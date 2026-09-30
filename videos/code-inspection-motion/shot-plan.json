@@ -1,0 +1,11 @@
+{
+  "id": "motion-benchmark-01",
+  "category": "asset-fusion",
+  "assetStrategy": "Reuse the approved Scene 03 SVG assets and canonical Motif Bot geometry; no external search or generated imagery.",
+  "asset_needs": [],
+  "durationSec": 6.4,
+  "fps": 30,
+  "composition": "One continuous inspection-line shot with timed paper-object interactions and a restrained final camera push.",
+  "story": "A sheet enters, the scan finds a literal bug, the failed sheet and bug fall into the reject bin; a second sheet passes and receives a physical PASS ticket.",
+  "proofTimesSec": [0, 1.9, 3.05, 4.35, 6.2]
+}

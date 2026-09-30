@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="390" height="176" viewBox="0 0 390 176" role="img" aria-label="Blank layered paper appointment card">
+<title>Appointment card</title>
+<path d="M21 13 Q190 5 367 14 L377 148 Q191 165 13 151 Z" transform="translate(7 10)" fill="#202C32" opacity=".24"/>
+<path d="M21 13 Q190 5 367 14 L377 148 Q191 165 13 151 Z" transform="translate(3 4)" fill="#DCCDB3"/>
+<path d="M21 13 Q190 5 367 14 L377 148 Q191 165 13 151 Z" fill="#F4EBD8" stroke="#DCCDB3" stroke-width="5"/>
+<path d="M21 13 Q190 5 367 14 L377 148 Q191 165 13 151 Z" fill="url(#paperSpeckle)" opacity=".45"/>
+<path d="M66 119 H275" fill="none" stroke="#DCCDB3" stroke-width="11" stroke-linecap="round"/>
+<path d="M337 12 l34 3 -2 40 -22 -12 -20 9 Z" fill="#E9DEC9" stroke="#DCCDB3" stroke-width="3"/>
+</svg>

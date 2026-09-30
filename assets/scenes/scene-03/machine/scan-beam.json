@@ -1,0 +1,52 @@
+{
+  "id": "scene-03-scan-beam",
+  "name": "Soft inspection beam",
+  "category": "machine",
+  "subcategory": "scan-beam",
+  "concepts": [
+    "scan",
+    "light"
+  ],
+  "keywords": [
+    "scan-beam",
+    "paper-cutout",
+    "scene-03"
+  ],
+  "style": "motif-default-v1",
+  "orientation": "front",
+  "dimensions": {
+    "width": 210,
+    "height": 320,
+    "unit": "px"
+  },
+  "artBox": {
+    "x": 0,
+    "y": 0,
+    "width": 210,
+    "height": 320
+  },
+  "anchors": {},
+  "compatibleCharacters": [
+    "motif-bot"
+  ],
+  "supportedActions": [
+    "compose",
+    "swap",
+    "animate"
+  ],
+  "sourceType": "vector",
+  "source": {
+    "file": "assets/scenes/scene-03/machine/scan-beam.svg",
+    "generator": "scripts/build_benchmark_scenes.py"
+  },
+  "version": 1,
+  "status": "canonical",
+  "benchmark": true,
+  "preview": "previews/scene-03/contact-sheet.png",
+  "license": "project-original",
+  "scenePlacement": {
+    "x": 448,
+    "y": 896,
+    "layer": "midground"
+  }
+}

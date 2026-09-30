@@ -1,0 +1,55 @@
+{
+  "id": "motif-bot-concept-d",
+  "name": "Hinged puppet",
+  "category": "character",
+  "subcategory": "mascot-concept",
+  "concepts": [
+    "assistant",
+    "coding",
+    "friendly",
+    "paper-cutout",
+    "modular"
+  ],
+  "keywords": [
+    "robot",
+    "cream",
+    "teal",
+    "dark-display",
+    "antennae",
+    "code-badge"
+  ],
+  "style": "motif-default-v0.1",
+  "orientation": "front",
+  "dimensions": {
+    "width": 1024,
+    "height": 1536,
+    "unit": "px"
+  },
+  "artBox": {
+    "x": 0,
+    "y": 17,
+    "width": 1024,
+    "height": 1501
+  },
+  "anchors": {},
+  "compatibleCharacters": [
+    "motif-bot"
+  ],
+  "supportedActions": [
+    "depicted-pose-only"
+  ],
+  "sourceType": "generated",
+  "source": {
+    "file": "assets/characters/motif-bot/concepts/concept-d-modular.png",
+    "identityReference": "user-supplied robot image",
+    "styleReferences": "seven user-supplied video clips",
+    "generationMode": "built-in image_gen",
+    "promptSummary": "Visible pivot discs and separable limb strips"
+  },
+  "version": 1,
+  "status": "review",
+  "preview": "previews/mascot-concepts.png",
+  "riggable": false,
+  "license": "project-original-concept",
+  "directionSelection": "not-selected"
+}

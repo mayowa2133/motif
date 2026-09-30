@@ -1,0 +1,520 @@
+{
+  "schemaVersion": "1.0",
+  "compositionId": "main",
+  "durationSec": 10.2,
+  "fps": 30,
+  "initial": [
+    {
+      "target": "#shot-a",
+      "props": {
+        "opacity": 0
+      }
+    },
+    {
+      "target": "#shot-b",
+      "props": {
+        "opacity": 0
+      }
+    },
+    {
+      "target": "#shot-review",
+      "props": {
+        "opacity": 0
+      }
+    },
+    {
+      "target": "#a-stencil",
+      "props": {
+        "opacity": 0
+      }
+    },
+    {
+      "target": "#b-stencil",
+      "props": {
+        "opacity": 0
+      }
+    },
+    {
+      "target": "#a-path",
+      "props": {
+        "opacity": 0
+      }
+    },
+    {
+      "target": "#b-path",
+      "props": {
+        "opacity": 0
+      }
+    },
+    {
+      "target": "#a-result",
+      "props": {
+        "opacity": 0
+      }
+    },
+    {
+      "target": "#b-result",
+      "props": {
+        "opacity": 0
+      }
+    },
+    {
+      "target": "#review-bot-think",
+      "props": {
+        "opacity": 0
+      }
+    },
+    {
+      "target": "#review-lens",
+      "props": {
+        "opacity": 0
+      }
+    },
+    {
+      "target": "#a-evaluation-board",
+      "props": {
+        "opacity": 0
+      }
+    },
+    {
+      "target": "#a-agent-token-blue",
+      "props": {
+        "opacity": 0
+      }
+    },
+    {
+      "target": "#a-agent-token-teal",
+      "props": {
+        "opacity": 0
+      }
+    },
+    {
+      "target": "#a-agent-token-coral",
+      "props": {
+        "opacity": 0
+      }
+    },
+    {
+      "target": "#wide-title",
+      "props": {
+        "opacity": 0
+      }
+    },
+    {
+      "target": "#caption-0",
+      "props": {
+        "opacity": 0
+      }
+    },
+    {
+      "target": "#caption-1",
+      "props": {
+        "opacity": 0
+      }
+    },
+    {
+      "target": "#caption-2",
+      "props": {
+        "opacity": 0
+      }
+    },
+    {
+      "target": "#caption-3",
+      "props": {
+        "opacity": 0
+      }
+    },
+    {
+      "target": "#caption-4",
+      "props": {
+        "opacity": 0
+      }
+    },
+    {
+      "target": "#caption-5",
+      "props": {
+        "opacity": 0
+      }
+    },
+    {
+      "target": "#caption-6",
+      "props": {
+        "opacity": 0
+      }
+    },
+    {
+      "target": "#caption-7",
+      "props": {
+        "opacity": 0
+      }
+    },
+    {
+      "target": "#a-agent-token-teal",
+      "props": {
+        "opacity": 0,
+        "y": 110
+      }
+    },
+    {
+      "target": "#a-agent-token-coral",
+      "props": {
+        "opacity": 0,
+        "y": -40
+      }
+    },
+    {
+      "target": "#a-board-arrow",
+      "props": {
+        "opacity": 0
+      }
+    },
+    {
+      "target": "#selected-sheet",
+      "props": {
+        "x": 380
+      }
+    }
+  ],
+  "events": [
+    {
+      "time": 0.05,
+      "target": "#wide-title",
+      "action": "POP_IN",
+      "params": {
+        "duration": 0.32,
+        "overshoot": 1.04
+      }
+    },
+    {
+      "time": 0.08,
+      "target": "#caption-0",
+      "action": "CAPTION_REPLACE",
+      "params": {}
+    },
+    {
+      "time": 0.18,
+      "target": "#a-evaluation-board",
+      "action": "POP_IN",
+      "params": {
+        "duration": 0.34,
+        "overshoot": 1.04
+      }
+    },
+    {
+      "time": 0.34,
+      "target": "#a-agent-token-blue",
+      "action": "POP_IN",
+      "params": {
+        "duration": 0.28,
+        "overshoot": 1.04
+      }
+    },
+    {
+      "time": 0.47,
+      "target": "#a-agent-token-teal",
+      "action": "POP_IN",
+      "params": {
+        "duration": 0.28,
+        "overshoot": 1.04
+      }
+    },
+    {
+      "time": 0.6,
+      "target": "#a-agent-token-coral",
+      "action": "POP_IN",
+      "params": {
+        "duration": 0.28,
+        "overshoot": 1.04
+      }
+    },
+    {
+      "time": 0.89,
+      "target": "#caption-1",
+      "action": "CAPTION_REPLACE",
+      "params": {}
+    },
+    {
+      "time": 2.08,
+      "target": "#shot-wide",
+      "action": "SCENE_CUT",
+      "params": {
+        "hide": "#shot-wide",
+        "show": "#shot-a"
+      }
+    },
+    {
+      "time": 2.12,
+      "target": "#caption-2",
+      "action": "CAPTION_REPLACE",
+      "params": {}
+    },
+    {
+      "time": 3.68,
+      "target": "#a-stencil",
+      "action": "FROM_TO",
+      "params": {
+        "from": {
+          "y": -180,
+          "opacity": 0
+        },
+        "to": {
+          "y": 0,
+          "opacity": 1
+        },
+        "duration": 0.36,
+        "ease": "power2.inOut"
+      }
+    },
+    {
+      "time": 3.68,
+      "target": "#caption-3",
+      "action": "CAPTION_REPLACE",
+      "params": {}
+    },
+    {
+      "time": 4.06,
+      "target": "#a-path",
+      "action": "SET",
+      "params": {
+        "props": {
+          "opacity": 1
+        }
+      }
+    },
+    {
+      "time": 4.4,
+      "target": "#a-result",
+      "action": "STAMP",
+      "params": {
+        "duration": 0.31,
+        "fromY": -110
+      }
+    },
+    {
+      "time": 4.98,
+      "target": "#shot-a",
+      "action": "SCENE_CUT",
+      "params": {
+        "hide": "#shot-a",
+        "show": "#shot-b"
+      }
+    },
+    {
+      "time": 4.98,
+      "target": "#caption-4",
+      "action": "CAPTION_REPLACE",
+      "params": {}
+    },
+    {
+      "time": 5.29,
+      "target": "#b-stencil",
+      "action": "FROM_TO",
+      "params": {
+        "from": {
+          "y": -180,
+          "opacity": 0
+        },
+        "to": {
+          "y": 0,
+          "opacity": 1
+        },
+        "duration": 0.36,
+        "ease": "power2.inOut"
+      }
+    },
+    {
+      "time": 5.69,
+      "target": "#b-path",
+      "action": "SET",
+      "params": {
+        "props": {
+          "opacity": 1
+        }
+      }
+    },
+    {
+      "time": 5.91,
+      "target": "#b-result",
+      "action": "STAMP",
+      "params": {
+        "duration": 0.31,
+        "fromY": -110
+      }
+    },
+    {
+      "time": 6.67,
+      "target": "#shot-b",
+      "action": "SCENE_CUT",
+      "params": {
+        "hide": "#shot-b",
+        "show": "#shot-review"
+      }
+    },
+    {
+      "time": 6.67,
+      "target": "#caption-5",
+      "action": "CAPTION_REPLACE",
+      "params": {}
+    },
+    {
+      "time": 6.7,
+      "target": "#selected-sheet",
+      "action": "TWEEN",
+      "params": {
+        "to": {
+          "x": 0
+        },
+        "duration": 0.38,
+        "ease": "power2.out"
+      }
+    },
+    {
+      "time": 7.54,
+      "target": "#caption-6",
+      "action": "CAPTION_REPLACE",
+      "params": {}
+    },
+    {
+      "time": 7.57,
+      "target": "#selected-sheet",
+      "action": "TWEEN",
+      "params": {
+        "to": {
+          "x": -220,
+          "y": 175,
+          "rotation": -8
+        },
+        "duration": 0.48,
+        "ease": "power2.inOut"
+      }
+    },
+    {
+      "time": 8.03,
+      "target": "#review-bot-present",
+      "action": "POSE_SWAP",
+      "params": {
+        "hide": "#review-bot-present",
+        "show": "#review-bot-think",
+        "bounceTarget": "#review-bot-motion",
+        "height": 7,
+        "duration": 0.24
+      }
+    },
+    {
+      "time": 8.08,
+      "target": "#review-lens",
+      "action": "POP_IN",
+      "params": {
+        "duration": 0.28,
+        "overshoot": 1.03
+      }
+    },
+    {
+      "time": 8.41,
+      "target": "#caption-7",
+      "action": "CAPTION_REPLACE",
+      "params": {}
+    },
+    {
+      "time": 8.43,
+      "target": "#review-lens",
+      "action": "TWEEN",
+      "params": {
+        "to": {
+          "x": -75,
+          "y": -45,
+          "rotation": -11
+        },
+        "duration": 0.48,
+        "ease": "power2.inOut"
+      }
+    }
+  ],
+  "captions": [
+    {
+      "text": "Three agents",
+      "emphasis": "agents",
+      "color": "teal",
+      "start": 0.08,
+      "end": 0.82
+    },
+    {
+      "text": "propose answers",
+      "emphasis": "answers",
+      "color": "teal",
+      "start": 0.89,
+      "end": 2.04
+    },
+    {
+      "text": "Answer A looks strong",
+      "emphasis": "strong",
+      "color": "blue",
+      "start": 2.12,
+      "end": 3.36
+    },
+    {
+      "text": "a check finds a flaw",
+      "emphasis": "flaw",
+      "color": "coral",
+      "start": 3.68,
+      "end": 4.84
+    },
+    {
+      "text": "Answer B performs better",
+      "emphasis": "better",
+      "color": "teal",
+      "start": 4.96,
+      "end": 6.29
+    },
+    {
+      "text": "B is selected",
+      "emphasis": "selected",
+      "color": "teal",
+      "start": 6.67,
+      "end": 7.46
+    },
+    {
+      "text": "Review the result",
+      "emphasis": "Review",
+      "color": "teal",
+      "start": 7.54,
+      "end": 8.41
+    },
+    {
+      "text": "before using it",
+      "emphasis": "using",
+      "color": "teal",
+      "start": 8.41,
+      "end": 9.28
+    }
+  ],
+  "sceneBeats": [
+    {
+      "id": "arena-establish",
+      "start": 0,
+      "end": 2.08
+    },
+    {
+      "id": "A-answer-and-test",
+      "start": 2.08,
+      "end": 4.98
+    },
+    {
+      "id": "B-matched-test",
+      "start": 4.98,
+      "end": 6.67
+    },
+    {
+      "id": "selection-and-review",
+      "start": 6.67,
+      "end": 10.2
+    }
+  ],
+  "narration": {
+    "file": "assets/voice/narration-master.wav",
+    "alignmentFile": "assets/voice/transcript.json",
+    "voiceStart": 0,
+    "voiceEnd": 9.37,
+    "status": "whisper-small.en-aligned"
+  }
+}

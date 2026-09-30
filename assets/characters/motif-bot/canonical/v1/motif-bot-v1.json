@@ -1,0 +1,231 @@
+{
+  "id": "motif-bot-a-v1",
+  "name": "Motif Bot A minimal cutout puppet",
+  "category": "character",
+  "subcategory": "mascot",
+  "concepts": [
+    "assistant",
+    "coding",
+    "friendly",
+    "paper-cutout"
+  ],
+  "keywords": [
+    "robot",
+    "cream",
+    "teal",
+    "dark-display",
+    "antennae",
+    "code-badge"
+  ],
+  "style": "motif-default-v1",
+  "orientation": "front",
+  "dimensions": {
+    "width": 1024,
+    "height": 1024,
+    "unit": "px"
+  },
+  "artBox": {
+    "x": 205,
+    "y": 44,
+    "width": 614,
+    "height": 867
+  },
+  "anchors": {
+    "neck": {
+      "x": 0.5,
+      "y": 0.53172
+    },
+    "headAccessory": {
+      "x": 0.5,
+      "y": 0.1684
+    },
+    "faceAccessory": {
+      "x": 0.5,
+      "y": 0.34948
+    },
+    "leftShoulder": {
+      "x": 0.31107,
+      "y": 0.58824
+    },
+    "rightShoulder": {
+      "x": 0.68893,
+      "y": 0.58824
+    },
+    "leftHand": {
+      "x": 0.11889,
+      "y": 0.72895
+    },
+    "rightHand": {
+      "x": 0.88111,
+      "y": 0.72895
+    },
+    "torsoAccessory": {
+      "x": 0.5,
+      "y": 0.7105
+    },
+    "backAccessory": {
+      "x": 0.5,
+      "y": 0.7105
+    },
+    "leftHip": {
+      "x": 0.38274,
+      "y": 0.80277
+    },
+    "rightHip": {
+      "x": 0.61726,
+      "y": 0.80277
+    },
+    "leftFoot": {
+      "x": 0.35831,
+      "y": 0.94233
+    },
+    "rightFoot": {
+      "x": 0.64169,
+      "y": 0.94233
+    },
+    "groundContact": {
+      "x": 0.5,
+      "y": 0.99423
+    }
+  },
+  "anchorPixels": {
+    "neck": {
+      "x": 512,
+      "y": 505
+    },
+    "headAccessory": {
+      "x": 512,
+      "y": 190
+    },
+    "faceAccessory": {
+      "x": 512,
+      "y": 347
+    },
+    "leftShoulder": {
+      "x": 396,
+      "y": 554
+    },
+    "rightShoulder": {
+      "x": 628,
+      "y": 554
+    },
+    "leftHand": {
+      "x": 278,
+      "y": 676
+    },
+    "rightHand": {
+      "x": 746,
+      "y": 676
+    },
+    "torsoAccessory": {
+      "x": 512,
+      "y": 660
+    },
+    "backAccessory": {
+      "x": 512,
+      "y": 660
+    },
+    "leftHip": {
+      "x": 440,
+      "y": 740
+    },
+    "rightHip": {
+      "x": 584,
+      "y": 740
+    },
+    "leftFoot": {
+      "x": 425,
+      "y": 861
+    },
+    "rightFoot": {
+      "x": 599,
+      "y": 861
+    },
+    "groundContact": {
+      "x": 512,
+      "y": 906
+    }
+  },
+  "visualGroups": [
+    "head",
+    "body",
+    "leftArm",
+    "leftHand",
+    "rightArm",
+    "rightHand",
+    "leftLeg",
+    "leftFoot",
+    "rightLeg",
+    "rightFoot"
+  ],
+  "headSubcomponents": [
+    "headShell",
+    "facePanel",
+    "faceState",
+    "antennae"
+  ],
+  "handStates": [
+    "mitten",
+    "open",
+    "point",
+    "grip",
+    "fist"
+  ],
+  "faceStates": [
+    "neutral",
+    "happy",
+    "excited",
+    "surprised",
+    "confused",
+    "thinking",
+    "worried",
+    "determined",
+    "annoyed",
+    "proud",
+    "sleepy",
+    "shocked"
+  ],
+  "views": [
+    "front",
+    "front-three-quarter-left",
+    "front-three-quarter-right",
+    "left-side",
+    "right-side",
+    "back"
+  ],
+  "posePresets": "assets/characters/motif-bot/canonical/v1/pose-presets.json",
+  "poseRenderMode": "parameterized",
+  "poseProofs": "previews/motif-bot-a-v1/proofs",
+  "supportedActions": [
+    "standing",
+    "sitting",
+    "walking",
+    "running",
+    "pointing",
+    "typing",
+    "holding-object",
+    "carrying-object",
+    "inspecting",
+    "celebrating",
+    "falling",
+    "pushing",
+    "pulling",
+    "presenting",
+    "thinking",
+    "magnifying-glass"
+  ],
+  "compatibleCharacters": [
+    "motif-bot"
+  ],
+  "sourceType": "vector",
+  "source": {
+    "file": "assets/characters/motif-bot/canonical/v1/motif-bot-front-neutral-v1.svg",
+    "generator": "scripts/build_motif_bot.py",
+    "identityReference": "user-supplied robot image",
+    "styleReference": "seven user-supplied videos and selected concept A"
+  },
+  "version": 1,
+  "status": "canonical",
+  "riggable": true,
+  "license": "project-original"
+}

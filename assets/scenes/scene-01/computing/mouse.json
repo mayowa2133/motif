@@ -1,0 +1,56 @@
+{
+  "id": "scene-01-mouse",
+  "name": "Simple desk mouse",
+  "category": "computing",
+  "subcategory": "mouse",
+  "concepts": [
+    "mouse",
+    "computer"
+  ],
+  "keywords": [
+    "mouse",
+    "cut-paper",
+    "night-desk"
+  ],
+  "style": "motif-default-v1",
+  "orientation": "front",
+  "dimensions": {
+    "width": 72,
+    "height": 65,
+    "unit": "px"
+  },
+  "artBox": {
+    "x": 0,
+    "y": 0,
+    "width": 72,
+    "height": 65
+  },
+  "anchors": {
+    "surface": {
+      "x": 0.5,
+      "y": 0.5
+    }
+  },
+  "compatibleCharacters": [
+    "motif-bot"
+  ],
+  "supportedActions": [
+    "compose",
+    "swap",
+    "animate"
+  ],
+  "sourceType": "vector",
+  "source": {
+    "file": "assets/scenes/scene-01/computing/mouse.svg",
+    "generator": "scripts/build_scene_01.py"
+  },
+  "version": 1,
+  "status": "canonical",
+  "preview": "previews/scene-01/contact-sheet.png",
+  "license": "project-original",
+  "scenePlacement": {
+    "x": 892,
+    "y": 1191,
+    "layer": "foreground"
+  }
+}

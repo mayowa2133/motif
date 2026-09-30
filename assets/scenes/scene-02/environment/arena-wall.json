@@ -1,0 +1,52 @@
+{
+  "id": "scene-02-arena-wall",
+  "name": "Warm arena backdrop",
+  "category": "environment",
+  "subcategory": "arena-wall",
+  "concepts": [
+    "arena",
+    "paper"
+  ],
+  "keywords": [
+    "arena-wall",
+    "paper-cutout",
+    "scene-02"
+  ],
+  "style": "motif-default-v1",
+  "orientation": "front",
+  "dimensions": {
+    "width": 1080,
+    "height": 1495,
+    "unit": "px"
+  },
+  "artBox": {
+    "x": 0,
+    "y": 0,
+    "width": 1080,
+    "height": 1495
+  },
+  "anchors": {},
+  "compatibleCharacters": [
+    "motif-bot"
+  ],
+  "supportedActions": [
+    "compose",
+    "swap",
+    "animate"
+  ],
+  "sourceType": "vector",
+  "source": {
+    "file": "assets/scenes/scene-02/environment/arena-wall.svg",
+    "generator": "scripts/build_benchmark_scenes.py"
+  },
+  "version": 1,
+  "status": "canonical",
+  "benchmark": true,
+  "preview": "previews/scene-02/contact-sheet.png",
+  "license": "project-original",
+  "scenePlacement": {
+    "x": 0,
+    "y": 0,
+    "layer": "background"
+  }
+}

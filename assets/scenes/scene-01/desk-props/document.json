@@ -1,0 +1,56 @@
+{
+  "id": "scene-01-document",
+  "name": "Checked work notes",
+  "category": "desk-props",
+  "subcategory": "document",
+  "concepts": [
+    "paper",
+    "tasks"
+  ],
+  "keywords": [
+    "document",
+    "cut-paper",
+    "night-desk"
+  ],
+  "style": "motif-default-v1",
+  "orientation": "front",
+  "dimensions": {
+    "width": 145,
+    "height": 107,
+    "unit": "px"
+  },
+  "artBox": {
+    "x": 0,
+    "y": 0,
+    "width": 145,
+    "height": 107
+  },
+  "anchors": {
+    "surface": {
+      "x": 0.5,
+      "y": 0.5
+    }
+  },
+  "compatibleCharacters": [
+    "motif-bot"
+  ],
+  "supportedActions": [
+    "compose",
+    "swap",
+    "animate"
+  ],
+  "sourceType": "vector",
+  "source": {
+    "file": "assets/scenes/scene-01/desk-props/document.svg",
+    "generator": "scripts/build_scene_01.py"
+  },
+  "version": 1,
+  "status": "canonical",
+  "preview": "previews/scene-01/contact-sheet.png",
+  "license": "project-original",
+  "scenePlacement": {
+    "x": 426,
+    "y": 1161,
+    "layer": "foreground"
+  }
+}

@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="1920" viewBox="0 0 1080 1920" role="img" aria-label="Scene 01 background layer">
+<title>Scene 01 background layer</title>
+<defs>
+<pattern id="sceneGrain" width="43" height="39" patternUnits="userSpaceOnUse">
+ <circle cx="7" cy="9" r="1.1" fill="#F4EBD8" opacity=".13"/>
+ <circle cx="30" cy="20" r=".8" fill="#F4EBD8" opacity=".12"/>
+ <circle cx="17" cy="33" r="1" fill="#202C32" opacity=".11"/>
+ <path d="M25 5 l3 .5 M4 28 l2 -.5" stroke="#F4EBD8" stroke-width=".8" opacity=".16"/>
+ <ellipse cx="38" cy="31" rx="2.4" ry=".8" fill="#F4EBD8" opacity=".11"/>
+ <path d="M14 19 l4 -.7 M34 8 l-2 1.4" stroke="#202C32" stroke-width=".7" opacity=".13"/>
+</pattern>
+<pattern id="paperSpeckle" width="29" height="31" patternUnits="userSpaceOnUse">
+ <circle cx="5" cy="7" r=".8" fill="#725343" opacity=".18"/>
+ <circle cx="19" cy="17" r="1.1" fill="#725343" opacity=".13"/>
+ <path d="M10 26 l3 -.5" stroke="#725343" stroke-width=".7" opacity=".13"/>
+ <ellipse cx="24" cy="5" rx="1.9" ry=".7" fill="#725343" opacity=".13"/>
+ <path d="M3 19 l2 .8 M20 28 l2 -1" stroke="#725343" stroke-width=".6" opacity=".14"/>
+</pattern>
+<pattern id="woodFiber" width="59" height="41" patternUnits="userSpaceOnUse">
+ <path d="M5 12 q13 -3 26 0 M34 29 q10 2 19 -1 M16 34 l8 -1" fill="none" stroke="#725343" stroke-width="1.3" opacity=".18"/>
+ <circle cx="47" cy="10" r="1" fill="#F4EBD8" opacity=".18"/>
+ <circle cx="9" cy="28" r=".8" fill="#202C32" opacity=".12"/>
+</pattern>
+</defs><defs>
+<pattern id="grain" width="31" height="29" patternUnits="userSpaceOnUse">
+  <circle cx="4" cy="6" r="1.2" fill="#806F5D" opacity=".16"/>
+  <circle cx="23" cy="12" r=".85" fill="#806F5D" opacity=".13"/>
+  <circle cx="12" cy="24" r=".7" fill="#806F5D" opacity=".12"/>
+  <path d="M18 3 l2 .7 M5 20 l2 -.4" stroke="#806F5D" stroke-width=".8" opacity=".12"/>
+  <circle cx="28" cy="27" r="1.5" fill="#FFFFFF" opacity=".16"/>
+</pattern>
+<pattern id="darkGrain" width="29" height="31" patternUnits="userSpaceOnUse">
+  <circle cx="7" cy="9" r=".9" fill="#F4EBD8" opacity=".09"/>
+  <circle cx="20" cy="23" r=".7" fill="#F4EBD8" opacity=".08"/>
+</pattern>
+</defs>
+<g id="wall-background" data-asset="assets/scenes/scene-01/environment/wall-background.svg" transform="translate(0 0)"><path d="M0 0 H1080 V1472 Q735 1462 520 1473 Q290 1465 0 1472 Z" fill="#62546A"/><path d="M0 0 H1080 V1472 Q735 1462 520 1473 Q290 1465 0 1472 Z" fill="url(#sceneGrain)" opacity=".7"/><path d="M81 272 Q376 263 675 275 Q891 267 1020 278 L1020 1013 Q719 1003 477 1017 Q283 1006 81 1014 Z" fill="#F4EBD8" opacity=".025"/><path d="M82 277 Q392 269 652 280 M88 1011 Q462 1004 824 1010" fill="none" stroke="#F4EBD8" stroke-width="3" opacity=".075"/><path d="M0 0 H81 V1460 H0 Z" fill="#4A3E57" opacity=".28"/><path d="M1020 0 H1080 V1466 H1020 Z" fill="#4A3E57" opacity=".19"/><path d="M0 1453 Q535 1445 1080 1454" fill="none" stroke="#F4EBD8" stroke-width="4" opacity="0.12" stroke-linecap="round" stroke-linejoin="round"/><path d="M0 0 H1080 V262 Q741 255 531 268 Q264 259 0 266 Z" fill="#4A3E57" opacity=".14"/></g>
+<g id="floor" data-asset="assets/scenes/scene-01/environment/floor.svg" transform="translate(0 1450)"><path d="M0 1 Q243 -3 479 2 Q798 -5 1080 1 V520 H0 Z" fill="#9A735D"/><path d="M0 1 Q243 -3 479 2 Q798 -5 1080 1 V520 H0 Z" fill="url(#woodFiber)" opacity=".85"/><path d="M0 1 Q243 -3 479 2 Q798 -5 1080 1 V25 Q531 17 0 26 Z" fill="#725343"/><path d="M0 220 Q282 215 551 219 Q833 213 1080 223" fill="none" stroke="#725343" stroke-width="3" opacity="0.32" stroke-linecap="round" stroke-linejoin="round"/><path d="M315 218 Q299 365 278 520 M789 218 Q815 350 840 520" fill="none" stroke="#725343" stroke-width="3" opacity="0.21" stroke-linecap="round" stroke-linejoin="round"/><ellipse cx="530" cy="198" rx="470" ry="80" fill="#252A32" opacity=".13"/><path d="M0 372 Q298 366 519 373 Q844 363 1080 373 V520 H0 Z" fill="#725343" opacity=".12"/></g>
+<g id="night-sky-moon" data-asset="assets/scenes/scene-01/environment/night-sky-moon.svg" transform="translate(132 398)"><path d="M18 1 Q136.3 -2 272 1 Q291 2 290 18 Q292 160.7 289 324 Q288 343 272 342 Q156.6 344 18 341 Q-1 340 0 324 Q-2 147.1 1 18 Q2 2 18 1 Z" fill="#172C3E"/><path d="M18 1 Q136.3 -2 272 1 Q291 2 290 18 Q292 160.7 289 324 Q288 343 272 342 Q156.6 344 18 341 Q-1 340 0 324 Q-2 147.1 1 18 Q2 2 18 1 Z" fill="url(#sceneGrain)" opacity=".72"/><path d="M18 1 Q136.3 -2 272 1 Q291 2 290 18 Q292 160.7 289 324 Q288 343 272 342 Q156.6 344 18 341 Q-1 340 0 324 Q-2 147.1 1 18 Q2 2 18 1 Z" fill="none" stroke="#DCCDB3" stroke-width="2" opacity=".38"/><path d="M0 242 Q80 211 153 242 Q235 217 290 237 V342 H0 Z" fill="#254D50"/><circle cx="184" cy="80" r="45" fill="#EBC46B" opacity=".18"/><path d="M163 42 Q199 30 217 66 Q226 100 194 119 Q157 126 142 94 Q135 64 163 42 Z" fill="#F4EBD8"/><path d="M163 42 Q199 30 217 66 Q226 100 194 119 Q157 126 142 94 Q135 64 163 42 Z" fill="url(#paperSpeckle)" opacity=".55"/><circle cx="59" cy="70" r="3" fill="#A6E5D6"/><circle cx="88" cy="124" r="2" fill="#F4EBD8"/><circle cx="254" cy="151" r="2.5" fill="#A6E5D6"/><path d="M0 275 L23 275 V251 H53 V271 H75 V234 H109 V271 H131 V251 H165 V273 H198 V239 H227 V268 H290 V342 H0 Z" fill="#172C3E"/><path d="M23 287 h4 m20 -3 h4 m42 6 h4 m106 -3 h4 m23 14 h4" stroke="#EBC46B" stroke-width="3" opacity=".63"/></g>
+</svg>

@@ -1,0 +1,12 @@
+{
+  "id": "scene-02-link-test-stencil",
+  "source": "assets/scenes/scene-02/story/link-test-stencil.svg",
+  "type": "prop",
+  "dimensions": {"width": 660, "height": 265},
+  "layer": "foreground",
+  "usage": "The same large physical connection test is lowered over both answer sheets. Two endpoint sockets and a dashed guide expose a missing or complete bridge.",
+  "style": "motif-default-v1",
+  "perspective": "near-front cut paper",
+  "shadowDirection": "down-right",
+  "dependencies": ["paperSpeckle pattern from Motif scene defs"]
+}

@@ -1,0 +1,857 @@
+{
+  "project": "code-inspection-motion",
+  "runtime": "all",
+  "compositions": [
+    {
+      "composition": "index.html",
+      "source": "index.html",
+      "tweens": [
+        {
+          "id": "#incoming-code-sheet-set-0",
+          "target": "#incoming-code-sheet",
+          "method": "set",
+          "start": 0,
+          "duration": 0,
+          "end": 0,
+          "shape": "flat",
+          "keyframes": [
+            {
+              "pct": 0,
+              "time": 0,
+              "properties": {
+                "x": 0,
+                "y": 0,
+                "rotation": 0
+              }
+            },
+            {
+              "pct": 100,
+              "time": 0,
+              "properties": {
+                "x": -520,
+                "y": 0,
+                "rotation": -5
+              }
+            }
+          ],
+          "path": [
+            {
+              "x": 0,
+              "y": 0
+            },
+            {
+              "x": -520,
+              "y": 0
+            }
+          ]
+        },
+        {
+          "id": "#clean-code-sheet-set-0",
+          "target": "#clean-code-sheet",
+          "method": "set",
+          "start": 0,
+          "duration": 0,
+          "end": 0,
+          "shape": "flat",
+          "keyframes": [
+            {
+              "pct": 0,
+              "time": 0,
+              "properties": {
+                "x": 0,
+                "y": 0,
+                "rotation": 0
+              }
+            },
+            {
+              "pct": 100,
+              "time": 0,
+              "properties": {
+                "x": -1080,
+                "y": 0,
+                "rotation": -4
+              }
+            }
+          ],
+          "path": [
+            {
+              "x": 0,
+              "y": 0
+            },
+            {
+              "x": -1080,
+              "y": 0
+            }
+          ]
+        },
+        {
+          "id": "#caught-bug-set-0",
+          "target": "#caught-bug",
+          "method": "set",
+          "start": 0,
+          "duration": 0,
+          "end": 0,
+          "shape": "flat",
+          "keyframes": [
+            {
+              "pct": 0,
+              "time": 0,
+              "properties": {
+                "scale": 1,
+                "opacity": 1,
+                "rotation": 0
+              }
+            },
+            {
+              "pct": 100,
+              "time": 0,
+              "properties": {
+                "scale": 0,
+                "opacity": 0,
+                "rotation": -8
+              }
+            }
+          ],
+          "path": null
+        },
+        {
+          "id": "#pass-stamp-set-0",
+          "target": "#pass-stamp",
+          "method": "set",
+          "start": 0,
+          "duration": 0,
+          "end": 0,
+          "shape": "flat",
+          "keyframes": [
+            {
+              "pct": 0,
+              "time": 0,
+              "properties": {
+                "opacity": 1,
+                "y": 0
+              }
+            },
+            {
+              "pct": 100,
+              "time": 0,
+              "properties": {
+                "opacity": 0,
+                "y": -190
+              }
+            }
+          ],
+          "path": [
+            {
+              "x": 0,
+              "y": 0
+            },
+            {
+              "x": 0,
+              "y": -190
+            }
+          ]
+        },
+        {
+          "id": "#scan-beam-set-0",
+          "target": "#scan-beam",
+          "method": "set",
+          "start": 0,
+          "duration": 0,
+          "end": 0,
+          "shape": "flat",
+          "keyframes": [
+            {
+              "pct": 0,
+              "time": 0,
+              "properties": {
+                "opacity": 1,
+                "scaleY": 1
+              }
+            },
+            {
+              "pct": 100,
+              "time": 0,
+              "properties": {
+                "opacity": 0,
+                "scaleY": 0.72
+              }
+            }
+          ],
+          "path": null
+        },
+        {
+          "id": "#paper-grabber-set-0-position",
+          "target": "#paper-grabber",
+          "method": "set",
+          "group": "position",
+          "start": 0,
+          "duration": 0,
+          "end": 0,
+          "shape": "flat",
+          "keyframes": [
+            {
+              "pct": 0,
+              "time": 0,
+              "properties": {
+                "y": 0
+              }
+            },
+            {
+              "pct": 100,
+              "time": 0,
+              "properties": {
+                "y": -55
+              }
+            }
+          ],
+          "path": [
+            {
+              "x": 0,
+              "y": 0
+            },
+            {
+              "x": 0,
+              "y": -55
+            }
+          ]
+        },
+        {
+          "id": "#bot-point, #bot-react, #bot-celebrate-set-0-visual",
+          "target": "#bot-point, #bot-react, #bot-celebrate",
+          "method": "set",
+          "group": "visual",
+          "start": 0,
+          "duration": 0,
+          "end": 0,
+          "shape": "flat",
+          "keyframes": [
+            {
+              "pct": 0,
+              "time": 0,
+              "properties": {
+                "opacity": 1
+              }
+            },
+            {
+              "pct": 100,
+              "time": 0,
+              "properties": {
+                "opacity": 0
+              }
+            }
+          ],
+          "path": null
+        },
+        {
+          "id": "#belt-ticks path-to-0-other",
+          "target": "#belt-ticks path",
+          "method": "to",
+          "group": "other",
+          "start": 0,
+          "duration": 6.4,
+          "end": 6.4,
+          "shape": "flat",
+          "keyframes": [
+            {
+              "pct": 0,
+              "time": 0,
+              "properties": {
+                "strokeDashoffset": 0
+              }
+            },
+            {
+              "pct": 100,
+              "time": 6.4,
+              "properties": {
+                "strokeDashoffset": -430
+              }
+            }
+          ],
+          "path": null
+        },
+        {
+          "id": "#bot-idle-set-680-visual",
+          "target": "#bot-idle",
+          "method": "set",
+          "group": "visual",
+          "start": 0.68,
+          "duration": 0,
+          "end": 0.68,
+          "shape": "flat",
+          "keyframes": [
+            {
+              "pct": 0,
+              "time": 0.68,
+              "properties": {
+                "opacity": 1
+              }
+            },
+            {
+              "pct": 100,
+              "time": 0.68,
+              "properties": {
+                "opacity": 0
+              }
+            }
+          ],
+          "path": null
+        },
+        {
+          "id": "#bot-point-set-680-visual",
+          "target": "#bot-point",
+          "method": "set",
+          "group": "visual",
+          "start": 0.68,
+          "duration": 0,
+          "end": 0.68,
+          "shape": "flat",
+          "keyframes": [
+            {
+              "pct": 0,
+              "time": 0.68,
+              "properties": {
+                "opacity": 1
+              }
+            },
+            {
+              "pct": 100,
+              "time": 0.68,
+              "properties": {
+                "opacity": 1
+              }
+            }
+          ],
+          "path": null
+        },
+        {
+          "id": "#point-head-to-700-rotation",
+          "target": "#point-head",
+          "method": "to",
+          "group": "rotation",
+          "start": 0.7,
+          "duration": 0.24,
+          "end": 0.94,
+          "shape": "flat",
+          "keyframes": [
+            {
+              "pct": 0,
+              "time": 0.7,
+              "properties": {
+                "rotation": 0
+              }
+            },
+            {
+              "pct": 100,
+              "time": 0.94,
+              "properties": {
+                "rotation": -7
+              }
+            }
+          ],
+          "path": null
+        },
+        {
+          "id": "#scan-beam-to-1000",
+          "target": "#scan-beam",
+          "method": "to",
+          "start": 1,
+          "duration": 0.22,
+          "end": 1.22,
+          "shape": "flat",
+          "keyframes": [
+            {
+              "pct": 0,
+              "time": 1,
+              "properties": {
+                "opacity": 1,
+                "scaleY": 1
+              }
+            },
+            {
+              "pct": 100,
+              "time": 1.22,
+              "properties": {
+                "opacity": 0.94,
+                "scaleY": 1
+              }
+            }
+          ],
+          "path": null
+        },
+        {
+          "id": "#scan-beam-to-1280-visual",
+          "target": "#scan-beam",
+          "method": "to",
+          "group": "visual",
+          "start": 1.28,
+          "duration": 0.22,
+          "end": 1.5,
+          "shape": "flat",
+          "keyframes": [
+            {
+              "pct": 0,
+              "time": 1.28,
+              "properties": {
+                "opacity": 1
+              }
+            },
+            {
+              "pct": 100,
+              "time": 1.5,
+              "properties": {
+                "opacity": 0.53
+              }
+            }
+          ],
+          "path": null
+        },
+        {
+          "id": "#bot-point-set-2140-visual",
+          "target": "#bot-point",
+          "method": "set",
+          "group": "visual",
+          "start": 2.14,
+          "duration": 0,
+          "end": 2.14,
+          "shape": "flat",
+          "keyframes": [
+            {
+              "pct": 0,
+              "time": 2.14,
+              "properties": {
+                "opacity": 1
+              }
+            },
+            {
+              "pct": 100,
+              "time": 2.14,
+              "properties": {
+                "opacity": 0
+              }
+            }
+          ],
+          "path": null
+        },
+        {
+          "id": "#bot-react-set-2140-visual",
+          "target": "#bot-react",
+          "method": "set",
+          "group": "visual",
+          "start": 2.14,
+          "duration": 0,
+          "end": 2.14,
+          "shape": "flat",
+          "keyframes": [
+            {
+              "pct": 0,
+              "time": 2.14,
+              "properties": {
+                "opacity": 1
+              }
+            },
+            {
+              "pct": 100,
+              "time": 2.14,
+              "properties": {
+                "opacity": 1
+              }
+            }
+          ],
+          "path": null
+        },
+        {
+          "id": "#paper-grabber-to-2240-position",
+          "target": "#paper-grabber",
+          "method": "to",
+          "group": "position",
+          "start": 2.24,
+          "duration": 0.26,
+          "end": 2.5,
+          "shape": "flat",
+          "keyframes": [
+            {
+              "pct": 0,
+              "time": 2.24,
+              "properties": {
+                "y": 0
+              }
+            },
+            {
+              "pct": 100,
+              "time": 2.5,
+              "properties": {
+                "y": 8
+              }
+            }
+          ],
+          "path": [
+            {
+              "x": 0,
+              "y": 0
+            },
+            {
+              "x": 0,
+              "y": 8
+            }
+          ]
+        },
+        {
+          "id": "#warning-flash-to-2420-visual",
+          "target": "#warning-flash",
+          "method": "to",
+          "group": "visual",
+          "start": 2.42,
+          "duration": 0.09,
+          "end": 2.51,
+          "shape": "flat",
+          "keyframes": [
+            {
+              "pct": 0,
+              "time": 2.42,
+              "properties": {
+                "opacity": 1
+              }
+            },
+            {
+              "pct": 100,
+              "time": 2.51,
+              "properties": {
+                "opacity": 1
+              }
+            }
+          ],
+          "path": null
+        },
+        {
+          "id": "#warning-flash-to-2510-visual",
+          "target": "#warning-flash",
+          "method": "to",
+          "group": "visual",
+          "start": 2.51,
+          "duration": 0.14,
+          "end": 2.65,
+          "shape": "flat",
+          "keyframes": [
+            {
+              "pct": 0,
+              "time": 2.51,
+              "properties": {
+                "opacity": 1
+              }
+            },
+            {
+              "pct": 100,
+              "time": 2.65,
+              "properties": {
+                "opacity": 0
+              }
+            }
+          ],
+          "path": null
+        },
+        {
+          "id": "#scan-beam-to-2600-visual",
+          "target": "#scan-beam",
+          "method": "to",
+          "group": "visual",
+          "start": 2.6,
+          "duration": 0.17,
+          "end": 2.77,
+          "shape": "flat",
+          "keyframes": [
+            {
+              "pct": 0,
+              "time": 2.6,
+              "properties": {
+                "opacity": 1
+              }
+            },
+            {
+              "pct": 100,
+              "time": 2.77,
+              "properties": {
+                "opacity": 0
+              }
+            }
+          ],
+          "path": null
+        },
+        {
+          "id": "#paper-grabber-to-2980-position",
+          "target": "#paper-grabber",
+          "method": "to",
+          "group": "position",
+          "start": 2.98,
+          "duration": 0.25,
+          "end": 3.23,
+          "shape": "flat",
+          "keyframes": [
+            {
+              "pct": 0,
+              "time": 2.98,
+              "properties": {
+                "y": 0
+              }
+            },
+            {
+              "pct": 100,
+              "time": 3.23,
+              "properties": {
+                "y": -55
+              }
+            }
+          ],
+          "path": [
+            {
+              "x": 0,
+              "y": 0
+            },
+            {
+              "x": 0,
+              "y": -55
+            }
+          ]
+        },
+        {
+          "id": "#incoming-code-sheet, #caught-bug-to-3280-visual",
+          "target": "#incoming-code-sheet, #caught-bug",
+          "method": "to",
+          "group": "visual",
+          "start": 3.28,
+          "duration": 0.13,
+          "end": 3.41,
+          "shape": "flat",
+          "keyframes": [
+            {
+              "pct": 0,
+              "time": 3.28,
+              "properties": {
+                "opacity": 1
+              }
+            },
+            {
+              "pct": 100,
+              "time": 3.41,
+              "properties": {
+                "opacity": 0
+              }
+            }
+          ],
+          "path": null
+        },
+        {
+          "id": "#scan-beam-to-3680",
+          "target": "#scan-beam",
+          "method": "to",
+          "start": 3.68,
+          "duration": 0.18,
+          "end": 3.86,
+          "shape": "flat",
+          "keyframes": [
+            {
+              "pct": 0,
+              "time": 3.68,
+              "properties": {
+                "opacity": 1,
+                "scaleY": 1
+              }
+            },
+            {
+              "pct": 100,
+              "time": 3.86,
+              "properties": {
+                "opacity": 0.85,
+                "scaleY": 1
+              }
+            }
+          ],
+          "path": null
+        },
+        {
+          "id": "#scan-beam-to-4050-visual",
+          "target": "#scan-beam",
+          "method": "to",
+          "group": "visual",
+          "start": 4.05,
+          "duration": 0.18,
+          "end": 4.23,
+          "shape": "flat",
+          "keyframes": [
+            {
+              "pct": 0,
+              "time": 4.05,
+              "properties": {
+                "opacity": 1
+              }
+            },
+            {
+              "pct": 100,
+              "time": 4.23,
+              "properties": {
+                "opacity": 0
+              }
+            }
+          ],
+          "path": null
+        },
+        {
+          "id": "#bot-react-set-4760-visual",
+          "target": "#bot-react",
+          "method": "set",
+          "group": "visual",
+          "start": 4.76,
+          "duration": 0,
+          "end": 4.76,
+          "shape": "flat",
+          "keyframes": [
+            {
+              "pct": 0,
+              "time": 4.76,
+              "properties": {
+                "opacity": 1
+              }
+            },
+            {
+              "pct": 100,
+              "time": 4.76,
+              "properties": {
+                "opacity": 0
+              }
+            }
+          ],
+          "path": null
+        },
+        {
+          "id": "#bot-celebrate-set-4760-visual",
+          "target": "#bot-celebrate",
+          "method": "set",
+          "group": "visual",
+          "start": 4.76,
+          "duration": 0,
+          "end": 4.76,
+          "shape": "flat",
+          "keyframes": [
+            {
+              "pct": 0,
+              "time": 4.76,
+              "properties": {
+                "opacity": 1
+              }
+            },
+            {
+              "pct": 100,
+              "time": 4.76,
+              "properties": {
+                "opacity": 1
+              }
+            }
+          ],
+          "path": null
+        },
+        {
+          "id": "#pass-stamp-to-5420-rotation",
+          "target": "#pass-stamp",
+          "method": "to",
+          "group": "rotation",
+          "start": 5.42,
+          "duration": 0.25,
+          "end": 5.67,
+          "shape": "flat",
+          "keyframes": [
+            {
+              "pct": 0,
+              "time": 5.42,
+              "properties": {
+                "rotation": 0
+              }
+            },
+            {
+              "pct": 100,
+              "time": 5.67,
+              "properties": {
+                "rotation": -2
+              }
+            }
+          ],
+          "path": null
+        }
+      ],
+      "traces": [
+        {
+          "target": "#paper-grabber",
+          "strokes": [
+            {
+              "id": "#paper-grabber-to-2240-position",
+              "start": 2.24,
+              "end": 2.5,
+              "keyframes": [
+                {
+                  "pct": 0,
+                  "time": 2.24,
+                  "properties": {
+                    "y": 0
+                  }
+                },
+                {
+                  "pct": 100,
+                  "time": 2.5,
+                  "properties": {
+                    "y": 8
+                  }
+                }
+              ],
+              "points": [
+                {
+                  "x": 0,
+                  "y": 0
+                },
+                {
+                  "x": 0,
+                  "y": 8
+                }
+              ]
+            },
+            {
+              "id": "#paper-grabber-to-2980-position",
+              "start": 2.98,
+              "end": 3.23,
+              "keyframes": [
+                {
+                  "pct": 0,
+                  "time": 2.98,
+                  "properties": {
+                    "y": 0
+                  }
+                },
+                {
+                  "pct": 100,
+                  "time": 3.23,
+                  "properties": {
+                    "y": -55
+                  }
+                }
+              ],
+              "points": [
+                {
+                  "x": 0,
+                  "y": 0
+                },
+                {
+                  "x": 0,
+                  "y": -55
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "cssKeyframes": [],
+      "anime": []
+    }
+  ],
+  "_meta": {
+    "version": "0.8.94",
+    "latestVersion": "0.8.94",
+    "updateAvailable": false
+  }
+}

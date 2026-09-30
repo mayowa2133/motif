@@ -1,0 +1,56 @@
+{
+  "id": "scene-01-chair",
+  "name": "Simple desk chair",
+  "category": "furniture",
+  "subcategory": "chair",
+  "concepts": [
+    "chair",
+    "seat"
+  ],
+  "keywords": [
+    "chair",
+    "cut-paper",
+    "night-desk"
+  ],
+  "style": "motif-default-v1",
+  "orientation": "front",
+  "dimensions": {
+    "width": 275,
+    "height": 345,
+    "unit": "px"
+  },
+  "artBox": {
+    "x": 0,
+    "y": 0,
+    "width": 275,
+    "height": 345
+  },
+  "anchors": {
+    "seat": {
+      "x": 0.51,
+      "y": 0.7
+    }
+  },
+  "compatibleCharacters": [
+    "motif-bot"
+  ],
+  "supportedActions": [
+    "compose",
+    "swap",
+    "animate"
+  ],
+  "sourceType": "vector",
+  "source": {
+    "file": "assets/scenes/scene-01/furniture/chair.svg",
+    "generator": "scripts/build_scene_01.py"
+  },
+  "version": 1,
+  "status": "canonical",
+  "preview": "previews/scene-01/contact-sheet.png",
+  "license": "project-original",
+  "scenePlacement": {
+    "x": 320,
+    "y": 976,
+    "layer": "midground"
+  }
+}

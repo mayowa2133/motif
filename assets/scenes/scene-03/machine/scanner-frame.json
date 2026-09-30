@@ -1,0 +1,52 @@
+{
+  "id": "scene-03-scanner-frame",
+  "name": "Cut-paper scanning gate",
+  "category": "machine",
+  "subcategory": "scanner-frame",
+  "concepts": [
+    "scanner",
+    "machine"
+  ],
+  "keywords": [
+    "scanner-frame",
+    "paper-cutout",
+    "scene-03"
+  ],
+  "style": "motif-default-v1",
+  "orientation": "front",
+  "dimensions": {
+    "width": 350,
+    "height": 475,
+    "unit": "px"
+  },
+  "artBox": {
+    "x": 0,
+    "y": 0,
+    "width": 350,
+    "height": 475
+  },
+  "anchors": {},
+  "compatibleCharacters": [
+    "motif-bot"
+  ],
+  "supportedActions": [
+    "compose",
+    "swap",
+    "animate"
+  ],
+  "sourceType": "vector",
+  "source": {
+    "file": "assets/scenes/scene-03/machine/scanner-frame.svg",
+    "generator": "scripts/build_benchmark_scenes.py"
+  },
+  "version": 1,
+  "status": "canonical",
+  "benchmark": true,
+  "preview": "previews/scene-03/contact-sheet.png",
+  "license": "project-original",
+  "scenePlacement": {
+    "x": 378,
+    "y": 785,
+    "layer": "midground"
+  }
+}

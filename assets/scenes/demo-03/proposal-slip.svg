@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="390" height="176" viewBox="0 0 390 176" role="img" aria-label="Pale dashed paper proposed appointment">
+<title>Unbooked proposal slip</title>
+<path d="M21 13 Q190 5 367 14 L377 148 Q191 165 13 151 Z" transform="translate(6 9)" fill="#202C32" opacity=".09"/>
+<path d="M21 13 Q190 5 367 14 L377 148 Q191 165 13 151 Z" fill="#E3F2E8" fill-opacity=".8" stroke="#318E85" stroke-width="6" stroke-dasharray="17 12"/>
+<path d="M21 13 Q190 5 367 14 L377 148 Q191 165 13 151 Z" fill="url(#paperSpeckle)" opacity=".28"/>
+<circle cx="321" cy="76" r="32" fill="#F4EBD8" stroke="#318E85" stroke-width="5" stroke-dasharray="11 7"/>
+<text x="321" y="93" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="44" font-weight="900" fill="#318E85">?</text>
+</svg>

@@ -1,0 +1,13 @@
+{
+  "provider": "kokoro",
+  "voice": "af_nova",
+  "lang": "en",
+  "speed": 0.85,
+  "lines": [
+    {
+      "id": "narration",
+      "text": "Three agents propose answers. Answer A looks strong. Then a check finds a flaw. Answer B performs better and is selected. Review the result before using it."
+    }
+  ],
+  "bgm": { "mode": "none" }
+}

@@ -1,0 +1,1102 @@
+{
+  "schemaVersion": "1.0",
+  "compositionId": "main",
+  "durationSec": 9.55,
+  "fps": 30,
+  "initial": [
+    {
+      "target": "#f-scene",
+      "props": {
+        "opacity": 0
+      }
+    },
+    {
+      "target": "#headline-bug",
+      "props": {
+        "opacity": 0
+      }
+    },
+    {
+      "target": "#headline-pass",
+      "props": {
+        "opacity": 0
+      }
+    },
+    {
+      "target": "#d-paper-cover",
+      "props": {
+        "opacity": 0
+      }
+    },
+    {
+      "target": "#d-bot-thinking",
+      "props": {
+        "opacity": 0
+      }
+    },
+    {
+      "target": "#f-bot-point",
+      "props": {
+        "opacity": 0
+      }
+    },
+    {
+      "target": "#f-bot-react",
+      "props": {
+        "opacity": 0
+      }
+    },
+    {
+      "target": "#f-bot-celebrate",
+      "props": {
+        "opacity": 0
+      }
+    },
+    {
+      "target": "#f-caught-bug",
+      "props": {
+        "opacity": 0
+      }
+    },
+    {
+      "target": "#f-pass-stamp",
+      "props": {
+        "opacity": 0
+      }
+    },
+    {
+      "target": "#f-scan-beam",
+      "props": {
+        "opacity": 0
+      }
+    },
+    {
+      "target": "#f-pass-check",
+      "props": {
+        "opacity": 0
+      }
+    },
+    {
+      "target": "#f-incoming-code-sheet",
+      "props": {
+        "x": -520,
+        "rotation": -5
+      }
+    },
+    {
+      "target": "#f-clean-code-sheet",
+      "props": {
+        "x": -1080,
+        "rotation": -4
+      }
+    },
+    {
+      "target": "#f-caught-bug",
+      "props": {
+        "scale": 0,
+        "opacity": 0,
+        "rotation": -8
+      }
+    },
+    {
+      "target": "#f-pass-stamp",
+      "props": {
+        "opacity": 0,
+        "y": -190
+      }
+    },
+    {
+      "target": "#f-paper-grabber",
+      "props": {
+        "y": -55
+      }
+    },
+    {
+      "target": "#f-scan-beam",
+      "props": {
+        "opacity": 0,
+        "scaleY": 0.42,
+        "y": -66
+      }
+    },
+    {
+      "target": "#f-pass-check",
+      "props": {
+        "opacity": 0,
+        "scale": 0.2
+      }
+    },
+    {
+      "target": "#d-notification-card",
+      "props": {
+        "opacity": 0,
+        "scale": 0.8
+      }
+    },
+    {
+      "target": "#d-screen-glow",
+      "props": {
+        "opacity": 0
+      }
+    },
+    {
+      "target": "#headline-night",
+      "props": {
+        "opacity": 0
+      }
+    },
+    {
+      "target": "#caption-0",
+      "props": {
+        "opacity": 0
+      }
+    },
+    {
+      "target": "#caption-1",
+      "props": {
+        "opacity": 0
+      }
+    },
+    {
+      "target": "#caption-2",
+      "props": {
+        "opacity": 0
+      }
+    },
+    {
+      "target": "#caption-3",
+      "props": {
+        "opacity": 0
+      }
+    },
+    {
+      "target": "#caption-4",
+      "props": {
+        "opacity": 0
+      }
+    },
+    {
+      "target": "#caption-5",
+      "props": {
+        "opacity": 0
+      }
+    },
+    {
+      "target": "#caption-6",
+      "props": {
+        "opacity": 0
+      }
+    },
+    {
+      "target": "#f-clean-check",
+      "props": {
+        "opacity": 0,
+        "scale": 0.2
+      }
+    },
+    {
+      "target": "#m-scene",
+      "props": {
+        "opacity": 0
+      }
+    },
+    {
+      "target": "#m-camera",
+      "props": {
+        "scale": 1.2
+      }
+    },
+    {
+      "target": "#m-report",
+      "props": {
+        "opacity": 0,
+        "scale": 0.86
+      }
+    },
+    {
+      "target": "#m-notification-card",
+      "props": {
+        "opacity": 0,
+        "scale": 0.82
+      }
+    },
+    {
+      "target": "#headline-morning",
+      "props": {
+        "opacity": 0
+      }
+    }
+  ],
+  "events": [
+    {
+      "time": 0.0,
+      "target": "#d-bot-motion",
+      "action": "BOUNCE",
+      "params": {
+        "height": 15,
+        "duration": 0.226
+      }
+    },
+    {
+      "time": 0.0,
+      "target": "#d-screen-glow",
+      "action": "PULSE",
+      "params": {
+        "peak": 0.74,
+        "rise": 0.113,
+        "fall": 0.252
+      }
+    },
+    {
+      "time": 0.052,
+      "target": "#headline-night",
+      "action": "POP_IN",
+      "params": {
+        "duration": 0.33,
+        "overshoot": 1.08
+      }
+    },
+    {
+      "time": 0.06,
+      "target": "#caption-0",
+      "action": "CAPTION_REPLACE",
+      "params": {}
+    },
+    {
+      "time": 0.104,
+      "target": "#d-bot-point",
+      "action": "POSE_SWAP",
+      "params": {
+        "hide": "#d-bot-point",
+        "show": "#d-bot-thinking",
+        "bounceTarget": "#d-bot-motion",
+        "height": 9,
+        "duration": 0.191
+      }
+    },
+    {
+      "time": 0.417,
+      "target": "#d-bot-thinking-head",
+      "action": "WOBBLE",
+      "params": {
+        "angle": 6,
+        "duration": 0.295
+      }
+    },
+    {
+      "time": 0.556,
+      "target": "#d-notification-card",
+      "action": "POP_IN",
+      "params": {
+        "duration": 0.304,
+        "overshoot": 1.12
+      }
+    },
+    {
+      "time": 0.695,
+      "target": "#d-screen-glow",
+      "action": "PULSE",
+      "params": {
+        "peak": 0.85,
+        "rise": 0.174,
+        "fall": 0.365
+      }
+    },
+    {
+      "time": 0.9,
+      "target": "#d-camera",
+      "action": "CAMERA_PUSH",
+      "params": {
+        "scale": 1.32,
+        "duration": 0.4
+      }
+    },
+    {
+      "time": 0.99,
+      "target": "#d-bot-thinking",
+      "action": "POSE_SWAP",
+      "params": {
+        "hide": "#d-bot-thinking",
+        "show": "#d-bot-point",
+        "bounceTarget": "#d-bot-motion",
+        "height": 11,
+        "duration": 0.217
+      }
+    },
+    {
+      "time": 1.16,
+      "target": "#caption-1",
+      "action": "CAPTION_REPLACE",
+      "params": {}
+    },
+    {
+      "time": 1.503,
+      "target": "#d-bot-point-head",
+      "action": "WOBBLE",
+      "params": {
+        "angle": 5,
+        "duration": 0.33
+      }
+    },
+    {
+      "time": 1.581,
+      "target": "#d-screen-glow",
+      "action": "PULSE",
+      "params": {
+        "peak": 0.68,
+        "rise": 0.13,
+        "fall": 0.261
+      }
+    },
+    {
+      "time": 1.893,
+      "target": "#d-notification-card",
+      "action": "WOBBLE",
+      "params": {
+        "angle": 4,
+        "duration": 0.33
+      }
+    },
+    {
+      "time": 1.9,
+      "target": "#caption-2",
+      "action": "CAPTION_REPLACE",
+      "params": {}
+    },
+    {
+      "time": 2.224,
+      "target": "#d-bot-motion",
+      "action": "BOUNCE",
+      "params": {
+        "height": 14,
+        "duration": 0.269
+      }
+    },
+    {
+      "time": 2.389,
+      "target": "#d-screen-glow",
+      "action": "PULSE",
+      "params": {
+        "peak": 0.84,
+        "rise": 0.113,
+        "fall": 0.261
+      }
+    },
+    {
+      "time": 2.658,
+      "target": "#headline-night",
+      "action": "POP_OUT",
+      "params": {
+        "duration": 0.148
+      }
+    },
+    {
+      "time": 2.701,
+      "target": "#d-paper-cover",
+      "action": "SET",
+      "params": {
+        "props": {
+          "opacity": 1
+        }
+      }
+    },
+    {
+      "time": 2.71,
+      "target": "#d-paper-cover",
+      "action": "TWEEN",
+      "params": {
+        "to": {
+          "scale": 26,
+          "rotation": -8
+        },
+        "duration": 0.356,
+        "ease": "power3.in"
+      }
+    },
+    {
+      "time": 3.04,
+      "target": "#f-scene",
+      "action": "SCENE_CUT",
+      "params": {
+        "hide": "#d-scene",
+        "show": "#f-scene"
+      }
+    },
+    {
+      "time": 3.082,
+      "target": "#f-incoming-code-sheet",
+      "action": "SLIDE",
+      "params": {
+        "fromX": -520,
+        "toX": 150,
+        "duration": 0.683,
+        "ease": "power2.out"
+      }
+    },
+    {
+      "time": 3.098,
+      "target": "#f-belt-ticks path",
+      "action": "TWEEN",
+      "params": {
+        "to": {
+          "strokeDashoffset": -580
+        },
+        "duration": 7.525,
+        "ease": "none"
+      }
+    },
+    {
+      "time": 3.107,
+      "target": "#d-paper-cover",
+      "action": "TWEEN",
+      "params": {
+        "to": {
+          "opacity": 0
+        },
+        "duration": 0.15,
+        "ease": "power2.out"
+      }
+    },
+    {
+      "time": 3.14,
+      "target": "#headline-bug",
+      "action": "POP_IN",
+      "params": {
+        "duration": 0.275,
+        "overshoot": 1.08
+      }
+    },
+    {
+      "time": 3.182,
+      "target": "#f-bot-idle",
+      "action": "POSE_SWAP",
+      "params": {
+        "hide": "#f-bot-idle",
+        "show": "#f-bot-point",
+        "bounceTarget": "#f-bot-motion",
+        "height": 16,
+        "duration": 0.208
+      }
+    },
+    {
+      "time": 3.34,
+      "target": "#caption-2",
+      "action": "SET",
+      "params": {
+        "props": {
+          "opacity": 0
+        }
+      }
+    },
+    {
+      "time": 3.74,
+      "target": "#f-incoming-code-sheet",
+      "action": "WOBBLE",
+      "params": {
+        "angle": 4,
+        "duration": 0.225
+      }
+    },
+    {
+      "time": 3.85,
+      "target": "#caption-3",
+      "action": "CAPTION_REPLACE",
+      "params": {}
+    },
+    {
+      "time": 3.865,
+      "target": "#f-paper-grabber",
+      "action": "TWEEN",
+      "params": {
+        "to": {
+          "y": 8
+        },
+        "duration": 0.208,
+        "ease": "power2.in"
+      }
+    },
+    {
+      "time": 3.915,
+      "target": "#f-scan-beam",
+      "action": "TWEEN",
+      "params": {
+        "to": {
+          "opacity": 0.95,
+          "scaleY": 1,
+          "y": 35
+        },
+        "duration": 0.333,
+        "ease": "power2.inOut"
+      }
+    },
+    {
+      "time": 3.932,
+      "target": "#f-scanner-frame",
+      "action": "SQUASH",
+      "params": {
+        "amount": 0.965,
+        "duration": 0.25
+      }
+    },
+    {
+      "time": 4.123,
+      "target": "#f-camera",
+      "action": "CAMERA_PUSH",
+      "params": {
+        "scale": 1.34,
+        "duration": 0.375
+      }
+    },
+    {
+      "time": 4.265,
+      "target": "#f-scan-beam",
+      "action": "TWEEN",
+      "params": {
+        "to": {
+          "y": -36,
+          "opacity": 0.66
+        },
+        "duration": 0.25,
+        "ease": "power2.inOut"
+      }
+    },
+    {
+      "time": 4.49,
+      "target": "#f-scanner-frame",
+      "action": "SQUASH",
+      "params": {
+        "amount": 0.94,
+        "duration": 0.192
+      }
+    },
+    {
+      "time": 4.54,
+      "target": "#f-caught-bug",
+      "action": "POP_IN",
+      "params": {
+        "duration": 0.283,
+        "overshoot": 1.3
+      }
+    },
+    {
+      "time": 4.594,
+      "target": "#f-warning",
+      "action": "PULSE",
+      "params": {
+        "peak": 1,
+        "rise": 0.04,
+        "fall": 0.059
+      }
+    },
+    {
+      "time": 4.621,
+      "target": "#f-bot-point",
+      "action": "POSE_SWAP",
+      "params": {
+        "hide": "#f-bot-point",
+        "show": "#f-bot-react",
+        "bounceTarget": "#f-bot-motion",
+        "height": 52,
+        "duration": 0.126
+      }
+    },
+    {
+      "time": 4.63,
+      "target": "#f-bot-motion",
+      "action": "TWEEN",
+      "params": {
+        "to": {
+          "scale": 1.15
+        },
+        "duration": 0.086,
+        "ease": "back.out(1.7)"
+      }
+    },
+    {
+      "time": 4.666,
+      "target": "#f-caught-bug",
+      "action": "WOBBLE",
+      "params": {
+        "angle": 12,
+        "duration": 0.171
+      }
+    },
+    {
+      "time": 4.693,
+      "target": "#f-scanner-frame",
+      "action": "SHAKE",
+      "params": {
+        "distance": 13,
+        "duration": 0.108
+      }
+    },
+    {
+      "time": 4.711,
+      "target": "#f-warning",
+      "action": "PULSE",
+      "params": {
+        "peak": 1,
+        "rise": 0.04,
+        "fall": 0.054
+      }
+    },
+    {
+      "time": 4.779,
+      "target": "#f-scan-beam",
+      "action": "TWEEN",
+      "params": {
+        "to": {
+          "opacity": 0
+        },
+        "duration": 0.09
+      }
+    },
+    {
+      "time": 4.855,
+      "target": "#f-bot-motion",
+      "action": "TWEEN",
+      "params": {
+        "to": {
+          "scale": 1
+        },
+        "duration": 0.122
+      }
+    },
+    {
+      "time": 4.887,
+      "target": "#f-camera",
+      "action": "CAMERA_PULL",
+      "params": {
+        "scale": 1,
+        "duration": 0.216
+      }
+    },
+    {
+      "time": 5.0,
+      "target": "#caption-4",
+      "action": "CAPTION_REPLACE",
+      "params": {}
+    },
+    {
+      "time": 5.07,
+      "target": "#f-clean-code-sheet",
+      "action": "SLIDE",
+      "params": {
+        "fromX": -1080,
+        "toX": -270,
+        "duration": 0.48,
+        "ease": "power2.out"
+      }
+    },
+    {
+      "time": 5.103,
+      "target": "#f-paper-grabber",
+      "action": "TWEEN",
+      "params": {
+        "to": {
+          "y": -55
+        },
+        "duration": 0.113
+      }
+    },
+    {
+      "time": 5.116,
+      "target": "#f-incoming-code-sheet",
+      "action": "SLIDE",
+      "params": {
+        "fromX": 150,
+        "toX": 430,
+        "duration": 0.117,
+        "ease": "power2.in"
+      }
+    },
+    {
+      "time": 5.211,
+      "target": "#f-caught-bug",
+      "action": "DROP",
+      "params": {
+        "x": 290,
+        "y": 420,
+        "duration": 0.216,
+        "rotation": 31
+      }
+    },
+    {
+      "time": 5.224,
+      "target": "#f-incoming-code-sheet",
+      "action": "DROP",
+      "params": {
+        "x": 430,
+        "y": 265,
+        "duration": 0.198,
+        "rotation": 16
+      }
+    },
+    {
+      "time": 5.25,
+      "target": "#f-bot-idle",
+      "action": "POSE_SWAP",
+      "params": {
+        "hide": "#f-bot-idle",
+        "show": "#f-bot-point",
+        "bounceTarget": "#f-bot-motion",
+        "height": 12,
+        "duration": 0.176
+      }
+    },
+    {
+      "time": 5.4,
+      "target": "#f-reject-bin",
+      "action": "SQUASH",
+      "params": {
+        "amount": 0.9,
+        "duration": 0.126
+      }
+    },
+    {
+      "time": 5.404,
+      "target": "#f-warning",
+      "action": "PULSE",
+      "params": {
+        "peak": 0.75,
+        "rise": 0.04,
+        "fall": 0.05
+      }
+    },
+    {
+      "time": 5.427,
+      "target": "#f-incoming-code-sheet",
+      "action": "TWEEN",
+      "params": {
+        "to": {
+          "opacity": 0
+        },
+        "duration": 0.06
+      }
+    },
+    {
+      "time": 5.431,
+      "target": "#f-caught-bug",
+      "action": "TWEEN",
+      "params": {
+        "to": {
+          "opacity": 0
+        },
+        "duration": 0.06
+      }
+    },
+    {
+      "time": 5.486,
+      "target": "#f-bot-react",
+      "action": "POSE_SWAP",
+      "params": {
+        "hide": "#f-bot-react",
+        "show": "#f-bot-idle",
+        "bounceTarget": "#f-bot-motion",
+        "height": 8,
+        "duration": 0.06
+      }
+    },
+    {
+      "time": 5.55,
+      "target": "#f-clean-code-sheet",
+      "action": "WOBBLE",
+      "params": {
+        "angle": 3,
+        "duration": 0.2
+      }
+    },
+    {
+      "time": 5.58,
+      "target": "#f-scan-beam",
+      "action": "TWEEN",
+      "params": {
+        "to": {
+          "opacity": 0.87,
+          "scaleY": 1,
+          "y": 26
+        },
+        "duration": 0.3
+      }
+    },
+    {
+      "time": 5.61,
+      "target": "#f-scanner-frame",
+      "action": "SQUASH",
+      "params": {
+        "amount": 0.975,
+        "duration": 0.152
+      }
+    },
+    {
+      "time": 5.92,
+      "target": "#caption-4",
+      "action": "SET",
+      "params": {
+        "props": {
+          "opacity": 0
+        }
+      }
+    },
+    {
+      "time": 6.02,
+      "target": "#f-scan-beam",
+      "action": "TWEEN",
+      "params": {
+        "to": {
+          "y": -30,
+          "opacity": 0
+        },
+        "duration": 0.232
+      }
+    },
+    {
+      "time": 6.564,
+      "target": "#f-camera",
+      "action": "CAMERA_PUSH",
+      "params": {
+        "scale": 1.2,
+        "duration": 0.344
+      }
+    },
+    {
+      "time": 6.68,
+      "target": "#headline-bug",
+      "action": "POP_OUT",
+      "params": {
+        "duration": 0.16
+      }
+    },
+    {
+      "time": 6.72,
+      "target": "#caption-5",
+      "action": "CAPTION_REPLACE",
+      "params": {}
+    },
+    {
+      "time": 6.82,
+      "target": "#f-pass-stamp",
+      "action": "STAMP",
+      "params": {
+        "duration": 0.344,
+        "fromY": -190
+      }
+    },
+    {
+      "time": 6.83,
+      "target": "#headline-pass",
+      "action": "POP_IN",
+      "params": {
+        "duration": 0.29,
+        "overshoot": 1.08
+      }
+    },
+    {
+      "time": 6.98,
+      "target": "#f-clean-code-sheet",
+      "action": "SQUASH",
+      "params": {
+        "amount": 0.91,
+        "duration": 0.153
+      }
+    },
+    {
+      "time": 7.02,
+      "target": "#f-clean-check",
+      "action": "POP_IN",
+      "params": {
+        "duration": 0.27,
+        "overshoot": 1.16
+      }
+    },
+    {
+      "time": 7.031,
+      "target": "#f-pass-check",
+      "action": "POP_IN",
+      "params": {
+        "duration": 0.225,
+        "overshoot": 1.22
+      }
+    },
+    {
+      "time": 7.27,
+      "target": "#f-camera",
+      "action": "CAMERA_PULL",
+      "params": {
+        "scale": 1,
+        "duration": 0.305
+      }
+    },
+    {
+      "time": 7.605,
+      "target": "#f-clean-code-sheet",
+      "action": "SLIDE",
+      "params": {
+        "fromX": -270,
+        "toX": 330,
+        "duration": 0.421,
+        "ease": "power2.inOut"
+      }
+    },
+    {
+      "time": 7.63,
+      "target": "#caption-6",
+      "action": "CAPTION_REPLACE",
+      "params": {}
+    },
+    {
+      "time": 7.72,
+      "target": "#m-scene",
+      "action": "SCENE_CUT",
+      "params": {
+        "hide": "#f-scene",
+        "show": "#m-scene"
+      }
+    },
+    {
+      "time": 7.72,
+      "target": "#headline-pass",
+      "action": "SET",
+      "params": {
+        "props": {
+          "opacity": 0
+        }
+      }
+    },
+    {
+      "time": 7.74,
+      "target": "#headline-morning",
+      "action": "POP_IN",
+      "params": {
+        "duration": 0.25,
+        "overshoot": 1.06
+      }
+    },
+    {
+      "time": 7.75,
+      "target": "#m-report",
+      "action": "POP_IN",
+      "params": {
+        "duration": 0.3,
+        "overshoot": 1.06
+      }
+    },
+    {
+      "time": 7.79,
+      "target": "#m-bot-motion",
+      "action": "BOUNCE",
+      "params": {
+        "height": 14,
+        "duration": 0.3
+      }
+    },
+    {
+      "time": 8.06,
+      "target": "#m-notification-card",
+      "action": "POP_IN",
+      "params": {
+        "duration": 0.26,
+        "overshoot": 1.07
+      }
+    },
+    {
+      "time": 8.18,
+      "target": "#m-bot-present-head",
+      "action": "WOBBLE",
+      "params": {
+        "angle": 4,
+        "duration": 0.36
+      }
+    },
+    {
+      "time": 8.52,
+      "target": "#caption-6",
+      "action": "SET",
+      "params": {
+        "props": {
+          "opacity": 0
+        }
+      }
+    }
+  ],
+  "sceneBeats": [
+    {
+      "id": "night-work",
+      "start": 0,
+      "end": 3.04
+    },
+    {
+      "id": "bug-rejected",
+      "start": 3.04,
+      "end": 5.62
+    },
+    {
+      "id": "checks-passed",
+      "start": 5.62,
+      "end": 7.72
+    },
+    {
+      "id": "morning-results",
+      "start": 7.72,
+      "end": 9.55
+    }
+  ],
+  "captions": [
+    {
+      "text": "While you sleep",
+      "emphasis": "sleep",
+      "color": "teal",
+      "start": 0.06,
+      "end": 1.16
+    },
+    {
+      "text": "an AI agent",
+      "emphasis": "AI",
+      "color": "teal",
+      "start": 1.16,
+      "end": 1.81
+    },
+    {
+      "text": "reviews your code",
+      "emphasis": "code",
+      "color": "teal",
+      "start": 1.9,
+      "end": 3.34
+    },
+    {
+      "text": "potential bugs",
+      "emphasis": "bugs",
+      "color": "coral",
+      "start": 3.85,
+      "end": 4.96
+    },
+    {
+      "text": "runs tests",
+      "emphasis": "tests",
+      "color": "teal",
+      "start": 5.0,
+      "end": 5.92
+    },
+    {
+      "text": "results ready",
+      "emphasis": "ready",
+      "color": "teal",
+      "start": 6.72,
+      "end": 7.61
+    },
+    {
+      "text": "in the morning",
+      "emphasis": "morning",
+      "color": "teal",
+      "start": 7.63,
+      "end": 8.52
+    }
+  ],
+  "narration": {
+    "file": "assets/voice/narration-master.wav",
+    "alignmentFile": "assets/voice/transcript.json",
+    "voiceStart": 0,
+    "voiceEnd": 8.789,
+    "status": "whisper-small.en-aligned"
+  }
+}

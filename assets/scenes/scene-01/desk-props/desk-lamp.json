@@ -1,0 +1,56 @@
+{
+  "id": "scene-01-desk-lamp",
+  "name": "Warm paper desk lamp",
+  "category": "desk-props",
+  "subcategory": "desk-lamp",
+  "concepts": [
+    "lamp",
+    "light"
+  ],
+  "keywords": [
+    "desk-lamp",
+    "cut-paper",
+    "night-desk"
+  ],
+  "style": "motif-default-v1",
+  "orientation": "front",
+  "dimensions": {
+    "width": 160,
+    "height": 346,
+    "unit": "px"
+  },
+  "artBox": {
+    "x": 0,
+    "y": 0,
+    "width": 160,
+    "height": 346
+  },
+  "anchors": {
+    "surface": {
+      "x": 0.48,
+      "y": 0.96
+    }
+  },
+  "compatibleCharacters": [
+    "motif-bot"
+  ],
+  "supportedActions": [
+    "compose",
+    "swap",
+    "animate"
+  ],
+  "sourceType": "vector",
+  "source": {
+    "file": "assets/scenes/scene-01/desk-props/desk-lamp.svg",
+    "generator": "scripts/build_scene_01.py"
+  },
+  "version": 1,
+  "status": "canonical",
+  "preview": "previews/scene-01/contact-sheet.png",
+  "license": "project-original",
+  "scenePlacement": {
+    "x": 80,
+    "y": 921,
+    "layer": "midground"
+  }
+}

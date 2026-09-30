@@ -1,0 +1,52 @@
+{
+  "id": "motif-bot-v1-hands-fist",
+  "name": "Motif Bot fist",
+  "category": "character",
+  "subcategory": "hands",
+  "concepts": [
+    "assistant",
+    "coding",
+    "paper-cutout"
+  ],
+  "keywords": [
+    "cream",
+    "teal",
+    "hands",
+    "fist"
+  ],
+  "style": "motif-default-v1",
+  "orientation": "front",
+  "dimensions": {
+    "width": 1024,
+    "height": 1024,
+    "unit": "px"
+  },
+  "artBox": {
+    "x": 0,
+    "y": 0,
+    "width": 1024,
+    "height": 1024
+  },
+  "anchors": {
+    "grip": {
+      "x": 0.5,
+      "y": 0.5
+    }
+  },
+  "compatibleCharacters": [
+    "motif-bot"
+  ],
+  "supportedActions": [
+    "compose"
+  ],
+  "sourceType": "vector",
+  "source": {
+    "file": "assets/characters/motif-bot/canonical/v1/hands/fist.svg",
+    "generator": "scripts/build_motif_bot.py"
+  },
+  "version": 1,
+  "status": "canonical",
+  "preview": "previews/motif-bot-front-neutral-v1.png",
+  "previewOnly": false,
+  "license": "project-original"
+}

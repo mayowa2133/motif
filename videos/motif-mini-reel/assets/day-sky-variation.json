@@ -1,0 +1,10 @@
+{
+  "id": "mini-reel-01-day-sky-variation",
+  "source": "videos/motif-mini-reel/assets/day-sky-variation.svg",
+  "baseAsset": "assets/scenes/scene-01/environment/night-sky-moon.svg",
+  "role": "scene-specific morning window insert",
+  "dimensions": { "width": 290, "height": 342 },
+  "placement": { "x": 132, "y": 398 },
+  "style": "motif-default-v1",
+  "note": "Replaces only the sky insert during the Reel's final desk return. The approved night asset and Scene 01 render are unchanged."
+}

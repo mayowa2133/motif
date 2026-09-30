@@ -1,0 +1,51 @@
+{
+  "id": "scene-01-late-night-clock",
+  "name": "Late night wall clock",
+  "category": "desk-props",
+  "subcategory": "late-night-clock",
+  "concepts": [
+    "clock",
+    "night"
+  ],
+  "keywords": [
+    "late-night-clock",
+    "cut-paper",
+    "night-desk"
+  ],
+  "style": "motif-default-v1",
+  "orientation": "front",
+  "dimensions": {
+    "width": 140,
+    "height": 160,
+    "unit": "px"
+  },
+  "artBox": {
+    "x": 0,
+    "y": 0,
+    "width": 140,
+    "height": 160
+  },
+  "anchors": {},
+  "compatibleCharacters": [
+    "motif-bot"
+  ],
+  "supportedActions": [
+    "compose",
+    "swap",
+    "animate"
+  ],
+  "sourceType": "vector",
+  "source": {
+    "file": "assets/scenes/scene-01/desk-props/late-night-clock.svg",
+    "generator": "scripts/build_scene_01.py"
+  },
+  "version": 1,
+  "status": "canonical",
+  "preview": "previews/scene-01/contact-sheet.png",
+  "license": "project-original",
+  "scenePlacement": {
+    "x": 820,
+    "y": 502,
+    "layer": "midground"
+  }
+}

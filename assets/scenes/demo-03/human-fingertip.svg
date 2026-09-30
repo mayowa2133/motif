@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="320" height="230" viewBox="0 0 320 230" role="img" aria-label="Simplified human fingertip reaching to press a paper control">
+<title>Human fingertip</title>
+<path d="M319 72 Q265 70 229 84 L174 90 Q147 84 127 100 Q115 111 118 128 L138 151 Q157 165 181 157 L215 151 Q254 177 319 176 Z" transform="translate(5 8)" fill="#202C32" opacity=".16"/>
+<path d="M319 72 Q265 70 229 84 L174 90 Q147 84 127 100 Q115 111 118 128 L138 151 Q157 165 181 157 L215 151 Q254 177 319 176 Z" fill="#E8AC8B" stroke="#9F604D" stroke-width="5"/>
+<path d="M115 103 Q98 91 82 99 L30 122 Q13 131 18 148 Q24 163 43 160 L132 146" fill="#F1BE9D" stroke="#9F604D" stroke-width="5" stroke-linejoin="round"/>
+<path d="M316 83 Q287 103 285 164" fill="none" stroke="#F5C8A9" stroke-width="9" opacity=".55"/>
+<path d="M26 129 Q55 113 82 113" fill="none" stroke="#F7D1B6" stroke-width="8" stroke-linecap="round" opacity=".7"/>
+<path d="M271 75 L320 73 V180 L267 179 Q281 132 271 75 Z" fill="#64869A" stroke="#4C5B60" stroke-width="5"/>
+</svg>

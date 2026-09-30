@@ -1,0 +1,60 @@
+{
+  "id": "scene-01-coffee-mug",
+  "name": "Cream coffee mug",
+  "category": "desk-props",
+  "subcategory": "coffee-mug",
+  "concepts": [
+    "mug",
+    "coffee"
+  ],
+  "keywords": [
+    "coffee-mug",
+    "cut-paper",
+    "night-desk"
+  ],
+  "style": "motif-default-v1",
+  "orientation": "front",
+  "dimensions": {
+    "width": 120,
+    "height": 110,
+    "unit": "px"
+  },
+  "artBox": {
+    "x": 0,
+    "y": 0,
+    "width": 120,
+    "height": 110
+  },
+  "anchors": {
+    "grip": {
+      "x": 0.89,
+      "y": 0.5
+    },
+    "surface": {
+      "x": 0.43,
+      "y": 0.92
+    }
+  },
+  "compatibleCharacters": [
+    "motif-bot"
+  ],
+  "supportedActions": [
+    "compose",
+    "swap",
+    "animate"
+  ],
+  "sourceType": "vector",
+  "source": {
+    "file": "assets/scenes/scene-01/desk-props/coffee-mug.svg",
+    "generator": "scripts/build_scene_01.py"
+  },
+  "version": 1,
+  "status": "canonical",
+  "preview": "previews/scene-01/contact-sheet.png",
+  "license": "project-original",
+  "scenePlacement": {
+    "x": 82,
+    "y": 1154,
+    "layer": "foreground"
+  }
+}

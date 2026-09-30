@@ -1,0 +1,52 @@
+{
+  "id": "scene-03-scan-sign",
+  "name": "Hanging inspection sign",
+  "category": "props",
+  "subcategory": "scan-sign",
+  "concepts": [
+    "inspection",
+    "sign"
+  ],
+  "keywords": [
+    "scan-sign",
+    "paper-cutout",
+    "scene-03"
+  ],
+  "style": "motif-default-v1",
+  "orientation": "front",
+  "dimensions": {
+    "width": 280,
+    "height": 115,
+    "unit": "px"
+  },
+  "artBox": {
+    "x": 0,
+    "y": 0,
+    "width": 280,
+    "height": 115
+  },
+  "anchors": {},
+  "compatibleCharacters": [
+    "motif-bot"
+  ],
+  "supportedActions": [
+    "compose",
+    "swap",
+    "animate"
+  ],
+  "sourceType": "vector",
+  "source": {
+    "file": "assets/scenes/scene-03/props/scan-sign.svg",
+    "generator": "scripts/build_benchmark_scenes.py"
+  },
+  "version": 1,
+  "status": "canonical",
+  "benchmark": true,
+  "preview": "previews/scene-03/contact-sheet.png",
+  "license": "project-original",
+  "scenePlacement": {
+    "x": 400,
+    "y": 344,
+    "layer": "midground"
+  }
+}

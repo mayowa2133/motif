@@ -1,0 +1,13 @@
+{
+  "provider": "kokoro",
+  "voice": "af_nova",
+  "lang": "en",
+  "speed": 0.85,
+  "lines": [
+    {
+      "id": "narration",
+      "text": "Two plans land at the same time. An assistant spots the overlap and suggests a free slot. But the calendar stays put. It waits for your approval. Only then does the appointment move."
+    }
+  ],
+  "bgm": { "mode": "none" }
+}

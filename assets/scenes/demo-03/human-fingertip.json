@@ -1,0 +1,9 @@
+{
+  "id": "demo-03-human-fingertip",
+  "source": "assets/scenes/demo-03/human-fingertip.svg",
+  "type": "interaction-prop",
+  "dimensions": {"width": 320, "height": 230},
+  "style": "motif-default-v1",
+  "shadowDirection": "down-right",
+  "usage": "Simplified separate human actor; fingertip visibly presses the approval tab. This is not a redraw of Motif Bot."
+}

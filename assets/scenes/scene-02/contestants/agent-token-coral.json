@@ -1,0 +1,52 @@
+{
+  "id": "scene-02-agent-token-coral",
+  "name": "Coral agent token",
+  "category": "contestants",
+  "subcategory": "agent-token-coral",
+  "concepts": [
+    "agent",
+    "contestant"
+  ],
+  "keywords": [
+    "agent-token-coral",
+    "paper-cutout",
+    "scene-02"
+  ],
+  "style": "motif-default-v1",
+  "orientation": "front",
+  "dimensions": {
+    "width": 155,
+    "height": 210,
+    "unit": "px"
+  },
+  "artBox": {
+    "x": 0,
+    "y": 0,
+    "width": 155,
+    "height": 210
+  },
+  "anchors": {},
+  "compatibleCharacters": [
+    "motif-bot"
+  ],
+  "supportedActions": [
+    "compose",
+    "swap",
+    "animate"
+  ],
+  "sourceType": "vector",
+  "source": {
+    "file": "assets/scenes/scene-02/contestants/agent-token-coral.svg",
+    "generator": "scripts/build_benchmark_scenes.py"
+  },
+  "version": 1,
+  "status": "canonical",
+  "benchmark": true,
+  "preview": "previews/scene-02/contact-sheet.png",
+  "license": "project-original",
+  "scenePlacement": {
+    "x": 705,
+    "y": 1100,
+    "layer": "character"
+  }
+}

@@ -1,0 +1,52 @@
+{
+  "id": "scene-03-reject-bin",
+  "name": "Defect reject bin",
+  "category": "machine",
+  "subcategory": "reject-bin",
+  "concepts": [
+    "reject",
+    "defect"
+  ],
+  "keywords": [
+    "reject-bin",
+    "paper-cutout",
+    "scene-03"
+  ],
+  "style": "motif-default-v1",
+  "orientation": "front",
+  "dimensions": {
+    "width": 235,
+    "height": 175,
+    "unit": "px"
+  },
+  "artBox": {
+    "x": 0,
+    "y": 0,
+    "width": 235,
+    "height": 175
+  },
+  "anchors": {},
+  "compatibleCharacters": [
+    "motif-bot"
+  ],
+  "supportedActions": [
+    "compose",
+    "swap",
+    "animate"
+  ],
+  "sourceType": "vector",
+  "source": {
+    "file": "assets/scenes/scene-03/machine/reject-bin.svg",
+    "generator": "scripts/build_benchmark_scenes.py"
+  },
+  "version": 1,
+  "status": "canonical",
+  "benchmark": true,
+  "preview": "previews/scene-03/contact-sheet.png",
+  "license": "project-original",
+  "scenePlacement": {
+    "x": 703,
+    "y": 1363,
+    "layer": "foreground"
+  }
+}

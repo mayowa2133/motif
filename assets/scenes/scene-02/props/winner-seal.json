@@ -1,0 +1,52 @@
+{
+  "id": "scene-02-winner-seal",
+  "name": "Best-answer paper seal",
+  "category": "props",
+  "subcategory": "winner-seal",
+  "concepts": [
+    "winner",
+    "best-answer"
+  ],
+  "keywords": [
+    "winner-seal",
+    "paper-cutout",
+    "scene-02"
+  ],
+  "style": "motif-default-v1",
+  "orientation": "front",
+  "dimensions": {
+    "width": 240,
+    "height": 240,
+    "unit": "px"
+  },
+  "artBox": {
+    "x": 0,
+    "y": 0,
+    "width": 240,
+    "height": 240
+  },
+  "anchors": {},
+  "compatibleCharacters": [
+    "motif-bot"
+  ],
+  "supportedActions": [
+    "compose",
+    "swap",
+    "animate"
+  ],
+  "sourceType": "vector",
+  "source": {
+    "file": "assets/scenes/scene-02/props/winner-seal.svg",
+    "generator": "scripts/build_benchmark_scenes.py"
+  },
+  "version": 1,
+  "status": "canonical",
+  "benchmark": true,
+  "preview": "previews/scene-02/contact-sheet.png",
+  "license": "project-original",
+  "scenePlacement": {
+    "x": 640,
+    "y": 844,
+    "layer": "ui"
+  }
+}

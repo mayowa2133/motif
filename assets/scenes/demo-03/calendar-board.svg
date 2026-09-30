@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="840" height="1030" viewBox="0 0 840 1030" role="img" aria-label="Large tactile paper calendar with 3 PM and 4 PM rows">
+<title>Paper calendar</title>
+<path d="M48 23 Q419 11 792 23 L802 980 Q419 1001 35 982 Z" transform="translate(13 17)" fill="#202C32" opacity=".23"/>
+<path d="M48 23 Q419 11 792 23 L802 980 Q419 1001 35 982 Z" transform="translate(5 7)" fill="#DCCDB3"/>
+<path d="M48 23 Q419 11 792 23 L802 980 Q419 1001 35 982 Z" fill="#F4EBD8" stroke="#DCCDB3" stroke-width="6"/>
+<path d="M48 23 Q419 11 792 23 L802 980 Q419 1001 35 982 Z" fill="url(#paperSpeckle)" opacity=".52"/>
+<path d="M45 142 Q418 133 796 142 L798 197 Q418 190 42 198 Z" fill="#E9DEC9"/>
+<path d="M63 205 Q416 196 778 206" fill="none" stroke="#D1BFA5" stroke-width="6"/>
+<path d="M70 527 Q421 516 772 527 M70 835 Q420 825 775 835" fill="none" stroke="#D1BFA5" stroke-width="6" stroke-dasharray="15 13" opacity=".86"/>
+<path d="M210 232 V819" fill="none" stroke="#D1BFA5" stroke-width="5" opacity=".75"/>
+<path d="M74 928 Q421 917 771 930" fill="none" stroke="#D1BFA5" stroke-width="5"/>
+<g fill="#DCCDB3" stroke="#725343" stroke-width="5">
+ <circle cx="164" cy="28" r="18"/><circle cx="336" cy="24" r="18"/><circle cx="507" cy="25" r="18"/><circle cx="679" cy="28" r="18"/>
+</g>
+<g fill="none" stroke="#725343" stroke-width="12" stroke-linecap="round">
+ <path d="M164 -15 V26 M336 -18 V22 M507 -17 V23 M679 -15 V26"/>
+</g>
+<text x="93" y="119" font-family="DejaVu Sans, Arial, sans-serif" font-size="68" font-weight="900" fill="#202C32">TODAY</text>
+<text x="86" y="366" font-family="DejaVu Sans, Arial, sans-serif" font-size="60" font-weight="900" fill="#202C32">3 PM</text>
+<text x="86" y="676" font-family="DejaVu Sans, Arial, sans-serif" font-size="60" font-weight="900" fill="#202C32">4 PM</text>
+<path d="M102 962 h136 M657 961 h96" fill="none" stroke="#D1BFA5" stroke-width="8" stroke-linecap="round"/>
+</svg>

@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="340" height="170" viewBox="0 0 340 170" role="img" aria-label="Tactile paper approval control">
+<title>Approval tab</title>
+<path d="M27 27 Q168 15 312 28 L317 139 Q171 158 23 140 Z" transform="translate(8 13)" fill="#202C32" opacity=".24"/>
+<path d="M27 27 Q168 15 312 28 L317 139 Q171 158 23 140 Z" transform="translate(3 5)" fill="#CDBB9F"/>
+<path d="M27 27 Q168 15 312 28 L317 139 Q171 158 23 140 Z" fill="#F4EBD8" stroke="#725343" stroke-width="6"/>
+<path d="M27 27 Q168 15 312 28 L317 139 Q171 158 23 140 Z" fill="url(#paperSpeckle)" opacity=".45"/>
+<circle cx="65" cy="82" r="27" fill="#F4EBD8" stroke="#318E85" stroke-width="6"/>
+<text x="194" y="100" text-anchor="middle" fill="#202C32" font-family="DejaVu Sans, Arial, sans-serif" font-size="39" font-weight="900">APPROVE</text>
+</svg>

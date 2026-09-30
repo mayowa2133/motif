@@ -1,0 +1,9 @@
+{
+  "duration": 6.4,
+  "assertions": [
+    { "kind": "appearsBy", "selector": "#caught-bug", "bySec": 1.95 },
+    { "kind": "appearsBy", "selector": "#pass-stamp", "bySec": 4.45 },
+    { "kind": "before", "a": "#caught-bug", "b": "#pass-stamp" },
+    { "kind": "keepsMoving", "withinSelector": "#scene", "maxStaticSec": 1.25 }
+  ]
+}

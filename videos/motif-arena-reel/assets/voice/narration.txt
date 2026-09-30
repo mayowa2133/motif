@@ -1,0 +1,1 @@
+Three agents propose answers. Answer A looks strong. Then a check finds a flaw. Answer B performs better and is selected. Review the result before using it.

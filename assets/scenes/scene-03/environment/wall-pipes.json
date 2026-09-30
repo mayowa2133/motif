@@ -1,0 +1,52 @@
+{
+  "id": "scene-03-wall-pipes",
+  "name": "Shallow paper conduit set",
+  "category": "environment",
+  "subcategory": "wall-pipes",
+  "concepts": [
+    "factory",
+    "pipes"
+  ],
+  "keywords": [
+    "wall-pipes",
+    "paper-cutout",
+    "scene-03"
+  ],
+  "style": "motif-default-v1",
+  "orientation": "front",
+  "dimensions": {
+    "width": 900,
+    "height": 255,
+    "unit": "px"
+  },
+  "artBox": {
+    "x": 0,
+    "y": 0,
+    "width": 900,
+    "height": 255
+  },
+  "anchors": {},
+  "compatibleCharacters": [
+    "motif-bot"
+  ],
+  "supportedActions": [
+    "compose",
+    "swap",
+    "animate"
+  ],
+  "sourceType": "vector",
+  "source": {
+    "file": "assets/scenes/scene-03/environment/wall-pipes.svg",
+    "generator": "scripts/build_benchmark_scenes.py"
+  },
+  "version": 1,
+  "status": "canonical",
+  "benchmark": true,
+  "preview": "previews/scene-03/contact-sheet.png",
+  "license": "project-original",
+  "scenePlacement": {
+    "x": 92,
+    "y": 415,
+    "layer": "midground"
+  }
+}

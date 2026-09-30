@@ -1,0 +1,9 @@
+{
+  "id": "demo-03-proposal-slip",
+  "source": "assets/scenes/demo-03/proposal-slip.svg",
+  "type": "prop",
+  "dimensions": {"width": 390, "height": 176},
+  "style": "motif-default-v1",
+  "shadowDirection": "down-right",
+  "usage": "Dashed, pale alternative placement; never treated as a booked event before human approval."
+}

@@ -1,0 +1,36 @@
+{
+  "script": "While you sleep, an AI agent reviews your code. It flags potential bugs, runs tests, and leaves the results ready for you in the morning.",
+  "narrator": "Kokoro-82M v1.0 / af_nova / speed 0.85",
+  "alignmentTool": "HyperFrames transcribe, Whisper small.en DTW",
+  "textMatchesScript": true,
+  "wordCount": 25,
+  "timingStatus": "ASR estimate, not manual phonetic verification",
+  "boundaryReviewFlags": [
+    {
+      "word": "AI",
+      "start": 1.31,
+      "end": 1.42,
+      "reason": "Short aligned span; inspect boundary if precise per-word highlighting is needed."
+    },
+    {
+      "word": "It",
+      "start": 3.4,
+      "end": 3.48,
+      "reason": "Short aligned span; inspect boundary if precise per-word highlighting is needed."
+    },
+    {
+      "word": "and",
+      "start": 5.98,
+      "end": 6.09,
+      "reason": "Short aligned span; inspect boundary if precise per-word highlighting is needed."
+    },
+    {
+      "word": "in",
+      "start": 7.63,
+      "end": 7.73,
+      "reason": "Short aligned span; inspect boundary if precise per-word highlighting is needed."
+    }
+  ],
+  "captionPolicy": "Phrase cards use the aligned starts and ends of matching words, with 0.05 s early entrance and 0.02 s late exit.",
+  "sourceAudioSha256": "2387a7c802715b4817a9d36807c262e34288765e0377fb02f1a6602f2042a3d5"
+}

@@ -1,0 +1,60 @@
+{
+  "id": "scene-01-desktop-monitor",
+  "name": "Desktop monitor shell",
+  "category": "computing",
+  "subcategory": "desktop-monitor",
+  "concepts": [
+    "monitor",
+    "screen"
+  ],
+  "keywords": [
+    "desktop-monitor",
+    "cut-paper",
+    "night-desk"
+  ],
+  "style": "motif-default-v1",
+  "orientation": "front",
+  "dimensions": {
+    "width": 345,
+    "height": 345,
+    "unit": "px"
+  },
+  "artBox": {
+    "x": 0,
+    "y": 0,
+    "width": 345,
+    "height": 345
+  },
+  "anchors": {
+    "screenContent": {
+      "x": 0.5,
+      "y": 0.39
+    },
+    "surface": {
+      "x": 0.5,
+      "y": 0.96
+    }
+  },
+  "compatibleCharacters": [
+    "motif-bot"
+  ],
+  "supportedActions": [
+    "compose",
+    "swap",
+    "animate"
+  ],
+  "sourceType": "vector",
+  "source": {
+    "file": "assets/scenes/scene-01/computing/desktop-monitor.svg",
+    "generator": "scripts/build_scene_01.py"
+  },
+  "version": 1,
+  "status": "canonical",
+  "preview": "previews/scene-01/contact-sheet.png",
+  "license": "project-original",
+  "scenePlacement": {
+    "x": 610,
+    "y": 861,
+    "layer": "midground"
+  }
+}

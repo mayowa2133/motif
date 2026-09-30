@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="850" viewBox="0 0 760 850" role="img" aria-label="Layered paper answer sheet">
+<title>Answer sheet</title>
+<path d="M38 24 Q380 6 724 24 L735 803 Q390 832 27 810 Z" transform="translate(12 16)" fill="#202C32" opacity=".22"/>
+<path d="M38 24 Q380 6 724 24 L735 803 Q390 832 27 810 Z" transform="translate(4 6)" fill="#DCCDB3"/>
+<path d="M38 24 Q380 6 724 24 L735 803 Q390 832 27 810 Z" fill="#F4EBD8" stroke="#DCCDB3" stroke-width="5"/>
+<path d="M38 24 Q380 6 724 24 L735 803 Q390 832 27 810 Z" fill="url(#paperSpeckle)" opacity=".48"/>
+<path d="M95 128 Q380 117 665 128" fill="none" stroke="#DCCDB3" stroke-width="5" stroke-linecap="round"/>
+<path d="M116 193 H524 M116 242 H611 M116 291 H441" fill="none" stroke="#DCCDB3" stroke-width="21" stroke-linecap="round" opacity=".88"/>
+<path d="M93 360 Q385 347 671 361" fill="none" stroke="#DCCDB3" stroke-width="5" stroke-dasharray="16 15" opacity=".85"/>
+<path d="M93 719 Q379 706 671 719" fill="none" stroke="#DCCDB3" stroke-width="5" stroke-dasharray="16 15" opacity=".85"/>
+<path d="M111 766 H392" fill="none" stroke="#DCCDB3" stroke-width="16" stroke-linecap="round" opacity=".7"/>
+<path d="M683 24 L724 24 L727 92 Q696 76 670 87 Z" fill="#E9DEC9" stroke="#DCCDB3" stroke-width="3"/>
+</svg>

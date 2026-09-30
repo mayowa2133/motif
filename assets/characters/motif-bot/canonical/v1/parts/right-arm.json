@@ -1,0 +1,56 @@
+{
+  "id": "motif-bot-v1-parts-right-arm",
+  "name": "Motif Bot right arm",
+  "category": "character",
+  "subcategory": "parts",
+  "concepts": [
+    "assistant",
+    "coding",
+    "paper-cutout"
+  ],
+  "keywords": [
+    "cream",
+    "teal",
+    "parts",
+    "right-arm"
+  ],
+  "style": "motif-default-v1",
+  "orientation": "front",
+  "dimensions": {
+    "width": 1024,
+    "height": 1024,
+    "unit": "px"
+  },
+  "artBox": {
+    "x": 0,
+    "y": 0,
+    "width": 1024,
+    "height": 1024
+  },
+  "anchors": {
+    "rightShoulder": {
+      "x": 0.61328,
+      "y": 0.54102
+    },
+    "rightHand": {
+      "x": 0.72852,
+      "y": 0.66016
+    }
+  },
+  "compatibleCharacters": [
+    "motif-bot"
+  ],
+  "supportedActions": [
+    "compose"
+  ],
+  "sourceType": "vector",
+  "source": {
+    "file": "assets/characters/motif-bot/canonical/v1/parts/right-arm.svg",
+    "generator": "scripts/build_motif_bot.py"
+  },
+  "version": 1,
+  "status": "canonical",
+  "preview": "previews/motif-bot-front-neutral-v1.png",
+  "previewOnly": false,
+  "license": "project-original"
+}

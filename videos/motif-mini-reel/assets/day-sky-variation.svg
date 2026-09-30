@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="290" height="342" viewBox="0 0 290 342" role="img" aria-label="Morning sky and city through the approved desk window">
+<title>Morning sky and city variation</title>
+<path d="M18 1 Q136 -2 272 1 Q291 2 290 18 Q292 160 289 324 Q288 343 272 342 Q156 344 18 341 Q-1 340 0 324 Q-2 147 1 18 Q2 2 18 1 Z" fill="#A6D8D1"/>
+<path d="M18 1 Q136 -2 272 1 Q291 2 290 18 Q292 160 289 324 Q288 343 272 342 Q156 344 18 341 Q-1 340 0 324 Q-2 147 1 18 Q2 2 18 1 Z" fill="url(#sceneGrain)" opacity=".62"/>
+<path d="M18 1 Q136 -2 272 1 Q291 2 290 18 Q292 160 289 324 Q288 343 272 342 Q156 344 18 341 Q-1 340 0 324 Q-2 147 1 18 Q2 2 18 1 Z" fill="none" stroke="#F4EBD8" stroke-width="3" opacity=".8"/>
+<circle cx="191" cy="91" r="67" fill="#F4EBD8" opacity=".35"/>
+<path d="M164 55 Q189 39 215 54 Q239 76 226 109 Q210 134 177 126 Q148 118 149 90 Q149 69 164 55 Z" fill="#EBC46B"/>
+<path d="M164 55 Q189 39 215 54 Q239 76 226 109 Q210 134 177 126 Q148 118 149 90 Q149 69 164 55 Z" fill="url(#paperSpeckle)" opacity=".5"/>
+<path d="M0 237 Q80 210 153 237 Q235 215 290 233 V342 H0 Z" fill="#6CA79C"/>
+<path d="M0 275 L23 275 V251 H53 V271 H75 V234 H109 V271 H131 V251 H165 V273 H198 V239 H227 V268 H290 V342 H0 Z" fill="#356F72"/>
+<path d="M23 288 h8 m15 -4 h8 m38 5 h8 m101 -3 h8 m24 14 h8" stroke="#DCCDB3" stroke-width="3" opacity=".65"/>
+</svg>

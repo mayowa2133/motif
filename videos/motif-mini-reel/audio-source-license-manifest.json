@@ -1,0 +1,110 @@
+{
+  "schemaVersion": "1.0",
+  "narration": {
+    "provider": "local Kokoro ONNX through HyperFrames 0.8.95",
+    "model": "Kokoro-82M v1.0",
+    "modelVersion": "v1.0",
+    "voice": "af_nova",
+    "speed": 0.85,
+    "runtimePackage": "kokoro-onnx 0.6.1",
+    "modelSource": "https://github.com/thewh1teagle/kokoro-onnx/releases/download/model-files-v1.0/kokoro-v1.0.onnx",
+    "voiceDataSource": "https://github.com/thewh1teagle/kokoro-onnx/releases/download/model-files-v1.0/voices-v1.0.bin",
+    "modelSha256": "7d5df8ecf7d4b1878015a32686053fd0eebe2bc377234608764cc0ef3636a6c5",
+    "voiceDataSha256": "bca610b8308e8d99f32e6fe4197e7ec01679264efed0cac9140fe9c29f1fbf7d",
+    "modelLicense": "Apache-2.0 per Kokoro-82M model card",
+    "modelLicenseEvidence": "https://huggingface.co/hexgrad/Kokoro-82M",
+    "rawFile": "assets/voice/narration-af-nova.wav",
+    "rawSha256": "2387a7c802715b4817a9d36807c262e34288765e0377fb02f1a6602f2042a3d5",
+    "masterFile": "assets/voice/narration-master.wav",
+    "masterSha256": "06ee03a2c61f28b69a207c356a80561205108d5f49edb18b6655a135a3ded6af",
+    "auditions": [
+      "assets/voice/audition-af-nova.wav",
+      "assets/voice/audition-bf-emma.wav"
+    ],
+    "auditionReview": {
+      "method": "Whisper small.en DTW",
+      "samePassage": "While you sleep, an AI agent reviews your code.",
+      "af_nova": {
+        "durationOfSpeechSeconds": 3.1,
+        "recognizedWords": 9,
+        "scriptWords": 9
+      },
+      "bf_emma": {
+        "durationOfSpeechSeconds": 2.67,
+        "recognizedWords": 9,
+        "scriptWords": 9
+      },
+      "selectionReason": "af_nova provided more breathing room; subjective voice quality remains for human review."
+    },
+    "matchedAuditions": [
+      "assets/voice/audition-af-nova-matched.wav",
+      "assets/voice/audition-bf-emma-matched.wav"
+    ],
+    "auditionLevelMatch": "assets/voice/audition-level-match.json"
+  },
+  "sfx": [
+    {
+      "file": "assets/sfx/chime.mp3",
+      "sha256": "74823b1b27703c56e0652db838f503c150ce9c2442d47d27430af3d5121d6d12",
+      "source": "Bundled HyperFrames media-use SFX collection; CREDITS.md attributes collection to Pixabay",
+      "license": "Pixabay Content License",
+      "licenseUrl": "https://pixabay.com/service/license-summary/",
+      "provenanceLimit": "Bundled metadata does not retain the original Pixabay item URL."
+    },
+    {
+      "file": "assets/sfx/glitch-3.mp3",
+      "sha256": "7ebe61cfd0d69a2d35d9ee3a88c26025101e999d5cc6bfb2df410f820b433042",
+      "source": "Bundled HyperFrames media-use SFX collection; CREDITS.md attributes collection to Pixabay",
+      "license": "Pixabay Content License",
+      "licenseUrl": "https://pixabay.com/service/license-summary/",
+      "provenanceLimit": "Bundled metadata does not retain the original Pixabay item URL."
+    },
+    {
+      "file": "assets/sfx/impact-bass-1.mp3",
+      "sha256": "634d5eda5eb7b501aca98393a64f3815eccf24157cd1d95df55aaec1b5000bd7",
+      "source": "Bundled HyperFrames media-use SFX collection; CREDITS.md attributes collection to Pixabay",
+      "license": "Pixabay Content License",
+      "licenseUrl": "https://pixabay.com/service/license-summary/",
+      "provenanceLimit": "Bundled metadata does not retain the original Pixabay item URL."
+    },
+    {
+      "file": "assets/sfx/impact-bass-2.mp3",
+      "sha256": "fb832995477784f44ba8533359d20caf706195b52117ecc2a33b3e63e3c1307b",
+      "source": "Bundled HyperFrames media-use SFX collection; CREDITS.md attributes collection to Pixabay",
+      "license": "Pixabay Content License",
+      "licenseUrl": "https://pixabay.com/service/license-summary/",
+      "provenanceLimit": "Bundled metadata does not retain the original Pixabay item URL."
+    },
+    {
+      "file": "assets/sfx/pop.mp3",
+      "sha256": "19ab7193f626ff57fdeef60b45543bac416fcbcec803cfb417abe4b271c1b352",
+      "source": "Bundled HyperFrames media-use SFX collection; CREDITS.md attributes collection to Pixabay",
+      "license": "Pixabay Content License",
+      "licenseUrl": "https://pixabay.com/service/license-summary/",
+      "provenanceLimit": "Bundled metadata does not retain the original Pixabay item URL."
+    },
+    {
+      "file": "assets/sfx/typing.mp3",
+      "sha256": "944160652faeb7b32acc9341ede4d735a5c9a4ce3fe8509ef7eab91efb430487",
+      "source": "Bundled HyperFrames media-use SFX collection; CREDITS.md attributes collection to Pixabay",
+      "license": "Pixabay Content License",
+      "licenseUrl": "https://pixabay.com/service/license-summary/",
+      "provenanceLimit": "Bundled metadata does not retain the original Pixabay item URL."
+    },
+    {
+      "file": "assets/sfx/whoosh-short.mp3",
+      "sha256": "c2efd9d902a59bf9ec5019035d7deadd17762136896b6e3cb6dd99ea50997a30",
+      "source": "Bundled HyperFrames media-use SFX collection; CREDITS.md attributes collection to Pixabay",
+      "license": "Pixabay Content License",
+      "licenseUrl": "https://pixabay.com/service/license-summary/",
+      "provenanceLimit": "Bundled metadata does not retain the original Pixabay item URL."
+    }
+  ],
+  "music": {
+    "included": false,
+    "reason": "No existing track with verified intended-use licence was found in the repository. Standard MusicGen weights were not used.",
+    "excludedModel": "facebook/musicgen-small",
+    "excludedModelLicense": "CC-BY-NC 4.0",
+    "evidence": "https://huggingface.co/facebook/musicgen-small"
+  }
+}

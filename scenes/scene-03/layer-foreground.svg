@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="1920" viewBox="0 0 1080 1920" role="img" aria-label="scene-03 foreground layer">
+<title>scene-03 foreground layer</title>
+<defs>
+<pattern id="sceneGrain" width="43" height="39" patternUnits="userSpaceOnUse">
+ <circle cx="7" cy="9" r="1.1" fill="#F4EBD8" opacity=".13"/>
+ <circle cx="30" cy="20" r=".8" fill="#F4EBD8" opacity=".12"/>
+ <circle cx="17" cy="33" r="1" fill="#202C32" opacity=".11"/>
+ <path d="M25 5 l3 .5 M4 28 l2 -.5" stroke="#F4EBD8" stroke-width=".8" opacity=".16"/>
+ <ellipse cx="38" cy="31" rx="2.4" ry=".8" fill="#F4EBD8" opacity=".11"/>
+ <path d="M14 19 l4 -.7 M34 8 l-2 1.4" stroke="#202C32" stroke-width=".7" opacity=".13"/>
+</pattern>
+<pattern id="paperSpeckle" width="29" height="31" patternUnits="userSpaceOnUse">
+ <circle cx="5" cy="7" r=".8" fill="#725343" opacity=".18"/>
+ <circle cx="19" cy="17" r="1.1" fill="#725343" opacity=".13"/>
+ <path d="M10 26 l3 -.5" stroke="#725343" stroke-width=".7" opacity=".13"/>
+ <ellipse cx="24" cy="5" rx="1.9" ry=".7" fill="#725343" opacity=".13"/>
+ <path d="M3 19 l2 .8 M20 28 l2 -1" stroke="#725343" stroke-width=".6" opacity=".14"/>
+</pattern>
+<pattern id="woodFiber" width="59" height="41" patternUnits="userSpaceOnUse">
+ <path d="M5 12 q13 -3 26 0 M34 29 q10 2 19 -1 M16 34 l8 -1" fill="none" stroke="#725343" stroke-width="1.3" opacity=".18"/>
+ <circle cx="47" cy="10" r="1" fill="#F4EBD8" opacity=".18"/>
+ <circle cx="9" cy="28" r=".8" fill="#202C32" opacity=".12"/>
+</pattern>
+</defs><defs>
+<pattern id="grain" width="31" height="29" patternUnits="userSpaceOnUse">
+  <circle cx="4" cy="6" r="1.2" fill="#806F5D" opacity=".16"/>
+  <circle cx="23" cy="12" r=".85" fill="#806F5D" opacity=".13"/>
+  <circle cx="12" cy="24" r=".7" fill="#806F5D" opacity=".12"/>
+  <path d="M18 3 l2 .7 M5 20 l2 -.4" stroke="#806F5D" stroke-width=".8" opacity=".12"/>
+  <circle cx="28" cy="27" r="1.5" fill="#FFFFFF" opacity=".16"/>
+</pattern>
+<pattern id="darkGrain" width="29" height="31" patternUnits="userSpaceOnUse">
+  <circle cx="7" cy="9" r=".9" fill="#F4EBD8" opacity=".09"/>
+  <circle cx="20" cy="23" r=".7" fill="#F4EBD8" opacity=".08"/>
+</pattern>
+</defs>
+<g id="conveyor-belt" data-asset="assets/scenes/scene-03/machine/conveyor-belt.svg" transform="translate(95 1185)"><ellipse cx="443" cy="230" rx="439" ry="29" fill="#252A32" opacity=".16"/><path d="M21 64 Q449 52 858 66 L879 104 Q451 117 7 104 Z" fill="#252A32" opacity=".22" transform="translate(4 5)"/><path d="M21 64 Q449 52 858 66 L879 104 Q451 117 7 104 Z" transform="translate(6 8)" fill="#252A32" opacity=".19"/><path d="M21 64 Q449 52 858 66 L879 104 Q451 117 7 104 Z" transform="translate(2 4)" fill="#DCCDB3" opacity=".6"/><path d="M21 64 Q449 52 858 66 L879 104 Q451 117 7 104 Z" fill="#202C32"/><path d="M21 64 Q449 52 858 66 L879 104 Q451 117 7 104 Z" fill="url(#sceneGrain)" opacity=".72"/><path d="M21 64 Q449 52 858 66 L879 104 Q451 117 7 104 Z" fill="none" stroke="#DCCDB3" stroke-width="2" opacity=".38"/><path d="M7 104 Q447 117 879 104 L868 179 Q445 195 18 180 Z" fill="#3C5D68"/><path d="M7 104 Q447 117 879 104 L868 179 Q445 195 18 180 Z" fill="url(#sceneGrain)" opacity="0.6"/><circle cx="70" cy="144" r="22" fill="#DCCDB3"/><circle cx="70" cy="144" r="11" fill="#6D8890"/><circle cx="149" cy="144" r="22" fill="#DCCDB3"/><circle cx="149" cy="144" r="11" fill="#6D8890"/><circle cx="228" cy="144" r="22" fill="#DCCDB3"/><circle cx="228" cy="144" r="11" fill="#6D8890"/><circle cx="307" cy="144" r="22" fill="#DCCDB3"/><circle cx="307" cy="144" r="11" fill="#6D8890"/><circle cx="386" cy="144" r="22" fill="#DCCDB3"/><circle cx="386" cy="144" r="11" fill="#6D8890"/><circle cx="465" cy="144" r="22" fill="#DCCDB3"/><circle cx="465" cy="144" r="11" fill="#6D8890"/><circle cx="544" cy="144" r="22" fill="#DCCDB3"/><circle cx="544" cy="144" r="11" fill="#6D8890"/><circle cx="623" cy="144" r="22" fill="#DCCDB3"/><circle cx="623" cy="144" r="11" fill="#6D8890"/><circle cx="702" cy="144" r="22" fill="#DCCDB3"/><circle cx="702" cy="144" r="11" fill="#6D8890"/><circle cx="781" cy="144" r="22" fill="#DCCDB3"/><circle cx="781" cy="144" r="11" fill="#6D8890"/><circle cx="860" cy="144" r="22" fill="#DCCDB3"/><circle cx="860" cy="144" r="11" fill="#6D8890"/><path d="M96 179 L99 246 L145 246 L158 182 M719 181 L730 247 L777 247 L789 181" fill="#725343"/><path d="M20 71 Q435 60 856 73" fill="none" stroke="#F4EBD8" stroke-width="5" opacity=".6"/></g>
+<g id="incoming-code-sheet" data-asset="assets/scenes/scene-03/workflow/incoming-code-sheet.svg" transform="translate(300 1118)"><path d="M16 10 Q81 5 148 12 L154 117 Q86 126 10 119 Z" transform="translate(6 8)" fill="#252A32" opacity=".19"/><path d="M16 10 Q81 5 148 12 L154 117 Q86 126 10 119 Z" transform="translate(2 4)" fill="#DCCDB3" opacity=".6"/><path d="M16 10 Q81 5 148 12 L154 117 Q86 126 10 119 Z" fill="#F4EBD8"/><path d="M16 10 Q81 5 148 12 L154 117 Q86 126 10 119 Z" fill="url(#paperSpeckle)" opacity=".72"/><path d="M16 10 Q81 5 148 12 L154 117 Q86 126 10 119 Z" fill="none" stroke="#DCCDB3" stroke-width="2" opacity=".38"/><text x="36" y="50" font-family="DejaVu Sans, Arial, sans-serif" font-size="31" font-weight="700" fill="#318E85">&lt; &gt;</text><path d="M33 70 H124 M33 85 H103 M33 100 H116" fill="none" stroke="#DCCDB3" stroke-width="6" opacity="0.9" stroke-linecap="round" stroke-linejoin="round"/><path d="M122 12 L149 13 L152 38 Z" fill="#DCCDB3" opacity=".65"/></g>
+<g id="clean-code-sheet" data-asset="assets/scenes/scene-03/workflow/clean-code-sheet.svg" transform="translate(785 1115)"><path d="M15 10 Q82 5 150 12 L155 119 Q84 125 10 118 Z" transform="translate(6 8)" fill="#252A32" opacity=".19"/><path d="M15 10 Q82 5 150 12 L155 119 Q84 125 10 118 Z" transform="translate(2 4)" fill="#DCCDB3" opacity=".6"/><path d="M15 10 Q82 5 150 12 L155 119 Q84 125 10 118 Z" fill="#F4EBD8"/><path d="M15 10 Q82 5 150 12 L155 119 Q84 125 10 118 Z" fill="url(#paperSpeckle)" opacity=".72"/><path d="M15 10 Q82 5 150 12 L155 119 Q84 125 10 118 Z" fill="none" stroke="#DCCDB3" stroke-width="2" opacity=".38"/><text x="34" y="48" font-family="DejaVu Sans, Arial, sans-serif" font-size="30" font-weight="700" fill="#318E85">&lt; &gt;</text><path d="M34 67 H96 M34 85 H83" fill="none" stroke="#DCCDB3" stroke-width="6" opacity="0.8" stroke-linecap="round" stroke-linejoin="round"/><circle cx="118" cy="87" r="25" fill="#318E85"/><path d="M105 86 l9 9 16 -19" fill="none" stroke="#F4EBD8" stroke-width="7" opacity="1" stroke-linecap="round" stroke-linejoin="round"/></g>
+<g id="reject-bin" data-asset="assets/scenes/scene-03/machine/reject-bin.svg" transform="translate(703 1363)"><ellipse cx="118" cy="157" rx="113" ry="19" fill="#252A32" opacity=".16"/><path d="M18 35 Q114 25 216 35 L199 145 Q117 157 34 145 Z" transform="translate(6 8)" fill="#252A32" opacity=".19"/><path d="M18 35 Q114 25 216 35 L199 145 Q117 157 34 145 Z" transform="translate(2 4)" fill="#DCCDB3" opacity=".6"/><path d="M18 35 Q114 25 216 35 L199 145 Q117 157 34 145 Z" fill="#3C5D68"/><path d="M18 35 Q114 25 216 35 L199 145 Q117 157 34 145 Z" fill="url(#sceneGrain)" opacity=".72"/><path d="M18 35 Q114 25 216 35 L199 145 Q117 157 34 145 Z" fill="none" stroke="#DCCDB3" stroke-width="2" opacity=".38"/><path d="M7 32 Q112 16 227 30 L224 48 Q116 58 10 49 Z" fill="#DCCDB3"/><circle cx="117" cy="96" r="29" fill="#D87969"/><path d="M103 84 l28 26 M132 84 l-28 27" fill="none" stroke="#F4EBD8" stroke-width="7" opacity="1" stroke-linecap="round" stroke-linejoin="round"/></g>
+</svg>

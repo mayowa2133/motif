@@ -1,0 +1,57 @@
+{
+  "id": "scene-01-task-progress-panel",
+  "name": "Replaceable task progress panel",
+  "category": "ui",
+  "subcategory": "task-progress-panel",
+  "concepts": [
+    "task",
+    "progress",
+    "agent"
+  ],
+  "keywords": [
+    "task-progress-panel",
+    "cut-paper",
+    "night-desk"
+  ],
+  "style": "motif-default-v1",
+  "orientation": "front",
+  "dimensions": {
+    "width": 276,
+    "height": 194,
+    "unit": "px"
+  },
+  "artBox": {
+    "x": 0,
+    "y": 0,
+    "width": 276,
+    "height": 194
+  },
+  "anchors": {
+    "screenContent": {
+      "x": 0.5,
+      "y": 0.5
+    }
+  },
+  "compatibleCharacters": [
+    "motif-bot"
+  ],
+  "supportedActions": [
+    "compose",
+    "swap",
+    "animate"
+  ],
+  "sourceType": "vector",
+  "source": {
+    "file": "assets/scenes/scene-01/ui/task-progress-panel.svg",
+    "generator": "scripts/build_scene_01.py"
+  },
+  "version": 1,
+  "status": "canonical",
+  "preview": "previews/scene-01/contact-sheet.png",
+  "license": "project-original",
+  "scenePlacement": {
+    "x": 648,
+    "y": 894,
+    "layer": "ui"
+  }
+}

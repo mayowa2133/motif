@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="660" height="265" viewBox="0 0 660 265" role="img" aria-label="Paper stencil for testing whether two ends connect">
+<title>Link test stencil</title>
+<path d="M23 22 Q326 9 637 22 L650 241 Q330 257 15 240 Z" transform="translate(8 10)" fill="#202C32" opacity=".20"/>
+<path d="M23 22 Q326 9 637 22 L650 241 Q330 257 15 240 Z" fill="#E9DEC9" stroke="#CDBB9F" stroke-width="5"/>
+<path d="M23 22 Q326 9 637 22 L650 241 Q330 257 15 240 Z" fill="url(#paperSpeckle)" opacity=".46"/>
+<circle cx="93" cy="137" r="48" fill="#F4EBD8" stroke="#725343" stroke-width="7"/>
+<circle cx="566" cy="137" r="48" fill="#F4EBD8" stroke="#725343" stroke-width="7"/>
+<path d="M151 137 H509" fill="none" stroke="#725343" stroke-width="8" stroke-dasharray="13 16" stroke-linecap="round" opacity=".7"/>
+<path d="M92 52 Q330 43 568 52" fill="none" stroke="#725343" stroke-width="5" opacity=".4"/>
+<path d="M285 225 H373" fill="none" stroke="#725343" stroke-width="7" stroke-linecap="round" opacity=".35"/>
+</svg>

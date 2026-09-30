@@ -1,0 +1,97 @@
+{
+  "version": 2,
+  "provider": "Kokoro-82M v1.0 + bundled local SFX",
+  "music": null,
+  "tracks": [
+    {
+      "id": "narration",
+      "group": "voice",
+      "file": "assets/voice/narration-master.wav",
+      "start": 0,
+      "duration": 8.789,
+      "volume": 1.0,
+      "lane": 10
+    },
+    {
+      "id": "opening-typing",
+      "group": "sfx",
+      "file": "assets/sfx/typing.mp3",
+      "start": 0.0,
+      "duration": 1.5,
+      "volume": 0.132,
+      "lane": 20
+    },
+    {
+      "id": "paper-transition",
+      "group": "sfx",
+      "file": "assets/sfx/whoosh-short.mp3",
+      "start": 2.74,
+      "duration": 0.57,
+      "volume": 0.182,
+      "lane": 21
+    },
+    {
+      "id": "scanner-1",
+      "group": "sfx",
+      "file": "assets/sfx/glitch-3.mp3",
+      "start": 3.92,
+      "duration": 0.9,
+      "volume": 0.094,
+      "lane": 22
+    },
+    {
+      "id": "bug-pop",
+      "group": "sfx",
+      "file": "assets/sfx/pop.mp3",
+      "start": 4.54,
+      "duration": 0.72,
+      "volume": 0.187,
+      "lane": 23
+    },
+    {
+      "id": "reject",
+      "group": "sfx",
+      "file": "assets/sfx/impact-bass-1.mp3",
+      "start": 5.36,
+      "duration": 1.25,
+      "volume": 0.165,
+      "lane": 24
+    },
+    {
+      "id": "paper-2",
+      "group": "sfx",
+      "file": "assets/sfx/whoosh-short.mp3",
+      "start": 5.07,
+      "duration": 0.57,
+      "volume": 0.149,
+      "lane": 25
+    },
+    {
+      "id": "scanner-2",
+      "group": "sfx",
+      "file": "assets/sfx/glitch-3.mp3",
+      "start": 5.58,
+      "duration": 0.62,
+      "volume": 0.077,
+      "lane": 26
+    },
+    {
+      "id": "pass-stamp",
+      "group": "sfx",
+      "file": "assets/sfx/impact-bass-2.mp3",
+      "start": 6.72,
+      "duration": 1.25,
+      "volume": 0.16,
+      "lane": 27
+    },
+    {
+      "id": "celebrate",
+      "group": "sfx",
+      "file": "assets/sfx/chime.mp3",
+      "start": 7.76,
+      "duration": 1.4,
+      "volume": 0.116,
+      "lane": 28
+    }
+  ]
+}

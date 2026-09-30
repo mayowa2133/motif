@@ -1,0 +1,37 @@
+{
+  "status": "level matched for human voice comparison",
+  "passage": "While you sleep, an AI agent reviews your code.",
+  "targetIntegratedLufs": -21,
+  "method": "Endpoint trim, then FFmpeg loudnorm target -21 LUFS / -3 dBTP; source files preserved.",
+  "voices": {
+    "af-nova": {
+      "file": "assets/voice/audition-af-nova-matched.wav",
+      "source": "assets/voice/audition-af-nova.wav",
+      "trim": {
+        "startSeconds": 0.03,
+        "endSeconds": 3.02
+      },
+      "durationSeconds": 2.99,
+      "sampleRate": 24000,
+      "channels": 1,
+      "integratedLufs": -21.0,
+      "truePeakDbtp": -4.77,
+      "sha256": "9d6b672cc35e4a478a8e12ebc0605651a8b7fd24324807f3e47c17b57c5b6dd4"
+    },
+    "bf-emma": {
+      "file": "assets/voice/audition-bf-emma-matched.wav",
+      "source": "assets/voice/audition-bf-emma.wav",
+      "trim": {
+        "startSeconds": 0.0,
+        "endSeconds": 2.75
+      },
+      "durationSeconds": 2.75,
+      "sampleRate": 24000,
+      "channels": 1,
+      "integratedLufs": -21.02,
+      "truePeakDbtp": -3.66,
+      "sha256": "b6864175639a26e7f6df6817c44900c79f33407600c672e8f6b51373a65ccd60"
+    }
+  },
+  "subjectiveJudgment": "pending human listening comparison"
+}

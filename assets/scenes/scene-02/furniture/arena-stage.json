@@ -1,0 +1,52 @@
+{
+  "id": "scene-02-arena-stage",
+  "name": "Cut-paper arena stage",
+  "category": "furniture",
+  "subcategory": "arena-stage",
+  "concepts": [
+    "stage",
+    "platform"
+  ],
+  "keywords": [
+    "arena-stage",
+    "paper-cutout",
+    "scene-02"
+  ],
+  "style": "motif-default-v1",
+  "orientation": "front",
+  "dimensions": {
+    "width": 900,
+    "height": 310,
+    "unit": "px"
+  },
+  "artBox": {
+    "x": 0,
+    "y": 0,
+    "width": 900,
+    "height": 310
+  },
+  "anchors": {},
+  "compatibleCharacters": [
+    "motif-bot"
+  ],
+  "supportedActions": [
+    "compose",
+    "swap",
+    "animate"
+  ],
+  "sourceType": "vector",
+  "source": {
+    "file": "assets/scenes/scene-02/furniture/arena-stage.svg",
+    "generator": "scripts/build_benchmark_scenes.py"
+  },
+  "version": 1,
+  "status": "canonical",
+  "benchmark": true,
+  "preview": "previews/scene-02/contact-sheet.png",
+  "license": "project-original",
+  "scenePlacement": {
+    "x": 90,
+    "y": 1190,
+    "layer": "midground"
+  }
+}

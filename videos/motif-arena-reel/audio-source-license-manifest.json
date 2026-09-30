@@ -1,0 +1,86 @@
+{
+  "schemaVersion": "1.0",
+  "narration": {
+    "provider": "local Kokoro ONNX through HyperFrames 0.8.95",
+    "model": "Kokoro-82M v1.0",
+    "modelVersion": "v1.0",
+    "voice": "af_nova",
+    "speed": 0.85,
+    "runtimePackage": "kokoro-onnx 0.6.1",
+    "modelSource": "https://github.com/thewh1teagle/kokoro-onnx/releases/download/model-files-v1.0/kokoro-v1.0.onnx",
+    "voiceDataSource": "https://github.com/thewh1teagle/kokoro-onnx/releases/download/model-files-v1.0/voices-v1.0.bin",
+    "modelSha256": "7d5df8ecf7d4b1878015a32686053fd0eebe2bc377234608764cc0ef3636a6c5",
+    "voiceDataSha256": "bca610b8308e8d99f32e6fe4197e7ec01679264efed0cac9140fe9c29f1fbf7d",
+    "modelLicense": "Apache-2.0 per Kokoro-82M model card",
+    "modelLicenseEvidence": "https://huggingface.co/hexgrad/Kokoro-82M",
+    "rawFile": "assets/voice/narration-af-nova.wav",
+    "rawSha256": "e12dd9f3b8f36bfbc7f99e688b635649938640ade40730c321484b5194f95edc",
+    "masterFile": "assets/voice/narration-master.wav",
+    "masterSha256": "c014b1ab047ee5aea5f9eb485097d26ce3bf0fc1e3dc6b337da7c39adbf68ed6",
+    "scriptFile": "assets/voice/narration.txt",
+    "alignmentFile": "assets/voice/transcript.json",
+    "status": "provisional narrator, same provider and voice as Demo 01"
+  },
+  "sfx": [
+    {
+      "file": "assets/sfx/chime.mp3",
+      "sha256": "74823b1b27703c56e0652db838f503c150ce9c2442d47d27430af3d5121d6d12",
+      "source": "Bundled HyperFrames media-use SFX collection; CREDITS.md attributes collection to Pixabay",
+      "license": "Pixabay Content License",
+      "licenseUrl": "https://pixabay.com/service/license-summary/",
+      "provenanceLimit": "Bundled metadata does not retain the original Pixabay item URL."
+    },
+    {
+      "file": "assets/sfx/glitch-3.mp3",
+      "sha256": "7ebe61cfd0d69a2d35d9ee3a88c26025101e999d5cc6bfb2df410f820b433042",
+      "source": "Bundled HyperFrames media-use SFX collection; CREDITS.md attributes collection to Pixabay",
+      "license": "Pixabay Content License",
+      "licenseUrl": "https://pixabay.com/service/license-summary/",
+      "provenanceLimit": "Bundled metadata does not retain the original Pixabay item URL."
+    },
+    {
+      "file": "assets/sfx/impact-bass-2.mp3",
+      "sha256": "fb832995477784f44ba8533359d20caf706195b52117ecc2a33b3e63e3c1307b",
+      "source": "Bundled HyperFrames media-use SFX collection; CREDITS.md attributes collection to Pixabay",
+      "license": "Pixabay Content License",
+      "licenseUrl": "https://pixabay.com/service/license-summary/",
+      "provenanceLimit": "Bundled metadata does not retain the original Pixabay item URL."
+    },
+    {
+      "file": "assets/sfx/pop.mp3",
+      "sha256": "19ab7193f626ff57fdeef60b45543bac416fcbcec803cfb417abe4b271c1b352",
+      "source": "Bundled HyperFrames media-use SFX collection; CREDITS.md attributes collection to Pixabay",
+      "license": "Pixabay Content License",
+      "licenseUrl": "https://pixabay.com/service/license-summary/",
+      "provenanceLimit": "Bundled metadata does not retain the original Pixabay item URL."
+    },
+    {
+      "file": "assets/sfx/click-soft.mp3",
+      "sha256": "075e17bdac5c13662a1c9530050e0046f81d4138e00eb3bf30427a7b4404103d",
+      "source": "Bundled HyperFrames media-use SFX collection; CREDITS.md attributes collection to Pixabay",
+      "license": "Pixabay Content License",
+      "licenseUrl": "https://pixabay.com/service/license-summary/",
+      "provenanceLimit": "Bundled metadata does not retain the original Pixabay item URL."
+    },
+    {
+      "file": "assets/sfx/click.mp3",
+      "sha256": "075e17bdac5c13662a1c9530050e0046f81d4138e00eb3bf30427a7b4404103d",
+      "source": "Bundled HyperFrames media-use SFX collection; CREDITS.md attributes collection to Pixabay",
+      "license": "Pixabay Content License",
+      "licenseUrl": "https://pixabay.com/service/license-summary/",
+      "provenanceLimit": "Bundled metadata does not retain the original Pixabay item URL."
+    },
+    {
+      "file": "assets/sfx/error.mp3",
+      "sha256": "b4882e3941ca496b5038e7c7d64318419da9f69d3da9540a1c693adc639cf121",
+      "source": "Bundled HyperFrames media-use SFX collection; CREDITS.md attributes collection to Pixabay",
+      "license": "Pixabay Content License",
+      "licenseUrl": "https://pixabay.com/service/license-summary/",
+      "provenanceLimit": "Bundled metadata does not retain the original Pixabay item URL."
+    }
+  ],
+  "music": {
+    "included": false,
+    "reason": "Demo 02 reuses the cleared local SFX set and no music, matching Demo 01."
+  }
+}

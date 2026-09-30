@@ -1,0 +1,56 @@
+{
+  "id": "scene-01-desk",
+  "name": "Wide paper and wood desk",
+  "category": "furniture",
+  "subcategory": "desk",
+  "concepts": [
+    "desk",
+    "workstation"
+  ],
+  "keywords": [
+    "desk",
+    "cut-paper",
+    "night-desk"
+  ],
+  "style": "motif-default-v1",
+  "orientation": "front",
+  "dimensions": {
+    "width": 945,
+    "height": 390,
+    "unit": "px"
+  },
+  "artBox": {
+    "x": 0,
+    "y": 0,
+    "width": 945,
+    "height": 390
+  },
+  "anchors": {
+    "surface": {
+      "x": 0.5,
+      "y": 0.21
+    }
+  },
+  "compatibleCharacters": [
+    "motif-bot"
+  ],
+  "supportedActions": [
+    "compose",
+    "swap",
+    "animate"
+  ],
+  "sourceType": "vector",
+  "source": {
+    "file": "assets/scenes/scene-01/furniture/desk.svg",
+    "generator": "scripts/build_scene_01.py"
+  },
+  "version": 1,
+  "status": "canonical",
+  "preview": "previews/scene-01/contact-sheet.png",
+  "license": "project-original",
+  "scenePlacement": {
+    "x": 68,
+    "y": 1151,
+    "layer": "foreground"
+  }
+}

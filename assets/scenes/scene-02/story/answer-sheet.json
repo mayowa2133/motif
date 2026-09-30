@@ -1,0 +1,12 @@
+{
+  "id": "scene-02-answer-sheet",
+  "source": "assets/scenes/scene-02/story/answer-sheet.svg",
+  "type": "prop",
+  "dimensions": {"width": 760, "height": 850},
+  "layer": "foreground",
+  "usage": "Reusable tactile paper base for the matched A and B answer tests and selected-answer handoff.",
+  "style": "motif-default-v1",
+  "perspective": "near-front paper with softened corners",
+  "shadowDirection": "down-right",
+  "dependencies": ["paperSpeckle pattern from Motif scene defs"]
+}

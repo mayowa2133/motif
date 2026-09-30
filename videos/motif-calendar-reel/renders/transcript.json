@@ -1,0 +1,200 @@
+[
+  {
+    "text": "Two",
+    "start": 0.05,
+    "end": 0.26,
+    "id": "w0"
+  },
+  {
+    "text": "plans",
+    "start": 0.26,
+    "end": 0.65,
+    "id": "w1"
+  },
+  {
+    "text": "land",
+    "start": 0.72,
+    "end": 1.04,
+    "id": "w2"
+  },
+  {
+    "text": "at",
+    "start": 1.04,
+    "end": 1.21,
+    "id": "w3"
+  },
+  {
+    "text": "the",
+    "start": 1.21,
+    "end": 1.47,
+    "id": "w4"
+  },
+  {
+    "text": "same",
+    "start": 1.47,
+    "end": 1.81,
+    "id": "w5"
+  },
+  {
+    "text": "time.",
+    "start": 1.81,
+    "end": 2.24,
+    "id": "w6"
+  },
+  {
+    "text": "An",
+    "start": 2.3,
+    "end": 2.34,
+    "id": "w7"
+  },
+  {
+    "text": "assistant",
+    "start": 2.38,
+    "end": 3.01,
+    "id": "w8"
+  },
+  {
+    "text": "spots",
+    "start": 3.01,
+    "end": 3.31,
+    "id": "w9"
+  },
+  {
+    "text": "the",
+    "start": 3.39,
+    "end": 3.57,
+    "id": "w10"
+  },
+  {
+    "text": "overlap",
+    "start": 3.57,
+    "end": 4.08,
+    "id": "w11"
+  },
+  {
+    "text": "and",
+    "start": 4.08,
+    "end": 4.21,
+    "id": "w12"
+  },
+  {
+    "text": "suggests",
+    "start": 4.54,
+    "end": 5.08,
+    "id": "w13"
+  },
+  {
+    "text": "a",
+    "start": 5.08,
+    "end": 5.13,
+    "id": "w14"
+  },
+  {
+    "text": "free",
+    "start": 5.18,
+    "end": 5.49,
+    "id": "w15"
+  },
+  {
+    "text": "slot.",
+    "start": 5.66,
+    "end": 5.92,
+    "id": "w16"
+  },
+  {
+    "text": "But",
+    "start": 5.97,
+    "end": 6.1,
+    "id": "w17"
+  },
+  {
+    "text": "the",
+    "start": 6.1,
+    "end": 6.27,
+    "id": "w18"
+  },
+  {
+    "text": "calendar",
+    "start": 6.31,
+    "end": 6.77,
+    "id": "w19"
+  },
+  {
+    "text": "stays",
+    "start": 6.77,
+    "end": 7.08,
+    "id": "w20"
+  },
+  {
+    "text": "put.",
+    "start": 7.08,
+    "end": 7.47,
+    "id": "w21"
+  },
+  {
+    "text": "It",
+    "start": 7.54,
+    "end": 7.58,
+    "id": "w22"
+  },
+  {
+    "text": "waits",
+    "start": 7.62,
+    "end": 7.9,
+    "id": "w23"
+  },
+  {
+    "text": "for",
+    "start": 7.9,
+    "end": 8.08,
+    "id": "w24"
+  },
+  {
+    "text": "your",
+    "start": 8.08,
+    "end": 8.32,
+    "id": "w25"
+  },
+  {
+    "text": "approval.",
+    "start": 8.32,
+    "end": 8.98,
+    "id": "w26"
+  },
+  {
+    "text": "Only",
+    "start": 9.05,
+    "end": 9.23,
+    "id": "w27"
+  },
+  {
+    "text": "then",
+    "start": 9.23,
+    "end": 9.46,
+    "id": "w28"
+  },
+  {
+    "text": "does",
+    "start": 9.46,
+    "end": 9.65,
+    "id": "w29"
+  },
+  {
+    "text": "the",
+    "start": 9.72,
+    "end": 9.86,
+    "id": "w30"
+  },
+  {
+    "text": "appointment",
+    "start": 9.86,
+    "end": 10.49,
+    "id": "w31"
+  },
+  {
+    "text": "move.",
+    "start": 10.49,
+    "end": 10.92,
+    "id": "w32"
+  }
+]

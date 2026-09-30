@@ -1,0 +1,9 @@
+{
+  "id": "demo-03-calendar-board",
+  "source": "assets/scenes/demo-03/calendar-board.svg",
+  "type": "environment-prop",
+  "dimensions": {"width": 840, "height": 1030},
+  "style": "motif-default-v1",
+  "shadowDirection": "down-right",
+  "usage": "Persistent physical calendar for the overlap, proposal, approval, and final schedule. Rows at 3 PM and 4 PM are large enough for mobile reading."
+}

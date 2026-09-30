@@ -1,0 +1,51 @@
+{
+  "purpose": "Move the clean sheet and second scan into the spoken runs tests phrase by editing scene-events.json only. No composition timeline code changed.",
+  "speech": {
+    "runs": {
+      "start": 5.0,
+      "end": 5.37
+    },
+    "tests": {
+      "start": 5.42,
+      "end": 5.92
+    }
+  },
+  "changes": [
+    {
+      "target": "#f-clean-code-sheet",
+      "action": "SLIDE",
+      "before": 5.62,
+      "after": 5.07
+    },
+    {
+      "target": "#f-bot-idle",
+      "action": "POSE_SWAP",
+      "before": 5.716,
+      "after": 5.25
+    },
+    {
+      "target": "#f-clean-code-sheet",
+      "action": "WOBBLE",
+      "before": 6.132,
+      "after": 5.55
+    },
+    {
+      "target": "#f-scan-beam",
+      "action": "TWEEN",
+      "before": 6.212,
+      "after": 5.58
+    },
+    {
+      "target": "#f-scanner-frame",
+      "action": "SQUASH",
+      "before": 6.236,
+      "after": 5.61
+    },
+    {
+      "target": "#f-scan-beam",
+      "action": "TWEEN",
+      "before": 6.452,
+      "after": 6.02
+    }
+  ]
+}

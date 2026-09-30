@@ -1,0 +1,52 @@
+{
+  "id": "scene-02-arena-floor",
+  "name": "Plum stage floor",
+  "category": "environment",
+  "subcategory": "arena-floor",
+  "concepts": [
+    "floor",
+    "arena"
+  ],
+  "keywords": [
+    "arena-floor",
+    "paper-cutout",
+    "scene-02"
+  ],
+  "style": "motif-default-v1",
+  "orientation": "front",
+  "dimensions": {
+    "width": 1080,
+    "height": 530,
+    "unit": "px"
+  },
+  "artBox": {
+    "x": 0,
+    "y": 0,
+    "width": 1080,
+    "height": 530
+  },
+  "anchors": {},
+  "compatibleCharacters": [
+    "motif-bot"
+  ],
+  "supportedActions": [
+    "compose",
+    "swap",
+    "animate"
+  ],
+  "sourceType": "vector",
+  "source": {
+    "file": "assets/scenes/scene-02/environment/arena-floor.svg",
+    "generator": "scripts/build_benchmark_scenes.py"
+  },
+  "version": 1,
+  "status": "canonical",
+  "benchmark": true,
+  "preview": "previews/scene-02/contact-sheet.png",
+  "license": "project-original",
+  "scenePlacement": {
+    "x": 0,
+    "y": 1430,
+    "layer": "background"
+  }
+}

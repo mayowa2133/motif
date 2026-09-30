@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="140" height="160" viewBox="0 0 140 160" role="img" aria-label="Late night wall clock">
+<title>Late night wall clock</title>
+<defs>
+<pattern id="sceneGrain" width="43" height="39" patternUnits="userSpaceOnUse">
+ <circle cx="7" cy="9" r="1.1" fill="#F4EBD8" opacity=".13"/>
+ <circle cx="30" cy="20" r=".8" fill="#F4EBD8" opacity=".12"/>
+ <circle cx="17" cy="33" r="1" fill="#202C32" opacity=".11"/>
+ <path d="M25 5 l3 .5 M4 28 l2 -.5" stroke="#F4EBD8" stroke-width=".8" opacity=".16"/>
+ <ellipse cx="38" cy="31" rx="2.4" ry=".8" fill="#F4EBD8" opacity=".11"/>
+ <path d="M14 19 l4 -.7 M34 8 l-2 1.4" stroke="#202C32" stroke-width=".7" opacity=".13"/>
+</pattern>
+<pattern id="paperSpeckle" width="29" height="31" patternUnits="userSpaceOnUse">
+ <circle cx="5" cy="7" r=".8" fill="#725343" opacity=".18"/>
+ <circle cx="19" cy="17" r="1.1" fill="#725343" opacity=".13"/>
+ <path d="M10 26 l3 -.5" stroke="#725343" stroke-width=".7" opacity=".13"/>
+ <ellipse cx="24" cy="5" rx="1.9" ry=".7" fill="#725343" opacity=".13"/>
+ <path d="M3 19 l2 .8 M20 28 l2 -1" stroke="#725343" stroke-width=".6" opacity=".14"/>
+</pattern>
+<pattern id="woodFiber" width="59" height="41" patternUnits="userSpaceOnUse">
+ <path d="M5 12 q13 -3 26 0 M34 29 q10 2 19 -1 M16 34 l8 -1" fill="none" stroke="#725343" stroke-width="1.3" opacity=".18"/>
+ <circle cx="47" cy="10" r="1" fill="#F4EBD8" opacity=".18"/>
+ <circle cx="9" cy="28" r=".8" fill="#202C32" opacity=".12"/>
+</pattern>
+</defs>
+<path d="M70 5 Q115 3 134 43 Q150 82 124 115 Q98 142 62 135 Q22 132 7 98 Q-7 62 20 25 Q39 5 70 5 Z" transform="translate(6 8)" fill="#252A32" opacity=".19"/><path d="M70 5 Q115 3 134 43 Q150 82 124 115 Q98 142 62 135 Q22 132 7 98 Q-7 62 20 25 Q39 5 70 5 Z" transform="translate(2 4)" fill="#DCCDB3" opacity=".6"/><path d="M70 5 Q115 3 134 43 Q150 82 124 115 Q98 142 62 135 Q22 132 7 98 Q-7 62 20 25 Q39 5 70 5 Z" fill="#F4EBD8"/><path d="M70 5 Q115 3 134 43 Q150 82 124 115 Q98 142 62 135 Q22 132 7 98 Q-7 62 20 25 Q39 5 70 5 Z" fill="url(#paperSpeckle)" opacity=".72"/><path d="M70 5 Q115 3 134 43 Q150 82 124 115 Q98 142 62 135 Q22 132 7 98 Q-7 62 20 25 Q39 5 70 5 Z" fill="none" stroke="#DCCDB3" stroke-width="2" opacity=".38"/><path d="M69 18 Q110 17 122 53 Q133 90 105 113 Q74 134 43 113 Q16 93 19 63 Q22 28 69 18 Z" fill="none" stroke="#DCCDB3" stroke-width="3" opacity=".86"/><circle cx="70" cy="70" r="5" fill="#318E85"/><path d="M70 70 L104 65 M70 70 L88 51" fill="none" stroke="#202C32" stroke-width="6" opacity="1" stroke-linecap="round" stroke-linejoin="round"/><circle cx="70" cy="25" r="3.3" fill="#318E85"/><circle cx="115" cy="70" r="3.3" fill="#318E85"/><circle cx="70" cy="115" r="3.3" fill="#318E85"/><circle cx="25" cy="70" r="3.3" fill="#318E85"/><path d="M33 133 Q67.5 130 107 133 Q113 134 112 137 Q114 144.7 111 154 Q110 160 107 159 Q73.4 161 33 158 Q27 157 28 154 Q26 143.6 29 137 Q30 134 33 133 Z" transform="translate(6 8)" fill="#252A32" opacity=".19"/><path d="M33 133 Q67.5 130 107 133 Q113 134 112 137 Q114 144.7 111 154 Q110 160 107 159 Q73.4 161 33 158 Q27 157 28 154 Q26 143.6 29 137 Q30 134 33 133 Z" transform="translate(2 4)" fill="#DCCDB3" opacity=".6"/><path d="M33 133 Q67.5 130 107 133 Q113 134 112 137 Q114 144.7 111 154 Q110 160 107 159 Q73.4 161 33 158 Q27 157 28 154 Q26 143.6 29 137 Q30 134 33 133 Z" fill="#F4EBD8"/><path d="M33 133 Q67.5 130 107 133 Q113 134 112 137 Q114 144.7 111 154 Q110 160 107 159 Q73.4 161 33 158 Q27 157 28 154 Q26 143.6 29 137 Q30 134 33 133 Z" fill="url(#paperSpeckle)" opacity=".72"/><path d="M33 133 Q67.5 130 107 133 Q113 134 112 137 Q114 144.7 111 154 Q110 160 107 159 Q73.4 161 33 158 Q27 157 28 154 Q26 143.6 29 137 Q30 134 33 133 Z" fill="none" stroke="#DCCDB3" stroke-width="2" opacity=".38"/><text x="35" y="153" font-family="DejaVu Sans, Arial, sans-serif" font-size="20" font-weight="700" fill="#202C32">02:14</text>
+</svg>

@@ -1,0 +1,47 @@
+{
+  "id": "motif-bot-v1-views-front-three-quarter-right",
+  "name": "Motif Bot front three quarter right",
+  "category": "character",
+  "subcategory": "views",
+  "concepts": [
+    "assistant",
+    "coding",
+    "paper-cutout"
+  ],
+  "keywords": [
+    "cream",
+    "teal",
+    "views",
+    "front-three-quarter-right"
+  ],
+  "style": "motif-default-v1",
+  "orientation": "front-three-quarter-right",
+  "dimensions": {
+    "width": 1024,
+    "height": 1024,
+    "unit": "px"
+  },
+  "artBox": {
+    "x": 0,
+    "y": 0,
+    "width": 1024,
+    "height": 1024
+  },
+  "anchors": {},
+  "compatibleCharacters": [
+    "motif-bot"
+  ],
+  "supportedActions": [
+    "stand"
+  ],
+  "sourceType": "vector",
+  "source": {
+    "file": "assets/characters/motif-bot/canonical/v1/views/front-three-quarter-right.svg",
+    "generator": "scripts/build_motif_bot.py"
+  },
+  "version": 1,
+  "status": "canonical",
+  "preview": "previews/mascot-turnaround.png",
+  "previewOnly": false,
+  "license": "project-original"
+}

@@ -1,0 +1,262 @@
+{
+  "id": "scene-03",
+  "name": "The system scans your code and catches bugs",
+  "description": "Inspection factory: code enters a scanner, a bug is caught, and checked code exits.",
+  "version": 1,
+  "status": "canonical",
+  "benchmark": true,
+  "style": "motif-default-v1",
+  "dimensions": {
+    "width": 1080,
+    "height": 1920,
+    "unit": "px"
+  },
+  "render": "scenes/scene-03/scene-03.svg",
+  "generator": "scripts/build_benchmark_scenes.py",
+  "layerOrder": [
+    "background",
+    "midground",
+    "foreground",
+    "character",
+    "ui"
+  ],
+  "headlineSafeArea": {
+    "x": 90,
+    "y": 48,
+    "width": 900,
+    "height": 192
+  },
+  "captionSafeArea": {
+    "x": 100,
+    "y": 1640,
+    "width": 880,
+    "height": 215
+  },
+  "character": {
+    "source": "assets/characters/motif-bot/canonical/v1/motif-bot-v1.json",
+    "geometrySource": "scripts/build_motif_bot.py",
+    "status": "canonical",
+    "placement": {
+      "x": 0,
+      "y": 1100,
+      "scale": 0.35
+    },
+    "pose": {
+      "base": "pointing",
+      "faceState": "determined",
+      "overrides": {
+        "l": [
+          278,
+          670,
+          "mitten"
+        ],
+        "r": [
+          825,
+          523,
+          "point"
+        ],
+        "head_tilt": -3
+      }
+    },
+    "insertBefore": "caught-bug"
+  },
+  "assets": [
+    {
+      "id": "scene-03-factory-wall",
+      "source": "assets/scenes/scene-03/environment/factory-wall.svg",
+      "metadata": "assets/scenes/scene-03/environment/factory-wall.json",
+      "layer": "background",
+      "placement": {
+        "x": 0,
+        "y": 0
+      },
+      "dimensions": {
+        "width": 1080,
+        "height": 1495
+      }
+    },
+    {
+      "id": "scene-03-factory-floor",
+      "source": "assets/scenes/scene-03/environment/factory-floor.svg",
+      "metadata": "assets/scenes/scene-03/environment/factory-floor.json",
+      "layer": "background",
+      "placement": {
+        "x": 0,
+        "y": 1430
+      },
+      "dimensions": {
+        "width": 1080,
+        "height": 520
+      }
+    },
+    {
+      "id": "scene-03-wall-pipes",
+      "source": "assets/scenes/scene-03/environment/wall-pipes.svg",
+      "metadata": "assets/scenes/scene-03/environment/wall-pipes.json",
+      "layer": "midground",
+      "placement": {
+        "x": 92,
+        "y": 415
+      },
+      "dimensions": {
+        "width": 900,
+        "height": 255
+      }
+    },
+    {
+      "id": "scene-03-scan-sign",
+      "source": "assets/scenes/scene-03/props/scan-sign.svg",
+      "metadata": "assets/scenes/scene-03/props/scan-sign.json",
+      "layer": "midground",
+      "placement": {
+        "x": 400,
+        "y": 344
+      },
+      "dimensions": {
+        "width": 280,
+        "height": 115
+      }
+    },
+    {
+      "id": "scene-03-quality-gauge",
+      "source": "assets/scenes/scene-03/props/quality-gauge.svg",
+      "metadata": "assets/scenes/scene-03/props/quality-gauge.json",
+      "layer": "midground",
+      "placement": {
+        "x": 835,
+        "y": 562
+      },
+      "dimensions": {
+        "width": 155,
+        "height": 160
+      }
+    },
+    {
+      "id": "scene-03-scanner-frame",
+      "source": "assets/scenes/scene-03/machine/scanner-frame.svg",
+      "metadata": "assets/scenes/scene-03/machine/scanner-frame.json",
+      "layer": "midground",
+      "placement": {
+        "x": 378,
+        "y": 785
+      },
+      "dimensions": {
+        "width": 350,
+        "height": 475
+      }
+    },
+    {
+      "id": "scene-03-scan-beam",
+      "source": "assets/scenes/scene-03/machine/scan-beam.svg",
+      "metadata": "assets/scenes/scene-03/machine/scan-beam.json",
+      "layer": "midground",
+      "placement": {
+        "x": 448,
+        "y": 896
+      },
+      "dimensions": {
+        "width": 210,
+        "height": 320
+      }
+    },
+    {
+      "id": "scene-03-conveyor-belt",
+      "source": "assets/scenes/scene-03/machine/conveyor-belt.svg",
+      "metadata": "assets/scenes/scene-03/machine/conveyor-belt.json",
+      "layer": "foreground",
+      "placement": {
+        "x": 95,
+        "y": 1185
+      },
+      "dimensions": {
+        "width": 890,
+        "height": 250
+      }
+    },
+    {
+      "id": "scene-03-incoming-code-sheet",
+      "source": "assets/scenes/scene-03/workflow/incoming-code-sheet.svg",
+      "metadata": "assets/scenes/scene-03/workflow/incoming-code-sheet.json",
+      "layer": "foreground",
+      "placement": {
+        "x": 300,
+        "y": 1118
+      },
+      "dimensions": {
+        "width": 165,
+        "height": 130
+      }
+    },
+    {
+      "id": "scene-03-clean-code-sheet",
+      "source": "assets/scenes/scene-03/workflow/clean-code-sheet.svg",
+      "metadata": "assets/scenes/scene-03/workflow/clean-code-sheet.json",
+      "layer": "foreground",
+      "placement": {
+        "x": 785,
+        "y": 1115
+      },
+      "dimensions": {
+        "width": 165,
+        "height": 130
+      }
+    },
+    {
+      "id": "scene-03-reject-bin",
+      "source": "assets/scenes/scene-03/machine/reject-bin.svg",
+      "metadata": "assets/scenes/scene-03/machine/reject-bin.json",
+      "layer": "foreground",
+      "placement": {
+        "x": 703,
+        "y": 1363
+      },
+      "dimensions": {
+        "width": 235,
+        "height": 175
+      }
+    },
+    {
+      "id": "scene-03-caught-bug",
+      "source": "assets/scenes/scene-03/workflow/caught-bug.svg",
+      "metadata": "assets/scenes/scene-03/workflow/caught-bug.json",
+      "layer": "character",
+      "placement": {
+        "x": 495,
+        "y": 947
+      },
+      "dimensions": {
+        "width": 140,
+        "height": 132
+      }
+    },
+    {
+      "id": "scene-03-paper-grabber",
+      "source": "assets/scenes/scene-03/machine/paper-grabber.svg",
+      "metadata": "assets/scenes/scene-03/machine/paper-grabber.json",
+      "layer": "character",
+      "placement": {
+        "x": 520,
+        "y": 802
+      },
+      "dimensions": {
+        "width": 130,
+        "height": 185
+      }
+    },
+    {
+      "id": "scene-03-pass-stamp",
+      "source": "assets/scenes/scene-03/workflow/pass-stamp.svg",
+      "metadata": "assets/scenes/scene-03/workflow/pass-stamp.json",
+      "layer": "ui",
+      "placement": {
+        "x": 728,
+        "y": 836
+      },
+      "dimensions": {
+        "width": 215,
+        "height": 120
+      }
+    }
+  ],
+  "note": "The composite is reconstructed in list order from independently exported SVGs and the locked Motif Bot puppet."
+}

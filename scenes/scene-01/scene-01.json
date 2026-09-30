@@ -1,0 +1,304 @@
+{
+  "id": "scene-01-night-work",
+  "name": "An AI agent works while you sleep",
+  "version": 1,
+  "status": "canonical",
+  "benchmark": true,
+  "style": "motif-default-v1",
+  "dimensions": {
+    "width": 1080,
+    "height": 1920,
+    "unit": "px"
+  },
+  "render": "scenes/scene-01/scene-01-night-work.svg",
+  "generator": "scripts/build_scene_01.py",
+  "layerOrder": [
+    "background",
+    "midground",
+    "character",
+    "foreground",
+    "ui"
+  ],
+  "headlineSafeArea": {
+    "x": 90,
+    "y": 55,
+    "width": 900,
+    "height": 185
+  },
+  "captionSafeArea": {
+    "x": 100,
+    "y": 1660,
+    "width": 880,
+    "height": 210
+  },
+  "character": {
+    "source": "assets/characters/motif-bot/canonical/v1/motif-bot-v1.json",
+    "geometrySource": "scripts/build_motif_bot.py",
+    "placement": {
+      "x": 264,
+      "y": 854,
+      "scale": 0.43
+    },
+    "pose": {
+      "base": "pointing",
+      "faceState": "determined",
+      "leftArm": {
+        "end": [
+          390,
+          669
+        ],
+        "hand": "mitten"
+      },
+      "rightArm": {
+        "end": [
+          824,
+          535
+        ],
+        "hand": "point"
+      },
+      "headRotation": -4
+    },
+    "status": "canonical"
+  },
+  "assets": [
+    {
+      "id": "scene-01-wall-background",
+      "source": "assets/scenes/scene-01/environment/wall-background.svg",
+      "metadata": "assets/scenes/scene-01/environment/wall-background.json",
+      "layer": "background",
+      "placement": {
+        "x": 0,
+        "y": 0
+      },
+      "dimensions": {
+        "width": 1080,
+        "height": 1475
+      }
+    },
+    {
+      "id": "scene-01-floor",
+      "source": "assets/scenes/scene-01/environment/floor.svg",
+      "metadata": "assets/scenes/scene-01/environment/floor.json",
+      "layer": "background",
+      "placement": {
+        "x": 0,
+        "y": 1450
+      },
+      "dimensions": {
+        "width": 1080,
+        "height": 520
+      }
+    },
+    {
+      "id": "scene-01-night-sky-moon",
+      "source": "assets/scenes/scene-01/environment/night-sky-moon.svg",
+      "metadata": "assets/scenes/scene-01/environment/night-sky-moon.json",
+      "layer": "background",
+      "placement": {
+        "x": 132,
+        "y": 398
+      },
+      "dimensions": {
+        "width": 290,
+        "height": 342
+      }
+    },
+    {
+      "id": "scene-01-window",
+      "source": "assets/scenes/scene-01/environment/window.svg",
+      "metadata": "assets/scenes/scene-01/environment/window.json",
+      "layer": "midground",
+      "placement": {
+        "x": 112,
+        "y": 385
+      },
+      "dimensions": {
+        "width": 336,
+        "height": 380
+      }
+    },
+    {
+      "id": "scene-01-late-night-clock",
+      "source": "assets/scenes/scene-01/desk-props/late-night-clock.svg",
+      "metadata": "assets/scenes/scene-01/desk-props/late-night-clock.json",
+      "layer": "midground",
+      "placement": {
+        "x": 820,
+        "y": 502
+      },
+      "dimensions": {
+        "width": 140,
+        "height": 160
+      }
+    },
+    {
+      "id": "scene-01-chair",
+      "source": "assets/scenes/scene-01/furniture/chair.svg",
+      "metadata": "assets/scenes/scene-01/furniture/chair.json",
+      "layer": "midground",
+      "placement": {
+        "x": 320,
+        "y": 976
+      },
+      "dimensions": {
+        "width": 275,
+        "height": 345
+      }
+    },
+    {
+      "id": "scene-01-desk-lamp",
+      "source": "assets/scenes/scene-01/desk-props/desk-lamp.svg",
+      "metadata": "assets/scenes/scene-01/desk-props/desk-lamp.json",
+      "layer": "midground",
+      "placement": {
+        "x": 80,
+        "y": 921
+      },
+      "dimensions": {
+        "width": 160,
+        "height": 346
+      }
+    },
+    {
+      "id": "scene-01-desktop-monitor",
+      "source": "assets/scenes/scene-01/computing/desktop-monitor.svg",
+      "metadata": "assets/scenes/scene-01/computing/desktop-monitor.json",
+      "layer": "midground",
+      "placement": {
+        "x": 610,
+        "y": 861
+      },
+      "dimensions": {
+        "width": 345,
+        "height": 345
+      }
+    },
+    {
+      "id": "scene-01-laptop",
+      "source": "assets/scenes/scene-01/computing/laptop.svg",
+      "metadata": "assets/scenes/scene-01/computing/laptop.json",
+      "layer": "midground",
+      "placement": {
+        "x": 150,
+        "y": 1006
+      },
+      "dimensions": {
+        "width": 295,
+        "height": 225
+      }
+    },
+    {
+      "id": "scene-01-desk",
+      "source": "assets/scenes/scene-01/furniture/desk.svg",
+      "metadata": "assets/scenes/scene-01/furniture/desk.json",
+      "layer": "foreground",
+      "placement": {
+        "x": 68,
+        "y": 1151
+      },
+      "dimensions": {
+        "width": 945,
+        "height": 390
+      }
+    },
+    {
+      "id": "scene-01-document",
+      "source": "assets/scenes/scene-01/desk-props/document.svg",
+      "metadata": "assets/scenes/scene-01/desk-props/document.json",
+      "layer": "foreground",
+      "placement": {
+        "x": 426,
+        "y": 1161
+      },
+      "dimensions": {
+        "width": 145,
+        "height": 107
+      }
+    },
+    {
+      "id": "scene-01-keyboard",
+      "source": "assets/scenes/scene-01/computing/keyboard.svg",
+      "metadata": "assets/scenes/scene-01/computing/keyboard.json",
+      "layer": "foreground",
+      "placement": {
+        "x": 570,
+        "y": 1193
+      },
+      "dimensions": {
+        "width": 320,
+        "height": 65
+      }
+    },
+    {
+      "id": "scene-01-mouse",
+      "source": "assets/scenes/scene-01/computing/mouse.svg",
+      "metadata": "assets/scenes/scene-01/computing/mouse.json",
+      "layer": "foreground",
+      "placement": {
+        "x": 892,
+        "y": 1191
+      },
+      "dimensions": {
+        "width": 72,
+        "height": 65
+      }
+    },
+    {
+      "id": "scene-01-coffee-mug",
+      "source": "assets/scenes/scene-01/desk-props/coffee-mug.svg",
+      "metadata": "assets/scenes/scene-01/desk-props/coffee-mug.json",
+      "layer": "foreground",
+      "placement": {
+        "x": 82,
+        "y": 1154
+      },
+      "dimensions": {
+        "width": 120,
+        "height": 110
+      }
+    },
+    {
+      "id": "scene-01-small-plant",
+      "source": "assets/scenes/scene-01/desk-props/small-plant.svg",
+      "metadata": "assets/scenes/scene-01/desk-props/small-plant.json",
+      "layer": "foreground",
+      "placement": {
+        "x": 950,
+        "y": 1131
+      },
+      "dimensions": {
+        "width": 120,
+        "height": 132
+      }
+    },
+    {
+      "id": "scene-01-task-progress-panel",
+      "source": "assets/scenes/scene-01/ui/task-progress-panel.svg",
+      "metadata": "assets/scenes/scene-01/ui/task-progress-panel.json",
+      "layer": "ui",
+      "placement": {
+        "x": 648,
+        "y": 894
+      },
+      "dimensions": {
+        "width": 276,
+        "height": 194
+      }
+    },
+    {
+      "id": "scene-01-notification-card",
+      "source": "assets/scenes/scene-01/ui/notification-card.svg",
+      "metadata": "assets/scenes/scene-01/ui/notification-card.json",
+      "layer": "ui",
+      "placement": {
+        "x": 670,
+        "y": 701
+      },
+      "dimensions": {
+        "width": 286,
+        "height": 160
+      }
+    }
+  ],
+  "note": "The composite contains the independent asset markup in layer order. Rebuild from this manifest and the listed SVGs; Motif Bot comes from the locked canonical generator."
+}

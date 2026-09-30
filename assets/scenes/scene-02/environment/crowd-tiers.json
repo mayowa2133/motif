@@ -1,0 +1,52 @@
+{
+  "id": "scene-02-crowd-tiers",
+  "name": "Three quiet crowd tiers",
+  "category": "environment",
+  "subcategory": "crowd-tiers",
+  "concepts": [
+    "audience",
+    "stadium"
+  ],
+  "keywords": [
+    "crowd-tiers",
+    "paper-cutout",
+    "scene-02"
+  ],
+  "style": "motif-default-v1",
+  "orientation": "front",
+  "dimensions": {
+    "width": 980,
+    "height": 390,
+    "unit": "px"
+  },
+  "artBox": {
+    "x": 0,
+    "y": 0,
+    "width": 980,
+    "height": 390
+  },
+  "anchors": {},
+  "compatibleCharacters": [
+    "motif-bot"
+  ],
+  "supportedActions": [
+    "compose",
+    "swap",
+    "animate"
+  ],
+  "sourceType": "vector",
+  "source": {
+    "file": "assets/scenes/scene-02/environment/crowd-tiers.svg",
+    "generator": "scripts/build_benchmark_scenes.py"
+  },
+  "version": 1,
+  "status": "canonical",
+  "benchmark": true,
+  "preview": "previews/scene-02/contact-sheet.png",
+  "license": "project-original",
+  "scenePlacement": {
+    "x": 50,
+    "y": 472,
+    "layer": "background"
+  }
+}

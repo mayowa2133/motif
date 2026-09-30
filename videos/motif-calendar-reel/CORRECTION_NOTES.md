@@ -1,0 +1,7 @@
+# Demo 03 — first render and one correction
+
+The [first encoded render](renders/motif-demo-03-first-render.mp4) was preserved before any post-render change, along with its [source snapshot](versions/first-render/) and [mobile contact sheet](proof/first-render-contact-sheet.png). It already showed the required causal sequence: two solid cards overlap at 3 PM; a dashed suggestion appears at 4 PM while the real card stays at 3 PM; a human finger presses APPROVE; only then does the solid card move.
+
+The [first-render review](FIRST_RENDER_REVIEW.md) found one visual defect. A teal check was baked into the APPROVE tab, so the tab could look approved before the finger arrived. In the single bounded correction pass, the tab became an empty circle and a separate check appeared after the press. The scene, script, shot order, and timing were otherwise retained.
+
+The [corrected visual MP4](renders/motif-demo-03-calendar-approval.mp4) and [encoded-frame contact sheet](proof/final-contact-sheet.png) show the empty circle at 7.8 and 8.4 seconds, fingertip contact around 8.7 seconds, the check around 9.4 seconds, and the real FOCUS card moving afterward. The final frame has CALL at 3 PM and FOCUS at 4 PM. The first and corrected files have different SHA-256 hashes, recorded in the [production review](../../docs/DEMO_03_REVIEW.md). No second visual correction or alternate concept was made. A later [audio-only finishing pass](AUDIO_FINISHING.md) raised the entire mix after the visual story was approved.

@@ -1,0 +1,52 @@
+{
+  "id": "scene-02-evaluation-board",
+  "name": "Three-answer evaluation board",
+  "category": "props",
+  "subcategory": "evaluation-board",
+  "concepts": [
+    "competition",
+    "answers"
+  ],
+  "keywords": [
+    "evaluation-board",
+    "paper-cutout",
+    "scene-02"
+  ],
+  "style": "motif-default-v1",
+  "orientation": "front",
+  "dimensions": {
+    "width": 570,
+    "height": 215,
+    "unit": "px"
+  },
+  "artBox": {
+    "x": 0,
+    "y": 0,
+    "width": 570,
+    "height": 215
+  },
+  "anchors": {},
+  "compatibleCharacters": [
+    "motif-bot"
+  ],
+  "supportedActions": [
+    "compose",
+    "swap",
+    "animate"
+  ],
+  "sourceType": "vector",
+  "source": {
+    "file": "assets/scenes/scene-02/props/evaluation-board.svg",
+    "generator": "scripts/build_benchmark_scenes.py"
+  },
+  "version": 1,
+  "status": "canonical",
+  "benchmark": true,
+  "preview": "previews/scene-02/contact-sheet.png",
+  "license": "project-original",
+  "scenePlacement": {
+    "x": 280,
+    "y": 750,
+    "layer": "midground"
+  }
+}

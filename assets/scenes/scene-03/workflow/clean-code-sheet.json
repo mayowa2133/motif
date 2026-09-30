@@ -1,0 +1,52 @@
+{
+  "id": "scene-03-clean-code-sheet",
+  "name": "Checked code ticket",
+  "category": "workflow",
+  "subcategory": "clean-code-sheet",
+  "concepts": [
+    "code",
+    "pass"
+  ],
+  "keywords": [
+    "clean-code-sheet",
+    "paper-cutout",
+    "scene-03"
+  ],
+  "style": "motif-default-v1",
+  "orientation": "front",
+  "dimensions": {
+    "width": 165,
+    "height": 130,
+    "unit": "px"
+  },
+  "artBox": {
+    "x": 0,
+    "y": 0,
+    "width": 165,
+    "height": 130
+  },
+  "anchors": {},
+  "compatibleCharacters": [
+    "motif-bot"
+  ],
+  "supportedActions": [
+    "compose",
+    "swap",
+    "animate"
+  ],
+  "sourceType": "vector",
+  "source": {
+    "file": "assets/scenes/scene-03/workflow/clean-code-sheet.svg",
+    "generator": "scripts/build_benchmark_scenes.py"
+  },
+  "version": 1,
+  "status": "canonical",
+  "benchmark": true,
+  "preview": "previews/scene-03/contact-sheet.png",
+  "license": "project-original",
+  "scenePlacement": {
+    "x": 785,
+    "y": 1115,
+    "layer": "foreground"
+  }
+}

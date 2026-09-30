@@ -1,0 +1,32 @@
+{
+  "brief": "briefs/focus-hour-validation.json",
+  "first_render": "videos/productions/focus-hour-validation/renders/first.mp4",
+  "final_render": "videos/productions/focus-hour-validation/renders/final.mp4",
+  "first_audio": {
+    "integrated_lufs": -24.14,
+    "true_peak_dbtp": -3.99,
+    "lra_lu": 8.8
+  },
+  "initial_linear_gain_attempt_db": 2.39,
+  "finishing_method": "combined-mix loudnorm with measured calibration",
+  "final_audio": {
+    "integrated_lufs": -16.04,
+    "true_peak_dbtp": -1.74,
+    "lra_lu": 7.7
+  },
+  "target_lufs": -16.0,
+  "true_peak_ceiling_dbtp": -1.5,
+  "checks": {
+    "storyboard_and_event_order": true,
+    "word_aligned_captions": true,
+    "integrated_loudness": true,
+    "true_peak": true,
+    "same_encoded_video_stream": true,
+    "same_duration": true,
+    "requested_duration_range": true
+  },
+  "first_sha256": "b86378de04c47c2c1388ce006c727ad7e41d0c573f0ed7e642fd865197ca204c",
+  "final_sha256": "0db612d0d196002b642691fcea4b4e54625dec32751377989e97668eaea9d329",
+  "video_stream_sha256": "e4df4d5af9bb52b0e126e750a90a398e37927a1820dca91e4a7e308d6c440a26",
+  "subjective_listening": "not assessed"
+}

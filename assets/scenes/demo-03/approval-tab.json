@@ -1,0 +1,9 @@
+{
+  "id": "demo-03-approval-tab",
+  "source": "assets/scenes/demo-03/approval-tab.svg",
+  "type": "interaction-prop",
+  "dimensions": {"width": 340, "height": 170},
+  "style": "motif-default-v1",
+  "shadowDirection": "down-right",
+  "usage": "Physical permission control. Its empty circle receives a separate checkmark only after a human fingertip presses it, before either solid calendar card moves."
+}

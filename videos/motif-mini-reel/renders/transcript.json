@@ -1,0 +1,152 @@
+[
+  {
+    "text": "While",
+    "start": 0.06,
+    "end": 0.41,
+    "id": "w0"
+  },
+  {
+    "text": "you",
+    "start": 0.41,
+    "end": 0.67,
+    "id": "w1"
+  },
+  {
+    "text": "sleep,",
+    "start": 0.67,
+    "end": 1.26,
+    "id": "w2"
+  },
+  {
+    "text": "an",
+    "start": 1.26,
+    "end": 1.42,
+    "id": "w3"
+  },
+  {
+    "text": "AI",
+    "start": 1.47,
+    "end": 1.6,
+    "id": "w4"
+  },
+  {
+    "text": "agent",
+    "start": 1.6,
+    "end": 2.02,
+    "id": "w5"
+  },
+  {
+    "text": "reviews",
+    "start": 2.02,
+    "end": 2.61,
+    "id": "w6"
+  },
+  {
+    "text": "your",
+    "start": 2.61,
+    "end": 2.94,
+    "id": "w7"
+  },
+  {
+    "text": "code.",
+    "start": 2.95,
+    "end": 3.34,
+    "id": "w8"
+  },
+  {
+    "text": "It",
+    "start": 3.4,
+    "end": 3.48,
+    "id": "w9"
+  },
+  {
+    "text": "flags",
+    "start": 3.48,
+    "end": 3.85,
+    "id": "w10"
+  },
+  {
+    "text": "potential",
+    "start": 3.85,
+    "end": 4.52,
+    "id": "w11"
+  },
+  {
+    "text": "bugs,",
+    "start": 4.52,
+    "end": 4.96,
+    "id": "w12"
+  },
+  {
+    "text": "runs",
+    "start": 5,
+    "end": 5.37,
+    "id": "w13"
+  },
+  {
+    "text": "tests,",
+    "start": 5.42,
+    "end": 5.92,
+    "id": "w14"
+  },
+  {
+    "text": "and",
+    "start": 5.98,
+    "end": 6.09,
+    "id": "w15"
+  },
+  {
+    "text": "leaves",
+    "start": 6.09,
+    "end": 6.43,
+    "id": "w16"
+  },
+  {
+    "text": "the",
+    "start": 6.43,
+    "end": 6.59,
+    "id": "w17"
+  },
+  {
+    "text": "results",
+    "start": 6.72,
+    "end": 7,
+    "id": "w18"
+  },
+  {
+    "text": "ready",
+    "start": 7,
+    "end": 7.28,
+    "id": "w19"
+  },
+  {
+    "text": "for",
+    "start": 7.28,
+    "end": 7.45,
+    "id": "w20"
+  },
+  {
+    "text": "you",
+    "start": 7.45,
+    "end": 7.61,
+    "id": "w21"
+  },
+  {
+    "text": "in",
+    "start": 7.63,
+    "end": 7.73,
+    "id": "w22"
+  },
+  {
+    "text": "the",
+    "start": 7.73,
+    "end": 7.9,
+    "id": "w23"
+  },
+  {
+    "text": "morning.",
+    "start": 7.9,
+    "end": 8.52,
+    "id": "w24"
+  }
+]

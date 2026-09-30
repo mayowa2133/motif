@@ -1,0 +1,52 @@
+{
+  "id": "scene-01-notification-card",
+  "name": "Stamped paper task ticket",
+  "category": "ui",
+  "subcategory": "notification-card",
+  "concepts": [
+    "notification",
+    "task",
+    "complete"
+  ],
+  "keywords": [
+    "notification-card",
+    "cut-paper",
+    "night-desk"
+  ],
+  "style": "motif-default-v1",
+  "orientation": "front",
+  "dimensions": {
+    "width": 286,
+    "height": 160,
+    "unit": "px"
+  },
+  "artBox": {
+    "x": 0,
+    "y": 0,
+    "width": 286,
+    "height": 160
+  },
+  "anchors": {},
+  "compatibleCharacters": [
+    "motif-bot"
+  ],
+  "supportedActions": [
+    "compose",
+    "swap",
+    "animate"
+  ],
+  "sourceType": "vector",
+  "source": {
+    "file": "assets/scenes/scene-01/ui/notification-card.svg",
+    "generator": "scripts/build_scene_01.py"
+  },
+  "version": 1,
+  "status": "canonical",
+  "preview": "previews/scene-01/contact-sheet.png",
+  "license": "project-original",
+  "scenePlacement": {
+    "x": 670,
+    "y": 701,
+    "layer": "ui"
+  }
+}

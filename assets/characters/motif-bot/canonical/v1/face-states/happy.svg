@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024" role="img" aria-label="Motif Bot happy face state">
+<title>Motif Bot happy face state</title>
+<defs>
+<pattern id="grain" width="31" height="29" patternUnits="userSpaceOnUse">
+  <circle cx="4" cy="6" r="1.2" fill="#806F5D" opacity=".16"/>
+  <circle cx="23" cy="12" r=".85" fill="#806F5D" opacity=".13"/>
+  <circle cx="12" cy="24" r=".7" fill="#806F5D" opacity=".12"/>
+  <path d="M18 3 l2 .7 M5 20 l2 -.4" stroke="#806F5D" stroke-width=".8" opacity=".12"/>
+  <circle cx="28" cy="27" r="1.5" fill="#FFFFFF" opacity=".16"/>
+</pattern>
+<pattern id="darkGrain" width="29" height="31" patternUnits="userSpaceOnUse">
+  <circle cx="7" cy="9" r=".9" fill="#F4EBD8" opacity=".09"/>
+  <circle cx="20" cy="23" r=".7" fill="#F4EBD8" opacity=".08"/>
+</pattern>
+</defs>
+<g id="faceState" data-part="faceState" data-state="happy"><ellipse cx="358" cy="387" rx="15" ry="10" fill="#DF806B"/><ellipse cx="666" cy="387" rx="15" ry="10" fill="#DF806B"/><path d="M385 345 Q419 294 454 345" stroke="#A6E5D6" stroke-width="19" fill="none" stroke-linecap="round"/><path d="M566 345 Q601 294 636 345" stroke="#A6E5D6" stroke-width="19" fill="none" stroke-linecap="round"/><path d="M466 386 Q512 435 558 386" stroke="#A6E5D6" stroke-width="13" fill="none" stroke-linecap="round"/></g>
+</svg>

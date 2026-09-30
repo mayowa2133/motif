@@ -1,0 +1,56 @@
+{
+  "id": "motif-bot-v1-parts-left-leg",
+  "name": "Motif Bot left leg",
+  "category": "character",
+  "subcategory": "parts",
+  "concepts": [
+    "assistant",
+    "coding",
+    "paper-cutout"
+  ],
+  "keywords": [
+    "cream",
+    "teal",
+    "parts",
+    "left-leg"
+  ],
+  "style": "motif-default-v1",
+  "orientation": "front",
+  "dimensions": {
+    "width": 1024,
+    "height": 1024,
+    "unit": "px"
+  },
+  "artBox": {
+    "x": 0,
+    "y": 0,
+    "width": 1024,
+    "height": 1024
+  },
+  "anchors": {
+    "leftHip": {
+      "x": 0.42969,
+      "y": 0.72266
+    },
+    "leftFoot": {
+      "x": 0.41504,
+      "y": 0.84082
+    }
+  },
+  "compatibleCharacters": [
+    "motif-bot"
+  ],
+  "supportedActions": [
+    "compose"
+  ],
+  "sourceType": "vector",
+  "source": {
+    "file": "assets/characters/motif-bot/canonical/v1/parts/left-leg.svg",
+    "generator": "scripts/build_motif_bot.py"
+  },
+  "version": 1,
+  "status": "canonical",
+  "preview": "previews/motif-bot-front-neutral-v1.png",
+  "previewOnly": false,
+  "license": "project-original"
+}

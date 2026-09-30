@@ -1,0 +1,695 @@
+{
+  "schemaVersion": "1.0",
+  "compositionId": "main",
+  "durationSec": 12.8,
+  "fps": 30,
+  "initial": [
+    {
+      "target": "#call-card",
+      "props": {
+        "opacity": 0
+      }
+    },
+    {
+      "target": "#focus-card",
+      "props": {
+        "opacity": 0
+      }
+    },
+    {
+      "target": "#overlap-bracket",
+      "props": {
+        "opacity": 0
+      }
+    },
+    {
+      "target": "#proposal-route",
+      "props": {
+        "opacity": 0
+      }
+    },
+    {
+      "target": "#proposal-slip",
+      "props": {
+        "opacity": 0
+      }
+    },
+    {
+      "target": "#approval-tab",
+      "props": {
+        "opacity": 0
+      }
+    },
+    {
+      "target": "#approval-glow",
+      "props": {
+        "opacity": 0
+      }
+    },
+    {
+      "target": "#human-finger",
+      "props": {
+        "opacity": 0
+      }
+    },
+    {
+      "target": "#headline-intro",
+      "props": {
+        "opacity": 0
+      }
+    },
+    {
+      "target": "#headline-propose",
+      "props": {
+        "opacity": 0
+      }
+    },
+    {
+      "target": "#headline-wait",
+      "props": {
+        "opacity": 0
+      }
+    },
+    {
+      "target": "#headline-done",
+      "props": {
+        "opacity": 0
+      }
+    },
+    {
+      "target": "#bot-notice",
+      "props": {
+        "opacity": 0
+      }
+    },
+    {
+      "target": "#bot-wait",
+      "props": {
+        "opacity": 0
+      }
+    },
+    {
+      "target": "#bot-happy",
+      "props": {
+        "opacity": 0
+      }
+    },
+    {
+      "target": "#caption-0",
+      "props": {
+        "opacity": 0
+      }
+    },
+    {
+      "target": "#caption-1",
+      "props": {
+        "opacity": 0
+      }
+    },
+    {
+      "target": "#caption-2",
+      "props": {
+        "opacity": 0
+      }
+    },
+    {
+      "target": "#caption-3",
+      "props": {
+        "opacity": 0
+      }
+    },
+    {
+      "target": "#caption-4",
+      "props": {
+        "opacity": 0
+      }
+    },
+    {
+      "target": "#caption-5",
+      "props": {
+        "opacity": 0
+      }
+    },
+    {
+      "target": "#caption-6",
+      "props": {
+        "opacity": 0
+      }
+    },
+    {
+      "target": "#caption-7",
+      "props": {
+        "opacity": 0
+      }
+    },
+    {
+      "target": "#world-camera",
+      "props": {
+        "scale": 1
+      }
+    },
+    {
+      "target": "#approval-check",
+      "props": {
+        "opacity": 0
+      }
+    }
+  ],
+  "events": [
+    {
+      "time": 0.05,
+      "target": "#headline-intro",
+      "action": "POP_IN",
+      "params": {
+        "duration": 0.28,
+        "overshoot": 1.04
+      }
+    },
+    {
+      "time": 0.05,
+      "target": "#caption-0",
+      "action": "CAPTION_REPLACE",
+      "params": {}
+    },
+    {
+      "time": 0.28,
+      "target": "#call-card",
+      "action": "FROM_TO",
+      "params": {
+        "from": {
+          "x": -230,
+          "y": -105,
+          "opacity": 0,
+          "rotation": -9
+        },
+        "to": {
+          "x": 0,
+          "y": 0,
+          "opacity": 1,
+          "rotation": 0
+        },
+        "duration": 0.55,
+        "ease": "power2.out"
+      }
+    },
+    {
+      "time": 0.72,
+      "target": "#caption-1",
+      "action": "CAPTION_REPLACE",
+      "params": {}
+    },
+    {
+      "time": 1.18,
+      "target": "#focus-card",
+      "action": "FROM_TO",
+      "params": {
+        "from": {
+          "x": 280,
+          "y": -115,
+          "opacity": 0,
+          "rotation": 8
+        },
+        "to": {
+          "x": 0,
+          "y": 0,
+          "opacity": 1,
+          "rotation": 0
+        },
+        "duration": 0.62,
+        "ease": "power2.out"
+      }
+    },
+    {
+      "time": 1.78,
+      "target": "#focus-card",
+      "action": "SHAKE",
+      "params": {
+        "distance": 10,
+        "duration": 0.25
+      }
+    },
+    {
+      "time": 1.78,
+      "target": "#call-card",
+      "action": "SHAKE",
+      "params": {
+        "distance": 6,
+        "duration": 0.24
+      }
+    },
+    {
+      "time": 2.3,
+      "target": "#caption-2",
+      "action": "CAPTION_REPLACE",
+      "params": {}
+    },
+    {
+      "time": 2.38,
+      "target": "#bot-neutral",
+      "action": "POSE_SWAP",
+      "params": {
+        "hide": "#bot-neutral",
+        "show": "#bot-notice",
+        "bounceTarget": "#bot-motion",
+        "height": 10,
+        "duration": 0.25
+      }
+    },
+    {
+      "time": 2.4,
+      "target": "#world-camera",
+      "action": "TWEEN",
+      "params": {
+        "to": {
+          "scale": 1.12
+        },
+        "duration": 0.5,
+        "ease": "power2.inOut"
+      }
+    },
+    {
+      "time": 3.02,
+      "target": "#overlap-bracket",
+      "action": "POP_IN",
+      "params": {
+        "duration": 0.32,
+        "overshoot": 1.03
+      }
+    },
+    {
+      "time": 4.2,
+      "target": "#headline-intro",
+      "action": "SET",
+      "params": {
+        "props": {
+          "opacity": 0
+        }
+      }
+    },
+    {
+      "time": 4.2,
+      "target": "#caption-3",
+      "action": "CAPTION_REPLACE",
+      "params": {}
+    },
+    {
+      "time": 4.24,
+      "target": "#headline-propose",
+      "action": "POP_IN",
+      "params": {
+        "duration": 0.28,
+        "overshoot": 1.04
+      }
+    },
+    {
+      "time": 4.52,
+      "target": "#proposal-route",
+      "action": "FROM_TO",
+      "params": {
+        "from": {
+          "opacity": 0,
+          "y": -70
+        },
+        "to": {
+          "opacity": 1,
+          "y": 0
+        },
+        "duration": 0.38,
+        "ease": "power2.out"
+      }
+    },
+    {
+      "time": 4.65,
+      "target": "#proposal-slip",
+      "action": "FROM_TO",
+      "params": {
+        "from": {
+          "opacity": 0,
+          "y": -140,
+          "scale": 0.88
+        },
+        "to": {
+          "opacity": 1,
+          "y": 0,
+          "scale": 1
+        },
+        "duration": 0.58,
+        "ease": "power2.out"
+      }
+    },
+    {
+      "time": 5.97,
+      "target": "#caption-4",
+      "action": "CAPTION_REPLACE",
+      "params": {}
+    },
+    {
+      "time": 6.2,
+      "target": "#bot-notice",
+      "action": "POSE_SWAP",
+      "params": {
+        "hide": "#bot-notice",
+        "show": "#bot-wait",
+        "bounceTarget": "#bot-motion",
+        "height": 7,
+        "duration": 0.22
+      }
+    },
+    {
+      "time": 6.58,
+      "target": "#approval-tab",
+      "action": "POP_IN",
+      "params": {
+        "duration": 0.32,
+        "overshoot": 1.04
+      }
+    },
+    {
+      "time": 7.46,
+      "target": "#headline-propose",
+      "action": "SET",
+      "params": {
+        "props": {
+          "opacity": 0
+        }
+      }
+    },
+    {
+      "time": 7.46,
+      "target": "#caption-5",
+      "action": "CAPTION_REPLACE",
+      "params": {}
+    },
+    {
+      "time": 7.48,
+      "target": "#headline-wait",
+      "action": "POP_IN",
+      "params": {
+        "duration": 0.28,
+        "overshoot": 1.04
+      }
+    },
+    {
+      "time": 7.58,
+      "target": "#human-finger",
+      "action": "FROM_TO",
+      "params": {
+        "from": {
+          "x": 350,
+          "opacity": 0
+        },
+        "to": {
+          "x": 0,
+          "opacity": 1
+        },
+        "duration": 0.56,
+        "ease": "power2.out"
+      }
+    },
+    {
+      "time": 8.42,
+      "target": "#human-finger",
+      "action": "TWEEN",
+      "params": {
+        "to": {
+          "y": 35
+        },
+        "duration": 0.24,
+        "ease": "power2.in"
+      }
+    },
+    {
+      "time": 8.66,
+      "target": "#approval-tab",
+      "action": "TWEEN",
+      "params": {
+        "to": {
+          "y": 12,
+          "scale": 0.95
+        },
+        "duration": 0.12,
+        "ease": "power2.in"
+      }
+    },
+    {
+      "time": 8.73,
+      "target": "#approval-glow",
+      "action": "POP_IN",
+      "params": {
+        "duration": 0.26,
+        "overshoot": 1.02
+      }
+    },
+    {
+      "time": 8.73,
+      "target": "#approval-check",
+      "action": "POP_IN",
+      "params": {
+        "duration": 0.23,
+        "overshoot": 1.02
+      }
+    },
+    {
+      "time": 8.82,
+      "target": "#human-finger",
+      "action": "TWEEN",
+      "params": {
+        "to": {
+          "y": 16
+        },
+        "duration": 0.18,
+        "ease": "power2.out"
+      }
+    },
+    {
+      "time": 9.01,
+      "target": "#headline-wait",
+      "action": "SET",
+      "params": {
+        "props": {
+          "opacity": 0
+        }
+      }
+    },
+    {
+      "time": 9.01,
+      "target": "#caption-6",
+      "action": "CAPTION_REPLACE",
+      "params": {}
+    },
+    {
+      "time": 9.05,
+      "target": "#headline-done",
+      "action": "POP_IN",
+      "params": {
+        "duration": 0.28,
+        "overshoot": 1.04
+      }
+    },
+    {
+      "time": 9.18,
+      "target": "#focus-card",
+      "action": "TWEEN",
+      "params": {
+        "to": {
+          "y": 310,
+          "x": 0,
+          "rotation": -3
+        },
+        "duration": 0.72,
+        "ease": "power2.inOut"
+      }
+    },
+    {
+      "time": 9.28,
+      "target": "#proposal-slip",
+      "action": "TWEEN",
+      "params": {
+        "to": {
+          "opacity": 0
+        },
+        "duration": 0.46,
+        "ease": "power2.out"
+      }
+    },
+    {
+      "time": 9.35,
+      "target": "#human-finger",
+      "action": "TWEEN",
+      "params": {
+        "to": {
+          "x": 360,
+          "opacity": 0
+        },
+        "duration": 0.35,
+        "ease": "power2.in"
+      }
+    },
+    {
+      "time": 9.79,
+      "target": "#caption-7",
+      "action": "CAPTION_REPLACE",
+      "params": {}
+    },
+    {
+      "time": 9.84,
+      "target": "#proposal-route",
+      "action": "TWEEN",
+      "params": {
+        "to": {
+          "opacity": 0
+        },
+        "duration": 0.28,
+        "ease": "power2.out"
+      }
+    },
+    {
+      "time": 9.93,
+      "target": "#overlap-bracket",
+      "action": "POP_OUT",
+      "params": {
+        "duration": 0.23
+      }
+    },
+    {
+      "time": 10.08,
+      "target": "#focus-card",
+      "action": "TWEEN",
+      "params": {
+        "to": {
+          "rotation": 0
+        },
+        "duration": 0.2,
+        "ease": "power2.out"
+      }
+    },
+    {
+      "time": 10.18,
+      "target": "#bot-wait",
+      "action": "POSE_SWAP",
+      "params": {
+        "hide": "#bot-wait",
+        "show": "#bot-happy",
+        "bounceTarget": "#bot-motion",
+        "height": 13,
+        "duration": 0.3
+      }
+    },
+    {
+      "time": 10.25,
+      "target": "#world-camera",
+      "action": "TWEEN",
+      "params": {
+        "to": {
+          "scale": 1
+        },
+        "duration": 0.48,
+        "ease": "power2.inOut"
+      }
+    },
+    {
+      "time": 10.4,
+      "target": "#approval-glow",
+      "action": "TWEEN",
+      "params": {
+        "to": {
+          "opacity": 0
+        },
+        "duration": 0.42,
+        "ease": "power2.out"
+      }
+    }
+  ],
+  "captions": [
+    {
+      "text": "Two plans",
+      "emphasis": "plans",
+      "color": "teal",
+      "start": 0.05,
+      "end": 0.65
+    },
+    {
+      "text": "same time",
+      "emphasis": "same",
+      "color": "coral",
+      "start": 0.72,
+      "end": 2.24
+    },
+    {
+      "text": "spots the overlap",
+      "emphasis": "overlap",
+      "color": "coral",
+      "start": 2.3,
+      "end": 3.99
+    },
+    {
+      "text": "suggests a free slot",
+      "emphasis": "free",
+      "color": "teal",
+      "start": 4.2,
+      "end": 5.92
+    },
+    {
+      "text": "calendar stays put",
+      "emphasis": "stays put",
+      "color": "blue",
+      "start": 5.97,
+      "end": 7.42
+    },
+    {
+      "text": "waits for your approval",
+      "emphasis": "approval",
+      "color": "teal",
+      "start": 7.46,
+      "end": 8.92
+    },
+    {
+      "text": "Only then",
+      "emphasis": "then",
+      "color": "teal",
+      "start": 9.01,
+      "end": 9.42
+    },
+    {
+      "text": "appointment moves",
+      "emphasis": "moves",
+      "color": "teal",
+      "start": 9.79,
+      "end": 10.69
+    }
+  ],
+  "sceneBeats": [
+    {
+      "id": "collision",
+      "start": 0,
+      "end": 2.3
+    },
+    {
+      "id": "notice",
+      "start": 2.3,
+      "end": 4.2
+    },
+    {
+      "id": "proposal",
+      "start": 4.2,
+      "end": 7.46
+    },
+    {
+      "id": "approval",
+      "start": 7.46,
+      "end": 9.01
+    },
+    {
+      "id": "authorized-move",
+      "start": 9.01,
+      "end": 12.8
+    }
+  ],
+  "narration": {
+    "file": "assets/voice/narration-af-nova.wav",
+    "alignmentFile": "assets/voice/transcript.json",
+    "voiceStart": 0,
+    "voiceEnd": 11.349,
+    "status": "whisper-small.en-aligned"
+  }
+}

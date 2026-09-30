@@ -1,0 +1,56 @@
+{
+  "id": "scene-01-small-plant",
+  "name": "Small desk plant",
+  "category": "desk-props",
+  "subcategory": "small-plant",
+  "concepts": [
+    "plant",
+    "desk"
+  ],
+  "keywords": [
+    "small-plant",
+    "cut-paper",
+    "night-desk"
+  ],
+  "style": "motif-default-v1",
+  "orientation": "front",
+  "dimensions": {
+    "width": 120,
+    "height": 132,
+    "unit": "px"
+  },
+  "artBox": {
+    "x": 0,
+    "y": 0,
+    "width": 120,
+    "height": 132
+  },
+  "anchors": {
+    "surface": {
+      "x": 0.5,
+      "y": 0.89
+    }
+  },
+  "compatibleCharacters": [
+    "motif-bot"
+  ],
+  "supportedActions": [
+    "compose",
+    "swap",
+    "animate"
+  ],
+  "sourceType": "vector",
+  "source": {
+    "file": "assets/scenes/scene-01/desk-props/small-plant.svg",
+    "generator": "scripts/build_scene_01.py"
+  },
+  "version": 1,
+  "status": "canonical",
+  "preview": "previews/scene-01/contact-sheet.png",
+  "license": "project-original",
+  "scenePlacement": {
+    "x": 950,
+    "y": 1131,
+    "layer": "foreground"
+  }
+}

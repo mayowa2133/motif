@@ -1,0 +1,68 @@
+{
+  "id": "motif-bot-v1-parts-body",
+  "name": "Motif Bot body",
+  "category": "character",
+  "subcategory": "parts",
+  "concepts": [
+    "assistant",
+    "coding",
+    "paper-cutout"
+  ],
+  "keywords": [
+    "cream",
+    "teal",
+    "parts",
+    "body"
+  ],
+  "style": "motif-default-v1",
+  "orientation": "front",
+  "dimensions": {
+    "width": 1024,
+    "height": 1024,
+    "unit": "px"
+  },
+  "artBox": {
+    "x": 0,
+    "y": 0,
+    "width": 1024,
+    "height": 1024
+  },
+  "anchors": {
+    "neck": {
+      "x": 0.5,
+      "y": 0.49316
+    },
+    "leftShoulder": {
+      "x": 0.38672,
+      "y": 0.54102
+    },
+    "rightShoulder": {
+      "x": 0.61328,
+      "y": 0.54102
+    },
+    "leftHip": {
+      "x": 0.42969,
+      "y": 0.72266
+    },
+    "rightHip": {
+      "x": 0.57031,
+      "y": 0.72266
+    }
+  },
+  "compatibleCharacters": [
+    "motif-bot"
+  ],
+  "supportedActions": [
+    "compose"
+  ],
+  "sourceType": "vector",
+  "source": {
+    "file": "assets/characters/motif-bot/canonical/v1/parts/body.svg",
+    "generator": "scripts/build_motif_bot.py"
+  },
+  "version": 1,
+  "status": "canonical",
+  "preview": "previews/motif-bot-front-neutral-v1.png",
+  "previewOnly": false,
+  "license": "project-original"
+}

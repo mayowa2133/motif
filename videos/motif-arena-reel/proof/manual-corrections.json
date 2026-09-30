@@ -1,0 +1,20 @@
+{
+  "stage": "after first encoded render",
+  "correctionPasses": 1,
+  "changes": [
+    {
+      "target": "#a-promising-tag",
+      "before": "POP_OUT at 4.38 s over 0.15 s",
+      "after": "SET opacity 0 at 4.36 s",
+      "reason": "The provisional card briefly remained beneath the FLAW card in the encoded mobile frame."
+    },
+    {
+      "target": "#a-agent-token-teal",
+      "before": "rise to the winner height at 6.03 s",
+      "after": "rise to the winner height at 6.70 s, alongside the podium",
+      "reason": "B appeared to hover above the stage before the selection reveal."
+    }
+  ],
+  "firstRenderPreserved": false,
+  "finalRender": "renders/motif-demo-02-arena-first-cut.mp4"
+}

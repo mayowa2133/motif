@@ -1,0 +1,11 @@
+{
+  "id": "scene-02-inspection-lens",
+  "source": "assets/scenes/scene-02/story/inspection-lens.svg",
+  "type": "prop",
+  "dimensions": {"width": 225, "height": 300},
+  "layer": "foreground",
+  "usage": "A physical review prop placed over the selected answer after Motif Bot receives it.",
+  "style": "motif-default-v1",
+  "perspective": "near-front cut paper",
+  "shadowDirection": "down-right"
+}

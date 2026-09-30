@@ -1,0 +1,56 @@
+{
+  "id": "scene-01-keyboard",
+  "name": "Paper key keyboard",
+  "category": "computing",
+  "subcategory": "keyboard",
+  "concepts": [
+    "keyboard",
+    "typing"
+  ],
+  "keywords": [
+    "keyboard",
+    "cut-paper",
+    "night-desk"
+  ],
+  "style": "motif-default-v1",
+  "orientation": "front",
+  "dimensions": {
+    "width": 320,
+    "height": 65,
+    "unit": "px"
+  },
+  "artBox": {
+    "x": 0,
+    "y": 0,
+    "width": 320,
+    "height": 65
+  },
+  "anchors": {
+    "surface": {
+      "x": 0.5,
+      "y": 0.5
+    }
+  },
+  "compatibleCharacters": [
+    "motif-bot"
+  ],
+  "supportedActions": [
+    "compose",
+    "swap",
+    "animate"
+  ],
+  "sourceType": "vector",
+  "source": {
+    "file": "assets/scenes/scene-01/computing/keyboard.svg",
+    "generator": "scripts/build_scene_01.py"
+  },
+  "version": 1,
+  "status": "canonical",
+  "preview": "previews/scene-01/contact-sheet.png",
+  "license": "project-original",
+  "scenePlacement": {
+    "x": 570,
+    "y": 1193,
+    "layer": "foreground"
+  }
+}

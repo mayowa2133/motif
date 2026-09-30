@@ -1,0 +1,52 @@
+{
+  "id": "scene-03-pass-stamp",
+  "name": "Passed inspection card",
+  "category": "workflow",
+  "subcategory": "pass-stamp",
+  "concepts": [
+    "pass",
+    "check"
+  ],
+  "keywords": [
+    "pass-stamp",
+    "paper-cutout",
+    "scene-03"
+  ],
+  "style": "motif-default-v1",
+  "orientation": "front",
+  "dimensions": {
+    "width": 215,
+    "height": 120,
+    "unit": "px"
+  },
+  "artBox": {
+    "x": 0,
+    "y": 0,
+    "width": 215,
+    "height": 120
+  },
+  "anchors": {},
+  "compatibleCharacters": [
+    "motif-bot"
+  ],
+  "supportedActions": [
+    "compose",
+    "swap",
+    "animate"
+  ],
+  "sourceType": "vector",
+  "source": {
+    "file": "assets/scenes/scene-03/workflow/pass-stamp.svg",
+    "generator": "scripts/build_benchmark_scenes.py"
+  },
+  "version": 1,
+  "status": "canonical",
+  "benchmark": true,
+  "preview": "previews/scene-03/contact-sheet.png",
+  "license": "project-original",
+  "scenePlacement": {
+    "x": 728,
+    "y": 836,
+    "layer": "ui"
+  }
+}

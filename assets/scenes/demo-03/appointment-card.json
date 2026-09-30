@@ -1,0 +1,9 @@
+{
+  "id": "demo-03-appointment-card",
+  "source": "assets/scenes/demo-03/appointment-card.svg",
+  "type": "prop-template",
+  "dimensions": {"width": 390, "height": 176},
+  "style": "motif-default-v1",
+  "shadowDirection": "down-right",
+  "usage": "One template for two color-coded solid commitments. Content is applied by the composition so the physical shape remains reusable."
+}

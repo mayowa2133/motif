@@ -1,0 +1,60 @@
+{
+  "id": "scene-01-laptop",
+  "name": "Open coding laptop",
+  "category": "computing",
+  "subcategory": "laptop",
+  "concepts": [
+    "laptop",
+    "coding"
+  ],
+  "keywords": [
+    "laptop",
+    "cut-paper",
+    "night-desk"
+  ],
+  "style": "motif-default-v1",
+  "orientation": "front",
+  "dimensions": {
+    "width": 295,
+    "height": 225,
+    "unit": "px"
+  },
+  "artBox": {
+    "x": 0,
+    "y": 0,
+    "width": 295,
+    "height": 225
+  },
+  "anchors": {
+    "screenContent": {
+      "x": 0.5,
+      "y": 0.4
+    },
+    "keyboard": {
+      "x": 0.5,
+      "y": 0.85
+    }
+  },
+  "compatibleCharacters": [
+    "motif-bot"
+  ],
+  "supportedActions": [
+    "compose",
+    "swap",
+    "animate"
+  ],
+  "sourceType": "vector",
+  "source": {
+    "file": "assets/scenes/scene-01/computing/laptop.svg",
+    "generator": "scripts/build_scene_01.py"
+  },
+  "version": 1,
+  "status": "canonical",
+  "preview": "previews/scene-01/contact-sheet.png",
+  "license": "project-original",
+  "scenePlacement": {
+    "x": 150,
+    "y": 1006,
+    "layer": "midground"
+  }
+}

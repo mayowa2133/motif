@@ -1,0 +1,52 @@
+{
+  "id": "scene-02-podium",
+  "name": "Three-level result podium",
+  "category": "furniture",
+  "subcategory": "podium",
+  "concepts": [
+    "podium",
+    "winner"
+  ],
+  "keywords": [
+    "podium",
+    "paper-cutout",
+    "scene-02"
+  ],
+  "style": "motif-default-v1",
+  "orientation": "front",
+  "dimensions": {
+    "width": 720,
+    "height": 400,
+    "unit": "px"
+  },
+  "artBox": {
+    "x": 0,
+    "y": 0,
+    "width": 720,
+    "height": 400
+  },
+  "anchors": {},
+  "compatibleCharacters": [
+    "motif-bot"
+  ],
+  "supportedActions": [
+    "compose",
+    "swap",
+    "animate"
+  ],
+  "sourceType": "vector",
+  "source": {
+    "file": "assets/scenes/scene-02/furniture/podium.svg",
+    "generator": "scripts/build_benchmark_scenes.py"
+  },
+  "version": 1,
+  "status": "canonical",
+  "benchmark": true,
+  "preview": "previews/scene-02/contact-sheet.png",
+  "license": "project-original",
+  "scenePlacement": {
+    "x": 250,
+    "y": 1070,
+    "layer": "foreground"
+  }
+}

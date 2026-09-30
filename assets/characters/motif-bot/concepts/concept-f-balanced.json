@@ -1,0 +1,55 @@
+{
+  "id": "motif-bot-concept-f",
+  "name": "Balanced bot",
+  "category": "character",
+  "subcategory": "mascot-concept",
+  "concepts": [
+    "assistant",
+    "coding",
+    "friendly",
+    "paper-cutout",
+    "balanced"
+  ],
+  "keywords": [
+    "robot",
+    "cream",
+    "teal",
+    "dark-display",
+    "antennae",
+    "code-badge"
+  ],
+  "style": "motif-default-v0.1",
+  "orientation": "front",
+  "dimensions": {
+    "width": 1024,
+    "height": 1536,
+    "unit": "px"
+  },
+  "artBox": {
+    "x": 0,
+    "y": 32,
+    "width": 992,
+    "height": 1482
+  },
+  "anchors": {},
+  "compatibleCharacters": [
+    "motif-bot"
+  ],
+  "supportedActions": [
+    "depicted-pose-only"
+  ],
+  "sourceType": "generated",
+  "source": {
+    "file": "assets/characters/motif-bot/concepts/concept-f-balanced.png",
+    "identityReference": "user-supplied robot image",
+    "styleReferences": "seven user-supplied video clips",
+    "generationMode": "built-in image_gen",
+    "promptSummary": "Expressive face and prop-ready hands"
+  },
+  "version": 1,
+  "status": "review",
+  "preview": "previews/mascot-concepts.png",
+  "riggable": false,
+  "license": "project-original-concept",
+  "directionSelection": "not-selected"
+}

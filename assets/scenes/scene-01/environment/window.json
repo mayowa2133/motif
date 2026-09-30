@@ -1,0 +1,51 @@
+{
+  "id": "scene-01-window",
+  "name": "Paper window frame",
+  "category": "environment",
+  "subcategory": "window",
+  "concepts": [
+    "window",
+    "room"
+  ],
+  "keywords": [
+    "window",
+    "cut-paper",
+    "night-desk"
+  ],
+  "style": "motif-default-v1",
+  "orientation": "front",
+  "dimensions": {
+    "width": 336,
+    "height": 380,
+    "unit": "px"
+  },
+  "artBox": {
+    "x": 0,
+    "y": 0,
+    "width": 336,
+    "height": 380
+  },
+  "anchors": {},
+  "compatibleCharacters": [
+    "motif-bot"
+  ],
+  "supportedActions": [
+    "compose",
+    "swap",
+    "animate"
+  ],
+  "sourceType": "vector",
+  "source": {
+    "file": "assets/scenes/scene-01/environment/window.svg",
+    "generator": "scripts/build_scene_01.py"
+  },
+  "version": 1,
+  "status": "canonical",
+  "preview": "previews/scene-01/contact-sheet.png",
+  "license": "project-original",
+  "scenePlacement": {
+    "x": 112,
+    "y": 385,
+    "layer": "midground"
+  }
+}

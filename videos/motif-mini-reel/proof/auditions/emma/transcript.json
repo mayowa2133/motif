@@ -1,0 +1,56 @@
+[
+  {
+    "text": "While",
+    "start": 0.03,
+    "end": 0.32,
+    "id": "w0"
+  },
+  {
+    "text": "you",
+    "start": 0.32,
+    "end": 0.51,
+    "id": "w1"
+  },
+  {
+    "text": "sleep,",
+    "start": 0.51,
+    "end": 0.96,
+    "id": "w2"
+  },
+  {
+    "text": "an",
+    "start": 0.96,
+    "end": 1.09,
+    "id": "w3"
+  },
+  {
+    "text": "AI",
+    "start": 1.09,
+    "end": 1.22,
+    "id": "w4"
+  },
+  {
+    "text": "agent",
+    "start": 1.22,
+    "end": 1.53,
+    "id": "w5"
+  },
+  {
+    "text": "reviews",
+    "start": 1.53,
+    "end": 1.99,
+    "id": "w6"
+  },
+  {
+    "text": "your",
+    "start": 1.99,
+    "end": 2.25,
+    "id": "w7"
+  },
+  {
+    "text": "code.",
+    "start": 2.25,
+    "end": 2.67,
+    "id": "w8"
+  }
+]

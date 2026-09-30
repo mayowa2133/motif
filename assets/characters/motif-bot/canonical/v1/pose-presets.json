@@ -1,0 +1,605 @@
+{
+  "schemaVersion": 1,
+  "id": "motif-bot-a-v1-pose-presets",
+  "coordinateSpace": {
+    "width": 1024,
+    "height": 1024,
+    "unit": "px"
+  },
+  "representation": "parameters",
+  "description": "Pose recipes for one reusable puppet; proof SVGs are preview artifacts.",
+  "presets": {
+    "standing": {
+      "id": "standing",
+      "leftArm": {
+        "end": [
+          278,
+          676
+        ],
+        "hand": "mitten",
+        "curve": 0
+      },
+      "rightArm": {
+        "end": [
+          746,
+          676
+        ],
+        "hand": "mitten",
+        "curve": 0
+      },
+      "leftFoot": {
+        "position": [
+          425,
+          861
+        ],
+        "rotation": 0
+      },
+      "rightFoot": {
+        "position": [
+          599,
+          861
+        ],
+        "rotation": 0
+      },
+      "headRotation": 0,
+      "bodyRotation": 0,
+      "bodyOffsetY": 0,
+      "faceState": "neutral"
+    },
+    "sitting": {
+      "id": "sitting",
+      "leftArm": {
+        "end": [
+          286,
+          652
+        ],
+        "hand": "mitten",
+        "curve": 0
+      },
+      "rightArm": {
+        "end": [
+          738,
+          652
+        ],
+        "hand": "mitten",
+        "curve": 0
+      },
+      "leftFoot": {
+        "position": [
+          397,
+          805
+        ],
+        "rotation": -12
+      },
+      "rightFoot": {
+        "position": [
+          627,
+          805
+        ],
+        "rotation": 12
+      },
+      "headRotation": 0,
+      "bodyRotation": 0,
+      "bodyOffsetY": 24,
+      "faceState": "neutral"
+    },
+    "walking": {
+      "id": "walking",
+      "leftArm": {
+        "end": [
+          283,
+          663
+        ],
+        "hand": "mitten",
+        "curve": 0
+      },
+      "rightArm": {
+        "end": [
+          731,
+          618
+        ],
+        "hand": "mitten",
+        "curve": 0
+      },
+      "leftFoot": {
+        "position": [
+          389,
+          868
+        ],
+        "rotation": -18
+      },
+      "rightFoot": {
+        "position": [
+          651,
+          836
+        ],
+        "rotation": 19
+      },
+      "headRotation": 0,
+      "bodyRotation": 0,
+      "bodyOffsetY": 0,
+      "faceState": "neutral"
+    },
+    "running": {
+      "id": "running",
+      "leftArm": {
+        "end": [
+          318,
+          478
+        ],
+        "hand": "fist",
+        "curve": 0
+      },
+      "rightArm": {
+        "end": [
+          752,
+          690
+        ],
+        "hand": "fist",
+        "curve": 0
+      },
+      "leftFoot": {
+        "position": [
+          368,
+          860
+        ],
+        "rotation": -27
+      },
+      "rightFoot": {
+        "position": [
+          667,
+          814
+        ],
+        "rotation": 30
+      },
+      "headRotation": 0,
+      "bodyRotation": 10,
+      "bodyOffsetY": 0,
+      "faceState": "neutral"
+    },
+    "pointing": {
+      "id": "pointing",
+      "leftArm": {
+        "end": [
+          278,
+          670
+        ],
+        "hand": "mitten",
+        "curve": 0
+      },
+      "rightArm": {
+        "end": [
+          793,
+          515
+        ],
+        "hand": "point",
+        "curve": 0
+      },
+      "leftFoot": {
+        "position": [
+          425,
+          861
+        ],
+        "rotation": 0
+      },
+      "rightFoot": {
+        "position": [
+          599,
+          861
+        ],
+        "rotation": 0
+      },
+      "headRotation": 0,
+      "bodyRotation": 0,
+      "bodyOffsetY": 0,
+      "faceState": "neutral"
+    },
+    "typing": {
+      "id": "typing",
+      "leftArm": {
+        "end": [
+          451,
+          647
+        ],
+        "hand": "mitten",
+        "curve": 0
+      },
+      "rightArm": {
+        "end": [
+          570,
+          647
+        ],
+        "hand": "mitten",
+        "curve": 0
+      },
+      "leftFoot": {
+        "position": [
+          427,
+          867
+        ],
+        "rotation": 0
+      },
+      "rightFoot": {
+        "position": [
+          597,
+          867
+        ],
+        "rotation": 0
+      },
+      "headRotation": 0,
+      "bodyRotation": 0,
+      "bodyOffsetY": 0,
+      "faceState": "neutral"
+    },
+    "holding-object": {
+      "id": "holding-object",
+      "leftArm": {
+        "end": [
+          298,
+          684
+        ],
+        "hand": "mitten",
+        "curve": 0
+      },
+      "rightArm": {
+        "end": [
+          755,
+          581
+        ],
+        "hand": "grip",
+        "curve": 0
+      },
+      "leftFoot": {
+        "position": [
+          425,
+          861
+        ],
+        "rotation": 0
+      },
+      "rightFoot": {
+        "position": [
+          599,
+          861
+        ],
+        "rotation": 0
+      },
+      "headRotation": 0,
+      "bodyRotation": 0,
+      "bodyOffsetY": 0,
+      "faceState": "neutral"
+    },
+    "carrying-object": {
+      "id": "carrying-object",
+      "leftArm": {
+        "end": [
+          417,
+          654
+        ],
+        "hand": "grip",
+        "curve": 0
+      },
+      "rightArm": {
+        "end": [
+          605,
+          654
+        ],
+        "hand": "grip",
+        "curve": 0
+      },
+      "leftFoot": {
+        "position": [
+          425,
+          861
+        ],
+        "rotation": 0
+      },
+      "rightFoot": {
+        "position": [
+          599,
+          861
+        ],
+        "rotation": 0
+      },
+      "headRotation": 0,
+      "bodyRotation": 0,
+      "bodyOffsetY": 0,
+      "faceState": "neutral"
+    },
+    "inspecting": {
+      "id": "inspecting",
+      "leftArm": {
+        "end": [
+          279,
+          670
+        ],
+        "hand": "mitten",
+        "curve": 0
+      },
+      "rightArm": {
+        "end": [
+          670,
+          435
+        ],
+        "hand": "point",
+        "curve": 0
+      },
+      "leftFoot": {
+        "position": [
+          425,
+          861
+        ],
+        "rotation": 0
+      },
+      "rightFoot": {
+        "position": [
+          599,
+          861
+        ],
+        "rotation": 0
+      },
+      "headRotation": -8,
+      "bodyRotation": 0,
+      "bodyOffsetY": 0,
+      "faceState": "thinking"
+    },
+    "celebrating": {
+      "id": "celebrating",
+      "leftArm": {
+        "end": [
+          282,
+          431
+        ],
+        "hand": "open",
+        "curve": 0
+      },
+      "rightArm": {
+        "end": [
+          745,
+          432
+        ],
+        "hand": "open",
+        "curve": 0
+      },
+      "leftFoot": {
+        "position": [
+          425,
+          861
+        ],
+        "rotation": 0
+      },
+      "rightFoot": {
+        "position": [
+          599,
+          861
+        ],
+        "rotation": 0
+      },
+      "headRotation": 0,
+      "bodyRotation": 0,
+      "bodyOffsetY": 0,
+      "faceState": "excited"
+    },
+    "falling": {
+      "id": "falling",
+      "leftArm": {
+        "end": [
+          285,
+          495
+        ],
+        "hand": "open",
+        "curve": 0
+      },
+      "rightArm": {
+        "end": [
+          731,
+          473
+        ],
+        "hand": "open",
+        "curve": 0
+      },
+      "leftFoot": {
+        "position": [
+          384,
+          846
+        ],
+        "rotation": -25
+      },
+      "rightFoot": {
+        "position": [
+          653,
+          850
+        ],
+        "rotation": 28
+      },
+      "headRotation": 0,
+      "bodyRotation": -38,
+      "bodyOffsetY": 0,
+      "faceState": "shocked"
+    },
+    "pushing": {
+      "id": "pushing",
+      "leftArm": {
+        "end": [
+          786,
+          541
+        ],
+        "hand": "fist",
+        "curve": 0
+      },
+      "rightArm": {
+        "end": [
+          786,
+          610
+        ],
+        "hand": "mitten",
+        "curve": 0
+      },
+      "leftFoot": {
+        "position": [
+          383,
+          879
+        ],
+        "rotation": -14
+      },
+      "rightFoot": {
+        "position": [
+          638,
+          846
+        ],
+        "rotation": 10
+      },
+      "headRotation": 0,
+      "bodyRotation": 9,
+      "bodyOffsetY": 0,
+      "faceState": "determined"
+    },
+    "pulling": {
+      "id": "pulling",
+      "leftArm": {
+        "end": [
+          770,
+          547
+        ],
+        "hand": "grip",
+        "curve": 0
+      },
+      "rightArm": {
+        "end": [
+          765,
+          619
+        ],
+        "hand": "grip",
+        "curve": 0
+      },
+      "leftFoot": {
+        "position": [
+          385,
+          862
+        ],
+        "rotation": 12
+      },
+      "rightFoot": {
+        "position": [
+          644,
+          869
+        ],
+        "rotation": -12
+      },
+      "headRotation": 0,
+      "bodyRotation": -9,
+      "bodyOffsetY": 0,
+      "faceState": "determined"
+    },
+    "presenting": {
+      "id": "presenting",
+      "leftArm": {
+        "end": [
+          233,
+          562
+        ],
+        "hand": "open",
+        "curve": 0
+      },
+      "rightArm": {
+        "end": [
+          791,
+          562
+        ],
+        "hand": "open",
+        "curve": 0
+      },
+      "leftFoot": {
+        "position": [
+          425,
+          861
+        ],
+        "rotation": 0
+      },
+      "rightFoot": {
+        "position": [
+          599,
+          861
+        ],
+        "rotation": 0
+      },
+      "headRotation": 0,
+      "bodyRotation": 0,
+      "bodyOffsetY": 0,
+      "faceState": "happy"
+    },
+    "thinking": {
+      "id": "thinking",
+      "leftArm": {
+        "end": [
+          284,
+          685
+        ],
+        "hand": "mitten",
+        "curve": 0
+      },
+      "rightArm": {
+        "end": [
+          609,
+          459
+        ],
+        "hand": "fist",
+        "curve": 0
+      },
+      "leftFoot": {
+        "position": [
+          425,
+          861
+        ],
+        "rotation": 0
+      },
+      "rightFoot": {
+        "position": [
+          599,
+          861
+        ],
+        "rotation": 0
+      },
+      "headRotation": -6,
+      "bodyRotation": 0,
+      "bodyOffsetY": 0,
+      "faceState": "thinking"
+    },
+    "magnifying-glass": {
+      "id": "magnifying-glass",
+      "leftArm": {
+        "end": [
+          282,
+          680
+        ],
+        "hand": "mitten",
+        "curve": 0
+      },
+      "rightArm": {
+        "end": [
+          652,
+          445
+        ],
+        "hand": "grip",
+        "curve": 0
+      },
+      "leftFoot": {
+        "position": [
+          425,
+          861
+        ],
+        "rotation": 0
+      },
+      "rightFoot": {
+        "position": [
+          599,
+          861
+        ],
+        "rotation": 0
+      },
+      "headRotation": 0,
+      "bodyRotation": 0,
+      "bodyOffsetY": 0,
+      "faceState": "thinking"
+    }
+  }
+}

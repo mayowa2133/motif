@@ -1,0 +1,52 @@
+{
+  "id": "scene-02-arena-arch",
+  "name": "Layered arena proscenium",
+  "category": "environment",
+  "subcategory": "arena-arch",
+  "concepts": [
+    "arch",
+    "stage"
+  ],
+  "keywords": [
+    "arena-arch",
+    "paper-cutout",
+    "scene-02"
+  ],
+  "style": "motif-default-v1",
+  "orientation": "front",
+  "dimensions": {
+    "width": 900,
+    "height": 410,
+    "unit": "px"
+  },
+  "artBox": {
+    "x": 0,
+    "y": 0,
+    "width": 900,
+    "height": 410
+  },
+  "anchors": {},
+  "compatibleCharacters": [
+    "motif-bot"
+  ],
+  "supportedActions": [
+    "compose",
+    "swap",
+    "animate"
+  ],
+  "sourceType": "vector",
+  "source": {
+    "file": "assets/scenes/scene-02/environment/arena-arch.svg",
+    "generator": "scripts/build_benchmark_scenes.py"
+  },
+  "version": 1,
+  "status": "canonical",
+  "benchmark": true,
+  "preview": "previews/scene-02/contact-sheet.png",
+  "license": "project-original",
+  "scenePlacement": {
+    "x": 90,
+    "y": 365,
+    "layer": "midground"
+  }
+}

@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="225" height="300" viewBox="0 0 225 300" role="img" aria-label="Paper and teal inspection lens">
+<title>Inspection lens</title>
+<path d="M152 183 L206 268 Q213 280 201 287 L185 294 Q173 297 165 284 L112 203 Z" transform="translate(5 8)" fill="#202C32" opacity=".2"/>
+<path d="M152 183 L206 268 Q213 280 201 287 L185 294 Q173 297 165 284 L112 203 Z" fill="#DCCDB3" stroke="#725343" stroke-width="6"/>
+<circle cx="96" cy="102" r="84" transform="translate(6 10)" fill="#202C32" opacity=".21"/>
+<circle cx="96" cy="102" r="84" fill="#F4EBD8" stroke="#725343" stroke-width="8"/>
+<circle cx="96" cy="102" r="64" fill="#A6E5D6" opacity=".38" stroke="#318E85" stroke-width="8"/>
+<path d="M54 81 Q72 56 99 55" fill="none" stroke="#F4EBD8" stroke-width="10" stroke-linecap="round" opacity=".7"/>
+<path d="M96 17 A85 85 0 0 1 180 101" fill="none" stroke="#F4EBD8" stroke-width="5" opacity=".5"/>
+</svg>

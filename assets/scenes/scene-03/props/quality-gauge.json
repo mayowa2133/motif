@@ -1,0 +1,52 @@
+{
+  "id": "scene-03-quality-gauge",
+  "name": "Quality dial",
+  "category": "props",
+  "subcategory": "quality-gauge",
+  "concepts": [
+    "quality",
+    "gauge"
+  ],
+  "keywords": [
+    "quality-gauge",
+    "paper-cutout",
+    "scene-03"
+  ],
+  "style": "motif-default-v1",
+  "orientation": "front",
+  "dimensions": {
+    "width": 155,
+    "height": 160,
+    "unit": "px"
+  },
+  "artBox": {
+    "x": 0,
+    "y": 0,
+    "width": 155,
+    "height": 160
+  },
+  "anchors": {},
+  "compatibleCharacters": [
+    "motif-bot"
+  ],
+  "supportedActions": [
+    "compose",
+    "swap",
+    "animate"
+  ],
+  "sourceType": "vector",
+  "source": {
+    "file": "assets/scenes/scene-03/props/quality-gauge.svg",
+    "generator": "scripts/build_benchmark_scenes.py"
+  },
+  "version": 1,
+  "status": "canonical",
+  "benchmark": true,
+  "preview": "previews/scene-03/contact-sheet.png",
+  "license": "project-original",
+  "scenePlacement": {
+    "x": 835,
+    "y": 562,
+    "layer": "midground"
+  }
+}

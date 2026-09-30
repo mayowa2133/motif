@@ -1,0 +1,657 @@
+{
+  "schemaVersion": "1.0",
+  "compositionId": "main",
+  "durationSec": 13.35,
+  "fps": 30,
+  "initial": [
+    {
+      "target": "#call-card",
+      "props": {
+        "opacity": 0
+      }
+    },
+    {
+      "target": "#focus-card",
+      "props": {
+        "opacity": 0
+      }
+    },
+    {
+      "target": "#overlap-bracket",
+      "props": {
+        "opacity": 0
+      }
+    },
+    {
+      "target": "#proposal-route",
+      "props": {
+        "opacity": 0
+      }
+    },
+    {
+      "target": "#proposal-slip",
+      "props": {
+        "opacity": 0
+      }
+    },
+    {
+      "target": "#approval-tab",
+      "props": {
+        "opacity": 0
+      }
+    },
+    {
+      "target": "#approval-glow",
+      "props": {
+        "opacity": 0
+      }
+    },
+    {
+      "target": "#human-finger",
+      "props": {
+        "opacity": 0
+      }
+    },
+    {
+      "target": "#headline-intro",
+      "props": {
+        "opacity": 0
+      }
+    },
+    {
+      "target": "#headline-propose",
+      "props": {
+        "opacity": 0
+      }
+    },
+    {
+      "target": "#headline-wait",
+      "props": {
+        "opacity": 0
+      }
+    },
+    {
+      "target": "#headline-done",
+      "props": {
+        "opacity": 0
+      }
+    },
+    {
+      "target": "#bot-notice",
+      "props": {
+        "opacity": 0
+      }
+    },
+    {
+      "target": "#bot-wait",
+      "props": {
+        "opacity": 0
+      }
+    },
+    {
+      "target": "#bot-happy",
+      "props": {
+        "opacity": 0
+      }
+    },
+    {
+      "target": "#caption-0",
+      "props": {
+        "opacity": 0
+      }
+    },
+    {
+      "target": "#caption-1",
+      "props": {
+        "opacity": 0
+      }
+    },
+    {
+      "target": "#caption-2",
+      "props": {
+        "opacity": 0
+      }
+    },
+    {
+      "target": "#caption-3",
+      "props": {
+        "opacity": 0
+      }
+    },
+    {
+      "target": "#caption-4",
+      "props": {
+        "opacity": 0
+      }
+    },
+    {
+      "target": "#caption-5",
+      "props": {
+        "opacity": 0
+      }
+    },
+    {
+      "target": "#caption-6",
+      "props": {
+        "opacity": 0
+      }
+    },
+    {
+      "target": "#caption-7",
+      "props": {
+        "opacity": 0
+      }
+    },
+    {
+      "target": "#world-camera",
+      "props": {
+        "scale": 1
+      }
+    },
+    {
+      "target": "#approval-check",
+      "props": {
+        "opacity": 0
+      }
+    }
+  ],
+  "events": [
+    {
+      "time": 0.05,
+      "target": "#caption-0",
+      "action": "CAPTION_REPLACE",
+      "params": {}
+    },
+    {
+      "time": 0.052,
+      "target": "#headline-intro",
+      "action": "POP_IN",
+      "params": {
+        "duration": 0.294,
+        "overshoot": 1.04
+      }
+    },
+    {
+      "time": 0.294,
+      "target": "#call-card",
+      "action": "FROM_TO",
+      "params": {
+        "from": {
+          "x": -230,
+          "y": -105,
+          "opacity": 0,
+          "rotation": -9
+        },
+        "to": {
+          "x": 0,
+          "y": 0,
+          "opacity": 1,
+          "rotation": 0
+        },
+        "duration": 0.577,
+        "ease": "power2.out"
+      }
+    },
+    {
+      "time": 1.11,
+      "target": "#caption-1",
+      "action": "CAPTION_REPLACE",
+      "params": {}
+    },
+    {
+      "time": 1.238,
+      "target": "#overlap-bracket",
+      "action": "POP_IN",
+      "params": {
+        "duration": 0.315,
+        "overshoot": 1.02
+      }
+    },
+    {
+      "time": 1.867,
+      "target": "#call-card",
+      "action": "SHAKE",
+      "params": {
+        "distance": 6,
+        "duration": 0.252
+      }
+    },
+    {
+      "time": 2.29,
+      "target": "#caption-2",
+      "action": "CAPTION_REPLACE",
+      "params": {}
+    },
+    {
+      "time": 2.496,
+      "target": "#bot-neutral",
+      "action": "POSE_SWAP",
+      "params": {
+        "hide": "#bot-neutral",
+        "show": "#bot-notice",
+        "bounceTarget": "#bot-motion",
+        "height": 10,
+        "duration": 0.262
+      }
+    },
+    {
+      "time": 2.517,
+      "target": "#world-camera",
+      "action": "TWEEN",
+      "params": {
+        "to": {
+          "scale": 1.12
+        },
+        "duration": 0.524,
+        "ease": "power2.inOut"
+      }
+    },
+    {
+      "time": 3.74,
+      "target": "#caption-3",
+      "action": "CAPTION_REPLACE",
+      "params": {}
+    },
+    {
+      "time": 4.405,
+      "target": "#headline-intro",
+      "action": "SET",
+      "params": {
+        "props": {
+          "opacity": 0
+        }
+      }
+    },
+    {
+      "time": 4.447,
+      "target": "#headline-propose",
+      "action": "POP_IN",
+      "params": {
+        "duration": 0.294,
+        "overshoot": 1.04
+      }
+    },
+    {
+      "time": 4.741,
+      "target": "#proposal-route",
+      "action": "FROM_TO",
+      "params": {
+        "from": {
+          "opacity": 0,
+          "y": -70
+        },
+        "to": {
+          "opacity": 1,
+          "y": 0
+        },
+        "duration": 0.399,
+        "ease": "power2.out"
+      }
+    },
+    {
+      "time": 4.877,
+      "target": "#proposal-slip",
+      "action": "FROM_TO",
+      "params": {
+        "from": {
+          "opacity": 0,
+          "y": -140,
+          "scale": 0.88
+        },
+        "to": {
+          "opacity": 1,
+          "y": 0,
+          "scale": 1
+        },
+        "duration": 0.608,
+        "ease": "power2.out"
+      }
+    },
+    {
+      "time": 5.41,
+      "target": "#caption-4",
+      "action": "CAPTION_REPLACE",
+      "params": {}
+    },
+    {
+      "time": 6.503,
+      "target": "#bot-notice",
+      "action": "POSE_SWAP",
+      "params": {
+        "hide": "#bot-notice",
+        "show": "#bot-wait",
+        "bounceTarget": "#bot-motion",
+        "height": 7,
+        "duration": 0.231
+      }
+    },
+    {
+      "time": 6.87,
+      "target": "#human-finger",
+      "action": "FROM_TO",
+      "params": {
+        "from": {
+          "x": 350,
+          "opacity": 0
+        },
+        "to": {
+          "x": 0,
+          "opacity": 1
+        },
+        "duration": 0.587,
+        "ease": "power2.out"
+      }
+    },
+    {
+      "time": 6.902,
+      "target": "#approval-tab",
+      "action": "POP_IN",
+      "params": {
+        "duration": 0.336,
+        "overshoot": 1.04
+      }
+    },
+    {
+      "time": 7.13,
+      "target": "#caption-5",
+      "action": "CAPTION_REPLACE",
+      "params": {}
+    },
+    {
+      "time": 7.814,
+      "target": "#human-finger",
+      "action": "TWEEN",
+      "params": {
+        "to": {
+          "y": 35
+        },
+        "duration": 0.252,
+        "ease": "power2.in"
+      }
+    },
+    {
+      "time": 7.825,
+      "target": "#headline-propose",
+      "action": "SET",
+      "params": {
+        "props": {
+          "opacity": 0
+        }
+      }
+    },
+    {
+      "time": 7.846,
+      "target": "#headline-wait",
+      "action": "POP_IN",
+      "params": {
+        "duration": 0.294,
+        "overshoot": 1.04
+      }
+    },
+    {
+      "time": 8.066,
+      "target": "#approval-tab",
+      "action": "TWEEN",
+      "params": {
+        "to": {
+          "y": 12,
+          "scale": 0.95
+        },
+        "duration": 0.126,
+        "ease": "power2.in"
+      }
+    },
+    {
+      "time": 8.181,
+      "target": "#approval-glow",
+      "action": "POP_IN",
+      "params": {
+        "duration": 0.273,
+        "overshoot": 1.02
+      }
+    },
+    {
+      "time": 8.181,
+      "target": "#approval-check",
+      "action": "POP_IN",
+      "params": {
+        "duration": 0.241,
+        "overshoot": 1.02
+      }
+    },
+    {
+      "time": 8.286,
+      "target": "#human-finger",
+      "action": "TWEEN",
+      "params": {
+        "to": {
+          "y": 16
+        },
+        "duration": 0.189,
+        "ease": "power2.out"
+      }
+    },
+    {
+      "time": 8.286,
+      "target": "#human-finger",
+      "action": "TWEEN",
+      "params": {
+        "to": {
+          "x": 360,
+          "opacity": 0
+        },
+        "duration": 0.367,
+        "ease": "power2.in"
+      }
+    },
+    {
+      "time": 8.69,
+      "target": "#caption-6",
+      "action": "CAPTION_REPLACE",
+      "params": {}
+    },
+    {
+      "time": 9.451,
+      "target": "#proposal-slip",
+      "action": "TWEEN",
+      "params": {
+        "to": {
+          "opacity": 0
+        },
+        "duration": 0.262,
+        "ease": "power2.out"
+      }
+    },
+    {
+      "time": 9.818,
+      "target": "#focus-card",
+      "action": "POP_IN",
+      "params": {
+        "duration": 0.577,
+        "overshoot": 1.04
+      }
+    },
+    {
+      "time": 10.27,
+      "target": "#caption-7",
+      "action": "CAPTION_REPLACE",
+      "params": {}
+    },
+    {
+      "time": 10.321,
+      "target": "#proposal-route",
+      "action": "TWEEN",
+      "params": {
+        "to": {
+          "opacity": 0
+        },
+        "duration": 0.294,
+        "ease": "power2.out"
+      }
+    },
+    {
+      "time": 10.416,
+      "target": "#overlap-bracket",
+      "action": "POP_OUT",
+      "params": {
+        "duration": 0.241
+      }
+    },
+    {
+      "time": 10.479,
+      "target": "#headline-wait",
+      "action": "SET",
+      "params": {
+        "props": {
+          "opacity": 0
+        }
+      }
+    },
+    {
+      "time": 10.51,
+      "target": "#headline-done",
+      "action": "POP_IN",
+      "params": {
+        "duration": 0.294,
+        "overshoot": 1.04
+      }
+    },
+    {
+      "time": 10.573,
+      "target": "#focus-card",
+      "action": "SET",
+      "params": {
+        "props": {
+          "rotation": 0
+        }
+      }
+    },
+    {
+      "time": 10.678,
+      "target": "#bot-wait",
+      "action": "POSE_SWAP",
+      "params": {
+        "hide": "#bot-wait",
+        "show": "#bot-happy",
+        "bounceTarget": "#bot-motion",
+        "height": 13,
+        "duration": 0.315
+      }
+    },
+    {
+      "time": 10.751,
+      "target": "#world-camera",
+      "action": "TWEEN",
+      "params": {
+        "to": {
+          "scale": 1
+        },
+        "duration": 0.503,
+        "ease": "power2.inOut"
+      }
+    },
+    {
+      "time": 10.909,
+      "target": "#approval-glow",
+      "action": "TWEEN",
+      "params": {
+        "to": {
+          "opacity": 0
+        },
+        "duration": 0.441,
+        "ease": "power2.out"
+      }
+    }
+  ],
+  "captions": [
+    {
+      "text": "Your afternoon",
+      "emphasis": "afternoon",
+      "color": "teal",
+      "start": 0.05,
+      "end": 1.11
+    },
+    {
+      "text": "has an open hour",
+      "emphasis": "open",
+      "color": "teal",
+      "start": 1.11,
+      "end": 2.29
+    },
+    {
+      "text": "assistant spots it",
+      "emphasis": "spots",
+      "color": "teal",
+      "start": 2.29,
+      "end": 3.74
+    },
+    {
+      "text": "suggests a focus block",
+      "emphasis": "focus",
+      "color": "teal",
+      "start": 3.74,
+      "end": 5.41
+    },
+    {
+      "text": "slot stays empty",
+      "emphasis": "stays empty",
+      "color": "blue",
+      "start": 5.41,
+      "end": 7.13
+    },
+    {
+      "text": "waits for your approval",
+      "emphasis": "approval",
+      "color": "teal",
+      "start": 7.13,
+      "end": 8.69
+    },
+    {
+      "text": "Only then",
+      "emphasis": "then",
+      "color": "teal",
+      "start": 8.69,
+      "end": 10.27
+    },
+    {
+      "text": "focus block joins calendar",
+      "emphasis": "joins",
+      "color": "teal",
+      "start": 10.27,
+      "end": 11.65
+    }
+  ],
+  "sceneBeats": [
+    {
+      "id": "collision",
+      "start": 0.0,
+      "end": 2.412
+    },
+    {
+      "id": "notice",
+      "start": 2.412,
+      "end": 4.405
+    },
+    {
+      "id": "proposal",
+      "start": 4.405,
+      "end": 7.825
+    },
+    {
+      "id": "approval",
+      "start": 7.825,
+      "end": 9.451
+    },
+    {
+      "id": "authorized-move",
+      "start": 9.451,
+      "end": 13.35
+    }
+  ],
+  "narration": {
+    "file": "assets/voice/narration-af-nova.wav",
+    "voiceStart": 0,
+    "voiceEnd": 11.904,
+    "status": "local-kokoro-duration-scaled-template"
+  }
+}
