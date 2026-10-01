@@ -1,0 +1,266 @@
+[
+  {
+    "text": "The",
+    "start": 0.05,
+    "end": 0.19,
+    "id": "w0"
+  },
+  {
+    "text": "project",
+    "start": 0.19,
+    "end": 0.59,
+    "id": "w1"
+  },
+  {
+    "text": "splits,",
+    "start": 0.69,
+    "end": 1.12,
+    "id": "w2"
+  },
+  {
+    "text": "sending",
+    "start": 1.12,
+    "end": 1.56,
+    "id": "w3"
+  },
+  {
+    "text": "three",
+    "start": 1.56,
+    "end": 1.87,
+    "id": "w4"
+  },
+  {
+    "text": "jobs",
+    "start": 1.87,
+    "end": 2.12,
+    "id": "w5"
+  },
+  {
+    "text": "to",
+    "start": 2.12,
+    "end": 2.23,
+    "id": "w6"
+  },
+  {
+    "text": "three",
+    "start": 2.26,
+    "end": 2.55,
+    "id": "w7"
+  },
+  {
+    "text": "bots.",
+    "start": 2.55,
+    "end": 2.89,
+    "id": "w8"
+  },
+  {
+    "text": "They",
+    "start": 3.09,
+    "end": 3.24,
+    "id": "w9"
+  },
+  {
+    "text": "work",
+    "start": 3.24,
+    "end": 3.44,
+    "id": "w10"
+  },
+  {
+    "text": "in",
+    "start": 3.44,
+    "end": 3.49,
+    "id": "w11"
+  },
+  {
+    "text": "parallel,",
+    "start": 3.57,
+    "end": 4.06,
+    "id": "w12"
+  },
+  {
+    "text": "folding,",
+    "start": 4.08,
+    "end": 4.6,
+    "id": "w13"
+  },
+  {
+    "text": "pressing,",
+    "start": 4.6,
+    "end": 5.1,
+    "id": "w14"
+  },
+  {
+    "text": "and",
+    "start": 5.15,
+    "end": 5.26,
+    "id": "w15"
+  },
+  {
+    "text": "carrying",
+    "start": 5.28,
+    "end": 5.69,
+    "id": "w16"
+  },
+  {
+    "text": "each",
+    "start": 5.79,
+    "end": 5.91,
+    "id": "w17"
+  },
+  {
+    "text": "piece",
+    "start": 6.05,
+    "end": 6.3,
+    "id": "w18"
+  },
+  {
+    "text": "towards",
+    "start": 6.3,
+    "end": 6.68,
+    "id": "w19"
+  },
+  {
+    "text": "shared",
+    "start": 6.72,
+    "end": 7.08,
+    "id": "w20"
+  },
+  {
+    "text": "assembly.",
+    "start": 7.08,
+    "end": 7.76,
+    "id": "w21"
+  },
+  {
+    "text": "The",
+    "start": 7.83,
+    "end": 7.97,
+    "id": "w22"
+  },
+  {
+    "text": "pieces",
+    "start": 7.97,
+    "end": 8.35,
+    "id": "w23"
+  },
+  {
+    "text": "assemble",
+    "start": 8.35,
+    "end": 8.86,
+    "id": "w24"
+  },
+  {
+    "text": "and",
+    "start": 8.86,
+    "end": 9.03,
+    "id": "w25"
+  },
+  {
+    "text": "three",
+    "start": 9.03,
+    "end": 9.31,
+    "id": "w26"
+  },
+  {
+    "text": "grips",
+    "start": 9.31,
+    "end": 9.6,
+    "id": "w27"
+  },
+  {
+    "text": "press",
+    "start": 9.64,
+    "end": 9.9,
+    "id": "w28"
+  },
+  {
+    "text": "one",
+    "start": 9.9,
+    "end": 10.05,
+    "id": "w29"
+  },
+  {
+    "text": "finished",
+    "start": 10.13,
+    "end": 10.55,
+    "id": "w30"
+  },
+  {
+    "text": "book",
+    "start": 10.56,
+    "end": 10.8,
+    "id": "w31"
+  },
+  {
+    "text": "together.",
+    "start": 10.8,
+    "end": 11.47,
+    "id": "w32"
+  },
+  {
+    "text": "They",
+    "start": 11.53,
+    "end": 11.68,
+    "id": "w33"
+  },
+  {
+    "text": "deliver",
+    "start": 11.68,
+    "end": 12.03,
+    "id": "w34"
+  },
+  {
+    "text": "forward,",
+    "start": 12.03,
+    "end": 12.5,
+    "id": "w35"
+  },
+  {
+    "text": "waiting",
+    "start": 12.52,
+    "end": 12.98,
+    "id": "w36"
+  },
+  {
+    "text": "hands",
+    "start": 12.98,
+    "end": 13.32,
+    "id": "w37"
+  },
+  {
+    "text": "take",
+    "start": 13.37,
+    "end": 13.53,
+    "id": "w38"
+  },
+  {
+    "text": "the",
+    "start": 13.53,
+    "end": 13.65,
+    "id": "w39"
+  },
+  {
+    "text": "finished",
+    "start": 13.69,
+    "end": 14.1,
+    "id": "w40"
+  },
+  {
+    "text": "book's",
+    "start": 14.1,
+    "end": 14.41,
+    "id": "w41"
+  },
+  {
+    "text": "full",
+    "start": 14.41,
+    "end": 14.62,
+    "id": "w42"
+  },
+  {
+    "text": "weight.",
+    "start": 14.62,
+    "end": 15.12,
+    "id": "w43"
+  }
+]

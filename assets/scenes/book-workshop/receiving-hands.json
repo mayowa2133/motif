@@ -1,0 +1,52 @@
+{
+  "id": "receiving-hands",
+  "name": "Receiving Hands",
+  "category": "prop",
+  "subcategory": "paper-workshop",
+  "concepts": [
+    "parallel work",
+    "assembly",
+    "delivery"
+  ],
+  "keywords": [
+    "receiving-hands",
+    "paper",
+    "workshop"
+  ],
+  "style": "motif-default-v1",
+  "orientation": "front",
+  "dimensions": {
+    "width": 512,
+    "height": 512,
+    "unit": "px"
+  },
+  "artBox": {
+    "x": 23,
+    "y": 277,
+    "width": 466,
+    "height": 210
+  },
+  "anchors": {
+    "contact": {
+      "x": 0.5,
+      "y": 0.69
+    }
+  },
+  "compatibleCharacters": [
+    "motif-bot"
+  ],
+  "supportedActions": [
+    "receive",
+    "hold",
+    "withdraw"
+  ],
+  "sourceType": "vector",
+  "source": {
+    "file": "assets/scenes/book-workshop/receiving-hands.svg",
+    "reference": "Live Little Book Workshop concept; agent-authored geometry using existing paper material helpers"
+  },
+  "version": 1,
+  "status": "review",
+  "preview": "assets/scenes/book-workshop/receiving-hands.png",
+  "license": "project-original"
+}

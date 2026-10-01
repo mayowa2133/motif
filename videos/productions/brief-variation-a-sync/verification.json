@@ -1,0 +1,32 @@
+{
+  "brief": "briefs/validation/variation-a-sync.json",
+  "first_render": "videos/productions/brief-variation-a-sync/renders/first.mp4",
+  "final_render": "videos/productions/brief-variation-a-sync/renders/final.mp4",
+  "first_audio": {
+    "integrated_lufs": -24.14,
+    "true_peak_dbtp": -3.99,
+    "lra_lu": 8.8
+  },
+  "initial_linear_gain_attempt_db": 2.39,
+  "finishing_method": "combined-mix loudnorm with measured calibration",
+  "final_audio": {
+    "integrated_lufs": -16.04,
+    "true_peak_dbtp": -1.74,
+    "lra_lu": 7.7
+  },
+  "target_lufs": -16.0,
+  "true_peak_ceiling_dbtp": -1.5,
+  "checks": {
+    "storyboard_and_event_order": true,
+    "word_aligned_captions": true,
+    "integrated_loudness": true,
+    "true_peak": true,
+    "same_encoded_video_stream": true,
+    "same_duration": true,
+    "requested_duration_range": true
+  },
+  "first_sha256": "b7392332ffce4285819d139474d420c6efba68871be7803d8e971e51d2e9c08a",
+  "final_sha256": "286975066592fe02fa66f930b11a1c5dc03fd430cc03e64206fe542a8b999cb1",
+  "video_stream_sha256": "37758fa9b751d5b02d6ededc8e19acbce691de740c2cff715a1d1eeaa4e53380",
+  "subjective_listening": "not assessed"
+}

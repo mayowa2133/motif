@@ -1,0 +1,79 @@
+{
+  "version": 1,
+  "provider": "local Kokoro-82M v1.0 af_nova + reused cleared SFX",
+  "music": null,
+  "tracks": [
+    {
+      "id": "narration",
+      "group": "voice",
+      "file": "assets/voice/narration-af-nova.wav",
+      "start": 0,
+      "duration": 11.904,
+      "volume": 1,
+      "lane": 10
+    },
+    {
+      "id": "call-land",
+      "group": "sfx",
+      "file": "assets/sfx/pop.mp3",
+      "start": 0.42,
+      "duration": 0.6,
+      "volume": 0.09,
+      "lane": 20
+    },
+    {
+      "id": "collision",
+      "group": "sfx",
+      "file": "assets/sfx/click-soft.mp3",
+      "start": 1.857,
+      "duration": 0.36,
+      "volume": 0.15,
+      "lane": 21
+    },
+    {
+      "id": "notice",
+      "group": "sfx",
+      "file": "assets/sfx/click.mp3",
+      "start": 3.168,
+      "duration": 0.36,
+      "volume": 0.1,
+      "lane": 22
+    },
+    {
+      "id": "proposal",
+      "group": "sfx",
+      "file": "assets/sfx/whoosh-short.mp3",
+      "start": 4.741,
+      "duration": 0.57,
+      "volume": 0.09,
+      "lane": 23
+    },
+    {
+      "id": "button",
+      "group": "sfx",
+      "file": "assets/sfx/click.mp3",
+      "start": 9.083,
+      "duration": 0.36,
+      "volume": 0.18,
+      "lane": 24
+    },
+    {
+      "id": "appointment-slide",
+      "group": "sfx",
+      "file": "assets/sfx/whoosh-short.mp3",
+      "start": 9.734,
+      "duration": 0.57,
+      "volume": 0.1,
+      "lane": 25
+    },
+    {
+      "id": "settle",
+      "group": "sfx",
+      "file": "assets/sfx/chime.mp3",
+      "start": 10.678,
+      "duration": 1.65,
+      "volume": 0.075,
+      "lane": 26
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "slug": "brief-variation-b-review",
+  "message": "An assistant notices an open hour at 4 PM on the calendar, with an existing REVIEW appointment at 3 PM. It suggests a focus block and waits for the person's approval before adding the booking.",
+  "audience": "People interested in practical AI assistance and productivity",
+  "intended_duration_seconds": 14,
+  "aspect_ratio": "9:16",
+  "style": "motif-v1",
+  "voice": "af_nova",
+  "template": "calendar-open-slot",
+  "scene_data": {
+    "existing_title": "REVIEW",
+    "proposed_title": "FOCUS"
+  }
+}

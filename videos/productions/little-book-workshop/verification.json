@@ -1,0 +1,36 @@
+{
+  "production_plan": "videos/productions/little-book-workshop/production-plan.json",
+  "first_render": "videos/productions/little-book-workshop/renders/first.mp4",
+  "final_render": "videos/productions/little-book-workshop/renders/final.mp4",
+  "first_audio": {
+    "integrated_lufs": -24.26,
+    "true_peak_dbtp": -5.3,
+    "lra_lu": 7.6
+  },
+  "initial_linear_gain_attempt_db": 3.7,
+  "finishing_method": "combined-mix loudnorm with measured calibration",
+  "final_audio": {
+    "integrated_lufs": -16.05,
+    "true_peak_dbtp": -1.73,
+    "lra_lu": 6.6
+  },
+  "target_lufs": -16.0,
+  "true_peak_ceiling_dbtp": -1.5,
+  "pre_render": {
+    "record": "pre-render-checks.json",
+    "sha256": "8a7dd7b50fde75882280b03387486b7f8c63988b326171fc9bc6b7790b732d90",
+    "scope": "Earlier structured plan/event/alignment checks, not post-encode visual measurement"
+  },
+  "encoded_measurements": {
+    "integrated_loudness": true,
+    "true_peak": true,
+    "same_encoded_video_stream": true,
+    "same_duration": true,
+    "requested_duration_range": true
+  },
+  "first_sha256": "0d57c80046dae8ebb7634e36d003661c162a4b38ddbc8c09f6e701729a3d32f6",
+  "final_sha256": "7cb2210a88b730eb2f7b08b29a1e4fed371e20566c7dfaa884a9745343c407aa",
+  "video_stream_sha256": "d2eec922e0026e30a60475d20cfc6aa3b5e700a6aadd1d613a7e417d2245ae12",
+  "subjective_listening": "not assessed",
+  "human_visual_review": "not assessed"
+}

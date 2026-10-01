@@ -1,0 +1,44 @@
+[
+  {
+    "beat": "beat-1",
+    "kind": "bot.pose",
+    "subject": "bot",
+    "cue": "Here are",
+    "cue_time": 0.12,
+    "complete": 0.12,
+    "result": "presenting",
+    "requires": []
+  },
+  {
+    "beat": "beat-2",
+    "kind": "arena.check",
+    "subject": "A",
+    "cue": "Checking A",
+    "cue_time": 1.85,
+    "complete": 2.99,
+    "result": "pass",
+    "requires": []
+  },
+  {
+    "beat": "beat-3",
+    "kind": "arena.check",
+    "subject": "B",
+    "cue": "Checking B",
+    "cue_time": 5.16,
+    "complete": 6.3,
+    "result": "pass",
+    "requires": []
+  },
+  {
+    "beat": "beat-5",
+    "kind": "arena.select",
+    "subject": "A",
+    "cue": "both go",
+    "cue_time": 12.12,
+    "complete": 12.44,
+    "result": "none",
+    "requires": [
+      "A-pass"
+    ]
+  }
+]

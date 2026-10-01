@@ -1,0 +1,15 @@
+{
+  "scope": "Structured plan/events/alignment only; not independent encoded-frame inspection",
+  "deterministic_review_file": "deterministic-review-0.json",
+  "model_review_file": "model-review-0.json",
+  "planning_review_sha256": "ce0cdab878fcc768604349f40fa4ae79d3ef707d7610a4d2e439121b313a293b",
+  "event_plan_sha256": "e2e2320f81c6938cc7d49d6162bc632351151b05f2b5c7fa6154442ac02e0b61",
+  "checks": {
+    "accepted_plan_state_order": true,
+    "accepted_model_data_review": true,
+    "caption_starts_match_measured_beat_anchors": true,
+    "event_times_sorted": true
+  },
+  "visual_review": "not assessed",
+  "subjective_listening": "not assessed"
+}

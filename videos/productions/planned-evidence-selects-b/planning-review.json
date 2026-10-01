@@ -1,0 +1,162 @@
+{
+  "reviews": [
+    {
+      "attempt": 0,
+      "deterministic": {
+        "pass": true,
+        "issues": [],
+        "states": [
+          {
+            "beat": "beat-1",
+            "kind": "bot.pose",
+            "subject": "bot",
+            "before": {
+              "calendar": "unchanged",
+              "A": "untested",
+              "B": "untested",
+              "winner": "none",
+              "handoff": false
+            },
+            "after": {
+              "calendar": "unchanged",
+              "A": "untested",
+              "B": "untested",
+              "winner": "none",
+              "handoff": false
+            },
+            "facts": []
+          },
+          {
+            "beat": "beat-2",
+            "kind": "arena.check",
+            "subject": "A",
+            "before": {
+              "calendar": "unchanged",
+              "A": "untested",
+              "B": "untested",
+              "winner": "none",
+              "handoff": false
+            },
+            "after": {
+              "calendar": "unchanged",
+              "A": "fail",
+              "B": "untested",
+              "winner": "none",
+              "handoff": false
+            },
+            "facts": [
+              "A-fail",
+              "A-tested"
+            ]
+          },
+          {
+            "beat": "beat-3",
+            "kind": "arena.check",
+            "subject": "B",
+            "before": {
+              "calendar": "unchanged",
+              "A": "fail",
+              "B": "untested",
+              "winner": "none",
+              "handoff": false
+            },
+            "after": {
+              "calendar": "unchanged",
+              "A": "fail",
+              "B": "pass",
+              "winner": "none",
+              "handoff": false
+            },
+            "facts": [
+              "A-fail",
+              "A-tested",
+              "B-pass",
+              "B-tested"
+            ]
+          },
+          {
+            "beat": "beat-4",
+            "kind": "arena.select",
+            "subject": "B",
+            "before": {
+              "calendar": "unchanged",
+              "A": "fail",
+              "B": "pass",
+              "winner": "none",
+              "handoff": false
+            },
+            "after": {
+              "calendar": "unchanged",
+              "A": "fail",
+              "B": "pass",
+              "winner": "B",
+              "handoff": false
+            },
+            "facts": [
+              "A-fail",
+              "A-tested",
+              "B-pass",
+              "B-tested"
+            ]
+          },
+          {
+            "beat": "beat-4",
+            "kind": "bot.pose",
+            "subject": "bot",
+            "before": {
+              "calendar": "unchanged",
+              "A": "fail",
+              "B": "pass",
+              "winner": "B",
+              "handoff": false
+            },
+            "after": {
+              "calendar": "unchanged",
+              "A": "fail",
+              "B": "pass",
+              "winner": "B",
+              "handoff": false
+            },
+            "facts": [
+              "A-fail",
+              "A-tested",
+              "B-pass",
+              "B-tested"
+            ]
+          }
+        ],
+        "final": {
+          "calendar": "unchanged",
+          "A": "fail",
+          "B": "pass",
+          "winner": "B",
+          "handoff": false
+        },
+        "facts": [
+          "A-fail",
+          "A-tested",
+          "B-pass",
+          "B-tested"
+        ],
+        "semantic_guarantee": false,
+        "planning_notes": [
+          "script has 43 words; suggested budget is 41; actual speech duration is the acceptance gate"
+        ]
+      },
+      "timing_or_semantic_issues": [],
+      "model_review": {
+        "pass": true,
+        "issues": [],
+        "message_preserved": true,
+        "outcome_preserved": true,
+        "evidence_before_labels": true,
+        "ending_delivered": true,
+        "notes": "A and B receive the same arena.check treatment with identical detail framing. A\u2019s failure completes at 5.64 before \u201cA FAILS\u201d appears at 5.76; B\u2019s pass completes at 8.70 before \u201cB PASSES\u201d appears at 8.82; and B\u2019s selection completes at 12.81 before \u201cB SELECTED\u201d appears at 12.93. Headlines are explicitly cleared at each state transition, so none remain stale. The final framing identifies B as selected and keeps B\u2019s sheet as the focus through the 16.82-second ending. This is a data-level review only; rendered visibility is not guaranteed.",
+        "audience_narration": true
+      }
+    }
+  ],
+  "corrections": 0,
+  "pass": true,
+  "semantic_guarantee": false
+}

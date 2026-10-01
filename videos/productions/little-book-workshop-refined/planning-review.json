@@ -1,0 +1,100 @@
+{
+  "reviews": [
+    {
+      "attempt": 0,
+      "deterministic": {
+        "pass": true,
+        "issues": [],
+        "states": [
+          {
+            "beat": "dispatch-jobs",
+            "kind": "workshop.dispatch",
+            "subject": "project",
+            "before": {
+              "project": "intact"
+            },
+            "after": {
+              "project": "distributed"
+            },
+            "facts": [
+              "jobs-distributed"
+            ]
+          },
+          {
+            "beat": "parallel-work",
+            "kind": "workshop.work_parallel",
+            "subject": "project",
+            "before": {
+              "project": "distributed"
+            },
+            "after": {
+              "project": "worked"
+            },
+            "facts": [
+              "jobs-distributed",
+              "jobs-worked"
+            ]
+          },
+          {
+            "beat": "assemble-book",
+            "kind": "workshop.assemble",
+            "subject": "project",
+            "before": {
+              "project": "worked"
+            },
+            "after": {
+              "project": "assembled"
+            },
+            "facts": [
+              "book-assembled",
+              "jobs-distributed",
+              "jobs-worked"
+            ]
+          },
+          {
+            "beat": "deliver-book",
+            "kind": "workshop.deliver",
+            "subject": "project",
+            "before": {
+              "project": "assembled"
+            },
+            "after": {
+              "project": "delivered"
+            },
+            "facts": [
+              "book-assembled",
+              "book-delivered",
+              "jobs-distributed",
+              "jobs-worked"
+            ]
+          }
+        ],
+        "final": {
+          "project": "delivered"
+        },
+        "facts": [
+          "book-assembled",
+          "book-delivered",
+          "jobs-distributed",
+          "jobs-worked"
+        ],
+        "semantic_guarantee": false,
+        "planning_notes": []
+      },
+      "timing_or_semantic_issues": [],
+      "model_review": {
+        "pass": true,
+        "issues": [],
+        "message_preserved": true,
+        "outcome_preserved": true,
+        "evidence_before_labels": true,
+        "ending_delivered": true,
+        "notes": "The four physical outcomes form a coherent chain: the project splits, all three persistent components visibly undergo concurrent work (including 1.19 seconds of three-way overlap), those same components assemble into one book, and the book is handed to the recipient. Captions are narration-aligned descriptions of unfolding actions rather than premature completed-result headlines, and each clears at the next beat with no stale state label. Framing bounds retain the relevant subjects and critical workshop action. Delivery completes at 16.98 seconds, followed by about 0.8 seconds of hold before the 17.78-second ending, within the brief's duration tolerance.",
+        "audience_narration": true
+      }
+    }
+  ],
+  "corrections": 0,
+  "pass": true,
+  "semantic_guarantee": false
+}

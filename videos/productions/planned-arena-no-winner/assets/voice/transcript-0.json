@@ -1,0 +1,260 @@
+[
+  {
+    "text": "Two",
+    "start": 0.04,
+    "end": 0.22,
+    "id": "w0"
+  },
+  {
+    "text": "answers",
+    "start": 0.22,
+    "end": 0.74,
+    "id": "w1"
+  },
+  {
+    "text": "face",
+    "start": 0.74,
+    "end": 1.04,
+    "id": "w2"
+  },
+  {
+    "text": "the",
+    "start": 1.04,
+    "end": 1.24,
+    "id": "w3"
+  },
+  {
+    "text": "same",
+    "start": 1.33,
+    "end": 1.57,
+    "id": "w4"
+  },
+  {
+    "text": "route",
+    "start": 1.57,
+    "end": 1.91,
+    "id": "w5"
+  },
+  {
+    "text": "check.",
+    "start": 1.94,
+    "end": 2.58,
+    "id": "w6"
+  },
+  {
+    "text": "Testing",
+    "start": 2.62,
+    "end": 3.18,
+    "id": "w7"
+  },
+  {
+    "text": "answer",
+    "start": 3.18,
+    "end": 3.63,
+    "id": "w8"
+  },
+  {
+    "text": "A,",
+    "start": 3.73,
+    "end": 3.96,
+    "id": "w9"
+  },
+  {
+    "text": "the",
+    "start": 3.96,
+    "end": 4.14,
+    "id": "w10"
+  },
+  {
+    "text": "stencil",
+    "start": 4.14,
+    "end": 4.58,
+    "id": "w11"
+  },
+  {
+    "text": "exposes",
+    "start": 4.58,
+    "end": 4.65,
+    "id": "w12"
+  },
+  {
+    "text": "a",
+    "start": 5.18,
+    "end": 5.24,
+    "id": "w13"
+  },
+  {
+    "text": "missing",
+    "start": 5.24,
+    "end": 5.59,
+    "id": "w14"
+  },
+  {
+    "text": "connection",
+    "start": 5.61,
+    "end": 6.16,
+    "id": "w15"
+  },
+  {
+    "text": "before",
+    "start": 6.2,
+    "end": 6.62,
+    "id": "w16"
+  },
+  {
+    "text": "its",
+    "start": 6.62,
+    "end": 6.85,
+    "id": "w17"
+  },
+  {
+    "text": "cross",
+    "start": 6.85,
+    "end": 7.21,
+    "id": "w18"
+  },
+  {
+    "text": "appears.",
+    "start": 7.32,
+    "end": 8.02,
+    "id": "w19"
+  },
+  {
+    "text": "Testing",
+    "start": 8.06,
+    "end": 8.62,
+    "id": "w20"
+  },
+  {
+    "text": "answer",
+    "start": 8.62,
+    "end": 9.07,
+    "id": "w21"
+  },
+  {
+    "text": "Bexposes",
+    "start": 9.17,
+    "end": 9.75,
+    "id": "w22"
+  },
+  {
+    "text": "another",
+    "start": 9.85,
+    "end": 10.1,
+    "id": "w23"
+  },
+  {
+    "text": "missing",
+    "start": 10.2,
+    "end": 10.25,
+    "id": "w24"
+  },
+  {
+    "text": "connection",
+    "start": 10.62,
+    "end": 11.07,
+    "id": "w25"
+  },
+  {
+    "text": "before",
+    "start": 11.12,
+    "end": 11.52,
+    "id": "w26"
+  },
+  {
+    "text": "its",
+    "start": 11.52,
+    "end": 11.74,
+    "id": "w27"
+  },
+  {
+    "text": "cross",
+    "start": 11.74,
+    "end": 12.1,
+    "id": "w28"
+  },
+  {
+    "text": "appears.",
+    "start": 12.24,
+    "end": 12.8,
+    "id": "w29"
+  },
+  {
+    "text": "With",
+    "start": 12.88,
+    "end": 13.09,
+    "id": "w30"
+  },
+  {
+    "text": "both",
+    "start": 13.09,
+    "end": 13.31,
+    "id": "w31"
+  },
+  {
+    "text": "tested,",
+    "start": 13.38,
+    "end": 13.86,
+    "id": "w32"
+  },
+  {
+    "text": "the",
+    "start": 13.86,
+    "end": 14.04,
+    "id": "w33"
+  },
+  {
+    "text": "assistant",
+    "start": 14.04,
+    "end": 14.56,
+    "id": "w34"
+  },
+  {
+    "text": "sends",
+    "start": 14.68,
+    "end": 14.86,
+    "id": "w35"
+  },
+  {
+    "text": "them",
+    "start": 14.86,
+    "end": 15.03,
+    "id": "w36"
+  },
+  {
+    "text": "into",
+    "start": 15.12,
+    "end": 15.33,
+    "id": "w37"
+  },
+  {
+    "text": "a",
+    "start": 15.38,
+    "end": 15.42,
+    "id": "w38"
+  },
+  {
+    "text": "person's",
+    "start": 15.42,
+    "end": 15.86,
+    "id": "w39"
+  },
+  {
+    "text": "hand",
+    "start": 15.97,
+    "end": 16.13,
+    "id": "w40"
+  },
+  {
+    "text": "for",
+    "start": 16.24,
+    "end": 16.43,
+    "id": "w41"
+  },
+  {
+    "text": "review.",
+    "start": 16.43,
+    "end": 17.1,
+    "id": "w42"
+  }
+]

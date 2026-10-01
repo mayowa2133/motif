@@ -1,0 +1,79 @@
+{
+  "pass": true,
+  "issues": [],
+  "states": [
+    {
+      "beat": "dispatch-jobs",
+      "kind": "workshop.dispatch",
+      "subject": "project",
+      "before": {
+        "project": "intact"
+      },
+      "after": {
+        "project": "distributed"
+      },
+      "facts": [
+        "jobs-distributed"
+      ]
+    },
+    {
+      "beat": "parallel-work",
+      "kind": "workshop.work_parallel",
+      "subject": "project",
+      "before": {
+        "project": "distributed"
+      },
+      "after": {
+        "project": "worked"
+      },
+      "facts": [
+        "jobs-distributed",
+        "jobs-worked"
+      ]
+    },
+    {
+      "beat": "assemble-book",
+      "kind": "workshop.assemble",
+      "subject": "project",
+      "before": {
+        "project": "worked"
+      },
+      "after": {
+        "project": "assembled"
+      },
+      "facts": [
+        "book-assembled",
+        "jobs-distributed",
+        "jobs-worked"
+      ]
+    },
+    {
+      "beat": "deliver-book",
+      "kind": "workshop.deliver",
+      "subject": "project",
+      "before": {
+        "project": "assembled"
+      },
+      "after": {
+        "project": "delivered"
+      },
+      "facts": [
+        "book-assembled",
+        "book-delivered",
+        "jobs-distributed",
+        "jobs-worked"
+      ]
+    }
+  ],
+  "final": {
+    "project": "delivered"
+  },
+  "facts": [
+    "book-assembled",
+    "book-delivered",
+    "jobs-distributed",
+    "jobs-worked"
+  ],
+  "semantic_guarantee": false,
+  "planning_notes": []
+}

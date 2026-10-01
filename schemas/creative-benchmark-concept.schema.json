@@ -1,0 +1,94 @@
+{
+  "type": "object",
+  "properties": {
+    "title": {
+      "type": "string"
+    },
+    "physical_metaphor": {
+      "type": "string"
+    },
+    "visual_story": {
+      "type": "string"
+    },
+    "audience_script": {
+      "type": "string"
+    },
+    "beats": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "subject": {
+            "type": "string"
+          },
+          "physical_action": {
+            "type": "string"
+          },
+          "before_after": {
+            "type": "string"
+          },
+          "consequence": {
+            "type": "string"
+          },
+          "framing_intent": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "subject",
+          "physical_action",
+          "before_after",
+          "consequence",
+          "framing_intent"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "new_assets": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "purpose": {
+            "type": "string"
+          },
+          "reusable_interaction": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "purpose",
+          "reusable_interaction"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "reuse": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "limits": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "required": [
+    "title",
+    "physical_metaphor",
+    "visual_story",
+    "audience_script",
+    "beats",
+    "new_assets",
+    "reuse",
+    "limits"
+  ],
+  "additionalProperties": false
+}

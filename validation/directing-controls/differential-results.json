@@ -1,0 +1,74 @@
+{
+  "fixture_provenance": "Controlled copies of saved arena plan and measured narration. These are still-frame compiler tests, not new live-model plans or complete Reels. Selection fixtures change the terminal action but deliberately retain the older narration/labels, which therefore must not be treated as coherent narrative examples.",
+  "focus_only_input_changes": [
+    {
+      "field": "/beats/1/framing",
+      "detail": "detail",
+      "subject": "subject"
+    }
+  ],
+  "assets_and_narration_fixed": true,
+  "sample_time": 2.65,
+  "camera_subject": {
+    "x": -57.0516,
+    "y": -7.5233,
+    "scale": 1.105651
+  },
+  "camera_detail": {
+    "x": -230.206,
+    "y": -309.5816,
+    "scale": 1.426307
+  },
+  "subject_route_width": 608.1080499999999,
+  "detail_route_width": 784.46885,
+  "detail_enlargement_ratio": 1.2900155654903762,
+  "pixel_difference_bbox": [
+    90,
+    264,
+    990,
+    1439
+  ],
+  "mean_pixel_difference": [
+    11.820375192901235,
+    16.077822627314816,
+    17.424865933641975
+  ],
+  "matched_A_B_camera": true,
+  "matched_A_B_projected_diagnostic_bounds": true,
+  "selected_A_B_pixel_difference_bbox": [
+    153,
+    1005,
+    927,
+    1076
+  ],
+  "selected_A_targets": [
+    "#pair-A-selected",
+    "#close-A-selected",
+    "#review-A-selected"
+  ],
+  "selected_B_targets": [
+    "#pair-B-selected",
+    "#close-B-selected",
+    "#review-B-selected"
+  ],
+  "sampled_visual_review": "Inspected 360x640 comparison: target grows, A/B gap tests match, complete bot is visible, selected stamp attaches to correct sheet. Subjective listening unassessed.",
+  "source_development_intervention": "Initial diagnostic snapshot cropped Bot because it shared the camera. Shared compiler moved the complete canonical Bot to a supporting foreground slot outside the work-prop camera, before the fresh evaluation brief was chosen.",
+  "cli_pin_change": "New projects use 0.8.98 (was 0.8.97); upgraded fixture passes full check. Frozen projects unchanged.",
+  "compiler_fixture_validation_note": "The earlier one-A subject/detail diagnostic fixture is compiler-only: changing only A breaks the matched-comparison rule for a complete production. The following supplementary one-field focus-target differential uses two fully valid plans.",
+  "validated_focus_differential": {
+    "changed_field": "beats[3].focus_target",
+    "from": "answer-B.sheet",
+    "to": "answer-B.connection",
+    "framing_unchanged": "subject",
+    "both_complete_plans_pass_deterministic_review": true,
+    "origin": "Controlled copies of the fresh accepted model plan; no new model call or narration",
+    "pixel_difference_bbox": [
+      147,
+      437,
+      946,
+      1348
+    ],
+    "frame_time": 13.5,
+    "other_plan_fields_assets_speech_unchanged": true
+  }
+}

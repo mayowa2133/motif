@@ -1,0 +1,59 @@
+{
+  "id": "project-folio-kit",
+  "name": "Project Folio Kit",
+  "category": "prop",
+  "subcategory": "paper-workshop",
+  "concepts": [
+    "parallel work",
+    "assembly",
+    "delivery"
+  ],
+  "keywords": [
+    "project-folio-kit",
+    "paper",
+    "workshop"
+  ],
+  "style": "motif-default-v1",
+  "orientation": "front",
+  "dimensions": {
+    "width": 512,
+    "height": 512,
+    "unit": "px"
+  },
+  "artBox": {
+    "x": 117,
+    "y": 119,
+    "width": 253,
+    "height": 281
+  },
+  "anchors": {
+    "grip": {
+      "x": 0.5,
+      "y": 0.74
+    },
+    "spine": {
+      "x": 0.3,
+      "y": 0.5
+    }
+  },
+  "compatibleCharacters": [
+    "motif-bot"
+  ],
+  "supportedActions": [
+    "dispatch",
+    "fold",
+    "press",
+    "unroll",
+    "assemble",
+    "deliver"
+  ],
+  "sourceType": "vector",
+  "source": {
+    "file": "assets/scenes/book-workshop/project-folio-kit.svg",
+    "reference": "Live Little Book Workshop concept; agent-authored geometry using existing paper material helpers"
+  },
+  "version": 1,
+  "status": "review",
+  "preview": "assets/scenes/book-workshop/project-folio-kit.png",
+  "license": "project-original"
+}

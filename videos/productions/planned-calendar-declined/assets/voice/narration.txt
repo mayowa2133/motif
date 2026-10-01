@@ -1,0 +1,1 @@
+Assistant spots an open hour at four. It proposes focus time, placing a dashed card there. The person presses decline, removing the proposal while the existing meeting stays. The original calendar remains visibly unchanged.

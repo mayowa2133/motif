@@ -1,0 +1,118 @@
+{
+  "pass": true,
+  "issues": [],
+  "states": [
+    {
+      "beat": "beat-1",
+      "kind": "bot.pose",
+      "subject": "bot",
+      "before": {
+        "calendar": "unchanged",
+        "A": "untested",
+        "B": "untested",
+        "winner": "none",
+        "handoff": false
+      },
+      "after": {
+        "calendar": "unchanged",
+        "A": "untested",
+        "B": "untested",
+        "winner": "none",
+        "handoff": false
+      },
+      "facts": []
+    },
+    {
+      "beat": "beat-2",
+      "kind": "arena.check",
+      "subject": "A",
+      "before": {
+        "calendar": "unchanged",
+        "A": "untested",
+        "B": "untested",
+        "winner": "none",
+        "handoff": false
+      },
+      "after": {
+        "calendar": "unchanged",
+        "A": "fail",
+        "B": "untested",
+        "winner": "none",
+        "handoff": false
+      },
+      "facts": [
+        "A-fail",
+        "A-tested"
+      ]
+    },
+    {
+      "beat": "beat-3",
+      "kind": "arena.check",
+      "subject": "B",
+      "before": {
+        "calendar": "unchanged",
+        "A": "fail",
+        "B": "untested",
+        "winner": "none",
+        "handoff": false
+      },
+      "after": {
+        "calendar": "unchanged",
+        "A": "fail",
+        "B": "fail",
+        "winner": "none",
+        "handoff": false
+      },
+      "facts": [
+        "A-fail",
+        "A-tested",
+        "B-fail",
+        "B-tested"
+      ]
+    },
+    {
+      "beat": "beat-4",
+      "kind": "arena.handoff",
+      "subject": "both",
+      "before": {
+        "calendar": "unchanged",
+        "A": "fail",
+        "B": "fail",
+        "winner": "none",
+        "handoff": false
+      },
+      "after": {
+        "calendar": "unchanged",
+        "A": "fail",
+        "B": "fail",
+        "winner": "none",
+        "handoff": true
+      },
+      "facts": [
+        "A-fail",
+        "A-tested",
+        "B-fail",
+        "B-tested",
+        "handed-off"
+      ]
+    }
+  ],
+  "final": {
+    "calendar": "unchanged",
+    "A": "fail",
+    "B": "fail",
+    "winner": "none",
+    "handoff": true
+  },
+  "facts": [
+    "A-fail",
+    "A-tested",
+    "B-fail",
+    "B-tested",
+    "handed-off"
+  ],
+  "semantic_guarantee": false,
+  "planning_notes": [
+    "script has 45 words; suggested budget is 41; actual speech duration is the acceptance gate"
+  ]
+}

@@ -1,0 +1,260 @@
+[
+  {
+    "text": "Two",
+    "start": 0.06,
+    "end": 0.2,
+    "id": "w0"
+  },
+  {
+    "text": "candidate",
+    "start": 0.2,
+    "end": 0.76,
+    "id": "w1"
+  },
+  {
+    "text": "answers",
+    "start": 0.84,
+    "end": 1.27,
+    "id": "w2"
+  },
+  {
+    "text": "face",
+    "start": 1.27,
+    "end": 1.54,
+    "id": "w3"
+  },
+  {
+    "text": "the",
+    "start": 1.54,
+    "end": 1.74,
+    "id": "w4"
+  },
+  {
+    "text": "same",
+    "start": 1.74,
+    "end": 2.01,
+    "id": "w5"
+  },
+  {
+    "text": "connection",
+    "start": 2.01,
+    "end": 2.67,
+    "id": "w6"
+  },
+  {
+    "text": "check.",
+    "start": 2.67,
+    "end": 3.18,
+    "id": "w7"
+  },
+  {
+    "text": "First,",
+    "start": 3.31,
+    "end": 3.7,
+    "id": "w8"
+  },
+  {
+    "text": "the",
+    "start": 3.7,
+    "end": 3.9,
+    "id": "w9"
+  },
+  {
+    "text": "assistant",
+    "start": 3.9,
+    "end": 4.5,
+    "id": "w10"
+  },
+  {
+    "text": "checks",
+    "start": 4.5,
+    "end": 4.81,
+    "id": "w11"
+  },
+  {
+    "text": "A.",
+    "start": 4.91,
+    "end": 5,
+    "id": "w12"
+  },
+  {
+    "text": "A",
+    "start": 5.06,
+    "end": 5.07,
+    "id": "w13"
+  },
+  {
+    "text": "missing",
+    "start": 5.07,
+    "end": 5.58,
+    "id": "w14"
+  },
+  {
+    "text": "link",
+    "start": 5.58,
+    "end": 5.87,
+    "id": "w15"
+  },
+  {
+    "text": "shows",
+    "start": 5.87,
+    "end": 6.23,
+    "id": "w16"
+  },
+  {
+    "text": "why",
+    "start": 6.23,
+    "end": 6.45,
+    "id": "w17"
+  },
+  {
+    "text": "it",
+    "start": 6.45,
+    "end": 6.57,
+    "id": "w18"
+  },
+  {
+    "text": "fails.",
+    "start": 6.68,
+    "end": 7.2,
+    "id": "w19"
+  },
+  {
+    "text": "Then",
+    "start": 7.26,
+    "end": 7.42,
+    "id": "w20"
+  },
+  {
+    "text": "it",
+    "start": 7.42,
+    "end": 7.49,
+    "id": "w21"
+  },
+  {
+    "text": "checks",
+    "start": 7.56,
+    "end": 7.85,
+    "id": "w22"
+  },
+  {
+    "text": "B.",
+    "start": 7.85,
+    "end": 8.08,
+    "id": "w23"
+  },
+  {
+    "text": "The",
+    "start": 8.14,
+    "end": 8.29,
+    "id": "w24"
+  },
+  {
+    "text": "complete",
+    "start": 8.29,
+    "end": 8.84,
+    "id": "w25"
+  },
+  {
+    "text": "route",
+    "start": 8.92,
+    "end": 9.21,
+    "id": "w26"
+  },
+  {
+    "text": "provides",
+    "start": 9.21,
+    "end": 9.78,
+    "id": "w27"
+  },
+  {
+    "text": "passing",
+    "start": 9.78,
+    "end": 10.28,
+    "id": "w28"
+  },
+  {
+    "text": "evidence.",
+    "start": 10.28,
+    "end": 11.02,
+    "id": "w29"
+  },
+  {
+    "text": "Based",
+    "start": 11.15,
+    "end": 11.37,
+    "id": "w30"
+  },
+  {
+    "text": "on",
+    "start": 11.44,
+    "end": 11.51,
+    "id": "w31"
+  },
+  {
+    "text": "both",
+    "start": 11.51,
+    "end": 11.75,
+    "id": "w32"
+  },
+  {
+    "text": "results,",
+    "start": 11.75,
+    "end": 12.32,
+    "id": "w33"
+  },
+  {
+    "text": "it",
+    "start": 12.32,
+    "end": 12.4,
+    "id": "w34"
+  },
+  {
+    "text": "chooses",
+    "start": 12.49,
+    "end": 12.87,
+    "id": "w35"
+  },
+  {
+    "text": "B.",
+    "start": 12.91,
+    "end": 13.16,
+    "id": "w36"
+  },
+  {
+    "text": "So",
+    "start": 13.23,
+    "end": 13.26,
+    "id": "w37"
+  },
+  {
+    "text": "the",
+    "start": 13.3,
+    "end": 13.45,
+    "id": "w38"
+  },
+  {
+    "text": "evidence",
+    "start": 13.52,
+    "end": 13.92,
+    "id": "w39"
+  },
+  {
+    "text": "drives",
+    "start": 14,
+    "end": 14.36,
+    "id": "w40"
+  },
+  {
+    "text": "the",
+    "start": 14.36,
+    "end": 14.48,
+    "id": "w41"
+  },
+  {
+    "text": "decision.",
+    "start": 14.57,
+    "end": 15.26,
+    "id": "w42"
+  }
+]

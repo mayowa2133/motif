@@ -1,0 +1,7 @@
+{
+  "slug": "planned-calendar-declined",
+  "message": "An assistant finds a free hour and proposes a focus session. The person declines, so the calendar remains unchanged.",
+  "audience": "People interested in practical AI assistance, explained in plain language",
+  "intended_duration_seconds": 15,
+  "duration_tolerance_seconds": 3
+}

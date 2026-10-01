@@ -1,0 +1,91 @@
+[
+  {
+    "beat": "dispatch-jobs",
+    "kind": "workshop.dispatch",
+    "subject": "project",
+    "cue": "splits",
+    "cue_time": 0.69,
+    "complete": 2.91,
+    "result": "none",
+    "requires": [],
+    "duration": 2.22,
+    "constituent_ids": [
+      "job-cover",
+      "job-pages",
+      "job-binding"
+    ],
+    "identity_policy": "same DOM constituents through all phases"
+  },
+  {
+    "beat": "parallel-work",
+    "kind": "workshop.work_parallel",
+    "subject": "project",
+    "cue": "work in parallel",
+    "cue_time": 3.24,
+    "complete": 7.65,
+    "result": "none",
+    "requires": [
+      "jobs-distributed"
+    ],
+    "duration": 4.41,
+    "constituent_ids": [
+      "job-cover",
+      "job-pages",
+      "job-binding"
+    ],
+    "identity_policy": "same DOM constituents through all phases",
+    "simultaneous_job_windows": {
+      "fold-cover": [
+        4.034,
+        5.357
+      ],
+      "press-pages": [
+        3.593,
+        5.269
+      ],
+      "unroll-binding": [
+        3.461,
+        5.445
+      ]
+    },
+    "three_way_overlap_seconds": 1.235
+  },
+  {
+    "beat": "assemble-book",
+    "kind": "workshop.assemble",
+    "subject": "project",
+    "cue": "assemble",
+    "cue_time": 8.35,
+    "complete": 11.35,
+    "result": "none",
+    "requires": [
+      "jobs-worked"
+    ],
+    "duration": 3.0,
+    "constituent_ids": [
+      "job-cover",
+      "job-pages",
+      "job-binding"
+    ],
+    "identity_policy": "same DOM constituents through all phases"
+  },
+  {
+    "beat": "deliver-book",
+    "kind": "workshop.deliver",
+    "subject": "project",
+    "cue": "deliver",
+    "cue_time": 11.68,
+    "complete": 14.88,
+    "result": "none",
+    "requires": [
+      "book-assembled"
+    ],
+    "duration": 3.2,
+    "constituent_ids": [
+      "job-cover",
+      "job-pages",
+      "job-binding"
+    ],
+    "identity_policy": "same DOM constituents through all phases"
+  }
+]

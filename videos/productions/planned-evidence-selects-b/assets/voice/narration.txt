@@ -1,0 +1,1 @@
+Two candidate answers face the same connection check. First, the assistant checks A; a missing link shows why it fails. Then it checks B; the complete route provides passing evidence. Based on both results, it chooses B, so the evidence drives the decision.

@@ -1,0 +1,54 @@
+[
+  {
+    "stage": "before model planning",
+    "defect": "copy2 attempts to copy protected macOS font flags and raises PermissionError",
+    "fix": "use copyfile for local font bytes; no system metadata copied",
+    "preserved_attempt": "videos/productions/planned-calendar-declined-attempt-01",
+    "evaluations": "A and B run after this shared fix"
+  },
+  {
+    "stage": "live model integration",
+    "defect": "desktop configured gpt-6.1-sol is rejected by CLI ChatGPT backend",
+    "fix": "explicit MOTIF_PLANNER_MODEL override, without altering global config or silent fallback",
+    "selected_model": "gpt-5.6-sol, listed by freshly fetched CLI model catalog",
+    "preserved_attempt": "videos/productions/planned-calendar-declined-attempt-02",
+    "evaluations": "A and B use explicit same backend config"
+  },
+  {
+    "stage": "pre-render planning",
+    "defect": "initial model paraphrased input message; correction preserved message but script exceeded measured upper duration by .05s",
+    "fix": "explicit verbatim message/audience rule and duration-derived planning word budget; real speech-duration gate unchanged",
+    "preserved_attempt": "videos/productions/planned-calendar-declined-attempt-03",
+    "evaluations": "both briefs planned afresh under updated shared version"
+  },
+  {
+    "stage": "pre-render compiler / audit trace",
+    "defect": "pose timing absent from trace; labels not tied to completed evidence; static lint needs explicit timeline-registry initialization; SFX slots exceeded media lengths and intentionally clipped floor reported overflow",
+    "fix": "record pose/beat/label timings, delay headlines past action completion, initialize registry, probe SFX lengths, mark authored SVG placement wrappers for intentional overflow; manual frame inspection remains required",
+    "preserved_attempts": [
+      "videos/productions/planned-calendar-declined-attempt-04",
+      "videos/productions/planned-arena-no-winner-attempt-01"
+    ],
+    "evaluations": "A and B rerun with identical complete shared source; no individual plan was hand-edited"
+  },
+  {
+    "stage": "encoded finishing / planning constraint",
+    "defect": "new finishing adapter missing json import; corrected B script exceeded heuristic word budget despite a potentially acceptable actual duration",
+    "fix": "import json; keep suggested word budget as planning guidance and record it, while real speech-duration range remains a required gate",
+    "preserved_attempts": [
+      "videos/productions/planned-calendar-declined-attempt-05",
+      "videos/productions/planned-arena-no-winner-attempt-02"
+    ],
+    "evaluations": "both rerun against the same updated implementation"
+  },
+  {
+    "stage": "actual speech alignment",
+    "defect": "Whisper merged a cross/across and B takes/Btakes, producing an 85.4% exact-word match despite correct narration",
+    "fix": "recover exact concatenated word groups using the measured token start/end; do not interpolate within-token boundaries; record coarser precision and regression test it",
+    "preserved_attempts": [
+      "videos/productions/planned-calendar-declined-attempt-06",
+      "videos/productions/planned-arena-no-winner-attempt-03"
+    ],
+    "evaluations": "both rerun with the same updated aligner; previous calendar success preserved separately"
+  }
+]

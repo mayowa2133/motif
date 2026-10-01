@@ -1,0 +1,175 @@
+{
+  "coverage": 0.9772727272727273,
+  "merged_token_groups": [],
+  "script_words": [
+    "the",
+    "project",
+    "splits",
+    "sending",
+    "three",
+    "jobs",
+    "to",
+    "three",
+    "bots",
+    "they",
+    "work",
+    "in",
+    "parallel",
+    "folding",
+    "pressing",
+    "and",
+    "carrying",
+    "each",
+    "piece",
+    "toward",
+    "shared",
+    "assembly",
+    "the",
+    "pieces",
+    "assemble",
+    "and",
+    "three",
+    "grips",
+    "press",
+    "one",
+    "finished",
+    "book",
+    "together",
+    "they",
+    "deliver",
+    "forward",
+    "waiting",
+    "hands",
+    "take",
+    "the",
+    "finished",
+    "book's",
+    "full",
+    "weight"
+  ],
+  "matched_script_indices": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    29,
+    30,
+    31,
+    32,
+    33,
+    34,
+    35,
+    36,
+    37,
+    38,
+    39,
+    40,
+    41,
+    42,
+    43
+  ],
+  "beat_anchors": [
+    {
+      "id": "dispatch-jobs",
+      "start": 0.05,
+      "actions": [
+        {
+          "action": {
+            "kind": "workshop.dispatch",
+            "subject": "project",
+            "cue": "splits",
+            "result": "none",
+            "requires": []
+          },
+          "time": 0.69,
+          "script_word_index": 2,
+          "heard_word": "splits"
+        }
+      ]
+    },
+    {
+      "id": "parallel-work",
+      "start": 3.09,
+      "actions": [
+        {
+          "action": {
+            "kind": "workshop.work_parallel",
+            "subject": "project",
+            "cue": "work in parallel",
+            "result": "none",
+            "requires": [
+              "jobs-distributed"
+            ]
+          },
+          "time": 3.24,
+          "script_word_index": 10,
+          "heard_word": "work"
+        }
+      ]
+    },
+    {
+      "id": "assemble-book",
+      "start": 7.83,
+      "actions": [
+        {
+          "action": {
+            "kind": "workshop.assemble",
+            "subject": "project",
+            "cue": "assemble",
+            "result": "none",
+            "requires": [
+              "jobs-worked"
+            ]
+          },
+          "time": 8.35,
+          "script_word_index": 24,
+          "heard_word": "assemble"
+        }
+      ]
+    },
+    {
+      "id": "deliver-book",
+      "start": 11.53,
+      "actions": [
+        {
+          "action": {
+            "kind": "workshop.deliver",
+            "subject": "project",
+            "cue": "deliver",
+            "result": "none",
+            "requires": [
+              "book-assembled"
+            ]
+          },
+          "time": 11.68,
+          "script_word_index": 34,
+          "heard_word": "deliver"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "tracks": [
+    {
+      "id": "narration",
+      "file": "assets/voice/narration-af-nova.wav",
+      "start": 0,
+      "duration": 15.275,
+      "volume": 1,
+      "lane": 0,
+      "group": "voice"
+    },
+    {
+      "id": "sfx-0",
+      "file": "assets/sfx/whoosh-short.mp3",
+      "start": 1.645,
+      "duration": 0.575,
+      "volume": 0.16,
+      "lane": 1,
+      "group": "effects"
+    },
+    {
+      "id": "sfx-1",
+      "file": "assets/sfx/click-soft.mp3",
+      "start": 5.004,
+      "duration": 0.366,
+      "volume": 0.2,
+      "lane": 1,
+      "group": "effects"
+    },
+    {
+      "id": "sfx-2",
+      "file": "assets/sfx/click-soft.mp3",
+      "start": 10.87,
+      "duration": 0.366,
+      "volume": 0.2,
+      "lane": 1,
+      "group": "effects"
+    },
+    {
+      "id": "sfx-3",
+      "file": "assets/sfx/pop.mp3",
+      "start": 13.312,
+      "duration": 0.7,
+      "volume": 0.2,
+      "lane": 1,
+      "group": "effects"
+    }
+  ]
+}

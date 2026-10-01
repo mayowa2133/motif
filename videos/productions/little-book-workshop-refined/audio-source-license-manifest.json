@@ -1,0 +1,52 @@
+{
+  "schemaVersion": "1.0",
+  "narration": {
+    "provider": "local Kokoro ONNX through HyperFrames 0.8.98",
+    "model": "Kokoro-82M v1.0",
+    "modelVersion": "v1.0",
+    "voice": "af_nova",
+    "speed": 0.85,
+    "runtimePackage": "kokoro-onnx 0.6.1",
+    "modelSource": "https://github.com/thewh1teagle/kokoro-onnx/releases/download/model-files-v1.0/kokoro-v1.0.onnx",
+    "voiceDataSource": "https://github.com/thewh1teagle/kokoro-onnx/releases/download/model-files-v1.0/voices-v1.0.bin",
+    "modelSha256": "7d5df8ecf7d4b1878015a32686053fd0eebe2bc377234608764cc0ef3636a6c5",
+    "voiceDataSha256": "bca610b8308e8d99f32e6fe4197e7ec01679264efed0cac9140fe9c29f1fbf7d",
+    "modelLicense": "Apache-2.0 per Kokoro-82M model card",
+    "modelLicenseEvidence": "https://huggingface.co/hexgrad/Kokoro-82M",
+    "rawFile": "assets/voice/narration-af-nova.wav",
+    "rawSha256": "eb5eb356e235dc6ff3a5ccb5858274167fff2dd6517a03da34fb47f682a08635",
+    "scriptFile": "assets/voice/narration.txt",
+    "alignmentFile": "assets/voice/transcript.json",
+    "status": "new script from live validated production plan"
+  },
+  "sfx": [
+    {
+      "file": "assets/sfx/pop.mp3",
+      "sha256": "19ab7193f626ff57fdeef60b45543bac416fcbcec803cfb417abe4b271c1b352",
+      "source": "Bundled HyperFrames media-use SFX collection; CREDITS.md attributes collection to Pixabay",
+      "license": "Pixabay Content License",
+      "licenseUrl": "https://pixabay.com/service/license-summary/",
+      "provenanceLimit": "Bundled metadata does not retain the original Pixabay item URL."
+    },
+    {
+      "file": "assets/sfx/click-soft.mp3",
+      "sha256": "075e17bdac5c13662a1c9530050e0046f81d4138e00eb3bf30427a7b4404103d",
+      "source": "Bundled HyperFrames media-use SFX collection; CREDITS.md attributes collection to Pixabay",
+      "license": "Pixabay Content License",
+      "licenseUrl": "https://pixabay.com/service/license-summary/",
+      "provenanceLimit": "Bundled metadata does not retain the original Pixabay item URL."
+    },
+    {
+      "file": "assets/sfx/whoosh-short.mp3",
+      "sha256": "c2efd9d902a59bf9ec5019035d7deadd17762136896b6e3cb6dd99ea50997a30",
+      "source": "Bundled HyperFrames media-use SFX collection; CREDITS.md attributes collection to Pixabay",
+      "license": "Pixabay Content License",
+      "licenseUrl": "https://pixabay.com/service/license-summary/",
+      "provenanceLimit": "Bundled metadata does not retain the original Pixabay item URL."
+    }
+  ],
+  "music": {
+    "included": false,
+    "reason": "Narration and restrained reused paper interaction effects."
+  }
+}

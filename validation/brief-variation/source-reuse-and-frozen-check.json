@@ -1,0 +1,11 @@
+{
+  "shared_files_checked": 16,
+  "shared_source_changes_between_runs": [],
+  "frozen_files_checked": 362,
+  "changed_frozen_files": [],
+  "shared_producer_sha256": "8962655b2d07ed654fff7c17845d1389ac8edd09811e65a5680cdc093b200ff7",
+  "same_narration_text": true,
+  "same_generated_voice": true,
+  "manual_per_run_source_or_output_edits": [],
+  "pass": true
+}

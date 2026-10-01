@@ -1,0 +1,265 @@
+{
+  "type": "object",
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "enum": [
+        "1.0"
+      ]
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "ready",
+        "capability_error"
+      ]
+    },
+    "capability_error": {
+      "type": "string"
+    },
+    "message": {
+      "type": "string"
+    },
+    "audience": {
+      "type": "string"
+    },
+    "claims": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "illustrative_assumptions": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "environment": {
+      "type": "string",
+      "enum": [
+        "calendar",
+        "arena"
+      ]
+    },
+    "assets": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "asset_requests": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "calendar": {
+      "type": "object",
+      "properties": {
+        "existing_title": {
+          "type": "string",
+          "maxLength": 6
+        },
+        "proposed_title": {
+          "type": "string",
+          "maxLength": 6
+        }
+      },
+      "required": [
+        "existing_title",
+        "proposed_title"
+      ],
+      "additionalProperties": false
+    },
+    "expected_final": {
+      "type": "object",
+      "properties": {
+        "calendar": {
+          "type": "string",
+          "enum": [
+            "unchanged",
+            "booked"
+          ]
+        },
+        "A": {
+          "type": "string",
+          "enum": [
+            "untested",
+            "pass",
+            "fail"
+          ]
+        },
+        "B": {
+          "type": "string",
+          "enum": [
+            "untested",
+            "pass",
+            "fail"
+          ]
+        },
+        "winner": {
+          "type": "string",
+          "enum": [
+            "none",
+            "A",
+            "B"
+          ]
+        },
+        "handoff": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "calendar",
+        "A",
+        "B",
+        "winner",
+        "handoff"
+      ],
+      "additionalProperties": false
+    },
+    "ending_action": {
+      "type": "string"
+    },
+    "beats": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "subject": {
+            "type": "string"
+          },
+          "action": {
+            "type": "string"
+          },
+          "before_after": {
+            "type": "string"
+          },
+          "focal_detail": {
+            "type": "string"
+          },
+          "consequence": {
+            "type": "string"
+          },
+          "narration": {
+            "type": "string"
+          },
+          "caption": {
+            "type": "string",
+            "maxLength": 28
+          },
+          "headline": {
+            "type": "string",
+            "maxLength": 22
+          },
+          "shot": {
+            "type": "string",
+            "enum": [
+              "calendar-wide",
+              "calendar-detail",
+              "arena-pair",
+              "arena-a",
+              "arena-b",
+              "arena-review"
+            ]
+          },
+          "actions": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "kind": {
+                  "type": "string",
+                  "enum": [
+                    "calendar.propose",
+                    "calendar.approve",
+                    "calendar.decline",
+                    "calendar.commit",
+                    "arena.check",
+                    "arena.select",
+                    "arena.handoff",
+                    "bot.pose"
+                  ]
+                },
+                "subject": {
+                  "type": "string",
+                  "enum": [
+                    "calendar",
+                    "A",
+                    "B",
+                    "both",
+                    "bot"
+                  ]
+                },
+                "cue": {
+                  "type": "string"
+                },
+                "result": {
+                  "type": "string",
+                  "enum": [
+                    "none",
+                    "pass",
+                    "fail",
+                    "thinking",
+                    "pointing",
+                    "presenting",
+                    "happy"
+                  ]
+                },
+                "requires": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                }
+              },
+              "required": [
+                "kind",
+                "subject",
+                "cue",
+                "result",
+                "requires"
+              ],
+              "additionalProperties": false
+            }
+          }
+        },
+        "required": [
+          "id",
+          "subject",
+          "action",
+          "before_after",
+          "focal_detail",
+          "consequence",
+          "narration",
+          "caption",
+          "headline",
+          "shot",
+          "actions"
+        ],
+        "additionalProperties": false
+      }
+    }
+  },
+  "required": [
+    "schema_version",
+    "status",
+    "capability_error",
+    "message",
+    "audience",
+    "claims",
+    "illustrative_assumptions",
+    "environment",
+    "assets",
+    "asset_requests",
+    "calendar",
+    "expected_final",
+    "ending_action",
+    "beats"
+  ],
+  "additionalProperties": false
+}

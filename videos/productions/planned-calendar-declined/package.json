@@ -1,0 +1,9 @@
+{
+  "name": "planned-calendar-declined",
+  "private": true,
+  "scripts": {
+    "check": "npx --yes hyperframes@0.8.97 check",
+    "render": "npx --yes hyperframes@0.8.97 render",
+    "dev": "npx --yes hyperframes@0.8.97 preview"
+  }
+}

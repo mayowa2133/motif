@@ -1,0 +1,481 @@
+{
+  "schemaVersion": "1.0",
+  "compositionId": "main",
+  "fps": 30,
+  "durationSec": 15.56,
+  "initial": [
+    {
+      "target": "#proposed",
+      "props": {
+        "opacity": 0
+      }
+    },
+    {
+      "target": "#committed",
+      "props": {
+        "opacity": 0
+      }
+    },
+    {
+      "target": "#opening",
+      "props": {
+        "opacity": 0
+      }
+    },
+    {
+      "target": "#decision",
+      "props": {
+        "opacity": 0
+      }
+    },
+    {
+      "target": "#decision-result",
+      "props": {
+        "opacity": 0
+      }
+    },
+    {
+      "target": "#finger",
+      "props": {
+        "opacity": 0
+      }
+    },
+    {
+      "target": "#world-camera",
+      "props": {
+        "scale": 1
+      }
+    },
+    {
+      "target": "#bot-thinking",
+      "props": {
+        "opacity": 1
+      }
+    },
+    {
+      "target": "#bot-pointing",
+      "props": {
+        "opacity": 0
+      }
+    },
+    {
+      "target": "#bot-presenting",
+      "props": {
+        "opacity": 0
+      }
+    },
+    {
+      "target": "#bot-happy",
+      "props": {
+        "opacity": 0
+      }
+    },
+    {
+      "target": "#caption-0",
+      "props": {
+        "opacity": 0
+      }
+    },
+    {
+      "target": "#headline-0",
+      "props": {
+        "opacity": 0
+      }
+    },
+    {
+      "target": "#caption-1",
+      "props": {
+        "opacity": 0
+      }
+    },
+    {
+      "target": "#headline-1",
+      "props": {
+        "opacity": 0
+      }
+    },
+    {
+      "target": "#caption-2",
+      "props": {
+        "opacity": 0
+      }
+    },
+    {
+      "target": "#caption-3",
+      "props": {
+        "opacity": 0
+      }
+    },
+    {
+      "target": "#headline-3",
+      "props": {
+        "opacity": 0
+      }
+    }
+  ],
+  "events": [
+    {
+      "time": 0.05,
+      "target": "#caption-0",
+      "action": "CAPTION_REPLACE",
+      "params": {}
+    },
+    {
+      "time": 0.05,
+      "target": "#world-camera",
+      "action": "TWEEN",
+      "params": {
+        "to": {
+          "scale": 1
+        },
+        "duration": 0.4
+      }
+    },
+    {
+      "time": 0.05,
+      "target": "#headline-0",
+      "action": "FROM_TO",
+      "params": {
+        "from": {
+          "opacity": 0,
+          "scale": 0.92
+        },
+        "to": {
+          "opacity": 1,
+          "scale": 1
+        },
+        "duration": 0.25,
+        "ease": "power3.out"
+      }
+    },
+    {
+      "time": 0.18,
+      "target": "#opening",
+      "action": "FROM_TO",
+      "params": {
+        "from": {
+          "opacity": 0,
+          "scale": 0.92
+        },
+        "to": {
+          "opacity": 1,
+          "scale": 1
+        },
+        "duration": 0.32,
+        "ease": "power3.out"
+      }
+    },
+    {
+      "time": 0.74,
+      "target": "#bot-thinking",
+      "action": "SET",
+      "params": {
+        "props": {
+          "opacity": 0
+        }
+      }
+    },
+    {
+      "time": 0.74,
+      "target": "#bot-pointing",
+      "action": "SET",
+      "params": {
+        "props": {
+          "opacity": 1
+        }
+      }
+    },
+    {
+      "time": 0.74,
+      "target": "#bot-presenting",
+      "action": "SET",
+      "params": {
+        "props": {
+          "opacity": 0
+        }
+      }
+    },
+    {
+      "time": 0.74,
+      "target": "#bot-happy",
+      "action": "SET",
+      "params": {
+        "props": {
+          "opacity": 0
+        }
+      }
+    },
+    {
+      "time": 2.69,
+      "target": "#caption-1",
+      "action": "CAPTION_REPLACE",
+      "params": {}
+    },
+    {
+      "time": 2.69,
+      "target": "#headline-0",
+      "action": "SET",
+      "params": {
+        "props": {
+          "opacity": 0
+        }
+      }
+    },
+    {
+      "time": 2.69,
+      "target": "#world-camera",
+      "action": "TWEEN",
+      "params": {
+        "to": {
+          "scale": 1.08
+        },
+        "duration": 0.4
+      }
+    },
+    {
+      "time": 4.14,
+      "target": "#proposed",
+      "action": "FROM_TO",
+      "params": {
+        "from": {
+          "opacity": 0,
+          "y": -110
+        },
+        "to": {
+          "opacity": 1,
+          "y": 0
+        },
+        "duration": 0.55
+      }
+    },
+    {
+      "time": 4.81,
+      "target": "#headline-1",
+      "action": "FROM_TO",
+      "params": {
+        "from": {
+          "opacity": 0,
+          "scale": 0.92
+        },
+        "to": {
+          "opacity": 1,
+          "scale": 1
+        },
+        "duration": 0.25,
+        "ease": "power3.out"
+      }
+    },
+    {
+      "time": 6.33,
+      "target": "#caption-2",
+      "action": "CAPTION_REPLACE",
+      "params": {}
+    },
+    {
+      "time": 6.33,
+      "target": "#world-camera",
+      "action": "TWEEN",
+      "params": {
+        "to": {
+          "scale": 1.08
+        },
+        "duration": 0.4
+      }
+    },
+    {
+      "time": 6.33,
+      "target": "#decision",
+      "action": "FROM_TO",
+      "params": {
+        "from": {
+          "opacity": 0,
+          "scale": 0.92
+        },
+        "to": {
+          "opacity": 1,
+          "scale": 1
+        },
+        "duration": 0.25,
+        "ease": "power3.out"
+      }
+    },
+    {
+      "time": 6.33,
+      "target": "#finger",
+      "action": "FROM_TO",
+      "params": {
+        "from": {
+          "x": 350,
+          "opacity": 0
+        },
+        "to": {
+          "x": 0,
+          "opacity": 1
+        },
+        "duration": 0.5300000000000002
+      }
+    },
+    {
+      "time": 6.86,
+      "target": "#finger",
+      "action": "TWEEN",
+      "params": {
+        "to": {
+          "y": 35
+        },
+        "duration": 0.18
+      }
+    },
+    {
+      "time": 6.86,
+      "target": "#decision",
+      "action": "TWEEN",
+      "params": {
+        "to": {
+          "y": 12,
+          "scale": 0.96
+        },
+        "duration": 0.18
+      }
+    },
+    {
+      "time": 7.09,
+      "target": "#decision-result",
+      "action": "FROM_TO",
+      "params": {
+        "from": {
+          "opacity": 0,
+          "scale": 0.92
+        },
+        "to": {
+          "opacity": 1,
+          "scale": 1
+        },
+        "duration": 0.16,
+        "ease": "power3.out"
+      }
+    },
+    {
+      "time": 7.22,
+      "target": "#finger",
+      "action": "TWEEN",
+      "params": {
+        "to": {
+          "x": 350,
+          "opacity": 0
+        },
+        "duration": 0.42
+      }
+    },
+    {
+      "time": 7.22,
+      "target": "#decision",
+      "action": "TWEEN",
+      "params": {
+        "to": {
+          "y": 0,
+          "scale": 1
+        },
+        "duration": 0.3
+      }
+    },
+    {
+      "time": 7.64,
+      "target": "#proposed",
+      "action": "TWEEN",
+      "params": {
+        "to": {
+          "opacity": 0
+        },
+        "duration": 0.35
+      }
+    },
+    {
+      "time": 7.64,
+      "target": "#opening",
+      "action": "TWEEN",
+      "params": {
+        "to": {
+          "opacity": 0
+        },
+        "duration": 0.35
+      }
+    },
+    {
+      "time": 11.13,
+      "target": "#caption-3",
+      "action": "CAPTION_REPLACE",
+      "params": {}
+    },
+    {
+      "time": 11.13,
+      "target": "#headline-0",
+      "action": "SET",
+      "params": {
+        "props": {
+          "opacity": 0
+        }
+      }
+    },
+    {
+      "time": 11.13,
+      "target": "#headline-1",
+      "action": "SET",
+      "params": {
+        "props": {
+          "opacity": 0
+        }
+      }
+    },
+    {
+      "time": 11.13,
+      "target": "#world-camera",
+      "action": "TWEEN",
+      "params": {
+        "to": {
+          "scale": 1
+        },
+        "duration": 0.4
+      }
+    },
+    {
+      "time": 11.13,
+      "target": "#headline-3",
+      "action": "FROM_TO",
+      "params": {
+        "from": {
+          "opacity": 0,
+          "scale": 0.92
+        },
+        "to": {
+          "opacity": 1,
+          "scale": 1
+        },
+        "duration": 0.25,
+        "ease": "power3.out"
+      }
+    }
+  ],
+  "captions": [
+    {
+      "text": "Finding a free hour",
+      "start": 0.05,
+      "end": 2.69
+    },
+    {
+      "text": "Proposing focus time",
+      "start": 2.69,
+      "end": 6.33
+    },
+    {
+      "text": "Your decision",
+      "start": 6.33,
+      "end": 11.13
+    },
+    {
+      "text": "Original schedule",
+      "start": 11.13,
+      "end": 14.357
+    }
+  ]
+}

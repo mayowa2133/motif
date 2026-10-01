@@ -1,0 +1,36 @@
+{
+  "production_plan": "videos/productions/planned-evidence-selects-b/production-plan.json",
+  "first_render": "videos/productions/planned-evidence-selects-b/renders/first.mp4",
+  "final_render": "videos/productions/planned-evidence-selects-b/renders/final.mp4",
+  "first_audio": {
+    "integrated_lufs": -24.36,
+    "true_peak_dbtp": -9.08,
+    "lra_lu": 6.8
+  },
+  "initial_linear_gain_attempt_db": 7.48,
+  "finishing_method": "combined-mix loudnorm with measured calibration",
+  "final_audio": {
+    "integrated_lufs": -16.44,
+    "true_peak_dbtp": -1.79,
+    "lra_lu": 6.4
+  },
+  "target_lufs": -16.0,
+  "true_peak_ceiling_dbtp": -1.5,
+  "pre_render": {
+    "record": "pre-render-checks.json",
+    "sha256": "f47f8fe575c7bd0bf28da0c0c63d9f7c03df972e581a41dbb7710d543d1e4c70",
+    "scope": "Earlier structured plan/event/alignment checks, not post-encode visual measurement"
+  },
+  "encoded_measurements": {
+    "integrated_loudness": true,
+    "true_peak": true,
+    "same_encoded_video_stream": true,
+    "same_duration": true,
+    "requested_duration_range": true
+  },
+  "first_sha256": "c0b5c89fcae063de8e1fc4c67d43d3432601f8734326a526b56d6a4d0a4e9f71",
+  "final_sha256": "185d19e1b77cd0e307304d459cf98307497b60003867d76061d40b135e2f3be1",
+  "video_stream_sha256": "c30bfb7d72e1d983912bffd3558f82bdc16977c4e16f5129a4019f72dd3b0766",
+  "subjective_listening": "not assessed",
+  "human_visual_review": "not assessed"
+}

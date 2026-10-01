@@ -1,0 +1,26 @@
+{
+  "planning_backend": {
+    "backend": "codex-exec",
+    "execution": "self-contained command with live model planning",
+    "model": "gpt-5.6-sol",
+    "reasoning_effort": "low",
+    "authentication_status": "Logged in using ChatGPT",
+    "cli_version": "codex-cli 0.149.1",
+    "sandbox": "read-only",
+    "ephemeral": true,
+    "tools_requested": false,
+    "default_model_if_unspecified": false,
+    "model_selection": "MOTIF_PLANNER_MODEL",
+    "hyperframes": "0.8.98"
+  },
+  "initial_plan_sha256": "a59360fd0aa6d95a8a55cc9ac1c59c59f170bf4745c28ede0e0c84419ccb4458",
+  "production_plan_sha256": "84469282f1efdbd7de750357974545278ef92cf1fb925b679074ae02afad6473",
+  "input_brief_sha256": "b288b3650ec918fa5c5a5c280a34f3d397cbc408c4ee8d69e49b7632679e3450",
+  "shared_source_unchanged": true,
+  "manual_per_run_edits": [],
+  "duration_range": [
+    14,
+    20
+  ],
+  "final": "videos/productions/planned-evidence-selects-b/renders/final.mp4"
+}

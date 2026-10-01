@@ -1,0 +1,2 @@
+# Additional dependency for strict plan schema validation.
+jsonschema==4.25.1

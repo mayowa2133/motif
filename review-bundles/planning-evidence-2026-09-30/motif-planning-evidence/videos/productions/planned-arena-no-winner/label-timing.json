@@ -1,0 +1,47 @@
+[
+  {
+    "beat": "beat-1",
+    "caption": "Meet A and B",
+    "caption_start": 0.12,
+    "beat_end": 1.85,
+    "shot": "arena-pair",
+    "headline": "Two answers",
+    "headline_start": 0.12
+  },
+  {
+    "beat": "beat-2",
+    "caption": "Checking answer A",
+    "caption_start": 1.85,
+    "beat_end": 5.16,
+    "shot": "arena-a",
+    "headline": "",
+    "headline_start": null
+  },
+  {
+    "beat": "beat-3",
+    "caption": "Checking answer B",
+    "caption_start": 5.16,
+    "beat_end": 9,
+    "shot": "arena-b",
+    "headline": "Same check",
+    "headline_start": 6.42
+  },
+  {
+    "beat": "beat-4",
+    "caption": "Both answers failed",
+    "caption_start": 9,
+    "beat_end": 11.24,
+    "shot": "arena-pair",
+    "headline": "Both failed",
+    "headline_start": 9
+  },
+  {
+    "beat": "beat-5",
+    "caption": "To a person",
+    "caption_start": 11.24,
+    "beat_end": 15.301,
+    "shot": "arena-review",
+    "headline": "Human review",
+    "headline_start": 13.24
+  }
+]

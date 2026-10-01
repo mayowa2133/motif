@@ -1,0 +1,30 @@
+{
+  "duration_seconds": 17.8,
+  "width": 1080,
+  "height": 1920,
+  "fps": "30/1",
+  "frame_count": 534,
+  "prior_audio_stream_copied_unchanged": true,
+  "audio_payload_sha256": "SHA256=6f357cc7b6556f96acb1d3d645690c40c4587e592ffc30abf05f9952c5a18beb",
+  "audio_finishing_repeated": false,
+  "picture_stream_preserved_after_mux": true,
+  "native_caption_free_stills_inspected_before_encode": true,
+  "final_encoded_frame_times_reviewed": [
+    0.2,
+    1.5,
+    2.5,
+    3.4,
+    6.2,
+    7.5,
+    9.5,
+    10.3,
+    11.3,
+    13.2,
+    14.5,
+    15.9,
+    17.5
+  ],
+  "preserved_source_assets_and_previous_film_files": 163,
+  "changed_preserved_files": [],
+  "full_check": "staging-check.json"
+}

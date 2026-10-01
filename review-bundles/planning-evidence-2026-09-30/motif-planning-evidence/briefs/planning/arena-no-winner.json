@@ -1,0 +1,7 @@
+{
+  "slug": "planned-arena-no-winner",
+  "message": "Two candidate answers undergo the same check. Both fail. Instead of selecting a winner, the assistant sends the answers to a person for review.",
+  "audience": "People learning how AI answer checking and human review can work",
+  "intended_duration_seconds": 17,
+  "duration_tolerance_seconds": 3
+}

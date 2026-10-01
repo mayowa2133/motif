@@ -1,0 +1,52 @@
+{
+  "id": "tabletop-page-press",
+  "name": "Tabletop Page Press",
+  "category": "prop",
+  "subcategory": "paper-workshop",
+  "concepts": [
+    "parallel work",
+    "assembly",
+    "delivery"
+  ],
+  "keywords": [
+    "tabletop-page-press",
+    "paper",
+    "workshop"
+  ],
+  "style": "motif-default-v1",
+  "orientation": "front",
+  "dimensions": {
+    "width": 512,
+    "height": 512,
+    "unit": "px"
+  },
+  "artBox": {
+    "x": 123,
+    "y": 137,
+    "width": 271,
+    "height": 198
+  },
+  "anchors": {
+    "contact": {
+      "x": 0.5,
+      "y": 0.35
+    }
+  },
+  "compatibleCharacters": [
+    "motif-bot"
+  ],
+  "supportedActions": [
+    "press",
+    "align",
+    "release"
+  ],
+  "sourceType": "vector",
+  "source": {
+    "file": "assets/scenes/book-workshop/tabletop-page-press.svg",
+    "reference": "Live Little Book Workshop concept; agent-authored geometry using existing paper material helpers"
+  },
+  "version": 1,
+  "status": "review",
+  "preview": "assets/scenes/book-workshop/tabletop-page-press.png",
+  "license": "project-original"
+}

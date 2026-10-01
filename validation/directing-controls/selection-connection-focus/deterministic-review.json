@@ -1,0 +1,141 @@
+{
+  "pass": true,
+  "issues": [],
+  "states": [
+    {
+      "beat": "beat-1",
+      "kind": "bot.pose",
+      "subject": "bot",
+      "before": {
+        "calendar": "unchanged",
+        "A": "untested",
+        "B": "untested",
+        "winner": "none",
+        "handoff": false
+      },
+      "after": {
+        "calendar": "unchanged",
+        "A": "untested",
+        "B": "untested",
+        "winner": "none",
+        "handoff": false
+      },
+      "facts": []
+    },
+    {
+      "beat": "beat-2",
+      "kind": "arena.check",
+      "subject": "A",
+      "before": {
+        "calendar": "unchanged",
+        "A": "untested",
+        "B": "untested",
+        "winner": "none",
+        "handoff": false
+      },
+      "after": {
+        "calendar": "unchanged",
+        "A": "fail",
+        "B": "untested",
+        "winner": "none",
+        "handoff": false
+      },
+      "facts": [
+        "A-fail",
+        "A-tested"
+      ]
+    },
+    {
+      "beat": "beat-3",
+      "kind": "arena.check",
+      "subject": "B",
+      "before": {
+        "calendar": "unchanged",
+        "A": "fail",
+        "B": "untested",
+        "winner": "none",
+        "handoff": false
+      },
+      "after": {
+        "calendar": "unchanged",
+        "A": "fail",
+        "B": "pass",
+        "winner": "none",
+        "handoff": false
+      },
+      "facts": [
+        "A-fail",
+        "A-tested",
+        "B-pass",
+        "B-tested"
+      ]
+    },
+    {
+      "beat": "beat-4",
+      "kind": "arena.select",
+      "subject": "B",
+      "before": {
+        "calendar": "unchanged",
+        "A": "fail",
+        "B": "pass",
+        "winner": "none",
+        "handoff": false
+      },
+      "after": {
+        "calendar": "unchanged",
+        "A": "fail",
+        "B": "pass",
+        "winner": "B",
+        "handoff": false
+      },
+      "facts": [
+        "A-fail",
+        "A-tested",
+        "B-pass",
+        "B-tested"
+      ]
+    },
+    {
+      "beat": "beat-4",
+      "kind": "bot.pose",
+      "subject": "bot",
+      "before": {
+        "calendar": "unchanged",
+        "A": "fail",
+        "B": "pass",
+        "winner": "B",
+        "handoff": false
+      },
+      "after": {
+        "calendar": "unchanged",
+        "A": "fail",
+        "B": "pass",
+        "winner": "B",
+        "handoff": false
+      },
+      "facts": [
+        "A-fail",
+        "A-tested",
+        "B-pass",
+        "B-tested"
+      ]
+    }
+  ],
+  "final": {
+    "calendar": "unchanged",
+    "A": "fail",
+    "B": "pass",
+    "winner": "B",
+    "handoff": false
+  },
+  "facts": [
+    "A-fail",
+    "A-tested",
+    "B-pass",
+    "B-tested"
+  ],
+  "semantic_guarantee": false,
+  "planning_notes": [
+    "script has 43 words; suggested budget is 41; actual speech duration is the acceptance gate"
+  ]
+}

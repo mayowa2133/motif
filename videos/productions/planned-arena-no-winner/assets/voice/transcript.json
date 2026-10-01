@@ -1,0 +1,248 @@
+[
+  {
+    "text": "Here",
+    "start": 0.12,
+    "end": 0.33,
+    "id": "w0"
+  },
+  {
+    "text": "are",
+    "start": 0.4,
+    "end": 0.65,
+    "id": "w1"
+  },
+  {
+    "text": "answers",
+    "start": 0.65,
+    "end": 1.31,
+    "id": "w2"
+  },
+  {
+    "text": "and",
+    "start": 1.31,
+    "end": 1.51,
+    "id": "w3"
+  },
+  {
+    "text": "B.",
+    "start": 1.7,
+    "end": 1.85,
+    "id": "w4"
+  },
+  {
+    "text": "Checking",
+    "start": 1.85,
+    "end": 2.25,
+    "id": "w5"
+  },
+  {
+    "text": "a",
+    "start": 2.25,
+    "end": 2.3,
+    "id": "w6"
+  },
+  {
+    "text": "reveals",
+    "start": 2.3,
+    "end": 2.66,
+    "id": "w7"
+  },
+  {
+    "text": "a",
+    "start": 2.66,
+    "end": 2.73,
+    "id": "w8"
+  },
+  {
+    "text": "route",
+    "start": 2.73,
+    "end": 3.08,
+    "id": "w9"
+  },
+  {
+    "text": "gap",
+    "start": 3.09,
+    "end": 3.23,
+    "id": "w10"
+  },
+  {
+    "text": "before",
+    "start": 3.37,
+    "end": 3.64,
+    "id": "w11"
+  },
+  {
+    "text": "its",
+    "start": 3.64,
+    "end": 3.8,
+    "id": "w12"
+  },
+  {
+    "text": "cross",
+    "start": 3.8,
+    "end": 4.12,
+    "id": "w13"
+  },
+  {
+    "text": "appears.",
+    "start": 4.12,
+    "end": 5.04,
+    "id": "w14"
+  },
+  {
+    "text": "Checking",
+    "start": 5.16,
+    "end": 5.57,
+    "id": "w15"
+  },
+  {
+    "text": "Bwith",
+    "start": 5.57,
+    "end": 5.89,
+    "id": "w16"
+  },
+  {
+    "text": "the",
+    "start": 5.89,
+    "end": 6.09,
+    "id": "w17"
+  },
+  {
+    "text": "same",
+    "start": 6.09,
+    "end": 6.35,
+    "id": "w18"
+  },
+  {
+    "text": "stencil",
+    "start": 6.35,
+    "end": 6.81,
+    "id": "w19"
+  },
+  {
+    "text": "reveals",
+    "start": 6.81,
+    "end": 7.28,
+    "id": "w20"
+  },
+  {
+    "text": "its",
+    "start": 7.28,
+    "end": 7.48,
+    "id": "w21"
+  },
+  {
+    "text": "gap",
+    "start": 7.48,
+    "end": 7.68,
+    "id": "w22"
+  },
+  {
+    "text": "before",
+    "start": 7.68,
+    "end": 8,
+    "id": "w23"
+  },
+  {
+    "text": "the",
+    "start": 8.12,
+    "end": 8.27,
+    "id": "w24"
+  },
+  {
+    "text": "cross.",
+    "start": 8.41,
+    "end": 8.86,
+    "id": "w25"
+  },
+  {
+    "text": "Both",
+    "start": 9,
+    "end": 9.16,
+    "id": "w26"
+  },
+  {
+    "text": "answers",
+    "start": 9.16,
+    "end": 9.64,
+    "id": "w27"
+  },
+  {
+    "text": "failed",
+    "start": 9.64,
+    "end": 10.05,
+    "id": "w28"
+  },
+  {
+    "text": "the",
+    "start": 10.05,
+    "end": 10.26,
+    "id": "w29"
+  },
+  {
+    "text": "same",
+    "start": 10.26,
+    "end": 10.39,
+    "id": "w30"
+  },
+  {
+    "text": "check.",
+    "start": 10.63,
+    "end": 11.12,
+    "id": "w31"
+  },
+  {
+    "text": "No",
+    "start": 11.24,
+    "end": 11.3,
+    "id": "w32"
+  },
+  {
+    "text": "winner.",
+    "start": 11.3,
+    "end": 12.12,
+    "id": "w33"
+  },
+  {
+    "text": "Both",
+    "start": 12.12,
+    "end": 12.32,
+    "id": "w34"
+  },
+  {
+    "text": "go",
+    "start": 12.37,
+    "end": 12.43,
+    "id": "w35"
+  },
+  {
+    "text": "to",
+    "start": 12.43,
+    "end": 12.53,
+    "id": "w36"
+  },
+  {
+    "text": "a",
+    "start": 12.53,
+    "end": 12.58,
+    "id": "w37"
+  },
+  {
+    "text": "person",
+    "start": 12.58,
+    "end": 12.9,
+    "id": "w38"
+  },
+  {
+    "text": "for",
+    "start": 12.9,
+    "end": 13.02,
+    "id": "w39"
+  },
+  {
+    "text": "review.",
+    "start": 13.11,
+    "end": 13.6,
+    "id": "w40"
+  }
+]

@@ -1,0 +1,13 @@
+{
+  "scope": "Current structured plan/events/alignment plus upstream model data review; not encoded visual measurement",
+  "upstream_model_review": "../little-book-workshop-refined/model-review-0.json",
+  "checks": {
+    "accepted_plan_state_order": true,
+    "production_plan_unchanged": true,
+    "narration_unchanged": true,
+    "events_sorted": true,
+    "caption_starts_match_measured_beat_anchors": true
+  },
+  "visual_review": "pending encoded-frame inspection",
+  "subjective_listening": "not assessed"
+}

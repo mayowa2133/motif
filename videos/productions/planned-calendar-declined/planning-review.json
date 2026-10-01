@@ -1,0 +1,102 @@
+{
+  "reviews": [
+    {
+      "attempt": 0,
+      "deterministic": {
+        "pass": true,
+        "issues": [],
+        "states": [
+          {
+            "beat": "beat-1",
+            "kind": "bot.pose",
+            "subject": "bot",
+            "before": {
+              "calendar": "unchanged",
+              "A": "untested",
+              "B": "untested",
+              "winner": "none",
+              "handoff": false
+            },
+            "after": {
+              "calendar": "unchanged",
+              "A": "untested",
+              "B": "untested",
+              "winner": "none",
+              "handoff": false
+            },
+            "facts": []
+          },
+          {
+            "beat": "beat-2",
+            "kind": "calendar.propose",
+            "subject": "calendar",
+            "before": {
+              "calendar": "unchanged",
+              "A": "untested",
+              "B": "untested",
+              "winner": "none",
+              "handoff": false
+            },
+            "after": {
+              "calendar": "unchanged",
+              "A": "untested",
+              "B": "untested",
+              "winner": "none",
+              "handoff": false
+            },
+            "facts": [
+              "proposal-visible"
+            ]
+          },
+          {
+            "beat": "beat-3",
+            "kind": "calendar.decline",
+            "subject": "calendar",
+            "before": {
+              "calendar": "unchanged",
+              "A": "untested",
+              "B": "untested",
+              "winner": "none",
+              "handoff": false
+            },
+            "after": {
+              "calendar": "unchanged",
+              "A": "untested",
+              "B": "untested",
+              "winner": "none",
+              "handoff": false
+            },
+            "facts": [
+              "declined"
+            ]
+          }
+        ],
+        "final": {
+          "calendar": "unchanged",
+          "A": "untested",
+          "B": "untested",
+          "winner": "none",
+          "handoff": false
+        },
+        "facts": [
+          "declined"
+        ],
+        "semantic_guarantee": false,
+        "planning_notes": []
+      },
+      "timing_or_semantic_issues": [],
+      "model_review": {
+        "pass": true,
+        "issues": [],
+        "message_preserved": true,
+        "outcome_preserved": true,
+        "evidence_before_labels": true,
+        "ending_delivered": true,
+        "notes": "The plan faithfully shows the assistant identifying an already-visible empty 4 PM hour, presenting a dashed FOCUS proposal, the person declining it, and the proposal disappearing while the 3 PM TEAM appointment remains. \u201cOPEN HOUR\u201d is supported by the empty slot visible from the opening frame; \u201cPROPOSED\u201d starts at 4.81s, after proposal completion at 4.69s; and \u201cCALENDAR UNCHANGED\u201d starts at 11.13s, well after decline/removal completes at 7.99s. The earlier captions describe unfolding actions or neutral context rather than prematurely claiming completed results. The opening and ending expose the same calendar state for a fair unchanged check, and the final 4.43-second hold delivers the specified ending. The 15.56-second runtime is within tolerance."
+      }
+    }
+  ],
+  "corrections": 0,
+  "pass": true,
+  "semantic_guarantee": false
+}

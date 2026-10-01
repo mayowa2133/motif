@@ -1,0 +1,46 @@
+[
+  {
+    "beat": "dispatch-jobs",
+    "caption": "Dividing the project",
+    "caption_start": 0.05,
+    "beat_end": 3.09,
+    "shot": "workshop-wide",
+    "headline": "",
+    "headline_mode": "clear",
+    "headline_start": null,
+    "headline_clear_time": 0.05
+  },
+  {
+    "beat": "parallel-work",
+    "caption": "Working at the same time",
+    "caption_start": 3.09,
+    "beat_end": 7.83,
+    "shot": "workshop-wide",
+    "headline": "",
+    "headline_mode": "clear",
+    "headline_start": null,
+    "headline_clear_time": 3.09
+  },
+  {
+    "beat": "assemble-book",
+    "caption": "Bringing the pieces together",
+    "caption_start": 7.83,
+    "beat_end": 11.53,
+    "shot": "workshop-wide",
+    "headline": "",
+    "headline_mode": "clear",
+    "headline_start": null,
+    "headline_clear_time": 7.83
+  },
+  {
+    "beat": "deliver-book",
+    "caption": "Delivering one result",
+    "caption_start": 11.53,
+    "beat_end": 16.475,
+    "shot": "workshop-wide",
+    "headline": "",
+    "headline_mode": "clear",
+    "headline_start": null,
+    "headline_clear_time": 11.53
+  }
+]

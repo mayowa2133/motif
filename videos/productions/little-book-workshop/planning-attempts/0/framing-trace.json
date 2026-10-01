@@ -1,0 +1,178 @@
+[
+  {
+    "beat": "dispatch-jobs",
+    "start": 0.05,
+    "settled": 0.05,
+    "focus_target": "workshop.project",
+    "framing": "subject",
+    "shot": "workshop-wide",
+    "target_bounds": [
+      405,
+      925,
+      270,
+      315
+    ],
+    "critical_bounds": [
+      40,
+      755,
+      970,
+      640
+    ],
+    "safe_area": [
+      90,
+      260,
+      900,
+      1290
+    ],
+    "camera": {
+      "x": 56.8986,
+      "y": -63.4394,
+      "scale": 0.894632
+    },
+    "projected_target_bounds": [
+      419.22456,
+      764.0952,
+      241.55064,
+      281.80908
+    ],
+    "projected_critical_bounds": [
+      92.68388,
+      612.00776,
+      867.79304,
+      572.56448
+    ],
+    "selected_candidate": null
+  },
+  {
+    "beat": "parallel-work",
+    "start": 3.09,
+    "settled": 3.09,
+    "focus_target": "workshop.jobs",
+    "framing": "establish",
+    "shot": "workshop-wide",
+    "target_bounds": [
+      0,
+      240,
+      1080,
+      1350
+    ],
+    "critical_bounds": [
+      40,
+      755,
+      970,
+      640
+    ],
+    "safe_area": [
+      90,
+      260,
+      900,
+      1290
+    ],
+    "camera": {
+      "x": 90.0,
+      "y": 142.5,
+      "scale": 0.833333
+    },
+    "projected_target_bounds": [
+      90.0,
+      342.49992,
+      899.99964,
+      1124.99955
+    ],
+    "projected_critical_bounds": [
+      123.33332,
+      771.666415,
+      808.33301,
+      533.33312
+    ],
+    "selected_candidate": null
+  },
+  {
+    "beat": "assemble-book",
+    "start": 7.83,
+    "settled": 8.15,
+    "focus_target": "workshop.assembly",
+    "framing": "detail",
+    "shot": "workshop-wide",
+    "target_bounds": [
+      380,
+      940,
+      320,
+      360
+    ],
+    "critical_bounds": [
+      115,
+      775,
+      850,
+      620
+    ],
+    "safe_area": [
+      90,
+      260,
+      900,
+      1290
+    ],
+    "camera": {
+      "x": -8.5327,
+      "y": -232.6975,
+      "scale": 1.015801
+    },
+    "projected_target_bounds": [
+      377.47168,
+      722.15544,
+      325.05631999999997,
+      365.68836
+    ],
+    "projected_critical_bounds": [
+      108.284415,
+      554.548275,
+      863.43085,
+      629.79662
+    ],
+    "selected_candidate": null
+  },
+  {
+    "beat": "deliver-book",
+    "start": 11.53,
+    "settled": 11.53,
+    "focus_target": "workshop.delivery",
+    "framing": "subject",
+    "shot": "workshop-wide",
+    "target_bounds": [
+      370,
+      1080,
+      350,
+      415
+    ],
+    "critical_bounds": [
+      100,
+      770,
+      880,
+      770
+    ],
+    "safe_area": [
+      90,
+      260,
+      900,
+      1290
+    ],
+    "camera": {
+      "x": 4.5197,
+      "y": -360.0109,
+      "scale": 0.982533
+    },
+    "projected_target_bounds": [
+      368.05691,
+      701.12474,
+      343.88655,
+      407.751195
+    ],
+    "projected_critical_bounds": [
+      102.773,
+      396.53950999999995,
+      864.62904,
+      756.5504099999999
+    ],
+    "selected_candidate": null
+  }
+]

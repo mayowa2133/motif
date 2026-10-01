@@ -1,0 +1,275 @@
+{
+  "reviews": [
+    {
+      "attempt": 0,
+      "deterministic": {
+        "pass": true,
+        "issues": [],
+        "states": [
+          {
+            "beat": "beat-1",
+            "kind": "bot.pose",
+            "subject": "bot",
+            "before": {
+              "calendar": "unchanged",
+              "A": "untested",
+              "B": "untested",
+              "winner": "none",
+              "handoff": false
+            },
+            "after": {
+              "calendar": "unchanged",
+              "A": "untested",
+              "B": "untested",
+              "winner": "none",
+              "handoff": false
+            },
+            "facts": []
+          },
+          {
+            "beat": "beat-2",
+            "kind": "arena.check",
+            "subject": "A",
+            "before": {
+              "calendar": "unchanged",
+              "A": "untested",
+              "B": "untested",
+              "winner": "none",
+              "handoff": false
+            },
+            "after": {
+              "calendar": "unchanged",
+              "A": "fail",
+              "B": "untested",
+              "winner": "none",
+              "handoff": false
+            },
+            "facts": [
+              "A-fail",
+              "A-tested"
+            ]
+          },
+          {
+            "beat": "beat-3",
+            "kind": "arena.check",
+            "subject": "B",
+            "before": {
+              "calendar": "unchanged",
+              "A": "fail",
+              "B": "untested",
+              "winner": "none",
+              "handoff": false
+            },
+            "after": {
+              "calendar": "unchanged",
+              "A": "fail",
+              "B": "fail",
+              "winner": "none",
+              "handoff": false
+            },
+            "facts": [
+              "A-fail",
+              "A-tested",
+              "B-fail",
+              "B-tested"
+            ]
+          },
+          {
+            "beat": "beat-4",
+            "kind": "arena.handoff",
+            "subject": "both",
+            "before": {
+              "calendar": "unchanged",
+              "A": "fail",
+              "B": "fail",
+              "winner": "none",
+              "handoff": false
+            },
+            "after": {
+              "calendar": "unchanged",
+              "A": "fail",
+              "B": "fail",
+              "winner": "none",
+              "handoff": true
+            },
+            "facts": [
+              "A-fail",
+              "A-tested",
+              "B-fail",
+              "B-tested",
+              "handed-off"
+            ]
+          }
+        ],
+        "final": {
+          "calendar": "unchanged",
+          "A": "fail",
+          "B": "fail",
+          "winner": "none",
+          "handoff": true
+        },
+        "facts": [
+          "A-fail",
+          "A-tested",
+          "B-fail",
+          "B-tested",
+          "handed-off"
+        ],
+        "semantic_guarantee": false,
+        "planning_notes": [
+          "script has 45 words; suggested budget is 41; actual speech duration is the acceptance gate"
+        ]
+      },
+      "timing_or_semantic_issues": [
+        "\u201cSame test\u201d and \u201cOne shared check\u201d appear at 0.04s, before the timed checks establish that A and B receive the same procedure. The only timed beat-1 event is the bot presenting at 0.74s; labels cannot supply the missing physical evidence.",
+        "The plan describes the answer sheets arriving and being aligned under a shared stencil setup, but no corresponding timed physical action is present. Thus the fairness setup is asserted rather than fully evidenced."
+      ],
+      "model_review": {
+        "pass": false,
+        "issues": [
+          "\u201cSame test\u201d and \u201cOne shared check\u201d appear at 0.04s, before the timed checks establish that A and B receive the same procedure. The only timed beat-1 event is the bot presenting at 0.74s; labels cannot supply the missing physical evidence.",
+          "The plan describes the answer sheets arriving and being aligned under a shared stencil setup, but no corresponding timed physical action is present. Thus the fairness setup is asserted rather than fully evidenced."
+        ],
+        "message_preserved": true,
+        "outcome_preserved": true,
+        "evidence_before_labels": false,
+        "ending_delivered": true,
+        "notes": "A physically fails at 3.76s and its headline appears later at 9.32s. B physically fails at 9.20s. The handoff completes at 15.68s, followed by \u201cNo winner\u201d at 15.80s, and the review ending remains visible through 18.48s. The 18.48s duration is within tolerance. The action captions \u201cTesting answer A/B\u201d are unfolding-action captions and are not premature result claims."
+      }
+    },
+    {
+      "attempt": 1,
+      "deterministic": {
+        "pass": true,
+        "issues": [],
+        "states": [
+          {
+            "beat": "beat-1",
+            "kind": "bot.pose",
+            "subject": "bot",
+            "before": {
+              "calendar": "unchanged",
+              "A": "untested",
+              "B": "untested",
+              "winner": "none",
+              "handoff": false
+            },
+            "after": {
+              "calendar": "unchanged",
+              "A": "untested",
+              "B": "untested",
+              "winner": "none",
+              "handoff": false
+            },
+            "facts": []
+          },
+          {
+            "beat": "beat-2",
+            "kind": "arena.check",
+            "subject": "A",
+            "before": {
+              "calendar": "unchanged",
+              "A": "untested",
+              "B": "untested",
+              "winner": "none",
+              "handoff": false
+            },
+            "after": {
+              "calendar": "unchanged",
+              "A": "fail",
+              "B": "untested",
+              "winner": "none",
+              "handoff": false
+            },
+            "facts": [
+              "A-fail",
+              "A-tested"
+            ]
+          },
+          {
+            "beat": "beat-3",
+            "kind": "arena.check",
+            "subject": "B",
+            "before": {
+              "calendar": "unchanged",
+              "A": "fail",
+              "B": "untested",
+              "winner": "none",
+              "handoff": false
+            },
+            "after": {
+              "calendar": "unchanged",
+              "A": "fail",
+              "B": "fail",
+              "winner": "none",
+              "handoff": false
+            },
+            "facts": [
+              "A-fail",
+              "A-tested",
+              "B-fail",
+              "B-tested"
+            ]
+          },
+          {
+            "beat": "beat-5",
+            "kind": "arena.handoff",
+            "subject": "both",
+            "before": {
+              "calendar": "unchanged",
+              "A": "fail",
+              "B": "fail",
+              "winner": "none",
+              "handoff": false
+            },
+            "after": {
+              "calendar": "unchanged",
+              "A": "fail",
+              "B": "fail",
+              "winner": "none",
+              "handoff": true
+            },
+            "facts": [
+              "A-fail",
+              "A-tested",
+              "B-fail",
+              "B-tested",
+              "handed-off"
+            ]
+          }
+        ],
+        "final": {
+          "calendar": "unchanged",
+          "A": "fail",
+          "B": "fail",
+          "winner": "none",
+          "handoff": true
+        },
+        "facts": [
+          "A-fail",
+          "A-tested",
+          "B-fail",
+          "B-tested",
+          "handed-off"
+        ],
+        "semantic_guarantee": false,
+        "planning_notes": [
+          "script has 43 words; suggested budget is 41; actual speech duration is the acceptance gate"
+        ]
+      },
+      "timing_or_semantic_issues": [],
+      "model_review": {
+        "pass": true,
+        "issues": [],
+        "message_preserved": true,
+        "outcome_preserved": true,
+        "evidence_before_labels": true,
+        "ending_delivered": true,
+        "notes": "The 15.3-second timeline is within tolerance. A and B receive matching checks and visibly fail at 2.99s and 6.30s. The \u201cSame check\u201d headline begins at 6.42s, after B\u2019s matching check; the completed-result labels begin at 9.00s, after both failures. \u201cChecking answer A/B\u201d are unfolding-action captions, and \u201cTo a person\u201d is directional rather than a completed-result claim. The handoff completes at 13.12s, followed by \u201cHuman review\u201d at 13.24s, with both failed sheets held by the person through the ending and no winner shown."
+      }
+    }
+  ],
+  "corrections": 1,
+  "pass": true,
+  "semantic_guarantee": false
+}

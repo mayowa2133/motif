@@ -1,0 +1,18 @@
+{
+  "scripts/motif_produce.py": "8962655b2d07ed654fff7c17845d1389ac8edd09811e65a5680cdc093b200ff7",
+  "scripts/motif_calendar_template.py": "ced03868ba70f2e5754667908377f2946e62b7badd8dbc9f6e73eb1828659370",
+  "scripts/build_motif_bot.py": "9623db72a5dae5e2640367f6a6352a4ca36a7783d7a6e2c342050447f64354ad",
+  "scripts/build_scene_01.py": "133e4356cede8b984b455e3da9893cb011aa9db5e9fd83867d3c3bc622c6c048",
+  "videos/motif-calendar-reel/scene-events.json": "a548b298fe18c4e761159cb3869504f5bf7a72f27d435ed432b9407c2de809dc",
+  "videos/motif-calendar-reel/audio-plan.json": "fc28830a7043c7a5f437ce79f72ac6e8603961e837ce5f53931c1b699329405a",
+  "videos/motif-calendar-reel/hyperframes.json": "ad5dadeef78a520800a9e5cdd27a92ff5ac37f11b6a07f611b6b52b9f8c79a17",
+  "videos/motif-calendar-reel/package.json": "db5995221322a0883e40a822be16a5d4dedd3f99cfab81b0e1ae37d38beeb622",
+  "videos/motif-calendar-reel/assets/gsap.min.js": "c174bfce53a729418d57a8ad8625e7247c793a22fef8e2851e3cfa3de9cd8280",
+  "videos/motif-calendar-reel/assets/motion-engine.js": "1a9ce7c2d2038e1da03144852953e521850e58dfaf53bc6ad0e435394bc264a4",
+  "videos/motif-calendar-reel/assets/motion-primitives.js": "a5e42451d61b0c103ffcd51d0ee3d5edb44cd80023c23f5ecf4a42c32deddb6d",
+  "assets/scenes/demo-03/human-fingertip.svg": "73e8af80704c44aebedee890c96c616612f125dd95aa8583c5426f60cb65d96f",
+  "assets/scenes/demo-03/appointment-card.svg": "ade3b74aee61903a5a1201235c5aed9a8a73056738f5051e3b75ee39ab9e0daf",
+  "assets/scenes/demo-03/proposal-slip.svg": "57d82b597aaf3be433664b8cb4b7f826863cfecf704e82077307221b78d17f1c",
+  "assets/scenes/demo-03/approval-tab.svg": "ffc145d360ced75d0ed344cc3ea3e6a25919952df05bbbc34caee9b346396c64",
+  "assets/scenes/demo-03/calendar-board.svg": "dab2299a1e865392d516f927e96ea96463701656dc1ee90f660242af73ece589"
+}

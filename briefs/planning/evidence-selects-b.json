@@ -1,0 +1,7 @@
+{
+  "slug": "planned-evidence-selects-b",
+  "message": "Two candidate answers receive the same check. A fails and B passes. The assistant selects B based on that evidence.",
+  "audience": "People curious about how assistants choose between answers, explained in plain language",
+  "intended_duration_seconds": 17,
+  "duration_tolerance_seconds": 3
+}

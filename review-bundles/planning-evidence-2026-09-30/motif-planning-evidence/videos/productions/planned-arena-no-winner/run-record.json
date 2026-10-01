@@ -1,0 +1,26 @@
+{
+  "planning_backend": {
+    "backend": "codex-exec",
+    "execution": "self-contained command with live model planning",
+    "model": "gpt-5.6-sol",
+    "reasoning_effort": "low",
+    "authentication_status": "Logged in using ChatGPT",
+    "cli_version": "codex-cli 0.149.1",
+    "sandbox": "read-only",
+    "ephemeral": true,
+    "tools_requested": false,
+    "default_model_if_unspecified": false,
+    "model_selection": "MOTIF_PLANNER_MODEL",
+    "hyperframes": "0.8.97"
+  },
+  "initial_plan_sha256": "ada87834a60bdcbaefb36f5b77acfcba267de2e67961aabe77764222c30fa43f",
+  "production_plan_sha256": "0a4e0ac599dcdd14eea5ffbaefc55d9c241ad87db71d063c86384c22dccf04e1",
+  "input_brief_sha256": "b5d610f763a77a26bca5d162d747c55aff2d12886d4eba8fbb87052c34d88672",
+  "shared_source_unchanged": true,
+  "manual_per_run_edits": [],
+  "duration_range": [
+    14,
+    20
+  ],
+  "final": "videos/productions/planned-arena-no-winner/renders/final.mp4"
+}

@@ -1,0 +1,206 @@
+[
+  {
+    "text": "Assistant",
+    "start": 0.05,
+    "end": 0.74,
+    "id": "w0"
+  },
+  {
+    "text": "spots",
+    "start": 0.74,
+    "end": 1.08,
+    "id": "w1"
+  },
+  {
+    "text": "an",
+    "start": 1.16,
+    "end": 1.27,
+    "id": "w2"
+  },
+  {
+    "text": "open",
+    "start": 1.36,
+    "end": 1.64,
+    "id": "w3"
+  },
+  {
+    "text": "hour",
+    "start": 1.64,
+    "end": 1.82,
+    "id": "w4"
+  },
+  {
+    "text": "at",
+    "start": 2.03,
+    "end": 2.13,
+    "id": "w5"
+  },
+  {
+    "text": "4.",
+    "start": 2.13,
+    "end": 2.64,
+    "id": "w6"
+  },
+  {
+    "text": "It",
+    "start": 2.69,
+    "end": 2.77,
+    "id": "w7"
+  },
+  {
+    "text": "proposes",
+    "start": 2.78,
+    "end": 3.26,
+    "id": "w8"
+  },
+  {
+    "text": "focus",
+    "start": 3.36,
+    "end": 3.7,
+    "id": "w9"
+  },
+  {
+    "text": "time,",
+    "start": 3.7,
+    "end": 4.12,
+    "id": "w10"
+  },
+  {
+    "text": "placing",
+    "start": 4.14,
+    "end": 4.71,
+    "id": "w11"
+  },
+  {
+    "text": "a",
+    "start": 4.71,
+    "end": 4.79,
+    "id": "w12"
+  },
+  {
+    "text": "dashed",
+    "start": 4.79,
+    "end": 5.28,
+    "id": "w13"
+  },
+  {
+    "text": "card",
+    "start": 5.28,
+    "end": 5.6,
+    "id": "w14"
+  },
+  {
+    "text": "there.",
+    "start": 5.6,
+    "end": 6.28,
+    "id": "w15"
+  },
+  {
+    "text": "The",
+    "start": 6.33,
+    "end": 6.43,
+    "id": "w16"
+  },
+  {
+    "text": "person",
+    "start": 6.47,
+    "end": 6.81,
+    "id": "w17"
+  },
+  {
+    "text": "presses",
+    "start": 6.86,
+    "end": 7.31,
+    "id": "w18"
+  },
+  {
+    "text": "decline,",
+    "start": 7.31,
+    "end": 7.92,
+    "id": "w19"
+  },
+  {
+    "text": "removing",
+    "start": 7.92,
+    "end": 8.37,
+    "id": "w20"
+  },
+  {
+    "text": "the",
+    "start": 8.37,
+    "end": 8.54,
+    "id": "w21"
+  },
+  {
+    "text": "proposal",
+    "start": 8.54,
+    "end": 8.93,
+    "id": "w22"
+  },
+  {
+    "text": "while",
+    "start": 9.01,
+    "end": 9.33,
+    "id": "w23"
+  },
+  {
+    "text": "the",
+    "start": 9.33,
+    "end": 9.52,
+    "id": "w24"
+  },
+  {
+    "text": "existing",
+    "start": 9.52,
+    "end": 10.02,
+    "id": "w25"
+  },
+  {
+    "text": "meeting",
+    "start": 10.06,
+    "end": 10.5,
+    "id": "w26"
+  },
+  {
+    "text": "stays.",
+    "start": 10.51,
+    "end": 11.08,
+    "id": "w27"
+  },
+  {
+    "text": "The",
+    "start": 11.13,
+    "end": 11.23,
+    "id": "w28"
+  },
+  {
+    "text": "original",
+    "start": 11.27,
+    "end": 11.7,
+    "id": "w29"
+  },
+  {
+    "text": "calendar",
+    "start": 11.8,
+    "end": 12.26,
+    "id": "w30"
+  },
+  {
+    "text": "remains",
+    "start": 12.26,
+    "end": 12.69,
+    "id": "w31"
+  },
+  {
+    "text": "visibly",
+    "start": 12.69,
+    "end": 13.12,
+    "id": "w32"
+  },
+  {
+    "text": "unchanged.",
+    "start": 13.12,
+    "end": 13.89,
+    "id": "w33"
+  }
+]

@@ -1,0 +1,14 @@
+{
+  "slug": "brief-long-label",
+  "message": "An assistant notices an open hour on a busy afternoon, suggests using it for focused work, and waits for the person's approval before adding the block to the calendar.",
+  "audience": "People interested in practical AI assistance and productivity",
+  "intended_duration_seconds": 14,
+  "aspect_ratio": "9:16",
+  "style": "motif-v1",
+  "voice": "af_nova",
+  "template": "calendar-open-slot",
+  "scene_data": {
+    "existing_title": "PLANNING",
+    "proposed_title": "FOCUS"
+  }
+}

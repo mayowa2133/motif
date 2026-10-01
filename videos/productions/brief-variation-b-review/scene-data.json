@@ -1,0 +1,13 @@
+{
+  "mode": "open_slot",
+  "existing_title": "REVIEW",
+  "proposed_title": "FOCUS",
+  "title": "Motif \u00b7 an open hour becomes focus time after approval",
+  "aria": "A review card occupies 3 PM. Four PM is empty. Motif Bot suggests a focus block, waits for a person's approval, then the solid block appears at 4 PM.",
+  "headlines": [
+    "AN HOUR OPENS",
+    "A FOCUS PLAN",
+    "YOUR APPROVAL",
+    "BLOCK BOOKED"
+  ]
+}

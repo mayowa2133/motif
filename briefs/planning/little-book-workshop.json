@@ -1,0 +1,7 @@
+{
+  "slug": "little-book-workshop",
+  "message": "A project can be divided into independent jobs, worked on at the same time, and brought together as one finished deliverable.",
+  "audience": "People curious about how parallel AI agents work together",
+  "intended_duration_seconds": 18,
+  "duration_tolerance_seconds": 2
+}

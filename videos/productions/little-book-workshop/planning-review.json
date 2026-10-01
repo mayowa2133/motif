@@ -1,0 +1,100 @@
+{
+  "reviews": [
+    {
+      "attempt": 0,
+      "deterministic": {
+        "pass": true,
+        "issues": [],
+        "states": [
+          {
+            "beat": "dispatch-jobs",
+            "kind": "workshop.dispatch",
+            "subject": "project",
+            "before": {
+              "project": "intact"
+            },
+            "after": {
+              "project": "distributed"
+            },
+            "facts": [
+              "jobs-distributed"
+            ]
+          },
+          {
+            "beat": "parallel-work",
+            "kind": "workshop.work_parallel",
+            "subject": "project",
+            "before": {
+              "project": "distributed"
+            },
+            "after": {
+              "project": "worked"
+            },
+            "facts": [
+              "jobs-distributed",
+              "jobs-worked"
+            ]
+          },
+          {
+            "beat": "assemble-book",
+            "kind": "workshop.assemble",
+            "subject": "project",
+            "before": {
+              "project": "worked"
+            },
+            "after": {
+              "project": "assembled"
+            },
+            "facts": [
+              "book-assembled",
+              "jobs-distributed",
+              "jobs-worked"
+            ]
+          },
+          {
+            "beat": "deliver-book",
+            "kind": "workshop.deliver",
+            "subject": "project",
+            "before": {
+              "project": "assembled"
+            },
+            "after": {
+              "project": "delivered"
+            },
+            "facts": [
+              "book-assembled",
+              "book-delivered",
+              "jobs-distributed",
+              "jobs-worked"
+            ]
+          }
+        ],
+        "final": {
+          "project": "delivered"
+        },
+        "facts": [
+          "book-assembled",
+          "book-delivered",
+          "jobs-distributed",
+          "jobs-worked"
+        ],
+        "semantic_guarantee": false,
+        "planning_notes": []
+      },
+      "timing_or_semantic_issues": [],
+      "model_review": {
+        "pass": true,
+        "issues": [],
+        "message_preserved": true,
+        "outcome_preserved": true,
+        "evidence_before_labels": true,
+        "ending_delivered": true,
+        "notes": "The plan faithfully shows one project splitting into three traceable jobs, a genuine 1.235-second three-way overlap, reassembly of the same constituents, and transfer of the finished book to receiving hands. Captions describe unfolding actions rather than prematurely claiming completed results, and each prior label is explicitly cleared at the next beat. The 16.48-second runtime is within tolerance. Framing bounds retain the critical action regions, and the final delivery completes at 14.88 seconds, leaving about 1.60 seconds for the specified final hold. Narration explains division, parallel work, assembly, and delivery without resorting to production-checklist language.",
+        "audience_narration": true
+      }
+    }
+  ],
+  "corrections": 0,
+  "pass": true,
+  "semantic_guarantee": false
+}

@@ -1,0 +1,121 @@
+{
+  "schema_version": "1.0",
+  "status": "ready",
+  "capability_error": "",
+  "message": "An assistant finds a free hour and proposes a focus session. The person declines, so the calendar remains unchanged.",
+  "audience": "People interested in practical AI assistance, explained in plain language",
+  "claims": [
+    "Illustrates an assistant finding an open calendar hour and proposing a focus session.",
+    "Illustrates a person declining the proposal, after which the original calendar remains unchanged."
+  ],
+  "illustrative_assumptions": [
+    "The existing 3 PM appointment is labeled TEAM.",
+    "The open hour begins at 4 PM, and the proposed session is labeled FOCUS.",
+    "The assistant and person are staged beside a calendar board."
+  ],
+  "environment": "calendar",
+  "assets": [
+    "wall",
+    "floor",
+    "desk",
+    "calendar-board",
+    "appointment",
+    "proposal",
+    "decision-tab",
+    "human-hand",
+    "bot"
+  ],
+  "asset_requests": [],
+  "calendar": {
+    "existing_title": "TEAM",
+    "proposed_title": "FOCUS"
+  },
+  "expected_final": {
+    "calendar": "unchanged",
+    "A": "untested",
+    "B": "untested",
+    "winner": "none",
+    "handoff": false
+  },
+  "ending_action": "Hold on the unchanged calendar with the original 3 PM TEAM appointment and an empty 4 PM hour.",
+  "beats": [
+    {
+      "id": "beat-1",
+      "subject": "Assistant and calendar",
+      "action": "The assistant points to the empty 4 PM hour.",
+      "before_after": "Before: the board shows TEAM at 3 PM and an empty 4 PM slot. After: the assistant visibly indicates the open hour.",
+      "focal_detail": "The empty 4 PM row beside the pointing assistant.",
+      "consequence": "The available hour is clearly identified.",
+      "narration": "Assistant spots an open hour at four.",
+      "caption": "Finding a free hour",
+      "headline": "OPEN HOUR",
+      "shot": "calendar-wide",
+      "actions": [
+        {
+          "kind": "bot.pose",
+          "subject": "bot",
+          "cue": "spots",
+          "result": "pointing",
+          "requires": []
+        }
+      ]
+    },
+    {
+      "id": "beat-2",
+      "subject": "Calendar proposal",
+      "action": "A dashed FOCUS card appears in the empty 4 PM slot.",
+      "before_after": "Before: 4 PM is empty. After: a dashed FOCUS proposal occupies the slot.",
+      "focal_detail": "The dashed border distinguishing the proposal from the solid TEAM appointment.",
+      "consequence": "The focus session is visible but not booked.",
+      "narration": "It proposes focus time, placing a dashed card there.",
+      "caption": "Proposing focus time",
+      "headline": "PROPOSED",
+      "shot": "calendar-detail",
+      "actions": [
+        {
+          "kind": "calendar.propose",
+          "subject": "calendar",
+          "cue": "placing",
+          "result": "none",
+          "requires": []
+        }
+      ]
+    },
+    {
+      "id": "beat-3",
+      "subject": "Person and proposal",
+      "action": "A person's finger presses DECLINE; a cross registers and the dashed FOCUS card disappears.",
+      "before_after": "Before: the dashed FOCUS proposal is visible at 4 PM. After: the proposal is removed while TEAM remains solid at 3 PM.",
+      "focal_detail": "The fingertip on DECLINE, followed by the cross and removal.",
+      "consequence": "The proposed focus session is rejected without changing the existing appointment.",
+      "narration": "The person presses decline, removing the proposal while the existing meeting stays.",
+      "caption": "Your decision",
+      "headline": "",
+      "shot": "calendar-detail",
+      "actions": [
+        {
+          "kind": "calendar.decline",
+          "subject": "calendar",
+          "cue": "presses decline",
+          "result": "none",
+          "requires": [
+            "proposal-visible"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "beat-4",
+      "subject": "Calendar",
+      "action": "The board visibly holds on the original schedule.",
+      "before_after": "Before: the declined proposal has been removed. After: TEAM remains at 3 PM and 4 PM is empty.",
+      "focal_detail": "The solid TEAM card and clean, empty 4 PM row.",
+      "consequence": "The ending confirms that nothing was added or moved.",
+      "narration": "The original calendar remains visibly unchanged.",
+      "caption": "Original schedule",
+      "headline": "CALENDAR UNCHANGED",
+      "shot": "calendar-wide",
+      "actions": []
+    }
+  ]
+}

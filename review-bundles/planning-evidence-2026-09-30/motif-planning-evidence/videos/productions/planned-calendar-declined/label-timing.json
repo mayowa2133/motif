@@ -1,0 +1,38 @@
+[
+  {
+    "beat": "beat-1",
+    "caption": "Finding a free hour",
+    "caption_start": 0.05,
+    "beat_end": 2.69,
+    "shot": "calendar-wide",
+    "headline": "OPEN HOUR",
+    "headline_start": 0.05
+  },
+  {
+    "beat": "beat-2",
+    "caption": "Proposing focus time",
+    "caption_start": 2.69,
+    "beat_end": 6.33,
+    "shot": "calendar-detail",
+    "headline": "PROPOSED",
+    "headline_start": 4.81
+  },
+  {
+    "beat": "beat-3",
+    "caption": "Your decision",
+    "caption_start": 6.33,
+    "beat_end": 11.13,
+    "shot": "calendar-detail",
+    "headline": "",
+    "headline_start": null
+  },
+  {
+    "beat": "beat-4",
+    "caption": "Original schedule",
+    "caption_start": 11.13,
+    "beat_end": 15.556999999999999,
+    "shot": "calendar-wide",
+    "headline": "CALENDAR UNCHANGED",
+    "headline_start": 11.13
+  }
+]

@@ -1,0 +1,1305 @@
+{
+  "schemaVersion": "1.0",
+  "compositionId": "main",
+  "fps": 30,
+  "durationSec": 16.82,
+  "initial": [
+    {
+      "target": "#shot-arena-pair",
+      "props": {
+        "opacity": 0
+      }
+    },
+    {
+      "target": "#shot-arena-a",
+      "props": {
+        "opacity": 0
+      }
+    },
+    {
+      "target": "#shot-arena-b",
+      "props": {
+        "opacity": 0
+      }
+    },
+    {
+      "target": "#shot-arena-review",
+      "props": {
+        "opacity": 0
+      }
+    },
+    {
+      "target": "#receiver",
+      "props": {
+        "opacity": 0
+      }
+    },
+    {
+      "target": "#camera-arena-pair",
+      "props": {
+        "x": 0,
+        "y": 0,
+        "scale": 1,
+        "svgOrigin": "0 0"
+      }
+    },
+    {
+      "target": "#camera-arena-a",
+      "props": {
+        "x": 0,
+        "y": 0,
+        "scale": 1,
+        "svgOrigin": "0 0"
+      }
+    },
+    {
+      "target": "#camera-arena-b",
+      "props": {
+        "x": 0,
+        "y": 0,
+        "scale": 1,
+        "svgOrigin": "0 0"
+      }
+    },
+    {
+      "target": "#camera-arena-review",
+      "props": {
+        "x": 0,
+        "y": 0,
+        "scale": 1,
+        "svgOrigin": "0 0"
+      }
+    },
+    {
+      "target": "#pair-A-stencil",
+      "props": {
+        "opacity": 0
+      }
+    },
+    {
+      "target": "#pair-A-pass",
+      "props": {
+        "opacity": 0
+      }
+    },
+    {
+      "target": "#pair-A-fail",
+      "props": {
+        "opacity": 0
+      }
+    },
+    {
+      "target": "#pair-A-pass-mark",
+      "props": {
+        "opacity": 0
+      }
+    },
+    {
+      "target": "#pair-A-fail-mark",
+      "props": {
+        "opacity": 0
+      }
+    },
+    {
+      "target": "#pair-A-selected",
+      "props": {
+        "opacity": 0
+      }
+    },
+    {
+      "target": "#pair-B-stencil",
+      "props": {
+        "opacity": 0
+      }
+    },
+    {
+      "target": "#pair-B-pass",
+      "props": {
+        "opacity": 0
+      }
+    },
+    {
+      "target": "#pair-B-fail",
+      "props": {
+        "opacity": 0
+      }
+    },
+    {
+      "target": "#pair-B-pass-mark",
+      "props": {
+        "opacity": 0
+      }
+    },
+    {
+      "target": "#pair-B-fail-mark",
+      "props": {
+        "opacity": 0
+      }
+    },
+    {
+      "target": "#pair-B-selected",
+      "props": {
+        "opacity": 0
+      }
+    },
+    {
+      "target": "#close-A-stencil",
+      "props": {
+        "opacity": 0
+      }
+    },
+    {
+      "target": "#close-A-pass",
+      "props": {
+        "opacity": 0
+      }
+    },
+    {
+      "target": "#close-A-fail",
+      "props": {
+        "opacity": 0
+      }
+    },
+    {
+      "target": "#close-A-pass-mark",
+      "props": {
+        "opacity": 0
+      }
+    },
+    {
+      "target": "#close-A-fail-mark",
+      "props": {
+        "opacity": 0
+      }
+    },
+    {
+      "target": "#close-A-selected",
+      "props": {
+        "opacity": 0
+      }
+    },
+    {
+      "target": "#close-B-stencil",
+      "props": {
+        "opacity": 0
+      }
+    },
+    {
+      "target": "#close-B-pass",
+      "props": {
+        "opacity": 0
+      }
+    },
+    {
+      "target": "#close-B-fail",
+      "props": {
+        "opacity": 0
+      }
+    },
+    {
+      "target": "#close-B-pass-mark",
+      "props": {
+        "opacity": 0
+      }
+    },
+    {
+      "target": "#close-B-fail-mark",
+      "props": {
+        "opacity": 0
+      }
+    },
+    {
+      "target": "#close-B-selected",
+      "props": {
+        "opacity": 0
+      }
+    },
+    {
+      "target": "#review-A-stencil",
+      "props": {
+        "opacity": 0
+      }
+    },
+    {
+      "target": "#review-A-pass",
+      "props": {
+        "opacity": 0
+      }
+    },
+    {
+      "target": "#review-A-fail",
+      "props": {
+        "opacity": 0
+      }
+    },
+    {
+      "target": "#review-A-pass-mark",
+      "props": {
+        "opacity": 0
+      }
+    },
+    {
+      "target": "#review-A-fail-mark",
+      "props": {
+        "opacity": 0
+      }
+    },
+    {
+      "target": "#review-A-selected",
+      "props": {
+        "opacity": 0
+      }
+    },
+    {
+      "target": "#review-B-stencil",
+      "props": {
+        "opacity": 0
+      }
+    },
+    {
+      "target": "#review-B-pass",
+      "props": {
+        "opacity": 0
+      }
+    },
+    {
+      "target": "#review-B-fail",
+      "props": {
+        "opacity": 0
+      }
+    },
+    {
+      "target": "#review-B-pass-mark",
+      "props": {
+        "opacity": 0
+      }
+    },
+    {
+      "target": "#review-B-fail-mark",
+      "props": {
+        "opacity": 0
+      }
+    },
+    {
+      "target": "#review-B-selected",
+      "props": {
+        "opacity": 0
+      }
+    },
+    {
+      "target": "#pair-bot-thinking",
+      "props": {
+        "opacity": 1
+      }
+    },
+    {
+      "target": "#pair-bot-pointing",
+      "props": {
+        "opacity": 0
+      }
+    },
+    {
+      "target": "#pair-bot-presenting",
+      "props": {
+        "opacity": 0
+      }
+    },
+    {
+      "target": "#pair-bot-happy",
+      "props": {
+        "opacity": 0
+      }
+    },
+    {
+      "target": "#close-A-bot-thinking",
+      "props": {
+        "opacity": 1
+      }
+    },
+    {
+      "target": "#close-A-bot-pointing",
+      "props": {
+        "opacity": 0
+      }
+    },
+    {
+      "target": "#close-A-bot-presenting",
+      "props": {
+        "opacity": 0
+      }
+    },
+    {
+      "target": "#close-A-bot-happy",
+      "props": {
+        "opacity": 0
+      }
+    },
+    {
+      "target": "#close-B-bot-thinking",
+      "props": {
+        "opacity": 1
+      }
+    },
+    {
+      "target": "#close-B-bot-pointing",
+      "props": {
+        "opacity": 0
+      }
+    },
+    {
+      "target": "#close-B-bot-presenting",
+      "props": {
+        "opacity": 0
+      }
+    },
+    {
+      "target": "#close-B-bot-happy",
+      "props": {
+        "opacity": 0
+      }
+    },
+    {
+      "target": "#review-bot-thinking",
+      "props": {
+        "opacity": 1
+      }
+    },
+    {
+      "target": "#review-bot-pointing",
+      "props": {
+        "opacity": 0
+      }
+    },
+    {
+      "target": "#review-bot-presenting",
+      "props": {
+        "opacity": 0
+      }
+    },
+    {
+      "target": "#review-bot-happy",
+      "props": {
+        "opacity": 0
+      }
+    },
+    {
+      "target": "#caption-0",
+      "props": {
+        "opacity": 0
+      }
+    },
+    {
+      "target": "#caption-1",
+      "props": {
+        "opacity": 0
+      }
+    },
+    {
+      "target": "#headline-1",
+      "props": {
+        "opacity": 0
+      }
+    },
+    {
+      "target": "#caption-2",
+      "props": {
+        "opacity": 0
+      }
+    },
+    {
+      "target": "#headline-2",
+      "props": {
+        "opacity": 0
+      }
+    },
+    {
+      "target": "#caption-3",
+      "props": {
+        "opacity": 0
+      }
+    },
+    {
+      "target": "#headline-3",
+      "props": {
+        "opacity": 0
+      }
+    }
+  ],
+  "events": [
+    {
+      "time": 0,
+      "target": "#camera-arena-pair",
+      "action": "SET",
+      "params": {
+        "props": {
+          "x": 90.0,
+          "y": 142.5,
+          "scale": 0.833333
+        }
+      }
+    },
+    {
+      "time": 0,
+      "target": "#shot-arena-pair",
+      "action": "SET",
+      "params": {
+        "props": {
+          "opacity": 1
+        }
+      }
+    },
+    {
+      "time": 0.06,
+      "target": "#caption-0",
+      "action": "CAPTION_REPLACE",
+      "params": {}
+    },
+    {
+      "time": 1.27,
+      "target": "#pair-bot-thinking",
+      "action": "SET",
+      "params": {
+        "props": {
+          "opacity": 0
+        }
+      }
+    },
+    {
+      "time": 1.27,
+      "target": "#pair-bot-pointing",
+      "action": "SET",
+      "params": {
+        "props": {
+          "opacity": 0
+        }
+      }
+    },
+    {
+      "time": 1.27,
+      "target": "#pair-bot-presenting",
+      "action": "SET",
+      "params": {
+        "props": {
+          "opacity": 1
+        }
+      }
+    },
+    {
+      "time": 1.27,
+      "target": "#pair-bot-happy",
+      "action": "SET",
+      "params": {
+        "props": {
+          "opacity": 0
+        }
+      }
+    },
+    {
+      "time": 1.27,
+      "target": "#close-A-bot-thinking",
+      "action": "SET",
+      "params": {
+        "props": {
+          "opacity": 0
+        }
+      }
+    },
+    {
+      "time": 1.27,
+      "target": "#close-A-bot-pointing",
+      "action": "SET",
+      "params": {
+        "props": {
+          "opacity": 0
+        }
+      }
+    },
+    {
+      "time": 1.27,
+      "target": "#close-A-bot-presenting",
+      "action": "SET",
+      "params": {
+        "props": {
+          "opacity": 1
+        }
+      }
+    },
+    {
+      "time": 1.27,
+      "target": "#close-A-bot-happy",
+      "action": "SET",
+      "params": {
+        "props": {
+          "opacity": 0
+        }
+      }
+    },
+    {
+      "time": 1.27,
+      "target": "#close-B-bot-thinking",
+      "action": "SET",
+      "params": {
+        "props": {
+          "opacity": 0
+        }
+      }
+    },
+    {
+      "time": 1.27,
+      "target": "#close-B-bot-pointing",
+      "action": "SET",
+      "params": {
+        "props": {
+          "opacity": 0
+        }
+      }
+    },
+    {
+      "time": 1.27,
+      "target": "#close-B-bot-presenting",
+      "action": "SET",
+      "params": {
+        "props": {
+          "opacity": 1
+        }
+      }
+    },
+    {
+      "time": 1.27,
+      "target": "#close-B-bot-happy",
+      "action": "SET",
+      "params": {
+        "props": {
+          "opacity": 0
+        }
+      }
+    },
+    {
+      "time": 1.27,
+      "target": "#review-bot-thinking",
+      "action": "SET",
+      "params": {
+        "props": {
+          "opacity": 0
+        }
+      }
+    },
+    {
+      "time": 1.27,
+      "target": "#review-bot-pointing",
+      "action": "SET",
+      "params": {
+        "props": {
+          "opacity": 0
+        }
+      }
+    },
+    {
+      "time": 1.27,
+      "target": "#review-bot-presenting",
+      "action": "SET",
+      "params": {
+        "props": {
+          "opacity": 1
+        }
+      }
+    },
+    {
+      "time": 1.27,
+      "target": "#review-bot-happy",
+      "action": "SET",
+      "params": {
+        "props": {
+          "opacity": 0
+        }
+      }
+    },
+    {
+      "time": 3.31,
+      "target": "#caption-1",
+      "action": "CAPTION_REPLACE",
+      "params": {}
+    },
+    {
+      "time": 3.31,
+      "target": "#camera-arena-a",
+      "action": "SET",
+      "params": {
+        "props": {
+          "x": -230.206,
+          "y": -309.5816,
+          "scale": 1.426307
+        }
+      }
+    },
+    {
+      "time": 3.31,
+      "target": "#shot-arena-pair",
+      "action": "SCENE_CUT",
+      "params": {
+        "hide": "#shot-arena-pair",
+        "show": "#shot-arena-a"
+      }
+    },
+    {
+      "time": 4.5,
+      "target": "#pair-A-stencil",
+      "action": "FROM_TO",
+      "params": {
+        "from": {
+          "y": -150,
+          "opacity": 0
+        },
+        "to": {
+          "y": 0,
+          "opacity": 1
+        },
+        "duration": 0.38
+      }
+    },
+    {
+      "time": 4.5,
+      "target": "#close-A-stencil",
+      "action": "FROM_TO",
+      "params": {
+        "from": {
+          "y": -150,
+          "opacity": 0
+        },
+        "to": {
+          "y": 0,
+          "opacity": 1
+        },
+        "duration": 0.38
+      }
+    },
+    {
+      "time": 4.5,
+      "target": "#review-A-stencil",
+      "action": "FROM_TO",
+      "params": {
+        "from": {
+          "y": -150,
+          "opacity": 0
+        },
+        "to": {
+          "y": 0,
+          "opacity": 1
+        },
+        "duration": 0.38
+      }
+    },
+    {
+      "time": 4.9,
+      "target": "#pair-A-fail",
+      "action": "FROM_TO",
+      "params": {
+        "from": {
+          "opacity": 0,
+          "scale": 0.92
+        },
+        "to": {
+          "opacity": 1,
+          "scale": 1
+        },
+        "duration": 0.25,
+        "ease": "power3.out"
+      }
+    },
+    {
+      "time": 4.9,
+      "target": "#close-A-fail",
+      "action": "FROM_TO",
+      "params": {
+        "from": {
+          "opacity": 0,
+          "scale": 0.92
+        },
+        "to": {
+          "opacity": 1,
+          "scale": 1
+        },
+        "duration": 0.25,
+        "ease": "power3.out"
+      }
+    },
+    {
+      "time": 4.9,
+      "target": "#review-A-fail",
+      "action": "FROM_TO",
+      "params": {
+        "from": {
+          "opacity": 0,
+          "scale": 0.92
+        },
+        "to": {
+          "opacity": 1,
+          "scale": 1
+        },
+        "duration": 0.25,
+        "ease": "power3.out"
+      }
+    },
+    {
+      "time": 5.44,
+      "target": "#pair-A-fail-mark",
+      "action": "FROM_TO",
+      "params": {
+        "from": {
+          "opacity": 0,
+          "scale": 0.92
+        },
+        "to": {
+          "opacity": 1,
+          "scale": 1
+        },
+        "duration": 0.2,
+        "ease": "power3.out"
+      }
+    },
+    {
+      "time": 5.44,
+      "target": "#close-A-fail-mark",
+      "action": "FROM_TO",
+      "params": {
+        "from": {
+          "opacity": 0,
+          "scale": 0.92
+        },
+        "to": {
+          "opacity": 1,
+          "scale": 1
+        },
+        "duration": 0.2,
+        "ease": "power3.out"
+      }
+    },
+    {
+      "time": 5.44,
+      "target": "#review-A-fail-mark",
+      "action": "FROM_TO",
+      "params": {
+        "from": {
+          "opacity": 0,
+          "scale": 0.92
+        },
+        "to": {
+          "opacity": 1,
+          "scale": 1
+        },
+        "duration": 0.2,
+        "ease": "power3.out"
+      }
+    },
+    {
+      "time": 5.76,
+      "target": "#headline-1",
+      "action": "FROM_TO",
+      "params": {
+        "from": {
+          "opacity": 0,
+          "scale": 0.92
+        },
+        "to": {
+          "opacity": 1,
+          "scale": 1
+        },
+        "duration": 0.25,
+        "ease": "power3.out"
+      }
+    },
+    {
+      "time": 7.26,
+      "target": "#caption-2",
+      "action": "CAPTION_REPLACE",
+      "params": {}
+    },
+    {
+      "time": 7.26,
+      "target": "#headline-1",
+      "action": "SET",
+      "params": {
+        "props": {
+          "opacity": 0
+        }
+      }
+    },
+    {
+      "time": 7.26,
+      "target": "#camera-arena-b",
+      "action": "SET",
+      "params": {
+        "props": {
+          "x": -230.206,
+          "y": -309.5816,
+          "scale": 1.426307
+        }
+      }
+    },
+    {
+      "time": 7.26,
+      "target": "#shot-arena-a",
+      "action": "SCENE_CUT",
+      "params": {
+        "hide": "#shot-arena-a",
+        "show": "#shot-arena-b"
+      }
+    },
+    {
+      "time": 7.56,
+      "target": "#pair-B-stencil",
+      "action": "FROM_TO",
+      "params": {
+        "from": {
+          "y": -150,
+          "opacity": 0
+        },
+        "to": {
+          "y": 0,
+          "opacity": 1
+        },
+        "duration": 0.38
+      }
+    },
+    {
+      "time": 7.56,
+      "target": "#close-B-stencil",
+      "action": "FROM_TO",
+      "params": {
+        "from": {
+          "y": -150,
+          "opacity": 0
+        },
+        "to": {
+          "y": 0,
+          "opacity": 1
+        },
+        "duration": 0.38
+      }
+    },
+    {
+      "time": 7.56,
+      "target": "#review-B-stencil",
+      "action": "FROM_TO",
+      "params": {
+        "from": {
+          "y": -150,
+          "opacity": 0
+        },
+        "to": {
+          "y": 0,
+          "opacity": 1
+        },
+        "duration": 0.38
+      }
+    },
+    {
+      "time": 7.96,
+      "target": "#pair-B-pass",
+      "action": "FROM_TO",
+      "params": {
+        "from": {
+          "opacity": 0,
+          "scale": 0.92
+        },
+        "to": {
+          "opacity": 1,
+          "scale": 1
+        },
+        "duration": 0.25,
+        "ease": "power3.out"
+      }
+    },
+    {
+      "time": 7.96,
+      "target": "#close-B-pass",
+      "action": "FROM_TO",
+      "params": {
+        "from": {
+          "opacity": 0,
+          "scale": 0.92
+        },
+        "to": {
+          "opacity": 1,
+          "scale": 1
+        },
+        "duration": 0.25,
+        "ease": "power3.out"
+      }
+    },
+    {
+      "time": 7.96,
+      "target": "#review-B-pass",
+      "action": "FROM_TO",
+      "params": {
+        "from": {
+          "opacity": 0,
+          "scale": 0.92
+        },
+        "to": {
+          "opacity": 1,
+          "scale": 1
+        },
+        "duration": 0.25,
+        "ease": "power3.out"
+      }
+    },
+    {
+      "time": 8.5,
+      "target": "#pair-B-pass-mark",
+      "action": "FROM_TO",
+      "params": {
+        "from": {
+          "opacity": 0,
+          "scale": 0.92
+        },
+        "to": {
+          "opacity": 1,
+          "scale": 1
+        },
+        "duration": 0.2,
+        "ease": "power3.out"
+      }
+    },
+    {
+      "time": 8.5,
+      "target": "#close-B-pass-mark",
+      "action": "FROM_TO",
+      "params": {
+        "from": {
+          "opacity": 0,
+          "scale": 0.92
+        },
+        "to": {
+          "opacity": 1,
+          "scale": 1
+        },
+        "duration": 0.2,
+        "ease": "power3.out"
+      }
+    },
+    {
+      "time": 8.5,
+      "target": "#review-B-pass-mark",
+      "action": "FROM_TO",
+      "params": {
+        "from": {
+          "opacity": 0,
+          "scale": 0.92
+        },
+        "to": {
+          "opacity": 1,
+          "scale": 1
+        },
+        "duration": 0.2,
+        "ease": "power3.out"
+      }
+    },
+    {
+      "time": 8.82,
+      "target": "#headline-2",
+      "action": "FROM_TO",
+      "params": {
+        "from": {
+          "opacity": 0,
+          "scale": 0.92
+        },
+        "to": {
+          "opacity": 1,
+          "scale": 1
+        },
+        "duration": 0.25,
+        "ease": "power3.out"
+      }
+    },
+    {
+      "time": 11.15,
+      "target": "#caption-3",
+      "action": "CAPTION_REPLACE",
+      "params": {}
+    },
+    {
+      "time": 11.15,
+      "target": "#headline-1",
+      "action": "SET",
+      "params": {
+        "props": {
+          "opacity": 0
+        }
+      }
+    },
+    {
+      "time": 11.15,
+      "target": "#headline-2",
+      "action": "SET",
+      "params": {
+        "props": {
+          "opacity": 0
+        }
+      }
+    },
+    {
+      "time": 11.15,
+      "target": "#camera-arena-b",
+      "action": "TWEEN",
+      "params": {
+        "to": {
+          "x": 107.9232,
+          "y": 252.8841,
+          "scale": 0.800142
+        },
+        "duration": 0.32
+      }
+    },
+    {
+      "time": 12.49,
+      "target": "#pair-B-selected",
+      "action": "FROM_TO",
+      "params": {
+        "from": {
+          "opacity": 0,
+          "scale": 0.92
+        },
+        "to": {
+          "opacity": 1,
+          "scale": 1
+        },
+        "duration": 0.32,
+        "ease": "power3.out"
+      }
+    },
+    {
+      "time": 12.49,
+      "target": "#close-B-selected",
+      "action": "FROM_TO",
+      "params": {
+        "from": {
+          "opacity": 0,
+          "scale": 0.92
+        },
+        "to": {
+          "opacity": 1,
+          "scale": 1
+        },
+        "duration": 0.32,
+        "ease": "power3.out"
+      }
+    },
+    {
+      "time": 12.49,
+      "target": "#review-B-selected",
+      "action": "FROM_TO",
+      "params": {
+        "from": {
+          "opacity": 0,
+          "scale": 0.92
+        },
+        "to": {
+          "opacity": 1,
+          "scale": 1
+        },
+        "duration": 0.32,
+        "ease": "power3.out"
+      }
+    },
+    {
+      "time": 12.93,
+      "target": "#headline-3",
+      "action": "FROM_TO",
+      "params": {
+        "from": {
+          "opacity": 0,
+          "scale": 0.92
+        },
+        "to": {
+          "opacity": 1,
+          "scale": 1
+        },
+        "duration": 0.25,
+        "ease": "power3.out"
+      }
+    },
+    {
+      "time": 13.52,
+      "target": "#pair-bot-thinking",
+      "action": "SET",
+      "params": {
+        "props": {
+          "opacity": 0
+        }
+      }
+    },
+    {
+      "time": 13.52,
+      "target": "#pair-bot-pointing",
+      "action": "SET",
+      "params": {
+        "props": {
+          "opacity": 1
+        }
+      }
+    },
+    {
+      "time": 13.52,
+      "target": "#pair-bot-presenting",
+      "action": "SET",
+      "params": {
+        "props": {
+          "opacity": 0
+        }
+      }
+    },
+    {
+      "time": 13.52,
+      "target": "#pair-bot-happy",
+      "action": "SET",
+      "params": {
+        "props": {
+          "opacity": 0
+        }
+      }
+    },
+    {
+      "time": 13.52,
+      "target": "#close-A-bot-thinking",
+      "action": "SET",
+      "params": {
+        "props": {
+          "opacity": 0
+        }
+      }
+    },
+    {
+      "time": 13.52,
+      "target": "#close-A-bot-pointing",
+      "action": "SET",
+      "params": {
+        "props": {
+          "opacity": 1
+        }
+      }
+    },
+    {
+      "time": 13.52,
+      "target": "#close-A-bot-presenting",
+      "action": "SET",
+      "params": {
+        "props": {
+          "opacity": 0
+        }
+      }
+    },
+    {
+      "time": 13.52,
+      "target": "#close-A-bot-happy",
+      "action": "SET",
+      "params": {
+        "props": {
+          "opacity": 0
+        }
+      }
+    },
+    {
+      "time": 13.52,
+      "target": "#close-B-bot-thinking",
+      "action": "SET",
+      "params": {
+        "props": {
+          "opacity": 0
+        }
+      }
+    },
+    {
+      "time": 13.52,
+      "target": "#close-B-bot-pointing",
+      "action": "SET",
+      "params": {
+        "props": {
+          "opacity": 1
+        }
+      }
+    },
+    {
+      "time": 13.52,
+      "target": "#close-B-bot-presenting",
+      "action": "SET",
+      "params": {
+        "props": {
+          "opacity": 0
+        }
+      }
+    },
+    {
+      "time": 13.52,
+      "target": "#close-B-bot-happy",
+      "action": "SET",
+      "params": {
+        "props": {
+          "opacity": 0
+        }
+      }
+    },
+    {
+      "time": 13.52,
+      "target": "#review-bot-thinking",
+      "action": "SET",
+      "params": {
+        "props": {
+          "opacity": 0
+        }
+      }
+    },
+    {
+      "time": 13.52,
+      "target": "#review-bot-pointing",
+      "action": "SET",
+      "params": {
+        "props": {
+          "opacity": 1
+        }
+      }
+    },
+    {
+      "time": 13.52,
+      "target": "#review-bot-presenting",
+      "action": "SET",
+      "params": {
+        "props": {
+          "opacity": 0
+        }
+      }
+    },
+    {
+      "time": 13.52,
+      "target": "#review-bot-happy",
+      "action": "SET",
+      "params": {
+        "props": {
+          "opacity": 0
+        }
+      }
+    }
+  ],
+  "captions": [
+    {
+      "text": "The same check",
+      "start": 0.06,
+      "end": 3.31
+    },
+    {
+      "text": "Testing answer A",
+      "start": 3.31,
+      "end": 7.26
+    },
+    {
+      "text": "Testing answer B",
+      "start": 7.26,
+      "end": 11.15
+    },
+    {
+      "text": "Choosing from evidence",
+      "start": 11.15,
+      "end": 15.616
+    }
+  ]
+}

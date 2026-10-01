@@ -1,0 +1,14 @@
+{
+  "slug": "brief-declined",
+  "message": "An assistant notices an open hour on the calendar and suggests a focus block, but the person declines the proposal instead of giving approval. The calendar must remain unchanged.",
+  "audience": "People interested in practical AI assistance and productivity",
+  "intended_duration_seconds": 14,
+  "aspect_ratio": "9:16",
+  "style": "motif-v1",
+  "voice": "af_nova",
+  "template": "calendar-open-slot",
+  "scene_data": {
+    "existing_title": "CALL",
+    "proposed_title": "FOCUS"
+  }
+}

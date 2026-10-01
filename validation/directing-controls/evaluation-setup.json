@@ -1,0 +1,8 @@
+{
+  "brief_chosen_at_utc": "2026-09-30T20:40:58.344360+00:00",
+  "brief_path": "briefs/planning/evidence-selects-b.json",
+  "manual_shot_list_supplied": false,
+  "manual_plan_supplied": false,
+  "shared_source_snapshot": "shared-source-fixed.json",
+  "maximum_automated_corrections": 1
+}

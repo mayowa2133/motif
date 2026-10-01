@@ -1,0 +1,47 @@
+{
+  "execution": "One agent-assisted staging pass of accepted film; no new model plan or narration",
+  "source": "../little-book-workshop-final",
+  "changes": [
+    "Loose initial pieces; existing division starts at 0.05 seconds",
+    "Two upper workstations and one lower station, with real overlapping jobs",
+    "Closer assembly and delivery, unused workstations removed",
+    "Existing divided components stay the same DOM objects through assembly and delivery"
+  ],
+  "native_caption_free_stills": [
+    {
+      "file": "review/project-dividing.png",
+      "size": [
+        360,
+        640
+      ]
+    },
+    {
+      "file": "review/parallel-work.png",
+      "size": [
+        360,
+        640
+      ]
+    },
+    {
+      "file": "review/parts-assembling.png",
+      "size": [
+        360,
+        640
+      ]
+    },
+    {
+      "file": "review/book-received.png",
+      "size": [
+        360,
+        640
+      ]
+    }
+  ],
+  "pre_encode_mobile_frame_inspection": "All four native full frames inspected without captions; no enlarged crops",
+  "soundtrack": "Final export copies prior accepted encoded audio stream, without another audio finishing cycle",
+  "cli_pin_update": {
+    "from": "0.8.98",
+    "to": "0.8.99",
+    "check": "staging-check.json"
+  }
+}

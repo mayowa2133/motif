@@ -1,0 +1,26 @@
+{
+  "planning_backend": {
+    "backend": "codex-exec",
+    "execution": "self-contained command with live model planning",
+    "model": "gpt-5.6-sol",
+    "reasoning_effort": "low",
+    "authentication_status": "Logged in using ChatGPT",
+    "cli_version": "codex-cli 0.149.1",
+    "sandbox": "read-only",
+    "ephemeral": true,
+    "tools_requested": false,
+    "default_model_if_unspecified": false,
+    "model_selection": "MOTIF_PLANNER_MODEL",
+    "hyperframes": "0.8.97"
+  },
+  "initial_plan_sha256": "affd168cc2f8490aab67895fb3f3027c68ffa5628817e9bcaa0c95d7bd1994a8",
+  "production_plan_sha256": "64927f5d41e0b3f4cead64a71f09425887cf8a7899e58f4b2ad15b565cdeed25",
+  "input_brief_sha256": "e7a4ef875807a2a2a45144be022b6478e6b20194ca411a24365c296d91654452",
+  "shared_source_unchanged": true,
+  "manual_per_run_edits": [],
+  "duration_range": [
+    12,
+    18
+  ],
+  "final": "videos/productions/planned-calendar-declined/renders/final.mp4"
+}

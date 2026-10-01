@@ -1,0 +1,21 @@
+test_A_B_diagnostic_fits_match_and_protect_identity_and_marks (test_directing_controls.DirectingTests.test_A_B_diagnostic_fits_match_and_protect_identity_and_marks) ... ok
+test_decline_clears_PROPOSED_without_editing_old_export (test_directing_controls.DirectingTests.test_decline_clears_PROPOSED_without_editing_old_export) ... ok
+test_hidden_selection_and_freeform_focus_are_rejected (test_directing_controls.DirectingTests.test_hidden_selection_and_freeform_focus_are_rejected) ... ok
+test_one_framing_field_changes_camera_with_same_assets_and_speech (test_directing_controls.DirectingTests.test_one_framing_field_changes_camera_with_same_assets_and_speech) ... ok
+test_selection_subject_changes_attached_stamp_events (test_directing_controls.DirectingTests.test_selection_subject_changes_attached_stamp_events) ... ok
+test_stage_instruction_narration_is_not_accepted_as_audience_script (test_directing_controls.DirectingTests.test_stage_instruction_narration_is_not_accepted_as_audience_script) ... ok
+test_different_proposed_label_is_explicitly_unsupported (test_motif_brief_contract.BriefContractTests.test_different_proposed_label_is_explicitly_unsupported) ... ok
+test_supported_labels_leave_no_stale_storyboard_text (test_motif_brief_contract.BriefContractTests.test_supported_labels_leave_no_stale_storyboard_text) ... ok
+test_unknown_scene_fields_are_not_silently_discarded (test_motif_brief_contract.BriefContractTests.test_unknown_scene_fields_are_not_silently_discarded) ... ok
+test_unsupported_briefs_reject_before_output_creation (test_motif_brief_contract.BriefContractTests.test_unsupported_briefs_reject_before_output_creation) ... ok
+test_booking_without_approval_rejected (test_production_plan.PlanTests.test_booking_without_approval_rejected) ... ok
+test_failed_answer_cannot_win (test_production_plan.PlanTests.test_failed_answer_cannot_win) ... ok
+test_final_state_and_message_must_match (test_production_plan.PlanTests.test_final_state_and_message_must_match) ... ok
+test_merged_asr_words_keep_measured_boundaries (test_production_plan.PlanTests.test_merged_asr_words_keep_measured_boundaries) ... ok
+test_plan_content_reaches_compiled_scene (test_production_plan.PlanTests.test_plan_content_reaches_compiled_scene) ... ok
+test_unsupported_action_and_assets_cannot_disappear (test_production_plan.PlanTests.test_unsupported_action_and_assets_cannot_disappear) ... ok
+
+----------------------------------------------------------------------
+Ran 16 tests in 1.465s
+
+OK

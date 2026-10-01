@@ -1,0 +1,1942 @@
+{
+  "schemaVersion": "1.0",
+  "compositionId": "main",
+  "fps": 30,
+  "durationSec": 17.78,
+  "initial": [
+    {
+      "target": "#workshop-camera",
+      "props": {
+        "x": 0,
+        "y": 0,
+        "scale": 1,
+        "svgOrigin": "0 0"
+      }
+    },
+    {
+      "target": "#book-carrier",
+      "props": {
+        "x": 0,
+        "y": 0,
+        "svgOrigin": "0 0"
+      }
+    },
+    {
+      "target": "#job-pages",
+      "props": {
+        "x": 540,
+        "y": 1050,
+        "scale": 0.74,
+        "svgOrigin": "0 0"
+      }
+    },
+    {
+      "target": "#job-cover",
+      "props": {
+        "x": 540,
+        "y": 1050,
+        "scale": 0.74,
+        "svgOrigin": "0 0"
+      }
+    },
+    {
+      "target": "#job-binding",
+      "props": {
+        "x": 540,
+        "y": 1050,
+        "scale": 0.74,
+        "svgOrigin": "0 0"
+      }
+    },
+    {
+      "target": "#cover-flap",
+      "props": {
+        "svgOrigin": "-97 0",
+        "scaleX": 1
+      }
+    },
+    {
+      "target": "#page-0",
+      "props": {
+        "rotation": -7,
+        "x": -12
+      }
+    },
+    {
+      "target": "#page-1",
+      "props": {
+        "rotation": 6,
+        "x": 10
+      }
+    },
+    {
+      "target": "#jig-leaf",
+      "props": {
+        "svgOrigin": "0 0"
+      }
+    },
+    {
+      "target": "#receiving-hands",
+      "props": {
+        "opacity": 0
+      }
+    },
+    {
+      "target": "#carrier-bot",
+      "props": {
+        "opacity": 0
+      }
+    },
+    {
+      "target": "#join-cradle",
+      "props": {
+        "opacity": 0
+      }
+    },
+    {
+      "target": "#page-press",
+      "props": {
+        "opacity": 0
+      }
+    },
+    {
+      "target": "#crease-jig",
+      "props": {
+        "opacity": 0
+      }
+    },
+    {
+      "target": "#caption-0",
+      "props": {
+        "opacity": 0
+      }
+    },
+    {
+      "target": "#caption-1",
+      "props": {
+        "opacity": 0
+      }
+    },
+    {
+      "target": "#caption-2",
+      "props": {
+        "opacity": 0
+      }
+    },
+    {
+      "target": "#caption-3",
+      "props": {
+        "opacity": 0
+      }
+    }
+  ],
+  "events": [
+    {
+      "time": 0,
+      "target": "#workshop-camera",
+      "action": "SET",
+      "params": {
+        "props": {
+          "x": 56.8986,
+          "y": -63.4394,
+          "scale": 0.894632
+        }
+      }
+    },
+    {
+      "time": 0.05,
+      "target": "#caption-0",
+      "action": "CAPTION_REPLACE",
+      "params": {}
+    },
+    {
+      "time": 0.76,
+      "target": "#grip-1-right",
+      "action": "TWEEN",
+      "params": {
+        "to": {
+          "y": -28,
+          "x": -35
+        },
+        "duration": 0.4,
+        "ease": "power2.inOut"
+      }
+    },
+    {
+      "time": 0.76,
+      "target": "#worker-1-right-arm-line-0",
+      "action": "TWEEN",
+      "params": {
+        "to": {
+          "attr": {
+            "d": "M628 554 Q599.0 651.0 570.0 772.0"
+          }
+        },
+        "duration": 0.4,
+        "ease": "power2.inOut"
+      }
+    },
+    {
+      "time": 0.76,
+      "target": "#worker-1-right-arm-line-1",
+      "action": "TWEEN",
+      "params": {
+        "to": {
+          "attr": {
+            "d": "M628 554 Q599.0 651.0 570.0 772.0"
+          }
+        },
+        "duration": 0.4,
+        "ease": "power2.inOut"
+      }
+    },
+    {
+      "time": 0.76,
+      "target": "#worker-1-right-arm-line-2",
+      "action": "TWEEN",
+      "params": {
+        "to": {
+          "attr": {
+            "d": "M628 554 Q599.0 651.0 570.0 772.0"
+          }
+        },
+        "duration": 0.4,
+        "ease": "power2.inOut"
+      }
+    },
+    {
+      "time": 1.16,
+      "target": "#cover-flap",
+      "action": "TWEEN",
+      "params": {
+        "to": {
+          "scaleX": -0.72
+        },
+        "duration": 0.725,
+        "ease": "power2.inOut"
+      }
+    },
+    {
+      "time": 1.835,
+      "target": "#job-cover",
+      "action": "TWEEN",
+      "params": {
+        "to": {
+          "x": 235,
+          "y": 1050,
+          "rotation": -5
+        },
+        "duration": 1.2,
+        "ease": "power2.inOut"
+      }
+    },
+    {
+      "time": 1.835,
+      "target": "#job-binding",
+      "action": "TWEEN",
+      "params": {
+        "to": {
+          "x": 940,
+          "y": 1050,
+          "rotation": 10
+        },
+        "duration": 1.2,
+        "ease": "power2.inOut"
+      }
+    },
+    {
+      "time": 2.26,
+      "target": "#crease-jig",
+      "action": "TWEEN",
+      "params": {
+        "to": {
+          "opacity": 1
+        },
+        "duration": 0.5,
+        "ease": "power2.inOut"
+      }
+    },
+    {
+      "time": 2.26,
+      "target": "#page-press",
+      "action": "TWEEN",
+      "params": {
+        "to": {
+          "opacity": 1
+        },
+        "duration": 0.5,
+        "ease": "power2.inOut"
+      }
+    },
+    {
+      "time": 2.335,
+      "target": "#grip-1-right",
+      "action": "TWEEN",
+      "params": {
+        "to": {
+          "y": 0,
+          "x": 0
+        },
+        "duration": 0.7000000000000001,
+        "ease": "power2.inOut"
+      }
+    },
+    {
+      "time": 2.335,
+      "target": "#worker-1-right-arm-line-0",
+      "action": "TWEEN",
+      "params": {
+        "to": {
+          "attr": {
+            "d": "M628 554 Q616.5 665.0 605.0 800.0"
+          }
+        },
+        "duration": 0.7000000000000001,
+        "ease": "power2.inOut"
+      }
+    },
+    {
+      "time": 2.335,
+      "target": "#worker-1-right-arm-line-1",
+      "action": "TWEEN",
+      "params": {
+        "to": {
+          "attr": {
+            "d": "M628 554 Q616.5 665.0 605.0 800.0"
+          }
+        },
+        "duration": 0.7000000000000001,
+        "ease": "power2.inOut"
+      }
+    },
+    {
+      "time": 2.335,
+      "target": "#worker-1-right-arm-line-2",
+      "action": "TWEEN",
+      "params": {
+        "to": {
+          "attr": {
+            "d": "M628 554 Q616.5 665.0 605.0 800.0"
+          }
+        },
+        "duration": 0.7000000000000001,
+        "ease": "power2.inOut"
+      }
+    },
+    {
+      "time": 4.07,
+      "target": "#caption-1",
+      "action": "CAPTION_REPLACE",
+      "params": {}
+    },
+    {
+      "time": 4.07,
+      "target": "#workshop-camera",
+      "action": "TWEEN",
+      "params": {
+        "to": {
+          "x": 166.8428,
+          "y": 167.3234,
+          "scale": 0.691032
+        },
+        "duration": 0.32
+      }
+    },
+    {
+      "time": 4.78,
+      "target": "#grip-0-left",
+      "action": "TWEEN",
+      "params": {
+        "to": {
+          "y": 22,
+          "x": -30
+        },
+        "duration": 0.7650000000000001,
+        "ease": "power2.inOut"
+      }
+    },
+    {
+      "time": 4.78,
+      "target": "#worker-0-left-arm-line-0",
+      "action": "TWEEN",
+      "params": {
+        "to": {
+          "attr": {
+            "d": "M396 554 Q391.5 676.0 387.0 822.0"
+          }
+        },
+        "duration": 0.7650000000000001,
+        "ease": "power2.inOut"
+      }
+    },
+    {
+      "time": 4.78,
+      "target": "#worker-0-left-arm-line-1",
+      "action": "TWEEN",
+      "params": {
+        "to": {
+          "attr": {
+            "d": "M396 554 Q391.5 676.0 387.0 822.0"
+          }
+        },
+        "duration": 0.7650000000000001,
+        "ease": "power2.inOut"
+      }
+    },
+    {
+      "time": 4.78,
+      "target": "#worker-0-left-arm-line-2",
+      "action": "TWEEN",
+      "params": {
+        "to": {
+          "attr": {
+            "d": "M396 554 Q391.5 676.0 387.0 822.0"
+          }
+        },
+        "duration": 0.7650000000000001,
+        "ease": "power2.inOut"
+      }
+    },
+    {
+      "time": 4.993,
+      "target": "#binding-shape",
+      "action": "TWEEN",
+      "params": {
+        "to": {
+          "attr": {
+            "d": "M-105 -126 Q-108 -133 -110 -126 L-110 123 Q-108 131 -96 127 L-73 126 Q-79 104 -79 80 L-79 -94 Q-79 -116 -73 -126 Z"
+          }
+        },
+        "duration": 1.9125000000000005,
+        "ease": "power2.inOut"
+      }
+    },
+    {
+      "time": 4.993,
+      "target": "#binding-grain",
+      "action": "TWEEN",
+      "params": {
+        "to": {
+          "attr": {
+            "d": "M-105 -126 Q-108 -133 -110 -126 L-110 123 Q-108 131 -96 127 L-73 126 Q-79 104 -79 80 L-79 -94 Q-79 -116 -73 -126 Z"
+          }
+        },
+        "duration": 1.9125000000000005,
+        "ease": "power2.inOut"
+      }
+    },
+    {
+      "time": 4.993,
+      "target": "#job-binding",
+      "action": "TWEEN",
+      "params": {
+        "to": {
+          "x": 870,
+          "y": 1060,
+          "rotation": 0
+        },
+        "duration": 1.9125000000000005,
+        "ease": "power2.inOut"
+      }
+    },
+    {
+      "time": 4.993,
+      "target": "#grip-2-left",
+      "action": "TWEEN",
+      "params": {
+        "to": {
+          "y": 12,
+          "x": -16
+        },
+        "duration": 1.9125000000000005,
+        "ease": "power2.inOut"
+      }
+    },
+    {
+      "time": 4.993,
+      "target": "#worker-2-left-arm-line-0",
+      "action": "TWEEN",
+      "params": {
+        "to": {
+          "attr": {
+            "d": "M396 554 Q398.5 671.0 401.0 812.0"
+          }
+        },
+        "duration": 1.9125000000000005,
+        "ease": "power2.inOut"
+      }
+    },
+    {
+      "time": 4.993,
+      "target": "#worker-2-left-arm-line-1",
+      "action": "TWEEN",
+      "params": {
+        "to": {
+          "attr": {
+            "d": "M396 554 Q398.5 671.0 401.0 812.0"
+          }
+        },
+        "duration": 1.9125000000000005,
+        "ease": "power2.inOut"
+      }
+    },
+    {
+      "time": 4.993,
+      "target": "#worker-2-left-arm-line-2",
+      "action": "TWEEN",
+      "params": {
+        "to": {
+          "attr": {
+            "d": "M396 554 Q398.5 671.0 401.0 812.0"
+          }
+        },
+        "duration": 1.9125000000000005,
+        "ease": "power2.inOut"
+      }
+    },
+    {
+      "time": 4.993,
+      "target": "#grip-2-right",
+      "action": "TWEEN",
+      "params": {
+        "to": {
+          "y": 12,
+          "x": -16
+        },
+        "duration": 1.9125000000000005,
+        "ease": "power2.inOut"
+      }
+    },
+    {
+      "time": 4.993,
+      "target": "#worker-2-right-arm-line-0",
+      "action": "TWEEN",
+      "params": {
+        "to": {
+          "attr": {
+            "d": "M628 554 Q608.5 671.0 589.0 812.0"
+          }
+        },
+        "duration": 1.9125000000000005,
+        "ease": "power2.inOut"
+      }
+    },
+    {
+      "time": 4.993,
+      "target": "#worker-2-right-arm-line-1",
+      "action": "TWEEN",
+      "params": {
+        "to": {
+          "attr": {
+            "d": "M628 554 Q608.5 671.0 589.0 812.0"
+          }
+        },
+        "duration": 1.9125000000000005,
+        "ease": "power2.inOut"
+      }
+    },
+    {
+      "time": 4.993,
+      "target": "#worker-2-right-arm-line-2",
+      "action": "TWEEN",
+      "params": {
+        "to": {
+          "attr": {
+            "d": "M628 554 Q608.5 671.0 589.0 812.0"
+          }
+        },
+        "duration": 1.9125000000000005,
+        "ease": "power2.inOut"
+      }
+    },
+    {
+      "time": 5.12,
+      "target": "#press-plate",
+      "action": "TWEEN",
+      "params": {
+        "to": {
+          "y": 55
+        },
+        "duration": 1.3600000000000003,
+        "ease": "power2.inOut"
+      }
+    },
+    {
+      "time": 5.12,
+      "target": "#grip-1-left",
+      "action": "TWEEN",
+      "params": {
+        "to": {
+          "y": 38
+        },
+        "duration": 1.3600000000000003,
+        "ease": "power2.inOut"
+      }
+    },
+    {
+      "time": 5.12,
+      "target": "#worker-1-left-arm-line-0",
+      "action": "TWEEN",
+      "params": {
+        "to": {
+          "attr": {
+            "d": "M396 554 Q406.5 684.0 417.0 838.0"
+          }
+        },
+        "duration": 1.3600000000000003,
+        "ease": "power2.inOut"
+      }
+    },
+    {
+      "time": 5.12,
+      "target": "#worker-1-left-arm-line-1",
+      "action": "TWEEN",
+      "params": {
+        "to": {
+          "attr": {
+            "d": "M396 554 Q406.5 684.0 417.0 838.0"
+          }
+        },
+        "duration": 1.3600000000000003,
+        "ease": "power2.inOut"
+      }
+    },
+    {
+      "time": 5.12,
+      "target": "#worker-1-left-arm-line-2",
+      "action": "TWEEN",
+      "params": {
+        "to": {
+          "attr": {
+            "d": "M396 554 Q406.5 684.0 417.0 838.0"
+          }
+        },
+        "duration": 1.3600000000000003,
+        "ease": "power2.inOut"
+      }
+    },
+    {
+      "time": 5.12,
+      "target": "#grip-1-right",
+      "action": "TWEEN",
+      "params": {
+        "to": {
+          "y": 38
+        },
+        "duration": 1.3600000000000003,
+        "ease": "power2.inOut"
+      }
+    },
+    {
+      "time": 5.12,
+      "target": "#worker-1-right-arm-line-0",
+      "action": "TWEEN",
+      "params": {
+        "to": {
+          "attr": {
+            "d": "M628 554 Q616.5 684.0 605.0 838.0"
+          }
+        },
+        "duration": 1.3600000000000003,
+        "ease": "power2.inOut"
+      }
+    },
+    {
+      "time": 5.12,
+      "target": "#worker-1-right-arm-line-1",
+      "action": "TWEEN",
+      "params": {
+        "to": {
+          "attr": {
+            "d": "M628 554 Q616.5 684.0 605.0 838.0"
+          }
+        },
+        "duration": 1.3600000000000003,
+        "ease": "power2.inOut"
+      }
+    },
+    {
+      "time": 5.12,
+      "target": "#worker-1-right-arm-line-2",
+      "action": "TWEEN",
+      "params": {
+        "to": {
+          "attr": {
+            "d": "M628 554 Q616.5 684.0 605.0 838.0"
+          }
+        },
+        "duration": 1.3600000000000003,
+        "ease": "power2.inOut"
+      }
+    },
+    {
+      "time": 5.545,
+      "target": "#jig-leaf",
+      "action": "TWEEN",
+      "params": {
+        "to": {
+          "rotation": -54
+        },
+        "duration": 1.1475000000000004,
+        "ease": "power2.inOut"
+      }
+    },
+    {
+      "time": 5.545,
+      "target": "#cover-flap",
+      "action": "TWEEN",
+      "params": {
+        "to": {
+          "scaleX": 1
+        },
+        "duration": 1.2750000000000001,
+        "ease": "power2.inOut"
+      }
+    },
+    {
+      "time": 5.545,
+      "target": "#grip-0-left",
+      "action": "TWEEN",
+      "params": {
+        "to": {
+          "x": 30,
+          "y": 16
+        },
+        "duration": 1.2750000000000001,
+        "ease": "power2.inOut"
+      }
+    },
+    {
+      "time": 5.545,
+      "target": "#worker-0-left-arm-line-0",
+      "action": "TWEEN",
+      "params": {
+        "to": {
+          "attr": {
+            "d": "M396 554 Q421.5 673.0 447.0 816.0"
+          }
+        },
+        "duration": 1.2750000000000001,
+        "ease": "power2.inOut"
+      }
+    },
+    {
+      "time": 5.545,
+      "target": "#worker-0-left-arm-line-1",
+      "action": "TWEEN",
+      "params": {
+        "to": {
+          "attr": {
+            "d": "M396 554 Q421.5 673.0 447.0 816.0"
+          }
+        },
+        "duration": 1.2750000000000001,
+        "ease": "power2.inOut"
+      }
+    },
+    {
+      "time": 5.545,
+      "target": "#worker-0-left-arm-line-2",
+      "action": "TWEEN",
+      "params": {
+        "to": {
+          "attr": {
+            "d": "M396 554 Q421.5 673.0 447.0 816.0"
+          }
+        },
+        "duration": 1.2750000000000001,
+        "ease": "power2.inOut"
+      }
+    },
+    {
+      "time": 5.63,
+      "target": "#page-0",
+      "action": "TWEEN",
+      "params": {
+        "to": {
+          "x": 0,
+          "rotation": 0
+        },
+        "duration": 1.1050000000000002,
+        "ease": "power2.inOut"
+      }
+    },
+    {
+      "time": 5.63,
+      "target": "#page-1",
+      "action": "TWEEN",
+      "params": {
+        "to": {
+          "x": 0,
+          "rotation": 0
+        },
+        "duration": 1.1050000000000002,
+        "ease": "power2.inOut"
+      }
+    },
+    {
+      "time": 6.905,
+      "target": "#jig-leaf",
+      "action": "TWEEN",
+      "params": {
+        "to": {
+          "rotation": 0
+        },
+        "duration": 0.9350000000000002,
+        "ease": "power2.inOut"
+      }
+    },
+    {
+      "time": 7.075,
+      "target": "#press-plate",
+      "action": "TWEEN",
+      "params": {
+        "to": {
+          "y": -18
+        },
+        "duration": 1.0200000000000002,
+        "ease": "power2.inOut"
+      }
+    },
+    {
+      "time": 7.075,
+      "target": "#grip-1-left",
+      "action": "TWEEN",
+      "params": {
+        "to": {
+          "y": 0
+        },
+        "duration": 1.0200000000000002,
+        "ease": "power2.inOut"
+      }
+    },
+    {
+      "time": 7.075,
+      "target": "#worker-1-left-arm-line-0",
+      "action": "TWEEN",
+      "params": {
+        "to": {
+          "attr": {
+            "d": "M396 554 Q406.5 665.0 417.0 800.0"
+          }
+        },
+        "duration": 1.0200000000000002,
+        "ease": "power2.inOut"
+      }
+    },
+    {
+      "time": 7.075,
+      "target": "#worker-1-left-arm-line-1",
+      "action": "TWEEN",
+      "params": {
+        "to": {
+          "attr": {
+            "d": "M396 554 Q406.5 665.0 417.0 800.0"
+          }
+        },
+        "duration": 1.0200000000000002,
+        "ease": "power2.inOut"
+      }
+    },
+    {
+      "time": 7.075,
+      "target": "#worker-1-left-arm-line-2",
+      "action": "TWEEN",
+      "params": {
+        "to": {
+          "attr": {
+            "d": "M396 554 Q406.5 665.0 417.0 800.0"
+          }
+        },
+        "duration": 1.0200000000000002,
+        "ease": "power2.inOut"
+      }
+    },
+    {
+      "time": 7.075,
+      "target": "#grip-1-right",
+      "action": "TWEEN",
+      "params": {
+        "to": {
+          "y": 0
+        },
+        "duration": 1.0200000000000002,
+        "ease": "power2.inOut"
+      }
+    },
+    {
+      "time": 7.075,
+      "target": "#worker-1-right-arm-line-0",
+      "action": "TWEEN",
+      "params": {
+        "to": {
+          "attr": {
+            "d": "M628 554 Q616.5 665.0 605.0 800.0"
+          }
+        },
+        "duration": 1.0200000000000002,
+        "ease": "power2.inOut"
+      }
+    },
+    {
+      "time": 7.075,
+      "target": "#worker-1-right-arm-line-1",
+      "action": "TWEEN",
+      "params": {
+        "to": {
+          "attr": {
+            "d": "M628 554 Q616.5 665.0 605.0 800.0"
+          }
+        },
+        "duration": 1.0200000000000002,
+        "ease": "power2.inOut"
+      }
+    },
+    {
+      "time": 7.075,
+      "target": "#worker-1-right-arm-line-2",
+      "action": "TWEEN",
+      "params": {
+        "to": {
+          "attr": {
+            "d": "M628 554 Q616.5 665.0 605.0 800.0"
+          }
+        },
+        "duration": 1.0200000000000002,
+        "ease": "power2.inOut"
+      }
+    },
+    {
+      "time": 7.245,
+      "target": "#job-binding",
+      "action": "TWEEN",
+      "params": {
+        "to": {
+          "x": 735,
+          "y": 1110,
+          "rotation": -8
+        },
+        "duration": 1.4450000000000005,
+        "ease": "power2.inOut"
+      }
+    },
+    {
+      "time": 7.245,
+      "target": "#grip-2-left",
+      "action": "TWEEN",
+      "params": {
+        "to": {
+          "x": -115,
+          "y": 58
+        },
+        "duration": 1.4450000000000005,
+        "ease": "power2.inOut"
+      }
+    },
+    {
+      "time": 7.245,
+      "target": "#worker-2-left-arm-line-0",
+      "action": "TWEEN",
+      "params": {
+        "to": {
+          "attr": {
+            "d": "M396 554 Q349.0 694.0 302.0 858.0"
+          }
+        },
+        "duration": 1.4450000000000005,
+        "ease": "power2.inOut"
+      }
+    },
+    {
+      "time": 7.245,
+      "target": "#worker-2-left-arm-line-1",
+      "action": "TWEEN",
+      "params": {
+        "to": {
+          "attr": {
+            "d": "M396 554 Q349.0 694.0 302.0 858.0"
+          }
+        },
+        "duration": 1.4450000000000005,
+        "ease": "power2.inOut"
+      }
+    },
+    {
+      "time": 7.245,
+      "target": "#worker-2-left-arm-line-2",
+      "action": "TWEEN",
+      "params": {
+        "to": {
+          "attr": {
+            "d": "M396 554 Q349.0 694.0 302.0 858.0"
+          }
+        },
+        "duration": 1.4450000000000005,
+        "ease": "power2.inOut"
+      }
+    },
+    {
+      "time": 7.245,
+      "target": "#grip-2-right",
+      "action": "TWEEN",
+      "params": {
+        "to": {
+          "x": -115,
+          "y": 58
+        },
+        "duration": 1.4450000000000005,
+        "ease": "power2.inOut"
+      }
+    },
+    {
+      "time": 7.245,
+      "target": "#worker-2-right-arm-line-0",
+      "action": "TWEEN",
+      "params": {
+        "to": {
+          "attr": {
+            "d": "M628 554 Q559.0 694.0 490.0 858.0"
+          }
+        },
+        "duration": 1.4450000000000005,
+        "ease": "power2.inOut"
+      }
+    },
+    {
+      "time": 7.245,
+      "target": "#worker-2-right-arm-line-1",
+      "action": "TWEEN",
+      "params": {
+        "to": {
+          "attr": {
+            "d": "M628 554 Q559.0 694.0 490.0 858.0"
+          }
+        },
+        "duration": 1.4450000000000005,
+        "ease": "power2.inOut"
+      }
+    },
+    {
+      "time": 7.245,
+      "target": "#worker-2-right-arm-line-2",
+      "action": "TWEEN",
+      "params": {
+        "to": {
+          "attr": {
+            "d": "M628 554 Q559.0 694.0 490.0 858.0"
+          }
+        },
+        "duration": 1.4450000000000005,
+        "ease": "power2.inOut"
+      }
+    },
+    {
+      "time": 7.585,
+      "target": "#grip-0-left",
+      "action": "TWEEN",
+      "params": {
+        "to": {
+          "x": 0,
+          "y": 0
+        },
+        "duration": 1.0200000000000002,
+        "ease": "power2.inOut"
+      }
+    },
+    {
+      "time": 7.585,
+      "target": "#worker-0-left-arm-line-0",
+      "action": "TWEEN",
+      "params": {
+        "to": {
+          "attr": {
+            "d": "M396 554 Q406.5 665.0 417.0 800.0"
+          }
+        },
+        "duration": 1.0200000000000002,
+        "ease": "power2.inOut"
+      }
+    },
+    {
+      "time": 7.585,
+      "target": "#worker-0-left-arm-line-1",
+      "action": "TWEEN",
+      "params": {
+        "to": {
+          "attr": {
+            "d": "M396 554 Q406.5 665.0 417.0 800.0"
+          }
+        },
+        "duration": 1.0200000000000002,
+        "ease": "power2.inOut"
+      }
+    },
+    {
+      "time": 7.585,
+      "target": "#worker-0-left-arm-line-2",
+      "action": "TWEEN",
+      "params": {
+        "to": {
+          "attr": {
+            "d": "M396 554 Q406.5 665.0 417.0 800.0"
+          }
+        },
+        "duration": 1.0200000000000002,
+        "ease": "power2.inOut"
+      }
+    },
+    {
+      "time": 8.095,
+      "target": "#job-cover",
+      "action": "TWEEN",
+      "params": {
+        "to": {
+          "rotation": 0
+        },
+        "duration": 0.5950000000000002,
+        "ease": "power2.inOut"
+      }
+    },
+    {
+      "time": 9.21,
+      "target": "#caption-2",
+      "action": "CAPTION_REPLACE",
+      "params": {}
+    },
+    {
+      "time": 9.21,
+      "target": "#workshop-camera",
+      "action": "TWEEN",
+      "params": {
+        "to": {
+          "x": -8.5327,
+          "y": -232.6975,
+          "scale": 1.015801
+        },
+        "duration": 0.32
+      }
+    },
+    {
+      "time": 9.58,
+      "target": "#page-press",
+      "action": "TWEEN",
+      "params": {
+        "to": {
+          "opacity": 0
+        },
+        "duration": 0.46950000000000003,
+        "ease": "power2.inOut"
+      }
+    },
+    {
+      "time": 9.58,
+      "target": "#join-cradle",
+      "action": "TWEEN",
+      "params": {
+        "to": {
+          "opacity": 1
+        },
+        "duration": 0.46950000000000003,
+        "ease": "power2.inOut"
+      }
+    },
+    {
+      "time": 9.58,
+      "target": "#cover-flap",
+      "action": "TWEEN",
+      "params": {
+        "to": {
+          "scaleX": 0.06
+        },
+        "duration": 0.7512000000000001,
+        "ease": "power2.inOut"
+      }
+    },
+    {
+      "time": 9.956,
+      "target": "#job-cover",
+      "action": "TWEEN",
+      "params": {
+        "to": {
+          "x": 540,
+          "y": 1090,
+          "rotation": 0
+        },
+        "duration": 1.2520000000000002,
+        "ease": "power2.inOut"
+      }
+    },
+    {
+      "time": 10.269,
+      "target": "#job-pages",
+      "action": "TWEEN",
+      "params": {
+        "to": {
+          "x": 545,
+          "y": 1090
+        },
+        "duration": 1.0642000000000003,
+        "ease": "power2.inOut"
+      }
+    },
+    {
+      "time": 10.363,
+      "target": "#worker-0",
+      "action": "TWEEN",
+      "params": {
+        "to": {
+          "x": 300
+        },
+        "duration": 0.9390000000000001,
+        "ease": "power2.inOut"
+      }
+    },
+    {
+      "time": 10.363,
+      "target": "#worker-2",
+      "action": "TWEEN",
+      "params": {
+        "to": {
+          "x": -300
+        },
+        "duration": 0.9390000000000001,
+        "ease": "power2.inOut"
+      }
+    },
+    {
+      "time": 10.363,
+      "target": "#grip-0-left",
+      "action": "TWEEN",
+      "params": {
+        "to": {
+          "x": 300,
+          "y": 0
+        },
+        "duration": 0.9390000000000001,
+        "ease": "power2.inOut"
+      }
+    },
+    {
+      "time": 10.363,
+      "target": "#worker-0-left-arm-line-0",
+      "action": "TWEEN",
+      "params": {
+        "to": {
+          "attr": {
+            "d": "M396 554 Q406.5 665.0 417.0 800.0"
+          }
+        },
+        "duration": 0.9390000000000001,
+        "ease": "power2.inOut"
+      }
+    },
+    {
+      "time": 10.363,
+      "target": "#worker-0-left-arm-line-1",
+      "action": "TWEEN",
+      "params": {
+        "to": {
+          "attr": {
+            "d": "M396 554 Q406.5 665.0 417.0 800.0"
+          }
+        },
+        "duration": 0.9390000000000001,
+        "ease": "power2.inOut"
+      }
+    },
+    {
+      "time": 10.363,
+      "target": "#worker-0-left-arm-line-2",
+      "action": "TWEEN",
+      "params": {
+        "to": {
+          "attr": {
+            "d": "M396 554 Q406.5 665.0 417.0 800.0"
+          }
+        },
+        "duration": 0.9390000000000001,
+        "ease": "power2.inOut"
+      }
+    },
+    {
+      "time": 10.363,
+      "target": "#grip-2-right",
+      "action": "TWEEN",
+      "params": {
+        "to": {
+          "x": -300,
+          "y": 0
+        },
+        "duration": 0.9390000000000001,
+        "ease": "power2.inOut"
+      }
+    },
+    {
+      "time": 10.363,
+      "target": "#worker-2-right-arm-line-0",
+      "action": "TWEEN",
+      "params": {
+        "to": {
+          "attr": {
+            "d": "M628 554 Q616.5 665.0 605.0 800.0"
+          }
+        },
+        "duration": 0.9390000000000001,
+        "ease": "power2.inOut"
+      }
+    },
+    {
+      "time": 10.363,
+      "target": "#worker-2-right-arm-line-1",
+      "action": "TWEEN",
+      "params": {
+        "to": {
+          "attr": {
+            "d": "M628 554 Q616.5 665.0 605.0 800.0"
+          }
+        },
+        "duration": 0.9390000000000001,
+        "ease": "power2.inOut"
+      }
+    },
+    {
+      "time": 10.363,
+      "target": "#worker-2-right-arm-line-2",
+      "action": "TWEEN",
+      "params": {
+        "to": {
+          "attr": {
+            "d": "M628 554 Q616.5 665.0 605.0 800.0"
+          }
+        },
+        "duration": 0.9390000000000001,
+        "ease": "power2.inOut"
+      }
+    },
+    {
+      "time": 10.363,
+      "target": "#grip-0-right",
+      "action": "TWEEN",
+      "params": {
+        "to": {
+          "x": 505,
+          "y": 34
+        },
+        "duration": 0.9390000000000001,
+        "ease": "power2.inOut"
+      }
+    },
+    {
+      "time": 10.363,
+      "target": "#worker-0-right-arm-line-0",
+      "action": "TWEEN",
+      "params": {
+        "to": {
+          "attr": {
+            "d": "M628 554 Q719.0 682.0 810.0 834.0"
+          }
+        },
+        "duration": 0.9390000000000001,
+        "ease": "power2.inOut"
+      }
+    },
+    {
+      "time": 10.363,
+      "target": "#worker-0-right-arm-line-1",
+      "action": "TWEEN",
+      "params": {
+        "to": {
+          "attr": {
+            "d": "M628 554 Q719.0 682.0 810.0 834.0"
+          }
+        },
+        "duration": 0.9390000000000001,
+        "ease": "power2.inOut"
+      }
+    },
+    {
+      "time": 10.363,
+      "target": "#worker-0-right-arm-line-2",
+      "action": "TWEEN",
+      "params": {
+        "to": {
+          "attr": {
+            "d": "M628 554 Q719.0 682.0 810.0 834.0"
+          }
+        },
+        "duration": 0.9390000000000001,
+        "ease": "power2.inOut"
+      }
+    },
+    {
+      "time": 10.363,
+      "target": "#grip-2-left",
+      "action": "TWEEN",
+      "params": {
+        "to": {
+          "x": -505,
+          "y": 34
+        },
+        "duration": 0.9390000000000001,
+        "ease": "power2.inOut"
+      }
+    },
+    {
+      "time": 10.363,
+      "target": "#worker-2-left-arm-line-0",
+      "action": "TWEEN",
+      "params": {
+        "to": {
+          "attr": {
+            "d": "M396 554 Q304.0 682.0 212.0 834.0"
+          }
+        },
+        "duration": 0.9390000000000001,
+        "ease": "power2.inOut"
+      }
+    },
+    {
+      "time": 10.363,
+      "target": "#worker-2-left-arm-line-1",
+      "action": "TWEEN",
+      "params": {
+        "to": {
+          "attr": {
+            "d": "M396 554 Q304.0 682.0 212.0 834.0"
+          }
+        },
+        "duration": 0.9390000000000001,
+        "ease": "power2.inOut"
+      }
+    },
+    {
+      "time": 10.363,
+      "target": "#worker-2-left-arm-line-2",
+      "action": "TWEEN",
+      "params": {
+        "to": {
+          "attr": {
+            "d": "M396 554 Q304.0 682.0 212.0 834.0"
+          }
+        },
+        "duration": 0.9390000000000001,
+        "ease": "power2.inOut"
+      }
+    },
+    {
+      "time": 10.989,
+      "target": "#job-binding",
+      "action": "TWEEN",
+      "params": {
+        "to": {
+          "x": 540,
+          "y": 1090,
+          "rotation": 0
+        },
+        "duration": 0.9390000000000001,
+        "ease": "power2.inOut"
+      }
+    },
+    {
+      "time": 11.395,
+      "target": "#cover-flap",
+      "action": "TWEEN",
+      "params": {
+        "to": {
+          "scaleX": 1
+        },
+        "duration": 0.6573,
+        "ease": "power2.inOut"
+      }
+    },
+    {
+      "time": 11.928,
+      "target": "#grip-1-left",
+      "action": "TWEEN",
+      "params": {
+        "to": {
+          "y": 46
+        },
+        "duration": 0.2817,
+        "ease": "power2.inOut"
+      }
+    },
+    {
+      "time": 11.928,
+      "target": "#worker-1-left-arm-line-0",
+      "action": "TWEEN",
+      "params": {
+        "to": {
+          "attr": {
+            "d": "M396 554 Q406.5 688.0 417.0 846.0"
+          }
+        },
+        "duration": 0.2817,
+        "ease": "power2.inOut"
+      }
+    },
+    {
+      "time": 11.928,
+      "target": "#worker-1-left-arm-line-1",
+      "action": "TWEEN",
+      "params": {
+        "to": {
+          "attr": {
+            "d": "M396 554 Q406.5 688.0 417.0 846.0"
+          }
+        },
+        "duration": 0.2817,
+        "ease": "power2.inOut"
+      }
+    },
+    {
+      "time": 11.928,
+      "target": "#worker-1-left-arm-line-2",
+      "action": "TWEEN",
+      "params": {
+        "to": {
+          "attr": {
+            "d": "M396 554 Q406.5 688.0 417.0 846.0"
+          }
+        },
+        "duration": 0.2817,
+        "ease": "power2.inOut"
+      }
+    },
+    {
+      "time": 11.928,
+      "target": "#grip-1-right",
+      "action": "TWEEN",
+      "params": {
+        "to": {
+          "y": 46
+        },
+        "duration": 0.2817,
+        "ease": "power2.inOut"
+      }
+    },
+    {
+      "time": 11.928,
+      "target": "#worker-1-right-arm-line-0",
+      "action": "TWEEN",
+      "params": {
+        "to": {
+          "attr": {
+            "d": "M628 554 Q616.5 688.0 605.0 846.0"
+          }
+        },
+        "duration": 0.2817,
+        "ease": "power2.inOut"
+      }
+    },
+    {
+      "time": 11.928,
+      "target": "#worker-1-right-arm-line-1",
+      "action": "TWEEN",
+      "params": {
+        "to": {
+          "attr": {
+            "d": "M628 554 Q616.5 688.0 605.0 846.0"
+          }
+        },
+        "duration": 0.2817,
+        "ease": "power2.inOut"
+      }
+    },
+    {
+      "time": 11.928,
+      "target": "#worker-1-right-arm-line-2",
+      "action": "TWEEN",
+      "params": {
+        "to": {
+          "attr": {
+            "d": "M628 554 Q616.5 688.0 605.0 846.0"
+          }
+        },
+        "duration": 0.2817,
+        "ease": "power2.inOut"
+      }
+    },
+    {
+      "time": 11.928,
+      "target": "#book-carrier",
+      "action": "TWEEN",
+      "params": {
+        "to": {
+          "y": 8
+        },
+        "duration": 0.2817,
+        "ease": "power2.inOut"
+      }
+    },
+    {
+      "time": 12.303,
+      "target": "#book-carrier",
+      "action": "TWEEN",
+      "params": {
+        "to": {
+          "y": 0
+        },
+        "duration": 0.31300000000000006,
+        "ease": "power2.inOut"
+      }
+    },
+    {
+      "time": 12.303,
+      "target": "#grip-1-left",
+      "action": "TWEEN",
+      "params": {
+        "to": {
+          "y": 0
+        },
+        "duration": 0.31300000000000006,
+        "ease": "power2.inOut"
+      }
+    },
+    {
+      "time": 12.303,
+      "target": "#worker-1-left-arm-line-0",
+      "action": "TWEEN",
+      "params": {
+        "to": {
+          "attr": {
+            "d": "M396 554 Q406.5 665.0 417.0 800.0"
+          }
+        },
+        "duration": 0.31300000000000006,
+        "ease": "power2.inOut"
+      }
+    },
+    {
+      "time": 12.303,
+      "target": "#worker-1-left-arm-line-1",
+      "action": "TWEEN",
+      "params": {
+        "to": {
+          "attr": {
+            "d": "M396 554 Q406.5 665.0 417.0 800.0"
+          }
+        },
+        "duration": 0.31300000000000006,
+        "ease": "power2.inOut"
+      }
+    },
+    {
+      "time": 12.303,
+      "target": "#worker-1-left-arm-line-2",
+      "action": "TWEEN",
+      "params": {
+        "to": {
+          "attr": {
+            "d": "M396 554 Q406.5 665.0 417.0 800.0"
+          }
+        },
+        "duration": 0.31300000000000006,
+        "ease": "power2.inOut"
+      }
+    },
+    {
+      "time": 12.303,
+      "target": "#grip-1-right",
+      "action": "TWEEN",
+      "params": {
+        "to": {
+          "y": 0
+        },
+        "duration": 0.31300000000000006,
+        "ease": "power2.inOut"
+      }
+    },
+    {
+      "time": 12.303,
+      "target": "#worker-1-right-arm-line-0",
+      "action": "TWEEN",
+      "params": {
+        "to": {
+          "attr": {
+            "d": "M628 554 Q616.5 665.0 605.0 800.0"
+          }
+        },
+        "duration": 0.31300000000000006,
+        "ease": "power2.inOut"
+      }
+    },
+    {
+      "time": 12.303,
+      "target": "#worker-1-right-arm-line-1",
+      "action": "TWEEN",
+      "params": {
+        "to": {
+          "attr": {
+            "d": "M628 554 Q616.5 665.0 605.0 800.0"
+          }
+        },
+        "duration": 0.31300000000000006,
+        "ease": "power2.inOut"
+      }
+    },
+    {
+      "time": 12.303,
+      "target": "#worker-1-right-arm-line-2",
+      "action": "TWEEN",
+      "params": {
+        "to": {
+          "attr": {
+            "d": "M628 554 Q616.5 665.0 605.0 800.0"
+          }
+        },
+        "duration": 0.31300000000000006,
+        "ease": "power2.inOut"
+      }
+    },
+    {
+      "time": 12.89,
+      "target": "#caption-3",
+      "action": "CAPTION_REPLACE",
+      "params": {}
+    },
+    {
+      "time": 12.89,
+      "target": "#workshop-camera",
+      "action": "TWEEN",
+      "params": {
+        "to": {
+          "x": 4.5197,
+          "y": -360.0109,
+          "scale": 0.982533
+        },
+        "duration": 0.32
+      }
+    },
+    {
+      "time": 13.78,
+      "target": "#worker-1",
+      "action": "SET",
+      "params": {
+        "props": {
+          "opacity": 0
+        }
+      }
+    },
+    {
+      "time": 13.78,
+      "target": "#carrier-bot",
+      "action": "SET",
+      "params": {
+        "props": {
+          "opacity": 1
+        }
+      }
+    },
+    {
+      "time": 13.78,
+      "target": "#carrier-bot",
+      "action": "TWEEN",
+      "params": {
+        "to": {
+          "y": 462.5
+        },
+        "duration": 1.6,
+        "ease": "power2.inOut"
+      }
+    },
+    {
+      "time": 13.78,
+      "target": "#receiving-hands",
+      "action": "TWEEN",
+      "params": {
+        "to": {
+          "opacity": 1,
+          "y": 0
+        },
+        "duration": 0.8,
+        "ease": "power2.inOut"
+      }
+    },
+    {
+      "time": 13.78,
+      "target": "#grip-1-left",
+      "action": "TWEEN",
+      "params": {
+        "to": {
+          "y": 462.5
+        },
+        "duration": 1.6,
+        "ease": "power2.inOut"
+      }
+    },
+    {
+      "time": 13.78,
+      "target": "#grip-1-right",
+      "action": "TWEEN",
+      "params": {
+        "to": {
+          "y": 462.5
+        },
+        "duration": 1.6,
+        "ease": "power2.inOut"
+      }
+    },
+    {
+      "time": 13.78,
+      "target": "#book-carrier",
+      "action": "TWEEN",
+      "params": {
+        "to": {
+          "y": 185,
+          "scale": 1.1
+        },
+        "duration": 1.6,
+        "ease": "power2.inOut"
+      }
+    },
+    {
+      "time": 13.78,
+      "target": "#worker-0",
+      "action": "TWEEN",
+      "params": {
+        "to": {
+          "x": 0
+        },
+        "duration": 1.088,
+        "ease": "power2.inOut"
+      }
+    },
+    {
+      "time": 13.78,
+      "target": "#grip-0-left",
+      "action": "TWEEN",
+      "params": {
+        "to": {
+          "x": 0,
+          "y": 0
+        },
+        "duration": 1.088,
+        "ease": "power2.inOut"
+      }
+    },
+    {
+      "time": 13.78,
+      "target": "#grip-0-right",
+      "action": "TWEEN",
+      "params": {
+        "to": {
+          "x": 0,
+          "y": 0
+        },
+        "duration": 1.088,
+        "ease": "power2.inOut"
+      }
+    },
+    {
+      "time": 13.78,
+      "target": "#worker-2",
+      "action": "TWEEN",
+      "params": {
+        "to": {
+          "x": 0
+        },
+        "duration": 1.088,
+        "ease": "power2.inOut"
+      }
+    },
+    {
+      "time": 13.78,
+      "target": "#grip-2-left",
+      "action": "TWEEN",
+      "params": {
+        "to": {
+          "x": 0,
+          "y": 0
+        },
+        "duration": 1.088,
+        "ease": "power2.inOut"
+      }
+    },
+    {
+      "time": 13.78,
+      "target": "#grip-2-right",
+      "action": "TWEEN",
+      "params": {
+        "to": {
+          "x": 0,
+          "y": 0
+        },
+        "duration": 1.088,
+        "ease": "power2.inOut"
+      }
+    },
+    {
+      "time": 15.508,
+      "target": "#grip-1-left",
+      "action": "TWEEN",
+      "params": {
+        "to": {
+          "y": 437.5,
+          "x": -60
+        },
+        "duration": 0.8,
+        "ease": "power2.inOut"
+      }
+    },
+    {
+      "time": 15.508,
+      "target": "#grip-1-right",
+      "action": "TWEEN",
+      "params": {
+        "to": {
+          "y": 437.5,
+          "x": 60
+        },
+        "duration": 0.8,
+        "ease": "power2.inOut"
+      }
+    },
+    {
+      "time": 15.86,
+      "target": "#book-carrier",
+      "action": "TWEEN",
+      "params": {
+        "to": {
+          "y": 270
+        },
+        "duration": 0.96,
+        "ease": "power2.inOut"
+      }
+    },
+    {
+      "time": 15.86,
+      "target": "#receiving-hands",
+      "action": "TWEEN",
+      "params": {
+        "to": {
+          "y": 85
+        },
+        "duration": 0.96,
+        "ease": "power2.inOut"
+      }
+    }
+  ],
+  "captions": [
+    {
+      "text": "Splitting the project",
+      "start": 0.05,
+      "end": 4.07
+    },
+    {
+      "text": "Working at the same time",
+      "start": 4.07,
+      "end": 9.21
+    },
+    {
+      "text": "Bringing the pieces together",
+      "start": 9.21,
+      "end": 12.89
+    },
+    {
+      "text": "Delivering one result",
+      "start": 12.89,
+      "end": 16.555
+    }
+  ]
+}

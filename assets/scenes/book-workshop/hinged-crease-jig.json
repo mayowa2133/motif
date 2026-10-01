@@ -1,0 +1,52 @@
+{
+  "id": "hinged-crease-jig",
+  "name": "Hinged Crease Jig",
+  "category": "prop",
+  "subcategory": "paper-workshop",
+  "concepts": [
+    "parallel work",
+    "assembly",
+    "delivery"
+  ],
+  "keywords": [
+    "hinged-crease-jig",
+    "paper",
+    "workshop"
+  ],
+  "style": "motif-default-v1",
+  "orientation": "front",
+  "dimensions": {
+    "width": 512,
+    "height": 512,
+    "unit": "px"
+  },
+  "artBox": {
+    "x": 122,
+    "y": 215,
+    "width": 273,
+    "height": 91
+  },
+  "anchors": {
+    "hinge": {
+      "x": 0.5,
+      "y": 0.45
+    }
+  },
+  "compatibleCharacters": [
+    "motif-bot"
+  ],
+  "supportedActions": [
+    "feed",
+    "crease",
+    "release"
+  ],
+  "sourceType": "vector",
+  "source": {
+    "file": "assets/scenes/book-workshop/hinged-crease-jig.svg",
+    "reference": "Live Little Book Workshop concept; agent-authored geometry using existing paper material helpers"
+  },
+  "version": 1,
+  "status": "review",
+  "preview": "assets/scenes/book-workshop/hinged-crease-jig.png",
+  "license": "project-original"
+}

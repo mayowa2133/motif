@@ -1,0 +1,92 @@
+[
+  {
+    "beat": "dispatch-jobs",
+    "kind": "workshop.dispatch",
+    "subject": "project",
+    "cue": "splits",
+    "cue_time": 0.05,
+    "complete": 2.55,
+    "result": "none",
+    "requires": [],
+    "duration": 2.5,
+    "constituent_ids": [
+      "job-cover",
+      "job-pages",
+      "job-binding"
+    ],
+    "identity_policy": "same DOM constituents through all phases",
+    "timing_note": "Picture action starts earlier by explicit staging request; narration is unchanged"
+  },
+  {
+    "beat": "parallel-work",
+    "kind": "workshop.work_parallel",
+    "subject": "project",
+    "cue": "work",
+    "cue_time": 4.78,
+    "complete": 9.03,
+    "result": "none",
+    "requires": [
+      "jobs-distributed"
+    ],
+    "duration": 4.25,
+    "constituent_ids": [
+      "job-cover",
+      "job-pages",
+      "job-binding"
+    ],
+    "identity_policy": "same DOM constituents through all phases",
+    "simultaneous_job_windows": {
+      "fold-cover": [
+        5.545,
+        6.82
+      ],
+      "press-pages": [
+        5.12,
+        6.735
+      ],
+      "unroll-binding": [
+        4.993,
+        6.905
+      ]
+    },
+    "three_way_overlap_seconds": 1.19
+  },
+  {
+    "beat": "assemble-book",
+    "kind": "workshop.assemble",
+    "subject": "project",
+    "cue": "finished pieces",
+    "cue_time": 9.58,
+    "complete": 12.71,
+    "result": "none",
+    "requires": [
+      "jobs-worked"
+    ],
+    "duration": 3.13,
+    "constituent_ids": [
+      "job-cover",
+      "job-pages",
+      "job-binding"
+    ],
+    "identity_policy": "same DOM constituents through all phases"
+  },
+  {
+    "beat": "deliver-book",
+    "kind": "workshop.deliver",
+    "subject": "project",
+    "cue": "reaches",
+    "cue_time": 13.78,
+    "complete": 16.98,
+    "result": "none",
+    "requires": [
+      "book-assembled"
+    ],
+    "duration": 3.2,
+    "constituent_ids": [
+      "job-cover",
+      "job-pages",
+      "job-binding"
+    ],
+    "identity_policy": "same DOM constituents through all phases"
+  }
+]

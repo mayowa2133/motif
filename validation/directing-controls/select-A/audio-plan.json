@@ -1,0 +1,40 @@
+{
+  "tracks": [
+    {
+      "id": "narration",
+      "file": "assets/voice/narration-af-nova.wav",
+      "start": 0,
+      "duration": 14.101,
+      "volume": 1,
+      "lane": 0,
+      "group": "voice"
+    },
+    {
+      "id": "sfx-0",
+      "file": "assets/sfx/click-soft.mp3",
+      "start": 2.79,
+      "duration": 0.366,
+      "volume": 0.2,
+      "lane": 1,
+      "group": "effects"
+    },
+    {
+      "id": "sfx-1",
+      "file": "assets/sfx/click-soft.mp3",
+      "start": 6.1,
+      "duration": 0.366,
+      "volume": 0.2,
+      "lane": 1,
+      "group": "effects"
+    },
+    {
+      "id": "sfx-2",
+      "file": "assets/sfx/pop.mp3",
+      "start": 12.12,
+      "duration": 0.7,
+      "volume": 0.2,
+      "lane": 1,
+      "group": "effects"
+    }
+  ]
+}

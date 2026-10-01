@@ -1,0 +1,1 @@
+One project splits into three independent jobs for three Bots. Together, they work at once: folding the cover, pressing pages, and preparing the binding. Then the finished pieces join, becoming one complete book together. Finally, the book reaches your hands as one finished deliverable.

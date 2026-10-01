@@ -1,0 +1,38 @@
+{
+  "status": "ready for human review, not approved",
+  "inspection": "15 decoded picture frames at mobile size; full mobile export produced but not manually watched. First picture stream equals finished export by encoded video hash.",
+  "frame_times_seconds": [
+    0.2,
+    2.4,
+    3.4,
+    5.6,
+    6.2,
+    7.6,
+    9,
+    10.1,
+    11,
+    12.5,
+    13.5,
+    14.6,
+    15.6,
+    16.5,
+    17.5
+  ],
+  "sample_sheet": "validation/creative-benchmark/final-contact.jpg",
+  "observations": [
+    "Three independent job pieces originate from one folio",
+    "Fold, press and unroll actions are visible at the same time",
+    "Same pieces slide into one book, with no new finished-book replacement",
+    "Participating canonical Bots converge and hand off the result",
+    "Floor remains continuous and desk grounded during camera reframes",
+    "Book travels down with receiving hands after Bot release"
+  ],
+  "limits": [
+    "Sampled frames are not a human full-motion approval",
+    "Subjective listening not assessed",
+    "Intentional hinge pivot produces one rotation_pivot_drift warning in CLI layout check"
+  ],
+  "preserved_previous_files": 658,
+  "encoded_duration_seconds": 17.8,
+  "encoded_frame_count": 534
+}

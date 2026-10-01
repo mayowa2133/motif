@@ -1,0 +1,342 @@
+{
+  "productions": [
+    {
+      "slug": "planned-calendar-declined",
+      "backend": {
+        "backend": "codex-exec",
+        "execution": "self-contained command with live model planning",
+        "model": "gpt-5.6-sol",
+        "reasoning_effort": "low",
+        "authentication_status": "Logged in using ChatGPT",
+        "cli_version": "codex-cli 0.149.1",
+        "sandbox": "read-only",
+        "ephemeral": true,
+        "tools_requested": false,
+        "default_model_if_unspecified": false,
+        "model_selection": "MOTIF_PLANNER_MODEL",
+        "hyperframes": "0.8.97"
+      },
+      "narration": "Assistant spots an open hour at four. It proposes focus time, placing a dashed card there. The person presses decline, removing the proposal while the existing meeting stays. The original calendar remains visibly unchanged.",
+      "plan_hash": "64927f5d41e0b3f4cead64a71f09425887cf8a7899e58f4b2ad15b565cdeed25",
+      "initial_plan_hash": "affd168cc2f8490aab67895fb3f3027c68ffa5628817e9bcaa0c95d7bd1994a8",
+      "final_sha256": "7a656f223d17f7c9c4312cd88566d2dbd8d60aec347ea6a9a0c3f6c5310fac50",
+      "expected_final": {
+        "calendar": "unchanged",
+        "A": "untested",
+        "B": "untested",
+        "winner": "none",
+        "handoff": false
+      },
+      "actual_final": {
+        "calendar": "unchanged",
+        "A": "untested",
+        "B": "untested",
+        "winner": "none",
+        "handoff": false
+      },
+      "actions": [
+        {
+          "beat": "beat-1",
+          "kind": "bot.pose",
+          "subject": "bot",
+          "cue": "spots",
+          "cue_time": 0.74,
+          "complete": 0.74,
+          "result": "pointing",
+          "requires": []
+        },
+        {
+          "beat": "beat-2",
+          "kind": "calendar.propose",
+          "subject": "calendar",
+          "cue": "placing",
+          "cue_time": 4.14,
+          "complete": 4.69,
+          "result": "none",
+          "requires": []
+        },
+        {
+          "beat": "beat-3",
+          "kind": "calendar.decline",
+          "subject": "calendar",
+          "cue": "presses decline",
+          "cue_time": 6.86,
+          "complete": 7.99,
+          "result": "none",
+          "requires": [
+            "proposal-visible"
+          ]
+        }
+      ],
+      "caption_and_headline_times": [
+        {
+          "beat": "beat-1",
+          "caption": "Finding a free hour",
+          "caption_start": 0.05,
+          "beat_end": 2.69,
+          "shot": "calendar-wide",
+          "headline": "OPEN HOUR",
+          "headline_start": 0.05
+        },
+        {
+          "beat": "beat-2",
+          "caption": "Proposing focus time",
+          "caption_start": 2.69,
+          "beat_end": 6.33,
+          "shot": "calendar-detail",
+          "headline": "PROPOSED",
+          "headline_start": 4.81
+        },
+        {
+          "beat": "beat-3",
+          "caption": "Your decision",
+          "caption_start": 6.33,
+          "beat_end": 11.13,
+          "shot": "calendar-detail",
+          "headline": "",
+          "headline_start": null
+        },
+        {
+          "beat": "beat-4",
+          "caption": "Original schedule",
+          "caption_start": 11.13,
+          "beat_end": 15.556999999999999,
+          "shot": "calendar-wide",
+          "headline": "CALENDAR UNCHANGED",
+          "headline_start": 11.13
+        }
+      ],
+      "encoded_probe": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "codec_type": "video",
+            "width": 1080,
+            "height": 1920,
+            "r_frame_rate": "30/1",
+            "duration": "15.566667",
+            "nb_frames": "467"
+          },
+          {
+            "codec_type": "audio",
+            "r_frame_rate": "0/0",
+            "duration": "15.560000",
+            "nb_frames": "731"
+          }
+        ],
+        "format": {
+          "duration": "15.566667"
+        }
+      },
+      "encoded_audio": {
+        "integrated_lufs": -16.08,
+        "true_peak_dbtp": -1.67
+      },
+      "checks": {
+        "expected_outcome_matches_simulated_final": true,
+        "accepted_live_model_review": true,
+        "script_from_plan": true,
+        "all_captions_and_headlines_consumed": true,
+        "headlines_follow_completed_evidence": true,
+        "no_commit_or_selection_in_evaluated_ending": true,
+        "first_final_encoded_video_equal": true,
+        "audio_target": true,
+        "audio_peak_ceiling": true,
+        "source_unchanged": true,
+        "duration_in_explicit_range": true
+      },
+      "frame_samples": [
+        1.37,
+        4.94,
+        8.24,
+        13.343,
+        15.067
+      ],
+      "subjective_listening": "not assessed",
+      "plan_corrections": 0
+    },
+    {
+      "slug": "planned-arena-no-winner",
+      "backend": {
+        "backend": "codex-exec",
+        "execution": "self-contained command with live model planning",
+        "model": "gpt-5.6-sol",
+        "reasoning_effort": "low",
+        "authentication_status": "Logged in using ChatGPT",
+        "cli_version": "codex-cli 0.149.1",
+        "sandbox": "read-only",
+        "ephemeral": true,
+        "tools_requested": false,
+        "default_model_if_unspecified": false,
+        "model_selection": "MOTIF_PLANNER_MODEL",
+        "hyperframes": "0.8.97"
+      },
+      "narration": "Here are answers A and B. Checking A reveals a route gap before its cross appears. Checking B with the same stencil reveals its gap before the cross. Both answers failed the same check. No winner; both go to a person for review.",
+      "plan_hash": "0a4e0ac599dcdd14eea5ffbaefc55d9c241ad87db71d063c86384c22dccf04e1",
+      "initial_plan_hash": "ada87834a60bdcbaefb36f5b77acfcba267de2e67961aabe77764222c30fa43f",
+      "final_sha256": "3e605677e20c302866630576750fbc41ca71486d97a64ca05c66fd831c489439",
+      "expected_final": {
+        "calendar": "unchanged",
+        "A": "fail",
+        "B": "fail",
+        "winner": "none",
+        "handoff": true
+      },
+      "actual_final": {
+        "calendar": "unchanged",
+        "A": "fail",
+        "B": "fail",
+        "winner": "none",
+        "handoff": true
+      },
+      "actions": [
+        {
+          "beat": "beat-1",
+          "kind": "bot.pose",
+          "subject": "bot",
+          "cue": "Here are",
+          "cue_time": 0.12,
+          "complete": 0.12,
+          "result": "presenting",
+          "requires": []
+        },
+        {
+          "beat": "beat-2",
+          "kind": "arena.check",
+          "subject": "A",
+          "cue": "Checking A",
+          "cue_time": 1.85,
+          "complete": 2.99,
+          "result": "fail",
+          "requires": []
+        },
+        {
+          "beat": "beat-3",
+          "kind": "arena.check",
+          "subject": "B",
+          "cue": "Checking B",
+          "cue_time": 5.16,
+          "complete": 6.3,
+          "result": "fail",
+          "requires": []
+        },
+        {
+          "beat": "beat-5",
+          "kind": "arena.handoff",
+          "subject": "both",
+          "cue": "both go",
+          "cue_time": 12.12,
+          "complete": 13.12,
+          "result": "none",
+          "requires": [
+            "A-tested",
+            "B-tested"
+          ]
+        }
+      ],
+      "caption_and_headline_times": [
+        {
+          "beat": "beat-1",
+          "caption": "Meet A and B",
+          "caption_start": 0.12,
+          "beat_end": 1.85,
+          "shot": "arena-pair",
+          "headline": "Two answers",
+          "headline_start": 0.12
+        },
+        {
+          "beat": "beat-2",
+          "caption": "Checking answer A",
+          "caption_start": 1.85,
+          "beat_end": 5.16,
+          "shot": "arena-a",
+          "headline": "",
+          "headline_start": null
+        },
+        {
+          "beat": "beat-3",
+          "caption": "Checking answer B",
+          "caption_start": 5.16,
+          "beat_end": 9,
+          "shot": "arena-b",
+          "headline": "Same check",
+          "headline_start": 6.42
+        },
+        {
+          "beat": "beat-4",
+          "caption": "Both answers failed",
+          "caption_start": 9,
+          "beat_end": 11.24,
+          "shot": "arena-pair",
+          "headline": "Both failed",
+          "headline_start": 9
+        },
+        {
+          "beat": "beat-5",
+          "caption": "To a person",
+          "caption_start": 11.24,
+          "beat_end": 15.301,
+          "shot": "arena-review",
+          "headline": "Human review",
+          "headline_start": 13.24
+        }
+      ],
+      "encoded_probe": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "codec_type": "video",
+            "width": 1080,
+            "height": 1920,
+            "r_frame_rate": "30/1",
+            "duration": "15.300000",
+            "nb_frames": "459"
+          },
+          {
+            "codec_type": "audio",
+            "r_frame_rate": "0/0",
+            "duration": "15.300000",
+            "nb_frames": "1436"
+          }
+        ],
+        "format": {
+          "duration": "15.300000"
+        }
+      },
+      "encoded_audio": {
+        "integrated_lufs": -16.09,
+        "true_peak_dbtp": -1.71
+      },
+      "checks": {
+        "expected_outcome_matches_simulated_final": true,
+        "accepted_live_model_review": true,
+        "script_from_plan": true,
+        "all_captions_and_headlines_consumed": true,
+        "headlines_follow_completed_evidence": true,
+        "no_commit_or_selection_in_evaluated_ending": true,
+        "first_final_encoded_video_equal": true,
+        "audio_target": true,
+        "audio_peak_ceiling": true,
+        "source_unchanged": true,
+        "duration_in_explicit_range": true
+      },
+      "frame_samples": [
+        0.985,
+        3.24,
+        6.55,
+        10.12,
+        13.37,
+        14.8
+      ],
+      "subjective_listening": "not assessed",
+      "plan_corrections": 1
+    }
+  ],
+  "different_scripts": true,
+  "same_shared_source": true,
+  "frozen_files_checked": 363,
+  "frozen_changed": [],
+  "manual_per_run_plan_or_source_edits": []
+}

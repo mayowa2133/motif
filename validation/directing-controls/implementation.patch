@@ -1,0 +1,626 @@
+--- /dev/null
++++ b/scripts/motif_framing.py
+@@ -0,0 +1,134 @@
++"""Typed focus registry and geometry-derived, bounded SVG camera transforms.
++
++Coordinates are authored scene geometry, not model coordinates. Asset envelopes
++come from the stored SVG viewBoxes; critical bounds include visible identity,
++diagnostic marks and contact/swept motion. The compiler uses these same placements.
++"""
++import re
++from pathlib import Path
++
++ROOT = Path(__file__).resolve().parents[1]
++SAFE = (90, 260, 900, 1290)  # headline ends at 197; caption starts at 1660
++SHEET_PLACEMENTS = {
++    'arena-pair': {'A': ('pair-A', 110, 570, .48), 'B': ('pair-B', 605, 570, .48)},
++    'arena-a': {'A': ('close-A', 160, 390, 1)},
++    'arena-b': {'B': ('close-B', 160, 390, 1)},
++    'arena-review': {'A': ('review-A', 160, 600, .40), 'B': ('review-B', 510, 600, .40)},
++}
++CALENDAR_PLACEMENTS = {
++    'calendar.board': ('calendar-board', 120, 315, 1, 'calendar-board'),
++    'calendar.proposal': ('proposed', 590, 975, .85, 'proposal'),
++    'calendar.booking': ('committed', 590, 975, .85, 'appointment'),
++    'calendar.decision': ('decision', 613, 1238, 1, 'decision-tab'),
++}
++FOCUS_SHOTS = {
++    **{k: {'calendar-wide', 'calendar-detail'} for k in CALENDAR_PLACEMENTS},
++    'arena.answers': {'arena-pair'},
++    'answer-A.sheet': {'arena-pair', 'arena-a', 'arena-review'},
++    'answer-B.sheet': {'arena-pair', 'arena-b', 'arena-review'},
++    'answer-A.connection': {'arena-a'},
++    'answer-B.connection': {'arena-b'},
++    'arena.handoff': {'arena-review'},
++}
++
++
++def union(*boxes):
++    x = min(b[0] for b in boxes); y = min(b[1] for b in boxes)
++    return (x, y, max(b[0]+b[2] for b in boxes)-x, max(b[1]+b[3] for b in boxes)-y)
++
++
++def placed(box, x, y, scale):
++    return (x+box[0]*scale, y+box[1]*scale, box[2]*scale, box[3]*scale)
++
++
++def asset_box(asset, assets):
++    svg = (ROOT/assets[asset]).read_text()
++    values = re.search(r'viewBox="([^"]+)"', svg)
++    if not values: raise ValueError('missing geometry for '+asset)
++    box = tuple(map(float, values[1].split()))
++    if len(box) != 4 or min(box[2:]) <= 0: raise ValueError('invalid geometry for '+asset)
++    return box
++
++
++def focus_bounds(target, shot, assets):
++    if target not in FOCUS_SHOTS or shot not in FOCUS_SHOTS[target]:
++        raise ValueError('unsupported focus/shot binding: '+target+' / '+shot)
++    if target.startswith('calendar.'):
++        _, x, y, s, asset = CALENDAR_PLACEMENTS[target]
++        box = placed(asset_box(asset, assets), x, y, s)
++        critical = box
++        if target == 'calendar.proposal':
++            critical = union(box, placed(asset_box(asset, assets), x, y-110, s))
++        elif target == 'calendar.decision':
++            # Contact and resulting proposal removal remain visible. The entry
++            # hand is intentionally allowed to travel in from outside the crop.
++            critical = union(box, (690, 1160, 320, 265), (590, 975, 331.5, 149.6))
++        return box, critical
++    placements = SHEET_PLACEMENTS[shot]
++    sheets = [placed(asset_box('answer-sheet', assets), x, y, s) for _, x, y, s in placements.values()]
++    if target == 'arena.answers': return union(*sheets), union(*sheets)
++    if target == 'arena.handoff':
++        # Include both sheets at source and destination, rotation margin, and
++        # the receiving hand throughout its authored final shift.
++        destinations = [placed((-55,-55,870,960), x+dx*s, y+225*s, s)
++                        for (_,x,y,s),dx in zip(placements.values(),(370,80))]
++        box = union(*sheets, *destinations, (653,850,315,207))
++        return box, box
++    candidate = target.split('.')[0][-1]
++    _, x, y, s = placements[candidate]
++    if target.endswith('.sheet'):
++        box = placed(asset_box('answer-sheet', assets), x, y, s)
++        return box, box
++    # Actual connection ends, route, gap, cross/check and candidate letter.
++    # Entire paper sheet is not the diagnostic target.
++    box = placed((105, 490, 550, 124), x, y, s)
++    critical = union(box, placed((80, 25, 125, 115), x, y, s),
++                     placed((95, 460, 580, 175), x, y, s))
++    return box, critical
++
++
++def project_box(box, transform):
++    return placed(box, transform['x'], transform['y'], transform['scale'])
++
++
++def contains(outer, inner, tolerance=.05):
++    return (inner[0] >= outer[0]-tolerance and inner[1] >= outer[1]-tolerance
++            and inner[0]+inner[2] <= outer[0]+outer[2]+tolerance
++            and inner[1]+inner[3] <= outer[1]+outer[3]+tolerance)
++
++
++def camera_for(beat, assets, selected=None):
++    target, shot, framing = beat['focus_target'], beat['shot'], beat['framing']
++    box, critical = focus_bounds(target, shot, assets)
++    if selected:
++        if selected not in SHEET_PLACEMENTS.get(shot, {}):
++            raise ValueError('selected indicator hidden by shot')
++        _,x,y,s = SHEET_PLACEMENTS[shot][selected]
++        seal = placed((55, 650, 650, 145), x, y, s)
++        critical = union(critical, seal)
++    if framing not in ('establish','subject','detail'): raise ValueError('unsupported framing')
++    sx, sy, sw, sh = SAFE
++    if framing == 'establish':
++        box = (0, 240, 1080, 1350)
++        scale = min(sw/box[2], sh/box[3])
++    else:
++        padding = 1.48 if framing == 'subject' else 1.10
++        scale = min(sw/(box[2]*padding), sh/(box[3]*padding), 3.0)
++    # Geometry fit also constrains the action/identity envelope. This safety
++    # clamp can limit zoom; it never silently discards required visual evidence.
++    scale = min(scale, sw/(critical[2]+36), sh/(critical[3]+36))
++    x = sx+sw/2-(box[0]+box[2]/2)*scale
++    anchor = .60 if target.endswith('.connection') else .5
++    y = sy+sh*anchor-(box[1]+box[3]/2)*scale
++    x = max(sx-critical[0]*scale, min(x, sx+sw-(critical[0]+critical[2])*scale))
++    y = max(sy-critical[1]*scale, min(y, sy+sh-(critical[1]+critical[3])*scale))
++    transform = {'x':round(x,4), 'y':round(y,4), 'scale':round(scale,6)}
++    if not contains(SAFE, project_box(critical, transform)):
++        raise ValueError('critical focus bounds exceed safe area')
++    if selected and 76*SHEET_PLACEMENTS[shot][selected][3]*scale < 34:
++        raise ValueError('selected indicator is too small for mobile; focus the selected sheet')
++    return {'focus_target':target, 'framing':framing, 'shot':shot,
++            'target_bounds':box, 'critical_bounds':critical, 'safe_area':SAFE,
++            'camera':transform, 'projected_target_bounds':project_box(box,transform),
++            'projected_critical_bounds':project_box(critical,transform),
++            'selected_candidate':selected}
+--- a/scripts/motif_plan.py
++++ b/scripts/motif_plan.py
+@@ -3,6 +3,7 @@
+ import re
+ from pathlib import Path
+ from jsonschema import Draft202012Validator
++from motif_framing import camera_for
+ 
+ ROOT = Path(__file__).resolve().parents[1]
+ SCHEMA = json.loads((ROOT / 'schemas/production-plan.schema.json').read_text())
+@@ -56,12 +57,29 @@
+     if plan['environment'] == 'calendar' and any(not re.fullmatch('[A-Z]{2,6}',v) for v in plan['calendar'].values()): issues.append('calendar labels need 2–6 uppercase letters')
+     state = {'calendar':'unchanged','A':'untested','B':'untested','winner':'none','handoff':False}
+     facts, history = set(), []
++    current_headline = None
++    comparison_framings = []
+     for beat in plan['beats']:
+         if beat['shot'] not in WORLD_SHOTS[plan['environment']]: issues.append('shot/world mismatch: '+beat['shot'])
+         for key in ('subject','action','before_after','focal_detail','consequence','narration','caption'):
+             if not beat[key].strip(): issues.append(f"empty {key} in {beat['id']}")
+         meaningful = [a for a in beat['actions'] if a['kind'] != 'bot.pose']
+         if len(meaningful) > 1: issues.append('one meaningful action per beat allows visible evidence dwell')
++        mode = beat['headline_mode']
++        if mode == 'set':
++            if not beat['headline'].strip(): issues.append('headline set requires text')
++            current_headline = beat['headline']
++        else:
++            if beat['headline']: issues.append('headline clear/keep requires empty text')
++            if mode == 'clear': current_headline = None
++            elif meaningful: issues.append('state action cannot keep a previous headline')
++            elif current_headline is None: issues.append('headline keep has no prior headline')
++        # A narrow deterministic safeguard for known production-instruction
++        # phrasing; the separate model reviewer judges broader audience fit.
++        stage_words = ('dashed card','stencil','cross appears','cross appearing','cross is rendered','before its cross','graphic','rendered')
++        for phrase in stage_words:
++            if phrase in beat['narration'].lower() and phrase not in brief['message'].lower():
++                issues.append('audience narration contains stage direction: '+phrase)
+         for action in beat['actions']:
+             kind, subject, result = action['kind'], action['subject'], action['result']
+             try: cue_index(beat['narration'], action['cue'])
+@@ -71,12 +89,15 @@
+             if kind.startswith('calendar.') and plan['environment'] != 'calendar' or kind.startswith('arena.') and plan['environment'] != 'arena': issues.append('action/world mismatch: '+kind)
+             if kind.startswith('calendar.') and (subject != 'calendar' or result != 'none'): issues.append('invalid calendar action arguments')
+             if kind == 'calendar.propose':
++                if beat['focus_target'] not in ('calendar.board','calendar.proposal'): issues.append('proposal needs board/proposal focus')
+                 if 'proposal-visible' in facts or 'declined' in facts or 'approved' in facts: issues.append('proposal already decided/present')
+                 facts.add('proposal-visible')
+             elif kind in ('calendar.approve','calendar.decline'):
++                if beat['focus_target'] != 'calendar.decision': issues.append('decision needs contact focus')
+                 if 'proposal-visible' not in facts or 'proposal-visible' not in action['requires']: issues.append('decision requires a visible proposal')
+                 facts.discard('proposal-visible'); facts.add('approved' if kind.endswith('approve') else 'declined')
+             elif kind == 'calendar.commit':
++                if beat['focus_target'] not in ('calendar.board','calendar.booking'): issues.append('booking needs board/booking focus')
+                 if 'approved' not in facts or 'approved' not in action['requires']: issues.append('booking requires human approval')
+                 state['calendar']='booked'; facts.add('booked')
+             elif kind == 'arena.check':
+@@ -84,6 +105,8 @@
+                 elif state[subject] != 'untested': issues.append('candidate already tested')
+                 else: state[subject]=result; facts.update([subject+'-tested', subject+'-'+result])
+                 if beat['shot'] != 'arena-'+subject.lower(): issues.append('test requires matching candidate close shot')
++                if beat['focus_target'] != 'answer-'+subject+'.connection' or beat['framing'] != 'detail': issues.append('test needs diagnostic connection detail')
++                comparison_framings.append(beat['framing'])
+             elif kind == 'arena.select':
+                 if subject not in ('A','B') or state.get(subject) != 'pass' or subject+'-pass' not in action['requires']: issues.append('selection requires candidate pass')
+                 else: state['winner']=subject
+@@ -91,10 +114,15 @@
+             elif kind == 'arena.handoff':
+                 if subject != 'both' or result != 'none' or not {'A-tested','B-tested'} <= facts or not {'A-tested','B-tested'} <= set(action['requires']): issues.append('handoff requires both tested answers')
+                 if beat['shot'] != 'arena-review': issues.append('handoff needs receiving-person shot')
++                if beat['focus_target'] != 'arena.handoff': issues.append('handoff needs complete source/destination focus')
+                 state['handoff']=True; facts.add('handed-off')
+             elif kind == 'bot.pose':
+                 if subject != 'bot' or result not in ('thinking','pointing','presenting','happy'): issues.append('unsupported bot pose')
+             history.append({'beat':beat['id'],'kind':kind,'subject':subject,'before':before,'after':state.copy(),'facts':sorted(facts)})
++        try:
++            camera_for(beat, ASSETS, None if state['winner']=='none' else state['winner'])
++        except ValueError as error: issues.append(str(error))
++    if len(set(comparison_framings)) > 1: issues.append('candidate comparisons need matching framing')
+     if state != plan['expected_final']: issues.append(f"expected final {plan['expected_final']} differs from simulated {state}")
+     if plan['environment']=='calendar' and ('proposal-visible' in facts or not {'declined','booked'} & facts): issues.append('calendar proposal needs a visible resolved ending')
+     if plan['environment']=='arena' and not state['handoff'] and state['winner']=='none': issues.append('tested answers need handoff or supported selection ending')
+--- a/scripts/motif_plan_compile.py
++++ b/scripts/motif_plan_compile.py
+@@ -8,6 +8,7 @@
+ from build_scene_01 import DEFS
+ from motif_plan import ROOT, ASSETS, cue_index, narration, tokens
+ from motif_produce import probe
++from motif_framing import CALENDAR_PLACEMENTS, SHEET_PLACEMENTS, camera_for, SAFE
+ 
+ INK='#202C32'; PAPER='#F4EBD8'; TEAL='#318E85'; CORAL='#C66355'
+ 
+@@ -56,17 +57,20 @@
+     labels=plan['calendar']
+     decision='DECLINE' if any(a['kind']=='calendar.decline' for b in plan['beats'] for a in b['actions']) else 'APPROVE'
+     board=fragment('calendar-board')
+-    body=layer('calendar-board',board,120,315)
++    def place(target, body):
++        id_, x, y, scale, _ = CALENDAR_PLACEMENTS[target]
++        return layer(id_, body, x, y, scale)
++    body=place('calendar.board',board)
+     body+=layer('existing',fragment('appointment')+text(labels['existing_title'],74,88,54),380,625,.85)
+-    body+=layer('committed',fragment('appointment')+text(labels['proposed_title'],74,88,54),590,975,.85)
+-    body+=layer('proposed',fragment('proposal')+text(labels['proposed_title'],74,89,52,TEAL),590,975,.85)
++    body+=place('calendar.booking',fragment('appointment')+text(labels['proposed_title'],74,88,54))
++    body+=place('calendar.proposal',fragment('proposal')+text(labels['proposed_title'],74,89,52,TEAL))
+     body+=layer('opening','<path d="M471 941 h-22 q-10 0 -10 11 v173 q0 11 10 11 h22 M940 941 h23 q10 0 10 11 v173 q0 11 -10 11 h-23" fill="none" stroke="#318E85" stroke-width="12" stroke-linecap="round"/>')
+     body+=bot('bot',120,1135,.38)
+     tab=fragment('decision-tab').replace('APPROVE',decision)
+-    body+=layer('decision',tab,613,1238)
++    body+=place('calendar.decision',tab)
+     body+=mark('decision-result',678,1320,decision=='APPROVE')
+     body+=layer('finger',fragment('human-hand'),690,1160)
+-    return backdrop()+f'<g id="world-camera" data-layout-allow-overflow>{body}</g>'
++    return backdrop()+f'<g clip-path="url(#action-safe)"><g id="world-camera" class="focus-camera" data-layout-allow-overflow>{body}</g></g>'
+ 
+ def sheet(prefix,letter,x,y,scale):
+     ink='#64869A' if letter=='A' else CORAL
+@@ -78,18 +82,30 @@
+         color=CORAL if result=='fail' else TEAL
+         body+=layer(prefix+'-'+result,f'<g fill="{PAPER}" stroke="{color}" stroke-width="15">{ends}</g><path d="{path}" fill="none" stroke="{color}" stroke-width="28" stroke-linecap="round"/>')
+         body+=mark(prefix+'-'+result+'-mark',384,552,result=='pass')
++    # Candidate-specific stamp is attached to the same moving sheet, not a
++    # shared banner. All shot representations receive the same selected state.
++    stamp='<path d="M55 658 Q380 643 705 658 L700 785 Q380 801 60 785 Z" fill="'+PAPER+'" stroke="'+TEAL+'" stroke-width="12"/>'
++    stamp+=text(letter+' SELECTED',380,750,76,TEAL,anchor='middle')
++    body+=layer(prefix+'-selected',stamp)
+     return layer(prefix,body,x,y,scale)
+ 
+ def arena_world(plan):
+     body=backdrop(True)
+-    pair=sheet('pair-A','A',110,570,.48)+sheet('pair-B','B',605,570,.48)+bot('pair-bot',365,1100,.34)
+-    close_a=sheet('close-A','A',160,390,1)+bot('close-A-bot',70,1230,.26)
+-    close_b=sheet('close-B','B',160,390,1)+bot('close-B-bot',70,1230,.26)
+-    review=sheet('review-A','A',160,600,.40)+sheet('review-B','B',510,600,.40)+bot('review-bot',85,1130,.34)
++    def sheets(shot):
++        return ''.join(sheet(prefix,candidate,x,y,scale) for candidate,(prefix,x,y,scale) in SHEET_PLACEMENTS[shot].items())
++    pair=sheets('arena-pair')
++    close_a=sheets('arena-a')
++    close_b=sheets('arena-b')
++    review=sheets('arena-review')
++    characters={'arena-pair':bot('pair-bot',365,1100,.34),
++                'arena-a':bot('close-A-bot',70,1230,.26),
++                'arena-b':bot('close-B-bot',70,1230,.26),
++                'arena-review':bot('review-bot',85,1130,.34)}
+     # Existing fingertip, acting as a separately attributed receiving person.
+     review+=layer('receiver',fragment('human-hand'),680,850,.9)
+-    review+=layer('winner',text('SELECTED',540,1180,65,TEAL,anchor='middle'))
+-    return body+''.join(layer('shot-'+name,value) for name,value in [('arena-pair',pair),('arena-a',close_a),('arena-b',close_b),('arena-review',review)])
++    # The work-prop camera frames sheets/inspection/contact; the complete Bot
++    # stays in a supporting foreground slot rather than being cropped by zoom.
++    return body+''.join(f'<g id="shot-{name}" data-layout-allow-overflow><g clip-path="url(#action-safe)"><g id="camera-{name}" class="focus-camera" data-layout-allow-overflow>{value}</g></g>{characters[name]}</g>' for name,value in [('arena-pair',pair),('arena-a',close_a),('arena-b',close_b),('arena-review',review)])
+ 
+ def align(plan, words):
+     wanted=tokens(narration(plan))
+@@ -138,7 +154,8 @@
+ 
+ def compile_plan(project, plan, words, voice_duration, duration_range):
+     spans,alignment=align(plan,words)
+-    events=[]; initial=[]; actions=[]; sfx=[]; label_timing=[]
++    events=[]; initial=[]; actions=[]; sfx=[]; label_timing=[]; framing_trace=[]
++    selected = None
+     def init(id_,**props): initial.append({'target':'#'+id_,'props':props})
+     def emit(t,id_,action,**params): events.append({'time':round(t,3),'target':'#'+id_,'action':action,'params':params})
+     def pop(t,id_,dur=.32): emit(t,id_,'FROM_TO',**{'from':{'opacity':0,'scale':.92},'to':{'opacity':1,'scale':1},'duration':dur,'ease':'power3.out'})
+@@ -149,28 +166,40 @@
+             for face in ('thinking','pointing','presenting','happy'): emit(t,prefix+'-'+face,'SET',props={'opacity':int(face==result)})
+     if plan['environment']=='calendar':
+         for id_ in ('proposed','committed','opening','decision','decision-result','finger'): init(id_,opacity=0)
+-        init('world-camera',scale=1)
++        init('world-camera',x=0,y=0,scale=1,svgOrigin='0 0')
+         pop(.18,'opening'); bot_prefixes=['bot']
+     else:
+         bot_prefixes=['pair-bot','close-A-bot','close-B-bot','review-bot']
+         for shot in ('arena-pair','arena-a','arena-b','arena-review'): init('shot-'+shot,opacity=0)
+-        init('receiver',opacity=0); init('winner',opacity=0)
++        init('receiver',opacity=0)
++        for shot in SHEET_PLACEMENTS: init('camera-'+shot,x=0,y=0,scale=1,svgOrigin='0 0')
+         for prefix in ('pair-A','pair-B','close-A','close-B','review-A','review-B'):
+-            for part in ('stencil','pass','fail','pass-mark','fail-mark'): init(prefix+'-'+part,opacity=0)
++            for part in ('stencil','pass','fail','pass-mark','fail-mark','selected'): init(prefix+'-'+part,opacity=0)
+     for prefix in bot_prefixes:
+         for face in ('thinking','pointing','presenting','happy'): init(prefix+'-'+face,opacity=int(face=='thinking'))
+     previous_shot=None
+     for i,(beat,span) in enumerate(zip(plan['beats'],spans,strict=True)):
+         start=span['start']; end=spans[i+1]['start'] if i+1<len(spans) else voice_duration+1.2
+         init('caption-'+str(i),opacity=0); emit(start,'caption-'+str(i),'CAPTION_REPLACE')
+-        if beat['headline']:
++        if beat['headline_mode'] == 'set':
+             init('headline-'+str(i),opacity=0)
+             for j in range(i):
+                 if plan['beats'][j]['headline']: emit(start,'headline-'+str(j),'SET',props={'opacity':0})
+             # Headline reveal is scheduled after this beat's physical evidence below.
+-        if plan['environment']=='calendar':
+-            emit(start,'world-camera','TWEEN',to={'scale':1.08 if beat['shot']=='calendar-detail' else 1},duration=.4)
+-        elif beat['shot']!=previous_shot:
++        elif beat['headline_mode'] == 'clear':
++            for j in range(i):
++                if plan['beats'][j]['headline_mode']=='set': emit(start,'headline-'+str(j),'SET',props={'opacity':0})
++        for a in beat['actions']:
++            if a['kind']=='arena.select': selected=a['subject']
++        framing = camera_for(beat, ASSETS, selected)
++        camera_id = 'world-camera' if plan['environment']=='calendar' else 'camera-'+beat['shot']
++        # First frame and new container shots start at the correct fit. Only
++        # reframes within one container tween; critical action starts after fit.
++        same_shot = previous_shot == beat['shot']
++        emit(start if i else 0, camera_id, 'TWEEN' if same_shot else 'SET',
++             **({'to':framing['camera'],'duration':.32} if same_shot else {'props':framing['camera']}))
++        framing_trace.append({'beat':beat['id'],'start':start,'settled':start+.32 if same_shot else start,**framing})
++        if plan['environment']=='arena' and beat['shot']!=previous_shot:
+             if previous_shot: emit(start,'shot-'+previous_shot,'SCENE_CUT',hide='#shot-'+previous_shot,show='#shot-'+beat['shot'])
+             else: emit(0,'shot-'+beat['shot'],'SET',props={'opacity':1})
+         previous_shot=beat['shot']
+@@ -180,6 +209,12 @@
+                 pose(t,a['result'])
+                 actions.append({'beat':beat['id'],'kind':kind,'subject':a['subject'],'cue':a['cue'],'cue_time':t,'complete':t,'result':a['result'],'requires':a['requires']})
+                 continue
++            if same_shot and t < start+.32:
++                # A semantic action can start at the first spoken word; use a
++                # cut rather than let its diagnostic/contact proof run mid-pan.
++                camera_event=next(e for e in reversed(events) if e['target']=='#'+camera_id)
++                camera_event['action']='SET'; camera_event['params']={'props':framing['camera']}
++                framing_trace[-1]['settled']=start
+             if kind=='calendar.propose':
+                 emit(t,'proposed','FROM_TO',**{'from':{'opacity':0,'y':-110},'to':{'opacity':1,'y':0},'duration':.55})
+                 complete=t+.55; sfx.append((t,'pop'))
+@@ -205,7 +240,9 @@
+                     pop(t+.94,prefix+'-'+result+'-mark',.2)
+                 complete=t+1.14; sfx.append((t+.94,'click-soft'))
+             elif kind=='arena.select':
+-                pop(t,'winner'); complete=t+.32; sfx.append((t,'pop'))
++                for prefix in ('pair-'+a['subject'],'close-'+a['subject'],'review-'+a['subject']):
++                    pop(t,prefix+'-selected')
++                complete=t+.32; sfx.append((t,'pop'))
+             elif kind=='arena.handoff':
+                 pop(max(start,t-.4),'receiver',.35)
+                 emit(t,'review-A','TWEEN',to={'x':370,'y':225,'rotation':-6},duration=.75)
+@@ -216,17 +253,17 @@
+             actions.append({'beat':beat['id'],'kind':kind,'subject':a['subject'],'cue':a['cue'],'cue_time':t,'complete':round(complete,3),'result':a['result'],'requires':a['requires']})
+         evidence=[a['complete'] for a in actions if a['beat']==beat['id'] and a['kind']!='bot.pose']
+         headline_time=round(max(evidence)+.12,3) if evidence else start
+-        if beat['headline']:
++        if beat['headline_mode']=='set':
+             if headline_time+.25 > end: raise ValueError('headline lacks evidence dwell: '+beat['id'])
+             pop(headline_time,'headline-'+str(i),.25)
+-        label_timing.append({'beat':beat['id'],'caption':beat['caption'],'caption_start':start,'beat_end':end,'shot':beat['shot'],'headline':beat['headline'],'headline_start':headline_time if beat['headline'] else None})
++        label_timing.append({'beat':beat['id'],'caption':beat['caption'],'caption_start':start,'beat_end':end,'shot':beat['shot'],'headline':beat['headline'],'headline_mode':beat['headline_mode'],'headline_start':headline_time if beat['headline_mode']=='set' else None,'headline_clear_time':start if beat['headline_mode'] in ('set','clear') else None})
+     duration=round(max(voice_duration+1.2,max(a['complete'] for a in actions)+.8),2)
+     if not duration_range[0]<=duration<=duration_range[1]: raise ValueError(f'duration conflict: actual {duration}s outside intended range {duration_range}; plan must be revised, not speech rushed')
+     spec={'schemaVersion':'1.0','compositionId':'main','fps':30,'durationSec':duration,'initial':initial,'events':sorted(events,key=lambda e:e['time']), 'captions':[{'text':b['caption'],'start':s['start'],'end':spans[i+1]['start'] if i+1<len(spans) else voice_duration} for i,(b,s) in enumerate(zip(plan['beats'],spans))]}
+     media=[{'id':'narration','file':'assets/voice/narration-af-nova.wav','start':0,'duration':voice_duration,'volume':1,'lane':0,'group':'voice'}]
+     for i,(start,name) in enumerate(sfx):
+         media.append({'id':'sfx-'+str(i),'file':f'assets/sfx/{name}.mp3','start':round(start,3),'duration':round(min(.7,duration-start,float(probe(ROOT/f'videos/motif-calendar-reel/assets/sfx/{name}.mp3')['format']['duration'])),3),'volume':.16 if name=='whoosh-short' else .20,'lane':1,'group':'effects'})
+-    for name,value in [('scene-events.json',spec),('alignment-review.json',alignment),('action-trace.json',actions),('audio-plan.json',{'tracks':media}),('label-timing.json',label_timing)]: (project/name).write_text(json.dumps(value,indent=2)+'\n')
++    for name,value in [('scene-events.json',spec),('alignment-review.json',alignment),('action-trace.json',actions),('audio-plan.json',{'tracks':media}),('label-timing.json',label_timing),('framing-trace.json',framing_trace)]: (project/name).write_text(json.dumps(value,indent=2)+'\n')
+     world=calendar_world(plan) if plan['environment']=='calendar' else arena_world(plan)
+     captions=''.join(sign('caption-'+str(i),b['caption'],True) for i,b in enumerate(plan['beats']))
+     headlines=''.join(sign('headline-'+str(i),b['headline']) for i,b in enumerate(plan['beats']) if b['headline'])
+@@ -236,9 +273,9 @@
+ <script src="assets/gsap.min.js"></script><script src="assets/motion-primitives.js"></script><script src="assets/motion-engine.js"></script>
+ <style>@font-face{{font-family:MotifSans;src:url('assets/MotifSans.ttf')}}
+ *{{box-sizing:border-box}}html,body{{margin:0;width:1080px;height:1920px;overflow:hidden;background:#B99476}}#root{{width:100%;height:100%}}#scene{{width:1080px;height:1920px;display:block;overflow:hidden}}
+-.motion-asset,.bot-pose,.paper-type{{transform-box:fill-box;transform-origin:center}}#world-camera{{transform-box:view-box;transform-origin:540px 900px}}</style></head><body>
++.motion-asset,.bot-pose,.paper-type{{transform-box:fill-box;transform-origin:center}}</style></head><body>
+ <div id="root" data-composition-id="main" data-start="0" data-duration="{duration}" data-width="1080" data-height="1920">
+-<svg id="scene" class="clip" data-start="0" data-duration="{duration}" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 1920" aria-label="{escape(plan['message'])}"><defs>{DEFS}{BOT_DEFS}</defs>{world}{headlines}{captions}</svg>{audio}</div>
++<svg id="scene" class="clip" data-start="0" data-duration="{duration}" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 1920" aria-label="{escape(plan['message'])}"><defs>{DEFS}{BOT_DEFS}<clipPath id="action-safe"><rect x="{SAFE[0]}" y="{SAFE[1]}" width="{SAFE[2]}" height="{SAFE[3]}"/></clipPath></defs>{world}{headlines}{captions}</svg>{audio}</div>
+ <script id="motif-scene-events" type="application/json">{literal}</script><script>window.__timelines = window.__timelines || {{}}; window.MotifEventEngine.compile(JSON.parse(document.getElementById('motif-scene-events').textContent),'main');</script></body></html>'''
+     (project/'index.html').write_text(html)
+     return duration
+--- a/scripts/motif_direct.py
++++ b/scripts/motif_direct.py
+@@ -13,6 +13,7 @@
+ import sys
+ import tempfile
+ import tomllib
++from datetime import datetime, timezone
+ from pathlib import Path
+ from jsonschema import Draft202012Validator
+ from motif_plan import ROOT, ASSETS, WORLD_ASSETS, WORLD_SHOTS, review_plan, narration
+@@ -20,8 +21,8 @@
+ from motif_plan_finish import finish
+ from motif_produce import command, probe, sha
+ 
+-PIN='0.8.97'
+-SOURCE_PATHS=['scripts/motif_direct.py','scripts/motif_plan.py','scripts/motif_plan_compile.py','scripts/motif_plan_finish.py','scripts/motif_produce.py','scripts/build_motif_bot.py','scripts/build_scene_01.py','planning/PLANNER.md','schemas/production-plan.schema.json','schemas/planning-review.schema.json','scripts/requirements-planning.txt']
++PIN='0.8.98'
++SOURCE_PATHS=['scripts/motif_direct.py','scripts/motif_plan.py','scripts/motif_plan_compile.py','scripts/motif_framing.py','scripts/motif_plan_finish.py','scripts/motif_produce.py','scripts/build_motif_bot.py','scripts/build_scene_01.py','planning/PLANNER.md','schemas/production-plan.schema.json','schemas/planning-review.schema.json','scripts/requirements-planning.txt']
+ SOURCE_PATHS+=list(ASSETS.values())
+ SOURCE_PATHS+=[f'videos/motif-calendar-reel/assets/sfx/{name}.mp3' for name in ('pop','click-soft','whoosh-short')]
+ SOURCE_PATHS+=['videos/motif-calendar-reel/assets/'+n for n in ('gsap.min.js','motion-engine.js','motion-primitives.js')]
+@@ -47,10 +48,12 @@
+     # A fresh empty working directory prevents the planner reading evaluation fixtures or old outputs.
+     with tempfile.TemporaryDirectory(prefix='motif-planning-') as cwd:
+         print('MODEL '+name,flush=True)
++        started_at=datetime.now(timezone.utc).isoformat()
+         process=subprocess.run(args,cwd=cwd,input=prompt,text=True,capture_output=True,timeout=600)
++        completed_at=datetime.now(timezone.utc).isoformat()
+     (project/(name+'-events.jsonl')).write_text(process.stdout)
+     (project/(name+'-stderr.txt')).write_text(process.stderr)
+-    write(project/(name+'-invocation.json'),{'argv':args,'exit_code':process.returncode,'input_sha256':sha(project/(name+'-input.txt')),'configuration':config})
++    write(project/(name+'-invocation.json'),{'argv':args,'exit_code':process.returncode,'input_sha256':sha(project/(name+'-input.txt')),'configuration':config,'started_at_utc':started_at,'completed_at_utc':completed_at,'requested_model':config['model'],'resolved_model':None,'resolved_model_note':'CLI event stream does not expose a separately resolved model identifier','saved_response_used':False,'model_fallback_used':False})
+     if process.returncode: raise ValueError('live planning backend failed; see '+str(project/(name+'-stderr.txt'))+'; no saved-response fallback was used')
+     value=read(project/(name+'.json'))
+     Draft202012Validator(read(ROOT/schema)).validate(value)
+@@ -66,7 +69,7 @@
+ def storyboard(plan):
+     lines=['# Production storyboard from validated plan','','Message: '+plan['message'],'','Narration: '+narration(plan),'','Environment: '+plan['environment'],'','Ending: '+plan['ending_action'],'']
+     for b in plan['beats']:
+-        lines+=['## '+b['id'],'']+[f'- {k}: {b[k]}' for k in ('subject','action','before_after','focal_detail','consequence','shot','narration','caption','headline')]+['- Executable actions: '+json.dumps(b['actions']),'']
++        lines+=['## '+b['id'],'']+[f'- {k}: {b[k]}' for k in ('subject','action','before_after','focal_detail','focus_target','framing','consequence','shot','narration','caption','headline_mode','headline')]+['- Executable actions: '+json.dumps(b['actions']),'']
+     return '\n'.join(lines)
+ 
+ def validate_brief(brief):
+@@ -117,10 +120,17 @@
+                 compile_plan(project,plan,read(project/'assets/voice/transcript.json'),voice_duration,bounds)
+             except ValueError as error: issues.append(str(error))
+         semantic=None
++        # Preserve actual compiled inputs from each planning attempt before a
++        # bounded correction can replace the root accepted artifacts.
++        attempt_dir=project/'planning-attempts'/str(attempt)
++        attempt_dir.mkdir(parents=True)
++        write(attempt_dir/'plan.json',plan)
++        for filename in ('scene-events.json','action-trace.json','label-timing.json','framing-trace.json','alignment-review.json','audio-plan.json','index.html'):
++            if (project/filename).exists() and not issues: shutil.copyfile(project/filename,attempt_dir/filename)
+         if not issues:
+-            review_prompt=('Review this illustrative Motif plan against its brief and actual action timings. No tools, files, code, other agents, or web. Check semantic fidelity, each outcome, visible evidence before labels, same-check fairness, and ending delivered. Labels are never substitutes for physical events. Use actual label-timing, not beat membership, to judge labels. Headlines are scheduled after physical evidence. Narration-aligned action captions describe an unfolding action; do not treat their present tense as a completed-result headline. A completed result caption preceding evidence is an issue. Return schema JSON; broader semantic correctness is not guaranteed.\nBrief: '+json.dumps(brief)+'\nPlan: '+json.dumps(plan)+'\nAction timings: '+json.dumps(read(project/'action-trace.json'))+'\nActual labels: '+json.dumps(read(project/'label-timing.json'))+'\nTimeline duration: '+str(read(project/'scene-events.json')['durationSec'])+'\nSpoken alignment: '+json.dumps(read(project/'alignment-review.json')))
++            review_prompt=('Review this illustrative Motif plan against its brief and actual action timings. No tools, files, code, other agents, or web. You review data, NOT rendered frames. Check semantic fidelity, each outcome, visible evidence before labels, same-check fairness, and ending delivered. Check audience_narration: speech should explain the useful idea, choice or consequence for this audience, not narrate stage directions (dashed graphics, stencil geometry, cross rendering or test-harness timing), unless these objects are the subject. Reject unnatural production-checklist speech; let structured visual fields carry choreography. Labels are never substitutes for physical events. Use actual label-timing and explicit set/clear/keep lifecycle; reject stale labels after state changes. Headlines are scheduled after physical evidence. Narration-aligned action captions describe an unfolding action; do not treat their present tense as a completed-result headline. A completed result caption preceding evidence is an issue. Focus prose is rationale only; focus_target/framing and actual framing bounds are operative. Return schema JSON; broader semantic correctness and painted visibility are not guaranteed.\nBrief: '+json.dumps(brief)+'\nPlan: '+json.dumps(plan)+'\nAction timings: '+json.dumps(read(project/'action-trace.json'))+'\nActual labels: '+json.dumps(read(project/'label-timing.json'))+'\nActual framing: '+json.dumps(read(project/'framing-trace.json'))+'\nTimeline duration: '+str(read(project/'scene-events.json')['durationSec'])+'\nSpoken alignment: '+json.dumps(read(project/'alignment-review.json')))
+             semantic=model_call(project,f'model-review-{attempt}',review_prompt,'schemas/planning-review.schema.json',config)
+-            if not semantic['pass'] or not all(semantic[k] for k in ('message_preserved','outcome_preserved','evidence_before_labels','ending_delivered')): issues+=semantic['issues'] or ['model review rejected meaning/storytelling']
++            if not semantic['pass'] or not all(semantic[k] for k in ('message_preserved','outcome_preserved','evidence_before_labels','ending_delivered','audience_narration')): issues+=semantic['issues'] or ['model review rejected meaning/storytelling/audience narration']
+         reviews.append({'attempt':attempt,'deterministic':deterministic,'timing_or_semantic_issues':issues,'model_review':semantic})
+         write(project/'planning-review.json',{'reviews':reviews,'corrections':attempt,'pass':not issues,'semantic_guarantee':False})
+         if not issues: break
+@@ -129,6 +139,13 @@
+         plan=model_call(project,'corrected-plan',prompt+'\n\nOne bounded correction. Prior plan:\n'+json.dumps(plan)+'\nFix these concrete issues without changing meaning:\n'+json.dumps(issues),'schemas/production-plan.schema.json',config)
+     write(project/'production-plan.json',plan)
+     (project/'STORYBOARD.md').write_text(storyboard(plan))
++    anchors=read(project/'alignment-review.json')['beat_anchors']
++    labels=read(project/'label-timing.json')
++    caption_starts_match=all(a['start']==l['caption_start'] for a,l in zip(anchors,labels,strict=True))
++    spec=read(project/'scene-events.json')
++    events_sorted=all(a['time']<=b['time'] for a,b in zip(spec['events'],spec['events'][1:]))
++    write(project/'pre-render-checks.json',{'scope':'Structured plan/events/alignment only; not independent encoded-frame inspection','deterministic_review_file':f'deterministic-review-{attempt}.json','model_review_file':f'model-review-{attempt}.json','planning_review_sha256':sha(project/'planning-review.json'),'event_plan_sha256':sha(project/'scene-events.json'),'checks':{'accepted_plan_state_order':deterministic['pass'],'accepted_model_data_review':semantic['pass'],'caption_starts_match_measured_beat_anchors':caption_starts_match,'event_times_sorted':events_sorted},'visual_review':'not assessed','subjective_listening':'not assessed'})
++    if not caption_starts_match or not events_sorted: raise ValueError('pre-render alignment/event consistency failed')
+     record=read(ROOT/'videos/motif-calendar-reel/audio-source-license-manifest.json')
+     record['narration'].update(provider=f'local Kokoro ONNX through HyperFrames {PIN}',rawSha256=sha(project/'assets/voice/narration-af-nova.wav'),status='new script from live validated production plan')
+     record['sfx']=[s for s in record['sfx'] if Path(s['file']).stem in ('pop','click-soft','whoosh-short')]
+--- a/scripts/motif_plan_finish.py
++++ b/scripts/motif_plan_finish.py
+@@ -14,7 +14,7 @@
+     (project / "FIRST_RENDER_REVIEW.md").write_text(
+         "# First encoded render review\n\n"
+         f"Video: [first.mp4](renders/first.mp4). Encoded mix: {initial['integrated_lufs']:.2f} LUFS, {initial['true_peak_dbtp']:.2f} dBTP. "
+-        "This automated gate checks the visual event order in scene-events.json; it does not replace mobile-frame inspection or listening. "
++        "This finishing stage measures encoded media only. Pre-render plan/events/alignment checks are recorded separately in pre-render-checks.json; rendered visual inspection and listening are not inferred from those checks. "
+         "The first render is preserved before any audio finishing.\n")
+     gain = min(TARGET_I - initial["integrated_lufs"], PEAK_CEILING - 0.1 - initial["true_peak_dbtp"])
+     final = project / "renders/final.mp4"
+@@ -47,13 +47,15 @@
+         "production_plan": str((project / "production-plan.json").relative_to(ROOT)), "first_render": str(first.relative_to(ROOT)), "final_render": str(final.relative_to(ROOT)),
+         "first_audio": initial, "initial_linear_gain_attempt_db": round(gain, 3), "finishing_method": finish_method, "final_audio": measured,
+         "target_lufs": TARGET_I, "true_peak_ceiling_dbtp": PEAK_CEILING,
+-        "checks": {"plan_and_event_order": True, "speech_aligned_captions": True, "integrated_loudness": level_pass, "true_peak": peak_pass, "same_encoded_video_stream": same_picture, "same_duration": same_duration, "requested_duration_range": duration_pass},
++        "pre_render": {"record":"pre-render-checks.json", "sha256":sha(project/'pre-render-checks.json'), "scope":"Earlier structured plan/event/alignment checks, not post-encode visual measurement"},
++        "encoded_measurements": {"integrated_loudness": level_pass, "true_peak": peak_pass, "same_encoded_video_stream": same_picture, "same_duration": same_duration, "requested_duration_range": duration_pass},
+         "first_sha256": sha(first), "final_sha256": sha(final), "video_stream_sha256": video_hash(final),
+         "subjective_listening": "not assessed",
++        "human_visual_review": "not assessed",
+     }
+     (project / "verification.json").write_text(json.dumps(result, indent=2) + "\n")
+-    if not all(result["checks"].values()):
+-        raise RuntimeError(f"encoded output failed production checks: {result['checks']}")
++    if not all(result["encoded_measurements"].values()):
++        raise RuntimeError(f"encoded output failed production checks: {result['encoded_measurements']}")
+     candidate = project / "renders/audio-loudnorm-candidate.mp4"
+     if candidate.exists():
+         candidate.unlink()
+--- a/schemas/production-plan.schema.json
++++ b/schemas/production-plan.schema.json
+@@ -4,7 +4,7 @@
+     "schema_version": {
+       "type": "string",
+       "enum": [
+-        "1.0"
++        "1.1"
+       ]
+     },
+     "status": {
+@@ -226,6 +226,37 @@
+               ],
+               "additionalProperties": false
+             }
++          },
++          "focus_target": {
++            "type": "string",
++            "enum": [
++              "calendar.board",
++              "calendar.proposal",
++              "calendar.booking",
++              "calendar.decision",
++              "arena.answers",
++              "answer-A.sheet",
++              "answer-B.sheet",
++              "answer-A.connection",
++              "answer-B.connection",
++              "arena.handoff"
++            ]
++          },
++          "framing": {
++            "type": "string",
++            "enum": [
++              "establish",
++              "subject",
++              "detail"
++            ]
++          },
++          "headline_mode": {
++            "type": "string",
++            "enum": [
++              "set",
++              "clear",
++              "keep"
++            ]
+           }
+         },
+         "required": [
+@@ -239,7 +270,10 @@
+           "caption",
+           "headline",
+           "shot",
+-          "actions"
++          "actions",
++          "focus_target",
++          "framing",
++          "headline_mode"
+         ],
+         "additionalProperties": false
+       }
+--- a/schemas/planning-review.schema.json
++++ b/schemas/planning-review.schema.json
+@@ -24,6 +24,9 @@
+     },
+     "notes": {
+       "type": "string"
++    },
++    "audience_narration": {
++      "type": "boolean"
+     }
+   },
+   "required": [
+@@ -33,7 +36,8 @@
+     "outcome_preserved",
+     "evidence_before_labels",
+     "ending_delivered",
+-    "notes"
++    "notes",
++    "audience_narration"
+   ],
+   "additionalProperties": false
+ }
+--- a/planning/PLANNER.md
++++ b/planning/PLANNER.md
+@@ -4,11 +4,11 @@
+ 
+ For a ready plan:
+ - Copy message and audience EXACTLY from the brief, character for character. Put your interpretation in claims and assumptions, never rewrite these input fields.
+-- Use 4–6 beats, one narrated sentence per beat. Total script approximately 30–43 words for a 14–18 second short. Intended duration is supplied in the brief. Kokoro speed .85, about 2.6 spoken words/sec; allow 1.2 sec ending hold. Do not race or add filler. Choose direct familiar language appropriate to the audience.
++- Use 4–6 beats, one narrated sentence per beat. Total script approximately 30–43 words for a 14–18 second short. Intended duration is supplied in the brief. Kokoro speed .85, about 2.6 spoken words/sec; allow 1.2 sec ending hold. Do not race or add filler. Choose direct familiar language appropriate to the audience. Narration explains the idea, choice or consequence to a viewer. Do NOT describe animation construction: dashed cards, stencil geometry, crosses appearing, rendering, or "before its cross appears" unless those objects are the topic in the brief. Stage directions belong in action/before_after/focal_detail, not the spoken script. Use natural narration words as cues (for example "checks", "declines", "chooses"); no need to speak each animation operation.
+ - Each beat needs subject, action, visible before/after, focal detail, consequence. Text and camera motion alone do not count as action. Explanatory hold beats may have no state action, but the ending must have an action or visibly hold its resulting state.
+ - While an action unfolds, captions must describe the action (e.g. "Your decision", "Testing answer A", "To a person"), not announce a completed result. A result caption belongs in a later hold beat after the action. Headlines are automatically delayed by the compiler until that beat's physical action is complete.
+-- Captions are short paraphrases <=28 characters; headlines <=22 characters. No positive result label before the action/evidence. A headline announcing unchanged/review must be in a beat AFTER decline/handoff action, so it follows completed evidence. Empty headline keeps the prior headline.
+-- shot controls actual camera/framing or scene cut. Choose all shots from the capability list. Arena candidate close shots must use identical geometry for fair comparison, and both must be checked with the same stencil.
++- Captions are short paraphrases <=28 characters; headlines <=22 characters. No positive result label before the action/evidence. A headline announcing unchanged/review must be in a beat AFTER decline/handoff action, so it follows completed evidence. headline_mode is explicit: set requires nonempty headline, clear requires empty headline and clears the previous label at beat start, keep requires empty headline and is allowed only in holds without a state action. Never keep a stale state label. When you do not need a headline use clear, not keep.
++- shot selects the supported scene container; focus_target and framing are the operative geometry-derived directing controls. focal_detail is rationale only, never parsed as a camera instruction. Use only the focus registry below. Arena A/B diagnostic checks MUST use answer-A.connection and answer-B.connection respectively, with the same framing=detail, so the actual route is enlarged comparably.
+ - actions.cue is an exact unique word or contiguous phrase within THAT beat's narration (case-insensitive, punctuation ignored). The compiler aligns it to the actual generated speech. One meaningful action per beat; bot.pose may accompany it. Leave enough narrated words after the cue for the action's 0.8–1.4 second choreography. Only use result where documented; otherwise none.
+ - List EXACTLY the complete asset ID array for the chosen world; do not substitute paths or omit parts.
+ - The only available prerequisite facts are proposal-visible, approved, declined, booked, A-tested, A-pass, A-fail, B-tested, B-pass, B-fail, handed-off. Initial facts are empty. Do not invent untested or stencil-ready facts: checks with requires=[] are allowed.
+@@ -20,3 +20,11 @@
+ Calendar capabilities: always starts with existing solid card at 3 PM, empty 4 PM. Labels 2–6 uppercase letters; choose and disclose these illustrative times/labels. Shots calendar-wide/calendar-detail. calendar.propose subject calendar result none creates dashed proposed card. calendar.approve requires [proposal-visible], subject calendar result none: person's finger presses and check registers. calendar.decline requires [proposal-visible], subject calendar result none: person's finger presses DECLINE, cross registers, dashed proposal removed, existing schedule untouched. calendar.commit requires [approved], subject calendar result none: solid card added only after approval. bot.pose subject bot result thinking/pointing/presenting/happy.
+ 
+ Arena capabilities: two answer sheets A and B, initially untested; both receive an identical tactile link stencil. Shots arena-pair, arena-a, arena-b, arena-review. arena.check subject A or B result fail/pass: stencil lands, broken/complete route exposed, then cross/check registers. arena.select subject A or B result none requires [A-pass] or [B-pass] respectively. arena.handoff subject both result none requires [A-tested,B-tested]: both sheets travel into a separate person's receiving hand, with no automatic winner. It can also follow selection if the message warrants human review. bot.pose as above. Winner visuals exist only after selection; never select a failed answer. To communicate both fail, show each missing connection before its cross, then both marked sheets move to the person. Do not merely show a REVIEW headline or lens over Bot.
++
++Operative directing contract (schema_version=1.1):
++- Every beat supplies focus_target, framing (establish/subject/detail), and headline_mode (set/clear/keep). No selectors, coordinates, expressions or code. A camera fit uses target bounds with padding, clamped by critical action/identity bounds and a safe action region between headline/caption bands.
++- Calendar focus targets: calendar.board (whole schedule), calendar.proposal (unbooked proposal), calendar.booking (solid booked card), calendar.decision (control, contacting finger and proposal). Either calendar shot supports these. Propose must focus board or proposal; approve/decline must focus calendar.decision; commit must focus board or booking. End unchanged with calendar.board so the original schedule and empty hour are visible.
++- Arena: arena.answers only in arena-pair; answer-A.sheet/answer-B.sheet in arena-pair, matching arena-a/b, or arena-review; answer-A.connection only arena-a; answer-B.connection only arena-b; arena.handoff only arena-review.
++- Checks require matching candidate connection focus with detail framing. The linked path/gap plus candidate identity and mark are protected. Compare A/B using the SAME detail fit, never a favored framing.
++- For selection use the selected candidate's matching shot and sheet focus, or arena-pair with the selected sheet focus, so its attached A/B SELECTED stamp is large and visible. Subsequent shots must continue to include the selected indicator; do not switch to a shot containing only the other candidate.
++- Handoff requires arena.handoff focus. Narrative holds can use establish or subject; avoid repetitively zooming without new information.

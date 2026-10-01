@@ -1,0 +1,32 @@
+{
+  "production_plan": "videos/productions/planned-calendar-declined/production-plan.json",
+  "first_render": "videos/productions/planned-calendar-declined/renders/first.mp4",
+  "final_render": "videos/productions/planned-calendar-declined/renders/final.mp4",
+  "first_audio": {
+    "integrated_lufs": -24.56,
+    "true_peak_dbtp": -10.22,
+    "lra_lu": 6.8
+  },
+  "initial_linear_gain_attempt_db": 8.56,
+  "finishing_method": "combined-mix linear gain",
+  "final_audio": {
+    "integrated_lufs": -16.08,
+    "true_peak_dbtp": -1.67,
+    "lra_lu": 6.7
+  },
+  "target_lufs": -16.0,
+  "true_peak_ceiling_dbtp": -1.5,
+  "checks": {
+    "plan_and_event_order": true,
+    "speech_aligned_captions": true,
+    "integrated_loudness": true,
+    "true_peak": true,
+    "same_encoded_video_stream": true,
+    "same_duration": true,
+    "requested_duration_range": true
+  },
+  "first_sha256": "04b3b40680eb0f0e745730cc0518409ab1427f03610c11f63b14ead451e2d45d",
+  "final_sha256": "7a656f223d17f7c9c4312cd88566d2dbd8d60aec347ea6a9a0c3f6c5310fac50",
+  "video_stream_sha256": "cb95b8782dc76dd6f35d5c8f497bdb9a9e0a1f71af508a27ecbf8089792cb889",
+  "subjective_listening": "not assessed"
+}

@@ -1,0 +1,54 @@
+[
+  {
+    "beat": "beat-1",
+    "kind": "bot.pose",
+    "subject": "bot",
+    "cue": "face",
+    "cue_time": 1.27,
+    "complete": 1.27,
+    "result": "presenting",
+    "requires": []
+  },
+  {
+    "beat": "beat-2",
+    "kind": "arena.check",
+    "subject": "A",
+    "cue": "checks A",
+    "cue_time": 4.5,
+    "complete": 5.64,
+    "result": "fail",
+    "requires": []
+  },
+  {
+    "beat": "beat-3",
+    "kind": "arena.check",
+    "subject": "B",
+    "cue": "checks B",
+    "cue_time": 7.56,
+    "complete": 8.7,
+    "result": "pass",
+    "requires": []
+  },
+  {
+    "beat": "beat-4",
+    "kind": "arena.select",
+    "subject": "B",
+    "cue": "chooses B",
+    "cue_time": 12.49,
+    "complete": 12.81,
+    "result": "none",
+    "requires": [
+      "B-pass"
+    ]
+  },
+  {
+    "beat": "beat-4",
+    "kind": "bot.pose",
+    "subject": "bot",
+    "cue": "evidence drives",
+    "cue_time": 13.52,
+    "complete": 13.52,
+    "result": "pointing",
+    "requires": []
+  }
+]

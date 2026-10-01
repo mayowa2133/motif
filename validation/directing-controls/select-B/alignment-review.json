@@ -1,0 +1,191 @@
+{
+  "coverage": 0.9767441860465116,
+  "merged_token_groups": [
+    {
+      "script_indices": [
+        17,
+        18
+      ],
+      "script_words": [
+        "b",
+        "with"
+      ],
+      "heard_tokens": [
+        "bwith"
+      ],
+      "start": 5.57,
+      "end": 5.89,
+      "precision": "shared measured ASR token interval"
+    }
+  ],
+  "script_words": [
+    "here",
+    "are",
+    "answers",
+    "a",
+    "and",
+    "b",
+    "checking",
+    "a",
+    "reveals",
+    "a",
+    "route",
+    "gap",
+    "before",
+    "its",
+    "cross",
+    "appears",
+    "checking",
+    "b",
+    "with",
+    "the",
+    "same",
+    "stencil",
+    "reveals",
+    "its",
+    "gap",
+    "before",
+    "the",
+    "cross",
+    "both",
+    "answers",
+    "failed",
+    "the",
+    "same",
+    "check",
+    "no",
+    "winner",
+    "both",
+    "go",
+    "to",
+    "a",
+    "person",
+    "for",
+    "review"
+  ],
+  "matched_script_indices": [
+    0,
+    1,
+    2,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    29,
+    30,
+    31,
+    32,
+    33,
+    34,
+    35,
+    36,
+    37,
+    38,
+    39,
+    40,
+    41,
+    42
+  ],
+  "beat_anchors": [
+    {
+      "id": "beat-1",
+      "start": 0.12,
+      "actions": [
+        {
+          "action": {
+            "kind": "bot.pose",
+            "subject": "bot",
+            "cue": "Here are",
+            "result": "presenting",
+            "requires": []
+          },
+          "time": 0.12,
+          "script_word_index": 0,
+          "heard_word": "here"
+        }
+      ]
+    },
+    {
+      "id": "beat-2",
+      "start": 1.85,
+      "actions": [
+        {
+          "action": {
+            "kind": "arena.check",
+            "subject": "A",
+            "cue": "Checking A",
+            "result": "pass",
+            "requires": []
+          },
+          "time": 1.85,
+          "script_word_index": 6,
+          "heard_word": "checking"
+        }
+      ]
+    },
+    {
+      "id": "beat-3",
+      "start": 5.16,
+      "actions": [
+        {
+          "action": {
+            "kind": "arena.check",
+            "subject": "B",
+            "cue": "Checking B",
+            "result": "pass",
+            "requires": []
+          },
+          "time": 5.16,
+          "script_word_index": 16,
+          "heard_word": "checking"
+        }
+      ]
+    },
+    {
+      "id": "beat-4",
+      "start": 9,
+      "actions": []
+    },
+    {
+      "id": "beat-5",
+      "start": 11.24,
+      "actions": [
+        {
+          "action": {
+            "kind": "arena.select",
+            "subject": "B",
+            "cue": "both go",
+            "result": "none",
+            "requires": [
+              "B-pass"
+            ]
+          },
+          "time": 12.12,
+          "script_word_index": 36,
+          "heard_word": "both"
+        }
+      ]
+    }
+  ]
+}

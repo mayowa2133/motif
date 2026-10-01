@@ -1,0 +1,178 @@
+[
+  {
+    "beat": "beat-1",
+    "start": 0.06,
+    "settled": 0.06,
+    "focus_target": "arena.answers",
+    "framing": "establish",
+    "shot": "arena-pair",
+    "target_bounds": [
+      0,
+      240,
+      1080,
+      1350
+    ],
+    "critical_bounds": [
+      110.0,
+      570.0,
+      859.8,
+      408.0
+    ],
+    "safe_area": [
+      90,
+      260,
+      900,
+      1290
+    ],
+    "camera": {
+      "x": 90.0,
+      "y": 142.5,
+      "scale": 0.833333
+    },
+    "projected_target_bounds": [
+      90.0,
+      342.49992,
+      899.99964,
+      1124.99955
+    ],
+    "projected_critical_bounds": [
+      181.66663,
+      617.49981,
+      716.4997133999999,
+      339.999864
+    ],
+    "selected_candidate": null
+  },
+  {
+    "beat": "beat-2",
+    "start": 3.31,
+    "settled": 3.31,
+    "focus_target": "answer-A.connection",
+    "framing": "detail",
+    "shot": "arena-a",
+    "target_bounds": [
+      265,
+      880,
+      550,
+      124
+    ],
+    "critical_bounds": [
+      240,
+      415,
+      595,
+      610
+    ],
+    "safe_area": [
+      90,
+      260,
+      900,
+      1290
+    ],
+    "camera": {
+      "x": -230.206,
+      "y": -309.5816,
+      "scale": 1.426307
+    },
+    "projected_target_bounds": [
+      147.76535500000003,
+      945.5685599999999,
+      784.46885,
+      176.862068
+    ],
+    "projected_critical_bounds": [
+      112.10767999999999,
+      282.33580500000005,
+      848.652665,
+      870.04727
+    ],
+    "selected_candidate": null
+  },
+  {
+    "beat": "beat-3",
+    "start": 7.26,
+    "settled": 7.26,
+    "focus_target": "answer-B.connection",
+    "framing": "detail",
+    "shot": "arena-b",
+    "target_bounds": [
+      265,
+      880,
+      550,
+      124
+    ],
+    "critical_bounds": [
+      240,
+      415,
+      595,
+      610
+    ],
+    "safe_area": [
+      90,
+      260,
+      900,
+      1290
+    ],
+    "camera": {
+      "x": -230.206,
+      "y": -309.5816,
+      "scale": 1.426307
+    },
+    "projected_target_bounds": [
+      147.76535500000003,
+      945.5685599999999,
+      784.46885,
+      176.862068
+    ],
+    "projected_critical_bounds": [
+      112.10767999999999,
+      282.33580500000005,
+      848.652665,
+      870.04727
+    ],
+    "selected_candidate": null
+  },
+  {
+    "beat": "beat-4",
+    "start": 11.15,
+    "settled": 11.47,
+    "focus_target": "answer-B.sheet",
+    "framing": "subject",
+    "shot": "arena-b",
+    "target_bounds": [
+      160.0,
+      390.0,
+      760.0,
+      850.0
+    ],
+    "critical_bounds": [
+      160.0,
+      390.0,
+      760.0,
+      850.0
+    ],
+    "safe_area": [
+      90,
+      260,
+      900,
+      1290
+    ],
+    "camera": {
+      "x": 107.9232,
+      "y": 252.8841,
+      "scale": 0.800142
+    },
+    "projected_target_bounds": [
+      235.94592,
+      564.93948,
+      608.10792,
+      680.1207
+    ],
+    "projected_critical_bounds": [
+      235.94592,
+      564.93948,
+      608.10792,
+      680.1207
+    ],
+    "selected_candidate": "B"
+  }
+]

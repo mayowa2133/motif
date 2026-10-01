@@ -1,5 +1,7 @@
 # Motif local production workflow
 
+This document describes supported **legacy template mode**. The new [message-driven production-plan workflow](PRODUCTION_PLAN_WORKFLOW.md) invokes a configured live planning backend and compiles varied calendar or arena actions through the same event engine.
+
 This entry point connects a structured brief to a storyboard record, local narration, structured scene events, an encoded first render, audio finishing, and measured final-file gates. [The pre-change inspection](PRODUCTION_WORKFLOW_INSPECTION.md) records what was already shared. Demo 01–03 remain frozen.
 
 ## Run
@@ -27,7 +29,9 @@ The encoded audio result is a technical measurement. A person still needs to jud
 
 ## Supported scope
 
-The current scene template supports one **calendar open-slot proposal**: a fixed 3 PM existing card, a visibly provisional 4 PM FOCUS suggestion, a separate person's approval, then a booked solid card. The existing event label can vary within 2–6 uppercase letters; the proposed label remains `FOCUS` because the script and captions are fixed. The message is checked for an open hour, focus, and approval, then recorded; it is not interpreted by a general story model. The shared template and entry point prevent copying a new generator for each brief within this family. They do not select arbitrary metaphors or support other topics, times, aspect ratios, voices, or a general scene grammar. Such work still needs an authored template or bespoke scene code and review.
+The current scene template supports one **calendar open-slot proposal**: a fixed 3 PM existing card, a visibly provisional 4 PM FOCUS suggestion, a separate person's approval, then a booked solid card. The existing event label can vary within 2–6 uppercase letters; the proposed label remains `FOCUS` because the script and captions are fixed. The message is checked for a calendar opening, focus, and approval, then recorded; it is not interpreted by a general story model. Explicit refusal/cancellation, unsupported clock times, and unknown fields now receive JSON rejections before project creation. These are conservative keyword checks, not complete natural-language validation. The shared template and entry point prevent copying a new generator for each brief within this family. They do not select arbitrary metaphors or support other topics, times, aspect ratios, voices, or a general scene grammar. Such work still needs an authored template or bespoke scene code and review.
+
+The [input contract](BRIEF_INPUT_CONTRACT.md) documents the actual fields and fixed decisions. Use `python3 scripts/motif_produce.py validate --brief <brief.json>` for validation without production. The [bounded variation review](BRIEF_VARIATION_REVIEW.md) records two finished label variations and five requests rejected before rendering.
 
 No new motion-engine action, mascot redesign, broad asset library, publishing surface, account system, or dashboard was added. The renderer, event engine, captions, Bot, approved environment pieces, calendar props, local Kokoro workflow, and cleared SFX are reused. The one new shared scene module, [`motif_calendar_template.py`](../scripts/motif_calendar_template.py), is a parameterized derivative of the frozen Demo 03 calendar assembly; Demo 03 itself was not changed.
 

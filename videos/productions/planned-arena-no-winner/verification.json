@@ -1,0 +1,32 @@
+{
+  "production_plan": "videos/productions/planned-arena-no-winner/production-plan.json",
+  "first_render": "videos/productions/planned-arena-no-winner/renders/first.mp4",
+  "final_render": "videos/productions/planned-arena-no-winner/renders/final.mp4",
+  "first_audio": {
+    "integrated_lufs": -24.41,
+    "true_peak_dbtp": -8.06,
+    "lra_lu": 7.6
+  },
+  "initial_linear_gain_attempt_db": 6.46,
+  "finishing_method": "combined-mix loudnorm with measured calibration",
+  "final_audio": {
+    "integrated_lufs": -16.09,
+    "true_peak_dbtp": -1.71,
+    "lra_lu": 7.1
+  },
+  "target_lufs": -16.0,
+  "true_peak_ceiling_dbtp": -1.5,
+  "checks": {
+    "plan_and_event_order": true,
+    "speech_aligned_captions": true,
+    "integrated_loudness": true,
+    "true_peak": true,
+    "same_encoded_video_stream": true,
+    "same_duration": true,
+    "requested_duration_range": true
+  },
+  "first_sha256": "e96a1f8894bc6b7d0881f14a50dfe835d370cb3e6d73e76215a027036b9a01c9",
+  "final_sha256": "3e605677e20c302866630576750fbc41ca71486d97a64ca05c66fd831c489439",
+  "video_stream_sha256": "d9a266b642ca14f161ddf458db6e88279324d0c0f8b0c0512f01a92fe6d8a83c",
+  "subjective_listening": "not assessed"
+}

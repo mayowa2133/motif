@@ -1,0 +1,14 @@
+{
+  "slug": "brief-unsupported-times",
+  "message": "An assistant notices an open hour at 10 AM on the calendar, suggests a focus block, and waits for approval before booking. The existing event is at 9 AM.",
+  "audience": "People interested in practical AI assistance and productivity",
+  "intended_duration_seconds": 14,
+  "aspect_ratio": "9:16",
+  "style": "motif-v1",
+  "voice": "af_nova",
+  "template": "calendar-open-slot",
+  "scene_data": {
+    "existing_title": "CALL",
+    "proposed_title": "FOCUS"
+  }
+}

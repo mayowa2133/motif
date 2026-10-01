@@ -1,0 +1,46 @@
+[
+  {
+    "beat": "beat-1",
+    "caption": "The same check",
+    "caption_start": 0.06,
+    "beat_end": 3.31,
+    "shot": "arena-pair",
+    "headline": "",
+    "headline_mode": "clear",
+    "headline_start": null,
+    "headline_clear_time": 0.06
+  },
+  {
+    "beat": "beat-2",
+    "caption": "Testing answer A",
+    "caption_start": 3.31,
+    "beat_end": 7.26,
+    "shot": "arena-a",
+    "headline": "A FAILS",
+    "headline_mode": "set",
+    "headline_start": 5.76,
+    "headline_clear_time": 3.31
+  },
+  {
+    "beat": "beat-3",
+    "caption": "Testing answer B",
+    "caption_start": 7.26,
+    "beat_end": 11.15,
+    "shot": "arena-b",
+    "headline": "B PASSES",
+    "headline_mode": "set",
+    "headline_start": 8.82,
+    "headline_clear_time": 7.26
+  },
+  {
+    "beat": "beat-4",
+    "caption": "Choosing from evidence",
+    "caption_start": 11.15,
+    "beat_end": 16.816,
+    "shot": "arena-b",
+    "headline": "B SELECTED",
+    "headline_mode": "set",
+    "headline_start": 12.93,
+    "headline_clear_time": 11.15
+  }
+]

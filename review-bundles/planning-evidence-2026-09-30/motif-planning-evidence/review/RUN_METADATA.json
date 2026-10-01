@@ -1,0 +1,239 @@
+{
+  "scope": "Read-only packaging of the two existing evaluated runs; no model calls, renders, implementation changes, commit, push or attempt deletion.",
+  "source_revision": {
+    "git_head_observed_at_packaging": "4071618a9b151d18c3378b8abe2644d7550e8c6c",
+    "run_time_git_head": null,
+    "availability": "A run-time Git revision was not explicitly captured. The implementation was an uncommitted working tree; the exact shared source hashes are the run provenance. Current HEAD alone does not identify that implementation.",
+    "shared_source_hash_files_identical": true,
+    "current_source_matches_recorded_31_file_snapshot": true
+  },
+  "calls": [
+    {
+      "run": "planned-calendar-declined",
+      "call": "initial-plan",
+      "requested_model": "gpt-5.6-sol",
+      "resolved_model": null,
+      "resolved_model_availability": "No resolved identifier in preserved invocation or event records; requested identifier is not server-resolution proof.",
+      "exit_code": 0,
+      "exact_invocation_started_at": null,
+      "exact_invocation_completed_at": null,
+      "time_availability": "Exact invocation boundaries were not recorded. The following timestamps are existing filesystem observations and diagnostic timestamps, not reconstructed start/end times.",
+      "prompt_file_mtime_utc": "2026-09-30T18:06:43.484491+00:00",
+      "invocation_record_file_mtime_utc": "2026-09-30T18:07:16.080150+00:00",
+      "stderr_diagnostic_timestamps_utc": [
+        "2026-09-30T18:06:44.335103Z"
+      ],
+      "stderr_warning_summary": "State database lookup fallback warning; this is not a planner-model or saved-response fallback.",
+      "input_sha256": "00c5b6e73721ee9f58e2d67f44ee471cfb98dd97bf3169dce1f65ae452a56b3f",
+      "structured_output_sha256": "affd168cc2f8490aab67895fb3f3027c68ffa5628817e9bcaa0c95d7bd1994a8",
+      "original_invocation_record_sha256": "3af0df34b92d5ecf409d5485f5d155cd4a23cacef2a29b5a2112d700f9815c2e",
+      "private_event_log_sha256": "da7e4b925b737af45ffddaa92523f2bb861bce7136e15db5b836355c9d01f134",
+      "private_event_log_included": false,
+      "event_type_counts": {
+        "thread.started": 1,
+        "turn.started": 1,
+        "item.completed:agent_message": 1,
+        "turn.completed": 1
+      },
+      "structured_output_matches_logged_agent_message": true,
+      "completed_tool_items": 0
+    },
+    {
+      "run": "planned-calendar-declined",
+      "call": "model-review-0",
+      "requested_model": "gpt-5.6-sol",
+      "resolved_model": null,
+      "resolved_model_availability": "No resolved identifier in preserved invocation or event records; requested identifier is not server-resolution proof.",
+      "exit_code": 0,
+      "exact_invocation_started_at": null,
+      "exact_invocation_completed_at": null,
+      "time_availability": "Exact invocation boundaries were not recorded. The following timestamps are existing filesystem observations and diagnostic timestamps, not reconstructed start/end times.",
+      "prompt_file_mtime_utc": "2026-09-30T18:07:29.999959+00:00",
+      "invocation_record_file_mtime_utc": "2026-09-30T18:07:43.761115+00:00",
+      "stderr_diagnostic_timestamps_utc": [
+        "2026-09-30T18:07:30.632210Z"
+      ],
+      "stderr_warning_summary": "State database lookup fallback warning; this is not a planner-model or saved-response fallback.",
+      "input_sha256": "374dcc5f8bd8388f7caa3c8e64337fe0b08a53c5a02fa06697c4bb7c34d8db24",
+      "structured_output_sha256": "f6eeae7741056b26b10606be8cc0646797dfd588a0dd2f6c88a3601a5e9c2ea2",
+      "original_invocation_record_sha256": "af73f1571cd1c8353e26601f66663aea1f9cb1d0df8dc9f77e735105d0682abc",
+      "private_event_log_sha256": "f33f537c241c5c8ae9a266860628b2d0c392cc7fade1fa37866b550b5938ece9",
+      "private_event_log_included": false,
+      "event_type_counts": {
+        "thread.started": 1,
+        "turn.started": 1,
+        "item.completed:agent_message": 1,
+        "turn.completed": 1
+      },
+      "structured_output_matches_logged_agent_message": true,
+      "completed_tool_items": 0
+    },
+    {
+      "run": "planned-arena-no-winner",
+      "call": "corrected-plan",
+      "requested_model": "gpt-5.6-sol",
+      "resolved_model": null,
+      "resolved_model_availability": "No resolved identifier in preserved invocation or event records; requested identifier is not server-resolution proof.",
+      "exit_code": 0,
+      "exact_invocation_started_at": null,
+      "exact_invocation_completed_at": null,
+      "time_availability": "Exact invocation boundaries were not recorded. The following timestamps are existing filesystem observations and diagnostic timestamps, not reconstructed start/end times.",
+      "prompt_file_mtime_utc": "2026-09-30T18:07:52.703758+00:00",
+      "invocation_record_file_mtime_utc": "2026-09-30T18:08:31.974032+00:00",
+      "stderr_diagnostic_timestamps_utc": [
+        "2026-09-30T18:07:52.846488Z"
+      ],
+      "stderr_warning_summary": "State database lookup fallback warning; this is not a planner-model or saved-response fallback.",
+      "input_sha256": "595571a5fca4139a9f08030df82c7837e242fc5802fdb9fb4b15028d321fb137",
+      "structured_output_sha256": "597d42e81a4b30efec0fdb98214b857da4b1584eb032af20bf774dc03e9a1f25",
+      "original_invocation_record_sha256": "db28998ada2a448e76d608a4d92122bf692d02915548093cf607c573664a6766",
+      "private_event_log_sha256": "6a7f66108f9b8ce64d308e445018532b888d1904a61d51f73cdf330ccb1b009b",
+      "private_event_log_included": false,
+      "event_type_counts": {
+        "thread.started": 1,
+        "turn.started": 1,
+        "item.completed:agent_message": 1,
+        "turn.completed": 1
+      },
+      "structured_output_matches_logged_agent_message": true,
+      "completed_tool_items": 0
+    },
+    {
+      "run": "planned-arena-no-winner",
+      "call": "initial-plan",
+      "requested_model": "gpt-5.6-sol",
+      "resolved_model": null,
+      "resolved_model_availability": "No resolved identifier in preserved invocation or event records; requested identifier is not server-resolution proof.",
+      "exit_code": 0,
+      "exact_invocation_started_at": null,
+      "exact_invocation_completed_at": null,
+      "time_availability": "Exact invocation boundaries were not recorded. The following timestamps are existing filesystem observations and diagnostic timestamps, not reconstructed start/end times.",
+      "prompt_file_mtime_utc": "2026-09-30T18:06:43.484422+00:00",
+      "invocation_record_file_mtime_utc": "2026-09-30T18:07:15.592340+00:00",
+      "stderr_diagnostic_timestamps_utc": [
+        "2026-09-30T18:06:44.335100Z"
+      ],
+      "stderr_warning_summary": "State database lookup fallback warning; this is not a planner-model or saved-response fallback.",
+      "input_sha256": "d4379b9d274da2da02f5eb87b683f95fffb279cb290dcf3eff8a3dd9323add28",
+      "structured_output_sha256": "ada87834a60bdcbaefb36f5b77acfcba267de2e67961aabe77764222c30fa43f",
+      "original_invocation_record_sha256": "3a08c4013a5c5bd6f2de5e77b940cdddf49b49f9b7e8f30c2dc3bfbcdcd01e9c",
+      "private_event_log_sha256": "3efd766ca6f3e78c193bf520ce0db61b34168026b1e580be72f2ac026fd81325",
+      "private_event_log_included": false,
+      "event_type_counts": {
+        "thread.started": 1,
+        "turn.started": 1,
+        "item.completed:agent_message": 1,
+        "turn.completed": 1
+      },
+      "structured_output_matches_logged_agent_message": true,
+      "completed_tool_items": 0
+    },
+    {
+      "run": "planned-arena-no-winner",
+      "call": "model-review-0",
+      "requested_model": "gpt-5.6-sol",
+      "resolved_model": null,
+      "resolved_model_availability": "No resolved identifier in preserved invocation or event records; requested identifier is not server-resolution proof.",
+      "exit_code": 0,
+      "exact_invocation_started_at": null,
+      "exact_invocation_completed_at": null,
+      "time_availability": "Exact invocation boundaries were not recorded. The following timestamps are existing filesystem observations and diagnostic timestamps, not reconstructed start/end times.",
+      "prompt_file_mtime_utc": "2026-09-30T18:07:30.684561+00:00",
+      "invocation_record_file_mtime_utc": "2026-09-30T18:07:52.701455+00:00",
+      "stderr_diagnostic_timestamps_utc": [
+        "2026-09-30T18:07:30.828397Z"
+      ],
+      "stderr_warning_summary": "State database lookup fallback warning; this is not a planner-model or saved-response fallback.",
+      "input_sha256": "833b5f5514b7807848756790460b0294717b17c1448f7ac54bf43c883002ea27",
+      "structured_output_sha256": "4e3c4a2932eab5a75ca19fcea6d29afee8663cf2961e55772e0603b601069550",
+      "original_invocation_record_sha256": "e2b654d31fabba334cc5e494c309647cdd97e037b5251becae90e315c94bf361",
+      "private_event_log_sha256": "0002ae3e5472ed62d8f6c11df4724c0bb2ec524d0c03b3a73f754808bdfa7fdd",
+      "private_event_log_included": false,
+      "event_type_counts": {
+        "thread.started": 1,
+        "turn.started": 1,
+        "item.completed:agent_message": 1,
+        "turn.completed": 1
+      },
+      "structured_output_matches_logged_agent_message": true,
+      "completed_tool_items": 0
+    },
+    {
+      "run": "planned-arena-no-winner",
+      "call": "model-review-1",
+      "requested_model": "gpt-5.6-sol",
+      "resolved_model": null,
+      "resolved_model_availability": "No resolved identifier in preserved invocation or event records; requested identifier is not server-resolution proof.",
+      "exit_code": 0,
+      "exact_invocation_started_at": null,
+      "exact_invocation_completed_at": null,
+      "time_availability": "Exact invocation boundaries were not recorded. The following timestamps are existing filesystem observations and diagnostic timestamps, not reconstructed start/end times.",
+      "prompt_file_mtime_utc": "2026-09-30T18:08:42.643875+00:00",
+      "invocation_record_file_mtime_utc": "2026-09-30T18:08:57.748587+00:00",
+      "stderr_diagnostic_timestamps_utc": [
+        "2026-09-30T18:08:43.978290Z"
+      ],
+      "stderr_warning_summary": "State database lookup fallback warning; this is not a planner-model or saved-response fallback.",
+      "input_sha256": "44f048b5f178f6778889394d2b1eb130450350dd6558e7ae741ae1b3ba6409f9",
+      "structured_output_sha256": "513e927720cbaecebdcad0e391fa368a6d1dedf80b5a99e26077888454eff8b6",
+      "original_invocation_record_sha256": "76b8caf9deb12521c00c924a3d96ab85c82b7112ac2ef3abac02052699edb389",
+      "private_event_log_sha256": "40ab0aeab81e0a826f68a76f08403862e5a3e8a03bd540f8bde21b59676aabc4",
+      "private_event_log_included": false,
+      "event_type_counts": {
+        "thread.started": 1,
+        "turn.started": 1,
+        "item.completed:agent_message": 1,
+        "turn.completed": 1
+      },
+      "structured_output_matches_logged_agent_message": true,
+      "completed_tool_items": 0
+    }
+  ],
+  "run_consumption_checks": [
+    {
+      "run": "planned-calendar-declined",
+      "final_plan_matches_structured_model_output": "initial-plan.json",
+      "scene_events_match_embedded_renderer_input": true,
+      "narration_matches_final_plan": true,
+      "corrections": 0,
+      "manual_per_run_edits_record": [],
+      "final_video_sha256_recorded": "7a656f223d17f7c9c4312cd88566d2dbd8d60aec347ea6a9a0c3f6c5310fac50",
+      "videos_included": false
+    },
+    {
+      "run": "planned-arena-no-winner",
+      "final_plan_matches_structured_model_output": "corrected-plan.json",
+      "scene_events_match_embedded_renderer_input": true,
+      "narration_matches_final_plan": true,
+      "corrections": 1,
+      "manual_per_run_edits_record": [],
+      "final_video_sha256_recorded": "3e605677e20c302866630576750fbc41ca71486d97a64ca05c66fd831c489439",
+      "videos_included": false
+    }
+  ],
+  "fallback_and_saved_response_usage": {
+    "recorded_result": "Neither evaluated run used a saved example response or automatic model fallback.",
+    "basis": [
+      "scripts/motif_direct.py:model_call has no saved-response branch",
+      "docs/PRODUCTION_PLAN_MILESTONE_REVIEW.md records explicit model selection and no saved-response fallback",
+      "All six included invocation records exit with code 0 and match their logged structured outputs."
+    ],
+    "development_model_change": "Earlier configured gpt-6.1-sol failed; gpt-5.6-sol was explicitly selected before these evaluated runs. This development intervention is preserved in development-fixes.json, not a silent fallback.",
+    "limits": "Local records, not independent provider-side attestation."
+  },
+  "manual_interventions": {
+    "successful_runs": "run-record.json records empty manual_per_run_edits arrays; milestone review records no successful-run script, plan, event, caption, audio or picture edits.",
+    "shared_development": "Brief authoring, contract/compiler implementation, explicit backend selection, shared defect fixes, command invocation and review are documented in the milestone review and development-fixes.json. Arena correction was an automated model call.",
+    "packaging": "Copied selected originals; redacted workspace prefix in invocation arguments; added index/known-issue/metadata/manifest. No production artifacts were edited."
+  },
+  "exclusions": [
+    "Raw JSONL event streams and stderr logs; private session identifiers and potential reasoning are not included.",
+    "Authentication files, environment files, credentials/tokens, dependencies, fonts, audio/video media and asset library.",
+    "Development attempt contents and unrelated repository files."
+  ],
+  "evidence_gaps": [
+    "Exact invocation start/end times were not recorded; only existing filesystem and diagnostic timestamps are provided.",
+    "Resolved backend model identifier was not separately recorded.",
+    "This bundle reviews source/data and is not a standalone runnable render project."
+  ]
+}

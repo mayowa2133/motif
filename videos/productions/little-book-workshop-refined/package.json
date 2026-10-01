@@ -1,0 +1,9 @@
+{
+  "name": "little-book-workshop-refined",
+  "private": true,
+  "scripts": {
+    "check": "npx --yes hyperframes@0.8.98 check",
+    "render": "npx --yes hyperframes@0.8.98 render",
+    "dev": "npx --yes hyperframes@0.8.98 preview"
+  }
+}

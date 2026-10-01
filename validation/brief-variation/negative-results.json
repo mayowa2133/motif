@@ -1,0 +1,62 @@
+[
+  {
+    "brief": "briefs/validation/declined.json",
+    "expected": "unsupported_outcome",
+    "actual": {
+      "status": "rejected",
+      "code": "unsupported_outcome",
+      "reason": "calendar-open-slot supports approval followed by booking; a declined, cancelled, or unapproved proposal is unsupported and will not be rendered"
+    },
+    "exit_code": 2,
+    "output_created": false,
+    "pass": true
+  },
+  {
+    "brief": "briefs/validation/unrelated.json",
+    "expected": "unsupported_topic",
+    "actual": {
+      "status": "rejected",
+      "code": "unsupported_topic",
+      "reason": "calendar-open-slot only supports a calendar opening, focus suggestion, and approval before booking"
+    },
+    "exit_code": 2,
+    "output_created": false,
+    "pass": true
+  },
+  {
+    "brief": "briefs/validation/unsupported-times.json",
+    "expected": "unsupported_time",
+    "actual": {
+      "status": "rejected",
+      "code": "unsupported_time",
+      "reason": "calendar times are fixed at 3 PM and 4 PM; the requested times cannot be represented"
+    },
+    "exit_code": 2,
+    "output_created": false,
+    "pass": true
+  },
+  {
+    "brief": "briefs/validation/long-label.json",
+    "expected": "invalid_brief",
+    "actual": {
+      "status": "rejected",
+      "code": "invalid_brief",
+      "reason": "scene_data.existing_title must be 2\u20136 uppercase letters"
+    },
+    "exit_code": 2,
+    "output_created": false,
+    "pass": true
+  },
+  {
+    "brief": "briefs/validation/custom-narration.json",
+    "expected": "unsupported_field",
+    "actual": {
+      "status": "rejected",
+      "code": "unsupported_field",
+      "reason": "unsupported brief fields: narration; custom narration and calendar times are not supported"
+    },
+    "exit_code": 2,
+    "output_created": false,
+    "pass": true
+  }
+]

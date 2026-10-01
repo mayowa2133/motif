@@ -1,0 +1,523 @@
+{
+  "manifest_scope": "All payload files except MANIFEST.json itself; archive SHA-256 is supplied outside the ZIP.",
+  "files": [
+    {
+      "path": "INDEX.md",
+      "bytes": 6181,
+      "sha256": "4429d34876165b6acb0b51869191d91a9065cf07a6f20d7ccb0bcd553267799e",
+      "original_sha256": null,
+      "handling": "new packaging index/metadata, derived from existing records"
+    },
+    {
+      "path": "briefs/planning/arena-no-winner.json",
+      "bytes": 352,
+      "sha256": "b5d610f763a77a26bca5d162d747c55aff2d12886d4eba8fbb87052c34d88672",
+      "original_sha256": "b5d610f763a77a26bca5d162d747c55aff2d12886d4eba8fbb87052c34d88672",
+      "handling": "exact byte copy"
+    },
+    {
+      "path": "briefs/planning/calendar-declined.json",
+      "bytes": 336,
+      "sha256": "e7a4ef875807a2a2a45144be022b6478e6b20194ca411a24365c296d91654452",
+      "original_sha256": "e7a4ef875807a2a2a45144be022b6478e6b20194ca411a24365c296d91654452",
+      "handling": "exact byte copy"
+    },
+    {
+      "path": "docs/PRODUCTION_PLAN_MILESTONE_REVIEW.md",
+      "bytes": 11459,
+      "sha256": "2cbbf78768c0f3ec1847be2b5b07ef8327fd06986d6141ae6b0246fe8185d204",
+      "original_sha256": "2cbbf78768c0f3ec1847be2b5b07ef8327fd06986d6141ae6b0246fe8185d204",
+      "handling": "exact byte copy"
+    },
+    {
+      "path": "docs/PRODUCTION_PLAN_WORKFLOW.md",
+      "bytes": 8730,
+      "sha256": "7f486549dc4fb3a63ab2dcbe2fbb29018c55551fe15bcc70e62c8cd07d1bbb7a",
+      "original_sha256": "7f486549dc4fb3a63ab2dcbe2fbb29018c55551fe15bcc70e62c8cd07d1bbb7a",
+      "handling": "exact byte copy"
+    },
+    {
+      "path": "planning/PLANNER.md",
+      "bytes": 5531,
+      "sha256": "16485b2041376742275e25ecc15608db1ab6e2271ec324711c9dae9ec89b5f65",
+      "original_sha256": "16485b2041376742275e25ecc15608db1ab6e2271ec324711c9dae9ec89b5f65",
+      "handling": "exact byte copy"
+    },
+    {
+      "path": "review/KNOWN_ISSUES.md",
+      "bytes": 1335,
+      "sha256": "b93adca1bb48aed7691c0f25d033b2789b7a1f0cdf6146aaed4008ad79e71d69",
+      "original_sha256": null,
+      "handling": "new packaging index/metadata, derived from existing records"
+    },
+    {
+      "path": "review/RUN_METADATA.json",
+      "bytes": 13825,
+      "sha256": "51645e12fc5a721f8c49a69e2c71a6a1528381d42d78a66ac221014ce59c1ce4",
+      "original_sha256": null,
+      "handling": "new packaging index/metadata, derived from existing records"
+    },
+    {
+      "path": "schemas/planning-review.schema.json",
+      "bytes": 663,
+      "sha256": "d8ce85c0db97284ec68bb94990ef7149f8bb035389b96a5aee6dbf0c5d51a163",
+      "original_sha256": "d8ce85c0db97284ec68bb94990ef7149f8bb035389b96a5aee6dbf0c5d51a163",
+      "handling": "exact byte copy"
+    },
+    {
+      "path": "schemas/production-plan.schema.json",
+      "bytes": 5592,
+      "sha256": "4f8da1feeff2ceb46c828623a2791646f19fc1caba330b60772b5897256fccf0",
+      "original_sha256": "4f8da1feeff2ceb46c828623a2791646f19fc1caba330b60772b5897256fccf0",
+      "handling": "exact byte copy"
+    },
+    {
+      "path": "scripts/motif_direct.py",
+      "bytes": 14374,
+      "sha256": "302867c9a85077f47a9ecae346276771182dcb2f15ed18ee2fbd1fffd6ca1603",
+      "original_sha256": "302867c9a85077f47a9ecae346276771182dcb2f15ed18ee2fbd1fffd6ca1603",
+      "handling": "exact byte copy"
+    },
+    {
+      "path": "scripts/motif_plan.py",
+      "bytes": 8024,
+      "sha256": "df3d3dac2a6be513c5ffd040a5507a5e820328cf38c31005cc40065b260e0a39",
+      "original_sha256": "df3d3dac2a6be513c5ffd040a5507a5e820328cf38c31005cc40065b260e0a39",
+      "handling": "exact byte copy"
+    },
+    {
+      "path": "scripts/motif_plan_compile.py",
+      "bytes": 18020,
+      "sha256": "7e4e8d83acfba7812a3448e40ae28276657e7399e268c3aa8abbfa509cd2c809",
+      "original_sha256": "7e4e8d83acfba7812a3448e40ae28276657e7399e268c3aa8abbfa509cd2c809",
+      "handling": "exact byte copy"
+    },
+    {
+      "path": "scripts/motif_plan_finish.py",
+      "bytes": 5134,
+      "sha256": "84aef73246de1962660f6e73114c2839f5e80e22986bb12441e189a6351a3087",
+      "original_sha256": "84aef73246de1962660f6e73114c2839f5e80e22986bb12441e189a6351a3087",
+      "handling": "exact byte copy"
+    },
+    {
+      "path": "scripts/motif_produce.py",
+      "bytes": 25778,
+      "sha256": "8962655b2d07ed654fff7c17845d1389ac8edd09811e65a5680cdc093b200ff7",
+      "original_sha256": "8962655b2d07ed654fff7c17845d1389ac8edd09811e65a5680cdc093b200ff7",
+      "handling": "exact byte copy"
+    },
+    {
+      "path": "validation/production-plan/development-fixes.json",
+      "bytes": 3325,
+      "sha256": "12e79f92924ca72c9e7ee38084e649f87042c7a08c7d44b17d668adfe3f789e6",
+      "original_sha256": "12e79f92924ca72c9e7ee38084e649f87042c7a08c7d44b17d668adfe3f789e6",
+      "handling": "exact byte copy"
+    },
+    {
+      "path": "validation/production-plan/frozen-before.json",
+      "bytes": 47079,
+      "sha256": "90b6eba01b7d869db58b8cb09b416b29a722df7dded13e9ad966d230dc2fb6fc",
+      "original_sha256": "90b6eba01b7d869db58b8cb09b416b29a722df7dded13e9ad966d230dc2fb6fc",
+      "handling": "exact byte copy"
+    },
+    {
+      "path": "validation/production-plan/results.json",
+      "bytes": 10085,
+      "sha256": "bde2c67062b0aaa43686d2301dcf36937f608bdb4a6818f0da3df58570ec7f99",
+      "original_sha256": "bde2c67062b0aaa43686d2301dcf36937f608bdb4a6818f0da3df58570ec7f99",
+      "handling": "exact byte copy"
+    },
+    {
+      "path": "validation/production-plan/shared-source-before-runs.json",
+      "bytes": 3535,
+      "sha256": "7f3f9b82aefb10d57c6de118e8dab6db36017978f6c1a540face14381d96b5e9",
+      "original_sha256": "7f3f9b82aefb10d57c6de118e8dab6db36017978f6c1a540face14381d96b5e9",
+      "handling": "exact byte copy"
+    },
+    {
+      "path": "videos/productions/planned-arena-no-winner/STORYBOARD.md",
+      "bytes": 3709,
+      "sha256": "bcb790ac1f99440de81741a709282f2632cbc8d978762ccc56dfedb7aba664cd",
+      "original_sha256": "bcb790ac1f99440de81741a709282f2632cbc8d978762ccc56dfedb7aba664cd",
+      "handling": "exact byte copy"
+    },
+    {
+      "path": "videos/productions/planned-arena-no-winner/STORYBOARD_INITIAL.md",
+      "bytes": 3245,
+      "sha256": "b67540b458cecd7272780d42ce8922347abd34f8d44fd6d670b8c0349bd91678",
+      "original_sha256": "b67540b458cecd7272780d42ce8922347abd34f8d44fd6d670b8c0349bd91678",
+      "handling": "exact byte copy"
+    },
+    {
+      "path": "videos/productions/planned-arena-no-winner/action-trace.json",
+      "bytes": 801,
+      "sha256": "1c0bc5c05ba8a747cfca7f4e156370fd4e4c36449196edade5f362cc5731c15c",
+      "original_sha256": "1c0bc5c05ba8a747cfca7f4e156370fd4e4c36449196edade5f362cc5731c15c",
+      "handling": "exact byte copy"
+    },
+    {
+      "path": "videos/productions/planned-arena-no-winner/alignment-review.json",
+      "bytes": 2952,
+      "sha256": "4da12834db8e8277d6c76e618bd343367b238f3f063d534400e6d79252ce09cf",
+      "original_sha256": "4da12834db8e8277d6c76e618bd343367b238f3f063d534400e6d79252ce09cf",
+      "handling": "exact byte copy"
+    },
+    {
+      "path": "videos/productions/planned-arena-no-winner/assets/voice/narration.txt",
+      "bytes": 229,
+      "sha256": "6ab269e4adb51730878148d85236f24e7eeb67ca09a651895e3c0503650c484e",
+      "original_sha256": "6ab269e4adb51730878148d85236f24e7eeb67ca09a651895e3c0503650c484e",
+      "handling": "exact byte copy"
+    },
+    {
+      "path": "videos/productions/planned-arena-no-winner/assets/voice/transcript.json",
+      "bytes": 3342,
+      "sha256": "781d917bec9432729449b35ff600b219e5dc3b837eed61296431438b0788a410",
+      "original_sha256": "781d917bec9432729449b35ff600b219e5dc3b837eed61296431438b0788a410",
+      "handling": "exact byte copy"
+    },
+    {
+      "path": "videos/productions/planned-arena-no-winner/audio-plan.json",
+      "bytes": 775,
+      "sha256": "9569203c5c4896b6971e057c88a829e95ca9764cfcb0fabc82a660c6e3aa034e",
+      "original_sha256": "9569203c5c4896b6971e057c88a829e95ca9764cfcb0fabc82a660c6e3aa034e",
+      "handling": "exact byte copy"
+    },
+    {
+      "path": "videos/productions/planned-arena-no-winner/backend.json",
+      "bytes": 430,
+      "sha256": "861e253bb24452af397e144c118b421629f9ecb9ba90e6e5f86ea741e46110a9",
+      "original_sha256": "861e253bb24452af397e144c118b421629f9ecb9ba90e6e5f86ea741e46110a9",
+      "handling": "exact byte copy"
+    },
+    {
+      "path": "videos/productions/planned-arena-no-winner/brief.json",
+      "bytes": 352,
+      "sha256": "b5d610f763a77a26bca5d162d747c55aff2d12886d4eba8fbb87052c34d88672",
+      "original_sha256": "b5d610f763a77a26bca5d162d747c55aff2d12886d4eba8fbb87052c34d88672",
+      "handling": "exact byte copy"
+    },
+    {
+      "path": "videos/productions/planned-arena-no-winner/corrected-plan-input.txt",
+      "bytes": 10688,
+      "sha256": "595571a5fca4139a9f08030df82c7837e242fc5802fdb9fb4b15028d321fb137",
+      "original_sha256": "595571a5fca4139a9f08030df82c7837e242fc5802fdb9fb4b15028d321fb137",
+      "handling": "exact byte copy"
+    },
+    {
+      "path": "videos/productions/planned-arena-no-winner/corrected-plan-invocation.json",
+      "bytes": 1092,
+      "sha256": "079a67c862666c35e02d0cfb2a9f44a68b2aa2205085ec7cfee8a35cc2a8c7a3",
+      "original_sha256": "db28998ada2a448e76d608a4d92122bf692d02915548093cf607c573664a6766",
+      "handling": "workspace prefix redacted in argv; JSON reformatted"
+    },
+    {
+      "path": "videos/productions/planned-arena-no-winner/corrected-plan.json",
+      "bytes": 4291,
+      "sha256": "597d42e81a4b30efec0fdb98214b857da4b1584eb032af20bf774dc03e9a1f25",
+      "original_sha256": "597d42e81a4b30efec0fdb98214b857da4b1584eb032af20bf774dc03e9a1f25",
+      "handling": "exact byte copy"
+    },
+    {
+      "path": "videos/productions/planned-arena-no-winner/deterministic-review-0.json",
+      "bytes": 2335,
+      "sha256": "940210caba1a5f4e0c88cbaaf98081690f8d66fcc2a9790c71c0d1656885140f",
+      "original_sha256": "940210caba1a5f4e0c88cbaaf98081690f8d66fcc2a9790c71c0d1656885140f",
+      "handling": "exact byte copy"
+    },
+    {
+      "path": "videos/productions/planned-arena-no-winner/deterministic-review-1.json",
+      "bytes": 2335,
+      "sha256": "9cc6839b31ce8979109f54e75aa925b7464fc85e17fe21ad3f63c4c907f1c75b",
+      "original_sha256": "9cc6839b31ce8979109f54e75aa925b7464fc85e17fe21ad3f63c4c907f1c75b",
+      "handling": "exact byte copy"
+    },
+    {
+      "path": "videos/productions/planned-arena-no-winner/index.html",
+      "bytes": 212663,
+      "sha256": "be91c737152bbbe4a34124ea3c47e31e7ddd6587a6717d7bda5f37c3335ef24b",
+      "original_sha256": "be91c737152bbbe4a34124ea3c47e31e7ddd6587a6717d7bda5f37c3335ef24b",
+      "handling": "exact byte copy"
+    },
+    {
+      "path": "videos/productions/planned-arena-no-winner/initial-plan-input.txt",
+      "bytes": 6251,
+      "sha256": "d4379b9d274da2da02f5eb87b683f95fffb279cb290dcf3eff8a3dd9323add28",
+      "original_sha256": "d4379b9d274da2da02f5eb87b683f95fffb279cb290dcf3eff8a3dd9323add28",
+      "handling": "exact byte copy"
+    },
+    {
+      "path": "videos/productions/planned-arena-no-winner/initial-plan-invocation.json",
+      "bytes": 1090,
+      "sha256": "41fc8cbd2834e9852bbb8998ef980fa9618848e34fc2ee01fcdecaebbba31916",
+      "original_sha256": "3a08c4013a5c5bd6f2de5e77b940cdddf49b49f9b7e8f30c2dc3bfbcdcd01e9c",
+      "handling": "workspace prefix redacted in argv; JSON reformatted"
+    },
+    {
+      "path": "videos/productions/planned-arena-no-winner/initial-plan.json",
+      "bytes": 3688,
+      "sha256": "ada87834a60bdcbaefb36f5b77acfcba267de2e67961aabe77764222c30fa43f",
+      "original_sha256": "ada87834a60bdcbaefb36f5b77acfcba267de2e67961aabe77764222c30fa43f",
+      "handling": "exact byte copy"
+    },
+    {
+      "path": "videos/productions/planned-arena-no-winner/label-timing.json",
+      "bytes": 975,
+      "sha256": "92078e40290bbc13aacb40e39b1aa740a5c0d6380af8a9959663bf4ecc6b66b3",
+      "original_sha256": "92078e40290bbc13aacb40e39b1aa740a5c0d6380af8a9959663bf4ecc6b66b3",
+      "handling": "exact byte copy"
+    },
+    {
+      "path": "videos/productions/planned-arena-no-winner/model-review-0-input.txt",
+      "bytes": 7998,
+      "sha256": "833b5f5514b7807848756790460b0294717b17c1448f7ac54bf43c883002ea27",
+      "original_sha256": "833b5f5514b7807848756790460b0294717b17c1448f7ac54bf43c883002ea27",
+      "handling": "exact byte copy"
+    },
+    {
+      "path": "videos/productions/planned-arena-no-winner/model-review-0-invocation.json",
+      "bytes": 1092,
+      "sha256": "d6b689909bfb3b0a2958e7604a67cf3e5f48b3556761d6af5540146acfe91bc3",
+      "original_sha256": "e2b654d31fabba334cc5e494c309647cdd97e037b5251becae90e315c94bf361",
+      "handling": "workspace prefix redacted in argv; JSON reformatted"
+    },
+    {
+      "path": "videos/productions/planned-arena-no-winner/model-review-0.json",
+      "bytes": 982,
+      "sha256": "4e3c4a2932eab5a75ca19fcea6d29afee8663cf2961e55772e0603b601069550",
+      "original_sha256": "4e3c4a2932eab5a75ca19fcea6d29afee8663cf2961e55772e0603b601069550",
+      "handling": "exact byte copy"
+    },
+    {
+      "path": "videos/productions/planned-arena-no-winner/model-review-1-input.txt",
+      "bytes": 8746,
+      "sha256": "44f048b5f178f6778889394d2b1eb130450350dd6558e7ae741ae1b3ba6409f9",
+      "original_sha256": "44f048b5f178f6778889394d2b1eb130450350dd6558e7ae741ae1b3ba6409f9",
+      "handling": "exact byte copy"
+    },
+    {
+      "path": "videos/productions/planned-arena-no-winner/model-review-1-invocation.json",
+      "bytes": 1092,
+      "sha256": "c3ece027bf6dd403c5ae6466932fb421dd14f255299a1bec95edf25701265cf5",
+      "original_sha256": "76b8caf9deb12521c00c924a3d96ab85c82b7112ac2ef3abac02052699edb389",
+      "handling": "workspace prefix redacted in argv; JSON reformatted"
+    },
+    {
+      "path": "videos/productions/planned-arena-no-winner/model-review-1.json",
+      "bytes": 684,
+      "sha256": "513e927720cbaecebdcad0e391fa368a6d1dedf80b5a99e26077888454eff8b6",
+      "original_sha256": "513e927720cbaecebdcad0e391fa368a6d1dedf80b5a99e26077888454eff8b6",
+      "handling": "exact byte copy"
+    },
+    {
+      "path": "videos/productions/planned-arena-no-winner/planning-review.json",
+      "bytes": 8804,
+      "sha256": "bb402e8e0c7c23b410980a3b6a25d95d8b0c4db94135017421c89e50e607e8c4",
+      "original_sha256": "bb402e8e0c7c23b410980a3b6a25d95d8b0c4db94135017421c89e50e607e8c4",
+      "handling": "exact byte copy"
+    },
+    {
+      "path": "videos/productions/planned-arena-no-winner/production-plan.json",
+      "bytes": 5361,
+      "sha256": "0a4e0ac599dcdd14eea5ffbaefc55d9c241ad87db71d063c86384c22dccf04e1",
+      "original_sha256": "0a4e0ac599dcdd14eea5ffbaefc55d9c241ad87db71d063c86384c22dccf04e1",
+      "handling": "exact byte copy"
+    },
+    {
+      "path": "videos/productions/planned-arena-no-winner/run-record.json",
+      "bytes": 945,
+      "sha256": "cd8bc1c346269e3a948400205d2e7855c1619074d564a2a337ff0884e9a41190",
+      "original_sha256": "cd8bc1c346269e3a948400205d2e7855c1619074d564a2a337ff0884e9a41190",
+      "handling": "exact byte copy"
+    },
+    {
+      "path": "videos/productions/planned-arena-no-winner/scene-events.json",
+      "bytes": 19496,
+      "sha256": "50d329cb604da08d708c6e4d090f0a96483efe1bf75b9af8539b45411f738daf",
+      "original_sha256": "50d329cb604da08d708c6e4d090f0a96483efe1bf75b9af8539b45411f738daf",
+      "handling": "exact byte copy"
+    },
+    {
+      "path": "videos/productions/planned-arena-no-winner/source-hashes.json",
+      "bytes": 3535,
+      "sha256": "7f3f9b82aefb10d57c6de118e8dab6db36017978f6c1a540face14381d96b5e9",
+      "original_sha256": "7f3f9b82aefb10d57c6de118e8dab6db36017978f6c1a540face14381d96b5e9",
+      "handling": "exact byte copy"
+    },
+    {
+      "path": "videos/productions/planned-arena-no-winner/verification.json",
+      "bytes": 1188,
+      "sha256": "086c621aa8224645c2774600376de76c47dfebd599ff282b85cbd99c8ff77ff4",
+      "original_sha256": "086c621aa8224645c2774600376de76c47dfebd599ff282b85cbd99c8ff77ff4",
+      "handling": "exact byte copy"
+    },
+    {
+      "path": "videos/productions/planned-calendar-declined/STORYBOARD.md",
+      "bytes": 3019,
+      "sha256": "8b19f6a5cb5bbebb2046046c9bb19cdcabd9ce7c5ec88cb2d9ce7a490ac2d66c",
+      "original_sha256": "8b19f6a5cb5bbebb2046046c9bb19cdcabd9ce7c5ec88cb2d9ce7a490ac2d66c",
+      "handling": "exact byte copy"
+    },
+    {
+      "path": "videos/productions/planned-calendar-declined/STORYBOARD_INITIAL.md",
+      "bytes": 3019,
+      "sha256": "8b19f6a5cb5bbebb2046046c9bb19cdcabd9ce7c5ec88cb2d9ce7a490ac2d66c",
+      "original_sha256": "8b19f6a5cb5bbebb2046046c9bb19cdcabd9ce7c5ec88cb2d9ce7a490ac2d66c",
+      "handling": "exact byte copy"
+    },
+    {
+      "path": "videos/productions/planned-calendar-declined/action-trace.json",
+      "bytes": 621,
+      "sha256": "3993b28aa7b49b85bae17c52f086447b1a5e7e5d82c121581413b5a82850a0ca",
+      "original_sha256": "3993b28aa7b49b85bae17c52f086447b1a5e7e5d82c121581413b5a82850a0ca",
+      "handling": "exact byte copy"
+    },
+    {
+      "path": "videos/productions/planned-calendar-declined/alignment-review.json",
+      "bytes": 2155,
+      "sha256": "60b75f3a73941d721c8734b460d5591cd0328dc008c3a3636b38c43fccb394f1",
+      "original_sha256": "60b75f3a73941d721c8734b460d5591cd0328dc008c3a3636b38c43fccb394f1",
+      "handling": "exact byte copy"
+    },
+    {
+      "path": "videos/productions/planned-calendar-declined/assets/voice/narration.txt",
+      "bytes": 224,
+      "sha256": "0f8b02da80a4b5f871c8c68a4c54aa2964395682b86a6fcefd688459894261ff",
+      "original_sha256": "0f8b02da80a4b5f871c8c68a4c54aa2964395682b86a6fcefd688459894261ff",
+      "handling": "exact byte copy"
+    },
+    {
+      "path": "videos/productions/planned-calendar-declined/assets/voice/transcript.json",
+      "bytes": 2807,
+      "sha256": "4b6a5fb0c551e5243c0379cff62929b9343fd24a461dccf82c3cad42528f3ce3",
+      "original_sha256": "4b6a5fb0c551e5243c0379cff62929b9343fd24a461dccf82c3cad42528f3ce3",
+      "handling": "exact byte copy"
+    },
+    {
+      "path": "videos/productions/planned-calendar-declined/audio-plan.json",
+      "bytes": 577,
+      "sha256": "ccf4dc229b33d334ce8faca8a7f8029bfacef7859145f07a225a1fcb25953d62",
+      "original_sha256": "ccf4dc229b33d334ce8faca8a7f8029bfacef7859145f07a225a1fcb25953d62",
+      "handling": "exact byte copy"
+    },
+    {
+      "path": "videos/productions/planned-calendar-declined/backend.json",
+      "bytes": 430,
+      "sha256": "861e253bb24452af397e144c118b421629f9ecb9ba90e6e5f86ea741e46110a9",
+      "original_sha256": "861e253bb24452af397e144c118b421629f9ecb9ba90e6e5f86ea741e46110a9",
+      "handling": "exact byte copy"
+    },
+    {
+      "path": "videos/productions/planned-calendar-declined/brief.json",
+      "bytes": 336,
+      "sha256": "e7a4ef875807a2a2a45144be022b6478e6b20194ca411a24365c296d91654452",
+      "original_sha256": "e7a4ef875807a2a2a45144be022b6478e6b20194ca411a24365c296d91654452",
+      "handling": "exact byte copy"
+    },
+    {
+      "path": "videos/productions/planned-calendar-declined/deterministic-review-0.json",
+      "bytes": 1637,
+      "sha256": "36ea5a03839cfce6a1da9d11a6e3a3f47d841f14c508cbb3d28fca428b489453",
+      "original_sha256": "36ea5a03839cfce6a1da9d11a6e3a3f47d841f14c508cbb3d28fca428b489453",
+      "handling": "exact byte copy"
+    },
+    {
+      "path": "videos/productions/planned-calendar-declined/index.html",
+      "bytes": 58389,
+      "sha256": "1b65c1079686cb0c6f0138542983591535dbef14a013b979e734983fec62525a",
+      "original_sha256": "1b65c1079686cb0c6f0138542983591535dbef14a013b979e734983fec62525a",
+      "handling": "exact byte copy"
+    },
+    {
+      "path": "videos/productions/planned-calendar-declined/initial-plan-input.txt",
+      "bytes": 6235,
+      "sha256": "00c5b6e73721ee9f58e2d67f44ee471cfb98dd97bf3169dce1f65ae452a56b3f",
+      "original_sha256": "00c5b6e73721ee9f58e2d67f44ee471cfb98dd97bf3169dce1f65ae452a56b3f",
+      "handling": "exact byte copy"
+    },
+    {
+      "path": "videos/productions/planned-calendar-declined/initial-plan-invocation.json",
+      "bytes": 1092,
+      "sha256": "2c049db85c46c64f773a7ed9160baf7a022f22ddc0b29013a66fb3959f489f5c",
+      "original_sha256": "3af0df34b92d5ecf409d5485f5d155cd4a23cacef2a29b5a2112d700f9815c2e",
+      "handling": "workspace prefix redacted in argv; JSON reformatted"
+    },
+    {
+      "path": "videos/productions/planned-calendar-declined/initial-plan.json",
+      "bytes": 3599,
+      "sha256": "affd168cc2f8490aab67895fb3f3027c68ffa5628817e9bcaa0c95d7bd1994a8",
+      "original_sha256": "affd168cc2f8490aab67895fb3f3027c68ffa5628817e9bcaa0c95d7bd1994a8",
+      "handling": "exact byte copy"
+    },
+    {
+      "path": "videos/productions/planned-calendar-declined/label-timing.json",
+      "bytes": 828,
+      "sha256": "c38382a7d232c1dcf6ce9eeba13ef4b03c5990b3c5aa5330bb1661b42afa635d",
+      "original_sha256": "c38382a7d232c1dcf6ce9eeba13ef4b03c5990b3c5aa5330bb1661b42afa635d",
+      "handling": "exact byte copy"
+    },
+    {
+      "path": "videos/productions/planned-calendar-declined/model-review-0-input.txt",
+      "bytes": 7324,
+      "sha256": "374dcc5f8bd8388f7caa3c8e64337fe0b08a53c5a02fa06697c4bb7c34d8db24",
+      "original_sha256": "374dcc5f8bd8388f7caa3c8e64337fe0b08a53c5a02fa06697c4bb7c34d8db24",
+      "handling": "exact byte copy"
+    },
+    {
+      "path": "videos/productions/planned-calendar-declined/model-review-0-invocation.json",
+      "bytes": 1094,
+      "sha256": "850d9b319baa6d91cfcea4d71be3fc2cd73c776d93a222b4c39483d7646a5ce6",
+      "original_sha256": "af73f1571cd1c8353e26601f66663aea1f9cb1d0df8dc9f77e735105d0682abc",
+      "handling": "workspace prefix redacted in argv; JSON reformatted"
+    },
+    {
+      "path": "videos/productions/planned-calendar-declined/model-review-0.json",
+      "bytes": 909,
+      "sha256": "f6eeae7741056b26b10606be8cc0646797dfd588a0dd2f6c88a3601a5e9c2ea2",
+      "original_sha256": "f6eeae7741056b26b10606be8cc0646797dfd588a0dd2f6c88a3601a5e9c2ea2",
+      "handling": "exact byte copy"
+    },
+    {
+      "path": "videos/productions/planned-calendar-declined/planning-review.json",
+      "bytes": 3335,
+      "sha256": "a659b06c3e8f0f4e6316e748bfbda056b8f876da331595c719b40e9f07c2755c",
+      "original_sha256": "a659b06c3e8f0f4e6316e748bfbda056b8f876da331595c719b40e9f07c2755c",
+      "handling": "exact byte copy"
+    },
+    {
+      "path": "videos/productions/planned-calendar-declined/production-plan.json",
+      "bytes": 4458,
+      "sha256": "64927f5d41e0b3f4cead64a71f09425887cf8a7899e58f4b2ad15b565cdeed25",
+      "original_sha256": "64927f5d41e0b3f4cead64a71f09425887cf8a7899e58f4b2ad15b565cdeed25",
+      "handling": "exact byte copy"
+    },
+    {
+      "path": "videos/productions/planned-calendar-declined/run-record.json",
+      "bytes": 947,
+      "sha256": "3f9a21a06d4c327991e3eafdb8bff036dea9f637b84bd4985d25c9698547acfd",
+      "original_sha256": "3f9a21a06d4c327991e3eafdb8bff036dea9f637b84bd4985d25c9698547acfd",
+      "handling": "exact byte copy"
+    },
+    {
+      "path": "videos/productions/planned-calendar-declined/scene-events.json",
+      "bytes": 8188,
+      "sha256": "92525721317f1cb72924adb3c4553fe5da36e137b10efbdad9fe73a1c87bc7fa",
+      "original_sha256": "92525721317f1cb72924adb3c4553fe5da36e137b10efbdad9fe73a1c87bc7fa",
+      "handling": "exact byte copy"
+    },
+    {
+      "path": "videos/productions/planned-calendar-declined/source-hashes.json",
+      "bytes": 3535,
+      "sha256": "7f3f9b82aefb10d57c6de118e8dab6db36017978f6c1a540face14381d96b5e9",
+      "original_sha256": "7f3f9b82aefb10d57c6de118e8dab6db36017978f6c1a540face14381d96b5e9",
+      "handling": "exact byte copy"
+    },
+    {
+      "path": "videos/productions/planned-calendar-declined/verification.json",
+      "bytes": 1172,
+      "sha256": "a63cb6ecb195b592c8957a012a680c2bab0c12bf18440bf52a7721a53dcfea97",
+      "original_sha256": "a63cb6ecb195b592c8957a012a680c2bab0c12bf18440bf52a7721a53dcfea97",
+      "handling": "exact byte copy"
+    }
+  ]
+}

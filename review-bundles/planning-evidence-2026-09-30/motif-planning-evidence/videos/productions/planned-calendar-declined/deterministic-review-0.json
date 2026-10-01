@@ -1,0 +1,82 @@
+{
+  "pass": true,
+  "issues": [],
+  "states": [
+    {
+      "beat": "beat-1",
+      "kind": "bot.pose",
+      "subject": "bot",
+      "before": {
+        "calendar": "unchanged",
+        "A": "untested",
+        "B": "untested",
+        "winner": "none",
+        "handoff": false
+      },
+      "after": {
+        "calendar": "unchanged",
+        "A": "untested",
+        "B": "untested",
+        "winner": "none",
+        "handoff": false
+      },
+      "facts": []
+    },
+    {
+      "beat": "beat-2",
+      "kind": "calendar.propose",
+      "subject": "calendar",
+      "before": {
+        "calendar": "unchanged",
+        "A": "untested",
+        "B": "untested",
+        "winner": "none",
+        "handoff": false
+      },
+      "after": {
+        "calendar": "unchanged",
+        "A": "untested",
+        "B": "untested",
+        "winner": "none",
+        "handoff": false
+      },
+      "facts": [
+        "proposal-visible"
+      ]
+    },
+    {
+      "beat": "beat-3",
+      "kind": "calendar.decline",
+      "subject": "calendar",
+      "before": {
+        "calendar": "unchanged",
+        "A": "untested",
+        "B": "untested",
+        "winner": "none",
+        "handoff": false
+      },
+      "after": {
+        "calendar": "unchanged",
+        "A": "untested",
+        "B": "untested",
+        "winner": "none",
+        "handoff": false
+      },
+      "facts": [
+        "declined"
+      ]
+    }
+  ],
+  "final": {
+    "calendar": "unchanged",
+    "A": "untested",
+    "B": "untested",
+    "winner": "none",
+    "handoff": false
+  },
+  "facts": [
+    "declined"
+  ],
+  "semantic_guarantee": false,
+  "planning_notes": []
+}

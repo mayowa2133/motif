@@ -1,0 +1,81 @@
+{
+  "accepted_plan_matches_initial_structured_model_output": true,
+  "initial_and_first_encoded_render_preserved": true,
+  "corrections": 0,
+  "narration_from_plan": true,
+  "scene_events_equal_embedded_renderer_input": true,
+  "final_state": {
+    "calendar": "unchanged",
+    "A": "fail",
+    "B": "pass",
+    "winner": "B",
+    "handoff": false
+  },
+  "generated_narration": "Two candidate answers face the same connection check. First, the assistant checks A; a missing link shows why it fails. Then it checks B; the complete route provides passing evidence. Based on both results, it chooses B, so the evidence drives the decision.",
+  "audience_narration_model_data_review": true,
+  "matching_A_B_diagnostic_camera": true,
+  "sampled_encoded_frame_inspection": {
+    "reviewer": "Codex agent using decoded 360x640 final-MP4 frames",
+    "frame_times_seconds": [
+      0.8,
+      3.8,
+      5.3,
+      5.95,
+      7.7,
+      8.36,
+      9.05,
+      11.65,
+      12.9,
+      13.5,
+      15.0,
+      16.4
+    ],
+    "observations": [
+      "A gap visible at 5.30 before cross in 5.95 sample",
+      "B complete route visible at 8.36 before pass mark in 9.05 sample",
+      "B-specific selected stamp visible at 12.90 and through final hold",
+      "Matched A/B framing, complete Bot silhouette, readable main labels and selected stamp",
+      "Headline clears at shot/state transitions; samples show no prior A FAILS during B check or B PASSES during choice"
+    ],
+    "limits": "Sampled frames, not continuous human playback; subjective listening and human review remain unassessed"
+  },
+  "human_visual_review": "not assessed",
+  "subjective_listening": "not assessed",
+  "manual_or_bespoke_work": {
+    "shared_before_evaluation": [
+      "Typed focus/bounds registry, common camera fit, explicit headline lifecycle, per-sheet stamps, audience-narration constraints and reviewer, verification provenance, CLI pin 0.8.98",
+      "Development snapshot exposed cropped Bot; moved complete arena Bot into supporting foreground slot outside the work-prop camera before choosing the fresh brief"
+    ],
+    "evaluated_run": [
+      "Human-requested scope; agent chose plain message brief after shared code was fixed",
+      "Explicit MOTIF_PLANNER_MODEL=gpt-5.6-sol selected using existing account",
+      "Invoked shared production command; no supplied shot list, script, plan or hand-edited production artifacts"
+    ],
+    "after_run": [
+      "Decoded final frames, built controlled still-frame focus comparison, checked preserved hashes, wrote report. No source or Reel changes."
+    ]
+  },
+  "model_calls": [
+    {
+      "call": "initial-plan",
+      "requested_model": "gpt-5.6-sol",
+      "resolved_model": null,
+      "started_at_utc": "2026-09-30T20:40:59.278479+00:00",
+      "completed_at_utc": "2026-09-30T20:41:29.824978+00:00",
+      "exit_code": 0,
+      "saved_response_used": false,
+      "model_fallback_used": false
+    },
+    {
+      "call": "model-review-0",
+      "requested_model": "gpt-5.6-sol",
+      "resolved_model": null,
+      "started_at_utc": "2026-09-30T20:41:41.957791+00:00",
+      "completed_at_utc": "2026-09-30T20:41:52.774875+00:00",
+      "exit_code": 0,
+      "saved_response_used": false,
+      "model_fallback_used": false
+    }
+  ],
+  "known_tool_limit": "HyperFrames keyframes --shot cannot statically resolve tweens emitted by the JSON-driven Motif event compiler; --ghost requires canvas/WebGL and is inapplicable to this SVG composition. Those diagnostic logs are preserved. Real snapshot/encoded pixels and full check provide the recorded visual evidence."
+}

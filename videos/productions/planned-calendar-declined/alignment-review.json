@@ -1,0 +1,138 @@
+{
+  "coverage": 0.9705882352941176,
+  "merged_token_groups": [],
+  "script_words": [
+    "assistant",
+    "spots",
+    "an",
+    "open",
+    "hour",
+    "at",
+    "four",
+    "it",
+    "proposes",
+    "focus",
+    "time",
+    "placing",
+    "a",
+    "dashed",
+    "card",
+    "there",
+    "the",
+    "person",
+    "presses",
+    "decline",
+    "removing",
+    "the",
+    "proposal",
+    "while",
+    "the",
+    "existing",
+    "meeting",
+    "stays",
+    "the",
+    "original",
+    "calendar",
+    "remains",
+    "visibly",
+    "unchanged"
+  ],
+  "matched_script_indices": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    29,
+    30,
+    31,
+    32,
+    33
+  ],
+  "beat_anchors": [
+    {
+      "id": "beat-1",
+      "start": 0.05,
+      "actions": [
+        {
+          "action": {
+            "kind": "bot.pose",
+            "subject": "bot",
+            "cue": "spots",
+            "result": "pointing",
+            "requires": []
+          },
+          "time": 0.74,
+          "script_word_index": 1,
+          "heard_word": "spots"
+        }
+      ]
+    },
+    {
+      "id": "beat-2",
+      "start": 2.69,
+      "actions": [
+        {
+          "action": {
+            "kind": "calendar.propose",
+            "subject": "calendar",
+            "cue": "placing",
+            "result": "none",
+            "requires": []
+          },
+          "time": 4.14,
+          "script_word_index": 11,
+          "heard_word": "placing"
+        }
+      ]
+    },
+    {
+      "id": "beat-3",
+      "start": 6.33,
+      "actions": [
+        {
+          "action": {
+            "kind": "calendar.decline",
+            "subject": "calendar",
+            "cue": "presses decline",
+            "result": "none",
+            "requires": [
+              "proposal-visible"
+            ]
+          },
+          "time": 6.86,
+          "script_word_index": 18,
+          "heard_word": "presses"
+        }
+      ]
+    },
+    {
+      "id": "beat-4",
+      "start": 11.13,
+      "actions": []
+    }
+  ]
+}

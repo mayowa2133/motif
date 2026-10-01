@@ -1,0 +1,266 @@
+[
+  {
+    "text": "One",
+    "start": 0.05,
+    "end": 0.21,
+    "id": "w0"
+  },
+  {
+    "text": "project",
+    "start": 0.21,
+    "end": 0.68,
+    "id": "w1"
+  },
+  {
+    "text": "splits",
+    "start": 0.76,
+    "end": 1.12,
+    "id": "w2"
+  },
+  {
+    "text": "into",
+    "start": 1.12,
+    "end": 1.35,
+    "id": "w3"
+  },
+  {
+    "text": "three",
+    "start": 1.51,
+    "end": 1.75,
+    "id": "w4"
+  },
+  {
+    "text": "independent",
+    "start": 1.75,
+    "end": 2.53,
+    "id": "w5"
+  },
+  {
+    "text": "jobs",
+    "start": 2.53,
+    "end": 2.81,
+    "id": "w6"
+  },
+  {
+    "text": "for",
+    "start": 2.89,
+    "end": 2.96,
+    "id": "w7"
+  },
+  {
+    "text": "three",
+    "start": 3.03,
+    "end": 3.2,
+    "id": "w8"
+  },
+  {
+    "text": "bots.",
+    "start": 3.2,
+    "end": 4.02,
+    "id": "w9"
+  },
+  {
+    "text": "Together,",
+    "start": 4.07,
+    "end": 4.55,
+    "id": "w10"
+  },
+  {
+    "text": "they",
+    "start": 4.59,
+    "end": 4.78,
+    "id": "w11"
+  },
+  {
+    "text": "work",
+    "start": 4.78,
+    "end": 5.01,
+    "id": "w12"
+  },
+  {
+    "text": "at",
+    "start": 5.01,
+    "end": 5.05,
+    "id": "w13"
+  },
+  {
+    "text": "once,",
+    "start": 5.13,
+    "end": 5.37,
+    "id": "w14"
+  },
+  {
+    "text": "folding",
+    "start": 5.53,
+    "end": 5.85,
+    "id": "w15"
+  },
+  {
+    "text": "the",
+    "start": 5.85,
+    "end": 5.98,
+    "id": "w16"
+  },
+  {
+    "text": "cover,",
+    "start": 6.06,
+    "end": 6.38,
+    "id": "w17"
+  },
+  {
+    "text": "pressing",
+    "start": 6.43,
+    "end": 6.83,
+    "id": "w18"
+  },
+  {
+    "text": "pages,",
+    "start": 6.91,
+    "end": 7.47,
+    "id": "w19"
+  },
+  {
+    "text": "and",
+    "start": 7.47,
+    "end": 7.51,
+    "id": "w20"
+  },
+  {
+    "text": "preparing",
+    "start": 7.62,
+    "end": 7.75,
+    "id": "w21"
+  },
+  {
+    "text": "the",
+    "start": 8.08,
+    "end": 8.14,
+    "id": "w22"
+  },
+  {
+    "text": "binding.",
+    "start": 8.14,
+    "end": 9.16,
+    "id": "w23"
+  },
+  {
+    "text": "Then",
+    "start": 9.21,
+    "end": 9.4,
+    "id": "w24"
+  },
+  {
+    "text": "the",
+    "start": 9.4,
+    "end": 9.58,
+    "id": "w25"
+  },
+  {
+    "text": "finished",
+    "start": 9.58,
+    "end": 10.01,
+    "id": "w26"
+  },
+  {
+    "text": "pieces",
+    "start": 10.1,
+    "end": 10.4,
+    "id": "w27"
+  },
+  {
+    "text": "join,",
+    "start": 10.42,
+    "end": 10.78,
+    "id": "w28"
+  },
+  {
+    "text": "becoming",
+    "start": 10.78,
+    "end": 11.23,
+    "id": "w29"
+  },
+  {
+    "text": "one",
+    "start": 11.25,
+    "end": 11.44,
+    "id": "w30"
+  },
+  {
+    "text": "complete",
+    "start": 11.44,
+    "end": 11.91,
+    "id": "w31"
+  },
+  {
+    "text": "book",
+    "start": 11.91,
+    "end": 12.12,
+    "id": "w32"
+  },
+  {
+    "text": "together.",
+    "start": 12.19,
+    "end": 12.84,
+    "id": "w33"
+  },
+  {
+    "text": "Finally,",
+    "start": 12.89,
+    "end": 13.34,
+    "id": "w34"
+  },
+  {
+    "text": "the",
+    "start": 13.34,
+    "end": 13.5,
+    "id": "w35"
+  },
+  {
+    "text": "book",
+    "start": 13.5,
+    "end": 13.69,
+    "id": "w36"
+  },
+  {
+    "text": "reaches",
+    "start": 13.78,
+    "end": 14.11,
+    "id": "w37"
+  },
+  {
+    "text": "your",
+    "start": 14.11,
+    "end": 14.19,
+    "id": "w38"
+  },
+  {
+    "text": "hands",
+    "start": 14.35,
+    "end": 14.6,
+    "id": "w39"
+  },
+  {
+    "text": "as",
+    "start": 14.62,
+    "end": 14.72,
+    "id": "w40"
+  },
+  {
+    "text": "one",
+    "start": 14.72,
+    "end": 14.8,
+    "id": "w41"
+  },
+  {
+    "text": "finished",
+    "start": 14.88,
+    "end": 15.32,
+    "id": "w42"
+  },
+  {
+    "text": "deliverable.",
+    "start": 15.32,
+    "end": 16.16,
+    "id": "w43"
+  }
+]
