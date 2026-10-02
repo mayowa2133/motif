@@ -1,0 +1,74 @@
+[
+  {
+    "text": "Clean",
+    "start": 0.05,
+    "end": 0.29,
+    "id": "wash-w0"
+  },
+  {
+    "text": "your",
+    "start": 0.29,
+    "end": 0.52,
+    "id": "wash-w1"
+  },
+  {
+    "text": "instructions.",
+    "start": 0.52,
+    "end": 1.28,
+    "id": "wash-w2"
+  },
+  {
+    "text": "Run",
+    "start": 1.706667,
+    "end": 1.806667,
+    "id": "terminal-w0"
+  },
+  {
+    "text": "Prompt",
+    "start": 1.806667,
+    "end": 2.086667,
+    "id": "terminal-w1"
+  },
+  {
+    "text": "Audit.",
+    "start": 2.126667,
+    "end": 2.376667,
+    "id": "terminal-w2"
+  },
+  {
+    "text": "Scan",
+    "start": 3.093333,
+    "end": 3.223333,
+    "id": "scanner-w0"
+  },
+  {
+    "text": "your",
+    "start": 3.223333,
+    "end": 3.513333,
+    "id": "scanner-w1"
+  },
+  {
+    "text": "file",
+    "start": 3.513333,
+    "end": 3.733333,
+    "id": "scanner-w2"
+  },
+  {
+    "text": "for",
+    "start": 3.833333,
+    "end": 4.003333,
+    "id": "scanner-w3"
+  },
+  {
+    "text": "3",
+    "start": 4.023333,
+    "end": 4.223333,
+    "id": "scanner-w4"
+  },
+  {
+    "text": "problems.",
+    "start": 4.223333,
+    "end": 4.853333,
+    "id": "scanner-w5"
+  }
+]

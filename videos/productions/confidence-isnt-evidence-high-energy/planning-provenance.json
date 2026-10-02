@@ -1,0 +1,6 @@
+{
+  "source": "agent-authored implementation of user-supplied high-energy treatment",
+  "live_model_planning": false,
+  "rejected_plan_reused": false,
+  "instruction_preset": "reference-expressive-high-energy-v1"
+}

@@ -1,0 +1,241 @@
+{
+	"systeminfo": "WHISPER : VITISAI = 0 | COREML = 0 | OPENVINO = 0 | MTL : EMBED_LIBRARY = 1 | CPU : NEON = 1 | ARM_FMA = 1 | MATMUL_INT8 = 1 | DOTPROD = 1 | ACCELERATE = 1 | OPENMP = 1 | REPACK = 1 | ",
+	"model": {
+		"type": "small",
+		"multilingual": false,
+		"vocab": 51864,
+		"audio": {
+			"ctx": 1500,
+			"state": 768,
+			"head": 12,
+			"layer": 12
+		},
+		"text": {
+			"ctx": 448,
+			"state": 768,
+			"head": 12,
+			"layer": 12
+		},
+		"mels": 80,
+		"ftype": 1
+	},
+	"params": {
+		"model": "/Users/mayowaadesanya/.cache/hyperframes/whisper/models/ggml-small.en.bin",
+		"language": "en",
+		"translate": false
+	},
+	"result": {
+		"language": "en"
+	},
+	"transcription": [
+		{
+			"timestamps": {
+				"from": "00:00:00,000",
+				"to": "00:00:03,320"
+			},
+			"offsets": {
+				"from": 0,
+				"to": 3320
+			},
+			"text": " Check twice plan every step that extra work slows the race.",
+			"tokens": [
+				{
+					"text": "[_BEG_]",
+					"timestamps": {
+						"from": "00:00:00,000",
+						"to": "00:00:00,000"
+					},
+					"offsets": {
+						"from": 0,
+						"to": 0
+					},
+					"id": 50363,
+					"p": 0.996467,
+					"t_dtw": -1
+				},
+				{
+					"text": " Check",
+					"timestamps": {
+						"from": "00:00:00,050",
+						"to": "00:00:00,300"
+					},
+					"offsets": {
+						"from": 50,
+						"to": 300
+					},
+					"id": 6822,
+					"p": 0.970208,
+					"t_dtw": 22
+				},
+				{
+					"text": " twice",
+					"timestamps": {
+						"from": "00:00:00,360",
+						"to": "00:00:00,570"
+					},
+					"offsets": {
+						"from": 360,
+						"to": 570
+					},
+					"id": 5403,
+					"p": 0.993661,
+					"t_dtw": 54
+				},
+				{
+					"text": " plan",
+					"timestamps": {
+						"from": "00:00:00,730",
+						"to": "00:00:00,980"
+					},
+					"offsets": {
+						"from": 730,
+						"to": 980
+					},
+					"id": 1410,
+					"p": 0.584269,
+					"t_dtw": 90
+				},
+				{
+					"text": " every",
+					"timestamps": {
+						"from": "00:00:00,980",
+						"to": "00:00:01,210"
+					},
+					"offsets": {
+						"from": 980,
+						"to": 1210
+					},
+					"id": 790,
+					"p": 0.996156,
+					"t_dtw": 120
+				},
+				{
+					"text": " step",
+					"timestamps": {
+						"from": "00:00:01,340",
+						"to": "00:00:01,470"
+					},
+					"offsets": {
+						"from": 1340,
+						"to": 1470
+					},
+					"id": 2239,
+					"p": 0.998557,
+					"t_dtw": 150
+				},
+				{
+					"text": " that",
+					"timestamps": {
+						"from": "00:00:01,680",
+						"to": "00:00:01,900"
+					},
+					"offsets": {
+						"from": 1680,
+						"to": 1900
+					},
+					"id": 326,
+					"p": 0.950407,
+					"t_dtw": 178
+				},
+				{
+					"text": " extra",
+					"timestamps": {
+						"from": "00:00:01,900",
+						"to": "00:00:02,230"
+					},
+					"offsets": {
+						"from": 1900,
+						"to": 2230
+					},
+					"id": 3131,
+					"p": 0.957092,
+					"t_dtw": 216
+				},
+				{
+					"text": " work",
+					"timestamps": {
+						"from": "00:00:02,230",
+						"to": "00:00:02,360"
+					},
+					"offsets": {
+						"from": 2230,
+						"to": 2360
+					},
+					"id": 670,
+					"p": 0.992738,
+					"t_dtw": 240
+				},
+				{
+					"text": " slows",
+					"timestamps": {
+						"from": "00:00:02,550",
+						"to": "00:00:02,820"
+					},
+					"offsets": {
+						"from": 2550,
+						"to": 2820
+					},
+					"id": 33019,
+					"p": 0.99286,
+					"t_dtw": 264
+				},
+				{
+					"text": " the",
+					"timestamps": {
+						"from": "00:00:02,820",
+						"to": "00:00:03,010"
+					},
+					"offsets": {
+						"from": 2820,
+						"to": 3010
+					},
+					"id": 262,
+					"p": 0.994791,
+					"t_dtw": 288
+				},
+				{
+					"text": " race",
+					"timestamps": {
+						"from": "00:00:03,010",
+						"to": "00:00:03,100"
+					},
+					"offsets": {
+						"from": 3010,
+						"to": 3100
+					},
+					"id": 3234,
+					"p": 0.996068,
+					"t_dtw": 314
+				},
+				{
+					"text": ".",
+					"timestamps": {
+						"from": "00:00:03,320",
+						"to": "00:00:03,320"
+					},
+					"offsets": {
+						"from": 3320,
+						"to": 3320
+					},
+					"id": 13,
+					"p": 0.897973,
+					"t_dtw": 330
+				},
+				{
+					"text": "[_TT_166]",
+					"timestamps": {
+						"from": "00:00:03,320",
+						"to": "00:00:03,320"
+					},
+					"offsets": {
+						"from": 3320,
+						"to": 3320
+					},
+					"id": 50529,
+					"p": 0.204675,
+					"t_dtw": -1
+				}
+			]
+		}
+	]
+}

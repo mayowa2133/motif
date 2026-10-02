@@ -1,0 +1,545 @@
+{
+  "method": "Actual generated WAVs, installed Whisper small.en DTW with flash attention disabled; token-center midpoints, waveform speech limits, editorial phrase grouping and nearest 30fps boundary",
+  "accuracyLimit": "Automatic alignment with waveform checks; phoneme-perfect forced alignment and subjective listening are not claimed.",
+  "sourceAudioUsed": false,
+  "approvedCaptions": "unchanged in approved clip, [436,600)",
+  "segments": [
+    {
+      "id": "opening",
+      "measuredSpeechActivity": [
+        0.030000000000000002,
+        5.6499999999999995
+      ],
+      "dtwFile": "assets/voice/fine-opening-v2-dtw.json",
+      "textNormalization": "ASR merged TryPrompt \u2192 scripted Try prompt; numerical 70/9% \u2192 spoken words; missing article A restored from synthesis script."
+    },
+    {
+      "id": "burden",
+      "measuredSpeechActivity": [
+        0.009999999999999998,
+        3.3400000000000003
+      ],
+      "dtwFile": "assets/voice/fine-burden-dtw.json",
+      "textNormalization": "ASR merged TryPrompt \u2192 scripted Try prompt; numerical 70/9% \u2192 spoken words; missing article A restored from synthesis script."
+    },
+    {
+      "id": "suggestion",
+      "measuredSpeechActivity": [
+        0.02,
+        1.33
+      ],
+      "dtwFile": "assets/voice/fine-suggestion-v2-dtw.json",
+      "textNormalization": "ASR merged TryPrompt \u2192 scripted Try prompt; numerical 70/9% \u2192 spoken words; missing article A restored from synthesis script."
+    },
+    {
+      "id": "rituals",
+      "measuredSpeechActivity": [
+        0.02,
+        4.17
+      ],
+      "dtwFile": "assets/voice/fine-rituals-v3-dtw.json",
+      "textNormalization": "ASR merged TryPrompt \u2192 scripted Try prompt; numerical 70/9% \u2192 spoken words; missing article A restored from synthesis script."
+    },
+    {
+      "id": "permission",
+      "measuredSpeechActivity": [
+        0.02,
+        2.75
+      ],
+      "dtwFile": "assets/voice/fine-permission-v2-dtw.json",
+      "textNormalization": "ASR merged TryPrompt \u2192 scripted Try prompt; numerical 70/9% \u2192 spoken words; missing article A restored from synthesis script."
+    },
+    {
+      "id": "example",
+      "measuredSpeechActivity": [
+        0.02,
+        3.46
+      ],
+      "dtwFile": "assets/voice/fine-example-dtw.json",
+      "textNormalization": "ASR merged TryPrompt \u2192 scripted Try prompt; numerical 70/9% \u2192 spoken words; missing article A restored from synthesis script."
+    },
+    {
+      "id": "results",
+      "measuredSpeechActivity": [
+        0.02,
+        5.319999999999999
+      ],
+      "dtwFile": "assets/voice/fine-results-dtw.json",
+      "textNormalization": "ASR merged TryPrompt \u2192 scripted Try prompt; numerical 70/9% \u2192 spoken words; missing article A restored from synthesis script."
+    },
+    {
+      "id": "ending",
+      "measuredSpeechActivity": [
+        0.009999999999999998,
+        2.07
+      ],
+      "dtwFile": "assets/voice/fine-ending-v2-dtw.json",
+      "textNormalization": "ASR merged TryPrompt \u2192 scripted Try prompt; numerical 70/9% \u2192 spoken words; missing article A restored from synthesis script."
+    }
+  ],
+  "chunks": [
+    {
+      "segment": "opening",
+      "text": "The source argues",
+      "start": 0.03333333333333333,
+      "end": 0.9,
+      "width": 597.23,
+      "alignedWordRange": [
+        0,
+        3
+      ],
+      "spokenTokens": [
+        "The",
+        "source",
+        "argues"
+      ]
+    },
+    {
+      "segment": "opening",
+      "text": "old instructions",
+      "start": 0.9,
+      "end": 1.8,
+      "width": 541.48,
+      "alignedWordRange": [
+        3,
+        5
+      ],
+      "spokenTokens": [
+        "old",
+        "instructions"
+      ]
+    },
+    {
+      "segment": "opening",
+      "text": "can hold",
+      "start": 1.8,
+      "end": 2.3333333333333335,
+      "width": 333.98,
+      "alignedWordRange": [
+        5,
+        7
+      ],
+      "spokenTokens": [
+        "can",
+        "hold"
+      ]
+    },
+    {
+      "segment": "opening",
+      "text": "newer models back.",
+      "start": 2.3333333333333335,
+      "end": 3.466666666666667,
+      "width": 641.98,
+      "alignedWordRange": [
+        7,
+        10
+      ],
+      "spokenTokens": [
+        "newer",
+        "models",
+        "back."
+      ]
+    },
+    {
+      "segment": "opening",
+      "text": "Rules for",
+      "start": 3.466666666666667,
+      "end": 4.266666666666667,
+      "width": 356.43,
+      "alignedWordRange": [
+        10,
+        12
+      ],
+      "spokenTokens": [
+        "Rules",
+        "for"
+      ]
+    },
+    {
+      "segment": "opening",
+      "text": "retired models",
+      "start": 4.266666666666667,
+      "end": 5.066666666666666,
+      "width": 501.15,
+      "alignedWordRange": [
+        12,
+        14
+      ],
+      "spokenTokens": [
+        "retired",
+        "models"
+      ]
+    },
+    {
+      "segment": "opening",
+      "text": "pile up.",
+      "start": 5.066666666666666,
+      "end": 5.633333333333334,
+      "width": 305.98,
+      "alignedWordRange": [
+        14,
+        16
+      ],
+      "spokenTokens": [
+        "pile",
+        "up."
+      ]
+    },
+    {
+      "segment": "burden",
+      "text": "Check twice.",
+      "start": 6.966666666666667,
+      "end": 7.7,
+      "width": 456.19,
+      "alignedWordRange": [
+        0,
+        2
+      ],
+      "spokenTokens": [
+        "Check",
+        "twice"
+      ]
+    },
+    {
+      "segment": "burden",
+      "text": "Plan every step.",
+      "start": 7.7,
+      "end": 8.6,
+      "width": 533.64,
+      "alignedWordRange": [
+        2,
+        5
+      ],
+      "spokenTokens": [
+        "plan",
+        "every",
+        "step"
+      ]
+    },
+    {
+      "segment": "burden",
+      "text": "That extra work",
+      "start": 8.6,
+      "end": 9.5,
+      "width": 558.63,
+      "alignedWordRange": [
+        5,
+        8
+      ],
+      "spokenTokens": [
+        "that",
+        "extra",
+        "work"
+      ]
+    },
+    {
+      "segment": "burden",
+      "text": "slows the race.",
+      "start": 9.5,
+      "end": 10.3,
+      "width": 498.8,
+      "alignedWordRange": [
+        8,
+        11
+      ],
+      "spokenTokens": [
+        "slows",
+        "the",
+        "race."
+      ]
+    },
+    {
+      "segment": "suggestion",
+      "text": "Try prompt audit.",
+      "start": 12.366666666666667,
+      "end": 13.666666666666666,
+      "width": 613.51,
+      "alignedWordRange": [
+        0,
+        2
+      ],
+      "spokenTokens": [
+        "TriPrompt",
+        "audit."
+      ]
+    },
+    {
+      "segment": "rituals",
+      "text": "Remove repeated checks.",
+      "start": 20.3,
+      "end": 21.733333333333334,
+      "width": 792.4,
+      "alignedWordRange": [
+        0,
+        3
+      ],
+      "spokenTokens": [
+        "Remove",
+        "repeated",
+        "checks."
+      ]
+    },
+    {
+      "segment": "rituals",
+      "text": "Stop shouting commands.",
+      "start": 21.733333333333334,
+      "end": 23.033333333333335,
+      "width": 819.47,
+      "alignedWordRange": [
+        3,
+        6
+      ],
+      "spokenTokens": [
+        "Stop",
+        "shouting",
+        "commands."
+      ]
+    },
+    {
+      "segment": "rituals",
+      "text": "Cut unnecessary steps.",
+      "start": 23.033333333333335,
+      "end": 24.433333333333334,
+      "width": 725.8,
+      "alignedWordRange": [
+        6,
+        9
+      ],
+      "spokenTokens": [
+        "Cut",
+        "unnecessary",
+        "steps."
+      ]
+    },
+    {
+      "segment": "permission",
+      "text": "Review changes.",
+      "start": 25.6,
+      "end": 26.633333333333333,
+      "width": 555.55,
+      "alignedWordRange": [
+        0,
+        2
+      ],
+      "spokenTokens": [
+        "Review",
+        "changes,"
+      ]
+    },
+    {
+      "segment": "permission",
+      "text": "Nothing applies",
+      "start": 26.633333333333333,
+      "end": 27.433333333333334,
+      "width": 547.65,
+      "alignedWordRange": [
+        2,
+        4
+      ],
+      "spokenTokens": [
+        "nothing",
+        "applies"
+      ]
+    },
+    {
+      "segment": "permission",
+      "text": "without permission.",
+      "start": 27.433333333333334,
+      "end": 28.333333333333332,
+      "width": 662.95,
+      "alignedWordRange": [
+        4,
+        6
+      ],
+      "spokenTokens": [
+        "without",
+        "permission."
+      ]
+    },
+    {
+      "segment": "example",
+      "text": "One developer reports",
+      "start": 28.733333333333334,
+      "end": 30.0,
+      "width": 718.5,
+      "alignedWordRange": [
+        0,
+        3
+      ],
+      "spokenTokens": [
+        "one",
+        "developer",
+        "reports"
+      ]
+    },
+    {
+      "segment": "example",
+      "text": "seventy improvements",
+      "start": 30.0,
+      "end": 30.966666666666665,
+      "width": 721.18,
+      "alignedWordRange": [
+        3,
+        5
+      ],
+      "spokenTokens": [
+        "70",
+        "improvements"
+      ]
+    },
+    {
+      "segment": "example",
+      "text": "across three files.",
+      "start": 30.966666666666665,
+      "end": 32.166666666666664,
+      "width": 572.1,
+      "alignedWordRange": [
+        5,
+        8
+      ],
+      "spokenTokens": [
+        "across",
+        "three",
+        "files."
+      ]
+    },
+    {
+      "segment": "results",
+      "text": "A cited test claims",
+      "start": 34.1,
+      "end": 35.333333333333336,
+      "width": 605.54,
+      "alignedWordRange": [
+        0,
+        3
+      ],
+      "spokenTokens": [
+        "Cited",
+        "test",
+        "claims"
+      ]
+    },
+    {
+      "segment": "results",
+      "text": "nine percent",
+      "start": 35.333333333333336,
+      "end": 36.0,
+      "width": 446.54,
+      "alignedWordRange": [
+        3,
+        4
+      ],
+      "spokenTokens": [
+        "9%"
+      ]
+    },
+    {
+      "segment": "results",
+      "text": "lower cost,",
+      "start": 36.0,
+      "end": 36.7,
+      "width": 397.77,
+      "alignedWordRange": [
+        4,
+        6
+      ],
+      "spokenTokens": [
+        "lower",
+        "cost"
+      ]
+    },
+    {
+      "segment": "results",
+      "text": "and roughly",
+      "start": 36.7,
+      "end": 37.36666666666667,
+      "width": 436.83,
+      "alignedWordRange": [
+        6,
+        8
+      ],
+      "spokenTokens": [
+        "and",
+        "roughly"
+      ]
+    },
+    {
+      "segment": "results",
+      "text": "two points",
+      "start": 37.36666666666667,
+      "end": 37.9,
+      "width": 398.64,
+      "alignedWordRange": [
+        8,
+        10
+      ],
+      "spokenTokens": [
+        "two",
+        "points"
+      ]
+    },
+    {
+      "segment": "results",
+      "text": "more accuracy",
+      "start": 37.9,
+      "end": 38.5,
+      "width": 493.51,
+      "alignedWordRange": [
+        10,
+        12
+      ],
+      "spokenTokens": [
+        "more",
+        "accuracy"
+      ]
+    },
+    {
+      "segment": "results",
+      "text": "on the same model.",
+      "start": 38.5,
+      "end": 39.4,
+      "width": 629.65,
+      "alignedWordRange": [
+        12,
+        16
+      ],
+      "spokenTokens": [
+        "on",
+        "the",
+        "same",
+        "model."
+      ]
+    },
+    {
+      "segment": "ending",
+      "text": "The takeaway:",
+      "start": 39.6,
+      "end": 40.4,
+      "width": 503.02,
+      "alignedWordRange": [
+        0,
+        2
+      ],
+      "spokenTokens": [
+        "The",
+        "takeaway"
+      ]
+    },
+    {
+      "segment": "ending",
+      "text": "audit your instructions.",
+      "start": 40.4,
+      "end": 41.666666666666664,
+      "width": 762.85,
+      "alignedWordRange": [
+        2,
+        5
+      ],
+      "spokenTokens": [
+        "audit",
+        "your",
+        "instructions."
+      ]
+    }
+  ]
+}

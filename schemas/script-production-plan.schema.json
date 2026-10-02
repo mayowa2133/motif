@@ -1,0 +1,172 @@
+{
+  "type": "object",
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "enum": [
+        "script-1.0"
+      ]
+    },
+    "script": {
+      "type": "string"
+    },
+    "audience": {
+      "type": "string"
+    },
+    "style": {
+      "type": "string",
+      "enum": [
+        "reference-expressive-v1",
+        "reference-expressive-high-energy-v1"
+      ]
+    },
+    "rationale": {
+      "type": "string"
+    },
+    "metaphor": {
+      "type": "string"
+    },
+    "assets": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "reuse_path": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "description",
+          "reuse_path"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "beats": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "narration": {
+            "type": "string"
+          },
+          "subject": {
+            "type": "string"
+          },
+          "action": {
+            "type": "string"
+          },
+          "before_after": {
+            "type": "string"
+          },
+          "focal_detail": {
+            "type": "string"
+          },
+          "consequence": {
+            "type": "string"
+          },
+          "headline": {
+            "type": "string"
+          },
+          "focus_target": {
+            "type": "string"
+          },
+          "framing": {
+            "type": "string",
+            "enum": [
+              "establish",
+              "subject",
+              "detail"
+            ]
+          },
+          "actions": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "kind": {
+                  "type": "string"
+                },
+                "cue": {
+                  "type": "string"
+                },
+                "requires": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "produces": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                }
+              },
+              "required": [
+                "kind",
+                "cue",
+                "requires",
+                "produces"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "needed_assets": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        },
+        "required": [
+          "id",
+          "narration",
+          "subject",
+          "action",
+          "before_after",
+          "focal_detail",
+          "consequence",
+          "headline",
+          "focus_target",
+          "framing",
+          "actions",
+          "needed_assets"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "ending_action": {
+      "type": "string"
+    },
+    "limitations": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "required": [
+    "schema_version",
+    "script",
+    "audience",
+    "style",
+    "rationale",
+    "metaphor",
+    "assets",
+    "beats",
+    "ending_action",
+    "limitations"
+  ],
+  "additionalProperties": false
+}

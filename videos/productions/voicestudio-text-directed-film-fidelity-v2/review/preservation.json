@@ -1,0 +1,11 @@
+{
+  "same_shot_count": 19,
+  "same_shot_order_headlines_and_boundaries": true,
+  "same_script": true,
+  "frames": 986,
+  "fps": 30,
+  "canonical_metadata_sha256": "2b77dea3547ea7c9e89e3873efb6e88e14628751139726f72ccdb1ac0a452a23",
+  "canonical_generator_sha256": "9623db72a5dae5e2640367f6a6352a4ca36a7783d7a6e2c342050447f64354ad",
+  "default_styles_edited": false,
+  "framework_upgrade": false
+}

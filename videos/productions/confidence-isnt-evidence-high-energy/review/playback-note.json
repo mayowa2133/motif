@@ -1,0 +1,36 @@
+{
+  "status": "REVIEW_REQUIRED",
+  "opening_reference_comparison": {
+    "reference": "igexport-Dd15NcHvlNl.mp4 opening",
+    "new": "opening-test-02.mp4",
+    "display": "360x640",
+    "playback_rate": 1,
+    "both_completed": true,
+    "audio": "muted; no subjective listening judgment"
+  },
+  "complete_native": {
+    "with_captions": {
+      "ended": true,
+      "error": null,
+      "duration": 19.833333
+    },
+    "without_captions": {
+      "ended": true,
+      "error": null,
+      "duration": 19.833333,
+      "method": "only bottom 96px caption band masked; no picture reframe"
+    },
+    "native_dimensions": [
+      360,
+      640
+    ],
+    "display_dimensions": [
+      360,
+      640
+    ],
+    "playback_rate": 1
+  },
+  "visual_inspection": "normal-speed browser playback plus sampled decoded actions; not every frame inspected",
+  "subjective_listening": "not assessed",
+  "delivery_sha256": "eb5d4c153f618aa52bfb576276c8dae585287c5c48c97d2298b23a74d96a9c2e"
+}

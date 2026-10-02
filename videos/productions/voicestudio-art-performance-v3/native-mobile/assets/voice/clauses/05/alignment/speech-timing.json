@@ -1,0 +1,56 @@
+{
+  "method": "installed Whisper small.en DTW; no flash attention; adjacent token-center midpoints",
+  "precision": "automatic approximate word boundaries, not phoneme-perfect",
+  "duration": 1.645,
+  "words": [
+    {
+      "text": "turns",
+      "centers": [
+        0.32
+      ],
+      "start": 0.2,
+      "end": 0.43000000000000005
+    },
+    {
+      "text": "any",
+      "centers": [
+        0.54
+      ],
+      "start": 0.43000000000000005,
+      "end": 0.63
+    },
+    {
+      "text": "book",
+      "centers": [
+        0.72
+      ],
+      "start": 0.63,
+      "end": 0.83
+    },
+    {
+      "text": "into",
+      "centers": [
+        0.94
+      ],
+      "start": 0.83,
+      "end": 1.01
+    },
+    {
+      "text": "an",
+      "centers": [
+        1.08
+      ],
+      "start": 1.01,
+      "end": 1.1600000000000001
+    },
+    {
+      "text": "audiobook.",
+      "centers": [
+        1.24,
+        1.5
+      ],
+      "start": 1.1600000000000001,
+      "end": 1.62
+    }
+  ]
+}

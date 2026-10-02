@@ -1,0 +1,214 @@
+{
+  "status": "scratch narration",
+  "provider": "local Kokoro",
+  "voice": "af_nova",
+  "sourceAudioUsed": false,
+  "segments": [
+    {
+      "id": "gym",
+      "frames": [
+        0,
+        110
+      ],
+      "text": "The reference says old instructions can hurt newer models.",
+      "captionChunks": [
+        "Old instructions",
+        "newer model",
+        "worse answers"
+      ]
+    },
+    {
+      "id": "archive",
+      "frames": [
+        110,
+        206
+      ],
+      "text": "Instructions written for older models become a burden.",
+      "captionChunks": [
+        "Written for",
+        "older models",
+        "a burden"
+      ]
+    },
+    {
+      "id": "answer",
+      "frames": [
+        206,
+        257
+      ],
+      "text": "Double-check everything.",
+      "captionChunks": [
+        "Double-check",
+        "everything"
+      ]
+    },
+    {
+      "id": "race",
+      "frames": [
+        257,
+        370
+      ],
+      "text": "Those old instructions slow the model down.",
+      "captionChunks": [
+        "Old instructions",
+        "slow it down"
+      ]
+    },
+    {
+      "id": "skills",
+      "frames": [
+        370,
+        436
+      ],
+      "text": "The source introduces prompt audit.",
+      "captionChunks": [
+        "Introducing",
+        "prompt audit"
+      ]
+    },
+    {
+      "id": "classroom",
+      "frames": [
+        600,
+        650
+      ],
+      "text": "First, duplicate checking.",
+      "captionChunks": [
+        "Duplicate",
+        "checking"
+      ]
+    },
+    {
+      "id": "shout",
+      "frames": [
+        650,
+        691
+      ],
+      "text": "Second, all caps.",
+      "captionChunks": [
+        "Instructions",
+        "in all caps"
+      ]
+    },
+    {
+      "id": "stairs",
+      "frames": [
+        691,
+        767
+      ],
+      "text": "Third, spelling out every step.",
+      "captionChunks": [
+        "Spelling out",
+        "every step"
+      ]
+    },
+    {
+      "id": "permission",
+      "frames": [
+        767,
+        861
+      ],
+      "text": "It proposes cuts and waits for your permission.",
+      "captionChunks": [
+        "Proposed cuts",
+        "your permission"
+      ]
+    },
+    {
+      "id": "real-run",
+      "frames": [
+        861,
+        887
+      ],
+      "text": "An example.",
+      "captionChunks": [
+        "An example"
+      ]
+    },
+    {
+      "id": "post",
+      "frames": [
+        887,
+        923
+      ],
+      "text": "One developer reports.",
+      "captionChunks": [
+        "One developer",
+        "reports"
+      ]
+    },
+    {
+      "id": "files",
+      "frames": [
+        923,
+        985
+      ],
+      "text": "About seventy things to fix.",
+      "captionChunks": [
+        "About seventy",
+        "things to fix"
+      ]
+    },
+    {
+      "id": "research",
+      "frames": [
+        985,
+        1076
+      ],
+      "text": "The source cites a test of this advice.",
+      "captionChunks": [
+        "A cited test",
+        "of this advice"
+      ]
+    },
+    {
+      "id": "cost",
+      "frames": [
+        1076,
+        1121
+      ],
+      "text": "Around nine percent cheaper.",
+      "captionChunks": [
+        "Around",
+        "nine percent"
+      ]
+    },
+    {
+      "id": "accuracy",
+      "frames": [
+        1121,
+        1196
+      ],
+      "text": "About two points more accurate, on the same model.",
+      "captionChunks": [
+        "Two points",
+        "more accurate",
+        "same model"
+      ]
+    },
+    {
+      "id": "guide",
+      "frames": [
+        1196,
+        1227
+      ],
+      "text": "Command and guide.",
+      "captionChunks": [
+        "Command",
+        "and guide"
+      ]
+    },
+    {
+      "id": "comment",
+      "frames": [
+        1227,
+        1262
+      ],
+      "text": "Comment audit.",
+      "captionChunks": [
+        "Comment",
+        "AUDIT"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,870 @@
+{
+  "voice": "af_nova",
+  "engine": "local Kokoro-82M through pinned HyperFrames tts",
+  "script_preserved": true,
+  "post_generation_speed_change": false,
+  "truncated_speech": false,
+  "blocks": [
+    {
+      "id": 1,
+      "text": "A solo dev just open sourced a free version of ElevenLabs, and it's already past 36,000 stars.",
+      "start_frame": 0,
+      "end_frame": 138,
+      "actual_start": 0.0,
+      "actual_end": 4.455,
+      "takes": [
+        {
+          "file": "assets/voice/clauses/01/take-01-speed-1.2950.wav",
+          "speed": 1.295,
+          "raw_duration": 5.696,
+          "quiet_crop_samples": [
+            120,
+            129000
+          ],
+          "spoken_duration": 5.37
+        },
+        {
+          "file": "assets/voice/clauses/01/take-02-speed-1.5307.wav",
+          "speed": 1.5307,
+          "raw_duration": 4.266666666666667,
+          "quiet_crop_samples": [
+            0,
+            96600
+          ],
+          "spoken_duration": 4.025
+        },
+        {
+          "file": "assets/voice/clauses/01/take-03-speed-1.4128.wav",
+          "speed": 1.4128,
+          "raw_duration": 4.373333333333333,
+          "quiet_crop_samples": [
+            0,
+            97800
+          ],
+          "spoken_duration": 4.075
+        },
+        {
+          "file": "assets/voice/clauses/01/take-04-speed-1.3539.wav",
+          "speed": 1.3539,
+          "raw_duration": 4.501333333333333,
+          "quiet_crop_samples": [
+            0,
+            100920
+          ],
+          "spoken_duration": 4.205
+        },
+        {
+          "file": "assets/voice/clauses/01/take-05-speed-1.3245.wav",
+          "speed": 1.3245,
+          "raw_duration": 5.461333333333333,
+          "quiet_crop_samples": [
+            0,
+            123480
+          ],
+          "spoken_duration": 5.145
+        },
+        {
+          "file": "assets/voice/clauses/01/take-06-speed-1.3392.wav",
+          "speed": 1.3392,
+          "raw_duration": 4.650666666666667,
+          "quiet_crop_samples": [
+            0,
+            104520
+          ],
+          "spoken_duration": 4.355
+        },
+        {
+          "file": "assets/voice/clauses/01/take-07-speed-1.3318.wav",
+          "speed": 1.3318,
+          "raw_duration": 5.290666666666667,
+          "quiet_crop_samples": [
+            0,
+            119400
+          ],
+          "spoken_duration": 4.975
+        },
+        {
+          "file": "assets/voice/clauses/01/take-08-speed-1.3355.wav",
+          "speed": 1.3355,
+          "raw_duration": 4.949333333333334,
+          "quiet_crop_samples": [
+            0,
+            111720
+          ],
+          "spoken_duration": 4.655
+        },
+        {
+          "file": "assets/voice/clauses/01/take-09-speed-1.3373.wav",
+          "speed": 1.3373,
+          "raw_duration": 4.736,
+          "quiet_crop_samples": [
+            0,
+            106920
+          ],
+          "spoken_duration": 4.455
+        }
+      ],
+      "selected_generation": {
+        "file": "assets/voice/clauses/01/take-09-speed-1.3373.wav",
+        "speed": 1.3373,
+        "raw_duration": 4.736,
+        "quiet_crop_samples": [
+          0,
+          106920
+        ],
+        "spoken_duration": 4.455
+      },
+      "selected": "assets/voice/clauses/01/selected.wav",
+      "edge_only_fade_ms": 3
+    },
+    {
+      "id": 2,
+      "text": "So instead of paying ElevenLabs every month to clone your voice, you can now do it on your own computer, even on the 10 year old laptop you have sitting around in the basement.",
+      "start_frame": 138,
+      "end_frame": 328,
+      "actual_start": 4.6,
+      "actual_end": 10.785,
+      "takes": [
+        {
+          "file": "assets/voice/clauses/02/take-01-speed-1.2950.wav",
+          "speed": 1.295,
+          "raw_duration": 7.786666666666667,
+          "quiet_crop_samples": [
+            0,
+            176760
+          ],
+          "spoken_duration": 7.365
+        },
+        {
+          "file": "assets/voice/clauses/02/take-02-speed-1.5196.wav",
+          "speed": 1.5196,
+          "raw_duration": 6.1866666666666665,
+          "quiet_crop_samples": [
+            0,
+            140520
+          ],
+          "spoken_duration": 5.855
+        },
+        {
+          "file": "assets/voice/clauses/02/take-03-speed-1.4073.wav",
+          "speed": 1.4073,
+          "raw_duration": 6.378666666666667,
+          "quiet_crop_samples": [
+            0,
+            144120
+          ],
+          "spoken_duration": 6.005
+        },
+        {
+          "file": "assets/voice/clauses/02/take-04-speed-1.3512.wav",
+          "speed": 1.3512,
+          "raw_duration": 6.506666666666667,
+          "quiet_crop_samples": [
+            0,
+            146760
+          ],
+          "spoken_duration": 6.115
+        },
+        {
+          "file": "assets/voice/clauses/02/take-05-speed-1.3231.wav",
+          "speed": 1.3231,
+          "raw_duration": 7.573333333333333,
+          "quiet_crop_samples": [
+            0,
+            172440
+          ],
+          "spoken_duration": 7.185
+        },
+        {
+          "file": "assets/voice/clauses/02/take-06-speed-1.3371.wav",
+          "speed": 1.3371,
+          "raw_duration": 6.592,
+          "quiet_crop_samples": [
+            0,
+            148440
+          ],
+          "spoken_duration": 6.185
+        },
+        {
+          "file": "assets/voice/clauses/02/take-07-speed-1.3301.wav",
+          "speed": 1.3301,
+          "raw_duration": 7.296,
+          "quiet_crop_samples": [
+            0,
+            165960
+          ],
+          "spoken_duration": 6.915
+        },
+        {
+          "file": "assets/voice/clauses/02/take-08-speed-1.3336.wav",
+          "speed": 1.3336,
+          "raw_duration": 6.912,
+          "quiet_crop_samples": [
+            0,
+            156360
+          ],
+          "spoken_duration": 6.515
+        },
+        {
+          "file": "assets/voice/clauses/02/take-09-speed-1.3354.wav",
+          "speed": 1.3354,
+          "raw_duration": 6.762666666666667,
+          "quiet_crop_samples": [
+            0,
+            152760
+          ],
+          "spoken_duration": 6.365
+        }
+      ],
+      "selected_generation": {
+        "file": "assets/voice/clauses/02/take-06-speed-1.3371.wav",
+        "speed": 1.3371,
+        "raw_duration": 6.592,
+        "quiet_crop_samples": [
+          0,
+          148440
+        ],
+        "spoken_duration": 6.185
+      },
+      "selected": "assets/voice/clauses/02/selected.wav",
+      "edge_only_fade_ms": 3
+    },
+    {
+      "id": 3,
+      "text": "It's called VoiceStudio, and you give it a short clip of you talking,",
+      "start_frame": 328,
+      "end_frame": 400,
+      "actual_start": 10.933333333333334,
+      "actual_end": 13.278333333333334,
+      "takes": [
+        {
+          "file": "assets/voice/clauses/03/take-01-speed-1.2950.wav",
+          "speed": 1.295,
+          "raw_duration": 3.1786666666666665,
+          "quiet_crop_samples": [
+            120,
+            68280
+          ],
+          "spoken_duration": 2.84
+        },
+        {
+          "file": "assets/voice/clauses/03/take-02-speed-1.5697.wav",
+          "speed": 1.5697,
+          "raw_duration": 2.4106666666666667,
+          "quiet_crop_samples": [
+            120,
+            51480
+          ],
+          "spoken_duration": 2.14
+        },
+        {
+          "file": "assets/voice/clauses/03/take-03-speed-1.4324.wav",
+          "speed": 1.4324,
+          "raw_duration": 2.517333333333333,
+          "quiet_crop_samples": [
+            120,
+            53160
+          ],
+          "spoken_duration": 2.21
+        },
+        {
+          "file": "assets/voice/clauses/03/take-04-speed-1.3637.wav",
+          "speed": 1.3637,
+          "raw_duration": 2.538666666666667,
+          "quiet_crop_samples": [
+            120,
+            53160
+          ],
+          "spoken_duration": 2.21
+        },
+        {
+          "file": "assets/voice/clauses/03/take-05-speed-1.3293.wav",
+          "speed": 1.3293,
+          "raw_duration": 2.9013333333333335,
+          "quiet_crop_samples": [
+            120,
+            62280
+          ],
+          "spoken_duration": 2.59
+        },
+        {
+          "file": "assets/voice/clauses/03/take-06-speed-1.3465.wav",
+          "speed": 1.3465,
+          "raw_duration": 2.5813333333333333,
+          "quiet_crop_samples": [
+            120,
+            54360
+          ],
+          "spoken_duration": 2.26
+        },
+        {
+          "file": "assets/voice/clauses/03/take-07-speed-1.3379.wav",
+          "speed": 1.3379,
+          "raw_duration": 2.6666666666666665,
+          "quiet_crop_samples": [
+            0,
+            56280
+          ],
+          "spoken_duration": 2.345
+        }
+      ],
+      "selected_generation": {
+        "file": "assets/voice/clauses/03/take-07-speed-1.3379.wav",
+        "speed": 1.3379,
+        "raw_duration": 2.6666666666666665,
+        "quiet_crop_samples": [
+          0,
+          56280
+        ],
+        "spoken_duration": 2.345
+      },
+      "selected": "assets/voice/clauses/03/selected.wav",
+      "edge_only_fade_ms": 3
+    },
+    {
+      "id": 4,
+      "text": "and it can read anything back in your voice. And cloning your voice is just the start because",
+      "start_frame": 400,
+      "end_frame": 507,
+      "actual_start": 13.333333333333334,
+      "actual_end": 16.833333333333336,
+      "takes": [
+        {
+          "file": "assets/voice/clauses/04/take-01-speed-1.2950.wav",
+          "speed": 1.295,
+          "raw_duration": 4.245333333333333,
+          "quiet_crop_samples": [
+            120,
+            93240
+          ],
+          "spoken_duration": 3.88
+        },
+        {
+          "file": "assets/voice/clauses/04/take-02-speed-1.4316.wav",
+          "speed": 1.4316,
+          "raw_duration": 3.4346666666666668,
+          "quiet_crop_samples": [
+            0,
+            75240
+          ],
+          "spoken_duration": 3.135
+        },
+        {
+          "file": "assets/voice/clauses/04/take-03-speed-1.3633.wav",
+          "speed": 1.3633,
+          "raw_duration": 3.541333333333333,
+          "quiet_crop_samples": [
+            0,
+            76920
+          ],
+          "spoken_duration": 3.205
+        },
+        {
+          "file": "assets/voice/clauses/04/take-04-speed-1.3291.wav",
+          "speed": 1.3291,
+          "raw_duration": 4.010666666666666,
+          "quiet_crop_samples": [
+            120,
+            88200
+          ],
+          "spoken_duration": 3.67
+        },
+        {
+          "file": "assets/voice/clauses/04/take-05-speed-1.3462.wav",
+          "speed": 1.3462,
+          "raw_duration": 3.562666666666667,
+          "quiet_crop_samples": [
+            0,
+            77640
+          ],
+          "spoken_duration": 3.235
+        },
+        {
+          "file": "assets/voice/clauses/04/take-06-speed-1.3377.wav",
+          "speed": 1.3377,
+          "raw_duration": 3.712,
+          "quiet_crop_samples": [
+            120,
+            81000
+          ],
+          "spoken_duration": 3.37
+        },
+        {
+          "file": "assets/voice/clauses/04/take-07-speed-1.3334.wav",
+          "speed": 1.3334,
+          "raw_duration": 3.8826666666666667,
+          "quiet_crop_samples": [
+            120,
+            85320
+          ],
+          "spoken_duration": 3.55
+        },
+        {
+          "file": "assets/voice/clauses/04/take-08-speed-1.3356.wav",
+          "speed": 1.3356,
+          "raw_duration": 3.7546666666666666,
+          "quiet_crop_samples": [
+            120,
+            82440
+          ],
+          "spoken_duration": 3.43
+        },
+        {
+          "file": "assets/voice/clauses/04/take-09-speed-1.3345.wav",
+          "speed": 1.3345,
+          "raw_duration": 3.84,
+          "quiet_crop_samples": [
+            120,
+            84120
+          ],
+          "spoken_duration": 3.5
+        }
+      ],
+      "selected_generation": {
+        "file": "assets/voice/clauses/04/take-09-speed-1.3345.wav",
+        "speed": 1.3345,
+        "raw_duration": 3.84,
+        "quiet_crop_samples": [
+          120,
+          84120
+        ],
+        "spoken_duration": 3.5
+      },
+      "selected": "assets/voice/clauses/04/selected.wav",
+      "edge_only_fade_ms": 3
+    },
+    {
+      "id": 5,
+      "text": "it turns any book into an audiobook,",
+      "start_frame": 507,
+      "end_frame": 559,
+      "actual_start": 16.9,
+      "actual_end": 18.544999999999998,
+      "takes": [
+        {
+          "file": "assets/voice/clauses/05/take-01-speed-1.2950.wav",
+          "speed": 1.295,
+          "raw_duration": 2.176,
+          "quiet_crop_samples": [
+            0,
+            45720
+          ],
+          "spoken_duration": 1.905
+        },
+        {
+          "file": "assets/voice/clauses/05/take-02-speed-1.4716.wav",
+          "speed": 1.4716,
+          "raw_duration": 1.728,
+          "quiet_crop_samples": [
+            840,
+            35880
+          ],
+          "spoken_duration": 1.46
+        },
+        {
+          "file": "assets/voice/clauses/05/take-03-speed-1.3833.wav",
+          "speed": 1.3833,
+          "raw_duration": 1.792,
+          "quiet_crop_samples": [
+            0,
+            37080
+          ],
+          "spoken_duration": 1.545
+        },
+        {
+          "file": "assets/voice/clauses/05/take-04-speed-1.3392.wav",
+          "speed": 1.3392,
+          "raw_duration": 1.92,
+          "quiet_crop_samples": [
+            0,
+            39480
+          ],
+          "spoken_duration": 1.645
+        }
+      ],
+      "selected_generation": {
+        "file": "assets/voice/clauses/05/take-04-speed-1.3392.wav",
+        "speed": 1.3392,
+        "raw_duration": 1.92,
+        "quiet_crop_samples": [
+          0,
+          39480
+        ],
+        "spoken_duration": 1.645
+      },
+      "selected": "assets/voice/clauses/05/selected.wav",
+      "edge_only_fade_ms": 3
+    },
+    {
+      "id": 6,
+      "text": "types out whatever you want to say, and writes a transcript of any recording.",
+      "start_frame": 559,
+      "end_frame": 651,
+      "actual_start": 18.633333333333333,
+      "actual_end": 21.64333333333333,
+      "takes": [
+        {
+          "file": "assets/voice/clauses/06/take-01-speed-1.2950.wav",
+          "speed": 1.295,
+          "raw_duration": 3.584,
+          "quiet_crop_samples": [
+            120,
+            77640
+          ],
+          "spoken_duration": 3.23
+        },
+        {
+          "file": "assets/voice/clauses/06/take-02-speed-1.3898.wav",
+          "speed": 1.3898,
+          "raw_duration": 2.9226666666666667,
+          "quiet_crop_samples": [
+            120,
+            62760
+          ],
+          "spoken_duration": 2.61
+        },
+        {
+          "file": "assets/voice/clauses/06/take-03-speed-1.3424.wav",
+          "speed": 1.3424,
+          "raw_duration": 3.050666666666667,
+          "quiet_crop_samples": [
+            120,
+            65640
+          ],
+          "spoken_duration": 2.73
+        },
+        {
+          "file": "assets/voice/clauses/06/take-04-speed-1.3187.wav",
+          "speed": 1.3187,
+          "raw_duration": 3.477333333333333,
+          "quiet_crop_samples": [
+            120,
+            75960
+          ],
+          "spoken_duration": 3.16
+        },
+        {
+          "file": "assets/voice/clauses/06/take-05-speed-1.3306.wav",
+          "speed": 1.3306,
+          "raw_duration": 3.3706666666666667,
+          "quiet_crop_samples": [
+            120,
+            73560
+          ],
+          "spoken_duration": 3.06
+        },
+        {
+          "file": "assets/voice/clauses/06/take-06-speed-1.3365.wav",
+          "speed": 1.3365,
+          "raw_duration": 3.1786666666666665,
+          "quiet_crop_samples": [
+            120,
+            68760
+          ],
+          "spoken_duration": 2.86
+        },
+        {
+          "file": "assets/voice/clauses/06/take-07-speed-1.3336.wav",
+          "speed": 1.3336,
+          "raw_duration": 3.2213333333333334,
+          "quiet_crop_samples": [
+            120,
+            69960
+          ],
+          "spoken_duration": 2.91
+        },
+        {
+          "file": "assets/voice/clauses/06/take-08-speed-1.3321.wav",
+          "speed": 1.3321,
+          "raw_duration": 3.328,
+          "quiet_crop_samples": [
+            120,
+            72360
+          ],
+          "spoken_duration": 3.01
+        }
+      ],
+      "selected_generation": {
+        "file": "assets/voice/clauses/06/take-08-speed-1.3321.wav",
+        "speed": 1.3321,
+        "raw_duration": 3.328,
+        "quiet_crop_samples": [
+          120,
+          72360
+        ],
+        "spoken_duration": 3.01
+      },
+      "selected": "assets/voice/clauses/06/selected.wav",
+      "edge_only_fade_ms": 3
+    },
+    {
+      "id": 7,
+      "text": "But here's the part that's even crazier. It can dub your videos into 646 languages,",
+      "start_frame": 651,
+      "end_frame": 790,
+      "actual_start": 21.7,
+      "actual_end": 26.27,
+      "takes": [
+        {
+          "file": "assets/voice/clauses/07/take-01-speed-1.2950.wav",
+          "speed": 1.295,
+          "raw_duration": 5.141333333333334,
+          "quiet_crop_samples": [
+            360,
+            115800
+          ],
+          "spoken_duration": 4.81
+        },
+        {
+          "file": "assets/voice/clauses/07/take-02-speed-1.3611.wav",
+          "speed": 1.3611,
+          "raw_duration": 4.181333333333333,
+          "quiet_crop_samples": [
+            0,
+            93000
+          ],
+          "spoken_duration": 3.875
+        },
+        {
+          "file": "assets/voice/clauses/07/take-03-speed-1.3280.wav",
+          "speed": 1.328,
+          "raw_duration": 4.8853333333333335,
+          "quiet_crop_samples": [
+            120,
+            109800
+          ],
+          "spoken_duration": 4.57
+        }
+      ],
+      "selected_generation": {
+        "file": "assets/voice/clauses/07/take-03-speed-1.3280.wav",
+        "speed": 1.328,
+        "raw_duration": 4.8853333333333335,
+        "quiet_crop_samples": [
+          120,
+          109800
+        ],
+        "spoken_duration": 4.57
+      },
+      "selected": "assets/voice/clauses/07/selected.wav",
+      "edge_only_fade_ms": 3
+    },
+    {
+      "id": 8,
+      "text": "which means stop paying any more bills, since it runs on your computer",
+      "start_frame": 790,
+      "end_frame": 878,
+      "actual_start": 26.333333333333332,
+      "actual_end": 29.188333333333333,
+      "takes": [
+        {
+          "file": "assets/voice/clauses/08/take-01-speed-1.2950.wav",
+          "speed": 1.295,
+          "raw_duration": 3.456,
+          "quiet_crop_samples": [
+            0,
+            74520
+          ],
+          "spoken_duration": 3.105
+        },
+        {
+          "file": "assets/voice/clauses/08/take-02-speed-1.3980.wav",
+          "speed": 1.398,
+          "raw_duration": 2.8373333333333335,
+          "quiet_crop_samples": [
+            0,
+            59880
+          ],
+          "spoken_duration": 2.495
+        },
+        {
+          "file": "assets/voice/clauses/08/take-03-speed-1.3465.wav",
+          "speed": 1.3465,
+          "raw_duration": 2.9226666666666667,
+          "quiet_crop_samples": [
+            0,
+            61800
+          ],
+          "spoken_duration": 2.575
+        },
+        {
+          "file": "assets/voice/clauses/08/take-04-speed-1.3207.wav",
+          "speed": 1.3207,
+          "raw_duration": 3.4346666666666668,
+          "quiet_crop_samples": [
+            0,
+            73800
+          ],
+          "spoken_duration": 3.075
+        },
+        {
+          "file": "assets/voice/clauses/08/take-05-speed-1.3336.wav",
+          "speed": 1.3336,
+          "raw_duration": 3.072,
+          "quiet_crop_samples": [
+            0,
+            65400
+          ],
+          "spoken_duration": 2.725
+        },
+        {
+          "file": "assets/voice/clauses/08/take-06-speed-1.3272.wav",
+          "speed": 1.3272,
+          "raw_duration": 3.3066666666666666,
+          "quiet_crop_samples": [
+            0,
+            70920
+          ],
+          "spoken_duration": 2.955
+        },
+        {
+          "file": "assets/voice/clauses/08/take-07-speed-1.3304.wav",
+          "speed": 1.3304,
+          "raw_duration": 3.2213333333333334,
+          "quiet_crop_samples": [
+            0,
+            68520
+          ],
+          "spoken_duration": 2.855
+        }
+      ],
+      "selected_generation": {
+        "file": "assets/voice/clauses/08/take-07-speed-1.3304.wav",
+        "speed": 1.3304,
+        "raw_duration": 3.2213333333333334,
+        "quiet_crop_samples": [
+          0,
+          68520
+        ],
+        "spoken_duration": 2.855
+      },
+      "selected": "assets/voice/clauses/08/selected.wav",
+      "edge_only_fade_ms": 3
+    },
+    {
+      "id": 9,
+      "text": "and your voice never has to get uploaded anywhere.",
+      "start_frame": 878,
+      "end_frame": 937,
+      "actual_start": 29.266666666666666,
+      "actual_end": 31.181666666666665,
+      "takes": [
+        {
+          "file": "assets/voice/clauses/09/take-01-speed-1.2950.wav",
+          "speed": 1.295,
+          "raw_duration": 2.6026666666666665,
+          "quiet_crop_samples": [
+            0,
+            54600
+          ],
+          "spoken_duration": 2.275
+        },
+        {
+          "file": "assets/voice/clauses/09/take-02-speed-1.5427.wav",
+          "speed": 1.5427,
+          "raw_duration": 2.026666666666667,
+          "quiet_crop_samples": [
+            0,
+            42120
+          ],
+          "spoken_duration": 1.755
+        },
+        {
+          "file": "assets/voice/clauses/09/take-03-speed-1.4188.wav",
+          "speed": 1.4188,
+          "raw_duration": 2.112,
+          "quiet_crop_samples": [
+            0,
+            43560
+          ],
+          "spoken_duration": 1.815
+        },
+        {
+          "file": "assets/voice/clauses/09/take-04-speed-1.3569.wav",
+          "speed": 1.3569,
+          "raw_duration": 2.24,
+          "quiet_crop_samples": [
+            0,
+            45960
+          ],
+          "spoken_duration": 1.915
+        }
+      ],
+      "selected_generation": {
+        "file": "assets/voice/clauses/09/take-04-speed-1.3569.wav",
+        "speed": 1.3569,
+        "raw_duration": 2.24,
+        "quiet_crop_samples": [
+          0,
+          45960
+        ],
+        "spoken_duration": 1.915
+      },
+      "selected": "assets/voice/clauses/09/selected.wav",
+      "edge_only_fade_ms": 3
+    },
+    {
+      "id": 10,
+      "text": "For the link and setup, comment Voice.",
+      "start_frame": 937,
+      "end_frame": 986,
+      "actual_start": 31.233333333333334,
+      "actual_end": 32.76833333333333,
+      "takes": [
+        {
+          "file": "assets/voice/clauses/10/take-01-speed-1.2950.wav",
+          "speed": 1.295,
+          "raw_duration": 2.1333333333333333,
+          "quiet_crop_samples": [
+            120,
+            44520
+          ],
+          "spoken_duration": 1.85
+        },
+        {
+          "file": "assets/voice/clauses/10/take-02-speed-1.5198.wav",
+          "speed": 1.5198,
+          "raw_duration": 1.664,
+          "quiet_crop_samples": [
+            120,
+            34440
+          ],
+          "spoken_duration": 1.43
+        },
+        {
+          "file": "assets/voice/clauses/10/take-03-speed-1.4074.wav",
+          "speed": 1.4074,
+          "raw_duration": 1.6853333333333333,
+          "quiet_crop_samples": [
+            0,
+            34440
+          ],
+          "spoken_duration": 1.435
+        },
+        {
+          "file": "assets/voice/clauses/10/take-04-speed-1.3512.wav",
+          "speed": 1.3512,
+          "raw_duration": 1.8133333333333332,
+          "quiet_crop_samples": [
+            0,
+            36840
+          ],
+          "spoken_duration": 1.535
+        }
+      ],
+      "selected_generation": {
+        "file": "assets/voice/clauses/10/take-04-speed-1.3512.wav",
+        "speed": 1.3512,
+        "raw_duration": 1.8133333333333332,
+        "quiet_crop_samples": [
+          0,
+          36840
+        ],
+        "spoken_duration": 1.535
+      },
+      "selected": "assets/voice/clauses/10/selected.wav",
+      "edge_only_fade_ms": 3
+    }
+  ],
+  "human_listening": "pending"
+}

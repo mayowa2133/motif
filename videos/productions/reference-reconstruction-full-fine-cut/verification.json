@@ -1,0 +1,501 @@
+{
+  "provenance": "Codex-assisted, reference-led production using Motif",
+  "frames": 1262,
+  "fps": 30,
+  "duration": 42.06666666666667,
+  "approvedReuse": [
+    436,
+    600
+  ],
+  "sourceAudioUsed": false,
+  "subjectiveListening": "unassessed",
+  "retiming": false,
+  "media": {
+    "full-film-fine-cut": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "codec_type": "video",
+          "width": 1080,
+          "height": 1920,
+          "r_frame_rate": "30/1",
+          "duration": "42.066667",
+          "nb_frames": "1262"
+        },
+        {
+          "codec_type": "audio",
+          "r_frame_rate": "0/0",
+          "duration": "42.066667",
+          "nb_frames": "1973"
+        }
+      ],
+      "format": {
+        "duration": "42.066667"
+      }
+    },
+    "mobile": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "codec_type": "video",
+          "width": 360,
+          "height": 640,
+          "r_frame_rate": "30/1",
+          "duration": "42.066667",
+          "nb_frames": "1262"
+        },
+        {
+          "codec_type": "audio",
+          "r_frame_rate": "0/0",
+          "duration": "42.066667",
+          "nb_frames": "1973"
+        }
+      ],
+      "format": {
+        "duration": "42.066667"
+      }
+    },
+    "comparison": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "codec_type": "video",
+          "width": 720,
+          "height": 680,
+          "r_frame_rate": "30/1",
+          "duration": "42.066667",
+          "nb_frames": "1262"
+        },
+        {
+          "codec_type": "audio",
+          "r_frame_rate": "0/0",
+          "duration": "42.066667",
+          "nb_frames": "1973"
+        }
+      ],
+      "format": {
+        "duration": "42.066667"
+      }
+    }
+  },
+  "baseline": {
+    "final": {
+      "originalAndReuseSha256": "6b80a5d2a4efae9a5db40dc5efe66a0cf3924a0408502656e82fb5b445fb0c96",
+      "unchanged": true,
+      "deliveryReencodeSSIM": {
+        "frames": 164,
+        "minimum": 0.99427,
+        "mean": 0.9952095670731705,
+        "note": "Reuse video undergoes delivery encoding; approved source files themselves are unchanged. This checks frame correspondence, not style similarity."
+      }
+    },
+    "mobile": {
+      "originalAndReuseSha256": "c24268a97f4077fb0f61a7a2a6357070478c0ca3f58a6a682b33280c0f5103f5",
+      "unchanged": true,
+      "deliveryReencodeSSIM": {
+        "frames": 164,
+        "minimum": 0.990859,
+        "mean": 0.9927530975609754,
+        "note": "Reuse video undergoes delivery encoding; approved source files themselves are unchanged. This checks frame correspondence, not style similarity."
+      }
+    }
+  },
+  "cutChecks": {
+    "110": {
+      "beforeAfterBackgroundPixels": [
+        [
+          183,
+          152,
+          125
+        ],
+        [
+          161,
+          138,
+          70
+        ]
+      ],
+      "difference": 60.868711174132805,
+      "basis": "decoded native picture, adjacent source-frame boundaries"
+    },
+    "206": {
+      "beforeAfterBackgroundPixels": [
+        [
+          161,
+          138,
+          70
+        ],
+        [
+          52,
+          93,
+          95
+        ]
+      ],
+      "difference": 120.54459755625716,
+      "basis": "decoded native picture, adjacent source-frame boundaries"
+    },
+    "257": {
+      "beforeAfterBackgroundPixels": [
+        [
+          52,
+          93,
+          95
+        ],
+        [
+          126,
+          157,
+          153
+        ]
+      ],
+      "difference": 113.73653766490345,
+      "basis": "decoded native picture, adjacent source-frame boundaries"
+    },
+    "370": {
+      "beforeAfterBackgroundPixels": [
+        [
+          126,
+          157,
+          153
+        ],
+        [
+          137,
+          125,
+          157
+        ]
+      ],
+      "difference": 34.07345007480164,
+      "basis": "decoded native picture, adjacent source-frame boundaries"
+    },
+    "436": {
+      "beforeAfterBackgroundPixels": [
+        [
+          137,
+          125,
+          157
+        ],
+        [
+          112,
+          162,
+          146
+        ]
+      ],
+      "difference": 45.98912915026767,
+      "basis": "decoded native picture, adjacent source-frame boundaries"
+    },
+    "486": {
+      "beforeAfterBackgroundPixels": [
+        [
+          112,
+          162,
+          146
+        ],
+        [
+          27,
+          42,
+          51
+        ]
+      ],
+      "difference": 175.07141400011596,
+      "basis": "decoded native picture, adjacent source-frame boundaries"
+    },
+    "524": {
+      "beforeAfterBackgroundPixels": [
+        [
+          27,
+          42,
+          51
+        ],
+        [
+          176,
+          154,
+          125
+        ]
+      ],
+      "difference": 200.55173896029922,
+      "basis": "decoded native picture, adjacent source-frame boundaries"
+    },
+    "600": {
+      "beforeAfterBackgroundPixels": [
+        [
+          176,
+          154,
+          125
+        ],
+        [
+          167,
+          132,
+          124
+        ]
+      ],
+      "difference": 23.790754506740637,
+      "basis": "decoded native picture, adjacent source-frame boundaries"
+    },
+    "650": {
+      "beforeAfterBackgroundPixels": [
+        [
+          167,
+          132,
+          124
+        ],
+        [
+          37,
+          58,
+          80
+        ]
+      ],
+      "difference": 155.9230579484638,
+      "basis": "decoded native picture, adjacent source-frame boundaries"
+    },
+    "691": {
+      "beforeAfterBackgroundPixels": [
+        [
+          37,
+          58,
+          80
+        ],
+        [
+          180,
+          162,
+          83
+        ]
+      ],
+      "difference": 176.84456451924103,
+      "basis": "decoded native picture, adjacent source-frame boundaries"
+    },
+    "767": {
+      "beforeAfterBackgroundPixels": [
+        [
+          180,
+          162,
+          83
+        ],
+        [
+          133,
+          161,
+          130
+        ]
+      ],
+      "difference": 66.47555941848101,
+      "basis": "decoded native picture, adjacent source-frame boundaries"
+    },
+    "861": {
+      "beforeAfterBackgroundPixels": [
+        [
+          133,
+          161,
+          130
+        ],
+        [
+          119,
+          95,
+          118
+        ]
+      ],
+      "difference": 68.52736679604726,
+      "basis": "decoded native picture, adjacent source-frame boundaries"
+    },
+    "887": {
+      "beforeAfterBackgroundPixels": [
+        [
+          119,
+          95,
+          118
+        ],
+        [
+          138,
+          169,
+          176
+        ]
+      ],
+      "difference": 95.9218431849597,
+      "basis": "decoded native picture, adjacent source-frame boundaries"
+    },
+    "923": {
+      "beforeAfterBackgroundPixels": [
+        [
+          138,
+          169,
+          176
+        ],
+        [
+          178,
+          174,
+          150
+        ]
+      ],
+      "difference": 47.968739820845826,
+      "basis": "decoded native picture, adjacent source-frame boundaries"
+    },
+    "985": {
+      "beforeAfterBackgroundPixels": [
+        [
+          178,
+          174,
+          150
+        ],
+        [
+          118,
+          152,
+          165
+        ]
+      ],
+      "difference": 65.64297372910524,
+      "basis": "decoded native picture, adjacent source-frame boundaries"
+    },
+    "1076": {
+      "beforeAfterBackgroundPixels": [
+        [
+          118,
+          152,
+          165
+        ],
+        [
+          134,
+          146,
+          147
+        ]
+      ],
+      "difference": 24.819347291981714,
+      "basis": "decoded native picture, adjacent source-frame boundaries"
+    },
+    "1121": {
+      "beforeAfterBackgroundPixels": [
+        [
+          134,
+          146,
+          147
+        ],
+        [
+          126,
+          147,
+          96
+        ]
+      ],
+      "difference": 51.633322573702344,
+      "basis": "decoded native picture, adjacent source-frame boundaries"
+    },
+    "1196": {
+      "beforeAfterBackgroundPixels": [
+        [
+          126,
+          147,
+          96
+        ],
+        [
+          180,
+          139,
+          101
+        ]
+      ],
+      "difference": 54.817880294662984,
+      "basis": "decoded native picture, adjacent source-frame boundaries"
+    },
+    "1227": {
+      "beforeAfterBackgroundPixels": [
+        [
+          180,
+          139,
+          101
+        ],
+        [
+          59,
+          48,
+          62
+        ]
+      ],
+      "difference": 156.34257257701756,
+      "basis": "decoded native picture, adjacent source-frame boundaries"
+    }
+  },
+  "audio": {
+    "integrated_lufs": -16.53,
+    "true_peak_dbtp": -1.75,
+    "lra_lu": 5.6
+  },
+  "runtimeCheckFile": "review/check-fine-04.json",
+  "motionAssertions": "disabled by CLI; sampled decoded geometry checks and playback separately recorded",
+  "captionAlignment": "Whisper DTW on actual generated WAVs, waveform limits; automatic alignment approximate",
+  "sharedAudioPayload": true,
+  "roughAndCanonicalFilesUnchanged": true,
+  "approvedMasterPcm": {
+    "decodedUnitySampleEquality": true,
+    "samplesPerChannel": 260800,
+    "rate": 48000,
+    "channels": 2,
+    "sha256": "6c2c8a2edb2cc594521f06eb46b34971d4906580a69416b147eba57101e6d43f",
+    "deliveryCaveat": "Final AAC is a new full-film encoding; compressed packets are not claimed identical to the old approved AAC."
+  },
+  "repairs": {
+    "full-film-fine-cut": {
+      "gymNeedle": {
+        "framesChecked": 110,
+        "visibleAtPredictedNeedleRegionEveryFrame": true,
+        "minimumDarkPixels": 53,
+        "basis": "decoded pixels near 75% of fixed-pivot pointer length; dark-ink threshold",
+        "limit": "bounded needle check, not all motion/contact assertions"
+      },
+      "cost": {
+        "decodedBars": [
+          {
+            "top": 772,
+            "baselineEdge": 1408,
+            "height": 636
+          },
+          {
+            "top": 830,
+            "baselineEdge": 1408,
+            "height": 578
+          }
+        ],
+        "heightRatio": 0.9088050314465409,
+        "authoredHeightRatio": 0.91,
+        "sameBaselineWithinPixels": 0,
+        "qualifier": "Illustrative source-claim index; no measured product cost result"
+      }
+    },
+    "mobile": {
+      "gymNeedle": {
+        "framesChecked": 110,
+        "visibleAtPredictedNeedleRegionEveryFrame": true,
+        "minimumDarkPixels": 5,
+        "basis": "decoded pixels near 75% of fixed-pivot pointer length; dark-ink threshold",
+        "limit": "bounded needle check, not all motion/contact assertions"
+      },
+      "cost": {
+        "decodedBars": [
+          {
+            "top": 258,
+            "baselineEdge": 469,
+            "height": 211
+          },
+          {
+            "top": 276,
+            "baselineEdge": 469,
+            "height": 193
+          }
+        ],
+        "heightRatio": 0.9146919431279621,
+        "authoredHeightRatio": 0.91,
+        "sameBaselineWithinPixels": 0,
+        "qualifier": "Illustrative source-claim index; no measured product cost result"
+      }
+    }
+  },
+  "playback": {
+    "files": "full / native mobile / comparison",
+    "rate": 1,
+    "completed": true,
+    "samples": 9,
+    "mediaErrors": 0,
+    "captureDirectory": "review/playback-final",
+    "subjectiveListening": "unassessed; muted visual playback",
+    "visualInspection": "All twenty shots sampled in context; selected normal-speed screenshots and matched source pairs inspected. Not every frame visually inspected."
+  },
+  "outputHashes": {
+    "full-film-fine-cut.mp4": "9a2173ec722600c9defab34a0d6863a7ef4555da6e2339ee8e7e42b37cddd43c",
+    "mobile.mp4": "053797b16e3c3bb9c323505955123f6eafb4bd6fb46dcf41e4e4c90597afd1dd",
+    "comparison.mp4": "b0fc98eb4d4d4c9fbfeeba722e104deb783f175e97030429c57c6b12464161cc"
+  }
+}

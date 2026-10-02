@@ -1,0 +1,336 @@
+{
+  "tracks": [
+    {
+      "src": "assets/voice/gym-fitted.wav",
+      "start": 0.0,
+      "duration": 3.662375,
+      "volume": 1,
+      "kind": "narration",
+      "id": "gym"
+    },
+    {
+      "src": "assets/voice/archive-fitted.wav",
+      "start": 3.6666666666666665,
+      "duration": 3.152583,
+      "volume": 1,
+      "kind": "narration",
+      "id": "archive"
+    },
+    {
+      "src": "assets/voice/answer-fitted.wav",
+      "start": 6.866666666666666,
+      "duration": 1.7,
+      "volume": 1,
+      "kind": "narration",
+      "id": "answer"
+    },
+    {
+      "src": "assets/voice/race-fitted.wav",
+      "start": 8.566666666666666,
+      "duration": 3.66975,
+      "volume": 1,
+      "kind": "narration",
+      "id": "race"
+    },
+    {
+      "src": "assets/voice/skills-fitted.wav",
+      "start": 12.333333333333334,
+      "duration": 2.2,
+      "volume": 1,
+      "kind": "narration",
+      "id": "skills"
+    },
+    {
+      "src": "assets/voice/classroom-fitted.wav",
+      "start": 20.0,
+      "duration": 1.6666666666666667,
+      "volume": 1,
+      "kind": "narration",
+      "id": "classroom"
+    },
+    {
+      "src": "assets/voice/shout-fitted.wav",
+      "start": 21.666666666666668,
+      "duration": 1.3666666666666667,
+      "volume": 1,
+      "kind": "narration",
+      "id": "shout"
+    },
+    {
+      "src": "assets/voice/stairs-fitted.wav",
+      "start": 23.033333333333335,
+      "duration": 2.533333,
+      "volume": 1,
+      "kind": "narration",
+      "id": "stairs"
+    },
+    {
+      "src": "assets/voice/permission-fitted.wav",
+      "start": 25.566666666666666,
+      "duration": 3.133333,
+      "volume": 1,
+      "kind": "narration",
+      "id": "permission"
+    },
+    {
+      "src": "assets/voice/real-run-fitted.wav",
+      "start": 28.7,
+      "duration": 0.8666666666666667,
+      "volume": 1,
+      "kind": "narration",
+      "id": "real-run"
+    },
+    {
+      "src": "assets/voice/post-fitted.wav",
+      "start": 29.566666666666666,
+      "duration": 1.2,
+      "volume": 1,
+      "kind": "narration",
+      "id": "post"
+    },
+    {
+      "src": "assets/voice/files-fitted.wav",
+      "start": 30.766666666666666,
+      "duration": 2.066666666666667,
+      "volume": 1,
+      "kind": "narration",
+      "id": "files"
+    },
+    {
+      "src": "assets/voice/research-fitted.wav",
+      "start": 32.833333333333336,
+      "duration": 3.033333,
+      "volume": 1,
+      "kind": "narration",
+      "id": "research"
+    },
+    {
+      "src": "assets/voice/cost-fitted.wav",
+      "start": 35.86666666666667,
+      "duration": 1.5,
+      "volume": 1,
+      "kind": "narration",
+      "id": "cost"
+    },
+    {
+      "src": "assets/voice/accuracy-fitted.wav",
+      "start": 37.36666666666667,
+      "duration": 2.5,
+      "volume": 1,
+      "kind": "narration",
+      "id": "accuracy"
+    },
+    {
+      "src": "assets/voice/guide-fitted.wav",
+      "start": 39.86666666666667,
+      "duration": 1.033333,
+      "volume": 1,
+      "kind": "narration",
+      "id": "guide"
+    },
+    {
+      "src": "assets/voice/comment-fitted.wav",
+      "start": 40.9,
+      "duration": 1.1666666666666667,
+      "volume": 1,
+      "kind": "narration",
+      "id": "comment"
+    },
+    {
+      "src": "assets/baseline/final.mp4",
+      "start": 14.533333333333333,
+      "duration": 5.466666666666667,
+      "volume": 1,
+      "kind": "approved soundtrack",
+      "id": "locked-soundtrack"
+    },
+    {
+      "src": "assets/sfx/click-soft.mp3",
+      "start": 7.366666666666666,
+      "duration": 0.36572916666666666,
+      "volume": 0.1,
+      "kind": "effect",
+      "id": "click-soft-221"
+    },
+    {
+      "src": "assets/sfx/whoosh-short.mp3",
+      "start": 24.9,
+      "duration": 0.5747083333333334,
+      "volume": 0.07,
+      "kind": "effect",
+      "id": "whoosh-short-747"
+    },
+    {
+      "src": "assets/sfx/pop.mp3",
+      "start": 32.0,
+      "duration": 0.72,
+      "volume": 0.06,
+      "kind": "effect",
+      "id": "pop-960"
+    },
+    {
+      "src": "assets/sfx/click-soft.mp3",
+      "start": 33.666666666666664,
+      "duration": 0.36572916666666666,
+      "volume": 0.1,
+      "kind": "effect",
+      "id": "click-soft-1010"
+    },
+    {
+      "src": "assets/sfx/pop.mp3",
+      "start": 37.93333333333333,
+      "duration": 0.72,
+      "volume": 0.08,
+      "kind": "effect",
+      "id": "pop-1138"
+    },
+    {
+      "src": "assets/sfx/pop.mp3",
+      "start": 38.5,
+      "duration": 0.72,
+      "volume": 0.08,
+      "kind": "effect",
+      "id": "pop-1155"
+    },
+    {
+      "src": "assets/sfx/pop.mp3",
+      "start": 39.166666666666664,
+      "duration": 0.72,
+      "volume": 0.08,
+      "kind": "effect",
+      "id": "pop-1175"
+    }
+  ],
+  "fitting": [
+    {
+      "id": "gym",
+      "sourceDuration": 3.498667,
+      "slotDuration": 3.6666666666666665,
+      "atempo": 1,
+      "status": "scratch cue; not final performance"
+    },
+    {
+      "id": "archive",
+      "sourceDuration": 3.392,
+      "slotDuration": 3.2,
+      "atempo": 1.0802547770700637,
+      "status": "scratch cue; not final performance"
+    },
+    {
+      "id": "answer",
+      "sourceDuration": 1.749333,
+      "slotDuration": 1.7,
+      "atempo": 1.0666664634146343,
+      "status": "scratch cue; not final performance"
+    },
+    {
+      "id": "race",
+      "sourceDuration": 3.008,
+      "slotDuration": 3.7666666666666666,
+      "atempo": 1,
+      "status": "scratch cue; not final performance"
+    },
+    {
+      "id": "skills",
+      "sourceDuration": 2.517333,
+      "slotDuration": 2.2,
+      "atempo": 1.1763238317757008,
+      "status": "scratch cue; not final performance"
+    },
+    {
+      "id": "classroom",
+      "sourceDuration": 2.026667,
+      "slotDuration": 1.6666666666666667,
+      "atempo": 1.2614109958506226,
+      "status": "scratch cue; not final performance"
+    },
+    {
+      "id": "shout",
+      "sourceDuration": 1.749333,
+      "slotDuration": 1.3666666666666667,
+      "atempo": 1.3387752551020409,
+      "status": "scratch cue; not final performance"
+    },
+    {
+      "id": "stairs",
+      "sourceDuration": 2.24,
+      "slotDuration": 2.533333333333333,
+      "atempo": 1,
+      "status": "scratch cue; not final performance"
+    },
+    {
+      "id": "permission",
+      "sourceDuration": 2.837333,
+      "slotDuration": 3.1333333333333333,
+      "atempo": 1,
+      "status": "scratch cue; not final performance"
+    },
+    {
+      "id": "real-run",
+      "sourceDuration": 1.130667,
+      "slotDuration": 0.8666666666666667,
+      "atempo": 1.4016533057851241,
+      "status": "scratch cue; not final performance"
+    },
+    {
+      "id": "post",
+      "sourceDuration": 2.048,
+      "slotDuration": 1.2,
+      "atempo": 1.7964912280701757,
+      "status": "scratch cue; not final performance"
+    },
+    {
+      "id": "files",
+      "sourceDuration": 2.133333,
+      "slotDuration": 2.066666666666667,
+      "atempo": 1.063122757475083,
+      "status": "scratch cue; not final performance"
+    },
+    {
+      "id": "research",
+      "sourceDuration": 2.602667,
+      "slotDuration": 3.033333333333333,
+      "atempo": 1,
+      "status": "scratch cue; not final performance"
+    },
+    {
+      "id": "cost",
+      "sourceDuration": 2.090667,
+      "slotDuration": 1.5,
+      "atempo": 1.4518520833333333,
+      "status": "scratch cue; not final performance"
+    },
+    {
+      "id": "accuracy",
+      "sourceDuration": 2.730667,
+      "slotDuration": 2.5,
+      "atempo": 1.1191258196721312,
+      "status": "scratch cue; not final performance"
+    },
+    {
+      "id": "guide",
+      "sourceDuration": 1.792,
+      "slotDuration": 1.0333333333333334,
+      "atempo": 1.841095890410959,
+      "status": "scratch cue; not final performance"
+    },
+    {
+      "id": "comment",
+      "sourceDuration": 1.408,
+      "slotDuration": 1.1666666666666667,
+      "atempo": 1.272289156626506,
+      "status": "scratch cue; not final performance"
+    }
+  ],
+  "approvedIntervalDecodedSamplesPreservedAtUnityBeforeAAC": true,
+  "sourceAudioUsed": false,
+  "provider": "local Kokoro af_nova",
+  "subjectiveListening": "unassessed",
+  "mixMeasurement": {
+    "integrated_lufs": -17.76,
+    "true_peak_dbtp": -1.65,
+    "lra_lu": 4.5
+  },
+  "mixSha256": "f885f562ccde93de249cdd4105969f37b80855da7e604ce79567e336d39ded21",
+  "captionTiming": "rough phrase blocks per shot, not forced word alignment"
+}

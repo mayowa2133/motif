@@ -1,0 +1,64 @@
+{
+  "pass": true,
+  "issues": [],
+  "states": [
+    {
+      "beat": "beat-01",
+      "kind": "snap-open-then-buckle-sample-answer",
+      "facts_after": [
+        "caught"
+      ]
+    },
+    {
+      "beat": "beat-02",
+      "kind": "trace-claim-connector-through-folio",
+      "facts_after": [
+        "caught",
+        "traced"
+      ]
+    },
+    {
+      "beat": "beat-03",
+      "kind": "lift-summary-window-to-compare-source",
+      "facts_after": [
+        "caught",
+        "compared",
+        "traced"
+      ]
+    },
+    {
+      "beat": "beat-04",
+      "kind": "expose-and-preserve-evidence-gap",
+      "facts_after": [
+        "caught",
+        "compared",
+        "gap-open",
+        "traced"
+      ]
+    },
+    {
+      "beat": "beat-05",
+      "kind": "place-cautious-decision-bookmark",
+      "facts_after": [
+        "caught",
+        "compared",
+        "gap-open",
+        "review-needed",
+        "traced"
+      ]
+    },
+    {
+      "beat": "beat-06",
+      "kind": "arrange-exploded-support-chain-for-understanding",
+      "facts_after": [
+        "caught",
+        "compared",
+        "explained",
+        "gap-open",
+        "review-needed",
+        "traced"
+      ]
+    }
+  ],
+  "scope": "finite capability/order/script checks; no assertion of audience engagement or factual truth"
+}

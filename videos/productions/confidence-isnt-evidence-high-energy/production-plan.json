@@ -1,0 +1,350 @@
+{
+  "schema_version": "script-1.0",
+  "script": "A confident answer can still be wrong. Before you trust a claim, follow it back to its source. Check what the original actually says, not just the summary. If the evidence is missing, leave the gap visible instead of filling it with a guess. Then make your decision. Useful AI should help you understand the answer\u2014not just make it sound convincing.",
+  "audience": "People who use AI for work, research, and everyday decisions.",
+  "style": "reference-expressive-high-energy-v1",
+  "rationale": "User rejected sparse desk diagram. Follow the authorized treatment with eleven evolving compositions, one focal meaning plus overlapping reaction, living motion, captions and physical sound.",
+  "metaphor": "A theatrically confident paper claim must survive a trip through its source and missing support; a guess cannot repair the hole.",
+  "assets": [
+    {
+      "id": "bot",
+      "description": "existing registered bot",
+      "reuse_path": "assets/characters/motif-bot/canonical/v1/motif-bot-v1.json"
+    },
+    {
+      "id": "source-chain-paper-set",
+      "description": "existing registered source-chain-paper-set",
+      "reuse_path": ""
+    },
+    {
+      "id": "missing-evidence-frame",
+      "description": "existing registered missing-evidence-frame",
+      "reuse_path": ""
+    }
+  ],
+  "beats": [
+    {
+      "id": "energy-01",
+      "narration": "A confident answer",
+      "subject": "canonical Motif Bot and illustrative paper claim/source/support",
+      "action": "Large sample claim slams onto a trembling paper plinth. Bot anticipates, recoils; tabs snap and caption pops overlap.",
+      "before_after": "Large sample claim slams onto a trembling paper plinth. Bot anticipates, recoils; tabs snap and caption pops overlap.",
+      "focal_detail": "SAMPLE IT WILL WORK",
+      "consequence": "A confident facade exists but its foundation is not stable.",
+      "headline": "",
+      "focus_target": "slam",
+      "framing": "subject",
+      "actions": [
+        {
+          "kind": "slam-confident-claim",
+          "cue": "A confident answer",
+          "requires": [],
+          "produces": [
+            "claim-up"
+          ]
+        }
+      ],
+      "needed_assets": [
+        "bot",
+        "source-chain-paper-set",
+        "missing-evidence-frame"
+      ]
+    },
+    {
+      "id": "energy-02",
+      "narration": "can still be wrong.",
+      "subject": "canonical Motif Bot and illustrative paper claim/source/support",
+      "action": "The base buckles under the claim. Bot scrambles into a caught edge while adjacent tabs keep fluttering.",
+      "before_after": "The base buckles under the claim. Bot scrambles into a caught edge while adjacent tabs keep fluttering.",
+      "focal_detail": "buckling base and caught paper edge",
+      "consequence": "Confidence does not stop the visible collapse.",
+      "headline": "",
+      "focus_target": "catch",
+      "framing": "subject",
+      "actions": [
+        {
+          "kind": "buckle-and-scramble-catch",
+          "cue": "can still be wrong.",
+          "requires": [
+            "claim-up"
+          ],
+          "produces": [
+            "caught"
+          ]
+        }
+      ],
+      "needed_assets": [
+        "bot",
+        "source-chain-paper-set",
+        "missing-evidence-frame"
+      ]
+    },
+    {
+      "id": "energy-03",
+      "narration": "Before you trust a claim,",
+      "subject": "canonical Motif Bot and illustrative paper claim/source/support",
+      "action": "Connector snaps taut from the same sample claim toward its source leaf; Bot leans against its pull.",
+      "before_after": "Connector snaps taut from the same sample claim toward its source leaf; Bot leans against its pull.",
+      "focal_detail": "claim-to-source tether",
+      "consequence": "The source relationship becomes a path that can be followed.",
+      "headline": "",
+      "focus_target": "trail",
+      "framing": "subject",
+      "actions": [
+        {
+          "kind": "snap-source-trail",
+          "cue": "Before you trust a claim,",
+          "requires": [
+            "caught"
+          ],
+          "produces": [
+            "trail"
+          ]
+        }
+      ],
+      "needed_assets": [
+        "bot",
+        "source-chain-paper-set",
+        "missing-evidence-frame"
+      ]
+    },
+    {
+      "id": "energy-04",
+      "narration": "follow it back to its source.",
+      "subject": "canonical Motif Bot and illustrative paper claim/source/support",
+      "action": "Camera/scale follows the connector into flipping paper layers. The original emerges, with Bot reacting through the travel.",
+      "before_after": "Camera/scale follows the connector into flipping paper layers. The original emerges, with Bot reacting through the travel.",
+      "focal_detail": "SAMPLE ORIGINAL emerges",
+      "consequence": "Origin is reached, not declared correct.",
+      "headline": "",
+      "focus_target": "journey",
+      "framing": "subject",
+      "actions": [
+        {
+          "kind": "thread-through-flipping-pages",
+          "cue": "follow it back to its source.",
+          "requires": [
+            "trail"
+          ],
+          "produces": [
+            "traced"
+          ]
+        }
+      ],
+      "needed_assets": [
+        "bot",
+        "source-chain-paper-set",
+        "missing-evidence-frame"
+      ]
+    },
+    {
+      "id": "energy-05",
+      "narration": "Check what the original actually says,",
+      "subject": "canonical Motif Bot and illustrative paper claim/source/support",
+      "action": "The summary peels and turns upward on a shared grip; ORIGINAL MAY and qualification emerge at large scale.",
+      "before_after": "The summary peels and turns upward on a shared grip; ORIGINAL MAY and qualification emerge at large scale.",
+      "focal_detail": "WILL peels from MAY / in some cases",
+      "consequence": "Original wording qualifies the overconfident summary.",
+      "headline": "",
+      "focus_target": "peel",
+      "framing": "detail",
+      "actions": [
+        {
+          "kind": "peel-summary-reveal-original",
+          "cue": "Check what the original actually says,",
+          "requires": [
+            "traced"
+          ],
+          "produces": [
+            "revealed"
+          ]
+        }
+      ],
+      "needed_assets": [
+        "bot",
+        "source-chain-paper-set",
+        "missing-evidence-frame"
+      ]
+    },
+    {
+      "id": "energy-06",
+      "narration": "not just the summary.",
+      "subject": "canonical Motif Bot and illustrative paper claim/source/support",
+      "action": "WILL and MAY land in succession as a large comparison, then the original underline sweeps while Bot recoils.",
+      "before_after": "WILL and MAY land in succession as a large comparison, then the original underline sweeps while Bot recoils.",
+      "focal_detail": "large WILL versus MAY",
+      "consequence": "The meaning difference is large enough to read on a phone.",
+      "headline": "",
+      "focus_target": "compare",
+      "framing": "detail",
+      "actions": [
+        {
+          "kind": "compare-large-will-may",
+          "cue": "not just the summary.",
+          "requires": [
+            "revealed"
+          ],
+          "produces": [
+            "compared"
+          ]
+        }
+      ],
+      "needed_assets": [
+        "bot",
+        "source-chain-paper-set",
+        "missing-evidence-frame"
+      ]
+    },
+    {
+      "id": "energy-07",
+      "narration": "If the evidence is missing,",
+      "subject": "canonical Motif Bot and illustrative paper claim/source/support",
+      "action": "Bot encounters a paper bridge whose support connector is missing; it stops at the obstacle and the tabs rattle.",
+      "before_after": "Bot encounters a paper bridge whose support connector is missing; it stops at the obstacle and the tabs rattle.",
+      "focal_detail": "open support gap",
+      "consequence": "Missing support is a physical obstacle, not hidden behind a label.",
+      "headline": "",
+      "focus_target": "gap",
+      "framing": "subject",
+      "actions": [
+        {
+          "kind": "encounter-missing-support",
+          "cue": "If the evidence is missing,",
+          "requires": [
+            "compared"
+          ],
+          "produces": [
+            "gap-open"
+          ]
+        }
+      ],
+      "needed_assets": [
+        "bot",
+        "source-chain-paper-set",
+        "missing-evidence-frame"
+      ]
+    },
+    {
+      "id": "energy-08",
+      "narration": "leave the gap visible instead of filling it with a guess.",
+      "subject": "canonical Motif Bot and illustrative paper claim/source/support",
+      "action": "An unattached scrap approaches the opening. Bot rejects it with a broad motion; the gap stays visibly open.",
+      "before_after": "An unattached scrap approaches the opening. Bot rejects it with a broad motion; the gap stays visibly open.",
+      "focal_detail": "scrap rejected; gap stays open",
+      "consequence": "No guessed patch closes the unsupported connection.",
+      "headline": "",
+      "focus_target": "patch",
+      "framing": "detail",
+      "actions": [
+        {
+          "kind": "reject-tempting-patch",
+          "cue": "leave the gap visible instead of filling it with a guess.",
+          "requires": [
+            "gap-open"
+          ],
+          "produces": [
+            "gap-kept"
+          ]
+        }
+      ],
+      "needed_assets": [
+        "bot",
+        "source-chain-paper-set",
+        "missing-evidence-frame"
+      ]
+    },
+    {
+      "id": "energy-09",
+      "narration": "Then make your decision.",
+      "subject": "canonical Motif Bot and illustrative paper claim/source/support",
+      "action": "NEEDS REVIEW lands alongside the source and gap, with a paper impact and Bot response; no verification mark.",
+      "before_after": "NEEDS REVIEW lands alongside the source and gap, with a paper impact and Bot response; no verification mark.",
+      "focal_detail": "NEEDS REVIEW beside hole",
+      "consequence": "The decision is cautious review, not a verified conclusion.",
+      "headline": "",
+      "focus_target": "decision",
+      "framing": "subject",
+      "actions": [
+        {
+          "kind": "route-claim-to-review",
+          "cue": "Then make your decision.",
+          "requires": [
+            "gap-kept"
+          ],
+          "produces": [
+            "review-needed"
+          ]
+        }
+      ],
+      "needed_assets": [
+        "bot",
+        "source-chain-paper-set",
+        "missing-evidence-frame"
+      ]
+    },
+    {
+      "id": "energy-10",
+      "narration": "Useful AI should help you",
+      "subject": "canonical Motif Bot and illustrative paper claim/source/support",
+      "action": "Claim, original and missing support arrive at staggered times; the connector travels while Bot presents.",
+      "before_after": "Claim, original and missing support arrive at staggered times; the connector travels while Bot presents.",
+      "focal_detail": "source and gap assemble",
+      "consequence": "Useful assistance exposes the components behind an answer.",
+      "headline": "",
+      "focus_target": "assemble",
+      "framing": "subject",
+      "actions": [
+        {
+          "kind": "assemble-visible-understanding",
+          "cue": "Useful AI should help you",
+          "requires": [
+            "review-needed"
+          ],
+          "produces": [
+            "assembled"
+          ]
+        }
+      ],
+      "needed_assets": [
+        "bot",
+        "source-chain-paper-set",
+        "missing-evidence-frame"
+      ]
+    },
+    {
+      "id": "energy-11",
+      "narration": "understand the answer\u2014not just make it sound convincing.",
+      "subject": "canonical Motif Bot and illustrative paper claim/source/support",
+      "action": "The convincing WILL surface peels away again. Large original MAY / qualification and unresolved support remain, emphasized in succession; short final settle.",
+      "before_after": "The convincing WILL surface peels away again. Large original MAY / qualification and unresolved support remain, emphasized in succession; short final settle.",
+      "focal_detail": "MAY qualification and visible gap",
+      "consequence": "The original qualification and unresolved gap survive the end; appearance alone is rejected.",
+      "headline": "",
+      "focus_target": "payoff",
+      "framing": "detail",
+      "actions": [
+        {
+          "kind": "peel-convincing-surface-for-payoff",
+          "cue": "understand the answer\u2014not just make it sound convincing.",
+          "requires": [
+            "assembled"
+          ],
+          "produces": [
+            "explained"
+          ]
+        }
+      ],
+      "needed_assets": [
+        "bot",
+        "source-chain-paper-set",
+        "missing-evidence-frame"
+      ]
+    }
+  ],
+  "ending_action": "Large original qualification and unresolved gap survive after overconfident summary peels away.",
+  "limitations": [
+    "Agent-authored directed reset; not evidence of autonomous high-energy creative planning.",
+    "Finite paper-world bindings, not arbitrary-script generation.",
+    "New voice delivery and sound design require human listening review."
+  ]
+}

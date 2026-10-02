@@ -1,0 +1,23 @@
+[
+  {
+    "version": "before",
+    "encoded_frame": 45,
+    "view_size": [
+      360,
+      640
+    ],
+    "largest_pink_bar_height_px": 37,
+    "method": "encoded MP4 pixel connected-components inside waveform region; excludes wide particles"
+  },
+  {
+    "version": "after",
+    "encoded_frame": 45,
+    "view_size": [
+      360,
+      640
+    ],
+    "largest_pink_bar_height_px": 75,
+    "method": "native encoded MP4 connected-components within waveform region; excludes wide particles",
+    "source": "renders/mobile.mp4"
+  }
+]

@@ -1,0 +1,98 @@
+[
+  {
+    "text": "Cited",
+    "start": 0.05,
+    "end": 0.45,
+    "id": "w0"
+  },
+  {
+    "text": "test",
+    "start": 0.53,
+    "end": 0.81,
+    "id": "w1"
+  },
+  {
+    "text": "claims",
+    "start": 0.93,
+    "end": 1.46,
+    "id": "w2"
+  },
+  {
+    "text": "9%",
+    "start": 1.46,
+    "end": 1.82,
+    "id": "w3"
+  },
+  {
+    "text": "lower",
+    "start": 1.84,
+    "end": 2.33,
+    "id": "w4"
+  },
+  {
+    "text": "cost",
+    "start": 2.33,
+    "end": 2.56,
+    "id": "w5"
+  },
+  {
+    "text": "and",
+    "start": 2.82,
+    "end": 2.9,
+    "id": "w6"
+  },
+  {
+    "text": "roughly",
+    "start": 2.9,
+    "end": 3.18,
+    "id": "w7"
+  },
+  {
+    "text": "two",
+    "start": 3.25,
+    "end": 3.38,
+    "id": "w8"
+  },
+  {
+    "text": "points",
+    "start": 3.38,
+    "end": 3.74,
+    "id": "w9"
+  },
+  {
+    "text": "more",
+    "start": 3.8,
+    "end": 3.96,
+    "id": "w10"
+  },
+  {
+    "text": "accuracy",
+    "start": 3.96,
+    "end": 4.4,
+    "id": "w11"
+  },
+  {
+    "text": "on",
+    "start": 4.4,
+    "end": 4.54,
+    "id": "w12"
+  },
+  {
+    "text": "the",
+    "start": 4.54,
+    "end": 4.62,
+    "id": "w13"
+  },
+  {
+    "text": "same",
+    "start": 4.73,
+    "end": 4.88,
+    "id": "w14"
+  },
+  {
+    "text": "model.",
+    "start": 4.88,
+    "end": 5.22,
+    "id": "w15"
+  }
+]

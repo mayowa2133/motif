@@ -1,0 +1,15 @@
+{
+  "slug": "confidence-isnt-evidence-high-energy",
+  "title": "Confidence Isn't Evidence \u2014 high-energy reset",
+  "script": "A confident answer can still be wrong. Before you trust a claim, follow it back to its source. Check what the original actually says, not just the summary. If the evidence is missing, leave the gap visible instead of filling it with a guess. Then make your decision. Useful AI should help you understand the answer\u2014not just make it sound convincing.",
+  "audience": "People who use AI for work, research, and everyday decisions.",
+  "style": "reference-expressive-high-energy-v1",
+  "intended_duration_seconds": 30,
+  "duration_tolerance_seconds": 5,
+  "voice": "af_nova",
+  "voice_speed": 0.85,
+  "duration_range": [
+    20,
+    25
+  ]
+}

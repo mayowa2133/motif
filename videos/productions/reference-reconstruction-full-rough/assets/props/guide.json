@@ -1,0 +1,46 @@
+{
+  "id": "reconstruction-rough-guide",
+  "name": "Guide",
+  "category": "prop",
+  "subcategory": "reference-reconstruction",
+  "concepts": [
+    "instruction-audit",
+    "reference-study"
+  ],
+  "keywords": [
+    "paper",
+    "cutout",
+    "guide"
+  ],
+  "style": "reference-expressive-v1",
+  "orientation": "front",
+  "dimensions": {
+    "width": 465,
+    "height": 538,
+    "unit": "px"
+  },
+  "artBox": {
+    "x": 0,
+    "y": 0,
+    "width": 465,
+    "height": 538
+  },
+  "anchors": {},
+  "compatibleCharacters": [
+    "motif-bot"
+  ],
+  "supportedActions": [
+    "fan"
+  ],
+  "sourceType": "vector",
+  "source": {
+    "file": "videos/productions/reference-reconstruction-full-rough/assets/props/guide.svg",
+    "generator": "videos/productions/reference-reconstruction-full-rough/build.py",
+    "reference": "Agent-authored geometry for a mapped source shot; no source prop pixels."
+  },
+  "preview": "videos/productions/reference-reconstruction-full-rough/assets/props/guide.svg",
+  "license": "project-original",
+  "status": "review",
+  "presentationStatus": "rough",
+  "version": 1
+}

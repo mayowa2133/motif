@@ -1,0 +1,14 @@
+{
+  "bounded_visual_pass": 2,
+  "preserved": [
+    "renders/rough-mobile-01.mp4",
+    "renders/preview-01.mp4",
+    "review/finish-01-compositions"
+  ],
+  "changes": [
+    "narrow final dubbing card so all three completed row checks remain visible",
+    "add Synthesize audio button compression at pointer contact"
+  ],
+  "runtime": "finite frame lookup delegates its one paused timeline to the existing event compiler; exact frame-state table retained; avoids replaying all prior SVG states on every seek",
+  "status": "REVIEW_REQUIRED"
+}

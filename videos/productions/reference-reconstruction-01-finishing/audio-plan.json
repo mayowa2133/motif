@@ -1,0 +1,75 @@
+{
+  "tracks": [
+    {
+      "src": "assets/voice/wash.wav",
+      "start": 0,
+      "duration": 1.557333,
+      "volume": 1,
+      "kind": "voice",
+      "voice": "af_nova",
+      "speed": 1.25
+    },
+    {
+      "src": "assets/voice/terminal.wav",
+      "start": 1.6666666666666667,
+      "duration": 1.130667,
+      "volume": 1,
+      "kind": "voice",
+      "voice": "af_nova",
+      "speed": 1.5
+    },
+    {
+      "src": "assets/voice/scanner.wav",
+      "start": 2.933333333333333,
+      "duration": 2.282667,
+      "volume": 1,
+      "kind": "voice",
+      "voice": "af_nova",
+      "speed": 1.15
+    },
+    {
+      "src": "assets/sfx/whoosh-short.mp3",
+      "start": 0.4,
+      "duration": 0.574688,
+      "volume": 0.12,
+      "kind": "sfx"
+    },
+    {
+      "src": "assets/sfx/pop.mp3",
+      "start": 0.63,
+      "duration": 0.72,
+      "volume": 0.16,
+      "kind": "sfx"
+    },
+    {
+      "src": "assets/sfx/click-soft.mp3",
+      "start": 2.5366666666666666,
+      "duration": 0.365688,
+      "volume": 0.28,
+      "kind": "sfx"
+    },
+    {
+      "src": "assets/sfx/pop.mp3",
+      "start": 3.8633333333333333,
+      "duration": 0.72,
+      "volume": 0.13,
+      "kind": "sfx"
+    },
+    {
+      "src": "assets/sfx/pop.mp3",
+      "start": 4.563333333333333,
+      "duration": 0.72,
+      "volume": 0.13,
+      "kind": "sfx"
+    },
+    {
+      "src": "assets/sfx/pop.mp3",
+      "start": 5.093333333333334,
+      "duration": 0.373333,
+      "volume": 0.13,
+      "kind": "sfx"
+    }
+  ],
+  "sourceAudioUsed": false,
+  "music": null
+}

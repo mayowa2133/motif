@@ -1,0 +1,50 @@
+[
+  {
+    "text": "one",
+    "start": 0.04,
+    "end": 0.18,
+    "id": "w0"
+  },
+  {
+    "text": "developer",
+    "start": 0.18,
+    "end": 0.71,
+    "id": "w1"
+  },
+  {
+    "text": "reports",
+    "start": 0.71,
+    "end": 1.08,
+    "id": "w2"
+  },
+  {
+    "text": "70",
+    "start": 1.32,
+    "end": 1.49,
+    "id": "w3"
+  },
+  {
+    "text": "improvements",
+    "start": 1.49,
+    "end": 2.18,
+    "id": "w4"
+  },
+  {
+    "text": "across",
+    "start": 2.22,
+    "end": 2.64,
+    "id": "w5"
+  },
+  {
+    "text": "three",
+    "start": 2.66,
+    "end": 3.02,
+    "id": "w6"
+  },
+  {
+    "text": "files.",
+    "start": 3.02,
+    "end": 3.6,
+    "id": "w7"
+  }
+]

@@ -1,0 +1,245 @@
+{
+  "frames": 164,
+  "fps": 30,
+  "sourceInterval": [
+    436,
+    600
+  ],
+  "unchangedSoundtrack": true,
+  "retiming": false,
+  "cuts": {
+    "49": {
+      "reference": {
+        "scene": "wash",
+        "backgroundPixel": [
+          204,
+          216,
+          217
+        ]
+      },
+      "full": {
+        "scene": "wash",
+        "backgroundPixel": [
+          116,
+          162,
+          150
+        ]
+      },
+      "mobile": {
+        "scene": "wash",
+        "backgroundPixel": [
+          116,
+          162,
+          150
+        ]
+      }
+    },
+    "50": {
+      "reference": {
+        "scene": "terminal",
+        "backgroundPixel": [
+          24,
+          30,
+          38
+        ]
+      },
+      "full": {
+        "scene": "terminal",
+        "backgroundPixel": [
+          30,
+          44,
+          52
+        ]
+      },
+      "mobile": {
+        "scene": "terminal",
+        "backgroundPixel": [
+          30,
+          44,
+          52
+        ]
+      }
+    },
+    "51": {
+      "reference": {
+        "scene": "terminal",
+        "backgroundPixel": [
+          24,
+          30,
+          38
+        ]
+      },
+      "full": {
+        "scene": "terminal",
+        "backgroundPixel": [
+          30,
+          44,
+          52
+        ]
+      },
+      "mobile": {
+        "scene": "terminal",
+        "backgroundPixel": [
+          30,
+          44,
+          52
+        ]
+      }
+    },
+    "87": {
+      "reference": {
+        "scene": "terminal",
+        "backgroundPixel": [
+          22,
+          27,
+          35
+        ]
+      },
+      "full": {
+        "scene": "terminal",
+        "backgroundPixel": [
+          30,
+          44,
+          52
+        ]
+      },
+      "mobile": {
+        "scene": "terminal",
+        "backgroundPixel": [
+          30,
+          44,
+          52
+        ]
+      }
+    },
+    "88": {
+      "reference": {
+        "scene": "scanner",
+        "backgroundPixel": [
+          145,
+          117,
+          89
+        ]
+      },
+      "full": {
+        "scene": "scanner",
+        "backgroundPixel": [
+          179,
+          154,
+          126
+        ]
+      },
+      "mobile": {
+        "scene": "scanner",
+        "backgroundPixel": [
+          179,
+          154,
+          126
+        ]
+      }
+    },
+    "89": {
+      "reference": {
+        "scene": "scanner",
+        "backgroundPixel": [
+          147,
+          119,
+          91
+        ]
+      },
+      "full": {
+        "scene": "scanner",
+        "backgroundPixel": [
+          179,
+          154,
+          126
+        ]
+      },
+      "mobile": {
+        "scene": "scanner",
+        "backgroundPixel": [
+          179,
+          154,
+          126
+        ]
+      }
+    }
+  },
+  "media": {
+    "final": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "codec_type": "video",
+          "width": 1080,
+          "height": 1920,
+          "r_frame_rate": "30/1",
+          "duration": "5.466667",
+          "nb_frames": "164"
+        },
+        {
+          "codec_type": "audio",
+          "r_frame_rate": "0/0",
+          "duration": "5.466667",
+          "nb_frames": "511"
+        }
+      ],
+      "format": {
+        "duration": "5.466667"
+      }
+    },
+    "mobile": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "codec_type": "video",
+          "width": 360,
+          "height": 640,
+          "r_frame_rate": "30/1",
+          "duration": "5.466667",
+          "nb_frames": "164"
+        },
+        {
+          "codec_type": "audio",
+          "r_frame_rate": "0/0",
+          "duration": "5.466667",
+          "nb_frames": "511"
+        }
+      ],
+      "format": {
+        "duration": "5.466667"
+      }
+    },
+    "comparison": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "codec_type": "video",
+          "width": 720,
+          "height": 680,
+          "r_frame_rate": "30/1",
+          "duration": "5.466667",
+          "nb_frames": "164"
+        },
+        {
+          "codec_type": "audio",
+          "r_frame_rate": "0/0",
+          "duration": "5.466667",
+          "nb_frames": "511"
+        }
+      ],
+      "format": {
+        "duration": "5.466667"
+      }
+    }
+  },
+  "audio": {
+    "integrated_lufs": -16.01,
+    "true_peak_dbtp": -1.65,
+    "lra_lu": 2.3
+  },
+  "subjectiveListening": "unassessed"
+}

@@ -1,0 +1,42 @@
+{
+  "sources": {
+    "v2": "/Users/mayowaadesanya/Projects/motif/videos/productions/voicestudio-text-directed-film-fidelity-v2/renders/mobile.mp4",
+    "v3": "/Users/mayowaadesanya/Projects/motif/videos/productions/voicestudio-art-performance-v3/renders/mobile.mp4"
+  },
+  "native_source_size": [
+    360,
+    640
+  ],
+  "stills": {
+    "opening": 45,
+    "basement": 316,
+    "menu": 505,
+    "ending": 983
+  },
+  "clips": [
+    {
+      "name": "recording",
+      "start_frame": 0,
+      "end_frame_exclusive": 76,
+      "fps": 30,
+      "speed": 1,
+      "audio": "muted visual comparison"
+    },
+    {
+      "name": "menu-contacts",
+      "start_frame": 455,
+      "end_frame_exclusive": 507,
+      "fps": 30,
+      "speed": 1,
+      "audio": "muted visual comparison"
+    },
+    {
+      "name": "keyboard-contacts",
+      "start_frame": 937,
+      "end_frame_exclusive": 986,
+      "fps": 30,
+      "speed": 1,
+      "audio": "muted visual comparison"
+    }
+  ]
+}

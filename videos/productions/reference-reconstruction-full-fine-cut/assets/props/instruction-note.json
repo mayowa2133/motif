@@ -1,0 +1,47 @@
+{
+  "id": "reconstruction-rough-instruction-note",
+  "name": "Instruction Note",
+  "category": "prop",
+  "subcategory": "reference-reconstruction",
+  "concepts": [
+    "instruction-audit",
+    "reference-study"
+  ],
+  "keywords": [
+    "paper",
+    "cutout",
+    "instruction-note"
+  ],
+  "style": "reference-expressive-v1",
+  "orientation": "front",
+  "dimensions": {
+    "width": 165,
+    "height": 80,
+    "unit": "px"
+  },
+  "artBox": {
+    "x": -80,
+    "y": -36,
+    "width": 165,
+    "height": 80
+  },
+  "anchors": {},
+  "compatibleCharacters": [
+    "motif-bot"
+  ],
+  "supportedActions": [
+    "attach",
+    "burden"
+  ],
+  "sourceType": "vector",
+  "source": {
+    "file": "videos/productions/reference-reconstruction-full-fine-cut/assets/props/instruction-note.svg",
+    "generator": "videos/productions/reference-reconstruction-full-fine-cut/build.py",
+    "reference": "Agent-authored geometry for a mapped source shot; no source prop pixels."
+  },
+  "preview": "videos/productions/reference-reconstruction-full-fine-cut/assets/props/instruction-note.svg",
+  "license": "project-original",
+  "status": "review",
+  "presentationStatus": "fine-cut",
+  "version": 1
+}

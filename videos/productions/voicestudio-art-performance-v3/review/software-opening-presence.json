@@ -1,0 +1,71 @@
+{
+  "video": "/Users/mayowaadesanya/Projects/motif/videos/productions/voicestudio-art-performance-v3/review/software-capture-opening.mp4",
+  "method": "FFmpeg actual encoded frames, native material crops; all frames in the stated ranges",
+  "pass": false,
+  "regions": [
+    {
+      "asset": "opening-microphone",
+      "frames_inclusive": [
+        0,
+        75
+      ],
+      "crop_native": [
+        176,
+        340,
+        40,
+        68
+      ],
+      "material": "dark",
+      "minimum_required_pixels": 300,
+      "minimum_observed": 80,
+      "failed_frames": [
+        17,
+        56
+      ],
+      "pass": false
+    },
+    {
+      "asset": "opening-monitor-rim",
+      "frames_inclusive": [
+        0,
+        75
+      ],
+      "crop_native": [
+        41,
+        205,
+        4,
+        75
+      ],
+      "material": "cream",
+      "minimum_required_pixels": 150,
+      "minimum_observed": 0,
+      "failed_frames": [
+        17,
+        56
+      ],
+      "pass": false
+    },
+    {
+      "asset": "opening-stool-seat",
+      "frames_inclusive": [
+        0,
+        75
+      ],
+      "crop_native": [
+        80,
+        459,
+        50,
+        5
+      ],
+      "material": "blue",
+      "minimum_required_pixels": 70,
+      "minimum_observed": 0,
+      "failed_frames": [
+        17,
+        56
+      ],
+      "pass": false
+    }
+  ],
+  "scope": "physical bitmap presence only"
+}

@@ -1,0 +1,1027 @@
+
+> check
+> npx --yes hyperframes@0.8.99 check --strict --json
+
+{
+  "ok": false,
+  "strict": true,
+  "lint": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 0,
+    "infoCount": 0,
+    "findings": [],
+    "filesScanned": 8
+  },
+  "runtime": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 0,
+    "infoCount": 0,
+    "findings": []
+  },
+  "layout": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 7,
+    "infoCount": 15,
+    "findings": [
+      {
+        "code": "escaped_container",
+        "severity": "warning",
+        "time": 1.352,
+        "selector": "#host-captions > div:nth-of-type(1)",
+        "message": "Positioned element renders far outside its offset parent — its coordinates were likely computed in a different frame (canvas/viewport pixels).",
+        "rect": {
+          "left": 0,
+          "top": 0,
+          "right": 1080,
+          "bottom": 1920,
+          "width": 1080,
+          "height": 1920
+        },
+        "containerSelector": "#host-captions",
+        "text": "A confident answer can still be wrong. Before you trust a claim, follow it back to its source. Check what the original actually says, not just the summary. If the evidence is missing, leave the gap visible instead of filling it with a guess. Then make your decision. Useful AI should help you understand the answer not just make it sound convincing.",
+        "fixHint": "Compute left/top in the offset parent's frame (subtract its rect), or mark intentional placement with data-layout-allow-overflow.",
+        "containerRect": {
+          "left": 0,
+          "top": 0,
+          "right": 360,
+          "bottom": 640,
+          "width": 360,
+          "height": 640
+        },
+        "dataAttributes": {
+          "data-hf-inner-root": "true",
+          "data-hf-authored-id": "captions-root",
+          "data-width": "1080",
+          "data-height": "1920"
+        },
+        "sourceFile": "compositions/captions.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 1080,
+          "height": 1920
+        },
+        "firstSeen": 1.352,
+        "lastSeen": 22.981,
+        "occurrences": 9,
+        "heldMs": 0
+      },
+      {
+        "code": "canvas_overflow",
+        "severity": "warning",
+        "time": 6.759,
+        "selector": "#beat-03-headline > g:nth-of-type(1) > text:nth-of-type(1)",
+        "message": "Text extends outside the composition canvas.",
+        "rect": {
+          "left": 314.42,
+          "top": 266,
+          "right": 765.58,
+          "bottom": 336,
+          "width": 451.16,
+          "height": 70
+        },
+        "containerSelector": "#root",
+        "text": "Read beneath it",
+        "fixHint": "Move the text inward, reduce its size, or mark intentional off-canvas animation with data-layout-allow-overflow.",
+        "containerRect": {
+          "left": 0,
+          "top": 0,
+          "right": 360,
+          "bottom": 640,
+          "width": 360,
+          "height": 640
+        },
+        "overflow": {
+          "right": 405.58
+        },
+        "dataAttributes": {},
+        "sourceFile": "compositions/beat-03.html",
+        "bbox": {
+          "x": 314.42,
+          "y": 266,
+          "width": 451.16,
+          "height": 70
+        },
+        "firstSeen": 6.759,
+        "lastSeen": 9.463,
+        "occurrences": 2,
+        "heldMs": 0
+      },
+      {
+        "code": "escaped_container",
+        "severity": "warning",
+        "time": 6.759,
+        "selector": "#host-beat-03 > div:nth-of-type(1)",
+        "message": "Positioned element renders far outside its offset parent — its coordinates were likely computed in a different frame (canvas/viewport pixels).",
+        "rect": {
+          "left": 0,
+          "top": 0,
+          "right": 1080,
+          "bottom": 1920,
+          "width": 1080,
+          "height": 1920
+        },
+        "containerSelector": "#host-beat-03",
+        "text": "SAMPLE · ORIGINAL MAY in some cases SAMPLE · SUMMARY WILL Read beneath it",
+        "fixHint": "Compute left/top in the offset parent's frame (subtract its rect), or mark intentional placement with data-layout-allow-overflow.",
+        "containerRect": {
+          "left": 0,
+          "top": 0,
+          "right": 360,
+          "bottom": 640,
+          "width": 360,
+          "height": 640
+        },
+        "dataAttributes": {
+          "data-hf-inner-root": "true",
+          "data-hf-authored-id": "beat-03-root",
+          "data-width": "1080",
+          "data-height": "1920"
+        },
+        "sourceFile": "compositions/beat-03.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 1080,
+          "height": 1920
+        },
+        "firstSeen": 6.759,
+        "lastSeen": 9.463,
+        "occurrences": 2,
+        "heldMs": 0
+      },
+      {
+        "code": "canvas_overflow",
+        "severity": "warning",
+        "time": 12.167,
+        "selector": "#beat-04-headline > g:nth-of-type(1) > text:nth-of-type(1)",
+        "message": "Text extends outside the composition canvas.",
+        "rect": {
+          "left": 270.01,
+          "top": 266,
+          "right": 809.99,
+          "bottom": 336,
+          "width": 539.98,
+          "height": 70
+        },
+        "containerSelector": "#root",
+        "text": "Keep the gap open",
+        "fixHint": "Move the text inward, reduce its size, or mark intentional off-canvas animation with data-layout-allow-overflow.",
+        "containerRect": {
+          "left": 0,
+          "top": 0,
+          "right": 360,
+          "bottom": 640,
+          "width": 360,
+          "height": 640
+        },
+        "overflow": {
+          "right": 449.99
+        },
+        "dataAttributes": {},
+        "sourceFile": "compositions/beat-04.html",
+        "bbox": {
+          "x": 270.01,
+          "y": 266,
+          "width": 539.98,
+          "height": 70
+        },
+        "firstSeen": 12.167,
+        "lastSeen": 14.87,
+        "occurrences": 2,
+        "heldMs": 0
+      },
+      {
+        "code": "escaped_container",
+        "severity": "warning",
+        "time": 12.167,
+        "selector": "#host-beat-04 > div:nth-of-type(1)",
+        "message": "Positioned element renders far outside its offset parent — its coordinates were likely computed in a different frame (canvas/viewport pixels).",
+        "rect": {
+          "left": 0,
+          "top": 0,
+          "right": 1080,
+          "bottom": 1920,
+          "width": 1080,
+          "height": 1920
+        },
+        "containerSelector": "#host-beat-04",
+        "text": "SAMPLE · ORIGINAL MAY in some cases SUPPORT ? Keep the gap open",
+        "fixHint": "Compute left/top in the offset parent's frame (subtract its rect), or mark intentional placement with data-layout-allow-overflow.",
+        "containerRect": {
+          "left": 0,
+          "top": 0,
+          "right": 360,
+          "bottom": 640,
+          "width": 360,
+          "height": 640
+        },
+        "dataAttributes": {
+          "data-hf-inner-root": "true",
+          "data-hf-authored-id": "beat-04-root",
+          "data-width": "1080",
+          "data-height": "1920"
+        },
+        "sourceFile": "compositions/beat-04.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 1080,
+          "height": 1920
+        },
+        "firstSeen": 12.167,
+        "lastSeen": 14.87,
+        "occurrences": 2,
+        "heldMs": 0
+      },
+      {
+        "code": "canvas_overflow",
+        "severity": "warning",
+        "time": 20.278,
+        "selector": "#beat-06-headline > g:nth-of-type(1) > text:nth-of-type(1)",
+        "message": "Text extends outside the composition canvas.",
+        "rect": {
+          "left": 304.6,
+          "top": 266,
+          "right": 775.4,
+          "bottom": 336,
+          "width": 470.8,
+          "height": 70
+        },
+        "containerSelector": "#root",
+        "text": "See how it holds",
+        "fixHint": "Move the text inward, reduce its size, or mark intentional off-canvas animation with data-layout-allow-overflow.",
+        "containerRect": {
+          "left": 0,
+          "top": 0,
+          "right": 360,
+          "bottom": 640,
+          "width": 360,
+          "height": 640
+        },
+        "overflow": {
+          "right": 415.4
+        },
+        "dataAttributes": {},
+        "sourceFile": "compositions/beat-06.html",
+        "bbox": {
+          "x": 304.6,
+          "y": 266,
+          "width": 470.8,
+          "height": 70
+        },
+        "firstSeen": 20.278,
+        "lastSeen": 22.981,
+        "occurrences": 2,
+        "heldMs": 0
+      },
+      {
+        "code": "escaped_container",
+        "severity": "warning",
+        "time": 20.278,
+        "selector": "#host-beat-06 > div:nth-of-type(1)",
+        "message": "Positioned element renders far outside its offset parent — its coordinates were likely computed in a different frame (canvas/viewport pixels).",
+        "rect": {
+          "left": 0,
+          "top": 0,
+          "right": 1080,
+          "bottom": 1920,
+          "width": 1080,
+          "height": 1920
+        },
+        "containerSelector": "#host-beat-06",
+        "text": "SAMPLE · ANSWER IT WILL WORK. SAMPLE · SUMMARY WILL SAMPLE · ORIGINAL MAY in some cases SUPPORT ? NEEDS REVIEW See how it holds",
+        "fixHint": "Compute left/top in the offset parent's frame (subtract its rect), or mark intentional placement with data-layout-allow-overflow.",
+        "containerRect": {
+          "left": 0,
+          "top": 0,
+          "right": 360,
+          "bottom": 640,
+          "width": 360,
+          "height": 640
+        },
+        "dataAttributes": {
+          "data-hf-inner-root": "true",
+          "data-hf-authored-id": "beat-06-root",
+          "data-width": "1080",
+          "data-height": "1920"
+        },
+        "sourceFile": "compositions/beat-06.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 1080,
+          "height": 1920
+        },
+        "firstSeen": 20.278,
+        "lastSeen": 22.981,
+        "occurrences": 2,
+        "heldMs": 0
+      },
+      {
+        "code": "canvas_overflow",
+        "severity": "info",
+        "time": 1.352,
+        "selector": "#beat-01-headline > g:nth-of-type(1) > text:nth-of-type(1)",
+        "message": "Text extends outside the composition canvas.",
+        "rect": {
+          "left": 251.66,
+          "top": 266,
+          "right": 828.34,
+          "bottom": 336,
+          "width": 576.68,
+          "height": 70
+        },
+        "containerSelector": "#root",
+        "text": "Looks can stand tall",
+        "fixHint": "Move the text inward, reduce its size, or mark intentional off-canvas animation with data-layout-allow-overflow.",
+        "containerRect": {
+          "left": 0,
+          "top": 0,
+          "right": 360,
+          "bottom": 640,
+          "width": 360,
+          "height": 640
+        },
+        "overflow": {
+          "right": 468.34
+        },
+        "dataAttributes": {},
+        "sourceFile": "compositions/beat-01.html",
+        "bbox": {
+          "x": 251.66,
+          "y": 266,
+          "width": 576.68,
+          "height": 70
+        },
+        "firstSeen": 1.352,
+        "lastSeen": 1.352,
+        "occurrences": 1,
+        "heldMs": 0
+      },
+      {
+        "code": "canvas_overflow",
+        "severity": "info",
+        "time": 1.352,
+        "selector": "#caption-0 > text:nth-of-type(1)",
+        "message": "Text extends outside the composition canvas.",
+        "rect": {
+          "left": 239.08,
+          "top": 1652,
+          "right": 840.92,
+          "bottom": 1732,
+          "width": 601.84,
+          "height": 80
+        },
+        "containerSelector": "#root",
+        "text": "A confident answer can",
+        "fixHint": "Move the text inward, reduce its size, or mark intentional off-canvas animation with data-layout-allow-overflow.",
+        "containerRect": {
+          "left": 0,
+          "top": 0,
+          "right": 360,
+          "bottom": 640,
+          "width": 360,
+          "height": 640
+        },
+        "overflow": {
+          "right": 480.92,
+          "bottom": 1092
+        },
+        "dataAttributes": {},
+        "sourceFile": "compositions/captions.html",
+        "bbox": {
+          "x": 239.08,
+          "y": 1652,
+          "width": 601.84,
+          "height": 80
+        },
+        "firstSeen": 1.352,
+        "lastSeen": 1.352,
+        "occurrences": 1,
+        "heldMs": 0
+      },
+      {
+        "code": "escaped_container",
+        "severity": "info",
+        "time": 1.352,
+        "selector": "#host-beat-01 > div:nth-of-type(1)",
+        "message": "Positioned element renders far outside its offset parent — its coordinates were likely computed in a different frame (canvas/viewport pixels).",
+        "rect": {
+          "left": 0,
+          "top": 0,
+          "right": 1080,
+          "bottom": 1920,
+          "width": 1080,
+          "height": 1920
+        },
+        "containerSelector": "#host-beat-01",
+        "text": "SAMPLE · ANSWER IT WILL WORK. Looks can stand tall",
+        "fixHint": "Compute left/top in the offset parent's frame (subtract its rect), or mark intentional placement with data-layout-allow-overflow.",
+        "containerRect": {
+          "left": 0,
+          "top": 0,
+          "right": 360,
+          "bottom": 640,
+          "width": 360,
+          "height": 640
+        },
+        "dataAttributes": {
+          "data-hf-inner-root": "true",
+          "data-hf-authored-id": "beat-01-root",
+          "data-width": "1080",
+          "data-height": "1920"
+        },
+        "sourceFile": "compositions/beat-01.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 1080,
+          "height": 1920
+        },
+        "firstSeen": 1.352,
+        "lastSeen": 1.352,
+        "occurrences": 1,
+        "heldMs": 0
+      },
+      {
+        "code": "canvas_overflow",
+        "severity": "info",
+        "time": 4.056,
+        "selector": "#beat-02-headline > g:nth-of-type(1) > text:nth-of-type(1)",
+        "message": "Text extends outside the composition canvas.",
+        "rect": {
+          "left": 320.3,
+          "top": 266,
+          "right": 759.7,
+          "bottom": 336,
+          "width": 439.4,
+          "height": 70
+        },
+        "containerSelector": "#root",
+        "text": "Trace the route",
+        "fixHint": "Move the text inward, reduce its size, or mark intentional off-canvas animation with data-layout-allow-overflow.",
+        "containerRect": {
+          "left": 0,
+          "top": 0,
+          "right": 360,
+          "bottom": 640,
+          "width": 360,
+          "height": 640
+        },
+        "overflow": {
+          "right": 399.7
+        },
+        "dataAttributes": {},
+        "sourceFile": "compositions/beat-02.html",
+        "bbox": {
+          "x": 320.3,
+          "y": 266,
+          "width": 439.4,
+          "height": 70
+        },
+        "firstSeen": 4.056,
+        "lastSeen": 4.056,
+        "occurrences": 1,
+        "heldMs": 0
+      },
+      {
+        "code": "canvas_overflow",
+        "severity": "info",
+        "time": 4.056,
+        "selector": "#caption-3 > text:nth-of-type(1)",
+        "message": "Text extends outside the composition canvas.",
+        "rect": {
+          "left": 279.66,
+          "top": 1652,
+          "right": 800.34,
+          "bottom": 1732,
+          "width": 520.68,
+          "height": 80
+        },
+        "containerSelector": "#root",
+        "text": "claim, follow it back",
+        "fixHint": "Move the text inward, reduce its size, or mark intentional off-canvas animation with data-layout-allow-overflow.",
+        "containerRect": {
+          "left": 0,
+          "top": 0,
+          "right": 360,
+          "bottom": 640,
+          "width": 360,
+          "height": 640
+        },
+        "overflow": {
+          "right": 440.34,
+          "bottom": 1092
+        },
+        "dataAttributes": {},
+        "sourceFile": "compositions/captions.html",
+        "bbox": {
+          "x": 279.66,
+          "y": 1652,
+          "width": 520.68,
+          "height": 80
+        },
+        "firstSeen": 4.056,
+        "lastSeen": 4.056,
+        "occurrences": 1,
+        "heldMs": 0
+      },
+      {
+        "code": "escaped_container",
+        "severity": "info",
+        "time": 4.056,
+        "selector": "#host-beat-02 > div:nth-of-type(1)",
+        "message": "Positioned element renders far outside its offset parent — its coordinates were likely computed in a different frame (canvas/viewport pixels).",
+        "rect": {
+          "left": 0,
+          "top": 0,
+          "right": 1080,
+          "bottom": 1920,
+          "width": 1080,
+          "height": 1920
+        },
+        "containerSelector": "#host-beat-02",
+        "text": "SAMPLE · ANSWER IT WILL WORK. SAMPLE · ORIGINAL MAY in some cases Trace the route",
+        "fixHint": "Compute left/top in the offset parent's frame (subtract its rect), or mark intentional placement with data-layout-allow-overflow.",
+        "containerRect": {
+          "left": 0,
+          "top": 0,
+          "right": 360,
+          "bottom": 640,
+          "width": 360,
+          "height": 640
+        },
+        "dataAttributes": {
+          "data-hf-inner-root": "true",
+          "data-hf-authored-id": "beat-02-root",
+          "data-width": "1080",
+          "data-height": "1920"
+        },
+        "sourceFile": "compositions/beat-02.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 1080,
+          "height": 1920
+        },
+        "firstSeen": 4.056,
+        "lastSeen": 4.056,
+        "occurrences": 1,
+        "heldMs": 0
+      },
+      {
+        "code": "canvas_overflow",
+        "severity": "info",
+        "time": 6.759,
+        "selector": "#caption-5 > text:nth-of-type(1)",
+        "message": "Text extends outside the composition canvas.",
+        "rect": {
+          "left": 226.96,
+          "top": 1652,
+          "right": 853.04,
+          "bottom": 1732,
+          "width": 626.08,
+          "height": 80
+        },
+        "containerSelector": "#root",
+        "text": "Check what the original",
+        "fixHint": "Move the text inward, reduce its size, or mark intentional off-canvas animation with data-layout-allow-overflow.",
+        "containerRect": {
+          "left": 0,
+          "top": 0,
+          "right": 360,
+          "bottom": 640,
+          "width": 360,
+          "height": 640
+        },
+        "overflow": {
+          "right": 493.04,
+          "bottom": 1092
+        },
+        "dataAttributes": {},
+        "sourceFile": "compositions/captions.html",
+        "bbox": {
+          "x": 226.96,
+          "y": 1652,
+          "width": 626.08,
+          "height": 80
+        },
+        "firstSeen": 6.759,
+        "lastSeen": 6.759,
+        "occurrences": 1,
+        "heldMs": 0
+      },
+      {
+        "code": "canvas_overflow",
+        "severity": "info",
+        "time": 9.463,
+        "selector": "#caption-6 > text:nth-of-type(1)",
+        "message": "Text extends outside the composition canvas.",
+        "rect": {
+          "left": 267.1,
+          "top": 1652,
+          "right": 812.9,
+          "bottom": 1732,
+          "width": 545.8,
+          "height": 80
+        },
+        "containerSelector": "#root",
+        "text": "actually says, not just",
+        "fixHint": "Move the text inward, reduce its size, or mark intentional off-canvas animation with data-layout-allow-overflow.",
+        "containerRect": {
+          "left": 0,
+          "top": 0,
+          "right": 360,
+          "bottom": 640,
+          "width": 360,
+          "height": 640
+        },
+        "overflow": {
+          "right": 452.9,
+          "bottom": 1092
+        },
+        "dataAttributes": {},
+        "sourceFile": "compositions/captions.html",
+        "bbox": {
+          "x": 267.1,
+          "y": 1652,
+          "width": 545.8,
+          "height": 80
+        },
+        "firstSeen": 9.463,
+        "lastSeen": 9.463,
+        "occurrences": 1,
+        "heldMs": 0
+      },
+      {
+        "code": "canvas_overflow",
+        "severity": "info",
+        "time": 12.167,
+        "selector": "#caption-9 > text:nth-of-type(1)",
+        "message": "Text extends outside the composition canvas.",
+        "rect": {
+          "left": 262.11,
+          "top": 1652,
+          "right": 817.89,
+          "bottom": 1732,
+          "width": 555.78,
+          "height": 80
+        },
+        "containerSelector": "#root",
+        "text": "missing, leave the gap",
+        "fixHint": "Move the text inward, reduce its size, or mark intentional off-canvas animation with data-layout-allow-overflow.",
+        "containerRect": {
+          "left": 0,
+          "top": 0,
+          "right": 360,
+          "bottom": 640,
+          "width": 360,
+          "height": 640
+        },
+        "overflow": {
+          "right": 457.89,
+          "bottom": 1092
+        },
+        "dataAttributes": {},
+        "sourceFile": "compositions/captions.html",
+        "bbox": {
+          "x": 262.11,
+          "y": 1652,
+          "width": 555.78,
+          "height": 80
+        },
+        "firstSeen": 12.167,
+        "lastSeen": 12.167,
+        "occurrences": 1,
+        "heldMs": 0
+      },
+      {
+        "code": "canvas_overflow",
+        "severity": "info",
+        "time": 14.87,
+        "selector": "#caption-11 > text:nth-of-type(1)",
+        "message": "Text extends outside the composition canvas.",
+        "rect": {
+          "left": 346.71,
+          "top": 1652,
+          "right": 733.29,
+          "bottom": 1732,
+          "width": 386.58,
+          "height": 80
+        },
+        "containerSelector": "#root",
+        "text": "it with a guess.",
+        "fixHint": "Move the text inward, reduce its size, or mark intentional off-canvas animation with data-layout-allow-overflow.",
+        "containerRect": {
+          "left": 0,
+          "top": 0,
+          "right": 360,
+          "bottom": 640,
+          "width": 360,
+          "height": 640
+        },
+        "overflow": {
+          "right": 373.29,
+          "bottom": 1092
+        },
+        "dataAttributes": {},
+        "sourceFile": "compositions/captions.html",
+        "bbox": {
+          "x": 346.71,
+          "y": 1652,
+          "width": 386.58,
+          "height": 80
+        },
+        "firstSeen": 14.87,
+        "lastSeen": 14.87,
+        "occurrences": 1,
+        "heldMs": 0
+      },
+      {
+        "code": "canvas_overflow",
+        "severity": "info",
+        "time": 17.574,
+        "selector": "#beat-05-headline > g:nth-of-type(1) > text:nth-of-type(1)",
+        "message": "Text extends outside the composition canvas.",
+        "rect": {
+          "left": 281.38,
+          "top": 266,
+          "right": 798.63,
+          "bottom": 336,
+          "width": 517.25,
+          "height": 70
+        },
+        "containerSelector": "#root",
+        "text": "Decide with limits",
+        "fixHint": "Move the text inward, reduce its size, or mark intentional off-canvas animation with data-layout-allow-overflow.",
+        "containerRect": {
+          "left": 0,
+          "top": 0,
+          "right": 360,
+          "bottom": 640,
+          "width": 360,
+          "height": 640
+        },
+        "overflow": {
+          "right": 438.63
+        },
+        "dataAttributes": {},
+        "sourceFile": "compositions/beat-05.html",
+        "bbox": {
+          "x": 281.38,
+          "y": 266,
+          "width": 517.25,
+          "height": 70
+        },
+        "firstSeen": 17.574,
+        "lastSeen": 17.574,
+        "occurrences": 1,
+        "heldMs": 0
+      },
+      {
+        "code": "canvas_overflow",
+        "severity": "info",
+        "time": 17.574,
+        "selector": "#caption-12 > text:nth-of-type(1)",
+        "message": "Text extends outside the composition canvas.",
+        "rect": {
+          "left": 208.42,
+          "top": 1652,
+          "right": 871.58,
+          "bottom": 1732,
+          "width": 663.16,
+          "height": 80
+        },
+        "containerSelector": "#root",
+        "text": "Then make your decision.",
+        "fixHint": "Move the text inward, reduce its size, or mark intentional off-canvas animation with data-layout-allow-overflow.",
+        "containerRect": {
+          "left": 0,
+          "top": 0,
+          "right": 360,
+          "bottom": 640,
+          "width": 360,
+          "height": 640
+        },
+        "overflow": {
+          "right": 511.58,
+          "bottom": 1092
+        },
+        "dataAttributes": {},
+        "sourceFile": "compositions/captions.html",
+        "bbox": {
+          "x": 208.42,
+          "y": 1652,
+          "width": 663.16,
+          "height": 80
+        },
+        "firstSeen": 17.574,
+        "lastSeen": 17.574,
+        "occurrences": 1,
+        "heldMs": 0
+      },
+      {
+        "code": "escaped_container",
+        "severity": "info",
+        "time": 17.574,
+        "selector": "#host-beat-05 > div:nth-of-type(1)",
+        "message": "Positioned element renders far outside its offset parent — its coordinates were likely computed in a different frame (canvas/viewport pixels).",
+        "rect": {
+          "left": 0,
+          "top": 0,
+          "right": 1080,
+          "bottom": 1920,
+          "width": 1080,
+          "height": 1920
+        },
+        "containerSelector": "#host-beat-05",
+        "text": "SAMPLE · ORIGINAL MAY in some cases SUPPORT ? NEEDS REVIEW Decide with limits",
+        "fixHint": "Compute left/top in the offset parent's frame (subtract its rect), or mark intentional placement with data-layout-allow-overflow.",
+        "containerRect": {
+          "left": 0,
+          "top": 0,
+          "right": 360,
+          "bottom": 640,
+          "width": 360,
+          "height": 640
+        },
+        "dataAttributes": {
+          "data-hf-inner-root": "true",
+          "data-hf-authored-id": "beat-05-root",
+          "data-width": "1080",
+          "data-height": "1920"
+        },
+        "sourceFile": "compositions/beat-05.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 1080,
+          "height": 1920
+        },
+        "firstSeen": 17.574,
+        "lastSeen": 17.574,
+        "occurrences": 1,
+        "heldMs": 0
+      },
+      {
+        "code": "canvas_overflow",
+        "severity": "info",
+        "time": 20.278,
+        "selector": "#caption-14 > text:nth-of-type(1)",
+        "message": "Text extends outside the composition canvas.",
+        "rect": {
+          "left": 190.1,
+          "top": 1652,
+          "right": 889.9,
+          "bottom": 1732,
+          "width": 699.8,
+          "height": 80
+        },
+        "containerSelector": "#root",
+        "text": "you understand the answer",
+        "fixHint": "Move the text inward, reduce its size, or mark intentional off-canvas animation with data-layout-allow-overflow.",
+        "containerRect": {
+          "left": 0,
+          "top": 0,
+          "right": 360,
+          "bottom": 640,
+          "width": 360,
+          "height": 640
+        },
+        "overflow": {
+          "right": 529.9,
+          "bottom": 1092
+        },
+        "dataAttributes": {},
+        "sourceFile": "compositions/captions.html",
+        "bbox": {
+          "x": 190.1,
+          "y": 1652,
+          "width": 699.8,
+          "height": 80
+        },
+        "firstSeen": 20.278,
+        "lastSeen": 20.278,
+        "occurrences": 1,
+        "heldMs": 0
+      },
+      {
+        "code": "canvas_overflow",
+        "severity": "info",
+        "time": 22.981,
+        "selector": "#caption-16 > text:nth-of-type(1)",
+        "message": "Text extends outside the composition canvas.",
+        "rect": {
+          "left": 304.89,
+          "top": 1652,
+          "right": 775.11,
+          "bottom": 1732,
+          "width": 470.22,
+          "height": 80
+        },
+        "containerSelector": "#root",
+        "text": "sound convincing.",
+        "fixHint": "Move the text inward, reduce its size, or mark intentional off-canvas animation with data-layout-allow-overflow.",
+        "containerRect": {
+          "left": 0,
+          "top": 0,
+          "right": 360,
+          "bottom": 640,
+          "width": 360,
+          "height": 640
+        },
+        "overflow": {
+          "right": 415.11,
+          "bottom": 1092
+        },
+        "dataAttributes": {},
+        "sourceFile": "compositions/captions.html",
+        "bbox": {
+          "x": 304.89,
+          "y": 1652,
+          "width": 470.22,
+          "height": 80
+        },
+        "firstSeen": 22.981,
+        "lastSeen": 22.981,
+        "occurrences": 1,
+        "heldMs": 0
+      }
+    ],
+    "duration": 24.333333333333332,
+    "samples": [
+      1.352,
+      4.056,
+      6.759,
+      9.463,
+      12.167,
+      14.87,
+      17.574,
+      20.278,
+      22.981
+    ],
+    "transitionSamples": [],
+    "transitionSamplesDropped": 0,
+    "tolerance": 2,
+    "totalIssueCount": 22,
+    "truncated": false
+  },
+  "motion": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 0,
+    "infoCount": 0,
+    "findings": [],
+    "enabled": false,
+    "samples": 0
+  },
+  "contrast": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 0,
+    "infoCount": 0,
+    "findings": [],
+    "enabled": true,
+    "samples": [
+      1.352,
+      6.759,
+      12.167,
+      17.574,
+      22.981
+    ],
+    "checked": 5,
+    "passed": 5
+  },
+  "hdr": {
+    "autoPromotion": null,
+    "inspection": "available"
+  },
+  "snapshots": {
+    "enabled": false,
+    "files": [],
+    "times": [],
+    "findingFiles": []
+  },
+  "_meta": {
+    "version": "0.8.99",
+    "latestVersion": "0.8.99",
+    "updateAvailable": false
+  }
+}
+[HyperFrames] Not inlining "assets/materials/wall.png" (3.3 MB exceeds the 2 MB inline limit). The bundle may not be self-contained.
+[HyperFrames] Not inlining "assets/materials/wall.png" (3.3 MB exceeds the 2 MB inline limit). The bundle may not be self-contained.
+[HyperFrames] Not inlining "assets/materials/wall.png" (3.3 MB exceeds the 2 MB inline limit). The bundle may not be self-contained.
+[HyperFrames] Not inlining "assets/materials/wall.png" (3.3 MB exceeds the 2 MB inline limit). The bundle may not be self-contained.
+[HyperFrames] Not inlining "assets/materials/wall.png" (3.3 MB exceeds the 2 MB inline limit). The bundle may not be self-contained.
+[HyperFrames] Not inlining "assets/materials/wall.png" (3.3 MB exceeds the 2 MB inline limit). The bundle may not be self-contained.
+[HyperFrames] Not inlining "assets/materials/wall.png" (3.3 MB exceeds the 2 MB inline limit). The bundle may not be self-contained.
+[HyperFrames] Not inlining "assets/materials/wall.png" (3.3 MB exceeds the 2 MB inline limit). The bundle may not be self-contained.
+[HyperFrames] Not inlining "assets/materials/wall.png" (3.3 MB exceeds the 2 MB inline limit). The bundle may not be self-contained.
+[HyperFrames] Not inlining "assets/materials/wall.png" (3.3 MB exceeds the 2 MB inline limit). The bundle may not be self-contained.
+[HyperFrames] Not inlining "assets/materials/wall.png" (3.3 MB exceeds the 2 MB inline limit). The bundle may not be self-contained.
+[HyperFrames] Not inlining "assets/materials/wall.png" (3.3 MB exceeds the 2 MB inline limit). The bundle may not be self-contained.
+[hyperframes] browserGpuMode probe → hardware (WebGL renderer vendor="Google Inc. (Apple)" renderer="ANGLE (Apple, ANGLE Metal Renderer: Apple M2 Pro, Unspecified Version)")

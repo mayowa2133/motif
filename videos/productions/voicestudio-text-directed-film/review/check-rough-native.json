@@ -1,0 +1,322 @@
+
+> check
+> npx --yes hyperframes@0.8.99 check --strict --json
+
+[HyperFrames] Not inlining "assets/materials/wall.png" (3.3 MB exceeds the 2 MB inline limit). The bundle may not be self-contained.
+[HyperFrames] Not inlining "assets/materials/wall.png" (3.3 MB exceeds the 2 MB inline limit). The bundle may not be self-contained.
+[HyperFrames] Not inlining "assets/materials/wall.png" (3.3 MB exceeds the 2 MB inline limit). The bundle may not be self-contained.
+[HyperFrames] Not inlining "assets/materials/wall.png" (3.3 MB exceeds the 2 MB inline limit). The bundle may not be self-contained.
+[HyperFrames] Not inlining "assets/materials/wall.png" (3.3 MB exceeds the 2 MB inline limit). The bundle may not be self-contained.
+[HyperFrames] Not inlining "assets/materials/wall.png" (3.3 MB exceeds the 2 MB inline limit). The bundle may not be self-contained.
+[HyperFrames] Not inlining "assets/materials/wall.png" (3.3 MB exceeds the 2 MB inline limit). The bundle may not be self-contained.
+[HyperFrames] Not inlining "assets/materials/wall.png" (3.3 MB exceeds the 2 MB inline limit). The bundle may not be self-contained.
+[HyperFrames] Not inlining "assets/materials/wall.png" (3.3 MB exceeds the 2 MB inline limit). The bundle may not be self-contained.
+[HyperFrames] Not inlining "assets/materials/wall.png" (3.3 MB exceeds the 2 MB inline limit). The bundle may not be self-contained.
+[HyperFrames] Not inlining "assets/materials/wall.png" (3.3 MB exceeds the 2 MB inline limit). The bundle may not be self-contained.
+[HyperFrames] Not inlining "assets/materials/wall.png" (3.3 MB exceeds the 2 MB inline limit). The bundle may not be self-contained.
+[HyperFrames] Not inlining "assets/materials/wall.png" (3.3 MB exceeds the 2 MB inline limit). The bundle may not be self-contained.
+[HyperFrames] Not inlining "assets/materials/wall.png" (3.3 MB exceeds the 2 MB inline limit). The bundle may not be self-contained.
+[HyperFrames] Not inlining "assets/materials/wall.png" (3.3 MB exceeds the 2 MB inline limit). The bundle may not be self-contained.
+[HyperFrames] Not inlining "assets/materials/wall.png" (3.3 MB exceeds the 2 MB inline limit). The bundle may not be self-contained.
+[HyperFrames] Not inlining "assets/materials/wall.png" (3.3 MB exceeds the 2 MB inline limit). The bundle may not be self-contained.
+[HyperFrames] Not inlining "assets/materials/wall.png" (3.3 MB exceeds the 2 MB inline limit). The bundle may not be self-contained.
+[HyperFrames] Not inlining "assets/materials/wall.png" (3.3 MB exceeds the 2 MB inline limit). The bundle may not be self-contained.
+[HyperFrames] Not inlining "assets/materials/wall.png" (3.3 MB exceeds the 2 MB inline limit). The bundle may not be self-contained.
+[HyperFrames] Not inlining "assets/materials/wall.png" (3.3 MB exceeds the 2 MB inline limit). The bundle may not be self-contained.
+[HyperFrames] Not inlining "assets/materials/wall.png" (3.3 MB exceeds the 2 MB inline limit). The bundle may not be self-contained.
+[HyperFrames] Not inlining "assets/materials/wall.png" (3.3 MB exceeds the 2 MB inline limit). The bundle may not be self-contained.
+[HyperFrames] Not inlining "assets/materials/wall.png" (3.3 MB exceeds the 2 MB inline limit). The bundle may not be self-contained.
+[HyperFrames] Not inlining "assets/materials/wall.png" (3.3 MB exceeds the 2 MB inline limit). The bundle may not be self-contained.
+[HyperFrames] Not inlining "assets/materials/wall.png" (3.3 MB exceeds the 2 MB inline limit). The bundle may not be self-contained.
+[HyperFrames] Not inlining "assets/materials/wall.png" (3.3 MB exceeds the 2 MB inline limit). The bundle may not be self-contained.
+[HyperFrames] Not inlining "assets/materials/wall.png" (3.3 MB exceeds the 2 MB inline limit). The bundle may not be self-contained.
+[HyperFrames] Not inlining "assets/materials/wall.png" (3.3 MB exceeds the 2 MB inline limit). The bundle may not be self-contained.
+[HyperFrames] Not inlining "assets/materials/wall.png" (3.3 MB exceeds the 2 MB inline limit). The bundle may not be self-contained.
+[HyperFrames] Not inlining "assets/materials/wall.png" (3.3 MB exceeds the 2 MB inline limit). The bundle may not be self-contained.
+[HyperFrames] Not inlining "assets/materials/wall.png" (3.3 MB exceeds the 2 MB inline limit). The bundle may not be self-contained.
+[HyperFrames] Not inlining "assets/materials/wall.png" (3.3 MB exceeds the 2 MB inline limit). The bundle may not be self-contained.
+[HyperFrames] Not inlining "assets/materials/wall.png" (3.3 MB exceeds the 2 MB inline limit). The bundle may not be self-contained.
+[HyperFrames] Not inlining "assets/materials/wall.png" (3.3 MB exceeds the 2 MB inline limit). The bundle may not be self-contained.
+[HyperFrames] Not inlining "assets/materials/wall.png" (3.3 MB exceeds the 2 MB inline limit). The bundle may not be self-contained.
+[HyperFrames] Not inlining "assets/materials/wall.png" (3.3 MB exceeds the 2 MB inline limit). The bundle may not be self-contained.
+[HyperFrames] Not inlining "assets/materials/wall.png" (3.3 MB exceeds the 2 MB inline limit). The bundle may not be self-contained.
+[HyperFrames] Not inlining "assets/materials/wall.png" (3.3 MB exceeds the 2 MB inline limit). The bundle may not be self-contained.
+[HyperFrames] Not inlining "assets/materials/wall.png" (3.3 MB exceeds the 2 MB inline limit). The bundle may not be self-contained.
+[hyperframes] browserGpuMode probe → hardware (WebGL renderer vendor="Google Inc. (Apple)" renderer="ANGLE (Apple, ANGLE Metal Renderer: Apple M2 Pro, Unspecified Version)")
+{
+  "ok": false,
+  "strict": true,
+  "lint": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 0,
+    "infoCount": 0,
+    "findings": [],
+    "filesScanned": 21
+  },
+  "runtime": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 0,
+    "infoCount": 0,
+    "findings": []
+  },
+  "layout": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 0,
+    "infoCount": 0,
+    "findings": [],
+    "duration": 32.86666666666667,
+    "samples": [
+      1.826,
+      5.478,
+      9.13,
+      12.781,
+      16.433,
+      20.085,
+      23.737,
+      27.389,
+      31.041
+    ],
+    "transitionSamples": [],
+    "transitionSamplesDropped": 0,
+    "tolerance": 2,
+    "totalIssueCount": 0,
+    "truncated": false
+  },
+  "motion": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 0,
+    "infoCount": 0,
+    "findings": [],
+    "enabled": false,
+    "samples": 0
+  },
+  "contrast": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 8,
+    "infoCount": 0,
+    "findings": [
+      {
+        "code": "contrast_aa_failure",
+        "severity": "warning",
+        "message": "Contrast is 2.63:1; WCAG AA requires 3:1.",
+        "text": "a",
+        "fg": "rgb(255,244,221)",
+        "bg": "rgb(220,129,89)",
+        "ratio": 2.63,
+        "requiredRatio": 3,
+        "suggestedColor": "rgb(78,75,68)",
+        "large": true,
+        "selector": "div > div:nth-of-type(20) > div > svg > g > g:nth-of-type(1) > g > text",
+        "dataAttributes": {
+          "data-layout-allow-overlap": ""
+        },
+        "sourceFile": "compositions/captions.html",
+        "bbox": {
+          "x": 107.28709411621094,
+          "y": 504.4214172363281,
+          "width": 10.635963439941406,
+          "height": 30.155975341796875
+        },
+        "time": 1.826
+      },
+      {
+        "code": "contrast_aa_failure",
+        "severity": "warning",
+        "message": "Contrast is 2.63:1; WCAG AA requires 3:1.",
+        "text": "free",
+        "fg": "rgb(255,244,221)",
+        "bg": "rgb(220,129,89)",
+        "ratio": 2.63,
+        "requiredRatio": 3,
+        "suggestedColor": "rgb(78,75,68)",
+        "large": true,
+        "selector": "div > div:nth-of-type(20) > div > svg > g > g:nth-of-type(2) > g > text",
+        "dataAttributes": {
+          "data-layout-allow-overlap": ""
+        },
+        "sourceFile": "compositions/captions.html",
+        "bbox": {
+          "x": 131.61514282226562,
+          "y": 504.3088684082031,
+          "width": 36.9761962890625,
+          "height": 30.382293701171875
+        },
+        "time": 1.826
+      },
+      {
+        "code": "contrast_aa_failure",
+        "severity": "warning",
+        "message": "Contrast is 2.63:1; WCAG AA requires 3:1.",
+        "text": "version",
+        "fg": "rgb(255,244,221)",
+        "bg": "rgb(220,129,89)",
+        "ratio": 2.63,
+        "requiredRatio": 3,
+        "suggestedColor": "rgb(78,75,68)",
+        "large": true,
+        "selector": "div > div:nth-of-type(20) > div > svg > g > g:nth-of-type(3) > g > text",
+        "dataAttributes": {
+          "data-layout-allow-overlap": ""
+        },
+        "sourceFile": "compositions/captions.html",
+        "bbox": {
+          "x": 182.8339385986328,
+          "y": 504.3285217285156,
+          "width": 69.37921142578125,
+          "height": 30.347503662109375
+        },
+        "time": 1.826
+      },
+      {
+        "code": "contrast_aa_failure",
+        "severity": "warning",
+        "message": "Contrast is 2.63:1; WCAG AA requires 3:1.",
+        "text": "even",
+        "fg": "rgb(255,244,221)",
+        "bg": "rgb(220,129,89)",
+        "ratio": 2.63,
+        "requiredRatio": 3,
+        "suggestedColor": "rgb(78,75,68)",
+        "large": true,
+        "selector": "div > div:nth-of-type(20) > div > svg > g > g > g > text",
+        "dataAttributes": {
+          "data-layout-allow-overlap": ""
+        },
+        "sourceFile": "compositions/captions.html",
+        "bbox": {
+          "x": 158.4565887451172,
+          "y": 504.1824645996094,
+          "width": 43.0721435546875,
+          "height": 30.636138916015625
+        },
+        "time": 9.13
+      },
+      {
+        "code": "contrast_aa_failure",
+        "severity": "warning",
+        "message": "Contrast is 2.63:1; WCAG AA requires 3:1.",
+        "text": "And",
+        "fg": "rgb(255,244,221)",
+        "bg": "rgb(220,129,89)",
+        "ratio": 2.63,
+        "requiredRatio": 3,
+        "suggestedColor": "rgb(78,75,68)",
+        "large": true,
+        "selector": "div > div:nth-of-type(20) > div > svg > g > g:nth-of-type(1) > g > text",
+        "dataAttributes": {
+          "data-layout-allow-overlap": ""
+        },
+        "sourceFile": "compositions/captions.html",
+        "bbox": {
+          "x": 115.56730651855469,
+          "y": 504.1696472167969,
+          "width": 42.8626708984375,
+          "height": 30.662261962890625
+        },
+        "time": 16.433
+      },
+      {
+        "code": "contrast_aa_failure",
+        "severity": "warning",
+        "message": "Contrast is 2.63:1; WCAG AA requires 3:1.",
+        "text": "cloning",
+        "fg": "rgb(255,244,221)",
+        "bg": "rgb(220,129,89)",
+        "ratio": 2.63,
+        "requiredRatio": 3,
+        "suggestedColor": "rgb(78,75,68)",
+        "large": true,
+        "selector": "div > div:nth-of-type(20) > div > svg > g > g:nth-of-type(2) > g > text",
+        "dataAttributes": {
+          "data-layout-allow-overlap": ""
+        },
+        "sourceFile": "compositions/captions.html",
+        "bbox": {
+          "x": 172.32383728027344,
+          "y": 504.12725830078125,
+          "width": 71.79421997070312,
+          "height": 30.7469482421875
+        },
+        "time": 16.433
+      },
+      {
+        "code": "contrast_aa_failure",
+        "severity": "warning",
+        "message": "Contrast is 2.63:1; WCAG AA requires 3:1.",
+        "text": "crazier",
+        "fg": "rgb(255,244,221)",
+        "bg": "rgb(220,129,89)",
+        "ratio": 2.63,
+        "requiredRatio": 3,
+        "suggestedColor": "rgb(78,75,68)",
+        "large": true,
+        "selector": "div > div:nth-of-type(20) > div > svg > g > g > g > text",
+        "dataAttributes": {
+          "data-layout-allow-overlap": ""
+        },
+        "sourceFile": "compositions/captions.html",
+        "bbox": {
+          "x": 147.5232391357422,
+          "y": 503.9955139160156,
+          "width": 64.9398193359375,
+          "height": 31.009063720703125
+        },
+        "time": 23.737
+      },
+      {
+        "code": "contrast_aa_failure",
+        "severity": "warning",
+        "message": "Contrast is 2.63:1; WCAG AA requires 3:1.",
+        "text": "For",
+        "fg": "rgb(255,244,221)",
+        "bg": "rgb(220,129,89)",
+        "ratio": 2.63,
+        "requiredRatio": 3,
+        "suggestedColor": "rgb(78,75,68)",
+        "large": true,
+        "selector": "div > div:nth-of-type(20) > div > svg > g > g > g > text",
+        "dataAttributes": {
+          "data-layout-allow-overlap": ""
+        },
+        "sourceFile": "compositions/captions.html",
+        "bbox": {
+          "x": 163.29498291015625,
+          "y": 504.25848388671875,
+          "width": 33.39533996582031,
+          "height": 30.484130859375
+        },
+        "time": 31.041
+      }
+    ],
+    "enabled": true,
+    "samples": [
+      1.826,
+      9.13,
+      16.433,
+      23.737,
+      31.041
+    ],
+    "checked": 49,
+    "passed": 41
+  },
+  "hdr": {
+    "autoPromotion": null,
+    "inspection": "available"
+  },
+  "snapshots": {
+    "enabled": false,
+    "files": [],
+    "times": [],
+    "findingFiles": []
+  },
+  "_meta": {
+    "version": "0.8.99",
+    "latestVersion": "0.8.106",
+    "updateAvailable": true
+  }
+}

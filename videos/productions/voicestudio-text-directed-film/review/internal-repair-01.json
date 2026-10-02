@@ -1,0 +1,13 @@
+{
+  "preserved": "renders/rough-mobile-01.mp4 and review/rough-01-compositions",
+  "bounded_visual_pass": 1,
+  "changes": [
+    "move Wi-Fi app title below desktop menu bar",
+    "dark cancellation lettering and faster actor release",
+    "emit final app tiles above comment field",
+    "counter follows prescribed33933/36082/36204/36287/36311 checkpoints"
+  ],
+  "render_profile_change": "same pinned0.8.99, supported4-worker screenshot capture",
+  "no_story_or_script_rewrite": true,
+  "approval": "REVIEW_REQUIRED"
+}

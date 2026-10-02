@@ -1,0 +1,1795 @@
+[
+  {
+    "text": "A solo dev",
+    "sourceRhythmFrames": [
+      0,
+      19
+    ],
+    "start": 0.0,
+    "words": [
+      {
+        "text": "A",
+        "start": 0.0,
+        "end": 0.18,
+        "script_indices": [
+          0
+        ]
+      },
+      {
+        "text": "solo",
+        "start": 0.16666666666666666,
+        "end": 0.4,
+        "script_indices": [
+          1
+        ]
+      },
+      {
+        "text": "dev",
+        "start": 0.4,
+        "end": 0.5900000000000001,
+        "script_indices": [
+          2
+        ]
+      }
+    ],
+    "end": 0.6
+  },
+  {
+    "text": "just open sourced",
+    "sourceRhythmFrames": [
+      19,
+      38
+    ],
+    "start": 0.6,
+    "words": [
+      {
+        "text": "just",
+        "start": 0.6,
+        "end": 0.8600000000000001,
+        "script_indices": [
+          3
+        ]
+      },
+      {
+        "text": "open",
+        "start": 0.8666666666666667,
+        "end": 1.13,
+        "script_indices": [
+          4
+        ]
+      },
+      {
+        "text": "sourced",
+        "start": 1.1333333333333333,
+        "end": 1.31,
+        "script_indices": [
+          5
+        ]
+      }
+    ],
+    "end": 1.3
+  },
+  {
+    "text": "a free version",
+    "sourceRhythmFrames": [
+      39,
+      58
+    ],
+    "start": 1.3,
+    "words": [
+      {
+        "text": "a",
+        "start": 1.3,
+        "end": 1.48,
+        "script_indices": [
+          6
+        ]
+      },
+      {
+        "text": "free",
+        "start": 1.4666666666666666,
+        "end": 1.69,
+        "script_indices": [
+          7
+        ]
+      },
+      {
+        "text": "version",
+        "start": 1.7,
+        "end": 1.9,
+        "script_indices": [
+          8
+        ]
+      }
+    ],
+    "end": 1.9
+  },
+  {
+    "text": "of ElevenLabs",
+    "sourceRhythmFrames": [
+      59,
+      74
+    ],
+    "start": 1.9,
+    "words": [
+      {
+        "text": "of",
+        "start": 1.9,
+        "end": 2.1100000000000003,
+        "script_indices": [
+          9
+        ]
+      },
+      {
+        "text": "ElevenLabs",
+        "start": 2.1,
+        "end": 2.59,
+        "script_indices": [
+          10
+        ]
+      }
+    ],
+    "end": 2.6
+  },
+  {
+    "text": "and it's already",
+    "sourceRhythmFrames": [
+      74,
+      96
+    ],
+    "start": 2.6,
+    "words": [
+      {
+        "text": "and",
+        "start": 2.6,
+        "end": 2.77,
+        "script_indices": [
+          11
+        ]
+      },
+      {
+        "text": "it's",
+        "start": 2.7666666666666666,
+        "end": 2.9299999999999997,
+        "script_indices": [
+          12
+        ]
+      },
+      {
+        "text": "already",
+        "start": 2.933333333333333,
+        "end": 3.15,
+        "script_indices": [
+          13
+        ]
+      }
+    ],
+    "end": 3.1333333333333333
+  },
+  {
+    "text": "past 36,000",
+    "sourceRhythmFrames": [
+      96,
+      123
+    ],
+    "start": 3.1333333333333333,
+    "words": [
+      {
+        "text": "past",
+        "start": 3.1333333333333333,
+        "end": 3.48,
+        "script_indices": [
+          14
+        ]
+      },
+      {
+        "text": "36,000",
+        "start": 3.466666666666667,
+        "end": 4.4,
+        "script_indices": [
+          15,
+          16
+        ]
+      }
+    ],
+    "end": 4.4
+  },
+  {
+    "text": "stars",
+    "sourceRhythmFrames": [
+      123,
+      141
+    ],
+    "start": 4.4,
+    "words": [
+      {
+        "text": "stars",
+        "start": 4.4,
+        "end": 4.9,
+        "script_indices": [
+          17
+        ]
+      }
+    ],
+    "end": 4.9
+  },
+  {
+    "text": "So instead of",
+    "sourceRhythmFrames": [
+      141,
+      154
+    ],
+    "start": 4.9,
+    "words": [
+      {
+        "text": "So",
+        "start": 4.9,
+        "end": 5.359999999999999,
+        "script_indices": [
+          18
+        ]
+      },
+      {
+        "text": "instead",
+        "start": 5.366666666666666,
+        "end": 5.54,
+        "script_indices": [
+          19
+        ]
+      },
+      {
+        "text": "of",
+        "start": 5.533333333333333,
+        "end": 5.71,
+        "script_indices": [
+          20
+        ]
+      }
+    ],
+    "end": 5.7
+  },
+  {
+    "text": "paying ElevenLabs",
+    "sourceRhythmFrames": [
+      154,
+      174
+    ],
+    "start": 5.7,
+    "words": [
+      {
+        "text": "paying",
+        "start": 5.7,
+        "end": 5.93,
+        "script_indices": [
+          21
+        ]
+      },
+      {
+        "text": "ElevenLabs",
+        "start": 5.933333333333334,
+        "end": 6.45,
+        "script_indices": [
+          22
+        ]
+      }
+    ],
+    "end": 6.466666666666667
+  },
+  {
+    "text": "every month to",
+    "sourceRhythmFrames": [
+      174,
+      191
+    ],
+    "start": 6.466666666666667,
+    "words": [
+      {
+        "text": "every",
+        "start": 6.466666666666667,
+        "end": 6.66,
+        "script_indices": [
+          23
+        ]
+      },
+      {
+        "text": "month",
+        "start": 6.666666666666667,
+        "end": 6.82,
+        "script_indices": [
+          24
+        ]
+      },
+      {
+        "text": "to",
+        "start": 6.833333333333333,
+        "end": 6.98,
+        "script_indices": [
+          25
+        ]
+      }
+    ],
+    "end": 6.966666666666667
+  },
+  {
+    "text": "clone your voice",
+    "sourceRhythmFrames": [
+      192,
+      208
+    ],
+    "start": 6.966666666666667,
+    "words": [
+      {
+        "text": "clone",
+        "start": 6.966666666666667,
+        "end": 7.119999999999999,
+        "script_indices": [
+          26
+        ]
+      },
+      {
+        "text": "your",
+        "start": 7.133333333333334,
+        "end": 7.29,
+        "script_indices": [
+          27
+        ]
+      },
+      {
+        "text": "voice",
+        "start": 7.3,
+        "end": 7.49,
+        "script_indices": [
+          28
+        ]
+      }
+    ],
+    "end": 7.5
+  },
+  {
+    "text": "you can now",
+    "sourceRhythmFrames": [
+      209,
+      220
+    ],
+    "start": 7.5,
+    "words": [
+      {
+        "text": "you",
+        "start": 7.5,
+        "end": 7.640000000000001,
+        "script_indices": [
+          29
+        ]
+      },
+      {
+        "text": "can",
+        "start": 7.633333333333334,
+        "end": 7.78,
+        "script_indices": [
+          30
+        ]
+      },
+      {
+        "text": "now",
+        "start": 7.766666666666667,
+        "end": 7.9399999999999995,
+        "script_indices": [
+          31
+        ]
+      }
+    ],
+    "end": 7.933333333333334
+  },
+  {
+    "text": "do it on",
+    "sourceRhythmFrames": [
+      220,
+      230
+    ],
+    "start": 7.933333333333334,
+    "words": [
+      {
+        "text": "do",
+        "start": 7.933333333333334,
+        "end": 8.07,
+        "script_indices": [
+          32
+        ]
+      },
+      {
+        "text": "it",
+        "start": 8.066666666666666,
+        "end": 8.16,
+        "script_indices": [
+          33
+        ]
+      },
+      {
+        "text": "on",
+        "start": 8.166666666666666,
+        "end": 8.25,
+        "script_indices": [
+          34
+        ]
+      }
+    ],
+    "end": 8.266666666666667
+  },
+  {
+    "text": "your own computer",
+    "sourceRhythmFrames": [
+      230,
+      248
+    ],
+    "start": 8.266666666666667,
+    "words": [
+      {
+        "text": "your",
+        "start": 8.266666666666667,
+        "end": 8.370000000000001,
+        "script_indices": [
+          35
+        ]
+      },
+      {
+        "text": "own",
+        "start": 8.366666666666667,
+        "end": 8.61,
+        "script_indices": [
+          36
+        ]
+      },
+      {
+        "text": "computer",
+        "start": 8.6,
+        "end": 8.96,
+        "script_indices": [
+          37
+        ]
+      }
+    ],
+    "end": 8.966666666666667
+  },
+  {
+    "text": "even on the",
+    "sourceRhythmFrames": [
+      249,
+      266
+    ],
+    "start": 8.966666666666667,
+    "words": [
+      {
+        "text": "even",
+        "start": 8.966666666666667,
+        "end": 9.190000000000001,
+        "script_indices": [
+          38
+        ]
+      },
+      {
+        "text": "on",
+        "start": 9.2,
+        "end": 9.3,
+        "script_indices": [
+          39
+        ]
+      },
+      {
+        "text": "the",
+        "start": 9.3,
+        "end": 9.44,
+        "script_indices": [
+          40
+        ]
+      }
+    ],
+    "end": 9.433333333333334
+  },
+  {
+    "text": "10 year old",
+    "sourceRhythmFrames": [
+      266,
+      279
+    ],
+    "start": 9.433333333333334,
+    "words": [
+      {
+        "text": "10",
+        "start": 9.433333333333334,
+        "end": 9.57,
+        "script_indices": [
+          41
+        ]
+      },
+      {
+        "text": "year",
+        "start": 9.566666666666666,
+        "end": 9.7,
+        "script_indices": [
+          42
+        ]
+      },
+      {
+        "text": "old",
+        "start": 9.7,
+        "end": 9.91,
+        "script_indices": [
+          43
+        ]
+      }
+    ],
+    "end": 9.9
+  },
+  {
+    "text": "laptop you have",
+    "sourceRhythmFrames": [
+      279,
+      293
+    ],
+    "start": 9.9,
+    "words": [
+      {
+        "text": "laptop",
+        "start": 9.9,
+        "end": 10.16,
+        "script_indices": [
+          44
+        ]
+      },
+      {
+        "text": "you",
+        "start": 10.166666666666666,
+        "end": 10.34,
+        "script_indices": [
+          45
+        ]
+      },
+      {
+        "text": "have",
+        "start": 10.333333333333334,
+        "end": 10.48,
+        "script_indices": [
+          46
+        ]
+      }
+    ],
+    "end": 10.466666666666667
+  },
+  {
+    "text": "sitting around in",
+    "sourceRhythmFrames": [
+      293,
+      312
+    ],
+    "start": 10.466666666666667,
+    "words": [
+      {
+        "text": "sitting",
+        "start": 10.466666666666667,
+        "end": 10.690000000000001,
+        "script_indices": [
+          47
+        ]
+      },
+      {
+        "text": "around",
+        "start": 10.7,
+        "end": 10.89,
+        "script_indices": [
+          48
+        ]
+      },
+      {
+        "text": "in",
+        "start": 10.9,
+        "end": 11.0,
+        "script_indices": [
+          49
+        ]
+      }
+    ],
+    "end": 11.0
+  },
+  {
+    "text": "the basement",
+    "sourceRhythmFrames": [
+      312,
+      329
+    ],
+    "start": 11.0,
+    "words": [
+      {
+        "text": "the",
+        "start": 11.0,
+        "end": 11.17,
+        "script_indices": [
+          50
+        ]
+      },
+      {
+        "text": "basement",
+        "start": 11.166666666666666,
+        "end": 11.57,
+        "script_indices": [
+          51
+        ]
+      }
+    ],
+    "end": 11.566666666666666
+  },
+  {
+    "text": "It's called VoiceStudio",
+    "sourceRhythmFrames": [
+      329,
+      350
+    ],
+    "start": 11.566666666666666,
+    "words": [
+      {
+        "text": "It's",
+        "start": 11.566666666666666,
+        "end": 12.0,
+        "script_indices": [
+          52
+        ]
+      },
+      {
+        "text": "called",
+        "start": 12.0,
+        "end": 12.190000000000001,
+        "script_indices": [
+          53
+        ]
+      },
+      {
+        "text": "VoiceStudio",
+        "start": 12.2,
+        "end": 12.71,
+        "script_indices": [
+          54
+        ]
+      }
+    ],
+    "end": 12.7
+  },
+  {
+    "text": "and you",
+    "sourceRhythmFrames": [
+      350,
+      358
+    ],
+    "start": 12.7,
+    "words": [
+      {
+        "text": "and",
+        "start": 12.7,
+        "end": 12.92,
+        "script_indices": [
+          55
+        ]
+      },
+      {
+        "text": "you",
+        "start": 12.933333333333334,
+        "end": 13.04,
+        "script_indices": [
+          56
+        ]
+      }
+    ],
+    "end": 13.033333333333333
+  },
+  {
+    "text": "give it a",
+    "sourceRhythmFrames": [
+      358,
+      369
+    ],
+    "start": 13.033333333333333,
+    "words": [
+      {
+        "text": "give",
+        "start": 13.033333333333333,
+        "end": 13.14,
+        "script_indices": [
+          57
+        ]
+      },
+      {
+        "text": "it",
+        "start": 13.133333333333333,
+        "end": 13.24,
+        "script_indices": [
+          58
+        ]
+      },
+      {
+        "text": "a",
+        "start": 13.233333333333333,
+        "end": 13.38,
+        "script_indices": [
+          59
+        ]
+      }
+    ],
+    "end": 13.366666666666667
+  },
+  {
+    "text": "short clip of",
+    "sourceRhythmFrames": [
+      369,
+      384
+    ],
+    "start": 13.366666666666667,
+    "words": [
+      {
+        "text": "short",
+        "start": 13.366666666666667,
+        "end": 13.55,
+        "script_indices": [
+          60
+        ]
+      },
+      {
+        "text": "clip",
+        "start": 13.533333333333333,
+        "end": 13.72,
+        "script_indices": [
+          61
+        ]
+      },
+      {
+        "text": "of",
+        "start": 13.733333333333333,
+        "end": 13.850000000000001,
+        "script_indices": [
+          62
+        ]
+      }
+    ],
+    "end": 13.866666666666667
+  },
+  {
+    "text": "you talking and",
+    "sourceRhythmFrames": [
+      384,
+      401
+    ],
+    "start": 13.866666666666667,
+    "words": [
+      {
+        "text": "you",
+        "start": 13.866666666666667,
+        "end": 14.030000000000001,
+        "script_indices": [
+          63
+        ]
+      },
+      {
+        "text": "talking",
+        "start": 14.033333333333333,
+        "end": 14.29,
+        "script_indices": [
+          64
+        ]
+      },
+      {
+        "text": "and",
+        "start": 14.3,
+        "end": 14.46,
+        "script_indices": [
+          65
+        ]
+      }
+    ],
+    "end": 14.466666666666667
+  },
+  {
+    "text": "it can read",
+    "sourceRhythmFrames": [
+      402,
+      412
+    ],
+    "start": 14.466666666666667,
+    "words": [
+      {
+        "text": "it",
+        "start": 14.466666666666667,
+        "end": 14.57,
+        "script_indices": [
+          66
+        ]
+      },
+      {
+        "text": "can",
+        "start": 14.566666666666666,
+        "end": 14.7,
+        "script_indices": [
+          67
+        ]
+      },
+      {
+        "text": "read",
+        "start": 14.7,
+        "end": 14.89,
+        "script_indices": [
+          68
+        ]
+      }
+    ],
+    "end": 14.9
+  },
+  {
+    "text": "anything back in",
+    "sourceRhythmFrames": [
+      412,
+      438
+    ],
+    "start": 14.9,
+    "words": [
+      {
+        "text": "anything",
+        "start": 14.9,
+        "end": 15.14,
+        "script_indices": [
+          69
+        ]
+      },
+      {
+        "text": "back",
+        "start": 15.133333333333333,
+        "end": 15.32,
+        "script_indices": [
+          70
+        ]
+      },
+      {
+        "text": "in",
+        "start": 15.333333333333334,
+        "end": 15.420000000000002,
+        "script_indices": [
+          71
+        ]
+      }
+    ],
+    "end": 15.433333333333334
+  },
+  {
+    "text": "your voice",
+    "sourceRhythmFrames": [
+      438,
+      457
+    ],
+    "start": 15.433333333333334,
+    "words": [
+      {
+        "text": "your",
+        "start": 15.433333333333334,
+        "end": 15.600000000000001,
+        "script_indices": [
+          72
+        ]
+      },
+      {
+        "text": "voice",
+        "start": 15.6,
+        "end": 16.04,
+        "script_indices": [
+          73
+        ]
+      }
+    ],
+    "end": 15.966666666666667
+  },
+  {
+    "text": "And cloning your",
+    "sourceRhythmFrames": [
+      457,
+      473
+    ],
+    "start": 15.966666666666667,
+    "words": [
+      {
+        "text": "And",
+        "start": 15.966666666666667,
+        "end": 16.04,
+        "script_indices": [
+          74
+        ]
+      },
+      {
+        "text": "cloning",
+        "start": 16.033333333333335,
+        "end": 16.520000000000003,
+        "script_indices": [
+          75
+        ]
+      },
+      {
+        "text": "your",
+        "start": 16.533333333333335,
+        "end": 16.700000000000003,
+        "script_indices": [
+          76
+        ]
+      }
+    ],
+    "end": 16.7
+  },
+  {
+    "text": "voice is just",
+    "sourceRhythmFrames": [
+      473,
+      489
+    ],
+    "start": 16.7,
+    "words": [
+      {
+        "text": "voice",
+        "start": 16.7,
+        "end": 16.880000000000003,
+        "script_indices": [
+          77
+        ]
+      },
+      {
+        "text": "is",
+        "start": 16.866666666666667,
+        "end": 17.03,
+        "script_indices": [
+          78
+        ]
+      },
+      {
+        "text": "just",
+        "start": 17.033333333333335,
+        "end": 17.18,
+        "script_indices": [
+          79
+        ]
+      }
+    ],
+    "end": 17.166666666666668
+  },
+  {
+    "text": "the start because",
+    "sourceRhythmFrames": [
+      489,
+      508
+    ],
+    "start": 17.166666666666668,
+    "words": [
+      {
+        "text": "the",
+        "start": 17.166666666666668,
+        "end": 17.36,
+        "script_indices": [
+          80
+        ]
+      },
+      {
+        "text": "start",
+        "start": 17.366666666666667,
+        "end": 17.58,
+        "script_indices": [
+          81
+        ]
+      },
+      {
+        "text": "because",
+        "start": 17.566666666666666,
+        "end": 17.759999999999998,
+        "script_indices": [
+          82
+        ]
+      }
+    ],
+    "end": 17.766666666666666
+  },
+  {
+    "text": "it turns any",
+    "sourceRhythmFrames": [
+      508,
+      528
+    ],
+    "start": 17.766666666666666,
+    "words": [
+      {
+        "text": "it",
+        "start": 17.766666666666666,
+        "end": 17.93,
+        "script_indices": [
+          83
+        ]
+      },
+      {
+        "text": "turns",
+        "start": 17.933333333333334,
+        "end": 18.14,
+        "script_indices": [
+          84
+        ]
+      },
+      {
+        "text": "any",
+        "start": 18.133333333333333,
+        "end": 18.33,
+        "script_indices": [
+          85
+        ]
+      }
+    ],
+    "end": 18.333333333333332
+  },
+  {
+    "text": "book into an",
+    "sourceRhythmFrames": [
+      528,
+      547
+    ],
+    "start": 18.333333333333332,
+    "words": [
+      {
+        "text": "book",
+        "start": 18.333333333333332,
+        "end": 18.51,
+        "script_indices": [
+          86
+        ]
+      },
+      {
+        "text": "into",
+        "start": 18.5,
+        "end": 18.69,
+        "script_indices": [
+          87
+        ]
+      },
+      {
+        "text": "an",
+        "start": 18.7,
+        "end": 18.86,
+        "script_indices": [
+          88
+        ]
+      }
+    ],
+    "end": 18.866666666666667
+  },
+  {
+    "text": "audiobook",
+    "sourceRhythmFrames": [
+      547,
+      560
+    ],
+    "start": 18.866666666666667,
+    "words": [
+      {
+        "text": "audiobook",
+        "start": 18.866666666666667,
+        "end": 19.38,
+        "script_indices": [
+          89
+        ]
+      }
+    ],
+    "end": 19.366666666666667
+  },
+  {
+    "text": "types out whatever",
+    "sourceRhythmFrames": [
+      561,
+      580
+    ],
+    "start": 19.366666666666667,
+    "words": [
+      {
+        "text": "types",
+        "start": 19.366666666666667,
+        "end": 19.659999999999997,
+        "script_indices": [
+          90
+        ]
+      },
+      {
+        "text": "out",
+        "start": 19.666666666666668,
+        "end": 19.83,
+        "script_indices": [
+          91
+        ]
+      },
+      {
+        "text": "whatever",
+        "start": 19.833333333333332,
+        "end": 20.0,
+        "script_indices": [
+          92
+        ]
+      }
+    ],
+    "end": 20.0
+  },
+  {
+    "text": "you want to",
+    "sourceRhythmFrames": [
+      580,
+      593
+    ],
+    "start": 20.0,
+    "words": [
+      {
+        "text": "you",
+        "start": 20.0,
+        "end": 20.14,
+        "script_indices": [
+          93
+        ]
+      },
+      {
+        "text": "want",
+        "start": 20.133333333333333,
+        "end": 20.25,
+        "script_indices": [
+          94
+        ]
+      },
+      {
+        "text": "to",
+        "start": 20.266666666666666,
+        "end": 20.4,
+        "script_indices": [
+          95
+        ]
+      }
+    ],
+    "end": 20.4
+  },
+  {
+    "text": "say",
+    "sourceRhythmFrames": [
+      593,
+      603
+    ],
+    "start": 20.4,
+    "words": [
+      {
+        "text": "say",
+        "start": 20.4,
+        "end": 20.59,
+        "script_indices": [
+          96
+        ]
+      }
+    ],
+    "end": 20.6
+  },
+  {
+    "text": "and writes a",
+    "sourceRhythmFrames": [
+      604,
+      615
+    ],
+    "start": 20.6,
+    "words": [
+      {
+        "text": "and",
+        "start": 20.6,
+        "end": 20.75,
+        "script_indices": [
+          97
+        ]
+      },
+      {
+        "text": "writes",
+        "start": 20.733333333333334,
+        "end": 20.880000000000003,
+        "script_indices": [
+          98
+        ]
+      },
+      {
+        "text": "a",
+        "start": 20.866666666666667,
+        "end": 21.09,
+        "script_indices": [
+          99
+        ]
+      }
+    ],
+    "end": 21.1
+  },
+  {
+    "text": "transcript of any",
+    "sourceRhythmFrames": [
+      615,
+      640
+    ],
+    "start": 21.1,
+    "words": [
+      {
+        "text": "transcript",
+        "start": 21.1,
+        "end": 21.35,
+        "script_indices": [
+          100
+        ]
+      },
+      {
+        "text": "of",
+        "start": 21.333333333333332,
+        "end": 21.53,
+        "script_indices": [
+          101
+        ]
+      },
+      {
+        "text": "any",
+        "start": 21.533333333333335,
+        "end": 21.78,
+        "script_indices": [
+          102
+        ]
+      }
+    ],
+    "end": 21.766666666666666
+  },
+  {
+    "text": "recording",
+    "sourceRhythmFrames": [
+      640,
+      653
+    ],
+    "start": 21.766666666666666,
+    "words": [
+      {
+        "text": "recording",
+        "start": 21.766666666666666,
+        "end": 22.18,
+        "script_indices": [
+          103
+        ]
+      }
+    ],
+    "end": 22.166666666666668
+  },
+  {
+    "text": "But here's the",
+    "sourceRhythmFrames": [
+      653,
+      668
+    ],
+    "start": 22.166666666666668,
+    "words": [
+      {
+        "text": "But",
+        "start": 22.166666666666668,
+        "end": 22.46,
+        "script_indices": [
+          104
+        ]
+      },
+      {
+        "text": "here's",
+        "start": 22.466666666666665,
+        "end": 22.66,
+        "script_indices": [
+          105
+        ]
+      },
+      {
+        "text": "the",
+        "start": 22.666666666666668,
+        "end": 22.799999999999997,
+        "script_indices": [
+          106
+        ]
+      }
+    ],
+    "end": 22.8
+  },
+  {
+    "text": "part that's even",
+    "sourceRhythmFrames": [
+      668,
+      684
+    ],
+    "start": 22.8,
+    "words": [
+      {
+        "text": "part",
+        "start": 22.8,
+        "end": 22.95,
+        "script_indices": [
+          107
+        ]
+      },
+      {
+        "text": "that's",
+        "start": 22.933333333333334,
+        "end": 23.18,
+        "script_indices": [
+          108
+        ]
+      },
+      {
+        "text": "even",
+        "start": 23.166666666666668,
+        "end": 23.36,
+        "script_indices": [
+          109
+        ]
+      }
+    ],
+    "end": 23.366666666666667
+  },
+  {
+    "text": "crazier",
+    "sourceRhythmFrames": [
+      684,
+      704
+    ],
+    "start": 23.366666666666667,
+    "words": [
+      {
+        "text": "crazier",
+        "start": 23.366666666666667,
+        "end": 23.85,
+        "script_indices": [
+          110
+        ]
+      }
+    ],
+    "end": 23.866666666666667
+  },
+  {
+    "text": "It can dub",
+    "sourceRhythmFrames": [
+      705,
+      716
+    ],
+    "start": 23.866666666666667,
+    "words": [
+      {
+        "text": "It",
+        "start": 23.866666666666667,
+        "end": 24.08,
+        "script_indices": [
+          111
+        ]
+      },
+      {
+        "text": "can",
+        "start": 24.066666666666666,
+        "end": 24.200000000000003,
+        "script_indices": [
+          112
+        ]
+      },
+      {
+        "text": "dub",
+        "start": 24.2,
+        "end": 24.33,
+        "script_indices": [
+          113
+        ]
+      }
+    ],
+    "end": 24.333333333333332
+  },
+  {
+    "text": "your videos into",
+    "sourceRhythmFrames": [
+      716,
+      738
+    ],
+    "start": 24.333333333333332,
+    "words": [
+      {
+        "text": "your",
+        "start": 24.333333333333332,
+        "end": 24.52,
+        "script_indices": [
+          114
+        ]
+      },
+      {
+        "text": "videos",
+        "start": 24.533333333333335,
+        "end": 24.78,
+        "script_indices": [
+          115
+        ]
+      },
+      {
+        "text": "into",
+        "start": 24.766666666666666,
+        "end": 25.03,
+        "script_indices": [
+          116
+        ]
+      }
+    ],
+    "end": 25.033333333333335
+  },
+  {
+    "text": "646 languages",
+    "sourceRhythmFrames": [
+      740,
+      792
+    ],
+    "start": 25.033333333333335,
+    "words": [
+      {
+        "text": "646",
+        "start": 25.033333333333335,
+        "end": 25.869999999999997,
+        "script_indices": [
+          117
+        ]
+      },
+      {
+        "text": "languages",
+        "start": 25.866666666666667,
+        "end": 26.229999999999997,
+        "script_indices": [
+          118
+        ]
+      }
+    ],
+    "end": 26.233333333333334
+  },
+  {
+    "text": "which means",
+    "sourceRhythmFrames": [
+      793,
+      807
+    ],
+    "start": 26.233333333333334,
+    "words": [
+      {
+        "text": "which",
+        "start": 26.233333333333334,
+        "end": 26.47,
+        "script_indices": [
+          119
+        ]
+      },
+      {
+        "text": "means",
+        "start": 26.466666666666665,
+        "end": 26.68,
+        "script_indices": [
+          120
+        ]
+      }
+    ],
+    "end": 26.666666666666668
+  },
+  {
+    "text": "stop paying any",
+    "sourceRhythmFrames": [
+      807,
+      827
+    ],
+    "start": 26.666666666666668,
+    "words": [
+      {
+        "text": "stop",
+        "start": 26.666666666666668,
+        "end": 26.939999999999998,
+        "script_indices": [
+          121
+        ]
+      },
+      {
+        "text": "paying",
+        "start": 26.933333333333334,
+        "end": 27.17,
+        "script_indices": [
+          122
+        ]
+      },
+      {
+        "text": "any",
+        "start": 27.166666666666668,
+        "end": 27.35,
+        "script_indices": [
+          123
+        ]
+      }
+    ],
+    "end": 27.333333333333332
+  },
+  {
+    "text": "more bills since",
+    "sourceRhythmFrames": [
+      827,
+      848
+    ],
+    "start": 27.333333333333332,
+    "words": [
+      {
+        "text": "more",
+        "start": 27.333333333333332,
+        "end": 27.55,
+        "script_indices": [
+          124
+        ]
+      },
+      {
+        "text": "bills",
+        "start": 27.533333333333335,
+        "end": 27.759999999999998,
+        "script_indices": [
+          125
+        ]
+      },
+      {
+        "text": "since",
+        "start": 27.766666666666666,
+        "end": 27.92,
+        "script_indices": [
+          126
+        ]
+      }
+    ],
+    "end": 27.933333333333334
+  },
+  {
+    "text": "it runs on",
+    "sourceRhythmFrames": [
+      848,
+      862
+    ],
+    "start": 27.933333333333334,
+    "words": [
+      {
+        "text": "it",
+        "start": 27.933333333333334,
+        "end": 28.07,
+        "script_indices": [
+          127
+        ]
+      },
+      {
+        "text": "runs",
+        "start": 28.066666666666666,
+        "end": 28.240000000000002,
+        "script_indices": [
+          128
+        ]
+      },
+      {
+        "text": "on",
+        "start": 28.233333333333334,
+        "end": 28.380000000000003,
+        "script_indices": [
+          129
+        ]
+      }
+    ],
+    "end": 28.366666666666667
+  },
+  {
+    "text": "your computer and",
+    "sourceRhythmFrames": [
+      862,
+      881
+    ],
+    "start": 28.366666666666667,
+    "words": [
+      {
+        "text": "your",
+        "start": 28.366666666666667,
+        "end": 28.6,
+        "script_indices": [
+          130
+        ]
+      },
+      {
+        "text": "computer",
+        "start": 28.6,
+        "end": 28.86,
+        "script_indices": [
+          131
+        ]
+      },
+      {
+        "text": "and",
+        "start": 28.866666666666667,
+        "end": 29.02,
+        "script_indices": [
+          132
+        ]
+      }
+    ],
+    "end": 29.033333333333335
+  },
+  {
+    "text": "your voice never",
+    "sourceRhythmFrames": [
+      881,
+      898
+    ],
+    "start": 29.033333333333335,
+    "words": [
+      {
+        "text": "your",
+        "start": 29.033333333333335,
+        "end": 29.189999999999998,
+        "script_indices": [
+          133
+        ]
+      },
+      {
+        "text": "voice",
+        "start": 29.2,
+        "end": 29.42,
+        "script_indices": [
+          134
+        ]
+      },
+      {
+        "text": "never",
+        "start": 29.433333333333334,
+        "end": 29.64,
+        "script_indices": [
+          135
+        ]
+      }
+    ],
+    "end": 29.633333333333333
+  },
+  {
+    "text": "has to get",
+    "sourceRhythmFrames": [
+      898,
+      912
+    ],
+    "start": 29.633333333333333,
+    "words": [
+      {
+        "text": "has",
+        "start": 29.633333333333333,
+        "end": 29.82,
+        "script_indices": [
+          136
+        ]
+      },
+      {
+        "text": "to",
+        "start": 29.833333333333332,
+        "end": 29.95,
+        "script_indices": [
+          137
+        ]
+      },
+      {
+        "text": "get",
+        "start": 29.933333333333334,
+        "end": 30.15,
+        "script_indices": [
+          138
+        ]
+      }
+    ],
+    "end": 30.133333333333333
+  },
+  {
+    "text": "uploaded anywhere",
+    "sourceRhythmFrames": [
+      912,
+      940
+    ],
+    "start": 30.133333333333333,
+    "words": [
+      {
+        "text": "uploaded",
+        "start": 30.133333333333333,
+        "end": 30.5,
+        "script_indices": [
+          139
+        ]
+      },
+      {
+        "text": "anywhere",
+        "start": 30.5,
+        "end": 30.91,
+        "script_indices": [
+          140
+        ]
+      }
+    ],
+    "end": 30.9
+  },
+  {
+    "text": "For the link",
+    "sourceRhythmFrames": [
+      940,
+      949
+    ],
+    "start": 30.9,
+    "words": [
+      {
+        "text": "For",
+        "start": 30.9,
+        "end": 31.19,
+        "script_indices": [
+          141
+        ]
+      },
+      {
+        "text": "the",
+        "start": 31.2,
+        "end": 31.33,
+        "script_indices": [
+          142
+        ]
+      },
+      {
+        "text": "link",
+        "start": 31.333333333333332,
+        "end": 31.49,
+        "script_indices": [
+          143
+        ]
+      }
+    ],
+    "end": 31.5
+  },
+  {
+    "text": "and setup",
+    "sourceRhythmFrames": [
+      950,
+      969
+    ],
+    "start": 31.5,
+    "words": [
+      {
+        "text": "and",
+        "start": 31.5,
+        "end": 31.67,
+        "script_indices": [
+          144
+        ]
+      },
+      {
+        "text": "setup",
+        "start": 31.666666666666668,
+        "end": 32.07,
+        "script_indices": [
+          145
+        ]
+      }
+    ],
+    "end": 32.06666666666667
+  },
+  {
+    "text": "comment Voice",
+    "sourceRhythmFrames": [
+      969,
+      986
+    ],
+    "start": 32.06666666666667,
+    "words": [
+      {
+        "text": "comment",
+        "start": 32.06666666666667,
+        "end": 32.32,
+        "script_indices": [
+          146
+        ]
+      },
+      {
+        "text": "Voice",
+        "start": 32.333333333333336,
+        "end": 32.54,
+        "script_indices": [
+          147
+        ]
+      }
+    ],
+    "end": 32.86666666666667
+  }
+]

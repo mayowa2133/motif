@@ -1,0 +1,136 @@
+{
+  "schemaVersion": "1.0",
+  "narration": {
+    "provider": "local Kokoro ONNX through HyperFrames 0.8.99",
+    "model": "Kokoro-82M v1.0",
+    "modelVersion": "v1.0",
+    "voice": "af_nova",
+    "speed": 1.15,
+    "runtimePackage": "kokoro-onnx 0.6.1",
+    "modelSource": "https://github.com/thewh1teagle/kokoro-onnx/releases/download/model-files-v1.0/kokoro-v1.0.onnx",
+    "voiceDataSource": "https://github.com/thewh1teagle/kokoro-onnx/releases/download/model-files-v1.0/voices-v1.0.bin",
+    "modelSha256": "7d5df8ecf7d4b1878015a32686053fd0eebe2bc377234608764cc0ef3636a6c5",
+    "voiceDataSha256": "bca610b8308e8d99f32e6fe4197e7ec01679264efed0cac9140fe9c29f1fbf7d",
+    "modelLicense": "Apache-2.0 per Kokoro-82M model card",
+    "modelLicenseEvidence": "https://huggingface.co/hexgrad/Kokoro-82M",
+    "status": "Connected shot-group narration; consistent af_nova speed 1.15; no atempo",
+    "script": [
+      "The source argues old instructions can hold newer models back. Rules for retired models pile up.",
+      "Check twice. Plan every step. That extra work slows the race.",
+      "Try prompt audit.",
+      "Remove repeated checks. Stop shouting commands. Cut unnecessary steps.",
+      "Review changes. Nothing applies without permission.",
+      "One developer reports seventy improvements across three files.",
+      "A cited test claims nine percent lower cost, and roughly two points more accuracy on the same model.",
+      "The takeaway: audit your instructions."
+    ],
+    "segments": [
+      {
+        "id": "opening",
+        "duration": 5.909333,
+        "start": 0.0,
+        "atempo": 1,
+        "synthesisSpeed": 1.15,
+        "text": "The source argues old instructions can hold newer models back. Rules for retired models pile up."
+      },
+      {
+        "id": "burden",
+        "duration": 3.648,
+        "start": 6.966666666666666,
+        "atempo": 1,
+        "synthesisSpeed": 1.15,
+        "text": "Check twice. Plan every step. That extra work slows the race."
+      },
+      {
+        "id": "suggestion",
+        "duration": 1.6,
+        "start": 12.333333333333334,
+        "atempo": 1,
+        "synthesisSpeed": 1.15,
+        "text": "Try prompt audit."
+      },
+      {
+        "id": "rituals",
+        "duration": 4.48,
+        "start": 20.266666666666666,
+        "atempo": 1,
+        "synthesisSpeed": 1.15,
+        "text": "Remove repeated checks. Stop shouting commands. Cut unnecessary steps."
+      },
+      {
+        "id": "permission",
+        "duration": 3.093333,
+        "start": 25.566666666666666,
+        "atempo": 1,
+        "synthesisSpeed": 1.15,
+        "text": "Review changes. Nothing applies without permission."
+      },
+      {
+        "id": "example",
+        "duration": 3.754667,
+        "start": 28.7,
+        "atempo": 1,
+        "synthesisSpeed": 1.15,
+        "text": "One developer reports seventy improvements across three files."
+      },
+      {
+        "id": "results",
+        "duration": 5.674667,
+        "start": 34.06333333333333,
+        "atempo": 1,
+        "synthesisSpeed": 1.15,
+        "text": "A cited test claims nine percent lower cost, and roughly two points more accuracy on the same model."
+      },
+      {
+        "id": "ending",
+        "duration": 2.389333,
+        "start": 39.6,
+        "atempo": 1,
+        "synthesisSpeed": 1.15,
+        "text": "The takeaway: audit your instructions."
+      }
+    ]
+  },
+  "sfx": [
+    {
+      "file": "assets/sfx/pop.mp3",
+      "sha256": "19ab7193f626ff57fdeef60b45543bac416fcbcec803cfb417abe4b271c1b352",
+      "source": "Bundled HyperFrames media-use SFX collection; CREDITS.md attributes collection to Pixabay",
+      "license": "Pixabay Content License",
+      "licenseUrl": "https://pixabay.com/service/license-summary/",
+      "provenanceLimit": "Bundled metadata does not retain the original Pixabay item URL."
+    },
+    {
+      "file": "assets/sfx/click-soft.mp3",
+      "sha256": "075e17bdac5c13662a1c9530050e0046f81d4138e00eb3bf30427a7b4404103d",
+      "source": "Bundled HyperFrames media-use SFX collection; CREDITS.md attributes collection to Pixabay",
+      "license": "Pixabay Content License",
+      "licenseUrl": "https://pixabay.com/service/license-summary/",
+      "provenanceLimit": "Bundled metadata does not retain the original Pixabay item URL."
+    },
+    {
+      "file": "assets/sfx/whoosh-short.mp3",
+      "sha256": "c2efd9d902a59bf9ec5019035d7deadd17762136896b6e3cb6dd99ea50997a30",
+      "source": "Bundled HyperFrames media-use SFX collection; CREDITS.md attributes collection to Pixabay",
+      "license": "Pixabay Content License",
+      "licenseUrl": "https://pixabay.com/service/license-summary/",
+      "provenanceLimit": "Bundled metadata does not retain the original Pixabay item URL."
+    }
+  ],
+  "music": {
+    "included": false,
+    "reason": "No suitable cleared reference-like music in the reused kit; no new provider integration."
+  },
+  "sourceSoundtrack": {
+    "included": false,
+    "comparison": "reference side muted; reconstruction audio only"
+  },
+  "approvedPassage": {
+    "frames": [
+      436,
+      600
+    ],
+    "soundtrack": "Approved decoded PCM at unity in prepared master",
+    "compressedDelivery": "Complete-film AAC is newly encoded; no old AAC packet equality asserted"
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "first_audio": {
+    "integrated_lufs": -22.04,
+    "true_peak_dbtp": -5.74,
+    "lra_lu": 1.1
+  },
+  "final_audio": {
+    "integrated_lufs": -16.01,
+    "true_peak_dbtp": -1.65,
+    "lra_lu": 2.3
+  },
+  "finishing_method": "combined-mix loudnorm",
+  "initial_gain_db": 4.140000000000001,
+  "encoded_picture_preserved": true,
+  "native_mobile_picture_preserved": true,
+  "source_frame_interval": [
+    436,
+    600
+  ],
+  "fps": 30,
+  "expected_frame_count": 164,
+  "source_audio_used": false,
+  "subjective_listening": "unassessed",
+  "media": {
+    "final": {
+      "width": 1080,
+      "height": 1920,
+      "frames": 164,
+      "picture_duration": 5.466667,
+      "container_duration": 5.466667
+    },
+    "mobile": {
+      "width": 360,
+      "height": 640,
+      "frames": 164,
+      "picture_duration": 5.466667,
+      "container_duration": 5.466667
+    }
+  }
+}

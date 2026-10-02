@@ -1,0 +1,79 @@
+{
+  "method": "installed Whisper small.en DTW; lexical matches and exact compound concatenation; passed/past homophone normalization",
+  "measured_lexical_coverage": 0.9864864864864865,
+  "estimated_boundaries": [
+    {
+      "script_index": 0,
+      "word": "a",
+      "start": 0,
+      "end": 0.18,
+      "method": "estimated onset between adjacent measured DTW anchors; ASR missed this word"
+    },
+    {
+      "script_index": 74,
+      "word": "and",
+      "start": 15.969999999999999,
+      "end": 16.04,
+      "method": "estimated onset between adjacent measured DTW anchors; ASR missed this word"
+    }
+  ],
+  "merged_groups": [
+    {
+      "script_indices": [
+        10
+      ],
+      "heard_tokens": [
+        "eleven",
+        "labs"
+      ],
+      "interval": [
+        2.1100000000000003,
+        2.59
+      ],
+      "precision": "shared measured compound-word interval"
+    },
+    {
+      "script_indices": [
+        22
+      ],
+      "heard_tokens": [
+        "eleven",
+        "labs"
+      ],
+      "interval": [
+        5.93,
+        6.45
+      ],
+      "precision": "shared measured compound-word interval"
+    },
+    {
+      "script_indices": [
+        54
+      ],
+      "heard_tokens": [
+        "voice",
+        "studio"
+      ],
+      "interval": [
+        12.190000000000001,
+        12.71
+      ],
+      "precision": "shared measured compound-word interval"
+    },
+    {
+      "script_indices": [
+        145
+      ],
+      "heard_tokens": [
+        "set",
+        "up"
+      ],
+      "interval": [
+        31.67,
+        32.07
+      ],
+      "precision": "shared measured compound-word interval"
+    }
+  ],
+  "subjective_listening": "not assessed; exact supplied text verified as TTS input"
+}

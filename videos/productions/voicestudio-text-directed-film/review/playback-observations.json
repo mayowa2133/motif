@@ -1,0 +1,34 @@
+{
+  "rough": {
+    "file": "renders/rough-mobile-01.mp4",
+    "native_pixels": [
+      360,
+      640
+    ],
+    "rate": 1,
+    "ended": true,
+    "currentTime": 32.866667,
+    "duration": 32.866667,
+    "error": null,
+    "muted": true,
+    "subjective_listening": "not performed"
+  },
+  "decoded_review": "all19 encoded rough states at native360x640, plus final CTA; four linked boards",
+  "findings": "connected UI actions and continuous local processes visible; repair targets recorded separately",
+  "reference_video": "not inspected; source is supplied text only",
+  "delivery": {
+    "file": "renders/mobile.mp4",
+    "native_pixels": [
+      360,
+      640
+    ],
+    "rate": 1,
+    "ended": true,
+    "duration": 32.866667,
+    "error": null,
+    "muted": true,
+    "caption_masked": false,
+    "subjective_listening": "not performed",
+    "observations": "opening and final payoff observed during normal playback; all19 encoded full-delivery setup samples inspected at native360x640; cancellation/3checks/offline/0percent and finalVOICE visibility confirmed"
+  }
+}

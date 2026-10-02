@@ -1,0 +1,14 @@
+{
+  "source": "renders/mobile.mp4",
+  "source_sha256": "e4a4b3693fb70dad0cbe0feee0cf4b148532beea10f5d381cac910927ecb0040",
+  "view_size": [
+    360,
+    640
+  ],
+  "playback_rate": 1,
+  "ended": true,
+  "duration": 32.866667,
+  "media_error": null,
+  "muted": true,
+  "subjective_listening": "pending"
+}

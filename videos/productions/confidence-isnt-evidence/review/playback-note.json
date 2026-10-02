@@ -1,0 +1,21 @@
+{
+  "mode": "native 360x640 displayed at 360x640; muted; playbackRate 1",
+  "preserved_initial": {
+    "ended": true,
+    "error": null,
+    "duration": 24.333333
+  },
+  "corrected_with_captions": {
+    "ended": true,
+    "error": null,
+    "duration": 24.333333
+  },
+  "corrected_without_captions": {
+    "ended": true,
+    "error": null,
+    "duration": 24.333333,
+    "method": "Only lower 98px caption band hidden; picture geometry unchanged"
+  },
+  "inspection": "Normal-speed playback plus six settled frames and eighteen decoded action samples; not every frame inspected",
+  "subjective_listening": "Not assessed"
+}

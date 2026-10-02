@@ -1,0 +1,275 @@
+{
+  "method": "installed Whisper small.en DTW; no flash attention; adjacent token-center midpoints",
+  "precision": "automatic approximate word boundaries, not phoneme-perfect",
+  "duration": 6.185,
+  "words": [
+    {
+      "text": "So",
+      "centers": [
+        0.12
+      ],
+      "start": 0,
+      "end": 0.24
+    },
+    {
+      "text": "instead",
+      "centers": [
+        0.36
+      ],
+      "start": 0.24,
+      "end": 0.42
+    },
+    {
+      "text": "of",
+      "centers": [
+        0.48
+      ],
+      "start": 0.42,
+      "end": 0.55
+    },
+    {
+      "text": "paying",
+      "centers": [
+        0.62
+      ],
+      "start": 0.55,
+      "end": 0.73
+    },
+    {
+      "text": "11",
+      "centers": [
+        0.84
+      ],
+      "start": 0.73,
+      "end": 0.95
+    },
+    {
+      "text": "labs",
+      "centers": [
+        1.06
+      ],
+      "start": 0.95,
+      "end": 1.2000000000000002
+    },
+    {
+      "text": "every",
+      "centers": [
+        1.34
+      ],
+      "start": 1.2000000000000002,
+      "end": 1.4100000000000001
+    },
+    {
+      "text": "month",
+      "centers": [
+        1.48
+      ],
+      "start": 1.4100000000000001,
+      "end": 1.56
+    },
+    {
+      "text": "to",
+      "centers": [
+        1.64
+      ],
+      "start": 1.56,
+      "end": 1.71
+    },
+    {
+      "text": "clone",
+      "centers": [
+        1.78
+      ],
+      "start": 1.71,
+      "end": 1.85
+    },
+    {
+      "text": "your",
+      "centers": [
+        1.92
+      ],
+      "start": 1.85,
+      "end": 2.05
+    },
+    {
+      "text": "voice,",
+      "centers": [
+        2.18
+      ],
+      "start": 2.05,
+      "end": 2.33
+    },
+    {
+      "text": "you",
+      "centers": [
+        2.48
+      ],
+      "start": 2.33,
+      "end": 2.5300000000000002
+    },
+    {
+      "text": "can",
+      "centers": [
+        2.58
+      ],
+      "start": 2.5300000000000002,
+      "end": 2.66
+    },
+    {
+      "text": "now",
+      "centers": [
+        2.74
+      ],
+      "start": 2.66,
+      "end": 2.81
+    },
+    {
+      "text": "do",
+      "centers": [
+        2.88
+      ],
+      "start": 2.81,
+      "end": 2.9299999999999997
+    },
+    {
+      "text": "it",
+      "centers": [
+        2.98
+      ],
+      "start": 2.9299999999999997,
+      "end": 3.0300000000000002
+    },
+    {
+      "text": "on",
+      "centers": [
+        3.08
+      ],
+      "start": 3.0300000000000002,
+      "end": 3.13
+    },
+    {
+      "text": "your",
+      "centers": [
+        3.18
+      ],
+      "start": 3.13,
+      "end": 3.24
+    },
+    {
+      "text": "own",
+      "centers": [
+        3.3
+      ],
+      "start": 3.24,
+      "end": 3.4699999999999998
+    },
+    {
+      "text": "computer,",
+      "centers": [
+        3.64
+      ],
+      "start": 3.4699999999999998,
+      "end": 3.87
+    },
+    {
+      "text": "even",
+      "centers": [
+        4.1
+      ],
+      "start": 3.87,
+      "end": 4.15
+    },
+    {
+      "text": "on",
+      "centers": [
+        4.2
+      ],
+      "start": 4.15,
+      "end": 4.25
+    },
+    {
+      "text": "the",
+      "centers": [
+        4.3
+      ],
+      "start": 4.25,
+      "end": 4.37
+    },
+    {
+      "text": "10-year-old",
+      "centers": [
+        4.44,
+        4.5,
+        4.54,
+        4.6,
+        4.68
+      ],
+      "start": 4.37,
+      "end": 4.8100000000000005
+    },
+    {
+      "text": "laptop",
+      "centers": [
+        4.94
+      ],
+      "start": 4.8100000000000005,
+      "end": 5.050000000000001
+    },
+    {
+      "text": "you",
+      "centers": [
+        5.16
+      ],
+      "start": 5.050000000000001,
+      "end": 5.21
+    },
+    {
+      "text": "have",
+      "centers": [
+        5.26
+      ],
+      "start": 5.21,
+      "end": 5.33
+    },
+    {
+      "text": "sitting",
+      "centers": [
+        5.4
+      ],
+      "start": 5.33,
+      "end": 5.52
+    },
+    {
+      "text": "around",
+      "centers": [
+        5.64
+      ],
+      "start": 5.52,
+      "end": 5.71
+    },
+    {
+      "text": "in",
+      "centers": [
+        5.78
+      ],
+      "start": 5.71,
+      "end": 5.8100000000000005
+    },
+    {
+      "text": "the",
+      "centers": [
+        5.84
+      ],
+      "start": 5.8100000000000005,
+      "end": 5.9399999999999995
+    },
+    {
+      "text": "basement.",
+      "centers": [
+        6.04
+      ],
+      "start": 5.9399999999999995,
+      "end": 6.16
+    }
+  ]
+}

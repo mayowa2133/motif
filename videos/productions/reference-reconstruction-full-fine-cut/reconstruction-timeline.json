@@ -1,0 +1,305 @@
+{
+  "source": "/Users/mayowaadesanya/Downloads/igexport-Dd15NcHvlNl.mp4",
+  "duration": 42.06666666666667,
+  "frames": 1262,
+  "fps": 30,
+  "retiming": false,
+  "provenance": "Codex-assisted, reference-led production using Motif",
+  "shots": [
+    {
+      "id": "gym",
+      "frames": [
+        0,
+        110
+      ],
+      "duration": 3.6666666666666665,
+      "headline": "MAKE OPUS 5.5 SMARTER AND CHEAPER",
+      "editable": true
+    },
+    {
+      "id": "archive",
+      "frames": [
+        110,
+        206
+      ],
+      "duration": 3.2,
+      "headline": "WORKAROUNDS FOR RETIRED MODELS",
+      "editable": true
+    },
+    {
+      "id": "answer",
+      "frames": [
+        206,
+        257
+      ],
+      "duration": 1.7,
+      "headline": "\u201cVERIFY TWICE BEFORE RESPONDING\u201d",
+      "editable": true
+    },
+    {
+      "id": "race",
+      "frames": [
+        257,
+        370
+      ],
+      "duration": 3.7666666666666666,
+      "headline": "IT OVER-CHECKS AND OVER-PLANS",
+      "editable": true
+    },
+    {
+      "id": "skills",
+      "frames": [
+        370,
+        436
+      ],
+      "duration": 2.2,
+      "headline": "SOURCE-CREDITED SKILLS",
+      "editable": true
+    },
+    {
+      "id": "wash",
+      "frames": [
+        436,
+        486
+      ],
+      "duration": 1.6666666666666667,
+      "editable": "preserved original project",
+      "reuse": "approved movie"
+    },
+    {
+      "id": "terminal",
+      "frames": [
+        486,
+        524
+      ],
+      "duration": 1.2666666666666666,
+      "editable": "preserved original project",
+      "reuse": "approved movie"
+    },
+    {
+      "id": "scanner",
+      "frames": [
+        524,
+        600
+      ],
+      "duration": 2.533333333333333,
+      "editable": "preserved original project",
+      "reuse": "approved movie"
+    },
+    {
+      "id": "classroom",
+      "frames": [
+        600,
+        650
+      ],
+      "duration": 1.6666666666666667,
+      "headline": "1. DOUBLE-CHECK RITUALS",
+      "editable": true
+    },
+    {
+      "id": "shout",
+      "frames": [
+        650,
+        691
+      ],
+      "duration": 1.3666666666666667,
+      "headline": "2. SHOUTING IN CAPS",
+      "editable": true
+    },
+    {
+      "id": "stairs",
+      "frames": [
+        691,
+        767
+      ],
+      "duration": 2.533333333333333,
+      "headline": "3. STEP-BY-STEP SCRIPTS",
+      "editable": true
+    },
+    {
+      "id": "permission",
+      "frames": [
+        767,
+        861
+      ],
+      "duration": 3.1333333333333333,
+      "headline": "NOTHING CHANGES WITHOUT YOUR OK",
+      "editable": true
+    },
+    {
+      "id": "real-run",
+      "frames": [
+        861,
+        887
+      ],
+      "duration": 0.8666666666666667,
+      "headline": "A REAL RUN",
+      "editable": true
+    },
+    {
+      "id": "post",
+      "frames": [
+        887,
+        923
+      ],
+      "duration": 1.2,
+      "headline": "DAN McATEER, DEVELOPER",
+      "editable": true
+    },
+    {
+      "id": "files",
+      "frames": [
+        923,
+        985
+      ],
+      "duration": 2.066666666666667,
+      "headline": "SKILLS, CLAUDE.md AND AGENTS.md",
+      "editable": true
+    },
+    {
+      "id": "research",
+      "frames": [
+        985,
+        1076
+      ],
+      "duration": 3.033333333333333,
+      "headline": "A SOURCE-CITED TEST",
+      "editable": true
+    },
+    {
+      "id": "cost",
+      "frames": [
+        1076,
+        1121
+      ],
+      "duration": 1.5,
+      "headline": "FEWER TOOL CALLS, SMALLER BILL",
+      "editable": true
+    },
+    {
+      "id": "accuracy",
+      "frames": [
+        1121,
+        1196
+      ],
+      "duration": 2.5,
+      "headline": "ABOUT 2 POINTS MORE ACCURATE",
+      "editable": true
+    },
+    {
+      "id": "guide",
+      "frames": [
+        1196,
+        1227
+      ],
+      "duration": 1.0333333333333334,
+      "headline": "GET THE COMMAND AND THE GUIDE",
+      "editable": true
+    },
+    {
+      "id": "comment",
+      "frames": [
+        1227,
+        1262
+      ],
+      "duration": 1.1666666666666667,
+      "headline": "COMMENT AUDIT",
+      "editable": true
+    }
+  ],
+  "interactions": [
+    {
+      "kind": "barbell.strain",
+      "contactFrame": 46,
+      "consequence": "attached notes add burden; bar drops while gauge enters red"
+    },
+    {
+      "kind": "notes.burden",
+      "contactFrame": 143,
+      "consequence": "old instruction slips land on and weigh down the file"
+    },
+    {
+      "kind": "pencil.check",
+      "contactFrame": 221,
+      "consequence": "tip reaches checkbox; check then duplicate sheet appears"
+    },
+    {
+      "kind": "race.load",
+      "contactFrame": 267,
+      "consequence": "attached instruction burden lags; free car crosses the finish first"
+    },
+    {
+      "kind": "skills.arrival",
+      "contactFrame": 390,
+      "consequence": "contributor credits settle before the command document arrives"
+    },
+    {
+      "kind": "quote.inspect",
+      "contactFrame": 613,
+      "consequence": "duplicate-check instruction is isolated by a marker circle"
+    },
+    {
+      "kind": "megaphone.amplify",
+      "contactFrame": 657,
+      "consequence": "held mouthpiece projects waves toward the capital instruction"
+    },
+    {
+      "kind": "stairs.collapse",
+      "contactFrame": 747,
+      "consequence": "staircase falls after the climb; bot remains supported by independent upper platform"
+    },
+    {
+      "kind": "proposal.inspect",
+      "contactFrame": 778,
+      "consequence": "highlighted proposal appears; NO EDITS YET and Apply? y/n remain pending",
+      "approval": "not given"
+    },
+    {
+      "kind": "findings.accumulate",
+      "contactFrame": 941,
+      "consequence": "findings land on three named files before source-reported counter reaches 70",
+      "claim": "unverified source quotation"
+    },
+    {
+      "kind": "bench.run",
+      "contactFrame": 1010,
+      "consequence": "lever depresses before source-quoted result strip appears"
+    },
+    {
+      "kind": "arrow.hit",
+      "contactFrame": 1138,
+      "consequence": "arrow head lands on target; earlier arrows remain embedded",
+      "targetWorld": [
+        738,
+        790
+      ]
+    },
+    {
+      "kind": "arrow.hit",
+      "contactFrame": 1155,
+      "consequence": "arrow head lands on target; earlier arrows remain embedded",
+      "targetWorld": [
+        738,
+        988
+      ]
+    },
+    {
+      "kind": "arrow.hit",
+      "contactFrame": 1175,
+      "consequence": "arrow head lands on target; earlier arrows remain embedded",
+      "targetWorld": [
+        738,
+        922
+      ]
+    },
+    {
+      "kind": "comment.type",
+      "contactFrame": 1242,
+      "consequence": "AUDIT text enters illustrative comment field; no submission depicted"
+    }
+  ],
+  "approvedReuse": [
+    436,
+    600
+  ]
+}

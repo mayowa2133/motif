@@ -1,0 +1,523 @@
+{
+  "method": "existing Motif Bot generator imported; new procedural editable SVG UI components; lossless conversion of approved texture; no image-generation or external screenshots",
+  "character": {
+    "id": "motif-bot-v1",
+    "source": "assets/characters/motif-bot/canonical/v1/motif-bot-v1.json",
+    "status": "locked, reused unchanged"
+  },
+  "material": {
+    "file": "assets/materials/world-paper.webp",
+    "source": "reference-reconstruction-full-fine-cut/assets/materials/wall.png",
+    "conversion": "lossless WebP; same 2048x2048 pixel surface; no new painted texture",
+    "motion": "texture moves with owning paper geometry"
+  },
+  "components": [
+    {
+      "id": "app-tiles",
+      "source": "scripts/motif_ui_actions.py",
+      "interface": "explicit geometry/state in corresponding finite action",
+      "format": "editable independent SVG elements; combined by shared compiler",
+      "shadow": "down-right",
+      "grid": [
+        720,
+        1280
+      ],
+      "third_party_screenshot": false,
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "id": "book",
+      "source": "scripts/motif_ui_actions.py",
+      "interface": "explicit geometry/state in corresponding finite action",
+      "format": "editable independent SVG elements; combined by shared compiler",
+      "shadow": "down-right",
+      "grid": [
+        720,
+        1280
+      ],
+      "third_party_screenshot": false,
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "id": "cat",
+      "source": "scripts/motif_ui_actions.py",
+      "interface": "explicit geometry/state in corresponding finite action",
+      "format": "editable independent SVG elements; combined by shared compiler",
+      "shadow": "down-right",
+      "grid": [
+        720,
+        1280
+      ],
+      "third_party_screenshot": false,
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "id": "chapter-panel",
+      "source": "scripts/motif_ui_components.py",
+      "interface": "chapter_row(x,y,label,frame,phase)",
+      "format": "editable independent SVG elements; combined by shared compiler",
+      "shadow": "down-right",
+      "grid": [
+        720,
+        1280
+      ],
+      "third_party_screenshot": false,
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "id": "checklist",
+      "source": "scripts/motif_ui_actions.py",
+      "interface": "explicit geometry/state in corresponding finite action",
+      "format": "editable independent SVG elements; combined by shared compiler",
+      "shadow": "down-right",
+      "grid": [
+        720,
+        1280
+      ],
+      "third_party_screenshot": false,
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "id": "clapperboard",
+      "source": "scripts/motif_ui_actions.py",
+      "interface": "explicit geometry/state in corresponding finite action",
+      "format": "editable independent SVG elements; combined by shared compiler",
+      "shadow": "down-right",
+      "grid": [
+        720,
+        1280
+      ],
+      "third_party_screenshot": false,
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "id": "cloud",
+      "source": "scripts/motif_ui_actions.py",
+      "interface": "explicit geometry/state in corresponding finite action",
+      "format": "editable independent SVG elements; combined by shared compiler",
+      "shadow": "down-right",
+      "grid": [
+        720,
+        1280
+      ],
+      "third_party_screenshot": false,
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "id": "comment-phone",
+      "source": "scripts/motif_ui_actions.py",
+      "interface": "comment-keyboard finite binding",
+      "format": "editable independent SVG elements; combined by shared compiler",
+      "shadow": "down-right",
+      "grid": [
+        720,
+        1280
+      ],
+      "third_party_screenshot": false,
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "id": "counter",
+      "source": "scripts/motif_ui_actions.py",
+      "interface": "explicit geometry/state in corresponding finite action",
+      "format": "editable independent SVG elements; combined by shared compiler",
+      "shadow": "down-right",
+      "grid": [
+        720,
+        1280
+      ],
+      "third_party_screenshot": false,
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "id": "dock",
+      "source": "scripts/motif_ui_actions.py",
+      "interface": "explicit geometry/state in corresponding finite action",
+      "format": "editable independent SVG elements; combined by shared compiler",
+      "shadow": "down-right",
+      "grid": [
+        720,
+        1280
+      ],
+      "third_party_screenshot": false,
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "id": "dual-player",
+      "source": "scripts/motif_ui_actions.py",
+      "interface": "explicit geometry/state in corresponding finite action",
+      "format": "editable independent SVG elements; combined by shared compiler",
+      "shadow": "down-right",
+      "grid": [
+        720,
+        1280
+      ],
+      "third_party_screenshot": false,
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "id": "fact-card",
+      "source": "scripts/motif_ui_actions.py",
+      "interface": "explicit geometry/state in corresponding finite action",
+      "format": "editable independent SVG elements; combined by shared compiler",
+      "shadow": "down-right",
+      "grid": [
+        720,
+        1280
+      ],
+      "third_party_screenshot": false,
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "id": "floating-mic",
+      "source": "scripts/motif_ui_actions.py",
+      "interface": "explicit geometry/state in corresponding finite action",
+      "format": "editable independent SVG elements; combined by shared compiler",
+      "shadow": "down-right",
+      "grid": [
+        720,
+        1280
+      ],
+      "third_party_screenshot": false,
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "id": "keyboard",
+      "source": "scripts/motif_ui_components.py",
+      "interface": "keyboard(x,y,active)",
+      "format": "editable independent SVG elements; combined by shared compiler",
+      "shadow": "down-right",
+      "grid": [
+        720,
+        1280
+      ],
+      "third_party_screenshot": false,
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "id": "language-list",
+      "source": "scripts/motif_ui_actions.py",
+      "interface": "language-scroll-count finite binding",
+      "format": "editable independent SVG elements; combined by shared compiler",
+      "shadow": "down-right",
+      "grid": [
+        720,
+        1280
+      ],
+      "third_party_screenshot": false,
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "id": "laptop",
+      "source": "scripts/motif_ui_components.py",
+      "interface": "monitor(x,y,w,h,laptop=True)",
+      "format": "editable independent SVG elements; combined by shared compiler",
+      "shadow": "down-right",
+      "grid": [
+        720,
+        1280
+      ],
+      "third_party_screenshot": false,
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "id": "microphone",
+      "source": "scripts/motif_ui_actions.py",
+      "interface": "explicit geometry/state in corresponding finite action",
+      "format": "editable independent SVG elements; combined by shared compiler",
+      "shadow": "down-right",
+      "grid": [
+        720,
+        1280
+      ],
+      "third_party_screenshot": false,
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "id": "models-panel",
+      "source": "scripts/motif_ui_actions.py",
+      "interface": "explicit geometry/state in corresponding finite action",
+      "format": "editable independent SVG elements; combined by shared compiler",
+      "shadow": "down-right",
+      "grid": [
+        720,
+        1280
+      ],
+      "third_party_screenshot": false,
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "id": "monitor",
+      "source": "scripts/motif_ui_components.py",
+      "interface": "monitor(x,y,w,h,laptop=False)",
+      "format": "editable independent SVG elements; combined by shared compiler",
+      "shadow": "down-right",
+      "grid": [
+        720,
+        1280
+      ],
+      "third_party_screenshot": false,
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "id": "notes-window",
+      "source": "scripts/motif_ui_actions.py",
+      "interface": "explicit geometry/state in corresponding finite action",
+      "format": "editable independent SVG elements; combined by shared compiler",
+      "shadow": "down-right",
+      "grid": [
+        720,
+        1280
+      ],
+      "third_party_screenshot": false,
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "id": "pages",
+      "source": "scripts/motif_ui_actions.py",
+      "interface": "explicit geometry/state in corresponding finite action",
+      "format": "editable independent SVG elements; combined by shared compiler",
+      "shadow": "down-right",
+      "grid": [
+        720,
+        1280
+      ],
+      "third_party_screenshot": false,
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "id": "pointer",
+      "source": "scripts/motif_ui_actions.py",
+      "interface": "explicit geometry/state in corresponding finite action",
+      "format": "editable independent SVG elements; combined by shared compiler",
+      "shadow": "down-right",
+      "grid": [
+        720,
+        1280
+      ],
+      "third_party_screenshot": false,
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "id": "pricing-table",
+      "source": "scripts/motif_ui_components.py",
+      "interface": "pricing(frame,cancel)",
+      "format": "editable independent SVG elements; combined by shared compiler",
+      "shadow": "down-right",
+      "grid": [
+        720,
+        1280
+      ],
+      "third_party_screenshot": false,
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "id": "progress-ring",
+      "source": "scripts/motif_ui_components.py",
+      "interface": "ring(x,y,r,progress,frame,done)",
+      "format": "editable independent SVG elements; combined by shared compiler",
+      "shadow": "down-right",
+      "grid": [
+        720,
+        1280
+      ],
+      "third_party_screenshot": false,
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "id": "receipts",
+      "source": "scripts/motif_ui_components.py",
+      "interface": "receipt(x,y,angle)",
+      "format": "editable independent SVG elements; combined by shared compiler",
+      "shadow": "down-right",
+      "grid": [
+        720,
+        1280
+      ],
+      "third_party_screenshot": false,
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "id": "repository-card",
+      "source": "scripts/motif_ui_actions.py",
+      "interface": "explicit geometry/state in corresponding finite action",
+      "format": "editable independent SVG elements; combined by shared compiler",
+      "shadow": "down-right",
+      "grid": [
+        720,
+        1280
+      ],
+      "third_party_screenshot": false,
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "id": "row-hops",
+      "source": "scripts/motif_ui_actions.py",
+      "interface": "explicit geometry/state in corresponding finite action",
+      "format": "editable independent SVG elements; combined by shared compiler",
+      "shadow": "down-right",
+      "grid": [
+        720,
+        1280
+      ],
+      "third_party_screenshot": false,
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "id": "sample-token",
+      "source": "scripts/motif_ui_components.py",
+      "interface": "token(x,y,label,scale,angle)",
+      "format": "editable independent SVG elements; combined by shared compiler",
+      "shadow": "down-right",
+      "grid": [
+        720,
+        1280
+      ],
+      "third_party_screenshot": false,
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "id": "script-scraps",
+      "source": "scripts/motif_ui_actions.py",
+      "interface": "explicit geometry/state in corresponding finite action",
+      "format": "editable independent SVG elements; combined by shared compiler",
+      "shadow": "down-right",
+      "grid": [
+        720,
+        1280
+      ],
+      "third_party_screenshot": false,
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "id": "sheet",
+      "source": "scripts/motif_ui_actions.py",
+      "interface": "explicit geometry/state in corresponding finite action",
+      "format": "editable independent SVG elements; combined by shared compiler",
+      "shadow": "down-right",
+      "grid": [
+        720,
+        1280
+      ],
+      "third_party_screenshot": false,
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "id": "sound-ribbon",
+      "source": "scripts/motif_ui_actions.py",
+      "interface": "explicit geometry/state in corresponding finite action",
+      "format": "editable independent SVG elements; combined by shared compiler",
+      "shadow": "down-right",
+      "grid": [
+        720,
+        1280
+      ],
+      "third_party_screenshot": false,
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "id": "speaker-strips",
+      "source": "scripts/motif_ui_components.py",
+      "interface": "transcript(x,y,speaker,color,frame)",
+      "format": "editable independent SVG elements; combined by shared compiler",
+      "shadow": "down-right",
+      "grid": [
+        720,
+        1280
+      ],
+      "third_party_screenshot": false,
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "id": "star-control",
+      "source": "scripts/motif_ui_actions.py",
+      "interface": "explicit geometry/state in corresponding finite action",
+      "format": "editable independent SVG elements; combined by shared compiler",
+      "shadow": "down-right",
+      "grid": [
+        720,
+        1280
+      ],
+      "third_party_screenshot": false,
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "id": "step-list",
+      "source": "scripts/motif_ui_actions.py",
+      "interface": "workflow-step-hops finite binding",
+      "format": "editable independent SVG elements; combined by shared compiler",
+      "shadow": "down-right",
+      "grid": [
+        720,
+        1280
+      ],
+      "third_party_screenshot": false,
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "id": "type-field",
+      "source": "scripts/motif_ui_actions.py",
+      "interface": "explicit geometry/state in corresponding finite action",
+      "format": "editable independent SVG elements; combined by shared compiler",
+      "shadow": "down-right",
+      "grid": [
+        720,
+        1280
+      ],
+      "third_party_screenshot": false,
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "id": "upload-panel",
+      "source": "scripts/motif_ui_actions.py",
+      "interface": "explicit geometry/state in corresponding finite action",
+      "format": "editable independent SVG elements; combined by shared compiler",
+      "shadow": "down-right",
+      "grid": [
+        720,
+        1280
+      ],
+      "third_party_screenshot": false,
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "id": "washer",
+      "source": "scripts/motif_ui_actions.py",
+      "interface": "explicit geometry/state in corresponding finite action",
+      "format": "editable independent SVG elements; combined by shared compiler",
+      "shadow": "down-right",
+      "grid": [
+        720,
+        1280
+      ],
+      "third_party_screenshot": false,
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "id": "waveform",
+      "source": "scripts/motif_ui_components.py",
+      "interface": "waveform(x,y,w,h,frame,n,reveal,color,phase)",
+      "format": "editable independent SVG elements; combined by shared compiler",
+      "shadow": "down-right",
+      "grid": [
+        720,
+        1280
+      ],
+      "third_party_screenshot": false,
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "id": "wifi-popover",
+      "source": "scripts/motif_ui_actions.py",
+      "interface": "wifi-off-local-complete finite binding",
+      "format": "editable independent SVG elements; combined by shared compiler",
+      "shadow": "down-right",
+      "grid": [
+        720,
+        1280
+      ],
+      "third_party_screenshot": false,
+      "status": "REVIEW_REQUIRED"
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "playback_rate": 1,
+  "time_stretch": false,
+  "meaning": "semantic beat excerpts; different narration takes and natural timing",
+  "audio": "new cut only; old picture muted",
+  "clips": [
+    {
+      "file": "renders/compare-opening.mp4",
+      "old_start": 0,
+      "new_start": 0,
+      "duration": 2.8
+    },
+    {
+      "file": "renders/compare-wording-reveal.mp4",
+      "old_start": 6.34,
+      "new_start": 5.13,
+      "duration": 3.1
+    },
+    {
+      "file": "renders/compare-missing-evidence.mp4",
+      "old_start": 10.33,
+      "new_start": 9.76,
+      "duration": 2.94
+    }
+  ]
+}

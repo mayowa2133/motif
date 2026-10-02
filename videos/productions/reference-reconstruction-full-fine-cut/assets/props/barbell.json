@@ -1,0 +1,56 @@
+{
+  "id": "reconstruction-rough-barbell",
+  "name": "Barbell",
+  "category": "prop",
+  "subcategory": "reference-reconstruction",
+  "concepts": [
+    "instruction-audit",
+    "reference-study"
+  ],
+  "keywords": [
+    "paper",
+    "cutout",
+    "barbell"
+  ],
+  "style": "reference-expressive-v1",
+  "orientation": "front",
+  "dimensions": {
+    "width": 982,
+    "height": 242,
+    "unit": "px"
+  },
+  "artBox": {
+    "x": -489,
+    "y": -119,
+    "width": 982,
+    "height": 242
+  },
+  "anchors": {
+    "leftGrip": {
+      "x": 0.3625254582484725,
+      "y": 0.49173553719008267
+    },
+    "rightGrip": {
+      "x": 0.6221995926680245,
+      "y": 0.49173553719008267
+    }
+  },
+  "compatibleCharacters": [
+    "motif-bot"
+  ],
+  "supportedActions": [
+    "lift",
+    "strain"
+  ],
+  "sourceType": "vector",
+  "source": {
+    "file": "videos/productions/reference-reconstruction-full-fine-cut/assets/props/barbell.svg",
+    "generator": "videos/productions/reference-reconstruction-full-fine-cut/build.py",
+    "reference": "Agent-authored geometry for a mapped source shot; no source prop pixels."
+  },
+  "preview": "videos/productions/reference-reconstruction-full-fine-cut/assets/props/barbell.svg",
+  "license": "project-original",
+  "status": "review",
+  "presentationStatus": "fine-cut",
+  "version": 1
+}

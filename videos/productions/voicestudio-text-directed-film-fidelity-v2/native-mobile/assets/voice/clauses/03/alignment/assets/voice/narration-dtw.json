@@ -1,0 +1,311 @@
+{
+	"systeminfo": "WHISPER : VITISAI = 0 | COREML = 0 | OPENVINO = 0 | MTL : EMBED_LIBRARY = 1 | CPU : NEON = 1 | ARM_FMA = 1 | MATMUL_INT8 = 1 | DOTPROD = 1 | ACCELERATE = 1 | OPENMP = 1 | REPACK = 1 | ",
+	"model": {
+		"type": "small",
+		"multilingual": false,
+		"vocab": 51864,
+		"audio": {
+			"ctx": 1500,
+			"state": 768,
+			"head": 12,
+			"layer": 12
+		},
+		"text": {
+			"ctx": 448,
+			"state": 768,
+			"head": 12,
+			"layer": 12
+		},
+		"mels": 80,
+		"ftype": 1
+	},
+	"params": {
+		"model": "/Users/mayowaadesanya/.cache/hyperframes/whisper/models/ggml-small.en.bin",
+		"language": "en",
+		"translate": false
+	},
+	"result": {
+		"language": "en"
+	},
+	"transcription": [
+		{
+			"timestamps": {
+				"from": "00:00:00,000",
+				"to": "00:00:02,320"
+			},
+			"offsets": {
+				"from": 0,
+				"to": 2320
+			},
+			"text": " It's called Voice Studio, and you give it a short clip of you talking.",
+			"tokens": [
+				{
+					"text": "[_BEG_]",
+					"timestamps": {
+						"from": "00:00:00,000",
+						"to": "00:00:00,000"
+					},
+					"offsets": {
+						"from": 0,
+						"to": 0
+					},
+					"id": 50363,
+					"p": 0.992863,
+					"t_dtw": -1
+				},
+				{
+					"text": " It",
+					"timestamps": {
+						"from": "00:00:00,080",
+						"to": "00:00:00,080"
+					},
+					"offsets": {
+						"from": 80,
+						"to": 80
+					},
+					"id": 632,
+					"p": 0.918079,
+					"t_dtw": 8
+				},
+				{
+					"text": "'s",
+					"timestamps": {
+						"from": "00:00:00,110",
+						"to": "00:00:00,160"
+					},
+					"offsets": {
+						"from": 110,
+						"to": 160
+					},
+					"id": 338,
+					"p": 0.997851,
+					"t_dtw": 10
+				},
+				{
+					"text": " called",
+					"timestamps": {
+						"from": "00:00:00,160",
+						"to": "00:00:00,410"
+					},
+					"offsets": {
+						"from": 160,
+						"to": 410
+					},
+					"id": 1444,
+					"p": 0.995084,
+					"t_dtw": 28
+				},
+				{
+					"text": " Voice",
+					"timestamps": {
+						"from": "00:00:00,410",
+						"to": "00:00:00,600"
+					},
+					"offsets": {
+						"from": 410,
+						"to": 600
+					},
+					"id": 15282,
+					"p": 0.834701,
+					"t_dtw": 42
+				},
+				{
+					"text": " Studio",
+					"timestamps": {
+						"from": "00:00:00,610",
+						"to": "00:00:00,840"
+					},
+					"offsets": {
+						"from": 610,
+						"to": 840
+					},
+					"id": 11733,
+					"p": 0.928106,
+					"t_dtw": 68
+				},
+				{
+					"text": ",",
+					"timestamps": {
+						"from": "00:00:00,880",
+						"to": "00:00:00,930"
+					},
+					"offsets": {
+						"from": 880,
+						"to": 930
+					},
+					"id": 11,
+					"p": 0.496683,
+					"t_dtw": 86
+				},
+				{
+					"text": " and",
+					"timestamps": {
+						"from": "00:00:00,930",
+						"to": "00:00:01,010"
+					},
+					"offsets": {
+						"from": 930,
+						"to": 1010
+					},
+					"id": 290,
+					"p": 0.864395,
+					"t_dtw": 96
+				},
+				{
+					"text": " you",
+					"timestamps": {
+						"from": "00:00:01,010",
+						"to": "00:00:01,070"
+					},
+					"offsets": {
+						"from": 1010,
+						"to": 1070
+					},
+					"id": 345,
+					"p": 0.992447,
+					"t_dtw": 108
+				},
+				{
+					"text": " give",
+					"timestamps": {
+						"from": "00:00:01,110",
+						"to": "00:00:01,220"
+					},
+					"offsets": {
+						"from": 1110,
+						"to": 1220
+					},
+					"id": 1577,
+					"p": 0.982993,
+					"t_dtw": 120
+				},
+				{
+					"text": " it",
+					"timestamps": {
+						"from": "00:00:01,220",
+						"to": "00:00:01,320"
+					},
+					"offsets": {
+						"from": 1220,
+						"to": 1320
+					},
+					"id": 340,
+					"p": 0.967497,
+					"t_dtw": 128
+				},
+				{
+					"text": " a",
+					"timestamps": {
+						"from": "00:00:01,320",
+						"to": "00:00:01,360"
+					},
+					"offsets": {
+						"from": 1320,
+						"to": 1360
+					},
+					"id": 257,
+					"p": 0.803703,
+					"t_dtw": 138
+				},
+				{
+					"text": " short",
+					"timestamps": {
+						"from": "00:00:01,360",
+						"to": "00:00:01,510"
+					},
+					"offsets": {
+						"from": 1360,
+						"to": 1510
+					},
+					"id": 1790,
+					"p": 0.993334,
+					"t_dtw": 154
+				},
+				{
+					"text": " clip",
+					"timestamps": {
+						"from": "00:00:01,590",
+						"to": "00:00:01,680"
+					},
+					"offsets": {
+						"from": 1590,
+						"to": 1680
+					},
+					"id": 10651,
+					"p": 0.993056,
+					"t_dtw": 170
+				},
+				{
+					"text": " of",
+					"timestamps": {
+						"from": "00:00:01,740",
+						"to": "00:00:01,810"
+					},
+					"offsets": {
+						"from": 1740,
+						"to": 1810
+					},
+					"id": 286,
+					"p": 0.950886,
+					"t_dtw": 182
+				},
+				{
+					"text": " you",
+					"timestamps": {
+						"from": "00:00:01,810",
+						"to": "00:00:01,890"
+					},
+					"offsets": {
+						"from": 1810,
+						"to": 1890
+					},
+					"id": 345,
+					"p": 0.991124,
+					"t_dtw": 192
+				},
+				{
+					"text": " talking",
+					"timestamps": {
+						"from": "00:00:01,930",
+						"to": "00:00:02,280"
+					},
+					"offsets": {
+						"from": 1930,
+						"to": 2280
+					},
+					"id": 3375,
+					"p": 0.888976,
+					"t_dtw": 220
+				},
+				{
+					"text": ".",
+					"timestamps": {
+						"from": "00:00:02,320",
+						"to": "00:00:02,320"
+					},
+					"offsets": {
+						"from": 2320,
+						"to": 2320
+					},
+					"id": 13,
+					"p": 0.98157,
+					"t_dtw": 230
+				},
+				{
+					"text": "[_TT_116]",
+					"timestamps": {
+						"from": "00:00:02,320",
+						"to": "00:00:02,320"
+					},
+					"offsets": {
+						"from": 2320,
+						"to": 2320
+					},
+					"id": 50479,
+					"p": 0.0678308,
+					"t_dtw": -1
+				}
+			]
+		}
+	]
+}

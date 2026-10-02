@@ -1,0 +1,1200 @@
+{
+  "method": "installed Whisper small.en DTW; no flash attention; adjacent token-center midpoints",
+  "precision": "automatic approximate word boundaries, not phoneme-perfect",
+  "duration": 33.167333,
+  "words": [
+    {
+      "text": "Solo",
+      "centers": [
+        0.3
+      ],
+      "start": 0.18,
+      "end": 0.4
+    },
+    {
+      "text": "Dev",
+      "centers": [
+        0.5
+      ],
+      "start": 0.4,
+      "end": 0.6
+    },
+    {
+      "text": "just",
+      "centers": [
+        0.7
+      ],
+      "start": 0.6,
+      "end": 0.87
+    },
+    {
+      "text": "open",
+      "centers": [
+        1.04
+      ],
+      "start": 0.87,
+      "end": 1.13
+    },
+    {
+      "text": "sourced",
+      "centers": [
+        1.22
+      ],
+      "start": 1.13,
+      "end": 1.3199999999999998
+    },
+    {
+      "text": "a",
+      "centers": [
+        1.42
+      ],
+      "start": 1.3199999999999998,
+      "end": 1.5
+    },
+    {
+      "text": "free",
+      "centers": [
+        1.58
+      ],
+      "start": 1.5,
+      "end": 1.7200000000000002
+    },
+    {
+      "text": "version",
+      "centers": [
+        1.86
+      ],
+      "start": 1.7200000000000002,
+      "end": 1.9300000000000002
+    },
+    {
+      "text": "of",
+      "centers": [
+        2.0
+      ],
+      "start": 1.9300000000000002,
+      "end": 2.13
+    },
+    {
+      "text": "Eleven",
+      "centers": [
+        2.26
+      ],
+      "start": 2.13,
+      "end": 2.38
+    },
+    {
+      "text": "Labs",
+      "centers": [
+        2.5
+      ],
+      "start": 2.38,
+      "end": 2.62
+    },
+    {
+      "text": "and",
+      "centers": [
+        2.74
+      ],
+      "start": 2.62,
+      "end": 2.79
+    },
+    {
+      "text": "it's",
+      "centers": [
+        2.84,
+        2.88
+      ],
+      "start": 2.79,
+      "end": 2.9699999999999998
+    },
+    {
+      "text": "already",
+      "centers": [
+        3.06
+      ],
+      "start": 2.9699999999999998,
+      "end": 3.19
+    },
+    {
+      "text": "passed",
+      "centers": [
+        3.32
+      ],
+      "start": 3.19,
+      "end": 3.51
+    },
+    {
+      "text": "36,000",
+      "centers": [
+        3.7,
+        4.3
+      ],
+      "start": 3.51,
+      "end": 4.4399999999999995
+    },
+    {
+      "text": "stars.",
+      "centers": [
+        4.58
+      ],
+      "start": 4.4399999999999995,
+      "end": 4.93
+    },
+    {
+      "text": "So",
+      "centers": [
+        5.28
+      ],
+      "start": 4.93,
+      "end": 5.390000000000001
+    },
+    {
+      "text": "instead",
+      "centers": [
+        5.5
+      ],
+      "start": 5.390000000000001,
+      "end": 5.58
+    },
+    {
+      "text": "of",
+      "centers": [
+        5.66
+      ],
+      "start": 5.58,
+      "end": 5.74
+    },
+    {
+      "text": "paying",
+      "centers": [
+        5.82
+      ],
+      "start": 5.74,
+      "end": 5.96
+    },
+    {
+      "text": "Eleven",
+      "centers": [
+        6.1
+      ],
+      "start": 5.96,
+      "end": 6.22
+    },
+    {
+      "text": "Labs",
+      "centers": [
+        6.34
+      ],
+      "start": 6.22,
+      "end": 6.47
+    },
+    {
+      "text": "every",
+      "centers": [
+        6.6
+      ],
+      "start": 6.47,
+      "end": 6.6899999999999995
+    },
+    {
+      "text": "month",
+      "centers": [
+        6.78
+      ],
+      "start": 6.6899999999999995,
+      "end": 6.880000000000001
+    },
+    {
+      "text": "to",
+      "centers": [
+        6.98
+      ],
+      "start": 6.880000000000001,
+      "end": 7.050000000000001
+    },
+    {
+      "text": "clone",
+      "centers": [
+        7.12
+      ],
+      "start": 7.050000000000001,
+      "end": 7.1899999999999995
+    },
+    {
+      "text": "your",
+      "centers": [
+        7.26
+      ],
+      "start": 7.1899999999999995,
+      "end": 7.359999999999999
+    },
+    {
+      "text": "voice,",
+      "centers": [
+        7.46
+      ],
+      "start": 7.359999999999999,
+      "end": 7.5600000000000005
+    },
+    {
+      "text": "you",
+      "centers": [
+        7.66
+      ],
+      "start": 7.5600000000000005,
+      "end": 7.720000000000001
+    },
+    {
+      "text": "can",
+      "centers": [
+        7.78
+      ],
+      "start": 7.720000000000001,
+      "end": 7.86
+    },
+    {
+      "text": "now",
+      "centers": [
+        7.94
+      ],
+      "start": 7.86,
+      "end": 8.01
+    },
+    {
+      "text": "do",
+      "centers": [
+        8.08
+      ],
+      "start": 8.01,
+      "end": 8.129999999999999
+    },
+    {
+      "text": "it",
+      "centers": [
+        8.18
+      ],
+      "start": 8.129999999999999,
+      "end": 8.23
+    },
+    {
+      "text": "on",
+      "centers": [
+        8.28
+      ],
+      "start": 8.23,
+      "end": 8.33
+    },
+    {
+      "text": "your",
+      "centers": [
+        8.38
+      ],
+      "start": 8.33,
+      "end": 8.45
+    },
+    {
+      "text": "own",
+      "centers": [
+        8.52
+      ],
+      "start": 8.45,
+      "end": 8.7
+    },
+    {
+      "text": "computer,",
+      "centers": [
+        8.88
+      ],
+      "start": 8.7,
+      "end": 9.07
+    },
+    {
+      "text": "even",
+      "centers": [
+        9.26
+      ],
+      "start": 9.07,
+      "end": 9.309999999999999
+    },
+    {
+      "text": "on",
+      "centers": [
+        9.36
+      ],
+      "start": 9.309999999999999,
+      "end": 9.42
+    },
+    {
+      "text": "the",
+      "centers": [
+        9.48
+      ],
+      "start": 9.42,
+      "end": 9.55
+    },
+    {
+      "text": "ten",
+      "centers": [
+        9.62
+      ],
+      "start": 9.55,
+      "end": 9.68
+    },
+    {
+      "text": "year",
+      "centers": [
+        9.74
+      ],
+      "start": 9.68,
+      "end": 9.82
+    },
+    {
+      "text": "old",
+      "centers": [
+        9.9
+      ],
+      "start": 9.82,
+      "end": 10.030000000000001
+    },
+    {
+      "text": "laptop",
+      "centers": [
+        10.16
+      ],
+      "start": 10.030000000000001,
+      "end": 10.280000000000001
+    },
+    {
+      "text": "you",
+      "centers": [
+        10.4
+      ],
+      "start": 10.280000000000001,
+      "end": 10.46
+    },
+    {
+      "text": "have",
+      "centers": [
+        10.52
+      ],
+      "start": 10.46,
+      "end": 10.61
+    },
+    {
+      "text": "sitting",
+      "centers": [
+        10.7
+      ],
+      "start": 10.61,
+      "end": 10.84
+    },
+    {
+      "text": "around",
+      "centers": [
+        10.98
+      ],
+      "start": 10.84,
+      "end": 11.05
+    },
+    {
+      "text": "in",
+      "centers": [
+        11.12
+      ],
+      "start": 11.05,
+      "end": 11.16
+    },
+    {
+      "text": "the",
+      "centers": [
+        11.2
+      ],
+      "start": 11.16,
+      "end": 11.33
+    },
+    {
+      "text": "basement.",
+      "centers": [
+        11.46
+      ],
+      "start": 11.33,
+      "end": 11.73
+    },
+    {
+      "text": "It's",
+      "centers": [
+        12.0,
+        12.06
+      ],
+      "start": 11.73,
+      "end": 12.14
+    },
+    {
+      "text": "called",
+      "centers": [
+        12.22
+      ],
+      "start": 12.14,
+      "end": 12.34
+    },
+    {
+      "text": "Voice",
+      "centers": [
+        12.46
+      ],
+      "start": 12.34,
+      "end": 12.58
+    },
+    {
+      "text": "Studio",
+      "centers": [
+        12.7
+      ],
+      "start": 12.58,
+      "end": 12.86
+    },
+    {
+      "text": "and",
+      "centers": [
+        13.02
+      ],
+      "start": 12.86,
+      "end": 13.08
+    },
+    {
+      "text": "you",
+      "centers": [
+        13.14
+      ],
+      "start": 13.08,
+      "end": 13.190000000000001
+    },
+    {
+      "text": "give",
+      "centers": [
+        13.24
+      ],
+      "start": 13.190000000000001,
+      "end": 13.280000000000001
+    },
+    {
+      "text": "it",
+      "centers": [
+        13.32
+      ],
+      "start": 13.280000000000001,
+      "end": 13.39
+    },
+    {
+      "text": "a",
+      "centers": [
+        13.46
+      ],
+      "start": 13.39,
+      "end": 13.54
+    },
+    {
+      "text": "short",
+      "centers": [
+        13.62
+      ],
+      "start": 13.54,
+      "end": 13.71
+    },
+    {
+      "text": "clip",
+      "centers": [
+        13.8
+      ],
+      "start": 13.71,
+      "end": 13.870000000000001
+    },
+    {
+      "text": "of",
+      "centers": [
+        13.94
+      ],
+      "start": 13.870000000000001,
+      "end": 14.0
+    },
+    {
+      "text": "you",
+      "centers": [
+        14.06
+      ],
+      "start": 14.0,
+      "end": 14.2
+    },
+    {
+      "text": "talking",
+      "centers": [
+        14.34
+      ],
+      "start": 14.2,
+      "end": 14.45
+    },
+    {
+      "text": "and",
+      "centers": [
+        14.56
+      ],
+      "start": 14.45,
+      "end": 14.61
+    },
+    {
+      "text": "it",
+      "centers": [
+        14.66
+      ],
+      "start": 14.61,
+      "end": 14.719999999999999
+    },
+    {
+      "text": "can",
+      "centers": [
+        14.78
+      ],
+      "start": 14.719999999999999,
+      "end": 14.85
+    },
+    {
+      "text": "read",
+      "centers": [
+        14.92
+      ],
+      "start": 14.85,
+      "end": 15.05
+    },
+    {
+      "text": "anything",
+      "centers": [
+        15.18
+      ],
+      "start": 15.05,
+      "end": 15.309999999999999
+    },
+    {
+      "text": "back",
+      "centers": [
+        15.44
+      ],
+      "start": 15.309999999999999,
+      "end": 15.5
+    },
+    {
+      "text": "in",
+      "centers": [
+        15.56
+      ],
+      "start": 15.5,
+      "end": 15.600000000000001
+    },
+    {
+      "text": "your",
+      "centers": [
+        15.64
+      ],
+      "start": 15.600000000000001,
+      "end": 15.77
+    },
+    {
+      "text": "voice.",
+      "centers": [
+        15.9
+      ],
+      "start": 15.77,
+      "end": 16.22
+    },
+    {
+      "text": "Cloning",
+      "centers": [
+        16.54,
+        16.64
+      ],
+      "start": 16.22,
+      "end": 16.72
+    },
+    {
+      "text": "your",
+      "centers": [
+        16.8
+      ],
+      "start": 16.72,
+      "end": 16.9
+    },
+    {
+      "text": "voice",
+      "centers": [
+        17.0
+      ],
+      "start": 16.9,
+      "end": 17.08
+    },
+    {
+      "text": "is",
+      "centers": [
+        17.16
+      ],
+      "start": 17.08,
+      "end": 17.23
+    },
+    {
+      "text": "just",
+      "centers": [
+        17.3
+      ],
+      "start": 17.23,
+      "end": 17.380000000000003
+    },
+    {
+      "text": "the",
+      "centers": [
+        17.46
+      ],
+      "start": 17.380000000000003,
+      "end": 17.57
+    },
+    {
+      "text": "start",
+      "centers": [
+        17.68
+      ],
+      "start": 17.57,
+      "end": 17.8
+    },
+    {
+      "text": "because",
+      "centers": [
+        17.92
+      ],
+      "start": 17.8,
+      "end": 17.98
+    },
+    {
+      "text": "it",
+      "centers": [
+        18.04
+      ],
+      "start": 17.98,
+      "end": 18.14
+    },
+    {
+      "text": "turns",
+      "centers": [
+        18.24
+      ],
+      "start": 18.14,
+      "end": 18.35
+    },
+    {
+      "text": "any",
+      "centers": [
+        18.46
+      ],
+      "start": 18.35,
+      "end": 18.55
+    },
+    {
+      "text": "book",
+      "centers": [
+        18.64
+      ],
+      "start": 18.55,
+      "end": 18.740000000000002
+    },
+    {
+      "text": "into",
+      "centers": [
+        18.84
+      ],
+      "start": 18.740000000000002,
+      "end": 18.92
+    },
+    {
+      "text": "an",
+      "centers": [
+        19.0
+      ],
+      "start": 18.92,
+      "end": 19.08
+    },
+    {
+      "text": "audiobook,",
+      "centers": [
+        19.16,
+        19.38
+      ],
+      "start": 19.08,
+      "end": 19.6
+    },
+    {
+      "text": "types",
+      "centers": [
+        19.82
+      ],
+      "start": 19.6,
+      "end": 19.91
+    },
+    {
+      "text": "out",
+      "centers": [
+        20.0
+      ],
+      "start": 19.91,
+      "end": 20.08
+    },
+    {
+      "text": "whatever",
+      "centers": [
+        20.16
+      ],
+      "start": 20.08,
+      "end": 20.240000000000002
+    },
+    {
+      "text": "you",
+      "centers": [
+        20.32
+      ],
+      "start": 20.240000000000002,
+      "end": 20.380000000000003
+    },
+    {
+      "text": "want",
+      "centers": [
+        20.44
+      ],
+      "start": 20.380000000000003,
+      "end": 20.490000000000002
+    },
+    {
+      "text": "to",
+      "centers": [
+        20.54
+      ],
+      "start": 20.490000000000002,
+      "end": 20.64
+    },
+    {
+      "text": "say",
+      "centers": [
+        20.74
+      ],
+      "start": 20.64,
+      "end": 20.83
+    },
+    {
+      "text": "and",
+      "centers": [
+        20.92
+      ],
+      "start": 20.83,
+      "end": 20.990000000000002
+    },
+    {
+      "text": "writes",
+      "centers": [
+        21.06
+      ],
+      "start": 20.990000000000002,
+      "end": 21.119999999999997
+    },
+    {
+      "text": "a",
+      "centers": [
+        21.18
+      ],
+      "start": 21.119999999999997,
+      "end": 21.33
+    },
+    {
+      "text": "transcript",
+      "centers": [
+        21.48
+      ],
+      "start": 21.33,
+      "end": 21.6
+    },
+    {
+      "text": "of",
+      "centers": [
+        21.72
+      ],
+      "start": 21.6,
+      "end": 21.78
+    },
+    {
+      "text": "any",
+      "centers": [
+        21.84
+      ],
+      "start": 21.78,
+      "end": 22.02
+    },
+    {
+      "text": "recording.",
+      "centers": [
+        22.2
+      ],
+      "start": 22.02,
+      "end": 22.42
+    },
+    {
+      "text": "But",
+      "centers": [
+        22.64
+      ],
+      "start": 22.42,
+      "end": 22.72
+    },
+    {
+      "text": "here's",
+      "centers": [
+        22.8,
+        22.88
+      ],
+      "start": 22.72,
+      "end": 22.93
+    },
+    {
+      "text": "the",
+      "centers": [
+        22.98
+      ],
+      "start": 22.93,
+      "end": 23.07
+    },
+    {
+      "text": "part",
+      "centers": [
+        23.16
+      ],
+      "start": 23.07,
+      "end": 23.23
+    },
+    {
+      "text": "that's",
+      "centers": [
+        23.3,
+        23.38
+      ],
+      "start": 23.23,
+      "end": 23.45
+    },
+    {
+      "text": "even",
+      "centers": [
+        23.52
+      ],
+      "start": 23.45,
+      "end": 23.619999999999997
+    },
+    {
+      "text": "crazier.",
+      "centers": [
+        23.72,
+        23.96
+      ],
+      "start": 23.619999999999997,
+      "end": 24.130000000000003
+    },
+    {
+      "text": "It",
+      "centers": [
+        24.3
+      ],
+      "start": 24.130000000000003,
+      "end": 24.35
+    },
+    {
+      "text": "can",
+      "centers": [
+        24.4
+      ],
+      "start": 24.35,
+      "end": 24.46
+    },
+    {
+      "text": "dub",
+      "centers": [
+        24.52
+      ],
+      "start": 24.46,
+      "end": 24.6
+    },
+    {
+      "text": "your",
+      "centers": [
+        24.68
+      ],
+      "start": 24.6,
+      "end": 24.8
+    },
+    {
+      "text": "videos",
+      "centers": [
+        24.92
+      ],
+      "start": 24.8,
+      "end": 25.05
+    },
+    {
+      "text": "into",
+      "centers": [
+        25.18
+      ],
+      "start": 25.05,
+      "end": 25.3
+    },
+    {
+      "text": "646",
+      "centers": [
+        25.42,
+        25.94
+      ],
+      "start": 25.3,
+      "end": 26.200000000000003
+    },
+    {
+      "text": "languages",
+      "centers": [
+        26.46
+      ],
+      "start": 26.200000000000003,
+      "end": 26.6
+    },
+    {
+      "text": "which",
+      "centers": [
+        26.74
+      ],
+      "start": 26.6,
+      "end": 26.83
+    },
+    {
+      "text": "means",
+      "centers": [
+        26.92
+      ],
+      "start": 26.83,
+      "end": 27.04
+    },
+    {
+      "text": "stop",
+      "centers": [
+        27.16
+      ],
+      "start": 27.04,
+      "end": 27.310000000000002
+    },
+    {
+      "text": "paying",
+      "centers": [
+        27.46
+      ],
+      "start": 27.310000000000002,
+      "end": 27.54
+    },
+    {
+      "text": "any",
+      "centers": [
+        27.62
+      ],
+      "start": 27.54,
+      "end": 27.71
+    },
+    {
+      "text": "more",
+      "centers": [
+        27.8
+      ],
+      "start": 27.71,
+      "end": 27.92
+    },
+    {
+      "text": "bills",
+      "centers": [
+        28.04
+      ],
+      "start": 27.92,
+      "end": 28.13
+    },
+    {
+      "text": "since",
+      "centers": [
+        28.22
+      ],
+      "start": 28.13,
+      "end": 28.29
+    },
+    {
+      "text": "it",
+      "centers": [
+        28.36
+      ],
+      "start": 28.29,
+      "end": 28.439999999999998
+    },
+    {
+      "text": "runs",
+      "centers": [
+        28.52
+      ],
+      "start": 28.439999999999998,
+      "end": 28.61
+    },
+    {
+      "text": "on",
+      "centers": [
+        28.7
+      ],
+      "start": 28.61,
+      "end": 28.759999999999998
+    },
+    {
+      "text": "your",
+      "centers": [
+        28.82
+      ],
+      "start": 28.759999999999998,
+      "end": 28.97
+    },
+    {
+      "text": "computer",
+      "centers": [
+        29.12
+      ],
+      "start": 28.97,
+      "end": 29.23
+    },
+    {
+      "text": "and",
+      "centers": [
+        29.34
+      ],
+      "start": 29.23,
+      "end": 29.4
+    },
+    {
+      "text": "your",
+      "centers": [
+        29.46
+      ],
+      "start": 29.4,
+      "end": 29.560000000000002
+    },
+    {
+      "text": "voice",
+      "centers": [
+        29.66
+      ],
+      "start": 29.560000000000002,
+      "end": 29.78
+    },
+    {
+      "text": "never",
+      "centers": [
+        29.9
+      ],
+      "start": 29.78,
+      "end": 30.009999999999998
+    },
+    {
+      "text": "has",
+      "centers": [
+        30.12
+      ],
+      "start": 30.009999999999998,
+      "end": 30.19
+    },
+    {
+      "text": "to",
+      "centers": [
+        30.26
+      ],
+      "start": 30.19,
+      "end": 30.310000000000002
+    },
+    {
+      "text": "get",
+      "centers": [
+        30.36
+      ],
+      "start": 30.310000000000002,
+      "end": 30.53
+    },
+    {
+      "text": "uploaded",
+      "centers": [
+        30.7
+      ],
+      "start": 30.53,
+      "end": 30.89
+    },
+    {
+      "text": "anywhere,",
+      "centers": [
+        31.08
+      ],
+      "start": 30.89,
+      "end": 31.31
+    },
+    {
+      "text": "for",
+      "centers": [
+        31.54
+      ],
+      "start": 31.31,
+      "end": 31.6
+    },
+    {
+      "text": "the",
+      "centers": [
+        31.66
+      ],
+      "start": 31.6,
+      "end": 31.740000000000002
+    },
+    {
+      "text": "link",
+      "centers": [
+        31.82
+      ],
+      "start": 31.740000000000002,
+      "end": 31.92
+    },
+    {
+      "text": "and",
+      "centers": [
+        32.02
+      ],
+      "start": 31.92,
+      "end": 32.150000000000006
+    },
+    {
+      "text": "setup",
+      "centers": [
+        32.28
+      ],
+      "start": 32.150000000000006,
+      "end": 32.47
+    },
+    {
+      "text": "comment",
+      "centers": [
+        32.66
+      ],
+      "start": 32.47,
+      "end": 32.81
+    },
+    {
+      "text": "voice.",
+      "centers": [
+        32.96
+      ],
+      "start": 32.81,
+      "end": 33.08
+    }
+  ]
+}

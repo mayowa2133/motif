@@ -1,0 +1,213 @@
+{
+	"systeminfo": "WHISPER : VITISAI = 0 | COREML = 0 | OPENVINO = 0 | MTL : EMBED_LIBRARY = 1 | CPU : NEON = 1 | ARM_FMA = 1 | MATMUL_INT8 = 1 | DOTPROD = 1 | ACCELERATE = 1 | OPENMP = 1 | REPACK = 1 | ",
+	"model": {
+		"type": "small",
+		"multilingual": false,
+		"vocab": 51864,
+		"audio": {
+			"ctx": 1500,
+			"state": 768,
+			"head": 12,
+			"layer": 12
+		},
+		"text": {
+			"ctx": 448,
+			"state": 768,
+			"head": 12,
+			"layer": 12
+		},
+		"mels": 80,
+		"ftype": 1
+	},
+	"params": {
+		"model": "/Users/mayowaadesanya/.cache/hyperframes/whisper/models/ggml-small.en.bin",
+		"language": "en",
+		"translate": false
+	},
+	"result": {
+		"language": "en"
+	},
+	"transcription": [
+		{
+			"timestamps": {
+				"from": "00:00:00,000",
+				"to": "00:00:02,440"
+			},
+			"offsets": {
+				"from": 0,
+				"to": 2440
+			},
+			"text": " and your voice never has to get uploaded anywhere.",
+			"tokens": [
+				{
+					"text": "[_BEG_]",
+					"timestamps": {
+						"from": "00:00:00,000",
+						"to": "00:00:00,000"
+					},
+					"offsets": {
+						"from": 0,
+						"to": 0
+					},
+					"id": 50363,
+					"p": 0.994256,
+					"t_dtw": -1
+				},
+				{
+					"text": " and",
+					"timestamps": {
+						"from": "00:00:00,030",
+						"to": "00:00:00,140"
+					},
+					"offsets": {
+						"from": 30,
+						"to": 140
+					},
+					"id": 290,
+					"p": 0.336316,
+					"t_dtw": 10
+				},
+				{
+					"text": " your",
+					"timestamps": {
+						"from": "00:00:00,140",
+						"to": "00:00:00,330"
+					},
+					"offsets": {
+						"from": 140,
+						"to": 330
+					},
+					"id": 534,
+					"p": 0.995038,
+					"t_dtw": 18
+				},
+				{
+					"text": " voice",
+					"timestamps": {
+						"from": "00:00:00,330",
+						"to": "00:00:00,570"
+					},
+					"offsets": {
+						"from": 330,
+						"to": 570
+					},
+					"id": 3809,
+					"p": 0.999266,
+					"t_dtw": 44
+				},
+				{
+					"text": " never",
+					"timestamps": {
+						"from": "00:00:00,570",
+						"to": "00:00:00,810"
+					},
+					"offsets": {
+						"from": 570,
+						"to": 810
+					},
+					"id": 1239,
+					"p": 0.990299,
+					"t_dtw": 74
+				},
+				{
+					"text": " has",
+					"timestamps": {
+						"from": "00:00:00,810",
+						"to": "00:00:00,880"
+					},
+					"offsets": {
+						"from": 810,
+						"to": 880
+					},
+					"id": 468,
+					"p": 0.997647,
+					"t_dtw": 90
+				},
+				{
+					"text": " to",
+					"timestamps": {
+						"from": "00:00:00,960",
+						"to": "00:00:01,040"
+					},
+					"offsets": {
+						"from": 960,
+						"to": 1040
+					},
+					"id": 284,
+					"p": 0.998877,
+					"t_dtw": 102
+				},
+				{
+					"text": " get",
+					"timestamps": {
+						"from": "00:00:01,040",
+						"to": "00:00:01,170"
+					},
+					"offsets": {
+						"from": 1040,
+						"to": 1170
+					},
+					"id": 651,
+					"p": 0.992807,
+					"t_dtw": 112
+				},
+				{
+					"text": " uploaded",
+					"timestamps": {
+						"from": "00:00:01,260",
+						"to": "00:00:01,560"
+					},
+					"offsets": {
+						"from": 1260,
+						"to": 1560
+					},
+					"id": 19144,
+					"p": 0.997339,
+					"t_dtw": 136
+				},
+				{
+					"text": " anywhere",
+					"timestamps": {
+						"from": "00:00:01,560",
+						"to": "00:00:01,750"
+					},
+					"offsets": {
+						"from": 1560,
+						"to": 1750
+					},
+					"id": 6609,
+					"p": 0.996888,
+					"t_dtw": 178
+				},
+				{
+					"text": ".",
+					"timestamps": {
+						"from": "00:00:01,910",
+						"to": "00:00:01,910"
+					},
+					"offsets": {
+						"from": 1910,
+						"to": 1910
+					},
+					"id": 13,
+					"p": 0.981942,
+					"t_dtw": 188
+				},
+				{
+					"text": "[_TT_122]",
+					"timestamps": {
+						"from": "00:00:02,440",
+						"to": "00:00:02,440"
+					},
+					"offsets": {
+						"from": 2440,
+						"to": 2440
+					},
+					"id": 50485,
+					"p": 0.0456677,
+					"t_dtw": -1
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,128 @@
+{
+  "pass": true,
+  "issues": [],
+  "states": [
+    {
+      "beat": "energy-01",
+      "facts": [
+        "claim-up"
+      ]
+    },
+    {
+      "beat": "energy-02",
+      "facts": [
+        "caught",
+        "claim-up"
+      ]
+    },
+    {
+      "beat": "energy-03",
+      "facts": [
+        "caught",
+        "claim-up",
+        "trail"
+      ]
+    },
+    {
+      "beat": "energy-04",
+      "facts": [
+        "caught",
+        "claim-up",
+        "traced",
+        "trail"
+      ]
+    },
+    {
+      "beat": "energy-05",
+      "facts": [
+        "caught",
+        "claim-up",
+        "revealed",
+        "traced",
+        "trail"
+      ]
+    },
+    {
+      "beat": "energy-06",
+      "facts": [
+        "caught",
+        "claim-up",
+        "compared",
+        "revealed",
+        "traced",
+        "trail"
+      ]
+    },
+    {
+      "beat": "energy-07",
+      "facts": [
+        "caught",
+        "claim-up",
+        "compared",
+        "gap-open",
+        "revealed",
+        "traced",
+        "trail"
+      ]
+    },
+    {
+      "beat": "energy-08",
+      "facts": [
+        "caught",
+        "claim-up",
+        "compared",
+        "gap-kept",
+        "gap-open",
+        "revealed",
+        "traced",
+        "trail"
+      ]
+    },
+    {
+      "beat": "energy-09",
+      "facts": [
+        "caught",
+        "claim-up",
+        "compared",
+        "gap-kept",
+        "gap-open",
+        "revealed",
+        "review-needed",
+        "traced",
+        "trail"
+      ]
+    },
+    {
+      "beat": "energy-10",
+      "facts": [
+        "assembled",
+        "caught",
+        "claim-up",
+        "compared",
+        "gap-kept",
+        "gap-open",
+        "revealed",
+        "review-needed",
+        "traced",
+        "trail"
+      ]
+    },
+    {
+      "beat": "energy-11",
+      "facts": [
+        "assembled",
+        "caught",
+        "claim-up",
+        "compared",
+        "explained",
+        "gap-kept",
+        "gap-open",
+        "revealed",
+        "review-needed",
+        "traced",
+        "trail"
+      ]
+    }
+  ],
+  "scope": "script fidelity and finite executable capability checks, not engagement approval"
+}

@@ -1,0 +1,1717 @@
+{
+  "pageOrigin": [
+    98,
+    514
+  ],
+  "cameraScale": 1,
+  "botOrigin": [
+    496,
+    1095
+  ],
+  "botScale": 0.32,
+  "regions": [
+    {
+      "x": 245,
+      "y": 258,
+      "boxY": 218,
+      "height": 65
+    },
+    {
+      "x": 275,
+      "y": 468,
+      "boxY": 428,
+      "height": 65
+    },
+    {
+      "x": 280,
+      "y": 688,
+      "boxY": 644,
+      "height": 96
+    }
+  ],
+  "findingTimes": [
+    3.683333333333333,
+    4.343333333333333,
+    4.993333333333333
+  ],
+  "countTimes": [
+    3.8633333333333333,
+    4.563333333333333,
+    5.093333333333334
+  ],
+  "samples": [
+    {
+      "localFrame": 88,
+      "pageY": 275,
+      "activeRegion": 0,
+      "regionLocal": [
+        245,
+        258
+      ],
+      "lensWorld": [
+        490.0,
+        1080.0
+      ],
+      "handleWorld": [
+        643.0,
+        1244.0
+      ],
+      "gripWorld": [
+        643.0,
+        1244.0
+      ],
+      "lensOpacity": 0.0
+    },
+    {
+      "localFrame": 89,
+      "pageY": 269.04761904761904,
+      "activeRegion": 0,
+      "regionLocal": [
+        245,
+        258
+      ],
+      "lensWorld": [
+        472.5,
+        1075.3628117913831
+      ],
+      "handleWorld": [
+        625.5,
+        1239.3628117913831
+      ],
+      "gripWorld": [
+        625.5,
+        1239.3628117913831
+      ],
+      "lensOpacity": 0.22222222222222224
+    },
+    {
+      "localFrame": 90,
+      "pageY": 263.0952380952381,
+      "activeRegion": 0,
+      "regionLocal": [
+        245,
+        258
+      ],
+      "lensWorld": [
+        455.0,
+        1069.3083900226757
+      ],
+      "handleWorld": [
+        608.0,
+        1233.3083900226757
+      ],
+      "gripWorld": [
+        608.0,
+        1233.3083900226757
+      ],
+      "lensOpacity": 0.4444444444444445
+    },
+    {
+      "localFrame": 91,
+      "pageY": 257.14285714285717,
+      "activeRegion": 0,
+      "regionLocal": [
+        245,
+        258
+      ],
+      "lensWorld": [
+        437.5,
+        1061.8367346938776
+      ],
+      "handleWorld": [
+        590.5,
+        1225.8367346938776
+      ],
+      "gripWorld": [
+        590.5,
+        1225.8367346938776
+      ],
+      "lensOpacity": 0.6666666666666667
+    },
+    {
+      "localFrame": 92,
+      "pageY": 251.1904761904762,
+      "activeRegion": 0,
+      "regionLocal": [
+        245,
+        258
+      ],
+      "lensWorld": [
+        420.0,
+        1052.9478458049887
+      ],
+      "handleWorld": [
+        573.0,
+        1216.9478458049887
+      ],
+      "gripWorld": [
+        573.0,
+        1216.9478458049887
+      ],
+      "lensOpacity": 0.888888888888889
+    },
+    {
+      "localFrame": 93,
+      "pageY": 245.23809523809524,
+      "activeRegion": 0,
+      "regionLocal": [
+        245,
+        258
+      ],
+      "lensWorld": [
+        402.5,
+        1042.6417233560092
+      ],
+      "handleWorld": [
+        555.5,
+        1206.6417233560092
+      ],
+      "gripWorld": [
+        555.5,
+        1206.6417233560092
+      ],
+      "lensOpacity": 1
+    },
+    {
+      "localFrame": 94,
+      "pageY": 239.28571428571428,
+      "activeRegion": 0,
+      "regionLocal": [
+        245,
+        258
+      ],
+      "lensWorld": [
+        385.0,
+        1030.9183673469388
+      ],
+      "handleWorld": [
+        538.0,
+        1194.9183673469388
+      ],
+      "gripWorld": [
+        538.0,
+        1194.9183673469388
+      ],
+      "lensOpacity": 1
+    },
+    {
+      "localFrame": 95,
+      "pageY": 233.33333333333334,
+      "activeRegion": 0,
+      "regionLocal": [
+        245,
+        258
+      ],
+      "lensWorld": [
+        367.5,
+        1017.7777777777778
+      ],
+      "handleWorld": [
+        520.5,
+        1181.7777777777778
+      ],
+      "gripWorld": [
+        520.5,
+        1181.7777777777778
+      ],
+      "lensOpacity": 1
+    },
+    {
+      "localFrame": 96,
+      "pageY": 227.38095238095238,
+      "activeRegion": 0,
+      "regionLocal": [
+        245,
+        258
+      ],
+      "lensWorld": [
+        350.0,
+        1003.2199546485261
+      ],
+      "handleWorld": [
+        503.0,
+        1167.2199546485263
+      ],
+      "gripWorld": [
+        503.0,
+        1167.2199546485263
+      ],
+      "lensOpacity": 1
+    },
+    {
+      "localFrame": 97,
+      "pageY": 222.08333333333334,
+      "activeRegion": 0,
+      "regionLocal": [
+        245,
+        258
+      ],
+      "lensWorld": [
+        343,
+        994.0833333333334
+      ],
+      "handleWorld": [
+        496,
+        1158.0833333333335
+      ],
+      "gripWorld": [
+        496,
+        1158.0833333333335
+      ],
+      "lensOpacity": 1
+    },
+    {
+      "localFrame": 98,
+      "pageY": 217.22222222222223,
+      "activeRegion": 0,
+      "regionLocal": [
+        245,
+        258
+      ],
+      "lensWorld": [
+        343,
+        989.2222222222222
+      ],
+      "handleWorld": [
+        496,
+        1153.2222222222222
+      ],
+      "gripWorld": [
+        496,
+        1153.2222222222222
+      ],
+      "lensOpacity": 1
+    },
+    {
+      "localFrame": 99,
+      "pageY": 212.36111111111111,
+      "activeRegion": 0,
+      "regionLocal": [
+        245,
+        258
+      ],
+      "lensWorld": [
+        343,
+        984.3611111111111
+      ],
+      "handleWorld": [
+        496,
+        1148.361111111111
+      ],
+      "gripWorld": [
+        496,
+        1148.361111111111
+      ],
+      "lensOpacity": 1
+    },
+    {
+      "localFrame": 100,
+      "pageY": 207.5,
+      "activeRegion": 0,
+      "regionLocal": [
+        245,
+        258
+      ],
+      "lensWorld": [
+        343,
+        979.5
+      ],
+      "handleWorld": [
+        496,
+        1143.5
+      ],
+      "gripWorld": [
+        496,
+        1143.5
+      ],
+      "lensOpacity": 1
+    },
+    {
+      "localFrame": 101,
+      "pageY": 202.63888888888889,
+      "activeRegion": 0,
+      "regionLocal": [
+        245,
+        258
+      ],
+      "lensWorld": [
+        343,
+        974.6388888888889
+      ],
+      "handleWorld": [
+        496,
+        1138.638888888889
+      ],
+      "gripWorld": [
+        496,
+        1138.638888888889
+      ],
+      "lensOpacity": 1
+    },
+    {
+      "localFrame": 102,
+      "pageY": 197.77777777777777,
+      "activeRegion": 0,
+      "regionLocal": [
+        245,
+        258
+      ],
+      "lensWorld": [
+        343,
+        969.7777777777778
+      ],
+      "handleWorld": [
+        496,
+        1133.7777777777778
+      ],
+      "gripWorld": [
+        496,
+        1133.7777777777778
+      ],
+      "lensOpacity": 1
+    },
+    {
+      "localFrame": 103,
+      "pageY": 192.91666666666669,
+      "activeRegion": 0,
+      "regionLocal": [
+        245,
+        258
+      ],
+      "lensWorld": [
+        343,
+        964.9166666666667
+      ],
+      "handleWorld": [
+        496,
+        1128.9166666666667
+      ],
+      "gripWorld": [
+        496,
+        1128.9166666666667
+      ],
+      "lensOpacity": 1
+    },
+    {
+      "localFrame": 104,
+      "pageY": 188.05555555555557,
+      "activeRegion": 0,
+      "regionLocal": [
+        245,
+        258
+      ],
+      "lensWorld": [
+        343,
+        960.0555555555555
+      ],
+      "handleWorld": [
+        496,
+        1124.0555555555557
+      ],
+      "gripWorld": [
+        496,
+        1124.0555555555557
+      ],
+      "lensOpacity": 1
+    },
+    {
+      "localFrame": 105,
+      "pageY": 183.19444444444446,
+      "activeRegion": 0,
+      "regionLocal": [
+        245,
+        258
+      ],
+      "lensWorld": [
+        343,
+        955.1944444444445
+      ],
+      "handleWorld": [
+        496,
+        1119.1944444444443
+      ],
+      "gripWorld": [
+        496,
+        1119.1944444444443
+      ],
+      "lensOpacity": 1
+    },
+    {
+      "localFrame": 106,
+      "pageY": 178.33333333333334,
+      "activeRegion": 0,
+      "regionLocal": [
+        245,
+        258
+      ],
+      "lensWorld": [
+        343,
+        950.3333333333334
+      ],
+      "handleWorld": [
+        496,
+        1114.3333333333335
+      ],
+      "gripWorld": [
+        496,
+        1114.3333333333335
+      ],
+      "lensOpacity": 1
+    },
+    {
+      "localFrame": 107,
+      "pageY": 173.47222222222223,
+      "activeRegion": 0,
+      "regionLocal": [
+        245,
+        258
+      ],
+      "lensWorld": [
+        343,
+        945.4722222222222
+      ],
+      "handleWorld": [
+        496,
+        1109.4722222222222
+      ],
+      "gripWorld": [
+        496,
+        1109.4722222222222
+      ],
+      "lensOpacity": 1
+    },
+    {
+      "localFrame": 108,
+      "pageY": 168.61111111111111,
+      "activeRegion": 0,
+      "regionLocal": [
+        245,
+        258
+      ],
+      "lensWorld": [
+        343,
+        940.6111111111111
+      ],
+      "handleWorld": [
+        496,
+        1104.611111111111
+      ],
+      "gripWorld": [
+        496,
+        1104.611111111111
+      ],
+      "lensOpacity": 1
+    },
+    {
+      "localFrame": 109,
+      "pageY": 163.75,
+      "activeRegion": 0,
+      "regionLocal": [
+        245,
+        258
+      ],
+      "lensWorld": [
+        343,
+        935.75
+      ],
+      "handleWorld": [
+        496,
+        1099.75
+      ],
+      "gripWorld": [
+        496,
+        1099.75
+      ],
+      "lensOpacity": 1
+    },
+    {
+      "localFrame": 110,
+      "pageY": 158.8888888888889,
+      "activeRegion": 0,
+      "regionLocal": [
+        245,
+        258
+      ],
+      "lensWorld": [
+        343,
+        930.8888888888889
+      ],
+      "handleWorld": [
+        496,
+        1094.888888888889
+      ],
+      "gripWorld": [
+        496,
+        1094.888888888889
+      ],
+      "lensOpacity": 1
+    },
+    {
+      "localFrame": 111,
+      "pageY": 144.52380952380946,
+      "activeRegion": null,
+      "regionLocal": [
+        245.9090909090909,
+        264.36363636363643
+      ],
+      "lensWorld": [
+        343.9090909090909,
+        922.8874458874459
+      ],
+      "handleWorld": [
+        496.9090909090909,
+        1086.887445887446
+      ],
+      "gripWorld": [
+        496.9090909090909,
+        1086.887445887446
+      ],
+      "lensOpacity": 1
+    },
+    {
+      "localFrame": 112,
+      "pageY": 92.1428571428571,
+      "activeRegion": null,
+      "regionLocal": [
+        250.45454545454547,
+        296.18181818181824
+      ],
+      "lensWorld": [
+        348.4545454545455,
+        902.3246753246754
+      ],
+      "handleWorld": [
+        501.4545454545455,
+        1066.3246753246754
+      ],
+      "gripWorld": [
+        501.4545454545455,
+        1066.3246753246754
+      ],
+      "lensOpacity": 1
+    },
+    {
+      "localFrame": 113,
+      "pageY": 39.76190476190473,
+      "activeRegion": null,
+      "regionLocal": [
+        255.0,
+        328.0
+      ],
+      "lensWorld": [
+        353.0,
+        881.7619047619047
+      ],
+      "handleWorld": [
+        506.0,
+        1045.7619047619046
+      ],
+      "gripWorld": [
+        506.0,
+        1045.7619047619046
+      ],
+      "lensOpacity": 1
+    },
+    {
+      "localFrame": 114,
+      "pageY": -12.61904761904762,
+      "activeRegion": null,
+      "regionLocal": [
+        259.54545454545456,
+        359.8181818181818
+      ],
+      "lensWorld": [
+        357.54545454545456,
+        861.1991341991343
+      ],
+      "handleWorld": [
+        510.54545454545456,
+        1025.1991341991343
+      ],
+      "gripWorld": [
+        510.54545454545456,
+        1025.1991341991343
+      ],
+      "lensOpacity": 1
+    },
+    {
+      "localFrame": 115,
+      "pageY": -65.0,
+      "activeRegion": null,
+      "regionLocal": [
+        264.0909090909091,
+        391.6363636363636
+      ],
+      "lensWorld": [
+        362.0909090909091,
+        840.6363636363636
+      ],
+      "handleWorld": [
+        515.0909090909091,
+        1004.6363636363636
+      ],
+      "gripWorld": [
+        515.0909090909091,
+        1004.6363636363636
+      ],
+      "lensOpacity": 1
+    },
+    {
+      "localFrame": 116,
+      "pageY": -65.31446540880503,
+      "activeRegion": null,
+      "regionLocal": [
+        268.6363636363636,
+        423.4545454545455
+      ],
+      "lensWorld": [
+        366.6363636363636,
+        872.1400800457404
+      ],
+      "handleWorld": [
+        519.6363636363636,
+        1036.1400800457404
+      ],
+      "gripWorld": [
+        519.6363636363636,
+        1036.1400800457404
+      ],
+      "lensOpacity": 1
+    },
+    {
+      "localFrame": 117,
+      "pageY": -65.62893081761007,
+      "activeRegion": null,
+      "regionLocal": [
+        273.1818181818182,
+        455.27272727272725
+      ],
+      "lensWorld": [
+        371.1818181818182,
+        903.6437964551171
+      ],
+      "handleWorld": [
+        524.1818181818182,
+        1067.6437964551171
+      ],
+      "gripWorld": [
+        524.1818181818182,
+        1067.6437964551171
+      ],
+      "lensOpacity": 1
+    },
+    {
+      "localFrame": 118,
+      "pageY": -65.94339622641509,
+      "activeRegion": 1,
+      "regionLocal": [
+        275,
+        468
+      ],
+      "lensWorld": [
+        373,
+        916.0566037735849
+      ],
+      "handleWorld": [
+        526,
+        1080.0566037735848
+      ],
+      "gripWorld": [
+        526,
+        1080.0566037735848
+      ],
+      "lensOpacity": 1
+    },
+    {
+      "localFrame": 119,
+      "pageY": -66.25786163522012,
+      "activeRegion": 1,
+      "regionLocal": [
+        275,
+        468
+      ],
+      "lensWorld": [
+        373,
+        915.7421383647799
+      ],
+      "handleWorld": [
+        526,
+        1079.7421383647797
+      ],
+      "gripWorld": [
+        526,
+        1079.7421383647797
+      ],
+      "lensOpacity": 1
+    },
+    {
+      "localFrame": 120,
+      "pageY": -66.57232704402516,
+      "activeRegion": 1,
+      "regionLocal": [
+        275,
+        468
+      ],
+      "lensWorld": [
+        373,
+        915.4276729559749
+      ],
+      "handleWorld": [
+        526,
+        1079.427672955975
+      ],
+      "gripWorld": [
+        526,
+        1079.427672955975
+      ],
+      "lensOpacity": 1
+    },
+    {
+      "localFrame": 121,
+      "pageY": -66.88679245283019,
+      "activeRegion": 1,
+      "regionLocal": [
+        275,
+        468
+      ],
+      "lensWorld": [
+        373,
+        915.1132075471698
+      ],
+      "handleWorld": [
+        526,
+        1079.1132075471698
+      ],
+      "gripWorld": [
+        526,
+        1079.1132075471698
+      ],
+      "lensOpacity": 1
+    },
+    {
+      "localFrame": 122,
+      "pageY": -67.20125786163521,
+      "activeRegion": 1,
+      "regionLocal": [
+        275,
+        468
+      ],
+      "lensWorld": [
+        373,
+        914.7987421383648
+      ],
+      "handleWorld": [
+        526,
+        1078.7987421383648
+      ],
+      "gripWorld": [
+        526,
+        1078.7987421383648
+      ],
+      "lensOpacity": 1
+    },
+    {
+      "localFrame": 123,
+      "pageY": -67.51572327044025,
+      "activeRegion": 1,
+      "regionLocal": [
+        275,
+        468
+      ],
+      "lensWorld": [
+        373,
+        914.4842767295597
+      ],
+      "handleWorld": [
+        526,
+        1078.4842767295597
+      ],
+      "gripWorld": [
+        526,
+        1078.4842767295597
+      ],
+      "lensOpacity": 1
+    },
+    {
+      "localFrame": 124,
+      "pageY": -67.83018867924528,
+      "activeRegion": 1,
+      "regionLocal": [
+        275,
+        468
+      ],
+      "lensWorld": [
+        373,
+        914.1698113207547
+      ],
+      "handleWorld": [
+        526,
+        1078.1698113207547
+      ],
+      "gripWorld": [
+        526,
+        1078.1698113207547
+      ],
+      "lensOpacity": 1
+    },
+    {
+      "localFrame": 125,
+      "pageY": -68.14465408805032,
+      "activeRegion": 1,
+      "regionLocal": [
+        275,
+        468
+      ],
+      "lensWorld": [
+        373,
+        913.8553459119497
+      ],
+      "handleWorld": [
+        526,
+        1077.8553459119498
+      ],
+      "gripWorld": [
+        526,
+        1077.8553459119498
+      ],
+      "lensOpacity": 1
+    },
+    {
+      "localFrame": 126,
+      "pageY": -68.45911949685535,
+      "activeRegion": 1,
+      "regionLocal": [
+        275,
+        468
+      ],
+      "lensWorld": [
+        373,
+        913.5408805031446
+      ],
+      "handleWorld": [
+        526,
+        1077.5408805031448
+      ],
+      "gripWorld": [
+        526,
+        1077.5408805031448
+      ],
+      "lensOpacity": 1
+    },
+    {
+      "localFrame": 127,
+      "pageY": -68.77358490566039,
+      "activeRegion": 1,
+      "regionLocal": [
+        275,
+        468
+      ],
+      "lensWorld": [
+        373,
+        913.2264150943396
+      ],
+      "handleWorld": [
+        526,
+        1077.2264150943397
+      ],
+      "gripWorld": [
+        526,
+        1077.2264150943397
+      ],
+      "lensOpacity": 1
+    },
+    {
+      "localFrame": 128,
+      "pageY": -69.0880503144654,
+      "activeRegion": 1,
+      "regionLocal": [
+        275,
+        468
+      ],
+      "lensWorld": [
+        373,
+        912.9119496855346
+      ],
+      "handleWorld": [
+        526,
+        1076.9119496855346
+      ],
+      "gripWorld": [
+        526,
+        1076.9119496855346
+      ],
+      "lensOpacity": 1
+    },
+    {
+      "localFrame": 129,
+      "pageY": -69.40251572327044,
+      "activeRegion": 1,
+      "regionLocal": [
+        275,
+        468
+      ],
+      "lensWorld": [
+        373,
+        912.5974842767296
+      ],
+      "handleWorld": [
+        526,
+        1076.5974842767296
+      ],
+      "gripWorld": [
+        526,
+        1076.5974842767296
+      ],
+      "lensOpacity": 1
+    },
+    {
+      "localFrame": 130,
+      "pageY": -69.71698113207547,
+      "activeRegion": 1,
+      "regionLocal": [
+        275,
+        468
+      ],
+      "lensWorld": [
+        373,
+        912.2830188679245
+      ],
+      "handleWorld": [
+        526,
+        1076.2830188679245
+      ],
+      "gripWorld": [
+        526,
+        1076.2830188679245
+      ],
+      "lensOpacity": 1
+    },
+    {
+      "localFrame": 131,
+      "pageY": -74.22222222222231,
+      "activeRegion": null,
+      "regionLocal": [
+        275.06666666666666,
+        470.9333333333334
+      ],
+      "lensWorld": [
+        373.06666666666666,
+        910.7111111111111
+      ],
+      "handleWorld": [
+        526.0666666666666,
+        1074.7111111111112
+      ],
+      "gripWorld": [
+        526.0666666666666,
+        1074.7111111111112
+      ],
+      "lensOpacity": 1
+    },
+    {
+      "localFrame": 132,
+      "pageY": -116.44444444444434,
+      "activeRegion": null,
+      "regionLocal": [
+        275.73333333333335,
+        500.26666666666665
+      ],
+      "lensWorld": [
+        373.73333333333335,
+        897.8222222222223
+      ],
+      "handleWorld": [
+        526.7333333333333,
+        1061.8222222222223
+      ],
+      "gripWorld": [
+        526.7333333333333,
+        1061.8222222222223
+      ],
+      "lensOpacity": 1
+    },
+    {
+      "localFrame": 133,
+      "pageY": -158.66666666666669,
+      "activeRegion": null,
+      "regionLocal": [
+        276.4,
+        529.6
+      ],
+      "lensWorld": [
+        374.4,
+        884.9333333333334
+      ],
+      "handleWorld": [
+        527.4,
+        1048.9333333333334
+      ],
+      "gripWorld": [
+        527.4,
+        1048.9333333333334
+      ],
+      "lensOpacity": 1
+    },
+    {
+      "localFrame": 134,
+      "pageY": -200.88888888888897,
+      "activeRegion": null,
+      "regionLocal": [
+        277.06666666666666,
+        558.9333333333335
+      ],
+      "lensWorld": [
+        375.06666666666666,
+        872.0444444444445
+      ],
+      "handleWorld": [
+        528.0666666666666,
+        1036.0444444444445
+      ],
+      "gripWorld": [
+        528.0666666666666,
+        1036.0444444444445
+      ],
+      "lensOpacity": 1
+    },
+    {
+      "localFrame": 135,
+      "pageY": -243.11111111111103,
+      "activeRegion": null,
+      "regionLocal": [
+        277.73333333333335,
+        588.2666666666667
+      ],
+      "lensWorld": [
+        375.73333333333335,
+        859.1555555555556
+      ],
+      "handleWorld": [
+        528.7333333333333,
+        1023.1555555555556
+      ],
+      "gripWorld": [
+        528.7333333333333,
+        1023.1555555555556
+      ],
+      "lensOpacity": 1
+    },
+    {
+      "localFrame": 136,
+      "pageY": -260.8333333333333,
+      "activeRegion": null,
+      "regionLocal": [
+        278.4,
+        617.6000000000001
+      ],
+      "lensWorld": [
+        376.4,
+        870.7666666666669
+      ],
+      "handleWorld": [
+        529.4,
+        1034.7666666666669
+      ],
+      "gripWorld": [
+        529.4,
+        1034.7666666666669
+      ],
+      "lensOpacity": 1
+    },
+    {
+      "localFrame": 137,
+      "pageY": -262.22222222222223,
+      "activeRegion": null,
+      "regionLocal": [
+        279.06666666666666,
+        646.9333333333334
+      ],
+      "lensWorld": [
+        377.06666666666666,
+        898.7111111111112
+      ],
+      "handleWorld": [
+        530.0666666666666,
+        1062.7111111111112
+      ],
+      "gripWorld": [
+        530.0666666666666,
+        1062.7111111111112
+      ],
+      "lensOpacity": 1
+    },
+    {
+      "localFrame": 138,
+      "pageY": -263.6111111111111,
+      "activeRegion": null,
+      "regionLocal": [
+        279.73333333333335,
+        676.2666666666668
+      ],
+      "lensWorld": [
+        377.73333333333335,
+        926.6555555555557
+      ],
+      "handleWorld": [
+        530.7333333333333,
+        1090.6555555555556
+      ],
+      "gripWorld": [
+        530.7333333333333,
+        1090.6555555555556
+      ],
+      "lensOpacity": 1
+    },
+    {
+      "localFrame": 139,
+      "pageY": -265.0,
+      "activeRegion": 2,
+      "regionLocal": [
+        280,
+        688
+      ],
+      "lensWorld": [
+        378,
+        937.0
+      ],
+      "handleWorld": [
+        531,
+        1101.0
+      ],
+      "gripWorld": [
+        531,
+        1101.0
+      ],
+      "lensOpacity": 1
+    },
+    {
+      "localFrame": 140,
+      "pageY": -266.3888888888889,
+      "activeRegion": 2,
+      "regionLocal": [
+        280,
+        688
+      ],
+      "lensWorld": [
+        378,
+        935.6111111111111
+      ],
+      "handleWorld": [
+        531,
+        1099.611111111111
+      ],
+      "gripWorld": [
+        531,
+        1099.611111111111
+      ],
+      "lensOpacity": 1
+    },
+    {
+      "localFrame": 141,
+      "pageY": -267.77777777777777,
+      "activeRegion": 2,
+      "regionLocal": [
+        280,
+        688
+      ],
+      "lensWorld": [
+        378,
+        934.2222222222222
+      ],
+      "handleWorld": [
+        531,
+        1098.2222222222222
+      ],
+      "gripWorld": [
+        531,
+        1098.2222222222222
+      ],
+      "lensOpacity": 1
+    },
+    {
+      "localFrame": 142,
+      "pageY": -269.1666666666667,
+      "activeRegion": 2,
+      "regionLocal": [
+        280,
+        688
+      ],
+      "lensWorld": [
+        378,
+        932.8333333333333
+      ],
+      "handleWorld": [
+        531,
+        1096.8333333333333
+      ],
+      "gripWorld": [
+        531,
+        1096.8333333333333
+      ],
+      "lensOpacity": 1
+    },
+    {
+      "localFrame": 143,
+      "pageY": -270.55555555555554,
+      "activeRegion": 2,
+      "regionLocal": [
+        280,
+        688
+      ],
+      "lensWorld": [
+        378,
+        931.4444444444445
+      ],
+      "handleWorld": [
+        531,
+        1095.4444444444443
+      ],
+      "gripWorld": [
+        531,
+        1095.4444444444443
+      ],
+      "lensOpacity": 1
+    },
+    {
+      "localFrame": 144,
+      "pageY": -271.94444444444446,
+      "activeRegion": 2,
+      "regionLocal": [
+        280,
+        688
+      ],
+      "lensWorld": [
+        378,
+        930.0555555555555
+      ],
+      "handleWorld": [
+        531,
+        1094.0555555555557
+      ],
+      "gripWorld": [
+        531,
+        1094.0555555555557
+      ],
+      "lensOpacity": 1
+    },
+    {
+      "localFrame": 145,
+      "pageY": -273.3333333333333,
+      "activeRegion": 2,
+      "regionLocal": [
+        280,
+        688
+      ],
+      "lensWorld": [
+        378,
+        928.6666666666667
+      ],
+      "handleWorld": [
+        531,
+        1092.6666666666667
+      ],
+      "gripWorld": [
+        531,
+        1092.6666666666667
+      ],
+      "lensOpacity": 1
+    },
+    {
+      "localFrame": 146,
+      "pageY": -274.72222222222223,
+      "activeRegion": 2,
+      "regionLocal": [
+        280,
+        688
+      ],
+      "lensWorld": [
+        378,
+        927.2777777777778
+      ],
+      "handleWorld": [
+        531,
+        1091.2777777777778
+      ],
+      "gripWorld": [
+        531,
+        1091.2777777777778
+      ],
+      "lensOpacity": 1
+    },
+    {
+      "localFrame": 147,
+      "pageY": -276.1111111111111,
+      "activeRegion": 2,
+      "regionLocal": [
+        280,
+        688
+      ],
+      "lensWorld": [
+        378,
+        925.8888888888889
+      ],
+      "handleWorld": [
+        531,
+        1089.888888888889
+      ],
+      "gripWorld": [
+        531,
+        1089.888888888889
+      ],
+      "lensOpacity": 1
+    },
+    {
+      "localFrame": 148,
+      "pageY": -277.5,
+      "activeRegion": 2,
+      "regionLocal": [
+        280,
+        688
+      ],
+      "lensWorld": [
+        378,
+        924.5
+      ],
+      "handleWorld": [
+        531,
+        1088.5
+      ],
+      "gripWorld": [
+        531,
+        1088.5
+      ],
+      "lensOpacity": 1
+    },
+    {
+      "localFrame": 149,
+      "pageY": -278.88888888888886,
+      "activeRegion": 2,
+      "regionLocal": [
+        280,
+        688
+      ],
+      "lensWorld": [
+        378,
+        923.1111111111111
+      ],
+      "handleWorld": [
+        531,
+        1087.111111111111
+      ],
+      "gripWorld": [
+        531,
+        1087.111111111111
+      ],
+      "lensOpacity": 1
+    },
+    {
+      "localFrame": 150,
+      "pageY": -280.0,
+      "activeRegion": 2,
+      "regionLocal": [
+        280,
+        688
+      ],
+      "lensWorld": [
+        378,
+        922.0
+      ],
+      "handleWorld": [
+        531,
+        1086.0
+      ],
+      "gripWorld": [
+        531,
+        1086.0
+      ],
+      "lensOpacity": 1
+    },
+    {
+      "localFrame": 151,
+      "pageY": -280.0,
+      "activeRegion": 2,
+      "regionLocal": [
+        280,
+        688
+      ],
+      "lensWorld": [
+        378,
+        922.0
+      ],
+      "handleWorld": [
+        531,
+        1086.0
+      ],
+      "gripWorld": [
+        531,
+        1086.0
+      ],
+      "lensOpacity": 1
+    },
+    {
+      "localFrame": 152,
+      "pageY": -280.0,
+      "activeRegion": 2,
+      "regionLocal": [
+        280,
+        688
+      ],
+      "lensWorld": [
+        378,
+        922.0
+      ],
+      "handleWorld": [
+        531,
+        1086.0
+      ],
+      "gripWorld": [
+        531,
+        1086.0
+      ],
+      "lensOpacity": 1
+    },
+    {
+      "localFrame": 153,
+      "pageY": -280.0,
+      "activeRegion": 2,
+      "regionLocal": [
+        280,
+        688
+      ],
+      "lensWorld": [
+        378,
+        922.0
+      ],
+      "handleWorld": [
+        531,
+        1086.0
+      ],
+      "gripWorld": [
+        531,
+        1086.0
+      ],
+      "lensOpacity": 1
+    },
+    {
+      "localFrame": 154,
+      "pageY": -301.6666666666667,
+      "activeRegion": null,
+      "regionLocal": [
+        280,
+        688
+      ],
+      "lensWorld": [
+        386.3636363636364,
+        919.3939393939394
+      ],
+      "handleWorld": [
+        539.3636363636364,
+        1083.3939393939395
+      ],
+      "gripWorld": [
+        539.3636363636364,
+        1083.3939393939395
+      ],
+      "lensOpacity": 1
+    },
+    {
+      "localFrame": 155,
+      "pageY": -337.7777777777777,
+      "activeRegion": null,
+      "regionLocal": [
+        280,
+        688
+      ],
+      "lensWorld": [
+        400.30303030303025,
+        923.8047138047137
+      ],
+      "handleWorld": [
+        553.3030303030303,
+        1087.8047138047136
+      ],
+      "gripWorld": [
+        553.3030303030303,
+        1087.8047138047136
+      ],
+      "lensOpacity": 1
+    },
+    {
+      "localFrame": 156,
+      "pageY": -373.88888888888874,
+      "activeRegion": null,
+      "regionLocal": [
+        280,
+        688
+      ],
+      "lensWorld": [
+        414.24242424242414,
+        939.158249158249
+      ],
+      "handleWorld": [
+        567.2424242424241,
+        1103.158249158249
+      ],
+      "gripWorld": [
+        567.2424242424241,
+        1103.158249158249
+      ],
+      "lensOpacity": 1
+    },
+    {
+      "localFrame": 157,
+      "pageY": -409.9999999999998,
+      "activeRegion": null,
+      "regionLocal": [
+        280,
+        688
+      ],
+      "lensWorld": [
+        428.181818181818,
+        965.454545454545
+      ],
+      "handleWorld": [
+        581.181818181818,
+        1129.454545454545
+      ],
+      "gripWorld": [
+        581.181818181818,
+        1129.454545454545
+      ],
+      "lensOpacity": 1
+    },
+    {
+      "localFrame": 158,
+      "pageY": -446.1111111111113,
+      "activeRegion": null,
+      "regionLocal": [
+        280,
+        688
+      ],
+      "lensWorld": [
+        442.1212121212121,
+        1002.6936026936025
+      ],
+      "handleWorld": [
+        595.1212121212121,
+        1166.6936026936025
+      ],
+      "gripWorld": [
+        595.1212121212121,
+        1166.6936026936025
+      ],
+      "lensOpacity": 1
+    },
+    {
+      "localFrame": 159,
+      "pageY": -482.2222222222223,
+      "activeRegion": null,
+      "regionLocal": [
+        280,
+        688
+      ],
+      "lensWorld": [
+        456.060606060606,
+        1050.8754208754206
+      ],
+      "handleWorld": [
+        609.060606060606,
+        1214.8754208754206
+      ],
+      "gripWorld": [
+        609.060606060606,
+        1214.8754208754206
+      ],
+      "lensOpacity": 0.8958333333333337
+    },
+    {
+      "localFrame": 160,
+      "pageY": -518.3333333333333,
+      "activeRegion": null,
+      "regionLocal": [
+        280,
+        688
+      ],
+      "lensWorld": [
+        469.9999999999999,
+        1109.9999999999995
+      ],
+      "handleWorld": [
+        622.9999999999999,
+        1273.9999999999995
+      ],
+      "gripWorld": [
+        622.9999999999999,
+        1273.9999999999995
+      ],
+      "lensOpacity": 0.6875000000000011
+    },
+    {
+      "localFrame": 161,
+      "pageY": -540,
+      "activeRegion": null,
+      "regionLocal": [
+        280,
+        688
+      ],
+      "lensWorld": [
+        470,
+        1110
+      ],
+      "handleWorld": [
+        623,
+        1274
+      ],
+      "gripWorld": [
+        623,
+        1274
+      ],
+      "lensOpacity": 0.4791666666666685
+    },
+    {
+      "localFrame": 162,
+      "pageY": -540,
+      "activeRegion": null,
+      "regionLocal": [
+        280,
+        688
+      ],
+      "lensWorld": [
+        470,
+        1110
+      ],
+      "handleWorld": [
+        623,
+        1274
+      ],
+      "gripWorld": [
+        623,
+        1274
+      ],
+      "lensOpacity": 0.27083333333333315
+    },
+    {
+      "localFrame": 163,
+      "pageY": -540,
+      "activeRegion": null,
+      "regionLocal": [
+        280,
+        688
+      ],
+      "lensWorld": [
+        470,
+        1110
+      ],
+      "handleWorld": [
+        623,
+        1274
+      ],
+      "gripWorld": [
+        623,
+        1274
+      ],
+      "lensOpacity": 0.06250000000000056
+    }
+  ],
+  "findingBoxesVisibleAtCount": true
+}

@@ -1,0 +1,290 @@
+{
+  "coverage": 1.0,
+  "merged_token_groups": [],
+  "script_words": [
+    "a",
+    "confident",
+    "answer",
+    "can",
+    "still",
+    "be",
+    "wrong",
+    "before",
+    "you",
+    "trust",
+    "a",
+    "claim",
+    "follow",
+    "it",
+    "back",
+    "to",
+    "its",
+    "source",
+    "check",
+    "what",
+    "the",
+    "original",
+    "actually",
+    "says",
+    "not",
+    "just",
+    "the",
+    "summary",
+    "if",
+    "the",
+    "evidence",
+    "is",
+    "missing",
+    "leave",
+    "the",
+    "gap",
+    "visible",
+    "instead",
+    "of",
+    "filling",
+    "it",
+    "with",
+    "a",
+    "guess",
+    "then",
+    "make",
+    "your",
+    "decision",
+    "useful",
+    "ai",
+    "should",
+    "help",
+    "you",
+    "understand",
+    "the",
+    "answer",
+    "not",
+    "just",
+    "make",
+    "it",
+    "sound",
+    "convincing"
+  ],
+  "matched_script_indices": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    29,
+    30,
+    31,
+    32,
+    33,
+    34,
+    35,
+    36,
+    37,
+    38,
+    39,
+    40,
+    41,
+    42,
+    43,
+    44,
+    45,
+    46,
+    47,
+    48,
+    49,
+    50,
+    51,
+    52,
+    53,
+    54,
+    55,
+    56,
+    57,
+    58,
+    59,
+    60,
+    61
+  ],
+  "beat_anchors": [
+    {
+      "id": "beat-01",
+      "start": 0.0,
+      "actions": [
+        {
+          "action": {
+            "kind": "snap-open-then-buckle-sample-answer",
+            "cue": "A confident answer",
+            "requires": [
+              "The SAMPLE answer card begins folded flat on the desk",
+              "The card has a crisp display fold but no supporting connector beneath it",
+              "The bot has both hands free"
+            ],
+            "produces": [
+              "The SAMPLE answer card briefly stands upright",
+              "The unsupported base visibly buckles",
+              "The bot catches the falling card"
+            ]
+          },
+          "time": 0.08,
+          "script_word_index": 0,
+          "heard_word": "a"
+        }
+      ],
+      "end": 2.78
+    },
+    {
+      "id": "beat-02",
+      "start": 2.78,
+      "actions": [
+        {
+          "action": {
+            "kind": "trace-claim-connector-through-folio",
+            "cue": "Before you trust a claim",
+            "requires": [
+              "The bot holds the buckled SAMPLE answer card",
+              "A connector strip is attached to the card\u2019s reverse",
+              "The project folio is closed beside the card"
+            ],
+            "produces": [
+              "The folio opens",
+              "The connector passes through visible folio slots",
+              "A SAMPLE original-source leaf becomes partially exposed"
+            ]
+          },
+          "time": 2.78,
+          "script_word_index": 7,
+          "heard_word": "before"
+        }
+      ],
+      "end": 6.34
+    },
+    {
+      "id": "beat-03",
+      "start": 6.34,
+      "actions": [
+        {
+          "action": {
+            "kind": "lift-summary-window-to-compare-source",
+            "cue": "Check what the original",
+            "requires": [
+              "The SAMPLE summary flap covers the SAMPLE original-source leaf",
+              "The two layers are attached along one paper hinge",
+              "Their differing words occupy the same viewing window"
+            ],
+            "produces": [
+              "The bot exposes both wordings in one close view",
+              "The summary\u2019s overstatement becomes visibly attributable to its own layer",
+              "The original-source leaf remains connected but unverified"
+            ]
+          },
+          "time": 6.34,
+          "script_word_index": 18,
+          "heard_word": "check"
+        }
+      ],
+      "end": 10.33
+    },
+    {
+      "id": "beat-04",
+      "start": 10.33,
+      "actions": [
+        {
+          "action": {
+            "kind": "expose-and-preserve-evidence-gap",
+            "cue": "If the evidence is missing",
+            "requires": [
+              "The SAMPLE original-source leaf has a connector strip",
+              "The evidence frame has an unmatched receiving tab",
+              "A loose blank scrap rests near the gap"
+            ],
+            "produces": [
+              "The connector ends remain physically separated",
+              "The bot relocates the blank scrap outside the support chain",
+              "The missing evidence gap stays unobstructed"
+            ]
+          },
+          "time": 10.33,
+          "script_word_index": 28,
+          "heard_word": "if"
+        }
+      ],
+      "end": 15.8
+    },
+    {
+      "id": "beat-05",
+      "start": 15.8,
+      "actions": [
+        {
+          "action": {
+            "kind": "place-cautious-decision-bookmark",
+            "cue": "Then make your decision",
+            "requires": [
+              "The answer, summary, source, and missing gap are all visible",
+              "The decision bookmark begins flat in the bot\u2019s hand",
+              "The gap must remain unobstructed"
+            ],
+            "produces": [
+              "The \u201cNeeds review\u201d bookmark stands beside the chain",
+              "No source wording is covered",
+              "The missing evidence gap remains unchanged"
+            ]
+          },
+          "time": 15.8,
+          "script_word_index": 44,
+          "heard_word": "then"
+        }
+      ],
+      "end": 17.61
+    },
+    {
+      "id": "beat-06",
+      "start": 17.61,
+      "actions": [
+        {
+          "action": {
+            "kind": "arrange-exploded-support-chain-for-understanding",
+            "cue": "Useful AI should help",
+            "requires": [
+              "All investigation layers remain on the desk",
+              "The original-source leaf can open flat",
+              "The missing evidence tabs remain unmatched"
+            ],
+            "produces": [
+              "Every layer and ownership relationship is readable in one composition",
+              "The bot connects the wording comparison to the support path through gesture",
+              "The evidence gap remains visibly unresolved in the final frame"
+            ]
+          },
+          "time": 17.61,
+          "script_word_index": 48,
+          "heard_word": "useful"
+        }
+      ],
+      "end": 24.316
+    }
+  ]
+}

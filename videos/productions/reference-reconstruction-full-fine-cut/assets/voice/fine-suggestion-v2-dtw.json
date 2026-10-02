@@ -1,0 +1,143 @@
+{
+	"systeminfo": "WHISPER : VITISAI = 0 | COREML = 0 | OPENVINO = 0 | MTL : EMBED_LIBRARY = 1 | CPU : NEON = 1 | ARM_FMA = 1 | MATMUL_INT8 = 1 | DOTPROD = 1 | ACCELERATE = 1 | OPENMP = 1 | REPACK = 1 | ",
+	"model": {
+		"type": "small",
+		"multilingual": false,
+		"vocab": 51864,
+		"audio": {
+			"ctx": 1500,
+			"state": 768,
+			"head": 12,
+			"layer": 12
+		},
+		"text": {
+			"ctx": 448,
+			"state": 768,
+			"head": 12,
+			"layer": 12
+		},
+		"mels": 80,
+		"ftype": 1
+	},
+	"params": {
+		"model": "/Users/mayowaadesanya/.cache/hyperframes/whisper/models/ggml-small.en.bin",
+		"language": "en",
+		"translate": false
+	},
+	"result": {
+		"language": "en"
+	},
+	"transcription": [
+		{
+			"timestamps": {
+				"from": "00:00:00,000",
+				"to": "00:00:01,280"
+			},
+			"offsets": {
+				"from": 0,
+				"to": 1280
+			},
+			"text": " TriPrompt audit.",
+			"tokens": [
+				{
+					"text": "[_BEG_]",
+					"timestamps": {
+						"from": "00:00:00,000",
+						"to": "00:00:00,000"
+					},
+					"offsets": {
+						"from": 0,
+						"to": 0
+					},
+					"id": 50363,
+					"p": 0.985936,
+					"t_dtw": -1
+				},
+				{
+					"text": " Tri",
+					"timestamps": {
+						"from": "00:00:00,110",
+						"to": "00:00:00,270"
+					},
+					"offsets": {
+						"from": 110,
+						"to": 270
+					},
+					"id": 7563,
+					"p": 0.282348,
+					"t_dtw": 30
+				},
+				{
+					"text": "Prom",
+					"timestamps": {
+						"from": "00:00:00,270",
+						"to": "00:00:00,590"
+					},
+					"offsets": {
+						"from": 270,
+						"to": 590
+					},
+					"id": 24129,
+					"p": 0.546838,
+					"t_dtw": 52
+				},
+				{
+					"text": "pt",
+					"timestamps": {
+						"from": "00:00:00,660",
+						"to": "00:00:00,810"
+					},
+					"offsets": {
+						"from": 660,
+						"to": 810
+					},
+					"id": 457,
+					"p": 0.991275,
+					"t_dtw": 72
+				},
+				{
+					"text": " audit",
+					"timestamps": {
+						"from": "00:00:00,810",
+						"to": "00:00:01,070"
+					},
+					"offsets": {
+						"from": 810,
+						"to": 1070
+					},
+					"id": 14984,
+					"p": 0.459677,
+					"t_dtw": 106
+				},
+				{
+					"text": ".",
+					"timestamps": {
+						"from": "00:00:01,270",
+						"to": "00:00:01,280"
+					},
+					"offsets": {
+						"from": 1270,
+						"to": 1280
+					},
+					"id": 13,
+					"p": 0.693199,
+					"t_dtw": 126
+				},
+				{
+					"text": "[_TT_64]",
+					"timestamps": {
+						"from": "00:00:01,280",
+						"to": "00:00:01,280"
+					},
+					"offsets": {
+						"from": 1280,
+						"to": 1280
+					},
+					"id": 50427,
+					"p": 0.0789325,
+					"t_dtw": -1
+				}
+			]
+		}
+	]
+}

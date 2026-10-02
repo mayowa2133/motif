@@ -1,0 +1,14 @@
+{
+ "$schema":"https://json-schema.org/draft/2020-12/schema",
+ "type":"object",
+ "required":["schema_version","family","style","script","fps","targetFrames","seed","shots","captionPhrases"],
+ "properties":{
+  "schema_version":{"const":"text-directed-1.0"},
+  "family":{"const":"interactive-ui-v1"},
+  "style":{"const":"reference-expressive-high-energy-v1"},
+  "script":{"type":"string","minLength":1},
+  "fps":{"const":30},"targetFrames":{"type":"integer","minimum":1},"seed":{"type":"integer"},
+  "shots":{"type":"array","minItems":1,"items":{"type":"object","required":["id","kind","headline","startFrame","endFrame","components","recipe","seed"],"properties":{"id":{"type":"string","pattern":"^[a-z0-9-]+$"},"kind":{"type":"string"},"headline":{"type":"string"},"startFrame":{"type":"integer","minimum":0},"endFrame":{"type":"integer","minimum":1},"components":{"type":"array","items":{"type":"string"}},"recipe":{"type":"string"},"seed":{"type":"integer"}}}},
+  "captionPhrases":{"type":"array","minItems":1,"items":{"type":"object","required":["startFrame","endFrame","text"],"properties":{"startFrame":{"type":"integer"},"endFrame":{"type":"integer"},"text":{"type":"string"}}}}
+ }
+}

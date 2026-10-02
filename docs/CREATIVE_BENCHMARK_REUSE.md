@@ -15,7 +15,7 @@ Staging examples retained in the [existing planner](../planning/PLANNER.md):
 
 **Non-blocking limitation:** around **13.3–13.7 seconds**, the delivery framing moves up and then settles down before the receiving hands arrive. Record this for future transition polish: use a clean cut or one purposeful move. Do not reopen this film.
 
-The user reviewed full phone-sized frames and independently confirmed unchanged encoded and decoded soundtrack hashes, approximately **−16.17 LUFS / −1.52 dBTP**. This approval covers the completed prototype; it does not establish subjective voice/SFX balance, the original references' entertainment level, or autonomous staging for arbitrary subjects. The accepted staging was agent-assisted, with no new live plan or narration. Individual prop metadata remains `review`; prototype acceptance does not promote the full library.
+The prototype was approved following assistant review of sampled phone-sized frames and technical comparison of the uploaded files. The prior assistant review reported matching encoded and decoded soundtrack hashes, approximately **−16.17 LUFS / −1.52 dBTP**. Subjective voice and SFX listening quality remains unassessed in this record. This approval covers the completed prototype; it does not establish the original references' entertainment level or autonomous staging for arbitrary subjects. The accepted staging was agent-assisted, with no new live plan or narration. Individual prop metadata remains `review`; prototype acceptance does not promote the full library.
 
 ## Previous delivery (preserved)
 

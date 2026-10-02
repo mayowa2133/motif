@@ -1,0 +1,11 @@
+{
+  "slug": "confidence-isnt-evidence",
+  "title": "Confidence Isn't Evidence",
+  "script": "A confident answer can still be wrong. Before you trust a claim, follow it back to its source. Check what the original actually says, not just the summary. If the evidence is missing, leave the gap visible instead of filling it with a guess. Then make your decision. Useful AI should help you understand the answer\u2014not just make it sound convincing.",
+  "audience": "People who use AI for work, research, and everyday decisions.",
+  "style": "reference-expressive-v1",
+  "intended_duration_seconds": 30,
+  "duration_tolerance_seconds": 5,
+  "voice": "af_nova",
+  "voice_speed": 0.75
+}

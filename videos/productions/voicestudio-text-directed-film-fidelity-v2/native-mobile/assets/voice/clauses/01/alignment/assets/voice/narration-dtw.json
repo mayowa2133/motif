@@ -1,0 +1,395 @@
+{
+	"systeminfo": "WHISPER : VITISAI = 0 | COREML = 0 | OPENVINO = 0 | MTL : EMBED_LIBRARY = 1 | CPU : NEON = 1 | ARM_FMA = 1 | MATMUL_INT8 = 1 | DOTPROD = 1 | ACCELERATE = 1 | OPENMP = 1 | REPACK = 1 | ",
+	"model": {
+		"type": "small",
+		"multilingual": false,
+		"vocab": 51864,
+		"audio": {
+			"ctx": 1500,
+			"state": 768,
+			"head": 12,
+			"layer": 12
+		},
+		"text": {
+			"ctx": 448,
+			"state": 768,
+			"head": 12,
+			"layer": 12
+		},
+		"mels": 80,
+		"ftype": 1
+	},
+	"params": {
+		"model": "/Users/mayowaadesanya/.cache/hyperframes/whisper/models/ggml-small.en.bin",
+		"language": "en",
+		"translate": false
+	},
+	"result": {
+		"language": "en"
+	},
+	"transcription": [
+		{
+			"timestamps": {
+				"from": "00:00:00,000",
+				"to": "00:00:04,440"
+			},
+			"offsets": {
+				"from": 0,
+				"to": 4440
+			},
+			"text": " Solodev just open sourced a free version of 11 Labs, and it's already passed 36,000 stars.",
+			"tokens": [
+				{
+					"text": "[_BEG_]",
+					"timestamps": {
+						"from": "00:00:00,000",
+						"to": "00:00:00,000"
+					},
+					"offsets": {
+						"from": 0,
+						"to": 0
+					},
+					"id": 50363,
+					"p": 0.994361,
+					"t_dtw": -1
+				},
+				{
+					"text": " Sol",
+					"timestamps": {
+						"from": "00:00:00,110",
+						"to": "00:00:00,140"
+					},
+					"offsets": {
+						"from": 110,
+						"to": 140
+					},
+					"id": 4294,
+					"p": 0.500849,
+					"t_dtw": 18
+				},
+				{
+					"text": "ode",
+					"timestamps": {
+						"from": "00:00:00,140",
+						"to": "00:00:00,280"
+					},
+					"offsets": {
+						"from": 140,
+						"to": 280
+					},
+					"id": 1098,
+					"p": 0.806372,
+					"t_dtw": 34
+				},
+				{
+					"text": "v",
+					"timestamps": {
+						"from": "00:00:00,280",
+						"to": "00:00:00,290"
+					},
+					"offsets": {
+						"from": 280,
+						"to": 290
+					},
+					"id": 85,
+					"p": 0.984828,
+					"t_dtw": 46
+				},
+				{
+					"text": " just",
+					"timestamps": {
+						"from": "00:00:00,320",
+						"to": "00:00:00,450"
+					},
+					"offsets": {
+						"from": 320,
+						"to": 450
+					},
+					"id": 655,
+					"p": 0.98641,
+					"t_dtw": 62
+				},
+				{
+					"text": " open",
+					"timestamps": {
+						"from": "00:00:00,510",
+						"to": "00:00:00,700"
+					},
+					"offsets": {
+						"from": 510,
+						"to": 700
+					},
+					"id": 1280,
+					"p": 0.90819,
+					"t_dtw": 94
+				},
+				{
+					"text": " sourced",
+					"timestamps": {
+						"from": "00:00:00,700",
+						"to": "00:00:01,040"
+					},
+					"offsets": {
+						"from": 700,
+						"to": 1040
+					},
+					"id": 18229,
+					"p": 0.788676,
+					"t_dtw": 108
+				},
+				{
+					"text": " a",
+					"timestamps": {
+						"from": "00:00:01,040",
+						"to": "00:00:01,080"
+					},
+					"offsets": {
+						"from": 1040,
+						"to": 1080
+					},
+					"id": 257,
+					"p": 0.989208,
+					"t_dtw": 126
+				},
+				{
+					"text": " free",
+					"timestamps": {
+						"from": "00:00:01,080",
+						"to": "00:00:01,220"
+					},
+					"offsets": {
+						"from": 1080,
+						"to": 1220
+					},
+					"id": 1479,
+					"p": 0.997457,
+					"t_dtw": 140
+				},
+				{
+					"text": " version",
+					"timestamps": {
+						"from": "00:00:01,310",
+						"to": "00:00:01,680"
+					},
+					"offsets": {
+						"from": 1310,
+						"to": 1680
+					},
+					"id": 2196,
+					"p": 0.996567,
+					"t_dtw": 162
+				},
+				{
+					"text": " of",
+					"timestamps": {
+						"from": "00:00:01,680",
+						"to": "00:00:01,810"
+					},
+					"offsets": {
+						"from": 1680,
+						"to": 1810
+					},
+					"id": 286,
+					"p": 0.972503,
+					"t_dtw": 178
+				},
+				{
+					"text": " 11",
+					"timestamps": {
+						"from": "00:00:01,810",
+						"to": "00:00:02,190"
+					},
+					"offsets": {
+						"from": 1810,
+						"to": 2190
+					},
+					"id": 1367,
+					"p": 0.573423,
+					"t_dtw": 198
+				},
+				{
+					"text": " Labs",
+					"timestamps": {
+						"from": "00:00:02,190",
+						"to": "00:00:02,310"
+					},
+					"offsets": {
+						"from": 2190,
+						"to": 2310
+					},
+					"id": 23500,
+					"p": 0.548433,
+					"t_dtw": 218
+				},
+				{
+					"text": ",",
+					"timestamps": {
+						"from": "00:00:02,520",
+						"to": "00:00:02,520"
+					},
+					"offsets": {
+						"from": 2520,
+						"to": 2520
+					},
+					"id": 11,
+					"p": 0.417765,
+					"t_dtw": 254
+				},
+				{
+					"text": " and",
+					"timestamps": {
+						"from": "00:00:02,590",
+						"to": "00:00:02,660"
+					},
+					"offsets": {
+						"from": 2590,
+						"to": 2660
+					},
+					"id": 290,
+					"p": 0.649614,
+					"t_dtw": 264
+				},
+				{
+					"text": " it",
+					"timestamps": {
+						"from": "00:00:02,660",
+						"to": "00:00:02,680"
+					},
+					"offsets": {
+						"from": 2660,
+						"to": 2680
+					},
+					"id": 340,
+					"p": 0.927714,
+					"t_dtw": 274
+				},
+				{
+					"text": "'s",
+					"timestamps": {
+						"from": "00:00:02,760",
+						"to": "00:00:02,800"
+					},
+					"offsets": {
+						"from": 2760,
+						"to": 2800
+					},
+					"id": 338,
+					"p": 0.963058,
+					"t_dtw": 276
+				},
+				{
+					"text": " already",
+					"timestamps": {
+						"from": "00:00:02,800",
+						"to": "00:00:03,080"
+					},
+					"offsets": {
+						"from": 2800,
+						"to": 3080
+					},
+					"id": 1541,
+					"p": 0.955873,
+					"t_dtw": 296
+				},
+				{
+					"text": " passed",
+					"timestamps": {
+						"from": "00:00:03,080",
+						"to": "00:00:03,190"
+					},
+					"offsets": {
+						"from": 3080,
+						"to": 3190
+					},
+					"id": 3804,
+					"p": 0.601461,
+					"t_dtw": 322
+				},
+				{
+					"text": " 36",
+					"timestamps": {
+						"from": "00:00:03,360",
+						"to": "00:00:03,560"
+					},
+					"offsets": {
+						"from": 3360,
+						"to": 3560
+					},
+					"id": 4570,
+					"p": 0.962164,
+					"t_dtw": 360
+				},
+				{
+					"text": ",",
+					"timestamps": {
+						"from": "00:00:03,560",
+						"to": "00:00:03,640"
+					},
+					"offsets": {
+						"from": 3560,
+						"to": 3640
+					},
+					"id": 11,
+					"p": 0.889739,
+					"t_dtw": 384
+				},
+				{
+					"text": "000",
+					"timestamps": {
+						"from": "00:00:03,640",
+						"to": "00:00:04,040"
+					},
+					"offsets": {
+						"from": 3640,
+						"to": 4040
+					},
+					"id": 830,
+					"p": 0.999275,
+					"t_dtw": 398
+				},
+				{
+					"text": " stars",
+					"timestamps": {
+						"from": "00:00:04,040",
+						"to": "00:00:04,380"
+					},
+					"offsets": {
+						"from": 4040,
+						"to": 4380
+					},
+					"id": 5788,
+					"p": 0.794748,
+					"t_dtw": 422
+				},
+				{
+					"text": ".",
+					"timestamps": {
+						"from": "00:00:04,440",
+						"to": "00:00:04,440"
+					},
+					"offsets": {
+						"from": 4440,
+						"to": 4440
+					},
+					"id": 13,
+					"p": 0.96419,
+					"t_dtw": 442
+				},
+				{
+					"text": "[_TT_222]",
+					"timestamps": {
+						"from": "00:00:04,440",
+						"to": "00:00:04,440"
+					},
+					"offsets": {
+						"from": 4440,
+						"to": 4440
+					},
+					"id": 50585,
+					"p": 0.233948,
+					"t_dtw": -1
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,32 @@
+{
+  "id": "reference-expressive-high-energy-v1",
+  "extends": "reference-expressive-v1",
+  "scope": "explicit opt-in; default style and frozen films unchanged",
+  "canonicalMascot": "locked v1; existing editable puppet geometry",
+  "surfaces": "matte tactile paper; shared stable material grain; soft down-right edges",
+  "paletteZones": [
+    "ochre claim stage",
+    "jade source trail",
+    "coral wording workshop",
+    "dark teal support bridge",
+    "gold review route",
+    "mint explanation stage"
+  ],
+  "captions": "2\u20133 word coral serif cutouts, short attack and clean replacement; no letter jitter",
+  "instructionOverrides": {
+    "oneActionThenHold": "One dominant focal idea, overlapping main action plus 2\u20134 quieter responses",
+    "continuousIdleDiscouraged": "Selected bounded living motion is part of style; independent phases and amplitudes",
+    "sparseEffects": "Connected physical impact, peel, rattle and placement accents",
+    "quietEnvironment": "Layered physical zones and scale changes; no full-room view requirement",
+    "restrainedCamera": "Purposeful source follow, punch-in and match cuts allowed"
+  },
+  "motion": {
+    "outputFps": 30,
+    "livingHold": "seeded frame-indexed transforms held 2\u20134 frames; no runtime randomness",
+    "composition": "base placement -> main action -> secondary local transform",
+    "contact": "same composed prop transform drives grip; selected exact-contact jitter coordinated",
+    "cameraShake": false
+  },
+  "sound": "regenerated exact-script Kokoro; original deterministic synthesized SFX; no unlicensed music",
+  "approval": "REVIEW_REQUIRED; technical checks do not establish engagement"
+}

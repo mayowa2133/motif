@@ -1,0 +1,38 @@
+{
+  "assets": [
+    {
+      "id": "monitor",
+      "prompt": "Use case: illustration-story. Asset type: independent reusable physical monitor cutout for a tactile 2D animated film.\nCreate ONE beautiful desktop monitor, straight-on front view, on genuinely transparent background. Landscape canvas, monitor fills canvas with small transparent margin, stand and base fully visible. Large broad 16:10 dark plum blank display occupies most of the upper body, precise rounded display boundary. Substantial warm ivory paper casing with slightly asymmetric hand-cut contours, layered cardboard side backing peeking on right/bottom, a distinct thick lower lip, short stout muted teal pedestal and wide stable trapezoid foot. The screen is blank uninterrupted #241D29, no text, icons or reflections. Casing feels illustrated from layered printed paper with subtle dry gouache ink variation and fine sparse paper fibers, warm shadows at cut edges, three purposeful printed seam/edge marks. Flat cutout art, shallow depth only, sophisticated children's editorial illustration, broad shapes, restrained soft ink edges. Palette ivory #F4EBD8, tan #DCCDB3, deep charcoal #202C32, teal #318E85. No photorealism, no glossy 3D, no room, no desk, no characters, no labels, no cables, no lettering. The physical casing must feel designed and touchable, not a uniform vector rounded rectangle. Keep the screen unobstructed for later editable UI compositing.",
+      "source_file": "/Users/mayowaadesanya/.codex/generated_images/01a0efb5-bc82-7313-8535-e2b13c74cc1b/exec-49106e94-565d-40a6-b1db-b3b31da9593c.png",
+      "method": "built-in imagegen",
+      "file": "assets/art-v3/monitor.png"
+    },
+    {
+      "id": "microphone",
+      "prompt": "Use case: illustration-story. Reference image is a STYLE reference only. Make ONE independent front-view chunky retro studio microphone on a short floor tripod, genuine transparent background, portrait canvas, no other objects. Match the reference's warm dry-gouache printed paper cutout treatment, shallow cardboard undersides and softly inked broad contours. Rounded graphite/navy capsule with pale warm silver grille, only six purposeful bold grille divisions, a stout U-shaped teal mount, short graphite pole and three coherent substantial feet. No chrome or glossy shading. Slight hand-cut asymmetry, fine quiet paper fibers, warm low shadow at layer edges. Big graphic silhouette, clear flat layers. No text, room, characters, background, wires or waveform. Capsule and mount dominant; not a tiny mic on a long thin pole.",
+      "source_file": "/Users/mayowaadesanya/.codex/generated_images/01a0efb5-bc82-7313-8535-e2b13c74cc1b/exec-ca75f6da-b5a3-40fa-8ef8-38b57effdb6f.png",
+      "method": "built-in imagegen",
+      "file": "assets/art-v3/microphone.png"
+    },
+    {
+      "id": "stool",
+      "prompt": "Use case: illustration-story. Reference image is a STYLE reference only. Make ONE independent small blue wooden workshop stool, genuine transparent background. Straight-on with a slight view of seat top, shallow 2D paper cutout depth, whole stool visible. Match the reference's professionally illustrated printed-paper gouache character. Chunky uneven chamfered blue seat with a visible dark lower lip, two slightly splayed navy wooden legs and one deliberate pale-blue crossbrace. Warm paper cut edges, restrained dry brush print variation, broad purposeful shapes. Seat proportion wide, stool compact, sturdy enough for a small robot. No text, robot, monitor, room or extra props. No glossy 3D, thin arbitrary stick legs or clipart vector style.",
+      "source_file": "/Users/mayowaadesanya/.codex/generated_images/01a0efb5-bc82-7313-8535-e2b13c74cc1b/exec-9fdb8515-acb0-46c3-ab2c-1d8fa8334536.png",
+      "method": "built-in imagegen",
+      "file": "assets/art-v3/stool.png"
+    },
+    {
+      "id": "old-computer",
+      "prompt": "Use case: illustration-story. Reference image is a STYLE reference only. One independent vintage desktop CRT-like computer monitor, straight-on, on genuine transparent background. Landscape canvas, broad thick off-white beige casing around a compact almost-square blank dark-plum display. Screen clearly smaller relative to casing than the reference. Chunky trapezoid cream stand and broad simple base, slightly sagging lower lip, three visible inset ventilation slits at one side, one small faded teal status light. Warm yellowed printed cardboard casing, shallow tan backing, fine sparse fibers and a few deliberate edge scuffs. Professionally illustrated tactile 2D paper-cutout, matte dry gouache colors, broad distinct contours, slight handmade asymmetry. Not a realistic CRT photograph or 3D render. No lettering, icons, reflections, room, washer or characters. Keep the blank screen an uninterrupted region for editable UI compositing.",
+      "source_file": "/Users/mayowaadesanya/.codex/generated_images/01a0efb5-bc82-7313-8535-e2b13c74cc1b/exec-dd02eee8-92cb-4bf3-90ce-edca88daa6ec.png",
+      "method": "built-in imagegen",
+      "file": "assets/art-v3/old-computer.png"
+    }
+  ],
+  "failedCleanup": {
+    "source_file": "/Users/mayowaadesanya/.codex/generated_images/01a0efb5-bc82-7313-8535-e2b13c74cc1b/exec-af24b0a9-d993-42c3-8f88-4ac33057f748.png",
+    "prompt": "Edit this microphone image: keep the exact microphone, cream grille, teal U mount, short pole and tripod artwork. Remove ALL diffuse colored haze, blur, halo, surrounding atmospheric shadow and floating edge artifacts outside the object's silhouette. Every pixel outside the microphone and its feet must be fully transparent alpha, not black or gray or a blurred background. Retain only shallow contact shadows between the microphone's own paper layers. No ground plane, no background shadow. Preserve matte gouache printed-paper texture inside the silhouette. Do not change shape, palette, framing, or add anything.",
+    "used": false,
+    "reason": "Diffuse halo remained; original prop uses authored SVG silhouette mask."
+  }
+}

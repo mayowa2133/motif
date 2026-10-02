@@ -1,0 +1,789 @@
+{
+  "schemaVersion": "1.0",
+  "compositionId": "rough-captions",
+  "durationSec": 42.06666666666667,
+  "initial": [
+    {
+      "target": "#fine-caption-0",
+      "props": {
+        "opacity": 0
+      }
+    },
+    {
+      "target": "#fine-caption-1",
+      "props": {
+        "opacity": 0
+      }
+    },
+    {
+      "target": "#fine-caption-2",
+      "props": {
+        "opacity": 0
+      }
+    },
+    {
+      "target": "#fine-caption-3",
+      "props": {
+        "opacity": 0
+      }
+    },
+    {
+      "target": "#fine-caption-4",
+      "props": {
+        "opacity": 0
+      }
+    },
+    {
+      "target": "#fine-caption-5",
+      "props": {
+        "opacity": 0
+      }
+    },
+    {
+      "target": "#fine-caption-6",
+      "props": {
+        "opacity": 0
+      }
+    },
+    {
+      "target": "#fine-caption-7",
+      "props": {
+        "opacity": 0
+      }
+    },
+    {
+      "target": "#fine-caption-8",
+      "props": {
+        "opacity": 0
+      }
+    },
+    {
+      "target": "#fine-caption-9",
+      "props": {
+        "opacity": 0
+      }
+    },
+    {
+      "target": "#fine-caption-10",
+      "props": {
+        "opacity": 0
+      }
+    },
+    {
+      "target": "#fine-caption-11",
+      "props": {
+        "opacity": 0
+      }
+    },
+    {
+      "target": "#fine-caption-12",
+      "props": {
+        "opacity": 0
+      }
+    },
+    {
+      "target": "#fine-caption-13",
+      "props": {
+        "opacity": 0
+      }
+    },
+    {
+      "target": "#fine-caption-14",
+      "props": {
+        "opacity": 0
+      }
+    },
+    {
+      "target": "#fine-caption-15",
+      "props": {
+        "opacity": 0
+      }
+    },
+    {
+      "target": "#fine-caption-16",
+      "props": {
+        "opacity": 0
+      }
+    },
+    {
+      "target": "#fine-caption-17",
+      "props": {
+        "opacity": 0
+      }
+    },
+    {
+      "target": "#fine-caption-18",
+      "props": {
+        "opacity": 0
+      }
+    },
+    {
+      "target": "#fine-caption-19",
+      "props": {
+        "opacity": 0
+      }
+    },
+    {
+      "target": "#fine-caption-20",
+      "props": {
+        "opacity": 0
+      }
+    },
+    {
+      "target": "#fine-caption-21",
+      "props": {
+        "opacity": 0
+      }
+    },
+    {
+      "target": "#fine-caption-22",
+      "props": {
+        "opacity": 0
+      }
+    },
+    {
+      "target": "#fine-caption-23",
+      "props": {
+        "opacity": 0
+      }
+    },
+    {
+      "target": "#fine-caption-24",
+      "props": {
+        "opacity": 0
+      }
+    },
+    {
+      "target": "#fine-caption-25",
+      "props": {
+        "opacity": 0
+      }
+    },
+    {
+      "target": "#fine-caption-26",
+      "props": {
+        "opacity": 0
+      }
+    },
+    {
+      "target": "#fine-caption-27",
+      "props": {
+        "opacity": 0
+      }
+    },
+    {
+      "target": "#fine-caption-28",
+      "props": {
+        "opacity": 0
+      }
+    },
+    {
+      "target": "#fine-caption-29",
+      "props": {
+        "opacity": 0
+      }
+    }
+  ],
+  "events": [
+    {
+      "time": 0.03332333333333333,
+      "target": "#fine-caption-0",
+      "action": "SET",
+      "params": {
+        "props": {
+          "opacity": 1
+        }
+      }
+    },
+    {
+      "time": 0.8999900000000001,
+      "target": "#fine-caption-0",
+      "action": "SET",
+      "params": {
+        "props": {
+          "opacity": 0
+        }
+      }
+    },
+    {
+      "time": 0.8999900000000001,
+      "target": "#fine-caption-1",
+      "action": "SET",
+      "params": {
+        "props": {
+          "opacity": 1
+        }
+      }
+    },
+    {
+      "time": 1.79999,
+      "target": "#fine-caption-1",
+      "action": "SET",
+      "params": {
+        "props": {
+          "opacity": 0
+        }
+      }
+    },
+    {
+      "time": 1.79999,
+      "target": "#fine-caption-2",
+      "action": "SET",
+      "params": {
+        "props": {
+          "opacity": 1
+        }
+      }
+    },
+    {
+      "time": 2.3333233333333334,
+      "target": "#fine-caption-2",
+      "action": "SET",
+      "params": {
+        "props": {
+          "opacity": 0
+        }
+      }
+    },
+    {
+      "time": 2.3333233333333334,
+      "target": "#fine-caption-3",
+      "action": "SET",
+      "params": {
+        "props": {
+          "opacity": 1
+        }
+      }
+    },
+    {
+      "time": 3.4666566666666667,
+      "target": "#fine-caption-3",
+      "action": "SET",
+      "params": {
+        "props": {
+          "opacity": 0
+        }
+      }
+    },
+    {
+      "time": 3.4666566666666667,
+      "target": "#fine-caption-4",
+      "action": "SET",
+      "params": {
+        "props": {
+          "opacity": 1
+        }
+      }
+    },
+    {
+      "time": 4.266656666666667,
+      "target": "#fine-caption-4",
+      "action": "SET",
+      "params": {
+        "props": {
+          "opacity": 0
+        }
+      }
+    },
+    {
+      "time": 4.266656666666667,
+      "target": "#fine-caption-5",
+      "action": "SET",
+      "params": {
+        "props": {
+          "opacity": 1
+        }
+      }
+    },
+    {
+      "time": 5.066656666666667,
+      "target": "#fine-caption-5",
+      "action": "SET",
+      "params": {
+        "props": {
+          "opacity": 0
+        }
+      }
+    },
+    {
+      "time": 5.066656666666667,
+      "target": "#fine-caption-6",
+      "action": "SET",
+      "params": {
+        "props": {
+          "opacity": 1
+        }
+      }
+    },
+    {
+      "time": 5.633323333333334,
+      "target": "#fine-caption-6",
+      "action": "SET",
+      "params": {
+        "props": {
+          "opacity": 0
+        }
+      }
+    },
+    {
+      "time": 6.966656666666667,
+      "target": "#fine-caption-7",
+      "action": "SET",
+      "params": {
+        "props": {
+          "opacity": 1
+        }
+      }
+    },
+    {
+      "time": 7.699990000000001,
+      "target": "#fine-caption-7",
+      "action": "SET",
+      "params": {
+        "props": {
+          "opacity": 0
+        }
+      }
+    },
+    {
+      "time": 7.699990000000001,
+      "target": "#fine-caption-8",
+      "action": "SET",
+      "params": {
+        "props": {
+          "opacity": 1
+        }
+      }
+    },
+    {
+      "time": 8.59999,
+      "target": "#fine-caption-8",
+      "action": "SET",
+      "params": {
+        "props": {
+          "opacity": 0
+        }
+      }
+    },
+    {
+      "time": 8.59999,
+      "target": "#fine-caption-9",
+      "action": "SET",
+      "params": {
+        "props": {
+          "opacity": 1
+        }
+      }
+    },
+    {
+      "time": 9.49999,
+      "target": "#fine-caption-9",
+      "action": "SET",
+      "params": {
+        "props": {
+          "opacity": 0
+        }
+      }
+    },
+    {
+      "time": 9.49999,
+      "target": "#fine-caption-10",
+      "action": "SET",
+      "params": {
+        "props": {
+          "opacity": 1
+        }
+      }
+    },
+    {
+      "time": 10.299990000000001,
+      "target": "#fine-caption-10",
+      "action": "SET",
+      "params": {
+        "props": {
+          "opacity": 0
+        }
+      }
+    },
+    {
+      "time": 12.366656666666668,
+      "target": "#fine-caption-11",
+      "action": "SET",
+      "params": {
+        "props": {
+          "opacity": 1
+        }
+      }
+    },
+    {
+      "time": 13.666656666666666,
+      "target": "#fine-caption-11",
+      "action": "SET",
+      "params": {
+        "props": {
+          "opacity": 0
+        }
+      }
+    },
+    {
+      "time": 20.29999,
+      "target": "#fine-caption-12",
+      "action": "SET",
+      "params": {
+        "props": {
+          "opacity": 1
+        }
+      }
+    },
+    {
+      "time": 21.733323333333335,
+      "target": "#fine-caption-12",
+      "action": "SET",
+      "params": {
+        "props": {
+          "opacity": 0
+        }
+      }
+    },
+    {
+      "time": 21.733323333333335,
+      "target": "#fine-caption-13",
+      "action": "SET",
+      "params": {
+        "props": {
+          "opacity": 1
+        }
+      }
+    },
+    {
+      "time": 23.033323333333335,
+      "target": "#fine-caption-13",
+      "action": "SET",
+      "params": {
+        "props": {
+          "opacity": 0
+        }
+      }
+    },
+    {
+      "time": 23.033323333333335,
+      "target": "#fine-caption-14",
+      "action": "SET",
+      "params": {
+        "props": {
+          "opacity": 1
+        }
+      }
+    },
+    {
+      "time": 24.433323333333334,
+      "target": "#fine-caption-14",
+      "action": "SET",
+      "params": {
+        "props": {
+          "opacity": 0
+        }
+      }
+    },
+    {
+      "time": 25.599990000000002,
+      "target": "#fine-caption-15",
+      "action": "SET",
+      "params": {
+        "props": {
+          "opacity": 1
+        }
+      }
+    },
+    {
+      "time": 26.633323333333333,
+      "target": "#fine-caption-15",
+      "action": "SET",
+      "params": {
+        "props": {
+          "opacity": 0
+        }
+      }
+    },
+    {
+      "time": 26.633323333333333,
+      "target": "#fine-caption-16",
+      "action": "SET",
+      "params": {
+        "props": {
+          "opacity": 1
+        }
+      }
+    },
+    {
+      "time": 27.433323333333334,
+      "target": "#fine-caption-16",
+      "action": "SET",
+      "params": {
+        "props": {
+          "opacity": 0
+        }
+      }
+    },
+    {
+      "time": 27.433323333333334,
+      "target": "#fine-caption-17",
+      "action": "SET",
+      "params": {
+        "props": {
+          "opacity": 1
+        }
+      }
+    },
+    {
+      "time": 28.333323333333333,
+      "target": "#fine-caption-17",
+      "action": "SET",
+      "params": {
+        "props": {
+          "opacity": 0
+        }
+      }
+    },
+    {
+      "time": 28.733323333333335,
+      "target": "#fine-caption-18",
+      "action": "SET",
+      "params": {
+        "props": {
+          "opacity": 1
+        }
+      }
+    },
+    {
+      "time": 29.99999,
+      "target": "#fine-caption-18",
+      "action": "SET",
+      "params": {
+        "props": {
+          "opacity": 0
+        }
+      }
+    },
+    {
+      "time": 29.99999,
+      "target": "#fine-caption-19",
+      "action": "SET",
+      "params": {
+        "props": {
+          "opacity": 1
+        }
+      }
+    },
+    {
+      "time": 30.966656666666665,
+      "target": "#fine-caption-19",
+      "action": "SET",
+      "params": {
+        "props": {
+          "opacity": 0
+        }
+      }
+    },
+    {
+      "time": 30.966656666666665,
+      "target": "#fine-caption-20",
+      "action": "SET",
+      "params": {
+        "props": {
+          "opacity": 1
+        }
+      }
+    },
+    {
+      "time": 32.16665666666666,
+      "target": "#fine-caption-20",
+      "action": "SET",
+      "params": {
+        "props": {
+          "opacity": 0
+        }
+      }
+    },
+    {
+      "time": 34.09999,
+      "target": "#fine-caption-21",
+      "action": "SET",
+      "params": {
+        "props": {
+          "opacity": 1
+        }
+      }
+    },
+    {
+      "time": 35.33332333333333,
+      "target": "#fine-caption-21",
+      "action": "SET",
+      "params": {
+        "props": {
+          "opacity": 0
+        }
+      }
+    },
+    {
+      "time": 35.33332333333333,
+      "target": "#fine-caption-22",
+      "action": "SET",
+      "params": {
+        "props": {
+          "opacity": 1
+        }
+      }
+    },
+    {
+      "time": 35.99999,
+      "target": "#fine-caption-22",
+      "action": "SET",
+      "params": {
+        "props": {
+          "opacity": 0
+        }
+      }
+    },
+    {
+      "time": 35.99999,
+      "target": "#fine-caption-23",
+      "action": "SET",
+      "params": {
+        "props": {
+          "opacity": 1
+        }
+      }
+    },
+    {
+      "time": 36.69999,
+      "target": "#fine-caption-23",
+      "action": "SET",
+      "params": {
+        "props": {
+          "opacity": 0
+        }
+      }
+    },
+    {
+      "time": 36.69999,
+      "target": "#fine-caption-24",
+      "action": "SET",
+      "params": {
+        "props": {
+          "opacity": 1
+        }
+      }
+    },
+    {
+      "time": 37.366656666666664,
+      "target": "#fine-caption-24",
+      "action": "SET",
+      "params": {
+        "props": {
+          "opacity": 0
+        }
+      }
+    },
+    {
+      "time": 37.366656666666664,
+      "target": "#fine-caption-25",
+      "action": "SET",
+      "params": {
+        "props": {
+          "opacity": 1
+        }
+      }
+    },
+    {
+      "time": 37.899989999999995,
+      "target": "#fine-caption-25",
+      "action": "SET",
+      "params": {
+        "props": {
+          "opacity": 0
+        }
+      }
+    },
+    {
+      "time": 37.899989999999995,
+      "target": "#fine-caption-26",
+      "action": "SET",
+      "params": {
+        "props": {
+          "opacity": 1
+        }
+      }
+    },
+    {
+      "time": 38.49999,
+      "target": "#fine-caption-26",
+      "action": "SET",
+      "params": {
+        "props": {
+          "opacity": 0
+        }
+      }
+    },
+    {
+      "time": 38.49999,
+      "target": "#fine-caption-27",
+      "action": "SET",
+      "params": {
+        "props": {
+          "opacity": 1
+        }
+      }
+    },
+    {
+      "time": 39.399989999999995,
+      "target": "#fine-caption-27",
+      "action": "SET",
+      "params": {
+        "props": {
+          "opacity": 0
+        }
+      }
+    },
+    {
+      "time": 39.59999,
+      "target": "#fine-caption-28",
+      "action": "SET",
+      "params": {
+        "props": {
+          "opacity": 1
+        }
+      }
+    },
+    {
+      "time": 40.399989999999995,
+      "target": "#fine-caption-28",
+      "action": "SET",
+      "params": {
+        "props": {
+          "opacity": 0
+        }
+      }
+    },
+    {
+      "time": 40.399989999999995,
+      "target": "#fine-caption-29",
+      "action": "SET",
+      "params": {
+        "props": {
+          "opacity": 1
+        }
+      }
+    },
+    {
+      "time": 41.66665666666666,
+      "target": "#fine-caption-29",
+      "action": "SET",
+      "params": {
+        "props": {
+          "opacity": 0
+        }
+      }
+    }
+  ]
+}

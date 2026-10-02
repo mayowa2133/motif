@@ -1,0 +1,46 @@
+{
+  "id": "reconstruction-rough-race-car",
+  "name": "Race Car",
+  "category": "prop",
+  "subcategory": "reference-reconstruction",
+  "concepts": [
+    "instruction-audit",
+    "reference-study"
+  ],
+  "keywords": [
+    "paper",
+    "cutout",
+    "race-car"
+  ],
+  "style": "reference-expressive-v1",
+  "orientation": "front",
+  "dimensions": {
+    "width": 360,
+    "height": 218,
+    "unit": "px"
+  },
+  "artBox": {
+    "x": -180,
+    "y": -118,
+    "width": 360,
+    "height": 218
+  },
+  "anchors": {},
+  "compatibleCharacters": [
+    "motif-bot"
+  ],
+  "supportedActions": [
+    "race"
+  ],
+  "sourceType": "vector",
+  "source": {
+    "file": "videos/productions/reference-reconstruction-full-rough/assets/props/race-car.svg",
+    "generator": "videos/productions/reference-reconstruction-full-rough/build.py",
+    "reference": "Agent-authored geometry for a mapped source shot; no source prop pixels."
+  },
+  "preview": "videos/productions/reference-reconstruction-full-rough/assets/props/race-car.svg",
+  "license": "project-original",
+  "status": "review",
+  "presentationStatus": "rough",
+  "version": 1
+}

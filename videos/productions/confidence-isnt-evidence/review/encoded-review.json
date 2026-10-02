@@ -1,0 +1,65 @@
+{
+  "full": {
+    "programs": [],
+    "stream_groups": [],
+    "streams": [
+      {
+        "index": 0,
+        "codec_type": "video",
+        "width": 1080,
+        "height": 1920,
+        "duration": "24.333333",
+        "nb_frames": "730"
+      },
+      {
+        "index": 1,
+        "codec_type": "audio",
+        "duration": "24.333333",
+        "nb_frames": "1142"
+      }
+    ],
+    "format": {
+      "duration": "24.333333"
+    }
+  },
+  "native": {
+    "programs": [],
+    "stream_groups": [],
+    "streams": [
+      {
+        "index": 0,
+        "codec_type": "video",
+        "width": 360,
+        "height": 640,
+        "duration": "24.333333",
+        "nb_frames": "730"
+      },
+      {
+        "index": 1,
+        "codec_type": "audio",
+        "duration": "24.333333",
+        "nb_frames": "1142"
+      }
+    ],
+    "format": {
+      "duration": "24.333333"
+    }
+  },
+  "review_level_calibration": {
+    "method": "combined encoded linear gain; native uses identical adjusted AAC; original picture streams retained",
+    "before": {
+      "integrated_lufs": -13.66,
+      "true_peak_dbtp": -1.58,
+      "lra_lu": 4.9
+    },
+    "gain_db": -2.34,
+    "after": {
+      "integrated_lufs": -16.01,
+      "true_peak_dbtp": -3.9,
+      "lra_lu": 5.0
+    },
+    "scope": "comfortable review levels, not subjective listening approval or final sound design"
+  },
+  "subjective_listening": "not assessed",
+  "status": "REVIEW_REQUIRED"
+}

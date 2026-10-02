@@ -1,0 +1,177 @@
+
+> check
+> npx --yes hyperframes@0.8.99 check --strict --json
+
+{
+  "ok": false,
+  "strict": true,
+  "lint": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 0,
+    "infoCount": 0,
+    "findings": [],
+    "filesScanned": 4
+  },
+  "runtime": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 0,
+    "infoCount": 0,
+    "findings": []
+  },
+  "layout": {
+    "ok": false,
+    "errorCount": 1,
+    "warningCount": 2,
+    "infoCount": 0,
+    "findings": [
+      {
+        "code": "content_overlap",
+        "severity": "error",
+        "time": 1.538,
+        "selector": "#energy-02-world > g:nth-of-type(21) > text:nth-of-type(2)",
+        "message": "Two text blocks overlap and may render unreadable.",
+        "rect": {
+          "left": 97.22,
+          "top": 258.33,
+          "right": 217.92,
+          "bottom": 320.2,
+          "width": 120.7,
+          "height": 61.87
+        },
+        "containerSelector": "#energy-02-world > g:nth-of-type(21) > text:nth-of-type(3)",
+        "text": "IT WILL",
+        "fixHint": "Give each block its own zone, or mark intentional layering with data-layout-allow-overlap.",
+        "dataAttributes": {},
+        "sourceFile": "compositions/energy-02.html",
+        "bbox": {
+          "x": 97.22,
+          "y": 258.33,
+          "width": 120.7,
+          "height": 61.87
+        },
+        "firstSeen": 1.538,
+        "lastSeen": 2.13,
+        "occurrences": 6,
+        "heldMs": 591.9999999999999
+      },
+      {
+        "code": "off_pivot_rotation",
+        "severity": "warning",
+        "time": 1.065,
+        "selector": "#energy-01-world > g:nth-of-type(24) > path:nth-of-type(4)",
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 30.86,
+          "y": 215.93,
+          "width": 32.29,
+          "height": 17.269999999999982
+        },
+        "rect": {
+          "left": 30.86,
+          "top": 215.93,
+          "right": 63.15,
+          "bottom": 233.2,
+          "width": 32.29,
+          "height": 17.269999999999982
+        },
+        "message": "Gauge/dial pointer rotates about a point 407px from the dial hub — its center-of-rotation is off the hub, so it points wrong or overshoots the track (check the rotating group's pivot: translate to the hub before rotate, or set svgOrigin/transform-origin to the hub).",
+        "fixHint": "The pointer's center-of-rotation must coincide with the dial hub. Rotate the group about the hub (e.g. transform-origin/svgOrigin set to the hub center, or translate the group so its rotation pivot lands on the hub) rather than about the element's own bbox center.",
+        "firstSeen": 1.065,
+        "lastSeen": 1.065,
+        "occurrences": 1,
+        "heldMs": 0
+      },
+      {
+        "code": "content_overlap",
+        "severity": "warning",
+        "time": 1.657,
+        "selector": "#energy-02-world > g:nth-of-type(21) > text:nth-of-type(1)",
+        "message": "Two text blocks overlap and may render unreadable.",
+        "rect": {
+          "left": 109.14,
+          "top": 237.69,
+          "right": 199.73,
+          "bottom": 269.86,
+          "width": 90.59,
+          "height": 32.17
+        },
+        "containerSelector": "#energy-02-world > g:nth-of-type(21) > text:nth-of-type(2)",
+        "text": "SAMPLE · ANSWER",
+        "fixHint": "Give each block its own zone, or mark intentional layering with data-layout-allow-overlap.",
+        "dataAttributes": {},
+        "sourceFile": "compositions/energy-02.html",
+        "bbox": {
+          "x": 109.14,
+          "y": 237.69,
+          "width": 90.59,
+          "height": 32.17
+        },
+        "firstSeen": 1.657,
+        "lastSeen": 2.13,
+        "occurrences": 3,
+        "heldMs": 472.9999999999999
+      }
+    ],
+    "duration": 2.13,
+    "samples": [
+      0.118,
+      0.355,
+      0.592,
+      0.828,
+      1.065,
+      1.302,
+      1.538,
+      1.775,
+      2.012
+    ],
+    "transitionSamples": [],
+    "transitionSamplesDropped": 0,
+    "tolerance": 2,
+    "totalIssueCount": 3,
+    "truncated": false
+  },
+  "motion": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 0,
+    "infoCount": 0,
+    "findings": [],
+    "enabled": false,
+    "samples": 0
+  },
+  "contrast": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 0,
+    "infoCount": 0,
+    "findings": [],
+    "enabled": true,
+    "samples": [
+      0.118,
+      0.592,
+      1.065,
+      1.538,
+      2.012
+    ],
+    "checked": 23,
+    "passed": 23
+  },
+  "hdr": {
+    "autoPromotion": null,
+    "inspection": "available"
+  },
+  "snapshots": {
+    "enabled": false,
+    "files": [],
+    "times": [],
+    "findingFiles": []
+  },
+  "_meta": {
+    "version": "0.8.99",
+    "latestVersion": "0.8.99",
+    "updateAvailable": false
+  }
+}

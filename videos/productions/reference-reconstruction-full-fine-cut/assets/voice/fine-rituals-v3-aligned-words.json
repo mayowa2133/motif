@@ -1,0 +1,78 @@
+{
+  "method": "Whisper small.en DTW token centers; adjacent center midpoints for word boundaries; local no-flash-attn invocation",
+  "duration": 4.48,
+  "words": [
+    {
+      "text": "Remove",
+      "centers": [
+        0.28
+      ],
+      "start": 0.16000000000000003,
+      "end": 0.48000000000000004
+    },
+    {
+      "text": "repeated",
+      "centers": [
+        0.68
+      ],
+      "start": 0.48000000000000004,
+      "end": 0.9299999999999999
+    },
+    {
+      "text": "checks.",
+      "centers": [
+        1.18
+      ],
+      "start": 0.9299999999999999,
+      "end": 1.45
+    },
+    {
+      "text": "Stop",
+      "centers": [
+        1.72
+      ],
+      "start": 1.45,
+      "end": 1.8900000000000001
+    },
+    {
+      "text": "shouting",
+      "centers": [
+        2.06
+      ],
+      "start": 1.8900000000000001,
+      "end": 2.34
+    },
+    {
+      "text": "commands.",
+      "centers": [
+        2.62
+      ],
+      "start": 2.34,
+      "end": 2.76
+    },
+    {
+      "text": "Cut",
+      "centers": [
+        2.9
+      ],
+      "start": 2.76,
+      "end": 3.16
+    },
+    {
+      "text": "unnecessary",
+      "centers": [
+        3.42
+      ],
+      "start": 3.16,
+      "end": 3.71
+    },
+    {
+      "text": "steps.",
+      "centers": [
+        4.0
+      ],
+      "start": 3.71,
+      "end": 4.12
+    }
+  ]
+}

@@ -1,0 +1,51 @@
+{
+  "id": "reconstruction-rough-performance-gauge",
+  "name": "Performance Gauge",
+  "category": "prop",
+  "subcategory": "reference-reconstruction",
+  "concepts": [
+    "instruction-audit",
+    "reference-study"
+  ],
+  "keywords": [
+    "paper",
+    "cutout",
+    "performance-gauge"
+  ],
+  "style": "reference-expressive-v1",
+  "orientation": "front",
+  "dimensions": {
+    "width": 216,
+    "height": 216,
+    "unit": "px"
+  },
+  "artBox": {
+    "x": -108,
+    "y": -108,
+    "width": 216,
+    "height": 216
+  },
+  "anchors": {
+    "pivot": {
+      "x": 0.5,
+      "y": 0.5
+    }
+  },
+  "compatibleCharacters": [
+    "motif-bot"
+  ],
+  "supportedActions": [
+    "indicate"
+  ],
+  "sourceType": "vector",
+  "source": {
+    "file": "videos/productions/reference-reconstruction-full-fine-cut/assets/props/performance-gauge.svg",
+    "generator": "videos/productions/reference-reconstruction-full-fine-cut/build.py",
+    "reference": "Agent-authored geometry for a mapped source shot; no source prop pixels."
+  },
+  "preview": "videos/productions/reference-reconstruction-full-fine-cut/assets/props/performance-gauge.svg",
+  "license": "project-original",
+  "status": "review",
+  "presentationStatus": "fine-cut",
+  "version": 1
+}

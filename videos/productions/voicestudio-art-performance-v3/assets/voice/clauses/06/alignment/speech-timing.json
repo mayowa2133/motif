@@ -1,0 +1,119 @@
+{
+  "method": "installed Whisper small.en DTW; no flash attention; adjacent token-center midpoints",
+  "precision": "automatic approximate word boundaries, not phoneme-perfect",
+  "duration": 3.01,
+  "words": [
+    {
+      "text": "types",
+      "centers": [
+        0.2
+      ],
+      "start": 0.08000000000000002,
+      "end": 0.30000000000000004
+    },
+    {
+      "text": "out",
+      "centers": [
+        0.4
+      ],
+      "start": 0.30000000000000004,
+      "end": 0.49
+    },
+    {
+      "text": "whatever",
+      "centers": [
+        0.58
+      ],
+      "start": 0.49,
+      "end": 0.6799999999999999
+    },
+    {
+      "text": "you",
+      "centers": [
+        0.78
+      ],
+      "start": 0.6799999999999999,
+      "end": 0.8500000000000001
+    },
+    {
+      "text": "want",
+      "centers": [
+        0.92
+      ],
+      "start": 0.8500000000000001,
+      "end": 0.97
+    },
+    {
+      "text": "to",
+      "centers": [
+        1.02
+      ],
+      "start": 0.97,
+      "end": 1.1400000000000001
+    },
+    {
+      "text": "say,",
+      "centers": [
+        1.26
+      ],
+      "start": 1.1400000000000001,
+      "end": 1.3900000000000001
+    },
+    {
+      "text": "and",
+      "centers": [
+        1.52
+      ],
+      "start": 1.3900000000000001,
+      "end": 1.5899999999999999
+    },
+    {
+      "text": "writes",
+      "centers": [
+        1.66
+      ],
+      "start": 1.5899999999999999,
+      "end": 1.73
+    },
+    {
+      "text": "a",
+      "centers": [
+        1.8
+      ],
+      "start": 1.73,
+      "end": 1.9500000000000002
+    },
+    {
+      "text": "transcript",
+      "centers": [
+        2.1
+      ],
+      "start": 1.9500000000000002,
+      "end": 2.23
+    },
+    {
+      "text": "of",
+      "centers": [
+        2.36
+      ],
+      "start": 2.23,
+      "end": 2.4299999999999997
+    },
+    {
+      "text": "any",
+      "centers": [
+        2.5
+      ],
+      "start": 2.4299999999999997,
+      "end": 2.69
+    },
+    {
+      "text": "recording.",
+      "centers": [
+        2.88
+      ],
+      "start": 2.69,
+      "end": 3.0
+    }
+  ]
+}

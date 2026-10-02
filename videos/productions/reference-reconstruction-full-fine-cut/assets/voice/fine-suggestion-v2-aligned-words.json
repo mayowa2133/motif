@@ -1,0 +1,24 @@
+{
+  "method": "Whisper small.en DTW token centers; adjacent center midpoints for word boundaries; local no-flash-attn invocation",
+  "duration": 1.6,
+  "words": [
+    {
+      "text": "TriPrompt",
+      "centers": [
+        0.3,
+        0.52,
+        0.72
+      ],
+      "start": 0.18,
+      "end": 0.89
+    },
+    {
+      "text": "audit.",
+      "centers": [
+        1.06
+      ],
+      "start": 0.89,
+      "end": 1.1800000000000002
+    }
+  ]
+}

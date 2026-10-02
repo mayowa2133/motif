@@ -1,0 +1,47 @@
+{
+  "id": "reconstruction-rough-shelf",
+  "name": "Shelf",
+  "category": "prop",
+  "subcategory": "reference-reconstruction",
+  "concepts": [
+    "instruction-audit",
+    "reference-study"
+  ],
+  "keywords": [
+    "paper",
+    "cutout",
+    "shelf"
+  ],
+  "style": "reference-expressive-v1",
+  "orientation": "front",
+  "dimensions": {
+    "width": 935,
+    "height": 179,
+    "unit": "px"
+  },
+  "artBox": {
+    "x": 0,
+    "y": -143,
+    "width": 935,
+    "height": 179
+  },
+  "anchors": {},
+  "compatibleCharacters": [
+    "motif-bot"
+  ],
+  "supportedActions": [
+    "hold",
+    "reveal"
+  ],
+  "sourceType": "vector",
+  "source": {
+    "file": "videos/productions/reference-reconstruction-full-rough/assets/props/shelf.svg",
+    "generator": "videos/productions/reference-reconstruction-full-rough/build.py",
+    "reference": "Agent-authored geometry for a mapped source shot; no source prop pixels."
+  },
+  "preview": "videos/productions/reference-reconstruction-full-rough/assets/props/shelf.svg",
+  "license": "project-original",
+  "status": "review",
+  "presentationStatus": "rough",
+  "version": 1
+}

@@ -1,0 +1,61 @@
+{
+  "status": "REVIEW_REQUIRED",
+  "full": {
+    "programs": [],
+    "stream_groups": [],
+    "streams": [
+      {
+        "index": 0,
+        "codec_type": "video",
+        "width": 1080,
+        "height": 1920,
+        "duration": "32.866667",
+        "nb_frames": "986"
+      },
+      {
+        "index": 1,
+        "codec_type": "audio",
+        "duration": "32.866667",
+        "nb_frames": "1542"
+      }
+    ],
+    "format": {
+      "duration": "32.866667"
+    }
+  },
+  "native": {
+    "programs": [],
+    "stream_groups": [],
+    "streams": [
+      {
+        "index": 0,
+        "codec_type": "video",
+        "width": 360,
+        "height": 640,
+        "duration": "32.866667",
+        "nb_frames": "986"
+      },
+      {
+        "index": 1,
+        "codec_type": "audio",
+        "duration": "32.866667",
+        "nb_frames": "1542"
+      }
+    ],
+    "format": {
+      "duration": "32.866667"
+    }
+  },
+  "loudness": {
+    "integrated_lufs": -16.01,
+    "true_peak_dbtp": -3.36,
+    "lra_lu": 1.4
+  },
+  "audio_preservation": {
+    "method": "copy unchanged finished v3 AAC packets into v4 picture streams; no new gain, timing, TTS, music or sound correction",
+    "source": "/Users/mayowaadesanya/Projects/motif/videos/productions/voicestudio-art-performance-v3/renders/moving-preview.mp4",
+    "aac_adts_sha256": "fe39df8faaac30f6333a4bb708ae3c32fd1be2fcc4004c0678030864ccc4e351",
+    "full_and_native_match_source": true
+  },
+  "subjective_listening": "not reassessed; visual review separate"
+}

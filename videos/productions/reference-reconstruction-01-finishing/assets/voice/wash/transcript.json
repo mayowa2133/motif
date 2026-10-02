@@ -1,0 +1,20 @@
+[
+  {
+    "text": "Clean",
+    "start": 0.05,
+    "end": 0.29,
+    "id": "w0"
+  },
+  {
+    "text": "your",
+    "start": 0.29,
+    "end": 0.52,
+    "id": "w1"
+  },
+  {
+    "text": "instructions.",
+    "start": 0.52,
+    "end": 1.28,
+    "id": "w2"
+  }
+]

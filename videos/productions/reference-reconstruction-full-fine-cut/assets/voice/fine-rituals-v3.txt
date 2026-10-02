@@ -1,0 +1,1 @@
+Remove repeated checks. Stop shouting commands. Cut unnecessary steps.

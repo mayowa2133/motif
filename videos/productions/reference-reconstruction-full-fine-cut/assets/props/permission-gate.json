@@ -1,0 +1,46 @@
+{
+  "id": "reconstruction-rough-permission-gate",
+  "name": "Permission Gate",
+  "category": "prop",
+  "subcategory": "reference-reconstruction",
+  "concepts": [
+    "instruction-audit",
+    "reference-study"
+  ],
+  "keywords": [
+    "paper",
+    "cutout",
+    "permission-gate"
+  ],
+  "style": "reference-expressive-v1",
+  "orientation": "front",
+  "dimensions": {
+    "width": 282,
+    "height": 374,
+    "unit": "px"
+  },
+  "artBox": {
+    "x": 0,
+    "y": 0,
+    "width": 282,
+    "height": 374
+  },
+  "anchors": {},
+  "compatibleCharacters": [
+    "motif-bot"
+  ],
+  "supportedActions": [
+    "await-permission"
+  ],
+  "sourceType": "vector",
+  "source": {
+    "file": "videos/productions/reference-reconstruction-full-fine-cut/assets/props/permission-gate.svg",
+    "generator": "videos/productions/reference-reconstruction-full-fine-cut/build.py",
+    "reference": "Agent-authored geometry for a mapped source shot; no source prop pixels."
+  },
+  "preview": "videos/productions/reference-reconstruction-full-fine-cut/assets/props/permission-gate.svg",
+  "license": "project-original",
+  "status": "review",
+  "presentationStatus": "fine-cut",
+  "version": 1
+}

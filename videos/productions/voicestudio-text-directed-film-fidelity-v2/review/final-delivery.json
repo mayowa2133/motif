@@ -1,0 +1,25 @@
+{
+  "status": "REVIEW_REQUIRED",
+  "loudness": {
+    "integrated_lufs": -16.01,
+    "true_peak_dbtp": -3.36,
+    "lra_lu": 1.4
+  },
+  "files": {
+    "renders/moving-preview.mp4": {
+      "sha256": "712790c7c3d8cf50126565944b5f150139d8dafe37e9f0aafcf8dac8eeeb7a43",
+      "bytes": 10290017
+    },
+    "renders/mobile.mp4": {
+      "sha256": "e4a4b3693fb70dad0cbe0feee0cf4b148532beea10f5d381cac910927ecb0040",
+      "bytes": 3263051
+    },
+    "renders/19-shot-contact-sheet.jpg": {
+      "sha256": "0b70dd6215e48c0d4fc42e5aefa9e968f3bf0c63275fb4a77a01782b3013989b",
+      "bytes": 347175
+    }
+  },
+  "opening_native_height_px": 75,
+  "same19shots": true,
+  "human_listening": "pending"
+}

@@ -1,0 +1,182 @@
+{
+  "text_directed_ui": {
+    "schema": "text-directed-1.0",
+    "style": "reference-expressive-high-energy-v1",
+    "actions": [
+      "record-and-complete",
+      "star-and-count",
+      "reject-free-subscribe",
+      "sample-type-synthesize",
+      "dusty-cpu-laundry",
+      "dock-name-reveal",
+      "record-to-sample",
+      "script-scrap-output",
+      "model-row-hops",
+      "book-to-chapters",
+      "floating-mic-type",
+      "upload-speaker-strips",
+      "workflow-step-hops",
+      "dual-player",
+      "language-scroll-count",
+      "cancel-subscription",
+      "wifi-off-local-complete",
+      "blocked-upload",
+      "comment-keyboard"
+    ],
+    "components_module": "scripts/motif_ui_components.py",
+    "scope": "finite interactive UI reconstruction; agent-authored geometry/choreography"
+  },
+  "worlds": {
+    "calendar": [
+      "calendar-wide",
+      "calendar-detail"
+    ],
+    "arena": [
+      "arena-b",
+      "arena-pair",
+      "arena-review",
+      "arena-a"
+    ],
+    "workshop": [
+      "workshop-wide"
+    ]
+  },
+  "assets": {
+    "workshop": [
+      "workshop-wall",
+      "workshop-floor",
+      "desk",
+      "bot",
+      "project-folio-kit",
+      "hinged-crease-jig",
+      "tabletop-page-press",
+      "assembly-cradle",
+      "receiving-hands"
+    ],
+    "calendar": [
+      "wall",
+      "floor",
+      "desk",
+      "calendar-board",
+      "appointment",
+      "proposal",
+      "decision-tab",
+      "human-hand",
+      "bot"
+    ],
+    "arena": [
+      "wall",
+      "floor",
+      "arena-arch",
+      "crowd",
+      "stage",
+      "answer-sheet",
+      "stencil",
+      "human-hand",
+      "bot"
+    ]
+  },
+  "backend": "codex-exec",
+  "style": "locked motif-v1",
+  "voice": "local Kokoro af_nova",
+  "script_preview": {
+    "style": "reference-expressive-v1",
+    "actions": [
+      "snap-open-then-buckle-sample-answer",
+      "trace-claim-connector-through-folio",
+      "lift-summary-window-to-compare-source",
+      "expose-and-preserve-evidence-gap",
+      "place-cautious-decision-bookmark",
+      "arrange-exploded-support-chain-for-understanding"
+    ],
+    "assets": {
+      "bot": "assets/characters/motif-bot/canonical/v1/motif-bot-v1.json",
+      "desk": "assets/scenes/scene-01/furniture/desk.svg",
+      "project-folio-kit": "assets/scenes/book-workshop/project-folio-kit.svg",
+      "source-chain-paper-set": "",
+      "missing-evidence-frame": ""
+    },
+    "scope": "finite paper investigation; new geometry requires explicit agent-assisted development",
+    "high_energy": {
+      "style": "reference-expressive-high-energy-v1",
+      "actions": {
+        "slam-confident-claim": {
+          "after": "claim-up",
+          "requires": [],
+          "mode": "slam"
+        },
+        "buckle-and-scramble-catch": {
+          "after": "caught",
+          "requires": [
+            "claim-up"
+          ],
+          "mode": "catch"
+        },
+        "snap-source-trail": {
+          "after": "trail",
+          "requires": [
+            "caught"
+          ],
+          "mode": "trail"
+        },
+        "thread-through-flipping-pages": {
+          "after": "traced",
+          "requires": [
+            "trail"
+          ],
+          "mode": "journey"
+        },
+        "peel-summary-reveal-original": {
+          "after": "revealed",
+          "requires": [
+            "traced"
+          ],
+          "mode": "peel"
+        },
+        "compare-large-will-may": {
+          "after": "compared",
+          "requires": [
+            "revealed"
+          ],
+          "mode": "compare"
+        },
+        "encounter-missing-support": {
+          "after": "gap-open",
+          "requires": [
+            "compared"
+          ],
+          "mode": "gap"
+        },
+        "reject-tempting-patch": {
+          "after": "gap-kept",
+          "requires": [
+            "gap-open"
+          ],
+          "mode": "patch"
+        },
+        "route-claim-to-review": {
+          "after": "review-needed",
+          "requires": [
+            "gap-kept"
+          ],
+          "mode": "decision"
+        },
+        "assemble-visible-understanding": {
+          "after": "assembled",
+          "requires": [
+            "review-needed"
+          ],
+          "mode": "assemble"
+        },
+        "peel-convincing-surface-for-payoff": {
+          "after": "explained",
+          "requires": [
+            "assembled"
+          ],
+          "mode": "payoff"
+        }
+      },
+      "scope": "finite agent-authored overlapping paper actions; explicit opt-in"
+    }
+  }
+}

@@ -1,0 +1,218 @@
+{
+  "narration": "assets/voice/narration-af-nova.wav",
+  "duration": 19.178667,
+  "review_input": "assets/voice/review-voice.wav",
+  "review_input_measurement": {
+    "integrated_lufs": -17.97,
+    "true_peak_dbtp": -2.3,
+    "lra_lu": 2.8
+  },
+  "review_gain_db": 0,
+  "target_lufs": -16.0,
+  "peak_ceiling": -1.5,
+  "music": false,
+  "sfx": true,
+  "sfx_cues": [
+    {
+      "shot": "energy-01",
+      "start": 0.28,
+      "file": "assets/sfx/hit.wav",
+      "duration": 0.19,
+      "volume": 0.5,
+      "meaning": "physical hit"
+    },
+    {
+      "shot": "energy-01",
+      "start": 0.4,
+      "file": "assets/sfx/rattle.wav",
+      "duration": 0.32,
+      "volume": 0.4,
+      "meaning": "physical rattle"
+    },
+    {
+      "shot": "energy-02",
+      "start": 1.31,
+      "file": "assets/sfx/rattle.wav",
+      "duration": 0.32,
+      "volume": 0.4,
+      "meaning": "physical rattle"
+    },
+    {
+      "shot": "energy-02",
+      "start": 1.63,
+      "file": "assets/sfx/catch.wav",
+      "duration": 0.16,
+      "volume": 0.5,
+      "meaning": "physical catch"
+    },
+    {
+      "shot": "energy-03",
+      "start": 2.23,
+      "file": "assets/sfx/snap.wav",
+      "duration": 0.12,
+      "volume": 0.4,
+      "meaning": "physical snap"
+    },
+    {
+      "shot": "energy-03",
+      "start": 2.45,
+      "file": "assets/sfx/flick.wav",
+      "duration": 0.22,
+      "volume": 0.4,
+      "meaning": "physical flick"
+    },
+    {
+      "shot": "energy-04",
+      "start": 3.38,
+      "file": "assets/sfx/flick.wav",
+      "duration": 0.22,
+      "volume": 0.4,
+      "meaning": "physical flick"
+    },
+    {
+      "shot": "energy-04",
+      "start": 3.59,
+      "file": "assets/sfx/flick.wav",
+      "duration": 0.22,
+      "volume": 0.4,
+      "meaning": "physical flick"
+    },
+    {
+      "shot": "energy-04",
+      "start": 3.83,
+      "file": "assets/sfx/flick.wav",
+      "duration": 0.22,
+      "volume": 0.4,
+      "meaning": "physical flick"
+    },
+    {
+      "shot": "energy-05",
+      "start": 5.29,
+      "file": "assets/sfx/peel.wav",
+      "duration": 0.54,
+      "volume": 0.4,
+      "meaning": "physical peel"
+    },
+    {
+      "shot": "energy-05",
+      "start": 5.64,
+      "file": "assets/sfx/pop.wav",
+      "duration": 0.12,
+      "volume": 0.4,
+      "meaning": "physical pop"
+    },
+    {
+      "shot": "energy-06",
+      "start": 7.31,
+      "file": "assets/sfx/pop.wav",
+      "duration": 0.12,
+      "volume": 0.4,
+      "meaning": "physical pop"
+    },
+    {
+      "shot": "energy-06",
+      "start": 7.45,
+      "file": "assets/sfx/pop.wav",
+      "duration": 0.12,
+      "volume": 0.4,
+      "meaning": "physical pop"
+    },
+    {
+      "shot": "energy-07",
+      "start": 8.71,
+      "file": "assets/sfx/catch.wav",
+      "duration": 0.16,
+      "volume": 0.5,
+      "meaning": "physical catch"
+    },
+    {
+      "shot": "energy-07",
+      "start": 8.87,
+      "file": "assets/sfx/rattle.wav",
+      "duration": 0.32,
+      "volume": 0.4,
+      "meaning": "physical rattle"
+    },
+    {
+      "shot": "energy-08",
+      "start": 9.81,
+      "file": "assets/sfx/flick.wav",
+      "duration": 0.22,
+      "volume": 0.4,
+      "meaning": "physical flick"
+    },
+    {
+      "shot": "energy-08",
+      "start": 10.42,
+      "file": "assets/sfx/snap.wav",
+      "duration": 0.12,
+      "volume": 0.4,
+      "meaning": "physical snap"
+    },
+    {
+      "shot": "energy-08",
+      "start": 10.7,
+      "file": "assets/sfx/flick.wav",
+      "duration": 0.22,
+      "volume": 0.4,
+      "meaning": "physical flick"
+    },
+    {
+      "shot": "energy-09",
+      "start": 13.05,
+      "file": "assets/sfx/hit.wav",
+      "duration": 0.19,
+      "volume": 0.5,
+      "meaning": "physical hit"
+    },
+    {
+      "shot": "energy-10",
+      "start": 14.31,
+      "file": "assets/sfx/pop.wav",
+      "duration": 0.12,
+      "volume": 0.4,
+      "meaning": "physical pop"
+    },
+    {
+      "shot": "energy-10",
+      "start": 14.55,
+      "file": "assets/sfx/pop.wav",
+      "duration": 0.12,
+      "volume": 0.4,
+      "meaning": "physical pop"
+    },
+    {
+      "shot": "energy-10",
+      "start": 14.83,
+      "file": "assets/sfx/hit.wav",
+      "duration": 0.19,
+      "volume": 0.5,
+      "meaning": "physical hit"
+    },
+    {
+      "shot": "energy-11",
+      "start": 16.08,
+      "file": "assets/sfx/peel.wav",
+      "duration": 0.54,
+      "volume": 0.4,
+      "meaning": "physical peel"
+    },
+    {
+      "shot": "energy-11",
+      "start": 16.72,
+      "file": "assets/sfx/snap.wav",
+      "duration": 0.12,
+      "volume": 0.4,
+      "meaning": "physical snap"
+    },
+    {
+      "shot": "energy-11",
+      "start": 17.35,
+      "file": "assets/sfx/pop.wav",
+      "duration": 0.12,
+      "volume": 0.4,
+      "meaning": "physical pop"
+    }
+  ],
+  "subjective_listening": "not assessed"
+}

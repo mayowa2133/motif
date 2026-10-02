@@ -1,0 +1,47 @@
+{
+  "id": "reconstruction-rough-answer-page",
+  "name": "Answer Page",
+  "category": "prop",
+  "subcategory": "reference-reconstruction",
+  "concepts": [
+    "instruction-audit",
+    "reference-study"
+  ],
+  "keywords": [
+    "paper",
+    "cutout",
+    "answer-page"
+  ],
+  "style": "reference-expressive-v1",
+  "orientation": "front",
+  "dimensions": {
+    "width": 620,
+    "height": 738,
+    "unit": "px"
+  },
+  "artBox": {
+    "x": 0,
+    "y": 0,
+    "width": 620,
+    "height": 738
+  },
+  "anchors": {},
+  "compatibleCharacters": [
+    "motif-bot"
+  ],
+  "supportedActions": [
+    "hold",
+    "reveal"
+  ],
+  "sourceType": "vector",
+  "source": {
+    "file": "videos/productions/reference-reconstruction-full-fine-cut/assets/props/answer-page.svg",
+    "generator": "videos/productions/reference-reconstruction-full-fine-cut/build.py",
+    "reference": "Agent-authored geometry for a mapped source shot; no source prop pixels."
+  },
+  "preview": "videos/productions/reference-reconstruction-full-fine-cut/assets/props/answer-page.svg",
+  "license": "project-original",
+  "status": "review",
+  "presentationStatus": "fine-cut",
+  "version": 1
+}

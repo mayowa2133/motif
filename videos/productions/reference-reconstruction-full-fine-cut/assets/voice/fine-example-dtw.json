@@ -1,0 +1,199 @@
+{
+	"systeminfo": "WHISPER : VITISAI = 0 | COREML = 0 | OPENVINO = 0 | MTL : EMBED_LIBRARY = 1 | CPU : NEON = 1 | ARM_FMA = 1 | MATMUL_INT8 = 1 | DOTPROD = 1 | ACCELERATE = 1 | OPENMP = 1 | REPACK = 1 | ",
+	"model": {
+		"type": "small",
+		"multilingual": false,
+		"vocab": 51864,
+		"audio": {
+			"ctx": 1500,
+			"state": 768,
+			"head": 12,
+			"layer": 12
+		},
+		"text": {
+			"ctx": 448,
+			"state": 768,
+			"head": 12,
+			"layer": 12
+		},
+		"mels": 80,
+		"ftype": 1
+	},
+	"params": {
+		"model": "/Users/mayowaadesanya/.cache/hyperframes/whisper/models/ggml-small.en.bin",
+		"language": "en",
+		"translate": false
+	},
+	"result": {
+		"language": "en"
+	},
+	"transcription": [
+		{
+			"timestamps": {
+				"from": "00:00:00,000",
+				"to": "00:00:03,600"
+			},
+			"offsets": {
+				"from": 0,
+				"to": 3600
+			},
+			"text": " one developer reports 70 improvements across three files.",
+			"tokens": [
+				{
+					"text": "[_BEG_]",
+					"timestamps": {
+						"from": "00:00:00,000",
+						"to": "00:00:00,000"
+					},
+					"offsets": {
+						"from": 0,
+						"to": 0
+					},
+					"id": 50363,
+					"p": 0.995425,
+					"t_dtw": -1
+				},
+				{
+					"text": " one",
+					"timestamps": {
+						"from": "00:00:00,040",
+						"to": "00:00:00,180"
+					},
+					"offsets": {
+						"from": 40,
+						"to": 180
+					},
+					"id": 530,
+					"p": 0.148715,
+					"t_dtw": 22
+				},
+				{
+					"text": " developer",
+					"timestamps": {
+						"from": "00:00:00,180",
+						"to": "00:00:00,710"
+					},
+					"offsets": {
+						"from": 180,
+						"to": 710
+					},
+					"id": 8517,
+					"p": 0.980466,
+					"t_dtw": 62
+				},
+				{
+					"text": " reports",
+					"timestamps": {
+						"from": "00:00:00,710",
+						"to": "00:00:01,080"
+					},
+					"offsets": {
+						"from": 710,
+						"to": 1080
+					},
+					"id": 3136,
+					"p": 0.966455,
+					"t_dtw": 108
+				},
+				{
+					"text": " 70",
+					"timestamps": {
+						"from": "00:00:01,320",
+						"to": "00:00:01,490"
+					},
+					"offsets": {
+						"from": 1320,
+						"to": 1490
+					},
+					"id": 4317,
+					"p": 0.893329,
+					"t_dtw": 154
+				},
+				{
+					"text": " improvements",
+					"timestamps": {
+						"from": "00:00:01,490",
+						"to": "00:00:02,180"
+					},
+					"offsets": {
+						"from": 1490,
+						"to": 2180
+					},
+					"id": 8561,
+					"p": 0.990475,
+					"t_dtw": 208
+				},
+				{
+					"text": " across",
+					"timestamps": {
+						"from": "00:00:02,220",
+						"to": "00:00:02,640"
+					},
+					"offsets": {
+						"from": 2220,
+						"to": 2640
+					},
+					"id": 1973,
+					"p": 0.93818,
+					"t_dtw": 248
+				},
+				{
+					"text": " three",
+					"timestamps": {
+						"from": "00:00:02,660",
+						"to": "00:00:03,020"
+					},
+					"offsets": {
+						"from": 2660,
+						"to": 3020
+					},
+					"id": 1115,
+					"p": 0.916036,
+					"t_dtw": 280
+				},
+				{
+					"text": " files",
+					"timestamps": {
+						"from": "00:00:03,020",
+						"to": "00:00:03,310"
+					},
+					"offsets": {
+						"from": 3020,
+						"to": 3310
+					},
+					"id": 3696,
+					"p": 0.985093,
+					"t_dtw": 322
+				},
+				{
+					"text": ".",
+					"timestamps": {
+						"from": "00:00:03,600",
+						"to": "00:00:03,600"
+					},
+					"offsets": {
+						"from": 3600,
+						"to": 3600
+					},
+					"id": 13,
+					"p": 0.976515,
+					"t_dtw": 354
+				},
+				{
+					"text": "[_TT_180]",
+					"timestamps": {
+						"from": "00:00:03,600",
+						"to": "00:00:03,600"
+					},
+					"offsets": {
+						"from": 3600,
+						"to": 3600
+					},
+					"id": 50543,
+					"p": 0.131245,
+					"t_dtw": -1
+				}
+			]
+		}
+	]
+}

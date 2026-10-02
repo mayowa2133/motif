@@ -1,0 +1,12 @@
+{
+  "reviewed_project": "/Users/mayowaadesanya/Projects/motif/videos/productions/voicestudio-text-directed-film-fidelity-v2",
+  "files": {
+    "renders/moving-preview.mp4": "712790c7c3d8cf50126565944b5f150139d8dafe37e9f0aafcf8dac8eeeb7a43",
+    "renders/mobile.mp4": "e4a4b3693fb70dad0cbe0feee0cf4b148532beea10f5d381cac910927ecb0040",
+    "production-plan.json": "ab85c86cf66cddc624e14e494e96b2b34a9b4069d28152afd6af39d6c6c414e4",
+    "assets/voice/narration-af-nova.wav": "3b06ba84c20b57ac85179b0a6d8bdd466facf8bed5222b35095b501ddc996fab",
+    "speech-timing.json": "56c78ba6bd5a0a81d4e2046711cde58928b39ff6abf4be6c75ab04b06c595c71"
+  },
+  "expected_frames": 986,
+  "fps": 30
+}

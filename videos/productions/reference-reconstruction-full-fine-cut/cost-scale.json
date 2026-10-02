@@ -1,0 +1,17 @@
+{
+  "baselineY": 1411,
+  "before": {
+    "index": 100,
+    "x": 240,
+    "topY": 771,
+    "height": 640
+  },
+  "after": {
+    "index": 91,
+    "x": 674,
+    "topY": 828.6,
+    "height": 582.4
+  },
+  "ratio": 0.9099999999999999,
+  "qualification": "illustrative index encoding the source claim; no verified cost measurement"
+}

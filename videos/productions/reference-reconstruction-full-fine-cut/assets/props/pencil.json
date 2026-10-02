@@ -1,0 +1,51 @@
+{
+  "id": "reconstruction-rough-pencil",
+  "name": "Pencil",
+  "category": "prop",
+  "subcategory": "reference-reconstruction",
+  "concepts": [
+    "instruction-audit",
+    "reference-study"
+  ],
+  "keywords": [
+    "paper",
+    "cutout",
+    "pencil"
+  ],
+  "style": "reference-expressive-v1",
+  "orientation": "front",
+  "dimensions": {
+    "width": 33,
+    "height": 290,
+    "unit": "px"
+  },
+  "artBox": {
+    "x": -6,
+    "y": -270,
+    "width": 33,
+    "height": 290
+  },
+  "anchors": {
+    "grip": {
+      "x": 0.5454545454545454,
+      "y": 0.6689655172413793
+    }
+  },
+  "compatibleCharacters": [
+    "motif-bot"
+  ],
+  "supportedActions": [
+    "mark"
+  ],
+  "sourceType": "vector",
+  "source": {
+    "file": "videos/productions/reference-reconstruction-full-fine-cut/assets/props/pencil.svg",
+    "generator": "videos/productions/reference-reconstruction-full-fine-cut/build.py",
+    "reference": "Agent-authored geometry for a mapped source shot; no source prop pixels."
+  },
+  "preview": "videos/productions/reference-reconstruction-full-fine-cut/assets/props/pencil.svg",
+  "license": "project-original",
+  "status": "review",
+  "presentationStatus": "fine-cut",
+  "version": 1
+}

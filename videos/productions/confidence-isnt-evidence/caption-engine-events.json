@@ -1,0 +1,384 @@
+{
+  "schemaVersion": "1.0",
+  "compositionId": "captions",
+  "durationSec": 24.333333333333332,
+  "fps": 30,
+  "initial": [
+    {
+      "target": "#caption-0",
+      "props": {
+        "opacity": 0
+      }
+    },
+    {
+      "target": "#caption-1",
+      "props": {
+        "opacity": 0
+      }
+    },
+    {
+      "target": "#caption-2",
+      "props": {
+        "opacity": 0
+      }
+    },
+    {
+      "target": "#caption-3",
+      "props": {
+        "opacity": 0
+      }
+    },
+    {
+      "target": "#caption-4",
+      "props": {
+        "opacity": 0
+      }
+    },
+    {
+      "target": "#caption-5",
+      "props": {
+        "opacity": 0
+      }
+    },
+    {
+      "target": "#caption-6",
+      "props": {
+        "opacity": 0
+      }
+    },
+    {
+      "target": "#caption-7",
+      "props": {
+        "opacity": 0
+      }
+    },
+    {
+      "target": "#caption-8",
+      "props": {
+        "opacity": 0
+      }
+    },
+    {
+      "target": "#caption-9",
+      "props": {
+        "opacity": 0
+      }
+    },
+    {
+      "target": "#caption-10",
+      "props": {
+        "opacity": 0
+      }
+    },
+    {
+      "target": "#caption-11",
+      "props": {
+        "opacity": 0
+      }
+    },
+    {
+      "target": "#caption-12",
+      "props": {
+        "opacity": 0
+      }
+    },
+    {
+      "target": "#caption-13",
+      "props": {
+        "opacity": 0
+      }
+    },
+    {
+      "target": "#caption-14",
+      "props": {
+        "opacity": 0
+      }
+    },
+    {
+      "target": "#caption-15",
+      "props": {
+        "opacity": 0
+      }
+    },
+    {
+      "target": "#caption-16",
+      "props": {
+        "opacity": 0
+      }
+    }
+  ],
+  "events": [
+    {
+      "time": 0.06666666666666667,
+      "target": "#caption-0",
+      "action": "CAPTION_REPLACE",
+      "params": {}
+    },
+    {
+      "time": 1.8,
+      "target": "#caption-0",
+      "action": "SET",
+      "params": {
+        "props": {
+          "opacity": 0
+        }
+      }
+    },
+    {
+      "time": 1.8,
+      "target": "#caption-1",
+      "action": "CAPTION_REPLACE",
+      "params": {}
+    },
+    {
+      "time": 2.7666666666666666,
+      "target": "#caption-1",
+      "action": "SET",
+      "params": {
+        "props": {
+          "opacity": 0
+        }
+      }
+    },
+    {
+      "time": 2.7666666666666666,
+      "target": "#caption-2",
+      "action": "CAPTION_REPLACE",
+      "params": {}
+    },
+    {
+      "time": 3.8666666666666667,
+      "target": "#caption-2",
+      "action": "SET",
+      "params": {
+        "props": {
+          "opacity": 0
+        }
+      }
+    },
+    {
+      "time": 3.8666666666666667,
+      "target": "#caption-3",
+      "action": "CAPTION_REPLACE",
+      "params": {}
+    },
+    {
+      "time": 5.1,
+      "target": "#caption-3",
+      "action": "SET",
+      "params": {
+        "props": {
+          "opacity": 0
+        }
+      }
+    },
+    {
+      "time": 5.1,
+      "target": "#caption-4",
+      "action": "CAPTION_REPLACE",
+      "params": {}
+    },
+    {
+      "time": 6.333333333333333,
+      "target": "#caption-4",
+      "action": "SET",
+      "params": {
+        "props": {
+          "opacity": 0
+        }
+      }
+    },
+    {
+      "time": 6.333333333333333,
+      "target": "#caption-5",
+      "action": "CAPTION_REPLACE",
+      "params": {}
+    },
+    {
+      "time": 8.066666666666666,
+      "target": "#caption-5",
+      "action": "SET",
+      "params": {
+        "props": {
+          "opacity": 0
+        }
+      }
+    },
+    {
+      "time": 8.066666666666666,
+      "target": "#caption-6",
+      "action": "CAPTION_REPLACE",
+      "params": {}
+    },
+    {
+      "time": 9.533333333333333,
+      "target": "#caption-6",
+      "action": "SET",
+      "params": {
+        "props": {
+          "opacity": 0
+        }
+      }
+    },
+    {
+      "time": 9.533333333333333,
+      "target": "#caption-7",
+      "action": "CAPTION_REPLACE",
+      "params": {}
+    },
+    {
+      "time": 10.333333333333334,
+      "target": "#caption-7",
+      "action": "SET",
+      "params": {
+        "props": {
+          "opacity": 0
+        }
+      }
+    },
+    {
+      "time": 10.333333333333334,
+      "target": "#caption-8",
+      "action": "CAPTION_REPLACE",
+      "params": {}
+    },
+    {
+      "time": 11.8,
+      "target": "#caption-8",
+      "action": "SET",
+      "params": {
+        "props": {
+          "opacity": 0
+        }
+      }
+    },
+    {
+      "time": 11.8,
+      "target": "#caption-9",
+      "action": "CAPTION_REPLACE",
+      "params": {}
+    },
+    {
+      "time": 13.233333333333333,
+      "target": "#caption-9",
+      "action": "SET",
+      "params": {
+        "props": {
+          "opacity": 0
+        }
+      }
+    },
+    {
+      "time": 13.233333333333333,
+      "target": "#caption-10",
+      "action": "CAPTION_REPLACE",
+      "params": {}
+    },
+    {
+      "time": 14.633333333333333,
+      "target": "#caption-10",
+      "action": "SET",
+      "params": {
+        "props": {
+          "opacity": 0
+        }
+      }
+    },
+    {
+      "time": 14.633333333333333,
+      "target": "#caption-11",
+      "action": "CAPTION_REPLACE",
+      "params": {}
+    },
+    {
+      "time": 15.8,
+      "target": "#caption-11",
+      "action": "SET",
+      "params": {
+        "props": {
+          "opacity": 0
+        }
+      }
+    },
+    {
+      "time": 15.8,
+      "target": "#caption-12",
+      "action": "CAPTION_REPLACE",
+      "params": {}
+    },
+    {
+      "time": 17.6,
+      "target": "#caption-12",
+      "action": "SET",
+      "params": {
+        "props": {
+          "opacity": 0
+        }
+      }
+    },
+    {
+      "time": 17.6,
+      "target": "#caption-13",
+      "action": "CAPTION_REPLACE",
+      "params": {}
+    },
+    {
+      "time": 19.3,
+      "target": "#caption-13",
+      "action": "SET",
+      "params": {
+        "props": {
+          "opacity": 0
+        }
+      }
+    },
+    {
+      "time": 19.3,
+      "target": "#caption-14",
+      "action": "CAPTION_REPLACE",
+      "params": {}
+    },
+    {
+      "time": 20.866666666666667,
+      "target": "#caption-14",
+      "action": "SET",
+      "params": {
+        "props": {
+          "opacity": 0
+        }
+      }
+    },
+    {
+      "time": 20.866666666666667,
+      "target": "#caption-15",
+      "action": "CAPTION_REPLACE",
+      "params": {}
+    },
+    {
+      "time": 22.033333333333335,
+      "target": "#caption-15",
+      "action": "SET",
+      "params": {
+        "props": {
+          "opacity": 0
+        }
+      }
+    },
+    {
+      "time": 22.033333333333335,
+      "target": "#caption-16",
+      "action": "CAPTION_REPLACE",
+      "params": {}
+    },
+    {
+      "time": 23.0,
+      "target": "#caption-16",
+      "action": "SET",
+      "params": {
+        "props": {
+          "opacity": 0
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+[
+  {
+    "text": "The",
+    "start": 0.04,
+    "end": 0.18,
+    "id": "w0"
+  },
+  {
+    "text": "takeaway",
+    "start": 0.18,
+    "end": 0.67,
+    "id": "w1"
+  },
+  {
+    "text": "audit",
+    "start": 0.67,
+    "end": 0.98,
+    "id": "w2"
+  },
+  {
+    "text": "your",
+    "start": 0.98,
+    "end": 1.23,
+    "id": "w3"
+  },
+  {
+    "text": "instructions.",
+    "start": 1.23,
+    "end": 2.11,
+    "id": "w4"
+  }
+]

@@ -1,0 +1,352 @@
+{
+	"systeminfo": "WHISPER : VITISAI = 0 | COREML = 0 | OPENVINO = 0 | MTL : EMBED_LIBRARY = 1 | CPU : NEON = 1 | ARM_FMA = 1 | MATMUL_INT8 = 1 | DOTPROD = 1 | ACCELERATE = 1 | OPENMP = 1 | REPACK = 1 | ",
+	"model": {
+		"type": "small",
+		"multilingual": false,
+		"vocab": 51864,
+		"audio": {
+			"ctx": 1500,
+			"state": 768,
+			"head": 12,
+			"layer": 12
+		},
+		"text": {
+			"ctx": 448,
+			"state": 768,
+			"head": 12,
+			"layer": 12
+		},
+		"mels": 80,
+		"ftype": 1
+	},
+	"params": {
+		"model": "/Users/mayowaadesanya/.cache/hyperframes/whisper/models/ggml-small.en.bin",
+		"language": "en",
+		"translate": false
+	},
+	"result": {
+		"language": "en"
+	},
+	"transcription": [
+		{
+			"timestamps": {
+				"from": "00:00:00,000",
+				"to": "00:00:03,520"
+			},
+			"offsets": {
+				"from": 0,
+				"to": 3520
+			},
+			"text": " The source argues old instructions can hold newer models back.",
+			"tokens": [
+				{
+					"text": "[_BEG_]",
+					"timestamps": {
+						"from": "00:00:00,000",
+						"to": "00:00:00,000"
+					},
+					"offsets": {
+						"from": 0,
+						"to": 0
+					},
+					"id": 50363,
+					"p": 0.992506,
+					"t_dtw": -1
+				},
+				{
+					"text": " The",
+					"timestamps": {
+						"from": "00:00:00,050",
+						"to": "00:00:00,160"
+					},
+					"offsets": {
+						"from": 50,
+						"to": 160
+					},
+					"id": 383,
+					"p": 0.958952,
+					"t_dtw": 16
+				},
+				{
+					"text": " source",
+					"timestamps": {
+						"from": "00:00:00,220",
+						"to": "00:00:00,540"
+					},
+					"offsets": {
+						"from": 220,
+						"to": 540
+					},
+					"id": 2723,
+					"p": 0.993576,
+					"t_dtw": 36
+				},
+				{
+					"text": " argues",
+					"timestamps": {
+						"from": "00:00:00,540",
+						"to": "00:00:00,840"
+					},
+					"offsets": {
+						"from": 540,
+						"to": 840
+					},
+					"id": 11673,
+					"p": 0.996559,
+					"t_dtw": 76
+				},
+				{
+					"text": " old",
+					"timestamps": {
+						"from": "00:00:00,900",
+						"to": "00:00:01,050"
+					},
+					"offsets": {
+						"from": 900,
+						"to": 1050
+					},
+					"id": 1468,
+					"p": 0.985035,
+					"t_dtw": 106
+				},
+				{
+					"text": " instructions",
+					"timestamps": {
+						"from": "00:00:01,080",
+						"to": "00:00:01,790"
+					},
+					"offsets": {
+						"from": 1080,
+						"to": 1790
+					},
+					"id": 7729,
+					"p": 0.991861,
+					"t_dtw": 164
+				},
+				{
+					"text": " can",
+					"timestamps": {
+						"from": "00:00:01,860",
+						"to": "00:00:01,980"
+					},
+					"offsets": {
+						"from": 1860,
+						"to": 1980
+					},
+					"id": 460,
+					"p": 0.855839,
+					"t_dtw": 196
+				},
+				{
+					"text": " hold",
+					"timestamps": {
+						"from": "00:00:01,980",
+						"to": "00:00:02,180"
+					},
+					"offsets": {
+						"from": 1980,
+						"to": 2180
+					},
+					"id": 1745,
+					"p": 0.986031,
+					"t_dtw": 220
+				},
+				{
+					"text": " newer",
+					"timestamps": {
+						"from": "00:00:02,240",
+						"to": "00:00:02,500"
+					},
+					"offsets": {
+						"from": 2240,
+						"to": 2500
+					},
+					"id": 15064,
+					"p": 0.944834,
+					"t_dtw": 246
+				},
+				{
+					"text": " models",
+					"timestamps": {
+						"from": "00:00:02,500",
+						"to": "00:00:02,800"
+					},
+					"offsets": {
+						"from": 2500,
+						"to": 2800
+					},
+					"id": 4981,
+					"p": 0.898933,
+					"t_dtw": 280
+				},
+				{
+					"text": " back",
+					"timestamps": {
+						"from": "00:00:02,930",
+						"to": "00:00:03,190"
+					},
+					"offsets": {
+						"from": 2930,
+						"to": 3190
+					},
+					"id": 736,
+					"p": 0.916679,
+					"t_dtw": 316
+				},
+				{
+					"text": ".",
+					"timestamps": {
+						"from": "00:00:03,520",
+						"to": "00:00:03,520"
+					},
+					"offsets": {
+						"from": 3520,
+						"to": 3520
+					},
+					"id": 13,
+					"p": 0.66067,
+					"t_dtw": 374
+				},
+				{
+					"text": "[_TT_176]",
+					"timestamps": {
+						"from": "00:00:03,520",
+						"to": "00:00:03,520"
+					},
+					"offsets": {
+						"from": 3520,
+						"to": 3520
+					},
+					"id": 50539,
+					"p": 0.163238,
+					"t_dtw": -1
+				}
+			]
+		},
+		{
+			"timestamps": {
+				"from": "00:00:03,520",
+				"to": "00:00:06,440"
+			},
+			"offsets": {
+				"from": 3520,
+				"to": 6440
+			},
+			"text": " Rules for retired models pile up.",
+			"tokens": [
+				{
+					"text": " Rules",
+					"timestamps": {
+						"from": "00:00:03,570",
+						"to": "00:00:03,980"
+					},
+					"offsets": {
+						"from": 3570,
+						"to": 3980
+					},
+					"id": 14252,
+					"p": 0.985234,
+					"t_dtw": 374
+				},
+				{
+					"text": " for",
+					"timestamps": {
+						"from": "00:00:04,010",
+						"to": "00:00:04,290"
+					},
+					"offsets": {
+						"from": 4010,
+						"to": 4290
+					},
+					"id": 329,
+					"p": 0.998891,
+					"t_dtw": 406
+				},
+				{
+					"text": " retired",
+					"timestamps": {
+						"from": "00:00:04,290",
+						"to": "00:00:04,950"
+					},
+					"offsets": {
+						"from": 4290,
+						"to": 4950
+					},
+					"id": 9880,
+					"p": 0.986596,
+					"t_dtw": 446
+				},
+				{
+					"text": " models",
+					"timestamps": {
+						"from": "00:00:05,030",
+						"to": "00:00:05,550"
+					},
+					"offsets": {
+						"from": 5030,
+						"to": 5550
+					},
+					"id": 4981,
+					"p": 0.998167,
+					"t_dtw": 492
+				},
+				{
+					"text": " pile",
+					"timestamps": {
+						"from": "00:00:05,550",
+						"to": "00:00:05,930"
+					},
+					"offsets": {
+						"from": 5550,
+						"to": 5930
+					},
+					"id": 14540,
+					"p": 0.997246,
+					"t_dtw": 518
+				},
+				{
+					"text": " up",
+					"timestamps": {
+						"from": "00:00:05,930",
+						"to": "00:00:06,120"
+					},
+					"offsets": {
+						"from": 5930,
+						"to": 6120
+					},
+					"id": 510,
+					"p": 0.981972,
+					"t_dtw": 550
+				},
+				{
+					"text": ".",
+					"timestamps": {
+						"from": "00:00:06,120",
+						"to": "00:00:06,350"
+					},
+					"offsets": {
+						"from": 6120,
+						"to": 6350
+					},
+					"id": 13,
+					"p": 0.989444,
+					"t_dtw": 588
+				},
+				{
+					"text": "[_TT_322]",
+					"timestamps": {
+						"from": "00:00:06,440",
+						"to": "00:00:06,440"
+					},
+					"offsets": {
+						"from": 6440,
+						"to": 6440
+					},
+					"id": 50685,
+					"p": 0.022188,
+					"t_dtw": -1
+				}
+			]
+		}
+	]
+}

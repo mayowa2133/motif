@@ -1,5 +1,19 @@
 # Message-driven production plans
 
+## Supplied-script moving previews
+
+The shared director also accepts an explicit supplied-script path. `script-plan --brief <brief.json>` uses live data-only planning, preserves the supplied narration words, and stops on unavailable actions/assets. `script-preview --project <saved-project> --render` renders the saved plan, speech timings, layout and captions without calling the planner or regenerating narration. Both route through the existing plan validator/compiler and Motif event engine.
+
+The first original production is [Confidence Isn’t Evidence](../videos/productions/confidence-isnt-evidence/REUSE_CHANGE_NOTE.md), currently **REVIEW_REQUIRED**. It explicitly selects the registered `reference-expressive-v1` presentation. Its seven paper props and six finite interactions are agent-authored additions to the shared producer. This supports one bounded paper-investigation capability family; unrelated scripts can still require explicit new artwork/actions. It does not establish arbitrary-script autonomous filmmaking.
+
+Saved-preview reproduction from the repository root:
+
+```bash
+python3 scripts/motif_direct.py script-preview --project videos/productions/confidence-isnt-evidence --render
+```
+
+`review-state.json` checks saved creative inputs before rendering. Final material/audio finishing awaits human approval; the frozen reconstruction and default style remain unchanged.
+
 The new entry point is `scripts/motif_direct.py`. The earlier `motif_produce.py` remains supported legacy calendar-template mode, with its existing contract intact.
 
 ## Execution boundary

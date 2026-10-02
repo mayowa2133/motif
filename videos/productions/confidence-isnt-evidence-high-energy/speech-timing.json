@@ -1,0 +1,503 @@
+{
+  "method": "installed Whisper small.en DTW; no flash attention; adjacent token-center midpoints",
+  "precision": "automatic approximate word boundaries, not phoneme-perfect",
+  "duration": 19.178667,
+  "words": [
+    {
+      "text": "A",
+      "centers": [
+        0.14
+      ],
+      "start": 0.020000000000000018,
+      "end": 0.36
+    },
+    {
+      "text": "confident",
+      "centers": [
+        0.58
+      ],
+      "start": 0.36,
+      "end": 0.79
+    },
+    {
+      "text": "answer",
+      "centers": [
+        1.0
+      ],
+      "start": 0.79,
+      "end": 1.1099999999999999
+    },
+    {
+      "text": "can",
+      "centers": [
+        1.22
+      ],
+      "start": 1.1099999999999999,
+      "end": 1.3399999999999999
+    },
+    {
+      "text": "still",
+      "centers": [
+        1.46
+      ],
+      "start": 1.3399999999999999,
+      "end": 1.5499999999999998
+    },
+    {
+      "text": "be",
+      "centers": [
+        1.64
+      ],
+      "start": 1.5499999999999998,
+      "end": 1.7799999999999998
+    },
+    {
+      "text": "wrong.",
+      "centers": [
+        1.92
+      ],
+      "start": 1.7799999999999998,
+      "end": 2.13
+    },
+    {
+      "text": "Before",
+      "centers": [
+        2.34
+      ],
+      "start": 2.13,
+      "end": 2.42
+    },
+    {
+      "text": "you",
+      "centers": [
+        2.5
+      ],
+      "start": 2.42,
+      "end": 2.62
+    },
+    {
+      "text": "trust",
+      "centers": [
+        2.74
+      ],
+      "start": 2.62,
+      "end": 2.81
+    },
+    {
+      "text": "a",
+      "centers": [
+        2.88
+      ],
+      "start": 2.81,
+      "end": 3.0
+    },
+    {
+      "text": "claim,",
+      "centers": [
+        3.12
+      ],
+      "start": 3.0,
+      "end": 3.33
+    },
+    {
+      "text": "follow",
+      "centers": [
+        3.54
+      ],
+      "start": 3.33,
+      "end": 3.65
+    },
+    {
+      "text": "it",
+      "centers": [
+        3.76
+      ],
+      "start": 3.65,
+      "end": 3.8499999999999996
+    },
+    {
+      "text": "back",
+      "centers": [
+        3.94
+      ],
+      "start": 3.8499999999999996,
+      "end": 4.05
+    },
+    {
+      "text": "to",
+      "centers": [
+        4.16
+      ],
+      "start": 4.05,
+      "end": 4.24
+    },
+    {
+      "text": "its",
+      "centers": [
+        4.32
+      ],
+      "start": 4.24,
+      "end": 4.49
+    },
+    {
+      "text": "source.",
+      "centers": [
+        4.66
+      ],
+      "start": 4.49,
+      "end": 5.13
+    },
+    {
+      "text": "Check",
+      "centers": [
+        5.6
+      ],
+      "start": 5.13,
+      "end": 5.68
+    },
+    {
+      "text": "what",
+      "centers": [
+        5.76
+      ],
+      "start": 5.68,
+      "end": 5.82
+    },
+    {
+      "text": "the",
+      "centers": [
+        5.88
+      ],
+      "start": 5.82,
+      "end": 6.05
+    },
+    {
+      "text": "original",
+      "centers": [
+        6.22
+      ],
+      "start": 6.05,
+      "end": 6.46
+    },
+    {
+      "text": "actually",
+      "centers": [
+        6.7
+      ],
+      "start": 6.46,
+      "end": 6.890000000000001
+    },
+    {
+      "text": "says,",
+      "centers": [
+        7.08
+      ],
+      "start": 6.890000000000001,
+      "end": 7.23
+    },
+    {
+      "text": "not",
+      "centers": [
+        7.38
+      ],
+      "start": 7.23,
+      "end": 7.47
+    },
+    {
+      "text": "just",
+      "centers": [
+        7.56
+      ],
+      "start": 7.47,
+      "end": 7.65
+    },
+    {
+      "text": "the",
+      "centers": [
+        7.74
+      ],
+      "start": 7.65,
+      "end": 7.89
+    },
+    {
+      "text": "summary.",
+      "centers": [
+        8.04
+      ],
+      "start": 7.89,
+      "end": 8.239999999999998
+    },
+    {
+      "text": "If",
+      "centers": [
+        8.44
+      ],
+      "start": 8.239999999999998,
+      "end": 8.5
+    },
+    {
+      "text": "the",
+      "centers": [
+        8.56
+      ],
+      "start": 8.5,
+      "end": 8.73
+    },
+    {
+      "text": "evidence",
+      "centers": [
+        8.9
+      ],
+      "start": 8.73,
+      "end": 9.02
+    },
+    {
+      "text": "is",
+      "centers": [
+        9.14
+      ],
+      "start": 9.02,
+      "end": 9.350000000000001
+    },
+    {
+      "text": "missing,",
+      "centers": [
+        9.56
+      ],
+      "start": 9.350000000000001,
+      "end": 9.760000000000002
+    },
+    {
+      "text": "leave",
+      "centers": [
+        9.96
+      ],
+      "start": 9.760000000000002,
+      "end": 10.07
+    },
+    {
+      "text": "the",
+      "centers": [
+        10.18
+      ],
+      "start": 10.07,
+      "end": 10.280000000000001
+    },
+    {
+      "text": "gap",
+      "centers": [
+        10.38
+      ],
+      "start": 10.280000000000001,
+      "end": 10.56
+    },
+    {
+      "text": "visible",
+      "centers": [
+        10.74
+      ],
+      "start": 10.56,
+      "end": 10.940000000000001
+    },
+    {
+      "text": "instead",
+      "centers": [
+        11.14
+      ],
+      "start": 10.940000000000001,
+      "end": 11.23
+    },
+    {
+      "text": "of",
+      "centers": [
+        11.32
+      ],
+      "start": 11.23,
+      "end": 11.42
+    },
+    {
+      "text": "filling",
+      "centers": [
+        11.52
+      ],
+      "start": 11.42,
+      "end": 11.649999999999999
+    },
+    {
+      "text": "it",
+      "centers": [
+        11.78
+      ],
+      "start": 11.649999999999999,
+      "end": 11.85
+    },
+    {
+      "text": "with",
+      "centers": [
+        11.92
+      ],
+      "start": 11.85,
+      "end": 11.99
+    },
+    {
+      "text": "a",
+      "centers": [
+        12.06
+      ],
+      "start": 11.99,
+      "end": 12.18
+    },
+    {
+      "text": "guess.",
+      "centers": [
+        12.3
+      ],
+      "start": 12.18,
+      "end": 12.7
+    },
+    {
+      "text": "Then",
+      "centers": [
+        13.1
+      ],
+      "start": 12.7,
+      "end": 13.19
+    },
+    {
+      "text": "make",
+      "centers": [
+        13.28
+      ],
+      "start": 13.19,
+      "end": 13.370000000000001
+    },
+    {
+      "text": "your",
+      "centers": [
+        13.46
+      ],
+      "start": 13.370000000000001,
+      "end": 13.670000000000002
+    },
+    {
+      "text": "decision.",
+      "centers": [
+        13.88
+      ],
+      "start": 13.670000000000002,
+      "end": 14.23
+    },
+    {
+      "text": "Useful",
+      "centers": [
+        14.58
+      ],
+      "start": 14.23,
+      "end": 14.79
+    },
+    {
+      "text": "AI",
+      "centers": [
+        15.0
+      ],
+      "start": 14.79,
+      "end": 15.129999999999999
+    },
+    {
+      "text": "should",
+      "centers": [
+        15.26
+      ],
+      "start": 15.129999999999999,
+      "end": 15.370000000000001
+    },
+    {
+      "text": "help",
+      "centers": [
+        15.48
+      ],
+      "start": 15.370000000000001,
+      "end": 15.58
+    },
+    {
+      "text": "you",
+      "centers": [
+        15.68
+      ],
+      "start": 15.58,
+      "end": 15.9
+    },
+    {
+      "text": "understand",
+      "centers": [
+        16.12
+      ],
+      "start": 15.9,
+      "end": 16.22
+    },
+    {
+      "text": "the",
+      "centers": [
+        16.32
+      ],
+      "start": 16.22,
+      "end": 16.490000000000002
+    },
+    {
+      "text": "answer,",
+      "centers": [
+        16.66
+      ],
+      "start": 16.490000000000002,
+      "end": 16.880000000000003
+    },
+    {
+      "text": "not",
+      "centers": [
+        17.1
+      ],
+      "start": 16.880000000000003,
+      "end": 17.21
+    },
+    {
+      "text": "just",
+      "centers": [
+        17.32
+      ],
+      "start": 17.21,
+      "end": 17.43
+    },
+    {
+      "text": "make",
+      "centers": [
+        17.54
+      ],
+      "start": 17.43,
+      "end": 17.63
+    },
+    {
+      "text": "it",
+      "centers": [
+        17.72
+      ],
+      "start": 17.63,
+      "end": 17.86
+    },
+    {
+      "text": "sound",
+      "centers": [
+        18.0
+      ],
+      "start": 17.86,
+      "end": 18.240000000000002
+    },
+    {
+      "text": "convincing.",
+      "centers": [
+        18.48
+      ],
+      "start": 18.240000000000002,
+      "end": 18.6
+    }
+  ]
+}

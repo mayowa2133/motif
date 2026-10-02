@@ -1,0 +1,6 @@
+{
+  "workers": 4,
+  "capture": "screenshot",
+  "reason": "default single-worker drawElement rough took566s; use supported parallel capture on the same pinned renderer",
+  "dependencies_upgraded": false
+}

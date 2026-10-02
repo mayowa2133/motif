@@ -1,0 +1,241 @@
+{
+  "tracks": [
+    {
+      "src": "assets/voice/fine-opening-v2-mixed.wav",
+      "start": 0.0,
+      "duration": 5.9093333333333335,
+      "volume": 1,
+      "kind": "narration",
+      "id": "opening"
+    },
+    {
+      "src": "assets/voice/fine-burden-mixed.wav",
+      "start": 6.966666666666666,
+      "duration": 3.648,
+      "volume": 1,
+      "kind": "narration",
+      "id": "burden"
+    },
+    {
+      "src": "assets/voice/fine-suggestion-v2-mixed.wav",
+      "start": 12.333333333333334,
+      "duration": 1.6,
+      "volume": 1,
+      "kind": "narration",
+      "id": "suggestion"
+    },
+    {
+      "src": "assets/voice/fine-rituals-v3-mixed.wav",
+      "start": 20.266666666666666,
+      "duration": 4.48,
+      "volume": 1,
+      "kind": "narration",
+      "id": "rituals"
+    },
+    {
+      "src": "assets/voice/fine-permission-v2-mixed.wav",
+      "start": 25.566666666666666,
+      "duration": 3.0933333333333333,
+      "volume": 1,
+      "kind": "narration",
+      "id": "permission"
+    },
+    {
+      "src": "assets/voice/fine-example-mixed.wav",
+      "start": 28.7,
+      "duration": 3.7546666666666666,
+      "volume": 1,
+      "kind": "narration",
+      "id": "example"
+    },
+    {
+      "src": "assets/voice/fine-results-mixed.wav",
+      "start": 34.06333333333333,
+      "duration": 5.674666666666667,
+      "volume": 1,
+      "kind": "narration",
+      "id": "results"
+    },
+    {
+      "src": "assets/voice/fine-ending-v2-mixed.wav",
+      "start": 39.6,
+      "duration": 2.3893333333333335,
+      "volume": 1,
+      "kind": "narration",
+      "id": "ending"
+    },
+    {
+      "src": "assets/sfx/click-soft.mp3",
+      "start": 5.1,
+      "duration": 0.36572916666666666,
+      "volume": 0.065,
+      "kind": "contact effect",
+      "id": "click-soft-153"
+    },
+    {
+      "src": "assets/sfx/click-soft.mp3",
+      "start": 7.366666666666666,
+      "duration": 0.36572916666666666,
+      "volume": 0.1,
+      "kind": "contact effect",
+      "id": "click-soft-221"
+    },
+    {
+      "src": "assets/sfx/whoosh-short.mp3",
+      "start": 13.0,
+      "duration": 0.5747083333333334,
+      "volume": 0.055,
+      "kind": "contact effect",
+      "id": "whoosh-short-390"
+    },
+    {
+      "src": "assets/sfx/click-soft.mp3",
+      "start": 21.933333333333334,
+      "duration": 0.36572916666666666,
+      "volume": 0.06,
+      "kind": "contact effect",
+      "id": "click-soft-658"
+    },
+    {
+      "src": "assets/sfx/whoosh-short.mp3",
+      "start": 24.9,
+      "duration": 0.5747083333333334,
+      "volume": 0.055,
+      "kind": "contact effect",
+      "id": "whoosh-short-747"
+    },
+    {
+      "src": "assets/sfx/pop.mp3",
+      "start": 32.0,
+      "duration": 0.72,
+      "volume": 0.05,
+      "kind": "contact effect",
+      "id": "pop-960"
+    },
+    {
+      "src": "assets/sfx/click-soft.mp3",
+      "start": 33.666666666666664,
+      "duration": 0.36572916666666666,
+      "volume": 0.09,
+      "kind": "contact effect",
+      "id": "click-soft-1010"
+    },
+    {
+      "src": "assets/sfx/pop.mp3",
+      "start": 37.93333333333333,
+      "duration": 0.72,
+      "volume": 0.07,
+      "kind": "contact effect",
+      "id": "pop-1138"
+    },
+    {
+      "src": "assets/sfx/pop.mp3",
+      "start": 38.5,
+      "duration": 0.72,
+      "volume": 0.07,
+      "kind": "contact effect",
+      "id": "pop-1155"
+    },
+    {
+      "src": "assets/sfx/pop.mp3",
+      "start": 39.166666666666664,
+      "duration": 0.72,
+      "volume": 0.07,
+      "kind": "contact effect",
+      "id": "pop-1175"
+    },
+    {
+      "src": "assets/baseline/final.mp4",
+      "start": 14.533333333333333,
+      "duration": 5.466666666666667,
+      "volume": 1,
+      "kind": "approved soundtrack",
+      "id": "locked-soundtrack"
+    }
+  ],
+  "performance": [
+    {
+      "id": "opening",
+      "duration": 5.909333,
+      "start": 0.0,
+      "atempo": 1,
+      "synthesisSpeed": 1.15,
+      "text": "The source argues old instructions can hold newer models back. Rules for retired models pile up."
+    },
+    {
+      "id": "burden",
+      "duration": 3.648,
+      "start": 6.966666666666666,
+      "atempo": 1,
+      "synthesisSpeed": 1.15,
+      "text": "Check twice. Plan every step. That extra work slows the race."
+    },
+    {
+      "id": "suggestion",
+      "duration": 1.6,
+      "start": 12.333333333333334,
+      "atempo": 1,
+      "synthesisSpeed": 1.15,
+      "text": "Try prompt audit."
+    },
+    {
+      "id": "rituals",
+      "duration": 4.48,
+      "start": 20.266666666666666,
+      "atempo": 1,
+      "synthesisSpeed": 1.15,
+      "text": "Remove repeated checks. Stop shouting commands. Cut unnecessary steps."
+    },
+    {
+      "id": "permission",
+      "duration": 3.093333,
+      "start": 25.566666666666666,
+      "atempo": 1,
+      "synthesisSpeed": 1.15,
+      "text": "Review changes. Nothing applies without permission."
+    },
+    {
+      "id": "example",
+      "duration": 3.754667,
+      "start": 28.7,
+      "atempo": 1,
+      "synthesisSpeed": 1.15,
+      "text": "One developer reports seventy improvements across three files."
+    },
+    {
+      "id": "results",
+      "duration": 5.674667,
+      "start": 34.06333333333333,
+      "atempo": 1,
+      "synthesisSpeed": 1.15,
+      "text": "A cited test claims nine percent lower cost, and roughly two points more accuracy on the same model."
+    },
+    {
+      "id": "ending",
+      "duration": 2.389333,
+      "start": 39.6,
+      "atempo": 1,
+      "synthesisSpeed": 1.15,
+      "text": "The takeaway: audit your instructions."
+    }
+  ],
+  "approvedIntervalDecodedSamplesPreservedAtUnityBeforeAAC": true,
+  "approvedPcmSha256": "6c2c8a2edb2cc594521f06eb46b34971d4906580a69416b147eba57101e6d43f",
+  "sourceAudioUsed": false,
+  "provider": "local Kokoro ONNX af_nova",
+  "subjectiveListening": "unassessed",
+  "music": "omitted; no suitable cleared bed selected",
+  "mixMeasurement": {
+    "integrated_lufs": -16.53,
+    "true_peak_dbtp": -1.65,
+    "lra_lu": 5.6
+  },
+  "mixSha256": "8063b043695817a665c9445845324027c8f76e5f55dbd1bf92a6d053d87c3850",
+  "captionTiming": "Local Whisper small.en word onsets from actual generated WAV; editorial short chunks; no fixed shot-window spreading",
+  "target": {
+    "integratedLufs": -16,
+    "tolerance": 0.8,
+    "truePeakCeilingDbtp": -1.5
+  },
+  "processingScope": "new voice cues only; edge fades and loudnorm; approved PCM copied at unity"
+}

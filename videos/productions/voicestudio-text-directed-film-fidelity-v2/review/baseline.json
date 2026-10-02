@@ -1,0 +1,9 @@
+{
+  "project": "/Users/mayowaadesanya/Projects/motif/videos/productions/voicestudio-text-directed-film",
+  "sha256": {
+    "renders/moving-preview.mp4": "f05ec8b019d731fce0fe54f5ef4e5e2e4d881cb05040f889809eff7da08e6971",
+    "renders/mobile.mp4": "b4a628db8ae4226fd9c9edfa76d82834e55c1d283304367c8efe29a47d2f8e59",
+    "production-plan.json": "189e4c44b0c142d44a4de00a43f7b3cfc9dcdf5caea39acbb236cab9989d173d",
+    "scene-events.json": "566fa18a5ae4b19f28a1d17ce272e9067e838c61d6accd98f7fd06d2924446d9"
+  }
+}

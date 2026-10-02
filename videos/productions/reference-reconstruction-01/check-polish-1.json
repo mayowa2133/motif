@@ -1,0 +1,247 @@
+{
+  "ok": true,
+  "strict": false,
+  "lint": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 0,
+    "infoCount": 0,
+    "findings": [],
+    "filesScanned": 2
+  },
+  "runtime": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 0,
+    "infoCount": 0,
+    "findings": []
+  },
+  "layout": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 1,
+    "infoCount": 2,
+    "findings": [
+      {
+        "code": "container_overflow",
+        "severity": "warning",
+        "time": 1.5,
+        "selector": "#persistent-document",
+        "message": "Element extends outside a clipping layout container.",
+        "rect": {
+          "left": -271,
+          "top": 789,
+          "right": 954.15,
+          "bottom": 1837,
+          "width": 1225.15,
+          "height": 1048
+        },
+        "containerSelector": "#story-host > div:nth-of-type(1) > svg:nth-of-type(1)",
+        "fixHint": "Resize/reposition the child or container, or mark intentional overflow with data-layout-allow-overflow.",
+        "containerRect": {
+          "left": 0,
+          "top": 0,
+          "right": 1080,
+          "bottom": 1920,
+          "width": 1080,
+          "height": 1920
+        },
+        "overflow": {
+          "left": 271
+        },
+        "dataAttributes": {
+          "data-document-identity": "claude-md"
+        },
+        "sourceFile": "compositions/story.html",
+        "bbox": {
+          "x": -271,
+          "y": 789,
+          "width": 1225.15,
+          "height": 1048
+        },
+        "firstSeen": 1.5,
+        "lastSeen": 4.2,
+        "occurrences": 6,
+        "heldMs": 2700
+      },
+      {
+        "code": "container_overflow",
+        "severity": "info",
+        "time": 0.8,
+        "selector": "#persistent-document",
+        "message": "Element extends outside a clipping layout container.",
+        "rect": {
+          "left": -160.35,
+          "top": 568.28,
+          "right": 895.41,
+          "bottom": 1837,
+          "width": 1055.76,
+          "height": 1268.72
+        },
+        "containerSelector": "#story-host > div:nth-of-type(1) > svg:nth-of-type(1)",
+        "fixHint": "Resize/reposition the child or container, or mark intentional overflow with data-layout-allow-overflow.",
+        "containerRect": {
+          "left": 0,
+          "top": 0,
+          "right": 1080,
+          "bottom": 1920,
+          "width": 1080,
+          "height": 1920
+        },
+        "overflow": {
+          "left": 160.35
+        },
+        "dataAttributes": {
+          "data-document-identity": "claude-md"
+        },
+        "sourceFile": "compositions/story.html",
+        "bbox": {
+          "x": -160.35,
+          "y": 568.28,
+          "width": 1055.76,
+          "height": 1268.72
+        },
+        "firstSeen": 0.8,
+        "lastSeen": 0.8,
+        "occurrences": 1,
+        "heldMs": 0
+      },
+      {
+        "code": "container_overflow",
+        "severity": "info",
+        "time": 5.2,
+        "selector": "#persistent-document",
+        "message": "Element extends outside a clipping layout container.",
+        "rect": {
+          "left": -271,
+          "top": -175.87,
+          "right": 954.15,
+          "bottom": 1742.43,
+          "width": 1225.15,
+          "height": 1918.3
+        },
+        "containerSelector": "#story-host > div:nth-of-type(1) > svg:nth-of-type(1)",
+        "fixHint": "Resize/reposition the child or container, or mark intentional overflow with data-layout-allow-overflow.",
+        "containerRect": {
+          "left": 0,
+          "top": 0,
+          "right": 1080,
+          "bottom": 1920,
+          "width": 1080,
+          "height": 1920
+        },
+        "overflow": {
+          "left": 271,
+          "top": 175.87
+        },
+        "dataAttributes": {
+          "data-document-identity": "claude-md"
+        },
+        "sourceFile": "compositions/story.html",
+        "bbox": {
+          "x": -271,
+          "y": -175.87,
+          "width": 1225.15,
+          "height": 1918.3
+        },
+        "firstSeen": 5.2,
+        "lastSeen": 5.2,
+        "occurrences": 1,
+        "heldMs": 0
+      }
+    ],
+    "duration": 5.466666666666667,
+    "samples": [
+      0.3,
+      0.8,
+      1.5,
+      2.1,
+      2.54,
+      2.63,
+      3.3,
+      4.2,
+      5.2
+    ],
+    "transitionSamples": [],
+    "transitionSamplesDropped": 0,
+    "tolerance": 2,
+    "totalIssueCount": 3,
+    "truncated": false
+  },
+  "motion": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 0,
+    "infoCount": 0,
+    "findings": [],
+    "enabled": false,
+    "samples": 0
+  },
+  "contrast": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 1,
+    "infoCount": 0,
+    "findings": [
+      {
+        "code": "contrast_aa_failure",
+        "severity": "warning",
+        "message": "Contrast is 3.8:1; WCAG AA requires 4.5:1.",
+        "text": "ILLUSTRATIVE RECONSTRUCTION",
+        "fg": "rgb(185,175,154)",
+        "bg": "rgb(77,79,78)",
+        "ratio": 3.8,
+        "requiredRatio": 4.5,
+        "suggestedColor": "rgb(199,191,174)",
+        "large": false,
+        "selector": "div > div > div > div > svg > g:nth-of-type(2) > text:nth-of-type(8)",
+        "dataAttributes": {},
+        "sourceFile": "compositions/story.html",
+        "bbox": {
+          "x": 693.078125,
+          "y": 1163,
+          "width": 301.921875,
+          "height": 21
+        },
+        "time": 2.54
+      }
+    ],
+    "enabled": true,
+    "samples": [
+      0.3,
+      1.5,
+      2.54,
+      3.3,
+      5.2
+    ],
+    "checked": 29,
+    "passed": 28
+  },
+  "hdr": {
+    "autoPromotion": null,
+    "inspection": "available"
+  },
+  "snapshots": {
+    "enabled": true,
+    "files": [
+      "snapshots/frame-00-at-0.3s.png",
+      "snapshots/frame-01-at-1.5s.png",
+      "snapshots/frame-02-at-2.5s.png",
+      "snapshots/frame-03-at-3.3s.png",
+      "snapshots/frame-04-at-5.2s.png"
+    ],
+    "times": [
+      0.3,
+      1.5,
+      2.54,
+      3.3,
+      5.2
+    ],
+    "findingFiles": []
+  },
+  "_meta": {
+    "version": "0.8.99",
+    "latestVersion": "0.8.99",
+    "updateAvailable": false
+  }
+}

@@ -1,0 +1,342 @@
+{
+  "samples": [
+    [
+      {
+        "id": "full",
+        "time": 0.344847,
+        "duration": 42.066667,
+        "rate": 1,
+        "paused": false,
+        "ended": false,
+        "width": 1080,
+        "height": 1920,
+        "error": null
+      },
+      {
+        "id": "mobile",
+        "time": 0.377693,
+        "duration": 42.066667,
+        "rate": 1,
+        "paused": false,
+        "ended": false,
+        "width": 360,
+        "height": 640,
+        "error": null
+      },
+      {
+        "id": "comparison",
+        "time": 0.344847,
+        "duration": 42.066667,
+        "rate": 1,
+        "paused": false,
+        "ended": false,
+        "width": 720,
+        "height": 680,
+        "error": null
+      }
+    ],
+    [
+      {
+        "id": "full",
+        "time": 5.620812,
+        "duration": 42.066667,
+        "rate": 1,
+        "paused": false,
+        "ended": false,
+        "width": 1080,
+        "height": 1920,
+        "error": null
+      },
+      {
+        "id": "mobile",
+        "time": 5.653155,
+        "duration": 42.066667,
+        "rate": 1,
+        "paused": false,
+        "ended": false,
+        "width": 360,
+        "height": 640,
+        "error": null
+      },
+      {
+        "id": "comparison",
+        "time": 5.620803,
+        "duration": 42.066667,
+        "rate": 1,
+        "paused": false,
+        "ended": false,
+        "width": 720,
+        "height": 680,
+        "error": null
+      }
+    ],
+    [
+      {
+        "id": "full",
+        "time": 10.851273,
+        "duration": 42.066667,
+        "rate": 1,
+        "paused": false,
+        "ended": false,
+        "width": 1080,
+        "height": 1920,
+        "error": null
+      },
+      {
+        "id": "mobile",
+        "time": 10.886085,
+        "duration": 42.066667,
+        "rate": 1,
+        "paused": false,
+        "ended": false,
+        "width": 360,
+        "height": 640,
+        "error": null
+      },
+      {
+        "id": "comparison",
+        "time": 10.851261,
+        "duration": 42.066667,
+        "rate": 1,
+        "paused": false,
+        "ended": false,
+        "width": 720,
+        "height": 680,
+        "error": null
+      }
+    ],
+    [
+      {
+        "id": "full",
+        "time": 16.097574,
+        "duration": 42.066667,
+        "rate": 1,
+        "paused": false,
+        "ended": false,
+        "width": 1080,
+        "height": 1920,
+        "error": null
+      },
+      {
+        "id": "mobile",
+        "time": 16.128804,
+        "duration": 42.066667,
+        "rate": 1,
+        "paused": false,
+        "ended": false,
+        "width": 360,
+        "height": 640,
+        "error": null
+      },
+      {
+        "id": "comparison",
+        "time": 16.097546,
+        "duration": 42.066667,
+        "rate": 1,
+        "paused": false,
+        "ended": false,
+        "width": 720,
+        "height": 680,
+        "error": null
+      }
+    ],
+    [
+      {
+        "id": "full",
+        "time": 21.304259,
+        "duration": 42.066667,
+        "rate": 1,
+        "paused": false,
+        "ended": false,
+        "width": 1080,
+        "height": 1920,
+        "error": null
+      },
+      {
+        "id": "mobile",
+        "time": 21.337663,
+        "duration": 42.066667,
+        "rate": 1,
+        "paused": false,
+        "ended": false,
+        "width": 360,
+        "height": 640,
+        "error": null
+      },
+      {
+        "id": "comparison",
+        "time": 21.30424,
+        "duration": 42.066667,
+        "rate": 1,
+        "paused": false,
+        "ended": false,
+        "width": 720,
+        "height": 680,
+        "error": null
+      }
+    ],
+    [
+      {
+        "id": "full",
+        "time": 26.511541,
+        "duration": 42.066667,
+        "rate": 1,
+        "paused": false,
+        "ended": false,
+        "width": 1080,
+        "height": 1920,
+        "error": null
+      },
+      {
+        "id": "mobile",
+        "time": 26.546049,
+        "duration": 42.066667,
+        "rate": 1,
+        "paused": false,
+        "ended": false,
+        "width": 360,
+        "height": 640,
+        "error": null
+      },
+      {
+        "id": "comparison",
+        "time": 26.511529,
+        "duration": 42.066667,
+        "rate": 1,
+        "paused": false,
+        "ended": false,
+        "width": 720,
+        "height": 680,
+        "error": null
+      }
+    ],
+    [
+      {
+        "id": "full",
+        "time": 31.668575,
+        "duration": 42.066667,
+        "rate": 1,
+        "paused": false,
+        "ended": false,
+        "width": 1080,
+        "height": 1920,
+        "error": null
+      },
+      {
+        "id": "mobile",
+        "time": 31.699642,
+        "duration": 42.066667,
+        "rate": 1,
+        "paused": false,
+        "ended": false,
+        "width": 360,
+        "height": 640,
+        "error": null
+      },
+      {
+        "id": "comparison",
+        "time": 31.668585,
+        "duration": 42.066667,
+        "rate": 1,
+        "paused": false,
+        "ended": false,
+        "width": 720,
+        "height": 680,
+        "error": null
+      }
+    ],
+    [
+      {
+        "id": "full",
+        "time": 36.822753,
+        "duration": 42.066667,
+        "rate": 1,
+        "paused": false,
+        "ended": false,
+        "width": 1080,
+        "height": 1920,
+        "error": null
+      },
+      {
+        "id": "mobile",
+        "time": 36.857072,
+        "duration": 42.066667,
+        "rate": 1,
+        "paused": false,
+        "ended": false,
+        "width": 360,
+        "height": 640,
+        "error": null
+      },
+      {
+        "id": "comparison",
+        "time": 36.822748,
+        "duration": 42.066667,
+        "rate": 1,
+        "paused": false,
+        "ended": false,
+        "width": 720,
+        "height": 680,
+        "error": null
+      }
+    ],
+    [
+      {
+        "id": "full",
+        "time": 42.031407,
+        "duration": 42.066667,
+        "rate": 1,
+        "paused": false,
+        "ended": false,
+        "width": 1080,
+        "height": 1920,
+        "error": null
+      },
+      {
+        "id": "mobile",
+        "time": 42.066647,
+        "duration": 42.066667,
+        "rate": 1,
+        "paused": false,
+        "ended": false,
+        "width": 360,
+        "height": 640,
+        "error": null
+      },
+      {
+        "id": "comparison",
+        "time": 42.031399,
+        "duration": 42.066667,
+        "rate": 1,
+        "paused": false,
+        "ended": false,
+        "width": 720,
+        "height": 680,
+        "error": null
+      }
+    ]
+  ],
+  "final": [
+    {
+      "id": "full",
+      "time": 42.066667,
+      "rate": 1,
+      "ended": true,
+      "error": null
+    },
+    {
+      "id": "mobile",
+      "time": 42.066667,
+      "rate": 1,
+      "ended": true,
+      "error": null
+    },
+    {
+      "id": "comparison",
+      "time": 42.066667,
+      "rate": 1,
+      "ended": true,
+      "error": null
+    }
+  ]
+}

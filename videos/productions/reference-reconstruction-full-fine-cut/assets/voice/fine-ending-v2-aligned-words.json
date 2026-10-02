@@ -1,0 +1,46 @@
+{
+  "method": "Whisper small.en DTW token centers; adjacent center midpoints for word boundaries; local no-flash-attn invocation",
+  "duration": 2.389333,
+  "words": [
+    {
+      "text": "The",
+      "centers": [
+        0.16
+      ],
+      "start": 0.04000000000000001,
+      "end": 0.37
+    },
+    {
+      "text": "takeaway",
+      "centers": [
+        0.58
+      ],
+      "start": 0.37,
+      "end": 0.79
+    },
+    {
+      "text": "audit",
+      "centers": [
+        1.0
+      ],
+      "start": 0.79,
+      "end": 1.0899999999999999
+    },
+    {
+      "text": "your",
+      "centers": [
+        1.18
+      ],
+      "start": 1.0899999999999999,
+      "end": 1.46
+    },
+    {
+      "text": "instructions.",
+      "centers": [
+        1.74
+      ],
+      "start": 1.46,
+      "end": 1.8599999999999999
+    }
+  ]
+}

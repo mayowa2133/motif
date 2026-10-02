@@ -1,0 +1,134 @@
+{
+  "method": "Whisper small.en DTW token centers; adjacent center midpoints for word boundaries; local no-flash-attn invocation",
+  "duration": 5.909333,
+  "words": [
+    {
+      "text": "The",
+      "centers": [
+        0.16
+      ],
+      "start": 0.04000000000000001,
+      "end": 0.26
+    },
+    {
+      "text": "source",
+      "centers": [
+        0.36
+      ],
+      "start": 0.26,
+      "end": 0.56
+    },
+    {
+      "text": "argues",
+      "centers": [
+        0.76
+      ],
+      "start": 0.56,
+      "end": 0.91
+    },
+    {
+      "text": "old",
+      "centers": [
+        1.06
+      ],
+      "start": 0.91,
+      "end": 1.35
+    },
+    {
+      "text": "instructions",
+      "centers": [
+        1.64
+      ],
+      "start": 1.35,
+      "end": 1.7999999999999998
+    },
+    {
+      "text": "can",
+      "centers": [
+        1.96
+      ],
+      "start": 1.7999999999999998,
+      "end": 2.08
+    },
+    {
+      "text": "hold",
+      "centers": [
+        2.2
+      ],
+      "start": 2.08,
+      "end": 2.33
+    },
+    {
+      "text": "newer",
+      "centers": [
+        2.46
+      ],
+      "start": 2.33,
+      "end": 2.63
+    },
+    {
+      "text": "models",
+      "centers": [
+        2.8
+      ],
+      "start": 2.63,
+      "end": 2.98
+    },
+    {
+      "text": "back.",
+      "centers": [
+        3.16
+      ],
+      "start": 2.98,
+      "end": 3.45
+    },
+    {
+      "text": "Rules",
+      "centers": [
+        3.74
+      ],
+      "start": 3.45,
+      "end": 3.9
+    },
+    {
+      "text": "for",
+      "centers": [
+        4.06
+      ],
+      "start": 3.9,
+      "end": 4.26
+    },
+    {
+      "text": "retired",
+      "centers": [
+        4.46
+      ],
+      "start": 4.26,
+      "end": 4.6899999999999995
+    },
+    {
+      "text": "models",
+      "centers": [
+        4.92
+      ],
+      "start": 4.6899999999999995,
+      "end": 5.05
+    },
+    {
+      "text": "pile",
+      "centers": [
+        5.18
+      ],
+      "start": 5.05,
+      "end": 5.34
+    },
+    {
+      "text": "up.",
+      "centers": [
+        5.5
+      ],
+      "start": 5.34,
+      "end": 5.62
+    }
+  ]
+}

@@ -1,0 +1,131 @@
+{
+  "method": "installed Whisper small.en DTW; no flash attention; adjacent token-center midpoints",
+  "precision": "automatic approximate word boundaries, not phoneme-perfect",
+  "duration": 4.57,
+  "words": [
+    {
+      "text": "But",
+      "centers": [
+        0.14
+      ],
+      "start": 0.020000000000000018,
+      "end": 0.21000000000000002
+    },
+    {
+      "text": "here's",
+      "centers": [
+        0.28,
+        0.36
+      ],
+      "start": 0.21000000000000002,
+      "end": 0.42
+    },
+    {
+      "text": "the",
+      "centers": [
+        0.48
+      ],
+      "start": 0.42,
+      "end": 0.5800000000000001
+    },
+    {
+      "text": "part",
+      "centers": [
+        0.68
+      ],
+      "start": 0.5800000000000001,
+      "end": 0.78
+    },
+    {
+      "text": "that's",
+      "centers": [
+        0.88,
+        0.98
+      ],
+      "start": 0.78,
+      "end": 1.0899999999999999
+    },
+    {
+      "text": "even",
+      "centers": [
+        1.2
+      ],
+      "start": 1.0899999999999999,
+      "end": 1.31
+    },
+    {
+      "text": "crazier.",
+      "centers": [
+        1.42,
+        1.68
+      ],
+      "start": 1.31,
+      "end": 1.87
+    },
+    {
+      "text": "It",
+      "centers": [
+        2.06
+      ],
+      "start": 1.87,
+      "end": 2.12
+    },
+    {
+      "text": "can",
+      "centers": [
+        2.18
+      ],
+      "start": 2.12,
+      "end": 2.24
+    },
+    {
+      "text": "dub",
+      "centers": [
+        2.3
+      ],
+      "start": 2.24,
+      "end": 2.38
+    },
+    {
+      "text": "your",
+      "centers": [
+        2.46
+      ],
+      "start": 2.38,
+      "end": 2.59
+    },
+    {
+      "text": "videos",
+      "centers": [
+        2.72
+      ],
+      "start": 2.59,
+      "end": 2.8600000000000003
+    },
+    {
+      "text": "into",
+      "centers": [
+        3.0
+      ],
+      "start": 2.8600000000000003,
+      "end": 3.13
+    },
+    {
+      "text": "646",
+      "centers": [
+        3.26,
+        3.86
+      ],
+      "start": 3.13,
+      "end": 4.09
+    },
+    {
+      "text": "languages.",
+      "centers": [
+        4.32
+      ],
+      "start": 4.09,
+      "end": 4.44
+    }
+  ]
+}

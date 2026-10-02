@@ -1,0 +1,101 @@
+{
+  "source_video": "/Users/mayowaadesanya/Projects/motif/videos/productions/voicestudio-art-performance-v3/renders/preview-01.mp4",
+  "method": "FFmpeg decode and frame-number selection; images at360x640",
+  "frames": [
+    {
+      "shot": "shot-01",
+      "encoded_frame": 52,
+      "file": "review/first-cut-frames/shot-01.png"
+    },
+    {
+      "shot": "shot-02",
+      "encoded_frame": 129,
+      "file": "review/first-cut-frames/shot-02.png"
+    },
+    {
+      "shot": "shot-03",
+      "encoded_frame": 195,
+      "file": "review/first-cut-frames/shot-03.png"
+    },
+    {
+      "shot": "shot-04",
+      "encoded_frame": 238,
+      "file": "review/first-cut-frames/shot-04.png"
+    },
+    {
+      "shot": "shot-05",
+      "encoded_frame": 316,
+      "file": "review/first-cut-frames/shot-05.png"
+    },
+    {
+      "shot": "shot-06",
+      "encoded_frame": 343,
+      "file": "review/first-cut-frames/shot-06.png"
+    },
+    {
+      "shot": "shot-07",
+      "encoded_frame": 395,
+      "file": "review/first-cut-frames/shot-07.png"
+    },
+    {
+      "shot": "shot-08",
+      "encoded_frame": 449,
+      "file": "review/first-cut-frames/shot-08.png"
+    },
+    {
+      "shot": "shot-09",
+      "encoded_frame": 504,
+      "file": "review/first-cut-frames/shot-09.png"
+    },
+    {
+      "shot": "shot-10",
+      "encoded_frame": 555,
+      "file": "review/first-cut-frames/shot-10.png"
+    },
+    {
+      "shot": "shot-11",
+      "encoded_frame": 596,
+      "file": "review/first-cut-frames/shot-11.png"
+    },
+    {
+      "shot": "shot-12",
+      "encoded_frame": 647,
+      "file": "review/first-cut-frames/shot-12.png"
+    },
+    {
+      "shot": "shot-13",
+      "encoded_frame": 694,
+      "file": "review/first-cut-frames/shot-13.png"
+    },
+    {
+      "shot": "shot-14",
+      "encoded_frame": 730,
+      "file": "review/first-cut-frames/shot-14.png"
+    },
+    {
+      "shot": "shot-15",
+      "encoded_frame": 779,
+      "file": "review/first-cut-frames/shot-15.png"
+    },
+    {
+      "shot": "shot-16",
+      "encoded_frame": 836,
+      "file": "review/first-cut-frames/shot-16.png"
+    },
+    {
+      "shot": "shot-17",
+      "encoded_frame": 876,
+      "file": "review/first-cut-frames/shot-17.png"
+    },
+    {
+      "shot": "shot-18",
+      "encoded_frame": 920,
+      "file": "review/first-cut-frames/shot-18.png"
+    },
+    {
+      "shot": "shot-19",
+      "encoded_frame": 983,
+      "file": "review/first-cut-frames/shot-19.png"
+    }
+  ]
+}

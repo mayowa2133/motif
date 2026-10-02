@@ -1,0 +1,94 @@
+{
+  "method": "Whisper small.en DTW token centers; adjacent center midpoints for word boundaries; local no-flash-attn invocation",
+  "duration": 3.648,
+  "words": [
+    {
+      "text": "Check",
+      "centers": [
+        0.22
+      ],
+      "start": 0.1,
+      "end": 0.38
+    },
+    {
+      "text": "twice",
+      "centers": [
+        0.54
+      ],
+      "start": 0.38,
+      "end": 0.72
+    },
+    {
+      "text": "plan",
+      "centers": [
+        0.9
+      ],
+      "start": 0.72,
+      "end": 1.05
+    },
+    {
+      "text": "every",
+      "centers": [
+        1.2
+      ],
+      "start": 1.05,
+      "end": 1.35
+    },
+    {
+      "text": "step",
+      "centers": [
+        1.5
+      ],
+      "start": 1.35,
+      "end": 1.6400000000000001
+    },
+    {
+      "text": "that",
+      "centers": [
+        1.78
+      ],
+      "start": 1.6400000000000001,
+      "end": 1.9700000000000002
+    },
+    {
+      "text": "extra",
+      "centers": [
+        2.16
+      ],
+      "start": 1.9700000000000002,
+      "end": 2.2800000000000002
+    },
+    {
+      "text": "work",
+      "centers": [
+        2.4
+      ],
+      "start": 2.2800000000000002,
+      "end": 2.52
+    },
+    {
+      "text": "slows",
+      "centers": [
+        2.64
+      ],
+      "start": 2.52,
+      "end": 2.76
+    },
+    {
+      "text": "the",
+      "centers": [
+        2.88
+      ],
+      "start": 2.76,
+      "end": 3.01
+    },
+    {
+      "text": "race.",
+      "centers": [
+        3.14
+      ],
+      "start": 3.01,
+      "end": 3.2600000000000002
+    }
+  ]
+}

@@ -1,0 +1,247 @@
+{
+  "schema_version": "script-1.0",
+  "script": "A confident answer can still be wrong. Before you trust a claim, follow it back to its source. Check what the original actually says, not just the summary. If the evidence is missing, leave the gap visible instead of filling it with a guess. Then make your decision. Useful AI should help you understand the answer\u2014not just make it sound convincing.",
+  "audience": "People who use AI for work, research, and everyday decisions.",
+  "style": "reference-expressive-v1",
+  "rationale": "A compact paper investigation makes support relationships tangible: the bot opens, traces, compares, and cautiously files each layer. One conspicuous empty connector remains unresolved, so the payoff is a readable understanding of the claim\u2019s limits rather than a verdict.",
+  "metaphor": "An answer is a folded paper structure whose strength and meaning depend on visible connections to its source and evidence.",
+  "assets": [
+    {
+      "id": "bot",
+      "description": "Canonical Motif bot; active investigator handling every paper object.",
+      "reuse_path": "assets/characters/motif-bot/canonical/v1/motif-bot-v1.json"
+    },
+    {
+      "id": "desk",
+      "description": "Neutral tabletop providing both contextual wide views and close inspection space.",
+      "reuse_path": "assets/scenes/scene-01/furniture/desk.svg"
+    },
+    {
+      "id": "project-folio-kit",
+      "description": "Existing tactile folio used to contain and organize the investigation layers.",
+      "reuse_path": "assets/scenes/book-workshop/project-folio-kit.svg"
+    },
+    {
+      "id": "source-chain-paper-set",
+      "description": "New finite artwork: a glossy folded SAMPLE answer card, a SAMPLE summary flap, a SAMPLE original-source leaf, connector strips, and a small decision bookmark.",
+      "reuse_path": ""
+    },
+    {
+      "id": "missing-evidence-frame",
+      "description": "New finite artwork: an open paper frame with two unmatched tabs, visibly incapable of completing the evidence connection.",
+      "reuse_path": ""
+    }
+  ],
+  "beats": [
+    {
+      "id": "beat-01",
+      "narration": "A confident answer can still be wrong.",
+      "subject": "A glossy folded SAMPLE answer card and the bot.",
+      "action": "The bot snaps the card upright; its unsupported base immediately buckles and the card pitches forward into the bot\u2019s hands.",
+      "before_after": "Before: a crisp, imposing answer stands tall. After: the same answer is visibly unstable and caught before it falls flat.",
+      "focal_detail": "The collapsing base fold beneath the readable SAMPLE answer card.",
+      "consequence": "Surface polish is separated from structural support in the opening seconds.",
+      "headline": "Looks can stand tall",
+      "focus_target": "Unsupported base fold of the SAMPLE answer card",
+      "framing": "detail",
+      "actions": [
+        {
+          "kind": "snap-open-then-buckle-sample-answer",
+          "cue": "A confident answer",
+          "requires": [
+            "The SAMPLE answer card begins folded flat on the desk",
+            "The card has a crisp display fold but no supporting connector beneath it",
+            "The bot has both hands free"
+          ],
+          "produces": [
+            "The SAMPLE answer card briefly stands upright",
+            "The unsupported base visibly buckles",
+            "The bot catches the falling card"
+          ]
+        }
+      ],
+      "needed_assets": [
+        "bot",
+        "desk",
+        "source-chain-paper-set"
+      ]
+    },
+    {
+      "id": "beat-02",
+      "narration": "Before you trust a claim, follow it back to its source.",
+      "subject": "The bot, the SAMPLE answer card, and a paper connector entering the folio.",
+      "action": "The bot turns the fallen card over, finds a narrow connector strip on its back, and pulls it through successive folio slots until a source leaf begins to emerge.",
+      "before_after": "Before: the answer\u2019s origin is hidden. After: a continuous physical route leads from the answer into the opened folio.",
+      "focal_detail": "The connector strip traveling through aligned paper slots while remaining attached to the answer.",
+      "consequence": "The claim gains traceable provenance, but no truth judgment is made.",
+      "headline": "Trace the route",
+      "focus_target": "Connector strip linking the answer card to the folio",
+      "framing": "subject",
+      "actions": [
+        {
+          "kind": "trace-claim-connector-through-folio",
+          "cue": "Before you trust a claim",
+          "requires": [
+            "The bot holds the buckled SAMPLE answer card",
+            "A connector strip is attached to the card\u2019s reverse",
+            "The project folio is closed beside the card"
+          ],
+          "produces": [
+            "The folio opens",
+            "The connector passes through visible folio slots",
+            "A SAMPLE original-source leaf becomes partially exposed"
+          ]
+        }
+      ],
+      "needed_assets": [
+        "bot",
+        "desk",
+        "project-folio-kit",
+        "source-chain-paper-set"
+      ]
+    },
+    {
+      "id": "beat-03",
+      "narration": "Check what the original actually says, not just the summary.",
+      "subject": "The bot comparing a SAMPLE summary flap with its SAMPLE original-source leaf.",
+      "action": "The bot lifts the short summary flap like a window, revealing the longer original wording underneath; one overstated word on the flap no longer aligns with the qualified phrase below.",
+      "before_after": "Before: the summary covers the source and appears sufficient. After: both layers are simultaneously readable, with their wording difference physically registered by misaligned cutouts.",
+      "focal_detail": "A summary cutout around \u201cWILL\u201d sitting above the original phrase \u201cMAY,\u201d with SAMPLE printed on both layers.",
+      "consequence": "The viewer can see exactly where compression changed the claim while understanding that locating an original is not proof by itself.",
+      "headline": "Read beneath it",
+      "focus_target": "Misaligned WILL/MAY wording window across the two SAMPLE layers",
+      "framing": "detail",
+      "actions": [
+        {
+          "kind": "lift-summary-window-to-compare-source",
+          "cue": "Check what the original",
+          "requires": [
+            "The SAMPLE summary flap covers the SAMPLE original-source leaf",
+            "The two layers are attached along one paper hinge",
+            "Their differing words occupy the same viewing window"
+          ],
+          "produces": [
+            "The bot exposes both wordings in one close view",
+            "The summary\u2019s overstatement becomes visibly attributable to its own layer",
+            "The original-source leaf remains connected but unverified"
+          ]
+        }
+      ],
+      "needed_assets": [
+        "bot",
+        "source-chain-paper-set"
+      ]
+    },
+    {
+      "id": "beat-04",
+      "narration": "If the evidence is missing, leave the gap visible instead of filling it with a guess.",
+      "subject": "The bot, the source leaf, two unmatched connector ends, and an empty evidence frame.",
+      "action": "The bot draws the source connector toward the evidence frame, discovers the strip is too short, removes a tempting blank scrap from the gap, and parks that scrap outside the chain.",
+      "before_after": "Before: a loose scrap could conceal the missing connection. After: open desk surface remains clearly visible between the unmatched tabs.",
+      "focal_detail": "The uncovered air gap between the source strip and empty evidence frame.",
+      "consequence": "Missing support stays legible and explicitly unowned; no invented bridge enters the chain.",
+      "headline": "Keep the gap open",
+      "focus_target": "Open space between unmatched source and evidence tabs",
+      "framing": "detail",
+      "actions": [
+        {
+          "kind": "expose-and-preserve-evidence-gap",
+          "cue": "If the evidence is missing",
+          "requires": [
+            "The SAMPLE original-source leaf has a connector strip",
+            "The evidence frame has an unmatched receiving tab",
+            "A loose blank scrap rests near the gap"
+          ],
+          "produces": [
+            "The connector ends remain physically separated",
+            "The bot relocates the blank scrap outside the support chain",
+            "The missing evidence gap stays unobstructed"
+          ]
+        }
+      ],
+      "needed_assets": [
+        "bot",
+        "desk",
+        "source-chain-paper-set",
+        "missing-evidence-frame"
+      ]
+    },
+    {
+      "id": "beat-05",
+      "narration": "Then make your decision.",
+      "subject": "The bot and a small paper decision bookmark beside the unresolved chain.",
+      "action": "The bot folds the bookmark into a shallow standing tab and places it beside the source layer, deliberately outside the missing gap and without covering any wording.",
+      "before_after": "Before: no decision object is present. After: a modest \u201cNeeds review\u201d bookmark records the next step while leaving every source layer and the gap exposed.",
+      "focal_detail": "The bookmark\u2019s foot positioned beside\u2014not across\u2014the broken connection.",
+      "consequence": "A decision can proceed with visible limits instead of pretending the evidence chain is complete.",
+      "headline": "Decide with limits",
+      "focus_target": "Decision bookmark placed adjacent to the unresolved evidence gap",
+      "framing": "subject",
+      "actions": [
+        {
+          "kind": "place-cautious-decision-bookmark",
+          "cue": "Then make your decision",
+          "requires": [
+            "The answer, summary, source, and missing gap are all visible",
+            "The decision bookmark begins flat in the bot\u2019s hand",
+            "The gap must remain unobstructed"
+          ],
+          "produces": [
+            "The \u201cNeeds review\u201d bookmark stands beside the chain",
+            "No source wording is covered",
+            "The missing evidence gap remains unchanged"
+          ]
+        }
+      ],
+      "needed_assets": [
+        "bot",
+        "desk",
+        "source-chain-paper-set",
+        "missing-evidence-frame"
+      ]
+    },
+    {
+      "id": "beat-06",
+      "narration": "Useful AI should help you understand the answer\u2014not just make it sound convincing.",
+      "subject": "The bot and the complete exploded paper chain from answer to unresolved evidence frame.",
+      "action": "The bot slides the layers into a clear stepped arrangement, opens the source leaf fully, and rests one hand beside the exact wording difference while the other points back along the connector to the still-empty gap.",
+      "before_after": "Before: the investigation layers are locally readable but scattered. After: answer, summary, original, decision bookmark, and missing support form one phone-readable causal view.",
+      "focal_detail": "The visible route from polished answer to altered summary wording, original wording, and the persistent open gap.",
+      "consequence": "The closing image delivers comprehension of what is known, changed, and missing without resolving or celebrating the claim.",
+      "headline": "See how it holds",
+      "focus_target": "Stepped paper chain with wording comparison and unresolved evidence gap",
+      "framing": "establish",
+      "actions": [
+        {
+          "kind": "arrange-exploded-support-chain-for-understanding",
+          "cue": "Useful AI should help",
+          "requires": [
+            "All investigation layers remain on the desk",
+            "The original-source leaf can open flat",
+            "The missing evidence tabs remain unmatched"
+          ],
+          "produces": [
+            "Every layer and ownership relationship is readable in one composition",
+            "The bot connects the wording comparison to the support path through gesture",
+            "The evidence gap remains visibly unresolved in the final frame"
+          ]
+        }
+      ],
+      "needed_assets": [
+        "bot",
+        "desk",
+        "project-folio-kit",
+        "source-chain-paper-set",
+        "missing-evidence-frame"
+      ]
+    }
+  ],
+  "ending_action": "Hold on the bot calmly tracing the complete paper route from SAMPLE answer to SAMPLE original, then stopping its fingertip at the uncovered evidence gap while all layers remain readable.",
+  "limitations": [
+    "All fictional answer, summary, and source text must carry a clearly readable SAMPLE mark.",
+    "The original-source leaf is treated as traceable context, never automatic proof.",
+    "The evidence gap must remain open and visible through the final frame.",
+    "No checkmarks, approval verdicts, celebratory gestures, trophies, or sales CTA.",
+    "New artwork is limited to the finite source-chain paper set and missing-evidence frame; their actions require explicit agent-assisted development."
+  ]
+}

@@ -1,0 +1,486 @@
+{
+  "ok": false,
+  "strict": true,
+  "lint": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 0,
+    "infoCount": 0,
+    "findings": [],
+    "filesScanned": 3
+  },
+  "runtime": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 0,
+    "infoCount": 0,
+    "findings": []
+  },
+  "layout": {
+    "ok": false,
+    "errorCount": 1,
+    "warningCount": 0,
+    "infoCount": 11,
+    "findings": [
+      {
+        "code": "content_overlap",
+        "severity": "error",
+        "time": 4.244,
+        "selector": "#archive-note-1 > g:nth-of-type(1) > text:nth-of-type(1)",
+        "message": "Two text blocks overlap and may render unreadable.",
+        "rect": {
+          "left": 346.98,
+          "top": 1019.88,
+          "right": 526.64,
+          "bottom": 1070.37,
+          "width": 179.66,
+          "height": 50.49
+        },
+        "containerSelector": "#archive-note-1 > g:nth-of-type(1) > text:nth-of-type(2)",
+        "text": "DOUBLE-CHECK",
+        "fixHint": "Give each block its own zone, or mark intentional layering with data-layout-allow-overlap.",
+        "dataAttributes": {},
+        "sourceFile": "compositions/story.html",
+        "bbox": {
+          "x": 346.98,
+          "y": 1019.88,
+          "width": 179.66,
+          "height": 50.49
+        },
+        "firstSeen": 4.244,
+        "lastSeen": 6.865,
+        "occurrences": 23,
+        "heldMs": 2621.0000000000005
+      },
+      {
+        "code": "content_overlap",
+        "severity": "info",
+        "time": 1.248,
+        "selector": "#gym-note-0 > text:nth-of-type(1)",
+        "message": "Two text blocks overlap and may render unreadable.",
+        "rect": {
+          "left": 128.12,
+          "top": 804.23,
+          "right": 211.88,
+          "bottom": 827.63,
+          "width": 83.76,
+          "height": 23.4
+        },
+        "containerSelector": "#gym-note-2 > text:nth-of-type(1)",
+        "text": "ALWAYS",
+        "fixHint": "Give each block its own zone, or mark intentional layering with data-layout-allow-overlap.",
+        "dataAttributes": {},
+        "sourceFile": "compositions/story.html",
+        "bbox": {
+          "x": 128.12,
+          "y": 804.23,
+          "width": 83.76,
+          "height": 23.4
+        },
+        "firstSeen": 1.248,
+        "lastSeen": 1.248,
+        "occurrences": 1,
+        "heldMs": 0
+      },
+      {
+        "code": "content_overlap",
+        "severity": "info",
+        "time": 1.748,
+        "selector": "#gym-note-2 > text:nth-of-type(1)",
+        "message": "Two text blocks overlap and may render unreadable.",
+        "rect": {
+          "left": 128.12,
+          "top": 922.2,
+          "right": 211.88,
+          "bottom": 945.6,
+          "width": 83.76,
+          "height": 23.4
+        },
+        "containerSelector": "#gym-note-4 > text:nth-of-type(1)",
+        "text": "ALWAYS",
+        "fixHint": "Give each block its own zone, or mark intentional layering with data-layout-allow-overlap.",
+        "dataAttributes": {},
+        "sourceFile": "compositions/story.html",
+        "bbox": {
+          "x": 128.12,
+          "y": 922.2,
+          "width": 83.76,
+          "height": 23.4
+        },
+        "firstSeen": 1.748,
+        "lastSeen": 1.748,
+        "occurrences": 1,
+        "heldMs": 0
+      },
+      {
+        "code": "content_overlap",
+        "severity": "info",
+        "time": 2,
+        "selector": "#gym-note-3 > text:nth-of-type(1)",
+        "message": "Two text blocks overlap and may render unreadable.",
+        "rect": {
+          "left": 868.12,
+          "top": 964.46,
+          "right": 951.88,
+          "bottom": 987.86,
+          "width": 83.76,
+          "height": 23.4
+        },
+        "containerSelector": "#gym-note-5 > text:nth-of-type(1)",
+        "text": "ALWAYS",
+        "fixHint": "Give each block its own zone, or mark intentional layering with data-layout-allow-overlap.",
+        "dataAttributes": {},
+        "sourceFile": "compositions/story.html",
+        "bbox": {
+          "x": 868.12,
+          "y": 964.46,
+          "width": 83.76,
+          "height": 23.4
+        },
+        "firstSeen": 2,
+        "lastSeen": 2,
+        "occurrences": 1,
+        "heldMs": 0
+      },
+      {
+        "code": "content_overlap",
+        "severity": "info",
+        "time": 4.868,
+        "selector": "#archive-note-0 > g:nth-of-type(1) > text:nth-of-type(1)",
+        "message": "Two text blocks overlap and may render unreadable.",
+        "rect": {
+          "left": 217.92,
+          "top": 947.62,
+          "right": 352.02,
+          "bottom": 993.9,
+          "width": 134.1,
+          "height": 46.28
+        },
+        "containerSelector": "#archive-note-3 > g:nth-of-type(1) > text:nth-of-type(1)",
+        "text": "THINK STEP",
+        "fixHint": "Give each block its own zone, or mark intentional layering with data-layout-allow-overlap.",
+        "dataAttributes": {},
+        "sourceFile": "compositions/story.html",
+        "bbox": {
+          "x": 217.92,
+          "y": 947.62,
+          "width": 134.1,
+          "height": 46.28
+        },
+        "firstSeen": 4.868,
+        "lastSeen": 4.868,
+        "occurrences": 1,
+        "heldMs": 0
+      },
+      {
+        "code": "content_overlap",
+        "severity": "info",
+        "time": 4.868,
+        "selector": "#archive-note-0 > g:nth-of-type(1) > text:nth-of-type(1)",
+        "message": "Two text blocks overlap and may render unreadable.",
+        "rect": {
+          "left": 217.92,
+          "top": 947.62,
+          "right": 352.02,
+          "bottom": 993.9,
+          "width": 134.1,
+          "height": 46.28
+        },
+        "containerSelector": "#archive-note-3 > g:nth-of-type(1) > text:nth-of-type(2)",
+        "text": "THINK STEP",
+        "fixHint": "Give each block its own zone, or mark intentional layering with data-layout-allow-overlap.",
+        "dataAttributes": {},
+        "sourceFile": "compositions/story.html",
+        "bbox": {
+          "x": 217.92,
+          "y": 947.62,
+          "width": 134.1,
+          "height": 46.28
+        },
+        "firstSeen": 4.868,
+        "lastSeen": 4.868,
+        "occurrences": 1,
+        "heldMs": 0
+      },
+      {
+        "code": "content_overlap",
+        "severity": "info",
+        "time": 4.868,
+        "selector": "#archive-note-0 > g:nth-of-type(1) > text:nth-of-type(2)",
+        "message": "Two text blocks overlap and may render unreadable.",
+        "rect": {
+          "left": 243.09,
+          "top": 987.24,
+          "right": 338.42,
+          "bottom": 1027.37,
+          "width": 95.33,
+          "height": 40.13
+        },
+        "containerSelector": "#archive-note-3 > g:nth-of-type(1) > text:nth-of-type(2)",
+        "text": "BY STEP",
+        "fixHint": "Give each block its own zone, or mark intentional layering with data-layout-allow-overlap.",
+        "dataAttributes": {},
+        "sourceFile": "compositions/story.html",
+        "bbox": {
+          "x": 243.09,
+          "y": 987.24,
+          "width": 95.33,
+          "height": 40.13
+        },
+        "firstSeen": 4.868,
+        "lastSeen": 4.868,
+        "occurrences": 1,
+        "heldMs": 0
+      },
+      {
+        "code": "content_overlap",
+        "severity": "info",
+        "time": 5.492,
+        "selector": "#archive-note-2 > g:nth-of-type(1) > text:nth-of-type(2)",
+        "message": "Two text blocks overlap and may render unreadable.",
+        "rect": {
+          "left": 536.95,
+          "top": 1120.36,
+          "right": 612.9,
+          "bottom": 1155.11,
+          "width": 75.95,
+          "height": 34.75
+        },
+        "containerSelector": "#archive-note-5 > g:nth-of-type(1) > text:nth-of-type(1)",
+        "text": "TWICE",
+        "fixHint": "Give each block its own zone, or mark intentional layering with data-layout-allow-overlap.",
+        "dataAttributes": {},
+        "sourceFile": "compositions/story.html",
+        "bbox": {
+          "x": 536.95,
+          "y": 1120.36,
+          "width": 75.95,
+          "height": 34.75
+        },
+        "firstSeen": 5.492,
+        "lastSeen": 5.492,
+        "occurrences": 1,
+        "heldMs": 0
+      },
+      {
+        "code": "content_overlap",
+        "severity": "info",
+        "time": 7.739,
+        "selector": "#answer-main > text:nth-of-type(1)",
+        "message": "Two text blocks overlap and may render unreadable.",
+        "rect": {
+          "left": 320,
+          "top": 620,
+          "right": 512.02,
+          "bottom": 672,
+          "width": 192.02,
+          "height": 52
+        },
+        "containerSelector": "#answer-copy > text:nth-of-type(1)",
+        "text": "ANSWER",
+        "fixHint": "Give each block its own zone, or mark intentional layering with data-layout-allow-overlap.",
+        "dataAttributes": {},
+        "sourceFile": "compositions/story.html",
+        "bbox": {
+          "x": 320,
+          "y": 620,
+          "width": 192.02,
+          "height": 52
+        },
+        "firstSeen": 7.739,
+        "lastSeen": 7.739,
+        "occurrences": 1,
+        "heldMs": 0
+      },
+      {
+        "code": "content_overlap",
+        "severity": "info",
+        "time": 31.207,
+        "selector": "#file-0 > text:nth-of-type(1)",
+        "message": "Two text blocks overlap and may render unreadable.",
+        "rect": {
+          "left": 71,
+          "top": 939,
+          "right": 195.77,
+          "bottom": 991,
+          "width": 124.77,
+          "height": 52
+        },
+        "containerSelector": "#file-finding-0-3 > text:nth-of-type(1)",
+        "text": "skills/",
+        "fixHint": "Give each block its own zone, or mark intentional layering with data-layout-allow-overlap.",
+        "dataAttributes": {},
+        "sourceFile": "compositions/story.html",
+        "bbox": {
+          "x": 71,
+          "y": 939,
+          "width": 124.77,
+          "height": 52
+        },
+        "firstSeen": 31.207,
+        "lastSeen": 31.207,
+        "occurrences": 1,
+        "heldMs": 0
+      },
+      {
+        "code": "content_overlap",
+        "severity": "info",
+        "time": 31.332,
+        "selector": "#file-1 > text:nth-of-type(1)",
+        "message": "Two text blocks overlap and may render unreadable.",
+        "rect": {
+          "left": 426,
+          "top": 944,
+          "right": 656.13,
+          "bottom": 990,
+          "width": 230.13,
+          "height": 46
+        },
+        "containerSelector": "#file-finding-1-0 > text:nth-of-type(1)",
+        "text": "CLAUDE.md",
+        "fixHint": "Give each block its own zone, or mark intentional layering with data-layout-allow-overlap.",
+        "dataAttributes": {},
+        "sourceFile": "compositions/story.html",
+        "bbox": {
+          "x": 426,
+          "y": 944,
+          "width": 230.13,
+          "height": 46
+        },
+        "firstSeen": 31.332,
+        "lastSeen": 31.332,
+        "occurrences": 1,
+        "heldMs": 0
+      },
+      {
+        "code": "content_overlap",
+        "severity": "info",
+        "time": 31.456,
+        "selector": "#file-1 > text:nth-of-type(1)",
+        "message": "Two text blocks overlap and may render unreadable.",
+        "rect": {
+          "left": 426,
+          "top": 944,
+          "right": 656.13,
+          "bottom": 990,
+          "width": 230.13,
+          "height": 46
+        },
+        "containerSelector": "#file-finding-1-2 > text:nth-of-type(1)",
+        "text": "CLAUDE.md",
+        "fixHint": "Give each block its own zone, or mark intentional layering with data-layout-allow-overlap.",
+        "dataAttributes": {},
+        "sourceFile": "compositions/story.html",
+        "bbox": {
+          "x": 426,
+          "y": 944,
+          "width": 230.13,
+          "height": 46
+        },
+        "firstSeen": 31.456,
+        "lastSeen": 31.456,
+        "occurrences": 1,
+        "heldMs": 0
+      }
+    ],
+    "duration": 42.06666666666667,
+    "samples": [
+      0.5,
+      1,
+      2,
+      3.17,
+      5.6,
+      7.8,
+      10.4,
+      13.8,
+      14.5,
+      14.534,
+      16.2,
+      17.45,
+      19.97,
+      20,
+      21.2,
+      22.4,
+      24.1,
+      25.2,
+      27.8,
+      29.2,
+      30.1,
+      32.1,
+      34.8,
+      36.6,
+      38.8,
+      40.4,
+      41.7
+    ],
+    "transitionSamples": [],
+    "transitionSamplesDropped": 0,
+    "tolerance": 2,
+    "totalIssueCount": 12,
+    "truncated": false
+  },
+  "motion": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 0,
+    "infoCount": 0,
+    "findings": [],
+    "enabled": false,
+    "samples": 0
+  },
+  "contrast": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 1,
+    "infoCount": 0,
+    "findings": [
+      {
+        "code": "contrast_aa_failure",
+        "severity": "warning",
+        "message": "Contrast is 2.99:1; WCAG AA requires 3:1.",
+        "text": "1",
+        "fg": "rgb(32,44,50)",
+        "bg": "rgb(181,87,59)",
+        "ratio": 2.99,
+        "requiredRatio": 3,
+        "suggestedColor": "rgb(203,206,208)",
+        "large": true,
+        "selector": "div > div > div:nth-of-type(1) > div > svg > g:nth-of-type(6) > g > text:nth-of-type(3)",
+        "dataAttributes": {},
+        "sourceFile": "compositions/story.html",
+        "bbox": {
+          "x": 97.4921875,
+          "y": 486,
+          "width": 25.015625,
+          "height": 70
+        },
+        "time": 20
+      }
+    ],
+    "enabled": true,
+    "samples": [
+      0.5,
+      10.4,
+      20,
+      29.2,
+      41.7
+    ],
+    "checked": 35,
+    "passed": 34
+  },
+  "hdr": {
+    "autoPromotion": null,
+    "inspection": "available"
+  },
+  "snapshots": {
+    "enabled": false,
+    "files": [],
+    "times": [],
+    "findingFiles": []
+  },
+  "_meta": {
+    "version": "0.8.99",
+    "latestVersion": "0.8.99",
+    "updateAvailable": false
+  }
+}

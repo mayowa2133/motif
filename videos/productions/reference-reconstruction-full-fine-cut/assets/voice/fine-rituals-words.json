@@ -1,0 +1,44 @@
+[
+  {
+    "text": "Remove",
+    "start": 0.04,
+    "end": 0.34,
+    "id": "w0"
+  },
+  {
+    "text": "repeated",
+    "start": 0.34,
+    "end": 0.8,
+    "id": "w1"
+  },
+  {
+    "text": "checks,",
+    "start": 0.8,
+    "end": 1.22,
+    "id": "w2"
+  },
+  {
+    "text": "shouting,",
+    "start": 1.43,
+    "end": 1.84,
+    "id": "w3"
+  },
+  {
+    "text": "and",
+    "start": 1.86,
+    "end": 2.05,
+    "id": "w4"
+  },
+  {
+    "text": "unnecessary",
+    "start": 2.05,
+    "end": 2.75,
+    "id": "w5"
+  },
+  {
+    "text": "steps.",
+    "start": 2.75,
+    "end": 3.14,
+    "id": "w6"
+  }
+]

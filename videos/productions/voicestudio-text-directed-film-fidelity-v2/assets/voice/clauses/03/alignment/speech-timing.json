@@ -1,0 +1,120 @@
+{
+  "method": "installed Whisper small.en DTW; no flash attention; adjacent token-center midpoints",
+  "precision": "automatic approximate word boundaries, not phoneme-perfect",
+  "duration": 2.345,
+  "words": [
+    {
+      "text": "It's",
+      "centers": [
+        0.08,
+        0.1
+      ],
+      "start": 0,
+      "end": 0.19
+    },
+    {
+      "text": "called",
+      "centers": [
+        0.28
+      ],
+      "start": 0.19,
+      "end": 0.35
+    },
+    {
+      "text": "Voice",
+      "centers": [
+        0.42
+      ],
+      "start": 0.35,
+      "end": 0.55
+    },
+    {
+      "text": "Studio,",
+      "centers": [
+        0.68
+      ],
+      "start": 0.55,
+      "end": 0.8200000000000001
+    },
+    {
+      "text": "and",
+      "centers": [
+        0.96
+      ],
+      "start": 0.8200000000000001,
+      "end": 1.02
+    },
+    {
+      "text": "you",
+      "centers": [
+        1.08
+      ],
+      "start": 1.02,
+      "end": 1.1400000000000001
+    },
+    {
+      "text": "give",
+      "centers": [
+        1.2
+      ],
+      "start": 1.1400000000000001,
+      "end": 1.24
+    },
+    {
+      "text": "it",
+      "centers": [
+        1.28
+      ],
+      "start": 1.24,
+      "end": 1.33
+    },
+    {
+      "text": "a",
+      "centers": [
+        1.38
+      ],
+      "start": 1.33,
+      "end": 1.46
+    },
+    {
+      "text": "short",
+      "centers": [
+        1.54
+      ],
+      "start": 1.46,
+      "end": 1.62
+    },
+    {
+      "text": "clip",
+      "centers": [
+        1.7
+      ],
+      "start": 1.62,
+      "end": 1.76
+    },
+    {
+      "text": "of",
+      "centers": [
+        1.82
+      ],
+      "start": 1.76,
+      "end": 1.87
+    },
+    {
+      "text": "you",
+      "centers": [
+        1.92
+      ],
+      "start": 1.87,
+      "end": 2.06
+    },
+    {
+      "text": "talking.",
+      "centers": [
+        2.2
+      ],
+      "start": 2.06,
+      "end": 2.3200000000000003
+    }
+  ]
+}

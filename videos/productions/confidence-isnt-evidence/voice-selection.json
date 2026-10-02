@@ -1,0 +1,10 @@
+{
+  "provider": "existing local Kokoro ONNX",
+  "voice": "af_nova",
+  "speed": 0.75,
+  "selected_duration_seconds": 23.616,
+  "preserved_initial_take": "assets/voice/take-01-brisk.wav",
+  "initial_speed": 1,
+  "initial_duration_seconds": 17.237,
+  "reason": "First take too brisk for the explanation; a slower generated take leaves the checking actions room. No post-generation stretching. Listening quality remains unassessed."
+}

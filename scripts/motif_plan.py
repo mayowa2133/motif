@@ -48,6 +48,12 @@ def narration(plan):
     return ' '.join(b['narration'].strip() for b in plan['beats'])
 
 def review_plan(plan, brief):
+    if plan.get('schema_version') == 'text-directed-1.0':
+        from motif_ui_production import review
+        return review(plan, brief)
+    if plan.get('schema_version') == 'script-1.0':
+        from motif_script import review
+        return review(plan, brief)
     issues = [f"schema {'.'.join(map(str,e.path))}: {e.message}" for e in Draft202012Validator(SCHEMA).iter_errors(plan)]
     if issues: return {'pass':False, 'issues':issues, 'states':[], 'final':None}
     if plan['status'] != 'ready': issues.append('capability_error: '+plan['capability_error'])

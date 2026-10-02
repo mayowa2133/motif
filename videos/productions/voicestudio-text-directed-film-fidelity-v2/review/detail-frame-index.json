@@ -1,0 +1,28 @@
+{
+  "source": "renders/preview-02.mp4",
+  "frames": [
+    311,
+    315,
+    322,
+    374,
+    381,
+    396,
+    529,
+    541,
+    553,
+    965,
+    970,
+    985
+  ],
+  "view_size": [
+    360,
+    640
+  ],
+  "board_crop": [
+    0,
+    140,
+    360,
+    490
+  ],
+  "rescaled_after_mobile_decode": false
+}

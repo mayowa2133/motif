@@ -1,0 +1,29 @@
+{
+  "id": "reference-expressive-v1",
+  "scope": "this production only",
+  "sourceHierarchy": [
+    "actual reference picture",
+    "canonical Motif Bot identity",
+    "existing Motif implementation"
+  ],
+  "headline": "newly authored taped paper strip",
+  "caption": "coral content-sized EB Garamond 700 paper chunks",
+  "palette": {
+    "wash": "#77A498",
+    "terminal": "#202D34",
+    "scanner": "#B79D7F",
+    "caption": "#B5573B"
+  },
+  "materials": [
+    "paper",
+    "dark-card",
+    "wood",
+    "wall",
+    "roller-fibers",
+    "foam"
+  ],
+  "timing": "source frames; no retiming",
+  "character": "unchanged canonical v1",
+  "implementation": "unchanged Motif event engine; scoped authored interactions",
+  "defaultStyleModified": false
+}

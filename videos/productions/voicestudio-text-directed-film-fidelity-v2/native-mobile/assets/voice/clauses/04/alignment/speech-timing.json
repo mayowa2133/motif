@@ -1,0 +1,151 @@
+{
+  "method": "installed Whisper small.en DTW; no flash attention; adjacent token-center midpoints",
+  "precision": "automatic approximate word boundaries, not phoneme-perfect",
+  "duration": 3.5,
+  "words": [
+    {
+      "text": "and",
+      "centers": [
+        0.12
+      ],
+      "start": 0,
+      "end": 0.14
+    },
+    {
+      "text": "it",
+      "centers": [
+        0.16
+      ],
+      "start": 0.14,
+      "end": 0.22000000000000003
+    },
+    {
+      "text": "can",
+      "centers": [
+        0.28
+      ],
+      "start": 0.22000000000000003,
+      "end": 0.36
+    },
+    {
+      "text": "read",
+      "centers": [
+        0.44
+      ],
+      "start": 0.36,
+      "end": 0.57
+    },
+    {
+      "text": "anything",
+      "centers": [
+        0.7
+      ],
+      "start": 0.57,
+      "end": 0.82
+    },
+    {
+      "text": "back",
+      "centers": [
+        0.94
+      ],
+      "start": 0.82,
+      "end": 1.0
+    },
+    {
+      "text": "in",
+      "centers": [
+        1.06
+      ],
+      "start": 1.0,
+      "end": 1.1099999999999999
+    },
+    {
+      "text": "your",
+      "centers": [
+        1.16
+      ],
+      "start": 1.1099999999999999,
+      "end": 1.31
+    },
+    {
+      "text": "voice,",
+      "centers": [
+        1.46
+      ],
+      "start": 1.31,
+      "end": 1.6400000000000001
+    },
+    {
+      "text": "and",
+      "centers": [
+        1.82
+      ],
+      "start": 1.6400000000000001,
+      "end": 1.9300000000000002
+    },
+    {
+      "text": "cloning",
+      "centers": [
+        2.04
+      ],
+      "start": 1.9300000000000002,
+      "end": 2.13
+    },
+    {
+      "text": "your",
+      "centers": [
+        2.22
+      ],
+      "start": 2.13,
+      "end": 2.33
+    },
+    {
+      "text": "voice",
+      "centers": [
+        2.44
+      ],
+      "start": 2.33,
+      "end": 2.52
+    },
+    {
+      "text": "is",
+      "centers": [
+        2.6
+      ],
+      "start": 2.52,
+      "end": 2.67
+    },
+    {
+      "text": "just",
+      "centers": [
+        2.74
+      ],
+      "start": 2.67,
+      "end": 2.81
+    },
+    {
+      "text": "the",
+      "centers": [
+        2.88
+      ],
+      "start": 2.81,
+      "end": 2.9699999999999998
+    },
+    {
+      "text": "start",
+      "centers": [
+        3.06
+      ],
+      "start": 2.9699999999999998,
+      "end": 3.2199999999999998
+    },
+    {
+      "text": "because.",
+      "centers": [
+        3.38
+      ],
+      "start": 3.2199999999999998,
+      "end": 3.5
+    }
+  ]
+}

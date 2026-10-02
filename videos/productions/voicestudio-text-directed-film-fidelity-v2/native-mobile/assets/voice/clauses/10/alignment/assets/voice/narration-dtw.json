@@ -1,0 +1,185 @@
+{
+	"systeminfo": "WHISPER : VITISAI = 0 | COREML = 0 | OPENVINO = 0 | MTL : EMBED_LIBRARY = 1 | CPU : NEON = 1 | ARM_FMA = 1 | MATMUL_INT8 = 1 | DOTPROD = 1 | ACCELERATE = 1 | OPENMP = 1 | REPACK = 1 | ",
+	"model": {
+		"type": "small",
+		"multilingual": false,
+		"vocab": 51864,
+		"audio": {
+			"ctx": 1500,
+			"state": 768,
+			"head": 12,
+			"layer": 12
+		},
+		"text": {
+			"ctx": 448,
+			"state": 768,
+			"head": 12,
+			"layer": 12
+		},
+		"mels": 80,
+		"ftype": 1
+	},
+	"params": {
+		"model": "/Users/mayowaadesanya/.cache/hyperframes/whisper/models/ggml-small.en.bin",
+		"language": "en",
+		"translate": false
+	},
+	"result": {
+		"language": "en"
+	},
+	"transcription": [
+		{
+			"timestamps": {
+				"from": "00:00:00,000",
+				"to": "00:00:01,680"
+			},
+			"offsets": {
+				"from": 0,
+				"to": 1680
+			},
+			"text": " for the link in setup comment voice.",
+			"tokens": [
+				{
+					"text": "[_BEG_]",
+					"timestamps": {
+						"from": "00:00:00,000",
+						"to": "00:00:00,000"
+					},
+					"offsets": {
+						"from": 0,
+						"to": 0
+					},
+					"id": 50363,
+					"p": 0.996928,
+					"t_dtw": -1
+				},
+				{
+					"text": " for",
+					"timestamps": {
+						"from": "00:00:00,060",
+						"to": "00:00:00,150"
+					},
+					"offsets": {
+						"from": 60,
+						"to": 150
+					},
+					"id": 329,
+					"p": 0.892542,
+					"t_dtw": 12
+				},
+				{
+					"text": " the",
+					"timestamps": {
+						"from": "00:00:00,150",
+						"to": "00:00:00,300"
+					},
+					"offsets": {
+						"from": 150,
+						"to": 300
+					},
+					"id": 262,
+					"p": 0.996333,
+					"t_dtw": 22
+				},
+				{
+					"text": " link",
+					"timestamps": {
+						"from": "00:00:00,300",
+						"to": "00:00:00,490"
+					},
+					"offsets": {
+						"from": 300,
+						"to": 490
+					},
+					"id": 2792,
+					"p": 0.869979,
+					"t_dtw": 34
+				},
+				{
+					"text": " in",
+					"timestamps": {
+						"from": "00:00:00,570",
+						"to": "00:00:00,600"
+					},
+					"offsets": {
+						"from": 570,
+						"to": 600
+					},
+					"id": 287,
+					"p": 0.910696,
+					"t_dtw": 52
+				},
+				{
+					"text": " setup",
+					"timestamps": {
+						"from": "00:00:00,600",
+						"to": "00:00:00,840"
+					},
+					"offsets": {
+						"from": 600,
+						"to": 840
+					},
+					"id": 9058,
+					"p": 0.372519,
+					"t_dtw": 74
+				},
+				{
+					"text": " comment",
+					"timestamps": {
+						"from": "00:00:00,880",
+						"to": "00:00:01,220"
+					},
+					"offsets": {
+						"from": 880,
+						"to": 1220
+					},
+					"id": 2912,
+					"p": 0.859161,
+					"t_dtw": 106
+				},
+				{
+					"text": " voice",
+					"timestamps": {
+						"from": "00:00:01,220",
+						"to": "00:00:01,430"
+					},
+					"offsets": {
+						"from": 1220,
+						"to": 1430
+					},
+					"id": 3809,
+					"p": 0.854774,
+					"t_dtw": 136
+				},
+				{
+					"text": ".",
+					"timestamps": {
+						"from": "00:00:01,530",
+						"to": "00:00:01,530"
+					},
+					"offsets": {
+						"from": 1530,
+						"to": 1530
+					},
+					"id": 13,
+					"p": 0.962102,
+					"t_dtw": 150
+				},
+				{
+					"text": "[_TT_84]",
+					"timestamps": {
+						"from": "00:00:01,680",
+						"to": "00:00:01,680"
+					},
+					"offsets": {
+						"from": 1680,
+						"to": 1680
+					},
+					"id": 50447,
+					"p": 0.0790273,
+					"t_dtw": -1
+				}
+			]
+		}
+	]
+}

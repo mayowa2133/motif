@@ -1,0 +1,10 @@
+{
+  "duration": 2.78,
+  "assertions": [
+    {
+      "kind": "appearsBy",
+      "selector": "#beat-01-bot",
+      "bySec": 0.6
+    }
+  ]
+}

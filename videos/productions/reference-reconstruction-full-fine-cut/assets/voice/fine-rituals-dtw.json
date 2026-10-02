@@ -1,0 +1,213 @@
+{
+	"systeminfo": "WHISPER : VITISAI = 0 | COREML = 0 | OPENVINO = 0 | MTL : EMBED_LIBRARY = 1 | CPU : NEON = 1 | ARM_FMA = 1 | MATMUL_INT8 = 1 | DOTPROD = 1 | ACCELERATE = 1 | OPENMP = 1 | REPACK = 1 | ",
+	"model": {
+		"type": "small",
+		"multilingual": false,
+		"vocab": 51864,
+		"audio": {
+			"ctx": 1500,
+			"state": 768,
+			"head": 12,
+			"layer": 12
+		},
+		"text": {
+			"ctx": 448,
+			"state": 768,
+			"head": 12,
+			"layer": 12
+		},
+		"mels": 80,
+		"ftype": 1
+	},
+	"params": {
+		"model": "/Users/mayowaadesanya/.cache/hyperframes/whisper/models/ggml-small.en.bin",
+		"language": "en",
+		"translate": false
+	},
+	"result": {
+		"language": "en"
+	},
+	"transcription": [
+		{
+			"timestamps": {
+				"from": "00:00:00,000",
+				"to": "00:00:03,300"
+			},
+			"offsets": {
+				"from": 0,
+				"to": 3300
+			},
+			"text": " Remove repeated checks, shouting, and unnecessary steps.",
+			"tokens": [
+				{
+					"text": "[_BEG_]",
+					"timestamps": {
+						"from": "00:00:00,000",
+						"to": "00:00:00,000"
+					},
+					"offsets": {
+						"from": 0,
+						"to": 0
+					},
+					"id": 50363,
+					"p": 0.997447,
+					"t_dtw": -1
+				},
+				{
+					"text": " Remove",
+					"timestamps": {
+						"from": "00:00:00,040",
+						"to": "00:00:00,340"
+					},
+					"offsets": {
+						"from": 40,
+						"to": 340
+					},
+					"id": 17220,
+					"p": 0.949081,
+					"t_dtw": 34
+				},
+				{
+					"text": " repeated",
+					"timestamps": {
+						"from": "00:00:00,340",
+						"to": "00:00:00,800"
+					},
+					"offsets": {
+						"from": 340,
+						"to": 800
+					},
+					"id": 5100,
+					"p": 0.998774,
+					"t_dtw": 76
+				},
+				{
+					"text": " checks",
+					"timestamps": {
+						"from": "00:00:00,800",
+						"to": "00:00:01,130"
+					},
+					"offsets": {
+						"from": 800,
+						"to": 1130
+					},
+					"id": 8794,
+					"p": 0.996926,
+					"t_dtw": 126
+				},
+				{
+					"text": ",",
+					"timestamps": {
+						"from": "00:00:01,210",
+						"to": "00:00:01,220"
+					},
+					"offsets": {
+						"from": 1210,
+						"to": 1220
+					},
+					"id": 11,
+					"p": 0.766265,
+					"t_dtw": 160
+				},
+				{
+					"text": " shouting",
+					"timestamps": {
+						"from": "00:00:01,430",
+						"to": "00:00:01,710"
+					},
+					"offsets": {
+						"from": 1430,
+						"to": 1710
+					},
+					"id": 19642,
+					"p": 0.977189,
+					"t_dtw": 170
+				},
+				{
+					"text": ",",
+					"timestamps": {
+						"from": "00:00:01,710",
+						"to": "00:00:01,840"
+					},
+					"offsets": {
+						"from": 1710,
+						"to": 1840
+					},
+					"id": 11,
+					"p": 0.421797,
+					"t_dtw": 172
+				},
+				{
+					"text": " and",
+					"timestamps": {
+						"from": "00:00:01,860",
+						"to": "00:00:02,050"
+					},
+					"offsets": {
+						"from": 1860,
+						"to": 2050
+					},
+					"id": 290,
+					"p": 0.967581,
+					"t_dtw": 196
+				},
+				{
+					"text": " unnecessary",
+					"timestamps": {
+						"from": "00:00:02,050",
+						"to": "00:00:02,760"
+					},
+					"offsets": {
+						"from": 2050,
+						"to": 2760
+					},
+					"id": 13114,
+					"p": 0.996774,
+					"t_dtw": 240
+				},
+				{
+					"text": " steps",
+					"timestamps": {
+						"from": "00:00:02,760",
+						"to": "00:00:03,040"
+					},
+					"offsets": {
+						"from": 2760,
+						"to": 3040
+					},
+					"id": 4831,
+					"p": 0.998464,
+					"t_dtw": 298
+				},
+				{
+					"text": ".",
+					"timestamps": {
+						"from": "00:00:03,110",
+						"to": "00:00:03,140"
+					},
+					"offsets": {
+						"from": 3110,
+						"to": 3140
+					},
+					"id": 13,
+					"p": 0.990548,
+					"t_dtw": 328
+				},
+				{
+					"text": "[_TT_165]",
+					"timestamps": {
+						"from": "00:00:03,300",
+						"to": "00:00:03,300"
+					},
+					"offsets": {
+						"from": 3300,
+						"to": 3300
+					},
+					"id": 50528,
+					"p": 0.050748,
+					"t_dtw": -1
+				}
+			]
+		}
+	]
+}

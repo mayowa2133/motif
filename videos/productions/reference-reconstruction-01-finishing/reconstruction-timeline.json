@@ -1,0 +1,87 @@
+{
+  "source": "/Users/mayowaadesanya/Downloads/igexport-Dd15NcHvlNl.mp4",
+  "sourceInFrame": 436,
+  "sourceOutFrameExclusive": 600,
+  "fps": 30,
+  "frameCount": 164,
+  "duration": 5.466666666666667,
+  "shots": [
+    {
+      "id": "wash",
+      "sourceFrames": [
+        436,
+        486
+      ],
+      "localFrames": [
+        0,
+        50
+      ],
+      "focus": "document and roller contact",
+      "occupancy": "89% width / 39% height",
+      "rules": [
+        "spring-pop-entrance"
+      ]
+    },
+    {
+      "id": "terminal",
+      "sourceFrames": [
+        486,
+        524
+      ],
+      "localFrames": [
+        50,
+        88
+      ],
+      "focus": "typed command and Enter contact",
+      "occupancy": "88% width / 40% height",
+      "rules": [
+        "press-release-spring"
+      ]
+    },
+    {
+      "id": "scanner",
+      "sourceFrames": [
+        524,
+        600
+      ],
+      "localFrames": [
+        88,
+        164
+      ],
+      "focus": "moving page, beam, lens, findings",
+      "occupancy": "72% width / 51% height",
+      "rules": [
+        "spring-pop-entrance"
+      ]
+    }
+  ],
+  "interactions": [
+    {
+      "kind": "document.wash",
+      "start": 0,
+      "end": 1.6666666666666667,
+      "contact": 0.4,
+      "consequence": "seven attached slips peel from document; labeled document remains"
+    },
+    {
+      "kind": "terminal.submit",
+      "start": 1.6666666666666667,
+      "end": 2.933333333333333,
+      "contact": 2.5366666666666666,
+      "response": 2.586666666666667,
+      "consequence": "command typed, contact, depression, illustrative response, release"
+    },
+    {
+      "kind": "document.inspect",
+      "start": 2.933333333333333,
+      "end": 5.466666666666667,
+      "findings": [
+        3.683333333333333,
+        4.343333333333333,
+        4.993333333333333
+      ],
+      "consequence": "highlight and count follow scan progress"
+    }
+  ],
+  "provenance": "agent-authored geometry and choreography, not autonomous planner output"
+}

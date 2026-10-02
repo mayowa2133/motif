@@ -1,0 +1,620 @@
+{
+  "query": "paper texture terminal typing scan beam",
+  "tier": "words",
+  "tier_detail": "local word match",
+  "dropped": 0,
+  "unindexed": 0,
+  "shown": 39,
+  "total": 386,
+  "report_gap": "npx hyperframes feedback --search-miss \"paper texture terminal typing scan beam\" --wanted \"<the move you needed>\" --tier words",
+  "results": [
+    {
+      "name": "terminal-simulator",
+      "type": "component",
+      "title": "Terminal Simulator",
+      "description": "A terminal window types commands and streams log output.",
+      "tags": [
+        "code-animation"
+      ],
+      "preview": {
+        "poster": "https://static.heygen.ai/hyperframes-oss/docs/images/catalog/components/terminal-simulator.png"
+      }
+    },
+    {
+      "name": "code-snippet-apple-terminal-pro",
+      "type": "block",
+      "title": "Code Snippet - Apple Terminal Pro",
+      "description": "Apple Terminal Pro profile: black background with grey text and lime green cursor, per-character typing animation of a shell session.",
+      "tags": [
+        "code",
+        "developer",
+        "showcase",
+        "terminal",
+        "apple",
+        "apple-terminal"
+      ],
+      "dimensions": {
+        "width": 1920,
+        "height": 1080
+      },
+      "duration": 12,
+      "preview": {
+        "video": "https://static.heygen.ai/hyperframes-oss/docs/images/catalog/blocks/code-snippet-apple-terminal-pro.mp4",
+        "poster": "https://static.heygen.ai/hyperframes-oss/docs/images/catalog/blocks/code-snippet-apple-terminal-pro.png"
+      }
+    },
+    {
+      "name": "camera-scan-gate",
+      "type": "component",
+      "title": "Camera Scan Gate",
+      "description": "A camera and QR recognition moment with a viewfinder sweep, bracket lock, confirmation pulse, and verified next beat.",
+      "tags": [
+        "prop",
+        "ui-props",
+        "camera",
+        "qr",
+        "scan",
+        "recognition",
+        "interaction",
+        "demonstrate"
+      ]
+    },
+    {
+      "name": "tracing-beam",
+      "type": "component",
+      "title": "Tracing Beam",
+      "description": "A glowing dash follows one SVG path through three UI elements, lifting and brightening each element in sequence.",
+      "tags": [
+        "motion-primitive",
+        "product-demo",
+        "attention",
+        "beam",
+        "path",
+        "spotlight"
+      ]
+    },
+    {
+      "name": "scan-band",
+      "type": "component",
+      "title": "Scan Band",
+      "description": "A diagonal distortion band sweeps once across a clean wordmark, revealing clipped red and cyan offsets only inside the moving band.",
+      "tags": [
+        "motion-primitive",
+        "typography",
+        "scan",
+        "chromatic",
+        "distortion",
+        "wordmark"
+      ]
+    },
+    {
+      "name": "code-typing",
+      "type": "block",
+      "title": "Code Typing",
+      "description": "Token-streamed typing reveal with a caret that tracks the frontier — deterministic, no CSS animation.",
+      "tags": [
+        "code",
+        "code-animation",
+        "typing",
+        "developer"
+      ],
+      "dimensions": {
+        "width": 1920,
+        "height": 1080
+      },
+      "duration": 5,
+      "preview": {
+        "video": "https://static.heygen.ai/hyperframes-oss/docs/images/catalog/blocks/code-typing.mp4",
+        "poster": "https://static.heygen.ai/hyperframes-oss/docs/images/catalog/blocks/code-typing.png"
+      }
+    },
+    {
+      "name": "code-terminal-run",
+      "type": "component",
+      "title": "Code Terminal Run",
+      "description": "A token-chrome terminal panel runs one command: the prompt line types deterministically behind an integer-cycle caret, executes after a beat, and output lines print one per cue before a fresh prompt appears.",
+      "tags": [
+        "motion-primitive",
+        "product-demo",
+        "terminal",
+        "typing",
+        "deterministic"
+      ]
+    },
+    {
+      "name": "texture-mask-text",
+      "type": "component",
+      "title": "Texture Mask Text",
+      "description": "CSS luminance masks that cut holes through letterforms - 66 pre-built texture masks from ambientCG PBR color maps",
+      "tags": [
+        "text",
+        "text-effect",
+        "effect",
+        "texture",
+        "mask"
+      ],
+      "preview": {
+        "poster": "https://static.heygen.ai/hyperframes-oss/docs/images/catalog/components/texture-mask-text.png"
+      }
+    },
+    {
+      "name": "caption-texture",
+      "type": "component",
+      "title": "Texture",
+      "description": "Flowing texture mask over large uppercase text — ships with 6 textures (lava, marble, metal, wood, concrete, rock), configurable via the texture variable",
+      "tags": [
+        "captions",
+        "caption-style",
+        "texture",
+        "mask"
+      ],
+      "preview": {
+        "video": "https://static.heygen.ai/hyperframes-oss/registry/components/caption-texture-lava/preview.mp4?v=1779051416",
+        "poster": "https://static.heygen.ai/hyperframes-oss/docs/images/catalog/components/caption-texture.png"
+      }
+    },
+    {
+      "name": "slit-scan-reveal",
+      "type": "component",
+      "title": "Slit Scan Reveal",
+      "description": "The frame's rows sample an authored subject at offset times: a canvas painter draws row slices of one pure position function evaluated at t minus offset(row), smearing arrival through time until the offsets collapse to zero and the mark holds coherent.",
+      "tags": [
+        "motion-primitive",
+        "time",
+        "slit-scan",
+        "canvas",
+        "deterministic",
+        "experiment"
+      ]
+    },
+    {
+      "name": "typing-indicator",
+      "type": "component",
+      "title": "Typing Indicator",
+      "description": "The three-dot chat bubble that says someone is writing: it pops in at the thread's edge exactly as messaging apps do, holds while the reply is coming, and vanishes when the message lands",
+      "tags": [
+        "video-primitive",
+        "chat",
+        "mock-ui",
+        "overlay"
+      ]
+    },
+    {
+      "name": "notes-typing",
+      "type": "component",
+      "title": "Notes Typing",
+      "description": "The notes-app confession as a mountable scene: a bold title, then body lines typed character by character on the measured human keystroke rhythm, the caret riding every landed character and jumping down at each paragraph. For a bare prompt line use typed-prompt; for an even mechanical reveal use typewriter",
+      "tags": [
+        "motion-primitive",
+        "notes",
+        "typing",
+        "mock-ui",
+        "vertical"
+      ]
+    },
+    {
+      "name": "code-snippet-dark-2026",
+      "type": "block",
+      "title": "Code Snippet - Dark 2026",
+      "description": "VS Code workbench with per-character typing animation in the Dark 2026 theme. Full editor chrome with activity bar, sidebar, tabs, terminal, and status bar.",
+      "tags": [
+        "code",
+        "developer",
+        "showcase",
+        "vscode"
+      ],
+      "dimensions": {
+        "width": 1920,
+        "height": 1080
+      },
+      "duration": 11
+    },
+    {
+      "name": "code-snippet-dark-modern",
+      "type": "block",
+      "title": "Code Snippet - Dark Modern",
+      "description": "VS Code workbench with per-character typing animation in the Dark Modern theme. Full editor chrome with activity bar, sidebar, tabs, terminal, and status bar.",
+      "tags": [
+        "code",
+        "developer",
+        "showcase",
+        "vscode"
+      ],
+      "dimensions": {
+        "width": 1920,
+        "height": 1080
+      },
+      "duration": 11
+    },
+    {
+      "name": "yt-lcd-background",
+      "type": "block",
+      "title": "Scanline Board Background",
+      "description": "Textured paper board: scanlines with slow drift, optional pixel grid, static grain, and display text with a blur-focus entrance and chromatic-fringe title",
+      "tags": [
+        "background",
+        "texture",
+        "creator"
+      ],
+      "dimensions": {
+        "width": 1920,
+        "height": 1080
+      },
+      "duration": 10
+    },
+    {
+      "name": "notes-reveal",
+      "type": "block",
+      "title": "Notes Reveal",
+      "description": "A personal note is typed character by character in a notes app - caret riding every letter, the page scrolling up on measured settle curves as each line lands - then cuts to a hand-lettered paper card with a marker headline and a ticked checklist",
+      "tags": [
+        "showcase",
+        "mock-ui",
+        "notes",
+        "typing",
+        "vertical",
+        "ad-template"
+      ],
+      "dimensions": {
+        "width": 1080,
+        "height": 1920
+      },
+      "duration": 24.85
+    },
+    {
+      "name": "ink-bleed-reveal",
+      "type": "component",
+      "title": "Ink Bleed Reveal",
+      "description": "Liquid ink blooms through paper under a gooey blur-plus-threshold filter, merges, then contracts as a crisp slotted mark resolves beneath it, with static seeded paper grain riding the result.",
+      "tags": [
+        "motion-primitive",
+        "texture",
+        "reveal",
+        "gooey",
+        "svg-filter",
+        "deterministic",
+        "experiment"
+      ]
+    },
+    {
+      "name": "oscilloscope-trace",
+      "type": "block",
+      "title": "Oscilloscope Trace",
+      "description": "CRT oscilloscope beam sweeping a waveform across a 10x8 graticule, with closed-form phosphor persistence: the tail decays as exp(-age/tau) and brightens where the beam slows",
+      "tags": [
+        "instrument",
+        "data",
+        "showcase",
+        "retro"
+      ],
+      "dimensions": {
+        "width": 1920,
+        "height": 1080
+      },
+      "duration": 6,
+      "preview": {
+        "video": "https://static.heygen.ai/hyperframes-oss/docs/images/catalog/blocks/oscilloscope-trace.mp4",
+        "poster": "https://static.heygen.ai/hyperframes-oss/docs/images/catalog/blocks/oscilloscope-trace.png"
+      }
+    },
+    {
+      "name": "freeze-frame-dressing",
+      "type": "block",
+      "title": "Freeze-Frame Dressing",
+      "description": "Timeline-driven paper, tape, and flash dressing for a freeze-frame or background-removed subject",
+      "tags": [
+        "freeze-frame",
+        "cutout",
+        "scrapbook",
+        "paper",
+        "social",
+        "overlay",
+        "media-treatment-overlay"
+      ],
+      "dimensions": {
+        "width": 1920,
+        "height": 1080
+      },
+      "duration": 4,
+      "preview": {
+        "poster": "https://static.heygen.ai/hyperframes-oss/docs/images/catalog/blocks/freeze-frame-dressing.png",
+        "video": "https://static.heygen.ai/hyperframes-oss/docs/images/catalog/blocks/freeze-frame-dressing.mp4"
+      }
+    },
+    {
+      "name": "grain-overlay",
+      "type": "component",
+      "title": "Grain Overlay",
+      "description": "Animated film grain texture overlay using CSS keyframes — adds warmth and analog character to any composition",
+      "tags": [
+        "texture",
+        "grain",
+        "overlay",
+        "film"
+      ],
+      "preview": {
+        "poster": "https://static.heygen.ai/hyperframes-oss/docs/images/catalog/components/grain-overlay.png"
+      }
+    },
+    {
+      "name": "hw-text-cloud",
+      "type": "block",
+      "title": "Speech Bubble",
+      "description": "Hand-drawn speech bubble with a positionable tail: outline draws on, paper fill fades in, handwritten text types per character; boils",
+      "tags": [
+        "handwritten",
+        "speech-bubble",
+        "overlay"
+      ],
+      "dimensions": {
+        "width": 1920,
+        "height": 1080
+      },
+      "duration": 6
+    },
+    {
+      "name": "flowchart",
+      "type": "block",
+      "title": "Flowchart",
+      "description": "Animated decision tree with SVG connectors, sticky-note nodes, cursor interaction, and typing correction",
+      "tags": [
+        "diagram",
+        "flowchart",
+        "interactive"
+      ],
+      "dimensions": {
+        "width": 1920,
+        "height": 1080
+      },
+      "duration": 12,
+      "preview": {
+        "video": "https://static.heygen.ai/hyperframes-oss/docs/images/catalog/blocks/flowchart.mp4",
+        "poster": "https://static.heygen.ai/hyperframes-oss/docs/images/catalog/blocks/flowchart.png"
+      }
+    },
+    {
+      "name": "mk-emphasis-type",
+      "type": "component",
+      "title": "Background Emphasis Type",
+      "description": "Oversized low-contrast background word drifting slowly behind the subject — typography as texture",
+      "tags": [
+        "typography",
+        "text-treatment",
+        "minimal"
+      ]
+    },
+    {
+      "name": "flowchart-vertical",
+      "type": "block",
+      "title": "Flowchart Vertical",
+      "description": "Portrait animated decision tree with SVG connectors, sticky-note nodes, cursor interaction, and typing correction",
+      "tags": [
+        "diagram",
+        "flowchart",
+        "interactive",
+        "portrait"
+      ],
+      "dimensions": {
+        "width": 1440,
+        "height": 2560
+      },
+      "duration": 12,
+      "preview": {
+        "video": "https://static.heygen.ai/hyperframes-oss/docs/images/catalog/blocks/flowchart-vertical.mp4",
+        "poster": "https://static.heygen.ai/hyperframes-oss/docs/images/catalog/blocks/flowchart-vertical.png"
+      }
+    },
+    {
+      "name": "yt-screen-warp",
+      "type": "component",
+      "title": "On-Screen Display Effect",
+      "description": "Grid, scanline, vignette, and sheen overlay plus a 3D-warp wrapper class that makes footage read as if playing on a physical display",
+      "tags": [
+        "effect",
+        "overlay",
+        "texture"
+      ]
+    },
+    {
+      "name": "yt-comment-card",
+      "type": "block",
+      "title": "Comment Cards",
+      "description": "Social comments typing on over footage: avatar pop, username and time, per-character typewriter, likes row; image avatars or initials chips",
+      "tags": [
+        "social",
+        "comments",
+        "creator",
+        "overlay"
+      ],
+      "dimensions": {
+        "width": 1920,
+        "height": 1080
+      },
+      "duration": 8
+    },
+    {
+      "name": "grain-field",
+      "type": "component",
+      "title": "Grain Field",
+      "description": "A clearly visible accent-tinted dot field drifts over a subtle luminance gradient in an exact ambient loop.",
+      "tags": [
+        "motion-primitive",
+        "background",
+        "grain",
+        "dots",
+        "texture",
+        "ambient",
+        "loopable"
+      ]
+    },
+    {
+      "name": "marker-checklist-card",
+      "type": "component",
+      "title": "Marker Checklist Card",
+      "description": "A hand-lettered paper card: marker headline with an underline and a drawn ellipse around one word, then three checklist rows whose checks draw themselves on - typewriter labels, marker values. The paper-and-marker sibling of mk-specs-list's clean professional rows",
+      "tags": [
+        "motion-primitive",
+        "handwritten",
+        "checklist",
+        "paper",
+        "marker"
+      ]
+    },
+    {
+      "name": "typed-prompt",
+      "type": "component",
+      "title": "Typed Prompt",
+      "description": "A prompt line types itself in chunked human cadence behind a deterministic blinking caret, with optional backspace-and-retype correction of the final word.",
+      "tags": [
+        "motion-primitive",
+        "product-demo",
+        "typing",
+        "prompt",
+        "deterministic"
+      ]
+    },
+    {
+      "name": "halftone-dissolve",
+      "type": "component",
+      "title": "Halftone Dissolve",
+      "description": "Scene A dissolves into scene B through a growing halftone dot field: accent ink dots pop onto a fixed grid smallest-first, each opens into a window onto B, until the windows merge and B fully replaces A.",
+      "tags": [
+        "motion-primitive",
+        "transition",
+        "texture",
+        "halftone",
+        "dissolve"
+      ]
+    },
+    {
+      "name": "stop-motion-cadence",
+      "type": "component",
+      "title": "Stop Motion Cadence",
+      "description": "The stepped-time law as a demo primitive: one driver quantizes timeline time to floor(t * fps) / fps and feeds ALL motion; four token paper-cut shapes throw-and-land with squash on hits, 2-frame boil jitter seeded per step, and sparkle accents living exactly 2 to 3 frames.",
+      "tags": [
+        "motion-primitive",
+        "time-law",
+        "stop-motion",
+        "stepped",
+        "boil",
+        "deterministic",
+        "experiment"
+      ]
+    },
+    {
+      "name": "yt-vertical-fill",
+      "type": "block",
+      "title": "Vertical Media Filler",
+      "description": "Portrait media filling a widescreen frame via blurred-scale, mirror, or copy side fills; grid texture and foreground contrast lift (images inside the block; keep live footage in the host)",
+      "tags": [
+        "placeholder",
+        "vertical",
+        "media"
+      ],
+      "dimensions": {
+        "width": 1920,
+        "height": 1080
+      },
+      "duration": 8
+    },
+    {
+      "name": "ordered-dither-pass",
+      "type": "component",
+      "title": "Ordered Dither Pass",
+      "description": "Bayer-matrix ordered dithering quantizes a slotted scene (rasterized once at mount): the image emerges from pure 2-tone noise to clean, or dissolves the reverse. Stateless per frame, never error diffusion.",
+      "tags": [
+        "motion-primitive",
+        "experiment",
+        "texture",
+        "dither",
+        "transition",
+        "quantize"
+      ]
+    },
+    {
+      "name": "message-thread-reveal",
+      "type": "block",
+      "title": "Message Thread Reveal",
+      "description": "A full text conversation plays out on a phone - bubbles popping in, typing indicators, a shared link card, emoji, delivered receipts - with the whole thread scrolling up beat by beat until a closing card lands. The complete chat ad-template, measured message by message",
+      "tags": [
+        "showcase",
+        "mock-ui",
+        "chat",
+        "vertical",
+        "ad-template"
+      ],
+      "dimensions": {
+        "width": 1080,
+        "height": 1920
+      },
+      "duration": 25.7667
+    },
+    {
+      "name": "hw-arrow",
+      "type": "component",
+      "title": "Hand-Drawn Arrow",
+      "description": "Wobbled draw-on arrow with straight, gentle, and swoop curve poses, a four-way stroke texture matrix (plain/soft/sharp/spray), and a travel-aligned head-arrival stretch pulse with spring recovery; boils while on screen",
+      "tags": [
+        "handwritten",
+        "annotation",
+        "arrow",
+        "overlay"
+      ]
+    },
+    {
+      "name": "ascii-render-pass",
+      "type": "component",
+      "title": "ASCII Render Pass",
+      "description": "A slotted scene renders as live ASCII: a canvas samples the source's luminance grid (rasterized once at mount) and draws glyphs from a density ramp charset; resolution steps coarse to fine as the piece resolves, then holds legible-fine.",
+      "tags": [
+        "motion-primitive",
+        "experiment",
+        "texture",
+        "ascii",
+        "quantize"
+      ]
+    },
+    {
+      "name": "halftone-field",
+      "type": "block",
+      "title": "Halftone Field",
+      "description": "A full-bleed halftone light field: a grid of dots whose size and colour track a slow flowing simplex-noise field, so broad bands of light sweep across a mostly-black frame like a giant LED wall showing a plasma. Built to run under type.",
+      "tags": [
+        "webgl",
+        "shader",
+        "background",
+        "texture",
+        "halftone"
+      ],
+      "dimensions": {
+        "width": 1920,
+        "height": 1080
+      },
+      "duration": 10
+    },
+    {
+      "name": "chat-thread",
+      "type": "component",
+      "title": "Chat Thread",
+      "description": "The measured conversation as one mountable scene at full fidelity: status bar, back badge, avatar and name pill, bubbles with real iMessage tails, a Delivered receipt, large emoji rows, a media placeholder, a link card, and typing dots holding the beat. Every message picks its type by prefix - recv:/sent: text, emoji: a large row, img media, card:Title~domain a link card - and heights are measured at mount so any thread fits",
+      "tags": [
+        "motion-primitive",
+        "chat",
+        "mock-ui",
+        "conversation",
+        "vertical"
+      ]
+    },
+    {
+      "name": "hw-boil",
+      "type": "component",
+      "title": "Hand-Drawn Boil",
+      "description": "Hand-drawn jitter that re-poses every N frames, as seek-safe helpers: pose derives from quantized timeline time through a seeded hash; includes the shared onUpdate dispatcher, a wobbled-ellipse path generator, the boil pose control (off/calm/lively over the family-locked frameDrop), a curvature-adaptive pen-velocity ease, and the completed stroke matrix (plain/soft/sharp/spray — spray is index-seeded deterministic dots, no turbulence) with texture-safe draw-on",
+      "tags": [
+        "handwritten",
+        "effect",
+        "annotation"
+      ]
+    }
+  ]
+}

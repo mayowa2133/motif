@@ -177,14 +177,39 @@ def run(brief_path,concept_path=None,feedback_path=None):
 
 if __name__=='__main__':
     parser=argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('action',choices=['run','validate','capabilities'])
+    parser.add_argument('action',choices=['run','validate','capabilities','script-plan','script-preview'])
     parser.add_argument('--brief',type=Path)
     parser.add_argument('--plan',type=Path)
+    parser.add_argument('--project',type=Path,help='Saved supplied-script project; preview does not replan or regenerate narration')
+    parser.add_argument('--render',action='store_true',help='Render the requested moving preview from saved inputs')
     parser.add_argument('--concept',type=Path,help='Optional recorded creative preproduction concept; not an executable plan')
     parser.add_argument('--feedback',type=Path,help='Optional review of a preserved prior render, supplied to live planning')
     args=parser.parse_args()
     try:
-        if args.action=='capabilities': print(json.dumps({'worlds':WORLD_SHOTS,'assets':WORLD_ASSETS,'backend':'codex-exec','style':'locked motif-v1','voice':'local Kokoro af_nova'},default=list,indent=2))
+        if args.action=='capabilities':
+            from motif_paper_investigation import KINDS
+            from motif_script import SCRIPT_ASSETS
+            from motif_paper_energy import STAGES
+            from motif_ui_actions import KINDS as UI_KINDS
+            print(json.dumps({'text_directed_ui':{'schema':'text-directed-1.0','style':'reference-expressive-high-energy-v1','actions':list(UI_KINDS),'components_module':'scripts/motif_ui_components.py','scope':'finite interactive UI reconstruction; agent-authored geometry/choreography'},'worlds':WORLD_SHOTS,'assets':WORLD_ASSETS,'backend':'codex-exec','style':'locked motif-v1','voice':'local Kokoro af_nova','script_preview':{'style':'reference-expressive-v1','actions':list(KINDS),'assets':SCRIPT_ASSETS,'scope':'finite paper investigation; new geometry requires explicit agent-assisted development','high_energy':{'style':'reference-expressive-high-energy-v1','actions':STAGES,'scope':'finite agent-authored overlapping paper actions; explicit opt-in'}}},default=list,indent=2))
+        elif args.action=='script-plan':
+            from motif_script import plan_script
+            if not args.brief: raise ValueError('script-plan requires --brief')
+            print('REVIEW_REQUIRED '+str(plan_script(args.brief.resolve())))
+        elif args.action=='script-preview':
+            from motif_script import align_voice, render_preview
+            if not args.project: raise ValueError('script-preview requires --project')
+            project=args.project.resolve()
+            plan=read(project/'production-plan.json'); brief=read(project/'brief.json')
+            report=review_plan(plan,brief)
+            if not report['pass']: raise ValueError('; '.join(report['issues']))
+            if not (project/'review-state.json').exists():
+                if (project/'speech-timing.json').exists():
+                    speech=read(project/'speech-timing.json'); words=speech['words']; duration=speech['duration']
+                else: words,duration=align_voice(project)
+                compile_plan(project,plan,words,duration,None)
+            if args.render: print('REVIEW_REQUIRED '+str(render_preview(project)))
+            else: print('REVIEW_REQUIRED '+str(project/'index.html'))
         elif args.action=='validate':
             if not args.plan or not args.brief: raise ValueError('validate requires --plan and --brief')
             report=review_plan(read(args.plan),read(args.brief)); print(json.dumps(report,indent=2))

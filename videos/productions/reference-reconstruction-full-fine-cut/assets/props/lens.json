@@ -1,0 +1,51 @@
+{
+  "id": "reconstruction-rough-lens",
+  "name": "Lens",
+  "category": "prop",
+  "subcategory": "reference-reconstruction",
+  "concepts": [
+    "instruction-audit",
+    "reference-study"
+  ],
+  "keywords": [
+    "paper",
+    "cutout",
+    "lens"
+  ],
+  "style": "reference-expressive-v1",
+  "orientation": "front",
+  "dimensions": {
+    "width": 314,
+    "height": 324,
+    "unit": "px"
+  },
+  "artBox": {
+    "x": -143,
+    "y": -143,
+    "width": 314,
+    "height": 324
+  },
+  "anchors": {
+    "grip": {
+      "x": 0.9426751592356688,
+      "y": 0.9475308641975309
+    }
+  },
+  "compatibleCharacters": [
+    "motif-bot"
+  ],
+  "supportedActions": [
+    "inspect"
+  ],
+  "sourceType": "vector",
+  "source": {
+    "file": "videos/productions/reference-reconstruction-full-fine-cut/assets/props/lens.svg",
+    "generator": "videos/productions/reference-reconstruction-full-fine-cut/build.py",
+    "reference": "Agent-authored geometry for a mapped source shot; no source prop pixels."
+  },
+  "preview": "videos/productions/reference-reconstruction-full-fine-cut/assets/props/lens.svg",
+  "license": "project-original",
+  "status": "review",
+  "presentationStatus": "fine-cut",
+  "version": 1
+}

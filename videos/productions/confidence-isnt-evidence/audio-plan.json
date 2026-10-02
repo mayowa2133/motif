@@ -1,0 +1,16 @@
+{
+  "narration": "assets/voice/narration-af-nova.wav",
+  "duration": 23.616,
+  "review_input": "assets/voice/review-voice.wav",
+  "review_input_measurement": {
+    "integrated_lufs": -16.74,
+    "true_peak_dbtp": -1.79,
+    "lra_lu": 2.2
+  },
+  "review_gain_db": 0.14000000000000004,
+  "target_lufs": -16.0,
+  "peak_ceiling": -1.5,
+  "music": false,
+  "sfx": false,
+  "subjective_listening": "not assessed"
+}

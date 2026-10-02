@@ -1,0 +1,269 @@
+{
+	"systeminfo": "WHISPER : VITISAI = 0 | COREML = 0 | OPENVINO = 0 | MTL : EMBED_LIBRARY = 1 | CPU : NEON = 1 | ARM_FMA = 1 | MATMUL_INT8 = 1 | DOTPROD = 1 | ACCELERATE = 1 | OPENMP = 1 | REPACK = 1 | ",
+	"model": {
+		"type": "small",
+		"multilingual": false,
+		"vocab": 51864,
+		"audio": {
+			"ctx": 1500,
+			"state": 768,
+			"head": 12,
+			"layer": 12
+		},
+		"text": {
+			"ctx": 448,
+			"state": 768,
+			"head": 12,
+			"layer": 12
+		},
+		"mels": 80,
+		"ftype": 1
+	},
+	"params": {
+		"model": "/Users/mayowaadesanya/.cache/hyperframes/whisper/models/ggml-small.en.bin",
+		"language": "en",
+		"translate": false
+	},
+	"result": {
+		"language": "en"
+	},
+	"transcription": [
+		{
+			"timestamps": {
+				"from": "00:00:00,000",
+				"to": "00:00:02,820"
+			},
+			"offsets": {
+				"from": 0,
+				"to": 2820
+			},
+			"text": " which means stop paying any more bills since it runs on your computer.",
+			"tokens": [
+				{
+					"text": "[_BEG_]",
+					"timestamps": {
+						"from": "00:00:00,000",
+						"to": "00:00:00,000"
+					},
+					"offsets": {
+						"from": 0,
+						"to": 0
+					},
+					"id": 50363,
+					"p": 0.994943,
+					"t_dtw": -1
+				},
+				{
+					"text": " which",
+					"timestamps": {
+						"from": "00:00:00,030",
+						"to": "00:00:00,240"
+					},
+					"offsets": {
+						"from": 30,
+						"to": 240
+					},
+					"id": 543,
+					"p": 0.565645,
+					"t_dtw": 12
+				},
+				{
+					"text": " means",
+					"timestamps": {
+						"from": "00:00:00,240",
+						"to": "00:00:00,480"
+					},
+					"offsets": {
+						"from": 240,
+						"to": 480
+					},
+					"id": 1724,
+					"p": 0.995057,
+					"t_dtw": 32
+				},
+				{
+					"text": " stop",
+					"timestamps": {
+						"from": "00:00:00,480",
+						"to": "00:00:00,670"
+					},
+					"offsets": {
+						"from": 480,
+						"to": 670
+					},
+					"id": 2245,
+					"p": 0.968943,
+					"t_dtw": 60
+				},
+				{
+					"text": " paying",
+					"timestamps": {
+						"from": "00:00:00,670",
+						"to": "00:00:00,960"
+					},
+					"offsets": {
+						"from": 670,
+						"to": 960
+					},
+					"id": 5989,
+					"p": 0.998154,
+					"t_dtw": 86
+				},
+				{
+					"text": " any",
+					"timestamps": {
+						"from": "00:00:00,960",
+						"to": "00:00:01,100"
+					},
+					"offsets": {
+						"from": 960,
+						"to": 1100
+					},
+					"id": 597,
+					"p": 0.739165,
+					"t_dtw": 102
+				},
+				{
+					"text": " more",
+					"timestamps": {
+						"from": "00:00:01,100",
+						"to": "00:00:01,290"
+					},
+					"offsets": {
+						"from": 1100,
+						"to": 1290
+					},
+					"id": 517,
+					"p": 0.998424,
+					"t_dtw": 118
+				},
+				{
+					"text": " bills",
+					"timestamps": {
+						"from": "00:00:01,290",
+						"to": "00:00:01,440"
+					},
+					"offsets": {
+						"from": 1290,
+						"to": 1440
+					},
+					"id": 9024,
+					"p": 0.994236,
+					"t_dtw": 146
+				},
+				{
+					"text": " since",
+					"timestamps": {
+						"from": "00:00:01,630",
+						"to": "00:00:01,820"
+					},
+					"offsets": {
+						"from": 1630,
+						"to": 1820
+					},
+					"id": 1201,
+					"p": 0.425908,
+					"t_dtw": 174
+				},
+				{
+					"text": " it",
+					"timestamps": {
+						"from": "00:00:01,820",
+						"to": "00:00:01,920"
+					},
+					"offsets": {
+						"from": 1820,
+						"to": 1920
+					},
+					"id": 340,
+					"p": 0.986741,
+					"t_dtw": 188
+				},
+				{
+					"text": " runs",
+					"timestamps": {
+						"from": "00:00:01,920",
+						"to": "00:00:02,160"
+					},
+					"offsets": {
+						"from": 1920,
+						"to": 2160
+					},
+					"id": 4539,
+					"p": 0.979056,
+					"t_dtw": 206
+				},
+				{
+					"text": " on",
+					"timestamps": {
+						"from": "00:00:02,160",
+						"to": "00:00:02,240"
+					},
+					"offsets": {
+						"from": 2160,
+						"to": 2240
+					},
+					"id": 319,
+					"p": 0.975258,
+					"t_dtw": 222
+				},
+				{
+					"text": " your",
+					"timestamps": {
+						"from": "00:00:02,240",
+						"to": "00:00:02,410"
+					},
+					"offsets": {
+						"from": 2240,
+						"to": 2410
+					},
+					"id": 534,
+					"p": 0.994135,
+					"t_dtw": 234
+				},
+				{
+					"text": " computer",
+					"timestamps": {
+						"from": "00:00:02,410",
+						"to": "00:00:02,760"
+					},
+					"offsets": {
+						"from": 2410,
+						"to": 2760
+					},
+					"id": 3644,
+					"p": 0.988513,
+					"t_dtw": 272
+				},
+				{
+					"text": ".",
+					"timestamps": {
+						"from": "00:00:02,760",
+						"to": "00:00:02,780"
+					},
+					"offsets": {
+						"from": 2760,
+						"to": 2780
+					},
+					"id": 13,
+					"p": 0.94928,
+					"t_dtw": 280
+				},
+				{
+					"text": "[_TT_141]",
+					"timestamps": {
+						"from": "00:00:02,820",
+						"to": "00:00:02,820"
+					},
+					"offsets": {
+						"from": 2820,
+						"to": 2820
+					},
+					"id": 50504,
+					"p": 0.0589222,
+					"t_dtw": -1
+				}
+			]
+		}
+	]
+}

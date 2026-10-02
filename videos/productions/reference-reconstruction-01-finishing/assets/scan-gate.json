@@ -1,0 +1,49 @@
+{
+  "id": "reconstruction-scan-gate",
+  "name": "Scan Gate",
+  "category": "prop",
+  "subcategory": "reference-reconstruction",
+  "concepts": [
+    "instruction-cleanup",
+    "audit"
+  ],
+  "keywords": [
+    "paper",
+    "cutout",
+    "scan-gate"
+  ],
+  "style": "reference-expressive-v1",
+  "orientation": "front",
+  "dimensions": {
+    "width": 1080,
+    "height": 1920,
+    "unit": "px"
+  },
+  "artBox": {
+    "x": 0,
+    "y": 0,
+    "width": 1080,
+    "height": 1920
+  },
+  "anchors": {
+    "origin": {
+      "x": 0,
+      "y": 0
+    }
+  },
+  "compatibleCharacters": [
+    "motif-bot"
+  ],
+  "supportedActions": [
+    "hold"
+  ],
+  "sourceType": "manual",
+  "source": {
+    "file": "videos/productions/reference-reconstruction-01-finishing/assets/scan-gate.svg",
+    "reference": "user-supplied reference video; geometry authored independently"
+  },
+  "version": 1,
+  "status": "review",
+  "license": "project-original",
+  "controlledGroups": []
+}

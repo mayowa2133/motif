@@ -1,0 +1,56 @@
+{
+  "full-film-fine-cut": {
+    "gymNeedle": {
+      "framesChecked": 110,
+      "visibleAtPredictedNeedleRegionEveryFrame": true,
+      "minimumDarkPixels": 53,
+      "basis": "decoded pixels near 75% of fixed-pivot pointer length; dark-ink threshold",
+      "limit": "bounded needle check, not all motion/contact assertions"
+    },
+    "cost": {
+      "decodedBars": [
+        {
+          "top": 772,
+          "baselineEdge": 1408,
+          "height": 636
+        },
+        {
+          "top": 830,
+          "baselineEdge": 1408,
+          "height": 578
+        }
+      ],
+      "heightRatio": 0.9088050314465409,
+      "authoredHeightRatio": 0.91,
+      "sameBaselineWithinPixels": 0,
+      "qualifier": "Illustrative source-claim index; no measured product cost result"
+    }
+  },
+  "mobile": {
+    "gymNeedle": {
+      "framesChecked": 110,
+      "visibleAtPredictedNeedleRegionEveryFrame": true,
+      "minimumDarkPixels": 5,
+      "basis": "decoded pixels near 75% of fixed-pivot pointer length; dark-ink threshold",
+      "limit": "bounded needle check, not all motion/contact assertions"
+    },
+    "cost": {
+      "decodedBars": [
+        {
+          "top": 258,
+          "baselineEdge": 469,
+          "height": 211
+        },
+        {
+          "top": 276,
+          "baselineEdge": 469,
+          "height": 193
+        }
+      ],
+      "heightRatio": 0.9146919431279621,
+      "authoredHeightRatio": 0.91,
+      "sameBaselineWithinPixels": 0,
+      "qualifier": "Illustrative source-claim index; no measured product cost result"
+    }
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "id": "decision-bookmark",
+  "status": "moving-preview; review required",
+  "method": "agent-authored editable SVG",
+  "style": "reference-expressive-high-energy-v1",
+  "viewBox": [
+    0,
+    0,
+    270,
+    164
+  ],
+  "meaning": "illustrative sample; no real source or product claim",
+  "layers": "paper edge, contact shadow, quiet surface, editable text or route geometry",
+  "shadow": "down-right",
+  "production": "confidence-isnt-evidence-high-energy",
+  "changes": "close-view text spacing; inherited asset shapes"
+}

@@ -1,0 +1,113 @@
+{
+  "assets": [
+    {
+      "id": "paper",
+      "file": "assets/sfx/paper.wav",
+      "duration": 0.23,
+      "source": "original deterministic filtered-noise and resonator construction",
+      "seed": 7301,
+      "external_recording": false,
+      "sha256": "4d2b74395799aeb6c55a0e6438acf9b55ee774fdfd00897e447f6fdd1133ed09"
+    },
+    {
+      "id": "flutter",
+      "file": "assets/sfx/flutter.wav",
+      "duration": 0.37,
+      "source": "original deterministic filtered-noise and resonator construction",
+      "seed": 7302,
+      "external_recording": false,
+      "sha256": "1efa6cdedef354b471cddf9cc709c9a542b2709b350c68658128435b7d891beb"
+    },
+    {
+      "id": "cloth",
+      "file": "assets/sfx/cloth.wav",
+      "duration": 0.48,
+      "source": "original deterministic filtered-noise and resonator construction",
+      "seed": 7303,
+      "external_recording": false,
+      "sha256": "ea0a6766674ad492d69c51fbefe3543fbaadce65f679f9ac9e74ba98725fac89"
+    },
+    {
+      "id": "key1",
+      "file": "assets/sfx/key1.wav",
+      "duration": 0.08,
+      "source": "original deterministic filtered-noise and resonator construction",
+      "seed": 7304,
+      "external_recording": false,
+      "sha256": "afe0043845b4c2fca520a8f373d540afb070faab66127caa565bf42efba3eee9"
+    },
+    {
+      "id": "key2",
+      "file": "assets/sfx/key2.wav",
+      "duration": 0.07,
+      "source": "original deterministic filtered-noise and resonator construction",
+      "seed": 7305,
+      "external_recording": false,
+      "sha256": "974c8cc171c99dc2b28f7f81dade1ecb1ecc85d6e017d5355b17a94c1408dc77"
+    },
+    {
+      "id": "key3",
+      "file": "assets/sfx/key3.wav",
+      "duration": 0.09,
+      "source": "original deterministic filtered-noise and resonator construction",
+      "seed": 7306,
+      "external_recording": false,
+      "sha256": "bbfe8a44acaa20dc169866a3613a845e8c585240aef24cd0c17f49be36866202"
+    },
+    {
+      "id": "pop",
+      "file": "assets/sfx/pop.wav",
+      "duration": 0.13,
+      "source": "original deterministic filtered-noise and resonator construction",
+      "seed": 7307,
+      "external_recording": false,
+      "sha256": "d16333de561a8d85310b54d72ac21e3d343b4202db3f2bc91f04dee344ee5fe9"
+    },
+    {
+      "id": "spring",
+      "file": "assets/sfx/spring.wav",
+      "duration": 0.19,
+      "source": "original deterministic filtered-noise and resonator construction",
+      "seed": 7308,
+      "external_recording": false,
+      "sha256": "f3654108376963bfc4a7d1ab913f3039bdbb20f33be1396b0ad4a1a391d775a7"
+    },
+    {
+      "id": "star",
+      "file": "assets/sfx/star.wav",
+      "duration": 0.24,
+      "source": "original deterministic filtered-noise and resonator construction",
+      "seed": 7309,
+      "external_recording": false,
+      "sha256": "6a6697aef0d0b8e7bb6fa138f9a35be8c9e65c19074ff33882ad09e606b91879"
+    },
+    {
+      "id": "reject",
+      "file": "assets/sfx/reject.wav",
+      "duration": 0.14,
+      "source": "original deterministic filtered-noise and resonator construction",
+      "seed": 7310,
+      "external_recording": false,
+      "sha256": "4d90a5b9aff9f73d709e5318334b455e3572925a7a31e7ddb2a0aa1b25c2b1c1"
+    },
+    {
+      "id": "washer",
+      "file": "assets/sfx/washer.wav",
+      "duration": 2.08,
+      "source": "original deterministic filtered-noise and resonator construction",
+      "seed": 7311,
+      "external_recording": false,
+      "sha256": "7fe4605ed7bbe76ca0bc890b628428a6ab3b6c95e7bfcb0feb3ab6325135b93c"
+    },
+    {
+      "id": "whoosh",
+      "file": "assets/sfx/whoosh.wav",
+      "duration": 0.39,
+      "source": "original deterministic filtered-noise and resonator construction",
+      "seed": 7312,
+      "external_recording": false,
+      "sha256": "774765be3f9a6319984f8e039fc2990af2ef7f193794a9b7501a6fc943058d85"
+    }
+  ],
+  "music": "none; no cleared bed selected"
+}

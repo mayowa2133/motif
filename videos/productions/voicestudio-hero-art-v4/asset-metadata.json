@@ -1,0 +1,573 @@
+{
+  "method": "Locked canonical puppet reused; production-local editable SVG art/performance; three new image_gen paper masters with exact lossless WebP derivatives. Original v3 microphone, stool and old-computer art inherited with SVG refinishing.",
+  "character": {
+    "id": "motif-bot-v1",
+    "source": "assets/characters/motif-bot/canonical/v1/motif-bot-v1.json",
+    "status": "locked, reused unchanged",
+    "performance_note": "Canonical anatomy/base geometry unchanged; seven production-local pose and face performance states, planted-foot squash, inverse-transform contact hand."
+  },
+  "material": {
+    "file": "assets/materials/world-paper.webp",
+    "source": "reference-reconstruction-full-fine-cut/assets/materials/wall.png",
+    "conversion": "lossless WebP; same 2048x2048 pixel surface; no new painted texture",
+    "motion": "texture moves with owning paper geometry"
+  },
+  "components": [
+    {
+      "id": "app-tiles",
+      "source": "source/components.py and source/actions.py",
+      "interface": "explicit geometry/state in corresponding finite action",
+      "format": "Independent SVG elements; named hero raster art only where documented",
+      "shadow": "down-right",
+      "grid": [
+        720,
+        1280
+      ],
+      "third_party_screenshot": false,
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "id": "book",
+      "source": "source/components.py and source/actions.py",
+      "interface": "explicit geometry/state in corresponding finite action",
+      "format": "Independent SVG elements; named hero raster art only where documented",
+      "shadow": "down-right",
+      "grid": [
+        720,
+        1280
+      ],
+      "third_party_screenshot": false,
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "id": "cat",
+      "source": "source/components.py and source/actions.py",
+      "interface": "explicit geometry/state in corresponding finite action",
+      "format": "Independent SVG elements; named hero raster art only where documented",
+      "shadow": "down-right",
+      "grid": [
+        720,
+        1280
+      ],
+      "third_party_screenshot": false,
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "id": "chapter-panel",
+      "source": "source/components.py and source/actions.py",
+      "interface": "chapter_row(x,y,label,frame,phase)",
+      "format": "Independent SVG elements; named hero raster art only where documented",
+      "shadow": "down-right",
+      "grid": [
+        720,
+        1280
+      ],
+      "third_party_screenshot": false,
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "id": "checklist",
+      "source": "source/components.py and source/actions.py",
+      "interface": "explicit geometry/state in corresponding finite action",
+      "format": "Independent SVG elements; named hero raster art only where documented",
+      "shadow": "down-right",
+      "grid": [
+        720,
+        1280
+      ],
+      "third_party_screenshot": false,
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "id": "clapperboard",
+      "source": "source/components.py and source/actions.py",
+      "interface": "explicit geometry/state in corresponding finite action",
+      "format": "Independent SVG elements; named hero raster art only where documented",
+      "shadow": "down-right",
+      "grid": [
+        720,
+        1280
+      ],
+      "third_party_screenshot": false,
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "id": "cloud",
+      "source": "source/components.py and source/actions.py",
+      "interface": "explicit geometry/state in corresponding finite action",
+      "format": "Independent SVG elements; named hero raster art only where documented",
+      "shadow": "down-right",
+      "grid": [
+        720,
+        1280
+      ],
+      "third_party_screenshot": false,
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "id": "comment-phone",
+      "source": "source/components.py and source/actions.py",
+      "interface": "comment-keyboard finite binding",
+      "format": "Independent SVG elements; named hero raster art only where documented",
+      "shadow": "down-right",
+      "grid": [
+        720,
+        1280
+      ],
+      "third_party_screenshot": false,
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "id": "counter",
+      "source": "source/components.py and source/actions.py",
+      "interface": "explicit geometry/state in corresponding finite action",
+      "format": "Independent SVG elements; named hero raster art only where documented",
+      "shadow": "down-right",
+      "grid": [
+        720,
+        1280
+      ],
+      "third_party_screenshot": false,
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "id": "dock",
+      "source": "source/components.py and source/actions.py",
+      "interface": "explicit geometry/state in corresponding finite action",
+      "format": "Independent SVG elements; named hero raster art only where documented",
+      "shadow": "down-right",
+      "grid": [
+        720,
+        1280
+      ],
+      "third_party_screenshot": false,
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "id": "dual-player",
+      "source": "source/components.py and source/actions.py",
+      "interface": "explicit geometry/state in corresponding finite action",
+      "format": "Independent SVG elements; named hero raster art only where documented",
+      "shadow": "down-right",
+      "grid": [
+        720,
+        1280
+      ],
+      "third_party_screenshot": false,
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "id": "fact-card",
+      "source": "source/components.py and source/actions.py",
+      "interface": "explicit geometry/state in corresponding finite action",
+      "format": "Independent SVG elements; named hero raster art only where documented",
+      "shadow": "down-right",
+      "grid": [
+        720,
+        1280
+      ],
+      "third_party_screenshot": false,
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "id": "floating-mic",
+      "source": "source/components.py and source/actions.py",
+      "interface": "explicit geometry/state in corresponding finite action",
+      "format": "Independent SVG elements; named hero raster art only where documented",
+      "shadow": "down-right",
+      "grid": [
+        720,
+        1280
+      ],
+      "third_party_screenshot": false,
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "id": "keyboard",
+      "source": "source/components.py and source/actions.py",
+      "interface": "keyboard(x,y,active)",
+      "format": "Independent SVG elements; named hero raster art only where documented",
+      "shadow": "down-right",
+      "grid": [
+        720,
+        1280
+      ],
+      "third_party_screenshot": false,
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "id": "language-list",
+      "source": "source/components.py and source/actions.py",
+      "interface": "language-scroll-count finite binding",
+      "format": "Independent SVG elements; named hero raster art only where documented",
+      "shadow": "down-right",
+      "grid": [
+        720,
+        1280
+      ],
+      "third_party_screenshot": false,
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "id": "laptop",
+      "source": "source/components.py and source/actions.py",
+      "interface": "monitor(x,y,w,h,laptop=True)",
+      "format": "Independent SVG elements; named hero raster art only where documented",
+      "shadow": "down-right",
+      "grid": [
+        720,
+        1280
+      ],
+      "third_party_screenshot": false,
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "id": "microphone",
+      "source": "source/components.py and source/actions.py",
+      "interface": "explicit geometry/state in corresponding finite action",
+      "format": "Independent SVG elements; named hero raster art only where documented",
+      "shadow": "down-right",
+      "grid": [
+        720,
+        1280
+      ],
+      "third_party_screenshot": false,
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "id": "models-panel",
+      "source": "source/components.py and source/actions.py",
+      "interface": "explicit geometry/state in corresponding finite action",
+      "format": "Independent SVG elements; named hero raster art only where documented",
+      "shadow": "down-right",
+      "grid": [
+        720,
+        1280
+      ],
+      "third_party_screenshot": false,
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "id": "monitor",
+      "source": "source/components.py and source/actions.py",
+      "interface": "monitor(x,y,w,h,laptop=False)",
+      "format": "Independent SVG elements; named hero raster art only where documented",
+      "shadow": "down-right",
+      "grid": [
+        720,
+        1280
+      ],
+      "third_party_screenshot": false,
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "id": "notes-window",
+      "source": "source/components.py and source/actions.py",
+      "interface": "explicit geometry/state in corresponding finite action",
+      "format": "Independent SVG elements; named hero raster art only where documented",
+      "shadow": "down-right",
+      "grid": [
+        720,
+        1280
+      ],
+      "third_party_screenshot": false,
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "id": "pages",
+      "source": "source/components.py and source/actions.py",
+      "interface": "explicit geometry/state in corresponding finite action",
+      "format": "Independent SVG elements; named hero raster art only where documented",
+      "shadow": "down-right",
+      "grid": [
+        720,
+        1280
+      ],
+      "third_party_screenshot": false,
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "id": "pointer",
+      "source": "source/components.py and source/actions.py",
+      "interface": "explicit geometry/state in corresponding finite action",
+      "format": "Independent SVG elements; named hero raster art only where documented",
+      "shadow": "down-right",
+      "grid": [
+        720,
+        1280
+      ],
+      "third_party_screenshot": false,
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "id": "pricing-table",
+      "source": "source/components.py and source/actions.py",
+      "interface": "pricing(frame,cancel)",
+      "format": "Independent SVG elements; named hero raster art only where documented",
+      "shadow": "down-right",
+      "grid": [
+        720,
+        1280
+      ],
+      "third_party_screenshot": false,
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "id": "progress-ring",
+      "source": "source/components.py and source/actions.py",
+      "interface": "ring(x,y,r,progress,frame,done)",
+      "format": "Independent SVG elements; named hero raster art only where documented",
+      "shadow": "down-right",
+      "grid": [
+        720,
+        1280
+      ],
+      "third_party_screenshot": false,
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "id": "receipts",
+      "source": "source/components.py and source/actions.py",
+      "interface": "receipt(x,y,angle)",
+      "format": "Independent SVG elements; named hero raster art only where documented",
+      "shadow": "down-right",
+      "grid": [
+        720,
+        1280
+      ],
+      "third_party_screenshot": false,
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "id": "repository-card",
+      "source": "source/components.py and source/actions.py",
+      "interface": "explicit geometry/state in corresponding finite action",
+      "format": "Independent SVG elements; named hero raster art only where documented",
+      "shadow": "down-right",
+      "grid": [
+        720,
+        1280
+      ],
+      "third_party_screenshot": false,
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "id": "row-hops",
+      "source": "source/components.py and source/actions.py",
+      "interface": "explicit geometry/state in corresponding finite action",
+      "format": "Independent SVG elements; named hero raster art only where documented",
+      "shadow": "down-right",
+      "grid": [
+        720,
+        1280
+      ],
+      "third_party_screenshot": false,
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "id": "sample-token",
+      "source": "source/components.py and source/actions.py",
+      "interface": "token(x,y,label,scale,angle)",
+      "format": "Independent SVG elements; named hero raster art only where documented",
+      "shadow": "down-right",
+      "grid": [
+        720,
+        1280
+      ],
+      "third_party_screenshot": false,
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "id": "script-scraps",
+      "source": "source/components.py and source/actions.py",
+      "interface": "explicit geometry/state in corresponding finite action",
+      "format": "Independent SVG elements; named hero raster art only where documented",
+      "shadow": "down-right",
+      "grid": [
+        720,
+        1280
+      ],
+      "third_party_screenshot": false,
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "id": "sheet",
+      "source": "source/components.py and source/actions.py",
+      "interface": "explicit geometry/state in corresponding finite action",
+      "format": "Independent SVG elements; named hero raster art only where documented",
+      "shadow": "down-right",
+      "grid": [
+        720,
+        1280
+      ],
+      "third_party_screenshot": false,
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "id": "sound-ribbon",
+      "source": "source/components.py and source/actions.py",
+      "interface": "explicit geometry/state in corresponding finite action",
+      "format": "Independent SVG elements; named hero raster art only where documented",
+      "shadow": "down-right",
+      "grid": [
+        720,
+        1280
+      ],
+      "third_party_screenshot": false,
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "id": "speaker-strips",
+      "source": "source/components.py and source/actions.py",
+      "interface": "transcript(x,y,speaker,color,frame)",
+      "format": "Independent SVG elements; named hero raster art only where documented",
+      "shadow": "down-right",
+      "grid": [
+        720,
+        1280
+      ],
+      "third_party_screenshot": false,
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "id": "star-control",
+      "source": "source/components.py and source/actions.py",
+      "interface": "explicit geometry/state in corresponding finite action",
+      "format": "Independent SVG elements; named hero raster art only where documented",
+      "shadow": "down-right",
+      "grid": [
+        720,
+        1280
+      ],
+      "third_party_screenshot": false,
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "id": "step-list",
+      "source": "source/components.py and source/actions.py",
+      "interface": "workflow-step-hops finite binding",
+      "format": "Independent SVG elements; named hero raster art only where documented",
+      "shadow": "down-right",
+      "grid": [
+        720,
+        1280
+      ],
+      "third_party_screenshot": false,
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "id": "type-field",
+      "source": "source/components.py and source/actions.py",
+      "interface": "explicit geometry/state in corresponding finite action",
+      "format": "Independent SVG elements; named hero raster art only where documented",
+      "shadow": "down-right",
+      "grid": [
+        720,
+        1280
+      ],
+      "third_party_screenshot": false,
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "id": "upload-panel",
+      "source": "source/components.py and source/actions.py",
+      "interface": "explicit geometry/state in corresponding finite action",
+      "format": "Independent SVG elements; named hero raster art only where documented",
+      "shadow": "down-right",
+      "grid": [
+        720,
+        1280
+      ],
+      "third_party_screenshot": false,
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "id": "washer",
+      "source": "source/components.py and source/actions.py",
+      "interface": "explicit geometry/state in corresponding finite action",
+      "format": "Independent SVG elements; named hero raster art only where documented",
+      "shadow": "down-right",
+      "grid": [
+        720,
+        1280
+      ],
+      "third_party_screenshot": false,
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "id": "waveform",
+      "source": "source/components.py and source/actions.py",
+      "interface": "waveform(x,y,w,h,frame,n,reveal,color,phase)",
+      "format": "Independent SVG elements; named hero raster art only where documented",
+      "shadow": "down-right",
+      "grid": [
+        720,
+        1280
+      ],
+      "third_party_screenshot": false,
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "id": "wifi-popover",
+      "source": "source/components.py and source/actions.py",
+      "interface": "wifi-off-local-complete finite binding",
+      "format": "Independent SVG elements; named hero raster art only where documented",
+      "shadow": "down-right",
+      "grid": [
+        720,
+        1280
+      ],
+      "third_party_screenshot": false,
+      "status": "REVIEW_REQUIRED"
+    }
+  ],
+  "revision": "fidelity-v2",
+  "changes": {
+    "materials": "stable varied paper cut profiles, shallow down-right undersides, quieter text fields and contextual wood colors",
+    "devices": "shared cutout rim; explicit worn old-computer casing with vents and plain base",
+    "waveform": "opening active height160 on720x1280 author grid; targeted about75px encoded mobile bar height at1.5s",
+    "sample": "same dark waveform mark on pink token; source waveform collapses before selector transfer",
+    "acting": "existing locked expressions/poses; talking state, strain/relief, feet-anchored compression and antenna follow-through",
+    "chapters": "three page arrivals directly reveal three continuously active chapter waveforms",
+    "offline": "52px central progress fill; completes after Wi-Fi changes to OFF",
+    "ending": "three large waveform app tiles and five smaller satellites; fixed launch trajectories and lifetimes"
+  },
+  "art_provenance": "assets/art-v4/provenance.json",
+  "hero_assets": [
+    {
+      "id": "monitor",
+      "master": "assets/art-v4/monitor.png",
+      "render_derivative": "assets/art-v4/monitor.webp",
+      "format": "unmodified RGBA raster artwork; independent editable SVG content/choreography",
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "id": "washer",
+      "master": "assets/art-v4/washer.png",
+      "render_derivative": "assets/art-v4/washer.webp",
+      "format": "unmodified RGBA raster artwork; independent editable SVG content/choreography",
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "id": "book",
+      "master": "assets/art-v4/book.png",
+      "render_derivative": "assets/art-v4/book.webp",
+      "format": "unmodified RGBA raster artwork; independent editable SVG content/choreography",
+      "status": "REVIEW_REQUIRED"
+    }
+  ],
+  "hero_svg_assets": [
+    "booth acoustic wings",
+    "microphone cable/socket",
+    "stool braces/feet",
+    "die-cut FREE ticket",
+    "vintage device repair/vents",
+    "cat sleeping and startled silhouettes",
+    "menu backing/ledges",
+    "three curled page silhouettes",
+    "library nook",
+    "phone kiosk shell",
+    "awning panels",
+    "waveform output tiles"
+  ]
+}

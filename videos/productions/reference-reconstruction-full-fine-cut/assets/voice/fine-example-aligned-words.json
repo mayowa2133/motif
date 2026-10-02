@@ -1,0 +1,70 @@
+{
+  "method": "Whisper small.en DTW token centers; adjacent center midpoints for word boundaries; local no-flash-attn invocation",
+  "duration": 3.754667,
+  "words": [
+    {
+      "text": "one",
+      "centers": [
+        0.22
+      ],
+      "start": 0.1,
+      "end": 0.42
+    },
+    {
+      "text": "developer",
+      "centers": [
+        0.62
+      ],
+      "start": 0.42,
+      "end": 0.8500000000000001
+    },
+    {
+      "text": "reports",
+      "centers": [
+        1.08
+      ],
+      "start": 0.8500000000000001,
+      "end": 1.31
+    },
+    {
+      "text": "70",
+      "centers": [
+        1.54
+      ],
+      "start": 1.31,
+      "end": 1.81
+    },
+    {
+      "text": "improvements",
+      "centers": [
+        2.08
+      ],
+      "start": 1.81,
+      "end": 2.2800000000000002
+    },
+    {
+      "text": "across",
+      "centers": [
+        2.48
+      ],
+      "start": 2.2800000000000002,
+      "end": 2.6399999999999997
+    },
+    {
+      "text": "three",
+      "centers": [
+        2.8
+      ],
+      "start": 2.6399999999999997,
+      "end": 3.01
+    },
+    {
+      "text": "files.",
+      "centers": [
+        3.22
+      ],
+      "start": 3.01,
+      "end": 3.3400000000000003
+    }
+  ]
+}

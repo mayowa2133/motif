@@ -1,0 +1,10 @@
+{
+  "project": "reference-reconstruction-full-rough",
+  "runtime": "all",
+  "compositions": [],
+  "_meta": {
+    "version": "0.8.99",
+    "latestVersion": "0.8.99",
+    "updateAvailable": false
+  }
+}

@@ -1,0 +1,62 @@
+{
+  "video": "/Users/mayowaadesanya/Projects/motif/videos/productions/voicestudio-art-performance-v3/review/decoded-img-opening.mp4",
+  "method": "FFmpeg actual encoded frames, native material crops; all frames in the stated ranges",
+  "pass": true,
+  "regions": [
+    {
+      "asset": "opening-microphone",
+      "frames_inclusive": [
+        0,
+        75
+      ],
+      "crop_native": [
+        176,
+        340,
+        40,
+        68
+      ],
+      "material": "dark",
+      "minimum_required_pixels": 300,
+      "minimum_observed": 1606,
+      "failed_frames": [],
+      "pass": true
+    },
+    {
+      "asset": "opening-monitor-rim",
+      "frames_inclusive": [
+        0,
+        75
+      ],
+      "crop_native": [
+        41,
+        205,
+        4,
+        75
+      ],
+      "material": "cream",
+      "minimum_required_pixels": 150,
+      "minimum_observed": 300,
+      "failed_frames": [],
+      "pass": true
+    },
+    {
+      "asset": "opening-stool-seat",
+      "frames_inclusive": [
+        0,
+        75
+      ],
+      "crop_native": [
+        80,
+        459,
+        50,
+        5
+      ],
+      "material": "blue",
+      "minimum_required_pixels": 70,
+      "minimum_observed": 250,
+      "failed_frames": [],
+      "pass": true
+    }
+  ],
+  "scope": "physical bitmap presence only"
+}

@@ -3,5 +3,7 @@ __pycache__/
 .DS_Store
 node_modules/
 *.log
+.playwright-cli/
+.hyperframes/
 videos/productions/*-attempt-*/
 videos/productions/*-gate-rejected/

@@ -1,0 +1,50 @@
+[
+  {
+    "beat": "beat-01",
+    "spoken_cue": "A confident answer",
+    "cue_time": 0.08,
+    "complete": 2.08,
+    "action": "snap-open-then-buckle-sample-answer",
+    "contact": "canonical arm endpoints and carried prop share authored finite poses at 30 fps"
+  },
+  {
+    "beat": "beat-02",
+    "spoken_cue": "Before you trust a claim",
+    "cue_time": 2.78,
+    "complete": 6.18,
+    "action": "trace-claim-connector-through-folio",
+    "contact": "canonical arm endpoints and carried prop share authored finite poses at 30 fps"
+  },
+  {
+    "beat": "beat-03",
+    "spoken_cue": "Check what the original",
+    "cue_time": 6.34,
+    "complete": 9.54,
+    "action": "lift-summary-window-to-compare-source",
+    "contact": "canonical arm endpoints and carried prop share authored finite poses at 30 fps"
+  },
+  {
+    "beat": "beat-04",
+    "spoken_cue": "If the evidence is missing",
+    "cue_time": 10.33,
+    "complete": 14.33,
+    "action": "expose-and-preserve-evidence-gap",
+    "contact": "canonical arm endpoints and carried prop share authored finite poses at 30 fps"
+  },
+  {
+    "beat": "beat-05",
+    "spoken_cue": "Then make your decision",
+    "cue_time": 15.8,
+    "complete": 16.95,
+    "action": "place-cautious-decision-bookmark",
+    "contact": "canonical arm endpoints and carried prop share authored finite poses at 30 fps"
+  },
+  {
+    "beat": "beat-06",
+    "spoken_cue": "Useful AI should help",
+    "cue_time": 17.61,
+    "complete": 21.21,
+    "action": "arrange-exploded-support-chain-for-understanding",
+    "contact": "canonical arm endpoints and carried prop share authored finite poses at 30 fps"
+  }
+]

@@ -1,0 +1,79 @@
+{
+  "method": "installed Whisper small.en DTW; no flash attention; adjacent token-center midpoints",
+  "precision": "automatic approximate word boundaries, not phoneme-perfect",
+  "duration": 1.915,
+  "words": [
+    {
+      "text": "and",
+      "centers": [
+        0.1
+      ],
+      "start": 0,
+      "end": 0.14
+    },
+    {
+      "text": "your",
+      "centers": [
+        0.18
+      ],
+      "start": 0.14,
+      "end": 0.31
+    },
+    {
+      "text": "voice",
+      "centers": [
+        0.44
+      ],
+      "start": 0.31,
+      "end": 0.59
+    },
+    {
+      "text": "never",
+      "centers": [
+        0.74
+      ],
+      "start": 0.59,
+      "end": 0.8200000000000001
+    },
+    {
+      "text": "has",
+      "centers": [
+        0.9
+      ],
+      "start": 0.8200000000000001,
+      "end": 0.96
+    },
+    {
+      "text": "to",
+      "centers": [
+        1.02
+      ],
+      "start": 0.96,
+      "end": 1.07
+    },
+    {
+      "text": "get",
+      "centers": [
+        1.12
+      ],
+      "start": 1.07,
+      "end": 1.2400000000000002
+    },
+    {
+      "text": "uploaded",
+      "centers": [
+        1.36
+      ],
+      "start": 1.2400000000000002,
+      "end": 1.57
+    },
+    {
+      "text": "anywhere.",
+      "centers": [
+        1.78
+      ],
+      "start": 1.57,
+      "end": 1.9
+    }
+  ]
+}

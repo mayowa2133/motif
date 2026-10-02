@@ -1,0 +1,51 @@
+{
+  "id": "reconstruction-rough-megaphone",
+  "name": "Megaphone",
+  "category": "prop",
+  "subcategory": "reference-reconstruction",
+  "concepts": [
+    "instruction-audit",
+    "reference-study"
+  ],
+  "keywords": [
+    "paper",
+    "cutout",
+    "megaphone"
+  ],
+  "style": "reference-expressive-v1",
+  "orientation": "front",
+  "dimensions": {
+    "width": 193,
+    "height": 171,
+    "unit": "px"
+  },
+  "artBox": {
+    "x": 0,
+    "y": -83,
+    "width": 193,
+    "height": 171
+  },
+  "anchors": {
+    "grip": {
+      "x": 0.21761658031088082,
+      "y": 0.8245614035087719
+    }
+  },
+  "compatibleCharacters": [
+    "motif-bot"
+  ],
+  "supportedActions": [
+    "amplify"
+  ],
+  "sourceType": "vector",
+  "source": {
+    "file": "videos/productions/reference-reconstruction-full-rough/assets/props/megaphone.svg",
+    "generator": "videos/productions/reference-reconstruction-full-rough/build.py",
+    "reference": "Agent-authored geometry for a mapped source shot; no source prop pixels."
+  },
+  "preview": "videos/productions/reference-reconstruction-full-rough/assets/props/megaphone.svg",
+  "license": "project-original",
+  "status": "review",
+  "presentationStatus": "rough",
+  "version": 1
+}

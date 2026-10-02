@@ -1,0 +1,15 @@
+{
+  "source": "renders/fidelity-pass-01-mobile.mp4",
+  "browser": "local native video review",
+  "view_size": [
+    360,
+    640
+  ],
+  "playback_rate": 1,
+  "ended": true,
+  "duration": 32.866667,
+  "media_error": null,
+  "muted": true,
+  "observed_frames": "menu climb and final CTA during uninterrupted normal playback; all19encoded setup frames separately inspected",
+  "subjective_listening": "pending"
+}

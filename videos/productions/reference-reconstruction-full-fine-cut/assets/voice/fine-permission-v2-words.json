@@ -1,0 +1,38 @@
+[
+  {
+    "text": "Review",
+    "start": 0.04,
+    "end": 0.29,
+    "id": "w0"
+  },
+  {
+    "text": "changes,",
+    "start": 0.35,
+    "end": 0.85,
+    "id": "w1"
+  },
+  {
+    "text": "nothing",
+    "start": 0.85,
+    "end": 1.21,
+    "id": "w2"
+  },
+  {
+    "text": "applies",
+    "start": 1.29,
+    "end": 1.65,
+    "id": "w3"
+  },
+  {
+    "text": "without",
+    "start": 1.65,
+    "end": 2.04,
+    "id": "w4"
+  },
+  {
+    "text": "permission.",
+    "start": 2.04,
+    "end": 2.9,
+    "id": "w5"
+  }
+]

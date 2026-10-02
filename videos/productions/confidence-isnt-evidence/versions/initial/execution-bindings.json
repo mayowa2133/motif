@@ -1,0 +1,242 @@
+[
+  {
+    "beat": "beat-01",
+    "requested_focus": "Unsupported base fold of the SAMPLE answer card",
+    "requested_action": "snap-open-then-buckle-sample-answer",
+    "binding": "fold-catch",
+    "framing": {
+      "camera": {
+        "x": -8.651,
+        "y": -20.161,
+        "scale": 0.985011,
+        "svgOrigin": "0 0"
+      },
+      "target_bounds": [
+        260,
+        650,
+        710,
+        680
+      ],
+      "critical_bounds": [
+        90,
+        650,
+        910,
+        790
+      ],
+      "projected_critical_bounds": [
+        79.99999,
+        620.0961500000001,
+        896.36001,
+        778.15869
+      ],
+      "framing": "detail",
+      "safe_area": [
+        80,
+        400,
+        920,
+        1110
+      ]
+    },
+    "agent_authored_geometry": true
+  },
+  {
+    "beat": "beat-02",
+    "requested_focus": "Connector strip linking the answer card to the folio",
+    "requested_action": "trace-claim-connector-through-folio",
+    "binding": "trace",
+    "framing": {
+      "camera": {
+        "x": -3.28,
+        "y": -39.462,
+        "scale": 0.979766,
+        "svgOrigin": "0 0"
+      },
+      "target_bounds": [
+        340,
+        650,
+        640,
+        730
+      ],
+      "critical_bounds": [
+        85,
+        650,
+        915,
+        790
+      ],
+      "projected_critical_bounds": [
+        80.00011,
+        597.3859,
+        896.48589,
+        774.01514
+      ],
+      "framing": "subject",
+      "safe_area": [
+        80,
+        400,
+        920,
+        1110
+      ]
+    },
+    "agent_authored_geometry": true
+  },
+  {
+    "beat": "beat-03",
+    "requested_focus": "Misaligned WILL/MAY wording window across the two SAMPLE layers",
+    "requested_action": "lift-summary-window-to-compare-source",
+    "binding": "compare",
+    "framing": {
+      "camera": {
+        "x": -69.074,
+        "y": -61.898,
+        "scale": 1.064815,
+        "svgOrigin": "0 0"
+      },
+      "target_bounds": [
+        320,
+        610,
+        650,
+        690
+      ],
+      "critical_bounds": [
+        140,
+        580,
+        840,
+        830
+      ],
+      "projected_critical_bounds": [
+        80.00010000000002,
+        555.6947,
+        894.4446,
+        883.79645
+      ],
+      "framing": "detail",
+      "safe_area": [
+        80,
+        400,
+        920,
+        1110
+      ]
+    },
+    "agent_authored_geometry": true
+  },
+  {
+    "beat": "beat-04",
+    "requested_focus": "Open space between unmatched source and evidence tabs",
+    "requested_action": "expose-and-preserve-evidence-gap",
+    "binding": "gap",
+    "framing": {
+      "camera": {
+        "x": -67.368,
+        "y": -113.421,
+        "scale": 1.052632,
+        "svgOrigin": "0 0"
+      },
+      "target_bounds": [
+        295,
+        690,
+        650,
+        650
+      ],
+      "critical_bounds": [
+        140,
+        650,
+        850,
+        760
+      ],
+      "projected_critical_bounds": [
+        80.00048000000001,
+        570.7898,
+        894.7372,
+        800.00032
+      ],
+      "framing": "detail",
+      "safe_area": [
+        80,
+        400,
+        920,
+        1110
+      ]
+    },
+    "agent_authored_geometry": true
+  },
+  {
+    "beat": "beat-05",
+    "requested_focus": "Decision bookmark placed adjacent to the unresolved evidence gap",
+    "requested_action": "place-cautious-decision-bookmark",
+    "binding": "decision",
+    "framing": {
+      "camera": {
+        "x": -105.308,
+        "y": -184.1,
+        "scale": 1.090047,
+        "svgOrigin": "0 0"
+      },
+      "target_bounds": [
+        310,
+        760,
+        650,
+        570
+      ],
+      "critical_bounds": [
+        170,
+        730,
+        820,
+        700
+      ],
+      "projected_critical_bounds": [
+        79.99998999999998,
+        611.6343099999999,
+        893.83854,
+        763.0329
+      ],
+      "framing": "subject",
+      "safe_area": [
+        80,
+        400,
+        920,
+        1110
+      ]
+    },
+    "agent_authored_geometry": true
+  },
+  {
+    "beat": "beat-06",
+    "requested_focus": "Stepped paper chain with wording comparison and unresolved evidence gap",
+    "requested_action": "arrange-exploded-support-chain-for-understanding",
+    "binding": "explain",
+    "framing": {
+      "camera": {
+        "x": 5.059,
+        "y": -11.82,
+        "scale": 0.981543,
+        "svgOrigin": "0 0"
+      },
+      "target_bounds": [
+        90,
+        480,
+        910,
+        1010
+      ],
+      "critical_bounds": [
+        90,
+        480,
+        910,
+        1010
+      ],
+      "projected_critical_bounds": [
+        93.39787,
+        459.32064,
+        893.2041300000001,
+        991.35843
+      ],
+      "framing": "establish",
+      "safe_area": [
+        80,
+        400,
+        920,
+        1110
+      ]
+    },
+    "agent_authored_geometry": true
+  }
+]

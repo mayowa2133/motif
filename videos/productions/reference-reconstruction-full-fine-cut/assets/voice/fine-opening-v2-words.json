@@ -1,0 +1,98 @@
+[
+  {
+    "text": "The",
+    "start": 0.05,
+    "end": 0.16,
+    "id": "w0"
+  },
+  {
+    "text": "source",
+    "start": 0.22,
+    "end": 0.54,
+    "id": "w1"
+  },
+  {
+    "text": "argues",
+    "start": 0.54,
+    "end": 0.84,
+    "id": "w2"
+  },
+  {
+    "text": "old",
+    "start": 0.9,
+    "end": 1.05,
+    "id": "w3"
+  },
+  {
+    "text": "instructions",
+    "start": 1.08,
+    "end": 1.79,
+    "id": "w4"
+  },
+  {
+    "text": "can",
+    "start": 1.86,
+    "end": 2,
+    "id": "w5"
+  },
+  {
+    "text": "hold",
+    "start": 2.03,
+    "end": 2.18,
+    "id": "w6"
+  },
+  {
+    "text": "newer",
+    "start": 2.24,
+    "end": 2.5,
+    "id": "w7"
+  },
+  {
+    "text": "models",
+    "start": 2.5,
+    "end": 2.8,
+    "id": "w8"
+  },
+  {
+    "text": "back.",
+    "start": 2.93,
+    "end": 3.52,
+    "id": "w9"
+  },
+  {
+    "text": "Rules",
+    "start": 3.57,
+    "end": 3.98,
+    "id": "w10"
+  },
+  {
+    "text": "for",
+    "start": 4.01,
+    "end": 4.3,
+    "id": "w11"
+  },
+  {
+    "text": "retired",
+    "start": 4.3,
+    "end": 4.95,
+    "id": "w12"
+  },
+  {
+    "text": "models",
+    "start": 5.03,
+    "end": 5.58,
+    "id": "w13"
+  },
+  {
+    "text": "pile",
+    "start": 5.58,
+    "end": 5.97,
+    "id": "w14"
+  },
+  {
+    "text": "up.",
+    "start": 5.97,
+    "end": 6.48,
+    "id": "w15"
+  }
+]

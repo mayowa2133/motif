@@ -1,0 +1,136 @@
+{
+  "method": "Whisper small.en DTW token centers; adjacent center midpoints for word boundaries; local no-flash-attn invocation",
+  "duration": 5.674667,
+  "words": [
+    {
+      "text": "Cited",
+      "centers": [
+        0.28,
+        0.46
+      ],
+      "start": 0.16000000000000003,
+      "end": 0.6
+    },
+    {
+      "text": "test",
+      "centers": [
+        0.74
+      ],
+      "start": 0.6,
+      "end": 0.91
+    },
+    {
+      "text": "claims",
+      "centers": [
+        1.08
+      ],
+      "start": 0.91,
+      "end": 1.27
+    },
+    {
+      "text": "9%",
+      "centers": [
+        1.46,
+        1.78
+      ],
+      "start": 1.27,
+      "end": 1.92
+    },
+    {
+      "text": "lower",
+      "centers": [
+        2.06
+      ],
+      "start": 1.92,
+      "end": 2.2199999999999998
+    },
+    {
+      "text": "cost",
+      "centers": [
+        2.38
+      ],
+      "start": 2.2199999999999998,
+      "end": 2.6399999999999997
+    },
+    {
+      "text": "and",
+      "centers": [
+        2.9
+      ],
+      "start": 2.6399999999999997,
+      "end": 3.02
+    },
+    {
+      "text": "roughly",
+      "centers": [
+        3.14
+      ],
+      "start": 3.02,
+      "end": 3.29
+    },
+    {
+      "text": "two",
+      "centers": [
+        3.44
+      ],
+      "start": 3.29,
+      "end": 3.58
+    },
+    {
+      "text": "points",
+      "centers": [
+        3.72
+      ],
+      "start": 3.58,
+      "end": 3.83
+    },
+    {
+      "text": "more",
+      "centers": [
+        3.94
+      ],
+      "start": 3.83,
+      "end": 4.13
+    },
+    {
+      "text": "accuracy",
+      "centers": [
+        4.32
+      ],
+      "start": 4.13,
+      "end": 4.43
+    },
+    {
+      "text": "on",
+      "centers": [
+        4.54
+      ],
+      "start": 4.43,
+      "end": 4.6
+    },
+    {
+      "text": "the",
+      "centers": [
+        4.66
+      ],
+      "start": 4.6,
+      "end": 4.76
+    },
+    {
+      "text": "same",
+      "centers": [
+        4.86
+      ],
+      "start": 4.76,
+      "end": 5.03
+    },
+    {
+      "text": "model.",
+      "centers": [
+        5.2
+      ],
+      "start": 5.03,
+      "end": 5.32
+    }
+  ]
+}

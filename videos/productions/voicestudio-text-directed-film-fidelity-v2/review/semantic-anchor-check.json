@@ -1,0 +1,103 @@
+{
+  "status": "PASS",
+  "scope": "saved local narration DTW anchors and caption onset inside fixed picture windows; not subjective listening approval",
+  "anchors": [
+    {
+      "phrase": "It's called VoiceStudio",
+      "word": "VoiceStudio",
+      "measured_caption_onset": 11.266666666666667,
+      "frame": 338,
+      "picture_shot": 6,
+      "window_frames": [
+        328,
+        350
+      ],
+      "within_window": true
+    },
+    {
+      "phrase": "short clip of",
+      "word": "short",
+      "measured_caption_onset": 12.4,
+      "frame": 372,
+      "picture_shot": 7,
+      "window_frames": [
+        350,
+        400
+      ],
+      "within_window": true
+    },
+    {
+      "phrase": "audiobook",
+      "word": "audiobook",
+      "measured_caption_onset": 18.066666666666666,
+      "frame": 542,
+      "picture_shot": 10,
+      "window_frames": [
+        507,
+        559
+      ],
+      "within_window": true
+    },
+    {
+      "phrase": "types out whatever",
+      "word": "types",
+      "measured_caption_onset": 18.7,
+      "frame": 561,
+      "picture_shot": 11,
+      "window_frames": [
+        559,
+        600
+      ],
+      "within_window": true
+    },
+    {
+      "phrase": "stop paying any",
+      "word": "paying",
+      "measured_caption_onset": 27.066666666666666,
+      "frame": 812,
+      "picture_shot": 16,
+      "window_frames": [
+        790,
+        839
+      ],
+      "within_window": true
+    },
+    {
+      "phrase": "it runs on",
+      "word": "runs",
+      "measured_caption_onset": 28.3,
+      "frame": 849,
+      "picture_shot": 17,
+      "window_frames": [
+        839,
+        878
+      ],
+      "within_window": true
+    },
+    {
+      "phrase": "your voice never",
+      "word": "voice",
+      "measured_caption_onset": 29.566666666666666,
+      "frame": 887,
+      "picture_shot": 18,
+      "window_frames": [
+        878,
+        937
+      ],
+      "within_window": true
+    },
+    {
+      "phrase": "comment Voice",
+      "word": "Voice",
+      "measured_caption_onset": 32.43333333333333,
+      "frame": 973,
+      "picture_shot": 19,
+      "window_frames": [
+        937,
+        986
+      ],
+      "within_window": true
+    }
+  ],
+  "previous_delivery_hashes_unchanged": true
+}

@@ -1,0 +1,76 @@
+{
+  "method": "original local synthesis; no external samples",
+  "music": "none; no permissioned track selected",
+  "assets": [
+    {
+      "id": "hit",
+      "file": "assets/sfx/hit.wav",
+      "duration": 0.19,
+      "source": "original local deterministic signal synthesis",
+      "seed": 2718,
+      "third_party_recording": false,
+      "music": false,
+      "sha256": "c33a5b7e02f4f9914ce9f18c7f14e10da4aa6b8baa349a7cc15fb904305c90cc"
+    },
+    {
+      "id": "rattle",
+      "file": "assets/sfx/rattle.wav",
+      "duration": 0.32,
+      "source": "original local deterministic signal synthesis",
+      "seed": 2719,
+      "third_party_recording": false,
+      "music": false,
+      "sha256": "13539419dcf314e1d42ba9067106c8f2576d17b73e98f8332a1fe9d28a015c4f"
+    },
+    {
+      "id": "catch",
+      "file": "assets/sfx/catch.wav",
+      "duration": 0.16,
+      "source": "original local deterministic signal synthesis",
+      "seed": 2720,
+      "third_party_recording": false,
+      "music": false,
+      "sha256": "ac7212a9d77c6d0f65631593deca42f4e5f6d00ec3f5b4c40b1a487cd83b960d"
+    },
+    {
+      "id": "snap",
+      "file": "assets/sfx/snap.wav",
+      "duration": 0.12,
+      "source": "original local deterministic signal synthesis",
+      "seed": 2721,
+      "third_party_recording": false,
+      "music": false,
+      "sha256": "fd992f7225a1d78c6863853dbbbd8aae9645be6fe082bb703204b35b80d45b89"
+    },
+    {
+      "id": "flick",
+      "file": "assets/sfx/flick.wav",
+      "duration": 0.22,
+      "source": "original local deterministic signal synthesis",
+      "seed": 2722,
+      "third_party_recording": false,
+      "music": false,
+      "sha256": "54e48856424a624e7dd5dc4d14d5ddd38612db2f8c94dc189bc6468a6b88d80b"
+    },
+    {
+      "id": "peel",
+      "file": "assets/sfx/peel.wav",
+      "duration": 0.54,
+      "source": "original local deterministic signal synthesis",
+      "seed": 2723,
+      "third_party_recording": false,
+      "music": false,
+      "sha256": "77e1d5e33b21f672c34d51c2d21240aa8825b6878b7f76f4426842184e9efa16"
+    },
+    {
+      "id": "pop",
+      "file": "assets/sfx/pop.wav",
+      "duration": 0.12,
+      "source": "original local deterministic signal synthesis",
+      "seed": 2724,
+      "third_party_recording": false,
+      "music": false,
+      "sha256": "81c9347224b70a4502998c50aa0d8122f0d54c4b86fc30089c938ea9406b7b0a"
+    }
+  ]
+}

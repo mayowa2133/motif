@@ -1,0 +1,172 @@
+{
+  "video": "/Users/mayowaadesanya/Projects/motif/videos/productions/voicestudio-art-performance-v3/renders/preview-04.mp4",
+  "method": "FFmpeg actual encoded frames, native material crops; all frames in the stated ranges",
+  "pass": false,
+  "regions": [
+    {
+      "asset": "opening-microphone",
+      "frames_inclusive": [
+        0,
+        75
+      ],
+      "crop_native": [
+        176,
+        340,
+        40,
+        68
+      ],
+      "material": "dark",
+      "minimum_required_pixels": 300,
+      "minimum_observed": 80,
+      "failed_frames": [
+        6,
+        12,
+        44,
+        48,
+        55,
+        70
+      ],
+      "pass": false
+    },
+    {
+      "asset": "opening-monitor-rim",
+      "frames_inclusive": [
+        0,
+        75
+      ],
+      "crop_native": [
+        41,
+        205,
+        4,
+        75
+      ],
+      "material": "cream",
+      "minimum_required_pixels": 150,
+      "minimum_observed": 0,
+      "failed_frames": [
+        6,
+        12,
+        44,
+        48,
+        55,
+        70
+      ],
+      "pass": false
+    },
+    {
+      "asset": "opening-stool-seat",
+      "frames_inclusive": [
+        0,
+        75
+      ],
+      "crop_native": [
+        80,
+        459,
+        50,
+        5
+      ],
+      "material": "blue",
+      "minimum_required_pixels": 70,
+      "minimum_observed": 0,
+      "failed_frames": [
+        6,
+        12,
+        44,
+        48,
+        55,
+        70
+      ],
+      "pass": false
+    },
+    {
+      "asset": "desktop-monitor-rim",
+      "frames_inclusive": [
+        207,
+        247
+      ],
+      "crop_native": [
+        67,
+        216,
+        4,
+        88
+      ],
+      "material": "cream",
+      "minimum_required_pixels": 160,
+      "minimum_observed": 0,
+      "failed_frames": [
+        225,
+        227
+      ],
+      "pass": false
+    },
+    {
+      "asset": "vintage-computer-rim",
+      "frames_inclusive": [
+        268,
+        327
+      ],
+      "crop_native": [
+        75,
+        235,
+        6,
+        67
+      ],
+      "material": "cream",
+      "minimum_required_pixels": 170,
+      "minimum_observed": 0,
+      "failed_frames": [
+        281,
+        284,
+        292,
+        322
+      ],
+      "pass": false
+    },
+    {
+      "asset": "basement-stool-seat",
+      "frames_inclusive": [
+        248,
+        327
+      ],
+      "crop_native": [
+        45,
+        445,
+        43,
+        5
+      ],
+      "material": "blue",
+      "minimum_required_pixels": 55,
+      "minimum_observed": 0,
+      "failed_frames": [
+        255,
+        281,
+        284,
+        292,
+        322
+      ],
+      "pass": false
+    },
+    {
+      "asset": "script-monitor-rim",
+      "frames_inclusive": [
+        400,
+        454
+      ],
+      "crop_native": [
+        47,
+        220,
+        3,
+        95
+      ],
+      "material": "cream",
+      "minimum_required_pixels": 135,
+      "minimum_observed": 0,
+      "failed_frames": [
+        405,
+        454
+      ],
+      "pass": false
+    }
+  ],
+  "scope": "physical bitmap presence only"
+}

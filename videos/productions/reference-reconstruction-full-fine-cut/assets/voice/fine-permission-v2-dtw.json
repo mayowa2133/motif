@@ -1,0 +1,185 @@
+{
+	"systeminfo": "WHISPER : VITISAI = 0 | COREML = 0 | OPENVINO = 0 | MTL : EMBED_LIBRARY = 1 | CPU : NEON = 1 | ARM_FMA = 1 | MATMUL_INT8 = 1 | DOTPROD = 1 | ACCELERATE = 1 | OPENMP = 1 | REPACK = 1 | ",
+	"model": {
+		"type": "small",
+		"multilingual": false,
+		"vocab": 51864,
+		"audio": {
+			"ctx": 1500,
+			"state": 768,
+			"head": 12,
+			"layer": 12
+		},
+		"text": {
+			"ctx": 448,
+			"state": 768,
+			"head": 12,
+			"layer": 12
+		},
+		"mels": 80,
+		"ftype": 1
+	},
+	"params": {
+		"model": "/Users/mayowaadesanya/.cache/hyperframes/whisper/models/ggml-small.en.bin",
+		"language": "en",
+		"translate": false
+	},
+	"result": {
+		"language": "en"
+	},
+	"transcription": [
+		{
+			"timestamps": {
+				"from": "00:00:00,000",
+				"to": "00:00:02,900"
+			},
+			"offsets": {
+				"from": 0,
+				"to": 2900
+			},
+			"text": " Review changes, nothing applies without permission.",
+			"tokens": [
+				{
+					"text": "[_BEG_]",
+					"timestamps": {
+						"from": "00:00:00,000",
+						"to": "00:00:00,000"
+					},
+					"offsets": {
+						"from": 0,
+						"to": 0
+					},
+					"id": 50363,
+					"p": 0.996844,
+					"t_dtw": -1
+				},
+				{
+					"text": " Review",
+					"timestamps": {
+						"from": "00:00:00,040",
+						"to": "00:00:00,290"
+					},
+					"offsets": {
+						"from": 40,
+						"to": 290
+					},
+					"id": 6602,
+					"p": 0.743712,
+					"t_dtw": 28
+				},
+				{
+					"text": " changes",
+					"timestamps": {
+						"from": "00:00:00,350",
+						"to": "00:00:00,740"
+					},
+					"offsets": {
+						"from": 350,
+						"to": 740
+					},
+					"id": 2458,
+					"p": 0.809849,
+					"t_dtw": 82
+				},
+				{
+					"text": ",",
+					"timestamps": {
+						"from": "00:00:00,740",
+						"to": "00:00:00,850"
+					},
+					"offsets": {
+						"from": 740,
+						"to": 850
+					},
+					"id": 11,
+					"p": 0.609451,
+					"t_dtw": 110
+				},
+				{
+					"text": " nothing",
+					"timestamps": {
+						"from": "00:00:00,850",
+						"to": "00:00:01,210"
+					},
+					"offsets": {
+						"from": 850,
+						"to": 1210
+					},
+					"id": 2147,
+					"p": 0.988078,
+					"t_dtw": 132
+				},
+				{
+					"text": " applies",
+					"timestamps": {
+						"from": "00:00:01,290",
+						"to": "00:00:01,650"
+					},
+					"offsets": {
+						"from": 1290,
+						"to": 1650
+					},
+					"id": 8991,
+					"p": 0.99859,
+					"t_dtw": 168
+				},
+				{
+					"text": " without",
+					"timestamps": {
+						"from": "00:00:01,650",
+						"to": "00:00:02,040"
+					},
+					"offsets": {
+						"from": 1650,
+						"to": 2040
+					},
+					"id": 1231,
+					"p": 0.998037,
+					"t_dtw": 206
+				},
+				{
+					"text": " permission",
+					"timestamps": {
+						"from": "00:00:02,040",
+						"to": "00:00:02,640"
+					},
+					"offsets": {
+						"from": 2040,
+						"to": 2640
+					},
+					"id": 7170,
+					"p": 0.989231,
+					"t_dtw": 250
+				},
+				{
+					"text": ".",
+					"timestamps": {
+						"from": "00:00:02,900",
+						"to": "00:00:02,900"
+					},
+					"offsets": {
+						"from": 2900,
+						"to": 2900
+					},
+					"id": 13,
+					"p": 0.978172,
+					"t_dtw": 288
+				},
+				{
+					"text": "[_TT_145]",
+					"timestamps": {
+						"from": "00:00:02,900",
+						"to": "00:00:02,900"
+					},
+					"offsets": {
+						"from": 2900,
+						"to": 2900
+					},
+					"id": 50508,
+					"p": 0.0590688,
+					"t_dtw": -1
+				}
+			]
+		}
+	]
+}

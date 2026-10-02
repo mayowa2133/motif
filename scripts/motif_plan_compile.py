@@ -154,6 +154,12 @@ def align(plan, words):
 
 
 def compile_plan(project, plan, words, voice_duration, duration_range):
+    if plan.get('schema_version') == 'text-directed-1.0':
+        from motif_ui_production import compile_ui
+        return compile_ui(project, plan, words, voice_duration)
+    if plan.get('schema_version') == 'script-1.0':
+        from motif_script import compile_script
+        return compile_script(project, plan, words, voice_duration, duration_range)
     spans,alignment=align(plan,words)
     events=[]; initial=[]; actions=[]; sfx=[]; label_timing=[]; framing_trace=[]
     selected = None

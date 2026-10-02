@@ -1,0 +1,157 @@
+{
+	"systeminfo": "WHISPER : VITISAI = 0 | COREML = 0 | OPENVINO = 0 | MTL : EMBED_LIBRARY = 1 | CPU : NEON = 1 | ARM_FMA = 1 | MATMUL_INT8 = 1 | DOTPROD = 1 | ACCELERATE = 1 | OPENMP = 1 | REPACK = 1 | ",
+	"model": {
+		"type": "small",
+		"multilingual": false,
+		"vocab": 51864,
+		"audio": {
+			"ctx": 1500,
+			"state": 768,
+			"head": 12,
+			"layer": 12
+		},
+		"text": {
+			"ctx": 448,
+			"state": 768,
+			"head": 12,
+			"layer": 12
+		},
+		"mels": 80,
+		"ftype": 1
+	},
+	"params": {
+		"model": "/Users/mayowaadesanya/.cache/hyperframes/whisper/models/ggml-small.en.bin",
+		"language": "en",
+		"translate": false
+	},
+	"result": {
+		"language": "en"
+	},
+	"transcription": [
+		{
+			"timestamps": {
+				"from": "00:00:00,000",
+				"to": "00:00:02,200"
+			},
+			"offsets": {
+				"from": 0,
+				"to": 2200
+			},
+			"text": " The takeaway audit your instructions.",
+			"tokens": [
+				{
+					"text": "[_BEG_]",
+					"timestamps": {
+						"from": "00:00:00,000",
+						"to": "00:00:00,000"
+					},
+					"offsets": {
+						"from": 0,
+						"to": 0
+					},
+					"id": 50363,
+					"p": 0.993561,
+					"t_dtw": -1
+				},
+				{
+					"text": " The",
+					"timestamps": {
+						"from": "00:00:00,040",
+						"to": "00:00:00,180"
+					},
+					"offsets": {
+						"from": 40,
+						"to": 180
+					},
+					"id": 383,
+					"p": 0.740947,
+					"t_dtw": 16
+				},
+				{
+					"text": " takeaway",
+					"timestamps": {
+						"from": "00:00:00,220",
+						"to": "00:00:00,690"
+					},
+					"offsets": {
+						"from": 220,
+						"to": 690
+					},
+					"id": 43678,
+					"p": 0.683128,
+					"t_dtw": 58
+				},
+				{
+					"text": " audit",
+					"timestamps": {
+						"from": "00:00:00,690",
+						"to": "00:00:01,000"
+					},
+					"offsets": {
+						"from": 690,
+						"to": 1000
+					},
+					"id": 14984,
+					"p": 0.517807,
+					"t_dtw": 100
+				},
+				{
+					"text": " your",
+					"timestamps": {
+						"from": "00:00:01,000",
+						"to": "00:00:01,250"
+					},
+					"offsets": {
+						"from": 1000,
+						"to": 1250
+					},
+					"id": 534,
+					"p": 0.990318,
+					"t_dtw": 118
+				},
+				{
+					"text": " instructions",
+					"timestamps": {
+						"from": "00:00:01,250",
+						"to": "00:00:01,850"
+					},
+					"offsets": {
+						"from": 1250,
+						"to": 1850
+					},
+					"id": 7729,
+					"p": 0.994844,
+					"t_dtw": 174
+				},
+				{
+					"text": ".",
+					"timestamps": {
+						"from": "00:00:02,040",
+						"to": "00:00:02,130"
+					},
+					"offsets": {
+						"from": 2040,
+						"to": 2130
+					},
+					"id": 13,
+					"p": 0.960516,
+					"t_dtw": 218
+				},
+				{
+					"text": "[_TT_110]",
+					"timestamps": {
+						"from": "00:00:02,200",
+						"to": "00:00:02,200"
+					},
+					"offsets": {
+						"from": 2200,
+						"to": 2200
+					},
+					"id": 50473,
+					"p": 0.104211,
+					"t_dtw": -1
+				}
+			]
+		}
+	]
+}

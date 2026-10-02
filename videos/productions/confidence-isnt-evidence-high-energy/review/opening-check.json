@@ -1,0 +1,242 @@
+
+> check
+> npx --yes hyperframes@0.8.99 check --strict --json
+
+{
+  "ok": false,
+  "strict": true,
+  "lint": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 2,
+    "infoCount": 0,
+    "findings": [
+      {
+        "code": "duplicate_audio_track",
+        "severity": "warning",
+        "message": "Multiple <audio> elements on track 3 overlap (assets/sfx/hit.wav at 0.28-0.5s, assets/sfx/rattle.wav at 0.4-0.7s). This causes layered audio playback.",
+        "selector": "[data-composition-id]",
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Use non-overlapping time windows or different track indices."
+      },
+      {
+        "code": "duplicate_audio_track",
+        "severity": "warning",
+        "message": "Multiple <audio> elements on track 3 overlap (assets/sfx/rattle.wav at 1.31-1.6s, assets/sfx/catch.wav at 1.63-1.8s). This causes layered audio playback.",
+        "selector": "[data-composition-id]",
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Use non-overlapping time windows or different track indices."
+      }
+    ],
+    "filesScanned": 4
+  },
+  "runtime": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 0,
+    "infoCount": 0,
+    "findings": []
+  },
+  "layout": {
+    "ok": false,
+    "errorCount": 4,
+    "warningCount": 0,
+    "infoCount": 0,
+    "findings": [
+      {
+        "code": "content_overlap",
+        "severity": "error",
+        "time": 0.118,
+        "selector": "#energy-01-world > g:nth-of-type(4) > text:nth-of-type(1)",
+        "message": "Two text blocks overlap and may render unreadable.",
+        "rect": {
+          "left": 79.62,
+          "top": 168.59,
+          "right": 227.54,
+          "bottom": 200.2,
+          "width": 147.92,
+          "height": 31.61
+        },
+        "containerSelector": "#energy-01-world > g:nth-of-type(4) > text:nth-of-type(2)",
+        "text": "SAMPLE · ANSWER",
+        "fixHint": "Give each block its own zone, or mark intentional layering with data-layout-allow-overlap.",
+        "dataAttributes": {},
+        "sourceFile": "compositions/energy-01.html",
+        "bbox": {
+          "x": 79.62,
+          "y": 168.59,
+          "width": 147.92,
+          "height": 31.61
+        },
+        "firstSeen": 0.118,
+        "lastSeen": 1.065,
+        "occurrences": 9,
+        "heldMs": 947
+      },
+      {
+        "code": "content_overlap",
+        "severity": "error",
+        "time": 0.118,
+        "selector": "#energy-01-world > g:nth-of-type(4) > text:nth-of-type(2)",
+        "message": "Two text blocks overlap and may render unreadable.",
+        "rect": {
+          "left": 80.62,
+          "top": 190.54,
+          "right": 227.69,
+          "bottom": 250.79,
+          "width": 147.07,
+          "height": 60.25
+        },
+        "containerSelector": "#energy-01-world > g:nth-of-type(4) > text:nth-of-type(3)",
+        "text": "IT WILL",
+        "fixHint": "Give each block its own zone, or mark intentional layering with data-layout-allow-overlap.",
+        "dataAttributes": {},
+        "sourceFile": "compositions/energy-01.html",
+        "bbox": {
+          "x": 80.62,
+          "y": 190.54,
+          "width": 147.07,
+          "height": 60.25
+        },
+        "firstSeen": 0.118,
+        "lastSeen": 1.065,
+        "occurrences": 9,
+        "heldMs": 947
+      },
+      {
+        "code": "content_overlap",
+        "severity": "error",
+        "time": 1.183,
+        "selector": "#energy-02-world > g:nth-of-type(4) > text:nth-of-type(1)",
+        "message": "Two text blocks overlap and may render unreadable.",
+        "rect": {
+          "left": 93.43,
+          "top": 230.05,
+          "right": 241.02,
+          "bottom": 279.19,
+          "width": 147.59,
+          "height": 49.14
+        },
+        "containerSelector": "#energy-02-world > g:nth-of-type(4) > text:nth-of-type(2)",
+        "text": "SAMPLE · ANSWER",
+        "fixHint": "Give each block its own zone, or mark intentional layering with data-layout-allow-overlap.",
+        "dataAttributes": {},
+        "sourceFile": "compositions/energy-02.html",
+        "bbox": {
+          "x": 93.43,
+          "y": 230.05,
+          "width": 147.59,
+          "height": 49.14
+        },
+        "firstSeen": 1.183,
+        "lastSeen": 2.13,
+        "occurrences": 8,
+        "heldMs": 946.9999999999999
+      },
+      {
+        "code": "content_overlap",
+        "severity": "error",
+        "time": 1.183,
+        "selector": "#energy-02-world > g:nth-of-type(4) > text:nth-of-type(2)",
+        "message": "Two text blocks overlap and may render unreadable.",
+        "rect": {
+          "left": 82.05,
+          "top": 251.06,
+          "right": 232.38,
+          "bottom": 327.91,
+          "width": 150.33,
+          "height": 76.85
+        },
+        "containerSelector": "#energy-02-world > g:nth-of-type(4) > text:nth-of-type(3)",
+        "text": "IT WILL",
+        "fixHint": "Give each block its own zone, or mark intentional layering with data-layout-allow-overlap.",
+        "dataAttributes": {},
+        "sourceFile": "compositions/energy-02.html",
+        "bbox": {
+          "x": 82.05,
+          "y": 251.06,
+          "width": 150.33,
+          "height": 76.85
+        },
+        "firstSeen": 1.183,
+        "lastSeen": 2.13,
+        "occurrences": 8,
+        "heldMs": 946.9999999999999
+      }
+    ],
+    "duration": 2.13,
+    "samples": [
+      0.118,
+      0.355,
+      0.592,
+      0.828,
+      1.065,
+      1.302,
+      1.538,
+      1.775,
+      2.012
+    ],
+    "transitionSamples": [],
+    "transitionSamplesDropped": 0,
+    "tolerance": 2,
+    "totalIssueCount": 4,
+    "truncated": false
+  },
+  "motion": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 0,
+    "infoCount": 0,
+    "findings": [],
+    "enabled": false,
+    "samples": 0
+  },
+  "contrast": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 0,
+    "infoCount": 0,
+    "findings": [],
+    "enabled": true,
+    "samples": [
+      0.118,
+      0.592,
+      1.065,
+      1.538,
+      2.012
+    ],
+    "checked": 20,
+    "passed": 20
+  },
+  "hdr": {
+    "autoPromotion": null,
+    "inspection": "available"
+  },
+  "snapshots": {
+    "enabled": false,
+    "files": [],
+    "times": [],
+    "findingFiles": []
+  },
+  "_meta": {
+    "version": "0.8.99",
+    "latestVersion": "0.8.99",
+    "updateAvailable": false
+  }
+}
