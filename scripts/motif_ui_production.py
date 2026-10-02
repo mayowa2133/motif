@@ -140,8 +140,10 @@ def write_composition(project,id_,duration,first,events,defs=''):
  (project/'compositions'/f'{id_}.html').write_text(html);return spec
 
 def compile_ui(project,plan,words,voice_duration):
- from motif_quality import reject_unbound
- reject_unbound(plan)
+ from motif_quality import plan_check,MODE
+ from motif_quality_frames import ui_frame
+ quality_mode=plan.get('quality_mode')==MODE
+ if quality_mode:plan_check(plan)
  from motif_script import prepare_local_assets,write_index
  report=review(plan,read(project/'brief.json'))
  if not report['pass']:raise ValueError('; '.join(report['issues']))
@@ -164,6 +166,7 @@ def compile_ui(project,plan,words,voice_duration):
  scene_renderer=scene;scene_defs=DEFS;caption_renderer=captions_frame
  revision=read(project/'brief.json').get('art_revision')
  if revision in ('art-performance-v3','hero-art-v4'):
+  if quality_mode:raise ValueError('production-scoped art revision needs its own anchor-aware quality adapter; use registered interactive-ui-v1 components')
   import importlib.util,sys
   modules=[]
   prefix='motif_art_v4' if revision=='hero-art-v4' else 'motif_art_v3'
@@ -177,9 +180,12 @@ def compile_ui(project,plan,words,voice_duration):
  ledger=make_sounds(project);cues=[];frames=[];events=[];initial=[];directions=[]
  for shot in plan['shots']:
   number=KINDS.index(shot['kind'])+1;end=(shot['endFrame']-shot['startFrame'])/30;id_=shot['id'];local=[]
-  first=scene_renderer(number,0,shot['headline'],shot['seed'])
+  def paint(f):
+   if not quality_mode:return scene_renderer(number,f,shot['headline'],shot['seed'])
+   return ui_frame(scene_renderer,number,f,shot['headline'],shot['seed'],shot['quality'])[0]
+  first=paint(0)
   for f in range(1,shot['endFrame']-shot['startFrame']):
-   body=scene_renderer(number,f,shot['headline'],shot['seed'])
+   body=paint(f)
    local.append({'time':round(f/30,9),'target':'#'+id_+'-world','action':'SET','params':{'props':{'innerHTML':namespace(body,id_)}}})
   spec=write_composition(project,id_,end,first,local,scene_defs)
   frames.append({'id':id_,'start':shot['startFrame']/30,'duration':end,'source':'compositions/'+id_+'.html'})
@@ -194,6 +200,7 @@ def compile_ui(project,plan,words,voice_duration):
  engine={'schemaVersion':'1.0','durationSec':duration,'fps':30,'initial':initial,'events':events,'shots':frames}
  for name,data in [('scene-events.json',engine),('caption-events.json',groups),('caption-engine-events.json',capspec),('alignment-review.json',alignment),('shot-direction.json',directions),('execution-bindings.json',directions),('audio-plan.json',audio),('pre-render-checks.json',report),('sfx-source-manifest.json',{'assets':ledger,'music':'none; no cleared bed selected'})]:write(project/name,data)
  write_index(project,frames,duration,voice_duration,0)
+ if quality_mode:write(project/'quality-bindings.json',{'mode':MODE,'renderer':'interactive-ui-v1','shots':[{'id':s['id'],'contract':s['quality']} for s in plan['shots']],'contacts':'explicit world anchors resolved after primary, reaction and performance transforms','limitations':'standalone plant/mug/lamp/clock and Bot reactions; attached screen/token/keyboard targets rejected'})
  sources={str(p.relative_to(project)):sha(p) for folder in ['compositions','assets'] for p in (project/folder).rglob('*') if p.is_file()}
  sources.update({n:sha(project/n) for n in ['index.html','caption-events.json','audio-plan.json','style-preset.json']})
  sources.update({str(p.relative_to(project)):sha(p) for p in (project/'source').glob('*.py')})

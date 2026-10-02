@@ -20,3 +20,9 @@ No numeric average. Each gate is PASS, FAIL or NOT_ASSESSED. Any FAIL or missing
 Rough moving previews, with and without captions, must clear both independent critics before final artwork. Final moving QA must clear them again before audio finishing. Technical gates are separate and must also pass. A human must watch and approve the final video; the system never publishes or grants approval.
 
 Readability, canonical geometry, anchors, materials and rights remain governed by `docs/STYLE_BIBLE.md` and `docs/ASSET_SPEC.md`. New artwork or choreography is allowed when explicitly identified as agent-assisted development. Review it before depending on it across shots.
+
+## v1.1 composition and evidence
+
+Art direction selects `environment_mode`: `physical` requires 2–3 meaningful cues; `minimal-isolated` allows zero cues with a nonempty, story-specific `environment_justification`. Critics evaluate the resulting composition, not the number of props. Legacy contracts without a mode normalize to physical.
+
+Declared contacts, landings, handoffs and impacts receive consecutive native windows of six frames before and after the event, clipped at shot boundaries. At most eight meaningful events per shot keep evidence bounded. These augment sparse samples and full-rate pixel traces; final human playback/listening remains required.

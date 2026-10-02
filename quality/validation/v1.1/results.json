@@ -1,0 +1,102 @@
+{
+  "scope": "quality-system hardening fixtures, not an original-film quality guarantee",
+  "live_calls": 4,
+  "temporal": {
+    "physicality": "FAIL correctly detected at frames 91\u201393",
+    "all_consecutive_frames_supplied": true,
+    "sparse_before_contact_after_valid": true,
+    "painted_difference_mean_abs_pixels": {
+      "with_captions": {
+        "25": 0.08211371527777778,
+        "30": 0.08186921296296296,
+        "31": 2.618070023148148,
+        "32": 2.6191999421296295,
+        "33": 2.6198133680555555,
+        "34": 0.07521267361111111
+      },
+      "without_captions": {
+        "25": 0.07793258101851852,
+        "30": 0.07794994212962963,
+        "31": 2.6131467013888887,
+        "32": 2.613052662037037,
+        "33": 2.6139207175925927,
+        "34": 0.06946180555555556
+      }
+    },
+    "gate": "REPLAN_REQUIRED",
+    "other_control_failures": [
+      "art",
+      "composition"
+    ],
+    "reports_sha256": {
+      "story": "3451fe7bb8975a2e2aa9496ba0ff78e2cabb8730a0959a57006017d608e5eb89",
+      "visual": "935da561025b0192658d476835325548b325edd292eb73f558f1eef0e672ee8f"
+    }
+  },
+  "minimal": {
+    "control_all_ten_gates": "PASS in both live critics",
+    "optional_energy_channels": null,
+    "dead_hold_energy": "FAIL",
+    "gate": "REPLAN_REQUIRED",
+    "reports_sha256": {
+      "story": "4954a95245e80b4e76a6b7ce4d995ef00c95ec788c299861a4f00dda8a68d0a0",
+      "visual": "38281553524513face13c381ae55d27d77ae58482980546af1d364c9991d5b68"
+    }
+  },
+  "native_media": {
+    "temporal": {
+      "width": 360,
+      "height": 640,
+      "fps": 30.0,
+      "frames": 120,
+      "duration": 4.0,
+      "sha256": "3113e57a1f882b1f8b09044e6fbcbed84d23ed10c2a70b2c0e49ddd848b9abaa"
+    },
+    "minimal": {
+      "width": 360,
+      "height": 640,
+      "fps": 30.0,
+      "frames": 120,
+      "duration": 4.0,
+      "sha256": "a3a27e44ba60744e66a9923ee579387d27a37b6591ac3581c7e93a8d9fd5b941"
+    }
+  },
+  "bindings": {
+    "ui-focused": {
+      "contacts": 1,
+      "hand_error_native_pixels": 0.0032485717669554436,
+      "svg_sha256": "4f6126d90361cf06d9d72d7b3bf82e0fed43a22a69c7388f7a367679666941d0"
+    },
+    "ui-burdened": {
+      "contacts": 1,
+      "hand_error_native_pixels": 0.004061946679417922,
+      "svg_sha256": "f2b901927330031c66069abdfe9c51086a23dd3a9c044909d15c28b9770d24d7"
+    },
+    "ui-absent": {
+      "contacts": 0,
+      "hand_error_native_pixels": null,
+      "svg_sha256": "63869ff4fdde7d4ad40ac000a11e27afa2c2b6cbd60e4cb5f39e7b78c8f04a0b"
+    },
+    "calm": {
+      "left_error_authoring_pixels": 0.0260041122808671,
+      "right_error_authoring_pixels": 0.0318474048889908
+    },
+    "workshop": {
+      "same_book_constituents": [
+        "job-cover",
+        "job-pages",
+        "job-binding"
+      ],
+      "reaction_target": "workshop-interaction",
+      "performance_channels": "head/face/antenna only",
+      "separate_unsafe_grip_reactions": "rejected",
+      "operative_events_sha256": "94b776752ec0e5a31e8e36ddfae687964f6983b2928d2cfc4b090a280eceb5ea"
+    }
+  },
+  "freeze": {
+    "files_verified": 540,
+    "unchanged": true
+  },
+  "final_human_viewing_listening": "REQUIRED",
+  "publish": false
+}

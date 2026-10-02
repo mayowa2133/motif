@@ -28,7 +28,7 @@ SOURCE_PATHS+=[f'videos/motif-calendar-reel/assets/sfx/{name}.mp3' for name in (
 SOURCE_PATHS+=['videos/motif-calendar-reel/assets/'+n for n in ('gsap.min.js','motion-engine.js','motion-primitives.js')]
 SOURCE_PATHS+=['scripts/motif_workshop.py','scripts/build_workshop_kit.py','schemas/creative-benchmark-concept.schema.json']
 
-SOURCE_PATHS+=['scripts/motif_quality.py','scripts/motif_performance.py','scripts/motif_reaction.py','scripts/motif_asset_quality.py','schemas/shot-contract.schema.json','schemas/story-critic.schema.json','schemas/visual-critic.schema.json','QUALITY_CONTRACT.md','ENERGY_CONTRACT.md','quality/gold/index.json','quality/rubric/gates.json']
+SOURCE_PATHS+=['scripts/motif_quality.py','scripts/motif_quality_frames.py','quality/bindings.json','scripts/motif_performance.py','scripts/motif_reaction.py','scripts/motif_asset_quality.py','schemas/shot-contract.schema.json','schemas/story-critic.schema.json','schemas/visual-critic.schema.json','QUALITY_CONTRACT.md','ENERGY_CONTRACT.md','quality/gold/index.json','quality/rubric/gates.json']
 
 def write(path,value): path.write_text(json.dumps(value,indent=2)+'\n')
 def read(path): return json.loads(path.read_text())
@@ -55,6 +55,11 @@ def model_call(project, name, prompt, schema, config, images=()):
         key='shots' if 'shots' in wire_schema['properties'] else 'beats'
         item=wire_schema['properties'][key]['items']
         item['required']=list(item['properties'])
+        contract=item['properties']['quality']['properties']
+        # Explicit null is structured optionality in live output; stored legacy
+        # plans may omit these keys and are normalized without file mutation.
+        for name in ('energy','art_direction'):
+            contract[name]['required']=list(contract[name]['properties'])
     schema_path=project/(name+'-output-schema.json')
     write(schema_path,wire_schema)
     args=['codex','exec','--ignore-user-config','--ephemeral','--skip-git-repo-check','--sandbox','read-only','--json','--color','never','--output-schema',str(schema_path.resolve()),'-o',str(project/(name+'.json')),'-c','approval_policy="never"','-c','model_reasoning_effort='+json.dumps(config['reasoning_effort'])]

@@ -1,0 +1,10 @@
+{
+  "scope": "two isolated 2-second contact fixtures, not a film",
+  "canonical": "unchanged Motif Bot v1",
+  "sources": {
+    "scripts/build_quality_hardening_fixtures.py": "2597c8eb0ee1ef8ae6535d6e00a747bb20a2d7cf440193eeedde070a6c3f5400",
+    "scripts/motif_ui_components.py": "d89fd134fb73698c0f1f82bdc9dcc99f730815e280ed5ab6b9fc52c4eae4e1a3",
+    "scripts/motif_quality_frames.py": "e5b93084237292dbd78e91ffd157f32d70e13c3b1dd6f8ca41b7b7427ea2a2fb"
+  },
+  "intervention": "withheld expected.json not passed to critics"
+}

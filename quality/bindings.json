@@ -12,6 +12,27 @@
     ],
     "high-energy paper": [
       "bot"
+    ],
+    "interactive-ui-v1": [
+      "bot"
+    ],
+    "workshop": {
+      "targets": [
+        "worker-0",
+        "worker-1",
+        "worker-2",
+        "carrier-bot"
+      ],
+      "states": [
+        "focused",
+        "listening",
+        "talking",
+        "worried"
+      ],
+      "channels": "canonical head, face and antenna; primary arms/grips stay authored"
+    },
+    "calm paper": [
+      "bot"
     ]
   },
   "reaction": {
@@ -37,7 +58,47 @@
       "review-A",
       "review-B"
     ],
-    "high-energy paper": "bot and actual persistent prop names in the selected finite action"
+    "high-energy paper": "bot and actual persistent prop names in the selected finite action",
+    "interactive-ui-v1": [
+      "bot",
+      "plant",
+      "mug",
+      "lamp",
+      "clock"
+    ],
+    "workshop": [
+      "workshop-interaction"
+    ],
+    "calm paper": {
+      "fold-catch": [
+        "bot",
+        "claim"
+      ],
+      "trace": [
+        "bot"
+      ],
+      "compare": [
+        "bot"
+      ],
+      "gap": [
+        "bot",
+        "scrap"
+      ],
+      "decision": [
+        "bot",
+        "bookmark"
+      ],
+      "explain": [
+        "bot",
+        "frame",
+        "bookmark",
+        "summary"
+      ]
+    }
   },
-  "unsupported": "calm paper, workshop and interactive UI need an explicit anchor-aware hook"
+  "unsupported": {
+    "interactive-ui-v1": "screen/token/keyboard/pointer reactions need exposed contact anchors; production-scoped art revisions need explicit adapters",
+    "workshop": "independent gripped prop/worker/tool reactions, absent Bot and whole-body squash need inverse tool-grip choreography; common ensemble response preserves existing contacts",
+    "calm paper": "static support papers, hinge, tab and linked connector/thread reactions need complete anchor mapping"
+  }
 }

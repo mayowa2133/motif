@@ -1,0 +1,19 @@
+{
+  "withheld_from_critics": true,
+  "control": "t01",
+  "intermediate_fault": {
+    "shot": "t02",
+    "frames": [
+      91,
+      92,
+      93
+    ],
+    "gate": "physicality"
+  },
+  "sparse_samples_valid": true,
+  "before_contact_after_local_frames": [
+    25,
+    30,
+    34
+  ]
+}

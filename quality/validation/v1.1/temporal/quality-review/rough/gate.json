@@ -1,0 +1,30 @@
+{
+  "phase": "rough",
+  "status": "REPLAN_REQUIRED",
+  "blocked": [
+    "story: t02: story",
+    "story: t02: cause-effect",
+    "story: t02: continuity",
+    "story: story",
+    "story: cause-effect",
+    "story: continuity",
+    "visual: t01: art",
+    "visual: t01: composition",
+    "visual: t02: physicality",
+    "visual: t02: energy",
+    "visual: t02: art",
+    "visual: t02: composition",
+    "visual: physicality",
+    "visual: energy",
+    "visual: art",
+    "visual: composition"
+  ],
+  "meaningful_repairs": 0,
+  "human_final_approval": "REQUIRED",
+  "publish": false,
+  "report_hashes": {
+    "story": "3451fe7bb8975a2e2aa9496ba0ff78e2cabb8730a0959a57006017d608e5eb89",
+    "visual": "935da561025b0192658d476835325548b325edd292eb73f558f1eef0e672ee8f"
+  },
+  "evidence_sha256": "b486cf042103ac56e6886862b06133d688b1ffb1412b422ca8011f4eb6b7d960"
+}

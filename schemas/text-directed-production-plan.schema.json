@@ -261,11 +261,14 @@
                   "type": "string",
                   "minLength": 1
                 },
-                "minItems": 2,
+                "minItems": 0,
                 "maxItems": 3
               },
               "exit_overlap": {
-                "type": "string",
+                "type": [
+                  "string",
+                  "null"
+                ],
                 "minLength": 1
               },
               "energy": {
@@ -276,28 +279,36 @@
                     "minLength": 1
                   },
                   "character_response": {
-                    "type": "string",
+                    "type": [
+                      "string",
+                      "null"
+                    ],
                     "minLength": 1
                   },
                   "local_reaction": {
-                    "type": "string",
+                    "type": [
+                      "string",
+                      "null"
+                    ],
                     "minLength": 1
                   },
                   "residual_motion": {
-                    "type": "string",
+                    "type": [
+                      "string",
+                      "null"
+                    ],
                     "minLength": 1
                   },
                   "next_action_overlap": {
-                    "type": "string",
+                    "type": [
+                      "string",
+                      "null"
+                    ],
                     "minLength": 1
                   }
                 },
                 "required": [
-                  "dominant_action",
-                  "character_response",
-                  "local_reaction",
-                  "residual_motion",
-                  "next_action_overlap"
+                  "dominant_action"
                 ],
                 "additionalProperties": false
               },
@@ -339,6 +350,20 @@
                   },
                   "intentional_irregularity": {
                     "type": "string",
+                    "minLength": 1
+                  },
+                  "environment_mode": {
+                    "type": "string",
+                    "enum": [
+                      "physical",
+                      "minimal-isolated"
+                    ]
+                  },
+                  "environment_justification": {
+                    "type": [
+                      "string",
+                      "null"
+                    ],
                     "minLength": 1
                   }
                 },

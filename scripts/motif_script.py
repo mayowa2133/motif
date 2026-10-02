@@ -99,8 +99,8 @@ def prepare_local_assets(project):
    if not destination.exists():shutil.copy2(paper.KIT/(name+ext),destination)
 
 def compile_script(project,plan,words,voice_duration,duration_range=None):
- from motif_quality import reject_unbound
- if plan.get('style')!='reference-expressive-high-energy-v1':reject_unbound(plan)
+ from motif_quality import plan_check,MODE
+ if plan.get('quality_mode')==MODE:plan_check(plan)
  if plan.get('style')=='reference-expressive-high-energy-v1':
   from motif_paper_energy import compile_energy
   return compile_energy(project,plan,words,voice_duration)
@@ -121,7 +121,7 @@ def compile_script(project,plan,words,voice_duration,duration_range=None):
  frames=[];allinitial=[];allevents=[];bindings=[];actions=[]
  for i,(beat,span) in enumerate(zip(plan['beats'],spans,strict=True)):
   prefix=beat['id'];kind=beat['actions'][0]['kind'];local=span['actions'][0]['time']-span['start'];end=span['end']-span['start']
-  markup,initial,events,contacts,cam=paper.build_scene(prefix,kind,local,end,beat['framing'],assets)
+  markup,initial,events,contacts,cam=paper.build_scene(prefix,kind,local,end,beat['framing'],assets,beat.get('quality') if plan.get('quality_mode')==MODE else None)
   # Every source SVG ID/reference is namespaced across the assembled page.
   defs=paper.BOT_DEFS.removeprefix('<defs>').removesuffix('</defs>')+paper.SCENE_DEFS.removeprefix('<defs>').removesuffix('</defs>')
   defs+='<pattern id="wallSurface" width="2048" height="2048" patternUnits="userSpaceOnUse"><image href="assets/materials/wall.png" width="2048" height="2048"/></pattern><clipPath id="action-safe"><rect x="80" y="400" width="920" height="1110"/></clipPath>'

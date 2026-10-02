@@ -1,0 +1,146 @@
+{
+  "quality_mode": "motif-gold-v1",
+  "asset_usage": [
+    {
+      "id": "fixture",
+      "scope": "production-specific",
+      "path": "scripts/build_quality_hardening_fixtures.py",
+      "metadata_path": "quality/validation/v1.1/temporal/provenance.json",
+      "agent_assisted": true
+    }
+  ],
+  "shots": [
+    {
+      "id": "t01",
+      "quality": {
+        "purpose": "Hold and inspect one source paper",
+        "hero": "source paper",
+        "primary_action": "Lift source paper and inspect it",
+        "performance": {
+          "state": "focused",
+          "target": "bot"
+        },
+        "before": "Paper rests at lower height",
+        "after": "Source paper is raised and remains held",
+        "focal_target": "source paper",
+        "framing": "subject",
+        "reaction_radius": {
+          "origin": [
+            618,
+            934
+          ],
+          "radius": 200,
+          "duration": 0.6,
+          "targets": [
+            {
+              "id": "plant",
+              "position": [
+                618,
+                934
+              ],
+              "relevance": 1,
+              "amplitude": {
+                "x": 3,
+                "y": 0,
+                "rotation": 2
+              },
+              "delay": 0
+            }
+          ]
+        },
+        "secondary_motion": [],
+        "environment": [
+          "wood-colored wall",
+          "floor"
+        ],
+        "exit_overlap": null,
+        "energy": {
+          "dominant_action": "lift and inspect source paper"
+        },
+        "art_direction": {
+          "hero_object": "hinged pricing placards",
+          "bot_role": "participant",
+          "materials": [
+            "printed paper",
+            "wood shelf"
+          ],
+          "depth_planes": [
+            "tile wall",
+            "pricing placards",
+            "receipts and Bot"
+          ],
+          "composition": "Hero occupies action region; evidence visible without captions",
+          "intentional_irregularity": "asymmetric placards, layered receipts and varied shelf edges"
+        }
+      },
+      "startFrame": 0,
+      "endFrame": 60
+    },
+    {
+      "id": "t02",
+      "quality": {
+        "purpose": "Hold and inspect one source paper",
+        "hero": "source paper",
+        "primary_action": "Lift source paper and inspect it",
+        "performance": {
+          "state": "focused",
+          "target": "bot"
+        },
+        "before": "Paper rests at lower height",
+        "after": "Source paper is raised and remains held",
+        "focal_target": "source paper",
+        "framing": "subject",
+        "reaction_radius": {
+          "origin": [
+            618,
+            934
+          ],
+          "radius": 200,
+          "duration": 0.6,
+          "targets": [
+            {
+              "id": "plant",
+              "position": [
+                618,
+                934
+              ],
+              "relevance": 1,
+              "amplitude": {
+                "x": 3,
+                "y": 0,
+                "rotation": 2
+              },
+              "delay": 0
+            }
+          ]
+        },
+        "secondary_motion": [],
+        "environment": [
+          "wood-colored wall",
+          "floor"
+        ],
+        "exit_overlap": null,
+        "energy": {
+          "dominant_action": "lift and inspect source paper"
+        },
+        "art_direction": {
+          "hero_object": "hinged pricing placards",
+          "bot_role": "participant",
+          "materials": [
+            "printed paper",
+            "wood shelf"
+          ],
+          "depth_planes": [
+            "tile wall",
+            "pricing placards",
+            "receipts and Bot"
+          ],
+          "composition": "Hero occupies action region; evidence visible without captions",
+          "intentional_irregularity": "asymmetric placards, layered receipts and varied shelf edges"
+        }
+      },
+      "startFrame": 60,
+      "endFrame": 120
+    }
+  ]
+}

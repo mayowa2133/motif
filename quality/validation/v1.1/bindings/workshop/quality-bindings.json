@@ -1,0 +1,482 @@
+{
+  "mode": "motif-gold-v1",
+  "shots": [
+    {
+      "id": "dispatch-jobs",
+      "contract": {
+        "purpose": "Show a recurring bill becoming a physical burden",
+        "hero": "hinged pricing placards and accumulating receipts",
+        "primary_action": "Subscribe, then recurring bills arrive",
+        "performance": {
+          "state": "focused",
+          "target": "worker-1"
+        },
+        "before": "No billing receipts",
+        "after": "Receipts accumulate and Bot slumps",
+        "focal_target": "workshop.project",
+        "framing": "subject",
+        "reaction_radius": {
+          "origin": [
+            540,
+            1090
+          ],
+          "radius": 600,
+          "duration": 0.6,
+          "targets": [
+            {
+              "id": "workshop-interaction",
+              "position": [
+                540,
+                1090
+              ],
+              "relevance": 1,
+              "amplitude": {
+                "x": 9,
+                "y": -6,
+                "rotation": 4
+              },
+              "delay": 0
+            }
+          ]
+        },
+        "secondary_motion": [
+          "receipt flutter",
+          "antenna droop"
+        ],
+        "environment": [
+          "tile wall",
+          "receipt shelf"
+        ],
+        "exit_overlap": "Receipt settling carries into next beat",
+        "energy": {
+          "dominant_action": "press subscription control",
+          "character_response": "compress, then carry financial burden",
+          "local_reaction": "control depresses and receipts collect",
+          "residual_motion": "paper settling and antenna droop",
+          "next_action_overlap": "later receipts arrive before earlier ones settle"
+        },
+        "art_direction": {
+          "hero_object": "hinged pricing placards",
+          "bot_role": "participant",
+          "materials": [
+            "printed paper",
+            "wood shelf"
+          ],
+          "depth_planes": [
+            "tile wall",
+            "pricing placards",
+            "receipts and Bot"
+          ],
+          "composition": "Hero occupies action region; evidence visible without captions",
+          "intentional_irregularity": "asymmetric placards, layered receipts and varied shelf edges"
+        }
+      },
+      "span": {
+        "id": "dispatch-jobs",
+        "start": 0.05,
+        "actions": [
+          {
+            "action": {
+              "kind": "workshop.dispatch",
+              "subject": "project",
+              "cue": "splits",
+              "result": "none",
+              "requires": []
+            },
+            "time": 0.69,
+            "script_word_index": 2,
+            "heard_word": "splits"
+          }
+        ],
+        "end": 3.09
+      }
+    },
+    {
+      "id": "parallel-work",
+      "contract": {
+        "purpose": "Show a recurring bill becoming a physical burden",
+        "hero": "hinged pricing placards and accumulating receipts",
+        "primary_action": "Subscribe, then recurring bills arrive",
+        "performance": {
+          "state": "focused",
+          "target": "worker-1"
+        },
+        "before": "No billing receipts",
+        "after": "Receipts accumulate and Bot slumps",
+        "focal_target": "workshop.jobs",
+        "framing": "establish",
+        "reaction_radius": {
+          "origin": [
+            540,
+            1090
+          ],
+          "radius": 600,
+          "duration": 0.6,
+          "targets": [
+            {
+              "id": "workshop-interaction",
+              "position": [
+                540,
+                1090
+              ],
+              "relevance": 1,
+              "amplitude": {
+                "x": 9,
+                "y": -6,
+                "rotation": 4
+              },
+              "delay": 0
+            }
+          ]
+        },
+        "secondary_motion": [
+          "receipt flutter",
+          "antenna droop"
+        ],
+        "environment": [
+          "tile wall",
+          "receipt shelf"
+        ],
+        "exit_overlap": "Receipt settling carries into next beat",
+        "energy": {
+          "dominant_action": "press subscription control",
+          "character_response": "compress, then carry financial burden",
+          "local_reaction": "control depresses and receipts collect",
+          "residual_motion": "paper settling and antenna droop",
+          "next_action_overlap": "later receipts arrive before earlier ones settle"
+        },
+        "art_direction": {
+          "hero_object": "hinged pricing placards",
+          "bot_role": "participant",
+          "materials": [
+            "printed paper",
+            "wood shelf"
+          ],
+          "depth_planes": [
+            "tile wall",
+            "pricing placards",
+            "receipts and Bot"
+          ],
+          "composition": "Hero occupies action region; evidence visible without captions",
+          "intentional_irregularity": "asymmetric placards, layered receipts and varied shelf edges"
+        }
+      },
+      "span": {
+        "id": "parallel-work",
+        "start": 3.09,
+        "actions": [
+          {
+            "action": {
+              "kind": "workshop.work_parallel",
+              "subject": "project",
+              "cue": "work in parallel",
+              "result": "none",
+              "requires": [
+                "jobs-distributed"
+              ]
+            },
+            "time": 3.24,
+            "script_word_index": 10,
+            "heard_word": "work"
+          }
+        ],
+        "end": 7.83
+      }
+    },
+    {
+      "id": "assemble-book",
+      "contract": {
+        "purpose": "Show a recurring bill becoming a physical burden",
+        "hero": "hinged pricing placards and accumulating receipts",
+        "primary_action": "Subscribe, then recurring bills arrive",
+        "performance": {
+          "state": "focused",
+          "target": "worker-1"
+        },
+        "before": "No billing receipts",
+        "after": "Receipts accumulate and Bot slumps",
+        "focal_target": "workshop.assembly",
+        "framing": "detail",
+        "reaction_radius": {
+          "origin": [
+            540,
+            1090
+          ],
+          "radius": 600,
+          "duration": 0.6,
+          "targets": [
+            {
+              "id": "workshop-interaction",
+              "position": [
+                540,
+                1090
+              ],
+              "relevance": 1,
+              "amplitude": {
+                "x": 9,
+                "y": -6,
+                "rotation": 4
+              },
+              "delay": 0
+            }
+          ]
+        },
+        "secondary_motion": [
+          "receipt flutter",
+          "antenna droop"
+        ],
+        "environment": [
+          "tile wall",
+          "receipt shelf"
+        ],
+        "exit_overlap": "Receipt settling carries into next beat",
+        "energy": {
+          "dominant_action": "press subscription control",
+          "character_response": "compress, then carry financial burden",
+          "local_reaction": "control depresses and receipts collect",
+          "residual_motion": "paper settling and antenna droop",
+          "next_action_overlap": "later receipts arrive before earlier ones settle"
+        },
+        "art_direction": {
+          "hero_object": "hinged pricing placards",
+          "bot_role": "participant",
+          "materials": [
+            "printed paper",
+            "wood shelf"
+          ],
+          "depth_planes": [
+            "tile wall",
+            "pricing placards",
+            "receipts and Bot"
+          ],
+          "composition": "Hero occupies action region; evidence visible without captions",
+          "intentional_irregularity": "asymmetric placards, layered receipts and varied shelf edges"
+        }
+      },
+      "span": {
+        "id": "assemble-book",
+        "start": 7.83,
+        "actions": [
+          {
+            "action": {
+              "kind": "workshop.assemble",
+              "subject": "project",
+              "cue": "assemble",
+              "result": "none",
+              "requires": [
+                "jobs-worked"
+              ]
+            },
+            "time": 8.35,
+            "script_word_index": 24,
+            "heard_word": "assemble"
+          }
+        ],
+        "end": 11.53
+      }
+    },
+    {
+      "id": "deliver-book",
+      "contract": {
+        "purpose": "Show a recurring bill becoming a physical burden",
+        "hero": "hinged pricing placards and accumulating receipts",
+        "primary_action": "Subscribe, then recurring bills arrive",
+        "performance": {
+          "state": "focused",
+          "target": "carrier-bot"
+        },
+        "before": "No billing receipts",
+        "after": "Receipts accumulate and Bot slumps",
+        "focal_target": "workshop.delivery",
+        "framing": "subject",
+        "reaction_radius": {
+          "origin": [
+            540,
+            1090
+          ],
+          "radius": 600,
+          "duration": 0.6,
+          "targets": [
+            {
+              "id": "workshop-interaction",
+              "position": [
+                540,
+                1090
+              ],
+              "relevance": 1,
+              "amplitude": {
+                "x": 9,
+                "y": -6,
+                "rotation": 4
+              },
+              "delay": 0
+            }
+          ]
+        },
+        "secondary_motion": [
+          "receipt flutter",
+          "antenna droop"
+        ],
+        "environment": [
+          "tile wall",
+          "receipt shelf"
+        ],
+        "exit_overlap": "Receipt settling carries into next beat",
+        "energy": {
+          "dominant_action": "press subscription control",
+          "character_response": "compress, then carry financial burden",
+          "local_reaction": "control depresses and receipts collect",
+          "residual_motion": "paper settling and antenna droop",
+          "next_action_overlap": "later receipts arrive before earlier ones settle"
+        },
+        "art_direction": {
+          "hero_object": "hinged pricing placards",
+          "bot_role": "participant",
+          "materials": [
+            "printed paper",
+            "wood shelf"
+          ],
+          "depth_planes": [
+            "tile wall",
+            "pricing placards",
+            "receipts and Bot"
+          ],
+          "composition": "Hero occupies action region; evidence visible without captions",
+          "intentional_irregularity": "asymmetric placards, layered receipts and varied shelf edges"
+        }
+      },
+      "span": {
+        "id": "deliver-book",
+        "start": 11.53,
+        "actions": [
+          {
+            "action": {
+              "kind": "workshop.deliver",
+              "subject": "project",
+              "cue": "deliver",
+              "result": "none",
+              "requires": [
+                "book-assembled"
+              ]
+            },
+            "time": 11.68,
+            "script_word_index": 34,
+            "heard_word": "deliver"
+          }
+        ],
+        "end": 16.48
+      }
+    }
+  ],
+  "reactions": [
+    {
+      "id": "workshop-interaction",
+      "interval": [
+        0.69,
+        1.29
+      ],
+      "origin": [
+        540,
+        1090
+      ],
+      "selected_target": {
+        "id": "workshop-interaction",
+        "position": [
+          540,
+          1090
+        ],
+        "relevance": 1,
+        "amplitude": {
+          "x": 9,
+          "y": -6,
+          "rotation": 4
+        },
+        "delay": 0
+      },
+      "beat": "dispatch-jobs"
+    },
+    {
+      "id": "workshop-interaction",
+      "interval": [
+        3.24,
+        3.8400000000000003
+      ],
+      "origin": [
+        540,
+        1090
+      ],
+      "selected_target": {
+        "id": "workshop-interaction",
+        "position": [
+          540,
+          1090
+        ],
+        "relevance": 1,
+        "amplitude": {
+          "x": 9,
+          "y": -6,
+          "rotation": 4
+        },
+        "delay": 0
+      },
+      "beat": "parallel-work"
+    },
+    {
+      "id": "workshop-interaction",
+      "interval": [
+        8.35,
+        8.95
+      ],
+      "origin": [
+        540,
+        1090
+      ],
+      "selected_target": {
+        "id": "workshop-interaction",
+        "position": [
+          540,
+          1090
+        ],
+        "relevance": 1,
+        "amplitude": {
+          "x": 9,
+          "y": -6,
+          "rotation": 4
+        },
+        "delay": 0
+      },
+      "beat": "assemble-book"
+    },
+    {
+      "id": "workshop-interaction",
+      "interval": [
+        11.68,
+        12.28
+      ],
+      "origin": [
+        540,
+        1090
+      ],
+      "selected_target": {
+        "id": "workshop-interaction",
+        "position": [
+          540,
+          1090
+        ],
+        "relevance": 1,
+        "amplitude": {
+          "x": 9,
+          "y": -6,
+          "rotation": 4
+        },
+        "delay": 0
+      },
+      "beat": "deliver-book"
+    }
+  ],
+  "critic_consumers": [
+    "direction",
+    "story",
+    "visual"
+  ]
+}

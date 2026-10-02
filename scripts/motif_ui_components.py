@@ -130,22 +130,34 @@ def plant(x,y,f=0,s=1):
  for i in range(5):
   xx=38+(i-2)*15;yy=-28-(2-abs(i-2))*26;a=(i-2)*18+math.sin(f*.07+i)*3
   b+=path(f'M38 -2Q{xx} -30 {xx} {yy}','#537C58',4)+g(path('M0 0Q-30 -45 0 -50Q30 -35 0 0Z','#547C56',0,'#547C56'),xx,yy+14,a)
- return g(b,x,y,s=s)
+ from motif_quality_frames import prop
+ return prop('plant',g(b,x,y,s=s),x,y,f)
 def mug(x,y,color='#7198A0',s=1):
- return g(path('M45 10Q83 6 76 34Q68 46 47 39',color,8)+rect(0,0,49,58,color,10)+path('M5 4H44','#BACBC7',3)+path('M20 -11Q5 -24 22 -34','#CCC0AC',3),x,y,s=s)
-def lamp(x,y,s=1):return g(path('M0 0L13 18H75L87 0Z',GREEN,2,GREEN)+path('M44 17V100M14 100H76',INK,7),x,y,s=s)
+ from motif_quality_frames import prop,CURRENT
+ f=CURRENT.get()['frame'] if CURRENT.get() else 0
+ return prop('mug',g(path('M45 10Q83 6 76 34Q68 46 47 39',color,8)+rect(0,0,49,58,color,10)+path('M5 4H44','#BACBC7',3)+path('M20 -11Q5 -24 22 -34','#CCC0AC',3),x,y,s=s),x,y,f)
+def lamp(x,y,s=1):
+ from motif_quality_frames import prop,CURRENT
+ f=CURRENT.get()['frame'] if CURRENT.get() else 0
+ return prop('lamp',g(path('M0 0L13 18H75L87 0Z',GREEN,2,GREEN)+path('M44 17V100M14 100H76',INK,7),x,y,s=s),x,y,f)
 def mic(x,y,s=1):
  b=rect(0,0,52,82,'#ABA8A2',25,INK,3)
  for i in range(6):b+=path(f'M5 {15+i*10}H47','#686874',1.4)
  for i in range(5):b+=path(f'M{8+i*9} 11V71','#686874',1.2)
  b+=path('M-7 48V72Q26 109 59 72V48M26 97V155M26 155L-6 185M26 155L58 185',INK,7)
  return g(b,x,y,s=s)
-def clock(x,y,s=1):return g('<circle r="35" fill="'+CREAM+'" stroke="'+EDGE+'" stroke-width="4"/>'+path('M0 0L-12 -15M0 0L23 0',INK,4),x,y,s=s)
+def clock(x,y,s=1):
+ from motif_quality_frames import prop,CURRENT
+ f=CURRENT.get()['frame'] if CURRENT.get() else 0
+ return prop('clock',g('<circle r="35" fill="'+CREAM+'" stroke="'+EDGE+'" stroke-width="4"/>'+path('M0 0L-12 -15M0 0L23 0',INK,4),x,y,s=s),x,y,f)
 @lru_cache(maxsize=512)
 def bot_body(pose,face,head):
  body,parts=assemble_pose(pose,face,{'tilt':0,'body_y':0,'head_tilt':head})
  return re.sub(r'id="[^"]+"','',body).replace('<path ','<path data-layout-ignore ')
 def bot(x,y,f,s=.245,face='happy',pose='standing',angle=0,jitter=True,contact=None,performance=None,impact=0,stretch=1):
+ from motif_quality_frames import puppet
+ quality_body=puppet(x,y,f,s,angle,contact,stretch,impact)
+ if quality_body is not None:return quality_body
  # y is feet level; override hand inverse uses exact same final world transform.
  if jitter:x+=living(f,791,1.0);y+=living(f,802,.8);angle+=living(f,821,.6)
  head=round(math.sin(f*.15)*2)

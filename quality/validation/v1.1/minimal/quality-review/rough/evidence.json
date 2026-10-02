@@ -1,0 +1,347 @@
+{
+  "render_source_hashes": {
+    "/Users/mayowaadesanya/Projects/motif/quality/validation/v1.1/minimal/assets/fonts/EBGaramond-700.woff2": "5d0f8a497a48fd2a3611d07acc844f65c9fbb35419eafa4e1295f5f0f95f86e4",
+    "/Users/mayowaadesanya/Projects/motif/quality/validation/v1.1/minimal/assets/fonts/Inter-700.woff2": "6f56409fd3d64bb85f7d070bce20749db2d66b6d63cec586cc22d1c761be2491",
+    "/Users/mayowaadesanya/Projects/motif/quality/validation/v1.1/minimal/assets/fonts/Inter-900.woff2": "4eee5bf043412480a84a56c48562655acfc60c14a578f7beb48e6a338be20206",
+    "/Users/mayowaadesanya/Projects/motif/quality/validation/v1.1/minimal/assets/fonts/OFL-eb-garamond.txt": "f03c8eda63076cd52317dcd40aa04db8472d4cb592dfaafa385129dfdafc7f9c",
+    "/Users/mayowaadesanya/Projects/motif/quality/validation/v1.1/minimal/assets/fonts/OFL-inter.txt": "3b0a5fca3d17942cde889069889dedbbbd075e9b599968c82a95f4d944e9b345",
+    "/Users/mayowaadesanya/Projects/motif/quality/validation/v1.1/minimal/assets/gsap.min.js": "c174bfce53a729418d57a8ad8625e7247c793a22fef8e2851e3cfa3de9cd8280",
+    "/Users/mayowaadesanya/Projects/motif/quality/validation/v1.1/minimal/assets/materials/wall.png": "895076da1c99659050d444296daf8b21a06bf901c82550bc3333a95627cfc8bb",
+    "/Users/mayowaadesanya/Projects/motif/quality/validation/v1.1/minimal/assets/materials/world-paper.webp": "f672f7d3472007b265c96259bdecd32e7a639db85dc48711dae8ed297ddfd11c",
+    "/Users/mayowaadesanya/Projects/motif/quality/validation/v1.1/minimal/assets/motif-frame-sequence.js": "c296a8f1a06c30187cce60b8418a034088751b8749241ca55a0f0f137063dfff",
+    "/Users/mayowaadesanya/Projects/motif/quality/validation/v1.1/minimal/assets/motion-engine.js": "1a9ce7c2d2038e1da03144852953e521850e58dfaf53bc6ad0e435394bc264a4",
+    "/Users/mayowaadesanya/Projects/motif/quality/validation/v1.1/minimal/assets/motion-primitives.js": "a5e42451d61b0c103ffcd51d0ee3d5edb44cd80023c23f5ecf4a42c32deddb6d",
+    "/Users/mayowaadesanya/Projects/motif/quality/validation/v1.1/minimal/compositions/t01.html": "d02b712d0cd30cc6e4c292093af98b4a36c8d15d0fcab4a106cdbe07f764d8f3",
+    "/Users/mayowaadesanya/Projects/motif/quality/validation/v1.1/minimal/compositions/t02.html": "1c9b787e9298333a98d7003b7e0f5618de7da9032b490f7f63feaa912864e7cc",
+    "/Users/mayowaadesanya/Projects/motif/quality/validation/v1.1/minimal/hyperframes.json": "ad5dadeef78a520800a9e5cdd27a92ff5ac37f11b6a07f611b6b52b9f8c79a17",
+    "/Users/mayowaadesanya/Projects/motif/quality/validation/v1.1/minimal/index.html": "bdc158a9d93594b4e97e56b17e1ce3fdbaff907649b20faf916baa9c20b62bce",
+    "/Users/mayowaadesanya/Projects/motif/quality/validation/v1.1/minimal/package.json": "5db8830b347ddd9f38538fe133ce21074991238918853345abc68db8ced23e12",
+    "/Users/mayowaadesanya/Projects/motif/scripts/build_motif_bot.py": "9623db72a5dae5e2640367f6a6352a4ca36a7783d7a6e2c342050447f64354ad",
+    "/Users/mayowaadesanya/Projects/motif/scripts/build_quality_minimal_checks.py": "f030b5acf988f67ba8270c824200032211f45913fa932c9f0486fedc753645e7",
+    "/Users/mayowaadesanya/Projects/motif/scripts/motif_paper_energy.py": "eebb2abbd00178023184136817a5f24502ffa950dd73fb169c53fedc37306af2",
+    "/Users/mayowaadesanya/Projects/motif/scripts/motif_paper_investigation.py": "4077bb40d4e487e16e8952b0277bc6e18d3cff9fa3ba0aeb3c3878f84ce0eb70",
+    "/Users/mayowaadesanya/Projects/motif/scripts/motif_performance.py": "425bed77d08af9632b08d1233684eec5353d509900e0dde0abad6669e8161710",
+    "/Users/mayowaadesanya/Projects/motif/scripts/motif_plan_compile.py": "c1ce96c3410095128841d0da73dbccf62c99f7cdba08f4bbae22945bbe8744b1",
+    "/Users/mayowaadesanya/Projects/motif/scripts/motif_quality.py": "f2b9c26da8659ddb60daaf8e93ceecb083c4e93d880d796bb2035f9364a14dd9",
+    "/Users/mayowaadesanya/Projects/motif/scripts/motif_quality_frames.py": "e5b93084237292dbd78e91ffd157f32d70e13c3b1dd6f8ca41b7b7427ea2a2fb",
+    "/Users/mayowaadesanya/Projects/motif/scripts/motif_reaction.py": "649cb9a464d45085e6022f5042ba368c436bd042bd6b0568d46d39329ed42a6e",
+    "/Users/mayowaadesanya/Projects/motif/scripts/motif_script.py": "a77aaede025443080727571972be1ac26065d0b26215018e0ba07dacb6d9a90d",
+    "/Users/mayowaadesanya/Projects/motif/scripts/motif_ui_actions.py": "b5c315414e0c05a5a99fa932a0de734101957f96b3a9d7d5b9a5ed437c648ed4",
+    "/Users/mayowaadesanya/Projects/motif/scripts/motif_ui_components.py": "d89fd134fb73698c0f1f82bdc9dcc99f730815e280ed5ab6b9fc52c4eae4e1a3",
+    "/Users/mayowaadesanya/Projects/motif/scripts/motif_ui_production.py": "7cce5aa23f677364992102e7fe0454ce485830d3ebb66056ad3a3602192c8364",
+    "/Users/mayowaadesanya/Projects/motif/scripts/motif_workshop.py": "0b2a514d8f5864163f87b5a1fdab6410fe8f1e4af062a525fc1c8943e097023d"
+  },
+  "phase": "rough",
+  "inspection": "ordered decoded native frames + full-rate pixel motion traces; CLI does not accept video",
+  "plan_sha256": "b7b8464e1339b891c1f06d5d2cb38cb8a5f47c47529c102c717f1ddc152309a9",
+  "events_sha256": "fd2ec4561a65a0e61850f4d3ce9af957f17ca0278f6ffe0ff8e29ed773314ce4",
+  "with_captions": {
+    "video": "/Users/mayowaadesanya/Projects/motif/quality/validation/v1.1/minimal/renders/captions.mp4",
+    "probe": {
+      "width": 360,
+      "height": 640,
+      "fps": 30.0,
+      "frames": 120,
+      "duration": 4.0,
+      "sha256": "a3a27e44ba60744e66a9923ee579387d27a37b6591ac3581c7e93a8d9fd5b941"
+    },
+    "sheets": [
+      "/Users/mayowaadesanya/Projects/motif/quality/validation/v1.1/minimal/quality-review/rough/evidence-captions/t01-ordered.png",
+      "/Users/mayowaadesanya/Projects/motif/quality/validation/v1.1/minimal/quality-review/rough/evidence-captions/t01-native-00000.png",
+      "/Users/mayowaadesanya/Projects/motif/quality/validation/v1.1/minimal/quality-review/rough/evidence-captions/t01-native-00030.png",
+      "/Users/mayowaadesanya/Projects/motif/quality/validation/v1.1/minimal/quality-review/rough/evidence-captions/t01-native-00059.png",
+      "/Users/mayowaadesanya/Projects/motif/quality/validation/v1.1/minimal/quality-review/rough/evidence-captions/t01-event-00-strip-00.png",
+      "/Users/mayowaadesanya/Projects/motif/quality/validation/v1.1/minimal/quality-review/rough/evidence-captions/t01-event-00-strip-01.png",
+      "/Users/mayowaadesanya/Projects/motif/quality/validation/v1.1/minimal/quality-review/rough/evidence-captions/t01-event-00-strip-02.png",
+      "/Users/mayowaadesanya/Projects/motif/quality/validation/v1.1/minimal/quality-review/rough/evidence-captions/t01-event-00-strip-03.png",
+      "/Users/mayowaadesanya/Projects/motif/quality/validation/v1.1/minimal/quality-review/rough/evidence-captions/t02-ordered.png",
+      "/Users/mayowaadesanya/Projects/motif/quality/validation/v1.1/minimal/quality-review/rough/evidence-captions/t02-native-00060.png",
+      "/Users/mayowaadesanya/Projects/motif/quality/validation/v1.1/minimal/quality-review/rough/evidence-captions/t02-native-00090.png",
+      "/Users/mayowaadesanya/Projects/motif/quality/validation/v1.1/minimal/quality-review/rough/evidence-captions/t02-native-00119.png",
+      "/Users/mayowaadesanya/Projects/motif/quality/validation/v1.1/minimal/quality-review/rough/evidence-captions/t02-event-00-strip-00.png",
+      "/Users/mayowaadesanya/Projects/motif/quality/validation/v1.1/minimal/quality-review/rough/evidence-captions/t02-event-00-strip-01.png",
+      "/Users/mayowaadesanya/Projects/motif/quality/validation/v1.1/minimal/quality-review/rough/evidence-captions/t02-event-00-strip-02.png",
+      "/Users/mayowaadesanya/Projects/motif/quality/validation/v1.1/minimal/quality-review/rough/evidence-captions/t02-event-00-strip-03.png"
+    ],
+    "temporal_windows": [
+      {
+        "shot": "t01",
+        "kind": "contact",
+        "contact_frame": 30,
+        "fps": 30.0,
+        "consecutive": true,
+        "frames": [
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30,
+          31,
+          32,
+          33,
+          34,
+          35,
+          36
+        ],
+        "times": [
+          0.8,
+          0.833333,
+          0.866667,
+          0.9,
+          0.933333,
+          0.966667,
+          1.0,
+          1.033333,
+          1.066667,
+          1.1,
+          1.133333,
+          1.166667,
+          1.2
+        ],
+        "strips_in_order": [
+          "/Users/mayowaadesanya/Projects/motif/quality/validation/v1.1/minimal/quality-review/rough/evidence-captions/t01-event-00-strip-00.png",
+          "/Users/mayowaadesanya/Projects/motif/quality/validation/v1.1/minimal/quality-review/rough/evidence-captions/t01-event-00-strip-01.png",
+          "/Users/mayowaadesanya/Projects/motif/quality/validation/v1.1/minimal/quality-review/rough/evidence-captions/t01-event-00-strip-02.png",
+          "/Users/mayowaadesanya/Projects/motif/quality/validation/v1.1/minimal/quality-review/rough/evidence-captions/t01-event-00-strip-03.png"
+        ],
+        "clipped_at_shot_boundary": false
+      },
+      {
+        "shot": "t02",
+        "kind": "contact",
+        "contact_frame": 90,
+        "fps": 30.0,
+        "consecutive": true,
+        "frames": [
+          84,
+          85,
+          86,
+          87,
+          88,
+          89,
+          90,
+          91,
+          92,
+          93,
+          94,
+          95,
+          96
+        ],
+        "times": [
+          2.8,
+          2.833333,
+          2.866667,
+          2.9,
+          2.933333,
+          2.966667,
+          3.0,
+          3.033333,
+          3.066667,
+          3.1,
+          3.133333,
+          3.166667,
+          3.2
+        ],
+        "strips_in_order": [
+          "/Users/mayowaadesanya/Projects/motif/quality/validation/v1.1/minimal/quality-review/rough/evidence-captions/t02-event-00-strip-00.png",
+          "/Users/mayowaadesanya/Projects/motif/quality/validation/v1.1/minimal/quality-review/rough/evidence-captions/t02-event-00-strip-01.png",
+          "/Users/mayowaadesanya/Projects/motif/quality/validation/v1.1/minimal/quality-review/rough/evidence-captions/t02-event-00-strip-02.png",
+          "/Users/mayowaadesanya/Projects/motif/quality/validation/v1.1/minimal/quality-review/rough/evidence-captions/t02-event-00-strip-03.png"
+        ],
+        "clipped_at_shot_boundary": false
+      }
+    ],
+    "motion_trace": "/Users/mayowaadesanya/Projects/motif/quality/validation/v1.1/minimal/quality-review/rough/evidence-captions/motion-trace.json",
+    "trace_sha256": "a6b1ffa4d10a9e4ad6f1a9d0889225bb01e0e79d02af0b7d8f83addaa5dedb9f"
+  },
+  "without_captions": {
+    "video": "/Users/mayowaadesanya/Projects/motif/quality/validation/v1.1/minimal/renders/no-captions.mp4",
+    "probe": {
+      "width": 360,
+      "height": 640,
+      "fps": 30.0,
+      "frames": 120,
+      "duration": 4.0,
+      "sha256": "54a3817e64484c8805de79054884ee2e6dcfd4ddb3fe67065158ccaea0699464"
+    },
+    "sheets": [
+      "/Users/mayowaadesanya/Projects/motif/quality/validation/v1.1/minimal/quality-review/rough/evidence-no-captions/t01-ordered.png",
+      "/Users/mayowaadesanya/Projects/motif/quality/validation/v1.1/minimal/quality-review/rough/evidence-no-captions/t01-native-00000.png",
+      "/Users/mayowaadesanya/Projects/motif/quality/validation/v1.1/minimal/quality-review/rough/evidence-no-captions/t01-native-00030.png",
+      "/Users/mayowaadesanya/Projects/motif/quality/validation/v1.1/minimal/quality-review/rough/evidence-no-captions/t01-native-00059.png",
+      "/Users/mayowaadesanya/Projects/motif/quality/validation/v1.1/minimal/quality-review/rough/evidence-no-captions/t01-event-00-strip-00.png",
+      "/Users/mayowaadesanya/Projects/motif/quality/validation/v1.1/minimal/quality-review/rough/evidence-no-captions/t01-event-00-strip-01.png",
+      "/Users/mayowaadesanya/Projects/motif/quality/validation/v1.1/minimal/quality-review/rough/evidence-no-captions/t01-event-00-strip-02.png",
+      "/Users/mayowaadesanya/Projects/motif/quality/validation/v1.1/minimal/quality-review/rough/evidence-no-captions/t01-event-00-strip-03.png",
+      "/Users/mayowaadesanya/Projects/motif/quality/validation/v1.1/minimal/quality-review/rough/evidence-no-captions/t02-ordered.png",
+      "/Users/mayowaadesanya/Projects/motif/quality/validation/v1.1/minimal/quality-review/rough/evidence-no-captions/t02-native-00060.png",
+      "/Users/mayowaadesanya/Projects/motif/quality/validation/v1.1/minimal/quality-review/rough/evidence-no-captions/t02-native-00090.png",
+      "/Users/mayowaadesanya/Projects/motif/quality/validation/v1.1/minimal/quality-review/rough/evidence-no-captions/t02-native-00119.png",
+      "/Users/mayowaadesanya/Projects/motif/quality/validation/v1.1/minimal/quality-review/rough/evidence-no-captions/t02-event-00-strip-00.png",
+      "/Users/mayowaadesanya/Projects/motif/quality/validation/v1.1/minimal/quality-review/rough/evidence-no-captions/t02-event-00-strip-01.png",
+      "/Users/mayowaadesanya/Projects/motif/quality/validation/v1.1/minimal/quality-review/rough/evidence-no-captions/t02-event-00-strip-02.png",
+      "/Users/mayowaadesanya/Projects/motif/quality/validation/v1.1/minimal/quality-review/rough/evidence-no-captions/t02-event-00-strip-03.png"
+    ],
+    "temporal_windows": [
+      {
+        "shot": "t01",
+        "kind": "contact",
+        "contact_frame": 30,
+        "fps": 30.0,
+        "consecutive": true,
+        "frames": [
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30,
+          31,
+          32,
+          33,
+          34,
+          35,
+          36
+        ],
+        "times": [
+          0.8,
+          0.833333,
+          0.866667,
+          0.9,
+          0.933333,
+          0.966667,
+          1.0,
+          1.033333,
+          1.066667,
+          1.1,
+          1.133333,
+          1.166667,
+          1.2
+        ],
+        "strips_in_order": [
+          "/Users/mayowaadesanya/Projects/motif/quality/validation/v1.1/minimal/quality-review/rough/evidence-no-captions/t01-event-00-strip-00.png",
+          "/Users/mayowaadesanya/Projects/motif/quality/validation/v1.1/minimal/quality-review/rough/evidence-no-captions/t01-event-00-strip-01.png",
+          "/Users/mayowaadesanya/Projects/motif/quality/validation/v1.1/minimal/quality-review/rough/evidence-no-captions/t01-event-00-strip-02.png",
+          "/Users/mayowaadesanya/Projects/motif/quality/validation/v1.1/minimal/quality-review/rough/evidence-no-captions/t01-event-00-strip-03.png"
+        ],
+        "clipped_at_shot_boundary": false
+      },
+      {
+        "shot": "t02",
+        "kind": "contact",
+        "contact_frame": 90,
+        "fps": 30.0,
+        "consecutive": true,
+        "frames": [
+          84,
+          85,
+          86,
+          87,
+          88,
+          89,
+          90,
+          91,
+          92,
+          93,
+          94,
+          95,
+          96
+        ],
+        "times": [
+          2.8,
+          2.833333,
+          2.866667,
+          2.9,
+          2.933333,
+          2.966667,
+          3.0,
+          3.033333,
+          3.066667,
+          3.1,
+          3.133333,
+          3.166667,
+          3.2
+        ],
+        "strips_in_order": [
+          "/Users/mayowaadesanya/Projects/motif/quality/validation/v1.1/minimal/quality-review/rough/evidence-no-captions/t02-event-00-strip-00.png",
+          "/Users/mayowaadesanya/Projects/motif/quality/validation/v1.1/minimal/quality-review/rough/evidence-no-captions/t02-event-00-strip-01.png",
+          "/Users/mayowaadesanya/Projects/motif/quality/validation/v1.1/minimal/quality-review/rough/evidence-no-captions/t02-event-00-strip-02.png",
+          "/Users/mayowaadesanya/Projects/motif/quality/validation/v1.1/minimal/quality-review/rough/evidence-no-captions/t02-event-00-strip-03.png"
+        ],
+        "clipped_at_shot_boundary": false
+      }
+    ],
+    "motion_trace": "/Users/mayowaadesanya/Projects/motif/quality/validation/v1.1/minimal/quality-review/rough/evidence-no-captions/motion-trace.json",
+    "trace_sha256": "d8343d19ca7f67ef9d51bfed5835a362618b68f7bbb56349d8acfdfc7aea04b4"
+  },
+  "shots": [
+    {
+      "id": "t01",
+      "startFrame": 0,
+      "endFrame": 60,
+      "temporal_events": [
+        {
+          "time": 1,
+          "kind": "contact"
+        }
+      ]
+    },
+    {
+      "id": "t02",
+      "startFrame": 60,
+      "endFrame": 120,
+      "temporal_events": [
+        {
+          "time": 3,
+          "kind": "contact"
+        }
+      ]
+    }
+  ],
+  "state_fingerprint": {
+    "version": "1.1",
+    "semantic": {
+      "plan": "b7b8464e1339b891c1f06d5d2cb38cb8a5f47c47529c102c717f1ddc152309a9",
+      "events": "fd2ec4561a65a0e61850f4d3ce9af957f17ca0278f6ffe0ff8e29ed773314ce4"
+    },
+    "render": {
+      "sha256": "45aa37624df9bd489b2f5edc1013e8d047bd141e621be1a992745f55c826670a",
+      "sources": {
+        "/Users/mayowaadesanya/Projects/motif/quality/validation/v1.1/minimal/assets/fonts/EBGaramond-700.woff2": "5d0f8a497a48fd2a3611d07acc844f65c9fbb35419eafa4e1295f5f0f95f86e4",
+        "/Users/mayowaadesanya/Projects/motif/quality/validation/v1.1/minimal/assets/fonts/Inter-700.woff2": "6f56409fd3d64bb85f7d070bce20749db2d66b6d63cec586cc22d1c761be2491",
+        "/Users/mayowaadesanya/Projects/motif/quality/validation/v1.1/minimal/assets/fonts/Inter-900.woff2": "4eee5bf043412480a84a56c48562655acfc60c14a578f7beb48e6a338be20206",
+        "/Users/mayowaadesanya/Projects/motif/quality/validation/v1.1/minimal/assets/fonts/OFL-eb-garamond.txt": "f03c8eda63076cd52317dcd40aa04db8472d4cb592dfaafa385129dfdafc7f9c",
+        "/Users/mayowaadesanya/Projects/motif/quality/validation/v1.1/minimal/assets/fonts/OFL-inter.txt": "3b0a5fca3d17942cde889069889dedbbbd075e9b599968c82a95f4d944e9b345",
+        "/Users/mayowaadesanya/Projects/motif/quality/validation/v1.1/minimal/assets/gsap.min.js": "c174bfce53a729418d57a8ad8625e7247c793a22fef8e2851e3cfa3de9cd8280",
+        "/Users/mayowaadesanya/Projects/motif/quality/validation/v1.1/minimal/assets/materials/wall.png": "895076da1c99659050d444296daf8b21a06bf901c82550bc3333a95627cfc8bb",
+        "/Users/mayowaadesanya/Projects/motif/quality/validation/v1.1/minimal/assets/materials/world-paper.webp": "f672f7d3472007b265c96259bdecd32e7a639db85dc48711dae8ed297ddfd11c",
+        "/Users/mayowaadesanya/Projects/motif/quality/validation/v1.1/minimal/assets/motif-frame-sequence.js": "c296a8f1a06c30187cce60b8418a034088751b8749241ca55a0f0f137063dfff",
+        "/Users/mayowaadesanya/Projects/motif/quality/validation/v1.1/minimal/assets/motion-engine.js": "1a9ce7c2d2038e1da03144852953e521850e58dfaf53bc6ad0e435394bc264a4",
+        "/Users/mayowaadesanya/Projects/motif/quality/validation/v1.1/minimal/assets/motion-primitives.js": "a5e42451d61b0c103ffcd51d0ee3d5edb44cd80023c23f5ecf4a42c32deddb6d",
+        "/Users/mayowaadesanya/Projects/motif/quality/validation/v1.1/minimal/compositions/t01.html": "d02b712d0cd30cc6e4c292093af98b4a36c8d15d0fcab4a106cdbe07f764d8f3",
+        "/Users/mayowaadesanya/Projects/motif/quality/validation/v1.1/minimal/compositions/t02.html": "1c9b787e9298333a98d7003b7e0f5618de7da9032b490f7f63feaa912864e7cc",
+        "/Users/mayowaadesanya/Projects/motif/quality/validation/v1.1/minimal/hyperframes.json": "ad5dadeef78a520800a9e5cdd27a92ff5ac37f11b6a07f611b6b52b9f8c79a17",
+        "/Users/mayowaadesanya/Projects/motif/quality/validation/v1.1/minimal/index.html": "bdc158a9d93594b4e97e56b17e1ce3fdbaff907649b20faf916baa9c20b62bce",
+        "/Users/mayowaadesanya/Projects/motif/quality/validation/v1.1/minimal/package.json": "5db8830b347ddd9f38538fe133ce21074991238918853345abc68db8ced23e12",
+        "/Users/mayowaadesanya/Projects/motif/scripts/build_motif_bot.py": "9623db72a5dae5e2640367f6a6352a4ca36a7783d7a6e2c342050447f64354ad",
+        "/Users/mayowaadesanya/Projects/motif/scripts/build_quality_minimal_checks.py": "f030b5acf988f67ba8270c824200032211f45913fa932c9f0486fedc753645e7",
+        "/Users/mayowaadesanya/Projects/motif/scripts/motif_paper_energy.py": "eebb2abbd00178023184136817a5f24502ffa950dd73fb169c53fedc37306af2",
+        "/Users/mayowaadesanya/Projects/motif/scripts/motif_paper_investigation.py": "4077bb40d4e487e16e8952b0277bc6e18d3cff9fa3ba0aeb3c3878f84ce0eb70",
+        "/Users/mayowaadesanya/Projects/motif/scripts/motif_performance.py": "425bed77d08af9632b08d1233684eec5353d509900e0dde0abad6669e8161710",
+        "/Users/mayowaadesanya/Projects/motif/scripts/motif_plan_compile.py": "c1ce96c3410095128841d0da73dbccf62c99f7cdba08f4bbae22945bbe8744b1",
+        "/Users/mayowaadesanya/Projects/motif/scripts/motif_quality.py": "f2b9c26da8659ddb60daaf8e93ceecb083c4e93d880d796bb2035f9364a14dd9",
+        "/Users/mayowaadesanya/Projects/motif/scripts/motif_quality_frames.py": "e5b93084237292dbd78e91ffd157f32d70e13c3b1dd6f8ca41b7b7427ea2a2fb",
+        "/Users/mayowaadesanya/Projects/motif/scripts/motif_reaction.py": "649cb9a464d45085e6022f5042ba368c436bd042bd6b0568d46d39329ed42a6e",
+        "/Users/mayowaadesanya/Projects/motif/scripts/motif_script.py": "a77aaede025443080727571972be1ac26065d0b26215018e0ba07dacb6d9a90d",
+        "/Users/mayowaadesanya/Projects/motif/scripts/motif_ui_actions.py": "b5c315414e0c05a5a99fa932a0de734101957f96b3a9d7d5b9a5ed437c648ed4",
+        "/Users/mayowaadesanya/Projects/motif/scripts/motif_ui_components.py": "d89fd134fb73698c0f1f82bdc9dcc99f730815e280ed5ab6b9fc52c4eae4e1a3",
+        "/Users/mayowaadesanya/Projects/motif/scripts/motif_ui_production.py": "7cce5aa23f677364992102e7fe0454ce485830d3ebb66056ad3a3602192c8364",
+        "/Users/mayowaadesanya/Projects/motif/scripts/motif_workshop.py": "0b2a514d8f5864163f87b5a1fdab6410fe8f1e4af062a525fc1c8943e097023d"
+      }
+    }
+  },
+  "review_unit": "independent-variants"
+}

@@ -1,0 +1,1 @@
+The project splits, sending three jobs to three Bots. They work in parallel, folding, pressing, and carrying each piece toward shared assembly. The pieces assemble, and three grips press one finished book together. They deliver forward; waiting hands take the finished book's full weight.

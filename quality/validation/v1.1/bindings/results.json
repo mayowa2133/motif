@@ -1,0 +1,32 @@
+{
+  "ui-focused": {
+    "contacts": 1,
+    "hand_error_native_pixels": 0.0032485717669554436,
+    "svg_sha256": "4f6126d90361cf06d9d72d7b3bf82e0fed43a22a69c7388f7a367679666941d0"
+  },
+  "ui-burdened": {
+    "contacts": 1,
+    "hand_error_native_pixels": 0.004061946679417922,
+    "svg_sha256": "f2b901927330031c66069abdfe9c51086a23dd3a9c044909d15c28b9770d24d7"
+  },
+  "ui-absent": {
+    "contacts": 0,
+    "hand_error_native_pixels": null,
+    "svg_sha256": "63869ff4fdde7d4ad40ac000a11e27afa2c2b6cbd60e4cb5f39e7b78c8f04a0b"
+  },
+  "calm": {
+    "left_error_authoring_pixels": 0.0260041122808671,
+    "right_error_authoring_pixels": 0.0318474048889908
+  },
+  "workshop": {
+    "same_book_constituents": [
+      "job-cover",
+      "job-pages",
+      "job-binding"
+    ],
+    "reaction_target": "workshop-interaction",
+    "performance_channels": "head/face/antenna only",
+    "separate_unsafe_grip_reactions": "rejected",
+    "operative_events_sha256": "94b776752ec0e5a31e8e36ddfae687964f6983b2928d2cfc4b090a280eceb5ea"
+  }
+}

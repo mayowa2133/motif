@@ -35,6 +35,8 @@ def world(root,assets,fragment,layer):
     # Reuse the floor's support shadow; its finite viewBox edge is not a new
     # room boundary. The extended plane uses its unchanged color/wood grain.
     props+=layer('workshop-floor',''.join(ET.tostring(n,encoding='unicode') for n in floor if n.tag=='ellipse'),0,1408)
+    # A registered common response preserves every primary tool/grip transform.
+    props+='<g id="workshop-interaction" data-layout-allow-overflow>'
     for i,x in enumerate((30,335,640)):
         _,pieces=assemble_pose('carrying-object','determined',{'l':(417,800,'grip'),'r':(605,800,'grip')})
         for side in ('left','right'):
@@ -70,7 +72,7 @@ def world(root,assets,fragment,layer):
             hands=re.sub(r'id="([^"]+)"',lambda m:f'id="worker-{i}-{m[1]}"',pieces[side+'-hand'])
             props+=layer(f'grip-{i}-{side}',hands,x,740,.4)
     props+=layer('receiving-hands',local_part(root,assets,'receiving-hands','hands'),540,1295,.8)
-    return body+f'<g id="workshop-camera" class="focus-camera" data-layout-allow-overflow>{props}</g>'
+    return body+f'<g id="workshop-camera" class="focus-camera" data-layout-allow-overflow>{props}</g></g>'
 
 def initialize(init):
     init('workshop-camera',x=0,y=0,scale=1,svgOrigin='0 0')

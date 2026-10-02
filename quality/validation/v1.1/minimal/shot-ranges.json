@@ -1,0 +1,24 @@
+[
+  {
+    "id": "t01",
+    "startFrame": 0,
+    "endFrame": 60,
+    "temporal_events": [
+      {
+        "time": 1,
+        "kind": "contact"
+      }
+    ]
+  },
+  {
+    "id": "t02",
+    "startFrame": 60,
+    "endFrame": 120,
+    "temporal_events": [
+      {
+        "time": 3,
+        "kind": "contact"
+      }
+    ]
+  }
+]

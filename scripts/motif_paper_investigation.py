@@ -62,7 +62,7 @@ def camera(kind, framing):
  assert contains(SAFE,project_box(critical,cam),1)
  return {'camera':cam,'target_bounds':box,'critical_bounds':critical,'projected_critical_bounds':project_box(critical,cam),'framing':framing,'safe_area':SAFE}
 
-def build_scene(prefix,kind,action_time,end,framing,assets):
+def build_scene(prefix,kind,action_time,end,framing,assets,quality=None):
  """Build-time finite SVG states compiled as SET/TWEEN through Motif's engine."""
  mode,_,_,_,_,dur=KINDS[kind];dur=min(dur,end-action_time-.12)
  if dur<=.7: raise ValueError('speech leaves insufficient physical-action time: '+kind)
@@ -86,6 +86,34 @@ def build_scene(prefix,kind,action_time,end,framing,assets):
    value+=unique(a+h,prefix+'-arm')
   return put(value,bx,by,bs)
  def frame(t,poses,left=None,right=None):
+  if quality:
+   from motif_quality_frames import response
+   from motif_reaction import matrix,compose,point as transform_point,inverse_point
+   from motif_performance import render,channels
+   q={**quality,'_cue_time':action_time};selected={v['id'] for v in q['reaction_radius']['targets']}
+   safe={'fold-catch':{'claim'},'trace':set(),'compare':set(),'gap':{'scrap'},'decision':{'bookmark'},'explain':{'frame','bookmark','summary'}}[mode]|{'bot'}
+   if selected-safe:raise ValueError('unsafe/static/linked calm paper reaction target; finite carried anchors required: '+str(sorted(selected-safe)))
+   if q['performance']['state']!='absent' and q['performance']['target']!='bot':raise ValueError('calm paper performance target must be bot')
+   # Remap authored world contacts through the selected prop's outer response.
+   hands=[left,right]
+   owners={'fold-catch':('claim','claim'),'trace':(None,'source'),'compare':(None,'summary'),'gap':(None,'scrap'),'decision':(None,'bookmark'),'explain':('frame','source')}[mode]
+   for name,value in poses.items():
+    asset,x,y,s,a,*extra=value;v=response(q,name,(x,y),t)
+    outer=compose(matrix(x+v['x'],y+v['y'],v['rotation']),matrix(-x,-y))
+    for index,hand in enumerate(hands):
+     if hand is not None and owners[index]==name:hands[index]=transform_point(outer,hand)
+    body=put(assets[asset],x,y,s,a,extra[0] if extra else 1)
+    at(t,name,innerHTML=f'<g data-quality-reaction="{name}" transform="matrix({" ".join(map(str,outer))})">{body}</g>')
+   state=q['performance']['state']
+   if state=='absent':
+    if 'bot' in selected:raise ValueError('absent Bot cannot react')
+    at(t,'bot',innerHTML='');at(t,'arms',innerHTML='');return
+   c=channels(state,max(0,t-action_time));v=response(q,'bot',(bx,by),t)
+   main=compose(matrix(bx+v['x'],by+v['y'],v['rotation']),matrix(sx=bs,sy=bs))
+   pose=compose(matrix(512,904,c['angle'],1/math.sqrt(c['sy']),math.sqrt(c['sy'])),matrix(-512,-904))
+   total=compose(main,pose);grips={side:{'prop_transform':matrix(),'anchor':hand,'puppet_transform':total} for side,hand in zip(('l','r'),hands) if hand is not None}
+   at(t,'bot',innerHTML=f'<g transform="matrix({" ".join(map(str,main))})">{render(state,max(0,t-action_time),grips)}</g>')
+   at(t,'arms',innerHTML='');return
   for name,value in poses.items():
    asset,x,y,s,a,*extra=value
    at(t,name,innerHTML=put(assets[asset],x,y,s,a,extra[0] if extra else 1))

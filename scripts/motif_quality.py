@@ -10,6 +10,43 @@ MODE='motif-gold-v1'
 def read(p):return json.loads(Path(p).read_text())
 def write(p,v):Path(p).parent.mkdir(parents=True,exist_ok=True);Path(p).write_text(json.dumps(v,indent=2)+'\n')
 def sha(p):return hashlib.sha256(Path(p).read_bytes()).hexdigest()
+def normalize_contract(q):
+    """Read legacy v1 contracts without rewriting their approved source bytes."""
+    q=copy.deepcopy(q)
+    for k in ('character_response','local_reaction','residual_motion','next_action_overlap'):q['energy'].setdefault(k,None)
+    q['art_direction'].setdefault('environment_mode','physical')
+    q['art_direction'].setdefault('environment_justification',None)
+    return q
+
+def render_sources(project):
+    """Audited inputs, not generated evidence, exports, caches or wall clocks."""
+    project=Path(project).resolve();files=set()
+    for folder in ('assets','compositions','source','styles'):
+        files.update(p for p in (project/folder).rglob('*') if p.is_file() and '__pycache__' not in p.parts and p.suffix not in ('.pyc','.log'))
+    files.update(p for p in project.iterdir() if p.is_file() and p.suffix in ('.html','.css','.js','.svg'))
+    for name in ('style-preset.json','hyperframes.json','package.json','audio-plan.json','caption-events.json','quality-bindings.json'):
+        if (project/name).is_file():files.add(project/name)
+    plan=read(project/'production-plan.json')
+    for asset in plan.get('asset_usage',[]):
+        p=ROOT/asset['path']
+        if p.is_file():files.add(p.resolve())
+    # Shared renderer code also determines the paint of ordinary productions.
+    for name in ('motif_quality','motif_quality_frames','motif_performance','motif_reaction','motif_plan_compile','motif_workshop','motif_script','motif_paper_investigation','motif_paper_energy','motif_ui_production','motif_ui_actions','motif_ui_components','build_motif_bot'):
+        p=ROOT/'scripts'/(name+'.py')
+        if p.exists():files.add(p)
+    return {str(p.resolve()):sha(p) for p in sorted(files)}
+
+def state_fingerprint(project):
+    semantic={'plan':sha(project/'production-plan.json'),'events':sha(project/'scene-events.json')}
+    sources=render_sources(project)
+    digest=hashlib.sha256(json.dumps(sources,sort_keys=True,separators=(',',':')).encode()).hexdigest()
+    return {'version':'1.1','semantic':semantic,'render':{'sha256':digest,'sources':sources}}
+
+def source_freshness(project,manifest):
+    if 'state_fingerprint' in manifest:
+        return [] if state_fingerprint(project)==manifest['state_fingerprint'] else ['reviewed semantic/render fingerprint changed; resample and re-critique']
+    # Existing audited v1 records retain their exact hashed manifests.
+    return ['render source changed: '+p for p,h in manifest.get('render_source_hashes',{}).items() if not Path(p).exists() or sha(p)!=h]
 def cmd(args,cwd=None):
     p=subprocess.run([str(x) for x in args],cwd=cwd,text=True,capture_output=True)
     if p.returncode:raise ValueError('command failed: '+str(args[:3])+'\n'+p.stderr[-2000:])
@@ -29,7 +66,7 @@ def retrieve(tags,count=3):
 
 def planning_context(text):
     examples=retrieve([text,'performance','physical-ui'])
-    return '\n\nMANDATORY QUALITY MODE: set quality_mode to motif-gold-v1. Record asset_usage scopes (reused, production-specific, candidate-reusable, canonical-promoted), paths, metadata paths and explicit agent_assisted additions. Each beat/shot must have quality matching schemas/shot-contract.schema.json. All fields enter the pre-animation direction critic. Focus/framing and performance/reaction channels compile only through registered capabilities. Do not invent selectors. Calendar/arena and high-energy paper support named performance; other attached frame renderers need an anchor-aware hook and stop explicitly when unsupported. An absent Bot is valid only if absent in art direction. The director may request agent-assisted additions rather than force inappropriate reuse. No final artwork before moving rough critics pass.\n'+(ROOT/'QUALITY_CONTRACT.md').read_text()+'\n'+(ROOT/'ENERGY_CONTRACT.md').read_text()+'\nREGISTERED QUALITY BINDINGS: '+json.dumps(read(ROOT/'quality/bindings.json'))+'\nSHOT CONTRACT: '+json.dumps(read(ROOT/'schemas/shot-contract.schema.json'))+'\nRETRIEVED BEHAVIORAL EXAMPLES (not plot/pixel templates): '+json.dumps(examples)
+    return '\n\nMANDATORY QUALITY MODE: set quality_mode to motif-gold-v1. Record asset_usage scopes (reused, production-specific, candidate-reusable, canonical-promoted), paths, metadata paths and explicit agent_assisted additions. Each beat/shot must have quality matching schemas/shot-contract.schema.json. All fields enter the pre-animation direction critic. Focus/framing and performance/reaction channels compile only through registered capabilities. Do not invent selectors. Use the registered calendar/arena, paper, workshop and interactive UI capabilities and respect their documented limits. Optional energy channels may be null or omitted; never invent filler motion. Choose physical or justified minimal-isolated environment explicitly. An absent Bot is valid only if absent in art direction. The director may request agent-assisted additions rather than force inappropriate reuse. No final artwork before moving rough critics pass.\n'+(ROOT/'QUALITY_CONTRACT.md').read_text()+'\n'+(ROOT/'ENERGY_CONTRACT.md').read_text()+'\nREGISTERED QUALITY BINDINGS: '+json.dumps(read(ROOT/'quality/bindings.json'))+'\nSHOT CONTRACT: '+json.dumps(read(ROOT/'schemas/shot-contract.schema.json'))+'\nRETRIEVED BEHAVIORAL EXAMPLES (not plot/pixel templates): '+json.dumps(examples)
 
 def plan_check(plan):
     if plan.get('quality_mode')!=MODE:raise ValueError('explicit motif-gold-v1 plan required')
@@ -42,11 +79,17 @@ def plan_check(plan):
             transition({**meta,'state':'REVIEW','scope':'candidate-reusable'},path,'CANONICAL',meta.get('promotion_review'))
     key='shots' if 'shots' in plan else 'beats';schema=read(ROOT/'schemas/shot-contract.schema.json')
     for beat in plan[key]:
-        q=beat.get('quality');Draft202012Validator(schema).validate(q)
+        q=normalize_contract(beat.get('quality'));Draft202012Validator(schema).validate(q)
+        art=q['art_direction']
+        if art['environment_mode']=='physical' and len(q['environment'])<2:raise ValueError('physical environment needs 2–3 meaningful cues')
+        if art['environment_mode']=='minimal-isolated' and not art['environment_justification']:raise ValueError('minimal composition requires a story-specific justification')
+        for value in q['energy'].values():
+            if isinstance(value,str) and value.strip().lower() in ('none','not applicable','no reaction','n/a'):raise ValueError('use null or omit optional energy; dummy text is not direction')
         if 'focus_target' in beat and q['focal_target']!=beat['focus_target']:raise ValueError('quality focal_target must bind existing focus_target')
         if 'framing' in beat and q['framing']!=beat['framing']:raise ValueError('quality framing must bind existing framing')
         if q['performance']['state']=='absent':
             if q['performance']['target'] or q['art_direction']['bot_role']!='absent':raise ValueError('absent Bot requires no target and absent role')
+            # Legacy plans may describe an absent response; new optional contracts need none.
         elif not q['performance']['target'] or q['art_direction']['bot_role']=='absent':raise ValueError('participating Bot needs target and role')
     return {'status':'DIRECTION_REVIEW_REQUIRED','shots':len(plan[key]),'scope':'schema and binding consistency; no painted approval'}
 
@@ -75,7 +118,7 @@ def apply_bindings(project,plan,spans):
     """Decorator for the existing static calendar/arena compiler and event engine."""
     if plan.get('quality_mode')!=MODE:return
     plan_check(plan)
-    if plan.get('environment') not in ('calendar','arena'):
+    if plan.get('environment') not in ('calendar','arena','workshop'):
         raise ValueError('agent-assisted anchor-aware quality binding required for this renderer; fields cannot be silently ignored')
     spec=read(project/'scene-events.json');html=(project/'index.html').read_text();wrapped=set();trace=[]
     spans=copy.deepcopy(spans)
@@ -85,15 +128,28 @@ def apply_bindings(project,plan,spans):
     targets={'bot','opening','existing','proposed','committed','decision','decision-result','finger'} if plan['environment']=='calendar' else {'pair-bot','close-A-bot','close-B-bot','review-bot','receiver','pair-A','pair-B','close-A','close-B','review-A','review-B'}
     # Human finger has contacts; moving it without recomputing contacts is explicitly forbidden.
     targets.discard('finger')
+    workshop=plan['environment']=='workshop'
+    if workshop:
+        prefixes=['worker-0','worker-1','worker-2','carrier-bot']
+        targets={'workshop-interaction'}
     for b,s in zip(plan['beats'],spans,strict=True):
         q=b['quality'];start=s['start'];end=s['end'];cue=s['actions'][0]['time'] if s['actions'] else start
         state=q['performance']['state'];prefix=q['performance']['target']
+        if workshop and state=='absent':raise ValueError('workshop absent Bot needs separate grip/actor visibility choreography; unsupported')
         if state!='absent':
             if prefix not in prefixes:raise ValueError('unregistered performance target: '+prefix)
+            if workshop and state not in ('focused','listening','talking','worried'):raise ValueError('workshop supports focused/listening/talking/worried head acting; whole-body performance needs inverse tool-grip choreography')
             for n in range(math.ceil(start*30),math.ceil(end*30)):
                 t=n/30;body=render(state,max(0,t-cue))
-                for face in ('thinking','pointing','presenting','happy'):
-                    spec['events'].append({'time':t,'target':'#'+prefix+'-'+face,'action':'SET','params':{'props':{'innerHTML':body}}})
+                if workshop:
+                    import xml.etree.ElementTree as ET
+                    tree=ET.fromstring(body);head=next(node for node in tree.iter() if node.attrib.get('data-part')=='head')
+                    head_body=ET.tostring(head,encoding='unicode')
+                    target='carrier-head' if prefix=='carrier-bot' else prefix+'-head'
+                    spec['events'].append({'time':t,'target':'#'+target,'action':'SET','params':{'props':{'innerHTML':head_body}}})
+                else:
+                    for face in ('thinking','pointing','presenting','happy'):
+                        spec['events'].append({'time':t,'target':'#'+prefix+'-'+face,'action':'SET','params':{'props':{'innerHTML':body}}})
         r=q['reaction_radius']
         for target in r['targets']:
             id_=target['id'];wrapper='quality-reaction-'+id_
@@ -155,7 +211,7 @@ def evidence(video,out,shots):
     if (info['width'],info['height'])!=(360,640):raise ValueError('critic requires native 360×640 media')
     out.mkdir(parents=True,exist_ok=False)
     cmd(['ffmpeg','-v','error','-i',video,'-fps_mode','passthrough',out/'f-%05d.png'])
-    files=sorted(out.glob('f-*.png'));images=[];trace=[];prev=None;unchanged=0;longest=0
+    files=sorted(out.glob('f-*.png'));images=[];windows=[];trace=[];prev=None;unchanged=0;longest=0
     for i,p in enumerate(files):
         with Image.open(p) as im:crop=np.asarray(im.convert('RGB'))[140:510].astype('int16')
         mad=None if prev is None else float(np.abs(crop-prev).mean());prev=crop
@@ -166,7 +222,12 @@ def evidence(video,out,shots):
         if end<=start:raise ValueError('invalid shot evidence range')
         # Eight evenly-spaced images plus declared contacts, shown at native pixel dimensions.
         indices=set(round(start+(end-start-1)*i/7) for i in range(8))
-        indices.update(int(t*info['fps']) for t in shot.get('contacts',[]) if start<=int(t*info['fps'])<end)
+        events=[{'time':t,'kind':'contact'} if isinstance(t,(int,float)) else t for t in shot.get('contacts',[])]
+        events+=shot.get('temporal_events',[])
+        if len(events)>8:raise ValueError('declare at most eight meaningful temporal events per shot')
+        for event in events:
+            if event.get('kind') not in ('contact','landing','handoff','impact'):raise ValueError('unsupported temporal event kind')
+        indices.update(round(e['time']*info['fps']) for e in events if start<=round(e['time']*info['fps'])<end)
         indices=sorted(indices);sheet=Image.new('RGB',(360*4,668*math.ceil(len(indices)/4)), '#eee5d5');d=ImageDraw.Draw(sheet)
         for k,i in enumerate(indices):
             with Image.open(files[i]) as im:sheet.paste(im.convert('RGB'),((k%4)*360,(k//4)*668+28))
@@ -175,19 +236,33 @@ def evidence(video,out,shots):
         # Individual native frames avoid losing silhouette detail in a large sheet.
         for index in sorted({indices[0],indices[len(indices)//2],indices[-1]}):
             path=out/(shot['id']+f'-native-{index:05d}.png');shutil.copyfile(files[index],path);images.append(path)
+        for event_no,event in enumerate(events):
+            contact=round(event['time']*info['fps'])
+            if not start<=contact<end:raise ValueError('temporal event outside shot')
+            consecutive=list(range(max(start,contact-6),min(end,contact+7)))
+            strips=[]
+            # Short rows preserve native cell size and explicit consecutive order.
+            for offset in range(0,len(consecutive),4):
+                row=consecutive[offset:offset+4];strip=Image.new('RGB',(360*len(row),668),'#eee5d5');draw=ImageDraw.Draw(strip)
+                for k,index in enumerate(row):
+                    with Image.open(files[index]) as im:strip.paste(im.convert('RGB'),(k*360,28))
+                    label=f'{shot["id"]} {event["kind"]} f{index} {index/info["fps"]:.3f}s ({index-contact:+d})'
+                    draw.text((k*360+4,7),label,fill='#202c32')
+                path=out/f'{shot["id"]}-event-{event_no:02d}-strip-{offset//4:02d}.png';strip.save(path);images.append(path);strips.append(str(path))
+            windows.append({'shot':shot['id'],'kind':event['kind'],'contact_frame':contact,'fps':info['fps'],'consecutive':True,'frames':consecutive,'times':[round(i/info['fps'],6) for i in consecutive],'strips_in_order':strips,'clipped_at_shot_boundary':len(consecutive)<13})
     write(out/'motion-trace.json',{'scope':'full-rate painted action-region changes; not semantic motion grading','region':[0,140,360,510],'longest_nearly_unchanged_seconds':longest/info['fps'],'frames':trace})
     # Keep review sheets and motion trace; no duplicate 30fps PNG archive.
     for p in files:p.unlink()
-    return {'video':str(Path(video).resolve()),'probe':info,'sheets':[str(p) for p in images],'motion_trace':str(out/'motion-trace.json'),'trace_sha256':sha(out/'motion-trace.json')}
+    return {'video':str(Path(video).resolve()),'probe':info,'sheets':[str(p) for p in images],'temporal_windows':windows,'motion_trace':str(out/'motion-trace.json'),'trace_sha256':sha(out/'motion-trace.json')}
 
 def evidence_bundle(project,phase,with_captions,without_captions,shots,delivery_picture=None):
     if phase=='final' and delivery_picture is None:raise ValueError('final QA requires the matching delivery picture before audio finishing')
     base=project/'quality-review'/phase;base.mkdir(parents=True,exist_ok=True)
     a=evidence(with_captions,base/'evidence-captions',shots);b=evidence(without_captions,base/'evidence-no-captions',shots)
     if any(a['probe'][k]!=b['probe'][k] for k in ('fps','frames','duration')):raise ValueError('caption modes have different timing')
-    source_files=[project/'index.html',*list((project/'compositions').rglob('*.html')),*[p for p in (project/'assets').rglob('*') if p.is_file()]]
-    source_hashes={str(p.resolve()):sha(p) for p in source_files if p.exists()}
+    source_hashes=render_sources(project)
     manifest={'render_source_hashes':source_hashes,'phase':phase,'inspection':'ordered decoded native frames + full-rate pixel motion traces; CLI does not accept video','plan_sha256':sha(project/'production-plan.json'),'events_sha256':sha(project/'scene-events.json'),'with_captions':a,'without_captions':b,'shots':shots}
+    manifest['state_fingerprint']=state_fingerprint(project)
     if delivery_picture:
         delivery=probe_video(delivery_picture)
         if any(delivery[k]!=a['probe'][k] for k in ('fps','frames','duration')):raise ValueError('delivery and native preview timings differ')
@@ -198,6 +273,7 @@ def critics(project,phase,config):
     from motif_direct import model_call
     base=project/'quality-review'/phase;manifest=read(base/'evidence.json');plan=read(project/'production-plan.json')
     if manifest['plan_sha256']!=sha(project/'production-plan.json') or manifest['events_sha256']!=sha(project/'scene-events.json'):raise ValueError('stale visual evidence')
+    if source_freshness(project,manifest):raise ValueError('stale render-source evidence')
     gold=retrieve([json.dumps(plan),'physical-ui','performance'])
     images=[]
     for mode in ('with_captions','without_captions'):
@@ -219,7 +295,7 @@ def critics(project,phase,config):
     for mode in ('with_captions','without_captions'):
         trace=read(manifest[mode]['motion_trace'])
         observations.append({'mode':mode,'scope':trace['scope'],'region':trace['region'],'longest_nearly_unchanged_seconds':trace['longest_nearly_unchanged_seconds'],'timed_pixel_deltas':trace['frames'][::3]})
-    common='Assess EVERY listed shot separately in shot_assessments, using its declared before/after and performance as intended meaning, and the actual images as truth. Do not let failures in one shot hide another. Compare posture against the requested role, not just the presence of Bot. If review_unit is independent-variants, assess within each clip; no continuity/progression is expected between variant boundaries. For an ordinary production, also assess the complete film progression. '+ 'No tools or web. Assess only contract violations, not arbitrary improvements. This is rendered evidence, NOT plan self-grading. The CLI receives images, not MP4 playback: inspect the ordered decoded native frame sequences and full-rate motion observations. Do not claim you watched/listened to the videos. If samples cannot establish a gate, mark NOT_ASSESSED. Gold is behavioral, never pixel matching or copying plot. Inspect both caption modes. Every FAIL must include timestamp, shot, gate, observation, relevant retrieved gold ID, smallest correction. Character performance may be NOT_APPLICABLE only when Bot is explicitly absent. No averaged score, particle quotas or global-jitter mandates. Return schema JSON.\n'+(ROOT/'QUALITY_CONTRACT.md').read_text()+'\n'+(ROOT/'ENERGY_CONTRACT.md').read_text()+'\nPLAN: '+json.dumps(plan)+'\nEVIDENCE and IMAGE ORDER: '+json.dumps(manifest)+'\nATTACHED IMAGES IN ORDER: '+json.dumps(image_manifest)+'\nPAINTED MOTION OBSERVATIONS (pixel delta is not semantic motion): '+json.dumps(observations)+'\nRETRIEVED GOLD: '+json.dumps(gold_evidence)
+    common='Assess EVERY listed shot separately in shot_assessments, using its declared before/after and performance as intended meaning, and the actual images as truth. Do not let failures in one shot hide another. Compare posture against the requested role, not just the presence of Bot. If review_unit is independent-variants, assess within each clip; no continuity/progression is expected between variant boundaries. For an ordinary production, also assess the complete film progression. '+ 'Optional energy channels may be absent/null: judge purposeful pauses versus dead holds from pictures, not channel counts. Minimal-isolated compositions require story-specific justification. Temporal windows are consecutive native frames; inspect attachment on ALL intermediate frames using their labeled order. No tools or web. Assess only contract violations, not arbitrary improvements. This is rendered evidence, NOT plan self-grading. The CLI receives images, not MP4 playback: inspect the ordered decoded native frame sequences and full-rate motion observations. Do not claim you watched/listened to the videos. If samples cannot establish a gate, mark NOT_ASSESSED. Gold is behavioral, never pixel matching or copying plot. Inspect both caption modes. Every FAIL must include timestamp, shot, gate, observation, relevant retrieved gold ID, smallest correction. Character performance may be NOT_APPLICABLE only when Bot is explicitly absent. No averaged score, particle quotas or global-jitter mandates. Return schema JSON.\n'+(ROOT/'QUALITY_CONTRACT.md').read_text()+'\n'+(ROOT/'ENERGY_CONTRACT.md').read_text()+'\nPLAN: '+json.dumps(plan)+'\nEVIDENCE and IMAGE ORDER: '+json.dumps(manifest)+'\nATTACHED IMAGES IN ORDER: '+json.dumps(image_manifest)+'\nPAINTED MOTION OBSERVATIONS (pixel delta is not semantic motion): '+json.dumps(observations)+'\nRETRIEVED GOLD: '+json.dumps(gold_evidence)
     results={}
     for role in ('story','visual'):
         prompt=(ROOT/f'quality/{"story-critic" if role=="story" else "visual-critic"}/PROMPT.md').read_text()+'\n'+common
@@ -239,8 +315,7 @@ def evaluate(project,phase,check_current_events=True):
     if manifest['plan_sha256']!=sha(project/'production-plan.json') or (check_current_events and manifest['events_sha256']!=sha(project/'scene-events.json')):blocked.append('plan/events changed; resample and re-critique')
     if 'delivery_picture' in manifest and sha(manifest['delivery_picture']['file'])!=manifest['delivery_picture']['probe']['sha256']:blocked.append('delivery picture changed')
     if check_current_events:
-        for path,h in manifest.get('render_source_hashes',{}).items():
-            if not Path(path).exists() or sha(path)!=h:blocked.append('render source changed: '+path)
+        blocked+=source_freshness(project,manifest)
     reports={};story_bad=False
     for role in ('story','visual'):
         r=read(base/(role+'-critic.json'));Draft202012Validator(read(ROOT/f'schemas/{role}-critic.schema.json')).validate(r);reports[role]=r
@@ -273,13 +348,24 @@ def evaluate(project,phase,check_current_events=True):
 def repair(project,note):
     p=project/'quality-review/repairs.json';items=read(p) if p.exists() else []
     if len(items)>=2:raise ValueError('two meaningful repair passes exhausted; human review required')
-    current={'plan':sha(project/'production-plan.json'),'events':sha(project/'scene-events.json')}
-    gates=list((project/'quality-review').glob('*/evidence.json'))
+    current=state_fingerprint(project)
+    gates=[project/'quality-review'/phase/'evidence.json' for phase in ('rough','final') if (project/'quality-review'/phase/'evidence.json').exists()]
     if not gates:raise ValueError('repair needs prior moving evidence')
     previous=read(max(gates,key=lambda p:p.stat().st_mtime))
-    if current=={'plan':previous['plan_sha256'],'events':previous['events_sha256']}:raise ValueError('unchanged plan/events is not a meaningful repair')
+    old_semantic={'plan':previous['plan_sha256'],'events':previous['events_sha256']}
+    if 'state_fingerprint' in previous:
+        changed_render=current['render']!=previous['state_fingerprint']['render']
+    else:
+        # For v1 evidence compare only inputs actually audited at the time.
+        changed_render=bool(source_freshness(project,previous))
+    changed_semantic=current['semantic']!=old_semantic
+    if not changed_semantic and not changed_render:raise ValueError('unchanged plan/events/art is not a meaningful repair')
     if not note.strip():raise ValueError('repair must describe correction')
-    items.append({'pass':len(items)+1,'correction':note,'hashes':current});write(p,items)
+    items.append({'pass':len(items)+1,'correction':note,'fingerprint':current,'previous_fingerprint':previous.get('state_fingerprint',{'semantic':old_semantic,'render_sources':previous.get('render_source_hashes',{})}),'changed':{'semantic':changed_semantic,'render':changed_render}});write(p,items)
+    if current['semantic']['plan']!=old_semantic['plan']:
+        archive=project/'quality-review'/f'direction-before-repair-{len(items)}';archive.mkdir()
+        for name in project.glob('quality-direction*'):
+            if name.is_file():shutil.move(str(name),archive/name.name)
     for phase in ('rough','final'):
         d=project/'quality-review'/phase
         if d.exists():d.rename(project/'quality-review'/f'{phase}-before-repair-{len(items)}')

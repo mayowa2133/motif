@@ -1,0 +1,7 @@
+{
+  "withheld_from_critics": true,
+  "minimal_control": "t01",
+  "dead_hold": "t02",
+  "expected_dead_hold_gate": "energy",
+  "optional_channels": null
+}

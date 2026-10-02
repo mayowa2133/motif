@@ -1,0 +1,152 @@
+{
+  "quality_mode": "motif-gold-v1",
+  "asset_usage": [
+    {
+      "id": "fixture",
+      "scope": "production-specific",
+      "path": "scripts/build_quality_minimal_checks.py",
+      "metadata_path": "quality/validation/v1.1/temporal/provenance.json",
+      "agent_assisted": true
+    }
+  ],
+  "shots": [
+    {
+      "id": "t01",
+      "quality": {
+        "purpose": "Raise the folded source sheet, then pause briefly so the viewer can inspect its paper layers and maintained grip",
+        "hero": "folded source sheet",
+        "primary_action": "Lift folded source sheet into view",
+        "performance": {
+          "state": "focused",
+          "target": "bot"
+        },
+        "before": "Sheet held at the lower position",
+        "after": "Sheet raised for a brief deliberate inspection",
+        "focal_target": "source paper",
+        "framing": "subject",
+        "reaction_radius": {
+          "origin": [
+            618,
+            934
+          ],
+          "radius": 200,
+          "duration": 0.6,
+          "targets": [
+            {
+              "id": "plant",
+              "position": [
+                618,
+                934
+              ],
+              "relevance": 1,
+              "amplitude": {
+                "x": 3,
+                "y": 0,
+                "rotation": 2
+              },
+              "delay": 0
+            }
+          ]
+        },
+        "secondary_motion": [],
+        "environment": [],
+        "exit_overlap": null,
+        "energy": {
+          "dominant_action": "Raise the sheet, then allow one second to inspect the fold and grip",
+          "character_response": null,
+          "local_reaction": null,
+          "residual_motion": null,
+          "next_action_overlap": null
+        },
+        "art_direction": {
+          "hero_object": "folded source sheet",
+          "bot_role": "participant",
+          "materials": [
+            "layered printed paper",
+            "matte warm field"
+          ],
+          "depth_planes": [
+            "quiet paper field",
+            "grounding contact shadow",
+            "Bot and folded sheet"
+          ],
+          "composition": "Enlarged elevated Bot-sheet cluster with open upper caption area",
+          "intentional_irregularity": "three offset paper layers and one raised folded corner",
+          "environment_mode": "minimal-isolated",
+          "environment_justification": "Isolate the hand, folded sheet and readable lift at phone size; room dressing would distract from inspecting the grip"
+        }
+      },
+      "startFrame": 0,
+      "endFrame": 60
+    },
+    {
+      "id": "t02",
+      "quality": {
+        "purpose": "Raise the folded source sheet, then pause briefly so the viewer can inspect its paper layers and maintained grip",
+        "hero": "folded source sheet",
+        "primary_action": "Lift folded source sheet into view",
+        "performance": {
+          "state": "focused",
+          "target": "bot"
+        },
+        "before": "Sheet held at the lower position",
+        "after": "Sheet raised for a brief deliberate inspection",
+        "focal_target": "source paper",
+        "framing": "subject",
+        "reaction_radius": {
+          "origin": [
+            618,
+            934
+          ],
+          "radius": 200,
+          "duration": 0.6,
+          "targets": [
+            {
+              "id": "plant",
+              "position": [
+                618,
+                934
+              ],
+              "relevance": 1,
+              "amplitude": {
+                "x": 3,
+                "y": 0,
+                "rotation": 2
+              },
+              "delay": 0
+            }
+          ]
+        },
+        "secondary_motion": [],
+        "environment": [],
+        "exit_overlap": null,
+        "energy": {
+          "dominant_action": "Raise the sheet, then allow one second to inspect the fold and grip",
+          "character_response": null,
+          "local_reaction": null,
+          "residual_motion": null,
+          "next_action_overlap": null
+        },
+        "art_direction": {
+          "hero_object": "folded source sheet",
+          "bot_role": "participant",
+          "materials": [
+            "layered printed paper",
+            "matte warm field"
+          ],
+          "depth_planes": [
+            "quiet paper field",
+            "grounding contact shadow",
+            "Bot and folded sheet"
+          ],
+          "composition": "Enlarged elevated Bot-sheet cluster with open upper caption area",
+          "intentional_irregularity": "three offset paper layers and one raised folded corner",
+          "environment_mode": "minimal-isolated",
+          "environment_justification": "Isolate the hand, folded sheet and readable lift at phone size; room dressing would distract from inspecting the grip"
+        }
+      },
+      "startFrame": 60,
+      "endFrame": 120
+    }
+  ]
+}

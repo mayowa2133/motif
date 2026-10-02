@@ -1,0 +1,22 @@
+{
+  "evidence_sha256": "b486cf042103ac56e6886862b06133d688b1ffb1412b422ca8011f4eb6b7d960",
+  "images_sha256": "871a4332e53b42be87cec8ff9db2d50710e3586e9360a24c76b6fc9e4a078507",
+  "gold_ids": [
+    "recording",
+    "basement-completion",
+    "cancellation"
+  ],
+  "invocations": [
+    "story-critic-invocation.json",
+    "visual-critic-invocation.json"
+  ],
+  "report_hashes": {
+    "story": "3451fe7bb8975a2e2aa9496ba0ff78e2cabb8730a0959a57006017d608e5eb89",
+    "visual": "935da561025b0192658d476835325548b325edd292eb73f558f1eef0e672ee8f"
+  },
+  "invocation_hashes": {
+    "story": "4cd4128aac82eea53733f46f1f9dc88e12cfbb802b4d6f4cbb0d563bf6664b39",
+    "visual": "014f7a7f8a5b383c619cd9f7797f4957e25586ff89443e145b6f5ed4c61107e9"
+  },
+  "scope": "ordered decoded native frames + full-rate pixel motion traces; CLI does not accept video"
+}
