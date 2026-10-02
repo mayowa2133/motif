@@ -1,0 +1,16 @@
+{
+  "id": "answer-card",
+  "status": "moving-preview; review required",
+  "method": "agent-authored editable SVG",
+  "style": "reference-expressive-v1",
+  "viewBox": [
+    0,
+    0,
+    550,
+    394
+  ],
+  "meaning": "illustrative sample; no real source or product claim",
+  "layers": "paper edge, contact shadow, quiet surface, editable text or route geometry",
+  "shadow": "down-right",
+  "production": "confidence-isnt-evidence"
+}

@@ -1,0 +1,327 @@
+
+> check
+> npx --yes hyperframes@0.8.99 check --strict --timeout 60000 --at 3.6,6.833333333,10.5,15.8,21.6,27.533333333,32.333333333 --json
+
+{
+  "ok": false,
+  "strict": true,
+  "lint": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 0,
+    "infoCount": 0,
+    "findings": [],
+    "filesScanned": 21
+  },
+  "runtime": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 0,
+    "infoCount": 0,
+    "findings": []
+  },
+  "layout": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 0,
+    "infoCount": 0,
+    "findings": [],
+    "duration": 32.86666666666667,
+    "samples": [
+      3.6,
+      6.833,
+      10.5,
+      15.8,
+      21.6,
+      27.533,
+      32.333
+    ],
+    "transitionSamples": [],
+    "transitionSamplesDropped": 0,
+    "tolerance": 2,
+    "totalIssueCount": 0,
+    "truncated": false
+  },
+  "motion": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 0,
+    "infoCount": 0,
+    "findings": [],
+    "enabled": false,
+    "samples": 0
+  },
+  "contrast": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 10,
+    "infoCount": 0,
+    "findings": [
+      {
+        "code": "contrast_aa_failure",
+        "severity": "warning",
+        "message": "Contrast is 4.02:1; WCAG AA requires 4.5:1.",
+        "text": "Paid",
+        "fg": "rgb(37,134,80)",
+        "bg": "rgb(248,240,220)",
+        "ratio": 4.02,
+        "requiredRatio": 4.5,
+        "suggestedColor": "rgb(35,125,75)",
+        "large": false,
+        "selector": "div > div:nth-of-type(3) > div > svg > g > g:nth-of-type(17) > g > text:nth-of-type(3)",
+        "dataAttributes": {
+          "data-layout-allow-overlap": ""
+        },
+        "sourceFile": "compositions/shot-03.html",
+        "bbox": {
+          "x": 333.6230773925781,
+          "y": 436.487060546875,
+          "width": 20.673065185546875,
+          "height": 12.802947998046875
+        },
+        "time": 6.833
+      },
+      {
+        "code": "contrast_aa_failure",
+        "severity": "warning",
+        "message": "Contrast is 4.02:1; WCAG AA requires 4.5:1.",
+        "text": "Paid",
+        "fg": "rgb(37,134,80)",
+        "bg": "rgb(248,240,220)",
+        "ratio": 4.02,
+        "requiredRatio": 4.5,
+        "suggestedColor": "rgb(35,125,75)",
+        "large": false,
+        "selector": "div > div:nth-of-type(3) > div > svg > g > g:nth-of-type(18) > g > text:nth-of-type(3)",
+        "dataAttributes": {
+          "data-layout-allow-overlap": ""
+        },
+        "sourceFile": "compositions/shot-03.html",
+        "bbox": {
+          "x": 315.2464294433594,
+          "y": 449.5918884277344,
+          "width": 20.39862060546875,
+          "height": 12.202789306640625
+        },
+        "time": 6.833
+      },
+      {
+        "code": "contrast_aa_failure",
+        "severity": "warning",
+        "message": "Contrast is 4.02:1; WCAG AA requires 4.5:1.",
+        "text": "Paid",
+        "fg": "rgb(37,134,80)",
+        "bg": "rgb(248,240,220)",
+        "ratio": 4.02,
+        "requiredRatio": 4.5,
+        "suggestedColor": "rgb(35,125,75)",
+        "large": false,
+        "selector": "div > div:nth-of-type(3) > div > svg > g > g:nth-of-type(19) > g > text:nth-of-type(3)",
+        "dataAttributes": {
+          "data-layout-allow-overlap": ""
+        },
+        "sourceFile": "compositions/shot-03.html",
+        "bbox": {
+          "x": 320.6653747558594,
+          "y": 453.83135986328125,
+          "width": 20.09832763671875,
+          "height": 11.58160400390625
+        },
+        "time": 6.833
+      },
+      {
+        "code": "contrast_aa_failure",
+        "severity": "warning",
+        "message": "Contrast is 4.02:1; WCAG AA requires 4.5:1.",
+        "text": "Paid",
+        "fg": "rgb(37,134,80)",
+        "bg": "rgb(248,240,220)",
+        "ratio": 4.02,
+        "requiredRatio": 4.5,
+        "suggestedColor": "rgb(35,125,75)",
+        "large": false,
+        "selector": "div > div:nth-of-type(3) > div > svg > g > g:nth-of-type(20) > g > text:nth-of-type(3)",
+        "dataAttributes": {
+          "data-layout-allow-overlap": ""
+        },
+        "sourceFile": "compositions/shot-03.html",
+        "bbox": {
+          "x": 300.9899597167969,
+          "y": 465.1257629394531,
+          "width": 20.971649169921875,
+          "height": 13.50146484375
+        },
+        "time": 6.833
+      },
+      {
+        "code": "contrast_aa_failure",
+        "severity": "warning",
+        "message": "Contrast is 4.02:1; WCAG AA requires 4.5:1.",
+        "text": "Paid",
+        "fg": "rgb(37,134,80)",
+        "bg": "rgb(248,240,220)",
+        "ratio": 4.02,
+        "requiredRatio": 4.5,
+        "suggestedColor": "rgb(35,125,75)",
+        "large": false,
+        "selector": "div > div:nth-of-type(3) > div > svg > g > g:nth-of-type(21) > g > text:nth-of-type(3)",
+        "dataAttributes": {
+          "data-layout-allow-overlap": ""
+        },
+        "sourceFile": "compositions/shot-03.html",
+        "bbox": {
+          "x": 320.36346435546875,
+          "y": 469.8382263183594,
+          "width": 21.256500244140625,
+          "height": 14.228363037109375
+        },
+        "time": 6.833
+      },
+      {
+        "code": "contrast_aa_failure",
+        "severity": "warning",
+        "message": "Contrast is 4.02:1; WCAG AA requires 4.5:1.",
+        "text": "Paid",
+        "fg": "rgb(37,134,80)",
+        "bg": "rgb(248,240,220)",
+        "ratio": 4.02,
+        "requiredRatio": 4.5,
+        "suggestedColor": "rgb(35,125,75)",
+        "large": false,
+        "selector": "div > div:nth-of-type(3) > div > svg > g > g:nth-of-type(24) > g > text:nth-of-type(3)",
+        "dataAttributes": {
+          "data-layout-allow-overlap": ""
+        },
+        "sourceFile": "compositions/shot-03.html",
+        "bbox": {
+          "x": 54.597328186035156,
+          "y": 447.5286560058594,
+          "width": 15.401878356933594,
+          "height": 9.02325439453125
+        },
+        "time": 6.833
+      },
+      {
+        "code": "contrast_aa_failure",
+        "severity": "warning",
+        "message": "Contrast is 2.91:1; WCAG AA requires 3:1.",
+        "text": "Speaker 1",
+        "fg": "rgb(238,229,211)",
+        "bg": "rgb(86,140,175)",
+        "ratio": 2.91,
+        "requiredRatio": 3,
+        "suggestedColor": "rgb(63,60,55)",
+        "large": true,
+        "selector": "div > div:nth-of-type(12) > div > svg > g > g:nth-of-type(12) > g > text",
+        "dataAttributes": {
+          "data-layout-allow-overlap": ""
+        },
+        "sourceFile": "compositions/shot-12.html",
+        "bbox": {
+          "x": 57.45121765136719,
+          "y": 368.31689453125,
+          "width": 45.868919372558594,
+          "height": 12.610687255859375
+        },
+        "time": 21.6
+      },
+      {
+        "code": "contrast_aa_failure",
+        "severity": "warning",
+        "message": "Contrast is 2.29:1; WCAG AA requires 3:1.",
+        "text": "Speaker 2",
+        "fg": "rgb(238,229,211)",
+        "bg": "rgb(220,129,89)",
+        "ratio": 2.29,
+        "requiredRatio": 3,
+        "suggestedColor": "rgb(78,75,70)",
+        "large": true,
+        "selector": "div > div:nth-of-type(12) > div > svg > g > g:nth-of-type(13) > g > text",
+        "dataAttributes": {
+          "data-layout-allow-overlap": ""
+        },
+        "sourceFile": "compositions/shot-12.html",
+        "bbox": {
+          "x": 46.35236740112305,
+          "y": 398.1691589355469,
+          "width": 47.6573371887207,
+          "height": 12.408721923828125
+        },
+        "time": 21.6
+      },
+      {
+        "code": "contrast_aa_failure",
+        "severity": "warning",
+        "message": "Contrast is 2.91:1; WCAG AA requires 3:1.",
+        "text": "Speaker 1",
+        "fg": "rgb(238,229,211)",
+        "bg": "rgb(86,140,175)",
+        "ratio": 2.91,
+        "requiredRatio": 3,
+        "suggestedColor": "rgb(63,60,55)",
+        "large": true,
+        "selector": "div > div:nth-of-type(12) > div > svg > g > g:nth-of-type(14) > g > text",
+        "dataAttributes": {
+          "data-layout-allow-overlap": ""
+        },
+        "sourceFile": "compositions/shot-12.html",
+        "bbox": {
+          "x": 61.8083381652832,
+          "y": 425.46221923828125,
+          "width": 45.719486236572266,
+          "height": 11.976898193359375
+        },
+        "time": 21.6
+      },
+      {
+        "code": "contrast_aa_failure",
+        "severity": "warning",
+        "message": "Contrast is 2.29:1; WCAG AA requires 3:1.",
+        "text": "Speaker 2",
+        "fg": "rgb(238,229,211)",
+        "bg": "rgb(220,129,89)",
+        "ratio": 2.29,
+        "requiredRatio": 3,
+        "suggestedColor": "rgb(78,75,70)",
+        "large": true,
+        "selector": "div > div:nth-of-type(12) > div > svg > g > g:nth-of-type(15) > g > text",
+        "dataAttributes": {
+          "data-layout-allow-overlap": ""
+        },
+        "sourceFile": "compositions/shot-12.html",
+        "bbox": {
+          "x": 42.877315521240234,
+          "y": 455.9193115234375,
+          "width": 47.940006256103516,
+          "height": 13.750823974609375
+        },
+        "time": 21.6
+      }
+    ],
+    "enabled": true,
+    "samples": [
+      3.6,
+      6.833,
+      15.8,
+      21.6,
+      32.333
+    ],
+    "checked": 69,
+    "passed": 59
+  },
+  "hdr": {
+    "autoPromotion": null,
+    "inspection": "available"
+  },
+  "snapshots": {
+    "enabled": false,
+    "files": [],
+    "times": [],
+    "findingFiles": []
+  },
+  "_meta": {
+    "version": "0.8.99",
+    "latestVersion": "0.8.106",
+    "updateAvailable": true
+  }
+}

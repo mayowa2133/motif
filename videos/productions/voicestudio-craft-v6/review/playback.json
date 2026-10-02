@@ -1,0 +1,41 @@
+{
+  "status": "REVIEW_REQUIRED",
+  "method": "Codex in-app browser HTML5 video playback; actual encoded files",
+  "full": {
+    "duration": 32.866667,
+    "ended": true,
+    "playback_rate": 1,
+    "media_error": null
+  },
+  "native": {
+    "duration": 32.866667,
+    "ended": true,
+    "playback_rate": 1,
+    "media_error": null
+  },
+  "comparisons": [
+    {
+      "file": "billing-and-relief.mp4",
+      "duration": 2,
+      "ended": true,
+      "playback_rate": 1,
+      "media_error": null
+    },
+    {
+      "file": "basement-completion.mp4",
+      "duration": 0.833008,
+      "ended": true,
+      "playback_rate": 1,
+      "media_error": null
+    },
+    {
+      "file": "keyboard-contact-rebound.mp4",
+      "duration": 0.933333,
+      "ended": true,
+      "playback_rate": 1,
+      "media_error": null
+    }
+  ],
+  "audio_review": "Muted technical/visual playback; baseline finished AAC stream is reused exactly. No fresh subjective listening approval.",
+  "visual_scope": "Native selected before/after frames and matched moving excerpts; no automatic craft approval."
+}

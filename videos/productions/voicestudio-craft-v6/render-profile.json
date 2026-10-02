@@ -1,0 +1,8 @@
+{
+  "workers": 1,
+  "capture": "screenshot",
+  "reason": "Single-worker streaming screenshot capture reduces temporary storage and memory after ENOSPC; same pinned renderer and picture contract.",
+  "dependencies_upgraded": false,
+  "check_timeout_ms": 60000,
+  "check_timeout_reason": "First strict check reached its 10s navigation limit with the new raster masters. Supported CLI timeout only; pinned renderer unchanged."
+}

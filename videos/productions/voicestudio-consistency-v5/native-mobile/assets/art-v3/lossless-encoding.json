@@ -1,0 +1,38 @@
+[
+  {
+    "source": "old-computer.png",
+    "presentation": "old-computer.webp",
+    "operation": "lossless format conversion, no raster edits",
+    "same_dimensions": true,
+    "identical_alpha": true,
+    "identical_visible_rgba": true,
+    "bytes": 865722
+  },
+  {
+    "source": "microphone.png",
+    "presentation": "microphone.webp",
+    "operation": "lossless format conversion, no raster edits",
+    "same_dimensions": true,
+    "identical_alpha": true,
+    "identical_visible_rgba": true,
+    "bytes": 1514638
+  },
+  {
+    "source": "stool.png",
+    "presentation": "stool.webp",
+    "operation": "lossless format conversion, no raster edits",
+    "same_dimensions": true,
+    "identical_alpha": true,
+    "identical_visible_rgba": true,
+    "bytes": 1057604
+  },
+  {
+    "source": "monitor.png",
+    "presentation": "monitor.webp",
+    "operation": "lossless format conversion, no raster edits",
+    "same_dimensions": true,
+    "identical_alpha": true,
+    "identical_visible_rgba": true,
+    "bytes": 859634
+  }
+]

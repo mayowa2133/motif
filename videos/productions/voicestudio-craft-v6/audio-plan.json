@@ -1,0 +1,508 @@
+{
+  "duration": 32.86666666666667,
+  "narration": "assets/voice/narration-af-nova.wav",
+  "review_input": "assets/voice/review-voice.wav",
+  "review_gain_db": 0,
+  "target_lufs": -16.0,
+  "peak_ceiling": -1.5,
+  "sfx_cues": [
+    {
+      "shot": "shot-01",
+      "start": 1.1,
+      "file": "assets/sfx/star.wav",
+      "duration": 0.24,
+      "volume": 0.4,
+      "meaning": "star at specified physical interaction"
+    },
+    {
+      "shot": "shot-01",
+      "start": 1.4666666666666666,
+      "file": "assets/sfx/pop.wav",
+      "duration": 0.13,
+      "volume": 0.4,
+      "meaning": "pop at specified physical interaction"
+    },
+    {
+      "shot": "shot-01",
+      "start": 2.033333333333333,
+      "file": "assets/sfx/paper.wav",
+      "duration": 0.23,
+      "volume": 0.4,
+      "meaning": "paper at specified physical interaction"
+    },
+    {
+      "shot": "shot-02",
+      "start": 3.466666666666667,
+      "file": "assets/sfx/key1.wav",
+      "duration": 0.08,
+      "volume": 0.36,
+      "meaning": "key1 at specified physical interaction"
+    },
+    {
+      "shot": "shot-02",
+      "start": 4.166666666666667,
+      "file": "assets/sfx/star.wav",
+      "duration": 0.24,
+      "volume": 0.4,
+      "meaning": "star at specified physical interaction"
+    },
+    {
+      "shot": "shot-03",
+      "start": 5.1,
+      "file": "assets/sfx/reject.wav",
+      "duration": 0.14,
+      "volume": 0.4,
+      "meaning": "reject at specified physical interaction"
+    },
+    {
+      "shot": "shot-03",
+      "start": 5.733333333333333,
+      "file": "assets/sfx/key2.wav",
+      "duration": 0.07,
+      "volume": 0.36,
+      "meaning": "key2 at specified physical interaction"
+    },
+    {
+      "shot": "shot-03",
+      "start": 6.133333333333334,
+      "file": "assets/sfx/paper.wav",
+      "duration": 0.23,
+      "volume": 0.4,
+      "meaning": "paper at specified physical interaction"
+    },
+    {
+      "shot": "shot-03",
+      "start": 6.5,
+      "file": "assets/sfx/paper.wav",
+      "duration": 0.23,
+      "volume": 0.4,
+      "meaning": "paper at specified physical interaction"
+    },
+    {
+      "shot": "shot-04",
+      "start": 7.233333333333333,
+      "file": "assets/sfx/paper.wav",
+      "duration": 0.23,
+      "volume": 0.4,
+      "meaning": "paper at specified physical interaction"
+    },
+    {
+      "shot": "shot-04",
+      "start": 7.433333333333334,
+      "file": "assets/sfx/key1.wav",
+      "duration": 0.08,
+      "volume": 0.36,
+      "meaning": "key1 at specified physical interaction"
+    },
+    {
+      "shot": "shot-04",
+      "start": 7.633333333333334,
+      "file": "assets/sfx/key2.wav",
+      "duration": 0.07,
+      "volume": 0.36,
+      "meaning": "key2 at specified physical interaction"
+    },
+    {
+      "shot": "shot-04",
+      "start": 7.833333333333333,
+      "file": "assets/sfx/key3.wav",
+      "duration": 0.09,
+      "volume": 0.36,
+      "meaning": "key3 at specified physical interaction"
+    },
+    {
+      "shot": "shot-05",
+      "start": 8.4,
+      "file": "assets/sfx/cloth.wav",
+      "duration": 0.48,
+      "volume": 0.4,
+      "meaning": "cloth at specified physical interaction"
+    },
+    {
+      "shot": "shot-05",
+      "start": 8.866666666666667,
+      "file": "assets/sfx/washer.wav",
+      "duration": 2.08,
+      "volume": 0.34,
+      "meaning": "washer at specified physical interaction"
+    },
+    {
+      "shot": "shot-05",
+      "start": 10.366666666666667,
+      "file": "assets/sfx/pop.wav",
+      "duration": 0.13,
+      "volume": 0.4,
+      "meaning": "pop at specified physical interaction"
+    },
+    {
+      "shot": "shot-06",
+      "start": 11.2,
+      "file": "assets/sfx/spring.wav",
+      "duration": 0.19,
+      "volume": 0.4,
+      "meaning": "spring at specified physical interaction"
+    },
+    {
+      "shot": "shot-07",
+      "start": 12.366666666666667,
+      "file": "assets/sfx/pop.wav",
+      "duration": 0.13,
+      "volume": 0.4,
+      "meaning": "pop at specified physical interaction"
+    },
+    {
+      "shot": "shot-07",
+      "start": 12.7,
+      "file": "assets/sfx/paper.wav",
+      "duration": 0.23,
+      "volume": 0.4,
+      "meaning": "paper at specified physical interaction"
+    },
+    {
+      "shot": "shot-07",
+      "start": 13.166666666666666,
+      "file": "assets/sfx/key1.wav",
+      "duration": 0.08,
+      "volume": 0.36,
+      "meaning": "key1 at specified physical interaction"
+    },
+    {
+      "shot": "shot-08",
+      "start": 13.433333333333334,
+      "file": "assets/sfx/paper.wav",
+      "duration": 0.23,
+      "volume": 0.4,
+      "meaning": "paper at specified physical interaction"
+    },
+    {
+      "shot": "shot-08",
+      "start": 13.866666666666667,
+      "file": "assets/sfx/flutter.wav",
+      "duration": 0.37,
+      "volume": 0.4,
+      "meaning": "flutter at specified physical interaction"
+    },
+    {
+      "shot": "shot-08",
+      "start": 14.333333333333334,
+      "file": "assets/sfx/cloth.wav",
+      "duration": 0.48,
+      "volume": 0.4,
+      "meaning": "cloth at specified physical interaction"
+    },
+    {
+      "shot": "shot-09",
+      "start": 15.433333333333334,
+      "file": "assets/sfx/key1.wav",
+      "duration": 0.08,
+      "volume": 0.36,
+      "meaning": "key1 at specified physical interaction"
+    },
+    {
+      "shot": "shot-09",
+      "start": 15.766666666666667,
+      "file": "assets/sfx/key2.wav",
+      "duration": 0.07,
+      "volume": 0.36,
+      "meaning": "key2 at specified physical interaction"
+    },
+    {
+      "shot": "shot-09",
+      "start": 16.066666666666666,
+      "file": "assets/sfx/key3.wav",
+      "duration": 0.09,
+      "volume": 0.36,
+      "meaning": "key3 at specified physical interaction"
+    },
+    {
+      "shot": "shot-09",
+      "start": 16.333333333333332,
+      "file": "assets/sfx/key1.wav",
+      "duration": 0.08,
+      "volume": 0.36,
+      "meaning": "key1 at specified physical interaction"
+    },
+    {
+      "shot": "shot-09",
+      "start": 16.633333333333333,
+      "file": "assets/sfx/key2.wav",
+      "duration": 0.07,
+      "volume": 0.36,
+      "meaning": "key2 at specified physical interaction"
+    },
+    {
+      "shot": "shot-09",
+      "start": 16.8,
+      "file": "assets/sfx/star.wav",
+      "duration": 0.24,
+      "volume": 0.4,
+      "meaning": "star at specified physical interaction"
+    },
+    {
+      "shot": "shot-10",
+      "start": 17.233333333333334,
+      "file": "assets/sfx/flutter.wav",
+      "duration": 0.37,
+      "volume": 0.4,
+      "meaning": "flutter at specified physical interaction"
+    },
+    {
+      "shot": "shot-10",
+      "start": 17.666666666666668,
+      "file": "assets/sfx/paper.wav",
+      "duration": 0.23,
+      "volume": 0.4,
+      "meaning": "paper at specified physical interaction"
+    },
+    {
+      "shot": "shot-10",
+      "start": 18.033333333333335,
+      "file": "assets/sfx/paper.wav",
+      "duration": 0.23,
+      "volume": 0.4,
+      "meaning": "paper at specified physical interaction"
+    },
+    {
+      "shot": "shot-10",
+      "start": 18.333333333333332,
+      "file": "assets/sfx/star.wav",
+      "duration": 0.24,
+      "volume": 0.4,
+      "meaning": "star at specified physical interaction"
+    },
+    {
+      "shot": "shot-11",
+      "start": 18.866666666666667,
+      "file": "assets/sfx/key1.wav",
+      "duration": 0.08,
+      "volume": 0.36,
+      "meaning": "key1 at specified physical interaction"
+    },
+    {
+      "shot": "shot-11",
+      "start": 19.233333333333334,
+      "file": "assets/sfx/key2.wav",
+      "duration": 0.07,
+      "volume": 0.36,
+      "meaning": "key2 at specified physical interaction"
+    },
+    {
+      "shot": "shot-11",
+      "start": 19.566666666666666,
+      "file": "assets/sfx/key3.wav",
+      "duration": 0.09,
+      "volume": 0.36,
+      "meaning": "key3 at specified physical interaction"
+    },
+    {
+      "shot": "shot-12",
+      "start": 20.433333333333334,
+      "file": "assets/sfx/paper.wav",
+      "duration": 0.23,
+      "volume": 0.4,
+      "meaning": "paper at specified physical interaction"
+    },
+    {
+      "shot": "shot-12",
+      "start": 20.633333333333333,
+      "file": "assets/sfx/key1.wav",
+      "duration": 0.08,
+      "volume": 0.36,
+      "meaning": "key1 at specified physical interaction"
+    },
+    {
+      "shot": "shot-12",
+      "start": 20.9,
+      "file": "assets/sfx/key2.wav",
+      "duration": 0.07,
+      "volume": 0.36,
+      "meaning": "key2 at specified physical interaction"
+    },
+    {
+      "shot": "shot-12",
+      "start": 21.166666666666668,
+      "file": "assets/sfx/key3.wav",
+      "duration": 0.09,
+      "volume": 0.36,
+      "meaning": "key3 at specified physical interaction"
+    },
+    {
+      "shot": "shot-12",
+      "start": 21.433333333333334,
+      "file": "assets/sfx/paper.wav",
+      "duration": 0.23,
+      "volume": 0.4,
+      "meaning": "paper at specified physical interaction"
+    },
+    {
+      "shot": "shot-13",
+      "start": 22.166666666666668,
+      "file": "assets/sfx/key1.wav",
+      "duration": 0.08,
+      "volume": 0.36,
+      "meaning": "key1 at specified physical interaction"
+    },
+    {
+      "shot": "shot-13",
+      "start": 22.666666666666668,
+      "file": "assets/sfx/key2.wav",
+      "duration": 0.07,
+      "volume": 0.36,
+      "meaning": "key2 at specified physical interaction"
+    },
+    {
+      "shot": "shot-13",
+      "start": 23.033333333333335,
+      "file": "assets/sfx/star.wav",
+      "duration": 0.24,
+      "volume": 0.4,
+      "meaning": "star at specified physical interaction"
+    },
+    {
+      "shot": "shot-14",
+      "start": 23.433333333333334,
+      "file": "assets/sfx/key1.wav",
+      "duration": 0.08,
+      "volume": 0.36,
+      "meaning": "key1 at specified physical interaction"
+    },
+    {
+      "shot": "shot-14",
+      "start": 23.7,
+      "file": "assets/sfx/spring.wav",
+      "duration": 0.19,
+      "volume": 0.4,
+      "meaning": "spring at specified physical interaction"
+    },
+    {
+      "shot": "shot-15",
+      "start": 25.0,
+      "file": "assets/sfx/key1.wav",
+      "duration": 0.08,
+      "volume": 0.36,
+      "meaning": "key1 at specified physical interaction"
+    },
+    {
+      "shot": "shot-15",
+      "start": 25.5,
+      "file": "assets/sfx/key2.wav",
+      "duration": 0.07,
+      "volume": 0.36,
+      "meaning": "key2 at specified physical interaction"
+    },
+    {
+      "shot": "shot-15",
+      "start": 25.933333333333334,
+      "file": "assets/sfx/star.wav",
+      "duration": 0.24,
+      "volume": 0.4,
+      "meaning": "star at specified physical interaction"
+    },
+    {
+      "shot": "shot-16",
+      "start": 26.933333333333334,
+      "file": "assets/sfx/key2.wav",
+      "duration": 0.07,
+      "volume": 0.36,
+      "meaning": "key2 at specified physical interaction"
+    },
+    {
+      "shot": "shot-16",
+      "start": 27.166666666666668,
+      "file": "assets/sfx/pop.wav",
+      "duration": 0.13,
+      "volume": 0.4,
+      "meaning": "pop at specified physical interaction"
+    },
+    {
+      "shot": "shot-17",
+      "start": 28.366666666666667,
+      "file": "assets/sfx/key1.wav",
+      "duration": 0.08,
+      "volume": 0.36,
+      "meaning": "key1 at specified physical interaction"
+    },
+    {
+      "shot": "shot-17",
+      "start": 28.733333333333334,
+      "file": "assets/sfx/key2.wav",
+      "duration": 0.07,
+      "volume": 0.36,
+      "meaning": "key2 at specified physical interaction"
+    },
+    {
+      "shot": "shot-17",
+      "start": 29.166666666666668,
+      "file": "assets/sfx/star.wav",
+      "duration": 0.24,
+      "volume": 0.4,
+      "meaning": "star at specified physical interaction"
+    },
+    {
+      "shot": "shot-18",
+      "start": 29.733333333333334,
+      "file": "assets/sfx/reject.wav",
+      "duration": 0.14,
+      "volume": 0.4,
+      "meaning": "reject at specified physical interaction"
+    },
+    {
+      "shot": "shot-18",
+      "start": 30.833333333333332,
+      "file": "assets/sfx/whoosh.wav",
+      "duration": 0.39,
+      "volume": 0.4,
+      "meaning": "whoosh at specified physical interaction"
+    },
+    {
+      "shot": "shot-19",
+      "start": 32.166666666666664,
+      "file": "assets/sfx/key1.wav",
+      "duration": 0.08,
+      "volume": 0.36,
+      "meaning": "key1 at specified physical interaction"
+    },
+    {
+      "shot": "shot-19",
+      "start": 32.233333333333334,
+      "file": "assets/sfx/key2.wav",
+      "duration": 0.07,
+      "volume": 0.36,
+      "meaning": "key2 at specified physical interaction"
+    },
+    {
+      "shot": "shot-19",
+      "start": 32.3,
+      "file": "assets/sfx/key3.wav",
+      "duration": 0.09,
+      "volume": 0.36,
+      "meaning": "key3 at specified physical interaction"
+    },
+    {
+      "shot": "shot-19",
+      "start": 32.36666666666667,
+      "file": "assets/sfx/key1.wav",
+      "duration": 0.08,
+      "volume": 0.36,
+      "meaning": "key1 at specified physical interaction"
+    },
+    {
+      "shot": "shot-19",
+      "start": 32.43333333333333,
+      "file": "assets/sfx/key2.wav",
+      "duration": 0.07,
+      "volume": 0.36,
+      "meaning": "key2 at specified physical interaction"
+    },
+    {
+      "shot": "shot-19",
+      "start": 32.5,
+      "file": "assets/sfx/star.wav",
+      "duration": 0.24,
+      "volume": 0.4,
+      "meaning": "star at specified physical interaction"
+    }
+  ],
+  "music": false,
+  "subjective_listening": "not assessed"
+}

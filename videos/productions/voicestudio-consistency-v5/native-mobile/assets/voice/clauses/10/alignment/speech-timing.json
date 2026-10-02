@@ -1,0 +1,63 @@
+{
+  "method": "installed Whisper small.en DTW; no flash attention; adjacent token-center midpoints",
+  "precision": "automatic approximate word boundaries, not phoneme-perfect",
+  "duration": 1.535,
+  "words": [
+    {
+      "text": "for",
+      "centers": [
+        0.12
+      ],
+      "start": 0,
+      "end": 0.16999999999999998
+    },
+    {
+      "text": "the",
+      "centers": [
+        0.22
+      ],
+      "start": 0.16999999999999998,
+      "end": 0.28
+    },
+    {
+      "text": "link",
+      "centers": [
+        0.34
+      ],
+      "start": 0.28,
+      "end": 0.43000000000000005
+    },
+    {
+      "text": "in",
+      "centers": [
+        0.52
+      ],
+      "start": 0.43000000000000005,
+      "end": 0.63
+    },
+    {
+      "text": "setup",
+      "centers": [
+        0.74
+      ],
+      "start": 0.63,
+      "end": 0.9
+    },
+    {
+      "text": "comment",
+      "centers": [
+        1.06
+      ],
+      "start": 0.9,
+      "end": 1.21
+    },
+    {
+      "text": "voice.",
+      "centers": [
+        1.36
+      ],
+      "start": 1.21,
+      "end": 1.48
+    }
+  ]
+}

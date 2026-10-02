@@ -1,0 +1,50 @@
+{
+  "status": "REVIEW_REQUIRED",
+  "full": {
+    "width": 1080,
+    "height": 1920,
+    "frames": 986,
+    "fps": "30/1",
+    "duration": "32.866667",
+    "audio_sha256": "fe39df8faaac30f6333a4bb708ae3c32fd1be2fcc4004c0678030864ccc4e351",
+    "bytes": 10251626
+  },
+  "native": {
+    "width": 360,
+    "height": 640,
+    "frames": 986,
+    "fps": "30/1",
+    "duration": "32.866667",
+    "audio_sha256": "fe39df8faaac30f6333a4bb708ae3c32fd1be2fcc4004c0678030864ccc4e351",
+    "bytes": 3174264
+  },
+  "baseline_audio_sha256": "fe39df8faaac30f6333a4bb708ae3c32fd1be2fcc4004c0678030864ccc4e351",
+  "preserved_v5_files": 639,
+  "preserved_v5_changed_files": [],
+  "unchanged_composition_bytes_identical": {
+    "1": true,
+    "4": true,
+    "6": true,
+    "7": true,
+    "8": true,
+    "10": true,
+    "11": true,
+    "13": true,
+    "14": true,
+    "15": true,
+    "17": true,
+    "18": true
+  },
+  "hero_artwork_bytes_identical": {
+    "assets/art-v4/book.png": true,
+    "assets/art-v4/provenance.json": true,
+    "assets/art-v4/monitor.png": true,
+    "assets/art-v4/bitmap-layouts.json": true,
+    "assets/art-v4/book.webp": true,
+    "assets/art-v4/monitor.webp": true,
+    "assets/art-v4/washer.webp": true,
+    "assets/art-v4/washer.png": true
+  },
+  "subjective_listening": "not reassessed; baseline AAC stream reused exactly",
+  "source_scene_frame_schedule": "986 frames / 30 fps, nineteen fixed shots"
+}

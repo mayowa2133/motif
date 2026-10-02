@@ -1,0 +1,59 @@
+{
+  "native_size": [
+    360,
+    640
+  ],
+  "caption_free": true,
+  "source": "Pinned HyperFrames snapshots of native timelines, same times; caption host omitted, headline preserved",
+  "frames": {
+    "1": 45,
+    "2": 126,
+    "3": 195,
+    "4": 235,
+    "5": 316,
+    "6": 343,
+    "7": 388,
+    "8": 447,
+    "9": 505,
+    "10": 555,
+    "11": 592,
+    "12": 647,
+    "13": 698,
+    "14": 732,
+    "15": 779,
+    "16": 832,
+    "17": 876,
+    "18": 920,
+    "19": 985
+  },
+  "heroes": [
+    1,
+    5,
+    9,
+    10,
+    19
+  ],
+  "changed": [
+    2,
+    3,
+    6,
+    8,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    18
+  ],
+  "identical_unchanged_pause_pixels": {
+    "1": true,
+    "4": true,
+    "5": true,
+    "7": true,
+    "9": true,
+    "10": true,
+    "17": true,
+    "19": true
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "method": "image_gen referenced-image edit/generation; original PNGs unmodified; cwebp lossless derivative; editable SVG content and choreography",
+  "source_style_reference": "assets/art-v3/monitor.png",
+  "assets": [
+    {
+      "id": "monitor",
+      "prompt": "Edit the attached physical monitor into a more individually illustrated handmade paper object for a lively cute 2D paper-animation world. Keep its straight-on orthographic view, landscape aspect, complete teal stand and foot, and the same enormous uninterrupted dark-plum blank display opening in the same position. Redraw the outer ivory casing with a gently asymmetric broad silhouette: an unusually generous lower cream lip, slightly rounded chamfered upper corners, subtle offset tan cardboard backing at bottom/right, one small irregular teal repair patch on the lower lip, and three bold purposeful vent marks. Flatten the shading into printed matte cut paper and restrained dry gouache; each material feels like a separate layered paper piece. Fine quiet fibers INSIDE shapes only. No realistic bevels, gradients, gloss, reflections, global haze, surrounding shadow, text or room. Exact dark display is #241D29 and must remain blank with sharp usable edges. Warm ivory #F4EBD8, tan #DCCDB3 and muted teal #318E85. Asset fills frame with modest fully transparent padding; silhouette and base entirely present. The casing should feel crafted and specific, not stock UI chrome.",
+      "generated_source": "/Users/mayowaadesanya/.codex/generated_images/01a0efb5-bc82-7313-8535-e2b13c74cc1b/exec-14a55403-18a6-4d1d-90dc-18e97bd6e683.png",
+      "file": "monitor.png",
+      "reuse": "production-local physical artwork; blank apertures receive editable animated SVG layers"
+    },
+    {
+      "id": "washer",
+      "prompt": "Create one independent illustration of a small front-loading basement washing machine. The attached image is a style reference only: match its warm matte gouache PRINTED PAPER cutout construction and shallow 2D cardboard depth. Straight-on front elevation, broad compact squarish body, no room or floor. Off-white body with slightly imperfect asymmetric broad silhouette, clearly separate top control strip, one oversized cream control dial at upper right, a coral on/off pill at upper left, quiet worn teal paper repair patch at lower left, thick inset circular ivory door ring around an uninterrupted dark slate circular opening. The opening must be empty dark #344B58 so separately animated laundry can be composited inside later. Small cream latch at right of the ring. Lower edge has shallow tan underside; body feels like a heavy layered cardboard shell. Only a few deliberate vent slits and dry printed marks; no fine technical complexity. No writing, logos, characters, clothes, cables, cast ground shadow, diffuse halo or background. Genuine transparent background. Broad charming tactile shapes, flat 2D, no glossy 3D, realistic reflections or photographic lighting. Whole casing visible with narrow transparent margin.",
+      "generated_source": "/Users/mayowaadesanya/.codex/generated_images/01a0efb5-bc82-7313-8535-e2b13c74cc1b/exec-0913d000-e50b-401c-b732-de035bfc1d47.png",
+      "file": "washer.png",
+      "reuse": "production-local physical artwork; blank apertures receive editable animated SVG layers"
+    },
+    {
+      "id": "book",
+      "prompt": "Create one independent open storybook illustration in the attached image's warm tactile printed PAPER CUTOUT style. Reference is for material language only. Front view with slight shallow view of the open page spread, flat 2D editorial collage, whole book on genuinely transparent background. A distinctive wide asymmetrical open book with thick coral-red cut-card cover backing, generous ivory page block with a few irregular layered page edges visible along bottom, raised center fold, left page curls gently at outer corner, right page has one dog-ear, narrow teal cloth bookmark hanging from bottom. The open ivory pages are BLANK except for 3 to 4 broad faint warm-gray PRINTED horizontal curved marks per side, not readable words. Each half has intentionally different curvature and width. Subtle dry gouache paper variations attached inside each piece; shallow tan undersides offset lower right. No glossy 3D, realism, realistic perspective, shadows outside silhouette, halos, objects, characters, lettering or room. Broad confident distinct silhouette that reads at phone size; more finished and individual than a generic vector book icon. Keep center fold and all cover edges visible; landscape canvas.",
+      "generated_source": "/Users/mayowaadesanya/.codex/generated_images/01a0efb5-bc82-7313-8535-e2b13c74cc1b/exec-a2b76490-bf43-44d6-ae73-214056424a12.png",
+      "file": "book.png",
+      "reuse": "production-local physical artwork; blank apertures receive editable animated SVG layers"
+    }
+  ]
+}

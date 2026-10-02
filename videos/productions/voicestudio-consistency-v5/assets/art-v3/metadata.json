@@ -1,0 +1,134 @@
+{
+  "status": "REVIEW_REQUIRED",
+  "assets": [
+    {
+      "id": "art-v3-monitor",
+      "version": 3,
+      "file": "assets/art-v3/monitor.png",
+      "dimensions": [
+        1586,
+        992
+      ],
+      "sha256": "93dcbbb3dc1d4d794a43e6d523318ba68bb1b3ede20861c546c74764730c28ba",
+      "role": "cream paper monitor shell; independently masked editable display and foreground bezel",
+      "method": "built-in imagegen plus authored SVG integration/mask; PNG unmodified",
+      "scope": "VoiceStudio v3 only",
+      "reconstruction": "source/components.py; named master function and SVG clip; interface remains editable",
+      "presentation_file": "assets/art-v3/monitor.webp",
+      "format_conversion": "lossless; original PNG retained; dimensions/alpha/visible RGBA checked identical"
+    },
+    {
+      "id": "art-v3-old-computer",
+      "version": 3,
+      "file": "assets/art-v3/old-computer.png",
+      "dimensions": [
+        1585,
+        992
+      ],
+      "sha256": "01724e4f85af4651c6f3bcaf43c741a2019c53b7cc17a73969bdad774a4b0e88",
+      "role": "yellowed thick vintage computer and compact display",
+      "method": "built-in imagegen plus authored SVG integration/mask; PNG unmodified",
+      "scope": "VoiceStudio v3 only",
+      "reconstruction": "source/components.py; named master function and SVG clip; interface remains editable",
+      "presentation_file": "assets/art-v3/old-computer.webp",
+      "format_conversion": "lossless; original PNG retained; dimensions/alpha/visible RGBA checked identical"
+    },
+    {
+      "id": "art-v3-microphone",
+      "version": 3,
+      "file": "assets/art-v3/microphone.png",
+      "dimensions": [
+        1024,
+        1536
+      ],
+      "sha256": "086cbd699a2f9ff5dd67663c0a65e8c2d94f19609da17432de8fc68e4704b8da",
+      "role": "graphite capsule, cream grille, teal mount and short tripod; authored silhouette clip",
+      "method": "built-in imagegen plus authored SVG integration/mask; PNG unmodified",
+      "scope": "VoiceStudio v3 only",
+      "reconstruction": "source/components.py; named master function and SVG clip; interface remains editable",
+      "presentation_file": "assets/art-v3/microphone.webp",
+      "format_conversion": "lossless; original PNG retained; dimensions/alpha/visible RGBA checked identical"
+    },
+    {
+      "id": "art-v3-stool",
+      "version": 3,
+      "file": "assets/art-v3/stool.png",
+      "dimensions": [
+        1374,
+        1145
+      ],
+      "sha256": "3494aa4f3aa74814e0d46c1571187e10a1c59c77658ee4648a6999ac7676e4c9",
+      "role": "printed blue wood seat, dark underside and coherent supports",
+      "method": "built-in imagegen plus authored SVG integration/mask; PNG unmodified",
+      "scope": "VoiceStudio v3 only",
+      "reconstruction": "source/components.py; named master function and SVG clip; interface remains editable",
+      "presentation_file": "assets/art-v3/stool.webp",
+      "format_conversion": "lossless; original PNG retained; dimensions/alpha/visible RGBA checked identical"
+    },
+    {
+      "id": "art-v3-paper-cards",
+      "version": 3,
+      "method": "coding-agent original SVG or canonical puppet posing",
+      "source": "components.card; deterministic cut profiles and backing strata",
+      "scope": "VoiceStudio v3 only"
+    },
+    {
+      "id": "art-v3-speaking-expressions",
+      "version": 3,
+      "method": "coding-agent original SVG or canonical puppet posing",
+      "source": "components.speaking_face; four graphic mouth phases, blink and gaze",
+      "scope": "VoiceStudio v3 only"
+    },
+    {
+      "id": "art-v3-puppet-performance",
+      "version": 3,
+      "method": "coding-agent original SVG or canonical puppet posing",
+      "source": "components.bot; canonical assemble_pose geometry with pose/arm/head overrides",
+      "scope": "VoiceStudio v3 only"
+    },
+    {
+      "id": "art-v3-laundry-shell",
+      "version": 3,
+      "method": "coding-agent original SVG or canonical puppet posing",
+      "source": "actions.scene setup05; rim, seal, control strip",
+      "scope": "VoiceStudio v3 only"
+    },
+    {
+      "id": "art-v3-cat-states",
+      "version": 3,
+      "method": "coding-agent original SVG or canonical puppet posing",
+      "source": "actions.scene setup05; curled sleep and distinct startled silhouette",
+      "scope": "VoiceStudio v3 only"
+    },
+    {
+      "id": "art-v3-book-pages",
+      "version": 3,
+      "method": "coding-agent original SVG or canonical puppet posing",
+      "source": "actions.scene setup10; cover, spine, open pages, folded flights",
+      "scope": "VoiceStudio v3 only"
+    },
+    {
+      "id": "art-v3-keyboard",
+      "version": 3,
+      "method": "coding-agent original SVG or canonical puppet posing",
+      "source": "components.keyboard; per-key cap, underside and depression",
+      "scope": "VoiceStudio v3 only"
+    },
+    {
+      "id": "art-v3-phone",
+      "version": 3,
+      "method": "coding-agent original SVG or canonical puppet posing",
+      "source": "actions.scene setup19; asymmetric shallow backing and editable screen",
+      "scope": "VoiceStudio v3 only"
+    },
+    {
+      "id": "art-v3-workbench",
+      "version": 3,
+      "method": "coding-agent original SVG",
+      "source": "components.workbench; cut-paper wood surface, lip, coherent legs and brace",
+      "scope": "VoiceStudio v3 only; setups04/08"
+    }
+  ],
+  "canonical_mascot_redrawn": false,
+  "global_style_update": false
+}

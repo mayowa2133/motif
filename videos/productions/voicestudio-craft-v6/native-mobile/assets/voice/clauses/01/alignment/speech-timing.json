@@ -1,0 +1,139 @@
+{
+  "method": "installed Whisper small.en DTW; no flash attention; adjacent token-center midpoints",
+  "precision": "automatic approximate word boundaries, not phoneme-perfect",
+  "duration": 4.455,
+  "words": [
+    {
+      "text": "Solodev",
+      "centers": [
+        0.18,
+        0.34,
+        0.46
+      ],
+      "start": 0.06,
+      "end": 0.54
+    },
+    {
+      "text": "just",
+      "centers": [
+        0.62
+      ],
+      "start": 0.54,
+      "end": 0.78
+    },
+    {
+      "text": "open",
+      "centers": [
+        0.94
+      ],
+      "start": 0.78,
+      "end": 1.01
+    },
+    {
+      "text": "sourced",
+      "centers": [
+        1.08
+      ],
+      "start": 1.01,
+      "end": 1.17
+    },
+    {
+      "text": "a",
+      "centers": [
+        1.26
+      ],
+      "start": 1.17,
+      "end": 1.33
+    },
+    {
+      "text": "free",
+      "centers": [
+        1.4
+      ],
+      "start": 1.33,
+      "end": 1.51
+    },
+    {
+      "text": "version",
+      "centers": [
+        1.62
+      ],
+      "start": 1.51,
+      "end": 1.7000000000000002
+    },
+    {
+      "text": "of",
+      "centers": [
+        1.78
+      ],
+      "start": 1.7000000000000002,
+      "end": 1.88
+    },
+    {
+      "text": "11",
+      "centers": [
+        1.98
+      ],
+      "start": 1.88,
+      "end": 2.08
+    },
+    {
+      "text": "Labs,",
+      "centers": [
+        2.18
+      ],
+      "start": 2.08,
+      "end": 2.41
+    },
+    {
+      "text": "and",
+      "centers": [
+        2.64
+      ],
+      "start": 2.41,
+      "end": 2.6900000000000004
+    },
+    {
+      "text": "it's",
+      "centers": [
+        2.74,
+        2.76
+      ],
+      "start": 2.6900000000000004,
+      "end": 2.86
+    },
+    {
+      "text": "already",
+      "centers": [
+        2.96
+      ],
+      "start": 2.86,
+      "end": 3.09
+    },
+    {
+      "text": "passed",
+      "centers": [
+        3.22
+      ],
+      "start": 3.09,
+      "end": 3.41
+    },
+    {
+      "text": "36,000",
+      "centers": [
+        3.6,
+        3.98
+      ],
+      "start": 3.41,
+      "end": 4.1
+    },
+    {
+      "text": "stars.",
+      "centers": [
+        4.22
+      ],
+      "start": 4.1,
+      "end": 4.34
+    }
+  ]
+}

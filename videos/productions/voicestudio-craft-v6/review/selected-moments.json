@@ -1,0 +1,78 @@
+{
+  "status": "REVIEW_REQUIRED",
+  "shots": [
+    2,
+    3,
+    5,
+    9,
+    12,
+    16,
+    19
+  ],
+  "same_time_native_seconds": [
+    3.6,
+    6.833,
+    10.5,
+    15.8,
+    21.6,
+    27.533,
+    32.335
+  ],
+  "requested_frames": [
+    108,
+    205,
+    315,
+    474,
+    648,
+    826,
+    970
+  ],
+  "sheet": "renders/selected-before-after.png",
+  "comparisons": [
+    {
+      "file": "renders/comparisons/billing-and-relief.mp4",
+      "source_frames_half_open": [
+        [
+          180,
+          207
+        ],
+        [
+          806,
+          839
+        ]
+      ],
+      "frames": 60,
+      "fps": 30,
+      "playback_rate": 1,
+      "audio": "muted for picture comparison"
+    },
+    {
+      "file": "renders/comparisons/basement-completion.mp4",
+      "source_frames_half_open": [
+        [
+          303,
+          328
+        ]
+      ],
+      "frames": 25,
+      "fps": 30,
+      "playback_rate": 1,
+      "audio": "muted for picture comparison"
+    },
+    {
+      "file": "renders/comparisons/keyboard-contact-rebound.mp4",
+      "source_frames_half_open": [
+        [
+          958,
+          986
+        ]
+      ],
+      "frames": 28,
+      "fps": 30,
+      "playback_rate": 1,
+      "audio": "muted for picture comparison"
+    }
+  ],
+  "correction_passes": 1,
+  "caption_free_sheet": true
+}

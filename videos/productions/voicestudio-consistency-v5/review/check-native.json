@@ -1,0 +1,98 @@
+
+> check
+> npx --yes hyperframes@0.8.99 check --strict --timeout 60000 --at 1.5,4.2,6.5,7.83333333,10.53333333,11.43333333,12.93333333,14.9,16.83333333,18.5,19.73333333,21.56666667,23.26666667,24.4,25.96666667,27.73333333,29.2,30.66666667,32.83333333 --json
+
+{
+  "ok": true,
+  "strict": true,
+  "lint": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 0,
+    "infoCount": 0,
+    "findings": [],
+    "filesScanned": 21
+  },
+  "runtime": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 0,
+    "infoCount": 0,
+    "findings": []
+  },
+  "layout": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 0,
+    "infoCount": 0,
+    "findings": [],
+    "duration": 32.86666666666667,
+    "samples": [
+      1.5,
+      4.2,
+      6.5,
+      7.833,
+      10.533,
+      11.433,
+      12.933,
+      14.9,
+      16.833,
+      18.5,
+      19.733,
+      21.567,
+      23.267,
+      24.4,
+      25.967,
+      27.733,
+      29.2,
+      30.667,
+      32.833
+    ],
+    "transitionSamples": [],
+    "transitionSamplesDropped": 0,
+    "tolerance": 2,
+    "totalIssueCount": 0,
+    "truncated": false
+  },
+  "motion": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 0,
+    "infoCount": 0,
+    "findings": [],
+    "enabled": false,
+    "samples": 0
+  },
+  "contrast": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 0,
+    "infoCount": 0,
+    "findings": [],
+    "enabled": true,
+    "samples": [
+      1.5,
+      10.533,
+      18.5,
+      24.4,
+      32.833
+    ],
+    "checked": 37,
+    "passed": 37
+  },
+  "hdr": {
+    "autoPromotion": null,
+    "inspection": "available"
+  },
+  "snapshots": {
+    "enabled": false,
+    "files": [],
+    "times": [],
+    "findingFiles": []
+  },
+  "_meta": {
+    "version": "0.8.99",
+    "latestVersion": "0.8.106",
+    "updateAvailable": true
+  }
+}

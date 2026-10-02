@@ -1,0 +1,33 @@
+{
+  "status": "REVIEW_REQUIRED",
+  "full": {
+    "width": 1080,
+    "height": 1920,
+    "frames": 986,
+    "fps": "30/1",
+    "duration": "32.866667",
+    "audio_sha256": "fe39df8faaac30f6333a4bb708ae3c32fd1be2fcc4004c0678030864ccc4e351",
+    "bytes": 9909504
+  },
+  "native": {
+    "width": 360,
+    "height": 640,
+    "frames": 986,
+    "fps": "30/1",
+    "duration": "32.866667",
+    "audio_sha256": "fe39df8faaac30f6333a4bb708ae3c32fd1be2fcc4004c0678030864ccc4e351",
+    "bytes": 3086549
+  },
+  "baseline_audio_sha256": "fe39df8faaac30f6333a4bb708ae3c32fd1be2fcc4004c0678030864ccc4e351",
+  "preserved_v4_files": 721,
+  "preserved_v4_changed_files": [],
+  "hero_composition_bytes_identical": {
+    "1": true,
+    "5": true,
+    "9": true,
+    "10": true,
+    "19": true
+  },
+  "subjective_listening": "not reassessed; baseline AAC stream reused exactly",
+  "source_scene_frame_schedule": "986 frames / 30 fps, nineteen fixed shots"
+}

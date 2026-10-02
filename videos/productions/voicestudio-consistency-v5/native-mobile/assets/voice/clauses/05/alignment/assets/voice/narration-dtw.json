@@ -1,0 +1,185 @@
+{
+	"systeminfo": "WHISPER : VITISAI = 0 | COREML = 0 | OPENVINO = 0 | MTL : EMBED_LIBRARY = 1 | CPU : NEON = 1 | ARM_FMA = 1 | MATMUL_INT8 = 1 | DOTPROD = 1 | ACCELERATE = 1 | OPENMP = 1 | REPACK = 1 | ",
+	"model": {
+		"type": "small",
+		"multilingual": false,
+		"vocab": 51864,
+		"audio": {
+			"ctx": 1500,
+			"state": 768,
+			"head": 12,
+			"layer": 12
+		},
+		"text": {
+			"ctx": 448,
+			"state": 768,
+			"head": 12,
+			"layer": 12
+		},
+		"mels": 80,
+		"ftype": 1
+	},
+	"params": {
+		"model": "/Users/mayowaadesanya/.cache/hyperframes/whisper/models/ggml-small.en.bin",
+		"language": "en",
+		"translate": false
+	},
+	"result": {
+		"language": "en"
+	},
+	"transcription": [
+		{
+			"timestamps": {
+				"from": "00:00:00,000",
+				"to": "00:00:01,640"
+			},
+			"offsets": {
+				"from": 0,
+				"to": 1640
+			},
+			"text": " turns any book into an audiobook.",
+			"tokens": [
+				{
+					"text": "[_BEG_]",
+					"timestamps": {
+						"from": "00:00:00,000",
+						"to": "00:00:00,000"
+					},
+					"offsets": {
+						"from": 0,
+						"to": 0
+					},
+					"id": 50363,
+					"p": 0.99092,
+					"t_dtw": -1
+				},
+				{
+					"text": " turns",
+					"timestamps": {
+						"from": "00:00:00,100",
+						"to": "00:00:00,270"
+					},
+					"offsets": {
+						"from": 100,
+						"to": 270
+					},
+					"id": 4962,
+					"p": 0.585552,
+					"t_dtw": 32
+				},
+				{
+					"text": " any",
+					"timestamps": {
+						"from": "00:00:00,270",
+						"to": "00:00:00,430"
+					},
+					"offsets": {
+						"from": 270,
+						"to": 430
+					},
+					"id": 597,
+					"p": 0.998102,
+					"t_dtw": 54
+				},
+				{
+					"text": " book",
+					"timestamps": {
+						"from": "00:00:00,430",
+						"to": "00:00:00,640"
+					},
+					"offsets": {
+						"from": 430,
+						"to": 640
+					},
+					"id": 1492,
+					"p": 0.99956,
+					"t_dtw": 72
+				},
+				{
+					"text": " into",
+					"timestamps": {
+						"from": "00:00:00,640",
+						"to": "00:00:00,850"
+					},
+					"offsets": {
+						"from": 640,
+						"to": 850
+					},
+					"id": 656,
+					"p": 0.997215,
+					"t_dtw": 94
+				},
+				{
+					"text": " an",
+					"timestamps": {
+						"from": "00:00:00,850",
+						"to": "00:00:00,950"
+					},
+					"offsets": {
+						"from": 850,
+						"to": 950
+					},
+					"id": 281,
+					"p": 0.996531,
+					"t_dtw": 108
+				},
+				{
+					"text": " audi",
+					"timestamps": {
+						"from": "00:00:00,950",
+						"to": "00:00:01,160"
+					},
+					"offsets": {
+						"from": 950,
+						"to": 1160
+					},
+					"id": 40504,
+					"p": 0.736136,
+					"t_dtw": 124
+				},
+				{
+					"text": "obook",
+					"timestamps": {
+						"from": "00:00:01,160",
+						"to": "00:00:01,430"
+					},
+					"offsets": {
+						"from": 1160,
+						"to": 1430
+					},
+					"id": 49776,
+					"p": 0.999683,
+					"t_dtw": 150
+				},
+				{
+					"text": ".",
+					"timestamps": {
+						"from": "00:00:01,430",
+						"to": "00:00:01,540"
+					},
+					"offsets": {
+						"from": 1430,
+						"to": 1540
+					},
+					"id": 13,
+					"p": 0.971964,
+					"t_dtw": 162
+				},
+				{
+					"text": "[_TT_82]",
+					"timestamps": {
+						"from": "00:00:01,640",
+						"to": "00:00:01,640"
+					},
+					"offsets": {
+						"from": 1640,
+						"to": 1640
+					},
+					"id": 50445,
+					"p": 0.0226822,
+					"t_dtw": -1
+				}
+			]
+		}
+	]
+}

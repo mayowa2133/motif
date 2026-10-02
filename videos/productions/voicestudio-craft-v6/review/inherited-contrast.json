@@ -1,0 +1,58 @@
+{
+  "native_runtime_errors": 0,
+  "native_layout_errors": 0,
+  "native_contrast_warnings": 10,
+  "baseline_same_warnings": true,
+  "warnings": [
+    {
+      "text": "Paid",
+      "ratio": 4.02,
+      "time": 6.833
+    },
+    {
+      "text": "Paid",
+      "ratio": 4.02,
+      "time": 6.833
+    },
+    {
+      "text": "Paid",
+      "ratio": 4.02,
+      "time": 6.833
+    },
+    {
+      "text": "Paid",
+      "ratio": 4.02,
+      "time": 6.833
+    },
+    {
+      "text": "Paid",
+      "ratio": 4.02,
+      "time": 6.833
+    },
+    {
+      "text": "Paid",
+      "ratio": 4.02,
+      "time": 6.833
+    },
+    {
+      "text": "Speaker 1",
+      "ratio": 2.91,
+      "time": 21.6
+    },
+    {
+      "text": "Speaker 2",
+      "ratio": 2.29,
+      "time": 21.6
+    },
+    {
+      "text": "Speaker 1",
+      "ratio": 2.91,
+      "time": 21.6
+    },
+    {
+      "text": "Speaker 2",
+      "ratio": 2.29,
+      "time": 21.6
+    }
+  ]
+}
