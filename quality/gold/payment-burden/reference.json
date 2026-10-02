@@ -1,0 +1,26 @@
+{
+  "id": "payment-burden",
+  "status": "APPROVED_VISUAL_BENCHMARK",
+  "tags": [
+    "burden",
+    "ui-contact",
+    "receipts",
+    "consequence"
+  ],
+  "clip": {
+    "file": "videos/productions/voicestudio-craft-v6/renders/mobile.mp4",
+    "sha256": "ff8a2cda90e85fecbe85e750ba56f884c83a30d567447ef1ed1e9c2d501582c7",
+    "frames": [
+      138,
+      207
+    ],
+    "fps": 30,
+    "start_seconds": 4.6,
+    "end_seconds": 6.9,
+    "copy_policy": "stable source range; extract only when needed"
+  },
+  "still": "quality/gold/payment-burden/still.png",
+  "source_shot": 3,
+  "representative_frame": 205,
+  "note": "quality/gold/payment-burden/notes.md"
+}

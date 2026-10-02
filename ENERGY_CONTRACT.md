@@ -1,0 +1,17 @@
+# Motif gold energy contract v1
+
+In explicit `motif-gold-v1` mode, one focal idea may have concurrent purposeful motion. This supersedes interpreting “one clear action” as action → settle completely → wait. The default restrained style remains available.
+
+For each active beat, direct:
+
+- **Dominant action:** the physical change that explains the sentence.
+- **Character response:** readable anticipation, contact, burden, surprise or release, when Bot participates.
+- **Local reaction:** selected contacted or relevant nearby objects respond with bounded falloff.
+- **Residual motion:** material or antenna lag carries the consequence.
+- **Next-action overlap:** the next action may begin before residual movement has fully settled.
+
+Not every shot needs all five. An intentional pause needs a story purpose, not a motion quota. A 2.5-second caption hold with no developing visual idea fails the energy critic. No minimum particle count, global shake, event density score or mandated jitter.
+
+Use registered performance and reaction bindings. Name every affected object; distance alone never enrolls an object. Compose local response outside the main action transform. Held objects require inverse grip resolution after both transforms; unsupported attachment bindings stop compilation.
+
+Event-specific accents support contact or change and clear promptly. They must not compete with the hero. Review ordered native frames and motion traces from actual moving previews, and state the sampling limitations; a plan describing energy is not evidence of it.

@@ -1,0 +1,71 @@
+{
+  "scope": "finite copied regressions; no claim of general original-film quality",
+  "painted_failures": {
+    "q02": {
+      "expected_gates": [
+        "story",
+        "cause-effect"
+      ],
+      "observed_failures": [
+        "cause-effect",
+        "composition",
+        "continuity",
+        "focal-hierarchy",
+        "mobile",
+        "story"
+      ],
+      "caught": true
+    },
+    "q03": {
+      "expected_gates": [
+        "mobile",
+        "focal-hierarchy"
+      ],
+      "observed_failures": [
+        "composition",
+        "focal-hierarchy",
+        "mobile",
+        "story"
+      ],
+      "caught": true
+    },
+    "q04": {
+      "expected_gates": [
+        "character-performance"
+      ],
+      "observed_failures": [
+        "character-performance"
+      ],
+      "caught": true
+    },
+    "q05": {
+      "expected_gates": [
+        "energy"
+      ],
+      "observed_failures": [
+        "cause-effect",
+        "character-performance",
+        "composition",
+        "continuity",
+        "energy",
+        "focal-hierarchy",
+        "mobile",
+        "physicality",
+        "story"
+      ],
+      "caught": true
+    }
+  },
+  "control": "PASS in both live critics",
+  "gate": "REPLAN_REQUIRED",
+  "review_method": "ordered decoded native frames + full-rate pixel motion traces; CLI does not accept video",
+  "separate_live_invocations": 2,
+  "critics_record_sha256": "f3829c3a5b2752e105f6d7ed4e651aac785b59ce4f1af3635e2287d5265b1db9",
+  "freeze": {
+    "files_verified": 540,
+    "unchanged": true
+  },
+  "approval": "system ready for human review; no film acceptance/publishing",
+  "failed_backend_attempt": "retained separately; invalid schema, no output substitution",
+  "first_validation": "retained; global-only grading missed two faults, corrected with independent per-shot review and native frames"
+}

@@ -1,0 +1,8 @@
+Reading prompt from stdin...
+2026-10-02T16:52:25.215581Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-10-02T16:52:28.731745Z  WARN codex_core::responses_retry: stream disconnected - retrying sampling request (1/5 in 185ms)... turn_id=01a0fd88-06b8-7e13-9559-ceab7999df61 retries=1 max_retries=5 sampling_error=stream disconnected before completion: websocket closed by server before response.completed
+2026-10-02T16:52:30.396616Z  WARN codex_core::responses_retry: stream disconnected - retrying sampling request (2/5 in 407ms)... turn_id=01a0fd88-06b8-7e13-9559-ceab7999df61 retries=2 max_retries=5 sampling_error=stream disconnected before completion: websocket closed by server before response.completed
+2026-10-02T16:52:33.478519Z  WARN codex_core::responses_retry: stream disconnected - retrying sampling request (3/5 in 819ms)... turn_id=01a0fd88-06b8-7e13-9559-ceab7999df61 retries=3 max_retries=5 sampling_error=stream disconnected before completion: websocket closed by server before response.completed
+2026-10-02T16:52:35.655524Z  WARN codex_core::responses_retry: stream disconnected - retrying sampling request (4/5 in 1.6s)... turn_id=01a0fd88-06b8-7e13-9559-ceab7999df61 retries=4 max_retries=5 sampling_error=stream disconnected before completion: websocket closed by server before response.completed
+2026-10-02T16:52:39.792505Z  WARN codex_core::responses_retry: stream disconnected - retrying sampling request (5/5 in 3.318s)... turn_id=01a0fd88-06b8-7e13-9559-ceab7999df61 retries=5 max_retries=5 sampling_error=stream disconnected before completion: websocket closed by server before response.completed
+2026-10-02T16:52:44.667353Z  WARN codex_core::client: falling back to HTTP

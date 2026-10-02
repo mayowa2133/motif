@@ -1,0 +1,26 @@
+{
+  "id": "basement-completion",
+  "status": "APPROVED_VISUAL_BENCHMARK",
+  "tags": [
+    "environment",
+    "completion",
+    "surprise",
+    "reaction-radius"
+  ],
+  "clip": {
+    "file": "videos/productions/voicestudio-craft-v6/renders/mobile.mp4",
+    "sha256": "ff8a2cda90e85fecbe85e750ba56f884c83a30d567447ef1ed1e9c2d501582c7",
+    "frames": [
+      248,
+      328
+    ],
+    "fps": 30,
+    "start_seconds": 8.266666666666667,
+    "end_seconds": 10.933333333333334,
+    "copy_policy": "stable source range; extract only when needed"
+  },
+  "still": "quality/gold/basement-completion/still.png",
+  "source_shot": 5,
+  "representative_frame": 315,
+  "note": "quality/gold/basement-completion/notes.md"
+}

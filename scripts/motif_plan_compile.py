@@ -291,4 +291,6 @@ def compile_plan(project, plan, words, voice_duration, duration_range):
 <svg id="scene" class="clip" data-start="0" data-duration="{duration}" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 1920" aria-label="{escape(plan['message'])}"><defs>{DEFS}{BOT_DEFS}<clipPath id="action-safe"><rect x="{SAFE[0]}" y="{SAFE[1]}" width="{SAFE[2]}" height="{SAFE[3]}"/></clipPath></defs>{world}{headlines}{captions}</svg>{audio}</div>
 <script id="motif-scene-events" type="application/json">{literal}</script><script>window.__timelines = window.__timelines || {{}}; window.MotifEventEngine.compile(JSON.parse(document.getElementById('motif-scene-events').textContent),'main');</script></body></html>'''
     (project/'index.html').write_text(html)
+    from motif_quality import apply_bindings
+    apply_bindings(project,plan,spans)
     return duration

@@ -1,0 +1,36 @@
+{
+  "version": "v1",
+  "geometry": "locked canonical Motif Bot v1",
+  "implementation": "scripts/motif_performance.py",
+  "states": [
+    "talking",
+    "listening",
+    "focused",
+    "anticipating",
+    "impact-light",
+    "impact-heavy",
+    "worried",
+    "burdened",
+    "surprised",
+    "relieved",
+    "celebrating",
+    "climbing",
+    "typing"
+  ],
+  "channels": [
+    "head",
+    "eyes/mouth existing face states",
+    "torso squash",
+    "arms",
+    "existing hands",
+    "paired antenna lag",
+    "feet"
+  ],
+  "provenance": "placement concepts extracted from v6; canonical paths remain build_motif_bot.py",
+  "binding_support": {
+    "calendar": "executable",
+    "arena": "executable",
+    "attached frame renderers": "requires anchor-aware hook; explicit capability error otherwise",
+    "high-energy paper": "executable anchor-aware hook in motif_paper_energy.py"
+  }
+}

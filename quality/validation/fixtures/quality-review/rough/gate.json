@@ -1,0 +1,43 @@
+{
+  "phase": "rough",
+  "status": "REPLAN_REQUIRED",
+  "blocked": [
+    "story: q02: story",
+    "story: q02: cause-effect",
+    "story: q02: focal-hierarchy",
+    "story: q02: continuity",
+    "story: q03: story",
+    "story: q03: focal-hierarchy",
+    "story: q05: story",
+    "story: q05: cause-effect",
+    "story: q05: focal-hierarchy",
+    "story: q05: continuity",
+    "story: story",
+    "story: cause-effect",
+    "story: focal-hierarchy",
+    "story: continuity",
+    "visual: q02: composition",
+    "visual: q02: mobile",
+    "visual: q03: composition",
+    "visual: q03: mobile",
+    "visual: q04: character-performance",
+    "visual: q05: character-performance",
+    "visual: q05: physicality",
+    "visual: q05: energy",
+    "visual: q05: composition",
+    "visual: q05: mobile",
+    "visual: character-performance",
+    "visual: physicality",
+    "visual: energy",
+    "visual: composition",
+    "visual: mobile"
+  ],
+  "meaningful_repairs": 0,
+  "human_final_approval": "REQUIRED",
+  "publish": false,
+  "report_hashes": {
+    "story": "46e13ff9901ccc50b91fbc7e6d419f445f75d7e6841404beb5e847438c0c49be",
+    "visual": "0ccbd544cf7b5009ea542aa112c3ed1b542cbfd663d9f81f60bbd4c79fe9522d"
+  },
+  "evidence_sha256": "aa80bbe3c2dc055176768e649dc3fbf3c2a1af661d33b772b65db2349f5cb4e3"
+}

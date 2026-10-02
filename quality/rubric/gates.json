@@ -1,0 +1,19 @@
+{
+  "mode": "motif-gold-v1",
+  "story": [
+    "story",
+    "cause-effect",
+    "focal-hierarchy",
+    "continuity"
+  ],
+  "visual": [
+    "character-performance",
+    "physicality",
+    "energy",
+    "art",
+    "composition",
+    "mobile"
+  ],
+  "aggregation": "all required gates pass; never average",
+  "max_meaningful_repairs": 2
+}

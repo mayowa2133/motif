@@ -1,0 +1,174 @@
+[
+  {
+    "file": "/Users/mayowaadesanya/Projects/motif/quality/validation/fixtures/quality-review/rough/evidence-captions/q01-ordered.png",
+    "sha256": "23bc0fbba50a3c49ad352a1f29645a4fe5de59483c6c8afe87437269d41608c4"
+  },
+  {
+    "file": "/Users/mayowaadesanya/Projects/motif/quality/validation/fixtures/quality-review/rough/evidence-captions/q02-ordered.png",
+    "sha256": "5da57524839478eb3c783ff078f587d52cc04fdc3c7e353667f7f9c53ba0c286"
+  },
+  {
+    "file": "/Users/mayowaadesanya/Projects/motif/quality/validation/fixtures/quality-review/rough/evidence-captions/q03-ordered.png",
+    "sha256": "93c303ce7e23ea36c6d9f13dbbceb80fa9389960e1807b98d9eb9d61819e3c9e"
+  },
+  {
+    "file": "/Users/mayowaadesanya/Projects/motif/quality/validation/fixtures/quality-review/rough/evidence-captions/q04-ordered.png",
+    "sha256": "e148a77fb370c053fb0f90f64110546f013a260836fe0794b54555fa7d8db4a6"
+  },
+  {
+    "file": "/Users/mayowaadesanya/Projects/motif/quality/validation/fixtures/quality-review/rough/evidence-captions/q05-ordered.png",
+    "sha256": "e861e21b838f606513811035262cc08145f309c1f21902dfc62ee9c1528c3462"
+  },
+  {
+    "file": "/Users/mayowaadesanya/Projects/motif/quality/validation/fixtures/quality-review/rough/evidence-captions/q01-native-00000.png",
+    "sha256": "1a796a429ca0bfc19b28cecb81aad9d99209cbdc9b5c1f9d7e02d29d8b8630be"
+  },
+  {
+    "file": "/Users/mayowaadesanya/Projects/motif/quality/validation/fixtures/quality-review/rough/evidence-captions/q01-native-00037.png",
+    "sha256": "9d907f38dca31c83c436b5f4558c44e038fa872307342ab1e59b1c66718d975e"
+  },
+  {
+    "file": "/Users/mayowaadesanya/Projects/motif/quality/validation/fixtures/quality-review/rough/evidence-captions/q01-native-00074.png",
+    "sha256": "fab60493303b2fa2b0ae48df9701dd76650eb2b59cb865b5dd270ba0bc47975b"
+  },
+  {
+    "file": "/Users/mayowaadesanya/Projects/motif/quality/validation/fixtures/quality-review/rough/evidence-captions/q02-native-00075.png",
+    "sha256": "8137806732bbbf54b5d2e686d02c99419b91d2d0765b6537542eb638eb667641"
+  },
+  {
+    "file": "/Users/mayowaadesanya/Projects/motif/quality/validation/fixtures/quality-review/rough/evidence-captions/q02-native-00112.png",
+    "sha256": "75b75d45a312bf45a515ea5e213577fff5f5a67c519a2fdb16e9e72c5efab19b"
+  },
+  {
+    "file": "/Users/mayowaadesanya/Projects/motif/quality/validation/fixtures/quality-review/rough/evidence-captions/q02-native-00149.png",
+    "sha256": "8fa5716b6697e1998cf5c93b77216918c7717a3a7c430949522788ec947f997e"
+  },
+  {
+    "file": "/Users/mayowaadesanya/Projects/motif/quality/validation/fixtures/quality-review/rough/evidence-captions/q03-native-00150.png",
+    "sha256": "444fd3ee571323847c1374f1d2566bf481064e984ccbca1e0a1cb38ddd5874cd"
+  },
+  {
+    "file": "/Users/mayowaadesanya/Projects/motif/quality/validation/fixtures/quality-review/rough/evidence-captions/q03-native-00187.png",
+    "sha256": "5f677f67fc4265475aa55fd5d38c9e1fc65161568c32d31a5c61c46f02ecc6dd"
+  },
+  {
+    "file": "/Users/mayowaadesanya/Projects/motif/quality/validation/fixtures/quality-review/rough/evidence-captions/q03-native-00224.png",
+    "sha256": "aae132fdaede3be0a5ed2a11cd13bd7b8230dca2786641ea42779c9b41676cd9"
+  },
+  {
+    "file": "/Users/mayowaadesanya/Projects/motif/quality/validation/fixtures/quality-review/rough/evidence-captions/q04-native-00225.png",
+    "sha256": "61320c0dabb7f3ee7135edb728a1d370bfb9f08ff0577e72135ae289897411ec"
+  },
+  {
+    "file": "/Users/mayowaadesanya/Projects/motif/quality/validation/fixtures/quality-review/rough/evidence-captions/q04-native-00262.png",
+    "sha256": "7040183667cc4c2609cf06be42b0574c4a3b3c1ebd80d2f62bcaa2213869ea57"
+  },
+  {
+    "file": "/Users/mayowaadesanya/Projects/motif/quality/validation/fixtures/quality-review/rough/evidence-captions/q04-native-00299.png",
+    "sha256": "6d38a1feea53db388e52857128ca9355f3f1e19376384e748a6daf8350bb40d9"
+  },
+  {
+    "file": "/Users/mayowaadesanya/Projects/motif/quality/validation/fixtures/quality-review/rough/evidence-captions/q05-native-00300.png",
+    "sha256": "14faa70a47357e62823b676f973da2d7714a611566c9e117371e6e8b98ccf6a7"
+  },
+  {
+    "file": "/Users/mayowaadesanya/Projects/motif/quality/validation/fixtures/quality-review/rough/evidence-captions/q05-native-00337.png",
+    "sha256": "7dfb1682c91843f390c2d9c8aaf2efd460ecbec604fe4d5dd308ab7c158f4900"
+  },
+  {
+    "file": "/Users/mayowaadesanya/Projects/motif/quality/validation/fixtures/quality-review/rough/evidence-captions/q05-native-00374.png",
+    "sha256": "13fde239ca63c46727ad695a1c1baf3125261dea9e034ee6c6013fb732e07900"
+  },
+  {
+    "file": "/Users/mayowaadesanya/Projects/motif/quality/validation/fixtures/quality-review/rough/evidence-no-captions/q01-ordered.png",
+    "sha256": "e2bc40eb5582708e7bcad3c10eb4ee8035f60980e7d67930925f7887636892c7"
+  },
+  {
+    "file": "/Users/mayowaadesanya/Projects/motif/quality/validation/fixtures/quality-review/rough/evidence-no-captions/q02-ordered.png",
+    "sha256": "8c10b4277f8bd3edbcfc330fef6acbc6ad02208743dc5d45c8a643a886fae216"
+  },
+  {
+    "file": "/Users/mayowaadesanya/Projects/motif/quality/validation/fixtures/quality-review/rough/evidence-no-captions/q03-ordered.png",
+    "sha256": "0acf290e93ce3dbbcb7b43a370eadd54672d63ce868fb93e580123a92d44ecaf"
+  },
+  {
+    "file": "/Users/mayowaadesanya/Projects/motif/quality/validation/fixtures/quality-review/rough/evidence-no-captions/q04-ordered.png",
+    "sha256": "ce82bdb1ef4200140821060ee1124b23ecfe0fe0a8ff8638381ee19fa2275b1b"
+  },
+  {
+    "file": "/Users/mayowaadesanya/Projects/motif/quality/validation/fixtures/quality-review/rough/evidence-no-captions/q05-ordered.png",
+    "sha256": "f1a9917395d5b73c5cf6360fd546bca9436e45eff45407ede0265fee7858c337"
+  },
+  {
+    "file": "/Users/mayowaadesanya/Projects/motif/quality/validation/fixtures/quality-review/rough/evidence-no-captions/q01-native-00000.png",
+    "sha256": "5cb664cf5c10557136eea92468e0b9b27d1612a5f6fdec5cbc8e333d035107ab"
+  },
+  {
+    "file": "/Users/mayowaadesanya/Projects/motif/quality/validation/fixtures/quality-review/rough/evidence-no-captions/q01-native-00037.png",
+    "sha256": "6721ce20be27fa51bc051a91c0d93b0c1228267d761a459a180bdf2e9df6c8d6"
+  },
+  {
+    "file": "/Users/mayowaadesanya/Projects/motif/quality/validation/fixtures/quality-review/rough/evidence-no-captions/q01-native-00074.png",
+    "sha256": "adea69832e2194ccb5cc95832fe934f53d06d09ffc3b6fe73ce8b07696a01b83"
+  },
+  {
+    "file": "/Users/mayowaadesanya/Projects/motif/quality/validation/fixtures/quality-review/rough/evidence-no-captions/q02-native-00075.png",
+    "sha256": "ce047e2278a5f83c44cb610f8bae60a7b8b0964b06bf4cd4754ed4640410ace3"
+  },
+  {
+    "file": "/Users/mayowaadesanya/Projects/motif/quality/validation/fixtures/quality-review/rough/evidence-no-captions/q02-native-00112.png",
+    "sha256": "6bc3ad7dba9022bbf0783446452ba244de56aec138600ee8e4ae5a32a67a0148"
+  },
+  {
+    "file": "/Users/mayowaadesanya/Projects/motif/quality/validation/fixtures/quality-review/rough/evidence-no-captions/q02-native-00149.png",
+    "sha256": "3a30bc1c722e8d33f0cdf887ffdd72f8de9f91a65731bde01d6022d8f8046806"
+  },
+  {
+    "file": "/Users/mayowaadesanya/Projects/motif/quality/validation/fixtures/quality-review/rough/evidence-no-captions/q03-native-00150.png",
+    "sha256": "38adea66ac26cf222096f5b5534d31fde771460cee20f062d1cf73c5ad7f1d52"
+  },
+  {
+    "file": "/Users/mayowaadesanya/Projects/motif/quality/validation/fixtures/quality-review/rough/evidence-no-captions/q03-native-00187.png",
+    "sha256": "a9a8f7ae244c6cb820ae29cb68a24868e4aaeeb037651c592b15c5053b028ab2"
+  },
+  {
+    "file": "/Users/mayowaadesanya/Projects/motif/quality/validation/fixtures/quality-review/rough/evidence-no-captions/q03-native-00224.png",
+    "sha256": "5e5e630350367b305830cdffd326b3a9717c02e2d5ae194f6b715dc2e990bb61"
+  },
+  {
+    "file": "/Users/mayowaadesanya/Projects/motif/quality/validation/fixtures/quality-review/rough/evidence-no-captions/q04-native-00225.png",
+    "sha256": "08f09dfb08bf2ed9de1148ca94568ff63ac9ebba3d6b04f8f6a6d95b24c71555"
+  },
+  {
+    "file": "/Users/mayowaadesanya/Projects/motif/quality/validation/fixtures/quality-review/rough/evidence-no-captions/q04-native-00262.png",
+    "sha256": "4667bbd5c7b2413ad2371f8cf42e952e86ec77efaa208da6f4dd16b8d9cb03c2"
+  },
+  {
+    "file": "/Users/mayowaadesanya/Projects/motif/quality/validation/fixtures/quality-review/rough/evidence-no-captions/q04-native-00299.png",
+    "sha256": "3bf65f689e610a331b051391c6d2dfad53f863d7eb93664e5ce377e429b5b742"
+  },
+  {
+    "file": "/Users/mayowaadesanya/Projects/motif/quality/validation/fixtures/quality-review/rough/evidence-no-captions/q05-native-00300.png",
+    "sha256": "df778692702de25749998a53654b4a8de1a1ccb88f5576b23c0c874e43ac2a16"
+  },
+  {
+    "file": "/Users/mayowaadesanya/Projects/motif/quality/validation/fixtures/quality-review/rough/evidence-no-captions/q05-native-00337.png",
+    "sha256": "0b61852afbb2af92a37e57bddc37b6734a77f5271936c533a9cf2a723879440c"
+  },
+  {
+    "file": "/Users/mayowaadesanya/Projects/motif/quality/validation/fixtures/quality-review/rough/evidence-no-captions/q05-native-00374.png",
+    "sha256": "519fe37d137fd2edefd60b4cf02f7c0058954fb7d432b009284a6389c7a79b25"
+  },
+  {
+    "file": "/Users/mayowaadesanya/Projects/motif/quality/validation/fixtures/quality-review/rough/gold-payment-burden/payment-burden-ordered.png",
+    "sha256": "f0f169853a85ebb416a7cc268b4577355ec70be28e7a42ca999104db8ba0b4ff"
+  },
+  {
+    "file": "/Users/mayowaadesanya/Projects/motif/quality/validation/fixtures/quality-review/rough/gold-recording/recording-ordered.png",
+    "sha256": "50354c631f465a51ce8a47ae3d1a0c89e98ca0e3547fa054ed97e4ef65e8e6dd"
+  },
+  {
+    "file": "/Users/mayowaadesanya/Projects/motif/quality/validation/fixtures/quality-review/rough/gold-basement-completion/basement-completion-ordered.png",
+    "sha256": "c6098bdbdb9c3566881a1dede120dffd772dbf8ae2419812ba8de8d4e5b995f4"
+  }
+]

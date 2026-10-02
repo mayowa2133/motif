@@ -1,0 +1,323 @@
+{
+  "quality_mode": "motif-gold-v1",
+  "film": "VoiceStudio v6",
+  "approval": "User accepted visual benchmark on 2026-10-02",
+  "examples": [
+    {
+      "id": "recording",
+      "status": "APPROVED_VISUAL_BENCHMARK",
+      "tags": [
+        "performance",
+        "recording",
+        "talking",
+        "physical-ui"
+      ],
+      "clip": {
+        "file": "videos/productions/voicestudio-craft-v6/renders/mobile.mp4",
+        "sha256": "ff8a2cda90e85fecbe85e750ba56f884c83a30d567447ef1ed1e9c2d501582c7",
+        "frames": [
+          0,
+          76
+        ],
+        "fps": 30,
+        "start_seconds": 0.0,
+        "end_seconds": 2.533333333333333,
+        "copy_policy": "stable source range; extract only when needed"
+      },
+      "still": "quality/gold/recording/still.png",
+      "source_shot": 1,
+      "representative_frame": 56,
+      "note": "quality/gold/recording/notes.md"
+    },
+    {
+      "id": "star-interaction",
+      "status": "APPROVED_VISUAL_BENCHMARK",
+      "tags": [
+        "ui-contact",
+        "impact",
+        "effects",
+        "reward"
+      ],
+      "clip": {
+        "file": "videos/productions/voicestudio-craft-v6/renders/mobile.mp4",
+        "sha256": "ff8a2cda90e85fecbe85e750ba56f884c83a30d567447ef1ed1e9c2d501582c7",
+        "frames": [
+          76,
+          138
+        ],
+        "fps": 30,
+        "start_seconds": 2.533333333333333,
+        "end_seconds": 4.6,
+        "copy_policy": "stable source range; extract only when needed"
+      },
+      "still": "quality/gold/star-interaction/still.png",
+      "source_shot": 2,
+      "representative_frame": 108,
+      "note": "quality/gold/star-interaction/notes.md"
+    },
+    {
+      "id": "payment-burden",
+      "status": "APPROVED_VISUAL_BENCHMARK",
+      "tags": [
+        "burden",
+        "ui-contact",
+        "receipts",
+        "consequence"
+      ],
+      "clip": {
+        "file": "videos/productions/voicestudio-craft-v6/renders/mobile.mp4",
+        "sha256": "ff8a2cda90e85fecbe85e750ba56f884c83a30d567447ef1ed1e9c2d501582c7",
+        "frames": [
+          138,
+          207
+        ],
+        "fps": 30,
+        "start_seconds": 4.6,
+        "end_seconds": 6.9,
+        "copy_policy": "stable source range; extract only when needed"
+      },
+      "still": "quality/gold/payment-burden/still.png",
+      "source_shot": 3,
+      "representative_frame": 205,
+      "note": "quality/gold/payment-burden/notes.md"
+    },
+    {
+      "id": "basement-completion",
+      "status": "APPROVED_VISUAL_BENCHMARK",
+      "tags": [
+        "environment",
+        "completion",
+        "surprise",
+        "reaction-radius"
+      ],
+      "clip": {
+        "file": "videos/productions/voicestudio-craft-v6/renders/mobile.mp4",
+        "sha256": "ff8a2cda90e85fecbe85e750ba56f884c83a30d567447ef1ed1e9c2d501582c7",
+        "frames": [
+          248,
+          328
+        ],
+        "fps": 30,
+        "start_seconds": 8.266666666666667,
+        "end_seconds": 10.933333333333334,
+        "copy_policy": "stable source range; extract only when needed"
+      },
+      "still": "quality/gold/basement-completion/still.png",
+      "source_shot": 5,
+      "representative_frame": 315,
+      "note": "quality/gold/basement-completion/notes.md"
+    },
+    {
+      "id": "sample-transfer",
+      "status": "APPROVED_VISUAL_BENCHMARK",
+      "tags": [
+        "transfer",
+        "recording",
+        "continuity"
+      ],
+      "clip": {
+        "file": "videos/productions/voicestudio-craft-v6/renders/mobile.mp4",
+        "sha256": "ff8a2cda90e85fecbe85e750ba56f884c83a30d567447ef1ed1e9c2d501582c7",
+        "frames": [
+          350,
+          400
+        ],
+        "fps": 30,
+        "start_seconds": 11.666666666666666,
+        "end_seconds": 13.333333333333334,
+        "copy_policy": "stable source range; extract only when needed"
+      },
+      "still": "quality/gold/sample-transfer/still.png",
+      "source_shot": 7,
+      "representative_frame": 390,
+      "note": "quality/gold/sample-transfer/notes.md"
+    },
+    {
+      "id": "menu-landing",
+      "status": "APPROVED_VISUAL_BENCHMARK",
+      "tags": [
+        "ui-contact",
+        "impact-heavy",
+        "impact-light",
+        "process"
+      ],
+      "clip": {
+        "file": "videos/productions/voicestudio-craft-v6/renders/mobile.mp4",
+        "sha256": "ff8a2cda90e85fecbe85e750ba56f884c83a30d567447ef1ed1e9c2d501582c7",
+        "frames": [
+          455,
+          507
+        ],
+        "fps": 30,
+        "start_seconds": 15.166666666666666,
+        "end_seconds": 16.9,
+        "copy_policy": "stable source range; extract only when needed"
+      },
+      "still": "quality/gold/menu-landing/still.png",
+      "source_shot": 9,
+      "representative_frame": 474,
+      "note": "quality/gold/menu-landing/notes.md"
+    },
+    {
+      "id": "audiobook",
+      "status": "APPROVED_VISUAL_BENCHMARK",
+      "tags": [
+        "transformation",
+        "pages",
+        "hero-art"
+      ],
+      "clip": {
+        "file": "videos/productions/voicestudio-craft-v6/renders/mobile.mp4",
+        "sha256": "ff8a2cda90e85fecbe85e750ba56f884c83a30d567447ef1ed1e9c2d501582c7",
+        "frames": [
+          507,
+          559
+        ],
+        "fps": 30,
+        "start_seconds": 16.9,
+        "end_seconds": 18.633333333333333,
+        "copy_policy": "stable source range; extract only when needed"
+      },
+      "still": "quality/gold/audiobook/still.png",
+      "source_shot": 10,
+      "representative_frame": 550,
+      "note": "quality/gold/audiobook/notes.md"
+    },
+    {
+      "id": "transcription",
+      "status": "APPROVED_VISUAL_BENCHMARK",
+      "tags": [
+        "output-emerges",
+        "process",
+        "paper",
+        "designed-irregularity"
+      ],
+      "clip": {
+        "file": "videos/productions/voicestudio-craft-v6/renders/mobile.mp4",
+        "sha256": "ff8a2cda90e85fecbe85e750ba56f884c83a30d567447ef1ed1e9c2d501582c7",
+        "frames": [
+          600,
+          651
+        ],
+        "fps": 30,
+        "start_seconds": 20.0,
+        "end_seconds": 21.7,
+        "copy_policy": "stable source range; extract only when needed"
+      },
+      "still": "quality/gold/transcription/still.png",
+      "source_shot": 12,
+      "representative_frame": 648,
+      "note": "quality/gold/transcription/notes.md"
+    },
+    {
+      "id": "cancellation",
+      "status": "APPROVED_VISUAL_BENCHMARK",
+      "tags": [
+        "relief",
+        "ui-contact",
+        "receipts",
+        "continuity"
+      ],
+      "clip": {
+        "file": "videos/productions/voicestudio-craft-v6/renders/mobile.mp4",
+        "sha256": "ff8a2cda90e85fecbe85e750ba56f884c83a30d567447ef1ed1e9c2d501582c7",
+        "frames": [
+          790,
+          839
+        ],
+        "fps": 30,
+        "start_seconds": 26.333333333333332,
+        "end_seconds": 27.966666666666665,
+        "copy_policy": "stable source range; extract only when needed"
+      },
+      "still": "quality/gold/cancellation/still.png",
+      "source_shot": 16,
+      "representative_frame": 826,
+      "note": "quality/gold/cancellation/notes.md"
+    },
+    {
+      "id": "offline",
+      "status": "APPROVED_VISUAL_BENCHMARK",
+      "tags": [
+        "process-continues",
+        "offline",
+        "cause-effect"
+      ],
+      "clip": {
+        "file": "videos/productions/voicestudio-craft-v6/renders/mobile.mp4",
+        "sha256": "ff8a2cda90e85fecbe85e750ba56f884c83a30d567447ef1ed1e9c2d501582c7",
+        "frames": [
+          839,
+          878
+        ],
+        "fps": 30,
+        "start_seconds": 27.966666666666665,
+        "end_seconds": 29.266666666666666,
+        "copy_policy": "stable source range; extract only when needed"
+      },
+      "still": "quality/gold/offline/still.png",
+      "source_shot": 17,
+      "representative_frame": 869,
+      "note": "quality/gold/offline/notes.md"
+    },
+    {
+      "id": "privacy",
+      "status": "APPROVED_VISUAL_BENCHMARK",
+      "tags": [
+        "local-retention",
+        "blocked-upload",
+        "continuity"
+      ],
+      "clip": {
+        "file": "videos/productions/voicestudio-craft-v6/renders/mobile.mp4",
+        "sha256": "ff8a2cda90e85fecbe85e750ba56f884c83a30d567447ef1ed1e9c2d501582c7",
+        "frames": [
+          878,
+          937
+        ],
+        "fps": 30,
+        "start_seconds": 29.266666666666666,
+        "end_seconds": 31.233333333333334,
+        "copy_policy": "stable source range; extract only when needed"
+      },
+      "still": "quality/gold/privacy/still.png",
+      "source_shot": 18,
+      "representative_frame": 926,
+      "note": "quality/gold/privacy/notes.md"
+    },
+    {
+      "id": "keyboard",
+      "status": "APPROVED_VISUAL_BENCHMARK",
+      "tags": [
+        "typing",
+        "ui-contact",
+        "effects",
+        "payoff"
+      ],
+      "clip": {
+        "file": "videos/productions/voicestudio-craft-v6/renders/mobile.mp4",
+        "sha256": "ff8a2cda90e85fecbe85e750ba56f884c83a30d567447ef1ed1e9c2d501582c7",
+        "frames": [
+          937,
+          986
+        ],
+        "fps": 30,
+        "start_seconds": 31.233333333333334,
+        "end_seconds": 32.86666666666667,
+        "copy_policy": "stable source range; extract only when needed"
+      },
+      "still": "quality/gold/keyboard/still.png",
+      "source_shot": 19,
+      "representative_frame": 970,
+      "note": "quality/gold/keyboard/notes.md"
+    }
+  ],
+  "additional_reference": {
+    "tags": [
+      "assembly",
+      "handoff"
+    ],
+    "file": "videos/productions/little-book-workshop-staging/renders/final.mp4",
+    "note": "Approved workshop staging; retrieve as an additional reference only when assembly/handoff is relevant."
+  }
+}

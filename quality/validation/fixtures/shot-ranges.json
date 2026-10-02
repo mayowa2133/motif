@@ -1,0 +1,47 @@
+[
+  {
+    "id": "q01",
+    "startFrame": 0,
+    "endFrame": 75,
+    "contacts": [
+      0.8,
+      1.1333333333333333
+    ]
+  },
+  {
+    "id": "q02",
+    "startFrame": 75,
+    "endFrame": 150,
+    "contacts": [
+      3.3,
+      3.6333333333333333
+    ]
+  },
+  {
+    "id": "q03",
+    "startFrame": 150,
+    "endFrame": 225,
+    "contacts": [
+      5.8,
+      6.133333333333334
+    ]
+  },
+  {
+    "id": "q04",
+    "startFrame": 225,
+    "endFrame": 300,
+    "contacts": [
+      8.3,
+      8.633333333333333
+    ]
+  },
+  {
+    "id": "q05",
+    "startFrame": 300,
+    "endFrame": 375,
+    "contacts": [
+      10.8,
+      11.133333333333333
+    ]
+  }
+]

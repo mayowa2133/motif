@@ -24,3 +24,7 @@ Direction A is selected. The vector puppet is canonical v1. See its [implementat
 The [brief variation review](docs/BRIEF_VARIATION_REVIEW.md) verifies SYNC and REVIEW appointment labels through the same producer, checks encoded exports, and records unsupported requests rejected before rendering. The [current input contract](docs/BRIEF_INPUT_CONTRACT.md) identifies fixed times, narration, and outcomes.
 
 The [production-plan workflow](docs/PRODUCTION_PLAN_WORKFLOW.md) adds live Codex planning, state review, speech-driven action timing and compilation into the existing engine. Its [milestone review](docs/PRODUCTION_PLAN_MILESTONE_REVIEW.md) evaluates a declined calendar proposal and two failed arena answers handed to a person. The legacy producer and frozen demos remain available.
+
+## Motif quality mode
+
+New directed runs stop at a native moving rough for independent story and visual review. See [QUALITY_SYSTEM.md](QUALITY_SYSTEM.md) for contracts, frozen gold references, named performance and reaction bindings, asset promotion, bounded repairs and final human approval.

@@ -1,0 +1,93 @@
+{
+  "phase": "rough",
+  "inspection": "ordered decoded native frames + full-rate pixel motion traces; CLI does not accept video",
+  "plan_sha256": "2e060528f8beeb6ac12435980dd457778cabbb8b6eaae3a309253bc9845c4238",
+  "events_sha256": "45940c9c34cb6558fc6e5b4dc9c965a5e207b7779f2af267501486ed07b71ae4",
+  "with_captions": {
+    "video": "/Users/mayowaadesanya/Projects/motif/quality/validation/fixtures/renders/captions.mp4",
+    "probe": {
+      "width": 360,
+      "height": 640,
+      "fps": 30.0,
+      "frames": 375,
+      "duration": 12.5,
+      "sha256": "8ebbc706ec9cdffbc0df3965fdc764c09dd4dad46772718cf6a9b7294495d20c"
+    },
+    "sheets": [
+      "/Users/mayowaadesanya/Projects/motif/quality/validation/fixtures/quality-review/rough/evidence-captions/q01-ordered.png",
+      "/Users/mayowaadesanya/Projects/motif/quality/validation/fixtures/quality-review/rough/evidence-captions/q02-ordered.png",
+      "/Users/mayowaadesanya/Projects/motif/quality/validation/fixtures/quality-review/rough/evidence-captions/q03-ordered.png",
+      "/Users/mayowaadesanya/Projects/motif/quality/validation/fixtures/quality-review/rough/evidence-captions/q04-ordered.png",
+      "/Users/mayowaadesanya/Projects/motif/quality/validation/fixtures/quality-review/rough/evidence-captions/q05-ordered.png"
+    ],
+    "motion_trace": "/Users/mayowaadesanya/Projects/motif/quality/validation/fixtures/quality-review/rough/evidence-captions/motion-trace.json",
+    "trace_sha256": "361f70ff4e3ae570cb0c17af320f8094a91fd52aaa30b8aa2a5e740305f6c187"
+  },
+  "without_captions": {
+    "video": "/Users/mayowaadesanya/Projects/motif/quality/validation/fixtures/renders/no-captions.mp4",
+    "probe": {
+      "width": 360,
+      "height": 640,
+      "fps": 30.0,
+      "frames": 375,
+      "duration": 12.5,
+      "sha256": "d2469b7b3a34c505685ef28ae4c0538355ff1b7c48dff5539e778c5bc16c3966"
+    },
+    "sheets": [
+      "/Users/mayowaadesanya/Projects/motif/quality/validation/fixtures/quality-review/rough/evidence-no-captions/q01-ordered.png",
+      "/Users/mayowaadesanya/Projects/motif/quality/validation/fixtures/quality-review/rough/evidence-no-captions/q02-ordered.png",
+      "/Users/mayowaadesanya/Projects/motif/quality/validation/fixtures/quality-review/rough/evidence-no-captions/q03-ordered.png",
+      "/Users/mayowaadesanya/Projects/motif/quality/validation/fixtures/quality-review/rough/evidence-no-captions/q04-ordered.png",
+      "/Users/mayowaadesanya/Projects/motif/quality/validation/fixtures/quality-review/rough/evidence-no-captions/q05-ordered.png"
+    ],
+    "motion_trace": "/Users/mayowaadesanya/Projects/motif/quality/validation/fixtures/quality-review/rough/evidence-no-captions/motion-trace.json",
+    "trace_sha256": "e3be119f38e047c8695f5b89e22399438a1147f510ed64fbd601d2eaa1c2d361"
+  },
+  "shots": [
+    {
+      "id": "q01",
+      "startFrame": 0,
+      "endFrame": 75,
+      "contacts": [
+        0.8,
+        1.1333333333333333
+      ]
+    },
+    {
+      "id": "q02",
+      "startFrame": 75,
+      "endFrame": 150,
+      "contacts": [
+        3.3,
+        3.6333333333333333
+      ]
+    },
+    {
+      "id": "q03",
+      "startFrame": 150,
+      "endFrame": 225,
+      "contacts": [
+        5.8,
+        6.133333333333334
+      ]
+    },
+    {
+      "id": "q04",
+      "startFrame": 225,
+      "endFrame": 300,
+      "contacts": [
+        8.3,
+        8.633333333333333
+      ]
+    },
+    {
+      "id": "q05",
+      "startFrame": 300,
+      "endFrame": 375,
+      "contacts": [
+        10.8,
+        11.133333333333333
+      ]
+    }
+  ]
+}

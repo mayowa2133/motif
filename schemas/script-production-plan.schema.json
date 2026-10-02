@@ -127,6 +127,291 @@
             "items": {
               "type": "string"
             }
+          },
+          "quality": {
+            "type": "object",
+            "properties": {
+              "purpose": {
+                "type": "string",
+                "minLength": 1
+              },
+              "hero": {
+                "type": "string",
+                "minLength": 1
+              },
+              "primary_action": {
+                "type": "string",
+                "minLength": 1
+              },
+              "performance": {
+                "type": "object",
+                "properties": {
+                  "state": {
+                    "enum": [
+                      "talking",
+                      "listening",
+                      "focused",
+                      "anticipating",
+                      "impact-light",
+                      "impact-heavy",
+                      "worried",
+                      "burdened",
+                      "surprised",
+                      "relieved",
+                      "celebrating",
+                      "climbing",
+                      "typing",
+                      "absent"
+                    ],
+                    "type": "string"
+                  },
+                  "target": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "state",
+                  "target"
+                ],
+                "additionalProperties": false
+              },
+              "before": {
+                "type": "string",
+                "minLength": 1
+              },
+              "after": {
+                "type": "string",
+                "minLength": 1
+              },
+              "focal_target": {
+                "type": "string",
+                "minLength": 1
+              },
+              "framing": {
+                "enum": [
+                  "establish",
+                  "subject",
+                  "detail"
+                ],
+                "type": "string"
+              },
+              "reaction_radius": {
+                "type": "object",
+                "properties": {
+                  "origin": {
+                    "type": "array",
+                    "items": {
+                      "type": "number"
+                    },
+                    "minItems": 2,
+                    "maxItems": 2
+                  },
+                  "radius": {
+                    "type": "number",
+                    "exclusiveMinimum": 0,
+                    "maximum": 2000
+                  },
+                  "duration": {
+                    "type": "number",
+                    "exclusiveMinimum": 0,
+                    "maximum": 1.2
+                  },
+                  "targets": {
+                    "type": "array",
+                    "maxItems": 8,
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "id": {
+                          "type": "string",
+                          "minLength": 1
+                        },
+                        "position": {
+                          "type": "array",
+                          "items": {
+                            "type": "number"
+                          },
+                          "minItems": 2,
+                          "maxItems": 2
+                        },
+                        "relevance": {
+                          "type": "number",
+                          "minimum": 0,
+                          "maximum": 1
+                        },
+                        "amplitude": {
+                          "type": "object",
+                          "properties": {
+                            "x": {
+                              "type": "number",
+                              "minimum": -30,
+                              "maximum": 30
+                            },
+                            "y": {
+                              "type": "number",
+                              "minimum": -30,
+                              "maximum": 30
+                            },
+                            "rotation": {
+                              "type": "number",
+                              "minimum": -12,
+                              "maximum": 12
+                            }
+                          },
+                          "required": [
+                            "x",
+                            "y",
+                            "rotation"
+                          ],
+                          "additionalProperties": false
+                        },
+                        "delay": {
+                          "type": "number",
+                          "minimum": 0,
+                          "maximum": 0.3
+                        }
+                      },
+                      "required": [
+                        "id",
+                        "position",
+                        "relevance",
+                        "amplitude",
+                        "delay"
+                      ],
+                      "additionalProperties": false
+                    }
+                  }
+                },
+                "required": [
+                  "origin",
+                  "radius",
+                  "duration",
+                  "targets"
+                ],
+                "additionalProperties": false
+              },
+              "secondary_motion": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              },
+              "environment": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "minItems": 2,
+                "maxItems": 3
+              },
+              "exit_overlap": {
+                "type": "string",
+                "minLength": 1
+              },
+              "energy": {
+                "type": "object",
+                "properties": {
+                  "dominant_action": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "character_response": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "local_reaction": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "residual_motion": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "next_action_overlap": {
+                    "type": "string",
+                    "minLength": 1
+                  }
+                },
+                "required": [
+                  "dominant_action",
+                  "character_response",
+                  "local_reaction",
+                  "residual_motion",
+                  "next_action_overlap"
+                ],
+                "additionalProperties": false
+              },
+              "art_direction": {
+                "type": "object",
+                "properties": {
+                  "hero_object": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "bot_role": {
+                    "enum": [
+                      "participant",
+                      "reactor",
+                      "presenter",
+                      "absent"
+                    ],
+                    "type": "string"
+                  },
+                  "materials": {
+                    "type": "array",
+                    "items": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "minItems": 1
+                  },
+                  "depth_planes": {
+                    "type": "array",
+                    "items": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "minItems": 2
+                  },
+                  "composition": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "intentional_irregularity": {
+                    "type": "string",
+                    "minLength": 1
+                  }
+                },
+                "required": [
+                  "hero_object",
+                  "bot_role",
+                  "materials",
+                  "depth_planes",
+                  "composition",
+                  "intentional_irregularity"
+                ],
+                "additionalProperties": false
+              }
+            },
+            "required": [
+              "purpose",
+              "hero",
+              "primary_action",
+              "performance",
+              "before",
+              "after",
+              "focal_target",
+              "framing",
+              "reaction_radius",
+              "secondary_motion",
+              "environment",
+              "exit_overlap",
+              "energy",
+              "art_direction"
+            ],
+            "additionalProperties": false
           }
         },
         "required": [
@@ -154,6 +439,49 @@
       "items": {
         "type": "string"
       }
+    },
+    "quality_mode": {
+      "const": "motif-gold-v1",
+      "type": "string"
+    },
+    "asset_usage": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "scope": {
+            "enum": [
+              "reused",
+              "production-specific",
+              "candidate-reusable",
+              "canonical-promoted"
+            ],
+            "type": "string"
+          },
+          "path": {
+            "type": "string"
+          },
+          "metadata_path": {
+            "type": "string"
+          },
+          "agent_assisted": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "id",
+          "scope",
+          "path",
+          "metadata_path",
+          "agent_assisted"
+        ],
+        "additionalProperties": false
+      }
     }
   },
   "required": [
@@ -168,5 +496,28 @@
     "ending_action",
     "limitations"
   ],
-  "additionalProperties": false
+  "additionalProperties": false,
+  "allOf": [
+    {
+      "if": {
+        "required": [
+          "quality_mode"
+        ]
+      },
+      "then": {
+        "properties": {
+          "beats": {
+            "items": {
+              "required": [
+                "quality"
+              ]
+            }
+          }
+        },
+        "required": [
+          "asset_usage"
+        ]
+      }
+    }
+  ]
 }

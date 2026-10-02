@@ -69,10 +69,10 @@ def review_energy(plan,brief):
  if 'explained' not in facts:errors.append('unresolved explanation ending')
  return {'pass':not errors,'issues':errors,'states':states,'scope':'script fidelity and finite executable capability checks, not engagement approval'}
 
-def frame_scene(mode,t,duration,assets,seed):
+def frame_scene(mode,t,duration,assets,seed,quality=None):
  """Pure local-time scene. Placement/action/jitter compose before computing grips."""
  frame=round(t*30);q=clamp(t/max(.1,duration));last=mode=='payoff' and t>duration-.45
- j=lambda s,a=1:0 if last else living(frame,seed+s,a,2+s%3)
+ j=lambda s,a=1:0 if last or quality else living(frame,seed+s,a,2+s%3)
  chunks=[]
  zones={'slam':'#D9B25B','catch':'#D9B25B','trail':'#89BDB0','journey':'#318E85','peel':'#CC795A','compare':'#CC795A','gap':'#284D53','patch':'#284D53','decision':'#D9B25B','assemble':'#A5C6AD','payoff':'#A5C6AD'}
  bg=zones[mode]
@@ -89,9 +89,17 @@ def frame_scene(mode,t,duration,assets,seed):
   for i in range(8):
    decoration=paper.paper(60,88,[paper.TEAL,paper.CORAL,paper.PAPER][i%3]).replace('<path ','<path data-layout-ignore ')
    chunks.append(paper.put(decoration,70+i*132,180,1,j(130+i,4)+5*impulse(t,.31+i*.03)))
- poses={}; grips=[]
+ poses={}; grips=[]; selected=set()
+ def response(id_,position):
+  if not quality:return dict(x=0,y=0,rotation=0)
+  from motif_reaction import reaction
+  r=quality['reaction_radius'];target=next((a for a in r['targets'] if a['id']==id_),None)
+  if target is None:return dict(x=0,y=0,rotation=0)
+  selected.add(id_)
+  return reaction(t-quality.get('_cue_time',0),r['origin'],position,r['radius'],target['relevance'],target['amplitude'],r['duration'],target['delay'])
  def asset(name,x,y,s=1,a=0,sy=1,life=1):
   x+=j(len(name)+1,2.8*life);y+=j(len(name)+7,2.4*life);a+=j(len(name)+17,.75*life)
+  response_=response(name,(x,y));x+=response_['x'];y+=response_['y'];a+=response_['rotation']
   poses[name]=(x,y,s,a,sy)
   body=assets[name]
   body=re.sub(r'<path[^>]+fill="url\(#paperSpeckle\)"[^>]*/>',lambda m:m[0]+m[0].replace('paperSpeckle','wallSurface').replace('opacity=".45"','opacity=".24"'),body)
@@ -105,6 +113,25 @@ def frame_scene(mode,t,duration,assets,seed):
  def pt(p,px,py):
   x,y,s,a,sy=p;return paper.point(x,y,px,py*sy,a,s)
  def puppet(x,y,s=.65,a=0,pose='standing',face='happy',left=None,right=None,head=0,gait=0):
+  if quality:
+   from motif_performance import render as perform,channels
+   from motif_reaction import matrix,compose,point,inverse_point
+   state=quality['performance']['state']
+   if state=='absent':return
+   if quality['performance']['target']!='bot':raise ValueError('paper performer target must be bot')
+   rr=response('bot',(x,y));x+=rr['x'];y+=rr['y'];a+=rr['rotation']
+   age=max(0,t-quality.get('_cue_time',0));c=channels(state,age)
+   main=compose(matrix(x,y,a,s,s),matrix(-512,-620))
+   local=compose(matrix(512,904,c['angle'],1/math.sqrt(c['sy']),math.sqrt(c['sy'])),matrix(-512,-904))
+   total=compose(main,local);contacts={}
+   for side,endpoint in [('l',left),('r',right)]:
+    if endpoint is not None:
+     contacts[side]={'prop_transform':matrix(),'anchor':endpoint,'puppet_transform':total}
+     hand=point(total,inverse_point(total,endpoint));error=math.dist(hand,endpoint)
+     grips.append({'side':side,'prop_endpoint':list(endpoint),'hand_endpoint':list(hand),'error':error})
+   body=perform(state,age,contacts)
+   chunks.append(f'<g transform="translate({x} {y}) rotate({a}) scale({s}) translate(-512 -620)">{body}</g>')
+   return
   x+=j(91,3);y+=j(92,3);a+=j(93,.8)
   theta=math.radians(a);c=math.cos(theta);si=math.sin(theta)
   def inv(p):
@@ -257,6 +284,9 @@ def frame_scene(mode,t,duration,assets,seed):
    settle=ramp(t,2.38,.42)
    puppet(650+130*settle,1150+320*settle,.38,5*impulse(t,2.38),'presenting','happy',head=0)
   accent(870,705,.75,1.2)
+ if quality:
+  missing={a['id'] for a in quality['reaction_radius']['targets']}-selected
+  if missing:raise ValueError('unbound reaction target in action: '+str(sorted(missing)))
  return ''.join(chunks),grips
 
 SOUND_CUES={
@@ -291,6 +321,9 @@ def compile_energy(project,plan,words,voice_duration):
  from motif_produce import command,sha,loudness,TARGET_I,PEAK_CEILING
  from motif_plan_compile import align
  from motif_plan import tokens
+ if plan.get('quality_mode')=='motif-gold-v1':
+  from motif_quality import plan_check
+  plan_check(plan)
  r=review_energy(plan,read(project/'brief.json'))
  if not r['pass']:raise ValueError('; '.join(r['issues']))
  if (project/'script.txt').read_text().strip()!=plan['script'] or (project/'assets/voice/narration.txt').read_text().strip()!=plan['script']:raise ValueError('narration input changed')
@@ -310,9 +343,11 @@ def compile_energy(project,plan,words,voice_duration):
   def ns(s):
    s=re.sub(r'id="([^"]+)"',lambda m:f'id="{prefix}-def-{m[1]}"',s)
    return re.sub(r'url\(#([^)]+)\)',lambda m:f'url(#{prefix}-def-{m[1]})',s)
-  events=[];first,_=frame_scene(mode,0,end,assets,seed)
+  quality=beat.get('quality') if plan.get('quality_mode')=='motif-gold-v1' else None
+  if quality:quality={**quality,'_cue_time':span['actions'][0]['time']-span['start']}
+  events=[];first,_=frame_scene(mode,0,end,assets,seed,quality)
   for f in range(1,math.ceil(end*30)):
-   t=min(f/30,end);body,grips=frame_scene(mode,t,end,assets,seed)
+   t=min(f/30,end);body,grips=frame_scene(mode,t,end,assets,seed,quality)
    e={'time':round(t,6),'target':'#'+prefix+'-world','action':'SET','params':{'props':{'innerHTML':ns(body)}}};events.append(e)
    if f%3==0 and grips:contact_samples.append({'shot':prefix,'frame':f,'time':round(span['start']+t,6),'contacts':grips})
   spec={'schemaVersion':'1.0','compositionId':prefix,'durationSec':end,'fps':30,'initial':[{'target':'#'+prefix+'-world','props':{'innerHTML':ns(first)}}],'events':events}
@@ -357,6 +392,7 @@ def compile_energy(project,plan,words,voice_duration):
  audio={'narration':'assets/voice/narration-af-nova.wav','duration':voice_duration,'review_input':'assets/voice/review-voice.wav','review_input_measurement':loudness(voice),'review_gain_db':0,'target_lufs':TARGET_I,'peak_ceiling':PEAK_CEILING,'music':False,'sfx':True,'sfx_cues':cues,'subjective_listening':'not assessed'}
  spec={'schemaVersion':'1.0','durationSec':duration,'fps':30,'initial':initial,'events':all_events,'shots':frames}
  for filename,data in [('scene-events.json',spec),('caption-events.json',chunks),('caption-engine-events.json',capspec),('alignment-review.json',alignment),('shot-direction.json',directions),('execution-bindings.json',directions),('contact-samples.json',contact_samples),('audio-plan.json',audio),('sfx-source-manifest.json',{'method':'original local synthesis; no external samples','music':'none; no permissioned track selected','assets':ledger}),('pre-render-checks.json',r)]:write(project/filename,data)
+ if plan.get('quality_mode')=='motif-gold-v1':write(project/'quality-bindings.json',{'mode':'motif-gold-v1','shots':[{'id':b['id'],'contract':b['quality'],'span':s} for b,s in zip(plan['beats'],spans)],'hook':'anchor-aware pure-frame performance/reactions','critic_consumers':['direction','story','visual']})
  write_index(project,frames,duration,voice_duration,0)
  write(project/'review-state.json',{'status':'REVIEW_REQUIRED','approval_required_before':'creative acceptance; no automatic approval','plan_sha256':sha(project/'production-plan.json'),'voice_sha256':sha(project/'assets/voice/narration-af-nova.wav'),'events_sha256':sha(project/'scene-events.json'),'saved_source_hashes':{str(p.relative_to(project)):sha(p) for folder in ('compositions','assets/props','assets/sfx') for p in (project/folder).glob('*') if p.is_file()},'duration_seconds':duration,'finishing_rule':'saved plan and measured narration; no implicit replanning','planning_provenance':'agent-directed creative reset implementing supplied treatment; not new live autonomous planning'})
  return duration

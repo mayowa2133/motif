@@ -1,0 +1,23 @@
+{
+  "phase": "rough",
+  "status": "REPLAN_REQUIRED",
+  "blocked": [
+    "story: story",
+    "story: cause-effect",
+    "story: focal-hierarchy",
+    "story: continuity",
+    "visual: character-performance",
+    "visual: physicality",
+    "visual: energy",
+    "visual: composition",
+    "visual: mobile"
+  ],
+  "meaningful_repairs": 0,
+  "human_final_approval": "REQUIRED",
+  "publish": false,
+  "report_hashes": {
+    "story": "696f7735932435a3cb8b5b170a90fb11c51596b9ee67834982b70c23332dd56f",
+    "visual": "cab05d46026d99cf76ba55c6599ebcbaa14a9a7f8b742a27cda790aa55ec00e0"
+  },
+  "evidence_sha256": "9793aa496f3a4b326b36fe33cef451a7da52ce0e765aa5a3e21590af69f25f24"
+}

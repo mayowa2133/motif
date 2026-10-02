@@ -1,0 +1,26 @@
+{
+  "id": "keyboard",
+  "status": "APPROVED_VISUAL_BENCHMARK",
+  "tags": [
+    "typing",
+    "ui-contact",
+    "effects",
+    "payoff"
+  ],
+  "clip": {
+    "file": "videos/productions/voicestudio-craft-v6/renders/mobile.mp4",
+    "sha256": "ff8a2cda90e85fecbe85e750ba56f884c83a30d567447ef1ed1e9c2d501582c7",
+    "frames": [
+      937,
+      986
+    ],
+    "fps": 30,
+    "start_seconds": 31.233333333333334,
+    "end_seconds": 32.86666666666667,
+    "copy_policy": "stable source range; extract only when needed"
+  },
+  "still": "quality/gold/keyboard/still.png",
+  "source_shot": 19,
+  "representative_frame": 970,
+  "note": "quality/gold/keyboard/notes.md"
+}

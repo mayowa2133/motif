@@ -1,0 +1,363 @@
+{
+  "schema_version": "text-directed-1.0",
+  "quality_mode": "motif-gold-v1",
+  "family": "interactive-ui-v1",
+  "style": "reference-expressive-high-energy-v1",
+  "script": "Recurring bills start piling up.",
+  "fps": 30,
+  "targetFrames": 375,
+  "seed": 5107,
+  "shots": [
+    {
+      "id": "q01",
+      "kind": "reject-free-subscribe",
+      "headline": "Recurring bills start piling up",
+      "startFrame": 0,
+      "endFrame": 75,
+      "components": [
+        "pricing",
+        "bot",
+        "receipts"
+      ],
+      "recipe": "copied validation fixture",
+      "seed": 5107,
+      "quality": {
+        "purpose": "Show a recurring bill becoming a physical burden",
+        "hero": "hinged pricing placards and accumulating receipts",
+        "primary_action": "Subscribe, then recurring bills arrive",
+        "performance": {
+          "state": "burdened",
+          "target": "bot"
+        },
+        "before": "No billing receipts",
+        "after": "Receipts accumulate and Bot slumps",
+        "focal_target": "receipt pile",
+        "framing": "subject",
+        "reaction_radius": {
+          "origin": [
+            640,
+            782
+          ],
+          "radius": 200,
+          "duration": 0.6,
+          "targets": []
+        },
+        "secondary_motion": [
+          "receipt flutter",
+          "antenna droop"
+        ],
+        "environment": [
+          "tile wall",
+          "receipt shelf"
+        ],
+        "exit_overlap": "Receipt settling carries into next beat",
+        "energy": {
+          "dominant_action": "press subscription control",
+          "character_response": "compress, then carry financial burden",
+          "local_reaction": "control depresses and receipts collect",
+          "residual_motion": "paper settling and antenna droop",
+          "next_action_overlap": "later receipts arrive before earlier ones settle"
+        },
+        "art_direction": {
+          "hero_object": "hinged pricing placards",
+          "bot_role": "participant",
+          "materials": [
+            "printed paper",
+            "wood shelf"
+          ],
+          "depth_planes": [
+            "tile wall",
+            "pricing placards",
+            "receipts and Bot"
+          ],
+          "composition": "Hero occupies action region; evidence visible without captions",
+          "intentional_irregularity": "asymmetric placards, layered receipts and varied shelf edges"
+        }
+      }
+    },
+    {
+      "id": "q02",
+      "kind": "reject-free-subscribe",
+      "headline": "Recurring bills start piling up",
+      "startFrame": 75,
+      "endFrame": 150,
+      "components": [
+        "pricing",
+        "bot",
+        "receipts"
+      ],
+      "recipe": "copied validation fixture",
+      "seed": 5107,
+      "quality": {
+        "purpose": "Show a recurring bill becoming a physical burden",
+        "hero": "hinged pricing placards and accumulating receipts",
+        "primary_action": "Subscribe, then recurring bills arrive",
+        "performance": {
+          "state": "burdened",
+          "target": "bot"
+        },
+        "before": "No billing receipts",
+        "after": "Receipts accumulate and Bot slumps",
+        "focal_target": "receipt pile",
+        "framing": "subject",
+        "reaction_radius": {
+          "origin": [
+            640,
+            782
+          ],
+          "radius": 200,
+          "duration": 0.6,
+          "targets": []
+        },
+        "secondary_motion": [
+          "receipt flutter",
+          "antenna droop"
+        ],
+        "environment": [
+          "tile wall",
+          "receipt shelf"
+        ],
+        "exit_overlap": "Receipt settling carries into next beat",
+        "energy": {
+          "dominant_action": "press subscription control",
+          "character_response": "compress, then carry financial burden",
+          "local_reaction": "control depresses and receipts collect",
+          "residual_motion": "paper settling and antenna droop",
+          "next_action_overlap": "later receipts arrive before earlier ones settle"
+        },
+        "art_direction": {
+          "hero_object": "hinged pricing placards",
+          "bot_role": "participant",
+          "materials": [
+            "printed paper",
+            "wood shelf"
+          ],
+          "depth_planes": [
+            "tile wall",
+            "pricing placards",
+            "receipts and Bot"
+          ],
+          "composition": "Hero occupies action region; evidence visible without captions",
+          "intentional_irregularity": "asymmetric placards, layered receipts and varied shelf edges"
+        }
+      }
+    },
+    {
+      "id": "q03",
+      "kind": "reject-free-subscribe",
+      "headline": "Recurring bills start piling up",
+      "startFrame": 150,
+      "endFrame": 225,
+      "components": [
+        "pricing",
+        "bot",
+        "receipts"
+      ],
+      "recipe": "copied validation fixture",
+      "seed": 5107,
+      "quality": {
+        "purpose": "Show a recurring bill becoming a physical burden",
+        "hero": "hinged pricing placards and accumulating receipts",
+        "primary_action": "Subscribe, then recurring bills arrive",
+        "performance": {
+          "state": "burdened",
+          "target": "bot"
+        },
+        "before": "No billing receipts",
+        "after": "Receipts accumulate and Bot slumps",
+        "focal_target": "receipt pile",
+        "framing": "subject",
+        "reaction_radius": {
+          "origin": [
+            640,
+            782
+          ],
+          "radius": 200,
+          "duration": 0.6,
+          "targets": []
+        },
+        "secondary_motion": [
+          "receipt flutter",
+          "antenna droop"
+        ],
+        "environment": [
+          "tile wall",
+          "receipt shelf"
+        ],
+        "exit_overlap": "Receipt settling carries into next beat",
+        "energy": {
+          "dominant_action": "press subscription control",
+          "character_response": "compress, then carry financial burden",
+          "local_reaction": "control depresses and receipts collect",
+          "residual_motion": "paper settling and antenna droop",
+          "next_action_overlap": "later receipts arrive before earlier ones settle"
+        },
+        "art_direction": {
+          "hero_object": "hinged pricing placards",
+          "bot_role": "participant",
+          "materials": [
+            "printed paper",
+            "wood shelf"
+          ],
+          "depth_planes": [
+            "tile wall",
+            "pricing placards",
+            "receipts and Bot"
+          ],
+          "composition": "Hero occupies action region; evidence visible without captions",
+          "intentional_irregularity": "asymmetric placards, layered receipts and varied shelf edges"
+        }
+      }
+    },
+    {
+      "id": "q04",
+      "kind": "reject-free-subscribe",
+      "headline": "Recurring bills start piling up",
+      "startFrame": 225,
+      "endFrame": 300,
+      "components": [
+        "pricing",
+        "bot",
+        "receipts"
+      ],
+      "recipe": "copied validation fixture",
+      "seed": 5107,
+      "quality": {
+        "purpose": "Show a recurring bill becoming a physical burden",
+        "hero": "hinged pricing placards and accumulating receipts",
+        "primary_action": "Subscribe, then recurring bills arrive",
+        "performance": {
+          "state": "burdened",
+          "target": "bot"
+        },
+        "before": "No billing receipts",
+        "after": "Receipts accumulate and Bot slumps",
+        "focal_target": "receipt pile",
+        "framing": "subject",
+        "reaction_radius": {
+          "origin": [
+            640,
+            782
+          ],
+          "radius": 200,
+          "duration": 0.6,
+          "targets": []
+        },
+        "secondary_motion": [
+          "receipt flutter",
+          "antenna droop"
+        ],
+        "environment": [
+          "tile wall",
+          "receipt shelf"
+        ],
+        "exit_overlap": "Receipt settling carries into next beat",
+        "energy": {
+          "dominant_action": "press subscription control",
+          "character_response": "compress, then carry financial burden",
+          "local_reaction": "control depresses and receipts collect",
+          "residual_motion": "paper settling and antenna droop",
+          "next_action_overlap": "later receipts arrive before earlier ones settle"
+        },
+        "art_direction": {
+          "hero_object": "hinged pricing placards",
+          "bot_role": "participant",
+          "materials": [
+            "printed paper",
+            "wood shelf"
+          ],
+          "depth_planes": [
+            "tile wall",
+            "pricing placards",
+            "receipts and Bot"
+          ],
+          "composition": "Hero occupies action region; evidence visible without captions",
+          "intentional_irregularity": "asymmetric placards, layered receipts and varied shelf edges"
+        }
+      }
+    },
+    {
+      "id": "q05",
+      "kind": "reject-free-subscribe",
+      "headline": "Recurring bills start piling up",
+      "startFrame": 300,
+      "endFrame": 375,
+      "components": [
+        "pricing",
+        "bot",
+        "receipts"
+      ],
+      "recipe": "copied validation fixture",
+      "seed": 5107,
+      "quality": {
+        "purpose": "Show a recurring bill becoming a physical burden",
+        "hero": "hinged pricing placards and accumulating receipts",
+        "primary_action": "Subscribe, then recurring bills arrive",
+        "performance": {
+          "state": "burdened",
+          "target": "bot"
+        },
+        "before": "No billing receipts",
+        "after": "Receipts accumulate and Bot slumps",
+        "focal_target": "receipt pile",
+        "framing": "subject",
+        "reaction_radius": {
+          "origin": [
+            640,
+            782
+          ],
+          "radius": 200,
+          "duration": 0.6,
+          "targets": []
+        },
+        "secondary_motion": [
+          "receipt flutter",
+          "antenna droop"
+        ],
+        "environment": [
+          "tile wall",
+          "receipt shelf"
+        ],
+        "exit_overlap": "Receipt settling carries into next beat",
+        "energy": {
+          "dominant_action": "press subscription control",
+          "character_response": "compress, then carry financial burden",
+          "local_reaction": "control depresses and receipts collect",
+          "residual_motion": "paper settling and antenna droop",
+          "next_action_overlap": "later receipts arrive before earlier ones settle"
+        },
+        "art_direction": {
+          "hero_object": "hinged pricing placards",
+          "bot_role": "participant",
+          "materials": [
+            "printed paper",
+            "wood shelf"
+          ],
+          "depth_planes": [
+            "tile wall",
+            "pricing placards",
+            "receipts and Bot"
+          ],
+          "composition": "Hero occupies action region; evidence visible without captions",
+          "intentional_irregularity": "asymmetric placards, layered receipts and varied shelf edges"
+        }
+      }
+    }
+  ],
+  "captionPhrases": [
+    {
+      "startFrame": 0,
+      "endFrame": 375,
+      "text": "Recurring bills start piling up."
+    }
+  ],
+  "asset_usage": [
+    {
+      "id": "billing-svg",
+      "scope": "production-specific",
+      "path": "quality/validation/fixtures/source/actions.py",
+      "metadata_path": "quality/validation/fixtures/fixture-provenance.json",
+      "agent_assisted": true
+    }
+  ]
+}

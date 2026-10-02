@@ -1,0 +1,26 @@
+{
+  "withheld_from_critics": true,
+  "variants": {
+    "q01": "control",
+    "q02": "consequence-removed",
+    "q03": "tiny-hero",
+    "q04": "cheerful-burden",
+    "q05": "dead-hold"
+  },
+  "expected_violations": {
+    "q02": [
+      "story",
+      "cause-effect"
+    ],
+    "q03": [
+      "mobile",
+      "focal-hierarchy"
+    ],
+    "q04": [
+      "character-performance"
+    ],
+    "q05": [
+      "energy"
+    ]
+  }
+}

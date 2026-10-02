@@ -28,6 +28,8 @@ SOURCE_PATHS+=[f'videos/motif-calendar-reel/assets/sfx/{name}.mp3' for name in (
 SOURCE_PATHS+=['videos/motif-calendar-reel/assets/'+n for n in ('gsap.min.js','motion-engine.js','motion-primitives.js')]
 SOURCE_PATHS+=['scripts/motif_workshop.py','scripts/build_workshop_kit.py','schemas/creative-benchmark-concept.schema.json']
 
+SOURCE_PATHS+=['scripts/motif_quality.py','scripts/motif_performance.py','scripts/motif_reaction.py','scripts/motif_asset_quality.py','schemas/shot-contract.schema.json','schemas/story-critic.schema.json','schemas/visual-critic.schema.json','QUALITY_CONTRACT.md','ENERGY_CONTRACT.md','quality/gold/index.json','quality/rubric/gates.json']
+
 def write(path,value): path.write_text(json.dumps(value,indent=2)+'\n')
 def read(path): return json.loads(path.read_text())
 def snapshot(): return {p:sha(ROOT/p) for p in SOURCE_PATHS}
@@ -41,10 +43,25 @@ def backend_config():
     if config.get('model_provider') not in (None,'openai'): raise ValueError('configured custom model provider is not supported by this small integration')
     return {'backend':'codex-exec','execution':'self-contained command with live model planning', 'model':os.environ.get('MOTIF_PLANNER_MODEL',config.get('model')), 'reasoning_effort':config.get('model_reasoning_effort','low'), 'authentication_status':(status.stdout+status.stderr).strip(),'cli_version':command(['codex','--version'],ROOT).strip(),'sandbox':'read-only','ephemeral':True,'tools_requested':False,'default_model_if_unspecified':not os.environ.get('MOTIF_PLANNER_MODEL',config.get('model')), 'model_selection':'MOTIF_PLANNER_MODEL' if os.environ.get('MOTIF_PLANNER_MODEL') else 'existing Codex configuration','hyperframes':PIN}
 
-def model_call(project, name, prompt, schema, config):
+def model_call(project, name, prompt, schema, config, images=()):
     (project/(name+'-input.txt')).write_text(prompt)
-    args=['codex','exec','--ignore-user-config','--ephemeral','--skip-git-repo-check','--sandbox','read-only','--json','--color','never','--output-schema',str(ROOT/schema),'-o',str(project/(name+'.json')),'-c','approval_policy="never"','-c','model_reasoning_effort='+json.dumps(config['reasoning_effort'])]
+    wire_schema=read(ROOT/schema)
+    # New live plans select the quality profile; saved legacy plans still validate
+    # against the optional extension. Flatten the condition for the CLI's supported
+    # structured-output subset instead of introducing another planning framework.
+    if 'quality_mode' in wire_schema.get('properties',{}):
+        wire_schema.pop('allOf',None)
+        wire_schema['required']=list(wire_schema['properties'])
+        key='shots' if 'shots' in wire_schema['properties'] else 'beats'
+        item=wire_schema['properties'][key]['items']
+        item['required']=list(item['properties'])
+    schema_path=project/(name+'-output-schema.json')
+    write(schema_path,wire_schema)
+    args=['codex','exec','--ignore-user-config','--ephemeral','--skip-git-repo-check','--sandbox','read-only','--json','--color','never','--output-schema',str(schema_path.resolve()),'-o',str(project/(name+'.json')),'-c','approval_policy="never"','-c','model_reasoning_effort='+json.dumps(config['reasoning_effort'])]
     if config['model']: args+=['--model',config['model']]
+    for image in images:
+        if not Path(image).is_file(): raise ValueError('critic image missing: '+str(image))
+        args+=['-i',str(Path(image).resolve())]
     args+=['-']
     # A fresh empty working directory prevents the planner reading evaluation fixtures or old outputs.
     with tempfile.TemporaryDirectory(prefix='motif-planning-') as cwd:
@@ -54,7 +71,7 @@ def model_call(project, name, prompt, schema, config):
         completed_at=datetime.now(timezone.utc).isoformat()
     (project/(name+'-events.jsonl')).write_text(process.stdout)
     (project/(name+'-stderr.txt')).write_text(process.stderr)
-    write(project/(name+'-invocation.json'),{'argv':args,'exit_code':process.returncode,'input_sha256':sha(project/(name+'-input.txt')),'configuration':config,'started_at_utc':started_at,'completed_at_utc':completed_at,'requested_model':config['model'],'resolved_model':None,'resolved_model_note':'CLI event stream does not expose a separately resolved model identifier','saved_response_used':False,'model_fallback_used':False})
+    write(project/(name+'-invocation.json'),{'argv':args,'exit_code':process.returncode,'input_sha256':sha(project/(name+'-input.txt')),'output_schema_sha256':sha(schema_path),'configuration':config,'started_at_utc':started_at,'completed_at_utc':completed_at,'requested_model':config['model'],'resolved_model':None,'resolved_model_note':'CLI event stream does not expose a separately resolved model identifier','saved_response_used':False,'model_fallback_used':False})
     if process.returncode: raise ValueError('live planning backend failed; see '+str(project/(name+'-stderr.txt'))+'; no saved-response fallback was used')
     value=read(project/(name+'.json'))
     Draft202012Validator(read(ROOT/schema)).validate(value)
@@ -68,6 +85,8 @@ def planning_prompt(brief,concept=None,feedback=None):
     prompt=(ROOT/'planning/PLANNER.md').read_text()+'\n\nAvailable asset IDs by world:\n'+json.dumps(WORLD_ASSETS)+'\n\nNarration word budget: '+str(int((brief['intended_duration_seconds']-1)*2.6))+' maximum. Aim a few words below that limit; preserve meaning.\n\nINPUT BRIEF (subject matter):\n'+json.dumps(brief)
     if concept is not None:prompt+='\n\nRecorded preproduction concept (creative context, not executable code). Use its metaphor; choose natural final narration, action cues, and framing from the supported vocabulary:\n'+json.dumps(concept)
     if feedback is not None:prompt+='\n\nAgent review of a preserved earlier render; address these concrete creative issues without changing the brief or inventing capabilities:\n'+feedback
+    from motif_quality import planning_context
+    prompt+=planning_context(brief['message'])
     return prompt
 
 def storyboard(plan):
@@ -110,6 +129,8 @@ def run(brief_path,concept_path=None,feedback_path=None):
         (project/'prior-render-feedback.md').write_text(feedback)
     prompt=planning_prompt(brief,concept,feedback)
     plan=model_call(project,'initial-plan',prompt,'schemas/production-plan.schema.json',config)
+    if plan.get('quality_mode')!='motif-gold-v1': raise ValueError('new directed runs require motif-gold-v1')
+    from motif_quality import direction_review
     (project/'STORYBOARD_INITIAL.md').write_text(storyboard(plan))
     tolerance=brief['duration_tolerance_seconds']; intended=brief['intended_duration_seconds']; bounds=[intended-tolerance,intended+tolerance]
     reviews=[]
@@ -118,6 +139,8 @@ def run(brief_path,concept_path=None,feedback_path=None):
         write(project/f'deterministic-review-{attempt}.json',deterministic)
         issues=list(deterministic['issues'])
         if not issues:
+            write(project/'production-plan.json',plan)
+            direction_review(project,plan,config)
             (project/'assets/voice/narration.txt').write_text(narration(plan)+'\n')
             env=os.environ.copy()
             if 'HYPERFRAMES_PYTHON' not in env:
@@ -139,7 +162,7 @@ def run(brief_path,concept_path=None,feedback_path=None):
         attempt_dir=project/'planning-attempts'/str(attempt)
         attempt_dir.mkdir(parents=True)
         write(attempt_dir/'plan.json',plan)
-        for filename in ('scene-events.json','action-trace.json','label-timing.json','framing-trace.json','alignment-review.json','audio-plan.json','index.html'):
+        for filename in ('scene-events.json','action-trace.json','label-timing.json','framing-trace.json','alignment-review.json','audio-plan.json','index.html','quality-direction.json','quality-direction-record.json','quality-direction-invocation.json'):
             if (project/filename).exists() and not issues: shutil.copyfile(project/filename,attempt_dir/filename)
         if not issues:
             review_prompt=('Review this illustrative Motif plan against its brief and actual action timings. No tools, files, code, other agents, or web. You review data, NOT rendered frames. Check semantic fidelity, each outcome, visible evidence before labels, same-check fairness, and ending delivered. Check audience_narration: speech should explain the useful idea, choice or consequence for this audience, not narrate stage directions (dashed graphics, stencil geometry, cross rendering or test-harness timing), unless these objects are the subject. Reject unnatural production-checklist speech; let structured visual fields carry choreography. Labels are never substitutes for physical events. Use actual label-timing and explicit set/clear/keep lifecycle; reject stale labels after state changes. Headlines are scheduled after physical evidence. Narration-aligned action captions describe an unfolding action; do not treat their present tense as a completed-result headline. A completed result caption preceding evidence is an issue. Focus prose is rationale only; focus_target/framing and actual framing bounds are operative. Return schema JSON; broader semantic correctness and painted visibility are not guaranteed.\nBrief: '+json.dumps(brief)+'\nPlan: '+json.dumps(plan)+'\nAction timings: '+json.dumps(read(project/'action-trace.json'))+'\nActual labels: '+json.dumps(read(project/'label-timing.json'))+'\nActual framing: '+json.dumps(read(project/'framing-trace.json'))+'\nTimeline duration: '+str(read(project/'scene-events.json')['durationSec'])+'\nSpoken alignment: '+json.dumps(read(project/'alignment-review.json')))
@@ -165,6 +188,13 @@ def run(brief_path,concept_path=None,feedback_path=None):
     record['sfx']=[s for s in record['sfx'] if Path(s['file']).stem in ('pop','click-soft','whoosh-short')]
     record['music']={'included':False,'reason':'Narration and restrained reused paper interaction effects.'}
     write(project/'audio-source-license-manifest.json',record)
+    if plan.get('quality_mode')=='motif-gold-v1':
+        from motif_quality import rough, evidence_bundle, critics
+        output=rough(project)
+        shots=[{'id':x['id'],'start':x['span']['start'],'end':x['span']['end'],'contacts':[a['time'] for a in x['span']['actions']]} for x in read(project/'quality-bindings.json')['shots']]
+        evidence_bundle(project,'rough',output/'captions.mp4',output/'no-captions.mp4',shots)
+        critics(project,'rough',config)
+        return output/'captions.mp4'
     print('CHECK + RENDER',flush=True)
     command(['npm','run','check'],project,log=project/'check.log')
     first=project/'renders/first.mp4'
@@ -216,6 +246,6 @@ if __name__=='__main__':
             if not report['pass']: sys.exit(2)
         else:
             if not args.brief: raise ValueError('run requires --brief')
-            print('PASS '+str(run(args.brief.resolve(),args.concept.resolve() if args.concept else None,args.feedback.resolve() if args.feedback else None)),flush=True)
+            print('REVIEW_REQUIRED '+str(run(args.brief.resolve(),args.concept.resolve() if args.concept else None,args.feedback.resolve() if args.feedback else None)),flush=True)
     except (ValueError,RuntimeError,subprocess.TimeoutExpired) as error:
         print(json.dumps({'status':'capability_or_production_error','reason':str(error)}),file=sys.stderr); sys.exit(2)

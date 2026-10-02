@@ -140,6 +140,8 @@ def write_composition(project,id_,duration,first,events,defs=''):
  (project/'compositions'/f'{id_}.html').write_text(html);return spec
 
 def compile_ui(project,plan,words,voice_duration):
+ from motif_quality import reject_unbound
+ reject_unbound(plan)
  from motif_script import prepare_local_assets,write_index
  report=review(plan,read(project/'brief.json'))
  if not report['pass']:raise ValueError('; '.join(report['issues']))

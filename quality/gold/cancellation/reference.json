@@ -1,0 +1,26 @@
+{
+  "id": "cancellation",
+  "status": "APPROVED_VISUAL_BENCHMARK",
+  "tags": [
+    "relief",
+    "ui-contact",
+    "receipts",
+    "continuity"
+  ],
+  "clip": {
+    "file": "videos/productions/voicestudio-craft-v6/renders/mobile.mp4",
+    "sha256": "ff8a2cda90e85fecbe85e750ba56f884c83a30d567447ef1ed1e9c2d501582c7",
+    "frames": [
+      790,
+      839
+    ],
+    "fps": 30,
+    "start_seconds": 26.333333333333332,
+    "end_seconds": 27.966666666666665,
+    "copy_policy": "stable source range; extract only when needed"
+  },
+  "still": "quality/gold/cancellation/still.png",
+  "source_shot": 16,
+  "representative_frame": 826,
+  "note": "quality/gold/cancellation/notes.md"
+}

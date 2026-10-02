@@ -1,0 +1,25 @@
+{
+  "id": "offline",
+  "status": "APPROVED_VISUAL_BENCHMARK",
+  "tags": [
+    "process-continues",
+    "offline",
+    "cause-effect"
+  ],
+  "clip": {
+    "file": "videos/productions/voicestudio-craft-v6/renders/mobile.mp4",
+    "sha256": "ff8a2cda90e85fecbe85e750ba56f884c83a30d567447ef1ed1e9c2d501582c7",
+    "frames": [
+      839,
+      878
+    ],
+    "fps": 30,
+    "start_seconds": 27.966666666666665,
+    "end_seconds": 29.266666666666666,
+    "copy_policy": "stable source range; extract only when needed"
+  },
+  "still": "quality/gold/offline/still.png",
+  "source_shot": 17,
+  "representative_frame": 869,
+  "note": "quality/gold/offline/notes.md"
+}

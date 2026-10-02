@@ -1,0 +1,26 @@
+{
+  "id": "star-interaction",
+  "status": "APPROVED_VISUAL_BENCHMARK",
+  "tags": [
+    "ui-contact",
+    "impact",
+    "effects",
+    "reward"
+  ],
+  "clip": {
+    "file": "videos/productions/voicestudio-craft-v6/renders/mobile.mp4",
+    "sha256": "ff8a2cda90e85fecbe85e750ba56f884c83a30d567447ef1ed1e9c2d501582c7",
+    "frames": [
+      76,
+      138
+    ],
+    "fps": 30,
+    "start_seconds": 2.533333333333333,
+    "end_seconds": 4.6,
+    "copy_policy": "stable source range; extract only when needed"
+  },
+  "still": "quality/gold/star-interaction/still.png",
+  "source_shot": 2,
+  "representative_frame": 108,
+  "note": "quality/gold/star-interaction/notes.md"
+}

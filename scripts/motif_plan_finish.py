@@ -7,6 +7,12 @@ import json
 from motif_produce import ROOT, TARGET_I, PEAK_CEILING, command, loudness, probe, video_hash, sha
 
 def finish(project, first, duration_range):
+    plan_path=project/'production-plan.json'
+    if plan_path.exists() and json.loads(plan_path.read_text()).get('quality_mode')=='motif-gold-v1':
+        from motif_quality import require_gate,read
+        require_gate(project,'final')
+        delivery=read(project/'quality-review/final/evidence.json')['delivery_picture']
+        if str(first.resolve())!=delivery['file'] or sha(first)!=delivery['probe']['sha256']:raise ValueError('audio finishing input differs from reviewed delivery picture')
     initial = loudness(first)
     first_probe = probe(first)
     picture_duration = float(first_probe["format"]["duration"])

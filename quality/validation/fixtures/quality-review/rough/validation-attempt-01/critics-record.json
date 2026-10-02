@@ -1,0 +1,22 @@
+{
+  "evidence_sha256": "9793aa496f3a4b326b36fe33cef451a7da52ce0e765aa5a3e21590af69f25f24",
+  "images_sha256": "db6da199c8e0e8176e18360acf49ab937c4ee50e0a57d1d8cadcfc347a62ecca",
+  "gold_ids": [
+    "payment-burden",
+    "recording",
+    "basement-completion"
+  ],
+  "invocations": [
+    "story-critic-invocation.json",
+    "visual-critic-invocation.json"
+  ],
+  "report_hashes": {
+    "story": "696f7735932435a3cb8b5b170a90fb11c51596b9ee67834982b70c23332dd56f",
+    "visual": "cab05d46026d99cf76ba55c6599ebcbaa14a9a7f8b742a27cda790aa55ec00e0"
+  },
+  "invocation_hashes": {
+    "story": "e109ddfbb810426625536378372d4dbd7ba7ceeedf395466435b60ed0a39d62b",
+    "visual": "bd35ec8dbbe7d389d18107556ad076b00c794a04d3037250fedda767e1b8a05d"
+  },
+  "scope": "ordered decoded native frames + full-rate pixel motion traces; CLI does not accept video"
+}

@@ -1,0 +1,26 @@
+{
+  "id": "recording",
+  "status": "APPROVED_VISUAL_BENCHMARK",
+  "tags": [
+    "performance",
+    "recording",
+    "talking",
+    "physical-ui"
+  ],
+  "clip": {
+    "file": "videos/productions/voicestudio-craft-v6/renders/mobile.mp4",
+    "sha256": "ff8a2cda90e85fecbe85e750ba56f884c83a30d567447ef1ed1e9c2d501582c7",
+    "frames": [
+      0,
+      76
+    ],
+    "fps": 30,
+    "start_seconds": 0.0,
+    "end_seconds": 2.533333333333333,
+    "copy_policy": "stable source range; extract only when needed"
+  },
+  "still": "quality/gold/recording/still.png",
+  "source_shot": 1,
+  "representative_frame": 56,
+  "note": "quality/gold/recording/notes.md"
+}

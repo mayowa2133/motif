@@ -1,0 +1,25 @@
+{
+  "id": "privacy",
+  "status": "APPROVED_VISUAL_BENCHMARK",
+  "tags": [
+    "local-retention",
+    "blocked-upload",
+    "continuity"
+  ],
+  "clip": {
+    "file": "videos/productions/voicestudio-craft-v6/renders/mobile.mp4",
+    "sha256": "ff8a2cda90e85fecbe85e750ba56f884c83a30d567447ef1ed1e9c2d501582c7",
+    "frames": [
+      878,
+      937
+    ],
+    "fps": 30,
+    "start_seconds": 29.266666666666666,
+    "end_seconds": 31.233333333333334,
+    "copy_policy": "stable source range; extract only when needed"
+  },
+  "still": "quality/gold/privacy/still.png",
+  "source_shot": 18,
+  "representative_frame": 926,
+  "note": "quality/gold/privacy/notes.md"
+}

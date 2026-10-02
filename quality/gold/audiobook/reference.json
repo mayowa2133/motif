@@ -1,0 +1,25 @@
+{
+  "id": "audiobook",
+  "status": "APPROVED_VISUAL_BENCHMARK",
+  "tags": [
+    "transformation",
+    "pages",
+    "hero-art"
+  ],
+  "clip": {
+    "file": "videos/productions/voicestudio-craft-v6/renders/mobile.mp4",
+    "sha256": "ff8a2cda90e85fecbe85e750ba56f884c83a30d567447ef1ed1e9c2d501582c7",
+    "frames": [
+      507,
+      559
+    ],
+    "fps": 30,
+    "start_seconds": 16.9,
+    "end_seconds": 18.633333333333333,
+    "copy_policy": "stable source range; extract only when needed"
+  },
+  "still": "quality/gold/audiobook/still.png",
+  "source_shot": 10,
+  "representative_frame": 550,
+  "note": "quality/gold/audiobook/notes.md"
+}

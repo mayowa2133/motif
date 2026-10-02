@@ -1,0 +1,11 @@
+{
+  "source_commit": "76f21ba",
+  "source": "videos/productions/voicestudio-craft-v6",
+  "scope": "copied short regressions; not a new film",
+  "source_hashes": {
+    "components.py": "9d3c862cc773e5482a06f5174aad14d7703d249554dcf3c6e8867d0da877ed47",
+    "actions_v4.py": "43a7334d4e253a21108a177c8027399fc5e4397a188ec89c623b6e946d05db25",
+    "actions.py": "57667cc7d5e89733ae0c098d2631ccde141ef0a0f9b0c29e72752df8462a2416"
+  },
+  "caption_and_hero_changes": "isolated validation interventions; labels withheld from critic prompt"
+}

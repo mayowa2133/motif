@@ -111,3 +111,7 @@ For every major beat, record these five answers in the existing storyboard befor
 Every new asset must use the palette roles, matte surfaces, shallow perspective, clear silhouette and standardized shadow logic. Mascot assets must retain the cream shell, teal details, dark display, two ear/antenna cues and chest code mark. Compare new work against a canonical contact sheet once a direction is approved.
 
 Reject: photoreal or glossy 3D rendering; chrome, glass or neon bloom; elaborate armor seams; visible elbow/knee machinery; five-finger hands; realistic gait or joint behavior; thin pale lines that vanish on mobile; stock vector gradients; generic emoji expressions; deep perspective; unreadable fake UI; noisy texture under text; an orange square mascot like the source guide; exact recreations of source headlines, captions, characters or compositions.
+
+## Explicit Motif gold quality mode
+
+New directed productions select `quality_mode: motif-gold-v1`. See [QUALITY_CONTRACT.md](../QUALITY_CONTRACT.md), [ENERGY_CONTRACT.md](../ENERGY_CONTRACT.md) and [QUALITY_SYSTEM.md](../QUALITY_SYSTEM.md). In this mode, one focal idea can have purposeful concurrent responses and residual motion overlapping the next action. Fully settle then wait is superseded for active high-energy shots. Small text is secondary; communicate story through shape, physical action, composition and motion first. No event/particle quotas or global jitter. The default restrained style and approved films remain unchanged.

@@ -1,0 +1,43 @@
+{
+  "mode": "motif-gold-v1",
+  "performance": {
+    "calendar": [
+      "bot"
+    ],
+    "arena": [
+      "pair-bot",
+      "close-A-bot",
+      "close-B-bot",
+      "review-bot"
+    ],
+    "high-energy paper": [
+      "bot"
+    ]
+  },
+  "reaction": {
+    "calendar": [
+      "bot",
+      "opening",
+      "existing",
+      "proposed",
+      "committed",
+      "decision",
+      "decision-result"
+    ],
+    "arena": [
+      "pair-bot",
+      "close-A-bot",
+      "close-B-bot",
+      "review-bot",
+      "receiver",
+      "pair-A",
+      "pair-B",
+      "close-A",
+      "close-B",
+      "review-A",
+      "review-B"
+    ],
+    "high-energy paper": "bot and actual persistent prop names in the selected finite action"
+  },
+  "unsupported": "calm paper, workshop and interactive UI need an explicit anchor-aware hook"
+}

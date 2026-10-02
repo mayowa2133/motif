@@ -1,0 +1,26 @@
+{
+  "id": "transcription",
+  "status": "APPROVED_VISUAL_BENCHMARK",
+  "tags": [
+    "output-emerges",
+    "process",
+    "paper",
+    "designed-irregularity"
+  ],
+  "clip": {
+    "file": "videos/productions/voicestudio-craft-v6/renders/mobile.mp4",
+    "sha256": "ff8a2cda90e85fecbe85e750ba56f884c83a30d567447ef1ed1e9c2d501582c7",
+    "frames": [
+      600,
+      651
+    ],
+    "fps": 30,
+    "start_seconds": 20.0,
+    "end_seconds": 21.7,
+    "copy_policy": "stable source range; extract only when needed"
+  },
+  "still": "quality/gold/transcription/still.png",
+  "source_shot": 12,
+  "representative_frame": 648,
+  "note": "quality/gold/transcription/notes.md"
+}

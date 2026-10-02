@@ -1,0 +1,42 @@
+test_actual_hand_geometry_tracks_reacting_prop_with_squashed_performance (test_quality_system.QualityTests.test_actual_hand_geometry_tracks_reacting_prop_with_squashed_performance) ... ok
+test_all_named_states_use_canonical_parts_and_distinct_silhouette (test_quality_system.QualityTests.test_all_named_states_use_canonical_parts_and_distinct_silhouette) ... ok
+test_behavioral_retrieval_is_bounded_and_uses_internal_gold (test_quality_system.QualityTests.test_behavioral_retrieval_is_bounded_and_uses_internal_gold) ... ok
+test_embedded_contracts_match_the_shared_source (test_quality_system.QualityTests.test_embedded_contracts_match_the_shared_source) ... ok
+test_final_gate_requires_complete_technical_evidence_and_prior_rough (test_quality_system.QualityTests.test_final_gate_requires_complete_technical_evidence_and_prior_rough) ... ok
+test_grip_after_main_and_local_reaction_matches_real_anchor (test_quality_system.QualityTests.test_grip_after_main_and_local_reaction_matches_real_anchor) ... ok
+test_high_energy_hook_changes_real_frame_and_preserves_contact (test_quality_system.QualityTests.test_high_energy_hook_changes_real_frame_and_preserves_contact) ... ok
+test_missing_gate_and_edited_report_cannot_advance (test_quality_system.QualityTests.test_missing_gate_and_edited_report_cannot_advance) ... ok
+test_missing_metadata_and_unreviewed_asset_cannot_promote (test_quality_system.QualityTests.test_missing_metadata_and_unreviewed_asset_cannot_promote) ... ok
+test_operational_performance_changes_compiled_events_without_speech_change (test_quality_system.QualityTests.test_operational_performance_changes_compiled_events_without_speech_change) ... ok
+test_pass_is_not_human_approval_and_changed_media_invalidates_gate (test_quality_system.QualityTests.test_pass_is_not_human_approval_and_changed_media_invalidates_gate) ... ok
+test_performance_binding_changes_native_painted_pixels (test_quality_system.QualityTests.test_performance_binding_changes_native_painted_pixels) ... ok
+test_quality_contract_required_in_existing_schemas_and_focal_binding_checked (test_quality_system.QualityTests.test_quality_contract_required_in_existing_schemas_and_focal_binding_checked) ... ok
+test_reactions_have_separate_transform_channel_and_unsafe_targets_stop (test_quality_system.QualityTests.test_reactions_have_separate_transform_channel_and_unsafe_targets_stop) ... ok
+test_repair_budget_two_meaningful_changes_then_human (test_quality_system.QualityTests.test_repair_budget_two_meaningful_changes_then_human) ... ok
+test_selected_radius_is_bounded_distance_and_relevance_weighted (test_quality_system.QualityTests.test_selected_radius_is_bounded_distance_and_relevance_weighted) ... ok
+test_story_failure_cannot_average_out_with_perfect_art (test_quality_system.QualityTests.test_story_failure_cannot_average_out_with_perfect_art) ... ok
+
+----------------------------------------------------------------------
+Ran 17 tests in 1.632s
+
+OK
+test_A_B_diagnostic_fits_match_and_protect_identity_and_marks (test_directing_controls.DirectingTests.test_A_B_diagnostic_fits_match_and_protect_identity_and_marks) ... ok
+test_decline_clears_PROPOSED_without_editing_old_export (test_directing_controls.DirectingTests.test_decline_clears_PROPOSED_without_editing_old_export) ... ok
+test_hidden_selection_and_freeform_focus_are_rejected (test_directing_controls.DirectingTests.test_hidden_selection_and_freeform_focus_are_rejected) ... ok
+test_one_framing_field_changes_camera_with_same_assets_and_speech (test_directing_controls.DirectingTests.test_one_framing_field_changes_camera_with_same_assets_and_speech) ... ok
+test_selection_subject_changes_attached_stamp_events (test_directing_controls.DirectingTests.test_selection_subject_changes_attached_stamp_events) ... ok
+test_stage_instruction_narration_is_not_accepted_as_audience_script (test_directing_controls.DirectingTests.test_stage_instruction_narration_is_not_accepted_as_audience_script) ... ok
+
+----------------------------------------------------------------------
+Ran 6 tests in 0.556s
+
+OK
+test_canonical_hand_transform_meets_composed_prop_endpoint (test_paper_energy.EnergyTests.test_canonical_hand_transform_meets_composed_prop_endpoint) ... ok
+test_living_hold_is_repeatable_stepped_and_independent (test_paper_energy.EnergyTests.test_living_hold_is_repeatable_stepped_and_independent) ... ok
+test_reversed_seek_returns_identical_markup (test_paper_energy.EnergyTests.test_reversed_seek_returns_identical_markup) ... ok
+test_unknown_energy_actions_and_rewritten_script_fail (test_paper_energy.EnergyTests.test_unknown_energy_actions_and_rewritten_script_fail) ... ok
+
+----------------------------------------------------------------------
+Ran 4 tests in 0.013s
+
+OK

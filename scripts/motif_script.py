@@ -99,6 +99,8 @@ def prepare_local_assets(project):
    if not destination.exists():shutil.copy2(paper.KIT/(name+ext),destination)
 
 def compile_script(project,plan,words,voice_duration,duration_range=None):
+ from motif_quality import reject_unbound
+ if plan.get('style')!='reference-expressive-high-energy-v1':reject_unbound(plan)
  if plan.get('style')=='reference-expressive-high-energy-v1':
   from motif_paper_energy import compile_energy
   return compile_energy(project,plan,words,voice_duration)
@@ -205,6 +207,14 @@ def write_index(project,frames,duration,voice_duration,gain,width=1080,height=19
  (project/'index.html').write_text(html)
 
 def render_preview(project):
+ if read(project/'production-plan.json').get('quality_mode')=='motif-gold-v1':
+  from motif_quality import rough,evidence_bundle,critics
+  from motif_direct import backend_config
+  output=rough(project)
+  shots=[{'id':x['id'],'start':x['span']['start'],'end':x['span']['end'],'contacts':[a['time'] for a in x['span']['actions']]} for x in read(project/'quality-bindings.json')['shots']]
+  evidence_bundle(project,'rough',output/'captions.mp4',output/'no-captions.mp4',shots)
+  critics(project,'rough',backend_config())
+  return output/'captions.mp4'
  state=read(project/'review-state.json');spec=read(project/'scene-events.json');audio=read(project/'audio-plan.json')
  for field,path in [('plan_sha256','production-plan.json'),('voice_sha256','assets/voice/narration-af-nova.wav'),('events_sha256','scene-events.json')]:
   if sha(project/path)!=state[field]:raise ValueError('saved review input changed: '+path)
@@ -264,11 +274,17 @@ def plan_script(brief_path):
  if brief['style']=='reference-expressive-high-energy-v1':
   from motif_paper_energy import STAGES
   prompt+='\nACTIVE PRESET OVERRIDES: '+json.dumps(read(ROOT/'assets/styles/reference-expressive-high-energy-v1.json'))+'\nUse these high-energy action bindings instead: '+json.dumps(STAGES)+'. One dominant focal idea supports overlapping reactions, living motion, caption hits and transitions. Do not apply quiet one-action-then-hold rules. No parked multi-second diagrams.'
- plan=model_call(project,'initial-plan',prompt,'schemas/script-production-plan.schema.json',config);write(project/'production-plan.json',plan)
+ from motif_quality import planning_context,direction_review
+ prompt+=planning_context(brief['script'])
+ plan=model_call(project,'initial-plan',prompt,'schemas/script-production-plan.schema.json',config)
+ if plan.get('quality_mode')!='motif-gold-v1':raise ValueError('new script plans require motif-gold-v1')
+ write(project/'production-plan.json',plan)
+ direction_review(project,plan,config)
  (project/'STORYBOARD_INITIAL.md').write_text(json.dumps(plan,indent=2)+'\n')
  r=review(plan,brief);write(project/'pre-render-checks.json',r)
  if not r['pass']:raise ValueError('; '.join(r['issues']))
  env=os.environ.copy();env.setdefault('HYPERFRAMES_PYTHON',str(Path.home()/'.cache/motif-kokoro-venv/bin/python'))
  command(['npx','--yes',f'hyperframes@{PIN}','tts','--text-file=assets/voice/narration.txt','--voice=af_nova',f'--speed={brief.get("voice_speed",1)}','--output=assets/voice/narration-af-nova.wav','--json'],project,env,project/'tts.log')
  words,d=align_voice(project);compile_script(project,plan,words,d)
+ if plan.get('quality_mode')=='motif-gold-v1':render_preview(project)
  return project

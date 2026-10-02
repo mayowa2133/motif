@@ -1,0 +1,262 @@
+{
+  "ok": true,
+  "strict": false,
+  "lint": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 5,
+    "infoCount": 0,
+    "findings": [
+      {
+        "code": "studio_missing_editable_id",
+        "severity": "warning",
+        "message": "<div data-composition-id=\"q01\" data-start=\"0.0\" data-track-index=\"0\"> has no id, so Studio cannot use a stable edit target for its timeline and canvas controls.",
+        "selector": "[data-composition-id=\"q01\"]",
+        "dataAttributes": {},
+        "sourceFile": "/Users/mayowaadesanya/Projects/motif/quality/validation/fixtures/index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Add a stable, human-readable id such as id=\"hero-title\" or id=\"scene-1-card\" to every timeline-visible element you want agents or Studio to edit."
+      },
+      {
+        "code": "studio_missing_editable_id",
+        "severity": "warning",
+        "message": "<div data-composition-id=\"q02\" data-start=\"2.5\" data-track-index=\"0\"> has no id, so Studio cannot use a stable edit target for its timeline and canvas controls.",
+        "selector": "[data-composition-id=\"q02\"]",
+        "dataAttributes": {},
+        "sourceFile": "/Users/mayowaadesanya/Projects/motif/quality/validation/fixtures/index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Add a stable, human-readable id such as id=\"hero-title\" or id=\"scene-1-card\" to every timeline-visible element you want agents or Studio to edit."
+      },
+      {
+        "code": "studio_missing_editable_id",
+        "severity": "warning",
+        "message": "<div data-composition-id=\"q03\" data-start=\"5.0\" data-track-index=\"0\"> has no id, so Studio cannot use a stable edit target for its timeline and canvas controls.",
+        "selector": "[data-composition-id=\"q03\"]",
+        "dataAttributes": {},
+        "sourceFile": "/Users/mayowaadesanya/Projects/motif/quality/validation/fixtures/index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Add a stable, human-readable id such as id=\"hero-title\" or id=\"scene-1-card\" to every timeline-visible element you want agents or Studio to edit."
+      },
+      {
+        "code": "studio_missing_editable_id",
+        "severity": "warning",
+        "message": "<div data-composition-id=\"q04\" data-start=\"7.5\" data-track-index=\"0\"> has no id, so Studio cannot use a stable edit target for its timeline and canvas controls.",
+        "selector": "[data-composition-id=\"q04\"]",
+        "dataAttributes": {},
+        "sourceFile": "/Users/mayowaadesanya/Projects/motif/quality/validation/fixtures/index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Add a stable, human-readable id such as id=\"hero-title\" or id=\"scene-1-card\" to every timeline-visible element you want agents or Studio to edit."
+      },
+      {
+        "code": "studio_missing_editable_id",
+        "severity": "warning",
+        "message": "<div data-composition-id=\"q05\" data-start=\"10.0\" data-track-index=\"0\"> has no id, so Studio cannot use a stable edit target for its timeline and canvas controls.",
+        "selector": "[data-composition-id=\"q05\"]",
+        "dataAttributes": {},
+        "sourceFile": "/Users/mayowaadesanya/Projects/motif/quality/validation/fixtures/index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Add a stable, human-readable id such as id=\"hero-title\" or id=\"scene-1-card\" to every timeline-visible element you want agents or Studio to edit."
+      }
+    ],
+    "filesScanned": 6
+  },
+  "runtime": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 0,
+    "infoCount": 0,
+    "findings": []
+  },
+  "layout": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 0,
+    "infoCount": 0,
+    "findings": [],
+    "duration": 12.5,
+    "samples": [
+      0.694,
+      2.083,
+      3.472,
+      4.861,
+      6.25,
+      7.639,
+      9.028,
+      10.417,
+      11.806
+    ],
+    "transitionSamples": [],
+    "transitionSamplesDropped": 0,
+    "tolerance": 2,
+    "totalIssueCount": 0,
+    "truncated": false
+  },
+  "motion": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 0,
+    "infoCount": 0,
+    "findings": [],
+    "enabled": false,
+    "samples": 0
+  },
+  "contrast": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 4,
+    "infoCount": 0,
+    "findings": [
+      {
+        "code": "contrast_aa_failure",
+        "severity": "warning",
+        "message": "Contrast is 4.02:1; WCAG AA requires 4.5:1.",
+        "text": "Paid",
+        "fg": "rgb(37,134,80)",
+        "bg": "rgb(248,240,220)",
+        "ratio": 4.02,
+        "requiredRatio": 4.5,
+        "suggestedColor": "rgb(35,125,75)",
+        "large": false,
+        "selector": "div > div:nth-of-type(4) > div > svg > g > g:nth-of-type(17) > g > text:nth-of-type(3)",
+        "dataAttributes": {
+          "data-layout-allow-overlap": ""
+        },
+        "sourceFile": "compositions/q04.html",
+        "bbox": {
+          "x": 334.7223205566406,
+          "y": 437.0610656738281,
+          "width": 18.599945068359375,
+          "height": 12.067291259765625
+        },
+        "time": 9.028
+      },
+      {
+        "code": "contrast_aa_failure",
+        "severity": "warning",
+        "message": "Contrast is 4.02:1; WCAG AA requires 4.5:1.",
+        "text": "Paid",
+        "fg": "rgb(37,134,80)",
+        "bg": "rgb(248,240,220)",
+        "ratio": 4.02,
+        "requiredRatio": 4.5,
+        "suggestedColor": "rgb(35,125,75)",
+        "large": false,
+        "selector": "div > div:nth-of-type(4) > div > svg > g > g:nth-of-type(18) > g > text:nth-of-type(3)",
+        "dataAttributes": {
+          "data-layout-allow-overlap": ""
+        },
+        "sourceFile": "compositions/q04.html",
+        "bbox": {
+          "x": 316.93701171875,
+          "y": 449.60821533203125,
+          "width": 18.25189208984375,
+          "height": 11.368988037109375
+        },
+        "time": 9.028
+      },
+      {
+        "code": "contrast_aa_failure",
+        "severity": "warning",
+        "message": "Contrast is 4.02:1; WCAG AA requires 4.5:1.",
+        "text": "Paid",
+        "fg": "rgb(37,134,80)",
+        "bg": "rgb(248,240,220)",
+        "ratio": 4.02,
+        "requiredRatio": 4.5,
+        "suggestedColor": "rgb(35,125,75)",
+        "large": false,
+        "selector": "div > div:nth-of-type(4) > div > svg > g > g:nth-of-type(19) > g > text:nth-of-type(3)",
+        "dataAttributes": {
+          "data-layout-allow-overlap": ""
+        },
+        "sourceFile": "compositions/q04.html",
+        "bbox": {
+          "x": 318.2385559082031,
+          "y": 459.23406982421875,
+          "width": 17.50885009765625,
+          "height": 10.0018310546875
+        },
+        "time": 9.028
+      },
+      {
+        "code": "contrast_aa_failure",
+        "severity": "warning",
+        "message": "Contrast is 4.02:1; WCAG AA requires 4.5:1.",
+        "text": "Paid",
+        "fg": "rgb(37,134,80)",
+        "bg": "rgb(248,240,220)",
+        "ratio": 4.02,
+        "requiredRatio": 4.5,
+        "suggestedColor": "rgb(35,125,75)",
+        "large": false,
+        "selector": "div > div:nth-of-type(4) > div > svg > g > g:nth-of-type(22) > g > text:nth-of-type(3)",
+        "dataAttributes": {
+          "data-layout-allow-overlap": ""
+        },
+        "sourceFile": "compositions/q04.html",
+        "bbox": {
+          "x": 55.389217376708984,
+          "y": 447.97613525390625,
+          "width": 13.913021087646484,
+          "height": 8.363861083984375
+        },
+        "time": 9.028
+      }
+    ],
+    "enabled": true,
+    "samples": [
+      0.694,
+      3.472,
+      6.25,
+      9.028,
+      11.806
+    ],
+    "checked": 52,
+    "passed": 48
+  },
+  "hdr": {
+    "autoPromotion": null,
+    "inspection": "available"
+  },
+  "snapshots": {
+    "enabled": false,
+    "files": [],
+    "times": [],
+    "findingFiles": []
+  },
+  "_meta": {
+    "version": "0.8.99",
+    "latestVersion": "0.8.106",
+    "updateAvailable": true
+  }
+}
