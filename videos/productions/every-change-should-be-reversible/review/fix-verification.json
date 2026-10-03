@@ -1,0 +1,33 @@
+{
+  "frame_function_calls": 759,
+  "events_change_main_action": true,
+  "missing_event_rejected": true,
+  "maximum_grip_residual": 1.2710574864626038e-13,
+  "scope": "759-frame execution and 522 emitted-SVG grip checks pass. Native encoded roughs exist. Independent creative gate remains HUMAN_REVIEW_REQUIRED; geometric residual is not visibility approval.",
+  "formal_moving_repairs": 2,
+  "missing_anchor_rejected": true,
+  "compile_freshness": "PASS",
+  "rough_probes": {
+    "scope": "moving rough only; not finished art/audio",
+    "plan_sha256": "672e563e49ddac464bb02727a5772ebf9404e307fb9420d18ec74bddb6c7def6",
+    "events_sha256": "f3210dca1105bf377e057174517c46e21e754adfe10c900f14aab1ac4c07c9bd",
+    "with_captions": {
+      "width": 360,
+      "height": 640,
+      "fps": 30.0,
+      "frames": 759,
+      "duration": 25.3,
+      "sha256": "bc07c54f3b48b4fb2a9e7b1352cceb2a2a8f495db51283bfba80184cea7a5008"
+    },
+    "without_captions": {
+      "width": 360,
+      "height": 640,
+      "fps": 30.0,
+      "frames": 759,
+      "duration": 25.3,
+      "sha256": "782cbeddb625bc6c630acecaecc409d84912dc713c5b8ec51eceb01b5461ab05"
+    }
+  },
+  "emitted_svg_hand_contacts": 522,
+  "maximum_emitted_hand_residual_author_px": 0.03255
+}

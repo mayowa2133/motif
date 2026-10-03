@@ -26,3 +26,9 @@ Readability, canonical geometry, anchors, materials and rights remain governed b
 Art direction selects `environment_mode`: `physical` requires 2–3 meaningful cues; `minimal-isolated` allows zero cues with a nonempty, story-specific `environment_justification`. Critics evaluate the resulting composition, not the number of props. Legacy contracts without a mode normalize to physical.
 
 Declared contacts, landings, handoffs and impacts receive consecutive native windows of six frames before and after the event, clipped at shot boundaries. At most eight meaningful events per shot keep evidence bounded. These augment sparse samples and full-rate pixel traces; final human playback/listening remains required.
+
+## Film structure extension
+
+New motif-gold-v1 planning uses [Motif structural grammar](docs/MOTIF_STRUCTURAL_GRAMMAR.md): film → rhetorical chapters → setups → beats → motion layers. The independent data-only structure critic must pass before direction review, speech generation and moving rough. Macro failure requires replan. This adds no renderer or competing score system. Legacy saved contracts remain readable without rewriting frozen films.
+
+Moving visual reviews additionally assess all codes in `quality/rubric/hierarchy.json`, mapping failures to existing gates. Meaningful accumulation and long developing setups remain valid. There are no new quotas. Policy and plan freshness are required; human approval and final audio/technical boundaries remain unchanged.

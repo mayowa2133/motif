@@ -1,0 +1,28 @@
+
+> check
+> npx --yes hyperframes@0.8.99 check
+
+◆  Checking every-change-should-be-reversible
+[hyperframes] browserGpuMode probe → hardware (WebGL renderer vendor="Google Inc. (Apple)" renderer="ANGLE (Apple, ANGLE Metal Renderer: Apple M2 Pro, Unspecified Version)")
+
+Lint
+  ◇ 0 errors, 0 warnings
+
+Runtime
+  ✗ check_runtime_failure: Navigation timeout of 10000 ms exceeded
+    index.html [data-composition-id] t=0s
+  1 error(s), 0 warning(s), 0 info(s)
+
+Layout
+  ◇ 0 issues across 0 sample(s)
+
+Motion
+  ◇ 0 errors, 0 warnings
+
+Contrast
+  ◇ 0/0 text checks pass WCAG AA
+
+Snapshots
+  ◇ disabled
+
+◇  Check failed

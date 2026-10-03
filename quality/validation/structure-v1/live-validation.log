@@ -1,0 +1,39 @@
+MODEL quality-structure
+CHECK {'fixture': 'a', 'expected': ['METAPHOR_OVERLOAD'], 'observed_codes': ['CLUTTER_WITHOUT_PURPOSE', 'COMPETING_FOCI', 'COMPOSITIONAL_STAGNATION', 'CONTINUITY_TOKEN_OVERLOAD', 'METAPHOR_OVERLOAD', 'SEMANTIC_GROUP_OVERLOAD', 'STATE_ACCUMULATION_WITHOUT_MEANING', 'WEAK_RESET_RHYTHM'], 'gate': 'REPLAN_REQUIRED', 'expectation_met': True, 'plan_sha256': '20ad712947e632125527e1ad655aa0c68aa589a745dfed1966b0b7b82d22ef37', 'report_sha256': '5109489ca377655b11e33a5fa43996ebf2f4185c0e8c0258c9d6303a7e4feb1e', 'invocation_sha256': '37642625fd0312bfaadd75d3b93544cf125c5acee19de696e254070aff64d85b'}
+MODEL quality-structure
+CHECK {'fixture': 'b', 'expected': ['COMPOSITIONAL_STAGNATION'], 'observed_codes': ['CLUTTER_WITHOUT_PURPOSE', 'COMPETING_FOCI', 'COMPOSITIONAL_STAGNATION', 'CONTINUITY_TOKEN_OVERLOAD', 'METAPHOR_OVERLOAD', 'SEMANTIC_GROUP_OVERLOAD', 'STATE_ACCUMULATION_WITHOUT_MEANING', 'WEAK_RESET_RHYTHM'], 'gate': 'REPLAN_REQUIRED', 'expectation_met': True, 'plan_sha256': 'd8aed547aa4aeb54d0e55bcfc04edbc4b5467e25d656dc7cba17346d448113e9', 'report_sha256': 'faa4dacd1af3388e7a10d87122395e063ffeef63ee9ba31bfa44aa05731e457a', 'invocation_sha256': '360caa2d3449cb2efbd6af57e5cc6716944e6ed7ec40e4451cea733ba3ae3c4f'}
+MODEL quality-structure
+CHECK {'fixture': 'c', 'expected': ['SEMANTIC_GROUP_OVERLOAD', 'COMPETING_FOCI'], 'observed_codes': ['COMPETING_FOCI', 'METAPHOR_OVERLOAD', 'SEMANTIC_GROUP_OVERLOAD', 'WEAK_RESET_RHYTHM'], 'gate': 'REPLAN_REQUIRED', 'expectation_met': True, 'plan_sha256': '857d836f30aec73173c999c660b3b5aebea4e3f641f379e75de388c63a520f8b', 'report_sha256': '42dca17e82e29c2af2a634c568a52b3eaf1ff1bce89a1e2fabc903414ac65f9f', 'invocation_sha256': '350a84651fb53f3d83b78eb55dfaae99236b846242b7fbd9ab6de2ef7aebb8e2'}
+MODEL quality-structure
+CHECK {'fixture': 'd', 'expected': ['PASS'], 'observed_codes': [], 'gate': 'PASS', 'expectation_met': True, 'plan_sha256': '6dbcdc692175455279938ad3579a5c7f7ab0c780db8566edcda612be8cbe8359', 'report_sha256': 'e4691a2e098d612760e830d29b44282abcffb5efac312c98dcec9597d8a31105', 'invocation_sha256': 'a63e0b5ba901bb8130c03b163ca8737c3d6eada7547cd2e082a845a84b7cb3d8'}
+MODEL quality-structure
+CHECK {'fixture': 'e', 'expected': ['PASS'], 'observed_codes': ['CLUTTER_WITHOUT_PURPOSE', 'COMPETING_FOCI', 'SEMANTIC_GROUP_OVERLOAD', 'STATE_ACCUMULATION_WITHOUT_MEANING'], 'gate': 'REPLAN_REQUIRED', 'expectation_met': False, 'plan_sha256': 'f3109ff670eacbb151326ddab1bfc676ec7636a76dc10ec4fdb7e32c89432739', 'report_sha256': '2be1a9bf9922f20f537eb59e3db5008b4bf1810baa6eab308790528ff34d6b3a', 'invocation_sha256': '217c5376ec534573dae699bd34932585803e8b111f9c2deaaaba8b330fcd9cdc'}
+MODEL quality-structure
+CHECK {'fixture': 'f', 'expected': ['STATE_ACCUMULATION_WITHOUT_MEANING'], 'observed_codes': ['CLUTTER_WITHOUT_PURPOSE', 'COMPETING_FOCI', 'COMPOSITIONAL_STAGNATION', 'CONTINUITY_TOKEN_OVERLOAD', 'METAPHOR_OVERLOAD', 'SEMANTIC_GROUP_OVERLOAD', 'STATE_ACCUMULATION_WITHOUT_MEANING', 'WEAK_RESET_RHYTHM'], 'gate': 'REPLAN_REQUIRED', 'expectation_met': True, 'plan_sha256': '021be2b51efde603a670a13179ee0b89b78a4f44e73393f8ba41854782fad13a', 'report_sha256': '3c3fcf851bad33b519643288898606375de11af3c15d028eebb4b1061f92dcf4', 'invocation_sha256': '05f57345b1b41eb740a0438748a0433811b687cc3652c6059cc03d78b2b26a7c'}
+MODEL quality-structure
+Traceback (most recent call last):
+  File "/Users/mayowaadesanya/Projects/motif/scripts/validate_structure.py", line 47, in <module>
+    if __name__=='__main__':main()
+                            ^^^^^^
+  File "/Users/mayowaadesanya/Projects/motif/scripts/validate_structure.py", line 39, in main
+    try:structure_review(folder,read(folder/'production-plan.json'),config)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mayowaadesanya/Projects/motif/scripts/motif_structure.py", line 161, in structure_review
+    report = model_call(project, 'quality-structure', critic_prompt(plan), 'schemas/structure-critic.schema.json', config)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mayowaadesanya/Projects/motif/scripts/motif_direct.py", line 81, in model_call
+    process=subprocess.run(args,cwd=cwd,input=prompt,text=True,capture_output=True,timeout=600)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mayowaadesanya/.pyenv/versions/3.11.6/lib/python3.11/subprocess.py", line 550, in run
+    stdout, stderr = process.communicate(input, timeout=timeout)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mayowaadesanya/.pyenv/versions/3.11.6/lib/python3.11/subprocess.py", line 1209, in communicate
+    stdout, stderr = self._communicate(input, endtime, timeout)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mayowaadesanya/.pyenv/versions/3.11.6/lib/python3.11/subprocess.py", line 2108, in _communicate
+    ready = selector.select(timeout)
+            ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mayowaadesanya/.pyenv/versions/3.11.6/lib/python3.11/selectors.py", line 415, in select
+    fd_event_list = self._selector.poll(timeout)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+KeyboardInterrupt

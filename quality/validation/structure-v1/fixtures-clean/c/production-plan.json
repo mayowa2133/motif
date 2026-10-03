@@ -1,0 +1,110 @@
+{
+  "quality_mode": "motif-gold-v1",
+  "script": "This answer is selected.",
+  "asset_usage": [
+    {
+      "id": "planning-paper",
+      "scope": "production-specific",
+      "path": "",
+      "metadata_path": "",
+      "agent_assisted": true
+    }
+  ],
+  "beats": [
+    {
+      "id": "b1",
+      "narration": "This answer is selected.",
+      "quality": {
+        "purpose": "This answer is selected.",
+        "hero": "candidate sheet",
+        "primary_action": "Bot selects a candidate while a equally large independent cost stack collapses at right and a bug scanner simultaneously reports findings at left.",
+        "performance": {
+          "state": "focused",
+          "target": "bot"
+        },
+        "before": "Candidate, cost pile and scanner are equally large and visually active.",
+        "after": "Three unrelated large result regions change together.",
+        "focal_target": "candidate sheet",
+        "framing": "subject",
+        "reaction_radius": {
+          "origin": [
+            640,
+            782
+          ],
+          "radius": 200,
+          "duration": 0.6,
+          "targets": []
+        },
+        "secondary_motion": [],
+        "environment": [
+          "paper backboard",
+          "work surface"
+        ],
+        "exit_overlap": null,
+        "energy": {
+          "dominant_action": "Bot selects a candidate while a equally large independent cost stack collapses at right and a bug scanner simultaneously reports findings at left."
+        },
+        "art_direction": {
+          "hero_object": "candidate sheet",
+          "bot_role": "participant",
+          "materials": [
+            "printed paper",
+            "card supports"
+          ],
+          "depth_planes": [
+            "paper backboard",
+            "hero and contact plane"
+          ],
+          "composition": "Three equal thirds: selection, cost collapse, bug discovery. All insist on equal attention.",
+          "intentional_irregularity": "A corner crop directs attention to the active contact.",
+          "environment_mode": "physical",
+          "environment_justification": null
+        }
+      }
+    }
+  ],
+  "film_structure": {
+    "version": "structure-1.0",
+    "rhetorical_chapters": [
+      {
+        "id": "argument",
+        "purpose": "Develop the supplied short argument through visible changes.",
+        "narration_span": {
+          "start_word": 0,
+          "end_word": 4,
+          "text": "This answer is selected."
+        }
+      }
+    ],
+    "setups": [
+      {
+        "setup_id": "s1",
+        "chapter": "argument",
+        "narration_span": {
+          "start_word": 0,
+          "end_word": 4,
+          "text": "This answer is selected."
+        },
+        "semantic_center": "Select a candidate",
+        "visual_rule": "The chosen candidate rises above alternatives.",
+        "relationship_archetype": "physical interaction",
+        "hero": "candidate sheet",
+        "bot_role": "participant",
+        "continuity_tokens": [],
+        "environment_mode": "physical",
+        "palette_family": "warm paper / teal",
+        "entry_state": "Candidate, cost pile and scanner are equally large and visually active.",
+        "exit_state": "Three unrelated large result regions change together.",
+        "reason_for_persistence": "Show selection along with unrelated demonstrations to keep the frame energetic.",
+        "planned_reset_after": {
+          "kind": "end",
+          "reason": "The argument ends in this visible consequence."
+        },
+        "beat_ids": [
+          "b1"
+        ]
+      }
+    ],
+    "continuity_tokens": []
+  }
+}

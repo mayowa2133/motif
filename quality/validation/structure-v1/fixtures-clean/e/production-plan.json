@@ -1,0 +1,266 @@
+{
+  "quality_mode": "motif-gold-v1",
+  "script": "Inspect the entire page. Reveal the hidden marks. Repair what was found. Release the checked page.",
+  "asset_usage": [
+    {
+      "id": "planning-paper",
+      "scope": "production-specific",
+      "path": "",
+      "metadata_path": "",
+      "agent_assisted": true
+    }
+  ],
+  "beats": [
+    {
+      "id": "b1",
+      "narration": "Inspect the entire page.",
+      "quality": {
+        "purpose": "Inspect the entire page.",
+        "hero": "inspected document",
+        "primary_action": "Bot feeds a page under the lens.",
+        "performance": {
+          "state": "focused",
+          "target": "bot"
+        },
+        "before": "Page waits at the slot.",
+        "after": "Page reaches the lens.",
+        "focal_target": "inspected document",
+        "framing": "subject",
+        "reaction_radius": {
+          "origin": [
+            640,
+            782
+          ],
+          "radius": 200,
+          "duration": 0.6,
+          "targets": []
+        },
+        "secondary_motion": [],
+        "environment": [
+          "paper backboard",
+          "work surface"
+        ],
+        "exit_overlap": null,
+        "energy": {
+          "dominant_action": "Bot feeds a page under the lens."
+        },
+        "art_direction": {
+          "hero_object": "inspected document",
+          "bot_role": "participant",
+          "materials": [
+            "printed paper",
+            "card supports"
+          ],
+          "depth_planes": [
+            "paper backboard",
+            "hero and contact plane"
+          ],
+          "composition": "A single large page and traveling lens occupy the center; Bot operates at its right edge.",
+          "intentional_irregularity": "A corner crop directs attention to the active contact.",
+          "environment_mode": "physical",
+          "environment_justification": null
+        }
+      }
+    },
+    {
+      "id": "b2",
+      "narration": "Reveal the hidden marks.",
+      "quality": {
+        "purpose": "Reveal the hidden marks.",
+        "hero": "inspected document",
+        "primary_action": "The lens exposes previously covered marks on the same page.",
+        "performance": {
+          "state": "focused",
+          "target": "bot"
+        },
+        "before": "Marks are concealed.",
+        "after": "Marks are visible under the lens.",
+        "focal_target": "inspected document",
+        "framing": "subject",
+        "reaction_radius": {
+          "origin": [
+            640,
+            782
+          ],
+          "radius": 200,
+          "duration": 0.6,
+          "targets": []
+        },
+        "secondary_motion": [],
+        "environment": [
+          "paper backboard",
+          "work surface"
+        ],
+        "exit_overlap": null,
+        "energy": {
+          "dominant_action": "The lens exposes previously covered marks on the same page."
+        },
+        "art_direction": {
+          "hero_object": "inspected document",
+          "bot_role": "participant",
+          "materials": [
+            "printed paper",
+            "card supports"
+          ],
+          "depth_planes": [
+            "paper backboard",
+            "hero and contact plane"
+          ],
+          "composition": "A single large page and traveling lens occupy the center; Bot operates at its right edge.",
+          "intentional_irregularity": "A corner crop directs attention to the active contact.",
+          "environment_mode": "physical",
+          "environment_justification": null
+        }
+      }
+    },
+    {
+      "id": "b3",
+      "narration": "Repair what was found.",
+      "quality": {
+        "purpose": "Repair what was found.",
+        "hero": "inspected document",
+        "primary_action": "Bot aligns replacement patches over those marks.",
+        "performance": {
+          "state": "focused",
+          "target": "bot"
+        },
+        "before": "Revealed marks interrupt the printed routes.",
+        "after": "Patched routes reconnect.",
+        "focal_target": "inspected document",
+        "framing": "subject",
+        "reaction_radius": {
+          "origin": [
+            640,
+            782
+          ],
+          "radius": 200,
+          "duration": 0.6,
+          "targets": []
+        },
+        "secondary_motion": [],
+        "environment": [
+          "paper backboard",
+          "work surface"
+        ],
+        "exit_overlap": null,
+        "energy": {
+          "dominant_action": "Bot aligns replacement patches over those marks."
+        },
+        "art_direction": {
+          "hero_object": "inspected document",
+          "bot_role": "participant",
+          "materials": [
+            "printed paper",
+            "card supports"
+          ],
+          "depth_planes": [
+            "paper backboard",
+            "hero and contact plane"
+          ],
+          "composition": "A single large page and traveling lens occupy the center; Bot operates at its right edge.",
+          "intentional_irregularity": "A corner crop directs attention to the active contact.",
+          "environment_mode": "physical",
+          "environment_justification": null
+        }
+      }
+    },
+    {
+      "id": "b4",
+      "narration": "Release the checked page.",
+      "quality": {
+        "purpose": "Release the checked page.",
+        "hero": "inspected document",
+        "primary_action": "Bot advances the SAME page out of the lens.",
+        "performance": {
+          "state": "focused",
+          "target": "bot"
+        },
+        "before": "The patched page is under inspection.",
+        "after": "The connected page exits intact.",
+        "focal_target": "inspected document",
+        "framing": "subject",
+        "reaction_radius": {
+          "origin": [
+            640,
+            782
+          ],
+          "radius": 200,
+          "duration": 0.6,
+          "targets": []
+        },
+        "secondary_motion": [],
+        "environment": [
+          "paper backboard",
+          "work surface"
+        ],
+        "exit_overlap": null,
+        "energy": {
+          "dominant_action": "Bot advances the SAME page out of the lens."
+        },
+        "art_direction": {
+          "hero_object": "inspected document",
+          "bot_role": "participant",
+          "materials": [
+            "printed paper",
+            "card supports"
+          ],
+          "depth_planes": [
+            "paper backboard",
+            "hero and contact plane"
+          ],
+          "composition": "A single large page and traveling lens occupy the center; Bot operates at its right edge.",
+          "intentional_irregularity": "A corner crop directs attention to the active contact.",
+          "environment_mode": "physical",
+          "environment_justification": null
+        }
+      }
+    }
+  ],
+  "film_structure": {
+    "version": "structure-1.0",
+    "rhetorical_chapters": [
+      {
+        "id": "argument",
+        "purpose": "Develop the supplied short argument through visible changes.",
+        "narration_span": {
+          "start_word": 0,
+          "end_word": 16,
+          "text": "Inspect the entire page. Reveal the hidden marks. Repair what was found. Release the checked page."
+        }
+      }
+    ],
+    "setups": [
+      {
+        "setup_id": "s1",
+        "chapter": "argument",
+        "narration_span": {
+          "start_word": 0,
+          "end_word": 16,
+          "text": "Inspect the entire page. Reveal the hidden marks. Repair what was found. Release the checked page."
+        },
+        "semantic_center": "Resolve the findings on one page",
+        "visual_rule": "Inspection reveals broken routes on the same page, which are patched before release.",
+        "relationship_archetype": "inspection",
+        "hero": "inspected document",
+        "bot_role": "participant",
+        "continuity_tokens": [],
+        "environment_mode": "physical",
+        "palette_family": "warm paper / teal",
+        "entry_state": "Page waits at the slot.",
+        "exit_state": "The connected page exits intact.",
+        "reason_for_persistence": "The longer setup evolves a single page through inspection, repair and release; no unrelated mechanism is introduced.",
+        "planned_reset_after": {
+          "kind": "end",
+          "reason": "The argument ends in this visible consequence."
+        },
+        "beat_ids": [
+          "b1",
+          "b2",
+          "b3",
+          "b4"
+        ]
+      }
+    ],
+    "continuity_tokens": []
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "phase": "rough",
+  "status": "REPAIR_REQUIRED",
+  "blocked": [
+    "visual: shot-01-unsafe-overwrite: physicality",
+    "visual: shot-04-visible-difference: composition",
+    "visual: shot-04-visible-difference: mobile",
+    "visual: physicality",
+    "visual: composition",
+    "visual: mobile"
+  ],
+  "meaningful_repairs": 1,
+  "human_final_approval": "REQUIRED",
+  "publish": false,
+  "report_hashes": {
+    "story": "6cafe266e746f1e96e3111754e373331f2351f5b9b775c07a0fb458c4a2664bc",
+    "visual": "8bb5dfdf56b83864c6200ed6836cab38594f813d2d868321f1d284a3714578ea"
+  },
+  "evidence_sha256": "99e500fc42d84f9a58bccce54828325bbb6ea2e0bb90f4ea1670a7d74253692a"
+}

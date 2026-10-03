@@ -1,0 +1,686 @@
+[
+  {
+    "text": "Giving an AI write",
+    "words": [
+      {
+        "text": "Giving",
+        "start": 0.06666666666666667,
+        "end": 0.29000000000000004,
+        "script_indices": [
+          0
+        ]
+      },
+      {
+        "text": "an",
+        "start": 0.3,
+        "end": 0.5900000000000001,
+        "script_indices": [
+          1
+        ]
+      },
+      {
+        "text": "AI",
+        "start": 0.6,
+        "end": 0.91,
+        "script_indices": [
+          2
+        ]
+      },
+      {
+        "text": "write",
+        "start": 0.9,
+        "end": 1.26,
+        "script_indices": [
+          3
+        ]
+      }
+    ],
+    "start": 0.06666666666666667,
+    "end": 1.2666666666666666
+  },
+  {
+    "text": "access without version history",
+    "words": [
+      {
+        "text": "access",
+        "start": 1.2666666666666666,
+        "end": 1.65,
+        "script_indices": [
+          4
+        ]
+      },
+      {
+        "text": "without",
+        "start": 1.6666666666666667,
+        "end": 2.0100000000000002,
+        "script_indices": [
+          5
+        ]
+      },
+      {
+        "text": "version",
+        "start": 2.0,
+        "end": 2.41,
+        "script_indices": [
+          6
+        ]
+      },
+      {
+        "text": "history",
+        "start": 2.4,
+        "end": 2.74,
+        "script_indices": [
+          7
+        ]
+      }
+    ],
+    "start": 1.2666666666666666,
+    "end": 2.7333333333333334
+  },
+  {
+    "text": "is like letting someone",
+    "words": [
+      {
+        "text": "is",
+        "start": 2.7333333333333334,
+        "end": 2.96,
+        "script_indices": [
+          8
+        ]
+      },
+      {
+        "text": "like",
+        "start": 2.966666666666667,
+        "end": 3.19,
+        "script_indices": [
+          9
+        ]
+      },
+      {
+        "text": "letting",
+        "start": 3.2,
+        "end": 3.5300000000000002,
+        "script_indices": [
+          10
+        ]
+      },
+      {
+        "text": "someone",
+        "start": 3.533333333333333,
+        "end": 3.8600000000000003,
+        "script_indices": [
+          11
+        ]
+      }
+    ],
+    "start": 2.7333333333333334,
+    "end": 3.8666666666666667
+  },
+  {
+    "text": "renovate your house with",
+    "words": [
+      {
+        "text": "renovate",
+        "start": 3.8666666666666667,
+        "end": 4.24,
+        "script_indices": [
+          12
+        ]
+      },
+      {
+        "text": "your",
+        "start": 4.233333333333333,
+        "end": 4.41,
+        "script_indices": [
+          13
+        ]
+      },
+      {
+        "text": "house",
+        "start": 4.4,
+        "end": 4.63,
+        "script_indices": [
+          14
+        ]
+      },
+      {
+        "text": "with",
+        "start": 4.633333333333334,
+        "end": 4.84,
+        "script_indices": [
+          15
+        ]
+      }
+    ],
+    "start": 3.8666666666666667,
+    "end": 4.833333333333333
+  },
+  {
+    "text": "no before photos.",
+    "words": [
+      {
+        "text": "no",
+        "start": 4.833333333333333,
+        "end": 5.09,
+        "script_indices": [
+          16
+        ]
+      },
+      {
+        "text": "before",
+        "start": 5.1,
+        "end": 5.48,
+        "script_indices": [
+          17
+        ]
+      },
+      {
+        "text": "photos.",
+        "start": 5.466666666666667,
+        "end": 6.16,
+        "script_indices": [
+          18
+        ]
+      }
+    ],
+    "start": 4.833333333333333,
+    "end": 6.166666666666667
+  },
+  {
+    "text": "Every change should leave",
+    "words": [
+      {
+        "text": "Every",
+        "start": 6.166666666666667,
+        "end": 6.74,
+        "script_indices": [
+          19
+        ]
+      },
+      {
+        "text": "change",
+        "start": 6.733333333333333,
+        "end": 7.0,
+        "script_indices": [
+          20
+        ]
+      },
+      {
+        "text": "should",
+        "start": 7.0,
+        "end": 7.23,
+        "script_indices": [
+          21
+        ]
+      },
+      {
+        "text": "leave",
+        "start": 7.233333333333333,
+        "end": 7.41,
+        "script_indices": [
+          22
+        ]
+      }
+    ],
+    "start": 6.166666666666667,
+    "end": 7.4
+  },
+  {
+    "text": "a trail.",
+    "words": [
+      {
+        "text": "a",
+        "start": 7.4,
+        "end": 7.65,
+        "script_indices": [
+          23
+        ]
+      },
+      {
+        "text": "trail.",
+        "start": 7.666666666666667,
+        "end": 8.11,
+        "script_indices": [
+          24
+        ]
+      }
+    ],
+    "start": 7.4,
+    "end": 8.1
+  },
+  {
+    "text": "Save a checkpoint before",
+    "words": [
+      {
+        "text": "Save",
+        "start": 8.1,
+        "end": 8.48,
+        "script_indices": [
+          25
+        ]
+      },
+      {
+        "text": "a",
+        "start": 8.466666666666667,
+        "end": 8.77,
+        "script_indices": [
+          26
+        ]
+      },
+      {
+        "text": "checkpoint",
+        "start": 8.766666666666667,
+        "end": 9.15,
+        "script_indices": [
+          27
+        ]
+      },
+      {
+        "text": "before",
+        "start": 9.133333333333333,
+        "end": 9.39,
+        "script_indices": [
+          28
+        ]
+      }
+    ],
+    "start": 8.1,
+    "end": 9.4
+  },
+  {
+    "text": "the work starts.",
+    "words": [
+      {
+        "text": "the",
+        "start": 9.4,
+        "end": 9.55,
+        "script_indices": [
+          29
+        ]
+      },
+      {
+        "text": "work",
+        "start": 9.533333333333333,
+        "end": 9.84,
+        "script_indices": [
+          30
+        ]
+      },
+      {
+        "text": "starts.",
+        "start": 9.833333333333334,
+        "end": 10.25,
+        "script_indices": [
+          31
+        ]
+      }
+    ],
+    "start": 9.4,
+    "end": 10.266666666666667
+  },
+  {
+    "text": "Show exactly what changed.",
+    "words": [
+      {
+        "text": "Show",
+        "start": 10.266666666666667,
+        "end": 10.65,
+        "script_indices": [
+          32
+        ]
+      },
+      {
+        "text": "exactly",
+        "start": 10.666666666666666,
+        "end": 11.01,
+        "script_indices": [
+          33
+        ]
+      },
+      {
+        "text": "what",
+        "start": 11.0,
+        "end": 11.44,
+        "script_indices": [
+          34
+        ]
+      },
+      {
+        "text": "changed.",
+        "start": 11.433333333333334,
+        "end": 11.93,
+        "script_indices": [
+          35
+        ]
+      }
+    ],
+    "start": 10.266666666666667,
+    "end": 11.933333333333334
+  },
+  {
+    "text": "Let the agent test",
+    "words": [
+      {
+        "text": "Let",
+        "start": 11.933333333333334,
+        "end": 12.219999999999999,
+        "script_indices": [
+          36
+        ]
+      },
+      {
+        "text": "the",
+        "start": 12.233333333333333,
+        "end": 12.43,
+        "script_indices": [
+          37
+        ]
+      },
+      {
+        "text": "agent",
+        "start": 12.433333333333334,
+        "end": 12.719999999999999,
+        "script_indices": [
+          38
+        ]
+      },
+      {
+        "text": "test",
+        "start": 12.733333333333333,
+        "end": 12.96,
+        "script_indices": [
+          39
+        ]
+      }
+    ],
+    "start": 11.933333333333334,
+    "end": 12.966666666666667
+  },
+  {
+    "text": "the result.",
+    "words": [
+      {
+        "text": "the",
+        "start": 12.966666666666667,
+        "end": 13.23,
+        "script_indices": [
+          40
+        ]
+      },
+      {
+        "text": "result.",
+        "start": 13.233333333333333,
+        "end": 13.57,
+        "script_indices": [
+          41
+        ]
+      }
+    ],
+    "start": 12.966666666666667,
+    "end": 13.566666666666666
+  },
+  {
+    "text": "And if the new",
+    "words": [
+      {
+        "text": "And",
+        "start": 13.566666666666666,
+        "end": 13.79,
+        "script_indices": [
+          42
+        ]
+      },
+      {
+        "text": "if",
+        "start": 13.8,
+        "end": 13.91,
+        "script_indices": [
+          43
+        ]
+      },
+      {
+        "text": "the",
+        "start": 13.9,
+        "end": 14.06,
+        "script_indices": [
+          44
+        ]
+      },
+      {
+        "text": "new",
+        "start": 14.066666666666666,
+        "end": 14.29,
+        "script_indices": [
+          45
+        ]
+      }
+    ],
+    "start": 13.566666666666666,
+    "end": 14.3
+  },
+  {
+    "text": "version is worse, roll",
+    "words": [
+      {
+        "text": "version",
+        "start": 14.3,
+        "end": 14.54,
+        "script_indices": [
+          46
+        ]
+      },
+      {
+        "text": "is",
+        "start": 14.533333333333333,
+        "end": 14.79,
+        "script_indices": [
+          47
+        ]
+      },
+      {
+        "text": "worse,",
+        "start": 14.8,
+        "end": 15.129999999999999,
+        "script_indices": [
+          48
+        ]
+      },
+      {
+        "text": "roll",
+        "start": 15.133333333333333,
+        "end": 15.48,
+        "script_indices": [
+          49
+        ]
+      }
+    ],
+    "start": 14.3,
+    "end": 15.466666666666667
+  },
+  {
+    "text": "back instead of patching",
+    "words": [
+      {
+        "text": "back",
+        "start": 15.466666666666667,
+        "end": 15.79,
+        "script_indices": [
+          50
+        ]
+      },
+      {
+        "text": "instead",
+        "start": 15.8,
+        "end": 16.009999999999998,
+        "script_indices": [
+          51
+        ]
+      },
+      {
+        "text": "of",
+        "start": 16.0,
+        "end": 16.21,
+        "script_indices": [
+          52
+        ]
+      },
+      {
+        "text": "patching",
+        "start": 16.2,
+        "end": 16.61,
+        "script_indices": [
+          53
+        ]
+      }
+    ],
+    "start": 15.466666666666667,
+    "end": 16.6
+  },
+  {
+    "text": "over the mistake.",
+    "words": [
+      {
+        "text": "over",
+        "start": 16.6,
+        "end": 16.740000000000002,
+        "script_indices": [
+          54
+        ]
+      },
+      {
+        "text": "the",
+        "start": 16.733333333333334,
+        "end": 17.009999999999998,
+        "script_indices": [
+          55
+        ]
+      },
+      {
+        "text": "mistake.",
+        "start": 17.0,
+        "end": 17.63,
+        "script_indices": [
+          56
+        ]
+      }
+    ],
+    "start": 16.6,
+    "end": 17.633333333333333
+  },
+  {
+    "text": "Good automation doesn\u2019t just",
+    "words": [
+      {
+        "text": "Good",
+        "start": 17.633333333333333,
+        "end": 18.27,
+        "script_indices": [
+          57
+        ]
+      },
+      {
+        "text": "automation",
+        "start": 18.266666666666666,
+        "end": 18.7,
+        "script_indices": [
+          58
+        ]
+      },
+      {
+        "text": "doesn\u2019t",
+        "start": 18.7,
+        "end": 19.060000000000002,
+        "script_indices": [
+          59
+        ]
+      },
+      {
+        "text": "just",
+        "start": 19.066666666666666,
+        "end": 19.28,
+        "script_indices": [
+          60
+        ]
+      }
+    ],
+    "start": 17.633333333333333,
+    "end": 19.266666666666666
+  },
+  {
+    "text": "move fast.",
+    "words": [
+      {
+        "text": "move",
+        "start": 19.266666666666666,
+        "end": 19.61,
+        "script_indices": [
+          61
+        ]
+      },
+      {
+        "text": "fast.",
+        "start": 19.6,
+        "end": 19.97,
+        "script_indices": [
+          62
+        ]
+      }
+    ],
+    "start": 19.266666666666666,
+    "end": 19.966666666666665
+  },
+  {
+    "text": "It makes every step",
+    "words": [
+      {
+        "text": "It",
+        "start": 19.966666666666665,
+        "end": 20.200000000000003,
+        "script_indices": [
+          63
+        ]
+      },
+      {
+        "text": "makes",
+        "start": 20.2,
+        "end": 20.46,
+        "script_indices": [
+          64
+        ]
+      },
+      {
+        "text": "every",
+        "start": 20.466666666666665,
+        "end": 20.8,
+        "script_indices": [
+          65
+        ]
+      },
+      {
+        "text": "step",
+        "start": 20.8,
+        "end": 21.18,
+        "script_indices": [
+          66
+        ]
+      }
+    ],
+    "start": 19.966666666666665,
+    "end": 21.166666666666668
+  },
+  {
+    "text": "reversible.",
+    "words": [
+      {
+        "text": "reversible.",
+        "start": 21.166666666666668,
+        "end": 21.52,
+        "script_indices": [
+          67
+        ]
+      }
+    ],
+    "start": 21.166666666666668,
+    "end": 25.3
+  }
+]

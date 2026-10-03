@@ -1,0 +1,13 @@
+{
+  "status": "DATA_CHECKS_ONLY",
+  "plan": {
+    "status": "DIRECTION_REVIEW_REQUIRED",
+    "shots": 8,
+    "scope": "schema and binding consistency; no painted approval"
+  },
+  "exact_script": true,
+  "alignment": "alignment-review.json",
+  "contacts": "review/contact-audit.json",
+  "unsupported_policy": "fail on unregistered part/reaction or absent Bot",
+  "scope": "not creative or painted approval"
+}

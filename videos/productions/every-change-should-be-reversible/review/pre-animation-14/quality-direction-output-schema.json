@@ -1,0 +1,43 @@
+{
+  "type": "object",
+  "properties": {
+    "pass": {
+      "type": "boolean"
+    },
+    "issues": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "message_preserved": {
+      "type": "boolean"
+    },
+    "outcome_preserved": {
+      "type": "boolean"
+    },
+    "evidence_before_labels": {
+      "type": "boolean"
+    },
+    "ending_delivered": {
+      "type": "boolean"
+    },
+    "notes": {
+      "type": "string"
+    },
+    "audience_narration": {
+      "type": "boolean"
+    }
+  },
+  "required": [
+    "pass",
+    "issues",
+    "message_preserved",
+    "outcome_preserved",
+    "evidence_before_labels",
+    "ending_delivered",
+    "notes",
+    "audience_narration"
+  ],
+  "additionalProperties": false
+}

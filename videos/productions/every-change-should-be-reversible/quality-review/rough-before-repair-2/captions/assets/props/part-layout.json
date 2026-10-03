@@ -1,0 +1,72 @@
+{
+  "rowhouse-facade": [
+    173,
+    518,
+    1
+  ],
+  "teal-original-roof": [
+    138,
+    338,
+    1
+  ],
+  "coral-replacement-roof": [
+    190,
+    1117,
+    0.78
+  ],
+  "interior-floor-strip": [
+    205,
+    853,
+    1
+  ],
+  "upper-window-flap": [
+    321,
+    543,
+    1
+  ],
+  "paper-gold-checkpoint-plate": [
+    40,
+    630,
+    0.44
+  ],
+  "checkpoint-archive-slot": [
+    93,
+    540,
+    1
+  ],
+  "teal-side-gutter": [
+    565,
+    514,
+    1
+  ],
+  "paper-gold-catch-cup": [
+    590,
+    681,
+    1
+  ],
+  "paper-gold-checkpoint-tab": [
+    92,
+    815,
+    1
+  ],
+  "test-ribbon-guide": [
+    223,
+    310,
+    1
+  ],
+  "pinboard-seam": [
+    44,
+    275,
+    1
+  ],
+  "tabletop": [
+    0,
+    1009,
+    1
+  ],
+  "paper-gold-history-strip": [
+    80,
+    943,
+    1
+  ]
+}

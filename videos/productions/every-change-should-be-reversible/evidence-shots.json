@@ -1,0 +1,250 @@
+[
+  {
+    "id": "shot-01-unsafe-overwrite",
+    "startFrame": 0,
+    "endFrame": 185,
+    "temporal_events": [
+      {
+        "time": 0.6666666666666666,
+        "kind": "contact"
+      },
+      {
+        "time": 1.6666666666666667,
+        "kind": "contact"
+      },
+      {
+        "time": 3.7333333333333334,
+        "kind": "contact"
+      },
+      {
+        "time": 5.9,
+        "kind": "contact"
+      }
+    ]
+  },
+  {
+    "id": "shot-02-history-catches-change",
+    "startFrame": 185,
+    "endFrame": 243,
+    "temporal_events": [
+      {
+        "time": 6.333333333333333,
+        "kind": "impact"
+      },
+      {
+        "time": 6.633333333333334,
+        "kind": "contact"
+      },
+      {
+        "time": 6.666666666666667,
+        "kind": "handoff"
+      },
+      {
+        "time": 7.3,
+        "kind": "landing"
+      },
+      {
+        "time": 7.433333333333334,
+        "kind": "contact"
+      }
+    ]
+  },
+  {
+    "id": "shot-03-save-checkpoint",
+    "startFrame": 243,
+    "endFrame": 308,
+    "temporal_events": [
+      {
+        "time": 8.233333333333333,
+        "kind": "contact"
+      },
+      {
+        "time": 8.6,
+        "kind": "landing"
+      },
+      {
+        "time": 8.9,
+        "kind": "contact"
+      },
+      {
+        "time": 9.266666666666667,
+        "kind": "contact"
+      },
+      {
+        "time": 9.533333333333333,
+        "kind": "impact"
+      },
+      {
+        "time": 9.533333333333333,
+        "kind": "contact"
+      },
+      {
+        "time": 9.933333333333334,
+        "kind": "landing"
+      }
+    ]
+  },
+  {
+    "id": "shot-04-visible-difference",
+    "startFrame": 308,
+    "endFrame": 358,
+    "temporal_events": [
+      {
+        "time": 10.3,
+        "kind": "contact"
+      },
+      {
+        "time": 10.333333333333334,
+        "kind": "handoff"
+      },
+      {
+        "time": 10.5,
+        "kind": "contact"
+      },
+      {
+        "time": 10.7,
+        "kind": "handoff"
+      },
+      {
+        "time": 10.8,
+        "kind": "contact"
+      },
+      {
+        "time": 10.9,
+        "kind": "landing"
+      },
+      {
+        "time": 10.9,
+        "kind": "landing"
+      }
+    ]
+  },
+  {
+    "id": "shot-05-rain-test-fails",
+    "startFrame": 358,
+    "endFrame": 407,
+    "temporal_events": [
+      {
+        "time": 12.066666666666666,
+        "kind": "contact"
+      },
+      {
+        "time": 12.2,
+        "kind": "handoff"
+      },
+      {
+        "time": 12.533333333333333,
+        "kind": "contact"
+      },
+      {
+        "time": 12.766666666666667,
+        "kind": "impact"
+      },
+      {
+        "time": 12.966666666666667,
+        "kind": "impact"
+      }
+    ]
+  },
+  {
+    "id": "shot-06-rollback-restores",
+    "startFrame": 407,
+    "endFrame": 529,
+    "temporal_events": [
+      {
+        "time": 13.9,
+        "kind": "contact"
+      },
+      {
+        "time": 14.033333333333333,
+        "kind": "contact"
+      },
+      {
+        "time": 14.4,
+        "kind": "handoff"
+      },
+      {
+        "time": 14.7,
+        "kind": "handoff"
+      },
+      {
+        "time": 15.333333333333334,
+        "kind": "handoff"
+      },
+      {
+        "time": 15.866666666666667,
+        "kind": "handoff"
+      },
+      {
+        "time": 16.366666666666667,
+        "kind": "landing"
+      },
+      {
+        "time": 16.733333333333334,
+        "kind": "landing"
+      }
+    ]
+  },
+  {
+    "id": "shot-07-restored-test-passes",
+    "startFrame": 529,
+    "endFrame": 629,
+    "temporal_events": [
+      {
+        "time": 17.766666666666666,
+        "kind": "contact"
+      },
+      {
+        "time": 17.9,
+        "kind": "handoff"
+      },
+      {
+        "time": 18.233333333333334,
+        "kind": "contact"
+      },
+      {
+        "time": 18.666666666666668,
+        "kind": "handoff"
+      },
+      {
+        "time": 19.066666666666666,
+        "kind": "landing"
+      },
+      {
+        "time": 20.266666666666666,
+        "kind": "contact"
+      }
+    ]
+  },
+  {
+    "id": "shot-08-every-step-reversible",
+    "startFrame": 629,
+    "endFrame": 759,
+    "temporal_events": [
+      {
+        "time": 21.233333333333334,
+        "kind": "landing"
+      },
+      {
+        "time": 21.466666666666665,
+        "kind": "landing"
+      },
+      {
+        "time": 22.866666666666667,
+        "kind": "contact"
+      },
+      {
+        "time": 23.4,
+        "kind": "handoff"
+      },
+      {
+        "time": 23.766666666666666,
+        "kind": "landing"
+      },
+      {
+        "time": 24.1,
+        "kind": "landing"
+      }
+    ]
+  }
+]

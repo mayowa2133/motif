@@ -1,0 +1,497 @@
+I checked the pushed v1.1 implementation on GitHub, including the updated schema, bindings, repair logic, temporal-evidence changes, and validation notes. **I’d approve Quality System v1.1 and stop working on infrastructure for now.**
+
+The three issues I was worried about are genuinely addressed:
+
+- **Art-only repairs now count** without forcing fake plan/event changes. `repair()` compares semantic state and render-state fingerprints separately. [motif_quality.py](https://github.com/mayowa2133/motif/blob/65ce7d907e4d7d1048d8523af05211b7b7c71562/scripts/motif_quality.py)
+- **The energy schema no longer forces fake motion.** Only `dominant_action` is mandatory; the other channels can be null, and minimal-isolated scenes are explicitly representable. [shot-contract.schema.json](https://github.com/mayowa2133/motif/blob/65ce7d907e4d7d1048d8523af05211b7b7c71562/schemas/shot-contract.schema.json)
+- **Renderer support broadened honestly.** Interactive UI, calm paper, and limited workshop bindings are now explicit, while unsafe contacts still fail instead of being silently ignored. [bindings.json](https://github.com/mayowa2133/motif/blob/65ce7d907e4d7d1048d8523af05211b7b7c71562/quality/bindings.json)
+
+The dense temporal strips are also a meaningful improvement. Catching a three-frame detachment that normal before/contact/after samples would miss is exactly why that change mattered. The committed evidence documents that the new critics caught it. [v1.1 validation](https://github.com/mayowa2133/motif/blob/65ce7d907e4d7d1048d8523af05211b7b7c71562/quality/validation/v1.1/README.md)
+
+The workshop limitation is fine. **Explicitly limited support is much better than pretending Motif can safely animate every attachment.**
+
+Now comes the real test.
+
+# Stop building the system. Make one original film.
+
+We need to find out whether:
+
+> **blank original script → planner → quality system → rough → critics → repair → finished film**
+
+can get us somewhere close to v6 quality **without us reverse-engineering another creator first**.
+
+And this time I would deliberately choose a script that Motif has **never already solved as a calendar, arena, inspection line, or workshop**.
+
+Paste this into Codex:
+
+```text
+Quality System v1.1 at commit 65ce7d9 is approved.
+
+Do NOT make further infrastructure changes before this production.
+
+NEXT TASK:
+
+Run ONE genuinely original script-led film through motif-gold-v1 from
+initial planning through the final human-review gate.
+
+This is the first real validation of whether the quality system transfers
+VoiceStudio v6-level production lessons into a new film.
+
+Do not use a source/reference video.
+
+Do not reverse-engineer another creator.
+
+Do not provide yourself a manual shot list beforehand.
+
+The quality system, gold retrieval, director, critics and existing Motif
+capabilities should drive the production.
+
+==================================================
+1. ORIGINAL SCRIPT
+==================================================
+
+Project title:
+
+EVERY CHANGE SHOULD BE REVERSIBLE
+
+Audience:
+
+People using AI coding agents, automation tools and assistants.
+
+Purpose:
+
+Explain why an automated system should preserve checkpoints and make
+changes reversible.
+
+Use this exact narration:
+
+“Giving an AI write access without version history is like letting
+someone renovate your house with no before photos.
+
+Every change should leave a trail.
+
+Save a checkpoint before the work starts.
+
+Show exactly what changed.
+
+Let the agent test the result.
+
+And if the new version is worse, roll back instead of patching over
+the mistake.
+
+Good automation doesn’t just move fast.
+
+It makes every step reversible.”
+
+This is a general educational analogy.
+
+Do not attribute the claim to a named product.
+Do not invent measured performance data.
+Do not turn this into an advertisement.
+
+==================================================
+2. QUALITY MODE
+==================================================
+
+Use:
+
+quality_mode: motif-gold-v1
+
+Run the actual Quality System v1.1 path.
+
+Retrieve only the relevant internal Motif gold examples by behavior.
+
+Do not use the external reference videos as production inputs.
+
+Do not copy VoiceStudio’s plot or compositions.
+
+VoiceStudio v6 communicates quality grammar, not a storyboard.
+
+==================================================
+3. LET THE DIRECTOR CREATE THE FILM
+==================================================
+
+I am intentionally NOT specifying:
+
+- visual metaphor
+- environments
+- shot count
+- props
+- character roles
+- transitions
+- framing
+- physical actions
+
+The planner must convert the script into the production plan.
+
+It should privately consider a small number of plausible visual
+directions and choose one.
+
+Do not ask me to choose between several concepts.
+
+Do not stop after concept generation.
+
+Create one complete proposed film.
+
+The visual concept should make the script understandable even with the
+captions hidden.
+
+==================================================
+4. DO NOT FORCE EXISTING TEMPLATES
+==================================================
+
+Do not automatically turn this into:
+
+- an arena
+- a calendar
+- the code inspection factory
+- the Little Book Workshop
+- VoiceStudio interfaces
+- the Confidence Isn’t Evidence paper chain
+
+Reuse an existing interaction only when it genuinely serves the new
+story.
+
+If the best idea requires a new hero asset or finite interaction,
+create it as explicit agent-assisted production work.
+
+Quality beats zero-new-assets.
+
+Do not build a speculative library.
+
+==================================================
+5. APPLY THE SHOT CONTRACT FOR REAL
+==================================================
+
+For each shot/beat, operationally specify the current v1.1 contract:
+
+- purpose
+- hero
+- primary action
+- performance
+- before
+- after
+- focal target
+- framing
+- reaction behavior where appropriate
+- secondary motion where appropriate
+- environment mode/cues
+- exit overlap where useful
+- energy
+- art direction
+
+Do not populate optional energy channels with fake movement merely to
+satisfy the schema.
+
+A purposeful quiet moment is allowed.
+
+A dead hold that contributes nothing is not.
+
+Every field that is supposed to be operational must either:
+
+- compile through an existing capability
+- be implemented as bounded agent-assisted production work
+- or produce an explicit unsupported-capability error
+
+Do not silently ignore creative instructions.
+
+==================================================
+6. STORY STANDARD
+==================================================
+
+The film must visibly communicate:
+
+A. A meaningful “before” state exists.
+
+B. The AI/agent changes something.
+
+C. The viewer can see what changed.
+
+D. The changed version is actually tested.
+
+E. The test may reveal that the new result is worse.
+
+F. The system can visibly restore the earlier state.
+
+G. The ending communicates reversibility as the payoff.
+
+Do not communicate these ideas primarily through:
+
+CHECKPOINT
+DIFF
+TEST
+ROLLBACK
+
+labels floating on screen.
+
+Those words may reinforce physical evidence.
+
+They cannot substitute for the physical story.
+
+==================================================
+7. BOT PERFORMANCE
+==================================================
+
+Use the v1.1 performance registry when Motif Bot participates.
+
+Do not put the Bot into every shot for branding.
+
+If it participates, choose an appropriate state and make the silhouette
+read at 360 × 640.
+
+Potential emotional progression may naturally include things like:
+
+focused
+→ anticipating
+→ worried/surprised
+→ relieved
+
+but the director should decide the actual performance based on its
+chosen story.
+
+Use reaction radius only where physically appropriate.
+
+Do not make the whole world shake after every contact.
+
+==================================================
+8. ART DIRECTION
+==================================================
+
+Aim for the quality of VoiceStudio v6:
+
+- distinctive hero silhouettes
+- physical paper/card construction
+- material separation
+- shallow layered depth
+- designed irregularity
+- expressive but readable composition
+- event-specific accents
+- scene-specific environmental identity
+- Motif-level mobile clarity
+
+Do not recreate VoiceStudio’s assets unless they make genuine sense.
+
+Do not default to:
+
+large rectangle
++
+tiny Bot
++
+empty lower field.
+
+When a new hero asset is necessary, pass it through the current asset
+review lifecycle.
+
+Scene-specific assets do not need canonical promotion.
+
+==================================================
+9. ROUGH MOVING PREVIEW IS MANDATORY
+==================================================
+
+Do not proceed directly from storyboard to final polish.
+
+Produce native:
+
+360 × 640 WITH captions
+360 × 640 WITHOUT captions
+
+using the actual framing, Bot performance, primary actions and contacts.
+
+Run:
+
+- story critic
+- visual critic
+- quality gate
+
+through v1.1.
+
+Use the new consecutive temporal evidence around declared contacts,
+landings, handoffs and impacts.
+
+Do not claim that the critics watched native MP4 playback.
+
+Preserve critic evidence and sampling limitations.
+
+==================================================
+10. OBEY THE CRITICS
+==================================================
+
+If STORY fails:
+
+REPLAN the affected beat.
+
+Do not paper over a weak story with prettier art.
+
+If ART/MOTION fails:
+
+perform the smallest useful visual repair.
+
+Art-only repairs are legitimate under v1.1 and must use the audited
+render-state fingerprint.
+
+Maximum two meaningful repair passes.
+
+Do not manufacture plan/event changes just to consume a repair.
+
+Do not weaken or edit the critic result to pass.
+
+If the repair limit is exhausted, stop for human review with the failure
+intact.
+
+==================================================
+11. FINAL ART AND MOTION
+==================================================
+
+Only after the rough receives:
+
+FINAL_ART_ALLOWED
+
+should final artwork proceed.
+
+Finish:
+
+- hero artwork
+- materials
+- Bot acting
+- reaction behavior
+- contacts
+- event-specific effects
+- captions
+- final composition
+
+Do not silently change the approved rough story.
+
+If final artwork changes interaction/event data legitimately, preserve
+the rough story contract and run the required final evidence again.
+
+Run the final story and visual critics.
+
+==================================================
+12. AUDIO
+==================================================
+
+Use the current permitted local narration workflow.
+
+Use a clear, energetic conversational read.
+
+Do not copy a source creator’s voice.
+
+Generate timing from the actual produced narration.
+
+Use cleared or original SFX where appropriate.
+
+Music is optional.
+
+Do not add a new paid provider.
+
+Finish audio only after the picture reaches:
+
+AUDIO_FINISH_ALLOWED / PICTURE_PASS_AUDIO_PENDING
+
+according to the existing workflow.
+
+Preserve the current loudness/peak technical targets.
+
+Subjective listening remains a human gate.
+
+==================================================
+13. TECHNICAL QA
+==================================================
+
+Run the current Quality System technical checks.
+
+Do not invent PASS values for unavailable evidence.
+
+Missing required evidence remains NOT_ASSESSED and blocking.
+
+Keep technical approval separate from creative approval.
+
+No automatic publish.
+
+==================================================
+14. DELIVER THE ACTUAL FILM
+==================================================
+
+Deliver:
+
+1. Complete final MP4.
+
+2. Native 360 × 640 final preview.
+
+3. Initial production plan.
+
+4. Initial rough moving preview.
+
+5. Story and visual critic results from the rough.
+
+6. Any repair record(s).
+
+7. Final critic results.
+
+8. Final technical QA.
+
+9. Concise production note describing:
+   - gold examples retrieved
+   - reusable capabilities used
+   - new assets/interactions created
+   - which pieces remain production-specific
+   - what critics caught
+   - what the system repaired
+   - any unresolved limitations
+
+10. The command needed to reproduce the saved production WITHOUT
+    replanning or regenerating approved creative decisions.
+
+Do not return only:
+- documentation
+- a storyboard
+- still images
+- test results
+
+The actual finished moving film is required unless the quality system
+correctly blocks it.
+
+==================================================
+15. HUMAN GATE
+==================================================
+
+Do not mark the production approved.
+
+Final status must be:
+
+HUMAN_REVIEW_REQUIRED
+
+unless an earlier failure correctly blocks advancement.
+
+The user decides whether the film reaches the benchmark.
+
+==================================================
+16. BOUNDARIES
+==================================================
+
+Do not modify VoiceStudio v6.
+
+Do not modify canonical Bot geometry.
+
+Do not build another quality framework.
+
+Do not add billing, publishing, dashboard or analytics.
+
+Do not mass-generate assets.
+
+Do not weaken Quality System v1.1.
+
+Do not change authentication/provider settings.
+
+Do not delete preserved evidence.
+
+Do not commit or push unless explicitly requested separately.
+
+STOP after this one production is ready for human review.
+```
+
+**This is the moment of truth for Motif.**
+
+If that film comes back near v6 quality with maybe one bounded repair instead of six rounds of us saying “make it less static / redraw this / fix the acting,” then the quality system is doing its job.
+
+If it still comes back mediocre and both critics pass it, **the next thing to improve is the critic/gold system—not the animation engine.**

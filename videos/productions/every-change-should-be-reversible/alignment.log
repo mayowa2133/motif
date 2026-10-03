@@ -1,0 +1,156 @@
+[00:00:20.020 --> 00:00:21.900]   it makes every step reversible.
+[00:00:17.900 --> 00:00:20.020]   Good automation doesn't just move fast,
+[00:00:20.020 --> 00:00:21.900]   it makes every step reversible.
+[00:00:15.100 --> 00:00:17.900]   roll back instead of patching over the mistake.
+[00:00:17.900 --> 00:00:20.020]   Good automation doesn't just move fast,
+[00:00:20.020 --> 00:00:21.900]   it makes every step reversible.
+[00:00:13.620 --> 00:00:15.100]   And if the new version is worse,
+[00:00:15.100 --> 00:00:17.900]   roll back instead of patching over the mistake.
+[00:00:17.900 --> 00:00:20.020]   Good automation doesn't just move fast,
+[00:00:20.020 --> 00:00:21.900]   it makes every step reversible.
+[00:00:12.020 --> 00:00:13.620]   Let the agent test the result.
+[00:00:13.620 --> 00:00:15.100]   And if the new version is worse,
+[00:00:15.100 --> 00:00:17.900]   roll back instead of patching over the mistake.
+[00:00:17.900 --> 00:00:20.020]   Good automation doesn't just move fast,
+[00:00:20.020 --> 00:00:21.900]   it makes every step reversible.
+[00:00:10.220 --> 00:00:12.020]   Show exactly what changed.
+[00:00:12.020 --> 00:00:13.620]   Let the agent test the result.
+[00:00:13.620 --> 00:00:15.100]   And if the new version is worse,
+[00:00:15.100 --> 00:00:17.900]   roll back instead of patching over the mistake.
+[00:00:17.900 --> 00:00:20.020]   Good automation doesn't just move fast,
+[00:00:20.020 --> 00:00:21.900]   it makes every step reversible.
+[00:00:08.180 --> 00:00:10.220]   Save a checkpoint before the work starts.
+[00:00:10.220 --> 00:00:12.020]   Show exactly what changed.
+[00:00:12.020 --> 00:00:13.620]   Let the agent test the result.
+[00:00:13.620 --> 00:00:15.100]   And if the new version is worse,
+[00:00:15.100 --> 00:00:17.900]   roll back instead of patching over the mistake.
+[00:00:17.900 --> 00:00:20.020]   Good automation doesn't just move fast,
+[00:00:20.020 --> 00:00:21.900]   it makes every step reversible.
+[00:00:06.340 --> 00:00:08.180]   Every change should leave a trail.
+[00:00:08.180 --> 00:00:10.220]   Save a checkpoint before the work starts.
+[00:00:10.220 --> 00:00:12.020]   Show exactly what changed.
+[00:00:12.020 --> 00:00:13.620]   Let the agent test the result.
+[00:00:13.620 --> 00:00:15.100]   And if the new version is worse,
+[00:00:15.100 --> 00:00:17.900]   roll back instead of patching over the mistake.
+[00:00:17.900 --> 00:00:20.020]   Good automation doesn't just move fast,
+[00:00:20.020 --> 00:00:21.900]   it makes every step reversible.
+[00:00:04.620 --> 00:00:06.340]   with no before photos.
+[00:00:06.340 --> 00:00:08.180]   Every change should leave a trail.
+[00:00:08.180 --> 00:00:10.220]   Save a checkpoint before the work starts.
+[00:00:10.220 --> 00:00:12.020]   Show exactly what changed.
+[00:00:12.020 --> 00:00:13.620]   Let the agent test the result.
+[00:00:13.620 --> 00:00:15.100]   And if the new version is worse,
+[00:00:15.100 --> 00:00:17.900]   roll back instead of patching over the mistake.
+[00:00:17.900 --> 00:00:20.020]   Good automation doesn't just move fast,
+[00:00:20.020 --> 00:00:21.900]   it makes every step reversible.
+[00:00:02.740 --> 00:00:04.620]   is like letting someone renovate your house
+[00:00:04.620 --> 00:00:06.340]   with no before photos.
+[00:00:06.340 --> 00:00:08.180]   Every change should leave a trail.
+[00:00:08.180 --> 00:00:10.220]   Save a checkpoint before the work starts.
+[00:00:10.220 --> 00:00:12.020]   Show exactly what changed.
+[00:00:12.020 --> 00:00:13.620]   Let the agent test the result.
+[00:00:13.620 --> 00:00:15.100]   And if the new version is worse,
+[00:00:15.100 --> 00:00:17.900]   roll back instead of patching over the mistake.
+[00:00:17.900 --> 00:00:20.020]   Good automation doesn't just move fast,
+[00:00:20.020 --> 00:00:21.900]   it makes every step reversible.
+load_backend: loaded BLAS backend from /opt/homebrew/Cellar/ggml/0.25.3/libexec/libggml-blas.so
+ggml_metal_device_init: tensor API disabled for pre-M5 and pre-A19 devices
+ggml_metal_library_init: using embedded metal library
+ggml_metal_library_compile_all: compiled 'fa' library in 0.053 sec
+ggml_metal_library_compile_all: compiled 'mul_mv' library in 0.016 sec
+ggml_metal_library_compile_all: compiled 'mul_mm' library in 0.057 sec
+ggml_metal_library_compile_all: compiled 'quantize' library in 0.059 sec
+ggml_metal_library_compile_all: compiled 'softmax' library in 0.059 sec
+ggml_metal_library_compile_all: compiled 'norm' library in 0.008 sec
+ggml_metal_library_compile_all: compiled 'unary' library in 0.010 sec
+ggml_metal_library_compile_all: compiled 'binbcast' library in 0.009 sec
+ggml_metal_library_compile_all: compiled 'reduce' library in 0.008 sec
+ggml_metal_library_compile_all: compiled 'tri' library in 0.008 sec
+ggml_metal_library_compile_all: compiled 'ssm' library in 0.009 sec
+ggml_metal_library_compile_all: compiled 'wkv' library in 0.009 sec
+ggml_metal_library_compile_all: compiled 'gated_delta_net' library in 0.009 sec
+ggml_metal_library_compile_all: compiled 'solve_tri' library in 0.057 sec
+ggml_metal_library_compile_all: compiled 'rope' library in 0.060 sec
+ggml_metal_library_compile_all: compiled 'conv' library in 0.057 sec
+ggml_metal_library_compile_all: compiled 'upscale' library in 0.057 sec
+ggml_metal_library_compile_all: compiled 'argsort' library in 0.059 sec
+ggml_metal_library_compile_all: compiled 'pool' library in 0.060 sec
+ggml_metal_library_compile_all: compiled 'misc' library in 0.059 sec
+ggml_metal_library_compile_all: loaded 20 libraries from embedded data in 0.060 sec (max single = 0.060 sec)
+ggml_metal_rsets_init: creating a residency set collection (keep_alive = 180 s)
+ggml_metal_device_init: GPU name:   MTL0 (Apple M2 Pro)
+ggml_metal_device_init: GPU family: MTLGPUFamilyApple8  (1008)
+ggml_metal_device_init: GPU family: MTLGPUFamilyMetal4  (5002)
+ggml_metal_device_init: simdgroup reduction   = true
+ggml_metal_device_init: simdgroup matrix mul. = true
+ggml_metal_device_init: has unified memory    = true
+ggml_metal_device_init: has bfloat            = true
+ggml_metal_device_init: has tensor            = false
+ggml_metal_device_init: use residency sets    = true
+ggml_metal_device_init: use shared buffers    = true
+ggml_metal_device_init: recommendedMaxWorkingSetSize  = 12713.12 MB
+load_backend: loaded MTL backend from /opt/homebrew/Cellar/ggml/0.25.3/libexec/libggml-metal.so
+load_backend: loaded CPU backend from /opt/homebrew/Cellar/ggml/0.25.3/libexec/libggml-cpu-apple_m2_m3.so
+whisper_init_from_file_with_params_no_state: loading model from '/Users/mayowaadesanya/.cache/hyperframes/whisper/models/ggml-small.en.bin'
+whisper_init_with_params_no_state: use gpu    = 1
+whisper_init_with_params_no_state: flash attn = 0
+whisper_init_with_params_no_state: gpu_device = 0
+whisper_init_with_params_no_state: dtw        = 1
+whisper_init_with_params_no_state: devices    = 3
+whisper_init_with_params_no_state: backends   = 3
+whisper_model_load: loading model
+whisper_model_load: n_vocab       = 51864
+whisper_model_load: n_audio_ctx   = 1500
+whisper_model_load: n_audio_state = 768
+whisper_model_load: n_audio_head  = 12
+whisper_model_load: n_audio_layer = 12
+whisper_model_load: n_text_ctx    = 448
+whisper_model_load: n_text_state  = 768
+whisper_model_load: n_text_head   = 12
+whisper_model_load: n_text_layer  = 12
+whisper_model_load: n_mels        = 80
+whisper_model_load: ftype         = 1
+whisper_model_load: qntvr         = 0
+whisper_model_load: type          = 3 (small)
+whisper_model_load: adding 1607 extra tokens
+whisper_model_load: n_langs       = 99
+whisper_model_load:         MTL0 total size =   487.00 MB
+whisper_model_load: model size    =  487.00 MB
+whisper_backend_init_gpu: device 0: BLAS (type: 3)
+whisper_backend_init_gpu: device 1: MTL0 (type: 1)
+whisper_backend_init_gpu: found GPU device 1: MTL0 (type: 1, cnt: 0)
+whisper_backend_init_gpu: using MTL0 backend
+ggml_metal_init: allocating
+ggml_metal_init: found device: Apple M2 Pro
+ggml_metal_init: picking default device: Apple M2 Pro
+ggml_metal_init: use fusion         = true
+ggml_metal_init: use concurrency    = true
+ggml_metal_init: use graph optimize = true
+whisper_backend_init: using BLAS backend
+whisper_init_state: kv self size  =   18.87 MB
+whisper_init_state: kv cross size =   56.62 MB
+whisper_init_state: kv pad  size  =    4.72 MB
+whisper_init_state: alignment heads masks size = 912 B
+whisper_init_state: compute buffer (conv)   =   23.38 MB
+whisper_init_state: compute buffer (encode) =  132.63 MB
+whisper_init_state: compute buffer (cross)  =   66.10 MB
+whisper_init_state: compute buffer (decode) =  210.84 MB
+read_audio_data: reading audio data from '/Users/mayowaadesanya/Projects/motif/videos/productions/every-change-should-be-reversible/assets/voice/alignment16.wav' ...
+read_audio_data: trying to decode with miniaudio
+
+system_info: n_threads = 4 / 10 | WHISPER : VITISAI = 0 | COREML = 0 | OPENVINO = 0 | MTL : EMBED_LIBRARY = 1 | CPU : NEON = 1 | ARM_FMA = 1 | MATMUL_INT8 = 1 | DOTPROD = 1 | ACCELERATE = 1 | OPENMP = 1 | REPACK = 1 | 
+
+main: processing '/Users/mayowaadesanya/Projects/motif/videos/productions/every-change-should-be-reversible/assets/voice/alignment16.wav' (351915 samples, 22.0 sec), 4 threads, 1 processors, 5 beams + best of 5, lang = en, task = transcribe, timestamps = 1 ...
+
+output_json: saving output to '/Users/mayowaadesanya/Projects/motif/videos/productions/every-change-should-be-reversible/assets/voice/narration-dtw.json'
+
+whisper_print_timings:     load time =   488.03 ms
+whisper_print_timings:     fallbacks =   0 p /   0 h
+whisper_print_timings:      mel time =    11.31 ms
+whisper_print_timings:   sample time =   172.06 ms /   509 runs (     0.34 ms per run)
+whisper_print_timings:   encode time =   218.60 ms /     1 runs (   218.60 ms per run)
+whisper_print_timings:   decode time =    27.16 ms /     2 runs (    13.58 ms per run)
+whisper_print_timings:   batchd time =   921.34 ms /   503 runs (     1.83 ms per run)
+whisper_print_timings:   prompt time =    32.05 ms /    83 runs (     0.39 ms per run)
+whisper_print_timings:    total time =  2091.10 ms
+ggml_metal_free: deallocating

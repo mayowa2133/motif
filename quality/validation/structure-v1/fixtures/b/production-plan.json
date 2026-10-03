@@ -1,0 +1,269 @@
+{
+  "quality_mode": "motif-gold-v1",
+  "script": "Choose the closest answer. The cost keeps growing. Unlock the next step.",
+  "asset_usage": [
+    {
+      "id": "planning-paper",
+      "scope": "production-specific",
+      "path": "",
+      "metadata_path": "",
+      "agent_assisted": true
+    }
+  ],
+  "beats": [
+    {
+      "id": "b1",
+      "narration": "Choose the closest answer.",
+      "quality": {
+        "purpose": "Choose the closest answer.",
+        "hero": "target",
+        "primary_action": "Bot moves a dart onto the closest circle.",
+        "performance": {
+          "state": "focused",
+          "target": "bot"
+        },
+        "before": "Unchanged central slab.",
+        "after": "The local hero changes state.",
+        "focal_target": "receipt pile",
+        "framing": "subject",
+        "reaction_radius": {
+          "origin": [
+            640,
+            782
+          ],
+          "radius": 200,
+          "duration": 0.6,
+          "targets": []
+        },
+        "secondary_motion": [],
+        "environment": [
+          "paper backboard",
+          "work surface"
+        ],
+        "exit_overlap": "Receipt settling carries into next beat",
+        "energy": {
+          "dominant_action": "Bot moves a dart onto the closest circle."
+        },
+        "art_direction": {
+          "hero_object": "target",
+          "bot_role": "participant",
+          "materials": [
+            "printed paper",
+            "wood shelf"
+          ],
+          "depth_planes": [
+            "tile wall",
+            "pricing placards",
+            "receipts and Bot"
+          ],
+          "composition": "One central physical slab occupies the middle; Bot is small at left; fixed wide camera and paper wall/floor.",
+          "intentional_irregularity": "A corner crop directs attention to the active contact.",
+          "environment_mode": "physical",
+          "environment_justification": null
+        }
+      }
+    },
+    {
+      "id": "b2",
+      "narration": "The cost keeps growing.",
+      "quality": {
+        "purpose": "The cost keeps growing.",
+        "hero": "receipt tray",
+        "primary_action": "Bot stacks receipts on a tray.",
+        "performance": {
+          "state": "focused",
+          "target": "bot"
+        },
+        "before": "Unchanged central slab.",
+        "after": "The local hero changes state.",
+        "focal_target": "receipt pile",
+        "framing": "subject",
+        "reaction_radius": {
+          "origin": [
+            640,
+            782
+          ],
+          "radius": 200,
+          "duration": 0.6,
+          "targets": []
+        },
+        "secondary_motion": [],
+        "environment": [
+          "paper backboard",
+          "work surface"
+        ],
+        "exit_overlap": "Receipt settling carries into next beat",
+        "energy": {
+          "dominant_action": "Bot stacks receipts on a tray."
+        },
+        "art_direction": {
+          "hero_object": "receipt tray",
+          "bot_role": "participant",
+          "materials": [
+            "printed paper",
+            "wood shelf"
+          ],
+          "depth_planes": [
+            "tile wall",
+            "pricing placards",
+            "receipts and Bot"
+          ],
+          "composition": "One central physical slab occupies the middle; Bot is small at left; fixed wide camera and paper wall/floor.",
+          "intentional_irregularity": "A corner crop directs attention to the active contact.",
+          "environment_mode": "physical",
+          "environment_justification": null
+        }
+      }
+    },
+    {
+      "id": "b3",
+      "narration": "Unlock the next step.",
+      "quality": {
+        "purpose": "Unlock the next step.",
+        "hero": "permission switch",
+        "primary_action": "Bot depresses a latch to release a route.",
+        "performance": {
+          "state": "focused",
+          "target": "bot"
+        },
+        "before": "Unchanged central slab.",
+        "after": "The local hero changes state.",
+        "focal_target": "receipt pile",
+        "framing": "subject",
+        "reaction_radius": {
+          "origin": [
+            640,
+            782
+          ],
+          "radius": 200,
+          "duration": 0.6,
+          "targets": []
+        },
+        "secondary_motion": [],
+        "environment": [
+          "paper backboard",
+          "work surface"
+        ],
+        "exit_overlap": "Receipt settling carries into next beat",
+        "energy": {
+          "dominant_action": "Bot depresses a latch to release a route."
+        },
+        "art_direction": {
+          "hero_object": "permission switch",
+          "bot_role": "participant",
+          "materials": [
+            "printed paper",
+            "wood shelf"
+          ],
+          "depth_planes": [
+            "tile wall",
+            "pricing placards",
+            "receipts and Bot"
+          ],
+          "composition": "One central physical slab occupies the middle; Bot is small at left; fixed wide camera and paper wall/floor.",
+          "intentional_irregularity": "A corner crop directs attention to the active contact.",
+          "environment_mode": "physical",
+          "environment_justification": null
+        }
+      }
+    }
+  ],
+  "film_structure": {
+    "version": "structure-1.0",
+    "rhetorical_chapters": [
+      {
+        "id": "argument",
+        "purpose": "Develop the supplied short argument through visible changes.",
+        "narration_span": {
+          "start_word": 0,
+          "end_word": 12,
+          "text": "Choose the closest answer. The cost keeps growing. Unlock the next step."
+        }
+      }
+    ],
+    "setups": [
+      {
+        "setup_id": "s1",
+        "chapter": "argument",
+        "narration_span": {
+          "start_word": 0,
+          "end_word": 4,
+          "text": "Choose the closest answer."
+        },
+        "semantic_center": "accuracy",
+        "visual_rule": "Distance to the target encodes accuracy.",
+        "relationship_archetype": "physical interaction",
+        "hero": "target",
+        "bot_role": "participant",
+        "continuity_tokens": [],
+        "environment_mode": "physical",
+        "palette_family": "warm paper / teal",
+        "entry_state": "Unchanged central slab.",
+        "exit_state": "The local hero changes state.",
+        "reason_for_persistence": "This single action serves this proposition.",
+        "planned_reset_after": {
+          "kind": "hard-cut",
+          "reason": "The semantic relationship changes, so cut to a new hero."
+        },
+        "beat_ids": [
+          "b1"
+        ]
+      },
+      {
+        "setup_id": "s2",
+        "chapter": "argument",
+        "narration_span": {
+          "start_word": 4,
+          "end_word": 8,
+          "text": "The cost keeps growing."
+        },
+        "semantic_center": "cost",
+        "visual_rule": "Adding receipts increases burden.",
+        "relationship_archetype": "physical interaction",
+        "hero": "receipt tray",
+        "bot_role": "participant",
+        "continuity_tokens": [],
+        "environment_mode": "physical",
+        "palette_family": "warm paper / teal",
+        "entry_state": "Unchanged central slab.",
+        "exit_state": "The local hero changes state.",
+        "reason_for_persistence": "This single action serves this proposition.",
+        "planned_reset_after": {
+          "kind": "hard-cut",
+          "reason": "The semantic relationship changes, so cut to a new hero."
+        },
+        "beat_ids": [
+          "b2"
+        ]
+      },
+      {
+        "setup_id": "s3",
+        "chapter": "argument",
+        "narration_span": {
+          "start_word": 8,
+          "end_word": 12,
+          "text": "Unlock the next step."
+        },
+        "semantic_center": "permission",
+        "visual_rule": "Only a depressed latch opens a route.",
+        "relationship_archetype": "physical interaction",
+        "hero": "permission switch",
+        "bot_role": "participant",
+        "continuity_tokens": [],
+        "environment_mode": "physical",
+        "palette_family": "warm paper / teal",
+        "entry_state": "Unchanged central slab.",
+        "exit_state": "The local hero changes state.",
+        "reason_for_persistence": "This single action serves this proposition.",
+        "planned_reset_after": {
+          "kind": "end",
+          "reason": "The semantic relationship changes, so cut to a new hero."
+        },
+        "beat_ids": [
+          "b3"
+        ]
+      }
+    ],
+    "continuity_tokens": []
+  }
+}

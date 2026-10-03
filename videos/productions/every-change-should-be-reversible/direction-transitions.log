@@ -1,0 +1,9 @@
+MODEL quality-direction
+Traceback (most recent call last):
+  File "/Users/mayowaadesanya/Projects/motif/videos/productions/every-change-should-be-reversible/source/run_quality.py", line 20, in <module>
+    print(direction_review(P,read(P/'production-plan.json'),c))
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mayowaadesanya/Projects/motif/scripts/motif_quality.py", line 103, in direction_review
+    if not result['pass']:raise ValueError('pre-animation direction failed: '+json.dumps(result['issues']))
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: pre-animation direction failed: ["All eight shots route `reaction_and_focus` through an invented `production_local_capability`, and that local capability also defines its own framing modes. The contract requires focus, framing, performance, and reaction channels to compile only through registered capabilities. Route these channels explicitly through registered `high-energy paper`; keep `rowhouse-production-v1` limited to the agent-assisted finite action choreography and physical mechanisms. Use the exact registered capability name rather than the plan\u2019s `high-energy-paper` wording.", "Shot 07 moves the stored `test-water-slug` from `test-water-reservoir.delivery-stop` with the rain ribbon at frame 8 without a declared release, contact, or handoff. The reservoir owns the slug after shot 06, and no exposed outlet/coupling anchor transfers ownership to the ribbon or guide. Add a visible Bot-driven reservoir release and an anchored handoff using verified persistent parts, or request an explicit production-specific outlet/guide adapter and metadata anchor before animation."]

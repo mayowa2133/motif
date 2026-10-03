@@ -1,0 +1,32 @@
+{
+  "status": "HUMAN_REVIEW_REQUIRED",
+  "formal_moving_repairs": 2,
+  "previous_stop_correction": "Earlier pre-animation ceiling was not the v1.1 audited repair budget. Prior failure preserved in review/pre-animation-07.",
+  "current_frames": 759,
+  "duration": 25.3,
+  "direction": "PASS",
+  "rough": "PRODUCED",
+  "rough_modes": [
+    "captions",
+    "no-captions"
+  ],
+  "final_art": "BLOCKED",
+  "approved_story_plan_sha256": "672e563e49ddac464bb02727a5772ebf9404e307fb9420d18ec74bddb6c7def6",
+  "rough_story": "FAIL",
+  "rough_visual": "FAIL",
+  "final_render": "NOT_PRODUCED",
+  "audio_finish": "NOT_STARTED",
+  "gate": "quality-review/rough/gate.json",
+  "blocked": [
+    "story: shot-05-rain-test-fails: continuity",
+    "story: shot-06-rollback-restores: focal-hierarchy",
+    "story: shot-08-every-step-reversible: focal-hierarchy",
+    "story: focal-hierarchy",
+    "story: continuity",
+    "visual: shot-01-unsafe-overwrite: physicality",
+    "visual: shot-03-save-checkpoint: physicality",
+    "visual: physicality"
+  ],
+  "human_final_approval": "REQUIRED",
+  "publish": false
+}

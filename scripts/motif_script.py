@@ -279,6 +279,23 @@ def plan_script(brief_path):
  plan=model_call(project,'initial-plan',prompt,'schemas/script-production-plan.schema.json',config)
  if plan.get('quality_mode')!='motif-gold-v1':raise ValueError('new script plans require motif-gold-v1')
  write(project/'production-plan.json',plan)
+ from motif_structure import structure_review
+ # Macro replanning precedes narration and does not spend a moving-repair pass.
+ for attempt in range(2):
+  try:
+   structure_review(project,plan,config)
+   break
+  except ValueError:
+   record=project/'quality-structure-record.json'
+   if not record.exists() or read(record)['status']!='REPLAN_REQUIRED':raise
+   archive=project/'planning-attempts'/str(attempt);archive.mkdir(parents=True)
+   write(archive/'plan.json',plan)
+   for artifact in project.glob('quality-structure*'):
+    if artifact.is_file():shutil.copyfile(artifact,archive/artifact.name)
+   if attempt==1:raise
+   failures=read(project/'quality-structure.json')
+   plan=model_call(project,'structure-replanned',prompt+'\nOne bounded macro replan. Preserve the exact script/audience. Rebuild setup boundaries rather than polishing the old architecture. Prior plan: '+json.dumps(plan)+'\nIndependent structure review: '+json.dumps(failures),'schemas/script-production-plan.schema.json',config)
+   write(project/'production-plan.json',plan)
  direction_review(project,plan,config)
  (project/'STORYBOARD_INITIAL.md').write_text(json.dumps(plan,indent=2)+'\n')
  r=review(plan,brief);write(project/'pre-render-checks.json',r)

@@ -1,0 +1,111 @@
+{
+  "quality_mode": "motif-gold-v1",
+  "script": "Join these two pieces.",
+  "asset_usage": [
+    {
+      "id": "planning-paper",
+      "scope": "production-specific",
+      "path": "",
+      "metadata_path": "",
+      "agent_assisted": true
+    }
+  ],
+  "beats": [
+    {
+      "id": "b1",
+      "narration": "Join these two pieces.",
+      "quality": {
+        "purpose": "Join these two pieces.",
+        "hero": "paper halves",
+        "primary_action": "Bot pushes two large paper halves together.",
+        "performance": {
+          "state": "focused",
+          "target": "bot"
+        },
+        "before": "Halves are apart.",
+        "after": "Halves join.",
+        "focal_target": "receipt pile",
+        "framing": "subject",
+        "reaction_radius": {
+          "origin": [
+            640,
+            782
+          ],
+          "radius": 200,
+          "duration": 0.6,
+          "targets": []
+        },
+        "secondary_motion": [],
+        "environment": [
+          "paper backboard",
+          "work surface"
+        ],
+        "exit_overlap": "Receipt settling carries into next beat",
+        "energy": {
+          "dominant_action": "Bot pushes two large paper halves together."
+        },
+        "art_direction": {
+          "hero_object": "paper halves",
+          "bot_role": "participant",
+          "materials": [
+            "printed paper",
+            "wood shelf"
+          ],
+          "depth_planes": [
+            "tile wall",
+            "pricing placards",
+            "receipts and Bot"
+          ],
+          "composition": "The joint is visible centrally; six extra decorative gears, pipes, unused receipt boxes and competing signs are placed around it solely to fill space, without story, location or balance function.",
+          "intentional_irregularity": "A corner crop directs attention to the active contact.",
+          "environment_mode": "physical",
+          "environment_justification": null
+        }
+      }
+    }
+  ],
+  "film_structure": {
+    "version": "structure-1.0",
+    "rhetorical_chapters": [
+      {
+        "id": "argument",
+        "purpose": "Develop the supplied short argument through visible changes.",
+        "narration_span": {
+          "start_word": 0,
+          "end_word": 4,
+          "text": "Join these two pieces."
+        }
+      }
+    ],
+    "setups": [
+      {
+        "setup_id": "s1",
+        "chapter": "argument",
+        "narration_span": {
+          "start_word": 0,
+          "end_word": 4,
+          "text": "Join these two pieces."
+        },
+        "semantic_center": "Join two pieces",
+        "visual_rule": "A closed gap forms one connected object.",
+        "relationship_archetype": "physical interaction",
+        "hero": "paper halves",
+        "bot_role": "participant",
+        "continuity_tokens": [],
+        "environment_mode": "physical",
+        "palette_family": "warm paper / teal",
+        "entry_state": "Halves are apart.",
+        "exit_state": "Halves join.",
+        "reason_for_persistence": "Add decorative machinery simply to make the frame look busy.",
+        "planned_reset_after": {
+          "kind": "end",
+          "reason": "The argument ends in this visible consequence."
+        },
+        "beat_ids": [
+          "b1"
+        ]
+      }
+    ],
+    "continuity_tokens": []
+  }
+}

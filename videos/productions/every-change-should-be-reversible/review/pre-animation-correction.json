@@ -1,0 +1,182 @@
+{
+  "stage": "pre-animation binding/capability/continuity correction; no moving rough yet",
+  "unchanged": "director concept, eight narration partitions, primary physical plot",
+  "changes": {
+    "adapter": "videos/productions/every-change-should-be-reversible/source/build.py",
+    "scope": "production-specific agent-assisted artwork and finite choreography; not an existing high-energy-paper recipe and not ordinary-producer arbitrary scene generation",
+    "metadata": "videos/productions/every-change-should-be-reversible/assets/props/reversible-rowhouse-folio.json",
+    "shared_modules": [
+      "scripts/motif_performance.py:render/channels",
+      "scripts/motif_reaction.py:matrix/compose/grip/reaction",
+      "scripts/motif_ui_production.py:write_composition",
+      "assets/runtime/motif-frame-sequence.js:compileFrames"
+    ],
+    "focus_groups": [
+      "teal-original-roof",
+      "paper-gold-history-strip",
+      "paper-gold-checkpoint-plate",
+      "aligned-roof-profile-pair",
+      "leak-droplet-and-floor-contact",
+      "paper-gold-rollback-carriage",
+      "teal-roof-to-gutter-water-path",
+      "restored-rowhouse-and-seated-history-spine"
+    ],
+    "registered_part_ids": [
+      "aligned-roof-profile-pair",
+      "checkpoint-archive-slot",
+      "coral-replacement-roof",
+      "failed-roof-history-leaf",
+      "folio-center-hinge",
+      "history-state-failed",
+      "history-state-original",
+      "history-state-restored",
+      "house-dry-state",
+      "house-wet-state",
+      "interior-floor-strip",
+      "leak-droplet-and-floor-contact",
+      "left-keyed-roof-slot",
+      "paper-gold-catch-cup",
+      "paper-gold-catch-tongue",
+      "paper-gold-checkpoint-plate",
+      "paper-gold-checkpoint-tab",
+      "paper-gold-history-strip",
+      "paper-gold-rollback-carriage",
+      "rain-ribbon-anchor",
+      "restored-rowhouse-and-seated-history-spine",
+      "right-keyed-roof-slot",
+      "roof-eave-grip",
+      "rowhouse-facade",
+      "teal-original-roof",
+      "teal-roof-to-gutter-water-path",
+      "teal-side-gutter",
+      "test-ribbon-guide",
+      "upper-window-flap",
+      "wet-test-history-leaf",
+      "write-latch"
+    ],
+    "inverse_grips": [
+      "Bot right hand \u2192 original-roof eave during removal/arrest",
+      "Bot right hand \u2192 charcoal write latch before removal",
+      "Bot right hand \u2192 gold checkpoint tab during capture",
+      "Bot right hand \u2192 rain-ribbon-anchor during test",
+      "Bot both hands \u2192 separate checkpoint-tab grips during rollback; inverse solve after Bot pose and prop reaction transforms"
+    ],
+    "linked_contacts": [
+      "roof eave and gold catch hook share a solved keyed anchor until catch bay seating",
+      "original/proposed roof bays retain persistent identities on articulated history strip",
+      "folio leaves share registered center hinge; physical before/after roof baselines align",
+      "rollback tab moves linked two-depth roof carriage and floor hinge; one control drives all three restorations",
+      "failed-state roof leaf and wet-test leaf are two coupled parts of ONE failed-state keyed bay; three history states total",
+      "finale sequential hinge state transitions: failed coupled leaf closes before checkpoint housing closes"
+    ],
+    "timeline": [
+      {
+        "id": "shot-01-unsafe-overwrite",
+        "startFrame": 0,
+        "endFrame": 185,
+        "primary_window_local_fraction": [
+          0.08,
+          0.78
+        ],
+        "inspection_and_exit_window_local_fraction": [
+          0.78,
+          1.0
+        ]
+      },
+      {
+        "id": "shot-02-history-catches-change",
+        "startFrame": 185,
+        "endFrame": 243,
+        "primary_window_local_fraction": [
+          0.08,
+          0.78
+        ],
+        "inspection_and_exit_window_local_fraction": [
+          0.78,
+          1.0
+        ]
+      },
+      {
+        "id": "shot-03-save-checkpoint",
+        "startFrame": 243,
+        "endFrame": 308,
+        "primary_window_local_fraction": [
+          0.08,
+          0.78
+        ],
+        "inspection_and_exit_window_local_fraction": [
+          0.78,
+          1.0
+        ]
+      },
+      {
+        "id": "shot-04-visible-difference",
+        "startFrame": 308,
+        "endFrame": 358,
+        "primary_window_local_fraction": [
+          0.08,
+          0.78
+        ],
+        "inspection_and_exit_window_local_fraction": [
+          0.78,
+          1.0
+        ]
+      },
+      {
+        "id": "shot-05-rain-test-fails",
+        "startFrame": 358,
+        "endFrame": 407,
+        "primary_window_local_fraction": [
+          0.08,
+          0.78
+        ],
+        "inspection_and_exit_window_local_fraction": [
+          0.78,
+          1.0
+        ]
+      },
+      {
+        "id": "shot-06-rollback-restores",
+        "startFrame": 407,
+        "endFrame": 529,
+        "primary_window_local_fraction": [
+          0.08,
+          0.78
+        ],
+        "inspection_and_exit_window_local_fraction": [
+          0.78,
+          1.0
+        ]
+      },
+      {
+        "id": "shot-07-restored-test-passes",
+        "startFrame": 529,
+        "endFrame": 599,
+        "primary_window_local_fraction": [
+          0.08,
+          0.78
+        ],
+        "inspection_and_exit_window_local_fraction": [
+          0.78,
+          1.0
+        ]
+      },
+      {
+        "id": "shot-08-every-step-reversible",
+        "startFrame": 599,
+        "endFrame": 679,
+        "primary_window_local_fraction": [
+          0.08,
+          0.78
+        ],
+        "inspection_and_exit_window_local_fraction": [
+          0.78,
+          1.0
+        ]
+      }
+    ],
+    "unsupported_policy": "missing registered part/anchor, unsupported binding or extra unimplemented instruction raises explicit error",
+    "asset_promotion": "Only GENERATED \u2192 REVIEW for production-specific asset. No candidate-reusable or canonical-promoted assets."
+  },
+  "ending_clarification": "restore exact house configuration while retaining external test evidence"
+}

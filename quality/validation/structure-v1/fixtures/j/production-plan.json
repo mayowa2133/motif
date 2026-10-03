@@ -1,0 +1,111 @@
+{
+  "quality_mode": "motif-gold-v1",
+  "script": "Only tested answers should win.",
+  "asset_usage": [
+    {
+      "id": "planning-paper",
+      "scope": "production-specific",
+      "path": "",
+      "metadata_path": "",
+      "agent_assisted": true
+    }
+  ],
+  "beats": [
+    {
+      "id": "b1",
+      "narration": "Only tested answers should win.",
+      "quality": {
+        "purpose": "Only tested answers should win.",
+        "hero": "blank answer card",
+        "primary_action": "The unchanged blank card floats decoratively while captions state that one answer was tested and selected.",
+        "performance": {
+          "state": "focused",
+          "target": "bot"
+        },
+        "before": "A blank card rests on a surface.",
+        "after": "The same blank card rests on the surface; no test or comparison or selection is visible.",
+        "focal_target": "receipt pile",
+        "framing": "subject",
+        "reaction_radius": {
+          "origin": [
+            640,
+            782
+          ],
+          "radius": 200,
+          "duration": 0.6,
+          "targets": []
+        },
+        "secondary_motion": [],
+        "environment": [
+          "paper backboard",
+          "work surface"
+        ],
+        "exit_overlap": "Receipt settling carries into next beat",
+        "energy": {
+          "dominant_action": "The unchanged blank card floats decoratively while captions state that one answer was tested and selected."
+        },
+        "art_direction": {
+          "hero_object": "blank answer card",
+          "bot_role": "participant",
+          "materials": [
+            "printed paper",
+            "wood shelf"
+          ],
+          "depth_planes": [
+            "tile wall",
+            "pricing placards",
+            "receipts and Bot"
+          ],
+          "composition": "One blank card, a small Bot beside it, and a large caption containing the entire conclusion.",
+          "intentional_irregularity": "A corner crop directs attention to the active contact.",
+          "environment_mode": "physical",
+          "environment_justification": null
+        }
+      }
+    }
+  ],
+  "film_structure": {
+    "version": "structure-1.0",
+    "rhetorical_chapters": [
+      {
+        "id": "argument",
+        "purpose": "Develop the supplied short argument through visible changes.",
+        "narration_span": {
+          "start_word": 0,
+          "end_word": 5,
+          "text": "Only tested answers should win."
+        }
+      }
+    ],
+    "setups": [
+      {
+        "setup_id": "s1",
+        "chapter": "argument",
+        "narration_span": {
+          "start_word": 0,
+          "end_word": 5,
+          "text": "Only tested answers should win."
+        },
+        "semantic_center": "Select after testing",
+        "visual_rule": "Captions explain that testing preceded selection; the card is unchanged.",
+        "relationship_archetype": "physical interaction",
+        "hero": "blank answer card",
+        "bot_role": "participant",
+        "continuity_tokens": [],
+        "environment_mode": "physical",
+        "palette_family": "warm paper / teal",
+        "entry_state": "A blank card rests on a surface.",
+        "exit_state": "The same blank card rests on the surface; no test or comparison or selection is visible.",
+        "reason_for_persistence": "Keep the static card as an illustration while text supplies meaning.",
+        "planned_reset_after": {
+          "kind": "end",
+          "reason": "The argument ends in this visible consequence."
+        },
+        "beat_ids": [
+          "b1"
+        ]
+      }
+    ],
+    "continuity_tokens": []
+  }
+}

@@ -1,0 +1,64 @@
+[
+  {
+    "shot": "shot-01-unsafe-overwrite",
+    "field": "focus_target",
+    "original_description": "The unsupported teal original roof descending toward the discard mouth as the coral replacement closes in.",
+    "bound_id": "teal-original-roof",
+    "reason": "Existing plan_check requires operative focal IDs to match; preserve original descriptive intent in initial-plan.json."
+  },
+  {
+    "shot": "shot-02-history-catches-change",
+    "field": "focus_target",
+    "original_description": "The gold accordion strip joining the original and proposed roof silhouettes.",
+    "bound_id": "paper-gold-history-strip",
+    "reason": "Existing plan_check requires operative focal IDs to match; preserve original descriptive intent in initial-plan.json."
+  },
+  {
+    "shot": "shot-03-save-checkpoint",
+    "field": "focus_target",
+    "original_description": "The paper-gold checkpoint plate aligning behind the intact house.",
+    "bound_id": "paper-gold-checkpoint-plate",
+    "reason": "Existing plan_check requires operative focal IDs to match; preserve original descriptive intent in initial-plan.json."
+  },
+  {
+    "shot": "shot-04-visible-difference",
+    "field": "focus_target",
+    "original_description": "The aligned teal pitched roof and coral flat roof across the open folio hinge.",
+    "bound_id": "aligned-roof-profile-pair",
+    "reason": "Existing plan_check requires operative focal IDs to match; preserve original descriptive intent in initial-plan.json."
+  },
+  {
+    "shot": "shot-05-rain-test-fails",
+    "field": "focus_target",
+    "original_description": "The droplet passing through the coral roof notch toward the sagging floor.",
+    "bound_id": "leak-droplet-and-floor-contact",
+    "reason": "Existing plan_check requires operative focal IDs to match; preserve original descriptive intent in initial-plan.json."
+  },
+  {
+    "shot": "shot-06-rollback-restores",
+    "field": "focus_target",
+    "original_description": "The crossing roof panels and floor flip driven by the single gold rollback tab.",
+    "bound_id": "paper-gold-rollback-carriage",
+    "reason": "Existing plan_check requires operative focal IDs to match; preserve original descriptive intent in initial-plan.json."
+  },
+  {
+    "shot": "shot-07-restored-test-passes",
+    "field": "focus_target",
+    "original_description": "The continuous water path from pitched roof to exterior gutter while the interior stays dry.",
+    "bound_id": "teal-roof-to-gutter-water-path",
+    "reason": "Existing plan_check requires operative focal IDs to match; preserve original descriptive intent in initial-plan.json."
+  },
+  {
+    "shot": "shot-08-every-step-reversible",
+    "field": "focus_target",
+    "original_description": "The reverse-folding sequence resolving into the exact original rowhouse silhouette.",
+    "bound_id": "restored-rowhouse-and-seated-history-spine",
+    "reason": "Existing plan_check requires operative focal IDs to match; preserve original descriptive intent in initial-plan.json."
+  },
+  {
+    "asset": "motif-bot-v1",
+    "original_path": "assets/characters/motif-bot/canonical/v1/motif-bot-v1.svg",
+    "resolved_path": "assets/characters/motif-bot/canonical/v1/motif-bot-front-neutral-v1.svg",
+    "reason": "Resolve the actual canonical front master filename; geometry unchanged."
+  }
+]

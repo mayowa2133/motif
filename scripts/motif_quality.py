@@ -65,8 +65,9 @@ def retrieve(tags,count=3):
     return [{**e,'why_passes':(ROOT/e['note']).read_text()} for e in ranked]
 
 def planning_context(text):
+    from motif_structure import planning_context as structure_context
     examples=retrieve([text,'performance','physical-ui'])
-    return '\n\nMANDATORY QUALITY MODE: set quality_mode to motif-gold-v1. Record asset_usage scopes (reused, production-specific, candidate-reusable, canonical-promoted), paths, metadata paths and explicit agent_assisted additions. Each beat/shot must have quality matching schemas/shot-contract.schema.json. All fields enter the pre-animation direction critic. Focus/framing and performance/reaction channels compile only through registered capabilities. Do not invent selectors. Use the registered calendar/arena, paper, workshop and interactive UI capabilities and respect their documented limits. Optional energy channels may be null or omitted; never invent filler motion. Choose physical or justified minimal-isolated environment explicitly. An absent Bot is valid only if absent in art direction. The director may request agent-assisted additions rather than force inappropriate reuse. No final artwork before moving rough critics pass.\n'+(ROOT/'QUALITY_CONTRACT.md').read_text()+'\n'+(ROOT/'ENERGY_CONTRACT.md').read_text()+'\nREGISTERED QUALITY BINDINGS: '+json.dumps(read(ROOT/'quality/bindings.json'))+'\nSHOT CONTRACT: '+json.dumps(read(ROOT/'schemas/shot-contract.schema.json'))+'\nRETRIEVED BEHAVIORAL EXAMPLES (not plot/pixel templates): '+json.dumps(examples)
+    return '\n\nMANDATORY QUALITY MODE: set quality_mode to motif-gold-v1. Record asset_usage scopes (reused, production-specific, candidate-reusable, canonical-promoted), paths, metadata paths and explicit agent_assisted additions. Each beat/shot must have quality matching schemas/shot-contract.schema.json. All fields enter the pre-animation direction critic. Focus/framing and performance/reaction channels compile only through registered capabilities. Do not invent selectors. Use the registered calendar/arena, paper, workshop and interactive UI capabilities and respect their documented limits. Optional energy channels may be null or omitted; never invent filler motion. Choose physical or justified minimal-isolated environment explicitly. An absent Bot is valid only if absent in art direction. The director may request agent-assisted additions rather than force inappropriate reuse. No final artwork before moving rough critics pass.\n'+(ROOT/'QUALITY_CONTRACT.md').read_text()+'\n'+(ROOT/'ENERGY_CONTRACT.md').read_text()+'\nREGISTERED QUALITY BINDINGS: '+json.dumps(read(ROOT/'quality/bindings.json'))+'\nSHOT CONTRACT: '+json.dumps(read(ROOT/'schemas/shot-contract.schema.json'))+'\nRETRIEVED BEHAVIORAL EXAMPLES (not plot/pixel templates): '+json.dumps(examples)+structure_context()
 
 def plan_check(plan):
     if plan.get('quality_mode')!=MODE:raise ValueError('explicit motif-gold-v1 plan required')
@@ -77,6 +78,9 @@ def plan_check(plan):
             path=ROOT/asset['path'];meta=read(ROOT/asset['metadata_path'])
             if meta.get('state')!='CANONICAL':raise ValueError('unreviewed canonical asset: '+asset['id'])
             transition({**meta,'state':'REVIEW','scope':'candidate-reusable'},path,'CANONICAL',meta.get('promotion_review'))
+    if 'film_structure' in plan:
+        from motif_structure import check_structure
+        check_structure(plan)
     key='shots' if 'shots' in plan else 'beats';schema=read(ROOT/'schemas/shot-contract.schema.json')
     for beat in plan[key]:
         q=normalize_contract(beat.get('quality'));Draft202012Validator(schema).validate(q)
@@ -97,6 +101,9 @@ def direction_review(project,plan,config):
     """Before animation: independent data critic, never called visual review."""
     from motif_direct import model_call
     plan_check(plan)
+    from motif_structure import require_structure
+    require_structure(project)
+    if plan!=read(project/'production-plan.json'):raise ValueError('direction input must match structure-reviewed saved plan')
     prompt='Review shot contracts before animation. This is DATA ONLY, not visual QA. Identify weak subject/action/before/after/consequence, hero/material/depth/composition choices, unsupported interactions, ignored energy intentions. Art direction must be specific to this script. Return all planning-review schema fields. No tools.\n'+planning_context(json.dumps(plan))+'\nPLAN:'+json.dumps(plan)
     result=model_call(project,'quality-direction',prompt,'schemas/planning-review.schema.json',config)
     write(project/'quality-direction-record.json',{'plan_sha256':sha(project/'production-plan.json'),'response_sha256':sha(project/'quality-direction.json'),'invocation_sha256':sha(project/'quality-direction-invocation.json')})
@@ -181,6 +188,8 @@ def probe_video(path):
 def rough(project):
     """Native moving rough, actual captions removed, using existing pinned render."""
     plan=read(project/'production-plan.json');plan_check(plan)
+    from motif_structure import require_structure
+    require_structure(project)
     if not (project/'quality-direction.json').exists() or not read(project/'quality-direction.json')['pass']:raise ValueError('pre-animation art/direction review required')
     direction=read(project/'quality-direction-record.json')
     if direction['plan_sha256']!=sha(project/'production-plan.json') or direction['response_sha256']!=sha(project/'quality-direction.json'):raise ValueError('pre-animation direction review is stale')
@@ -300,8 +309,29 @@ def critics(project,phase,config):
     for role in ('story','visual'):
         prompt=(ROOT/f'quality/{"story-critic" if role=="story" else "visual-critic"}/PROMPT.md').read_text()+'\n'+common
         results[role]=model_call(base,role+'-critic',prompt,'schemas/'+role+'-critic.schema.json',config,images=images)
-    write(base/'critics-record.json',{'evidence_sha256':sha(base/'evidence.json'),'images_sha256':sha(base/'image-inputs.json'),'gold_ids':[g['id'] for g in gold],'invocations':['story-critic-invocation.json','visual-critic-invocation.json'],'report_hashes':{role:sha(base/(role+'-critic.json')) for role in ('story','visual')},'invocation_hashes':{role:sha(base/(role+'-critic-invocation.json')) for role in ('story','visual')},'scope':manifest['inspection']})
+    write(base/'critics-record.json',{'evidence_sha256':sha(base/'evidence.json'),'images_sha256':sha(base/'image-inputs.json'),'gold_ids':[g['id'] for g in gold],'invocations':['story-critic-invocation.json','visual-critic-invocation.json'],'report_hashes':{role:sha(base/(role+'-critic.json')) for role in ('story','visual')},'invocation_hashes':{role:sha(base/(role+'-critic-invocation.json')) for role in ('story','visual')},'scope':manifest['inspection'],'hierarchy_policy_sha256':sha(ROOT/'quality/rubric/hierarchy.json')})
     return evaluate(project,phase)
+
+def hierarchy_failures(plan,report):
+    """New diagnoses complement, and must fail, their existing owned gates."""
+    mapping=read(ROOT/'quality/rubric/hierarchy.json')['codes']
+    shots=plan.get('shots',plan.get('beats',[]));expected={(s['id'],code) for s in shots for code in mapping}
+    assessments=report.get('hierarchy_assessments',[]);blocked=[]
+    if {(a['shot'],a['code']) for a in assessments}!=expected or len(assessments)!=len(expected):
+        blocked.append('visual hierarchy coverage incomplete')
+    for a in assessments:
+        if a['status']!='PASS':blocked.append('visual hierarchy: '+a['shot']+': '+a['code'])
+        if a['status']=='FAIL':
+            gate=mapping[a['code']]
+            global_fail=any(g['gate']==gate and g['status']=='FAIL' for g in report['gates'])
+            shot_fail=any(g['gate']==gate and g['status']=='FAIL' for s in report['shot_assessments'] if s['shot']==a['shot'] for g in s['gates'])
+            violation=any(v['shot']==a['shot'] and v['gate']==gate and v.get('failure_code')==a['code'] for v in report['violations'])
+            if not (global_fail and shot_fail and violation):blocked.append('hierarchy failure must block mapped gate with correction: '+a['code'])
+    for v in report['violations']:
+        code=v.get('failure_code')
+        if code and (v['gate']!=mapping[code] or not any(a['shot']==v['shot'] and a['code']==code and a['status']=='FAIL' for a in assessments)):
+            blocked.append('hierarchy violation inconsistent: '+code)
+    return blocked
 
 def evaluate(project,phase,check_current_events=True):
     base=project/'quality-review'/phase;manifest=read(base/'evidence.json');record=read(base/'critics-record.json');blocked=[]
@@ -340,6 +370,14 @@ def evaluate(project,phase,check_current_events=True):
         for g in r['gates']:
             if g['status']=='FAIL' and not any(v['gate']==g['gate'] for v in r['violations']):blocked.append('failure missing correction: '+g['gate'])
         if any(v['gold_id'] not in record['gold_ids'] for v in r['violations']):blocked.append('violation references unretrieved gold')
+    plan=read(project/'production-plan.json')
+    if 'film_structure' in plan:
+        from motif_structure import require_structure
+        try:require_structure(project)
+        except ValueError as error:blocked.append(str(error));story_bad=True
+        if record.get('hierarchy_policy_sha256')!=sha(ROOT/'quality/rubric/hierarchy.json'):blocked.append('hierarchy policy stale')
+        blocked+=hierarchy_failures(plan,reports['visual'])
+        if any(a['code']=='CAPTION_CARRIES_STORY' and a['status']=='FAIL' for a in reports['visual'].get('hierarchy_assessments',[])):story_bad=True
     repairs=read(project/'quality-review/repairs.json') if (project/'quality-review/repairs.json').exists() else []
     status=('HUMAN_REVIEW_REQUIRED' if len(repairs)>=2 else 'REPLAN_REQUIRED' if story_bad else 'REPAIR_REQUIRED') if blocked else ('FINAL_ART_ALLOWED' if phase=='rough' else 'AUDIO_FINISH_ALLOWED')
     result={'phase':phase,'status':status,'blocked':blocked,'meaningful_repairs':len(repairs),'human_final_approval':'REQUIRED','publish':False,'report_hashes':{r:sha(base/(r+'-critic.json')) for r in reports},'evidence_sha256':sha(base/'evidence.json')}
@@ -364,7 +402,7 @@ def repair(project,note):
     items.append({'pass':len(items)+1,'correction':note,'fingerprint':current,'previous_fingerprint':previous.get('state_fingerprint',{'semantic':old_semantic,'render_sources':previous.get('render_source_hashes',{})}),'changed':{'semantic':changed_semantic,'render':changed_render}});write(p,items)
     if current['semantic']['plan']!=old_semantic['plan']:
         archive=project/'quality-review'/f'direction-before-repair-{len(items)}';archive.mkdir()
-        for name in project.glob('quality-direction*'):
+        for name in list(project.glob('quality-direction*'))+list(project.glob('quality-structure*')):
             if name.is_file():shutil.move(str(name),archive/name.name)
     for phase in ('rough','final'):
         d=project/'quality-review'/phase
@@ -422,7 +460,7 @@ def technical(project,video,checks):
     write(project/'quality-review/technical.json',result);return result
 
 def main():
-    p=argparse.ArgumentParser(description=__doc__);p.add_argument('action',choices=['retrieve','verify-frozen','plan-check','direction','rough','sample','critique','gate','repair','technical','asset-transition']);p.add_argument('--project',type=Path);p.add_argument('--phase',choices=['rough','final'],default='rough');p.add_argument('--tags',nargs='*',default=[]);p.add_argument('--with-captions',type=Path);p.add_argument('--without-captions',type=Path);p.add_argument('--shots',type=Path);p.add_argument('--note',default='');p.add_argument('--asset',type=Path);p.add_argument('--metadata',type=Path);p.add_argument('--review',type=Path);p.add_argument('--state',choices=['REVIEW','CANONICAL']);p.add_argument('--output',type=Path);p.add_argument('--checks',type=Path);p.add_argument('--delivery-picture',type=Path);a=p.parse_args()
+    p=argparse.ArgumentParser(description=__doc__);p.add_argument('action',choices=['retrieve','verify-frozen','plan-check','structure','direction','rough','sample','critique','gate','repair','technical','asset-transition']);p.add_argument('--project',type=Path);p.add_argument('--phase',choices=['rough','final'],default='rough');p.add_argument('--tags',nargs='*',default=[]);p.add_argument('--with-captions',type=Path);p.add_argument('--without-captions',type=Path);p.add_argument('--shots',type=Path);p.add_argument('--note',default='');p.add_argument('--asset',type=Path);p.add_argument('--metadata',type=Path);p.add_argument('--review',type=Path);p.add_argument('--state',choices=['REVIEW','CANONICAL']);p.add_argument('--output',type=Path);p.add_argument('--checks',type=Path);p.add_argument('--delivery-picture',type=Path);a=p.parse_args()
     if a.action=='retrieve':value=retrieve(a.tags)
     elif a.action=='verify-frozen':value=verify_frozen()
     elif a.action=='asset-transition':
@@ -433,6 +471,10 @@ def main():
     else:
         project=a.project.resolve();plan=read(project/'production-plan.json')
         if a.action=='plan-check':value=plan_check(plan)
+        elif a.action=='structure':
+            from motif_direct import backend_config
+            from motif_structure import structure_review
+            value=structure_review(project,plan,backend_config())
         elif a.action=='direction':
             from motif_direct import backend_config
             value=direction_review(project,plan,backend_config())

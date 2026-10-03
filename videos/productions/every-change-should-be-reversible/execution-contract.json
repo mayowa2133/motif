@@ -1,0 +1,589 @@
+{
+  "shots": [
+    {
+      "id": "shot-01-unsafe-overwrite",
+      "capability_route": {
+        "registered_performance": "high-energy paper: bot \u2192 scripts/motif_performance.py render, registered canonical state surprised",
+        "reaction_and_focus": "Production-specific bounded adapter in source/build.py: explicit new SVG group IDs, local anchors and finite world transforms. Uses shared motif_reaction.reaction/compose/grip mathematics. Does NOT claim new names exist in quality/bindings.json; new targets are explicit agent-assisted implementation allowed by the user, not implicitly global bindings.",
+        "framing": "Production-specific finite paper part layout at 720x1280, output360x640; declared target is real persistent part, not generic UI."
+      },
+      "events": [
+        {
+          "local_frame": 0,
+          "kind": "start",
+          "actor": "Bot",
+          "target": "rowhouse-facade",
+          "state_change": "Opening HOUSE state is visible: teal roof seated, three windows exposed, cream floor level and dry.",
+          "affine_rule": "Hold every house part at its registered opening transform."
+        },
+        {
+          "local_frame": 20,
+          "kind": "contact",
+          "actor": "Bot right hand",
+          "target": "write-latch",
+          "state_change": "Right hand seats on write-latch.grip; discard mouth and coral drive are mechanically armed.",
+          "affine_rule": "Solve the canonical right-hand inverse grip to write-latch.grip after the latch reaction transform."
+        },
+        {
+          "local_frame": 36,
+          "kind": "release",
+          "actor": "Bot right hand",
+          "target": "write-latch",
+          "state_change": "The turned latch releases the write-drive rack; discard mouth opens and coral roof begins advancing.",
+          "affine_rule": "Freeze the latch at its turned stop, release the hand constraint, then translate the connected rack and coral-replacement-roof along their bounded rail."
+        },
+        {
+          "local_frame": 50,
+          "kind": "contact",
+          "actor": "Bot right hand",
+          "target": "teal-original-roof",
+          "state_change": "Right hand seats on teal-original-roof.eave and begins lifting the roof from both slots.",
+          "affine_rule": "Apply the roof lift transform, then solve the right-hand inverse grip to teal-original-roof.eave."
+        },
+        {
+          "local_frame": 100,
+          "kind": "release",
+          "actor": "Bot right hand",
+          "target": "teal-original-roof",
+          "state_change": "The teal roof leaves the hand constraint and begins a bounded gravity descent toward discard-trip-latch.trip.",
+          "affine_rule": "Preserve the roof\u2019s release pose and continue with the finite descent transform; remove the inverse-grip constraint at this frame."
+        },
+        {
+          "local_frame": 104,
+          "kind": "handoff",
+          "actor": "teal-original-roof",
+          "target": "discard-trip-latch",
+          "state_change": "The falling eave enters the trip latch approach path while retaining its persistent roof identity.",
+          "affine_rule": "Map teal-original-roof.eave to the registered trip path without changing scale or part ownership."
+        },
+        {
+          "local_frame": 112,
+          "kind": "contact",
+          "actor": "Bot left hand",
+          "target": "write-latch",
+          "state_change": "Left hand presses write-latch.brake-grip and engages the rack brake.",
+          "affine_rule": "Resolve the authored left arm to write-latch.brake-grip after Bot performance and latch reaction transforms."
+        },
+        {
+          "local_frame": 126,
+          "kind": "stop",
+          "actor": "write-drive-rack",
+          "target": "coral-replacement-roof",
+          "state_change": "The connected rack stops the coral roof twelve authoring pixels before either roof slot.",
+          "affine_rule": "Clamp write-drive-rack and coral-replacement-roof at the declared brake stop; retain two pixels of local compression only."
+        },
+        {
+          "local_frame": 177,
+          "kind": "contact",
+          "actor": "Bot right hand",
+          "target": "paper-gold-checkpoint-tab",
+          "state_change": "Bot newly engages the gold archive trip latch while the original roof is still falling toward terminal discard.",
+          "affine_rule": "Resolve right-hand grip to gold tab; move the explicit engagement linkage from disengaged to active before shot02 frame5 impact."
+        }
+      ]
+    },
+    {
+      "id": "shot-02-history-catches-change",
+      "capability_route": {
+        "registered_performance": "high-energy paper: bot \u2192 scripts/motif_performance.py render, registered canonical state absent",
+        "reaction_and_focus": "Production-specific bounded adapter in source/build.py: explicit new SVG group IDs, local anchors and finite world transforms. Uses shared motif_reaction.reaction/compose/grip mathematics. Does NOT claim new names exist in quality/bindings.json; new targets are explicit agent-assisted implementation allowed by the user, not implicitly global bindings.",
+        "framing": "Production-specific finite paper part layout at 720x1280, output360x640; declared target is real persistent part, not generic UI."
+      },
+      "events": [
+        {
+          "local_frame": 5,
+          "kind": "impact",
+          "actor": "teal-original-roof",
+          "target": "discard-trip-latch",
+          "state_change": "teal-original-roof.eave depresses discard-trip-latch.trip from armed to released.",
+          "affine_rule": "Compose the roof descent before the latch\u2019s bounded local rotation; transfer no transform to unrelated strip segments."
+        },
+        {
+          "local_frame": 7,
+          "kind": "release",
+          "actor": "discard-trip-latch",
+          "target": "catch-leaf-spring",
+          "state_change": "The latch releases the visibly compressed spring from armed to driving.",
+          "affine_rule": "Remove the latch hold and evaluate the finite spring extension on its registered output axis."
+        },
+        {
+          "local_frame": 14,
+          "kind": "contact",
+          "actor": "paper-gold-catch-tongue",
+          "target": "teal-original-roof",
+          "state_change": "paper-gold-catch-tongue.hook engages teal-original-roof.eave.",
+          "affine_rule": "Solve the hook-to-eave keyed contact after the tongue extension transform."
+        },
+        {
+          "local_frame": 15,
+          "kind": "handoff",
+          "actor": "teal-original-roof",
+          "target": "paper-gold-catch-tongue",
+          "state_change": "Roof motion changes from free descent to spring-driven catch travel.",
+          "affine_rule": "Preserve the contact pose and transfer roof ownership to the tongue\u2019s keyed child transform."
+        },
+        {
+          "local_frame": 20,
+          "kind": "start",
+          "actor": "catch-leaf-spring",
+          "target": "paper-gold-history-strip",
+          "state_change": "The spring output begins opening owned history segments from inner to outer.",
+          "affine_rule": "Drive each named segment hinge from its own local pivot; do not transform the whole strip as one articulated part."
+        },
+        {
+          "local_frame": 34,
+          "kind": "landing",
+          "actor": "teal-original-roof",
+          "target": "history-state-original",
+          "state_change": "The caught teal roof seats in the original-state roof notch.",
+          "affine_rule": "Snap both teal keys to history-state-original roof sockets, then allow a four-pixel bounded rebound."
+        },
+        {
+          "local_frame": 44,
+          "kind": "stop",
+          "actor": "catch-leaf-spring",
+          "target": "paper-gold-history-strip",
+          "state_change": "The spring reaches its finite stop; both bays remain connected and the discard mouth closes.",
+          "affine_rule": "Clamp every segment at its declared hinge angle and close the discard mouth on its separate bounded transform."
+        }
+      ]
+    },
+    {
+      "id": "shot-03-save-checkpoint",
+      "capability_route": {
+        "registered_performance": "high-energy paper: bot \u2192 scripts/motif_performance.py render, registered canonical state focused",
+        "reaction_and_focus": "Production-specific bounded adapter in source/build.py: explicit new SVG group IDs, local anchors and finite world transforms. Uses shared motif_reaction.reaction/compose/grip mathematics. Does NOT claim new names exist in quality/bindings.json; new targets are explicit agent-assisted implementation allowed by the user, not implicitly global bindings.",
+        "framing": "Production-specific finite paper part layout at 720x1280, output360x640; declared target is real persistent part, not generic UI."
+      },
+      "events": [
+        {
+          "local_frame": 4,
+          "kind": "contact",
+          "actor": "Bot right hand",
+          "target": "teal-original-roof",
+          "state_change": "Right hand seats on teal-original-roof.eave and lifts the roof from history-state-original.",
+          "affine_rule": "Apply the roof transfer transform, then solve the canonical right-hand inverse grip to the eave anchor."
+        },
+        {
+          "local_frame": 15,
+          "kind": "landing",
+          "actor": "teal-original-roof",
+          "target": "rowhouse-facade",
+          "state_change": "The teal roof\u2019s left and right keys land in the fa\u00e7ade slots.",
+          "affine_rule": "Resolve teal-original-roof.left-key and right-key to the corresponding slot sockets before applying the two-pixel seating compression."
+        },
+        {
+          "local_frame": 18,
+          "kind": "release",
+          "actor": "Bot right hand",
+          "target": "teal-original-roof",
+          "state_change": "The grip releases after both roof keys are locked.",
+          "affine_rule": "Remove the inverse-grip constraint while holding the roof at its keyed seated transform."
+        },
+        {
+          "local_frame": 24,
+          "kind": "contact",
+          "actor": "Bot right hand",
+          "target": "paper-gold-checkpoint-tab",
+          "state_change": "Right hand seats on paper-gold-checkpoint-tab.right-grip and starts the capture pull.",
+          "affine_rule": "Apply the tab translation and reaction transform before solving the right-hand inverse grip."
+        },
+        {
+          "local_frame": 35,
+          "kind": "contact",
+          "actor": "paper-gold-checkpoint-plate",
+          "target": "rowhouse-facade",
+          "state_change": "Plate registration pins meet the roof, window and floor rear stops.",
+          "affine_rule": "Clamp the plate to checkpoint-plate.registration-stop with no fa\u00e7ade displacement."
+        },
+        {
+          "local_frame": 43,
+          "kind": "impact",
+          "actor": "capture-pressure-cam",
+          "target": "paper-gold-checkpoint-plate",
+          "state_change": "Cam pressure sets the finite roof-profile, three window-position and floor-level shutters and locks checkpoint-dry-floor-cassette as dry and level.",
+          "affine_rule": "Roll the cam on its bounded rail; switch only the five registered relief shutters and cassette latch at peak compression."
+        },
+        {
+          "local_frame": 55,
+          "kind": "landing",
+          "actor": "paper-gold-checkpoint-plate",
+          "target": "checkpoint-archive-slot",
+          "state_change": "The captured plate seats in the archive slot and arms checkpoint-drive-latch.",
+          "affine_rule": "Translate the plate to the archive stop; preserve all latched relief and cassette states."
+        },
+        {
+          "local_frame": 59,
+          "kind": "release",
+          "actor": "Bot right hand",
+          "target": "paper-gold-checkpoint-tab",
+          "state_change": "Bot releases the seated tab; checkpoint-drive-latch releases the visibly wound comparison spring.",
+          "affine_rule": "Remove the hand constraint, then release the spring latch without changing the plate\u2019s archived transform."
+        }
+      ]
+    },
+    {
+      "id": "shot-04-visible-difference",
+      "capability_route": {
+        "registered_performance": "high-energy paper: bot \u2192 scripts/motif_performance.py render, registered canonical state absent",
+        "reaction_and_focus": "Production-specific bounded adapter in source/build.py: explicit new SVG group IDs, local anchors and finite world transforms. Uses shared motif_reaction.reaction/compose/grip mathematics. Does NOT claim new names exist in quality/bindings.json; new targets are explicit agent-assisted implementation allowed by the user, not implicitly global bindings.",
+        "framing": "Production-specific finite paper part layout at 720x1280, output360x640; declared target is real persistent part, not generic UI."
+      },
+      "events": [
+        {
+          "local_frame": 1,
+          "kind": "start",
+          "actor": "comparison-leaf-spring",
+          "target": "comparison-drive-rack",
+          "state_change": "The spring released in shot 03 begins the finite roof exchange.",
+          "affine_rule": "Evaluate the spring output along comparison-drive-rack\u2019s registered axis from its carried boundary state."
+        },
+        {
+          "local_frame": 13,
+          "kind": "handoff",
+          "actor": "comparison-drive-rack",
+          "target": "teal-original-roof",
+          "state_change": "The rack transfers the teal roof from the live slots to the checkpoint-profile rail.",
+          "affine_rule": "Keep teal roof identity and keys; translate on the left owned rail without crossing the coral rail."
+        },
+        {
+          "local_frame": 19,
+          "kind": "landing",
+          "actor": "teal-original-roof",
+          "target": "paper-gold-checkpoint-plate",
+          "state_change": "The teal roof lands against the captured pitched-roof relief.",
+          "affine_rule": "Align the roof keys to checkpoint plate roof sockets and apply a three-pixel bounded stop rebound."
+        },
+        {
+          "local_frame": 25,
+          "kind": "contact",
+          "actor": "coral-replacement-roof",
+          "target": "rowhouse-facade",
+          "state_change": "The coral roof keys contact the two live roof slots.",
+          "affine_rule": "Resolve both coral key anchors to the fa\u00e7ade slot approach points before seating compression."
+        },
+        {
+          "local_frame": 31,
+          "kind": "landing",
+          "actor": "coral-replacement-roof",
+          "target": "rowhouse-facade",
+          "state_change": "The coral flat roof locks in both live slots with its drainage notch exposed.",
+          "affine_rule": "Clamp both key anchors at the live slot sockets and return from two-pixel compression."
+        },
+        {
+          "local_frame": 34,
+          "kind": "stop",
+          "actor": "comparison-drive-rack",
+          "target": "coral-replacement-roof",
+          "state_change": "The drive stops with teal and coral baselines aligned and all spring travel exhausted.",
+          "affine_rule": "Clamp the rack at its comparison stop; hold both roof transforms unchanged through local frame 49."
+        }
+      ]
+    },
+    {
+      "id": "shot-05-rain-test-fails",
+      "capability_route": {
+        "registered_performance": "high-energy paper: bot \u2192 scripts/motif_performance.py render, registered canonical state worried",
+        "reaction_and_focus": "Production-specific bounded adapter in source/build.py: explicit new SVG group IDs, local anchors and finite world transforms. Uses shared motif_reaction.reaction/compose/grip mathematics. Does NOT claim new names exist in quality/bindings.json; new targets are explicit agent-assisted implementation allowed by the user, not implicitly global bindings.",
+        "framing": "Production-specific finite paper part layout at 720x1280, output360x640; declared target is real persistent part, not generic UI."
+      },
+      "events": [
+        {
+          "local_frame": 4,
+          "kind": "contact",
+          "actor": "Bot right hand",
+          "target": "rain-ribbon-anchor",
+          "state_change": "Right hand seats on rain-ribbon-anchor.grip.",
+          "affine_rule": "Apply the ribbon anchor\u2019s local reaction, then solve the canonical right-hand inverse grip."
+        },
+        {
+          "local_frame": 8,
+          "kind": "start",
+          "actor": "Bot right hand",
+          "target": "rain-ribbon-anchor",
+          "state_change": "The ribbon and attached test-water-slug begin their measured downward pull.",
+          "affine_rule": "Translate rain-ribbon-anchor, ribbon and slug at the declared constant rate while maintaining the inverse grip."
+        },
+        {
+          "local_frame": 18,
+          "kind": "contact",
+          "actor": "test-water-slug",
+          "target": "coral-replacement-roof",
+          "state_change": "The slug reaches coral-replacement-roof.leak-notch and compresses to its notch-contact state.",
+          "affine_rule": "Clamp the slug to leak-notch for four frames; deform only its registered shallow compression group."
+        },
+        {
+          "local_frame": 22,
+          "kind": "release",
+          "actor": "test-water-slug",
+          "target": "coral-replacement-roof",
+          "state_change": "The slug leaves the notch and follows the explicit exterior-to-window water path.",
+          "affine_rule": "Release notch contact and translate the slug on the registered path without interpolation outside its bounded path table."
+        },
+        {
+          "local_frame": 25,
+          "kind": "impact",
+          "actor": "test-water-slug",
+          "target": "upper-window-flap",
+          "state_change": "The window flap rotates to its finite wet-contact angle and admits the slug.",
+          "affine_rule": "Compose slug path first, then rotate upper-window-flap around its registered hinge with no fa\u00e7ade transform."
+        },
+        {
+          "local_frame": 31,
+          "kind": "impact",
+          "actor": "test-water-slug",
+          "target": "interior-floor-strip",
+          "state_change": "The floor enters wet-spread state; its clipped teal mask progresses from 0 to 1 over six frames.",
+          "affine_rule": "Bind the impact point to interior-floor-strip local space; animate only the registered wet mask."
+        },
+        {
+          "local_frame": 37,
+          "kind": "stop",
+          "actor": "interior-floor-strip",
+          "target": "floor-sag-stop",
+          "state_change": "The wet mask is complete and the floor reaches its persistent asymmetric fourteen-pixel sag.",
+          "affine_rule": "Apply the finite three-point floor bend after the wet mask; clamp the center control to the declared sag stop."
+        },
+        {
+          "local_frame": 43,
+          "kind": "release",
+          "actor": "Bot right hand",
+          "target": "rain-ribbon-anchor",
+          "state_change": "Bot releases the ribbon at its lower test stop while the wet floor remains unchanged.",
+          "affine_rule": "Remove the inverse-grip constraint and hold ribbon, slug and floor at their completed test states."
+        }
+      ]
+    },
+    {
+      "id": "shot-06-rollback-restores",
+      "capability_route": {
+        "registered_performance": "high-energy paper: bot \u2192 scripts/motif_performance.py render, registered canonical state burdened",
+        "reaction_and_focus": "Production-specific bounded adapter in source/build.py: explicit new SVG group IDs, local anchors and finite world transforms. Uses shared motif_reaction.reaction/compose/grip mathematics. Does NOT claim new names exist in quality/bindings.json; new targets are explicit agent-assisted implementation allowed by the user, not implicitly global bindings.",
+        "framing": "Production-specific finite paper part layout at 720x1280, output360x640; declared target is real persistent part, not generic UI."
+      },
+      "events": [
+        {
+          "local_frame": 10,
+          "kind": "contact",
+          "actor": "Bot",
+          "target": "paper-gold-checkpoint-tab",
+          "state_change": "Bot left hand seats on paper-gold-checkpoint-tab.left-grip and right hand seats on paper-gold-checkpoint-tab.right-grip; the rollback pull begins.",
+          "affine_rule": "Apply tab and carriage transforms first, then solve separate canonical inverse grips to left-grip and right-grip after Bot performance and local reactions."
+        },
+        {
+          "local_frame": 34,
+          "kind": "handoff",
+          "actor": "paper-gold-rollback-carriage",
+          "target": "coral-replacement-roof",
+          "state_change": "The carriage withdraws the coral roof from the live slots and transfers it to failed-state-bay.roof-seat.",
+          "affine_rule": "Keep the coral roof on its owned upper rail and preserve its persistent identity through the bay handoff."
+        },
+        {
+          "local_frame": 53,
+          "kind": "handoff",
+          "actor": "floor-shuttle",
+          "target": "interior-floor-strip",
+          "state_change": "The shuttle removes the actual wet, sagging floor and transfers it unchanged to failed-state-bay.floor-seat.",
+          "affine_rule": "Translate the complete floor group, including wet mask and sag controls, without resetting or flipping any state."
+        },
+        {
+          "local_frame": 69,
+          "kind": "handoff",
+          "actor": "paper-gold-checkpoint-plate",
+          "target": "checkpoint-dry-floor-cassette",
+          "state_change": "The archived dry cassette leaves the checkpoint plate and enters the live floor guide.",
+          "affine_rule": "Translate the cassette on the lower dry rail; retain its cream, level checkpoint state."
+        },
+        {
+          "local_frame": 84,
+          "kind": "landing",
+          "actor": "teal-original-roof",
+          "target": "rowhouse-facade",
+          "state_change": "Both teal roof keys land in the live fa\u00e7ade slots.",
+          "affine_rule": "Resolve left and right roof keys to the live sockets, then apply and release two pixels of local compression."
+        },
+        {
+          "local_frame": 95,
+          "kind": "landing",
+          "actor": "checkpoint-dry-floor-cassette",
+          "target": "live-floor-mounts",
+          "state_change": "The checkpointed cream floor seats level in the house while the actual wet floor remains in the failed bay.",
+          "affine_rule": "Align both cassette tabs to the live mounts and clamp the level transform."
+        },
+        {
+          "local_frame": 105,
+          "kind": "stop",
+          "actor": "paper-gold-rollback-carriage",
+          "target": "carriage-stop",
+          "state_change": "All linked travel stops; the take-up reel has reset the rain ribbon and the failed bay contains the actual coral roof and actual wet floor.",
+          "affine_rule": "Clamp carriage, roof rails, floor shuttle and take-up reel at their declared terminal states without resetting child state."
+        },
+        {
+          "local_frame": 111,
+          "kind": "release",
+          "actor": "Bot",
+          "target": "paper-gold-checkpoint-tab",
+          "state_change": "Both hands release their separate grips after the carriage is mechanically locked.",
+          "affine_rule": "Remove both inverse-grip constraints simultaneously while holding tab and carriage at the locked stop."
+        }
+      ]
+    },
+    {
+      "id": "shot-07-restored-test-passes",
+      "capability_route": {
+        "registered_performance": "high-energy paper: bot \u2192 scripts/motif_performance.py render, registered canonical state relieved",
+        "reaction_and_focus": "Production-specific bounded adapter in source/build.py: explicit new SVG group IDs, local anchors and finite world transforms. Uses shared motif_reaction.reaction/compose/grip mathematics. Does NOT claim new names exist in quality/bindings.json; new targets are explicit agent-assisted implementation allowed by the user, not implicitly global bindings.",
+        "framing": "Production-specific finite paper part layout at 720x1280, output360x640; declared target is real persistent part, not generic UI."
+      },
+      "events": [
+        {
+          "local_frame": 4,
+          "kind": "contact",
+          "actor": "Bot right hand",
+          "target": "rain-ribbon-anchor",
+          "state_change": "Right hand seats on the same rain-ribbon-anchor.grip used in the failed test.",
+          "affine_rule": "Apply the anchor reaction, then solve the canonical right-hand inverse grip."
+        },
+        {
+          "local_frame": 8,
+          "kind": "start",
+          "actor": "Bot right hand",
+          "target": "rain-ribbon-anchor",
+          "state_change": "The ribbon and reset test-water-slug begin the same measured downward travel.",
+          "affine_rule": "Use the identical ribbon displacement table and speed used in shot 05."
+        },
+        {
+          "local_frame": 20,
+          "kind": "contact",
+          "actor": "test-water-slug",
+          "target": "teal-original-roof",
+          "state_change": "The slug contacts the pitched shingle path and begins moving outward.",
+          "affine_rule": "Bind the slug to teal-original-roof.shingle-path without changing the roof transform."
+        },
+        {
+          "local_frame": 31,
+          "kind": "handoff",
+          "actor": "test-water-slug",
+          "target": "teal-side-gutter",
+          "state_change": "The slug transfers from the roof path into the gutter channel.",
+          "affine_rule": "Preserve slug scale and continuity while changing path ownership at the shared gutter inlet anchor."
+        },
+        {
+          "local_frame": 43,
+          "kind": "landing",
+          "actor": "test-water-slug",
+          "target": "paper-gold-catch-cup",
+          "state_change": "The slug lands in the exterior cup; the cup enters and returns from its four-pixel loaded dip.",
+          "affine_rule": "Compose slug landing before the cup\u2019s local hinge response; leave the dry floor transform unchanged."
+        },
+        {
+          "local_frame": 47,
+          "kind": "release",
+          "actor": "Bot right hand",
+          "target": "rain-ribbon-anchor",
+          "state_change": "Bot releases the ribbon at the same lower stop used in shot 05.",
+          "affine_rule": "Remove the inverse grip and hold the completed water path state."
+        },
+        {
+          "local_frame": 54,
+          "kind": "contact",
+          "actor": "Bot left hand",
+          "target": "return-drive-lever",
+          "state_change": "Left hand presses return-drive-lever.grip and compresses the finale latch.",
+          "affine_rule": "Resolve the authored left arm to the lever grip after the lever\u2019s bounded rotation."
+        },
+        {
+          "local_frame": 60,
+          "kind": "release",
+          "actor": "return-drive-lever",
+          "target": "return-drive-flywheel",
+          "state_change": "The lever releases the wound finale spring; the connected flywheel begins continuous rotation.",
+          "affine_rule": "Remove the spring hold and start the finite flywheel/cam table; Bot\u2019s hand releases after the latch clears."
+        },
+        {
+          "local_frame": 64,
+          "kind": "start",
+          "actor": "Bot",
+          "target": "offscreen-left",
+          "state_change": "Having released the lever, Bot moves behind the archive edge and outside the next house-focused framing.",
+          "affine_rule": "Bounded 64\u201369 frame whole-puppet translation with all hand constraints released; no new geometry or realistic gait."
+        }
+      ]
+    },
+    {
+      "id": "shot-08-every-step-reversible",
+      "capability_route": {
+        "registered_performance": "high-energy paper: bot \u2192 scripts/motif_performance.py render, registered canonical state absent",
+        "reaction_and_focus": "Production-specific bounded adapter in source/build.py: explicit new SVG group IDs, local anchors and finite world transforms. Uses shared motif_reaction.reaction/compose/grip mathematics. Does NOT claim new names exist in quality/bindings.json; new targets are explicit agent-assisted implementation allowed by the user, not implicitly global bindings.",
+        "framing": "Production-specific finite paper part layout at 720x1280, output360x640; declared target is real persistent part, not generic UI."
+      },
+      "events": [
+        {
+          "local_frame": 0,
+          "kind": "start",
+          "actor": "return-drive-flywheel",
+          "target": "paper-gold-history-strip",
+          "state_change": "The flywheel continues from shot 07 and begins extending the two owned archive rails.",
+          "affine_rule": "Continue the carried flywheel phase without resetting time; drive each strip segment and rail from its declared local owner."
+        },
+        {
+          "local_frame": 8,
+          "kind": "landing",
+          "actor": "paper-gold-checkpoint-plate",
+          "target": "checkpoint-display-stop",
+          "state_change": "The reduced checkpoint bay reaches its left display stop with pitched roof profile and level cream floor bar exposed.",
+          "affine_rule": "Clamp the checkpoint plate at x20\u2013168 display bounds and enable only its registered roof-and-floor occlusion window."
+        },
+        {
+          "local_frame": 15,
+          "kind": "landing",
+          "actor": "failed-state-bay",
+          "target": "failed-display-stop",
+          "state_change": "The failed bay reaches its right display stop containing the actual coral roof and actual wet sagging floor.",
+          "affine_rule": "Clamp the complete failed bay at x552\u2013700; preserve the child roof and wet-floor states and suppress only covered detail."
+        },
+        {
+          "local_frame": 34,
+          "kind": "contact",
+          "actor": "return-cam-follower",
+          "target": "return-cam-apex",
+          "state_change": "The follower crosses the visible cam apex and changes both archive rails from extension to return.",
+          "affine_rule": "Use the continuous cam curve; reverse rail velocity at the apex without a new motor or hidden trigger."
+        },
+        {
+          "local_frame": 48,
+          "kind": "handoff",
+          "actor": "failed-state-bay",
+          "target": "checkpoint-archive-slot",
+          "state_change": "The intact failed bay folds behind the checkpoint plate without separating its coral roof or wet floor.",
+          "affine_rule": "Rotate the bay around failed-state-bay.hinge after its rail return; child parts inherit the bay transform unchanged."
+        },
+        {
+          "local_frame": 58,
+          "kind": "landing",
+          "actor": "failed-state-bay",
+          "target": "checkpoint-archive-slot",
+          "state_change": "The failed bay seats inside the checkpoint pocket with both failed components conserved.",
+          "affine_rule": "Clamp the bay at its pocket stop and retain its wet mask, sag controls and coral roof transform."
+        },
+        {
+          "local_frame": 67,
+          "kind": "landing",
+          "actor": "paper-gold-history-strip",
+          "target": "rowhouse-facade",
+          "state_change": "The segmented gold strip seats beneath the house and the live house returns to its opening scale and placement.",
+          "affine_rule": "Complete each owned hinge in causal order, then restore the fa\u00e7ade\u2019s declared opening world transform."
+        },
+        {
+          "local_frame": 73,
+          "kind": "stop",
+          "actor": "return-drive-flywheel",
+          "target": "return-cam-follower",
+          "state_change": "The flywheel reaches its finite stop; final HOUSE roof, windows and dry floor match the opening state.",
+          "affine_rule": "Clamp flywheel and follower at the terminal cam phase; hold teal roof keys, three window transforms and dry-floor level at their opening values."
+        }
+      ]
+    }
+  ],
+  "scope": "explicit production-specific implementation, not shared infrastructure"
+}

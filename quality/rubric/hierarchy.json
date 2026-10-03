@@ -1,0 +1,13 @@
+{
+  "version": "structure-1.0",
+  "codes": {
+    "COMPETING_FOCI": "composition",
+    "EXCESSIVE_OCCLUSION": "physicality",
+    "UNNECESSARY_RETAINED_GEOMETRY": "composition",
+    "CAPTION_CARRIES_STORY": "mobile",
+    "EFFECT_AS_ACTION": "energy",
+    "TINY_HERO": "mobile",
+    "HIDDEN_DIAGNOSTIC": "mobile",
+    "LABEL_BEFORE_EVIDENCE": "physicality"
+  }
+}

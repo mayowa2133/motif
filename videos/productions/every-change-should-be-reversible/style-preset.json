@@ -1,0 +1,15 @@
+{
+  "id": "motif-gold-v1",
+  "extends": "reference-expressive-high-energy-v1",
+  "selection": "explicit quality_mode, independent of default style",
+  "contracts": [
+    "QUALITY_CONTRACT.md",
+    "ENERGY_CONTRACT.md"
+  ],
+  "overrides": {
+    "secondary_motion": "purposeful, judged visually; no quotas",
+    "idle": "no mandated global jitter",
+    "settling": "may overlap next dominant action"
+  },
+  "canonical_character": "assets/characters/motif-bot/canonical/v1/motif-bot-v1.json"
+}

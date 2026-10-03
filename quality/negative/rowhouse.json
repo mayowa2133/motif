@@ -1,0 +1,29 @@
+{
+  "id": "reversible-rowhouse-negative",
+  "kind": "negative-structure",
+  "gold_art": false,
+  "project": "videos/productions/every-change-should-be-reversible",
+  "preservation_manifest": "quality/validation/structure-v1/rowhouse-preservation.json",
+  "sha256": {
+    "production-plan.json": "672e563e49ddac464bb02727a5772ebf9404e307fb9420d18ec74bddb6c7def6",
+    "source/build.py": "2af9a2640977cf272a09f73acee0e6228fe882c8236ea01b5d3a17411fae055e",
+    "quality-review/rough/story-critic.json": "c1fa660a1474d999296355506f9dd24ca7d6109cafb200812334e4772de77277",
+    "quality-review/rough/visual-critic.json": "71763a4538eb0346c90477513a3f97884a355eefe3d9c3359a32807a4093aaff",
+    "quality-review/rough/gate.json": "e7fc56e865ac5820bbc8209d200e2d88f64e34079d48d26aaede8ec7a73fdd5d",
+    "quality-review/repairs.json": "0c8bd1b7d585ed285241a7811bf3a98e92dc1c9e3c5735f81c4af51fa27fdf34",
+    "quality-review/rough/captions.mp4": "bc07c54f3b48b4fb2a9e7b1352cceb2a2a8f495db51283bfba80184cea7a5008",
+    "quality-review/rough/no-captions.mp4": "782cbeddb625bc6c630acecaecc409d84912dc713c5b8ec51eceb01b5461ab05"
+  },
+  "behavior": {
+    "failure_codes": [
+      "METAPHOR_OVERLOAD",
+      "STATE_ACCUMULATION_WITHOUT_MEANING",
+      "COMPETING_FOCI",
+      "EXCESSIVE_OCCLUSION"
+    ],
+    "observation": "A single rowhouse accumulates checkpoint controls, diff, water test, archives and rollback mechanisms across unrelated semantic propositions. Earlier geometry lingers and competing machinery obscures critical diagnostic actions.",
+    "lesson": "Replan distinct semantic setups and carry only meaningful continuity tokens. Do not fix macro overload with art polish.",
+    "evidence_status": "User rejected macro structure after two moving repair passes; final critics remain preserved, not rewritten.",
+    "not_a_pixel_template": true
+  }
+}

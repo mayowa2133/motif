@@ -1,0 +1,26 @@
+{
+  "scope": "Two substantive planning repair rounds; includes subsequent narrow metadata consistency corrections. NOT the motif_quality.repair moving-evidence ledger. No prior moving evidence exists, so no formal audited moving repair was invoked.",
+  "planning_repairs": [
+    {
+      "pass": 1,
+      "phase": "pre-animation planning",
+      "before_plan": "review/pre-animation-02/production-plan.json",
+      "after_plan": "corrected-director-plan.json",
+      "correction": "Director replanned missing physical causes and conserved the actual failed floor; added exact finite event/anchor contracts and visible mechanical drivers.",
+      "before_plan_sha256": "35b4d0382f2608af0d7ff32699c2ec2d40ef6729af7ac5974a0300052c821b2c",
+      "after_plan_sha256": "a7c46948ce14cffb73b6421c965c46693f4349b2aba5ba336ddfdc889a7d8f39"
+    },
+    {
+      "pass": 2,
+      "phase": "pre-animation planning",
+      "before_plan": "corrected-director-plan.json",
+      "after_plan": "production-plan.json",
+      "correction": "Clarified newly engaged history intervention, stationary pending replacement, ownership continuity and explicit production-scoped implementation; associated metadata/routing consistency corrections preserved in the failed pre-animation review history.",
+      "before_plan_sha256": "a7c46948ce14cffb73b6421c965c46693f4349b2aba5ba336ddfdc889a7d8f39",
+      "after_plan_sha256": "c58c8bd3955d3a273a4a5da26df9949d305d2d84f94838e5e13e39a36c49e772"
+    }
+  ],
+  "formal_moving_repairs": 0,
+  "direction_reviews": 7,
+  "limit_action": "stop rather than perform a third substantive story/pacing/control redesign"
+}

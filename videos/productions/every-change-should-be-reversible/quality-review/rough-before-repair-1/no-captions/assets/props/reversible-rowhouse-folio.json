@@ -1,0 +1,536 @@
+{
+  "id": "reversible-rowhouse-folio",
+  "name": "Reversible rowhouse folio",
+  "state": "GENERATED",
+  "status": "generated",
+  "scope": "scene-specific",
+  "category": "production-hero",
+  "style": "motif-gold-v1",
+  "materials": [
+    "fibrous cream card",
+    "teal and coral laminated card",
+    "paper-gold folds",
+    "charcoal card",
+    "teal vellum test droplets"
+  ],
+  "layers": [
+    "rowhouse-facade",
+    "teal-original-roof",
+    "coral-replacement-roof",
+    "interior-floor-strip",
+    "upper-window-flap",
+    "left-keyed-roof-slot",
+    "right-keyed-roof-slot",
+    "paper-gold-checkpoint-plate",
+    "paper-gold-checkpoint-tab",
+    "history-engage-control",
+    "checkpoint-capture-control",
+    "paper-gold-rollback-carriage",
+    "paper-gold-catch-tongue",
+    "paper-gold-history-strip",
+    "teal-side-gutter",
+    "paper-gold-catch-cup",
+    "write-latch",
+    "rain-ribbon-anchor",
+    "test-ribbon-guide",
+    "folio-center-hinge",
+    "wet-test-history-leaf",
+    "failed-roof-history-leaf",
+    "history-state-original",
+    "history-state-restored",
+    "checkpoint-archive-slot",
+    "pinboard-seam",
+    "tabletop",
+    "roof-eave-grip",
+    "house-dry-state",
+    "house-wet-state",
+    "write-drive-rack",
+    "comparison-drive-rack",
+    "discard-trip-latch",
+    "catch-leaf-spring",
+    "comparison-leaf-spring",
+    "capture-pressure-cam",
+    "return-drive-flywheel",
+    "checkpoint-drive-latch",
+    "checkpoint-dry-floor-cassette",
+    "floor-shuttle",
+    "failed-state-bay",
+    "live-floor-mounts",
+    "return-drive-lever",
+    "return-cam-follower",
+    "return-cam-apex",
+    "floor-sag-stop",
+    "carriage-stop",
+    "checkpoint-display-stop",
+    "failed-display-stop",
+    "history-state-proposed",
+    "test-water-slug",
+    "test-water-reservoir",
+    "test-take-up-cable",
+    "dry-cassette-latch",
+    "checkpoint-state-stamp"
+  ],
+  "anchors": {
+    "roof-left": [
+      0.25,
+      0.41875
+    ],
+    "roof-right": [
+      0.7472222222222222,
+      0.41875
+    ],
+    "archive-tab": [
+      0.15555555555555556,
+      0.65625
+    ],
+    "floor-hinge": [
+      0.2847222222222222,
+      0.678125
+    ],
+    "rain-pull": [
+      0.8333333333333334,
+      0.515625
+    ]
+  },
+  "local_anchors": {
+    "teal-original-roof": {
+      "eave": [
+        30,
+        183
+      ],
+      "right-key": [
+        400,
+        198
+      ],
+      "left-key": [
+        42,
+        198
+      ],
+      "rain-contact": [
+        329,
+        88
+      ]
+    },
+    "coral-replacement-roof": {
+      "right-key": [
+        400,
+        78
+      ],
+      "left-key": [
+        42,
+        78
+      ],
+      "leak-notch": [
+        329,
+        61
+      ]
+    },
+    "paper-gold-checkpoint-tab": {
+      "right-grip": [
+        39,
+        25
+      ],
+      "left-grip": [
+        13,
+        25
+      ]
+    },
+    "rain-ribbon-anchor": {
+      "grip": [
+        20,
+        29
+      ]
+    },
+    "write-latch": {
+      "grip": [
+        23,
+        36
+      ],
+      "brake-grip": [
+        11,
+        67
+      ]
+    },
+    "interior-floor-strip": {
+      "water-contact": [
+        155,
+        0
+      ],
+      "wet-support": [
+        155,
+        46
+      ]
+    },
+    "paper-gold-catch-tongue": {
+      "hook": [
+        175,
+        0
+      ]
+    },
+    "folio-center-hinge": {
+      "hinge": [
+        8,
+        160
+      ]
+    },
+    "failed-roof-history-leaf": {
+      "hinge": [
+        3,
+        105
+      ]
+    },
+    "wet-test-history-leaf": {
+      "hinge": [
+        3,
+        105
+      ]
+    },
+    "discard-trip-latch": {
+      "trip": [
+        9,
+        5
+      ]
+    },
+    "catch-leaf-spring": {
+      "output": [
+        128,
+        31
+      ]
+    },
+    "comparison-drive-rack": {
+      "teal-clevis": [
+        5,
+        15
+      ],
+      "coral-clevis": [
+        244,
+        15
+      ]
+    },
+    "capture-pressure-cam": {
+      "follower": [
+        38,
+        70
+      ]
+    },
+    "paper-gold-checkpoint-plate": {
+      "registration-stop": [
+        128,
+        330
+      ],
+      "left-roof-socket": [
+        20,
+        12
+      ],
+      "right-roof-socket": [
+        242,
+        12
+      ],
+      "left-window-register": [
+        57.5,
+        161
+      ],
+      "center-window-register": [
+        123.5,
+        161
+      ],
+      "right-window-register": [
+        193.5,
+        161
+      ],
+      "floor-register": [
+        126,
+        296
+      ]
+    },
+    "checkpoint-dry-floor-cassette": {
+      "left-tab": [
+        0,
+        16
+      ],
+      "right-tab": [
+        312,
+        16
+      ]
+    },
+    "floor-shuttle": {
+      "wet-saddle": [
+        155,
+        20
+      ]
+    },
+    "failed-state-bay": {
+      "roof-seat": [
+        12,
+        45
+      ],
+      "floor-seat": [
+        14,
+        158
+      ],
+      "hinge": [
+        3,
+        105
+      ]
+    },
+    "live-floor-mounts": {
+      "left": [
+        10,
+        8
+      ],
+      "right": [
+        302,
+        8
+      ]
+    },
+    "return-drive-lever": {
+      "grip": [
+        15,
+        17
+      ]
+    },
+    "return-drive-flywheel": {
+      "crank": [
+        38,
+        36
+      ]
+    },
+    "return-cam-follower": {
+      "contact": [
+        76,
+        -23
+      ]
+    },
+    "return-cam-apex": {
+      "contact": [
+        50,
+        12
+      ]
+    },
+    "checkpoint-display-stop": {
+      "contact": [
+        12,
+        12
+      ]
+    },
+    "failed-display-stop": {
+      "contact": [
+        12,
+        12
+      ]
+    },
+    "history-engage-control": {
+      "right-grip": [
+        39,
+        25
+      ],
+      "left-grip": [
+        13,
+        25
+      ]
+    },
+    "checkpoint-capture-control": {
+      "right-grip": [
+        39,
+        25
+      ]
+    },
+    "upper-window-flap": {
+      "water-contact": [
+        45,
+        40
+      ]
+    },
+    "teal-side-gutter": {
+      "water-contact": [
+        12,
+        139
+      ]
+    },
+    "paper-gold-catch-cup": {
+      "water-contact": [
+        45,
+        50
+      ]
+    },
+    "rowhouse-facade": {
+      "left-roof-socket": [
+        7,
+        18
+      ],
+      "right-roof-socket": [
+        365,
+        18
+      ],
+      "base-support": [
+        190,
+        448
+      ],
+      "archive-seat": [
+        190,
+        448
+      ],
+      "left-window-register": [
+        73.5,
+        82.5
+      ],
+      "center-window-register": [
+        192.5,
+        76.5
+      ],
+      "right-window-register": [
+        310,
+        86.5
+      ],
+      "floor-register": [
+        187,
+        335
+      ]
+    },
+    "left-keyed-roof-slot": {
+      "socket": [
+        0,
+        22
+      ]
+    },
+    "right-keyed-roof-slot": {
+      "socket": [
+        0,
+        22
+      ]
+    },
+    "history-state-original": {
+      "left-roof-socket": [
+        18,
+        30
+      ],
+      "right-roof-socket": [
+        135,
+        30
+      ]
+    },
+    "checkpoint-archive-slot": {
+      "plate-stop": [
+        13,
+        85
+      ]
+    },
+    "floor-sag-stop": {
+      "contact": [
+        12,
+        12
+      ]
+    },
+    "carriage-stop": {
+      "contact": [
+        12,
+        12
+      ]
+    },
+    "test-water-slug": {
+      "tip": [
+        23,
+        70
+      ]
+    },
+    "test-water-reservoir": {
+      "delivery-stop": [
+        40,
+        0
+      ],
+      "outlet": [
+        40,
+        0
+      ]
+    },
+    "test-take-up-cable": {
+      "pickup": [
+        0,
+        0
+      ]
+    },
+    "write-drive-rack": {
+      "clevis": [
+        205,
+        19
+      ]
+    },
+    "paper-gold-history-strip": {
+      "terminal-clevis": [
+        407,
+        13
+      ]
+    },
+    "dry-cassette-latch": {
+      "lock": [
+        17,
+        12
+      ]
+    },
+    "paper-gold-rollback-carriage": {
+      "left-output": [
+        0,
+        14
+      ],
+      "right-output": [
+        300,
+        14
+      ]
+    }
+  },
+  "dimensions": {
+    "width": 720,
+    "height": 1280
+  },
+  "interactions": [
+    "rowhouse_unlogged_roof_overwrite_v1",
+    "rowhouse_gold_history_catch_v1",
+    "rowhouse_capture_keyed_checkpoint_v1",
+    "rowhouse_hinged_before_after_reveal_v1",
+    "rowhouse_pull_rain_ribbon_and_register_leak_v1",
+    "rowhouse_checkpoint_carriage_rollback_v1",
+    "rowhouse_repeat_rain_test_pass_v1",
+    "rowhouse_history_reverse_fold_finale_v1"
+  ],
+  "provenance": "Original agent-authored SVG for this exact production; no external footage, generated raster or third-party artwork. Canonical Bot is separate and reused unchanged.",
+  "license": "project-original",
+  "sourceType": "vector",
+  "source": {
+    "file": "assets/props/reversible-rowhouse-folio.svg",
+    "builder": "source/build.py:create_asset"
+  },
+  "sha256": "1d08476d5270ab3ebe34e2e9e8b29741b7ddbbb4c91cc740c23d81abce04c5fd",
+  "preview": "review/hero-native.png",
+  "promotion": "No canonical promotion requested",
+  "state_ownership": {
+    "wet-floor": "same interior-floor-strip group retained in failed bay from shot06 onward",
+    "dry-floor": "separate checkpoint-dry-floor-cassette captured in shot03"
+  },
+  "focus_bounds": {
+    "rowhouse-facade": [
+      173,
+      518,
+      380,
+      448
+    ],
+    "teal-original-roof": [
+      138,
+      338,
+      450,
+      200
+    ],
+    "coral-replacement-roof": [
+      138,
+      458,
+      450,
+      90
+    ],
+    "interior-floor-strip": [
+      205,
+      853,
+      316,
+      58
+    ]
+  },
+  "mechanical_scope": "finite production-specific adapters only; not registered ordinary producer capabilities"
+}

@@ -1,0 +1,15 @@
+MODEL quality-structure
+Traceback (most recent call last):
+  File "/Users/mayowaadesanya/Projects/motif/scripts/validate_structure.py", line 47, in <module>
+    if __name__=='__main__':main()
+                            ^^^^^^
+  File "/Users/mayowaadesanya/Projects/motif/scripts/validate_structure.py", line 39, in main
+    try:structure_review(folder,read(folder/'production-plan.json'),config)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mayowaadesanya/Projects/motif/scripts/motif_structure.py", line 161, in structure_review
+    report = model_call(project, 'quality-structure', critic_prompt(plan), 'schemas/structure-critic.schema.json', config)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mayowaadesanya/Projects/motif/scripts/motif_direct.py", line 86, in model_call
+    if process.returncode: raise ValueError('live planning backend failed; see '+str(project/(name+'-stderr.txt'))+'; no saved-response fallback was used')
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: live planning backend failed; see /Users/mayowaadesanya/Projects/motif/quality/validation/structure-v1/fixtures/a/quality-structure-stderr.txt; no saved-response fallback was used

@@ -1,0 +1,370 @@
+{
+  "quality_mode": "motif-gold-v1",
+  "script": "Save the prior state. Show the changed lines. Test the new behavior. Authorize the next write. Route the new output. Reverse the failed operation.",
+  "asset_usage": [
+    {
+      "id": "planning-paper",
+      "scope": "production-specific",
+      "path": "",
+      "metadata_path": "",
+      "agent_assisted": true
+    }
+  ],
+  "beats": [
+    {
+      "id": "b1",
+      "narration": "Save the prior state.",
+      "quality": {
+        "purpose": "Save the prior state.",
+        "hero": "archive",
+        "primary_action": "Bot copies a snapshot into the archive.",
+        "performance": {
+          "state": "focused",
+          "target": "bot"
+        },
+        "before": "House plus all previously introduced operating machines remain visible.",
+        "after": "New machine added; all previous machines remain fully opaque and active.",
+        "focal_target": "archive",
+        "framing": "subject",
+        "reaction_radius": {
+          "origin": [
+            640,
+            782
+          ],
+          "radius": 200,
+          "duration": 0.6,
+          "targets": []
+        },
+        "secondary_motion": [],
+        "environment": [
+          "paper backboard",
+          "work surface"
+        ],
+        "exit_overlap": null,
+        "energy": {
+          "dominant_action": "Bot copies a snapshot into the archive."
+        },
+        "art_direction": {
+          "hero_object": "archive",
+          "bot_role": "participant",
+          "materials": [
+            "printed paper",
+            "card supports"
+          ],
+          "depth_planes": [
+            "paper backboard",
+            "hero and contact plane"
+          ],
+          "composition": "One central physical slab occupies the middle; Bot is small at left; fixed wide camera and paper wall/floor.",
+          "intentional_irregularity": "A corner crop directs attention to the active contact.",
+          "environment_mode": "physical",
+          "environment_justification": null
+        }
+      }
+    },
+    {
+      "id": "b2",
+      "narration": "Show the changed lines.",
+      "quality": {
+        "purpose": "Show the changed lines.",
+        "hero": "diff lens",
+        "primary_action": "Bot opens a split lens to reveal edited lines.",
+        "performance": {
+          "state": "focused",
+          "target": "bot"
+        },
+        "before": "House plus all previously introduced operating machines remain visible.",
+        "after": "New machine added; all previous machines remain fully opaque and active.",
+        "focal_target": "diff lens",
+        "framing": "subject",
+        "reaction_radius": {
+          "origin": [
+            640,
+            782
+          ],
+          "radius": 200,
+          "duration": 0.6,
+          "targets": []
+        },
+        "secondary_motion": [],
+        "environment": [
+          "paper backboard",
+          "work surface"
+        ],
+        "exit_overlap": null,
+        "energy": {
+          "dominant_action": "Bot opens a split lens to reveal edited lines."
+        },
+        "art_direction": {
+          "hero_object": "diff lens",
+          "bot_role": "participant",
+          "materials": [
+            "printed paper",
+            "card supports"
+          ],
+          "depth_planes": [
+            "paper backboard",
+            "hero and contact plane"
+          ],
+          "composition": "One central physical slab occupies the middle; Bot is small at left; fixed wide camera and paper wall/floor.",
+          "intentional_irregularity": "A corner crop directs attention to the active contact.",
+          "environment_mode": "physical",
+          "environment_justification": null
+        }
+      }
+    },
+    {
+      "id": "b3",
+      "narration": "Test the new behavior.",
+      "quality": {
+        "purpose": "Test the new behavior.",
+        "hero": "water tank",
+        "primary_action": "Bot fills a tank over the live house to test leaks.",
+        "performance": {
+          "state": "focused",
+          "target": "bot"
+        },
+        "before": "House plus all previously introduced operating machines remain visible.",
+        "after": "New machine added; all previous machines remain fully opaque and active.",
+        "focal_target": "water tank",
+        "framing": "subject",
+        "reaction_radius": {
+          "origin": [
+            640,
+            782
+          ],
+          "radius": 200,
+          "duration": 0.6,
+          "targets": []
+        },
+        "secondary_motion": [],
+        "environment": [
+          "paper backboard",
+          "work surface"
+        ],
+        "exit_overlap": null,
+        "energy": {
+          "dominant_action": "Bot fills a tank over the live house to test leaks."
+        },
+        "art_direction": {
+          "hero_object": "water tank",
+          "bot_role": "participant",
+          "materials": [
+            "printed paper",
+            "card supports"
+          ],
+          "depth_planes": [
+            "paper backboard",
+            "hero and contact plane"
+          ],
+          "composition": "One central physical slab occupies the middle; Bot is small at left; fixed wide camera and paper wall/floor.",
+          "intentional_irregularity": "A corner crop directs attention to the active contact.",
+          "environment_mode": "physical",
+          "environment_justification": null
+        }
+      }
+    },
+    {
+      "id": "b4",
+      "narration": "Authorize the next write.",
+      "quality": {
+        "purpose": "Authorize the next write.",
+        "hero": "permission gate",
+        "primary_action": "Bot presses a separate gate and releases a write lever.",
+        "performance": {
+          "state": "focused",
+          "target": "bot"
+        },
+        "before": "House plus all previously introduced operating machines remain visible.",
+        "after": "New machine added; all previous machines remain fully opaque and active.",
+        "focal_target": "permission gate",
+        "framing": "subject",
+        "reaction_radius": {
+          "origin": [
+            640,
+            782
+          ],
+          "radius": 200,
+          "duration": 0.6,
+          "targets": []
+        },
+        "secondary_motion": [],
+        "environment": [
+          "paper backboard",
+          "work surface"
+        ],
+        "exit_overlap": null,
+        "energy": {
+          "dominant_action": "Bot presses a separate gate and releases a write lever."
+        },
+        "art_direction": {
+          "hero_object": "permission gate",
+          "bot_role": "participant",
+          "materials": [
+            "printed paper",
+            "card supports"
+          ],
+          "depth_planes": [
+            "paper backboard",
+            "hero and contact plane"
+          ],
+          "composition": "One central physical slab occupies the middle; Bot is small at left; fixed wide camera and paper wall/floor.",
+          "intentional_irregularity": "A corner crop directs attention to the active contact.",
+          "environment_mode": "physical",
+          "environment_justification": null
+        }
+      }
+    },
+    {
+      "id": "b5",
+      "narration": "Route the new output.",
+      "quality": {
+        "purpose": "Route the new output.",
+        "hero": "pipeline",
+        "primary_action": "Bot sends the house result through a branching pipe.",
+        "performance": {
+          "state": "focused",
+          "target": "bot"
+        },
+        "before": "House plus all previously introduced operating machines remain visible.",
+        "after": "New machine added; all previous machines remain fully opaque and active.",
+        "focal_target": "pipeline",
+        "framing": "subject",
+        "reaction_radius": {
+          "origin": [
+            640,
+            782
+          ],
+          "radius": 200,
+          "duration": 0.6,
+          "targets": []
+        },
+        "secondary_motion": [],
+        "environment": [
+          "paper backboard",
+          "work surface"
+        ],
+        "exit_overlap": null,
+        "energy": {
+          "dominant_action": "Bot sends the house result through a branching pipe."
+        },
+        "art_direction": {
+          "hero_object": "pipeline",
+          "bot_role": "participant",
+          "materials": [
+            "printed paper",
+            "card supports"
+          ],
+          "depth_planes": [
+            "paper backboard",
+            "hero and contact plane"
+          ],
+          "composition": "One central physical slab occupies the middle; Bot is small at left; fixed wide camera and paper wall/floor.",
+          "intentional_irregularity": "A corner crop directs attention to the active contact.",
+          "environment_mode": "physical",
+          "environment_justification": null
+        }
+      }
+    },
+    {
+      "id": "b6",
+      "narration": "Reverse the failed operation.",
+      "quality": {
+        "purpose": "Reverse the failed operation.",
+        "hero": "rewind crank",
+        "primary_action": "Bot cranks another mechanism to retrieve an old roof.",
+        "performance": {
+          "state": "focused",
+          "target": "bot"
+        },
+        "before": "House plus all previously introduced operating machines remain visible.",
+        "after": "New machine added; all previous machines remain fully opaque and active.",
+        "focal_target": "rewind crank",
+        "framing": "subject",
+        "reaction_radius": {
+          "origin": [
+            640,
+            782
+          ],
+          "radius": 200,
+          "duration": 0.6,
+          "targets": []
+        },
+        "secondary_motion": [],
+        "environment": [
+          "paper backboard",
+          "work surface"
+        ],
+        "exit_overlap": null,
+        "energy": {
+          "dominant_action": "Bot cranks another mechanism to retrieve an old roof."
+        },
+        "art_direction": {
+          "hero_object": "rewind crank",
+          "bot_role": "participant",
+          "materials": [
+            "printed paper",
+            "card supports"
+          ],
+          "depth_planes": [
+            "paper backboard",
+            "hero and contact plane"
+          ],
+          "composition": "One central physical slab occupies the middle; Bot is small at left; fixed wide camera and paper wall/floor.",
+          "intentional_irregularity": "A corner crop directs attention to the active contact.",
+          "environment_mode": "physical",
+          "environment_justification": null
+        }
+      }
+    }
+  ],
+  "film_structure": {
+    "version": "structure-1.0",
+    "rhetorical_chapters": [
+      {
+        "id": "argument",
+        "purpose": "Develop the supplied short argument through visible changes.",
+        "narration_span": {
+          "start_word": 0,
+          "end_word": 24,
+          "text": "Save the prior state. Show the changed lines. Test the new behavior. Authorize the next write. Route the new output. Reverse the failed operation."
+        }
+      }
+    ],
+    "setups": [
+      {
+        "setup_id": "s1",
+        "chapter": "argument",
+        "narration_span": {
+          "start_word": 0,
+          "end_word": 24,
+          "text": "Save the prior state. Show the changed lines. Test the new behavior. Authorize the next write. Route the new output. Reverse the failed operation."
+        },
+        "semantic_center": "All aspects of automation",
+        "visual_rule": "A house contains a different machine for each new software operation.",
+        "relationship_archetype": "physical interaction",
+        "hero": "archive",
+        "bot_role": "participant",
+        "continuity_tokens": [],
+        "environment_mode": "physical",
+        "palette_family": "warm paper / teal",
+        "entry_state": "House plus all previously introduced operating machines remain visible.",
+        "exit_state": "New machine added; all previous machines remain fully opaque and active.",
+        "reason_for_persistence": "Keep the house and every machine to brand the entire argument.",
+        "planned_reset_after": {
+          "kind": "end",
+          "reason": "The argument ends in this visible consequence."
+        },
+        "beat_ids": [
+          "b1",
+          "b2",
+          "b3",
+          "b4",
+          "b5",
+          "b6"
+        ]
+      }
+    ],
+    "continuity_tokens": []
+  }
+}

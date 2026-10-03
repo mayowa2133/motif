@@ -1,0 +1,554 @@
+{
+  "method": "installed Whisper small.en DTW; no flash attention; adjacent token-center midpoints",
+  "precision": "automatic approximate word boundaries, not phoneme-perfect",
+  "duration": 21.994667,
+  "words": [
+    {
+      "text": "Giving",
+      "centers": [
+        0.18
+      ],
+      "start": 0.06,
+      "end": 0.29000000000000004
+    },
+    {
+      "text": "an",
+      "centers": [
+        0.4
+      ],
+      "start": 0.29000000000000004,
+      "end": 0.5900000000000001
+    },
+    {
+      "text": "AI",
+      "centers": [
+        0.78
+      ],
+      "start": 0.5900000000000001,
+      "end": 0.91
+    },
+    {
+      "text": "right",
+      "centers": [
+        1.04
+      ],
+      "start": 0.91,
+      "end": 1.26
+    },
+    {
+      "text": "access",
+      "centers": [
+        1.48
+      ],
+      "start": 1.26,
+      "end": 1.65
+    },
+    {
+      "text": "without",
+      "centers": [
+        1.82
+      ],
+      "start": 1.65,
+      "end": 2.0100000000000002
+    },
+    {
+      "text": "version",
+      "centers": [
+        2.2
+      ],
+      "start": 2.0100000000000002,
+      "end": 2.41
+    },
+    {
+      "text": "history",
+      "centers": [
+        2.62
+      ],
+      "start": 2.41,
+      "end": 2.74
+    },
+    {
+      "text": "is",
+      "centers": [
+        2.86
+      ],
+      "start": 2.74,
+      "end": 2.96
+    },
+    {
+      "text": "like",
+      "centers": [
+        3.06
+      ],
+      "start": 2.96,
+      "end": 3.19
+    },
+    {
+      "text": "letting",
+      "centers": [
+        3.32
+      ],
+      "start": 3.19,
+      "end": 3.5300000000000002
+    },
+    {
+      "text": "someone",
+      "centers": [
+        3.74
+      ],
+      "start": 3.5300000000000002,
+      "end": 3.8600000000000003
+    },
+    {
+      "text": "renovate",
+      "centers": [
+        3.98,
+        4.18
+      ],
+      "start": 3.8600000000000003,
+      "end": 4.24
+    },
+    {
+      "text": "your",
+      "centers": [
+        4.3
+      ],
+      "start": 4.24,
+      "end": 4.41
+    },
+    {
+      "text": "house",
+      "centers": [
+        4.52
+      ],
+      "start": 4.41,
+      "end": 4.63
+    },
+    {
+      "text": "with",
+      "centers": [
+        4.74
+      ],
+      "start": 4.63,
+      "end": 4.84
+    },
+    {
+      "text": "no",
+      "centers": [
+        4.94
+      ],
+      "start": 4.84,
+      "end": 5.09
+    },
+    {
+      "text": "before",
+      "centers": [
+        5.24
+      ],
+      "start": 5.09,
+      "end": 5.48
+    },
+    {
+      "text": "photos.",
+      "centers": [
+        5.72
+      ],
+      "start": 5.48,
+      "end": 6.16
+    },
+    {
+      "text": "Every",
+      "centers": [
+        6.6
+      ],
+      "start": 6.16,
+      "end": 6.74
+    },
+    {
+      "text": "change",
+      "centers": [
+        6.88
+      ],
+      "start": 6.74,
+      "end": 7.0
+    },
+    {
+      "text": "should",
+      "centers": [
+        7.12
+      ],
+      "start": 7.0,
+      "end": 7.23
+    },
+    {
+      "text": "leave",
+      "centers": [
+        7.34
+      ],
+      "start": 7.23,
+      "end": 7.41
+    },
+    {
+      "text": "a",
+      "centers": [
+        7.48
+      ],
+      "start": 7.41,
+      "end": 7.65
+    },
+    {
+      "text": "trail.",
+      "centers": [
+        7.82
+      ],
+      "start": 7.65,
+      "end": 8.11
+    },
+    {
+      "text": "Save",
+      "centers": [
+        8.4
+      ],
+      "start": 8.11,
+      "end": 8.48
+    },
+    {
+      "text": "a",
+      "centers": [
+        8.56
+      ],
+      "start": 8.48,
+      "end": 8.77
+    },
+    {
+      "text": "checkpoint",
+      "centers": [
+        8.98
+      ],
+      "start": 8.77,
+      "end": 9.15
+    },
+    {
+      "text": "before",
+      "centers": [
+        9.32
+      ],
+      "start": 9.15,
+      "end": 9.39
+    },
+    {
+      "text": "the",
+      "centers": [
+        9.46
+      ],
+      "start": 9.39,
+      "end": 9.55
+    },
+    {
+      "text": "work",
+      "centers": [
+        9.64
+      ],
+      "start": 9.55,
+      "end": 9.84
+    },
+    {
+      "text": "starts.",
+      "centers": [
+        10.04
+      ],
+      "start": 9.84,
+      "end": 10.25
+    },
+    {
+      "text": "Show",
+      "centers": [
+        10.46
+      ],
+      "start": 10.25,
+      "end": 10.65
+    },
+    {
+      "text": "exactly",
+      "centers": [
+        10.84
+      ],
+      "start": 10.65,
+      "end": 11.01
+    },
+    {
+      "text": "what",
+      "centers": [
+        11.18
+      ],
+      "start": 11.01,
+      "end": 11.44
+    },
+    {
+      "text": "changed.",
+      "centers": [
+        11.7
+      ],
+      "start": 11.44,
+      "end": 11.93
+    },
+    {
+      "text": "Let",
+      "centers": [
+        12.16
+      ],
+      "start": 11.93,
+      "end": 12.219999999999999
+    },
+    {
+      "text": "the",
+      "centers": [
+        12.28
+      ],
+      "start": 12.219999999999999,
+      "end": 12.43
+    },
+    {
+      "text": "agent",
+      "centers": [
+        12.58
+      ],
+      "start": 12.43,
+      "end": 12.719999999999999
+    },
+    {
+      "text": "test",
+      "centers": [
+        12.86
+      ],
+      "start": 12.719999999999999,
+      "end": 12.96
+    },
+    {
+      "text": "the",
+      "centers": [
+        13.06
+      ],
+      "start": 12.96,
+      "end": 13.23
+    },
+    {
+      "text": "result.",
+      "centers": [
+        13.4
+      ],
+      "start": 13.23,
+      "end": 13.57
+    },
+    {
+      "text": "And",
+      "centers": [
+        13.74
+      ],
+      "start": 13.57,
+      "end": 13.79
+    },
+    {
+      "text": "if",
+      "centers": [
+        13.84
+      ],
+      "start": 13.79,
+      "end": 13.91
+    },
+    {
+      "text": "the",
+      "centers": [
+        13.98
+      ],
+      "start": 13.91,
+      "end": 14.06
+    },
+    {
+      "text": "new",
+      "centers": [
+        14.14
+      ],
+      "start": 14.06,
+      "end": 14.29
+    },
+    {
+      "text": "version",
+      "centers": [
+        14.44
+      ],
+      "start": 14.29,
+      "end": 14.54
+    },
+    {
+      "text": "is",
+      "centers": [
+        14.64
+      ],
+      "start": 14.54,
+      "end": 14.79
+    },
+    {
+      "text": "worse,",
+      "centers": [
+        14.94
+      ],
+      "start": 14.79,
+      "end": 15.129999999999999
+    },
+    {
+      "text": "roll",
+      "centers": [
+        15.32
+      ],
+      "start": 15.129999999999999,
+      "end": 15.48
+    },
+    {
+      "text": "back",
+      "centers": [
+        15.64
+      ],
+      "start": 15.48,
+      "end": 15.79
+    },
+    {
+      "text": "instead",
+      "centers": [
+        15.94
+      ],
+      "start": 15.79,
+      "end": 16.009999999999998
+    },
+    {
+      "text": "of",
+      "centers": [
+        16.08
+      ],
+      "start": 16.009999999999998,
+      "end": 16.21
+    },
+    {
+      "text": "patching",
+      "centers": [
+        16.34,
+        16.54
+      ],
+      "start": 16.21,
+      "end": 16.61
+    },
+    {
+      "text": "over",
+      "centers": [
+        16.68
+      ],
+      "start": 16.61,
+      "end": 16.740000000000002
+    },
+    {
+      "text": "the",
+      "centers": [
+        16.8
+      ],
+      "start": 16.740000000000002,
+      "end": 17.009999999999998
+    },
+    {
+      "text": "mistake.",
+      "centers": [
+        17.22
+      ],
+      "start": 17.009999999999998,
+      "end": 17.63
+    },
+    {
+      "text": "Good",
+      "centers": [
+        18.04
+      ],
+      "start": 17.63,
+      "end": 18.27
+    },
+    {
+      "text": "automation",
+      "centers": [
+        18.5
+      ],
+      "start": 18.27,
+      "end": 18.7
+    },
+    {
+      "text": "doesn't",
+      "centers": [
+        18.9,
+        18.96
+      ],
+      "start": 18.7,
+      "end": 19.060000000000002
+    },
+    {
+      "text": "just",
+      "centers": [
+        19.16
+      ],
+      "start": 19.060000000000002,
+      "end": 19.28
+    },
+    {
+      "text": "move",
+      "centers": [
+        19.4
+      ],
+      "start": 19.28,
+      "end": 19.61
+    },
+    {
+      "text": "fast,",
+      "centers": [
+        19.82
+      ],
+      "start": 19.61,
+      "end": 19.97
+    },
+    {
+      "text": "it",
+      "centers": [
+        20.12
+      ],
+      "start": 19.97,
+      "end": 20.200000000000003
+    },
+    {
+      "text": "makes",
+      "centers": [
+        20.28
+      ],
+      "start": 20.200000000000003,
+      "end": 20.46
+    },
+    {
+      "text": "every",
+      "centers": [
+        20.64
+      ],
+      "start": 20.46,
+      "end": 20.8
+    },
+    {
+      "text": "step",
+      "centers": [
+        20.96
+      ],
+      "start": 20.8,
+      "end": 21.18
+    },
+    {
+      "text": "reversible.",
+      "centers": [
+        21.4
+      ],
+      "start": 21.18,
+      "end": 21.52
+    }
+  ]
+}

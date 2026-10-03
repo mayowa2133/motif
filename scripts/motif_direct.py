@@ -30,6 +30,8 @@ SOURCE_PATHS+=['scripts/motif_workshop.py','scripts/build_workshop_kit.py','sche
 
 SOURCE_PATHS+=['scripts/motif_quality.py','scripts/motif_quality_frames.py','quality/bindings.json','scripts/motif_performance.py','scripts/motif_reaction.py','scripts/motif_asset_quality.py','schemas/shot-contract.schema.json','schemas/story-critic.schema.json','schemas/visual-critic.schema.json','QUALITY_CONTRACT.md','ENERGY_CONTRACT.md','quality/gold/index.json','quality/rubric/gates.json']
 
+SOURCE_PATHS+=['scripts/motif_structure.py','docs/MOTIF_STRUCTURAL_GRAMMAR.md','quality/structure-critic/PROMPT.md','schemas/film-structure.schema.json','schemas/setup-contract.schema.json','schemas/structure-critic.schema.json','quality/structure-examples.json','quality/negative/rowhouse.json','quality/rubric/hierarchy.json','quality/visual-critic/PROMPT.md']
+
 def write(path,value): path.write_text(json.dumps(value,indent=2)+'\n')
 def read(path): return json.loads(path.read_text())
 def snapshot(): return {p:sha(ROOT/p) for p in SOURCE_PATHS}
@@ -60,6 +62,10 @@ def model_call(project, name, prompt, schema, config, images=()):
         # plans may omit these keys and are normalized without file mutation.
         for name in ('energy','art_direction'):
             contract[name]['required']=list(contract[name]['properties'])
+    if wire_schema.get('properties',{}).get('role',{}).get('const')=='visual':
+        wire_schema['required']=list(wire_schema['properties'])
+        violation=wire_schema['properties']['violations']['items']
+        violation['required']=list(violation['properties'])
     schema_path=project/(name+'-output-schema.json')
     write(schema_path,wire_schema)
     args=['codex','exec','--ignore-user-config','--ephemeral','--skip-git-repo-check','--sandbox','read-only','--json','--color','never','--output-schema',str(schema_path.resolve()),'-o',str(project/(name+'.json')),'-c','approval_policy="never"','-c','model_reasoning_effort='+json.dumps(config['reasoning_effort'])]
@@ -136,6 +142,7 @@ def run(brief_path,concept_path=None,feedback_path=None):
     plan=model_call(project,'initial-plan',prompt,'schemas/production-plan.schema.json',config)
     if plan.get('quality_mode')!='motif-gold-v1': raise ValueError('new directed runs require motif-gold-v1')
     from motif_quality import direction_review
+    from motif_structure import structure_review
     (project/'STORYBOARD_INITIAL.md').write_text(storyboard(plan))
     tolerance=brief['duration_tolerance_seconds']; intended=brief['intended_duration_seconds']; bounds=[intended-tolerance,intended+tolerance]
     reviews=[]
@@ -145,7 +152,11 @@ def run(brief_path,concept_path=None,feedback_path=None):
         issues=list(deterministic['issues'])
         if not issues:
             write(project/'production-plan.json',plan)
-            direction_review(project,plan,config)
+            try:
+                structure_review(project,plan,config)
+                direction_review(project,plan,config)
+            except ValueError as error:issues.append(str(error))
+        if not issues:
             (project/'assets/voice/narration.txt').write_text(narration(plan)+'\n')
             env=os.environ.copy()
             if 'HYPERFRAMES_PYTHON' not in env:
@@ -167,7 +178,10 @@ def run(brief_path,concept_path=None,feedback_path=None):
         attempt_dir=project/'planning-attempts'/str(attempt)
         attempt_dir.mkdir(parents=True)
         write(attempt_dir/'plan.json',plan)
-        for filename in ('scene-events.json','action-trace.json','label-timing.json','framing-trace.json','alignment-review.json','audio-plan.json','index.html','quality-direction.json','quality-direction-record.json','quality-direction-invocation.json'):
+        for pattern in ('quality-structure*','quality-direction*'):
+            for artifact in project.glob(pattern):
+                if artifact.is_file():shutil.copyfile(artifact,attempt_dir/artifact.name)
+        for filename in ('scene-events.json','action-trace.json','label-timing.json','framing-trace.json','alignment-review.json','audio-plan.json','index.html','quality-direction.json','quality-direction-record.json','quality-direction-invocation.json','quality-structure.json','quality-structure-record.json','quality-structure-invocation.json'):
             if (project/filename).exists() and not issues: shutil.copyfile(project/filename,attempt_dir/filename)
         if not issues:
             review_prompt=('Review this illustrative Motif plan against its brief and actual action timings. No tools, files, code, other agents, or web. You review data, NOT rendered frames. Check semantic fidelity, each outcome, visible evidence before labels, same-check fairness, and ending delivered. Check audience_narration: speech should explain the useful idea, choice or consequence for this audience, not narrate stage directions (dashed graphics, stencil geometry, cross rendering or test-harness timing), unless these objects are the subject. Reject unnatural production-checklist speech; let structured visual fields carry choreography. Labels are never substitutes for physical events. Use actual label-timing and explicit set/clear/keep lifecycle; reject stale labels after state changes. Headlines are scheduled after physical evidence. Narration-aligned action captions describe an unfolding action; do not treat their present tense as a completed-result headline. A completed result caption preceding evidence is an issue. Focus prose is rationale only; focus_target/framing and actual framing bounds are operative. Return schema JSON; broader semantic correctness and painted visibility are not guaranteed.\nBrief: '+json.dumps(brief)+'\nPlan: '+json.dumps(plan)+'\nAction timings: '+json.dumps(read(project/'action-trace.json'))+'\nActual labels: '+json.dumps(read(project/'label-timing.json'))+'\nActual framing: '+json.dumps(read(project/'framing-trace.json'))+'\nTimeline duration: '+str(read(project/'scene-events.json')['durationSec'])+'\nSpoken alignment: '+json.dumps(read(project/'alignment-review.json')))

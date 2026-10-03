@@ -1,0 +1,4 @@
+MODEL story-critic
+MODEL visual-critic
+{'phase': 'rough', 'status': 'HUMAN_REVIEW_REQUIRED', 'blocked': ['story: shot-05-rain-test-fails: continuity', 'story: shot-06-rollback-restores: focal-hierarchy', 'story: shot-08-every-step-reversible: focal-hierarchy', 'story: focal-hierarchy', 'story: continuity', 'visual: shot-01-unsafe-overwrite: physicality', 'visual: shot-03-save-checkpoint: physicality', 'visual: physicality'], 'meaningful_repairs': 2, 'human_final_approval': 'REQUIRED', 'publish': False, 'report_hashes': {'story': 'c1fa660a1474d999296355506f9dd24ca7d6109cafb200812334e4772de77277', 'visual': '71763a4538eb0346c90477513a3f97884a355eefe3d9c3359a32807a4093aaff'}, 'evidence_sha256': '657811add804cdfef5a02751e628951243d461a1e364c8c86755e5a3419fe55c'}
+{'files_verified': 540, 'unchanged': True}

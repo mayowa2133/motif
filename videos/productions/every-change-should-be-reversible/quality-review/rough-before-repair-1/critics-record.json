@@ -1,0 +1,22 @@
+{
+  "evidence_sha256": "d3cad9753b03f884c0c596d0599a79745d60e290f441fcff8be64ef25e18bd68",
+  "images_sha256": "cce138a23e8922e1ee4a1f0c64d05a370c4b68f954d4fdebd0d42fa1bd7661fd",
+  "gold_ids": [
+    "basement-completion",
+    "cancellation",
+    "payment-burden"
+  ],
+  "invocations": [
+    "story-critic-invocation.json",
+    "visual-critic-invocation.json"
+  ],
+  "report_hashes": {
+    "story": "7e39bdcf3a28f2bb240975af29bf41298254d514018255d25510375f55b1a534",
+    "visual": "8be1bdfc63ec1e6732d26b022e3b1062e88b4f4cdfe4fe3de267c0e948f4cc1c"
+  },
+  "invocation_hashes": {
+    "story": "9186094bf99c80059f91098a5e1b7619d6f63643494e7f65300c1f535d3da188",
+    "visual": "fc421f31888f267bde8abc5288f8663d08e97a38e7d62a0147eb3d5b14965531"
+  },
+  "scope": "ordered decoded native frames + full-rate pixel motion traces; CLI does not accept video"
+}

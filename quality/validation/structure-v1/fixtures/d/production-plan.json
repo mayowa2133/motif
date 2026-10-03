@@ -1,0 +1,111 @@
+{
+  "quality_mode": "motif-gold-v1",
+  "script": "Every request adds a cost.",
+  "asset_usage": [
+    {
+      "id": "planning-paper",
+      "scope": "production-specific",
+      "path": "",
+      "metadata_path": "",
+      "agent_assisted": true
+    }
+  ],
+  "beats": [
+    {
+      "id": "b1",
+      "narration": "Every request adds a cost.",
+      "quality": {
+        "purpose": "Every request adds a cost.",
+        "hero": "receipt scale",
+        "primary_action": "Bot feeds twenty receipts into one tray in staggered groups.",
+        "performance": {
+          "state": "focused",
+          "target": "bot"
+        },
+        "before": "The tray is empty and level.",
+        "after": "Twenty paper receipts lower the SAME tray; all movement points to the load increasing.",
+        "focal_target": "receipt pile",
+        "framing": "subject",
+        "reaction_radius": {
+          "origin": [
+            640,
+            782
+          ],
+          "radius": 200,
+          "duration": 0.6,
+          "targets": []
+        },
+        "secondary_motion": [],
+        "environment": [
+          "paper backboard",
+          "work surface"
+        ],
+        "exit_overlap": "Receipt settling carries into next beat",
+        "energy": {
+          "dominant_action": "Bot feeds twenty receipts into one tray in staggered groups."
+        },
+        "art_direction": {
+          "hero_object": "receipt scale",
+          "bot_role": "participant",
+          "materials": [
+            "printed paper",
+            "wood shelf"
+          ],
+          "depth_planes": [
+            "tile wall",
+            "pricing placards",
+            "receipts and Bot"
+          ],
+          "composition": "One broad scale tray is the focal region; receipts form one cost group. A nearby spring recoils locally.",
+          "intentional_irregularity": "A corner crop directs attention to the active contact.",
+          "environment_mode": "physical",
+          "environment_justification": null
+        }
+      }
+    }
+  ],
+  "film_structure": {
+    "version": "structure-1.0",
+    "rhetorical_chapters": [
+      {
+        "id": "argument",
+        "purpose": "Develop the supplied short argument through visible changes.",
+        "narration_span": {
+          "start_word": 0,
+          "end_word": 5,
+          "text": "Every request adds a cost."
+        }
+      }
+    ],
+    "setups": [
+      {
+        "setup_id": "s1",
+        "chapter": "argument",
+        "narration_span": {
+          "start_word": 0,
+          "end_word": 5,
+          "text": "Every request adds a cost."
+        },
+        "semantic_center": "Rising cost",
+        "visual_rule": "Receipt mass lowers the tray.",
+        "relationship_archetype": "burden / accumulation",
+        "hero": "receipt scale",
+        "bot_role": "participant",
+        "continuity_tokens": [],
+        "environment_mode": "physical",
+        "palette_family": "warm paper / teal",
+        "entry_state": "The tray is empty and level.",
+        "exit_state": "Twenty paper receipts lower the SAME tray; all movement points to the load increasing.",
+        "reason_for_persistence": "Each added receipt develops the same visible load.",
+        "planned_reset_after": {
+          "kind": "end",
+          "reason": "The argument ends in this visible consequence."
+        },
+        "beat_ids": [
+          "b1"
+        ]
+      }
+    ],
+    "continuity_tokens": []
+  }
+}

@@ -1,0 +1,15 @@
+Giving an AI write access without version history is like letting someone renovate your house with no before photos.
+
+Every change should leave a trail.
+
+Save a checkpoint before the work starts.
+
+Show exactly what changed.
+
+Let the agent test the result.
+
+And if the new version is worse, roll back instead of patching over the mistake.
+
+Good automation doesn’t just move fast.
+
+It makes every step reversible.

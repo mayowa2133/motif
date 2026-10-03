@@ -1,0 +1,29 @@
+{
+  "inputs": {
+    "production-plan.json": "672e563e49ddac464bb02727a5772ebf9404e307fb9420d18ec74bddb6c7def6",
+    "source/build.py": "2af9a2640977cf272a09f73acee0e6228fe882c8236ea01b5d3a17411fae055e",
+    "source/timing.py": "64c63f3f0b7bf7bc4dfa99ca3b75800dc7e64b976fd577d523c6b8e141b79818",
+    "source/registered-bindings.json": "937f5c4803096492d4f92f6083fa4cddf4818e4c9430e31be73dca21e20369de",
+    "assets/props/reversible-rowhouse-folio.svg": "1d08476d5270ab3ebe34e2e9e8b29741b7ddbbb4c91cc740c23d81abce04c5fd",
+    "assets/props/reversible-rowhouse-folio.json": "e14523fd204f804a3e91d5ed4524d87260dcee5b8bd3d5e8196fc68f3cce0dcf",
+    "alignment-review.json": "3607845274524bae57ac9fd2018eae64393269264bd7f41180c90a46536199ef"
+  },
+  "outputs": {
+    "index.html": "4dc4667d206cfdd6bcb3353e2917aee0d27ad6d7c3ef474ce2c03cd8c9d6e0b7",
+    "scene-events.json": "f3210dca1105bf377e057174517c46e21e754adfe10c900f14aab1ac4c07c9bd",
+    "quality-bindings.json": "026399bfaa0ef2361fa35a0cc29a6415cbb9a7109bcabff9733a51a6214de104",
+    "evidence-shots.json": "4bd7cbad419a16ea4d057c2c59bfcd2326d6b59a697c1d6b2e5a56ee1b9540f4",
+    "caption-events.json": "6177f1c70468888a0b5e778d14de45e10f0393008c3b9472a3a28fd6b30ac62f",
+    "compositions/captions.html": "880cad5c27e10afbc7c3cd3f8845380b02e1daad1f48dd6dd3e90a621024239b",
+    "compositions/shot-01-unsafe-overwrite.html": "f692503f7623ab25274b8aaab5408aba12346a018a9004280706a94bfb79a830",
+    "compositions/shot-02-history-catches-change.html": "68ccb5288b60eab860cb2a0f0476dc0959e8c7da1133eb54dd4fe5406efe600d",
+    "compositions/shot-03-save-checkpoint.html": "feac2e82495a386fd194f29c6171b825bfc86499570f27d44b6797a0b06c65d4",
+    "compositions/shot-04-visible-difference.html": "7885edc2ceb2d13fd5f10c46d35eddd738d463d527c3106399d27dca0b93aef8",
+    "compositions/shot-05-rain-test-fails.html": "0c55078640bba2e69c95004c43b96aabb6f3908dea6b76f40e028a212a2ce82d",
+    "compositions/shot-06-rollback-restores.html": "0f1186be0c5a70f8edcef209e09cc56bd580fe9b87658b719013af7e92cbe608",
+    "compositions/shot-07-restored-test-passes.html": "ba5c6fccee3d8146c75e4ebe40bea2cd6f70531468719796417bb4c9702d8942",
+    "compositions/shot-08-every-step-reversible.html": "40eeea1171585808c5a4c5ff80f222c9a7d1989c53ee4ed44e1af3b444a49eca"
+  },
+  "frames": 759,
+  "scope": "current compiled source; not rendered quality approval"
+}

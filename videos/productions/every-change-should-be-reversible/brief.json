@@ -1,0 +1,9 @@
+{
+  "title": "EVERY CHANGE SHOULD BE REVERSIBLE",
+  "script": "Giving an AI write access without version history is like letting someone renovate your house with no before photos.\n\nEvery change should leave a trail.\n\nSave a checkpoint before the work starts.\n\nShow exactly what changed.\n\nLet the agent test the result.\n\nAnd if the new version is worse, roll back instead of patching over the mistake.\n\nGood automation doesn\u2019t just move fast.\n\nIt makes every step reversible.",
+  "audience": "People using AI coding agents, automation tools and assistants.",
+  "purpose": "Explain why an automated system should preserve checkpoints and make changes reversible.",
+  "style": "reference-expressive-high-energy-v1",
+  "quality_mode": "motif-gold-v1",
+  "voice_speed": 0.85
+}

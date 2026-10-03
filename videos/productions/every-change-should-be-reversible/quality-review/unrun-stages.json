@@ -1,0 +1,10 @@
+{
+  "rough_render": "PRODUCED",
+  "rough_story_critic": "FAIL",
+  "rough_visual_critic": "FAIL",
+  "final_render": "NOT_PRODUCED",
+  "final_story_critic": "NOT_ASSESSED",
+  "final_visual_critic": "NOT_ASSESSED",
+  "reason": "Latest rough gate is HUMAN_REVIEW_REQUIRED after two audited moving repairs. Remaining story continuity/occlusion and visual grip-readability failures are preserved; no third repair or final-art bypass.",
+  "audio_finish": "NOT_STARTED"
+}

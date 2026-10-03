@@ -1,0 +1,9 @@
+MODEL quality-direction
+Traceback (most recent call last):
+  File "/Users/mayowaadesanya/Projects/motif/videos/productions/every-change-should-be-reversible/source/run_quality.py", line 20, in <module>
+    print(direction_review(P,read(P/'production-plan.json'),c))
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mayowaadesanya/Projects/motif/scripts/motif_quality.py", line 103, in direction_review
+    if not result['pass']:raise ValueError('pre-animation direction failed: '+json.dumps(result['issues']))
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: pre-animation direction failed: ["Shot 08 invokes a \u201cregistered house display-carriage affine transform,\u201d but no house-display-carriage exists in the registered parts, anchor inventory, asset metadata declarations, or production-local capability. This contradicts the instruction not to invent selectors and also conflicts with the declared fixed house world transform. Remove that transform or register an explicit agent-assisted part and binding before animation.", "Shot 07 establishes a left-hand inverse grip on return-drive-lever at frame 79 but never declares a Bot-hand release event. Frame 85 releases the lever-to-flywheel latch and only mentions the hand release inside an affine rule. Add an explicit Bot-left-hand \u2192 return-drive-lever release so the grip is resolved before Bot exits at frame 89.", "Shot 06 weakens focal hierarchy by running water-slug retrieval and ribbon reset concurrently with the roof exchange, failed-floor archival, dry-cassette installation and original-roof restoration. The rollback is the sentence-level evidence; stage the test reset after the roof/floor exchange or explicitly subordinate it so the carriage exchange remains the single commanding idea at mobile size."]

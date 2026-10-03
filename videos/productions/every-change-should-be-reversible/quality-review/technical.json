@@ -1,0 +1,55 @@
+{
+  "status": "BLOCKED",
+  "scope": "Final technical QA remains NOT_ASSESSED and blocking because no final delivery is authorized. Separate actual rough timing/dimensions and HyperFrames checks are recorded below.",
+  "checks": {
+    "frame-count": "NOT_ASSESSED",
+    "fps": "NOT_ASSESSED",
+    "dimensions": "NOT_ASSESSED",
+    "duration": "NOT_ASSESSED",
+    "assets": "NOT_ASSESSED",
+    "clipping": "NOT_ASSESSED",
+    "contrast": "NOT_ASSESSED",
+    "caption-overflow": "NOT_ASSESSED",
+    "safe-areas": "NOT_ASSESSED",
+    "runtime": "NOT_ASSESSED",
+    "tts-alignment": "NOT_ASSESSED",
+    "loudness": "NOT_ASSESSED",
+    "true-peak": "NOT_ASSESSED",
+    "provenance": "NOT_ASSESSED",
+    "licensing": "NOT_ASSESSED",
+    "anchors": "NOT_ASSESSED",
+    "generation-artifacts": "NOT_ASSESSED",
+    "reproducibility": "NOT_ASSESSED"
+  },
+  "sources": [],
+  "human_listening": "NOT_ASSESSED; REQUIRED if a film eventually reaches final review",
+  "rough_measurements": {
+    "scope": "moving rough only; not finished art/audio",
+    "plan_sha256": "672e563e49ddac464bb02727a5772ebf9404e307fb9420d18ec74bddb6c7def6",
+    "events_sha256": "f3210dca1105bf377e057174517c46e21e754adfe10c900f14aab1ac4c07c9bd",
+    "with_captions": {
+      "width": 360,
+      "height": 640,
+      "fps": 30.0,
+      "frames": 759,
+      "duration": 25.3,
+      "sha256": "bc07c54f3b48b4fb2a9e7b1352cceb2a2a8f495db51283bfba80184cea7a5008"
+    },
+    "without_captions": {
+      "width": 360,
+      "height": 640,
+      "fps": 30.0,
+      "frames": 759,
+      "duration": 25.3,
+      "sha256": "782cbeddb625bc6c630acecaecc409d84912dc713c5b8ec51eceb01b5461ab05"
+    }
+  },
+  "rough_hyperframes_checks": {
+    "captions": "PASS",
+    "no-captions": "PASS"
+  },
+  "rough_check_logs": [
+    "quality-review/rough/captions/check.log",
+    "quality-review/rough/no-captions/check.log"
+  ]
+}

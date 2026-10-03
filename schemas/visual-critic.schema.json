@@ -81,6 +81,23 @@
           "smallest_correction": {
             "type": "string",
             "minLength": 1
+          },
+          "failure_code": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "enum": [
+              "COMPETING_FOCI",
+              "EXCESSIVE_OCCLUSION",
+              "UNNECESSARY_RETAINED_GEOMETRY",
+              "CAPTION_CARRIES_STORY",
+              "EFFECT_AS_ACTION",
+              "TINY_HERO",
+              "HIDDEN_DIAGNOSTIC",
+              "LABEL_BEFORE_EVIDENCE",
+              null
+            ]
           }
         },
         "required": [
@@ -148,6 +165,50 @@
         "required": [
           "shot",
           "gates"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "hierarchy_assessments": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "shot": {
+            "type": "string",
+            "minLength": 1
+          },
+          "code": {
+            "type": "string",
+            "enum": [
+              "COMPETING_FOCI",
+              "EXCESSIVE_OCCLUSION",
+              "UNNECESSARY_RETAINED_GEOMETRY",
+              "CAPTION_CARRIES_STORY",
+              "EFFECT_AS_ACTION",
+              "TINY_HERO",
+              "HIDDEN_DIAGNOSTIC",
+              "LABEL_BEFORE_EVIDENCE"
+            ]
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "PASS",
+              "FAIL",
+              "NOT_ASSESSED"
+            ]
+          },
+          "evidence": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "required": [
+          "shot",
+          "code",
+          "status",
+          "evidence"
         ],
         "additionalProperties": false
       }

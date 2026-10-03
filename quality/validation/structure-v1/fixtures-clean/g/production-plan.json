@@ -1,0 +1,214 @@
+{
+  "quality_mode": "motif-gold-v1",
+  "script": "Inspect this small sample. Compare it with the reference.",
+  "asset_usage": [
+    {
+      "id": "planning-paper",
+      "scope": "production-specific",
+      "path": "",
+      "metadata_path": "",
+      "agent_assisted": true
+    }
+  ],
+  "beats": [
+    {
+      "id": "b1",
+      "narration": "Inspect this small sample.",
+      "quality": {
+        "purpose": "Inspect this small sample.",
+        "hero": "sample",
+        "primary_action": "Bot opens a nicked sample beneath a lens.",
+        "performance": {
+          "state": "focused",
+          "target": "bot"
+        },
+        "before": "Folded sample enters.",
+        "after": "Its gap is exposed.",
+        "focal_target": "sample",
+        "framing": "subject",
+        "reaction_radius": {
+          "origin": [
+            640,
+            782
+          ],
+          "radius": 200,
+          "duration": 0.6,
+          "targets": []
+        },
+        "secondary_motion": [],
+        "environment": [
+          "paper backboard",
+          "work surface"
+        ],
+        "exit_overlap": null,
+        "energy": {
+          "dominant_action": "Bot opens a nicked sample beneath a lens."
+        },
+        "art_direction": {
+          "hero_object": "sample",
+          "bot_role": "participant",
+          "materials": [
+            "printed paper",
+            "card supports"
+          ],
+          "depth_planes": [
+            "paper backboard",
+            "hero and contact plane"
+          ],
+          "composition": "Large sample and lens, Bot at right; sample leaves frame before cut.",
+          "intentional_irregularity": "A corner crop directs attention to the active contact.",
+          "environment_mode": "physical",
+          "environment_justification": null
+        }
+      }
+    },
+    {
+      "id": "b2",
+      "narration": "Compare it with the reference.",
+      "quality": {
+        "purpose": "Compare it with the reference.",
+        "hero": "sample",
+        "primary_action": "Bot slides that SAME nicked sample next to a complete reference on a separate comparison rail.",
+        "performance": {
+          "state": "focused",
+          "target": "bot"
+        },
+        "before": "Nicked sample arrives on the new slate comparison rail; lens and old set are absent.",
+        "after": "The route gap is visibly aligned beside the intact reference.",
+        "focal_target": "sample",
+        "framing": "subject",
+        "reaction_radius": {
+          "origin": [
+            640,
+            782
+          ],
+          "radius": 200,
+          "duration": 0.6,
+          "targets": []
+        },
+        "secondary_motion": [],
+        "environment": [
+          "paper backboard",
+          "work surface"
+        ],
+        "exit_overlap": null,
+        "energy": {
+          "dominant_action": "Bot slides that SAME nicked sample next to a complete reference on a separate comparison rail."
+        },
+        "art_direction": {
+          "hero_object": "sample",
+          "bot_role": "participant",
+          "materials": [
+            "printed paper",
+            "card supports"
+          ],
+          "depth_planes": [
+            "paper backboard",
+            "hero and contact plane"
+          ],
+          "composition": "Paired samples fill a detail crop; Bot below, different silhouette and camera scale.",
+          "intentional_irregularity": "A corner crop directs attention to the active contact.",
+          "environment_mode": "physical",
+          "environment_justification": null
+        }
+      }
+    }
+  ],
+  "film_structure": {
+    "version": "structure-1.0",
+    "rhetorical_chapters": [
+      {
+        "id": "argument",
+        "purpose": "Develop the supplied short argument through visible changes.",
+        "narration_span": {
+          "start_word": 0,
+          "end_word": 9,
+          "text": "Inspect this small sample. Compare it with the reference."
+        }
+      }
+    ],
+    "setups": [
+      {
+        "setup_id": "s1",
+        "chapter": "argument",
+        "narration_span": {
+          "start_word": 0,
+          "end_word": 4,
+          "text": "Inspect this small sample."
+        },
+        "semantic_center": "Inspect a sample",
+        "visual_rule": "Lens exposes a route gap.",
+        "relationship_archetype": "physical interaction",
+        "hero": "sample",
+        "bot_role": "participant",
+        "continuity_tokens": [
+          "sample"
+        ],
+        "environment_mode": "physical",
+        "palette_family": "warm paper / teal",
+        "entry_state": "Folded sample enters.",
+        "exit_state": "Its gap is exposed.",
+        "reason_for_persistence": "One gap is revealed.",
+        "planned_reset_after": {
+          "kind": "hard-cut",
+          "reason": "Inspection becomes comparison; only the sample travels."
+        },
+        "beat_ids": [
+          "b1"
+        ]
+      },
+      {
+        "setup_id": "s2",
+        "chapter": "argument",
+        "narration_span": {
+          "start_word": 4,
+          "end_word": 9,
+          "text": "Compare it with the reference."
+        },
+        "semantic_center": "Compare the same sample",
+        "visual_rule": "Alignment against an intact reference reveals the missing route.",
+        "relationship_archetype": "comparison",
+        "hero": "sample",
+        "bot_role": "participant",
+        "continuity_tokens": [
+          "sample"
+        ],
+        "environment_mode": "physical",
+        "palette_family": "slate / cream",
+        "entry_state": "Nicked sample arrives on the new slate comparison rail; lens and old set are absent.",
+        "exit_state": "The route gap is visibly aligned beside the intact reference.",
+        "reason_for_persistence": "The identifiable sample supplies continuity while the visual rule changes.",
+        "planned_reset_after": {
+          "kind": "end",
+          "reason": "The argument ends in this visible consequence."
+        },
+        "beat_ids": [
+          "b2"
+        ]
+      }
+    ],
+    "continuity_tokens": [
+      {
+        "id": "sample",
+        "origin_setup": "s1",
+        "state_at_origin": "folded paper with a corner nick",
+        "setups_used": [
+          "s1",
+          "s2"
+        ],
+        "state_changes": [
+          {
+            "setup_id": "s1",
+            "change": "Lens exposes the sample route gap."
+          },
+          {
+            "setup_id": "s2",
+            "change": "Its gap is aligned against a complete reference."
+          }
+        ],
+        "final_destination": "Comparison slot, still identifiable by its nick.",
+        "story_justification": "The same inspected sample must be compared with the reference."
+      }
+    ]
+  }
+}

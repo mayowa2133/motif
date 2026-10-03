@@ -1,0 +1,28 @@
+{
+  "status": "BLOCKED_PRE_ANIMATION",
+  "actual_gate": {
+    "operation": "motif_quality.direction_review",
+    "result": "quality-direction.pass=false",
+    "record": "quality-direction-record.json",
+    "sha256": "f5fdb8b0ecd6aaaacf82aae8b37936e2926fa0a40f80b9f394f7b01057c3479f"
+  },
+  "blockers": [
+    "Shot 04 withdraws the keyed teal roof without first declaring how comparison-drive-rack.teal-clevis engages and unlocks it. The frame-13 handoff begins transport but does not establish the preceding physical connection; add an explicit contact/lock-release event and anchor rule.",
+    "Shot 01 reuses paper-gold-checkpoint-tab to engage the history catch, while later shots use the same tab for checkpoint capture and rollback. No visible mode, linkage state, or selector explains these three functions. Define the persistent linkage states and their mutually exclusive routing, or provide separately named controls.",
+    "Shot 07 allocates only frames 43\u201354\u2014about 0.37 seconds at 30 fps\u2014to inspect the filled exterior cup and unchanged dry floor before Bot starts the finale. That is too weak for the script\u2019s deliberate \u201cdoesn\u2019t just move fast\u201d contrast; extend the consequence hold before the lever press.",
+    "Shot 08 exposes the complete three-state arrangement for only frames 15\u201334\u2014about 0.63 seconds\u2014and restores the opening house at frame 67, leaving only 13 frames before the cut and six after the drive stops. The reduced 74-native-pixel bays and opening callback need longer recognition windows for mobile readability and ending payoff.",
+    "The asset ledger mentions candidate-reusable=[] and canonical-promoted=[] only inside development_scope prose. Record all four scopes structurally in asset_usage, including explicit empty collections for those two scopes, so downstream review does not infer missing ledger data."
+  ],
+  "moving_rough": "NOT_PRODUCED",
+  "rough_story_critic": "NOT_ASSESSED",
+  "rough_visual_critic": "NOT_ASSESSED",
+  "final_story_critic": "NOT_ASSESSED",
+  "final_visual_critic": "NOT_ASSESSED",
+  "final_technical_qa": "NOT_ASSESSED",
+  "final_film": "NOT_PRODUCED",
+  "audio_finishing": "NOT_ALLOWED; no picture gate",
+  "human_final_approval": "NOT_REACHED",
+  "publish": false,
+  "commit_or_push": false,
+  "source_status": "Production-specific rough-development adapter; current moving tables intentionally not compiled after failed direction. Existing compositions and review images are initial prototype artifacts, not evidence for the corrected plan."
+}

@@ -1,0 +1,11 @@
+{
+  "scope": "Internal synthetic relationships, not reference plots or approved artwork",
+  "examples": [
+    {"id":"evolving-contest","behavior":"Candidates attempt the same task, failed ones exit and the remaining one receives the result. Several beats continue the same elimination rule."},
+    {"id":"cost-stack","behavior":"Twenty receipts arrive, compress a single scale and lower its tray. Many moving papers form one cost group; accumulation is the meaning."},
+    {"id":"long-inspection","behavior":"One document feeds under a lens, marks are revealed, repairs align the same marks, then the page exits. Several changing states under one inspection rule."},
+    {"id":"token-crosses-cut","behavior":"A folded sample leaves an inspection set and enters a separate comparison set. Its nick remains visible; the lens and table do not travel with it."},
+    {"id":"absent-bot","behavior":"A visibly interrupted route reconnects and carries its token through. No character role is required."},
+    {"id":"stagnant-unrelated","behavior":"Three unrelated propositions use the same central rectangular slab, tiny left Bot and wide framing without justification. A background recolor does not fix the staging."}
+  ]
+}

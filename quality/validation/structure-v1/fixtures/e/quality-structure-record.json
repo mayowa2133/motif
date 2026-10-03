@@ -1,0 +1,17 @@
+{
+  "status": "REPLAN_REQUIRED",
+  "plan_sha256": "f3109ff670eacbb151326ddab1bfc676ec7636a76dc10ec4fdb7e32c89432739",
+  "response_sha256": "2be1a9bf9922f20f537eb59e3db5008b4bf1810baa6eab308790528ff34d6b3a",
+  "invocation_sha256": "217c5376ec534573dae699bd34932585803e8b111f9c2deaaaba8b330fcd9cdc",
+  "policy_hashes": {
+    "docs/MOTIF_STRUCTURAL_GRAMMAR.md": "1bfad4aed1dc0fc273397707071f4b426c9bf0639b122fd262c43e3796ed83e7",
+    "quality/structure-critic/PROMPT.md": "e700e3fe1e57cd658e6b5df1c6e89982b1e136dfe3f5e3bd468bc152f95188b7",
+    "schemas/film-structure.schema.json": "eee77c580a98ce2e8df48253b1b3009fc7454720c2611deadc6e02728234b6bf",
+    "schemas/setup-contract.schema.json": "71a00f3716097c68de2a85819a5656dd4df53cac1960eeb527ea7b593bb54ec8",
+    "schemas/structure-critic.schema.json": "a26e23018c7beea439f60184f1985633848f744a19d15bad440054e7752ce602",
+    "quality/structure-examples.json": "fbbff255e35cbebe0cb6361c693251c817500896434da96d10504e8f4d034f7d",
+    "quality/negative/rowhouse.json": "5d70b0dadfe7a26553824a5c8aba4361e085f75bc4cc840e50aa1a0019416bde",
+    "scripts/motif_structure.py": "b4d70c498629a2fb447226a5e587cd41a00a8e4d2b73e1f1217fdfc1c2510025"
+  },
+  "scope": "data only; no painted approval"
+}

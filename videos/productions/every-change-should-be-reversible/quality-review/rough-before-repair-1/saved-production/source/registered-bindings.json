@@ -1,0 +1,412 @@
+{
+  "id": "rowhouse-production-v1",
+  "scope": "Executable production-specific rough-development;759 finite frames and named-binding checks verified; painted approval pending.",
+  "adapter": "videos/productions/every-change-should-be-reversible/source/build.py",
+  "adapter_sha256": "fb337eab790c8f2a613980c2b1a6966f9613d006706fdb11c194170fca16a4a3",
+  "asset": "videos/productions/every-change-should-be-reversible/assets/props/reversible-rowhouse-folio.svg",
+  "asset_sha256": "1d08476d5270ab3ebe34e2e9e8b29741b7ddbbb4c91cc740c23d81abce04c5fd",
+  "metadata": "videos/productions/every-change-should-be-reversible/assets/props/reversible-rowhouse-folio.json",
+  "action_bindings": {
+    "rowhouse_unlogged_roof_overwrite_v1": {
+      "function": "frame",
+      "shot_number": 1,
+      "shot_id": "shot-01-unsafe-overwrite",
+      "events_source": "production-plan.json",
+      "events_pointer": "/shots/0/events",
+      "timing_pointer": "/shots/0/timing/landmarks",
+      "note": "No duplicated event table; compiler uses this shot in the current plan.",
+      "framing": "establish",
+      "focal_target": "teal-original-roof"
+    },
+    "rowhouse_gold_history_catch_v1": {
+      "function": "frame",
+      "shot_number": 2,
+      "shot_id": "shot-02-history-catches-change",
+      "events_source": "production-plan.json",
+      "events_pointer": "/shots/1/events",
+      "timing_pointer": "/shots/1/timing/landmarks",
+      "note": "No duplicated event table; compiler uses this shot in the current plan.",
+      "framing": "detail",
+      "focal_target": "paper-gold-history-strip"
+    },
+    "rowhouse_capture_keyed_checkpoint_v1": {
+      "function": "frame",
+      "shot_number": 3,
+      "shot_id": "shot-03-save-checkpoint",
+      "events_source": "production-plan.json",
+      "events_pointer": "/shots/2/events",
+      "timing_pointer": "/shots/2/timing/landmarks",
+      "note": "No duplicated event table; compiler uses this shot in the current plan.",
+      "framing": "subject",
+      "focal_target": "paper-gold-checkpoint-plate"
+    },
+    "rowhouse_hinged_before_after_reveal_v1": {
+      "function": "frame",
+      "shot_number": 4,
+      "shot_id": "shot-04-visible-difference",
+      "events_source": "production-plan.json",
+      "events_pointer": "/shots/3/events",
+      "timing_pointer": "/shots/3/timing/landmarks",
+      "note": "No duplicated event table; compiler uses this shot in the current plan.",
+      "framing": "detail",
+      "focal_target": "coral-replacement-roof"
+    },
+    "rowhouse_pull_rain_ribbon_and_register_leak_v1": {
+      "function": "frame",
+      "shot_number": 5,
+      "shot_id": "shot-05-rain-test-fails",
+      "events_source": "production-plan.json",
+      "events_pointer": "/shots/4/events",
+      "timing_pointer": "/shots/4/timing/landmarks",
+      "note": "No duplicated event table; compiler uses this shot in the current plan.",
+      "framing": "subject",
+      "focal_target": "interior-floor-strip"
+    },
+    "rowhouse_checkpoint_carriage_rollback_v1": {
+      "function": "frame",
+      "shot_number": 6,
+      "shot_id": "shot-06-rollback-restores",
+      "events_source": "production-plan.json",
+      "events_pointer": "/shots/5/events",
+      "timing_pointer": "/shots/5/timing/landmarks",
+      "note": "No duplicated event table; compiler uses this shot in the current plan.",
+      "framing": "establish",
+      "focal_target": "paper-gold-rollback-carriage"
+    },
+    "rowhouse_repeat_rain_test_pass_v1": {
+      "function": "frame",
+      "shot_number": 7,
+      "shot_id": "shot-07-restored-test-passes",
+      "events_source": "production-plan.json",
+      "events_pointer": "/shots/6/events",
+      "timing_pointer": "/shots/6/timing/landmarks",
+      "note": "No duplicated event table; compiler uses this shot in the current plan.",
+      "framing": "subject",
+      "focal_target": "teal-side-gutter"
+    },
+    "rowhouse_history_reverse_fold_finale_v1": {
+      "function": "frame",
+      "shot_number": 8,
+      "shot_id": "shot-08-every-step-reversible",
+      "events_source": "production-plan.json",
+      "events_pointer": "/shots/7/events",
+      "timing_pointer": "/shots/7/timing/landmarks",
+      "note": "No duplicated event table; compiler uses this shot in the current plan.",
+      "framing": "establish",
+      "focal_target": "rowhouse-facade"
+    }
+  },
+  "validation": "load_parts resolved every focal/reaction ID from actual SVG; named inverse grips bind current local anchors; runtime/frame rendering pending independent rough evidence; not visual PASS",
+  "timing_adapter": "source/timing.py",
+  "timing_sha256": "64c63f3f0b7bf7bc4dfa99ca3b75800dc7e64b976fd577d523c6b8e141b79818",
+  "control_routes": [
+    {
+      "id": "history-engage-control",
+      "shape": "teal square with upward hook",
+      "position": [
+        84,
+        814
+      ],
+      "driver": "visible cable to discard trip latch",
+      "function": "Engage history catch only; persistent engaged state after shot01."
+    },
+    {
+      "id": "checkpoint-capture-control",
+      "shape": "gold square with nested pressure stamp",
+      "position": [
+        144,
+        814
+      ],
+      "driver": "separate visible cable to pressure cam and archive latch",
+      "function": "Capture dry original checkpoint only in shot03; locks before comparison."
+    },
+    {
+      "id": "paper-gold-checkpoint-tab",
+      "shape": "gold scalloped left-arrow pull",
+      "position": [
+        94,
+        874
+      ],
+      "driver": "separate visible cable to rollback carriage and floor shuttle",
+      "function": "Rollback only in shot06; keeps distinct left/right anchors."
+    }
+  ],
+  "channel_capability": "high-energy paper",
+  "persistent_parts": {
+    "rowhouse-facade": {
+      "source_group": "rowhouse-facade",
+      "adapter": "frame.put / frame.strip",
+      "owns_geometry": true
+    },
+    "teal-original-roof": {
+      "source_group": "teal-original-roof",
+      "adapter": "frame.put / frame.strip",
+      "owns_geometry": true
+    },
+    "coral-replacement-roof": {
+      "source_group": "coral-replacement-roof",
+      "adapter": "frame.put / frame.strip",
+      "owns_geometry": true
+    },
+    "interior-floor-strip": {
+      "source_group": "interior-floor-strip",
+      "adapter": "frame.put / frame.strip",
+      "owns_geometry": true
+    },
+    "upper-window-flap": {
+      "source_group": "upper-window-flap",
+      "adapter": "frame.put / frame.strip",
+      "owns_geometry": true
+    },
+    "left-keyed-roof-slot": {
+      "source_group": "left-keyed-roof-slot",
+      "adapter": "frame.put / frame.strip",
+      "owns_geometry": true
+    },
+    "right-keyed-roof-slot": {
+      "source_group": "right-keyed-roof-slot",
+      "adapter": "frame.put / frame.strip",
+      "owns_geometry": true
+    },
+    "paper-gold-checkpoint-plate": {
+      "source_group": "paper-gold-checkpoint-plate",
+      "adapter": "frame.put / frame.strip",
+      "owns_geometry": true
+    },
+    "paper-gold-checkpoint-tab": {
+      "source_group": "paper-gold-checkpoint-tab",
+      "adapter": "frame.put / frame.strip",
+      "owns_geometry": true
+    },
+    "history-engage-control": {
+      "source_group": "history-engage-control",
+      "adapter": "frame.put / frame.strip",
+      "owns_geometry": true
+    },
+    "checkpoint-capture-control": {
+      "source_group": "checkpoint-capture-control",
+      "adapter": "frame.put / frame.strip",
+      "owns_geometry": true
+    },
+    "paper-gold-rollback-carriage": {
+      "source_group": "paper-gold-rollback-carriage",
+      "adapter": "frame.put / frame.strip",
+      "owns_geometry": true
+    },
+    "paper-gold-catch-tongue": {
+      "source_group": "paper-gold-catch-tongue",
+      "adapter": "frame.put / frame.strip",
+      "owns_geometry": true
+    },
+    "paper-gold-history-strip": {
+      "source_group": "paper-gold-history-strip",
+      "adapter": "frame.put / frame.strip",
+      "owns_geometry": true
+    },
+    "teal-side-gutter": {
+      "source_group": "teal-side-gutter",
+      "adapter": "frame.put / frame.strip",
+      "owns_geometry": true
+    },
+    "paper-gold-catch-cup": {
+      "source_group": "paper-gold-catch-cup",
+      "adapter": "frame.put / frame.strip",
+      "owns_geometry": true
+    },
+    "write-latch": {
+      "source_group": "write-latch",
+      "adapter": "frame.put / frame.strip",
+      "owns_geometry": true
+    },
+    "rain-ribbon-anchor": {
+      "source_group": "rain-ribbon-anchor",
+      "adapter": "frame.put / frame.strip",
+      "owns_geometry": true
+    },
+    "test-ribbon-guide": {
+      "source_group": "test-ribbon-guide",
+      "adapter": "frame.put / frame.strip",
+      "owns_geometry": true
+    },
+    "folio-center-hinge": {
+      "source_group": "folio-center-hinge",
+      "adapter": "frame.put / frame.strip",
+      "owns_geometry": true
+    },
+    "wet-test-history-leaf": {
+      "source_group": "wet-test-history-leaf",
+      "adapter": "frame.put / frame.strip",
+      "owns_geometry": true
+    },
+    "failed-roof-history-leaf": {
+      "source_group": "failed-roof-history-leaf",
+      "adapter": "frame.put / frame.strip",
+      "owns_geometry": true
+    },
+    "history-state-original": {
+      "source_group": "history-state-original",
+      "adapter": "frame.put / frame.strip",
+      "owns_geometry": true
+    },
+    "history-state-restored": {
+      "source_group": "history-state-restored",
+      "adapter": "frame.put / frame.strip",
+      "owns_geometry": true
+    },
+    "checkpoint-archive-slot": {
+      "source_group": "checkpoint-archive-slot",
+      "adapter": "frame.put / frame.strip",
+      "owns_geometry": true
+    },
+    "pinboard-seam": {
+      "source_group": "pinboard-seam",
+      "adapter": "frame.put / frame.strip",
+      "owns_geometry": true
+    },
+    "tabletop": {
+      "source_group": "tabletop",
+      "adapter": "frame.put / frame.strip",
+      "owns_geometry": true
+    },
+    "roof-eave-grip": {
+      "source_group": "roof-eave-grip",
+      "adapter": "frame.put / frame.strip",
+      "owns_geometry": true
+    },
+    "house-dry-state": {
+      "source_group": "house-dry-state",
+      "adapter": "frame.put / frame.strip",
+      "owns_geometry": true
+    },
+    "house-wet-state": {
+      "source_group": "house-wet-state",
+      "adapter": "frame.put / frame.strip",
+      "owns_geometry": true
+    },
+    "write-drive-rack": {
+      "source_group": "write-drive-rack",
+      "adapter": "frame.put / frame.strip",
+      "owns_geometry": true
+    },
+    "comparison-drive-rack": {
+      "source_group": "comparison-drive-rack",
+      "adapter": "frame.put / frame.strip",
+      "owns_geometry": true
+    },
+    "discard-trip-latch": {
+      "source_group": "discard-trip-latch",
+      "adapter": "frame.put / frame.strip",
+      "owns_geometry": true
+    },
+    "catch-leaf-spring": {
+      "source_group": "catch-leaf-spring",
+      "adapter": "frame.put / frame.strip",
+      "owns_geometry": true
+    },
+    "comparison-leaf-spring": {
+      "source_group": "comparison-leaf-spring",
+      "adapter": "frame.put / frame.strip",
+      "owns_geometry": true
+    },
+    "capture-pressure-cam": {
+      "source_group": "capture-pressure-cam",
+      "adapter": "frame.put / frame.strip",
+      "owns_geometry": true
+    },
+    "return-drive-flywheel": {
+      "source_group": "return-drive-flywheel",
+      "adapter": "frame.put / frame.strip",
+      "owns_geometry": true
+    },
+    "checkpoint-drive-latch": {
+      "source_group": "checkpoint-drive-latch",
+      "adapter": "frame.put / frame.strip",
+      "owns_geometry": true
+    },
+    "checkpoint-dry-floor-cassette": {
+      "source_group": "checkpoint-dry-floor-cassette",
+      "adapter": "frame.put / frame.strip",
+      "owns_geometry": true
+    },
+    "floor-shuttle": {
+      "source_group": "floor-shuttle",
+      "adapter": "frame.put / frame.strip",
+      "owns_geometry": true
+    },
+    "failed-state-bay": {
+      "source_group": "failed-state-bay",
+      "adapter": "frame.put / frame.strip",
+      "owns_geometry": true
+    },
+    "live-floor-mounts": {
+      "source_group": "live-floor-mounts",
+      "adapter": "frame.put / frame.strip",
+      "owns_geometry": true
+    },
+    "return-drive-lever": {
+      "source_group": "return-drive-lever",
+      "adapter": "frame.put / frame.strip",
+      "owns_geometry": true
+    },
+    "return-cam-follower": {
+      "source_group": "return-cam-follower",
+      "adapter": "frame.put / frame.strip",
+      "owns_geometry": true
+    },
+    "return-cam-apex": {
+      "source_group": "return-cam-apex",
+      "adapter": "frame.put / frame.strip",
+      "owns_geometry": true
+    },
+    "floor-sag-stop": {
+      "source_group": "floor-sag-stop",
+      "adapter": "frame.put / frame.strip",
+      "owns_geometry": true
+    },
+    "carriage-stop": {
+      "source_group": "carriage-stop",
+      "adapter": "frame.put / frame.strip",
+      "owns_geometry": true
+    },
+    "checkpoint-display-stop": {
+      "source_group": "checkpoint-display-stop",
+      "adapter": "frame.put / frame.strip",
+      "owns_geometry": true
+    },
+    "failed-display-stop": {
+      "source_group": "failed-display-stop",
+      "adapter": "frame.put / frame.strip",
+      "owns_geometry": true
+    },
+    "history-state-proposed": {
+      "source_group": "history-state-proposed",
+      "adapter": "frame.put / frame.strip",
+      "owns_geometry": true
+    },
+    "test-water-slug": {
+      "source_group": "test-water-slug",
+      "adapter": "frame.put / frame.strip",
+      "owns_geometry": true
+    },
+    "test-water-reservoir": {
+      "source_group": "test-water-reservoir",
+      "adapter": "frame.put / frame.strip",
+      "owns_geometry": true
+    },
+    "test-take-up-cable": {
+      "source_group": "test-take-up-cable",
+      "adapter": "frame.put / frame.strip",
+      "owns_geometry": true
+    },
+    "dry-cassette-latch": {
+      "source_group": "dry-cassette-latch",
+      "adapter": "frame.put / frame.strip",
+      "owns_geometry": true
+    },
+    "checkpoint-state-stamp": {
+      "source_group": "checkpoint-state-stamp",
+      "adapter": "frame.put / frame.strip",
+      "owns_geometry": true
+    }
+  }
+}

@@ -1,0 +1,111 @@
+{
+  "quality_mode": "motif-gold-v1",
+  "script": "A closed route can carry it.",
+  "asset_usage": [
+    {
+      "id": "planning-paper",
+      "scope": "production-specific",
+      "path": "",
+      "metadata_path": "",
+      "agent_assisted": true
+    }
+  ],
+  "beats": [
+    {
+      "id": "b1",
+      "narration": "A closed route can carry it.",
+      "quality": {
+        "purpose": "A closed route can carry it.",
+        "hero": "route and token",
+        "primary_action": "The route bridge slides into its gap and the token crosses.",
+        "performance": {
+          "state": "absent",
+          "target": ""
+        },
+        "before": "The token is blocked at a visible gap.",
+        "after": "The closed bridge visibly carries the token across.",
+        "focal_target": "receipt pile",
+        "framing": "subject",
+        "reaction_radius": {
+          "origin": [
+            640,
+            782
+          ],
+          "radius": 200,
+          "duration": 0.6,
+          "targets": []
+        },
+        "secondary_motion": [],
+        "environment": [
+          "paper backboard",
+          "work surface"
+        ],
+        "exit_overlap": "Receipt settling carries into next beat",
+        "energy": {
+          "dominant_action": "The route bridge slides into its gap and the token crosses."
+        },
+        "art_direction": {
+          "hero_object": "route and token",
+          "bot_role": "absent",
+          "materials": [
+            "printed paper",
+            "wood shelf"
+          ],
+          "depth_planes": [
+            "tile wall",
+            "pricing placards",
+            "receipts and Bot"
+          ],
+          "composition": "A broad route fills a close crop with just a paper backdrop and route support; no Bot.",
+          "intentional_irregularity": "A corner crop directs attention to the active contact.",
+          "environment_mode": "physical",
+          "environment_justification": null
+        }
+      }
+    }
+  ],
+  "film_structure": {
+    "version": "structure-1.0",
+    "rhetorical_chapters": [
+      {
+        "id": "argument",
+        "purpose": "Develop the supplied short argument through visible changes.",
+        "narration_span": {
+          "start_word": 0,
+          "end_word": 6,
+          "text": "A closed route can carry it."
+        }
+      }
+    ],
+    "setups": [
+      {
+        "setup_id": "s1",
+        "chapter": "argument",
+        "narration_span": {
+          "start_word": 0,
+          "end_word": 6,
+          "text": "A closed route can carry it."
+        },
+        "semantic_center": "A repaired route carries its token",
+        "visual_rule": "A closed connection permits transit.",
+        "relationship_archetype": "physical interaction",
+        "hero": "route and token",
+        "bot_role": "absent",
+        "continuity_tokens": [],
+        "environment_mode": "physical",
+        "palette_family": "warm paper / teal",
+        "entry_state": "The token is blocked at a visible gap.",
+        "exit_state": "The closed bridge visibly carries the token across.",
+        "reason_for_persistence": "The bridge closure and token crossing develop one rule. Bot has no causal or orientation role.",
+        "planned_reset_after": {
+          "kind": "end",
+          "reason": "The argument ends in this visible consequence."
+        },
+        "beat_ids": [
+          "b1"
+        ]
+      }
+    ],
+    "continuity_tokens": []
+  }
+}

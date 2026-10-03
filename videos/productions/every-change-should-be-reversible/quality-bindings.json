@@ -1,0 +1,4897 @@
+{
+  "scope": "production-specific finite adapter; shared performance, inverse grip and selected reaction functions",
+  "contract": {
+    "source": "production-plan.json",
+    "bindings": "production-specific finite part transforms and exact local-frame events",
+    "scopes": {
+      "candidate-reusable": [],
+      "canonical-promoted": []
+    }
+  },
+  "shots": [
+    {
+      "id": "shot-01-unsafe-overwrite",
+      "narration": "Giving an AI write access without version history is like letting someone renovate your house with no before photos.",
+      "action_binding": "rowhouse_unlogged_roof_overwrite_v1",
+      "physical_sequence": [
+        "Bot turns write-latch20\u201336, advancing the coral proposal on its visible rack.",
+        "Right hand lifts the original50\u2013100 and stays attached under visible burden until release175; left hand brakes112\u2013126 and releases150 after the gold detent locks.",
+        "Free left hand engages dormant history control177. Roof reaches the trip latch at global190, then the catch tongue acquires it at global199; the first0.5s is descent to impact, not complete capture."
+      ],
+      "consequence": "The opening configuration is visibly endangered, but the proposed roof is mechanically stopped before it can overwrite the empty anchors.",
+      "focus_target": "teal-original-roof",
+      "framing": "establish",
+      "needed_assets": [
+        "assets/characters/motif-bot/canonical/v1/motif-bot-front-neutral-v1.svg",
+        "videos/productions/every-change-should-be-reversible/assets/props/reversible-rowhouse-folio.svg"
+      ],
+      "quality": {
+        "purpose": "Make unversioned write access physically dangerous and establish the exact HOUSE state that must return.",
+        "hero": "The intact rowhouse becoming an unresolved two-roof overwrite.",
+        "primary_action": "Bot activates the linked write mechanism, removes the original roof and brakes the advancing replacement too late to prevent the original from falling.",
+        "performance": {
+          "state": "surprised",
+          "target": "bot"
+        },
+        "before": "The teal roof occupies both slots; the windows and cream floor are unchanged and dry.",
+        "after": "Slots are empty, proposed coral roof braked; original roof approaches the discard mouth. Newly engaged history catch is now in its path.",
+        "focal_target": "teal-original-roof",
+        "framing": "establish",
+        "reaction_radius": {
+          "origin": [
+            360,
+            486
+          ],
+          "radius": 252,
+          "duration": 0.52,
+          "targets": [
+            {
+              "id": "teal-original-roof",
+              "position": [
+                360,
+                430
+              ],
+              "relevance": 1,
+              "amplitude": {
+                "x": 2,
+                "y": 5,
+                "rotation": -2
+              },
+              "delay": 0
+            },
+            {
+              "id": "coral-replacement-roof",
+              "position": [
+                566,
+                492
+              ],
+              "relevance": 0.78,
+              "amplitude": {
+                "x": -3,
+                "y": 1,
+                "rotation": 1.5
+              },
+              "delay": 0.06
+            }
+          ]
+        },
+        "secondary_motion": [
+          "Right-hand inverse grip holds the roof through the entire loaded pause.",
+          "The braked rack stays against its gold detent after the left hand releases.",
+          "Dormant history control changes gray to teal only on the late left-hand intervention; independent background parts stay still."
+        ],
+        "environment": [
+          "Warm-cream tabletop with a deckled front edge",
+          "Charcoal pinboard seam behind the roofline",
+          "Paper-gold archive rail fixed to the house\u2019s left side"
+        ],
+        "exit_overlap": "At the shot boundary185 the falling original has entered the six-frame pre-impact window; no latch contact yet. Actual trip-latch impact is next-shot local5/global190; tongue contact follows at local14/global199.",
+        "energy": {
+          "dominant_action": "The original roof is removed and released while the linked replacement drive is abruptly braked.",
+          "character_response": "Focused leverage0\u201399 changes to burdened holding100\u2013174 and surprised response175 onward; the free left hand operates history177.",
+          "local_reaction": "Only explicitly connected roof, latch and braked proposal targets react; the facade and unrelated house components stay fixed.",
+          "residual_motion": "The teal eave and Bot antenna retain brief paper lag.",
+          "next_action_overlap": "The falling eave is already entering the trip latch\u2019s six-frame pre-impact window."
+        },
+        "art_direction": {
+          "hero_object": "A tall asymmetrical paper rowhouse with mutually exclusive teal and coral roof cards and exposed write linkage.",
+          "bot_role": "participant",
+          "materials": [
+            "Warm-cream fibrous fa\u00e7ade card",
+            "Teal and coral laminated roof card",
+            "Charcoal rack, latch and discard mouth",
+            "Paper-gold archive rail"
+          ],
+          "depth_planes": [
+            "Rear pinboard seam and discard mouth",
+            "Midplane house and roof rack",
+            "Foreground Bot, latch and contact shadows"
+          ],
+          "composition": "The house fills the central portrait field; Bot anchors the lower left and the opposing roofs form a readable diagonal above the windows. Until the late engagement the history tongue/strip are folded closed and unavailable; only the narrow inactive rail is visible. Newly pressed tab177 is the intervention; no earlier checkpoint is present. The unavailable history circuit has a dormant gray control face and a closed thin rail before177; only the left-hand press turns the history face teal and engages its separate cable. This is visibly distinct from the unsafe coral drive and the later gold checkpoint capture.",
+          "intentional_irregularity": "The ridge is off-center, window widths and baselines differ, and the left fa\u00e7ade edge bows outward.",
+          "environment_mode": "physical",
+          "environment_justification": null
+        }
+      },
+      "startFrame": 0,
+      "endFrame": 185,
+      "events": [
+        {
+          "local_frame": 0,
+          "kind": "start",
+          "actor": "Bot",
+          "target": "rowhouse-facade",
+          "state_change": "Opening HOUSE state is visible: teal roof seated, three windows exposed, cream floor level and dry.",
+          "affine_rule": "Hold every house part at its registered opening transform.",
+          "id": "rowhouse-facade-start"
+        },
+        {
+          "local_frame": 20,
+          "kind": "contact",
+          "actor": "Bot right hand",
+          "target": "write-latch",
+          "state_change": "Right hand seats on write-latch.grip; discard mouth and coral drive are mechanically armed.",
+          "affine_rule": "Solve the canonical right-hand inverse grip to write-latch.grip after the latch reaction transform.",
+          "id": "write-latch-contact"
+        },
+        {
+          "local_frame": 36,
+          "kind": "release",
+          "actor": "Bot right hand",
+          "target": "write-latch",
+          "state_change": "The turned latch releases the write-drive rack; discard mouth opens and coral roof begins advancing.",
+          "affine_rule": "Freeze the latch at its turned stop, release the hand constraint, then translate the connected rack and coral-replacement-roof along their bounded rail.",
+          "id": "write-latch-release"
+        },
+        {
+          "local_frame": 50,
+          "kind": "contact",
+          "actor": "Bot right hand",
+          "target": "teal-original-roof",
+          "state_change": "Right hand seats on teal-original-roof.eave and begins lifting the roof from both slots.",
+          "affine_rule": "Apply the roof lift transform, then solve the right-hand inverse grip to teal-original-roof.eave.",
+          "id": "teal-original-roof-contact"
+        },
+        {
+          "id": "teal-original-roof-stop",
+          "local_frame": 100,
+          "kind": "stop",
+          "actor": "Bot right hand",
+          "target": "teal-original-roof",
+          "state_change": "Bot reaches the upper lift stop and visibly bears the roof until release175; this interval is held load, not slow gravity.",
+          "affine_rule": "Keep the roof transform at its lift stop and maintain the right inverse grip; burdened canonical acting carries the load while the left hand applies the rack brake."
+        },
+        {
+          "local_frame": 112,
+          "kind": "contact",
+          "actor": "Bot left hand",
+          "target": "write-latch",
+          "state_change": "Left hand presses write-latch.brake-grip and engages the rack brake.",
+          "affine_rule": "Resolve the authored left arm to write-latch.brake-grip after Bot performance and latch reaction transforms.",
+          "id": "write-latch-contact-2"
+        },
+        {
+          "local_frame": 126,
+          "kind": "stop",
+          "actor": "write-drive-rack",
+          "target": "coral-replacement-roof",
+          "state_change": "The connected rack stops the coral roof twelve authoring pixels before either roof slot.",
+          "affine_rule": "Clamp write-drive-rack and coral-replacement-roof at the declared brake stop; retain two pixels of local compression only.",
+          "id": "coral-replacement-roof-stop"
+        },
+        {
+          "id": "write-latch-release-explicit",
+          "local_frame": 150,
+          "kind": "release",
+          "actor": "Bot left hand",
+          "target": "write-latch",
+          "state_change": "The brake face is held by its visible gold detent at126; Bot releases its left grip at150. Rack remains stationary.",
+          "affine_rule": "Remove the left inverse-grip constraint at150; hold the braked rack and latch against the painted detent."
+        },
+        {
+          "local_frame": 175,
+          "kind": "release",
+          "actor": "Bot right hand",
+          "target": "teal-original-roof",
+          "state_change": "The held original roof is released at175; it falls for only15 frames before the next-shot latch impact, not three seconds.",
+          "affine_rule": "Preserve the roof\u2019s release pose and continue with the finite descent transform; remove the inverse-grip constraint at this frame.",
+          "id": "teal-original-roof-release"
+        },
+        {
+          "local_frame": 176,
+          "kind": "start",
+          "actor": "teal-original-roof",
+          "target": "discard-trip-latch",
+          "state_change": "Released teal roof begins approaching the still-disengaged trip latch; no contact or ownership transfer has occurred.",
+          "affine_rule": "Continue bounded free-descent table; no keyed latch constraint before shot02 impact5.",
+          "id": "discard-trip-latch-start"
+        },
+        {
+          "local_frame": 177,
+          "kind": "contact",
+          "actor": "Bot left hand",
+          "target": "history-engage-control",
+          "state_change": "Bot newly engages the gold archive trip latch while the original roof is still falling toward terminal discard.",
+          "affine_rule": "After left brake-grip release150, the free left hand has27 frames to reach history-engage-control.left-grip [13,25]; solve left inverse grip at177. Right hand releases the roof175.",
+          "id": "history-engage-control-contact"
+        }
+      ],
+      "capability_route": {
+        "registered_performance": "Registered high-energy paper target bot; operative performance_phases call the canonical motif_performance renderer with state-local age and inverse grips.",
+        "reaction_and_focus": "Registered high-energy paper: its bot/actual-persistent-prop channel uses shared motif_reaction and canonical motif_performance. Selected persistent names are the real parts of this finite action. rowhouse-production-v1 supplies agent-assisted physical geometry, contact anchors and finite action choreography only; it does not define a new quality channel.",
+        "framing": "high-energy paper selected finite-action framing. Source checks chosen focal_target and framing against the explicit action binding; whole-scene camera uses this shot\u2019s operative named event markers. Unsupported changes require explicit action development, never silent fallback."
+      },
+      "asset_development": {
+        "new_artwork": "Only reversible-rowhouse-folio.svg: listed physical paper layers and anchors; GENERATED asset geometry scope scene-specific",
+        "new_choreography": "Only source/build.py: eight finite adapters keyed by these exact event frames; canonical Bot geometry and shared modules unchanged"
+      },
+      "pre_animation_validation": "Data contracts and implemented binding route only; actual motion/mobile/contact quality must remain pending until live rendered rough critics.",
+      "timing": {
+        "landmarks": {
+          "opening": {
+            "local_frame": 0
+          },
+          "write-latch-contact": {
+            "event_id": "write-latch-contact"
+          },
+          "write-latch-release": {
+            "event_id": "write-latch-release"
+          },
+          "teal-original-roof-contact": {
+            "event_id": "teal-original-roof-contact"
+          },
+          "teal-original-roof-contact-plus-10": {
+            "event_id": "teal-original-roof-contact",
+            "offset": 10
+          },
+          "teal-original-roof-contact-plus-15": {
+            "event_id": "teal-original-roof-contact",
+            "offset": 15
+          },
+          "teal-original-roof-stop": {
+            "event_id": "teal-original-roof-stop"
+          },
+          "write-latch-contact-2": {
+            "event_id": "write-latch-contact-2"
+          },
+          "coral-replacement-roof-stop": {
+            "event_id": "coral-replacement-roof-stop"
+          },
+          "write-latch-release-explicit": {
+            "event_id": "write-latch-release-explicit"
+          },
+          "teal-original-roof-release": {
+            "event_id": "teal-original-roof-release"
+          },
+          "history-engage-control-contact": {
+            "event_id": "history-engage-control-contact"
+          },
+          "history-engage-control-contact-plus-7": {
+            "event_id": "history-engage-control-contact",
+            "offset": 7
+          },
+          "shot-end": {
+            "boundary": "end"
+          }
+        },
+        "meaning": "Named landmarks resolve to the event local_frame, optionally plus a declared relative offset. These names are keys, not playback times. The compiler directly uses resolved event frames."
+      },
+      "performance_phases": [
+        {
+          "state": "focused",
+          "start": "opening",
+          "binding": "scripts/motif_performance.py:render",
+          "age": "seconds since resolved phase start"
+        },
+        {
+          "state": "burdened",
+          "start": "teal-original-roof-stop",
+          "binding": "scripts/motif_performance.py:render",
+          "age": "seconds since resolved phase start"
+        },
+        {
+          "state": "surprised",
+          "start": "teal-original-roof-release",
+          "binding": "scripts/motif_performance.py:render",
+          "age": "seconds since resolved phase start"
+        }
+      ],
+      "quality_channel_capability": "high-energy paper",
+      "compiled_frame_count": 185
+    },
+    {
+      "id": "shot-02-history-catches-change",
+      "narration": "Every change should leave a trail.",
+      "action_binding": "rowhouse_gold_history_catch_v1",
+      "physical_sequence": [
+        "The falling teal eave strikes the visible discard-trip latch.",
+        "The latch releases an exposed paper leaf spring connected to the gold catch tongue and segmented history strip.",
+        "The driven tongue hooks the teal eave before the discard mouth; successive owned strip segments unfold and carry the roof into the original-state bay.",
+        "The tongue seats the original in the first gold bay and closes the discard mouth; a visible gold connecting strip attaches to the still-braked coral write rack without moving the coral roof. The comparison drive will move it only after checkpoint capture.",
+        "The house\u2019s empty roof slots are the completed physical change from shot01. The retained teal roof records the prior seated state while the live house is visibly roofless. The uninstalled coral proposal is not claimed as a completed version."
+      ],
+      "consequence": "A retained original is physically linked to the pending replacement rack, allowing restoration before actual logged renovation.",
+      "focus_target": "paper-gold-history-strip",
+      "framing": "detail",
+      "needed_assets": [
+        "videos/productions/every-change-should-be-reversible/assets/props/reversible-rowhouse-folio.svg"
+      ],
+      "quality": {
+        "purpose": "Record the ACTUAL COMPLETED CHANGE of removing the seated roof: live slots are empty and the previous teal-roof state is physically retained. The pending coral proposal is intentionally not a completed roof exchange.",
+        "hero": "The newly engaged gold archive catching the original roof and attaching its retained trail to the pending replacement rack.",
+        "primary_action": "Falling roof trips the newly engaged spring catch; original roof seats in its history bay, and gold trail attaches to the stationary pending replacement rack.",
+        "performance": {
+          "state": "absent",
+          "target": ""
+        },
+        "before": "The completed removal has left the live house roofless; the teal prior roof is falling toward discard, and the uninstalled coral proposal remains on its braked rack.",
+        "after": "The original teal roof is retained in the gold history bay; the terminal strip hooks the braked pending coral rack. Live roof slots remain empty, and the proposal remains stationary.",
+        "focal_target": "paper-gold-history-strip",
+        "framing": "detail",
+        "reaction_radius": {
+          "origin": [
+            266,
+            500
+          ],
+          "radius": 214,
+          "duration": 0.44,
+          "targets": [
+            {
+              "id": "discard-trip-latch",
+              "position": [
+                318,
+                478
+              ],
+              "relevance": 1,
+              "amplitude": {
+                "x": 2,
+                "y": 3,
+                "rotation": 2
+              },
+              "delay": 0
+            },
+            {
+              "id": "paper-gold-catch-tongue",
+              "position": [
+                268,
+                504
+              ],
+              "relevance": 0.94,
+              "amplitude": {
+                "x": 4,
+                "y": -2,
+                "rotation": 1
+              },
+              "delay": 0.03
+            },
+            {
+              "id": "teal-original-roof",
+              "position": [
+                388,
+                458
+              ],
+              "relevance": 0.86,
+              "amplitude": {
+                "x": 2,
+                "y": -4,
+                "rotation": 2
+              },
+              "delay": 0.06
+            }
+          ]
+        },
+        "secondary_motion": [
+          "History-strip segments open successively from the spring-owned inner segment to the outer bay.",
+          "The hooked teal roof overshoots its bay by four pixels and returns.",
+          "The discard mouth closes only after the original roof lands in its history bay; the proposed coral roof stays on its braked rack, attached to the newly visible connecting strip.",
+          "The roof descends40 author pixels into a frontmost cream-backed discard latch; the latch visibly depresses20 pixels before releasing the linked spring. The tongue approaches only after release, then follows the actual eave."
+        ],
+        "environment": [
+          "Warm-cream tabletop below the catch",
+          "Charcoal pinboard seam behind the roof bays",
+          "Paper-gold archive rail anchoring the spring and strip"
+        ],
+        "exit_overlap": null,
+        "energy": {
+          "dominant_action": "Falling roof trips the newly engaged spring catch; original roof seats in its history bay, and gold trail attaches to the stationary pending replacement rack.",
+          "character_response": null,
+          "local_reaction": "The trip latch, catch tongue and contacted teal roof react in sequence.",
+          "residual_motion": "The outer owned strip segment settles last.",
+          "next_action_overlap": null
+        },
+        "art_direction": {
+          "hero_object": "A gold segmented history strip with an exposed leaf spring, catch tongue and two roof-shaped bays.",
+          "bot_role": "absent",
+          "materials": [
+            "Paper-gold foil folds with cream cores",
+            "Teal and coral laminated roof cards",
+            "Charcoal trip latch and discard liner",
+            "Cream card spring mounts"
+          ],
+          "depth_planes": [
+            "Rear closed-mouth track and pinboard seam",
+            "Midplane roof cards and house crown",
+            "Foreground trip latch, spring and catch tongue"
+          ],
+          "composition": "The catch occupies the central mobile field; the spring-to-hook-to-roof line remains unobstructed and the two large roof profiles fill the lower half.",
+          "intentional_irregularity": "Owned accordion segments have unequal fold widths and rounded hand-cut corners while their keyed seats remain exact.",
+          "environment_mode": "physical",
+          "environment_justification": null
+        }
+      },
+      "startFrame": 185,
+      "endFrame": 243,
+      "events": [
+        {
+          "local_frame": 5,
+          "kind": "impact",
+          "actor": "teal-original-roof",
+          "target": "discard-trip-latch",
+          "state_change": "teal-original-roof.eave depresses discard-trip-latch.trip from armed to released.",
+          "affine_rule": "Compose the roof descent before the latch\u2019s bounded local rotation; transfer no transform to unrelated strip segments.",
+          "id": "discard-trip-latch-impact"
+        },
+        {
+          "local_frame": 7,
+          "kind": "release",
+          "actor": "discard-trip-latch",
+          "target": "catch-leaf-spring",
+          "state_change": "The latch releases the visibly compressed spring from armed to driving.",
+          "affine_rule": "Remove the latch hold and evaluate the finite spring extension on its registered output axis.",
+          "id": "catch-leaf-spring-release"
+        },
+        {
+          "local_frame": 14,
+          "kind": "contact",
+          "actor": "paper-gold-catch-tongue",
+          "target": "teal-original-roof",
+          "state_change": "paper-gold-catch-tongue.hook engages teal-original-roof.eave.",
+          "affine_rule": "Solve the hook-to-eave keyed contact after the tongue extension transform.",
+          "id": "teal-original-roof-contact"
+        },
+        {
+          "local_frame": 15,
+          "kind": "handoff",
+          "actor": "teal-original-roof",
+          "target": "paper-gold-catch-tongue",
+          "state_change": "Roof motion changes from free descent to spring-driven catch travel.",
+          "affine_rule": "Preserve the contact pose and transfer roof ownership to the tongue\u2019s keyed child transform.",
+          "id": "paper-gold-catch-tongue-handoff"
+        },
+        {
+          "local_frame": 20,
+          "kind": "start",
+          "actor": "catch-leaf-spring",
+          "target": "paper-gold-history-strip",
+          "state_change": "The spring output begins opening owned history segments from inner to outer.",
+          "affine_rule": "Drive each named segment hinge from its own local pivot; do not transform the whole strip as one articulated part.",
+          "id": "paper-gold-history-strip-start"
+        },
+        {
+          "local_frame": 34,
+          "kind": "landing",
+          "actor": "teal-original-roof",
+          "target": "history-state-original",
+          "state_change": "The caught teal roof seats in the original-state roof notch.",
+          "affine_rule": "Snap both teal keys to history-state-original roof sockets, then allow a four-pixel bounded rebound.",
+          "id": "history-state-original-landing"
+        },
+        {
+          "local_frame": 38,
+          "kind": "contact",
+          "actor": "paper-gold-history-strip",
+          "target": "write-drive-rack",
+          "state_change": "The trailing gold strip hooks the stationary braked coral rack, and its return linkage closes the discard mouth. Coral roof remains stationary.",
+          "affine_rule": "Extend the terminal owned strip segment to the registered rack clevis; close the local mouth hinge only after original-bay landing34.",
+          "id": "write-drive-rack-contact"
+        },
+        {
+          "local_frame": 44,
+          "kind": "stop",
+          "actor": "catch-leaf-spring",
+          "target": "paper-gold-history-strip",
+          "state_change": "The spring reaches its finite stop; both bays remain connected and the discard mouth closes.",
+          "affine_rule": "Clamp every segment at its declared hinge angle and close the discard mouth on its separate bounded transform.",
+          "id": "paper-gold-history-strip-stop"
+        }
+      ],
+      "capability_route": {
+        "registered_performance": "Absent Bot: no performance phases, no renderer call, target empty as required by plan_check.",
+        "reaction_and_focus": "Registered high-energy paper: its bot/actual-persistent-prop channel uses shared motif_reaction and canonical motif_performance. Selected persistent names are the real parts of this finite action. rowhouse-production-v1 supplies agent-assisted physical geometry, contact anchors and finite action choreography only; it does not define a new quality channel.",
+        "framing": "high-energy paper selected finite-action framing. Source checks chosen focal_target and framing against the explicit action binding; whole-scene camera uses this shot\u2019s operative named event markers. Unsupported changes require explicit action development, never silent fallback."
+      },
+      "asset_development": {
+        "new_artwork": "Only reversible-rowhouse-folio.svg: listed physical paper layers and anchors; GENERATED asset geometry scope scene-specific",
+        "new_choreography": "Only source/build.py: eight finite adapters keyed by these exact event frames; canonical Bot geometry and shared modules unchanged"
+      },
+      "camera_continuity": "Detail crop above and to the right of Bot\u2019s established tabletop position. Bot remains outside this deliberately changed action crop; it does not vanish or leave the world.",
+      "pre_animation_validation": "Data contracts and implemented binding route only; actual motion/mobile/contact quality must remain pending until live rendered rough critics.",
+      "timing": {
+        "landmarks": {
+          "local-landmark-0": {
+            "local_frame": 0
+          },
+          "opening": {
+            "local_frame": 0
+          },
+          "discard-trip-latch-impact": {
+            "event_id": "discard-trip-latch-impact"
+          },
+          "catch-leaf-spring-release": {
+            "event_id": "catch-leaf-spring-release"
+          },
+          "teal-original-roof-contact": {
+            "event_id": "teal-original-roof-contact"
+          },
+          "paper-gold-history-strip-start": {
+            "event_id": "paper-gold-history-strip-start"
+          },
+          "history-state-original-landing": {
+            "event_id": "history-state-original-landing"
+          },
+          "write-drive-rack-contact": {
+            "event_id": "write-drive-rack-contact"
+          },
+          "paper-gold-history-strip-stop": {
+            "event_id": "paper-gold-history-strip-stop"
+          }
+        },
+        "meaning": "Named landmarks resolve to the event local_frame, optionally plus a declared relative offset. These names are keys, not playback times. The compiler directly uses resolved event frames."
+      },
+      "performance_phases": [],
+      "quality_channel_capability": "high-energy paper",
+      "compiled_frame_count": 58
+    },
+    {
+      "id": "shot-03-save-checkpoint",
+      "narration": "Save a checkpoint before the work starts.",
+      "action_binding": "rowhouse_capture_keyed_checkpoint_v1",
+      "physical_sequence": [
+        "Bot returns the retained teal roof to both fa\u00e7ade slots and releases it only after the two keyed landings.",
+        "Bot grips the checkpoint tab and pulls the gold plate against registered rear stops behind the intact house.",
+        "A visible pressure cam rolls across the plate, mechanically setting roof-profile, window-position and floor-level relief shutters; its stored cream dry-floor cassette is locked as part of the checkpoint.",
+        "The plate retracts into the archive slot. Its final seat arms and releases the connected comparison drive for the next shot.",
+        "The checkpoint-linked dry cassette moves to an unobscured front tray390,950 during capture; its gold dry-cassette-latch closes from open angle65 to locked0 during35\u201343, then the locked cassette retracts44\u201355. The cream level bar remains readable below the live house.",
+        "Finite presentation start24, named registration35, visible latch closure43, retraction44 and archive stop55 make the later dry restoration explicitly earned. Blank plate wells become the captured stamp only during pressure35\u201343."
+      ],
+      "consequence": "The untouched roof, window arrangement and dry floor state are mechanically registered before the coral roof is installed.",
+      "focus_target": "paper-gold-checkpoint-plate",
+      "framing": "subject",
+      "needed_assets": [
+        "assets/characters/motif-bot/canonical/v1/motif-bot-front-neutral-v1.svg",
+        "videos/productions/every-change-should-be-reversible/assets/props/reversible-rowhouse-folio.svg"
+      ],
+      "quality": {
+        "purpose": "Show checkpointing as pressure, registration and storage rather than an unexplained appearing relief. The first unsafe attempt is aborted: original roof seats at15, restoring the opening state; actual renovation remains held until checkpoint seats55 and releases the comparison drive.",
+        "hero": "The intact rowhouse pressed against its full-height gold checkpoint plate.",
+        "primary_action": "After restoring the original roof, Bot pulls the exposed capture control. A large foreground gold plate registers the unchanged roof/windows/floor, the visible pressure cam stamps those features, and the same plate retracts to an unobscured upper-left archive stop.",
+        "performance": {
+          "state": "focused",
+          "target": "bot"
+        },
+        "before": "The teal roof is retained in the history bay, and the checkpoint relief shutters are unset.",
+        "after": "The same plate contains the pitched profile, three window marks and cream floor bar, parked visibly at the upper-left archive stop. The unchanged dry cassette is locked. The comparison spring and flywheel start only after Bot releases the capture control.",
+        "focal_target": "paper-gold-checkpoint-plate",
+        "framing": "subject",
+        "reaction_radius": {
+          "origin": [
+            196,
+            650
+          ],
+          "radius": 236,
+          "duration": 0.5,
+          "targets": [
+            {
+              "id": "capture-pressure-cam",
+              "position": [
+                244,
+                610
+              ],
+              "relevance": 1,
+              "amplitude": {
+                "x": 4,
+                "y": 1,
+                "rotation": 1.2
+              },
+              "delay": 0
+            },
+            {
+              "id": "paper-gold-checkpoint-plate",
+              "position": [
+                278,
+                652
+              ],
+              "relevance": 0.9,
+              "amplitude": {
+                "x": 3,
+                "y": 0,
+                "rotation": 0.6
+              },
+              "delay": 0.04
+            },
+            {
+              "id": "checkpoint-capture-control",
+              "position": [
+                126,
+                748
+              ],
+              "relevance": 0.7,
+              "amplitude": {
+                "x": 4,
+                "y": 1,
+                "rotation": -1
+              },
+              "delay": 0.08
+            }
+          ]
+        },
+        "secondary_motion": [
+          "Bot\u2019s roof hand follows the eave anchor until both keys land.",
+          "The cam\u2019s small follower wheels rotate only while pressure crosses registered house features.",
+          "The checkpoint tab rebounds once at the archive stop.",
+          "A visible dry-cassette-latch changes from raised/unlocked to closed/locked at the pressure capture; the dry cream floor bar is displayed unobscured before its archive retraction."
+        ],
+        "environment": [
+          "Warm-cream tabletop supporting Bot and house",
+          "Charcoal pinboard seam behind the pressure rail",
+          "Paper-gold archive rail with visible cam and plate stops"
+        ],
+        "exit_overlap": "The seated plate releases checkpoint-drive-latch; its exposed spring begins turning before the cut.",
+        "energy": {
+          "dominant_action": "The intact house is physically pressed, registered and stored as a checkpoint.",
+          "character_response": "Bot stays focused through capture, then its registered relieved phase begins at archive landing55 after the original checkpoint and dry cassette have locked.",
+          "local_reaction": "The pressure cam, plate and tab react without shaking the live house globally.",
+          "residual_motion": "The tab and cam follower settle at their mechanical stops.",
+          "next_action_overlap": "The released comparison spring begins moving its visible rack."
+        },
+        "art_direction": {
+          "hero_object": "A full-height gold checkpoint plate, pressure cam and intact rowhouse.",
+          "bot_role": "participant",
+          "materials": [
+            "Warm-cream deckled fa\u00e7ade card",
+            "Teal laminated roof",
+            "Embossable paper-gold relief shutters",
+            "Charcoal cam rail and archive slot"
+          ],
+          "depth_planes": [
+            "Rear pinboard and persistent live house",
+            "Foreground checkpoint plate and enlarged pressure cam",
+            "Smaller canonical Bot at lower left with visible control grip"
+          ],
+          "composition": "Checkpoint plate owns the capture frame in front of the house, not hidden behind its opaque facade. Bot uses the same canonical geometry at .34 scale in the lower left. The stamped plate seats at20,243 scale.55 and remains identifiable above Bot; the separate dry cassette remains visible below the plate. A exposed spring and flywheel begin driving before the next cut.",
+          "intentional_irregularity": "The latched relief preserves the skewed ridge, unequal windows and bowed wall rather than regularizing them.",
+          "environment_mode": "physical",
+          "environment_justification": null
+        }
+      },
+      "startFrame": 243,
+      "endFrame": 308,
+      "events": [
+        {
+          "local_frame": 4,
+          "kind": "contact",
+          "actor": "Bot right hand",
+          "target": "teal-original-roof",
+          "state_change": "Right hand seats on teal-original-roof.eave and lifts the roof from history-state-original.",
+          "affine_rule": "Apply the roof transfer transform, then solve the canonical right-hand inverse grip to the eave anchor.",
+          "id": "teal-original-roof-contact"
+        },
+        {
+          "local_frame": 15,
+          "kind": "landing",
+          "actor": "teal-original-roof",
+          "target": "rowhouse-facade",
+          "state_change": "The teal roof\u2019s left and right keys land in the fa\u00e7ade slots.",
+          "affine_rule": "Resolve teal-original-roof.left-key and right-key to the corresponding slot sockets before applying the two-pixel seating compression.",
+          "id": "rowhouse-facade-landing"
+        },
+        {
+          "local_frame": 18,
+          "kind": "release",
+          "actor": "Bot right hand",
+          "target": "teal-original-roof",
+          "state_change": "The grip releases after both roof keys are locked.",
+          "affine_rule": "Remove the inverse-grip constraint while holding the roof at its keyed seated transform.",
+          "id": "teal-original-roof-release"
+        },
+        {
+          "local_frame": 24,
+          "kind": "contact",
+          "actor": "Bot right hand",
+          "target": "checkpoint-capture-control",
+          "state_change": "Right hand seats on checkpoint-capture-control.right-grip and starts the capture pull.",
+          "affine_rule": "Apply the tab translation and reaction transform before solving the right-hand inverse grip.",
+          "id": "checkpoint-capture-control-contact"
+        },
+        {
+          "id": "dry-cassette-present",
+          "local_frame": 24,
+          "kind": "start",
+          "actor": "checkpoint-capture-control",
+          "target": "checkpoint-dry-floor-cassette",
+          "state_change": "The checkpoint-linked tray exposes the existing dry cassette at390,950 by35, clear of Bot occlusion.",
+          "affine_rule": "Same capture-control progress drives plate registration and cassette presentation; preserve dry/level geometry.",
+          "anchor_refs": []
+        },
+        {
+          "local_frame": 35,
+          "kind": "contact",
+          "actor": "paper-gold-checkpoint-plate",
+          "target": "rowhouse-facade",
+          "state_change": "The foreground plate registers the restored roof/windows/floor while remaining visible over the facade; the pressure stroke35\u201343 makes those features persistent captured marks.",
+          "affine_rule": "Register the real named window and floor stops on facade and plate; same pressure stroke35\u201343 creates the captured roof/window/floor stamp and closes the cassette latch.",
+          "id": "rowhouse-facade-contact",
+          "anchor_refs": [
+            {
+              "part": "rowhouse-facade",
+              "anchor": "left-window-register"
+            },
+            {
+              "part": "rowhouse-facade",
+              "anchor": "center-window-register"
+            },
+            {
+              "part": "rowhouse-facade",
+              "anchor": "right-window-register"
+            },
+            {
+              "part": "rowhouse-facade",
+              "anchor": "floor-register"
+            },
+            {
+              "part": "paper-gold-checkpoint-plate",
+              "anchor": "left-window-register"
+            },
+            {
+              "part": "paper-gold-checkpoint-plate",
+              "anchor": "center-window-register"
+            },
+            {
+              "part": "paper-gold-checkpoint-plate",
+              "anchor": "right-window-register"
+            },
+            {
+              "part": "paper-gold-checkpoint-plate",
+              "anchor": "floor-register"
+            }
+          ]
+        },
+        {
+          "local_frame": 43,
+          "kind": "impact",
+          "actor": "capture-pressure-cam",
+          "target": "paper-gold-checkpoint-plate",
+          "state_change": "Cam pressure sets the finite roof-profile, three window-position and floor-level shutters and locks checkpoint-dry-floor-cassette as dry and level.",
+          "affine_rule": "Roll the cam on its bounded rail; switch only the five registered relief shutters and cassette latch at peak compression.",
+          "id": "paper-gold-checkpoint-plate-impact"
+        },
+        {
+          "id": "dry-cassette-lock",
+          "local_frame": 43,
+          "kind": "contact",
+          "actor": "capture-pressure-cam",
+          "target": "dry-cassette-latch",
+          "state_change": "The visible gold latch reaches closed0 degrees and locks the still-dry cassette at capture peak; the stamp shows roof profile, three window marks and floor level.",
+          "affine_rule": "Latch rotates65\u21920 during35\u201343; captured stamp develops on the plate over the same finite pressure stroke.",
+          "anchor_refs": [
+            {
+              "part": "dry-cassette-latch",
+              "anchor": "lock"
+            },
+            {
+              "part": "checkpoint-dry-floor-cassette",
+              "anchor": "left-tab"
+            }
+          ]
+        },
+        {
+          "id": "dry-cassette-retract",
+          "local_frame": 44,
+          "kind": "start",
+          "actor": "checkpoint-capture-control",
+          "target": "checkpoint-dry-floor-cassette",
+          "state_change": "The locked cassette retracts along its linked tray into the checkpoint system44\u201355.",
+          "affine_rule": "Keep the same dry geometry and closed latch while retracting to the original archive pose.",
+          "anchor_refs": []
+        },
+        {
+          "local_frame": 55,
+          "kind": "landing",
+          "actor": "paper-gold-checkpoint-plate",
+          "target": "checkpoint-archive-slot",
+          "state_change": "The same stamped plate seats in an unobscured upper-left archive slot at20,243 scale.55; the gold profile, three window marks and cream floor remain visible.",
+          "affine_rule": "Translate the plate to the archive stop; preserve all latched relief and cassette states.",
+          "id": "checkpoint-archive-slot-landing"
+        },
+        {
+          "id": "dry-cassette-archive-stop",
+          "local_frame": 55,
+          "kind": "stop",
+          "actor": "checkpoint-dry-floor-cassette",
+          "target": "checkpoint-archive-slot",
+          "state_change": "Locked dry cassette reaches its persistent archive stop before the logged work begins.",
+          "affine_rule": "Hold the same cassette and latch after55; no separate new dry floor is generated.",
+          "anchor_refs": [
+            {
+              "part": "checkpoint-archive-slot",
+              "anchor": "plate-stop"
+            }
+          ]
+        },
+        {
+          "local_frame": 59,
+          "kind": "release",
+          "actor": "Bot right hand",
+          "target": "checkpoint-capture-control",
+          "state_change": "Bot releases the exposed capture control after storage; the comparison spring extends and its visible flywheel rotates before the next cut.",
+          "affine_rule": "Remove the hand constraint, then release the spring latch without changing the plate\u2019s archived transform.",
+          "id": "checkpoint-capture-control-release"
+        }
+      ],
+      "capability_route": {
+        "registered_performance": "Registered high-energy paper target bot; operative performance_phases call the canonical motif_performance renderer with state-local age and inverse grips.",
+        "reaction_and_focus": "Registered high-energy paper: its bot/actual-persistent-prop channel uses shared motif_reaction and canonical motif_performance. Selected persistent names are the real parts of this finite action. rowhouse-production-v1 supplies agent-assisted physical geometry, contact anchors and finite action choreography only; it does not define a new quality channel.",
+        "framing": "high-energy paper selected finite-action framing. Source checks chosen focal_target and framing against the explicit action binding; whole-scene camera uses this shot\u2019s operative named event markers. Unsupported changes require explicit action development, never silent fallback."
+      },
+      "asset_development": {
+        "new_artwork": "Only reversible-rowhouse-folio.svg: listed physical paper layers and anchors; GENERATED asset geometry scope scene-specific",
+        "new_choreography": "Only source/build.py: eight finite adapters keyed by these exact event frames; canonical Bot geometry and shared modules unchanged"
+      },
+      "pre_animation_validation": "Data contracts and implemented binding route only; actual motion/mobile/contact quality must remain pending until live rendered rough critics.",
+      "timing": {
+        "landmarks": {
+          "opening": {
+            "local_frame": 0
+          },
+          "teal-original-roof-contact": {
+            "event_id": "teal-original-roof-contact"
+          },
+          "rowhouse-facade-landing": {
+            "event_id": "rowhouse-facade-landing"
+          },
+          "teal-original-roof-release": {
+            "event_id": "teal-original-roof-release"
+          },
+          "checkpoint-capture-control-contact": {
+            "event_id": "checkpoint-capture-control-contact"
+          },
+          "rowhouse-facade-contact": {
+            "event_id": "rowhouse-facade-contact"
+          },
+          "paper-gold-checkpoint-plate-impact": {
+            "event_id": "paper-gold-checkpoint-plate-impact"
+          },
+          "paper-gold-checkpoint-plate-impact-plus-1": {
+            "event_id": "paper-gold-checkpoint-plate-impact",
+            "offset": 1
+          },
+          "checkpoint-archive-slot-landing": {
+            "event_id": "checkpoint-archive-slot-landing"
+          },
+          "checkpoint-capture-control-release": {
+            "event_id": "checkpoint-capture-control-release"
+          },
+          "checkpoint-capture-control-release-plus-1": {
+            "event_id": "checkpoint-capture-control-release",
+            "offset": 1
+          },
+          "checkpoint-capture-control-release-plus-5": {
+            "event_id": "checkpoint-capture-control-release",
+            "offset": 5
+          }
+        },
+        "meaning": "Named landmarks resolve to the event local_frame, optionally plus a declared relative offset. These names are keys, not playback times. The compiler directly uses resolved event frames."
+      },
+      "performance_phases": [
+        {
+          "state": "focused",
+          "start": "opening",
+          "binding": "scripts/motif_performance.py:render",
+          "age": "seconds since resolved phase start"
+        },
+        {
+          "state": "relieved",
+          "start": "checkpoint-archive-slot-landing",
+          "binding": "scripts/motif_performance.py:render",
+          "age": "seconds since resolved phase start"
+        }
+      ],
+      "quality_channel_capability": "high-energy paper",
+      "compiled_frame_count": 65
+    },
+    {
+      "id": "shot-04-visible-difference",
+      "narration": "Show exactly what changed.",
+      "action_binding": "rowhouse_hinged_before_after_reveal_v1",
+      "physical_sequence": [
+        "The already captured checkpoint releases the comparison rack.",
+        "Coral coupling1 and handoff2 transfer the same pending roof from write rack to the connected right comparison rail.",
+        "Teal clevis contact7, slot unlock10 and handoff13 precede owned left-rail transport.",
+        "The live facade and dry floor are persistent supported children of comparison-drive-rack. Its visible support link translates the assembly13\u201319 without changing world size.",
+        "Both profiles are seated19; rack and uniform whole-scene camera stop20. Hold the aligned profiles20\u201349 for30 frames."
+      ],
+      "consequence": "The change is reduced to one aligned physical comparison between the preserved teal pitch and installed coral flat roof.",
+      "focus_target": "coral-replacement-roof",
+      "framing": "detail",
+      "needed_assets": [
+        "videos/productions/every-change-should-be-reversible/assets/props/reversible-rowhouse-folio.svg"
+      ],
+      "quality": {
+        "purpose": "Make the exact roof change readable without opening multiple leaves or invoking an absent operator.",
+        "hero": "The mechanically aligned teal checkpoint profile and live coral roof.",
+        "primary_action": "The already released comparison rack exchanges the roofs and stops them on a shared baseline.",
+        "performance": {
+          "state": "absent",
+          "target": ""
+        },
+        "before": "Bot has restored the opening house and captured its checkpoint. The teal original roof is seated; the coral proposed roof remains stationary on the braked write rack connected to the history strip, not in an occupied history bay. The visible comparison spring at385,925 and flywheel at570,880 have already started; the same shapes and rotation continue across the cut.",
+        "after": "The retained pitched profile and installed flat roof share a baseline; the whole-scene camera and rails have stopped. Compare their shapes during the30-frame hold20\u201349.",
+        "focal_target": "coral-replacement-roof",
+        "framing": "detail",
+        "reaction_radius": {
+          "origin": [
+            454,
+            500
+          ],
+          "radius": 226,
+          "duration": 0.46,
+          "targets": [
+            {
+              "id": "comparison-drive-rack",
+              "position": [
+                360,
+                522
+              ],
+              "relevance": 1,
+              "amplitude": {
+                "x": 3,
+                "y": 1,
+                "rotation": 0.4
+              },
+              "delay": 0
+            },
+            {
+              "id": "coral-replacement-roof",
+              "position": [
+                498,
+                478
+              ],
+              "relevance": 0.9,
+              "amplitude": {
+                "x": -3,
+                "y": 3,
+                "rotation": 1.2
+              },
+              "delay": 0.04
+            },
+            {
+              "id": "teal-original-roof",
+              "position": [
+                220,
+                466
+              ],
+              "relevance": 0.72,
+              "amplitude": {
+                "x": 2,
+                "y": 2,
+                "rotation": -0.8
+              },
+              "delay": 0.08
+            }
+          ]
+        },
+        "secondary_motion": [
+          "Independent visible clevis links own the two roof rails and never cross their silhouettes.",
+          "The supported live facade and dry floor travel together with the rack; only the whole scene is projected by the camera.",
+          "From20 through49 all comparative silhouettes hold:30 frames, exactly1.0s at30fps."
+        ],
+        "environment": [
+          "Warm-cream tabletop beneath both profile supports",
+          "Charcoal pinboard seam behind the common baseline",
+          "Paper-gold checkpoint rail framing the teal profile"
+        ],
+        "exit_overlap": null,
+        "energy": {
+          "dominant_action": "A visible spring rack exchanges and aligns the preserved and changed roof profiles.",
+          "character_response": null,
+          "local_reaction": "The rack and the two keyed roofs respond at their separate owned contacts.",
+          "residual_motion": "The coral seating compression and teal bay stop settle during the recognition hold.",
+          "next_action_overlap": null
+        },
+        "art_direction": {
+          "hero_object": "Two large aligned roof profiles: preserved teal pitch at left and installed coral flat deck at right.",
+          "bot_role": "absent",
+          "materials": [
+            "Teal laminated roof card",
+            "Coral laminated roof card",
+            "Paper-gold checkpoint relief",
+            "Charcoal comparison rack and slot liners"
+          ],
+          "depth_planes": [
+            "Rear pinboard seam and spring housing",
+            "Midplane common-baseline comparison rack",
+            "Foreground raised roof edges and contact shadows"
+          ],
+          "composition": "Camera pulls back on the entire tabletop mechanism; original pitched profile occupies the left, coral flat profile occupies the right on the same baseline. The persistent live house is translated, not resized; both keys and the visible clevis remain in frame.",
+          "intentional_irregularity": "The preserved ridge remains off-center while the coral deck keeps its blunt corner and uneven drainage notch.",
+          "environment_mode": "physical",
+          "environment_justification": null
+        }
+      },
+      "startFrame": 308,
+      "endFrame": 358,
+      "events": [
+        {
+          "local_frame": 1,
+          "kind": "start",
+          "actor": "comparison-leaf-spring",
+          "target": "comparison-drive-rack",
+          "state_change": "The spring released in shot03 first extends the clevis approach linkage; roof withdrawal is locked until contact7 and socket release10.",
+          "affine_rule": "Evaluate the spring output along comparison-drive-rack\u2019s registered axis from its carried boundary state.",
+          "id": "comparison-drive-rack-start"
+        },
+        {
+          "id": "coral-replacement-roof-coupling",
+          "local_frame": 1,
+          "kind": "contact",
+          "actor": "comparison-drive-rack.coral-clevis",
+          "target": "coral-replacement-roof",
+          "state_change": "The visible right clevis seats on coral-replacement-roof.left-key before the pending roof advances.",
+          "affine_rule": "Maintain a painted gold link from the transformed rack clevis to the same persistent coral key; no transport before handoff2."
+        },
+        {
+          "id": "coral-replacement-roof-handoff",
+          "local_frame": 2,
+          "kind": "handoff",
+          "actor": "write-drive-rack",
+          "target": "coral-replacement-roof",
+          "state_change": "The braked write rack transfers the coral key to the connected comparison rack; the right comparison rail now owns transport.",
+          "affine_rule": "Preserve the same roof group and keyed pose at2; its owned right rail moves2\u201319 only after coupling1."
+        },
+        {
+          "local_frame": 7,
+          "kind": "contact",
+          "actor": "comparison-drive-rack.teal-clevis",
+          "target": "teal-original-roof",
+          "state_change": "The visible rack clevis seats on the retained teal eave before either roof moves.",
+          "affine_rule": "Extend the visible keyed link to the transformed teal-original-roof.eave [30,183]; hold the roof in its live sockets.",
+          "id": "teal-original-roof-contact"
+        },
+        {
+          "local_frame": 10,
+          "kind": "release",
+          "actor": "comparison-drive-rack",
+          "target": "rowhouse-facade",
+          "state_change": "The closed clevis lifts both roof keys free; only then can the owned teal rail withdraw.",
+          "affine_rule": "Keep the closed clevis attached to the eave; lift the owned teal roof by twelve authoring pixels before lateral rail travel starts at frame13.",
+          "id": "left-keyed-roof-slot-release",
+          "anchor_refs": [
+            {
+              "part": "left-keyed-roof-slot",
+              "anchor": "socket"
+            },
+            {
+              "part": "right-keyed-roof-slot",
+              "anchor": "socket"
+            },
+            {
+              "part": "rowhouse-facade",
+              "anchor": "left-roof-socket"
+            },
+            {
+              "part": "rowhouse-facade",
+              "anchor": "right-roof-socket"
+            }
+          ]
+        },
+        {
+          "local_frame": 13,
+          "kind": "handoff",
+          "actor": "comparison-drive-rack",
+          "target": "teal-original-roof",
+          "state_change": "The rack transfers the teal roof from the live slots to the checkpoint-profile rail.",
+          "affine_rule": "Preserve teal identity; the closed clevis stays at the moving eave after contact7 and unlock10, on the separate left rail.",
+          "id": "teal-original-roof-handoff"
+        },
+        {
+          "local_frame": 16,
+          "kind": "contact",
+          "actor": "coral-replacement-roof",
+          "target": "rowhouse-facade",
+          "state_change": "The coral roof keys contact the two live roof slots.",
+          "affine_rule": "Resolve both coral key anchors to the fa\u00e7ade slot approach points before seating compression.",
+          "id": "rowhouse-facade-contact"
+        },
+        {
+          "local_frame": 19,
+          "kind": "landing",
+          "actor": "teal-original-roof",
+          "target": "paper-gold-checkpoint-plate",
+          "state_change": "The teal roof lands against the captured pitched-roof relief.",
+          "affine_rule": "Align the roof keys to checkpoint plate roof sockets and apply a three-pixel bounded stop rebound.",
+          "id": "paper-gold-checkpoint-plate-landing"
+        },
+        {
+          "local_frame": 19,
+          "kind": "landing",
+          "actor": "coral-replacement-roof",
+          "target": "rowhouse-facade",
+          "state_change": "The coral flat roof locks in both live slots with its drainage notch exposed.",
+          "affine_rule": "Clamp both key anchors at the live slot sockets and return from two-pixel compression.",
+          "id": "rowhouse-facade-landing"
+        },
+        {
+          "local_frame": 20,
+          "kind": "stop",
+          "actor": "comparison-drive-rack",
+          "target": "coral-replacement-roof",
+          "state_change": "The drive stops with teal and coral baselines aligned and all spring travel exhausted.",
+          "affine_rule": "Clamp both owned roof rails and the whole-scene camera at20; hold the aligned comparison through49, giving30 frames of recognition.",
+          "id": "coral-replacement-roof-stop"
+        }
+      ],
+      "capability_route": {
+        "registered_performance": "Absent Bot: no performance phases, no renderer call, target empty as required by plan_check.",
+        "reaction_and_focus": "Registered high-energy paper: its bot/actual-persistent-prop channel uses shared motif_reaction and canonical motif_performance. Selected persistent names are the real parts of this finite action. rowhouse-production-v1 supplies agent-assisted physical geometry, contact anchors and finite action choreography only; it does not define a new quality channel.",
+        "framing": "high-energy paper selected finite-action framing. Source checks chosen focal_target and framing against the explicit action binding; whole-scene camera uses this shot\u2019s operative named event markers. Unsupported changes require explicit action development, never silent fallback."
+      },
+      "asset_development": {
+        "new_artwork": "Only reversible-rowhouse-folio.svg: listed physical paper layers and anchors; GENERATED asset geometry scope scene-specific",
+        "new_choreography": "Only source/build.py: eight finite adapters keyed by these exact event frames; canonical Bot geometry and shared modules unchanged"
+      },
+      "camera_continuity": "Uniform whole-scene camera pullback1\u2192.72 during1\u201319, stopped20. Tabletop and hardware receive the same projection. The live facade and dry floor remain world-size children of comparison-drive-rack; its visible support translates them13\u201319.",
+      "pre_animation_validation": "Data contracts and implemented binding route only; actual motion/mobile/contact quality must remain pending until live rendered rough critics.",
+      "timing": {
+        "landmarks": {
+          "opening": {
+            "local_frame": 0
+          },
+          "comparison-drive-rack-start": {
+            "event_id": "comparison-drive-rack-start"
+          },
+          "coral-replacement-roof-handoff": {
+            "event_id": "coral-replacement-roof-handoff"
+          },
+          "teal-original-roof-contact": {
+            "event_id": "teal-original-roof-contact"
+          },
+          "left-keyed-roof-slot-release": {
+            "event_id": "left-keyed-roof-slot-release"
+          },
+          "teal-original-roof-handoff": {
+            "event_id": "teal-original-roof-handoff"
+          },
+          "paper-gold-checkpoint-plate-landing": {
+            "event_id": "paper-gold-checkpoint-plate-landing"
+          },
+          "rowhouse-facade-landing": {
+            "event_id": "rowhouse-facade-landing"
+          }
+        },
+        "meaning": "Named landmarks resolve to the event local_frame, optionally plus a declared relative offset. These names are keys, not playback times. The compiler directly uses resolved event frames."
+      },
+      "performance_phases": [],
+      "camera": {
+        "mode": "one uniform scene projection",
+        "pivot": [
+          360,
+          850
+        ],
+        "wide_scale": 0.72,
+        "start": "comparison-drive-rack-start",
+        "wide": "rowhouse-facade-landing",
+        "ownership": "Entire painted world, including tabletop, backdrop, house, roof rails and hardware; all physical parts retain their world size."
+      },
+      "persistent_ownership": {
+        "owner": "comparison-drive-rack",
+        "children": [
+          "rowhouse-facade",
+          "interior-floor-strip"
+        ],
+        "support_anchor": "rowhouse-facade.base-support linked to comparison-drive-rack.coral-clevis",
+        "binding": "frame shot04; supported child translation uses teal handoff13 through coral landing19",
+        "carried_state": "facade and floor are supported before the shot; no unregistered house-display-carriage object"
+      },
+      "quality_channel_capability": "high-energy paper",
+      "compiled_frame_count": 50
+    },
+    {
+      "id": "shot-05-rain-test-fails",
+      "narration": "Let the agent test the result.",
+      "action_binding": "rowhouse_pull_rain_ribbon_and_register_leak_v1",
+      "physical_sequence": [
+        "Bot grips the raised rain-ribbon anchor and pulls the translucent strip at a same bounded eased stroke.",
+        "The existing rain pull8 opens the visible reservoir outlet and transfers the same slug to the connected guide. Its release and handoff are explicit before the roof contact.",
+        "One large teal test-water slug reaches the coral drainage notch, exits the roof edge and strikes the upper window flap.",
+        "The slug enters the house and impacts the floor at one unambiguous point.",
+        "A clipped teal wet mask spreads across the persistent floor strip, then the same strip bends into its finite asymmetric fourteen-pixel sag while Bot holds for recognition."
+      ],
+      "consequence": "The controlled test physically produces a wet, sagging interior floor that persists into rollback.",
+      "focus_target": "interior-floor-strip",
+      "framing": "subject",
+      "needed_assets": [
+        "assets/characters/motif-bot/canonical/v1/motif-bot-front-neutral-v1.svg",
+        "videos/productions/every-change-should-be-reversible/assets/props/reversible-rowhouse-folio.svg"
+      ],
+      "quality": {
+        "purpose": "Show one readable water path and a persistent physical failure at mobile size.",
+        "hero": "The coral-roof rowhouse, one large test-water slug and the deforming floor.",
+        "primary_action": "Bot pulls the test ribbon; its water slug traverses the roof notch and window before wetting and bending the floor.",
+        "performance": {
+          "state": "worried",
+          "target": "bot"
+        },
+        "before": "The coral roof is installed; the ribbon is raised and the floor is cream, level and dry. The floor is already supported by the persistent floor-shuttle; its wet-saddle stays attached as the floor wets and bends, so support continues into rollback.",
+        "after": "The test-water slug has entered the house; the actual floor strip is fully wet and held in its asymmetric sag state.",
+        "focal_target": "interior-floor-strip",
+        "framing": "subject",
+        "reaction_radius": {
+          "origin": [
+            414,
+            760
+          ],
+          "radius": 218,
+          "duration": 0.58,
+          "targets": [
+            {
+              "id": "interior-floor-strip",
+              "position": [
+                410,
+                808
+              ],
+              "relevance": 1,
+              "amplitude": {
+                "x": 1,
+                "y": 8,
+                "rotation": 1.5
+              },
+              "delay": 0
+            },
+            {
+              "id": "upper-window-flap",
+              "position": [
+                420,
+                654
+              ],
+              "relevance": 0.78,
+              "amplitude": {
+                "x": 2,
+                "y": 3,
+                "rotation": 2
+              },
+              "delay": 0.05
+            },
+            {
+              "id": "coral-replacement-roof",
+              "position": [
+                404,
+                480
+              ],
+              "relevance": 0.44,
+              "amplitude": {
+                "x": 1,
+                "y": 2,
+                "rotation": 0.5
+              },
+              "delay": 0.12
+            }
+          ]
+        },
+        "secondary_motion": [
+          "Bot\u2019s pulling hand remains solved to rain-ribbon-anchor.grip until the end of the pull.",
+          "The water slug compresses only at the notch and window contacts.",
+          "The floor wet mask and sag stop at declared finite states; no global house shake is added.",
+          "The same visible floor-shuttle stays beneath the actual floor throughout wetting; support is not acquired invisibly at the following cut.",
+          "The rain handle is exposed to the right of Bot at330,740; its continuous dark tether reaches the reservoir gate. Both tests use the same740\u2192861 measured handle stroke."
+        ],
+        "environment": [
+          "Warm-cream tabletop beneath the wet house",
+          "Charcoal pinboard seam supporting the ribbon guide",
+          "Paper-gold archive rail closed at frame left"
+        ],
+        "exit_overlap": "Bot\u2019s free hand reaches toward the two-grip checkpoint tab while the wet floor remains visibly sagged.",
+        "energy": {
+          "dominant_action": "A Bot-driven rain test routes one visible water slug into the house and deforms the floor.",
+          "character_response": "Bot turns from focused pulling to worried attention at the floor impact.",
+          "local_reaction": "Only the coral notch, window flap and actual floor strip answer the water path.",
+          "residual_motion": "The wet floor fibers settle into their persistent sag.",
+          "next_action_overlap": "Bot reaches for rollback without touching or patching the failed parts."
+        },
+        "art_direction": {
+          "hero_object": "The live coral-roof house with a single legible water path and persistent wet floor.",
+          "bot_role": "participant",
+          "materials": [
+            "Coral laminated roof card",
+            "Translucent teal vellum ribbon and water slug",
+            "Cream absorbent floor card with clipped teal wet layer",
+            "Paper-gold archive hardware"
+          ],
+          "depth_planes": [
+            "Rear ribbon guide and pinboard seam",
+            "Midplane roof, window and floor",
+            "Foreground Bot, water slug and wet-floor shadow"
+          ],
+          "composition": "The cause path forms one large diagonal from Bot\u2019s grip through the roof notch and window to the floor; all contacts remain in the central 360\u00d7640-safe field.",
+          "intentional_irregularity": "The roof lip is bowed and the wet floor\u2019s low point sits left of center.",
+          "environment_mode": "physical",
+          "environment_justification": null
+        }
+      },
+      "startFrame": 358,
+      "endFrame": 407,
+      "events": [
+        {
+          "local_frame": 4,
+          "kind": "contact",
+          "actor": "Bot right hand",
+          "target": "rain-ribbon-anchor",
+          "state_change": "Right hand seats on rain-ribbon-anchor.grip.",
+          "affine_rule": "Apply the ribbon anchor\u2019s local reaction, then solve the canonical right-hand inverse grip.",
+          "id": "rain-ribbon-anchor-contact"
+        },
+        {
+          "local_frame": 8,
+          "kind": "start",
+          "actor": "Bot right hand",
+          "target": "rain-ribbon-anchor",
+          "state_change": "The ribbon and attached test-water-slug begin their measured downward pull.",
+          "affine_rule": "Translate rain-ribbon-anchor, ribbon and slug at the registered bounded easing while maintaining the inverse grip.",
+          "id": "rain-ribbon-anchor-start"
+        },
+        {
+          "id": "reservoir-outlet-release",
+          "local_frame": 8,
+          "kind": "release",
+          "actor": "Bot via rain-ribbon-anchor",
+          "target": "test-water-reservoir",
+          "state_change": "Bot-driven rain pull opens the visible reservoir gate at8, releasing the stored slug before delivery.",
+          "affine_rule": "Same rain-ribbon-anchor start8 drives the gate on its actual outlet; no autonomous water start.",
+          "anchor_refs": [
+            {
+              "part": "test-water-reservoir",
+              "anchor": "outlet"
+            },
+            {
+              "part": "test-water-slug",
+              "anchor": "tip"
+            },
+            {
+              "part": "rain-ribbon-anchor",
+              "anchor": "grip"
+            }
+          ]
+        },
+        {
+          "id": "test-water-delivery-handoff",
+          "local_frame": 8,
+          "kind": "handoff",
+          "actor": "test-water-reservoir",
+          "target": "test-water-slug",
+          "state_change": "Reservoir transfers the same slug to the connected test-ribbon-guide at8; the bounded test stroke now owns delivery.",
+          "affine_rule": "Resolve slug tip at test-water-reservoir.outlet [467,350], then follow the anchored roof-dependent path using the unchanged water piece.",
+          "anchor_refs": [
+            {
+              "part": "test-water-reservoir",
+              "anchor": "outlet"
+            },
+            {
+              "part": "test-water-slug",
+              "anchor": "tip"
+            },
+            {
+              "part": "rain-ribbon-anchor",
+              "anchor": "grip"
+            }
+          ]
+        },
+        {
+          "local_frame": 18,
+          "kind": "contact",
+          "actor": "test-water-slug",
+          "target": "coral-replacement-roof",
+          "state_change": "The slug reaches coral-replacement-roof.leak-notch and compresses to its notch-contact state.",
+          "affine_rule": "Compose the selected small coral-card recoil first and resolve the slug to the reacted leak-notch; only the slug shape compresses, while the roof has its explicitly bounded card reaction.",
+          "id": "coral-replacement-roof-contact"
+        },
+        {
+          "local_frame": 22,
+          "kind": "release",
+          "actor": "test-water-slug",
+          "target": "coral-replacement-roof",
+          "state_change": "The slug leaves the notch and follows the explicit exterior-to-window water path.",
+          "affine_rule": "Release notch contact and translate the slug on the registered path without interpolation outside its bounded path table.",
+          "id": "coral-replacement-roof-release"
+        },
+        {
+          "local_frame": 25,
+          "kind": "impact",
+          "actor": "test-water-slug",
+          "target": "upper-window-flap",
+          "state_change": "The window flap rotates to its finite wet-contact angle and admits the slug.",
+          "affine_rule": "Compose slug path first, then rotate upper-window-flap around its registered hinge with no fa\u00e7ade transform.",
+          "id": "upper-window-flap-impact"
+        },
+        {
+          "local_frame": 31,
+          "kind": "impact",
+          "actor": "test-water-slug",
+          "target": "interior-floor-strip",
+          "state_change": "Floor wetting and the continuous bend begin together; clipped wet mask and asymmetric sag develop over31\u201337, preserving the same floor group.",
+          "affine_rule": "One finite wet-progress driver simultaneously increases wet mask0\u21921 and center sag0\u219214px; no instantaneous deformation after wetting.",
+          "id": "interior-floor-strip-impact"
+        },
+        {
+          "id": "interior-floor-strip-start-bend",
+          "local_frame": 31,
+          "kind": "start",
+          "actor": "test-water-slug",
+          "target": "interior-floor-strip",
+          "state_change": "The local sag starts developing at the same water impact as wetting, then continuously reaches its stop at37.",
+          "affine_rule": "wet_floor(progress31\u201337) owns both the clipped color and the smooth bend."
+        },
+        {
+          "local_frame": 37,
+          "kind": "stop",
+          "actor": "interior-floor-strip",
+          "target": "floor-sag-stop",
+          "state_change": "The wet mask is complete and the floor reaches its persistent asymmetric fourteen-pixel sag.",
+          "affine_rule": "Wet mask and center bend reach their simultaneous finite stops at37; hold the actual wet sag through the remaining12 recognition frames.",
+          "id": "floor-sag-stop-stop"
+        },
+        {
+          "local_frame": 43,
+          "kind": "release",
+          "actor": "Bot right hand",
+          "target": "rain-ribbon-anchor",
+          "state_change": "Bot releases the ribbon at its lower test stop while the wet floor remains unchanged.",
+          "affine_rule": "Remove the inverse-grip constraint and hold ribbon, slug and floor at their completed test states.",
+          "id": "rain-ribbon-anchor-release"
+        }
+      ],
+      "capability_route": {
+        "registered_performance": "Registered high-energy paper target bot; operative performance_phases call the canonical motif_performance renderer with state-local age and inverse grips.",
+        "reaction_and_focus": "Registered high-energy paper: its bot/actual-persistent-prop channel uses shared motif_reaction and canonical motif_performance. Selected persistent names are the real parts of this finite action. rowhouse-production-v1 supplies agent-assisted physical geometry, contact anchors and finite action choreography only; it does not define a new quality channel.",
+        "framing": "high-energy paper selected finite-action framing. Source checks chosen focal_target and framing against the explicit action binding; whole-scene camera uses this shot\u2019s operative named event markers. Unsupported changes require explicit action development, never silent fallback."
+      },
+      "asset_development": {
+        "new_artwork": "Only reversible-rowhouse-folio.svg: listed physical paper layers and anchors; GENERATED asset geometry scope scene-specific",
+        "new_choreography": "Only source/build.py: eight finite adapters keyed by these exact event frames; canonical Bot geometry and shared modules unchanged"
+      },
+      "pre_animation_validation": "Data contracts and implemented binding route only; actual motion/mobile/contact quality must remain pending until live rendered rough critics.",
+      "timing": {
+        "landmarks": {
+          "opening": {
+            "local_frame": 0
+          },
+          "rain-ribbon-anchor-contact": {
+            "event_id": "rain-ribbon-anchor-contact"
+          },
+          "rain-ribbon-anchor-start": {
+            "event_id": "rain-ribbon-anchor-start"
+          },
+          "coral-replacement-roof-contact": {
+            "event_id": "coral-replacement-roof-contact"
+          },
+          "coral-replacement-roof-release": {
+            "event_id": "coral-replacement-roof-release"
+          },
+          "upper-window-flap-impact": {
+            "event_id": "upper-window-flap-impact"
+          },
+          "upper-window-flap-impact-plus-2": {
+            "event_id": "upper-window-flap-impact",
+            "offset": 2
+          },
+          "interior-floor-strip-impact": {
+            "event_id": "interior-floor-strip-impact"
+          },
+          "floor-sag-stop-stop": {
+            "event_id": "floor-sag-stop-stop"
+          },
+          "rain-ribbon-anchor-release": {
+            "event_id": "rain-ribbon-anchor-release"
+          }
+        },
+        "meaning": "Named landmarks resolve to the event local_frame, optionally plus a declared relative offset. These names are keys, not playback times. The compiler directly uses resolved event frames."
+      },
+      "performance_phases": [
+        {
+          "state": "focused",
+          "start": "opening",
+          "binding": "scripts/motif_performance.py:render",
+          "age": "seconds since resolved phase start"
+        },
+        {
+          "state": "worried",
+          "start": "upper-window-flap-impact",
+          "binding": "scripts/motif_performance.py:render",
+          "age": "seconds since resolved phase start"
+        }
+      ],
+      "quality_channel_capability": "high-energy paper",
+      "compiled_frame_count": 49
+    },
+    {
+      "id": "shot-06-rollback-restores",
+      "narration": "And if the new version is worse, roll back instead of patching over the mistake.",
+      "action_binding": "rowhouse_checkpoint_carriage_rollback_v1",
+      "physical_sequence": [
+        "Bot places its left and right hands on the separately named checkpoint-tab grips and begins one braced pull.",
+        "The linked carriage removes the coral roof into the failed-state bay; a lower floor shuttle removes the actual wet, sagging floor into the same bay.",
+        "The checkpoint\u2019s stored cream dry-floor cassette enters the live floor mounts while the teal original roof travels on its separate rail toward the fa\u00e7ade slots.",
+        "The original roof and dry cassette land, the linked take-up reel raises the rain ribbon, and the carriage stops with the actual coral roof and actual wet floor still visible together in the failed bay.",
+        "The real test-take-up-cable retrieves the same test-water slug14\u201343 to test-water-reservoir.delivery-stop [467,350]; the failed floor retains its wetness and sag.",
+        "Wet floor is already supported on the real shuttle before the cut; the saddle constraint is resolved after both motion and floor reaction, preserving contact through all intermediate frames. Coral socket release13 precedes transport."
+      ],
+      "consequence": "Rollback restores the checkpointed house while conserving the failed roof and the actual wet floor as one physical failed state.",
+      "focus_target": "paper-gold-rollback-carriage",
+      "framing": "establish",
+      "needed_assets": [
+        "assets/characters/motif-bot/canonical/v1/motif-bot-front-neutral-v1.svg",
+        "videos/productions/every-change-should-be-reversible/assets/props/reversible-rowhouse-folio.svg"
+      ],
+      "quality": {
+        "purpose": "Demonstrate restoration by exchanging persistent components, not hiding or recreating damage.",
+        "hero": "The linked rollback carriage, separate roof rails and lower floor shuttle.",
+        "primary_action": "Bot\u2019s two-handed checkpoint pull archives the failed roof and wet floor together while reinstalling the original roof and checkpointed dry floor.",
+        "performance": {
+          "state": "burdened",
+          "target": "bot"
+        },
+        "before": "The coral roof is installed, the actual floor is wet and sagging, and the teal roof plus dry-floor cassette are held in the checkpoint system. The actual wet floor already rests on floor-shuttle.wet-saddle at its matching wet-support anchor. The keyed coral roof retains the comparison clevis; rollback carriage takes its linked rail.",
+        "after": "The teal roof and checkpointed dry floor occupy the live house; the coral roof and actual wet floor occupy one failed-state bay; the rain ribbon is raised.",
+        "focal_target": "paper-gold-rollback-carriage",
+        "framing": "establish",
+        "reaction_radius": {
+          "origin": [
+            384,
+            506
+          ],
+          "radius": 280,
+          "duration": 0.62,
+          "targets": [
+            {
+              "id": "paper-gold-rollback-carriage",
+              "position": [
+                382,
+                522
+              ],
+              "relevance": 1,
+              "amplitude": {
+                "x": 4,
+                "y": 1,
+                "rotation": 0.5
+              },
+              "delay": 0
+            },
+            {
+              "id": "coral-replacement-roof",
+              "position": [
+                518,
+                508
+              ],
+              "relevance": 0.86,
+              "amplitude": {
+                "x": 3,
+                "y": 2,
+                "rotation": 1.5
+              },
+              "delay": 0.03
+            },
+            {
+              "id": "interior-floor-strip",
+              "position": [
+                404,
+                806
+              ],
+              "relevance": 0.74,
+              "amplitude": {
+                "x": 1,
+                "y": -5,
+                "rotation": -2
+              },
+              "delay": 0.08
+            },
+            {
+              "id": "paper-gold-checkpoint-tab",
+              "position": [
+                130,
+                770
+              ],
+              "relevance": 0.65,
+              "amplitude": {
+                "x": 5,
+                "y": 1,
+                "rotation": -1
+              },
+              "delay": 0.12
+            }
+          ]
+        },
+        "secondary_motion": [
+          "Bot\u2019s two authored arms remain attached to different tab anchors throughout the pull.",
+          "The roof rails and lower floor shuttle remain visually separated.",
+          "The seated teal eave and dry cassette each receive a small local compression, while the failed wet floor retains its wet mask and sag.",
+          "Water retrieval is visually subordinate: unchanged small slug and thin return cable use45% opacity only in this shot, outside the dominant roof/floor silhouette. Restoration remains the single sentence-level action.",
+          "The rollback tab is2.2 scale at300,840, outside Bot\u2019s body silhouette; separate grip anchors remain attached to both canonical hands throughout the pull."
+        ],
+        "environment": [
+          "Warm-cream tabletop bracing Bot and folio",
+          "Charcoal pinboard seam behind the two roof rails",
+          "Paper-gold archive rail exposing the failed-state bay"
+        ],
+        "exit_overlap": "The fully raised stored test input remains visible at the end of rollback, ready for the following repeat-test shot. No unsupported Bot gaze or free-arm reach is claimed.",
+        "energy": {
+          "dominant_action": "The two-handed rollback carriage exchanges failed components for retained original components; small dim test-reset mechanics stay peripheral and receive no commanding beat.",
+          "character_response": "Bot leans back under sustained load and releases only after the carriage stop.",
+          "local_reaction": "The carriage, two roof cards, floor shuttle and tab respond on owned transforms.",
+          "residual_motion": "The teal eave, dry cassette and take-up reel settle locally.",
+          "next_action_overlap": null
+        },
+        "art_direction": {
+          "hero_object": "A paper-gold rollback carriage exchanging persistent roof and floor components on separate visible rails.",
+          "bot_role": "participant",
+          "materials": [
+            "Teal and coral laminated roof cards",
+            "Paper-gold carriage, failed-state bay and checkpoint cassette",
+            "Wet absorbent floor card",
+            "Charcoal rail and floor-shuttle liners"
+          ],
+          "depth_planes": [
+            "Rear checkpoint plate and pinboard seam",
+            "Middle separate roof rails and live fa\u00e7ade",
+            "Foreground Bot, two-grip tab and lower floor shuttle"
+          ],
+          "composition": "The roof exchange commands the upper central field, with the actual wet-floor/dry-cassette exchange directly below. The reset water/cable remains a peripheral45%-opacity secondary at the right guide; it receives no separate accent, camera move or Bot glance. The focal target stays rollback carriage throughout; failed-bay roof and wet-floor evidence remain unobscured.",
+          "intentional_irregularity": "The rail arcs differ slightly, the pull tab is hand-scalloped and the wet floor keeps its asymmetric low point.",
+          "environment_mode": "physical",
+          "environment_justification": null
+        }
+      },
+      "startFrame": 407,
+      "endFrame": 529,
+      "events": [
+        {
+          "local_frame": 10,
+          "kind": "contact",
+          "actor": "Bot",
+          "target": "paper-gold-checkpoint-tab",
+          "state_change": "Bot left hand seats on paper-gold-checkpoint-tab.left-grip and right hand seats on paper-gold-checkpoint-tab.right-grip; the rollback pull begins.",
+          "affine_rule": "Apply tab and carriage transforms first, then solve separate canonical inverse grips to left-grip and right-grip after Bot performance and local reactions.",
+          "id": "paper-gold-checkpoint-tab-contact"
+        },
+        {
+          "id": "rollback-roof-unlock",
+          "local_frame": 13,
+          "kind": "release",
+          "actor": "paper-gold-rollback-carriage",
+          "target": "rowhouse-facade",
+          "state_change": "After the pull10, the retained coral clevis lifts both coral keys clear at13 before lateral withdrawal13\u201334.",
+          "affine_rule": "Keep the existing coral-clevis linkage visible; release both live sockets before the owned upper rail moves, preserving roof identity.",
+          "anchor_refs": [
+            {
+              "part": "left-keyed-roof-slot",
+              "anchor": "socket"
+            },
+            {
+              "part": "right-keyed-roof-slot",
+              "anchor": "socket"
+            },
+            {
+              "part": "rowhouse-facade",
+              "anchor": "left-roof-socket"
+            },
+            {
+              "part": "rowhouse-facade",
+              "anchor": "right-roof-socket"
+            }
+          ]
+        },
+        {
+          "id": "test-water-slug-contact-explicit",
+          "local_frame": 14,
+          "kind": "contact",
+          "actor": "test-take-up-cable",
+          "target": "test-water-slug",
+          "state_change": "The cable, driven by the rollback pull begun10, retrieves the same slug from the wet floor. Floor retains all wet color and sag.",
+          "affine_rule": "Bind cable tip to test-water-slug.tip; pull it outside the house toward the raised reservoir on the owned retrieval rail14\u201343."
+        },
+        {
+          "id": "rain-ribbon-anchor-handoff-explicit",
+          "local_frame": 25,
+          "kind": "handoff",
+          "actor": "test-take-up-cable",
+          "target": "test-water-slug",
+          "state_change": "The cable retains ownership of the same water slug on the registered return path to test-water-reservoir.delivery-stop. The overhead receiver does not own the slug until storage43.",
+          "affine_rule": "Maintain same slug group on the declared upper return path; do not recreate water or erase wet floor.",
+          "anchor_refs": [
+            {
+              "part": "test-take-up-cable",
+              "anchor": "pickup"
+            },
+            {
+              "part": "test-water-slug",
+              "anchor": "tip"
+            },
+            {
+              "part": "test-water-reservoir",
+              "anchor": "delivery-stop"
+            }
+          ]
+        },
+        {
+          "local_frame": 34,
+          "kind": "handoff",
+          "actor": "paper-gold-rollback-carriage",
+          "target": "coral-replacement-roof",
+          "state_change": "The keyed coral roof, unlocked13 and driven on its retained clevis rail, reaches the failed bay and transfers ownership at34.",
+          "affine_rule": "Keep the coral roof on its owned upper rail and preserve its persistent identity through the bay handoff.",
+          "id": "coral-replacement-roof-handoff"
+        },
+        {
+          "id": "teal-roof-restore-start",
+          "local_frame": 34,
+          "kind": "start",
+          "actor": "paper-gold-rollback-carriage",
+          "target": "teal-original-roof",
+          "state_change": "The already attached checkpoint roof departs its retained left rail and begins the reciprocal restoration34\u201384.",
+          "affine_rule": "Visible carriage.left-output remains bound to original.eave throughout; the same committed rollback pull drives its bounded return after the failed roof reaches its bay.",
+          "anchor_refs": [
+            {
+              "part": "paper-gold-rollback-carriage",
+              "anchor": "left-output"
+            },
+            {
+              "part": "teal-original-roof",
+              "anchor": "eave"
+            }
+          ]
+        },
+        {
+          "id": "test-water-stored",
+          "local_frame": 43,
+          "kind": "stop",
+          "actor": "test-take-up-cable",
+          "target": "test-water-reservoir",
+          "state_change": "Retrieved same slug reaches reservoir.delivery-stop467,350 and is held for the repeat test.",
+          "affine_rule": "Clamp the same slug tip at the real reservoir endpoint; retained failed floor stays wet and sagging.",
+          "anchor_refs": [
+            {
+              "part": "test-water-reservoir",
+              "anchor": "delivery-stop"
+            },
+            {
+              "part": "test-water-slug",
+              "anchor": "tip"
+            }
+          ]
+        },
+        {
+          "local_frame": 53,
+          "kind": "handoff",
+          "actor": "floor-shuttle",
+          "target": "interior-floor-strip",
+          "state_change": "The shuttle removes the actual wet, sagging floor and transfers it unchanged to failed-state-bay.floor-seat.",
+          "affine_rule": "The persistent supporting shuttle saddle remains exactly attached to the wet floor wet-support through34\u201353 and local reaction afterward; handoff53 is the receiving bay seat, not acquisition.",
+          "id": "interior-floor-strip-handoff"
+        },
+        {
+          "local_frame": 69,
+          "kind": "handoff",
+          "actor": "paper-gold-checkpoint-plate",
+          "target": "checkpoint-dry-floor-cassette",
+          "state_change": "The archived dry cassette leaves the checkpoint plate and enters the live floor guide.",
+          "affine_rule": "Translate the cassette on the lower dry rail; retain its cream, level checkpoint state.",
+          "id": "checkpoint-dry-floor-cassette-handoff"
+        },
+        {
+          "local_frame": 84,
+          "kind": "landing",
+          "actor": "teal-original-roof",
+          "target": "rowhouse-facade",
+          "state_change": "Both teal roof keys land in the live fa\u00e7ade slots.",
+          "affine_rule": "Resolve left and right roof keys to the live sockets, then apply and release two pixels of local compression.",
+          "id": "rowhouse-facade-landing"
+        },
+        {
+          "local_frame": 95,
+          "kind": "landing",
+          "actor": "checkpoint-dry-floor-cassette",
+          "target": "live-floor-mounts",
+          "state_change": "The checkpointed cream floor seats level in the house while the actual wet floor remains in the failed bay.",
+          "affine_rule": "Align both cassette tabs to the live mounts and clamp the level transform.",
+          "id": "live-floor-mounts-landing"
+        },
+        {
+          "local_frame": 105,
+          "kind": "stop",
+          "actor": "paper-gold-rollback-carriage",
+          "target": "carriage-stop",
+          "state_change": "All linked travel stops; the take-up reel has reset the rain ribbon and the failed bay contains the actual coral roof and actual wet floor. The same retrieved water slug is stored at the raised test-water-reservoir.",
+          "affine_rule": "Clamp carriage, roof rails, floor shuttle and take-up reel at their declared terminal states without resetting child state.",
+          "id": "carriage-stop-stop"
+        },
+        {
+          "local_frame": 111,
+          "kind": "release",
+          "actor": "Bot",
+          "target": "paper-gold-checkpoint-tab",
+          "state_change": "Both hands release their separate grips after the carriage is mechanically locked.",
+          "affine_rule": "Remove both inverse-grip constraints simultaneously while holding tab and carriage at the locked stop.",
+          "id": "paper-gold-checkpoint-tab-release"
+        }
+      ],
+      "capability_route": {
+        "registered_performance": "Registered high-energy paper target bot; operative performance_phases call the canonical motif_performance renderer with state-local age and inverse grips.",
+        "reaction_and_focus": "Registered high-energy paper: its bot/actual-persistent-prop channel uses shared motif_reaction and canonical motif_performance. Selected persistent names are the real parts of this finite action. rowhouse-production-v1 supplies agent-assisted physical geometry, contact anchors and finite action choreography only; it does not define a new quality channel.",
+        "framing": "high-energy paper selected finite-action framing. Source checks chosen focal_target and framing against the explicit action binding; whole-scene camera uses this shot\u2019s operative named event markers. Unsupported changes require explicit action development, never silent fallback."
+      },
+      "asset_development": {
+        "new_artwork": "Only reversible-rowhouse-folio.svg: listed physical paper layers and anchors; GENERATED asset geometry scope scene-specific",
+        "new_choreography": "Only source/build.py: eight finite adapters keyed by these exact event frames; canonical Bot geometry and shared modules unchanged"
+      },
+      "pre_animation_validation": "Data contracts and implemented binding route only; actual motion/mobile/contact quality must remain pending until live rendered rough critics.",
+      "timing": {
+        "landmarks": {
+          "opening": {
+            "local_frame": 0
+          },
+          "paper-gold-checkpoint-tab-contact": {
+            "event_id": "paper-gold-checkpoint-tab-contact"
+          },
+          "rollback-roof-unlock": {
+            "event_id": "rollback-roof-unlock"
+          },
+          "test-water-slug-contact-explicit": {
+            "event_id": "test-water-slug-contact-explicit"
+          },
+          "coral-replacement-roof-handoff": {
+            "event_id": "coral-replacement-roof-handoff"
+          },
+          "teal-roof-restore-start": {
+            "event_id": "teal-roof-restore-start"
+          },
+          "interior-floor-strip-handoff-minus-10": {
+            "event_id": "interior-floor-strip-handoff",
+            "offset": -10
+          },
+          "interior-floor-strip-handoff": {
+            "event_id": "interior-floor-strip-handoff"
+          },
+          "checkpoint-dry-floor-cassette-handoff": {
+            "event_id": "checkpoint-dry-floor-cassette-handoff"
+          },
+          "rowhouse-facade-landing": {
+            "event_id": "rowhouse-facade-landing"
+          },
+          "live-floor-mounts-landing": {
+            "event_id": "live-floor-mounts-landing"
+          },
+          "carriage-stop-stop": {
+            "event_id": "carriage-stop-stop"
+          },
+          "paper-gold-checkpoint-tab-release": {
+            "event_id": "paper-gold-checkpoint-tab-release"
+          }
+        },
+        "meaning": "Named landmarks resolve to the event local_frame, optionally plus a declared relative offset. These names are keys, not playback times. The compiler directly uses resolved event frames."
+      },
+      "performance_phases": [
+        {
+          "state": "burdened",
+          "start": "opening",
+          "binding": "scripts/motif_performance.py:render",
+          "age": "seconds since resolved phase start"
+        },
+        {
+          "state": "relieved",
+          "start": "paper-gold-checkpoint-tab-release",
+          "binding": "scripts/motif_performance.py:render",
+          "age": "seconds since resolved phase start"
+        }
+      ],
+      "persistent_ownership": {
+        "teal-original-roof": {
+          "owner": "checkpoint original-roof rail continuously linked to paper-gold-rollback-carriage",
+          "before": "retained original eave connected to carriage left output; the painted link remains present0\u2013122",
+          "start_trigger": "coral-replacement-roof-handoff34 advances the already coupled reciprocal rail",
+          "end": "rowhouse-facade-landing84",
+          "binding": "source/build.py frame shot06 z progress34\u201384"
+        },
+        "interior-floor-strip": {
+          "owner": "floor-shuttle",
+          "before": "wet-support155,46 seated on wet-saddle155,20 after26px mounting offset",
+          "binding": "saddle solved after floor motion and reaction, all intermediate frames"
+        },
+        "coral-replacement-roof": {
+          "owner": "retained comparison clevis linked to rollback carriage right output",
+          "unlock": "rollback-roof-unlock13",
+          "transport": "13\u201334 then receiving bay handoff"
+        }
+      },
+      "quality_channel_capability": "high-energy paper",
+      "compiled_frame_count": 122
+    },
+    {
+      "id": "shot-07-restored-test-passes",
+      "narration": "Good automation doesn\u2019t just move fast.",
+      "action_binding": "rowhouse_repeat_rain_test_pass_v1",
+      "physical_sequence": [
+        "Bot grips and pulls the same reset rain-ribbon anchor through the same measured travel.",
+        "The existing rain pull8 opens the visible reservoir outlet and transfers the same slug to the connected guide. Its release and handoff are explicit before the roof contact.",
+        "The same test-water slug reaches the restored teal pitch and travels outward along the overlapping shingle edge.",
+        "The slug transfers into the side gutter and lands in the exterior gold catch cup; the checkpointed cream floor remains level and dry.",
+        "After a short recognition hold, Bot presses the exposed return-drive lever, releasing the visibly wound finale spring before leaving the frame."
+      ],
+      "consequence": "The restored version passes the same physical test, and Bot visibly initiates the final history display.",
+      "focus_target": "teal-side-gutter",
+      "framing": "subject",
+      "needed_assets": [
+        "assets/characters/motif-bot/canonical/v1/motif-bot-front-neutral-v1.svg",
+        "videos/productions/every-change-should-be-reversible/assets/props/reversible-rowhouse-folio.svg"
+      ],
+      "quality": {
+        "purpose": "Prove restored behavior with the same physical test. Filled cup and unchanged dry floor are inspected43\u201378 inclusive:36 frames,1.2s. Lever contact79 and release85 follow that inspection; Bot exits89\u201394.",
+        "hero": "The restored teal roof, exterior gutter and dry interior floor.",
+        "primary_action": "Bot repeats the rain pull; water exits through the gutter, then Bot releases the finale\u2019s stored mechanical drive.",
+        "performance": {
+          "state": "relieved",
+          "target": "bot"
+        },
+        "before": "The original teal roof and checkpointed dry floor are restored; the test ribbon is raised.",
+        "after": "The slug rests in the exterior cup, the floor remains dry and level, and the return-drive spring has been released by Bot.",
+        "focal_target": "teal-side-gutter",
+        "framing": "subject",
+        "reaction_radius": {
+          "origin": [
+            548,
+            622
+          ],
+          "radius": 194,
+          "duration": 0.42,
+          "targets": [
+            {
+              "id": "teal-side-gutter",
+              "position": [
+                550,
+                596
+              ],
+              "relevance": 1,
+              "amplitude": {
+                "x": 2,
+                "y": 3,
+                "rotation": 1
+              },
+              "delay": 0
+            },
+            {
+              "id": "paper-gold-catch-cup",
+              "position": [
+                576,
+                724
+              ],
+              "relevance": 0.82,
+              "amplitude": {
+                "x": 2,
+                "y": 4,
+                "rotation": -1.5
+              },
+              "delay": 0.05
+            },
+            {
+              "id": "teal-original-roof",
+              "position": [
+                376,
+                468
+              ],
+              "relevance": 0.54,
+              "amplitude": {
+                "x": 1,
+                "y": 2,
+                "rotation": 0.4
+              },
+              "delay": 0.1
+            }
+          ]
+        },
+        "secondary_motion": [
+          "The slug accelerates down the roof pitch and slows in the gutter bend.",
+          "The catch cup dips four pixels at landing and returns.",
+          "The dry floor stays deliberately still; Bot\u2019s antenna rises in relief before turning toward the return lever.",
+          "The filled exterior cup and unchanged dry floor remain visible from frame43 through78: a 36-frame deliberate inspection before the finale lever.",
+          "The rain handle is exposed to the right of Bot at330,740; its continuous dark tether reaches the reservoir gate. Both tests use the same740\u2192861 measured handle stroke.",
+          "The return lever is exposed at330,835 scale.9; the left hand follows its actual pressed transform until the explicit release before exit."
+        ],
+        "environment": [
+          "Warm-cream tabletop beneath the dry house",
+          "Charcoal pinboard seam supporting the repeatable ribbon guide",
+          "Paper-gold archive rail retaining the failed-state bay"
+        ],
+        "exit_overlap": "Bot releases the lever and passes behind the left archive edge during frames89\u201394 while the flywheel continues into the next crop.",
+        "energy": {
+          "dominant_action": "The identical test routes water outside while the dry floor remains unchanged.",
+          "character_response": "Bot watches the floor through the full test, relaxes, then deliberately releases the finale drive.",
+          "local_reaction": "Only the contacted roof edge, gutter, catch cup and return lever respond.",
+          "residual_motion": "The cup settles locally, then a 1.2-second deliberate inspection hold contrasts safe verification with speed.",
+          "next_action_overlap": "The released finale spring carries continuous motion into the reduced history display."
+        },
+        "art_direction": {
+          "hero_object": "The restored house with one clear roof-to-gutter water path and exterior catch cup.",
+          "bot_role": "participant",
+          "materials": [
+            "Translucent teal vellum test slug",
+            "Layered teal roof card",
+            "Paper-gold catch cup and return lever",
+            "Dry warm-cream floor cassette"
+          ],
+          "depth_planes": [
+            "Rear ribbon guide and return-spring housing",
+            "Midplane restored house and roof",
+            "Foreground Bot, gutter, cup and lever"
+          ],
+          "composition": "The pitched roof drives a clear diagonal toward the exterior cup; the broad dry floor remains visible through the cutaway and Bot occupies only the lower-left edge.",
+          "intentional_irregularity": "Shingle overlaps vary slightly and the folded cup has one taller corner.",
+          "environment_mode": "physical",
+          "environment_justification": null
+        }
+      },
+      "startFrame": 529,
+      "endFrame": 629,
+      "events": [
+        {
+          "local_frame": 4,
+          "kind": "contact",
+          "actor": "Bot right hand",
+          "target": "rain-ribbon-anchor",
+          "state_change": "Right hand seats on the same rain-ribbon-anchor.grip used in the failed test.",
+          "affine_rule": "Apply the anchor reaction, then solve the canonical right-hand inverse grip.",
+          "id": "rain-ribbon-anchor-contact"
+        },
+        {
+          "local_frame": 8,
+          "kind": "start",
+          "actor": "Bot right hand",
+          "target": "rain-ribbon-anchor",
+          "state_change": "The ribbon and reset test-water-slug begin the same measured downward travel.",
+          "affine_rule": "Use the identical ribbon displacement table and speed used in shot 05.",
+          "id": "rain-ribbon-anchor-start"
+        },
+        {
+          "id": "reservoir-outlet-release",
+          "local_frame": 8,
+          "kind": "release",
+          "actor": "Bot via rain-ribbon-anchor",
+          "target": "test-water-reservoir",
+          "state_change": "Bot-driven rain pull opens the visible reservoir gate at8, releasing the stored slug before delivery.",
+          "affine_rule": "Same rain-ribbon-anchor start8 drives the gate on its actual outlet; no autonomous water start.",
+          "anchor_refs": [
+            {
+              "part": "test-water-reservoir",
+              "anchor": "outlet"
+            },
+            {
+              "part": "test-water-slug",
+              "anchor": "tip"
+            },
+            {
+              "part": "rain-ribbon-anchor",
+              "anchor": "grip"
+            }
+          ]
+        },
+        {
+          "id": "test-water-delivery-handoff",
+          "local_frame": 8,
+          "kind": "handoff",
+          "actor": "test-water-reservoir",
+          "target": "test-water-slug",
+          "state_change": "Reservoir transfers the same slug to the connected test-ribbon-guide at8; the bounded test stroke now owns delivery.",
+          "affine_rule": "Resolve slug tip at test-water-reservoir.outlet [467,350], then follow the anchored roof-dependent path using the unchanged water piece.",
+          "anchor_refs": [
+            {
+              "part": "test-water-reservoir",
+              "anchor": "outlet"
+            },
+            {
+              "part": "test-water-slug",
+              "anchor": "tip"
+            },
+            {
+              "part": "rain-ribbon-anchor",
+              "anchor": "grip"
+            }
+          ]
+        },
+        {
+          "local_frame": 18,
+          "kind": "contact",
+          "actor": "test-water-slug",
+          "target": "teal-original-roof",
+          "state_change": "The same slug reaches the original roof after the same ten-frame approach used in the failed test; the pitched roof routes it outward.",
+          "affine_rule": "Compose the selected small teal-card recoil first; resolve slug contact to its transformed rain-contact. The original roof shape is preserved while its selected bounded paper reaction is allowed.",
+          "id": "teal-original-roof-contact"
+        },
+        {
+          "local_frame": 31,
+          "kind": "handoff",
+          "actor": "test-water-slug",
+          "target": "teal-side-gutter",
+          "state_change": "The slug transfers from the roof path into the gutter channel.",
+          "affine_rule": "Preserve slug scale and continuity while changing path ownership at the shared gutter inlet anchor.",
+          "id": "teal-side-gutter-handoff"
+        },
+        {
+          "local_frame": 43,
+          "kind": "landing",
+          "actor": "test-water-slug",
+          "target": "paper-gold-catch-cup",
+          "state_change": "The slug lands in the exterior cup; the cup enters and returns from its four-pixel loaded dip.",
+          "affine_rule": "Compose slug landing before the cup\u2019s local hinge response; leave the dry floor transform unchanged.",
+          "id": "paper-gold-catch-cup-landing"
+        },
+        {
+          "local_frame": 43,
+          "kind": "release",
+          "actor": "Bot right hand",
+          "target": "rain-ribbon-anchor",
+          "state_change": "Bot releases the ribbon at the same lower stop used in shot 05.",
+          "affine_rule": "Remove the inverse grip and hold the completed water path state.",
+          "id": "rain-ribbon-anchor-release"
+        },
+        {
+          "local_frame": 79,
+          "kind": "contact",
+          "actor": "Bot left hand",
+          "target": "return-drive-lever",
+          "state_change": "Left hand presses return-drive-lever.grip and compresses the finale latch.",
+          "affine_rule": "Resolve the authored left arm to the lever grip after the lever\u2019s bounded rotation.",
+          "id": "return-drive-lever-contact"
+        },
+        {
+          "local_frame": 85,
+          "kind": "release",
+          "actor": "return-drive-lever",
+          "target": "return-drive-flywheel",
+          "state_change": "The lever releases the wound finale spring; the connected flywheel begins continuous rotation.",
+          "affine_rule": "Remove the spring hold and start the finite flywheel/cam table; Bot\u2019s hand releases after the latch clears.",
+          "id": "return-drive-flywheel-release"
+        },
+        {
+          "id": "return-drive-lever-release",
+          "local_frame": 85,
+          "kind": "release",
+          "actor": "Bot left hand",
+          "target": "return-drive-lever",
+          "state_change": "Bot explicitly releases the left inverse grip once the lever latch has released the flywheel. Left hand is free before exit89.",
+          "affine_rule": "Remove only the left-hand grip at85; hold the lever at its pressed stop while the flywheel continues and Bot exits89\u201394."
+        },
+        {
+          "local_frame": 89,
+          "kind": "start",
+          "actor": "Bot",
+          "target": "bot",
+          "state_change": "Having released the lever, Bot moves behind the archive edge and outside the next house-focused framing.",
+          "affine_rule": "Bounded 89\u201394 frame whole-puppet translation with all hand constraints released; no new geometry or realistic gait.",
+          "id": "offscreen-left-start"
+        }
+      ],
+      "capability_route": {
+        "registered_performance": "Registered high-energy paper target bot; operative performance_phases call the canonical motif_performance renderer with state-local age and inverse grips.",
+        "reaction_and_focus": "Registered high-energy paper: its bot/actual-persistent-prop channel uses shared motif_reaction and canonical motif_performance. Selected persistent names are the real parts of this finite action. rowhouse-production-v1 supplies agent-assisted physical geometry, contact anchors and finite action choreography only; it does not define a new quality channel.",
+        "framing": "high-energy paper selected finite-action framing. Source checks chosen focal_target and framing against the explicit action binding; whole-scene camera uses this shot\u2019s operative named event markers. Unsupported changes require explicit action development, never silent fallback."
+      },
+      "asset_development": {
+        "new_artwork": "Only reversible-rowhouse-folio.svg: listed physical paper layers and anchors; GENERATED asset geometry scope scene-specific",
+        "new_choreography": "Only source/build.py: eight finite adapters keyed by these exact event frames; canonical Bot geometry and shared modules unchanged"
+      },
+      "pre_animation_validation": "Data contracts and implemented binding route only; actual motion/mobile/contact quality must remain pending until live rendered rough critics.",
+      "timing": {
+        "landmarks": {
+          "opening": {
+            "local_frame": 0
+          },
+          "rain-ribbon-anchor-contact": {
+            "event_id": "rain-ribbon-anchor-contact"
+          },
+          "rain-ribbon-anchor-start": {
+            "event_id": "rain-ribbon-anchor-start"
+          },
+          "teal-original-roof-contact": {
+            "event_id": "teal-original-roof-contact"
+          },
+          "teal-side-gutter-handoff": {
+            "event_id": "teal-side-gutter-handoff"
+          },
+          "paper-gold-catch-cup-landing": {
+            "event_id": "paper-gold-catch-cup-landing"
+          },
+          "rain-ribbon-anchor-release": {
+            "event_id": "rain-ribbon-anchor-release"
+          },
+          "return-drive-lever-contact": {
+            "event_id": "return-drive-lever-contact"
+          },
+          "return-drive-flywheel-release": {
+            "event_id": "return-drive-flywheel-release"
+          },
+          "return-drive-lever-release": {
+            "event_id": "return-drive-lever-release"
+          },
+          "offscreen-left-start": {
+            "event_id": "offscreen-left-start"
+          },
+          "local-landmark-94": {
+            "local_frame": 94
+          },
+          "shot-end": {
+            "boundary": "end"
+          }
+        },
+        "meaning": "Named landmarks resolve to the event local_frame, optionally plus a declared relative offset. These names are keys, not playback times. The compiler directly uses resolved event frames."
+      },
+      "performance_phases": [
+        {
+          "state": "focused",
+          "start": "opening",
+          "binding": "scripts/motif_performance.py:render",
+          "age": "seconds since resolved phase start"
+        },
+        {
+          "state": "relieved",
+          "start": "teal-side-gutter-handoff",
+          "binding": "scripts/motif_performance.py:render",
+          "age": "seconds since resolved phase start"
+        }
+      ],
+      "quality_channel_capability": "high-energy paper",
+      "compiled_frame_count": 100
+    },
+    {
+      "id": "shot-08-every-step-reversible",
+      "narration": "It makes every step reversible.",
+      "action_binding": "rowhouse_history_reverse_fold_finale_v1",
+      "physical_sequence": [
+        "Continue the flywheel released85 in the preceding shot. It extends the two archive rails; uniform camera pullback0\u201315 reveals the wide tableau.",
+        "Live house world position and size stay173,518 scale1. The separate archive panels show only pitched-versus-flat profiles and dry-versus-wet floor bars; camera holds15\u201357.",
+        "At cam apex57, both physical archive rails return. Panels fold on their local X hinges and seat in the real pocket by94 while the uniform camera returns to its opening projection.",
+        "Camera is back at1 and house identity restored94; mechanical stop100 leaves30 final hold frames100\u2013129."
+      ],
+      "consequence": "Three states remain physically legible without crowding, the actual failure stays archived, and the final HOUSE identity matches the opening.",
+      "focus_target": "rowhouse-facade",
+      "framing": "establish",
+      "needed_assets": [
+        "videos/productions/every-change-should-be-reversible/assets/props/reversible-rowhouse-folio.svg"
+      ],
+      "quality": {
+        "purpose": "Pay off reversibility with a mechanically driven reduced state display and an exact final HOUSE match.",
+        "hero": "The restored live rowhouse flanked briefly by one checkpoint bay and one conserved failed-state bay.",
+        "primary_action": "A previously released flywheel presents two reduced archive states, reverses them through a visible cam, and seats the archive beneath the exact opening house.",
+        "performance": {
+          "state": "absent",
+          "target": ""
+        },
+        "before": "The restored house is full size; checkpoint and failed states are stored, and the finale flywheel is already turning.",
+        "after": "The archive is seated beneath the house; the teal roof, three windows and level dry floor exactly match the opening, while the actual coral roof and wet floor remain inside the failed bay.",
+        "focal_target": "rowhouse-facade",
+        "framing": "establish",
+        "reaction_radius": {
+          "origin": [
+            360,
+            720
+          ],
+          "radius": 314,
+          "duration": 0.68,
+          "targets": [
+            {
+              "id": "failed-state-bay",
+              "position": [
+                626,
+                650
+              ],
+              "relevance": 1,
+              "amplitude": {
+                "x": -4,
+                "y": 2,
+                "rotation": -2
+              },
+              "delay": 0
+            },
+            {
+              "id": "paper-gold-checkpoint-plate",
+              "position": [
+                94,
+                650
+              ],
+              "relevance": 0.86,
+              "amplitude": {
+                "x": 3,
+                "y": 2,
+                "rotation": 1.5
+              },
+              "delay": 0.05
+            },
+            {
+              "id": "paper-gold-history-strip",
+              "position": [
+                360,
+                842
+              ],
+              "relevance": 0.72,
+              "amplitude": {
+                "x": 3,
+                "y": 1,
+                "rotation": -1
+              },
+              "delay": 0.1
+            },
+            {
+              "id": "rowhouse-facade",
+              "position": [
+                360,
+                670
+              ],
+              "relevance": 0.4,
+              "amplitude": {
+                "x": 1,
+                "y": 1,
+                "rotation": 0.3
+              },
+              "delay": 0.16
+            }
+          ]
+        },
+        "secondary_motion": [
+          "The side bays show only high-contrast roof and floor silhouettes; small windows, rails, labels and relief texture are physically covered by bay masks during the display.",
+          "The cam and archive rails move continuously from the release established in shot 07; no element self-starts.",
+          "The final gold edge and exterior cup receive one bounded settle after the camera returns to its opening projection.",
+          "Hold all three distinguishable states for42 frames; after restoration94 and mechanical stop100, hold the exact house identity through129."
+        ],
+        "environment": [
+          "Warm-cream tabletop with the opening deckled edge",
+          "Charcoal pinboard seam framing the original roof silhouette",
+          "Paper-gold archive edge seated at the folio base"
+        ],
+        "exit_overlap": null,
+        "energy": {
+          "dominant_action": "A visible flywheel and reversing cam present and close the reduced physical history states.",
+          "character_response": null,
+          "local_reaction": "Only the owned archive bays, segmented history strip and supported fa\u00e7ade respond.",
+          "residual_motion": "After the cam stops at100, the restored opening house holds for30 complete frames; no further motion competes with the payoff.",
+          "next_action_overlap": null
+        },
+        "art_direction": {
+          "hero_object": "The full restored rowhouse plus two reduced high-contrast archive bays.",
+          "bot_role": "absent",
+          "materials": [
+            "Warm-cream fibrous house card",
+            "Teal original roof and gutter",
+            "Coral roof and actual wet floor retained in one gold bay",
+            "Paper-gold flywheel, cam and archive strip"
+          ],
+          "depth_planes": [
+            "Rear charcoal seam and spring housing",
+            "Midplane live restored house",
+            "Foreground reduced archive bays, seated gold edge and exterior cup"
+          ],
+          "composition": "Three-state display preserves the central live house. Flanking archive cards are203\u00d7240 world units with large pitched/flat roof silhouettes and thick cream-level/teal-sagged floor tokens; the cards have reduced blank area and clear gaps outside the live house. Only the whole camera projects the display; the same panels fold into the archive.",
+          "intentional_irregularity": "The final ridge, bowed wall and uneven windows preserve the opening asymmetry; the reduced bays retain the original pitched-versus-flat contrast and the failed floor\u2019s asymmetric sag.",
+          "environment_mode": "physical",
+          "environment_justification": null
+        }
+      },
+      "startFrame": 629,
+      "endFrame": 759,
+      "events": [
+        {
+          "local_frame": 0,
+          "kind": "start",
+          "actor": "return-drive-flywheel",
+          "target": "paper-gold-history-strip",
+          "state_change": "Continuing flywheel extends archive rails while the uniform whole-scene camera pulls back to.73 during0\u201315. House retains its original world size; tableau holds15\u201357 then the same camera returns1 by94.",
+          "affine_rule": "Continue the carried flywheel phase and owned archive rail/segment transforms. Apply one uniform scene camera projection to the entire painted world, including tabletop; live house world pose stays173,518 scale1.",
+          "id": "paper-gold-history-strip-start"
+        },
+        {
+          "local_frame": 8,
+          "kind": "landing",
+          "actor": "paper-gold-checkpoint-plate",
+          "target": "checkpoint-display-stop",
+          "state_change": "The reduced checkpoint bay reaches its left display stop with pitched roof profile and level cream floor bar exposed.",
+          "affine_rule": "Clamp the checkpoint plate at x20\u2013168 display bounds and enable only its registered roof-and-floor occlusion window.",
+          "id": "checkpoint-display-stop-landing"
+        },
+        {
+          "local_frame": 15,
+          "kind": "landing",
+          "actor": "failed-state-bay",
+          "target": "failed-display-stop",
+          "state_change": "The failed bay reaches its right display stop containing the actual coral roof and actual wet sagging floor.",
+          "affine_rule": "Clamp the complete failed bay at x552\u2013700; preserve the child roof and wet-floor states and suppress only covered detail.",
+          "id": "failed-display-stop-landing"
+        },
+        {
+          "local_frame": 57,
+          "kind": "contact",
+          "actor": "return-cam-follower",
+          "target": "return-cam-apex",
+          "state_change": "The follower crosses the visible cam apex and changes both archive rails from extension to return.",
+          "affine_rule": "Use the continuous cam curve; reverse rail velocity at the apex without a new motor or hidden trigger.",
+          "id": "return-cam-apex-contact"
+        },
+        {
+          "local_frame": 73,
+          "kind": "handoff",
+          "actor": "failed-state-bay",
+          "target": "checkpoint-archive-slot",
+          "state_change": "The intact failed bay folds behind the checkpoint plate without separating its coral roof or wet floor.",
+          "affine_rule": "Rotate the bay around failed-state-bay.hinge after its rail return; child parts inherit the bay transform unchanged.",
+          "id": "checkpoint-archive-slot-handoff"
+        },
+        {
+          "local_frame": 84,
+          "kind": "landing",
+          "actor": "failed-state-bay",
+          "target": "checkpoint-archive-slot",
+          "state_change": "The failed bay seats inside the checkpoint pocket with both failed components conserved.",
+          "affine_rule": "Clamp the bay at its pocket stop and retain its wet mask, sag controls and coral roof transform.",
+          "id": "checkpoint-archive-slot-landing"
+        },
+        {
+          "local_frame": 94,
+          "kind": "landing",
+          "actor": "paper-gold-history-strip",
+          "target": "rowhouse-facade",
+          "state_change": "The segmented gold strip seats beneath the house and the live house returns to its opening scale and placement.",
+          "affine_rule": "Translate the owned folded strip into the actual transformed facade.archive-seat before stopping; camera returns to its opening projection while house world geometry stays fixed.",
+          "id": "rowhouse-facade-landing",
+          "anchor_refs": [
+            {
+              "part": "rowhouse-facade",
+              "anchor": "archive-seat"
+            }
+          ]
+        },
+        {
+          "local_frame": 100,
+          "kind": "stop",
+          "actor": "return-drive-flywheel",
+          "target": "return-cam-follower",
+          "state_change": "The flywheel reaches its finite stop; final HOUSE roof, windows and dry floor match the opening state.",
+          "affine_rule": "Clamp flywheel and follower at the terminal cam phase; hold teal roof keys, three window transforms and dry-floor level at their opening values.",
+          "id": "return-cam-follower-stop"
+        }
+      ],
+      "capability_route": {
+        "registered_performance": "Absent Bot: no performance phases, no renderer call, target empty as required by plan_check.",
+        "reaction_and_focus": "Registered high-energy paper: its bot/actual-persistent-prop channel uses shared motif_reaction and canonical motif_performance. Selected persistent names are the real parts of this finite action. rowhouse-production-v1 supplies agent-assisted physical geometry, contact anchors and finite action choreography only; it does not define a new quality channel.",
+        "framing": "high-energy paper selected finite-action framing. Source checks chosen focal_target and framing against the explicit action binding; whole-scene camera uses this shot\u2019s operative named event markers. Unsupported changes require explicit action development, never silent fallback."
+      },
+      "asset_development": {
+        "new_artwork": "Only reversible-rowhouse-folio.svg: listed physical paper layers and anchors; GENERATED asset geometry scope scene-specific",
+        "new_choreography": "Only source/build.py: eight finite adapters keyed by these exact event frames; canonical Bot geometry and shared modules unchanged"
+      },
+      "camera_continuity": "Uniform camera pullback1\u2192.73 during0\u201315, hold15\u201357, return57\u201394. Full world-size house stays173,518. Physical203px archive panels project to74-native-pixel width; their later local X-only hinge folding preserves physical height while seating in the archive pocket. All painted layers share the camera projection.",
+      "pre_animation_validation": "Data contracts and implemented binding route only; actual motion/mobile/contact quality must remain pending until live rendered rough critics.",
+      "timing": {
+        "landmarks": {
+          "paper-gold-history-strip-start": {
+            "event_id": "paper-gold-history-strip-start"
+          },
+          "opening": {
+            "local_frame": 0
+          },
+          "checkpoint-display-stop-landing": {
+            "event_id": "checkpoint-display-stop-landing"
+          },
+          "failed-display-stop-landing": {
+            "event_id": "failed-display-stop-landing"
+          },
+          "return-cam-apex-contact": {
+            "event_id": "return-cam-apex-contact"
+          },
+          "checkpoint-archive-slot-handoff": {
+            "event_id": "checkpoint-archive-slot-handoff"
+          },
+          "checkpoint-archive-slot-landing": {
+            "event_id": "checkpoint-archive-slot-landing"
+          },
+          "rowhouse-facade-landing": {
+            "event_id": "rowhouse-facade-landing"
+          },
+          "return-cam-follower-stop": {
+            "event_id": "return-cam-follower-stop"
+          }
+        },
+        "meaning": "Named landmarks resolve to the event local_frame, optionally plus a declared relative offset. These names are keys, not playback times. The compiler directly uses resolved event frames."
+      },
+      "performance_phases": [],
+      "camera": {
+        "mode": "one uniform scene projection",
+        "pivot": [
+          360,
+          850
+        ],
+        "wide_scale": 0.73,
+        "start": "paper-gold-history-strip-start",
+        "wide": "failed-display-stop-landing",
+        "return_start": "return-cam-apex-contact",
+        "return_end": "rowhouse-facade-landing",
+        "ownership": "Identical projection for tabletop, house, hardware and archive states. Live house world transform remains173,518 scale1 throughout."
+      },
+      "quality_channel_capability": "high-energy paper",
+      "compiled_frame_count": 130
+    }
+  ],
+  "sampled_bindings": [
+    {
+      "shot": "shot-01-unsafe-overwrite",
+      "frame": 0,
+      "actual_part_positions": {
+        "pinboard-seam": [
+          44.0,
+          275.0
+        ],
+        "tabletop": [
+          0.0,
+          1009.0
+        ],
+        "checkpoint-archive-slot": [
+          80.0,
+          340.0
+        ],
+        "rowhouse-facade": [
+          363.0,
+          738.0
+        ],
+        "left-keyed-roof-slot": [
+          180.0,
+          514.0
+        ],
+        "right-keyed-roof-slot": [
+          538.0,
+          514.0
+        ],
+        "teal-side-gutter": [
+          600.0,
+          589.0
+        ],
+        "paper-gold-catch-cup": [
+          635.0,
+          731.0
+        ],
+        "upper-window-flap": [
+          487.0,
+          583.0
+        ],
+        "interior-floor-strip": [
+          360.0,
+          869.0
+        ],
+        "checkpoint-capture-control": [
+          144.0,
+          814.0
+        ],
+        "paper-gold-checkpoint-tab": [
+          119.0,
+          899.0
+        ],
+        "write-drive-rack": [
+          450.0,
+          548.0
+        ],
+        "coral-replacement-roof": [
+          966.084418463884,
+          479.12629218760566
+        ],
+        "discard-trip-latch": [
+          285.0,
+          575.0
+        ],
+        "teal-original-roof": [
+          363.0,
+          478.0
+        ],
+        "write-latch": [
+          147.0,
+          761.0
+        ],
+        "history-engage-control": [
+          84.0,
+          814.0
+        ]
+      },
+      "reaction_targets_bound": [
+        "coral-replacement-roof",
+        "teal-original-roof"
+      ],
+      "performance": "surprised"
+    },
+    {
+      "shot": "shot-01-unsafe-overwrite",
+      "frame": 30,
+      "actual_part_positions": {
+        "pinboard-seam": [
+          44.0,
+          275.0
+        ],
+        "tabletop": [
+          0.0,
+          1009.0
+        ],
+        "checkpoint-archive-slot": [
+          80.0,
+          340.0
+        ],
+        "rowhouse-facade": [
+          363.0,
+          738.0
+        ],
+        "left-keyed-roof-slot": [
+          180.0,
+          514.0
+        ],
+        "right-keyed-roof-slot": [
+          538.0,
+          514.0
+        ],
+        "teal-side-gutter": [
+          600.0,
+          589.0
+        ],
+        "paper-gold-catch-cup": [
+          635.0,
+          731.0
+        ],
+        "upper-window-flap": [
+          487.0,
+          583.0
+        ],
+        "interior-floor-strip": [
+          360.0,
+          869.0
+        ],
+        "checkpoint-capture-control": [
+          144.0,
+          814.0
+        ],
+        "paper-gold-checkpoint-tab": [
+          119.0,
+          899.0
+        ],
+        "write-drive-rack": [
+          450.0,
+          548.0
+        ],
+        "coral-replacement-roof": [
+          966.084418463884,
+          479.12629218760566
+        ],
+        "discard-trip-latch": [
+          285.0,
+          575.0
+        ],
+        "teal-original-roof": [
+          363.0,
+          478.0
+        ],
+        "write-latch": [
+          147.0,
+          761.0
+        ],
+        "history-engage-control": [
+          84.0,
+          814.0
+        ]
+      },
+      "reaction_targets_bound": [
+        "coral-replacement-roof",
+        "teal-original-roof"
+      ],
+      "performance": "surprised"
+    },
+    {
+      "shot": "shot-01-unsafe-overwrite",
+      "frame": 60,
+      "actual_part_positions": {
+        "pinboard-seam": [
+          44.0,
+          275.0
+        ],
+        "tabletop": [
+          0.0,
+          1009.0
+        ],
+        "checkpoint-archive-slot": [
+          80.0,
+          340.0
+        ],
+        "rowhouse-facade": [
+          363.0,
+          738.0
+        ],
+        "left-keyed-roof-slot": [
+          180.0,
+          514.0
+        ],
+        "right-keyed-roof-slot": [
+          538.0,
+          514.0
+        ],
+        "teal-side-gutter": [
+          600.0,
+          589.0
+        ],
+        "paper-gold-catch-cup": [
+          635.0,
+          731.0
+        ],
+        "upper-window-flap": [
+          487.0,
+          583.0
+        ],
+        "interior-floor-strip": [
+          360.0,
+          869.0
+        ],
+        "checkpoint-capture-control": [
+          144.0,
+          814.0
+        ],
+        "paper-gold-checkpoint-tab": [
+          119.0,
+          899.0
+        ],
+        "write-drive-rack": [
+          424.0397037037037,
+          548.0
+        ],
+        "coral-replacement-roof": [
+          891.365942603855,
+          480.5100613765684
+        ],
+        "discard-trip-latch": [
+          285.0,
+          575.0
+        ],
+        "teal-original-roof": [
+          363.75902013156406,
+          463.7727092379336
+        ],
+        "roof-eave-grip": [
+          169.08642459416302,
+          507.8761506885022
+        ],
+        "write-latch": [
+          147.0,
+          761.0
+        ],
+        "history-engage-control": [
+          84.0,
+          814.0
+        ]
+      },
+      "reaction_targets_bound": [
+        "coral-replacement-roof",
+        "teal-original-roof"
+      ],
+      "performance": "surprised"
+    },
+    {
+      "shot": "shot-01-unsafe-overwrite",
+      "frame": 90,
+      "actual_part_positions": {
+        "pinboard-seam": [
+          44.0,
+          275.0
+        ],
+        "tabletop": [
+          0.0,
+          1009.0
+        ],
+        "checkpoint-archive-slot": [
+          80.0,
+          340.0
+        ],
+        "rowhouse-facade": [
+          363.0,
+          738.0
+        ],
+        "left-keyed-roof-slot": [
+          180.0,
+          514.0
+        ],
+        "right-keyed-roof-slot": [
+          538.0,
+          514.0
+        ],
+        "teal-side-gutter": [
+          600.0,
+          589.0
+        ],
+        "paper-gold-catch-cup": [
+          635.0,
+          731.0
+        ],
+        "upper-window-flap": [
+          487.0,
+          583.0
+        ],
+        "interior-floor-strip": [
+          360.0,
+          869.0
+        ],
+        "checkpoint-capture-control": [
+          144.0,
+          814.0
+        ],
+        "paper-gold-checkpoint-tab": [
+          119.0,
+          899.0
+        ],
+        "write-drive-rack": [
+          354.096,
+          548.0
+        ],
+        "coral-replacement-roof": [
+          690.0130540279172,
+          484.2328260288684
+        ],
+        "discard-trip-latch": [
+          285.0,
+          575.0
+        ],
+        "teal-original-roof": [
+          470.33845891361506,
+          355.29408105964717
+        ],
+        "roof-eave-grip": [
+          277.56959514238054,
+          407.39173129789907
+        ],
+        "write-latch": [
+          147.0,
+          761.0
+        ],
+        "history-engage-control": [
+          84.0,
+          814.0
+        ]
+      },
+      "reaction_targets_bound": [
+        "coral-replacement-roof",
+        "teal-original-roof"
+      ],
+      "performance": "surprised"
+    },
+    {
+      "shot": "shot-01-unsafe-overwrite",
+      "frame": 120,
+      "actual_part_positions": {
+        "pinboard-seam": [
+          44.0,
+          275.0
+        ],
+        "tabletop": [
+          0.0,
+          1009.0
+        ],
+        "checkpoint-archive-slot": [
+          80.0,
+          340.0
+        ],
+        "rowhouse-facade": [
+          363.0,
+          738.0
+        ],
+        "left-keyed-roof-slot": [
+          180.0,
+          514.0
+        ],
+        "right-keyed-roof-slot": [
+          538.0,
+          514.0
+        ],
+        "teal-side-gutter": [
+          600.0,
+          589.0
+        ],
+        "paper-gold-catch-cup": [
+          635.0,
+          731.0
+        ],
+        "upper-window-flap": [
+          487.0,
+          583.0
+        ],
+        "interior-floor-strip": [
+          360.0,
+          869.0
+        ],
+        "checkpoint-capture-control": [
+          144.0,
+          814.0
+        ],
+        "paper-gold-checkpoint-tab": [
+          119.0,
+          899.0
+        ],
+        "write-drive-rack": [
+          303.88562962962965,
+          548.0
+        ],
+        "coral-replacement-roof": [
+          545.4303583141946,
+          486.8999309981947
+        ],
+        "discard-trip-latch": [
+          285.0,
+          575.0
+        ],
+        "teal-original-roof": [
+          496.01867919379123,
+          341.03254471097796
+        ],
+        "roof-eave-grip": [
+          303.53636603509597,
+          394.1791261727987
+        ],
+        "write-latch": [
+          147.0,
+          761.0
+        ],
+        "history-engage-control": [
+          84.0,
+          814.0
+        ]
+      },
+      "reaction_targets_bound": [
+        "coral-replacement-roof",
+        "teal-original-roof"
+      ],
+      "performance": "surprised"
+    },
+    {
+      "shot": "shot-01-unsafe-overwrite",
+      "frame": 150,
+      "actual_part_positions": {
+        "pinboard-seam": [
+          44.0,
+          275.0
+        ],
+        "tabletop": [
+          0.0,
+          1009.0
+        ],
+        "checkpoint-archive-slot": [
+          80.0,
+          340.0
+        ],
+        "rowhouse-facade": [
+          363.0,
+          738.0
+        ],
+        "left-keyed-roof-slot": [
+          180.0,
+          514.0
+        ],
+        "right-keyed-roof-slot": [
+          538.0,
+          514.0
+        ],
+        "teal-side-gutter": [
+          600.0,
+          589.0
+        ],
+        "paper-gold-catch-cup": [
+          635.0,
+          731.0
+        ],
+        "upper-window-flap": [
+          487.0,
+          583.0
+        ],
+        "interior-floor-strip": [
+          360.0,
+          869.0
+        ],
+        "checkpoint-capture-control": [
+          144.0,
+          814.0
+        ],
+        "paper-gold-checkpoint-tab": [
+          119.0,
+          899.0
+        ],
+        "write-drive-rack": [
+          302.0,
+          548.0
+        ],
+        "coral-replacement-roof": [
+          540.0,
+          487.0
+        ],
+        "discard-trip-latch": [
+          285.0,
+          575.0
+        ],
+        "teal-original-roof": [
+          496.01867919379123,
+          341.03254471097796
+        ],
+        "roof-eave-grip": [
+          303.53636603509597,
+          394.1791261727987
+        ],
+        "write-latch": [
+          147.0,
+          761.0
+        ],
+        "history-engage-control": [
+          84.0,
+          814.0
+        ]
+      },
+      "reaction_targets_bound": [
+        "coral-replacement-roof",
+        "teal-original-roof"
+      ],
+      "performance": "surprised"
+    },
+    {
+      "shot": "shot-01-unsafe-overwrite",
+      "frame": 180,
+      "actual_part_positions": {
+        "pinboard-seam": [
+          44.0,
+          275.0
+        ],
+        "tabletop": [
+          0.0,
+          1009.0
+        ],
+        "checkpoint-archive-slot": [
+          80.0,
+          340.0
+        ],
+        "rowhouse-facade": [
+          363.0,
+          738.0
+        ],
+        "left-keyed-roof-slot": [
+          180.0,
+          514.0
+        ],
+        "right-keyed-roof-slot": [
+          538.0,
+          514.0
+        ],
+        "teal-side-gutter": [
+          600.0,
+          589.0
+        ],
+        "paper-gold-catch-cup": [
+          635.0,
+          731.0
+        ],
+        "upper-window-flap": [
+          487.0,
+          583.0
+        ],
+        "interior-floor-strip": [
+          360.0,
+          869.0
+        ],
+        "checkpoint-capture-control": [
+          144.0,
+          814.0
+        ],
+        "paper-gold-checkpoint-tab": [
+          119.0,
+          899.0
+        ],
+        "write-drive-rack": [
+          302.0,
+          548.0
+        ],
+        "coral-replacement-roof": [
+          540.0,
+          487.0
+        ],
+        "discard-trip-latch": [
+          285.0,
+          575.0
+        ],
+        "teal-original-roof": [
+          491.40906831140774,
+          385.05188587350597
+        ],
+        "write-latch": [
+          147.0,
+          761.0
+        ],
+        "history-engage-control": [
+          84.0,
+          814.0
+        ]
+      },
+      "reaction_targets_bound": [
+        "coral-replacement-roof",
+        "teal-original-roof"
+      ],
+      "performance": "surprised"
+    },
+    {
+      "shot": "shot-02-history-catches-change",
+      "frame": 210,
+      "actual_part_positions": {
+        "pinboard-seam": [
+          44.0,
+          275.0
+        ],
+        "tabletop": [
+          0.0,
+          1009.0
+        ],
+        "rowhouse-facade": [
+          292.8,
+          837.4
+        ],
+        "checkpoint-archive-slot": [
+          64.0,
+          544.0
+        ],
+        "catch-leaf-spring": [
+          124.0,
+          671.0
+        ],
+        "paper-gold-history-strip": [
+          76.0,
+          700.0
+        ],
+        "paper-gold-catch-tongue": [
+          11.41362717599472,
+          555.0912687253897
+        ],
+        "teal-original-roof": [
+          340.268569158982,
+          517.5536370586077
+        ],
+        "coral-replacement-roof": [
+          540.0,
+          487.0
+        ],
+        "discard-trip-latch": [
+          294.0,
+          523.0
+        ],
+        "write-drive-rack": [
+          302.0,
+          548.0
+        ],
+        "history-state-original": [
+          70.0,
+          771.0
+        ],
+        "history-state-proposed": [
+          389.0,
+          771.0
+        ]
+      },
+      "reaction_targets_bound": [
+        "paper-gold-catch-tongue",
+        "teal-original-roof",
+        "discard-trip-latch"
+      ],
+      "performance": "absent"
+    },
+    {
+      "shot": "shot-02-history-catches-change",
+      "frame": 240,
+      "actual_part_positions": {
+        "pinboard-seam": [
+          44.0,
+          275.0
+        ],
+        "tabletop": [
+          0.0,
+          1009.0
+        ],
+        "rowhouse-facade": [
+          292.8,
+          837.4
+        ],
+        "checkpoint-archive-slot": [
+          64.0,
+          544.0
+        ],
+        "catch-leaf-spring": [
+          124.0,
+          671.0
+        ],
+        "paper-gold-history-strip": [
+          76.0,
+          700.0
+        ],
+        "paper-gold-catch-tongue": [
+          -73.8,
+          576.12
+        ],
+        "teal-original-roof": [
+          226.0,
+          548.6
+        ],
+        "coral-replacement-roof": [
+          540.0,
+          487.0
+        ],
+        "discard-trip-latch": [
+          294.0,
+          523.0
+        ],
+        "write-drive-rack": [
+          302.0,
+          548.0
+        ],
+        "history-state-original": [
+          70.0,
+          771.0
+        ],
+        "history-state-proposed": [
+          389.0,
+          771.0
+        ]
+      },
+      "reaction_targets_bound": [
+        "paper-gold-catch-tongue",
+        "teal-original-roof",
+        "discard-trip-latch"
+      ],
+      "performance": "absent"
+    },
+    {
+      "shot": "shot-03-save-checkpoint",
+      "frame": 270,
+      "actual_part_positions": {
+        "pinboard-seam": [
+          44.0,
+          275.0
+        ],
+        "tabletop": [
+          0.0,
+          1009.0
+        ],
+        "checkpoint-archive-slot": [
+          80.0,
+          340.0
+        ],
+        "paper-gold-checkpoint-plate": [
+          42.456048084147255,
+          257.60555972952665
+        ],
+        "rowhouse-facade": [
+          363.0,
+          738.0
+        ],
+        "left-keyed-roof-slot": [
+          180.0,
+          514.0
+        ],
+        "right-keyed-roof-slot": [
+          538.0,
+          514.0
+        ],
+        "teal-side-gutter": [
+          600.0,
+          589.0
+        ],
+        "paper-gold-catch-cup": [
+          635.0,
+          731.0
+        ],
+        "upper-window-flap": [
+          487.0,
+          583.0
+        ],
+        "interior-floor-strip": [
+          360.0,
+          869.0
+        ],
+        "history-engage-control": [
+          84.0,
+          814.0
+        ],
+        "paper-gold-checkpoint-tab": [
+          119.0,
+          899.0
+        ],
+        "teal-original-roof": [
+          363.0,
+          478.0
+        ],
+        "coral-replacement-roof": [
+          638.25,
+          802.75
+        ],
+        "checkpoint-capture-control": [
+          141.45706371191136,
+          814.0
+        ],
+        "checkpoint-dry-floor-cassette": [
+          103.89932381667919,
+          856.8129226145755
+        ],
+        "dry-cassette-latch": [
+          84.89932381667919,
+          849.8129226145755
+        ],
+        "capture-pressure-cam": [
+          95.0,
+          497.0
+        ],
+        "checkpoint-drive-latch": [
+          82.0,
+          750.0
+        ],
+        "comparison-leaf-spring": [
+          385.0,
+          925.0
+        ],
+        "return-drive-flywheel": [
+          570.0,
+          880.0
+        ]
+      },
+      "reaction_targets_bound": [
+        "paper-gold-checkpoint-plate",
+        "checkpoint-capture-control",
+        "capture-pressure-cam"
+      ],
+      "performance": "focused"
+    },
+    {
+      "shot": "shot-03-save-checkpoint",
+      "frame": 300,
+      "actual_part_positions": {
+        "pinboard-seam": [
+          44.0,
+          275.0
+        ],
+        "tabletop": [
+          0.0,
+          1009.0
+        ],
+        "checkpoint-archive-slot": [
+          80.0,
+          340.0
+        ],
+        "paper-gold-checkpoint-plate": [
+          20.0,
+          243.0
+        ],
+        "rowhouse-facade": [
+          363.0,
+          738.0
+        ],
+        "left-keyed-roof-slot": [
+          180.0,
+          514.0
+        ],
+        "right-keyed-roof-slot": [
+          538.0,
+          514.0
+        ],
+        "teal-side-gutter": [
+          600.0,
+          589.0
+        ],
+        "paper-gold-catch-cup": [
+          635.0,
+          731.0
+        ],
+        "upper-window-flap": [
+          487.0,
+          583.0
+        ],
+        "interior-floor-strip": [
+          360.0,
+          869.0
+        ],
+        "history-engage-control": [
+          84.0,
+          814.0
+        ],
+        "paper-gold-checkpoint-tab": [
+          119.0,
+          899.0
+        ],
+        "teal-original-roof": [
+          363.0,
+          478.0
+        ],
+        "coral-replacement-roof": [
+          638.25,
+          802.75
+        ],
+        "checkpoint-capture-control": [
+          144.0,
+          814.0
+        ],
+        "checkpoint-dry-floor-cassette": [
+          40.0,
+          836.0
+        ],
+        "dry-cassette-latch": [
+          21.0,
+          829.0
+        ],
+        "capture-pressure-cam": [
+          463.0,
+          497.0
+        ],
+        "checkpoint-drive-latch": [
+          82.0,
+          750.0
+        ],
+        "comparison-leaf-spring": [
+          385.0,
+          925.0
+        ],
+        "return-drive-flywheel": [
+          570.0,
+          880.0
+        ]
+      },
+      "reaction_targets_bound": [
+        "paper-gold-checkpoint-plate",
+        "checkpoint-capture-control",
+        "capture-pressure-cam"
+      ],
+      "performance": "focused"
+    },
+    {
+      "shot": "shot-04-visible-difference",
+      "frame": 330,
+      "actual_part_positions": {
+        "pinboard-seam": [
+          44.0,
+          275.0
+        ],
+        "tabletop": [
+          0.0,
+          1009.0
+        ],
+        "paper-gold-checkpoint-plate": [
+          33.0,
+          563.0
+        ],
+        "rowhouse-facade": [
+          610.0,
+          738.0
+        ],
+        "left-keyed-roof-slot": [
+          427.0,
+          514.0
+        ],
+        "right-keyed-roof-slot": [
+          785.0,
+          514.0
+        ],
+        "interior-floor-strip": [
+          607.0,
+          869.0
+        ],
+        "comparison-leaf-spring": [
+          385.0,
+          925.0
+        ],
+        "return-drive-flywheel": [
+          570.0,
+          880.0
+        ],
+        "comparison-drive-rack": [
+          238.0,
+          829.0
+        ],
+        "teal-original-roof": [
+          150.0,
+          478.0
+        ],
+        "coral-replacement-roof": [
+          610.0,
+          493.0
+        ],
+        "paper-gold-history-strip": [
+          70.0,
+          946.0
+        ]
+      },
+      "reaction_targets_bound": [
+        "comparison-drive-rack",
+        "teal-original-roof",
+        "coral-replacement-roof"
+      ],
+      "performance": "absent"
+    },
+    {
+      "shot": "shot-05-rain-test-fails",
+      "frame": 360,
+      "actual_part_positions": {
+        "pinboard-seam": [
+          44.0,
+          275.0
+        ],
+        "tabletop": [
+          0.0,
+          1009.0
+        ],
+        "checkpoint-archive-slot": [
+          80.0,
+          340.0
+        ],
+        "paper-gold-checkpoint-plate": [
+          20.0,
+          243.0
+        ],
+        "rowhouse-facade": [
+          363.0,
+          738.0
+        ],
+        "left-keyed-roof-slot": [
+          180.0,
+          514.0
+        ],
+        "right-keyed-roof-slot": [
+          538.0,
+          514.0
+        ],
+        "teal-side-gutter": [
+          600.0,
+          589.0
+        ],
+        "paper-gold-catch-cup": [
+          635.0,
+          731.0
+        ],
+        "upper-window-flap": [
+          487.0,
+          583.0
+        ],
+        "history-engage-control": [
+          84.0,
+          814.0
+        ],
+        "checkpoint-capture-control": [
+          144.0,
+          814.0
+        ],
+        "test-water-reservoir": [
+          427.0,
+          350.0
+        ],
+        "coral-replacement-roof": [
+          363.0,
+          493.0
+        ],
+        "test-ribbon-guide": [
+          223.0,
+          301.0
+        ],
+        "rain-ribbon-anchor": [
+          330.0,
+          740.0
+        ],
+        "paper-gold-checkpoint-tab": [
+          119.0,
+          899.0
+        ],
+        "interior-floor-strip": [
+          360.0,
+          869.0
+        ],
+        "floor-shuttle": [
+          205.0,
+          879.0
+        ],
+        "test-water-slug": [
+          446.07,
+          286.3
+        ],
+        "floor-sag-stop": [
+          335.0,
+          897.0
+        ]
+      },
+      "reaction_targets_bound": [
+        "upper-window-flap",
+        "coral-replacement-roof",
+        "interior-floor-strip"
+      ],
+      "performance": "worried"
+    },
+    {
+      "shot": "shot-05-rain-test-fails",
+      "frame": 390,
+      "actual_part_positions": {
+        "pinboard-seam": [
+          44.0,
+          275.0
+        ],
+        "tabletop": [
+          0.0,
+          1009.0
+        ],
+        "checkpoint-archive-slot": [
+          80.0,
+          340.0
+        ],
+        "paper-gold-checkpoint-plate": [
+          20.0,
+          243.0
+        ],
+        "rowhouse-facade": [
+          363.0,
+          738.0
+        ],
+        "left-keyed-roof-slot": [
+          180.0,
+          514.0
+        ],
+        "right-keyed-roof-slot": [
+          538.0,
+          514.0
+        ],
+        "teal-side-gutter": [
+          600.0,
+          589.0
+        ],
+        "paper-gold-catch-cup": [
+          635.0,
+          731.0
+        ],
+        "upper-window-flap": [
+          486.12886140897643,
+          583.9590477275455
+        ],
+        "history-engage-control": [
+          84.0,
+          814.0
+        ],
+        "checkpoint-capture-control": [
+          144.0,
+          814.0
+        ],
+        "test-water-reservoir": [
+          427.0,
+          350.0
+        ],
+        "coral-replacement-roof": [
+          363.0,
+          493.0
+        ],
+        "test-ribbon-guide": [
+          223.0,
+          301.0
+        ],
+        "rain-ribbon-anchor": [
+          330.0,
+          832.6570728862973
+        ],
+        "paper-gold-checkpoint-tab": [
+          119.0,
+          899.0
+        ],
+        "interior-floor-strip": [
+          360.0,
+          869.0
+        ],
+        "floor-shuttle": [
+          205.10350106939592,
+          881.5920149779338
+        ],
+        "test-water-slug": [
+          339.3885388684516,
+          793.2081732786012
+        ],
+        "floor-sag-stop": [
+          335.0,
+          897.0
+        ]
+      },
+      "reaction_targets_bound": [
+        "upper-window-flap",
+        "coral-replacement-roof",
+        "interior-floor-strip"
+      ],
+      "performance": "worried"
+    },
+    {
+      "shot": "shot-06-rollback-restores",
+      "frame": 420,
+      "actual_part_positions": {
+        "pinboard-seam": [
+          44.0,
+          275.0
+        ],
+        "tabletop": [
+          0.0,
+          1009.0
+        ],
+        "checkpoint-archive-slot": [
+          80.0,
+          340.0
+        ],
+        "paper-gold-checkpoint-plate": [
+          20.0,
+          243.0
+        ],
+        "rowhouse-facade": [
+          363.0,
+          738.0
+        ],
+        "left-keyed-roof-slot": [
+          180.0,
+          514.0
+        ],
+        "right-keyed-roof-slot": [
+          538.0,
+          514.0
+        ],
+        "teal-side-gutter": [
+          600.0,
+          589.0
+        ],
+        "paper-gold-catch-cup": [
+          635.0,
+          731.0
+        ],
+        "upper-window-flap": [
+          487.0,
+          583.0
+        ],
+        "history-engage-control": [
+          84.0,
+          814.0
+        ],
+        "checkpoint-capture-control": [
+          144.0,
+          814.0
+        ],
+        "test-water-reservoir": [
+          427.0,
+          350.0
+        ],
+        "failed-state-bay": [
+          631.4,
+          837.28
+        ],
+        "paper-gold-history-strip": [
+          80.0,
+          944.0
+        ],
+        "paper-gold-rollback-carriage": [
+          232.89749526169996,
+          805.0
+        ],
+        "coral-replacement-roof": [
+          363.0,
+          493.0
+        ],
+        "interior-floor-strip": [
+          360.0,
+          869.0
+        ],
+        "floor-shuttle": [
+          205.0,
+          879.0
+        ],
+        "teal-original-roof": [
+          159.3980179346871,
+          665.7836921997763
+        ],
+        "checkpoint-dry-floor-cassette": [
+          40.0,
+          836.0
+        ],
+        "live-floor-mounts": [
+          205.0,
+          873.0
+        ],
+        "carriage-stop": [
+          339.0,
+          808.0
+        ],
+        "rain-ribbon-anchor": [
+          330.0,
+          860.6456264761628
+        ],
+        "test-take-up-cable": [
+          360.0,
+          853.0
+        ],
+        "test-water-slug": [
+          339.07,
+          789.3
+        ],
+        "paper-gold-checkpoint-tab": [
+          354.89456655489136,
+          895.0
+        ]
+      },
+      "reaction_targets_bound": [
+        "paper-gold-rollback-carriage",
+        "coral-replacement-roof",
+        "interior-floor-strip",
+        "paper-gold-checkpoint-tab"
+      ],
+      "performance": "burdened"
+    },
+    {
+      "shot": "shot-06-rollback-restores",
+      "frame": 450,
+      "actual_part_positions": {
+        "pinboard-seam": [
+          44.0,
+          275.0
+        ],
+        "tabletop": [
+          0.0,
+          1009.0
+        ],
+        "checkpoint-archive-slot": [
+          80.0,
+          340.0
+        ],
+        "paper-gold-checkpoint-plate": [
+          20.0,
+          243.0
+        ],
+        "rowhouse-facade": [
+          363.0,
+          738.0
+        ],
+        "left-keyed-roof-slot": [
+          180.0,
+          514.0
+        ],
+        "right-keyed-roof-slot": [
+          538.0,
+          514.0
+        ],
+        "teal-side-gutter": [
+          600.0,
+          589.0
+        ],
+        "paper-gold-catch-cup": [
+          635.0,
+          731.0
+        ],
+        "upper-window-flap": [
+          487.0,
+          583.0
+        ],
+        "history-engage-control": [
+          84.0,
+          814.0
+        ],
+        "checkpoint-capture-control": [
+          144.0,
+          814.0
+        ],
+        "test-water-reservoir": [
+          427.0,
+          350.0
+        ],
+        "failed-state-bay": [
+          631.4,
+          837.28
+        ],
+        "paper-gold-history-strip": [
+          80.0,
+          944.0
+        ],
+        "paper-gold-rollback-carriage": [
+          223.26425426447003,
+          805.0
+        ],
+        "coral-replacement-roof": [
+          639.1467779606244,
+          795.1360770829701
+        ],
+        "interior-floor-strip": [
+          484.835537250328,
+          876.8111444817029
+        ],
+        "floor-shuttle": [
+          379.09272488700975,
+          883.6332614083685
+        ],
+        "teal-original-roof": [
+          177.2317592111275,
+          649.0438349953756
+        ],
+        "checkpoint-dry-floor-cassette": [
+          40.0,
+          836.0
+        ],
+        "live-floor-mounts": [
+          205.0,
+          873.0
+        ],
+        "carriage-stop": [
+          339.0,
+          808.0
+        ],
+        "rain-ribbon-anchor": [
+          330.0,
+          827.3421361714536
+        ],
+        "test-take-up-cable": [
+          467.0,
+          350.0
+        ],
+        "test-water-slug": [
+          446.07,
+          286.3
+        ],
+        "paper-gold-checkpoint-tab": [
+          344.9860901005978,
+          895.0
+        ]
+      },
+      "reaction_targets_bound": [
+        "paper-gold-rollback-carriage",
+        "coral-replacement-roof",
+        "interior-floor-strip",
+        "paper-gold-checkpoint-tab"
+      ],
+      "performance": "burdened"
+    },
+    {
+      "shot": "shot-06-rollback-restores",
+      "frame": 480,
+      "actual_part_positions": {
+        "pinboard-seam": [
+          44.0,
+          275.0
+        ],
+        "tabletop": [
+          0.0,
+          1009.0
+        ],
+        "checkpoint-archive-slot": [
+          80.0,
+          340.0
+        ],
+        "paper-gold-checkpoint-plate": [
+          20.0,
+          243.0
+        ],
+        "rowhouse-facade": [
+          363.0,
+          738.0
+        ],
+        "left-keyed-roof-slot": [
+          180.0,
+          514.0
+        ],
+        "right-keyed-roof-slot": [
+          538.0,
+          514.0
+        ],
+        "teal-side-gutter": [
+          600.0,
+          589.0
+        ],
+        "paper-gold-catch-cup": [
+          635.0,
+          731.0
+        ],
+        "upper-window-flap": [
+          487.0,
+          583.0
+        ],
+        "history-engage-control": [
+          84.0,
+          814.0
+        ],
+        "checkpoint-capture-control": [
+          144.0,
+          814.0
+        ],
+        "test-water-reservoir": [
+          427.0,
+          350.0
+        ],
+        "failed-state-bay": [
+          631.4,
+          837.28
+        ],
+        "paper-gold-history-strip": [
+          80.0,
+          944.0
+        ],
+        "paper-gold-rollback-carriage": [
+          207.2382446420761,
+          805.0
+        ],
+        "coral-replacement-roof": [
+          639.1467779606244,
+          795.1360770829701
+        ],
+        "interior-floor-strip": [
+          631.05,
+          885.96
+        ],
+        "floor-shuttle": [
+          583.0,
+          889.06
+        ],
+        "teal-original-roof": [
+          338.3795766724055,
+          500.342775867445
+        ],
+        "checkpoint-dry-floor-cassette": [
+          50.51433773327265,
+          837.083295402822
+        ],
+        "live-floor-mounts": [
+          205.0,
+          873.0
+        ],
+        "carriage-stop": [
+          339.0,
+          808.0
+        ],
+        "rain-ribbon-anchor": [
+          330.0,
+          771.9379314768917
+        ],
+        "test-take-up-cable": [
+          467.0,
+          350.0
+        ],
+        "test-water-slug": [
+          446.07,
+          286.3
+        ],
+        "paper-gold-checkpoint-tab": [
+          328.5021944889926,
+          895.0
+        ]
+      },
+      "reaction_targets_bound": [
+        "paper-gold-rollback-carriage",
+        "coral-replacement-roof",
+        "interior-floor-strip",
+        "paper-gold-checkpoint-tab"
+      ],
+      "performance": "burdened"
+    },
+    {
+      "shot": "shot-06-rollback-restores",
+      "frame": 510,
+      "actual_part_positions": {
+        "pinboard-seam": [
+          44.0,
+          275.0
+        ],
+        "tabletop": [
+          0.0,
+          1009.0
+        ],
+        "checkpoint-archive-slot": [
+          80.0,
+          340.0
+        ],
+        "paper-gold-checkpoint-plate": [
+          20.0,
+          243.0
+        ],
+        "rowhouse-facade": [
+          363.0,
+          738.0
+        ],
+        "left-keyed-roof-slot": [
+          180.0,
+          514.0
+        ],
+        "right-keyed-roof-slot": [
+          538.0,
+          514.0
+        ],
+        "teal-side-gutter": [
+          600.0,
+          589.0
+        ],
+        "paper-gold-catch-cup": [
+          635.0,
+          731.0
+        ],
+        "upper-window-flap": [
+          487.0,
+          583.0
+        ],
+        "history-engage-control": [
+          84.0,
+          814.0
+        ],
+        "checkpoint-capture-control": [
+          144.0,
+          814.0
+        ],
+        "test-water-reservoir": [
+          427.0,
+          350.0
+        ],
+        "failed-state-bay": [
+          631.4,
+          837.28
+        ],
+        "paper-gold-history-strip": [
+          80.0,
+          944.0
+        ],
+        "paper-gold-rollback-carriage": [
+          198.04588423968508,
+          805.0
+        ],
+        "coral-replacement-roof": [
+          639.1467779606244,
+          795.1360770829701
+        ],
+        "interior-floor-strip": [
+          631.05,
+          885.96
+        ],
+        "floor-shuttle": [
+          583.0,
+          889.06
+        ],
+        "teal-original-roof": [
+          363.0,
+          478.0
+        ],
+        "checkpoint-dry-floor-cassette": [
+          205.0,
+          853.0
+        ],
+        "live-floor-mounts": [
+          205.0,
+          873.0
+        ],
+        "carriage-stop": [
+          339.0,
+          808.0
+        ],
+        "rain-ribbon-anchor": [
+          330.0,
+          740.1586283714828
+        ],
+        "test-take-up-cable": [
+          467.0,
+          350.0
+        ],
+        "test-water-slug": [
+          446.07,
+          286.3
+        ],
+        "paper-gold-checkpoint-tab": [
+          319.0471952179618,
+          895.0
+        ]
+      },
+      "reaction_targets_bound": [
+        "paper-gold-rollback-carriage",
+        "coral-replacement-roof",
+        "interior-floor-strip",
+        "paper-gold-checkpoint-tab"
+      ],
+      "performance": "burdened"
+    },
+    {
+      "shot": "shot-07-restored-test-passes",
+      "frame": 540,
+      "actual_part_positions": {
+        "pinboard-seam": [
+          44.0,
+          275.0
+        ],
+        "tabletop": [
+          0.0,
+          1009.0
+        ],
+        "checkpoint-archive-slot": [
+          80.0,
+          340.0
+        ],
+        "paper-gold-checkpoint-plate": [
+          20.0,
+          243.0
+        ],
+        "rowhouse-facade": [
+          363.0,
+          738.0
+        ],
+        "left-keyed-roof-slot": [
+          180.0,
+          514.0
+        ],
+        "right-keyed-roof-slot": [
+          538.0,
+          514.0
+        ],
+        "teal-side-gutter": [
+          600.0,
+          589.0
+        ],
+        "paper-gold-catch-cup": [
+          635.0,
+          731.0
+        ],
+        "upper-window-flap": [
+          487.0,
+          583.0
+        ],
+        "checkpoint-dry-floor-cassette": [
+          205.0,
+          853.0
+        ],
+        "history-engage-control": [
+          84.0,
+          814.0
+        ],
+        "checkpoint-capture-control": [
+          144.0,
+          814.0
+        ],
+        "test-water-reservoir": [
+          427.0,
+          350.0
+        ],
+        "teal-original-roof": [
+          363.0,
+          478.0
+        ],
+        "failed-state-bay": [
+          631.4,
+          837.28
+        ],
+        "test-ribbon-guide": [
+          223.0,
+          301.0
+        ],
+        "rain-ribbon-anchor": [
+          330.0,
+          742.5145422740525
+        ],
+        "test-water-slug": [
+          446.07,
+          302.716
+        ],
+        "paper-gold-checkpoint-tab": [
+          119.0,
+          899.0
+        ],
+        "return-drive-lever": [
+          330.0,
+          835.0
+        ],
+        "return-drive-flywheel": [
+          319.0,
+          922.0
+        ]
+      },
+      "reaction_targets_bound": [
+        "teal-side-gutter",
+        "paper-gold-catch-cup",
+        "teal-original-roof"
+      ],
+      "performance": "relieved"
+    },
+    {
+      "shot": "shot-07-restored-test-passes",
+      "frame": 570,
+      "actual_part_positions": {
+        "pinboard-seam": [
+          44.0,
+          275.0
+        ],
+        "tabletop": [
+          0.0,
+          1009.0
+        ],
+        "checkpoint-archive-slot": [
+          80.0,
+          340.0
+        ],
+        "paper-gold-checkpoint-plate": [
+          20.0,
+          243.0
+        ],
+        "rowhouse-facade": [
+          363.0,
+          738.0
+        ],
+        "left-keyed-roof-slot": [
+          180.0,
+          514.0
+        ],
+        "right-keyed-roof-slot": [
+          538.0,
+          514.0
+        ],
+        "teal-side-gutter": [
+          600.0,
+          589.0
+        ],
+        "paper-gold-catch-cup": [
+          635.0,
+          731.0
+        ],
+        "upper-window-flap": [
+          487.0,
+          583.0
+        ],
+        "checkpoint-dry-floor-cassette": [
+          205.0,
+          853.0
+        ],
+        "history-engage-control": [
+          84.0,
+          814.0
+        ],
+        "checkpoint-capture-control": [
+          144.0,
+          814.0
+        ],
+        "test-water-reservoir": [
+          427.0,
+          350.0
+        ],
+        "teal-original-roof": [
+          363.0,
+          478.0
+        ],
+        "failed-state-bay": [
+          631.4,
+          837.28
+        ],
+        "test-ribbon-guide": [
+          223.0,
+          301.0
+        ],
+        "rain-ribbon-anchor": [
+          330.0,
+          859.8598483965014
+        ],
+        "test-water-slug": [
+          609.7736104116613,
+          661.5229244073757
+        ],
+        "paper-gold-checkpoint-tab": [
+          119.0,
+          899.0
+        ],
+        "return-drive-lever": [
+          330.0,
+          835.0
+        ],
+        "return-drive-flywheel": [
+          319.0,
+          922.0
+        ]
+      },
+      "reaction_targets_bound": [
+        "teal-side-gutter",
+        "paper-gold-catch-cup",
+        "teal-original-roof"
+      ],
+      "performance": "relieved"
+    },
+    {
+      "shot": "shot-07-restored-test-passes",
+      "frame": 600,
+      "actual_part_positions": {
+        "pinboard-seam": [
+          44.0,
+          275.0
+        ],
+        "tabletop": [
+          0.0,
+          1009.0
+        ],
+        "checkpoint-archive-slot": [
+          80.0,
+          340.0
+        ],
+        "paper-gold-checkpoint-plate": [
+          20.0,
+          243.0
+        ],
+        "rowhouse-facade": [
+          363.0,
+          738.0
+        ],
+        "left-keyed-roof-slot": [
+          180.0,
+          514.0
+        ],
+        "right-keyed-roof-slot": [
+          538.0,
+          514.0
+        ],
+        "teal-side-gutter": [
+          600.0,
+          589.0
+        ],
+        "paper-gold-catch-cup": [
+          635.0,
+          731.0
+        ],
+        "upper-window-flap": [
+          487.0,
+          583.0
+        ],
+        "checkpoint-dry-floor-cassette": [
+          205.0,
+          853.0
+        ],
+        "history-engage-control": [
+          84.0,
+          814.0
+        ],
+        "checkpoint-capture-control": [
+          144.0,
+          814.0
+        ],
+        "test-water-reservoir": [
+          427.0,
+          350.0
+        ],
+        "teal-original-roof": [
+          363.0,
+          478.0
+        ],
+        "failed-state-bay": [
+          631.4,
+          837.28
+        ],
+        "test-ribbon-guide": [
+          223.0,
+          301.0
+        ],
+        "rain-ribbon-anchor": [
+          330.0,
+          861.0
+        ],
+        "test-water-slug": [
+          614.07,
+          667.3
+        ],
+        "paper-gold-checkpoint-tab": [
+          119.0,
+          899.0
+        ],
+        "return-drive-lever": [
+          330.0,
+          835.0
+        ],
+        "return-drive-flywheel": [
+          319.0,
+          922.0
+        ]
+      },
+      "reaction_targets_bound": [
+        "teal-side-gutter",
+        "paper-gold-catch-cup",
+        "teal-original-roof"
+      ],
+      "performance": "relieved"
+    },
+    {
+      "shot": "shot-08-every-step-reversible",
+      "frame": 630,
+      "actual_part_positions": {
+        "pinboard-seam": [
+          44.0,
+          275.0
+        ],
+        "tabletop": [
+          0.0,
+          1009.0
+        ],
+        "checkpoint-archive-slot": [
+          80.0,
+          555.0
+        ],
+        "rowhouse-facade": [
+          363.0,
+          738.0
+        ],
+        "teal-original-roof": [
+          363.0,
+          478.0
+        ],
+        "checkpoint-dry-floor-cassette": [
+          205.0,
+          853.0
+        ],
+        "teal-side-gutter": [
+          600.0,
+          589.0
+        ],
+        "paper-gold-catch-cup": [
+          635.0,
+          731.0
+        ],
+        "test-water-slug": [
+          614.07,
+          667.3
+        ],
+        "paper-gold-checkpoint-plate": [
+          32.0703125,
+          430.0
+        ],
+        "failed-state-bay": [
+          644.6242962962963,
+          534.0
+        ],
+        "paper-gold-history-strip": [
+          80.0,
+          945.0
+        ],
+        "return-drive-flywheel": [
+          319.0,
+          922.0
+        ],
+        "return-cam-apex": [
+          370.0,
+          920.0
+        ],
+        "return-cam-follower": [
+          408.0,
+          957.0
+        ],
+        "checkpoint-display-stop": [
+          93.0,
+          780.0
+        ],
+        "failed-display-stop": [
+          622.0,
+          780.0
+        ]
+      },
+      "reaction_targets_bound": [
+        "rowhouse-facade",
+        "paper-gold-checkpoint-plate",
+        "failed-state-bay",
+        "paper-gold-history-strip"
+      ],
+      "performance": "absent"
+    },
+    {
+      "shot": "shot-08-every-step-reversible",
+      "frame": 660,
+      "actual_part_positions": {
+        "pinboard-seam": [
+          44.0,
+          275.0
+        ],
+        "tabletop": [
+          0.0,
+          1009.0
+        ],
+        "checkpoint-archive-slot": [
+          80.0,
+          555.0
+        ],
+        "rowhouse-facade": [
+          363.0,
+          738.0
+        ],
+        "teal-original-roof": [
+          363.0,
+          478.0
+        ],
+        "checkpoint-dry-floor-cassette": [
+          205.0,
+          853.0
+        ],
+        "teal-side-gutter": [
+          600.0,
+          589.0
+        ],
+        "paper-gold-catch-cup": [
+          635.0,
+          731.0
+        ],
+        "test-water-slug": [
+          614.07,
+          667.3
+        ],
+        "paper-gold-checkpoint-plate": [
+          -100.0,
+          430.0
+        ],
+        "failed-state-bay": [
+          693.0,
+          534.0
+        ],
+        "paper-gold-history-strip": [
+          80.0,
+          945.0
+        ],
+        "return-drive-flywheel": [
+          319.0,
+          922.0
+        ],
+        "return-cam-apex": [
+          370.0,
+          920.0
+        ],
+        "return-cam-follower": [
+          408.0,
+          957.0
+        ],
+        "checkpoint-display-stop": [
+          93.0,
+          780.0
+        ],
+        "failed-display-stop": [
+          622.0,
+          780.0
+        ]
+      },
+      "reaction_targets_bound": [
+        "rowhouse-facade",
+        "paper-gold-checkpoint-plate",
+        "failed-state-bay",
+        "paper-gold-history-strip"
+      ],
+      "performance": "absent"
+    },
+    {
+      "shot": "shot-08-every-step-reversible",
+      "frame": 690,
+      "actual_part_positions": {
+        "pinboard-seam": [
+          44.0,
+          275.0
+        ],
+        "tabletop": [
+          0.0,
+          1009.0
+        ],
+        "checkpoint-archive-slot": [
+          80.0,
+          555.0
+        ],
+        "rowhouse-facade": [
+          363.0,
+          738.0
+        ],
+        "teal-original-roof": [
+          363.0,
+          478.0
+        ],
+        "checkpoint-dry-floor-cassette": [
+          205.0,
+          853.0
+        ],
+        "teal-side-gutter": [
+          600.0,
+          589.0
+        ],
+        "paper-gold-catch-cup": [
+          635.0,
+          731.0
+        ],
+        "test-water-slug": [
+          614.07,
+          667.3
+        ],
+        "paper-gold-checkpoint-plate": [
+          -93.59058693463368,
+          430.0
+        ],
+        "failed-state-bay": [
+          661.9055530152924,
+          534.0
+        ],
+        "paper-gold-history-strip": [
+          80.0,
+          945.0
+        ],
+        "return-drive-flywheel": [
+          319.0,
+          922.0
+        ],
+        "return-cam-apex": [
+          370.0,
+          920.0
+        ],
+        "return-cam-follower": [
+          408.0,
+          957.0
+        ],
+        "checkpoint-display-stop": [
+          93.0,
+          780.0
+        ],
+        "failed-display-stop": [
+          622.0,
+          780.0
+        ]
+      },
+      "reaction_targets_bound": [
+        "rowhouse-facade",
+        "paper-gold-checkpoint-plate",
+        "failed-state-bay",
+        "paper-gold-history-strip"
+      ],
+      "performance": "absent"
+    },
+    {
+      "shot": "shot-08-every-step-reversible",
+      "frame": 720,
+      "actual_part_positions": {
+        "pinboard-seam": [
+          44.0,
+          275.0
+        ],
+        "tabletop": [
+          0.0,
+          1009.0
+        ],
+        "checkpoint-archive-slot": [
+          80.0,
+          555.0
+        ],
+        "rowhouse-facade": [
+          363.0,
+          738.0
+        ],
+        "teal-original-roof": [
+          363.0,
+          478.0
+        ],
+        "checkpoint-dry-floor-cassette": [
+          205.0,
+          853.0
+        ],
+        "teal-side-gutter": [
+          600.0,
+          589.0
+        ],
+        "paper-gold-catch-cup": [
+          635.0,
+          731.0
+        ],
+        "test-water-slug": [
+          614.07,
+          667.3
+        ],
+        "paper-gold-checkpoint-plate": [
+          93.32469942550293,
+          618.9212827988338
+        ],
+        "failed-state-bay": [
+          106.0,
+          640.4
+        ],
+        "paper-gold-history-strip": [
+          301.87199999999996,
+          961.4639999999999
+        ],
+        "return-drive-flywheel": [
+          319.0,
+          922.0
+        ],
+        "return-cam-apex": [
+          370.0,
+          920.0
+        ],
+        "return-cam-follower": [
+          408.0,
+          957.0
+        ],
+        "checkpoint-display-stop": [
+          93.0,
+          780.0
+        ],
+        "failed-display-stop": [
+          622.0,
+          780.0
+        ]
+      },
+      "reaction_targets_bound": [
+        "rowhouse-facade",
+        "paper-gold-checkpoint-plate",
+        "failed-state-bay",
+        "paper-gold-history-strip"
+      ],
+      "performance": "absent"
+    },
+    {
+      "shot": "shot-08-every-step-reversible",
+      "frame": 750,
+      "actual_part_positions": {
+        "pinboard-seam": [
+          44.0,
+          275.0
+        ],
+        "tabletop": [
+          0.0,
+          1009.0
+        ],
+        "checkpoint-archive-slot": [
+          80.0,
+          555.0
+        ],
+        "rowhouse-facade": [
+          363.0,
+          738.0
+        ],
+        "teal-original-roof": [
+          363.0,
+          478.0
+        ],
+        "checkpoint-dry-floor-cassette": [
+          205.0,
+          853.0
+        ],
+        "teal-side-gutter": [
+          600.0,
+          589.0
+        ],
+        "paper-gold-catch-cup": [
+          635.0,
+          731.0
+        ],
+        "test-water-slug": [
+          614.07,
+          667.3
+        ],
+        "paper-gold-checkpoint-plate": [
+          97.0,
+          630.0
+        ],
+        "failed-state-bay": [
+          106.0,
+          640.4
+        ],
+        "paper-gold-history-strip": [
+          363.0,
+          966.0
+        ],
+        "return-drive-flywheel": [
+          319.0,
+          922.0
+        ],
+        "return-cam-apex": [
+          370.0,
+          920.0
+        ],
+        "return-cam-follower": [
+          408.0,
+          957.0
+        ],
+        "checkpoint-display-stop": [
+          93.0,
+          780.0
+        ],
+        "failed-display-stop": [
+          622.0,
+          780.0
+        ]
+      },
+      "reaction_targets_bound": [
+        "rowhouse-facade",
+        "paper-gold-checkpoint-plate",
+        "failed-state-bay",
+        "paper-gold-history-strip"
+      ],
+      "performance": "absent"
+    }
+  ]
+}

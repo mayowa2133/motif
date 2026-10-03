@@ -1,0 +1,178 @@
+{
+  "id": "reversible-rowhouse-folio",
+  "name": "Reversible rowhouse folio",
+  "state": "GENERATED",
+  "status": "generated",
+  "scope": "scene-specific",
+  "category": "production-hero",
+  "style": "motif-gold-v1",
+  "materials": [
+    "fibrous cream card",
+    "teal and coral laminated card",
+    "paper-gold folds",
+    "charcoal card",
+    "teal vellum test droplets"
+  ],
+  "layers": [
+    "rowhouse-facade",
+    "teal-original-roof",
+    "coral-replacement-roof",
+    "interior-floor-strip",
+    "upper-window-flap",
+    "left-keyed-roof-slot",
+    "right-keyed-roof-slot",
+    "paper-gold-checkpoint-plate",
+    "paper-gold-checkpoint-tab",
+    "paper-gold-rollback-carriage",
+    "paper-gold-catch-tongue",
+    "paper-gold-history-strip",
+    "teal-side-gutter",
+    "paper-gold-catch-cup",
+    "write-latch",
+    "rain-ribbon-anchor",
+    "test-ribbon-guide",
+    "folio-center-hinge",
+    "wet-test-history-leaf",
+    "failed-roof-history-leaf",
+    "history-state-original",
+    "history-state-restored",
+    "checkpoint-archive-slot",
+    "pinboard-seam",
+    "tabletop",
+    "aligned-roof-profile-pair",
+    "leak-droplet-and-floor-contact",
+    "teal-roof-to-gutter-water-path",
+    "restored-rowhouse-and-seated-history-spine",
+    "roof-eave-grip",
+    "house-dry-state",
+    "house-wet-state"
+  ],
+  "anchors": {
+    "roof-left": [
+      0.25,
+      0.41875
+    ],
+    "roof-right": [
+      0.7472222222222222,
+      0.41875
+    ],
+    "archive-tab": [
+      0.15555555555555556,
+      0.65625
+    ],
+    "floor-hinge": [
+      0.2847222222222222,
+      0.678125
+    ],
+    "rain-pull": [
+      0.8333333333333334,
+      0.515625
+    ]
+  },
+  "local_anchors": {
+    "teal-original-roof": {
+      "eave": [
+        30,
+        183
+      ],
+      "right-key": [
+        400,
+        198
+      ],
+      "left-key": [
+        42,
+        198
+      ]
+    },
+    "coral-replacement-roof": {
+      "right-key": [
+        400,
+        81
+      ],
+      "left-key": [
+        42,
+        81
+      ],
+      "leak-notch": [
+        329,
+        61
+      ]
+    },
+    "paper-gold-checkpoint-tab": {
+      "right-grip": [
+        39,
+        25
+      ],
+      "left-grip": [
+        13,
+        25
+      ]
+    },
+    "rain-ribbon-anchor": {
+      "grip": [
+        20,
+        29
+      ]
+    },
+    "write-latch": {
+      "grip": [
+        23,
+        36
+      ]
+    },
+    "interior-floor-strip": {
+      "hinge": [
+        0,
+        16
+      ]
+    },
+    "paper-gold-catch-tongue": {
+      "hook": [
+        175,
+        0
+      ]
+    },
+    "folio-center-hinge": {
+      "hinge": [
+        8,
+        160
+      ]
+    },
+    "failed-roof-history-leaf": {
+      "hinge": [
+        3,
+        105
+      ]
+    },
+    "wet-test-history-leaf": {
+      "hinge": [
+        3,
+        105
+      ]
+    }
+  },
+  "dimensions": {
+    "width": 720,
+    "height": 1280
+  },
+  "interactions": [
+    "rowhouse_unlogged_roof_overwrite_v1",
+    "rowhouse_gold_history_catch_v1",
+    "rowhouse_capture_keyed_checkpoint_v1",
+    "rowhouse_hinged_before_after_reveal_v1",
+    "rowhouse_pull_rain_ribbon_and_register_leak_v1",
+    "rowhouse_checkpoint_carriage_rollback_v1",
+    "rowhouse_repeat_rain_test_pass_v1",
+    "rowhouse_history_reverse_fold_finale_v1"
+  ],
+  "provenance": "Original agent-authored SVG for this exact production; no external footage, generated raster or third-party artwork. Canonical Bot is separate and reused unchanged.",
+  "license": "project-original",
+  "sourceType": "vector",
+  "source": {
+    "file": "assets/props/reversible-rowhouse-folio.svg",
+    "builder": "source/build.py:create_asset"
+  },
+  "sha256": "bfb76119f54f2d4fe9bac2c2c752cf2a5777ca704a348cbd439b105415607266",
+  "preview": "review/hero-native.png",
+  "promotion": "No canonical promotion requested"
+}
