@@ -28,3 +28,9 @@ The [production-plan workflow](docs/PRODUCTION_PLAN_WORKFLOW.md) adds live Codex
 ## Motif quality mode
 
 New directed runs stop at a native moving rough for independent story and visual review. See [QUALITY_SYSTEM.md](QUALITY_SYSTEM.md) for contracts, frozen gold references, named performance and reaction bindings, asset promotion, bounded repairs and final human approval.
+
+## Planning CLI
+
+Motif prefers the Codex CLI bundled with the desktop app over the `codex` found on PATH. Authentication checks, version checks, planning and quality critics use the same resolved executable; backend/invocation records include its absolute path, selection source and version. The configured model remains in use.
+
+Set `MOTIF_CODEX_CLI` to an executable file to override discovery, for example a custom app installation. An invalid override stops rather than switching binaries. On systems without the desktop bundle, Motif uses and records the PATH CLI. Existing `MOTIF_PLANNER_MODEL` overrides remain available. See [CLI verification](quality/validation/cli-v1/README.md) for the tested runtime and GPT-6.1 call.

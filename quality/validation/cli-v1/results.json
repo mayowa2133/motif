@@ -1,0 +1,23 @@
+{
+  "status": "PASS",
+  "scope": "CLI/backend verification using one existing planning fixture; not a new production",
+  "cli_path": "/Applications/ChatGPT.app/Contents/Resources/codex-cli/CodexCLI.app/Contents/MacOS/codex",
+  "cli_version": "codex-cli 0.159.0-alpha.12.1",
+  "cli_selection": "desktop-bundled CLI",
+  "model": "gpt-6.1-sol",
+  "structure_gate": "PASS",
+  "invocation_sha256": "65d981ed091075cb764b4ef03b133588efef11e7aa64fbff1968adc73b4c796c",
+  "response_sha256": "384e577f34ea8b597ef7e5a7b457128a3b980900ac42cd3a960ecb12d9b51377",
+  "python_regression_log": "regression-tests.txt",
+  "preservation": {
+    "frozen_benchmark_and_canonical": {
+      "files_verified": 540,
+      "unchanged": true
+    },
+    "rowhouse_files_verified": 1940,
+    "rowhouse_unchanged": true,
+    "negative_not_gold": true
+  },
+  "providers_auth_global_settings_changed": false,
+  "commit_or_push": false
+}

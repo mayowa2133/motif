@@ -1,0 +1,60 @@
+{
+  "role": "structure",
+  "inspection_scope": "Complete supplied plan: six narration words, chapter argument, setup s1 and beat b1; shot contracts and film_structure assessed together.",
+  "checks": [
+    {
+      "check": "METAPHOR_OVERLOAD",
+      "status": "PASS",
+      "evidence": "s1 develops one physical rule: closing a route gap permits the blocked token to cross."
+    },
+    {
+      "check": "STATE_ACCUMULATION_WITHOUT_MEANING",
+      "status": "PASS",
+      "evidence": "s1 replaces the blocked state with a connected route and completed crossing; no obsolete mechanism is retained."
+    },
+    {
+      "check": "SEMANTIC_GROUP_OVERLOAD",
+      "status": "PASS",
+      "evidence": "The bridge, route and token form one causal transit group; the backboard and work surface support that action."
+    },
+    {
+      "check": "COMPOSITIONAL_STAGNATION",
+      "status": "PASS",
+      "evidence": "Only one proposition and composition are planned; the close route framing supports both closure and crossing."
+    },
+    {
+      "check": "CONTINUITY_TOKEN_OVERLOAD",
+      "status": "PASS",
+      "evidence": "No tokens persist across setups. The local token has a meaningful progression from blocked to carried across."
+    },
+    {
+      "check": "CLUTTER_WITHOUT_PURPOSE",
+      "status": "PASS",
+      "evidence": "The paper backdrop, work surface and route support provide staging and contact context; the corner crop directs attention to the active contact."
+    },
+    {
+      "check": "WEAK_RESET_RHYTHM",
+      "status": "PASS",
+      "evidence": "Closure and crossing develop the same semantic rule. No semantic shift requires an intermediate reset; the setup ends at the consequence."
+    },
+    {
+      "check": "COMPETING_FOCI",
+      "status": "PASS",
+      "evidence": "The broad route occupies a close crop. Bridge closure enables the token crossing in the same active region, with no unrelated secondary action."
+    },
+    {
+      "check": "CAPTION_CARRIES_STORY",
+      "status": "PASS",
+      "evidence": "The visible gap blocks the token, the bridge closes that gap, and the token crosses. These states establish the narrated causal claim through action."
+    }
+  ],
+  "setup_assessments": [
+    {
+      "setup_id": "s1",
+      "status": "PASS",
+      "evidence": "Covers the entire narration span [0,6) and assigns b1 once. Its shot contract agrees with the setup's hero, absent Bot and physical environment, and supplies a coherent blocked-to-connected-to-crossed progression."
+    }
+  ],
+  "violations": [],
+  "limits": "Data-only review cannot establish rendered/mobile performance, actual visibility, animation execution, caption timing or listening quality. Production-specific asset capability remains unverified."
+}

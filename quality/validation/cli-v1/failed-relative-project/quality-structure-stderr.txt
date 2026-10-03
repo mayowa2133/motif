@@ -1,0 +1,2 @@
+2026-10-03T04:59:54.088441Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+Failed to write last message file "quality/validation/cli-v1/quality-structure.json": No such file or directory (os error 2)

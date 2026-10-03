@@ -36,16 +36,40 @@ def write(path,value): path.write_text(json.dumps(value,indent=2)+'\n')
 def read(path): return json.loads(path.read_text())
 def snapshot(): return {p:sha(ROOT/p) for p in SOURCE_PATHS}
 
+def resolve_codex_cli():
+    """Prefer the desktop runtime; an explicit override never silently falls back."""
+    override=os.environ.get('MOTIF_CODEX_CLI')
+    if override:
+        path=Path(override).expanduser()
+        if not path.is_file() or not os.access(path,os.X_OK):
+            raise ValueError('MOTIF_CODEX_CLI must name an executable file: '+override)
+        return {'cli_path':str(path.resolve()),'cli_selection':'MOTIF_CODEX_CLI'}
+    relative=Path('ChatGPT.app/Contents/Resources/codex-cli/CodexCLI.app/Contents/MacOS/codex')
+    for applications in (Path('/Applications'),Path.home()/'Applications'):
+        path=applications/relative
+        if path.is_file() and os.access(path,os.X_OK):
+            return {'cli_path':str(path.resolve()),'cli_selection':'desktop-bundled CLI'}
+    executable=shutil.which('codex')
+    if not executable:raise ValueError('planning backend unavailable: desktop CLI and PATH codex not found; set MOTIF_CODEX_CLI')
+    return {'cli_path':str(Path(executable).resolve()),'cli_selection':'PATH (desktop bundle unavailable)'}
+
 def backend_config():
-    if not shutil.which('codex'): raise ValueError('planning backend unavailable: install/configure Codex CLI or use an explicitly agent-assisted plan outside this command')
-    status=subprocess.run(['codex','login','status'],text=True,capture_output=True)
+    cli=resolve_codex_cli()
+    status=subprocess.run([cli['cli_path'],'login','status'],text=True,capture_output=True)
     if status.returncode: raise ValueError('planning backend unavailable: Codex CLI is not signed in; no new credentials are assumed')
     path=Path(os.environ.get('CODEX_HOME',str(Path.home()/'.codex')))/'config.toml'
     config=tomllib.loads(path.read_text()) if path.exists() else {}
     if config.get('model_provider') not in (None,'openai'): raise ValueError('configured custom model provider is not supported by this small integration')
-    return {'backend':'codex-exec','execution':'self-contained command with live model planning', 'model':os.environ.get('MOTIF_PLANNER_MODEL',config.get('model')), 'reasoning_effort':config.get('model_reasoning_effort','low'), 'authentication_status':(status.stdout+status.stderr).strip(),'cli_version':command(['codex','--version'],ROOT).strip(),'sandbox':'read-only','ephemeral':True,'tools_requested':False,'default_model_if_unspecified':not os.environ.get('MOTIF_PLANNER_MODEL',config.get('model')), 'model_selection':'MOTIF_PLANNER_MODEL' if os.environ.get('MOTIF_PLANNER_MODEL') else 'existing Codex configuration','hyperframes':PIN}
+    return {**cli,'backend':'codex-exec','execution':'self-contained command with live model planning', 'model':os.environ.get('MOTIF_PLANNER_MODEL',config.get('model')), 'reasoning_effort':config.get('model_reasoning_effort','low'), 'authentication_status':(status.stdout+status.stderr).strip(),'cli_version':command([cli['cli_path'],'--version'],ROOT).strip(),'sandbox':'read-only','ephemeral':True,'tools_requested':False,'default_model_if_unspecified':not os.environ.get('MOTIF_PLANNER_MODEL',config.get('model')), 'model_selection':'MOTIF_PLANNER_MODEL' if os.environ.get('MOTIF_PLANNER_MODEL') else 'existing Codex configuration','hyperframes':PIN}
 
 def model_call(project, name, prompt, schema, config, images=()):
+    project=Path(project).resolve()
+    # Also support older callers' saved config without selecting another model.
+    if not config.get('cli_path'):
+        cli=resolve_codex_cli()
+        config={**config,**cli,'cli_version':command([cli['cli_path'],'--version'],ROOT).strip()}
+    if not Path(config['cli_path']).is_file() or not os.access(config['cli_path'],os.X_OK):
+        raise ValueError('recorded Codex CLI is unavailable: '+config['cli_path'])
     (project/(name+'-input.txt')).write_text(prompt)
     wire_schema=read(ROOT/schema)
     # New live plans select the quality profile; saved legacy plans still validate
@@ -68,7 +92,7 @@ def model_call(project, name, prompt, schema, config, images=()):
         violation['required']=list(violation['properties'])
     schema_path=project/(name+'-output-schema.json')
     write(schema_path,wire_schema)
-    args=['codex','exec','--ignore-user-config','--ephemeral','--skip-git-repo-check','--sandbox','read-only','--json','--color','never','--output-schema',str(schema_path.resolve()),'-o',str(project/(name+'.json')),'-c','approval_policy="never"','-c','model_reasoning_effort='+json.dumps(config['reasoning_effort'])]
+    args=[config['cli_path'],'exec','--ignore-user-config','--ephemeral','--skip-git-repo-check','--sandbox','read-only','--json','--color','never','--output-schema',str(schema_path.resolve()),'-o',str(project/(name+'.json')),'-c','approval_policy="never"','-c','model_reasoning_effort='+json.dumps(config['reasoning_effort'])]
     if config['model']: args+=['--model',config['model']]
     for image in images:
         if not Path(image).is_file(): raise ValueError('critic image missing: '+str(image))
