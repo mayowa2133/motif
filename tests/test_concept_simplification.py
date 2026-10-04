@@ -51,6 +51,23 @@ class ConceptTests(unittest.TestCase):
     b=p/'reference-gates'/name;write(b/'record.json',{});write(b/'concept-critic-invocation.json',{});write(b/'concept-critic.json',{'setup_assessments':[{'setup_id':'s','checks':[{'check':'hierarchy','status':'FAIL'}]}]})
    with patch('motif_concept.completed_review',return_value={'input_sha256':'same'}):
     result=deadlock_history(p,'s');self.assertEqual(result['completed_failures'],1);self.assertFalse(result['escape_required']);self.assertEqual(result['moving_budget_consumed'],0)
+ def test_replan_history_counts_archived_completed_receipts_once(self):
+  import shutil
+  with tempfile.TemporaryDirectory() as d:
+   p=Path(d)
+   def receipt(base,label):
+    base.mkdir(parents=True);(base/'concept-critic-input.txt').write_text(label)
+    write(base/'concept-critic-output-schema.json',{})
+    write(base/'concept-critic.json',{'setup_assessments':[{'setup_id':'s','checks':[{'check':'CONTACT_PROOF_UNREADABLE','status':'FAIL'}]}]})
+    write(base/'concept-critic-invocation.json',{'exit_code':0,'input_sha256':sha(base/'concept-critic-input.txt'),'output_schema_sha256':sha(base/'concept-critic-output-schema.json')})
+    write(base/'record.json',{'response_sha256':sha(base/'concept-critic.json'),'invocation_sha256':sha(base/'concept-critic-invocation.json')})
+   receipt(p/'concept-history/first','distinct first live input')
+   receipt(p/'reference-gates/concept','distinct second live input')
+   shutil.copytree(p/'reference-gates/concept',p/'concept-history/duplicate')
+   result=deadlock_history(p,'s')
+   self.assertEqual(result['completed_failures'],2);self.assertTrue(result['escape_required'])
+   self.assertEqual(result['repeated_checks'],['CONTACT_PROOF_UNREADABLE'])
+   with self.assertRaisesRegex(ValueError,'CONCEPT_DEADLOCK'):guard_deadlock(p,{'setup_ids':['s']})
  def original_patch(self):
   p=read(ROOT/'videos/productions/openai-dots-reference-calibrated/production-plan.json');s=copy.deepcopy(p['film_structure']['setups'][1]);s['visual_rule']='One new engagement rule';s['relationship_archetype']='connection';tokens=[{'id':t['id'],'state_at_origin':t['state_at_origin'],'story_justification':t['story_justification'],'state_changes':[c for c in t['state_changes'] if c['setup_id']==s['setup_id']],'final_destination':t['final_destination']} for t in p['film_structure']['continuity_tokens'] if t['id'] in s['continuity_tokens']]
   return p,{'reason':'UNIT only','escape':'simplify','setups':[s],'beats':copy.deepcopy(p['beats'][1:4]),'token_changes':tokens}
