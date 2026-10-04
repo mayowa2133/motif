@@ -142,6 +142,8 @@ class TransferReviewTests(unittest.TestCase):
    with self.assertRaisesRegex(ValueError,'deadlock'):tr.guard_transfer_deadlock(self.p)
    self.plan['film_structure']['setups'][0]['relationship_archetype']='transform';write(self.p/'production-plan.json',self.plan);second=self.p/'second-patch.json';write(second,{'escape':'change-archetype','setups':[{'relationship_archetype':'transform'}],'fixture_result':copy.deepcopy(self.plan)})
    tr.record_escape(self.p,prior_new,'split-a',second);tr.guard_transfer_deadlock(self.p);self.assertEqual(len(list((self.p/'transfer-review/escapes').glob('*/receipt.json'))),2)
+   # Mutable user patch/prior current paths can change; immutable snapshots remain valid.
+   write(patchfile,{'now':'changed own input'});tr.guard_transfer_deadlock(self.p)
   write(patchfile,{'escape':'simplify','setups':[{'relationship_archetype':'retain'}]})
   with self.assertRaisesRegex(ValueError,'changed relationship'):tr.record_escape(self.p,old,'u',patchfile)
  def test_transfer_planning_direction_structure_use_no_old_context(self):

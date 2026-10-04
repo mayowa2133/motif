@@ -194,6 +194,12 @@ def record_escape(project,old_plan,setup_id,patch_path):
  target=destination/'new-plan.json'
  if target.exists() and sha(target)!=sha(p/'production-plan.json'):raise ValueError('immutable transfer escape target changed')
  shutil.copy2(p/'production-plan.json',target)
+ original=own_file(p,{'file':str(Path(old_plan).resolve()),'sha256':sha(old_plan)});patch_source=own_file(p,{'file':str(Path(patch_path).resolve()),'sha256':sha(patch_path)})
+ for source,name in [(original,'old-plan.json'),(patch_source,'patch.json')]:
+  snapshot=destination/name
+  if snapshot.exists() and sha(snapshot)!=sha(source):raise ValueError('immutable transfer escape source changed')
+  if source!=snapshot:shutil.copy2(source,snapshot)
+ old_plan=destination/'old-plan.json';patch_path=destination/'patch.json'
  receipt={**binding(p),'new_plan':{'file':str(target.resolve()),'sha256':sha(target)},'replaced_setup':setup_id,'old_plan':{'file':str(Path(old_plan).resolve()),'sha256':sha(old_plan)},'patch':{'file':str(Path(patch_path).resolve()),'sha256':sha(patch_path)},'new_plan_sha256':sha(p/'production-plan.json'),'old_family':concept_families(read(old_plan))[setup_id],'new_families':concept_families(read(p/'production-plan.json')),'scope':'validated data escape only; all setups need fresh concept review; no inherited approval'}
  validated_escape(p,receipt);write(destination/'receipt.json',receipt);return receipt
 
