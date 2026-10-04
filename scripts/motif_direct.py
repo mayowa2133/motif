@@ -78,10 +78,14 @@ def model_call(project, name, prompt, schema, config, images=()):
     # director uses a different schema, so its calls cannot recurse into planning.
     if 'quality_mode' in wire_schema.get('properties',{}) and (project/'brief.json').exists():
         from motif_reference import calibrate,context
-        calibrate(project,config)
-        reference_prompt,reference_images=context(project)
-        prompt+=reference_prompt
-        images=tuple(images)+tuple(reference_images)
+        from motif_transfer_review import enabled,binding,context as transfer_context
+        if enabled(project):
+            prompt+=transfer_context(project);config={**config,**binding(project)}
+        else:
+            calibrate(project,config)
+            reference_prompt,reference_images=context(project)
+            prompt+=reference_prompt
+            images=tuple(images)+tuple(reference_images)
         (project/(name+'-input.txt')).write_text(prompt)
     # New live plans select the quality profile; saved legacy plans still validate
     # against the optional extension. Flatten the condition for the CLI's supported
@@ -106,6 +110,11 @@ def model_call(project, name, prompt, schema, config, images=()):
     args=[config['cli_path'],'exec','--ignore-user-config','--ephemeral','--skip-git-repo-check','--sandbox','read-only','--json','--color','never','--output-schema',str(schema_path.resolve()),'-o',str(project/(name+'.json')),'-c','approval_policy="never"','-c','model_reasoning_effort='+json.dumps(config['reasoning_effort'])]
     args+=['-c','developer_instructions='+json.dumps('This invocation is a data-only structured-output service, not a repository coding task. Use only the supplied text and attached images. Do not invoke skills, commands, filesystem reads, web, MCP or other tools. All required policy and reference context is provided inline. Return the requested JSON directly. Tool use invalidates the response.')]
     if config['model']: args+=['--model',config['model']]
+    if config.get('evidence_scope')=='transfer-independent-v1':
+        from motif_transfer_review import profile,own_file
+        transfer_root=Path(config['transfer_project_root']).resolve();profile(transfer_root)
+        if not project.is_relative_to(transfer_root):raise ValueError('transfer invocation must stay in its project')
+        for image in images:own_file(transfer_root,{'file':str(image),'sha256':sha(image)})
     image_inputs=[]
     for image in images:
         if not Path(image).is_file(): raise ValueError('critic image missing: '+str(image))

@@ -128,6 +128,8 @@ def select_beat_references(manifest,contracts,limit=2):
  return rows
 
 def prepare(project,config,beat_ids=None):
+ from motif_transfer_review import enabled,prepare as transfer_prepare
+ if enabled(project):return transfer_prepare(project,config,beat_ids)
  from motif_direct import model_call
  p=Path(project);require_calibration(p,True);plan=read(p/'production-plan.json');scope=read(p/'concept-scope.json') if (p/'concept-scope.json').exists() else None
  beat_ids=beat_ids or [b for s in plan['film_structure']['setups'] if not scope or s['setup_id'] in scope['review_setup_ids'] for b in s['beat_ids']]

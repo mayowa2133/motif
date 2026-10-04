@@ -105,7 +105,9 @@ def direction_review(project,plan,config):
     structure_record=require_structure(project)
     from motif_reference import context,require_stage,folder
     reference,reference_images=context(project)
-    if reference:require_stage(project,'concept')
+    from motif_transfer_review import binding,context as transfer_context
+    transfer=binding(project)
+    if reference or transfer:require_stage(project,'concept')
     if plan!=read(project/'production-plan.json'):raise ValueError('direction input must match structure-reviewed saved plan')
     resolution=read(project/'capability-resolution.json') if (project/'capability-resolution.json').exists() else None
     if resolution:
@@ -114,8 +116,8 @@ def direction_review(project,plan,config):
             if not path.is_relative_to(project.resolve()) or not path.is_file() or sha(path)!=source['sha256']:
                 raise ValueError('stale or non-project capability resolution source')
     prompt='Review shot contracts before animation. This is DATA ONLY, not visual QA. Identify weak subject/action/before/after/consequence, hero/material/depth/composition choices, unsupported interactions, ignored energy intentions. Art direction must be specific to this script. Structure PASS below has been independently verified by the calling gate; do not treat missing painted evidence as a planning failure. A production-scoped capability resolution is implementation context, not creative approval. Return all planning-review schema fields. No tools.\n'+planning_context(json.dumps(plan))+'\nVERIFIED STRUCTURE RECORD:'+json.dumps(structure_record)+'\nPROJECT CAPABILITY RESOLUTION:'+json.dumps(resolution)+'\nPLAN:'+json.dumps(plan)
-    result=model_call(project,'quality-direction',prompt+reference,'schemas/planning-review.schema.json',config,reference_images)
-    write(project/'quality-direction-record.json',{'plan_sha256':sha(project/'production-plan.json'),'response_sha256':sha(project/'quality-direction.json'),'invocation_sha256':sha(project/'quality-direction-invocation.json'),**({'reference_calibration_sha256':sha(folder(project)/'record.json'),'concept_gate_sha256':sha(project/'reference-gates/concept/record.json')} if reference else {})})
+    result=model_call(project,'quality-direction',prompt+reference+(transfer_context(project) if transfer else ''),'schemas/planning-review.schema.json',{**config,**transfer},reference_images)
+    write(project/'quality-direction-record.json',{'plan_sha256':sha(project/'production-plan.json'),'response_sha256':sha(project/'quality-direction.json'),'invocation_sha256':sha(project/'quality-direction-invocation.json'),**transfer,**({'transfer_concept_gate_sha256':sha(project/'transfer-gates/concept/record.json')} if transfer else {}),**({'reference_calibration_sha256':sha(folder(project)/'record.json'),'concept_gate_sha256':sha(project/'reference-gates/concept/record.json')} if reference else {})})
     if not result['pass']:raise ValueError('pre-animation direction failed: '+json.dumps(result['issues']))
     return result
 
@@ -204,6 +206,9 @@ def rough(project):
     if not (project/'quality-direction.json').exists() or not read(project/'quality-direction.json')['pass']:raise ValueError('pre-animation art/direction review required')
     direction=read(project/'quality-direction-record.json')
     if direction['plan_sha256']!=sha(project/'production-plan.json') or direction['response_sha256']!=sha(project/'quality-direction.json'):raise ValueError('pre-animation direction review is stale')
+    from motif_transfer_review import binding
+    transfer=binding(project)
+    if transfer and (any(direction.get(k)!=v for k,v in transfer.items()) or direction.get('transfer_concept_gate_sha256')!=sha(project/'transfer-gates/concept/record.json')):raise ValueError('direction transfer/concept evidence stale')
     if (project/'reference-calibration/required.json').exists():
         if direction.get('reference_calibration_sha256')!=sha(project/'reference-calibration/record.json') or direction.get('concept_gate_sha256')!=sha(project/'reference-gates/concept/record.json'):raise ValueError('direction reference/concept evidence stale')
     output=project/'quality-review/rough';output.mkdir(parents=True,exist_ok=True)
@@ -296,15 +301,22 @@ def critics(project,phase,config):
     base=project/'quality-review'/phase;manifest=read(base/'evidence.json');plan=read(project/'production-plan.json')
     if manifest['plan_sha256']!=sha(project/'production-plan.json') or manifest['events_sha256']!=sha(project/'scene-events.json'):raise ValueError('stale visual evidence')
     if source_freshness(project,manifest):raise ValueError('stale render-source evidence')
-    gold=retrieve([json.dumps(plan),'physical-ui','performance'])
+    from motif_transfer_review import binding,context as transfer_context,own_file
+    transfer=binding(project)
+    gold=[{'id':'transfer-rubric','why_passes':'frozen accepted-quality text criteria, no source pixels'},{'id':'learned-prior','why_passes':'frozen directing relationships, not shot templates'}] if transfer else retrieve([json.dumps(plan),'physical-ui','performance'])
     images=[]
     for mode in ('with_captions','without_captions'):
         e=manifest[mode]
         if sha(e['video'])!=e['probe']['sha256']:raise ValueError('preview changed after sampling')
+        if transfer:
+            own_file(project,{'file':e['video'],'sha256':e['probe']['sha256']})
+            for f in e['sheets']:own_file(project,{'file':f,'sha256':sha(f)})
         images += [Path(p) for p in e['sheets']]
     # Gold stills plus ordered motion samples retrieved from their stable clip ranges.
     gold_evidence=[]
     for g in gold:
+        if transfer:
+            gold_evidence.append({'id':g['id'],'scope':'textual transfer basis only; no gold clip inspected','notes':g['why_passes']});continue
         dest=base/('gold-'+g['id']);clip=ROOT/g['clip']['file']
         if sha(clip)!=g['clip']['sha256']:raise ValueError('gold clip changed')
         if dest.exists():
@@ -321,15 +333,19 @@ def critics(project,phase,config):
         trace=read(manifest[mode]['motion_trace'])
         observations.append({'mode':mode,'scope':trace['scope'],'region':trace['region'],'longest_nearly_unchanged_seconds':trace['longest_nearly_unchanged_seconds'],'timed_pixel_deltas':trace['frames'][::3]})
     common='Assess EVERY listed shot separately in shot_assessments, using its declared before/after and performance as intended meaning, and the actual images as truth. Do not let failures in one shot hide another. Compare posture against the requested role, not just the presence of Bot. If review_unit is independent-variants, assess within each clip; no continuity/progression is expected between variant boundaries. For an ordinary production, also assess the complete film progression. '+ 'Optional energy channels may be absent/null: judge purposeful pauses versus dead holds from pictures, not channel counts. Minimal-isolated compositions require story-specific justification. Temporal windows are consecutive native frames; inspect attachment on ALL intermediate frames using their labeled order. No tools or web. Assess only contract violations, not arbitrary improvements. This is rendered evidence, NOT plan self-grading. The CLI receives images, not MP4 playback: inspect the ordered decoded native frame sequences and full-rate motion observations. Do not claim you watched/listened to the videos. If samples cannot establish a gate, mark NOT_ASSESSED. Gold is behavioral, never pixel matching or copying plot. Inspect both caption modes. Every FAIL must include timestamp, shot, gate, observation, relevant retrieved gold ID, smallest correction. Character performance may be NOT_APPLICABLE only when Bot is explicitly absent. No averaged score, particle quotas or global-jitter mandates. Return schema JSON.\n'+(ROOT/'QUALITY_CONTRACT.md').read_text()+'\n'+(ROOT/'ENERGY_CONTRACT.md').read_text()+'\nPLAN: '+json.dumps(plan)+'\nEVIDENCE and IMAGE ORDER: '+json.dumps(manifest)+'\nATTACHED IMAGES IN ORDER: '+json.dumps(image_manifest)+'\nPAINTED MOTION OBSERVATIONS (pixel delta is not semantic motion): '+json.dumps(observations)+'\nRETRIEVED GOLD: '+json.dumps(gold_evidence)
+    if transfer:
+        common=common.replace('Gold is behavioral, never pixel matching or copying plot.', 'Frozen transfer criteria are behavioral text only; no gold clip pixels are provided.').replace('relevant retrieved gold ID','permitted textual basis ID in legacy gold_id').replace('RETRIEVED GOLD:','TEXTUAL TRANSFER BASES (no clip inspection):')
+        common+=transfer_context(project)+'\nTRANSFER MODE: gold_id is a legacy schema field binding violations to transfer-rubric/learned-prior textual criteria, NOT retrieved clip pixels. Same substantive story/visual/hierarchy checks; no source calibration or parity claim.'
     results={}
     for role in ('story','visual'):
         prompt=(ROOT/f'quality/{"story-critic" if role=="story" else "visual-critic"}/PROMPT.md').read_text()+'\n'+common
+        if transfer:prompt=prompt.replace('retrieved gold ID','permitted textual basis ID in legacy gold_id')
         if reference:
             prompt+=reference
             if role=='visual':prompt+='\n'+(ROOT/'quality/reference-critic/PROMPT.md').read_text()
         schema='reference-visual-critic' if role=='visual' and reference else role+'-critic'
-        results[role]=model_call(base,role+'-critic',prompt,'schemas/'+schema+'.schema.json',config,images=images)
-    write(base/'critics-record.json',{'evidence_sha256':sha(base/'evidence.json'),'images_sha256':sha(base/'image-inputs.json'),'gold_ids':[g['id'] for g in gold],'invocations':['story-critic-invocation.json','visual-critic-invocation.json'],'report_hashes':{role:sha(base/(role+'-critic.json')) for role in ('story','visual')},'invocation_hashes':{role:sha(base/(role+'-critic-invocation.json')) for role in ('story','visual')},'scope':manifest['inspection'],'hierarchy_policy_sha256':sha(ROOT/'quality/rubric/hierarchy.json'),**({'reference_calibration_sha256':sha(folder(project)/'record.json'),'reference_policy_sha256':sha(ROOT/'quality/reference-critic/policy.json')} if reference else {})})
+        results[role]=model_call(base,role+'-critic',prompt,'schemas/'+schema+'.schema.json',{**config,**transfer},images=images)
+    write(base/'critics-record.json',{'evidence_sha256':sha(base/'evidence.json'),'images_sha256':sha(base/'image-inputs.json'),'gold_ids':[g['id'] for g in gold],'invocations':['story-critic-invocation.json','visual-critic-invocation.json'],'report_hashes':{role:sha(base/(role+'-critic.json')) for role in ('story','visual')},'invocation_hashes':{role:sha(base/(role+'-critic-invocation.json')) for role in ('story','visual')},'scope':manifest['inspection'],**transfer,**({'source_calibration':False,'basis_ids':[g['id'] for g in gold]} if transfer else {}),'hierarchy_policy_sha256':sha(ROOT/'quality/rubric/hierarchy.json'),**({'reference_calibration_sha256':sha(folder(project)/'record.json'),'reference_policy_sha256':sha(ROOT/'quality/reference-critic/policy.json')} if reference else {})})
     return evaluate(project,phase)
 
 def hierarchy_failures(plan,report):
@@ -366,12 +382,20 @@ def evaluate(project,phase,check_current_events=True):
     if 'delivery_picture' in manifest and sha(manifest['delivery_picture']['file'])!=manifest['delivery_picture']['probe']['sha256']:blocked.append('delivery picture changed')
     if check_current_events:
         blocked+=source_freshness(project,manifest)
+    from motif_transfer_review import binding,own_file
+    transfer=binding(project)
+    if transfer:
+        if any(record.get(k)!=v for k,v in transfer.items()):blocked.append('transfer critic profile stale')
+        for im in read(base/'image-inputs.json'):own_file(project,im)
+        from motif_reference import require_stage
+        require_stage(project,'concept');require_stage(project,'opening')
     reports={};story_bad=False
     for role in ('story','visual'):
         schema='reference-visual-critic' if role=='visual' and record.get('reference_calibration_sha256') else role+'-critic'
         r=read(base/(role+'-critic.json'));Draft202012Validator(read(ROOT/f'schemas/{schema}.schema.json')).validate(r);reports[role]=r
         if record.get('report_hashes',{}).get(role)!=sha(base/(role+'-critic.json')) or record.get('invocation_hashes',{}).get(role)!=sha(base/(role+'-critic-invocation.json')):blocked.append('critic report/invocation changed')
         invocation=read(base/(role+'-critic-invocation.json'))
+        if transfer and (invocation.get('images')!=read(base/'image-inputs.json') or any(invocation.get('configuration',{}).get(k)!=v for k,v in transfer.items())):blocked.append('transfer '+role+' invocation scope/evidence mismatch')
         if invocation['exit_code']!=0 or invocation.get('saved_response_used') or invocation.get('model_fallback_used'):blocked.append('no valid live '+role+' invocation')
         expected=set(read(ROOT/'quality/rubric/gates.json')[role]);seen={g['gate'] for g in r['gates']}
         if expected!=seen or len(r['gates'])!=len(expected):blocked.append(role+' gate coverage incomplete')
