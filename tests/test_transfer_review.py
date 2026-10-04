@@ -1,5 +1,5 @@
 """Protocol tests with synthetic images and mocked responses, never creative approval."""
-import sys,json,tempfile,unittest
+import sys,json,tempfile,unittest,copy
 from pathlib import Path
 from unittest.mock import patch
 sys.path.insert(0,str(Path(__file__).resolve().parents[1]/'scripts'))
@@ -132,8 +132,16 @@ class TransferReviewTests(unittest.TestCase):
   old=self.p/'transfer-concept-history/first/reviewed-plan.json';patchfile=self.p/'split-patch.json';write(patchfile,{'escape':'split','setups':[{'relationship_archetype':'retain'},{'relationship_archetype':'handoff'}]})
   self.plan['film_structure']['setups']=[{'setup_id':'split-a','beat_ids':['b'],'bot_role':'participant','relationship_archetype':'compare','visual_rule':'new'},{'setup_id':'split-b','beat_ids':['c'],'bot_role':'absent','relationship_archetype':'handoff','visual_rule':'other'}];write(self.p/'production-plan.json',self.plan)
   with self.assertRaisesRegex(ValueError,'deadlock'):tr.guard_transfer_deadlock(self.p) # Changed names/rules without validated escape insufficient.
-  with patch('motif_concept.apply_patch',return_value=self.plan) as validation:
+  value=mr.read(patchfile);value['fixture_result']=copy.deepcopy(self.plan);write(patchfile,value)
+  with patch('motif_concept.apply_patch',side_effect=lambda old,sid,v:v['fixture_result']) as validation:
    tr.record_escape(self.p,old,'u',patchfile);tr.guard_transfer_deadlock(self.p);validation.assert_called();self.assertTrue(old.exists())
+   # A later real-family failure/escape must not resurrect already escaped history.
+   prior_new=None
+   for j in range(2):
+    base=self.p/'transfer-concept-history'/('second'+str(j));self.fake_call(base,'concept-critic','second-family'+str(j),tr.SCHEMA,tr.binding(self.p),());r=self.report(fail='hero-scale');r['setup_assessments'][0]['setup_id']='split-a';write(base/'concept-critic.json',r);write(base/'reviewed-plan.json',self.plan);write(base/'record.json',{'response_sha256':sha(base/'concept-critic.json'),'invocation_sha256':sha(base/'concept-critic-invocation.json'),'plan_sha256':sha(base/'reviewed-plan.json'),'reviewed_plan_sha256':sha(base/'reviewed-plan.json')});prior_new=base/'reviewed-plan.json'
+   with self.assertRaisesRegex(ValueError,'deadlock'):tr.guard_transfer_deadlock(self.p)
+   self.plan['film_structure']['setups'][0]['relationship_archetype']='transform';write(self.p/'production-plan.json',self.plan);second=self.p/'second-patch.json';write(second,{'escape':'change-archetype','setups':[{'relationship_archetype':'transform'}],'fixture_result':copy.deepcopy(self.plan)})
+   tr.record_escape(self.p,prior_new,'split-a',second);tr.guard_transfer_deadlock(self.p);self.assertEqual(len(list((self.p/'transfer-review/escapes').glob('*/receipt.json'))),2)
   write(patchfile,{'escape':'simplify','setups':[{'relationship_archetype':'retain'}]})
   with self.assertRaisesRegex(ValueError,'changed relationship'):tr.record_escape(self.p,old,'u',patchfile)
  def test_transfer_planning_direction_structure_use_no_old_context(self):

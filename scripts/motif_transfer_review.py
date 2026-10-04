@@ -170,8 +170,8 @@ def concept_families(plan):
 
 def validated_escape(project,receipt):
  from motif_concept import apply_patch
- p=Path(project);old_file=own_file(p,receipt['old_plan']);patch_file=own_file(p,receipt['patch']);old=read(old_file);patch=read(patch_file);current=read(p/'production-plan.json')
- if receipt['new_plan_sha256']!=sha(p/'production-plan.json'):raise ValueError('transfer escape current plan changed')
+ p=Path(project);old_file=own_file(p,receipt['old_plan']);patch_file=own_file(p,receipt['patch']);old=read(old_file);patch=read(patch_file);current=read(own_file(p,receipt['new_plan']))
+ if receipt['new_plan_sha256']!=receipt['new_plan']['sha256']:raise ValueError('transfer escape target plan changed')
  original=next(s for s in old['film_structure']['setups'] if s['setup_id']==receipt['replaced_setup'])
  replacements=patch['setups']
  # A rule paraphrase or renamed ID is not a substantive escape. Reuse the
@@ -190,13 +190,17 @@ def validated_escape(project,receipt):
  return receipt
 
 def record_escape(project,old_plan,setup_id,patch_path):
- p=Path(project);profile(p)
- receipt={**binding(p),'replaced_setup':setup_id,'old_plan':{'file':str(Path(old_plan).resolve()),'sha256':sha(old_plan)},'patch':{'file':str(Path(patch_path).resolve()),'sha256':sha(patch_path)},'new_plan_sha256':sha(p/'production-plan.json'),'old_family':concept_families(read(old_plan))[setup_id],'new_families':concept_families(read(p/'production-plan.json')),'scope':'validated data escape only; all setups need fresh concept review; no inherited approval'}
- validated_escape(p,receipt);write(p/'transfer-review/escape.json',receipt);return receipt
+ p=Path(project);profile(p);destination=p/'transfer-review/escapes'/sha(p/'production-plan.json');destination.mkdir(parents=True,exist_ok=True)
+ target=destination/'new-plan.json'
+ if target.exists() and sha(target)!=sha(p/'production-plan.json'):raise ValueError('immutable transfer escape target changed')
+ shutil.copy2(p/'production-plan.json',target)
+ receipt={**binding(p),'new_plan':{'file':str(target.resolve()),'sha256':sha(target)},'replaced_setup':setup_id,'old_plan':{'file':str(Path(old_plan).resolve()),'sha256':sha(old_plan)},'patch':{'file':str(Path(patch_path).resolve()),'sha256':sha(patch_path)},'new_plan_sha256':sha(p/'production-plan.json'),'old_family':concept_families(read(old_plan))[setup_id],'new_families':concept_families(read(p/'production-plan.json')),'scope':'validated data escape only; all setups need fresh concept review; no inherited approval'}
+ validated_escape(p,receipt);write(destination/'receipt.json',receipt);return receipt
 
 def guard_transfer_deadlock(project):
- p=Path(project);failures=[];seen=set();current=concept_families(read(p/'production-plan.json'));escape=None
- if (p/'transfer-review/escape.json').exists():escape=validated_escape(p,read(p/'transfer-review/escape.json'))
+ p=Path(project);failures=[];seen=set();current=concept_families(read(p/'production-plan.json'));retired=set()
+ for receipt in (p/'transfer-review/escapes').glob('*/receipt.json'):
+  retired.add(validated_escape(p,read(receipt))['old_family'])
  records=list((p/'transfer-concept-history').glob('*/record.json'))+[p/'transfer-gates/concept/record.json']
  for f in records:
   try:inv=completed_review(f.parent);report=read(f.parent/'concept-critic.json');record=read(f);plan=read(f.parent/'reviewed-plan.json')
@@ -210,7 +214,7 @@ def guard_transfer_deadlock(project):
     if c['status']=='FAIL' and c['check'] in ('hero-scale','hierarchy','character-role','CONTACT_PROOF_UNREADABLE','ACTOR_AMBIGUITY','UNNECESSARY_VISIBLE_MECHANISM'):failures.append((families[row['setup_id']],c['check']))
  for family,check in set(failures):
   if failures.count((family,check))<2:continue
-  if family in current.values() or not escape or escape['old_family']!=family:raise ValueError('transfer concept deadlock: validated relationship/split escape required, not cosmetic rename')
+  if family in current.values() or family not in retired:raise ValueError('transfer concept deadlock: validated relationship/split escape required, not cosmetic rename')
 
 def stage_review(project,stage,evidence_path,config):
  from motif_direct import model_call
