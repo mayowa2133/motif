@@ -169,9 +169,41 @@ def concept_families(plan):
   families[setup['setup_id']]=hashlib.sha256(json.dumps(key,sort_keys=True).encode()).hexdigest()
  return families
 
+def reviewed_raw_plan(project,digest):
+ p=Path(project)
+ for f in list((p/'transfer-concept-history').glob('*/record.json'))+[p/'transfer-gates/concept/record.json']:
+  try:completed_review(f.parent);r=read(f)
+  except (ValueError,FileNotFoundError,KeyError):continue
+  if r.get('plan_sha256')==digest and r.get('reviewed_plan_sha256')==digest and sha(f.parent/'reviewed-plan.json')==digest:return True
+ raise ValueError('legacy migration requires an unchanged completed own reviewed raw plan')
+
+def validated_shape_migration(project,receipt):
+ from motif_plan_shape import verify_augmentation
+ p=Path(project);raw=own_file(p,receipt['raw_plan']);normalized=own_file(p,receipt['normalized_plan']);reviewed_raw_plan(p,receipt['raw_plan']['sha256'])
+ detail=verify_augmentation(read(raw),read(normalized))
+ if receipt.get('details')!=detail or receipt.get('raw_families')!=concept_families(read(raw)) or receipt.get('normalized_families')!=concept_families(read(normalized)) or receipt['raw_families']!=receipt['normalized_families']:raise ValueError('shape migration semantic/family record changed')
+ if receipt.get('retroactive_approval') is not False or receipt.get('budget_reset') is not False:raise ValueError('shape migration never grants approval or budget reset')
+ return normalized
+
+def record_shape_migration(project,raw_path,normalized_path):
+ from motif_plan_shape import verify_augmentation
+ p=Path(project);profile(p);raw=own_file(p,{'file':str(Path(raw_path).resolve()),'sha256':sha(raw_path)});normalized=own_file(p,{'file':str(Path(normalized_path).resolve()),'sha256':sha(normalized_path)})
+ details=verify_augmentation(read(raw),read(normalized));reviewed_raw_plan(p,sha(raw));dest=p/'transfer-review/shape-migrations'/(sha(raw)+'-'+sha(normalized));dest.mkdir(parents=True,exist_ok=True)
+ for source,name in [(raw,'raw-plan.json'),(normalized,'normalized-plan.json')]:
+  snapshot=dest/name
+  if snapshot.exists() and sha(snapshot)!=sha(source):raise ValueError('immutable shape migration snapshot changed')
+  if snapshot!=source:shutil.copy2(source,snapshot)
+ receipt={**binding(p),'raw_plan':{'file':str((dest/'raw-plan.json').resolve()),'sha256':sha(raw)},'normalized_plan':{'file':str((dest/'normalized-plan.json').resolve()),'sha256':sha(normalized)},'details':details,'raw_families':concept_families(read(raw)),'normalized_families':concept_families(read(normalized)),'retroactive_approval':False,'budget_reset':False}
+ validated_shape_migration(p,receipt);write(dest/'receipt.json',receipt);return dest/'receipt.json'
+
 def validated_escape(project,receipt):
  from motif_concept import apply_patch
- p=Path(project);old_file=own_file(p,receipt['old_plan']);patch_file=own_file(p,receipt['patch']);old=read(old_file);patch=read(patch_file);current=read(own_file(p,receipt['new_plan']))
+ p=Path(project);old_file=own_file(p,receipt['old_plan']);patch_file=own_file(p,receipt['patch']);old=read(old_file)
+ if receipt.get('shape_migration'):
+  migration=read(own_file(p,receipt['shape_migration']))
+  if migration['raw_plan']['sha256']!=receipt['old_plan']['sha256']:raise ValueError('escape migration does not bind this raw failed plan')
+  old=read(validated_shape_migration(p,migration))
+ patch=read(patch_file);current=read(own_file(p,receipt['new_plan']))
  if receipt['new_plan_sha256']!=receipt['new_plan']['sha256']:raise ValueError('transfer escape target plan changed')
  original=next(s for s in old['film_structure']['setups'] if s['setup_id']==receipt['replaced_setup'])
  replacements=patch['setups']
@@ -190,7 +222,7 @@ def validated_escape(project,receipt):
  if not found:raise ValueError('transfer escape requires a completed prior own concept review')
  return receipt
 
-def record_escape(project,old_plan,setup_id,patch_path):
+def record_escape(project,old_plan,setup_id,patch_path,migration_path=None):
  p=Path(project);profile(p);destination=p/'transfer-review/escapes'/sha(p/'production-plan.json');destination.mkdir(parents=True,exist_ok=True)
  target=destination/'new-plan.json'
  if target.exists() and sha(target)!=sha(p/'production-plan.json'):raise ValueError('immutable transfer escape target changed')
@@ -202,6 +234,9 @@ def record_escape(project,old_plan,setup_id,patch_path):
   if source!=snapshot:shutil.copy2(source,snapshot)
  old_plan=destination/'old-plan.json';patch_path=destination/'patch.json'
  receipt={**binding(p),'new_plan':{'file':str(target.resolve()),'sha256':sha(target)},'replaced_setup':setup_id,'old_plan':{'file':str(Path(old_plan).resolve()),'sha256':sha(old_plan)},'patch':{'file':str(Path(patch_path).resolve()),'sha256':sha(patch_path)},'new_plan_sha256':sha(p/'production-plan.json'),'old_family':concept_families(read(old_plan))[setup_id],'new_families':concept_families(read(p/'production-plan.json')),'scope':'validated data escape only; all setups need fresh concept review; no inherited approval'}
+ if migration_path:
+  migration=own_file(p,{'file':str(Path(migration_path).resolve()),'sha256':sha(migration_path)})
+  receipt['shape_migration']={'file':str(migration),'sha256':sha(migration)}
  validated_escape(p,receipt);write(destination/'receipt.json',receipt);return receipt
 
 def guard_transfer_deadlock(project):
@@ -258,8 +293,8 @@ def require_stage(project,stage):
  except (FileNotFoundError,KeyError) as error:raise ValueError('fresh own-evidence transfer '+stage+' review required') from error
 
 def main():
- a=argparse.ArgumentParser(description=__doc__);a.add_argument('action',choices=['enable','prepare','concept','opening','verify','escape']);a.add_argument('--project',type=Path,required=True);a.add_argument('--kit',type=Path);a.add_argument('--old-plan',type=Path);a.add_argument('--patch',type=Path);a.add_argument('--setup');a.add_argument('--evidence',type=Path);a.add_argument('--stage',choices=['concept','opening'],default='concept');v=a.parse_args()
+ a=argparse.ArgumentParser(description=__doc__);a.add_argument('action',choices=['enable','prepare','concept','opening','verify','escape','shape-migration']);a.add_argument('--project',type=Path,required=True);a.add_argument('--kit',type=Path);a.add_argument('--old-plan',type=Path);a.add_argument('--raw-plan',type=Path);a.add_argument('--normalized-plan',type=Path);a.add_argument('--migration',type=Path);a.add_argument('--patch',type=Path);a.add_argument('--setup');a.add_argument('--evidence',type=Path);a.add_argument('--stage',choices=['concept','opening'],default='concept');v=a.parse_args()
  from motif_direct import backend_config
- result=record_escape(v.project,v.old_plan,v.setup,v.patch) if v.action=='escape' else enable(v.project,v.kit) if v.action=='enable' else require_stage(v.project,v.stage) if v.action=='verify' else prepare(v.project,backend_config()) if v.action=='prepare' else stage_review(v.project,v.action,v.evidence,backend_config())
+ result=str(record_shape_migration(v.project,v.raw_plan,v.normalized_plan)) if v.action=='shape-migration' else record_escape(v.project,v.old_plan,v.setup,v.patch,v.migration) if v.action=='escape' else enable(v.project,v.kit) if v.action=='enable' else require_stage(v.project,v.stage) if v.action=='verify' else prepare(v.project,backend_config()) if v.action=='prepare' else stage_review(v.project,v.action,v.evidence,backend_config())
  print(json.dumps(result,indent=2))
 if __name__=='__main__':main()

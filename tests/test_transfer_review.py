@@ -1,5 +1,5 @@
 """Protocol tests with synthetic images and mocked responses, never creative approval."""
-import sys,json,tempfile,unittest,copy
+import sys,json,tempfile,unittest,copy,os,subprocess
 from pathlib import Path
 from unittest.mock import patch
 sys.path.insert(0,str(Path(__file__).resolve().parents[1]/'scripts'))
@@ -192,6 +192,96 @@ class TransferReviewTests(unittest.TestCase):
   self.assertIn('No animation or full rough is authorized',' '.join(apply_patch(plan,original['setup_id'],patch_value)['limitations']))
   bad=copy.deepcopy(patch_value);bad['beats'][0]['narration']='Changed copy'
   with self.assertRaisesRegex(ValueError,'narration'):apply_patch(plan,original['setup_id'],bad,transfer=True)
+ def legacy_shape_fixture(self):
+  from test_structure import plan as fixture_plan
+  full=fixture_plan();full.update({'schema_version':'script-1.0','audience':'synthetic reviewer','style':'reference-expressive-high-energy-v1','rationale':'protocol fixture','metaphor':'own paper change','ending_action':'release','limitations':[],'assets':[{'id':'planning-paper','description':'synthetic own asset','reuse_path':''}]})
+  required=mr.read(ROOT/'schemas/script-production-plan.schema.json')['properties']['beats']['items']['required']
+  for b in full['beats']:
+   for name in required:
+    if name not in b:b[name]='synthetic own '+name
+   b.update({'needed_assets':['planning-paper'],'actions':[],'framing':'subject','focus_target':b['quality']['focal_target']})
+  raw=copy.deepcopy(full)
+  for name in ('schema_version','audience','style','rationale','metaphor','assets','ending_action','limitations'):del raw[name]
+  raw.update({'status':'GENERATED','agent_assisted':['synthetic annotation']})
+  for b in raw['beats']:
+   for name in ('before_after','focal_detail','focus_target','framing','actions','needed_assets'):del b[name]
+   b.update({'caption':'synthetic original caption','duration_seconds':1})
+  return raw,full
+ def legacy_shape_history(self,raw):
+  old=None
+  for j in range(2):
+   base=self.p/'transfer-concept-history'/('legacy-'+str(j));self.fake_call(base,'concept-critic','legacy '+str(j)+json.dumps(raw),tr.SCHEMA,tr.binding(self.p),());report=self.report(fail='hero-scale');report['setup_assessments'][0]['setup_id']=raw['film_structure']['setups'][0]['setup_id'];write(base/'concept-critic.json',report);write(base/'reviewed-plan.json',raw);write(base/'record.json',{'response_sha256':sha(base/'concept-critic.json'),'invocation_sha256':sha(base/'concept-critic-invocation.json'),'plan_sha256':sha(base/'reviewed-plan.json'),'reviewed_plan_sha256':sha(base/'reviewed-plan.json')});old=base/'reviewed-plan.json'
+  return old
+ def test_explicit_legacy_shape_migration_preserves_raw_failures_and_real_escape(self):
+  from motif_plan_shape import verify_augmentation
+  from motif_concept import apply_patch
+  import motif_structure as st
+  raw,full=self.legacy_shape_fixture();old=self.legacy_shape_history(raw);original_sha=sha(old);write(self.p/'production-plan.json',raw)
+  self.assertEqual(st.check_structure(raw)['status'],'STRUCTURE_REVIEW_REQUIRED') # Reproduces original partial integrity admission.
+  normalized=self.p/'caller-full-plan.json';write(normalized,full);migration_path=tr.record_shape_migration(self.p,old,normalized);migration=mr.read(migration_path)
+  self.assertFalse(migration['retroactive_approval']);self.assertFalse(migration['budget_reset']);self.assertEqual(migration['raw_families'],migration['normalized_families']);self.assertEqual(len(migration['details']['relocated_legacy_annotations']),2+2*len(raw['beats']))
+  for item in migration['details']['relocated_legacy_annotations']:
+   value=raw
+   for key in item['path']:value=value[key]
+   self.assertEqual(value,item['value'])
+  write(self.p/'production-plan.json',full)
+  with self.assertRaisesRegex(ValueError,'deadlock'):tr.guard_transfer_deadlock(self.p) # Full shape never clears the same failed family.
+  replacement=copy.deepcopy(full['film_structure']['setups'][0]);replacement['relationship_archetype']='transform';replacement['visual_rule']='Synthetic changed relationship';patch_value={'reason':'synthetic real escape','escape':'change-archetype','setups':[replacement],'beats':copy.deepcopy(full['beats']),'token_changes':[]}
+  with self.assertRaisesRegex(KeyError,'needed_assets'):apply_patch(raw,replacement['setup_id'],patch_value) # Exact pre-migration default-path failure.
+  with self.assertRaisesRegex(ValueError,'complete transfer'):apply_patch(raw,replacement['setup_id'],patch_value,transfer=True)
+  result=apply_patch(full,replacement['setup_id'],patch_value,transfer=True);write(self.p/'production-plan.json',result);patchfile=self.p/'caller-real-escape.json';write(patchfile,patch_value)
+  tr.record_escape(self.p,old,replacement['setup_id'],patchfile,migration_path);tr.guard_transfer_deadlock(self.p);self.assertEqual(sha(old),original_sha)
+  self.assertEqual(len(list((self.p/'transfer-concept-history').glob('*/record.json'))),2);self.assertFalse((self.p/'transfer-gates/concept/record.json').exists()) # No retroactive PASS.
+ def test_shape_migration_rejects_semantic_edits_and_unknown_relocations(self):
+  from motif_plan_shape import verify_augmentation
+  raw,full=self.legacy_shape_fixture();verify_augmentation(raw,full)
+  changes=[]
+  value=copy.deepcopy(full);value['beats'][0]['quality']['after']='different meaning';changes.append(value)
+  value=copy.deepcopy(full);value['beats'].reverse();changes.append(value)
+  value=copy.deepcopy(full);value['film_structure']['setups'][0]['hero']='different hero';changes.append(value)
+  value=copy.deepcopy(full);value['new_optional_story']='new invented field';changes.append(value)
+  for value in changes:
+   with self.assertRaises(ValueError):verify_augmentation(raw,value)
+  unknown=copy.deepcopy(raw);unknown['undeclared_semantic_field']='must not silently vanish'
+  with self.assertRaises(ValueError):verify_augmentation(unknown,full)
+ def test_migration_details_replay_across_distinct_python_processes(self):
+  raw,full=self.legacy_shape_fixture();rawfile=self.p/'raw.json';fullfile=self.p/'full.json';write(rawfile,raw);write(fullfile,full)
+  script='import sys,json;sys.path.insert(0,sys.argv[1]);from motif_plan_shape import verify_augmentation;print(json.dumps(verify_augmentation(json.load(open(sys.argv[2])),json.load(open(sys.argv[3]))),sort_keys=True))'
+  outputs=[]
+  for seed in ('1','2'):
+   outputs.append(subprocess.check_output([sys.executable,'-c',script,str(ROOT/'scripts'),str(rawfile),str(fullfile)],env={**os.environ,'PYTHONHASHSEED':seed},text=True))
+  self.assertEqual(outputs[0],outputs[1])
+ def test_missing_asset_usage_agent_assisted_migrates_without_rewriting_existing_values(self):
+  from motif_plan_shape import verify_augmentation
+  from motif_concept import apply_patch
+  raw,full=self.legacy_shape_fixture();del raw['asset_usage'][0]['agent_assisted'];old=self.legacy_shape_history(raw);original_sha=sha(old);normalized=self.p/'full-with-real-boolean.json';write(normalized,full)
+  details=verify_augmentation(raw,full);self.assertIn({'path':['asset_usage',0,'agent_assisted'],'value':True},details['explicit_added_fields'])
+  migration=tr.record_shape_migration(self.p,old,normalized);write(self.p/'production-plan.json',full)
+  with self.assertRaisesRegex(ValueError,'deadlock'):tr.guard_transfer_deadlock(self.p)
+  replacement=copy.deepcopy(full['film_structure']['setups'][0]);replacement['relationship_archetype']='transform';replacement['visual_rule']='Synthetic changed relationship';patch_value={'reason':'real nested-shape escape fixture','escape':'change-archetype','setups':[replacement],'beats':copy.deepcopy(full['beats']),'token_changes':[]};output=apply_patch(full,replacement['setup_id'],patch_value,transfer=True);write(self.p/'production-plan.json',output);patchfile=self.p/'nested-escape.json';write(patchfile,patch_value)
+  tr.record_escape(self.p,old,replacement['setup_id'],patchfile,migration);tr.guard_transfer_deadlock(self.p);self.assertEqual(sha(old),original_sha)
+  edited=copy.deepcopy(full);edited['asset_usage'][0]['scope']='reused'
+  with self.assertRaises(ValueError):verify_augmentation(raw,edited)
+  existing=copy.deepcopy(raw);existing['asset_usage'][0]['agent_assisted']=False
+  with self.assertRaises(ValueError):verify_augmentation(existing,full)
+  wrong=copy.deepcopy(full);wrong['asset_usage'][0]['agent_assisted']='true'
+  with self.assertRaises(ValueError):verify_augmentation(raw,wrong)
+ def test_transfer_warning_field_semantics_match_reference_without_stripping_warnings(self):
+  from motif_direct import model_call
+  report=self.report();report['novelty_warnings']=['synthetic actual unresolved issue'];report['limits']='scope caveat belongs here'
+  def run(args,**kwargs):
+   self.assertIn('novelty_warnings is a BLOCKING array',kwargs['input']);self.assertIn('general inspection limits in checks/limits',kwargs['input'])
+   write(Path(args[args.index('-o')+1]),report);return subprocess.CompletedProcess(args,0,'','')
+  with patch('motif_direct.subprocess.run',side_effect=run):
+   result=model_call(self.p,'field-semantics','synthetic review',tr.SCHEMA,{'cli_path':sys.executable,'reasoning_effort':'low','model':None})
+  self.assertEqual(result['novelty_warnings'],report['novelty_warnings']);self.assertEqual(result['limits'],report['limits']);self.assertNotEqual(tr.status(self.plan,result,'concept',['u'])['status'],'PASS')
+ def test_future_partial_plan_fails_before_live_review_or_contract(self):
+  import motif_structure as st
+  raw,full=self.legacy_shape_fixture();write(self.p/'production-plan.json',raw)
+  with patch('motif_direct.model_call') as model:
+   for call in (lambda:st.structure_review(self.p,raw,{}),lambda:tr.prepare(self.p,{}),lambda:tr.stage_review(self.p,'concept',self.ep,{})):
+    with self.assertRaisesRegex(ValueError,'complete transfer script-production-plan'):call()
+   model.assert_not_called()
  def test_opening_timing_must_cover_entire_video_and_be_finite(self):
   import motif_quality as q
   ev={**self.ev};ev['source_hashes']=dict(self.ev['source_hashes'])

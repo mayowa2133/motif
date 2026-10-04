@@ -36,3 +36,23 @@ python scripts/motif_transfer_review.py escape --project /absolute/new-project -
 ```
 
 The patch uses the existing concept-replan schema and pure apply_patch validation (exact script/beat coverage, untouched setups, token scope and full plan/structure consistency). The saved current plan must equal the validated result. Non-split escape must change relationship archetype; split must create multiple distinct relationships. The previous plan must be an immutable completed own review. Families ignore identifiers/layout/palette/free-text rule rewording; old failures remain archived. The receipt grants only permission for fresh full-project concept review, never inherited approval. The calibrated replan workflow and its reference-gate history are not used.
+
+## Explicit migration of already-reviewed legacy partial shape
+
+New transfer structure/contract preparation requires the COMPLETE script-production-plan schema before any expensive model call. A low-level structure integrity check alone is not complete plan admission. Transfer pure apply_patch also rejects incomplete old shape early; default/reference behavior is unchanged.
+
+Only an already completed own raw concept review may use the legacy migration exception. The caller supplies a full normalized COPY with actual own-scene required metadata/actions/assets; the API invents no values. Existing script, narration, setup/beat ordering, structure, quality and every other present value remain identical. Additions are limited to missing required root fields, missing required per-beat fields, and the exact required nested asset_usage[i].agent_assisted boolean when absent. The caller supplies its real value; existing asset usage/provenance values cannot change. The only relocated unsupported keys are root `status`, `agent_assisted` and beat `caption`, `duration_seconds`: their exact paths/values are retained in the immutable receipt, and the raw bytes remain unchanged. No other removal or semantic edit is permitted.
+
+```sh
+python scripts/motif_transfer_review.py shape-migration --project /absolute/own-project --raw-plan /absolute/own-project/transfer-concept-history/prior/reviewed-plan.json --normalized-plan /absolute/own-project/own-normalized-prior.json
+```
+
+This returns an immutable receipt path under transfer-review/shape-migrations. It records raw/normalized hashes, explicit added fields, relocated legacy annotations and identical semantic families; retroactive_approval and budget_reset are false. The incomplete failed raw plan remains the authoritative historical review/failure identity. Normalized metadata was NOT reviewed by the old critic. Migration alone leaves a two-failure same-family deadlock blocked.
+
+Use the normalized copy ONLY for pure validation of the worker's actual changed-relationship/split patch. Save the exact apply_patch(normalized, setup_id, patch, transfer=True) result as the current plan, then:
+
+```sh
+python scripts/motif_transfer_review.py escape --project /absolute/own-project --old-plan /absolute/own-project/transfer-concept-history/prior/reviewed-plan.json --setup failed-setup --patch /absolute/own-project/own-escape-patch.json --migration /absolute/own-project/transfer-review/shape-migrations/receipt-directory/receipt.json
+```
+
+Escape still binds the original raw failed hash, preserves the full historical budget, validates the migration and substantive scope, and requires exact current-plan equality. It creates no retroactive PASS. All current setups then need fresh full-schema structure/contract/concept/direction reviews under the explicitly versioned runtime/profile; do not reuse old approval receipts or mutate old snapshots. Preserve old profile/version files before enabling the new frozen kit; run the new runtime from its separate path so released old kit dependencies stay byte-stable.
