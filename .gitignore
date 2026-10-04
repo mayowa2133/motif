@@ -29,3 +29,10 @@ videos/productions/openai-dots-news/quality-review/rough*/gold-*/
 
 # Retained draft calibration attempts contain private external evidence.
 videos/productions/*/private-calibration-history/
+
+# Turbo R&D: private review evidence and isolated tooling.
+.venv/
+private-audit/
+videos/productions/turbo-*/**/*-input.txt
+videos/productions/turbo-*/**/*-events.jsonl
+videos/productions/turbo-*/**/*-stderr.txt

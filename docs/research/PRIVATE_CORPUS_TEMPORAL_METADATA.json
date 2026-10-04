@@ -1,0 +1,118 @@
+{
+  "private_sources": true,
+  "pixels_in_output": false,
+  "videos": [
+    {
+      "id": "Dd15NcHvlNl",
+      "sha256": "d92020ef90535aeb5a71b5ce767fc5bf066da3124e83db512b4901eb182a80bf",
+      "picture_frames_decoded": 1262,
+      "fps": "30/1",
+      "width": 720,
+      "height": 1280,
+      "picture_duration": 42.066667,
+      "container_duration": 42.1878,
+      "temporal_mean_absolute_luma_difference": {
+        "median": 4.298472222222222,
+        "p90": 13.131388888888889,
+        "maximum": 102.59576388888888
+      },
+      "limits": "All frames decoded. Difference includes captions/cuts/texture and is not quality, semantic energy or playback/listening approval."
+    },
+    {
+      "id": "Dd2HMwIy6D3",
+      "sha256": "6c55a441fe9a7ce750135cc0609c85b90866a1130099814e07cc0f659e357376",
+      "picture_frames_decoded": 986,
+      "fps": "30/1",
+      "width": 720,
+      "height": 1280,
+      "picture_duration": 32.866667,
+      "container_duration": 32.992698,
+      "temporal_mean_absolute_luma_difference": {
+        "median": 1.9961111111111112,
+        "p90": 4.870916666666667,
+        "maximum": 103.38479166666667
+      },
+      "limits": "All frames decoded. Difference includes captions/cuts/texture and is not quality, semantic energy or playback/listening approval."
+    },
+    {
+      "id": "Dd2UAqOvDoO",
+      "sha256": "2c36c9d223bc293332cf4743a66e4d05f9c3282779f88955dab9b1e85ac2dfaf",
+      "picture_frames_decoded": 906,
+      "fps": "30/1",
+      "width": 720,
+      "height": 1280,
+      "picture_duration": 30.2,
+      "container_duration": 30.322404,
+      "temporal_mean_absolute_luma_difference": {
+        "median": 3.389861111111111,
+        "p90": 9.458611111111113,
+        "maximum": 92.65215277777777
+      },
+      "limits": "All frames decoded. Difference includes captions/cuts/texture and is not quality, semantic energy or playback/listening approval."
+    },
+    {
+      "id": "Dd2uCwTB6II",
+      "sha256": "efaff22844a7d959c1f558e19aaabe4a2e7de55b5b1c16393fc626e300bd8bc7",
+      "picture_frames_decoded": 978,
+      "fps": "30/1",
+      "width": 720,
+      "height": 1280,
+      "picture_duration": 32.6,
+      "container_duration": 32.714059,
+      "temporal_mean_absolute_luma_difference": {
+        "median": 3.6121527777777778,
+        "p90": 12.33759722222222,
+        "maximum": 108.9804861111111
+      },
+      "limits": "All frames decoded. Difference includes captions/cuts/texture and is not quality, semantic energy or playback/listening approval."
+    },
+    {
+      "id": "Dd45WmVPOfQ",
+      "sha256": "7dbb4b72bf00f39df87e17f6f2bee41bb1f1b722499e2331d34d22918bef31ab",
+      "picture_frames_decoded": 847,
+      "fps": "30/1",
+      "width": 720,
+      "height": 1280,
+      "picture_duration": 28.233333,
+      "container_duration": 28.348707,
+      "temporal_mean_absolute_luma_difference": {
+        "median": 3.7226041666666667,
+        "p90": 11.881215277777777,
+        "maximum": 87.47458333333333
+      },
+      "limits": "All frames decoded. Difference includes captions/cuts/texture and is not quality, semantic energy or playback/listening approval."
+    },
+    {
+      "id": "Dd4Le3YhCQt",
+      "sha256": "586c1d89b7ca01215e5e716868b4d9dcf6292082fc2b1a81867f1a5c902ac034",
+      "picture_frames_decoded": 940,
+      "fps": "30/1",
+      "width": 720,
+      "height": 1280,
+      "picture_duration": 31.333333,
+      "container_duration": 31.460181,
+      "temporal_mean_absolute_luma_difference": {
+        "median": 3.0344444444444445,
+        "p90": 11.277055555555556,
+        "maximum": 70.69888888888889
+      },
+      "limits": "All frames decoded. Difference includes captions/cuts/texture and is not quality, semantic energy or playback/listening approval."
+    },
+    {
+      "id": "Dd4oMBpyEq_",
+      "sha256": "e435b837994b07a921c67d2d773203e7e8f41e10125fdfbfa2b90569bc778bab",
+      "picture_frames_decoded": 836,
+      "fps": "30/1",
+      "width": 720,
+      "height": 1280,
+      "picture_duration": 27.866667,
+      "container_duration": 28.000408,
+      "temporal_mean_absolute_luma_difference": {
+        "median": 2.451875,
+        "p90": 6.688347222222223,
+        "maximum": 83.09194444444445
+      },
+      "limits": "All frames decoded. Difference includes captions/cuts/texture and is not quality, semantic energy or playback/listening approval."
+    }
+  ]
+}

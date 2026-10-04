@@ -1,0 +1,65 @@
+[
+  {
+    "id": "Dd15NcHvlNl",
+    "decoded_audio_seconds": 42.073125,
+    "heuristic_energy_rises": 257,
+    "rises_per_second": 6.108412436680185,
+    "median_rise_interval_seconds": 0.15,
+    "method": "mono 24kHz; 10ms RMS; >3dB rise above -34dBFS; 80ms refractory; combined speech/music/SFX",
+    "limits": "Heuristic rhythm descriptor only. Cannot identify speech, music, impacts or subjective audio quality. Not an SFX quota."
+  },
+  {
+    "id": "Dd2HMwIy6D3",
+    "decoded_audio_seconds": 32.878,
+    "heuristic_energy_rises": 217,
+    "rises_per_second": 6.6001581604720485,
+    "median_rise_interval_seconds": 0.13,
+    "method": "mono 24kHz; 10ms RMS; >3dB rise above -34dBFS; 80ms refractory; combined speech/music/SFX",
+    "limits": "Heuristic rhythm descriptor only. Cannot identify speech, music, impacts or subjective audio quality. Not an SFX quota."
+  },
+  {
+    "id": "Dd2UAqOvDoO",
+    "decoded_audio_seconds": 30.207708333333333,
+    "heuristic_energy_rises": 193,
+    "rises_per_second": 6.389097705469768,
+    "median_rise_interval_seconds": 0.14,
+    "method": "mono 24kHz; 10ms RMS; >3dB rise above -34dBFS; 80ms refractory; combined speech/music/SFX",
+    "limits": "Heuristic rhythm descriptor only. Cannot identify speech, music, impacts or subjective audio quality. Not an SFX quota."
+  },
+  {
+    "id": "Dd2uCwTB6II",
+    "decoded_audio_seconds": 32.599375,
+    "heuristic_energy_rises": 208,
+    "rises_per_second": 6.38049042351272,
+    "median_rise_interval_seconds": 0.14,
+    "method": "mono 24kHz; 10ms RMS; >3dB rise above -34dBFS; 80ms refractory; combined speech/music/SFX",
+    "limits": "Heuristic rhythm descriptor only. Cannot identify speech, music, impacts or subjective audio quality. Not an SFX quota."
+  },
+  {
+    "id": "Dd45WmVPOfQ",
+    "decoded_audio_seconds": 28.234,
+    "heuristic_energy_rises": 176,
+    "rises_per_second": 6.233619040872706,
+    "median_rise_interval_seconds": 0.15,
+    "method": "mono 24kHz; 10ms RMS; >3dB rise above -34dBFS; 80ms refractory; combined speech/music/SFX",
+    "limits": "Heuristic rhythm descriptor only. Cannot identify speech, music, impacts or subjective audio quality. Not an SFX quota."
+  },
+  {
+    "id": "Dd4Le3YhCQt",
+    "decoded_audio_seconds": 31.3455,
+    "heuristic_energy_rises": 188,
+    "rises_per_second": 5.997671117066245,
+    "median_rise_interval_seconds": 0.15,
+    "method": "mono 24kHz; 10ms RMS; >3dB rise above -34dBFS; 80ms refractory; combined speech/music/SFX",
+    "limits": "Heuristic rhythm descriptor only. Cannot identify speech, music, impacts or subjective audio quality. Not an SFX quota."
+  },
+  {
+    "id": "Dd4oMBpyEq_",
+    "decoded_audio_seconds": 27.885708333333334,
+    "heuristic_energy_rises": 166,
+    "rises_per_second": 5.952870123136553,
+    "median_rise_interval_seconds": 0.15,
+    "method": "mono 24kHz; 10ms RMS; >3dB rise above -34dBFS; 80ms refractory; combined speech/music/SFX",
+    "limits": "Heuristic rhythm descriptor only. Cannot identify speech, music, impacts or subjective audio quality. Not an SFX quota."
+  }
+]
