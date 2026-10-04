@@ -14,7 +14,7 @@ class TransferReviewTests(unittest.TestCase):
   files={str(f.relative_to(self.kit)):sha(f) for f in self.kit.rglob('*') if f.is_file()}
   write(self.kit/'references/frozen-package.json',{'package_digest':'synthetic-test-kit','package_files':files,'repository_dependencies':{}})
   tr.enable(self.p,self.kit)
-  self.plan={'film_structure':{'setups':[{'setup_id':'u','beat_ids':['b'],'bot_role':'participant'}]},'beats':[{'id':'b','quality':{'art_direction':{'bot_role':'participant'}}}]};write(self.p/'production-plan.json',self.plan)
+  self.plan={'film_structure':{'setups':[{'setup_id':'u','beat_ids':['b'],'bot_role':'participant','relationship_archetype':'retain','visual_rule':'hold token'}]},'beats':[{'id':'b','quality':{'art_direction':{'bot_role':'participant'}}}]};write(self.p/'production-plan.json',self.plan)
   self.contract={'version':'hero-succession-v1','beats':[{'beat_id':'b','interactions':[{'id':'touch'}]}]};write(self.p/'concept-contract.json',self.contract)
   source=self.p/'source.py';source.write_text('# synthetic own fixture')
   frames={}
@@ -96,11 +96,76 @@ class TransferReviewTests(unittest.TestCase):
   # Existing status criteria still require external reference IDs, never textual basis IDs.
   result=mr.stage_status(self.plan,self.report(False),'concept',['fixture-ref'],['u']);self.assertEqual(result['status'],'PASS')
   with self.assertRaises(ValueError):mr.stage_status(self.plan,self.report(False),'concept',['transfer-rubric'],['u'])
+ def test_opening_scope_does_not_require_unseen_later_setups(self):
+  self.plan['film_structure']['setups'].append({'setup_id':'later','beat_ids':['later-beat'],'bot_role':'absent'});write(self.p/'production-plan.json',self.plan)
+  ev={**self.ev,'video':{'file':str(self.p/'own.mp4'),'sha256':''},'without_captions':{'file':str(self.p/'own-clean.mp4'),'sha256':''}}
+  for field in ('video','without_captions'):
+   Path(ev[field]['file']).write_text('synthetic video, mock probe');ev[field]['sha256']=sha(ev[field]['file'])
+  timing=self.p/'setup-timing.json';write(timing,{'plan_sha256':sha(self.p/'production-plan.json'),'setups':[{'setup_id':'u','start':0,'end':4},{'setup_id':'later','start':4,'end':8}]});ev['setup_timing']={'file':str(timing.resolve()),'sha256':sha(timing)};ev['source_hashes'][str(timing.resolve())]=sha(timing)
+  def sample(video,out,shots):
+   out.mkdir(parents=True);f=out/'decoded.png';Image.new('RGB',(360,640),'black').save(f);trace=out/'motion-trace.json';write(trace,{'frames':[0,1]})
+   return {'sheets':[str(f.resolve())],'motion_trace':str(trace.resolve()),'trace_sha256':sha(trace)}
+  with patch('motif_quality.probe_video',return_value={'duration':4,'width':360,'height':640,'fps':30,'frames':120}),patch('motif_quality.evidence',side_effect=sample) as sampler:
+   with self.assertRaises(KeyError):tr.evidence_images(self.p,'opening',ev) # Arbitrary still alone is not temporal evidence.
+   sampled=tr.sample_opening(self.p,ev);self.assertEqual(sampler.call_count,2);self.assertTrue(tr.evidence_images(self.p,'opening',sampled))
+   unrelated={**sampled,'images':ev['images']}
+   with self.assertRaisesRegex(ValueError,'derive from both'):tr.evidence_images(self.p,'opening',unrelated)
+   with self.assertRaisesRegex(ValueError,'reviewed interval'):tr.opening_inputs(self.p,{**ev,'setup_ids':['later']})
+  self.assertEqual(tr.review_setup_ids(self.plan,'opening',ev),['u'])
+  report=self.report();report['role']='opening';report['setup_assessments'][0]['checks']=[{'check':c,'status':'PASS','basis_id':'transfer-rubric','evidence':'synthetic','correction':''} for c in sorted(mr.OPENING)]
+  self.assertEqual(tr.status(self.plan,report,'opening',['u'])['status'],'PASS')
+  with self.assertRaisesRegex(ValueError,'concept setup coverage'):tr.review_setup_ids(self.plan,'concept',ev)
+  for bad in (['unknown'],['u','u'],[]):
+   with self.assertRaises(ValueError):tr.review_setup_ids(self.plan,'opening',{**ev,'setup_ids':bad})
+  with self.assertRaises(ValueError):tr.review_setup_ids(self.plan,'opening',{**ev,'review_setup_ids':['later']})
  def test_deadlock_counts_completed_current_and_archived_without_current_pixels(self):
   for j in range(2):
    base=self.p/('transfer-concept-history/first' if j==0 else 'transfer-gates/concept');base.mkdir(parents=True)
    self.fake_call(base,'concept-critic','different'+str(j),tr.SCHEMA,{**tr.binding(self.p)},())
    write(base/'concept-critic.json',self.report(fail='hero-scale'))
-   write(base/'record.json',{'response_sha256':sha(base/'concept-critic.json'),'invocation_sha256':sha(base/'concept-critic-invocation.json')})
+   write(base/'reviewed-plan.json',self.plan)
+   write(base/'record.json',{'response_sha256':sha(base/'concept-critic.json'),'invocation_sha256':sha(base/'concept-critic-invocation.json'),'plan_sha256':sha(base/'reviewed-plan.json'),'reviewed_plan_sha256':sha(base/'reviewed-plan.json')})
   with self.assertRaisesRegex(ValueError,'deadlock'):tr.guard_transfer_deadlock(self.p)
+  # Renaming setup/beat/interaction IDs or rewording the physical rule does not reset.
+  self.plan['film_structure']['setups'][0]['setup_id']='renamed';self.plan['film_structure']['setups'][0]['visual_rule']='same mechanism paraphrased';write(self.p/'production-plan.json',self.plan)
+  with self.assertRaisesRegex(ValueError,'deadlock'):tr.guard_transfer_deadlock(self.p)
+  old=self.p/'transfer-concept-history/first/reviewed-plan.json';patchfile=self.p/'split-patch.json';write(patchfile,{'escape':'split','setups':[{'relationship_archetype':'retain'},{'relationship_archetype':'handoff'}]})
+  self.plan['film_structure']['setups']=[{'setup_id':'split-a','beat_ids':['b'],'bot_role':'participant','relationship_archetype':'compare','visual_rule':'new'},{'setup_id':'split-b','beat_ids':['c'],'bot_role':'absent','relationship_archetype':'handoff','visual_rule':'other'}];write(self.p/'production-plan.json',self.plan)
+  with self.assertRaisesRegex(ValueError,'deadlock'):tr.guard_transfer_deadlock(self.p) # Changed names/rules without validated escape insufficient.
+  with patch('motif_concept.apply_patch',return_value=self.plan) as validation:
+   tr.record_escape(self.p,old,'u',patchfile);tr.guard_transfer_deadlock(self.p);validation.assert_called();self.assertTrue(old.exists())
+  write(patchfile,{'escape':'simplify','setups':[{'relationship_archetype':'retain'}]})
+  with self.assertRaisesRegex(ValueError,'changed relationship'):tr.record_escape(self.p,old,'u',patchfile)
+ def test_transfer_planning_direction_structure_use_no_old_context(self):
+  import motif_quality as q, motif_structure as st, motif_news as news
+  old_read=st.read
+  def no_legacy(path):
+   if 'rowhouse' in str(path) or 'structure-examples' in str(path):raise AssertionError('forbidden old example')
+   return old_read(path)
+  brief={'script':'A small task finishes.','audience':'workers','style':'reference-expressive-high-energy-v1'}
+  with patch.object(q,'retrieve',side_effect=AssertionError('forbidden gold')),patch.object(st,'read',side_effect=no_legacy):
+   self.assertIn('LEARNED METADATA',q.planning_context('own',self.p));self.assertNotIn('House +',q.planning_context('own',self.p));st.critic_prompt(self.plan,self.p)
+   # Actual news planner caller propagates profile scope to planning context.
+   with patch.object(news,'ROOT',self.root),patch.object(news,'read',return_value={}):self.assertIn('LEARNED METADATA',news.planner_prompt(brief,{},self.p))
+   write(self.p/'transfer-gates/concept/record.json',{})
+   def direction_call(*args,**kwargs):self.fake_call(*args,**kwargs);return {'pass':True,'issues':[]}
+   with patch.object(q,'plan_check'),patch.object(st,'require_structure',return_value={}),patch.object(mr,'require_stage',return_value={}),patch('motif_direct.model_call',side_effect=direction_call):q.direction_review(self.p,self.plan,{})
+ def test_opening_samples_are_decoded_from_both_own_movies(self):
+  import motif_quality as q
+  ev={**self.ev};ev['source_hashes']=dict(self.ev['source_hashes'])
+  for field,color in [('video','red'),('without_captions','blue')]:
+   movie=self.p/(field+'.mp4');q.cmd(['ffmpeg','-v','error','-f','lavfi','-i','color=c='+color+':s=360x640:r=4:d=3','-c:v','libx264','-pix_fmt','yuv420p',movie]);ev[field]={'file':str(movie.resolve()),'sha256':sha(movie)}
+  timing=self.p/'setup-timing.json';write(timing,{'plan_sha256':sha(self.p/'production-plan.json'),'setups':[{'setup_id':'u','start':0,'end':3}]});ev['setup_timing']={'file':str(timing.resolve()),'sha256':sha(timing)};ev['source_hashes'][str(timing.resolve())]=sha(timing)
+  sampled=tr.sample_opening(self.p,ev);tr.evidence_images(self.p,'opening',sampled)
+  for mode,channel in [('with_captions',0),('without_captions',2)]:
+   entry=sampled['decoded_opening_samples'][mode];native=next(f for f in entry['sheets'] if '-native-' in f)
+   with Image.open(native) as image:pixel=image.convert('RGB').getpixel((180,320))
+   self.assertGreater(pixel[channel],200);self.assertEqual(len(entry['motion_observations']['frames']),12)
+  # Test fixture is synthetic media, not a story, live critic or creative PASS.
+ def test_transfer_news_plan_stops_before_concept_direction(self):
+  import motif_news as news
+  production=self.root/'videos/productions';production.mkdir(parents=True);project=production/'new';tr.enable(project,self.kit)
+  brief={'slug':'new','script':'A small task finishes.','audience':'workers','style':'reference-expressive-high-energy-v1'};source={'as_of':'2026-10-04','sources':['owned brief'],'visual_fact_rules':['no new claims']};bp=self.root/'brief.json';sp=self.root/'sources.json';write(bp,brief);write(sp,source)
+  with patch.object(news,'ROOT',self.root),patch.object(news,'backend_config',return_value={}),patch.object(news,'planner_prompt',return_value='own prompt'),patch.object(news,'model_call',return_value=self.plan),patch.object(news,'validate_script'),patch.object(news,'structure_review'),patch.object(news,'direction_review') as direction:
+   self.assertEqual(news.plan_news(bp,sp),project);direction.assert_not_called();self.assertTrue((project/'production-plan.json').exists())
 if __name__=='__main__':unittest.main()

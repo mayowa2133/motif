@@ -107,7 +107,9 @@ def check_structure(plan):
             'chapters': len(chapters), 'scope': 'schema/references only; not semantic approval'}
 
 
-def planning_context():
+def planning_context(project=None):
+    from motif_transfer_review import enabled
+    grammar='' if project is not None and enabled(project) else (ROOT / 'docs/MOTIF_STRUCTURAL_GRAMMAR.md').read_text()
     return ('\nFILM STRUCTURE FIRST: derive rhetorical propositions and semantic verbs; '
             'group adjacent propositions by the same visual rule BEFORE choosing beats. '
             'Semantic coherence is not sufficient: inspect actual hero/causal mechanisms for COMPOUND_VISUAL_RULE. Prune inactive geometry; identify subject, actor and Bot role. '
@@ -116,11 +118,14 @@ def planning_context():
             'Reuse capabilities, not plots. If finite bindings cannot execute the required '
             'worlds, report explicit agent-assisted development; do not collapse them into '
             'one inappropriate metaphor. No shot/duration/reaction quotas.\n' +
-            (ROOT / 'docs/MOTIF_STRUCTURAL_GRAMMAR.md').read_text() +
+            grammar +
             '\nSTRUCTURE SCHEMA: ' + json.dumps(read(ROOT / 'schemas/film-structure.schema.json')))
 
 
 def critic_prompt(plan, project=None):
+    from motif_transfer_review import enabled
+    if project is not None and enabled(project):
+        return (ROOT/'quality/structure-critic/PROMPT.md').read_text()+planning_context(project)+'\nPLAN: '+json.dumps(plan)
     prompt=((ROOT / 'quality/structure-critic/PROMPT.md').read_text() +
             '\nGRAMMAR:\n' + (ROOT / 'docs/MOTIF_STRUCTURAL_GRAMMAR.md').read_text() +
             '\nINTERNAL BEHAVIORAL EXAMPLES: ' + json.dumps(read(ROOT / 'quality/structure-examples.json')) +

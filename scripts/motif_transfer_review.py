@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """Explicit own-evidence transfer admission; never reference calibration."""
-import argparse,json,shutil
+import argparse,hashlib,json,shutil
 from pathlib import Path
 from jsonschema import Draft202012Validator
 from motif_reference import ROOT,read,write,sha,CONCEPT,OPENING,valid_invocation
@@ -71,10 +71,48 @@ def verify_contract(project):
  inv=valid_invocation(p/'transfer-review','concept-contract')
  if inv.get('images',[]) or any(inv.get('configuration',{}).get(k)!=v for k,v in binding(p).items()):raise ValueError('transfer contract invocation scope/evidence mismatch')
 
+def review_setup_ids(plan,stage,ev):
+ ids={s['setup_id'] for s in plan['film_structure']['setups']};covered=ev['setup_ids'];reviewed=ev.get('review_setup_ids',covered)
+ if not covered or len(covered)!=len(set(covered)) or not set(covered)<=ids or not reviewed or len(reviewed)!=len(set(reviewed)) or not set(reviewed)<=set(covered):raise ValueError('valid declared transfer setup scope required')
+ if stage=='concept' and (set(covered)!=ids or set(reviewed)!=ids):raise ValueError('full transfer concept setup coverage required')
+ return reviewed
+
+def opening_inputs(project,ev):
+ from motif_quality import probe_video
+ p=Path(project);plan=read(p/'production-plan.json');info=probe_video(own_file(p,ev['video']));second=probe_video(own_file(p,ev['without_captions']))
+ if not 3<=info['duration']<=5.1 or (info['width'],info['height'])!=(360,640):raise ValueError('native3–5s opening required')
+ if any(info[k]!=second[k] for k in ('fps','frames','width','height')):raise ValueError('opening caption modes mismatch')
+ timing_file=own_file(p,ev['setup_timing']);timing=read(timing_file)
+ if ev['source_hashes'].get(str(timing_file))!=sha(timing_file) or timing['plan_sha256']!=sha(p/'production-plan.json'):raise ValueError('opening timing must bind own rendered sources and plan')
+ ids={s['setup_id'] for s in plan['film_structure']['setups']};rows=timing['setups']
+ if {r['setup_id'] for r in rows}!=ids or len(rows)!=len(ids):raise ValueError('complete own setup timing required')
+ cursor=0
+ for r in rows:
+  if not isinstance(r['start'],(int,float)) or not isinstance(r['end'],(int,float)) or r['start']!=cursor or not r['end']>r['start']:raise ValueError('setup timing must partition actual choreography')
+  cursor=r['end']
+ selected=[r for r in rows if r['start']<info['duration'] and r['end']>0]
+ reviewed=review_setup_ids(plan,'opening',ev)
+ if set(reviewed)!={r['setup_id'] for r in selected}:raise ValueError('opening scope must exactly match actual reviewed interval')
+ return info,selected
+
+def sample_opening(project,ev):
+ from motif_quality import evidence
+ p=Path(project);info,rows=opening_inputs(p,ev);dest=p/'transfer-review/opening-samples'
+ # Called only before a fresh live review. Existing failed receipt is archived first.
+ if dest.exists():shutil.rmtree(dest)
+ shots=[{'id':r['setup_id'],'start':r['start'],'end':min(r['end'],info['duration']),**({'temporal_events':r['temporal_events']} if r.get('temporal_events') else {})} for r in rows]
+ samples={};images=[]
+ for mode,field in [('with_captions','video'),('without_captions','without_captions')]:
+  samples[mode]=evidence(own_file(p,ev[field]),dest/mode,shots)
+  images += [{'file':f,'sha256':sha(f)} for f in samples[mode]['sheets']]
+  samples[mode]['motion_observations']=read(samples[mode]['motion_trace'])
+ manifest=dest/'sampling.json';write(manifest,{'method':'motif_quality.evidence; actual native decode both modes','video_inputs':{f:ev[f] for f in ('video','without_captions')},'samples':samples,'images':images})
+ return {**ev,'images':images,'decoded_opening_samples':samples,'opening_sampling':{'file':str(manifest.resolve()),'sha256':sha(manifest)}}
+
 def evidence_images(project,stage,ev):
  p=Path(project);plan=read(p/'production-plan.json');ids={s['setup_id'] for s in plan['film_structure']['setups']}
  if ev.get('origin')!='project-authored':raise ValueError('own-art origin attestation required')
- if set(ev['setup_ids'])!=ids or len(ev['setup_ids'])!=len(ids) or ev.get('review_setup_ids',ev['setup_ids'])!=ev['setup_ids']:raise ValueError('full transfer setup coverage required')
+ review_setup_ids(plan,stage,ev)
  if not ev.get('source_hashes'):raise ValueError('own rendered source fingerprint required')
  for file,digest in ev['source_hashes'].items():own_file(p,{'file':file,'sha256':digest})
  images=[own_file(p,i) for i in ev['images']]
@@ -88,11 +126,13 @@ def evidence_images(project,stage,ev):
   images += [own_file(p,i,True) for i in previews]
   images += [own_file(p,i,True) for row in ev['contact_proofs'] for i in row['frames'].values()]
  elif stage=='opening':
-  from motif_quality import probe_video
-  info=probe_video(own_file(p,ev['video']))
-  if not 3<=info['duration']<=5.1 or (info['width'],info['height'])!=(360,640):raise ValueError('native3–5s opening required')
-  second=probe_video(own_file(p,ev['without_captions']))
-  if any(info[k]!=second[k] for k in ('fps','frames','width','height')):raise ValueError('opening caption modes mismatch')
+  opening_inputs(p,ev);sampling=read(own_file(p,ev['opening_sampling']))
+  if sampling['method']!='motif_quality.evidence; actual native decode both modes' or sampling['video_inputs']!={f:ev[f] for f in ('video','without_captions')} or sampling['images']!=ev['images']:raise ValueError('opening images must derive from both actual movies')
+  if ev.get('decoded_opening_samples')!=sampling['samples']:raise ValueError('opening decoded observation metadata changed')
+  if set(sampling['samples'])!={'with_captions','without_captions'}:raise ValueError('both opening modes must be sampled')
+  for sample in sampling['samples'].values():
+   own_file(p,{'file':sample['motion_trace'],'sha256':sample['trace_sha256']})
+
  else:raise ValueError('unsupported transfer stage')
  return list(dict.fromkeys(images))
 
@@ -119,36 +159,78 @@ def completed_review(base,stage='concept'):
  if r['response_sha256']!=sha(base/(name+'.json')) or r['invocation_sha256']!=sha(base/(name+'-invocation.json')) or inv['input_sha256']!=sha(base/(name+'-input.txt')) or inv['output_schema_sha256']!=sha(base/(name+'-output-schema.json')):raise ValueError('historical transfer receipt changed')
  return inv
 
+def concept_families(plan):
+ # IDs, palette/layout and free-text visual-rule wording do not reset attempts.
+ families={}
+ for setup in plan['film_structure']['setups']:
+  beats=[b for b in plan['beats'] if b['id'] in setup['beat_ids']]
+  key={'narration':[b.get('narration','') for b in beats],'relationship':setup.get('relationship_archetype',''),'bot_role':setup['bot_role']}
+  families[setup['setup_id']]=hashlib.sha256(json.dumps(key,sort_keys=True).encode()).hexdigest()
+ return families
+
+def validated_escape(project,receipt):
+ from motif_concept import apply_patch
+ p=Path(project);old_file=own_file(p,receipt['old_plan']);patch_file=own_file(p,receipt['patch']);old=read(old_file);patch=read(patch_file);current=read(p/'production-plan.json')
+ if receipt['new_plan_sha256']!=sha(p/'production-plan.json'):raise ValueError('transfer escape current plan changed')
+ original=next(s for s in old['film_structure']['setups'] if s['setup_id']==receipt['replaced_setup'])
+ replacements=patch['setups']
+ # A rule paraphrase or renamed ID is not a substantive escape. Reuse the
+ # existing pure scope/partition/narration/token validation, never its private replan flow.
+ if patch['escape']!='split' and (len(replacements)!=1 or replacements[0]['relationship_archetype']==original['relationship_archetype']):raise ValueError('transfer escape requires changed relationship, not new wording')
+ if patch['escape']=='split' and (len(replacements)<2 or len({s['relationship_archetype'] for s in replacements})<2):raise ValueError('transfer split requires distinct physical relationships')
+ if apply_patch(old,receipt['replaced_setup'],patch)!=current:raise ValueError('transfer escape must equal exact validated current plan')
+ if receipt['old_family']!=concept_families(old)[receipt['replaced_setup']] or receipt['new_families']!=concept_families(current):raise ValueError('transfer escape family changed')
+ # Old plan must be an actual immutable completed own review, not invented history.
+ found=False
+ for f in list((p/'transfer-concept-history').glob('*/record.json'))+[p/'transfer-gates/concept/record.json']:
+  try:completed_review(f.parent);r=read(f)
+  except (ValueError,FileNotFoundError,KeyError):continue
+  if r.get('plan_sha256')==receipt['old_plan']['sha256'] and r.get('reviewed_plan_sha256')==receipt['old_plan']['sha256']:found=True
+ if not found:raise ValueError('transfer escape requires a completed prior own concept review')
+ return receipt
+
+def record_escape(project,old_plan,setup_id,patch_path):
+ p=Path(project);profile(p)
+ receipt={**binding(p),'replaced_setup':setup_id,'old_plan':{'file':str(Path(old_plan).resolve()),'sha256':sha(old_plan)},'patch':{'file':str(Path(patch_path).resolve()),'sha256':sha(patch_path)},'new_plan_sha256':sha(p/'production-plan.json'),'old_family':concept_families(read(old_plan))[setup_id],'new_families':concept_families(read(p/'production-plan.json')),'scope':'validated data escape only; all setups need fresh concept review; no inherited approval'}
+ validated_escape(p,receipt);write(p/'transfer-review/escape.json',receipt);return receipt
+
 def guard_transfer_deadlock(project):
- p=Path(project);failures=[];seen=set()
+ p=Path(project);failures=[];seen=set();current=concept_families(read(p/'production-plan.json'));escape=None
+ if (p/'transfer-review/escape.json').exists():escape=validated_escape(p,read(p/'transfer-review/escape.json'))
  records=list((p/'transfer-concept-history').glob('*/record.json'))+[p/'transfer-gates/concept/record.json']
  for f in records:
-  try:inv=completed_review(f.parent);report=read(f.parent/'concept-critic.json')
+  try:inv=completed_review(f.parent);report=read(f.parent/'concept-critic.json');record=read(f);plan=read(f.parent/'reviewed-plan.json')
   except (FileNotFoundError,KeyError,ValueError):continue
-  ident=(inv['input_sha256'],sha(f.parent/'concept-critic.json'))
+  if record.get('reviewed_plan_sha256')!=sha(f.parent/'reviewed-plan.json') or record.get('plan_sha256')!=sha(f.parent/'reviewed-plan.json'):raise ValueError('historical transfer plan changed')
+  families=concept_families(plan);ident=(inv['input_sha256'],sha(f.parent/'concept-critic.json'))
   if ident in seen:continue
   seen.add(ident)
   for row in report['setup_assessments']:
    for c in row['checks']:
-    if c['status']=='FAIL' and c['check'] in ('hero-scale','hierarchy','character-role','CONTACT_PROOF_UNREADABLE','ACTOR_AMBIGUITY','UNNECESSARY_VISIBLE_MECHANISM'):failures.append((row['setup_id'],c['check']))
- if any(failures.count(x)>=2 for x in failures):raise ValueError('transfer concept deadlock: simplify/split/change relationship')
+    if c['status']=='FAIL' and c['check'] in ('hero-scale','hierarchy','character-role','CONTACT_PROOF_UNREADABLE','ACTOR_AMBIGUITY','UNNECESSARY_VISIBLE_MECHANISM'):failures.append((families[row['setup_id']],c['check']))
+ for family,check in set(failures):
+  if failures.count((family,check))<2:continue
+  if family in current.values() or not escape or escape['old_family']!=family:raise ValueError('transfer concept deadlock: validated relationship/split escape required, not cosmetic rename')
 
 def stage_review(project,stage,evidence_path,config):
  from motif_direct import model_call
  from motif_structure import require_structure
  from motif_concept import guard_deadlock
  p=Path(project);profile(p);require_structure(p);ev=read(evidence_path);base=p/'transfer-gates'/stage;base.mkdir(parents=True,exist_ok=True)
- images=evidence_images(p,stage,ev)
  if stage=='concept':
   guard_deadlock(p,ev) # Original history plus transfer history below.
   guard_transfer_deadlock(p)
  if (base/'record.json').exists():
   completed_review(base,stage)
   dest=p/('transfer-'+stage+'-history')/sha(base/(stage+'-critic-invocation.json'))[:16];shutil.copytree(base,dest,dirs_exist_ok=True)
- prompt=(ROOT/POLICY).read_text()+context(p)+'\nReturn evidence_scope '+MODE+' and role '+stage+'. Assess exactly checks:'+json.dumps(sorted(CONCEPT if stage=='concept' else OPENING))+'\nPLAN:'+json.dumps(read(p/'production-plan.json'))+'\nOWN EVIDENCE/IMAGE ORDER:'+json.dumps(ev)
+ if stage=='opening':
+  ev=sample_opening(p,ev);evidence_path=base/'opening-evidence.json';write(evidence_path,ev)
+ images=evidence_images(p,stage,ev)
+ prompt=(ROOT/POLICY).read_text()+context(p)+'\nReturn evidence_scope '+MODE+' and role '+stage+'. Assess exactly checks:'+json.dumps(sorted(CONCEPT if stage=='concept' else OPENING))+'\nAssess exactly these declared stage setup IDs (unseen later setups receive no opening approval):'+json.dumps(review_setup_ids(read(p/'production-plan.json'),stage,ev))+'\nPLAN:'+json.dumps(read(p/'production-plan.json'))+'\nOWN EVIDENCE/IMAGE ORDER:'+json.dumps(ev)
  name=stage+'-critic';report=model_call(base,name,prompt,SCHEMA,{**config,**binding(p)},images)
- result=status(read(p/'production-plan.json'),report,stage,ev['setup_ids'])
- write(base/'record.json',{**result,**binding(p),'plan_sha256':sha(p/'production-plan.json'),'evidence_path':str(Path(evidence_path).resolve()),'evidence_sha256':sha(evidence_path),'image_inputs':[{'file':str(f),'sha256':sha(f)} for f in images],'response_sha256':sha(base/(name+'.json')),'invocation_sha256':sha(base/(name+'-invocation.json')),'policy_hashes':policies(),'human_approval':False,'source_calibration':False})
+ result=status(read(p/'production-plan.json'),report,stage,review_setup_ids(read(p/'production-plan.json'),stage,ev))
+ shutil.copy2(p/'production-plan.json',base/'reviewed-plan.json')
+ write(base/'record.json',{**result,**binding(p),'plan_sha256':sha(p/'production-plan.json'),'reviewed_plan_sha256':sha(base/'reviewed-plan.json'),'evidence_path':str(Path(evidence_path).resolve()),'evidence_sha256':sha(evidence_path),'image_inputs':[{'file':str(f),'sha256':sha(f)} for f in images],'response_sha256':sha(base/(name+'.json')),'invocation_sha256':sha(base/(name+'-invocation.json')),'policy_hashes':policies(),'human_approval':False,'source_calibration':False})
  if result['status']!='PASS':raise ValueError('transfer '+stage+' blocked: '+json.dumps(result['blocked']))
  return report
 
@@ -156,17 +238,17 @@ def require_stage(project,stage):
  p=Path(project);profile(p);base=p/'transfer-gates'/stage;name=stage+'-critic'
  try:
   r=read(base/'record.json');ev=read(r['evidence_path'])
-  if any(r.get(k)!=v for k,v in binding(p).items()) or r['policy_hashes']!=policies() or r['plan_sha256']!=sha(p/'production-plan.json') or r['evidence_sha256']!=sha(r['evidence_path']) or r['response_sha256']!=sha(base/(name+'.json')) or r['invocation_sha256']!=sha(base/(name+'-invocation.json')):raise ValueError('transfer stage stale')
+  if any(r.get(k)!=v for k,v in binding(p).items()) or r['policy_hashes']!=policies() or r['plan_sha256']!=sha(p/'production-plan.json') or r['reviewed_plan_sha256']!=sha(base/'reviewed-plan.json') or r['reviewed_plan_sha256']!=r['plan_sha256'] or r['evidence_sha256']!=sha(r['evidence_path']) or r['response_sha256']!=sha(base/(name+'.json')) or r['invocation_sha256']!=sha(base/(name+'-invocation.json')):raise ValueError('transfer stage stale')
   images=evidence_images(p,stage,ev);inv=valid_invocation(base,name)
   expected=[{'file':str(f),'sha256':sha(f)} for f in images]
   if any(inv.get('configuration',{}).get(k)!=v for k,v in binding(p).items()) or r['image_inputs']!=expected or inv.get('images')!=expected:raise ValueError('transfer invocation attached non-permitted evidence')
-  if r['status']!='PASS' or status(read(p/'production-plan.json'),read(base/(name+'.json')),stage,ev['setup_ids'])['status']!='PASS':raise ValueError('transfer gate blocked')
+  if r['status']!='PASS' or status(read(p/'production-plan.json'),read(base/(name+'.json')),stage,review_setup_ids(read(p/'production-plan.json'),stage,ev))['status']!='PASS':raise ValueError('transfer gate blocked')
   return r
  except (FileNotFoundError,KeyError) as error:raise ValueError('fresh own-evidence transfer '+stage+' review required') from error
 
 def main():
- a=argparse.ArgumentParser(description=__doc__);a.add_argument('action',choices=['enable','prepare','concept','opening','verify']);a.add_argument('--project',type=Path,required=True);a.add_argument('--kit',type=Path);a.add_argument('--evidence',type=Path);a.add_argument('--stage',choices=['concept','opening'],default='concept');v=a.parse_args()
+ a=argparse.ArgumentParser(description=__doc__);a.add_argument('action',choices=['enable','prepare','concept','opening','verify','escape']);a.add_argument('--project',type=Path,required=True);a.add_argument('--kit',type=Path);a.add_argument('--old-plan',type=Path);a.add_argument('--patch',type=Path);a.add_argument('--setup');a.add_argument('--evidence',type=Path);a.add_argument('--stage',choices=['concept','opening'],default='concept');v=a.parse_args()
  from motif_direct import backend_config
- result=enable(v.project,v.kit) if v.action=='enable' else require_stage(v.project,v.stage) if v.action=='verify' else prepare(v.project,backend_config()) if v.action=='prepare' else stage_review(v.project,v.action,v.evidence,backend_config())
+ result=record_escape(v.project,v.old_plan,v.setup,v.patch) if v.action=='escape' else enable(v.project,v.kit) if v.action=='enable' else require_stage(v.project,v.stage) if v.action=='verify' else prepare(v.project,backend_config()) if v.action=='prepare' else stage_review(v.project,v.action,v.evidence,backend_config())
  print(json.dumps(result,indent=2))
 if __name__=='__main__':main()

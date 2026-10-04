@@ -147,12 +147,12 @@ def model_call(project, name, prompt, schema, config, images=()):
         raise ValueError('planner invoked a tool despite the data-only boundary; response rejected')
     return value
 
-def planning_prompt(brief,concept=None,feedback=None):
+def planning_prompt(brief,concept=None,feedback=None,project=None):
     prompt=(ROOT/'planning/PLANNER.md').read_text()+'\n\nAvailable asset IDs by world:\n'+json.dumps(WORLD_ASSETS)+'\n\nNarration word budget: '+str(int((brief['intended_duration_seconds']-1)*2.6))+' maximum. Aim a few words below that limit; preserve meaning.\n\nINPUT BRIEF (subject matter):\n'+json.dumps(brief)
     if concept is not None:prompt+='\n\nRecorded preproduction concept (creative context, not executable code). Use its metaphor; choose natural final narration, action cues, and framing from the supported vocabulary:\n'+json.dumps(concept)
     if feedback is not None:prompt+='\n\nAgent review of a preserved earlier render; address these concrete creative issues without changing the brief or inventing capabilities:\n'+feedback
     from motif_quality import planning_context
-    prompt+=planning_context(brief['message'])
+    prompt+=planning_context(brief['message'],project)
     return prompt
 
 def storyboard(plan):
@@ -193,7 +193,7 @@ def run(brief_path,concept_path=None,feedback_path=None):
     if feedback_path:
         feedback=feedback_path.read_text()
         (project/'prior-render-feedback.md').write_text(feedback)
-    prompt=planning_prompt(brief,concept,feedback)
+    prompt=planning_prompt(brief,concept,feedback,project)
     plan=model_call(project,'initial-plan',prompt,'schemas/production-plan.schema.json',config)
     if plan.get('quality_mode')!='motif-gold-v1': raise ValueError('new directed runs require motif-gold-v1')
     from motif_quality import direction_review
