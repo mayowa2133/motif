@@ -1,0 +1,1026 @@
+{
+  "method": "installed Whisper small.en DTW; no flash attention; adjacent token-center midpoints",
+  "precision": "automatic approximate word boundaries, not phoneme-perfect",
+  "duration": 36.666,
+  "words": [
+    {
+      "text": "OpenAI",
+      "centers": [
+        0.26,
+        0.46
+      ],
+      "start": 0.14,
+      "end": 0.6
+    },
+    {
+      "text": "just",
+      "centers": [
+        0.74
+      ],
+      "start": 0.6,
+      "end": 0.88
+    },
+    {
+      "text": "gave",
+      "centers": [
+        1.02
+      ],
+      "start": 0.88,
+      "end": 1.1600000000000001
+    },
+    {
+      "text": "ChatGPT",
+      "centers": [
+        1.3,
+        1.48,
+        1.7
+      ],
+      "start": 1.1600000000000001,
+      "end": 1.7999999999999998
+    },
+    {
+      "text": "a",
+      "centers": [
+        1.9
+      ],
+      "start": 1.7999999999999998,
+      "end": 2.0300000000000002
+    },
+    {
+      "text": "tiny",
+      "centers": [
+        2.16
+      ],
+      "start": 2.0300000000000002,
+      "end": 2.29
+    },
+    {
+      "text": "co-worker",
+      "centers": [
+        2.42,
+        2.48,
+        2.6
+      ],
+      "start": 2.29,
+      "end": 2.71
+    },
+    {
+      "text": "with",
+      "centers": [
+        2.82
+      ],
+      "start": 2.71,
+      "end": 2.88
+    },
+    {
+      "text": "its",
+      "centers": [
+        2.94
+      ],
+      "start": 2.88,
+      "end": 3.01
+    },
+    {
+      "text": "own",
+      "centers": [
+        3.08
+      ],
+      "start": 3.01,
+      "end": 3.25
+    },
+    {
+      "text": "computer,",
+      "centers": [
+        3.42
+      ],
+      "start": 3.25,
+      "end": 3.67
+    },
+    {
+      "text": "and",
+      "centers": [
+        3.92
+      ],
+      "start": 3.67,
+      "end": 3.98
+    },
+    {
+      "text": "it",
+      "centers": [
+        4.04
+      ],
+      "start": 3.98,
+      "end": 4.1
+    },
+    {
+      "text": "doesn't",
+      "centers": [
+        4.16,
+        4.3
+      ],
+      "start": 4.1,
+      "end": 4.390000000000001
+    },
+    {
+      "text": "clock",
+      "centers": [
+        4.48
+      ],
+      "start": 4.390000000000001,
+      "end": 4.6
+    },
+    {
+      "text": "out.",
+      "centers": [
+        4.72
+      ],
+      "start": 4.6,
+      "end": 4.869999999999999
+    },
+    {
+      "text": "They're",
+      "centers": [
+        5.02,
+        5.08
+      ],
+      "start": 4.869999999999999,
+      "end": 5.1899999999999995
+    },
+    {
+      "text": "called",
+      "centers": [
+        5.3
+      ],
+      "start": 5.1899999999999995,
+      "end": 5.4
+    },
+    {
+      "text": "DOTS.",
+      "centers": [
+        5.5,
+        5.62
+      ],
+      "start": 5.4,
+      "end": 5.9
+    },
+    {
+      "text": "Instead",
+      "centers": [
+        6.18
+      ],
+      "start": 5.9,
+      "end": 6.25
+    },
+    {
+      "text": "of",
+      "centers": [
+        6.32
+      ],
+      "start": 6.25,
+      "end": 6.380000000000001
+    },
+    {
+      "text": "living",
+      "centers": [
+        6.44
+      ],
+      "start": 6.380000000000001,
+      "end": 6.59
+    },
+    {
+      "text": "inside",
+      "centers": [
+        6.74
+      ],
+      "start": 6.59,
+      "end": 6.86
+    },
+    {
+      "text": "one",
+      "centers": [
+        6.98
+      ],
+      "start": 6.86,
+      "end": 7.09
+    },
+    {
+      "text": "chat",
+      "centers": [
+        7.2
+      ],
+      "start": 7.09,
+      "end": 7.3100000000000005
+    },
+    {
+      "text": "bubble,",
+      "centers": [
+        7.42
+      ],
+      "start": 7.3100000000000005,
+      "end": 7.57
+    },
+    {
+      "text": "a",
+      "centers": [
+        7.72
+      ],
+      "start": 7.57,
+      "end": 7.779999999999999
+    },
+    {
+      "text": "DOT",
+      "centers": [
+        7.84,
+        7.9
+      ],
+      "start": 7.779999999999999,
+      "end": 8.0
+    },
+    {
+      "text": "can",
+      "centers": [
+        8.1
+      ],
+      "start": 8.0,
+      "end": 8.24
+    },
+    {
+      "text": "connect",
+      "centers": [
+        8.38
+      ],
+      "start": 8.24,
+      "end": 8.46
+    },
+    {
+      "text": "to",
+      "centers": [
+        8.54
+      ],
+      "start": 8.46,
+      "end": 8.579999999999998
+    },
+    {
+      "text": "your",
+      "centers": [
+        8.62
+      ],
+      "start": 8.579999999999998,
+      "end": 8.739999999999998
+    },
+    {
+      "text": "apps,",
+      "centers": [
+        8.86
+      ],
+      "start": 8.739999999999998,
+      "end": 8.98
+    },
+    {
+      "text": "use",
+      "centers": [
+        9.1
+      ],
+      "start": 8.98,
+      "end": 9.18
+    },
+    {
+      "text": "its",
+      "centers": [
+        9.26
+      ],
+      "start": 9.18,
+      "end": 9.36
+    },
+    {
+      "text": "own",
+      "centers": [
+        9.46
+      ],
+      "start": 9.36,
+      "end": 9.56
+    },
+    {
+      "text": "cloud",
+      "centers": [
+        9.66
+      ],
+      "start": 9.56,
+      "end": 9.85
+    },
+    {
+      "text": "computer,",
+      "centers": [
+        10.04
+      ],
+      "start": 9.85,
+      "end": 10.17
+    },
+    {
+      "text": "and",
+      "centers": [
+        10.3
+      ],
+      "start": 10.17,
+      "end": 10.370000000000001
+    },
+    {
+      "text": "keep",
+      "centers": [
+        10.44
+      ],
+      "start": 10.370000000000001,
+      "end": 10.58
+    },
+    {
+      "text": "chewing",
+      "centers": [
+        10.72
+      ],
+      "start": 10.58,
+      "end": 10.84
+    },
+    {
+      "text": "through",
+      "centers": [
+        10.96
+      ],
+      "start": 10.84,
+      "end": 11.04
+    },
+    {
+      "text": "a",
+      "centers": [
+        11.12
+      ],
+      "start": 11.04,
+      "end": 11.23
+    },
+    {
+      "text": "multi-step",
+      "centers": [
+        11.34,
+        11.56,
+        11.62
+      ],
+      "start": 11.23,
+      "end": 11.76
+    },
+    {
+      "text": "job",
+      "centers": [
+        11.9
+      ],
+      "start": 11.76,
+      "end": 11.98
+    },
+    {
+      "text": "in",
+      "centers": [
+        12.06
+      ],
+      "start": 11.98,
+      "end": 12.11
+    },
+    {
+      "text": "the",
+      "centers": [
+        12.16
+      ],
+      "start": 12.11,
+      "end": 12.36
+    },
+    {
+      "text": "background.",
+      "centers": [
+        12.56
+      ],
+      "start": 12.36,
+      "end": 13.02
+    },
+    {
+      "text": "OpenAI",
+      "centers": [
+        13.48,
+        13.8
+      ],
+      "start": 13.02,
+      "end": 13.93
+    },
+    {
+      "text": "is",
+      "centers": [
+        14.06
+      ],
+      "start": 13.93,
+      "end": 14.190000000000001
+    },
+    {
+      "text": "pitching",
+      "centers": [
+        14.32
+      ],
+      "start": 14.190000000000001,
+      "end": 14.42
+    },
+    {
+      "text": "them",
+      "centers": [
+        14.52
+      ],
+      "start": 14.42,
+      "end": 14.61
+    },
+    {
+      "text": "for",
+      "centers": [
+        14.7
+      ],
+      "start": 14.61,
+      "end": 14.8
+    },
+    {
+      "text": "real",
+      "centers": [
+        14.9
+      ],
+      "start": 14.8,
+      "end": 15.04
+    },
+    {
+      "text": "work",
+      "centers": [
+        15.18
+      ],
+      "start": 15.04,
+      "end": 15.27
+    },
+    {
+      "text": "and",
+      "centers": [
+        15.36
+      ],
+      "start": 15.27,
+      "end": 15.55
+    },
+    {
+      "text": "personal",
+      "centers": [
+        15.74
+      ],
+      "start": 15.55,
+      "end": 15.850000000000001
+    },
+    {
+      "text": "errands,",
+      "centers": [
+        15.96,
+        16.14
+      ],
+      "start": 15.850000000000001,
+      "end": 16.25
+    },
+    {
+      "text": "with",
+      "centers": [
+        16.36
+      ],
+      "start": 16.25,
+      "end": 16.57
+    },
+    {
+      "text": "specialist",
+      "centers": [
+        16.78
+      ],
+      "start": 16.57,
+      "end": 16.93
+    },
+    {
+      "text": "DOTS",
+      "centers": [
+        17.08,
+        17.14
+      ],
+      "start": 16.93,
+      "end": 17.259999999999998
+    },
+    {
+      "text": "for",
+      "centers": [
+        17.38
+      ],
+      "start": 17.259999999999998,
+      "end": 17.57
+    },
+    {
+      "text": "companies",
+      "centers": [
+        17.76
+      ],
+      "start": 17.57,
+      "end": 17.94
+    },
+    {
+      "text": "and",
+      "centers": [
+        18.12
+      ],
+      "start": 17.94,
+      "end": 18.259999999999998
+    },
+    {
+      "text": "teams",
+      "centers": [
+        18.4
+      ],
+      "start": 18.259999999999998,
+      "end": 18.47
+    },
+    {
+      "text": "of",
+      "centers": [
+        18.54
+      ],
+      "start": 18.47,
+      "end": 18.63
+    },
+    {
+      "text": "DOTS",
+      "centers": [
+        18.72,
+        18.86
+      ],
+      "start": 18.63,
+      "end": 18.98
+    },
+    {
+      "text": "planned",
+      "centers": [
+        19.1
+      ],
+      "start": 18.98,
+      "end": 19.3
+    },
+    {
+      "text": "later.",
+      "centers": [
+        19.5
+      ],
+      "start": 19.3,
+      "end": 19.810000000000002
+    },
+    {
+      "text": "But",
+      "centers": [
+        20.12
+      ],
+      "start": 19.810000000000002,
+      "end": 20.21
+    },
+    {
+      "text": "here's",
+      "centers": [
+        20.3,
+        20.4
+      ],
+      "start": 20.21,
+      "end": 20.46
+    },
+    {
+      "text": "the",
+      "centers": [
+        20.52
+      ],
+      "start": 20.46,
+      "end": 20.65
+    },
+    {
+      "text": "catch,",
+      "centers": [
+        20.78
+      ],
+      "start": 20.65,
+      "end": 21.03
+    },
+    {
+      "text": "sensitive",
+      "centers": [
+        21.28
+      ],
+      "start": 21.03,
+      "end": 21.520000000000003
+    },
+    {
+      "text": "actions",
+      "centers": [
+        21.76
+      ],
+      "start": 21.520000000000003,
+      "end": 21.880000000000003
+    },
+    {
+      "text": "can",
+      "centers": [
+        22.0
+      ],
+      "start": 21.880000000000003,
+      "end": 22.119999999999997
+    },
+    {
+      "text": "still",
+      "centers": [
+        22.24
+      ],
+      "start": 22.119999999999997,
+      "end": 22.35
+    },
+    {
+      "text": "need",
+      "centers": [
+        22.46
+      ],
+      "start": 22.35,
+      "end": 22.54
+    },
+    {
+      "text": "your",
+      "centers": [
+        22.62
+      ],
+      "start": 22.54,
+      "end": 22.78
+    },
+    {
+      "text": "approval,",
+      "centers": [
+        22.94
+      ],
+      "start": 22.78,
+      "end": 23.11
+    },
+    {
+      "text": "and",
+      "centers": [
+        23.28
+      ],
+      "start": 23.11,
+      "end": 23.36
+    },
+    {
+      "text": "right",
+      "centers": [
+        23.44
+      ],
+      "start": 23.36,
+      "end": 23.57
+    },
+    {
+      "text": "now",
+      "centers": [
+        23.7
+      ],
+      "start": 23.57,
+      "end": 23.79
+    },
+    {
+      "text": "DOTS",
+      "centers": [
+        23.88,
+        24.0
+      ],
+      "start": 23.79,
+      "end": 24.22
+    },
+    {
+      "text": "require",
+      "centers": [
+        24.44
+      ],
+      "start": 24.22,
+      "end": 24.54
+    },
+    {
+      "text": "an",
+      "centers": [
+        24.64
+      ],
+      "start": 24.54,
+      "end": 24.85
+    },
+    {
+      "text": "eligible",
+      "centers": [
+        25.06
+      ],
+      "start": 24.85,
+      "end": 25.25
+    },
+    {
+      "text": "paid",
+      "centers": [
+        25.44
+      ],
+      "start": 25.25,
+      "end": 25.62
+    },
+    {
+      "text": "ChatGPT",
+      "centers": [
+        25.8,
+        26.04,
+        26.36
+      ],
+      "start": 25.62,
+      "end": 26.53
+    },
+    {
+      "text": "plan,",
+      "centers": [
+        26.7
+      ],
+      "start": 26.53,
+      "end": 26.86
+    },
+    {
+      "text": "while",
+      "centers": [
+        27.02
+      ],
+      "start": 26.86,
+      "end": 27.11
+    },
+    {
+      "text": "Meta's",
+      "centers": [
+        27.2,
+        27.4
+      ],
+      "start": 27.11,
+      "end": 27.46
+    },
+    {
+      "text": "Muse",
+      "centers": [
+        27.52
+      ],
+      "start": 27.46,
+      "end": 27.67
+    },
+    {
+      "text": "offers",
+      "centers": [
+        27.82
+      ],
+      "start": 27.67,
+      "end": 27.91
+    },
+    {
+      "text": "a",
+      "centers": [
+        28.0
+      ],
+      "start": 27.91,
+      "end": 28.09
+    },
+    {
+      "text": "free",
+      "centers": [
+        28.18
+      ],
+      "start": 28.09,
+      "end": 28.29
+    },
+    {
+      "text": "tier.",
+      "centers": [
+        28.4
+      ],
+      "start": 28.29,
+      "end": 28.83
+    },
+    {
+      "text": "So",
+      "centers": [
+        29.26
+      ],
+      "start": 28.83,
+      "end": 29.310000000000002
+    },
+    {
+      "text": "the",
+      "centers": [
+        29.36
+      ],
+      "start": 29.310000000000002,
+      "end": 29.490000000000002
+    },
+    {
+      "text": "next",
+      "centers": [
+        29.62
+      ],
+      "start": 29.490000000000002,
+      "end": 29.82
+    },
+    {
+      "text": "AI",
+      "centers": [
+        30.02
+      ],
+      "start": 29.82,
+      "end": 30.18
+    },
+    {
+      "text": "race",
+      "centers": [
+        30.34
+      ],
+      "start": 30.18,
+      "end": 30.45
+    },
+    {
+      "text": "isn't",
+      "centers": [
+        30.56,
+        30.56
+      ],
+      "start": 30.45,
+      "end": 30.65
+    },
+    {
+      "text": "just",
+      "centers": [
+        30.74
+      ],
+      "start": 30.65,
+      "end": 30.81
+    },
+    {
+      "text": "who",
+      "centers": [
+        30.88
+      ],
+      "start": 30.81,
+      "end": 30.96
+    },
+    {
+      "text": "has",
+      "centers": [
+        31.04
+      ],
+      "start": 30.96,
+      "end": 31.13
+    },
+    {
+      "text": "the",
+      "centers": [
+        31.22
+      ],
+      "start": 31.13,
+      "end": 31.41
+    },
+    {
+      "text": "smartest",
+      "centers": [
+        31.6
+      ],
+      "start": 31.41,
+      "end": 31.770000000000003
+    },
+    {
+      "text": "ChatBot,",
+      "centers": [
+        31.94,
+        32.12
+      ],
+      "start": 31.770000000000003,
+      "end": 32.31
+    },
+    {
+      "text": "it's",
+      "centers": [
+        32.5,
+        32.54
+      ],
+      "start": 32.31,
+      "end": 32.599999999999994
+    },
+    {
+      "text": "who",
+      "centers": [
+        32.66
+      ],
+      "start": 32.599999999999994,
+      "end": 32.72
+    },
+    {
+      "text": "gets",
+      "centers": [
+        32.78
+      ],
+      "start": 32.72,
+      "end": 32.89
+    },
+    {
+      "text": "to",
+      "centers": [
+        33.0
+      ],
+      "start": 32.89,
+      "end": 33.14
+    },
+    {
+      "text": "become",
+      "centers": [
+        33.28
+      ],
+      "start": 33.14,
+      "end": 33.36
+    },
+    {
+      "text": "your",
+      "centers": [
+        33.44
+      ],
+      "start": 33.36,
+      "end": 33.62
+    },
+    {
+      "text": "always-on",
+      "centers": [
+        33.8,
+        33.8,
+        34.08
+      ],
+      "start": 33.62,
+      "end": 34.239999999999995
+    },
+    {
+      "text": "digital",
+      "centers": [
+        34.4
+      ],
+      "start": 34.239999999999995,
+      "end": 34.519999999999996
+    },
+    {
+      "text": "co-worker.",
+      "centers": [
+        34.64,
+        34.78,
+        34.86
+      ],
+      "start": 34.519999999999996,
+      "end": 35.09
+    },
+    {
+      "text": "Would",
+      "centers": [
+        35.32
+      ],
+      "start": 35.09,
+      "end": 35.39
+    },
+    {
+      "text": "you",
+      "centers": [
+        35.46
+      ],
+      "start": 35.39,
+      "end": 35.519999999999996
+    },
+    {
+      "text": "give",
+      "centers": [
+        35.58
+      ],
+      "start": 35.519999999999996,
+      "end": 35.65
+    },
+    {
+      "text": "one",
+      "centers": [
+        35.72
+      ],
+      "start": 35.65,
+      "end": 35.79
+    },
+    {
+      "text": "the",
+      "centers": [
+        35.86
+      ],
+      "start": 35.79,
+      "end": 35.97
+    },
+    {
+      "text": "keys?",
+      "centers": [
+        36.08
+      ],
+      "start": 35.97,
+      "end": 36.199999999999996
+    }
+  ]
+}

@@ -1,0 +1,633 @@
+{
+  "coverage": 1.0,
+  "merged_token_groups": [
+    {
+      "script_indices": [
+        6
+      ],
+      "script_words": [
+        "coworker"
+      ],
+      "heard_tokens": [
+        "co",
+        "worker"
+      ],
+      "start": 2.29,
+      "end": 2.71,
+      "precision": "shared measured ASR token interval"
+    },
+    {
+      "script_indices": [
+        119
+      ],
+      "script_words": [
+        "coworker"
+      ],
+      "heard_tokens": [
+        "co",
+        "worker"
+      ],
+      "start": 34.519999999999996,
+      "end": 35.09,
+      "precision": "shared measured ASR token interval"
+    }
+  ],
+  "script_words": [
+    "openai",
+    "just",
+    "gave",
+    "chatgpt",
+    "a",
+    "tiny",
+    "coworker",
+    "with",
+    "its",
+    "own",
+    "computer",
+    "and",
+    "it",
+    "doesn't",
+    "clock",
+    "out",
+    "they're",
+    "called",
+    "dots",
+    "instead",
+    "of",
+    "living",
+    "inside",
+    "one",
+    "chat",
+    "bubble",
+    "a",
+    "dot",
+    "can",
+    "connect",
+    "to",
+    "your",
+    "apps",
+    "use",
+    "its",
+    "own",
+    "cloud",
+    "computer",
+    "and",
+    "keep",
+    "chewing",
+    "through",
+    "a",
+    "multi",
+    "step",
+    "job",
+    "in",
+    "the",
+    "background",
+    "openai",
+    "is",
+    "pitching",
+    "them",
+    "for",
+    "real",
+    "work",
+    "and",
+    "personal",
+    "errands",
+    "with",
+    "specialist",
+    "dots",
+    "for",
+    "companies",
+    "and",
+    "teams",
+    "of",
+    "dots",
+    "planned",
+    "later",
+    "but",
+    "here's",
+    "the",
+    "catch",
+    "sensitive",
+    "actions",
+    "can",
+    "still",
+    "need",
+    "your",
+    "approval",
+    "and",
+    "right",
+    "now",
+    "dots",
+    "require",
+    "an",
+    "eligible",
+    "paid",
+    "chatgpt",
+    "plan",
+    "while",
+    "meta's",
+    "muse",
+    "offers",
+    "a",
+    "free",
+    "tier",
+    "so",
+    "the",
+    "next",
+    "ai",
+    "race",
+    "isn't",
+    "just",
+    "who",
+    "has",
+    "the",
+    "smartest",
+    "chatbot",
+    "it's",
+    "who",
+    "gets",
+    "to",
+    "become",
+    "your",
+    "always",
+    "on",
+    "digital",
+    "coworker",
+    "would",
+    "you",
+    "give",
+    "one",
+    "the",
+    "keys"
+  ],
+  "matched_script_indices": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    29,
+    30,
+    31,
+    32,
+    33,
+    34,
+    35,
+    36,
+    37,
+    38,
+    39,
+    40,
+    41,
+    42,
+    43,
+    44,
+    45,
+    46,
+    47,
+    48,
+    49,
+    50,
+    51,
+    52,
+    53,
+    54,
+    55,
+    56,
+    57,
+    58,
+    59,
+    60,
+    61,
+    62,
+    63,
+    64,
+    65,
+    66,
+    67,
+    68,
+    69,
+    70,
+    71,
+    72,
+    73,
+    74,
+    75,
+    76,
+    77,
+    78,
+    79,
+    80,
+    81,
+    82,
+    83,
+    84,
+    85,
+    86,
+    87,
+    88,
+    89,
+    90,
+    91,
+    92,
+    93,
+    94,
+    95,
+    96,
+    97,
+    98,
+    99,
+    100,
+    101,
+    102,
+    103,
+    104,
+    105,
+    106,
+    107,
+    108,
+    109,
+    110,
+    111,
+    112,
+    113,
+    114,
+    115,
+    116,
+    117,
+    118,
+    119,
+    120,
+    121,
+    122,
+    123,
+    124,
+    125
+  ],
+  "beat_anchors": [
+    {
+      "id": "b01",
+      "start": 0,
+      "actions": [
+        {
+          "action": {
+            "kind": "requested:dots-cloud-seat-v1",
+            "cue": "its own computer",
+            "requires": [
+              "dot-token",
+              "cloud-desk",
+              "cloud-desk token-seat contact anchor"
+            ],
+            "produces": [
+              "Dot seated on a visibly separate cloud computer"
+            ]
+          },
+          "time": 2.88,
+          "script_word_index": 8,
+          "heard_word": "its"
+        },
+        {
+          "action": {
+            "kind": "requested:dots-ribbon-advance-v1",
+            "cue": "it doesn\u2019t clock out.",
+            "requires": [
+              "cloud-desk",
+              "cloud-desk ribbon-entry anchor"
+            ],
+            "produces": [
+              "Assigned-work ribbon advances across the day/night change"
+            ]
+          },
+          "time": 3.98,
+          "script_word_index": 12,
+          "heard_word": "it"
+        }
+      ],
+      "end": 4.87
+    },
+    {
+      "id": "b02",
+      "start": 4.87,
+      "actions": [
+        {
+          "action": {
+            "kind": "requested:dots-cloud-seat-v1",
+            "cue": "called Dots.",
+            "requires": [
+              "dot-token",
+              "cloud-desk",
+              "cloud-desk token-seat contact anchor"
+            ],
+            "produces": [
+              "Named token exposed without changing identity"
+            ]
+          },
+          "time": 5.19,
+          "script_word_index": 17,
+          "heard_word": "called"
+        }
+      ],
+      "end": 5.9
+    },
+    {
+      "id": "b03",
+      "start": 5.9,
+      "actions": [
+        {
+          "action": {
+            "kind": "requested:dots-route-connect-v1",
+            "cue": "connect to your apps,",
+            "requires": [
+              "dot-token",
+              "route-dock",
+              "route-dock app-socket mouths and connector endpoint anchors"
+            ],
+            "produces": [
+              "Chat enclosure opened",
+              "Three visibly seated app connections"
+            ]
+          },
+          "time": 8.24,
+          "script_word_index": 29,
+          "heard_word": "connect"
+        }
+      ],
+      "end": 8.98
+    },
+    {
+      "id": "b04",
+      "start": 8.98,
+      "actions": [
+        {
+          "action": {
+            "kind": "requested:dots-route-connect-v1",
+            "cue": "own cloud computer,",
+            "requires": [
+              "dot-token",
+              "route-dock",
+              "route-dock cloud-seat anchor"
+            ],
+            "produces": [
+              "Dot seated on the separate cloud-computer shelf"
+            ]
+          },
+          "time": 9.36,
+          "script_word_index": 35,
+          "heard_word": "own"
+        }
+      ],
+      "end": 10.17
+    },
+    {
+      "id": "b05",
+      "start": 10.17,
+      "actions": [
+        {
+          "action": {
+            "kind": "requested:dots-ribbon-advance-v1",
+            "cue": "multi-step job in the background.",
+            "requires": [
+              "dot-token",
+              "job-fold",
+              "job-fold ribbon-feed, step-stop and draft-exit anchors"
+            ],
+            "produces": [
+              "Ordered assignment steps traversed",
+              "Draft retained for review"
+            ]
+          },
+          "time": 11.23,
+          "script_word_index": 43,
+          "heard_word": "multi"
+        }
+      ],
+      "end": 13.02
+    },
+    {
+      "id": "b06",
+      "start": 13.02,
+      "actions": [
+        {
+          "action": {
+            "kind": "requested:dots-folio-reveal-v1",
+            "cue": "real work and personal errands,",
+            "requires": [
+              "dot-token",
+              "preview-folio",
+              "preview-folio page-hinge and token-rest anchors"
+            ],
+            "produces": [
+              "Present-use work and personal leaves exposed"
+            ]
+          },
+          "time": 14.8,
+          "script_word_index": 54,
+          "heard_word": "real"
+        }
+      ],
+      "end": 16.25
+    },
+    {
+      "id": "b07",
+      "start": 16.25,
+      "actions": [
+        {
+          "action": {
+            "kind": "requested:dots-folio-reveal-v1",
+            "cue": "specialist Dots for companies,",
+            "requires": [
+              "preview-folio",
+              "preview-folio page-hinge anchors"
+            ],
+            "produces": [
+              "Specialist layer visible behind persistent PREVIEW veil"
+            ]
+          },
+          "time": 16.57,
+          "script_word_index": 60,
+          "heard_word": "specialist"
+        },
+        {
+          "action": {
+            "kind": "requested:dots-folio-reveal-v1",
+            "cue": "teams of Dots planned later.",
+            "requires": [
+              "preview-folio",
+              "preview-folio unopened team-fold anchor"
+            ],
+            "produces": [
+              "Empty team slots visible under persistent PLANNED fold"
+            ]
+          },
+          "time": 18.26,
+          "script_word_index": 65,
+          "heard_word": "teams"
+        }
+      ],
+      "end": 19.81
+    },
+    {
+      "id": "b08",
+      "start": 19.81,
+      "actions": [
+        {
+          "action": {
+            "kind": "requested:dots-permission-stop-v1",
+            "cue": "need your approval,",
+            "requires": [
+              "dot-token",
+              "permission-latch",
+              "permission-latch slip-stop and shutter-edge anchors"
+            ],
+            "produces": [
+              "Sensitive action retained pending",
+              "Key retained on the person's side"
+            ]
+          },
+          "time": 22.35,
+          "script_word_index": 78,
+          "heard_word": "need"
+        }
+      ],
+      "end": 23.11
+    },
+    {
+      "id": "b09",
+      "start": 23.11,
+      "actions": [
+        {
+          "action": {
+            "kind": "requested:dots-access-compare-v1",
+            "cue": "eligible paid ChatGPT plan,",
+            "requires": [
+              "dot-token",
+              "access-ledges",
+              "access-ledges ticket-slot anchor"
+            ],
+            "produces": [
+              "Dots entrance visibly requires an eligible paid-plan ticket"
+            ]
+          },
+          "time": 24.85,
+          "script_word_index": 87,
+          "heard_word": "eligible"
+        },
+        {
+          "action": {
+            "kind": "requested:dots-access-compare-v1",
+            "cue": "Muse offers a free tier.",
+            "requires": [
+              "access-ledges",
+              "access-ledges free-tier landing anchor"
+            ],
+            "produces": [
+              "Muse free-tier entrance exposed",
+              "Subscription extras remain distinct"
+            ]
+          },
+          "time": 27.46,
+          "script_word_index": 93,
+          "heard_word": "muse"
+        }
+      ],
+      "end": 28.83
+    },
+    {
+      "id": "b10",
+      "start": 28.83,
+      "actions": [
+        {
+          "action": {
+            "kind": "requested:dots-workplane-shift-v1",
+            "cue": "smartest chatbot.",
+            "requires": [
+              "coworker-shift",
+              "coworker-shift pedestal-hinge anchor"
+            ],
+            "produces": [
+              "Answer pedestal folded into a broader working surface"
+            ]
+          },
+          "time": 31.41,
+          "script_word_index": 108,
+          "heard_word": "smartest"
+        }
+      ],
+      "end": 32.31
+    },
+    {
+      "id": "b11",
+      "start": 32.31,
+      "actions": [
+        {
+          "action": {
+            "kind": "requested:dots-workplane-shift-v1",
+            "cue": "always-on digital coworker.",
+            "requires": [
+              "dot-token",
+              "coworker-shift",
+              "coworker-shift token-seat, task-rest and loop-track anchors"
+            ],
+            "produces": [
+              "Independent Dot workstation occupied",
+              "Assigned draft work continues across the day/night change"
+            ]
+          },
+          "time": 33.62,
+          "script_word_index": 116,
+          "heard_word": "always"
+        }
+      ],
+      "end": 35.09
+    },
+    {
+      "id": "b12",
+      "start": 35.09,
+      "actions": [
+        {
+          "action": {
+            "kind": "requested:dots-human-key-offer-v1",
+            "cue": "give one the keys?",
+            "requires": [
+              "dot-token",
+              "permission-latch",
+              "permission-latch palm-rest, key-contact and shutter-edge anchors"
+            ],
+            "produces": [
+              "Key offered but retained by the person",
+              "Closed shutter and untransferred access"
+            ]
+          },
+          "time": 35.52,
+          "script_word_index": 122,
+          "heard_word": "give"
+        }
+      ],
+      "end": 37.266666666666666
+    }
+  ]
+}

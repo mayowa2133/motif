@@ -1,0 +1,25 @@
+{
+  "setup": "s06",
+  "start": 23.11,
+  "duration": 5.719999999999999,
+  "rule": "A required eligible-plan ticket entrance is compared with an open free-tier entrance; additional subscriptions remain separate.",
+  "recipes": [
+    "cursor-drag: matched payload/contact transforms",
+    "press-release-spring: caused local material settle",
+    "viewport-change: token close view in same setup"
+  ],
+  "temporal_events": [
+    {
+      "kind": "landing",
+      "time": 27.01
+    },
+    {
+      "kind": "contact",
+      "time": 27.560000000000002
+    }
+  ],
+  "exit": {
+    "kind": "hard-cut",
+    "reason": "The editorial implication needs a change of working relationship, not a winner emerging from the access comparison."
+  }
+}

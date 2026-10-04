@@ -1,0 +1,234 @@
+{
+  "argv": [
+    "/Applications/ChatGPT.app/Contents/Resources/codex-cli/CodexCLI.app/Contents/MacOS/codex",
+    "exec",
+    "--ignore-user-config",
+    "--ephemeral",
+    "--skip-git-repo-check",
+    "--sandbox",
+    "read-only",
+    "--json",
+    "--color",
+    "never",
+    "--output-schema",
+    "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-reference-calibrated/reference-gates/concept/concept-critic-output-schema.json",
+    "-o",
+    "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-reference-calibrated/reference-gates/concept/concept-critic.json",
+    "-c",
+    "approval_policy=\"never\"",
+    "-c",
+    "model_reasoning_effort=\"medium\"",
+    "--model",
+    "gpt-6.1-sol",
+    "-i",
+    "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-reference-calibrated/review/concepts/contact-1.png",
+    "-i",
+    "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-reference-calibrated/review/concepts/contact-2.png",
+    "-i",
+    "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-reference-calibrated/review/concepts/s02-state-compositions.png",
+    "-i",
+    "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-reference-calibrated/reference-calibration/evidence/Dd2HMwIy6D3-s14/representative.jpg",
+    "-i",
+    "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-reference-calibrated/reference-calibration/evidence/Dd2HMwIy6D3-s14/ordered.jpg",
+    "-i",
+    "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-reference-calibrated/reference-calibration/evidence/Dd2HMwIy6D3-s14/dense.jpg",
+    "-i",
+    "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-reference-calibrated/reference-calibration/evidence/Dd45WmVPOfQ-s05/representative.jpg",
+    "-i",
+    "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-reference-calibrated/reference-calibration/evidence/Dd45WmVPOfQ-s05/ordered.jpg",
+    "-i",
+    "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-reference-calibrated/reference-calibration/evidence/Dd45WmVPOfQ-s05/dense.jpg",
+    "-i",
+    "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-reference-calibrated/reference-calibration/evidence/Dd2UAqOvDoO-s01/representative.jpg",
+    "-i",
+    "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-reference-calibrated/reference-calibration/evidence/Dd2UAqOvDoO-s01/ordered.jpg",
+    "-i",
+    "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-reference-calibrated/reference-calibration/evidence/Dd2UAqOvDoO-s01/dense.jpg",
+    "-i",
+    "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-reference-calibrated/reference-calibration/evidence/Dd4oMBpyEq_-s07/representative.jpg",
+    "-i",
+    "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-reference-calibrated/reference-calibration/evidence/Dd4oMBpyEq_-s07/ordered.jpg",
+    "-i",
+    "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-reference-calibrated/reference-calibration/evidence/Dd4oMBpyEq_-s07/dense.jpg",
+    "-i",
+    "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-reference-calibrated/reference-calibration/evidence/Dd2UAqOvDoO-s05/representative.jpg",
+    "-i",
+    "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-reference-calibrated/reference-calibration/evidence/Dd2UAqOvDoO-s05/ordered.jpg",
+    "-i",
+    "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-reference-calibrated/reference-calibration/evidence/Dd2UAqOvDoO-s05/dense.jpg",
+    "-i",
+    "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-reference-calibrated/reference-calibration/evidence/Dd4Le3YhCQt-s05/representative.jpg",
+    "-i",
+    "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-reference-calibrated/reference-calibration/evidence/Dd4Le3YhCQt-s05/ordered.jpg",
+    "-i",
+    "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-reference-calibrated/reference-calibration/evidence/Dd4Le3YhCQt-s05/dense.jpg",
+    "-i",
+    "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-reference-calibrated/reference-calibration/evidence/Dd2uCwTB6II-s02/representative.jpg",
+    "-i",
+    "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-reference-calibrated/reference-calibration/evidence/Dd2uCwTB6II-s02/ordered.jpg",
+    "-i",
+    "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-reference-calibrated/reference-calibration/evidence/Dd2uCwTB6II-s02/dense.jpg",
+    "-i",
+    "/Users/mayowaadesanya/Projects/motif/quality/gold/menu-landing/still.png",
+    "-i",
+    "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-reference-calibrated/reference-calibration/internal-gold/menu-landing/menu-landing-ordered.png",
+    "-i",
+    "/Users/mayowaadesanya/Projects/motif/quality/gold/transcription/still.png",
+    "-i",
+    "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-reference-calibrated/reference-calibration/internal-gold/transcription/transcription-ordered.png",
+    "-i",
+    "/Users/mayowaadesanya/Projects/motif/quality/gold/audiobook/still.png",
+    "-i",
+    "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-reference-calibrated/reference-calibration/internal-gold/audiobook/audiobook-ordered.png",
+    "-"
+  ],
+  "exit_code": 0,
+  "input_sha256": "c9034ce9e955f74312d9690a8c5d85df6bd96305727e353bfc75445cbe0aee6c",
+  "output_schema_sha256": "77fb63e397253fddd626ab30e09f98319049e9530a14dc8af7cce19c16e9bf37",
+  "images": [
+    {
+      "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-reference-calibrated/review/concepts/contact-1.png",
+      "sha256": "5bd3e799e1786bb43ea7bf484c781a3da9bb8e63f89a94b69dc7196efa156cf0"
+    },
+    {
+      "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-reference-calibrated/review/concepts/contact-2.png",
+      "sha256": "cae466a9d7506fda29ce61f10792c8bf4863b46e7345f6777f5b71760b2f91f8"
+    },
+    {
+      "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-reference-calibrated/review/concepts/s02-state-compositions.png",
+      "sha256": "2542f989cd77dc4ca74b2d9a3c8018d10415e50df709dde6764275bcbe553d65"
+    },
+    {
+      "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-reference-calibrated/reference-calibration/evidence/Dd2HMwIy6D3-s14/representative.jpg",
+      "sha256": "8810696e4accda97c36f3d823cdfa99c0800938d15abc2062ee1a3db4645c862"
+    },
+    {
+      "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-reference-calibrated/reference-calibration/evidence/Dd2HMwIy6D3-s14/ordered.jpg",
+      "sha256": "32b0eff39a04e1111ced7401af876d4b920f7d6c5fb04471c2931e8ae505df8e"
+    },
+    {
+      "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-reference-calibrated/reference-calibration/evidence/Dd2HMwIy6D3-s14/dense.jpg",
+      "sha256": "83e4ed3fed19cd06b191aa94f0a7cb9d7f0d90c47200e9c9bb57a065a4691373"
+    },
+    {
+      "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-reference-calibrated/reference-calibration/evidence/Dd45WmVPOfQ-s05/representative.jpg",
+      "sha256": "2732a9772c9593680e9910fd76d572058079b1337628be9645b3fedbfc99e167"
+    },
+    {
+      "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-reference-calibrated/reference-calibration/evidence/Dd45WmVPOfQ-s05/ordered.jpg",
+      "sha256": "7628f84f88f2145c02813f2b58c1ded09c3fe2a0ae060188313712123914590c"
+    },
+    {
+      "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-reference-calibrated/reference-calibration/evidence/Dd45WmVPOfQ-s05/dense.jpg",
+      "sha256": "3b6501a413c8d04a3517a9ed3471044eeac8f2b88339b2e86aa6ead994eed66a"
+    },
+    {
+      "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-reference-calibrated/reference-calibration/evidence/Dd2UAqOvDoO-s01/representative.jpg",
+      "sha256": "11eebd2a6b07bd958cef3f3b164bc87bd87728c74c8a5172651fda89b0e1289f"
+    },
+    {
+      "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-reference-calibrated/reference-calibration/evidence/Dd2UAqOvDoO-s01/ordered.jpg",
+      "sha256": "ac458f36b5a5fe721adbc3138962317659b9bdaf293913953d87f931f6e8d213"
+    },
+    {
+      "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-reference-calibrated/reference-calibration/evidence/Dd2UAqOvDoO-s01/dense.jpg",
+      "sha256": "a41dea8cb86beaed34c94229d1128aeac5a05418a9acd8e30b652db9a26c7553"
+    },
+    {
+      "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-reference-calibrated/reference-calibration/evidence/Dd4oMBpyEq_-s07/representative.jpg",
+      "sha256": "d9b8903931b20ce75bcf1e238a510946854cf659b0583dea23cfaeded8fd809b"
+    },
+    {
+      "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-reference-calibrated/reference-calibration/evidence/Dd4oMBpyEq_-s07/ordered.jpg",
+      "sha256": "0ec465e309958089674a8ed03b9a944eb16dae2d8a109c06f360008d5ed0121a"
+    },
+    {
+      "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-reference-calibrated/reference-calibration/evidence/Dd4oMBpyEq_-s07/dense.jpg",
+      "sha256": "51a4e6fe4a9177cb4314239ff705287f5f0e26a2405a88cdf6d2d061dd7287fe"
+    },
+    {
+      "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-reference-calibrated/reference-calibration/evidence/Dd2UAqOvDoO-s05/representative.jpg",
+      "sha256": "411e374e3099b9f00949a61425fa7732ba59e793f934c7a97aff2d070639788a"
+    },
+    {
+      "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-reference-calibrated/reference-calibration/evidence/Dd2UAqOvDoO-s05/ordered.jpg",
+      "sha256": "82752e9c4ba80ef65500f0e6c4b2d33b803ff67b57be67e942b91dfdda4155e6"
+    },
+    {
+      "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-reference-calibrated/reference-calibration/evidence/Dd2UAqOvDoO-s05/dense.jpg",
+      "sha256": "7b493cb7d538f36b1982a98ac22a9c8ab8087e74cca36cde378f8b254f3bf519"
+    },
+    {
+      "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-reference-calibrated/reference-calibration/evidence/Dd4Le3YhCQt-s05/representative.jpg",
+      "sha256": "e8285c33c5b288cfc5a4e23b70a9f0c97ee90130d1770c1eb46b18a4e4c1154c"
+    },
+    {
+      "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-reference-calibrated/reference-calibration/evidence/Dd4Le3YhCQt-s05/ordered.jpg",
+      "sha256": "792c775e0b61dec0b0e0481ce10b5d14c893ad4729e74630c92d4a7fa22c4c0b"
+    },
+    {
+      "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-reference-calibrated/reference-calibration/evidence/Dd4Le3YhCQt-s05/dense.jpg",
+      "sha256": "dcd4534127981db61649666591096c6c41ca81348e43262f60f6e69b5e5ca27c"
+    },
+    {
+      "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-reference-calibrated/reference-calibration/evidence/Dd2uCwTB6II-s02/representative.jpg",
+      "sha256": "1debccbb3902a693e3f27ede19c38384513d975b442a933b85c0e2337f6764f4"
+    },
+    {
+      "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-reference-calibrated/reference-calibration/evidence/Dd2uCwTB6II-s02/ordered.jpg",
+      "sha256": "7071fb29a629cf9b810fe0995fc22d07311b73876276a22c26725060e1c2fcf2"
+    },
+    {
+      "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-reference-calibrated/reference-calibration/evidence/Dd2uCwTB6II-s02/dense.jpg",
+      "sha256": "d65580f14c307a58897770f307d43269719302d947602a1680a3eb723474ceba"
+    },
+    {
+      "file": "/Users/mayowaadesanya/Projects/motif/quality/gold/menu-landing/still.png",
+      "sha256": "83da8f8e9ba7e53dd57f0f2771be11aff1ff03ef0e17f40cb0372b8fbfd3b62c"
+    },
+    {
+      "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-reference-calibrated/reference-calibration/internal-gold/menu-landing/menu-landing-ordered.png",
+      "sha256": "f5d877f7923b06e9a895e21b85363784fa0ab2ab7f0353292af2948eee633a3a"
+    },
+    {
+      "file": "/Users/mayowaadesanya/Projects/motif/quality/gold/transcription/still.png",
+      "sha256": "b9ac98b1a996a298afcffd9fe560f8615e87df354611df732cab2086ed093716"
+    },
+    {
+      "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-reference-calibrated/reference-calibration/internal-gold/transcription/transcription-ordered.png",
+      "sha256": "a1125b9bba2721f62ea7a65534959cef64be89897448e75282886ad71da23c31"
+    },
+    {
+      "file": "/Users/mayowaadesanya/Projects/motif/quality/gold/audiobook/still.png",
+      "sha256": "760ce682dcb1990e00b595699dee4bc9f5908818269e855c3b23b6bccbeec575"
+    },
+    {
+      "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-reference-calibrated/reference-calibration/internal-gold/audiobook/audiobook-ordered.png",
+      "sha256": "ab7fd01ede92068fb9fd6d4cbd9415a9badd2c149e3ef1893606c9cffdf611fd"
+    }
+  ],
+  "configuration": {
+    "cli_path": "/Applications/ChatGPT.app/Contents/Resources/codex-cli/CodexCLI.app/Contents/MacOS/codex",
+    "cli_selection": "desktop-bundled CLI",
+    "backend": "codex-exec",
+    "execution": "self-contained command with live model planning",
+    "model": "gpt-6.1-sol",
+    "reasoning_effort": "medium",
+    "authentication_status": "Logged in using ChatGPT",
+    "cli_version": "codex-cli 0.159.0-alpha.12.1",
+    "sandbox": "read-only",
+    "ephemeral": true,
+    "tools_requested": false,
+    "default_model_if_unspecified": false,
+    "model_selection": "existing Codex configuration",
+    "hyperframes": "0.8.98",
+    "timeout_seconds": 1200
+  },
+  "started_at_utc": "2026-10-03T16:35:59.842386+00:00",
+  "completed_at_utc": "2026-10-03T16:39:18.493823+00:00",
+  "requested_model": "gpt-6.1-sol",
+  "resolved_model": null,
+  "resolved_model_note": "CLI event stream does not expose a separately resolved model identifier",
+  "saved_response_used": false,
+  "model_fallback_used": false
+}

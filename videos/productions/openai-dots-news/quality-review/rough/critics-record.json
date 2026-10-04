@@ -1,0 +1,23 @@
+{
+  "evidence_sha256": "fc8b64b32f2c802fdc62d4c3847f3ecd5dfc6fa6bf9507048917aeb6fee31407",
+  "images_sha256": "3d596e337a1a98cbb9f889255462efe24c4f9bd01fe911d5e78e3c7e95f9211d",
+  "gold_ids": [
+    "basement-completion",
+    "audiobook",
+    "recording"
+  ],
+  "invocations": [
+    "story-critic-invocation.json",
+    "visual-critic-invocation.json"
+  ],
+  "report_hashes": {
+    "story": "05dce78159ed24414a9aa596032ac1457a1f102e2be8595ac8dec7975deaa0d8",
+    "visual": "39417be6df2ab736f01750d67cb31eb377b318f296c46afc9d8d9e0dbd89ab1c"
+  },
+  "invocation_hashes": {
+    "story": "2da2567822d869f47e1a595637e3066a456b6b35e232c3bf1ea48cf6c0f32f8d",
+    "visual": "2ab262fd4a7862e411e2a3dba6e22b58dc867ab51dc6d528d715ce5b3652c9d0"
+  },
+  "scope": "ordered decoded native frames + full-rate pixel motion traces; CLI does not accept video",
+  "hierarchy_policy_sha256": "b920c5c706955efbf1fabd4dedb0d01a02c5b85b289f2658085c78201ac9c445"
+}

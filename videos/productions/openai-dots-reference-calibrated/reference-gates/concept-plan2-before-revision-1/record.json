@@ -1,0 +1,17 @@
+{
+  "status": "REVISE_ART_DIRECTION",
+  "blocked": [
+    "s02-connected-work: character-role",
+    "s02-connected-work: hero-scale",
+    "s02-connected-work: hierarchy",
+    "BLOCKING REFERENCE_STRUCTURE_GAP \u2014 s02-connected-work, dock/seat/draft concept states: the roughs retain nearly identical apparatus framing and Bot staging instead of expressing the calibrated succession of dominant joint, supported landing and developing brief. The docking joint is underscaled and participating contact silhouettes remain unclear. Recompose the focal states and supply readable supported contact poses before advancing. Selected external references: Dd2HMwIy6D3-s14, Dd45WmVPOfQ-s05, Dd4oMBpyEq_-s07.",
+    "global concept FAIL"
+  ],
+  "plan_sha256": "7951e23b688e1a9584389234d2be36f00158b7d32113a02af783f97f43263a88",
+  "calibration_record_sha256": "e3a7894c37034d4ccd434b7ffd1ed6f993c50677293d348d7ba047ae03123e17",
+  "evidence_path": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-reference-calibrated/concept-evidence.json",
+  "evidence_sha256": "b97adaadf31fbdf20ebff942489bb9eaee7e22e9d45431c5d6a6738fb1be9109",
+  "response_sha256": "67a8fcece56d0b762d3ee420f5835da1b7477e2b28436c403ebbbb797ead31ba",
+  "invocation_sha256": "a86c15b82df6fd55220efba7a27586c5d9d3530884c819e3f9ee72e10151a343",
+  "human_approval": false
+}

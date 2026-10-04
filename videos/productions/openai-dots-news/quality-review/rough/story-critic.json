@@ -1,0 +1,355 @@
+{
+  "role": "story",
+  "inspection_scope": "All twelve shots and complete film progression, using the supplied ordered frames, every intermediate frame in the consecutive event strips, native mobile stills, both caption modes and painted-motion observations. REPLAN required for the remaining staging failures.",
+  "gates": [
+    {
+      "gate": "story",
+      "status": "FAIL",
+      "evidence": "The film develops introduction, reach, work, qualifications and retained human choice. However, b05 does not retain the declared compressed assignment after processing."
+    },
+    {
+      "gate": "cause-effect",
+      "status": "FAIL",
+      "evidence": "Most approaches precede their results. In b10, vertical compression and appearing table parts substitute for the declared attached paper fold."
+    },
+    {
+      "gate": "focal-hierarchy",
+      "status": "PASS",
+      "evidence": "The current explanatory feature generally owns attention in both caption modes: token identity, app connections, cloud computer, ordered steps, use pockets, availability layers, permission boundary, access comparison and final withheld key."
+    },
+    {
+      "gate": "continuity",
+      "status": "FAIL",
+      "evidence": "Dot identity and the permission callback remain recognizable, and the closing workstation pays off the opening. Within b05, completed ribbon material disappears instead of persisting as compressed folds."
+    }
+  ],
+  "violations": [
+    {
+      "timestamp": 12.6,
+      "shot": "b05",
+      "gate": "story",
+      "observation": "By frames 378–390, the extended assignment has become three disconnected checked cards and a draft. The declared consequential after-state—processed folds compressed behind their stops—is absent in both caption modes.",
+      "gold_id": "audiobook",
+      "smallest_correction": "REPLAN the completion staging to retain each traversed ribbon segment as a visibly compressed fold beside its completed stop, preserving the ordered assignment through draft emergence."
+    },
+    {
+      "timestamp": 12.6,
+      "shot": "b05",
+      "gate": "continuity",
+      "observation": "Across the consecutive processing windows, cream connecting segments shorten and then vanish. Their material cannot be followed into the final completed arrangement.",
+      "gold_id": "audiobook",
+      "smallest_correction": "Retain recognizable scored ribbon material in the compressed after-state instead of removing completed segments."
+    },
+    {
+      "timestamp": 30.833333,
+      "shot": "b10",
+      "gate": "cause-effect",
+      "observation": "Frames 925–947 show the blue answer face and its printed content progressively squashed vertically while cream wings and support legs appear. The bottom remains near a common baseline, but no readable hinge rotation or attached wing unfolding establishes the declared physical transformation.",
+      "gold_id": "audiobook",
+      "smallest_correction": "REPLAN the transformation around an exposed bottom hinge: rotate the intact answer face into the work surface and unfold cream wings from visibly attached side edges."
+    }
+  ],
+  "sampling_limits": "No video playback or listening was performed. Consecutive event strips establish local ordering and visible attachment within their supplied windows; sparse overview frames do not establish every intervening pose. Pixel deltas establish painted change, not purposeful motion. Unprovided hierarchy-rubric contents and technical validation were not assessed.",
+  "shot_assessments": [
+    {
+      "shot": "b01",
+      "gates": [
+        {
+          "gate": "story",
+          "status": "PASS",
+          "evidence": "An edge-on second station unfolds separately from the cropped user computer; the token approaches its seat and work develops across the day/night change."
+        },
+        {
+          "gate": "cause-effect",
+          "status": "PASS",
+          "evidence": "Frames 92–98 retain Bot's tilted, gathered-arm anticipation; the open-mouth, raised-arm surprised silhouette appears at frame 99 after the declared landing."
+        },
+        {
+          "gate": "focal-hierarchy",
+          "status": "PASS",
+          "evidence": "The separate cloud station dominates above Bot, with the user computer remaining identifiable at left in both modes."
+        },
+        {
+          "gate": "continuity",
+          "status": "PASS",
+          "evidence": "The station, notched token and observer persist through unfolding, seating and the time-marker change."
+        }
+      ]
+    },
+    {
+      "shot": "b02",
+      "gates": [
+        {
+          "gate": "story",
+          "status": "PASS",
+          "evidence": "The obscuring rim clears the same token, exposing its DOT label and distinctive notch. Bot returns to a restrained observer posture."
+        },
+        {
+          "gate": "cause-effect",
+          "status": "PASS",
+          "evidence": "Frames 146–155 expose the token as the foreground rim lowers; naming reinforces that visible uncovering."
+        },
+        {
+          "gate": "focal-hierarchy",
+          "status": "PASS",
+          "evidence": "The enlarged token commands the detail view without captions; Bot remains secondary."
+        },
+        {
+          "gate": "continuity",
+          "status": "PASS",
+          "evidence": "The close framing preserves the established token, computer rim and scalloped base."
+        }
+      ]
+    },
+    {
+      "shot": "b03",
+      "gates": [
+        {
+          "gate": "story",
+          "status": "PASS",
+          "evidence": "The chat enclosure clears before three connections develop to distinct app cards. Isolation serves the declared containment-to-reach argument."
+        },
+        {
+          "gate": "cause-effect",
+          "status": "PASS",
+          "evidence": "The consecutive windows show moving cable ends and plugs approaching exposed bottom sockets before connected socket states develop."
+        },
+        {
+          "gate": "focal-hierarchy",
+          "status": "PASS",
+          "evidence": "App pictograms remain unobscured, while exposed leads and sockets make the connection change readable in both modes."
+        },
+        {
+          "gate": "continuity",
+          "status": "PASS",
+          "evidence": "The hub and unequal app positions persist throughout connector growth and seating."
+        }
+      ]
+    },
+    {
+      "shot": "b04",
+      "gates": [
+        {
+          "gate": "story",
+          "status": "PASS",
+          "evidence": "A separate cloud computer enters above the retained app network, and the token relocates to its exposed seat."
+        },
+        {
+          "gate": "cause-effect",
+          "status": "PASS",
+          "evidence": "The shelf appears before the token completes its approach; frames 287–299 show its movement into the recess and subsequent settling."
+        },
+        {
+          "gate": "focal-hierarchy",
+          "status": "PASS",
+          "evidence": "The upper computer is the sole major new feature; lower connections preserve context without taking over."
+        },
+        {
+          "gate": "continuity",
+          "status": "PASS",
+          "evidence": "The existing app network remains identifiable as the same notched token moves to the computer."
+        }
+      ]
+    },
+    {
+      "shot": "b05",
+      "gates": [
+        {
+          "gate": "story",
+          "status": "FAIL",
+          "evidence": "Steps complete sequentially and an unsent draft emerges, but the declared compressed-fold after-state is missing."
+        },
+        {
+          "gate": "cause-effect",
+          "status": "PASS",
+          "evidence": "Each incoming sheet precedes its completed check; the draft remains absent through the third arrival and emerges afterward, while the separate foreground leaf turns."
+        },
+        {
+          "gate": "focal-hierarchy",
+          "status": "PASS",
+          "evidence": "The diagonal processing path remains readable behind the cropped foreground activity; the final draft is distinguishable at mobile size."
+        },
+        {
+          "gate": "continuity",
+          "status": "FAIL",
+          "evidence": "Completed connecting segments disappear rather than accumulating as recognizable compressed assignment material."
+        }
+      ]
+    },
+    {
+      "shot": "b06",
+      "gates": [
+        {
+          "gate": "story",
+          "status": "PASS",
+          "evidence": "The folio opens into distinct work and personal leaves; research slips collect on the left and planning rows assemble on the right."
+        },
+        {
+          "gate": "cause-effect",
+          "status": "PASS",
+          "evidence": "The consecutive collection windows show descending papers reaching the exposed retaining area before the assembled pocket state; personal rows follow."
+        },
+        {
+          "gate": "focal-hierarchy",
+          "status": "PASS",
+          "evidence": "Large folder and calendar pictograms distinguish the two proposed use contexts without narration captions."
+        },
+        {
+          "gate": "continuity",
+          "status": "PASS",
+          "evidence": "The broad folio backing and unequal leaves remain identifiable through opening and assembly."
+        }
+      ]
+    },
+    {
+      "shot": "b07",
+      "gates": [
+        {
+          "gate": "story",
+          "status": "PASS",
+          "evidence": "Company-document inspection develops behind a persistent preview layer, followed by a separately marked planned arrangement with empty sockets."
+        },
+        {
+          "gate": "cause-effect",
+          "status": "PASS",
+          "evidence": "The reader traverses the raw document before the proposed output appears and its checks develop. The team layer follows the specialist demonstration."
+        },
+        {
+          "gate": "focal-hierarchy",
+          "status": "PASS",
+          "evidence": "The enlarged inspection relation remains readable through the outlined translucent veil; the planned fold becomes primary afterward."
+        },
+        {
+          "gate": "continuity",
+          "status": "PASS",
+          "evidence": "The folio persists as prior leaves are replaced. PREVIEW and PLANNED remain local artwork in the caption-free evidence."
+        }
+      ]
+    },
+    {
+      "shot": "b08",
+      "gates": [
+        {
+          "gate": "story",
+          "status": "PASS",
+          "evidence": "A proposed envelope reaches a closed boundary and remains pending; a second proposal queues. The person retains the subordinate key."
+        },
+        {
+          "gate": "cause-effect",
+          "status": "PASS",
+          "evidence": "Frames 664–670 show the remaining gap closing before the slip meets the shutter; subsequent frames retain the stopped proposal."
+        },
+        {
+          "gate": "focal-hierarchy",
+          "status": "PASS",
+          "evidence": "The large slip, tray and closed shutter command the approval detail. The smaller human-held key does not displace that explanation."
+        },
+        {
+          "gate": "continuity",
+          "status": "PASS",
+          "evidence": "The closed shutter, waiting Dot and retained hand-key relationship persist through the stop and queue."
+        }
+      ]
+    },
+    {
+      "shot": "b09",
+      "gates": [
+        {
+          "gate": "story",
+          "status": "PASS",
+          "evidence": "A retained eligibility ticket, exposed receiver and blocked Dots entrance contrast with an opening Muse entrance and separate extras tab."
+        },
+        {
+          "gate": "cause-effect",
+          "status": "PASS",
+          "evidence": "The matching ticket/receiver relationship is established before the Muse cover clears. Labels qualify visible access geometry."
+        },
+        {
+          "gate": "focal-hierarchy",
+          "status": "PASS",
+          "evidence": "The receiver aperture remains exposed beneath the offset ticket; the later free entrance is distinct from the secondary extras tab."
+        },
+        {
+          "gate": "continuity",
+          "status": "PASS",
+          "evidence": "Unequal ledges and their product identities persist without a winner, passage or capability comparison."
+        }
+      ]
+    },
+    {
+      "shot": "b10",
+      "gates": [
+        {
+          "gate": "story",
+          "status": "PASS",
+          "evidence": "A narrow question/answer silhouette becomes part of a wider work surface, visibly broadening the established arrangement."
+        },
+        {
+          "gate": "cause-effect",
+          "status": "FAIL",
+          "evidence": "Vertical squashing and appearing table components do not establish the declared hinged fold and directly attached wing expansion."
+        },
+        {
+          "gate": "focal-hierarchy",
+          "status": "PASS",
+          "evidence": "The answer panel and subsequent horizontal spread remain the sole explanatory action in the isolated frame."
+        },
+        {
+          "gate": "continuity",
+          "status": "PASS",
+          "evidence": "The original blue face, question mark and answer marks remain recognizable in the left portion of the resulting surface."
+        }
+      ]
+    },
+    {
+      "shot": "b11",
+      "gates": [
+        {
+          "gate": "story",
+          "status": "PASS",
+          "evidence": "The separate Dot workstation joins the user's task position, and display work continues across the sun/moon change, paying off the opening."
+        },
+        {
+          "gate": "cause-effect",
+          "status": "PASS",
+          "evidence": "The workstation is established before the token completes its descent into the exposed recess; ongoing work follows occupation."
+        },
+        {
+          "gate": "focal-hierarchy",
+          "status": "PASS",
+          "evidence": "The two work positions and time marker communicate the sustained relationship without captions."
+        },
+        {
+          "gate": "continuity",
+          "status": "PASS",
+          "evidence": "The shared surface continues from b10; the token and scalloped independent station recall b01."
+        }
+      ]
+    },
+    {
+      "shot": "b12",
+      "gates": [
+        {
+          "gate": "story",
+          "status": "PASS",
+          "evidence": "The retained key approaches but stops short of the closed lock. The concluding pause serves an unresolved human decision."
+        },
+        {
+          "gate": "cause-effect",
+          "status": "PASS",
+          "evidence": "The hand and key move together, retain a visible gap throughout the stop window and cause no insertion, opening or grant."
+        },
+        {
+          "gate": "focal-hierarchy",
+          "status": "PASS",
+          "evidence": "The enlarged hand-key relationship and lock gap own the final frame; the waiting Dot remains secondary."
+        },
+        {
+          "gate": "continuity",
+          "status": "PASS",
+          "evidence": "The same retained key, closed shutter and waiting token return from the approval caveat. No transfer is implied."
+        }
+      ]
+    }
+  ]
+}

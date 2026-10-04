@@ -1,0 +1,16 @@
+{
+  "duration": 37.266666666666666,
+  "voice_duration": 36.666,
+  "setups": 8,
+  "beats": 12,
+  "source_sha256": {
+    "source/build.py": "51d43317fdaad99ea8b2967d62429548a6082b10ed324ede53c30cb0e6b3f83e",
+    "source/worlds.py": "66f680baeac302adf1f8084ad814112bd21a8fc8e1d4eda3988cbd9bad69194a",
+    "source/common.py": "939e743b6feef6438e44e4b263e7dffd18045f78594d691e97e741edc4d74aac"
+  },
+  "plan_sha256": "a693d9dc67fdcb17f619f781629b64edff46e5ae5b3c62513974f62cdcdd6316",
+  "events_sha256": "db251ecf6570a412daf847e50831a22cf0bbb81ec0a55a9ede76042ce099fbbd",
+  "generation": "Live model data plan; agent-assisted finite artwork/choreography; shared Motif runtime, alignment, quality gates",
+  "art_phase": "provisional rough",
+  "human_approved": false
+}

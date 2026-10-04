@@ -1,0 +1,56 @@
+{
+  "scope": "Production-scoped authored anchor map; static geometry resolved, choreography pending concept/direction/opening gates. Not canonical selectors.",
+  "coordinates": {
+    "width": 720,
+    "height": 1280,
+    "unit": "authoring-px"
+  },
+  "anchors": {
+    "wingPush": [
+      190,
+      836
+    ],
+    "couplingLeading": [
+      413,
+      697
+    ],
+    "couplingReceiver": [
+      413,
+      697
+    ],
+    "carrierTrailing": [
+      303,
+      795
+    ],
+    "carrierStop": [
+      557,
+      710
+    ],
+    "nextStep": [
+      453,
+      827
+    ],
+    "identityRecess": [
+      603,
+      572
+    ],
+    "sleeveHinge": [
+      60,
+      983
+    ]
+  },
+  "ownership": {
+    "palm": "Inverse of root + local lean transforms against actual transformed contacted edge; use canonical open hand",
+    "carrier": "One retained raised corner and teal notch through all work states",
+    "coupling": "Brief crossing prohibited until actual faces meet",
+    "folds": "Attached hinge faces retain material panels; no vanished input or flat squash masquerading as fold",
+    "sleeve": "Foreground only; may not cover the carrier/control/working hand"
+  },
+  "phasePrerequisites": [
+    "dock before cross",
+    "seat before develop",
+    "draft identity before foreground close",
+    "pending fold advances after foreground closes"
+  ],
+  "status": "review"
+}

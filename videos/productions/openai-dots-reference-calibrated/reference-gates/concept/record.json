@@ -1,0 +1,18 @@
+{
+  "status": "REVISE_ART_DIRECTION",
+  "blocked": [
+    "s02-connected-work: character-role",
+    "s02-connected-work: hero-scale",
+    "s02-connected-work: hierarchy",
+    "REFERENCE_STRUCTURE_GAP \u2014 s02-connected-work, b02\u2013b04: the planned causal deck architecture is stronger than its supplied rough evidence. Docking faces and gap are not clearly dominant, and Bot's operative contacts remain ambiguous. Revise the dock composition and provide supported contact silhouettes for docking, seating and step pressing before advancing. Selected external references: Dd2HMwIy6D3-s14, Dd45WmVPOfQ-s05, Dd4oMBpyEq_-s07.",
+    "global concept FAIL"
+  ],
+  "plan_sha256": "7951e23b688e1a9584389234d2be36f00158b7d32113a02af783f97f43263a88",
+  "calibration_record_sha256": "e3a7894c37034d4ccd434b7ffd1ed6f993c50677293d348d7ba047ae03123e17",
+  "evidence_path": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-reference-calibrated/concept-evidence.json",
+  "evidence_sha256": "1c3830d41cd4354c776d37d8a2ab6e3161f9704d05ebe8f223417f813e2dddb9",
+  "response_sha256": "cce94982f849a38823758e14ef897422a9e5a8a4f3ca7c8260daaae8de8baeed",
+  "invocation_sha256": "a2fb79ba71f4f622f72470032f55e6300ffd63c15b44be813be83f1899181b05",
+  "human_approval": false,
+  "recovery": "Validation of the original live response after post-call Path normalization error; no replacement/replay/grade changes"
+}

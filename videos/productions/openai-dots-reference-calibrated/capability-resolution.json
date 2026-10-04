@@ -1,0 +1,80 @@
+{
+  "scope": "Production-scoped agent-assisted artwork and planned finite choreography; not evidence of autonomous artwork generation or canonical promotion.",
+  "reuse": [
+    "Locked Motif Bot v1 parts via build_motif_bot.assemble_pose/motif_performance",
+    "Existing MotifEventEngine.compileFrames",
+    "Existing voice alignment/captions/quality gates",
+    "Approved local fonts and paper materials"
+  ],
+  "additions": [
+    {
+      "setup": "s01-agency",
+      "visual_rule": "An assignment unfolds into a distinct cloud workspace; closing the user side does not close assigned work.",
+      "execution": "Production-authored modular SVG; timed adapter implementation follows concept and direction approval."
+    },
+    {
+      "setup": "s02-connected-work",
+      "visual_rule": "Docking creates a continuous supported passage onto one cloud-computer task deck; the same seated brief develops there while the separate user-chat foreground can close.",
+      "execution": "Production-authored modular SVG; timed adapter implementation follows concept and direction approval."
+    },
+    {
+      "setup": "s03-use-pitch",
+      "visual_rule": "Task-category material replaces the previous proposal at one shared fitting; no external action executes.",
+      "execution": "Production-authored modular SVG; timed adapter implementation follows concept and direction approval."
+    },
+    {
+      "setup": "s04-specialists",
+      "visual_rule": "Expose compatible task geometry beneath a permanently attached PREVIEW band.",
+      "execution": "Production-authored modular SVG; timed adapter implementation follows concept and direction approval."
+    },
+    {
+      "setup": "s05-planned-teams",
+      "visual_rule": "A proposal can become visible while its operational joint remains sealed.",
+      "execution": "Production-authored modular SVG; timed adapter implementation follows concept and direction approval."
+    },
+    {
+      "setup": "s06-permission",
+      "visual_rule": "Sensitive material stops before its outgoing boundary; approval cannot be inferred from progress.",
+      "execution": "Production-authored modular SVG; timed adapter implementation follows concept and direction approval."
+    },
+    {
+      "setup": "s07-commercial-access",
+      "visual_rule": "Equal-scale admission leaves reveal unequal access requirements sequentially.",
+      "execution": "Production-authored modular SVG; timed adapter implementation follows concept and direction approval."
+    },
+    {
+      "setup": "s08-editorial-reframe",
+      "visual_rule": "A retained conversation face gives way to the deeper work dimension of the same editorial object.",
+      "execution": "Production-authored modular SVG; timed adapter implementation follows concept and direction approval."
+    },
+    {
+      "setup": "s09-unresolved-keys",
+      "visual_rule": "A user-side key can approach an agent receiving recess but must remain separated until a human decides.",
+      "execution": "Production-authored modular SVG; timed adapter implementation follows concept and direction approval."
+    }
+  ],
+  "sources": [
+    {
+      "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-reference-calibrated/source/common.py",
+      "sha256": "939e743b6feef6438e44e4b263e7dffd18045f78594d691e97e741edc4d74aac"
+    },
+    {
+      "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-reference-calibrated/source/art.py",
+      "sha256": "1e0b83f9c93fe067d55835920d959e10a382d6b09eab081a0adddc5c88848536"
+    },
+    {
+      "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-reference-calibrated/source/deck_art.py",
+      "sha256": "3757e7bb4689b66ff7ab1d0c16557d47f25df01f103b7e1e72fdf9aadbc34160"
+    },
+    {
+      "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-reference-calibrated/source/concepts.py",
+      "sha256": "d12d6b4d5f866bab6c7730c4abeb799819d9b99d0e6c7573a8a390e271057507"
+    },
+    {
+      "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-reference-calibrated/source/export_assets.py",
+      "sha256": "ba6714908c06cdc069131c090a51764071ccf666986925cdb91a1fc2a6f5f51a"
+    }
+  ],
+  "unsupported": "No novel adapter is silently treated as an existing registered selector. No external reference artwork is used.",
+  "pose_reuse": "Existing canonical alternate_view(left-side) head, mirrored for leftward work; existing torso/arms/hands/feet with composed contact and planted sole transforms. No new Bot geometry."
+}

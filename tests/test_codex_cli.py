@@ -39,4 +39,28 @@ class CodexCliTests(unittest.TestCase):
    folder=Path(d)
    with self.assertRaisesRegex(ValueError,'recorded Codex CLI'):model_call(folder,'probe','unit','schemas/planning-review.schema.json',{'cli_path':str(folder/'missing')})
    resolver.assert_not_called()
+ def test_quality_schema_normalization_preserves_call_name(self):
+  from types import SimpleNamespace
+  schema={'type':'object','properties':{'quality_mode':{'type':'string'},'beats':{'type':'array','items':{'type':'object','properties':{'quality':{'type':'object','properties':{k:{'type':'object','properties':{'intent':{'type':'string'}}} for k in ('energy','art_direction')}}}}}},'additionalProperties':False}
+  with tempfile.TemporaryDirectory() as d:
+   folder=Path(d);cli=folder/'cli';cli.touch();cli.chmod(0o755)
+   def execute(args,**kwargs):
+    Path(args[args.index('-o')+1]).write_text('{}')
+    return SimpleNamespace(returncode=0,stdout='',stderr='')
+   with patch('motif_direct.read',side_effect=lambda p:schema if str(p).endswith('unit-schema.json') else json.loads(Path(p).read_text())),patch('motif_direct.subprocess.run',side_effect=execute),patch('motif_direct.Draft202012Validator'):
+    model_call(folder,'initial-plan','Data only.','unit-schema.json',{'cli_path':str(cli),'model':'fixture','reasoning_effort':'medium'})
+   self.assertTrue((folder/'initial-plan.json').exists())
+   self.assertTrue((folder/'initial-plan-invocation.json').exists())
+   self.assertFalse((folder/'art_direction.json').exists())
+ def test_image_changed_during_live_call_cannot_receive_fresh_approval(self):
+  from types import SimpleNamespace
+  from motif_direct import sha
+  with tempfile.TemporaryDirectory() as d:
+   folder=Path(d);cli=folder/'cli';cli.touch();cli.chmod(0o755);im=folder/'image.png';im.write_bytes(b'original');original=sha(im)
+   def execute(args,**kwargs):
+    im.write_bytes(b'edited during call');Path(args[args.index('-o')+1]).write_text('{}')
+    return SimpleNamespace(returncode=0,stdout='',stderr='')
+   with patch('motif_direct.subprocess.run',side_effect=execute):
+    with self.assertRaisesRegex(ValueError,'image changed during review'):model_call(folder,'probe','Data only.','schemas/planning-review.schema.json',{'cli_path':str(cli),'model':'fixture','reasoning_effort':'medium'},[im])
+   self.assertEqual(json.loads((folder/'probe-invocation.json').read_text())['images'][0]['sha256'],original)
 if __name__=='__main__':unittest.main()

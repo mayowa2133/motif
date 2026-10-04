@@ -1,0 +1,95 @@
+{
+  "role": "structure",
+  "inspection_scope": "Complete supplied plan: narration, rationale, assets, all 12 beat contracts, limitations, five rhetorical chapters, eight setups, resets and both continuity-token lifecycles. Data-only review of planned structure before animation.",
+  "checks": [
+    {
+      "check": "METAPHOR_OVERLOAD",
+      "status": "PASS",
+      "evidence": "The independent computer, app network, ordered assignment, classification folio, permission shutter, commercial entrances and transformed work surface occupy separate setups. Within s02, connections and the computing shelf describe one connected operating arrangement; within s04, changing folio layers develop classification and availability rather than adding unrelated machinery."
+    },
+    {
+      "check": "STATE_ACCUMULATION_WITHOUT_MEANING",
+      "status": "PASS",
+      "evidence": "s03 compresses processed folds into completed-work state; s04 folds present-use leaves behind the newly focal availability layers; s05 queues slips to express pending actions; s07 transforms the answer pedestal into a subordinate component of the broader work surface. Previous machinery does not travel across the semantic resets. The opened chat silhouette retained in b04 provides containment-to-connection context, although its retention conflicts with b03's removal instruction."
+    },
+    {
+      "check": "SEMANTIC_GROUP_OVERLOAD",
+      "status": "PASS",
+      "evidence": "The three app sockets in s02 form one connection group. The ordered folds in s03 form one assignment. The paired leaves and subsequent restricted layers in s04 belong to one classification system and receive sequential emphasis. s06's two entrances form the comparison itself; its extras tab is explicitly subordinate."
+    },
+    {
+      "check": "COMPOSITIONAL_STAGNATION",
+      "status": "PASS",
+      "evidence": "Contracts progress from separated computers and a token detail to a diagonal network, deep accordion corridor, open folio, shutter contact, paired access ledges, and a vertical-to-horizontal work-surface transformation. Similar computer staging in s01 and s07 pays off persistence and independent participation. s08 changes the permission callback's primary region from slip contact to the human-held key."
+    },
+    {
+      "check": "CONTINUITY_TOKEN_OVERLOAD",
+      "status": "PASS",
+      "evidence": "The Dot changes location and role across all eight setups while its previous environments exit. The human key appears in s05 and returns in s08 with retained ownership and no transfer. Both tokens have ordered uses, state changes and final destinations that support the argument."
+    },
+    {
+      "check": "CLUTTER_WITHOUT_PURPOSE",
+      "status": "PASS",
+      "evidence": "Declared peripheral geometry has structural functions: desk and cable establish the user's station; socket lips establish contact; compressed folds record completion; folio layers distinguish status; queued slips express pending execution; the separated extras tab qualifies access. Irregularities distinguish states, expose boundaries or balance the composition."
+    },
+    {
+      "check": "WEAK_RESET_RHYTHM",
+      "status": "PASS",
+      "evidence": "Connection resets to ordered progress, progress to pitch classification, classification to execution permission, permission to commercial access, and access to rhetorical reframing. Naming, successive app connections, folio status changes and the coworker transformation retain their related worlds. The ending returns to permission as an intentional callback."
+    },
+    {
+      "check": "COMPETING_FOCI",
+      "status": "PASS",
+      "evidence": "Contracts nominate concrete primary actions: computer separation, token exposure, socket contact, cloud seating, ordered draft emergence, successive folio layers, stopped slip, sequential entrance reveals, pedestal transformation, coworker seating and withheld key approach. Concurrent foreground activity in s03 explains background work; the key in s05 and subscription extras in s06 remain subordinate. s07's continuing work and time-marker change develop the same persistence claim."
+    },
+    {
+      "check": "CAPTION_CARRIES_STORY",
+      "status": "PASS",
+      "evidence": "Central state changes supply the principal meanings: separate stations, breached containment and seated connectors, ordered processing into an unsent draft, restricted future layers, a physically stopped action, required versus open entrances, an expanded working relationship and untransferred access. Names and commercial/status qualifications use necessary identifiers; captions are not the sole source of these central relationships."
+    }
+  ],
+  "setup_assessments": [
+    {
+      "setup_id": "s01",
+      "status": "PASS",
+      "evidence": "b01 establishes independent computing and work across a day/night change; b02 exposes the same token in detail. Naming develops the introduced identity, and the computer and Bot leave before the next world."
+    },
+    {
+      "setup_id": "s02",
+      "status": "PASS",
+      "evidence": "b03 changes containment into connected reach through actual socket contact; b04 reveals the computer supporting that network and changes framing to its seat gap. Retained connections remain relevant to the resulting operating arrangement."
+    },
+    {
+      "setup_id": "s03",
+      "status": "PASS",
+      "evidence": "b05 advances one assignment through ordered stops, compresses completed folds and exposes the draft only after preceding steps clear. The user's separate foreground activity supports the background-work proposition."
+    },
+    {
+      "setup_id": "s04",
+      "status": "PASS",
+      "evidence": "b06 assembles two proposed-use pockets; b07 replaces their prominence with a veiled specialist layer and unopened team fold. Sequential focal replacement and physical restrictions distinguish use categories from future availability."
+    },
+    {
+      "setup_id": "s05",
+      "status": "PASS",
+      "evidence": "b08 centers the slip's approach and stop at a closed boundary. The second slip develops pending workload, while the already-held human key remains subordinate and outside the Dot's reach."
+    },
+    {
+      "setup_id": "s06",
+      "status": "PASS",
+      "evidence": "b09 compares a ticket-requiring entrance with an unobstructed entrance through sequential reveals. The separate subscription tab qualifies the open entrance without creating a capability contest or carrying the earlier permission machinery forward."
+    },
+    {
+      "setup_id": "s07",
+      "status": "PASS",
+      "evidence": "b10 physically folds the narrow answer panel into an expanded work surface; b11 occupies its independent coworker position and sustains assigned work across the time change. The second beat completes the transformation's rhetorical purpose."
+    },
+    {
+      "setup_id": "s08",
+      "status": "PASS",
+      "evidence": "b12 returns to the retained human grip but makes the key's stopped approach the primary action. The closed shutter, remaining gap and waiting Dot preserve the unresolved decision rather than implying access was granted."
+    }
+  ],
+  "violations": [],
+  "limits": "Data-only review cannot establish rendered/mobile performance, actual visibility, contact execution, caption timing, animation hierarchy or listening quality. Chapter and setup spans cover the supplied 125-word narration in order, and all 12 beats are assigned once. The b03 removal instruction and b04 retained open-chat background need a consistent production interpretation; the retained boundary has a relevant contextual function and does not establish a structural violation. Source accuracy and implementation claims were not independently verified."
+}

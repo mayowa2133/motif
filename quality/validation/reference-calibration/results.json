@@ -1,0 +1,78 @@
+{
+  "status": "PASS",
+  "cases": [
+    {
+      "id": "A",
+      "expected_status": "REPLAN_REQUIRED",
+      "actual_status": "REPLAN_REQUIRED",
+      "expected_code": "REFERENCE_STRUCTURE_GAP",
+      "actual_codes": [
+        "REFERENCE_STRUCTURE_GAP"
+      ],
+      "pass": true,
+      "evidence": "One repeated dashboard erases proposition changes, developing work and physical relationships without story justification. Dd2UAqOvDoO-s05 and Dd4Le3YhCQt-s05 demonstrate persistent rules with consequential state development. Sparse density alone is not the failure."
+    },
+    {
+      "id": "B",
+      "expected_status": "PASS",
+      "actual_status": "PASS",
+      "expected_code": null,
+      "actual_codes": [],
+      "pass": true,
+      "evidence": "The original postal world provides purposeful development, specific staging, readable participating acting, a dominant task, consequential grip-and-routing interaction and tangible material relationships. It transfers transformation and hierarchy from Dd2UAqOvDoO-s05 and Dd4oMBpyEq_-s07 without copying their expression. The authorization reset preserves structural clarity."
+    },
+    {
+      "id": "C",
+      "expected_status": "REPLAN_REQUIRED",
+      "actual_status": "REPLAN_REQUIRED",
+      "expected_code": "REFERENCE_SCENE_IMITATION",
+      "actual_codes": [
+        "REFERENCE_SCENE_IMITATION"
+      ],
+      "pass": true,
+      "evidence": "Replicating hero, environment and choreography together crosses the novelty boundary. The identical six-row Bot climb directly repeats internal menu-landing; replacing labels does not create a new expression. External Dd2UAqOvDoO-s01 supports transferable selection relationships, not reuse of the menu performance."
+    },
+    {
+      "id": "D",
+      "expected_status": "REPAIR_REQUIRED",
+      "actual_status": "REPAIR_REQUIRED",
+      "expected_code": "REFERENCE_INTERACTION_GAP",
+      "actual_codes": [
+        "REFERENCE_INTERACTION_GAP"
+      ],
+      "pass": true,
+      "evidence": "The hypothetical visible action communicates approval only through text and pointing. Nothing causally stops or awaits authority. External reference_assessments anchor: Dd45WmVPOfQ-s05. Internal violation gold_id: menu-landing, whose contacted surfaces visibly yield."
+    },
+    {
+      "id": "E",
+      "expected_status": "PASS",
+      "actual_status": "PASS",
+      "expected_code": null,
+      "actual_codes": [],
+      "pass": true,
+      "evidence": "The large key and closed lock establish composition and tactile hierarchy; approach, arrest and restrained recoil supply purposeful energy and consequential interaction. Retained ownership reads without captions. Sparse staging and the holder's readable restraint suit the unresolved final question calibrated through Dd45WmVPOfQ-s05."
+    },
+    {
+      "id": "F",
+      "expected_status": "PASS",
+      "actual_status": "PASS",
+      "expected_code": null,
+      "actual_codes": [],
+      "pass": true,
+      "evidence": "The original loom provides developing energy, a specific miniature world, clear hero/result composition, roller contact and visible transformation with linked material continuity. These transfer relationships from Dd2UAqOvDoO-s05 and Dd2uCwTB6II-s02. REFERENCE_ACTING_GAP is NOT_APPLICABLE because Bot is absent."
+    },
+    {
+      "id": "G",
+      "expected_status": "PASS",
+      "actual_status": "PASS",
+      "expected_code": null,
+      "actual_codes": [],
+      "pass": true,
+      "evidence": "The original paper harbor meets comparable ambition through purposeful cargo development, specific dock staging, readable crane manipulation, dominant/support/residual hierarchy, caused output and tactile contact. It transfers process relationships from Dd2UAqOvDoO-s05 and Dd4oMBpyEq_-s07. Sharing B's script does not constitute scene imitation."
+    }
+  ],
+  "live_report": "/Users/mayowaadesanya/Projects/motif/quality/validation/reference-calibration/private/fixture-critic.json",
+  "report_sha256": "3c473b2cc316e297455a8b156d1b74c22e2ccca282f3c5f24ffd123936c2cbcd",
+  "invocation_sha256": "7b2f7c68a91f76764f00778d1e0e269b1c40c58cb4f5ba40d5607c2ed3d76a90",
+  "scope": "live semantic fixtures; not actual film, playback, listening or proof of autonomous directing"
+}

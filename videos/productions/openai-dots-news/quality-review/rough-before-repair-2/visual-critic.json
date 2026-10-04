@@ -1,0 +1,327 @@
+{
+  "role": "visual",
+  "inspection_scope": "Rough production b01–b12: supplied ordered sheets, native 360×640 images and every intermediate frame in the supplied consecutive event strips, in both caption modes. Compared behavioral evidence with audiobook, basement-completion and recording gold. Film progression preserves the notched token, returns to separate computing and closes on withheld permission. Advancement is blocked by the failures below.",
+  "gates": [
+    {
+      "gate": "character-performance",
+      "status": "FAIL",
+      "evidence": "b01 shows the completed surprised posture before the declared seat contact; b02 returns to a readable quiet observer posture."
+    },
+    {
+      "gate": "physicality",
+      "status": "FAIL",
+      "evidence": "b03 connectors travel across app faces separately from the cable endpoint; b08 does not paint the declared slip approach into its stop."
+    },
+    {
+      "gate": "energy",
+      "status": "PASS",
+      "evidence": "Sequences develop through unfolding, connections, sequential processing, page collection, status revelation and access changes. The closing pause visibly preserves an unresolved choice. Pixel activity alone was not used to grant passes."
+    },
+    {
+      "gate": "art",
+      "status": "PASS",
+      "evidence": "Notched token, scalloped cloud bases, scored assignment ribbon, layered folio and retained paper key have recognizable silhouettes and consistent tactile layering."
+    },
+    {
+      "gate": "composition",
+      "status": "PASS",
+      "evidence": "Distinct setup rules create purposeful spatial changes. Retained apps, folio backing and shared work surface generally support the evolving proposition; minimal isolation has visible story purposes."
+    },
+    {
+      "gate": "mobile",
+      "status": "FAIL",
+      "evidence": "b07 company-document inspection is too small and pale beneath the veil to explain specialization at a glance. b09 eligibility ticket obscures the receiver needed to explain the matching requirement."
+    }
+  ],
+  "violations": [
+    {
+      "timestamp": 3.066667,
+      "shot": "b01",
+      "gate": "character-performance",
+      "observation": "At f92 Bot already has raised arms and an open surprised mouth while the token is still approaching the seat. That completed reaction persists through f98; the painted acting does not change from listening to surprise after the specified landing.",
+      "gold_id": "basement-completion",
+      "smallest_correction": "Keep the pre-contact posture as readable anticipation and trigger the full surprised silhouette after the painted token-seat contact.",
+      "failure_code": null
+    },
+    {
+      "timestamp": 8.533333,
+      "shot": "b03",
+      "gate": "physicality",
+      "observation": "Across f250–268 the teal plugs move over the app card faces toward their bottom sockets while the slate routes terminate behind the card edges. At the declared contacts, cable end and plug do not read as one painted endpoint seating into an exposed mouth. Final socket color cannot repair this intervening separation.",
+      "gold_id": "recording",
+      "smallest_correction": "Route each cable to the exposed bottom socket and use the same transformed endpoint for its plug throughout approach, seating and recovery.",
+      "failure_code": null
+    },
+    {
+      "timestamp": 16.733333,
+      "shot": "b07",
+      "gate": "mobile",
+      "observation": "The company mark, document rows and narrow reader are small, low-contrast details inside the veiled sleeve. The reader's f496–508 traversal is visible on inspection, but its document-inspection meaning does not command a native-size glance.",
+      "gold_id": "audiobook",
+      "smallest_correction": "Enlarge the document/reader relationship within the sleeve and increase its contrast while preserving the separate PREVIEW veil.",
+      "failure_code": "TINY_HERO"
+    },
+    {
+      "timestamp": 22.333333,
+      "shot": "b08",
+      "gate": "physicality",
+      "observation": "The primary envelope is already flush with the shutter in the earlier ordered samples. Throughout f664–676 it remains at essentially that same stop while the tray and subsequent queued slip supply the change. The declared impact therefore lacks the visible preceding slip approach required by the before/after contract.",
+      "gold_id": "basement-completion",
+      "smallest_correction": "Begin the primary slip visibly away from the shutter, move its leading edge into the stop, then maintain that attachment through the bounded response.",
+      "failure_code": null
+    },
+    {
+      "timestamp": 25.533333,
+      "shot": "b09",
+      "gate": "mobile",
+      "observation": "The eligibility ticket sits directly over the barred entrance and receiver region. The exposed yellow horizontal bar does not reveal a ticket-shaped opening or a clear matching relationship. Local wording supplies the requirement more clearly than the intended access geometry.",
+      "gold_id": "recording",
+      "smallest_correction": "Offset the approaching ticket enough to expose the receiver silhouette and blocked entrance simultaneously, retaining the uninserted state.",
+      "failure_code": "HIDDEN_DIAGNOSTIC"
+    }
+  ],
+  "sampling_limits": "No tools, MP4 playback or listening were used. Sparse ordered samples establish broad before/after states but cannot prove continuous attachment between them. Consecutive strips were inspected in labeled order, including intermediate frames. Some declared event centers occur after the most consequential movement: b10's strip shows the already-folded surface, and b06's pocket interiors conceal exact seating. Those physicality gates remain NOT_ASSESSED. Supplied pixel traces establish activity only, not semantic motion or contact. The schema exposes six visual gates; this is not approval of the separate story, cause-effect, continuity, technical or human-review gates.",
+  "shot_assessments": [
+    {
+      "shot": "b01",
+      "gates": [
+        {"gate": "character-performance", "status": "FAIL", "evidence": "Recognizable surprise is already complete before seat contact."},
+        {"gate": "physicality", "status": "PASS", "evidence": "f92–104 shows the token approaching and settling into the visible elliptical seat; its lower contact remains readable despite the foreground lip."},
+        {"gate": "energy", "status": "PASS", "evidence": "Station unfolds, token seats and display work develops across the sun-to-moon change."},
+        {"gate": "art", "status": "PASS", "evidence": "Canonical Bot and asymmetric token coexist with a distinct laminated rim and scalloped base."},
+        {"gate": "composition", "status": "PASS", "evidence": "Left user-computer crop and higher right cloud station establish separation; Bot does not hide the gap."},
+        {"gate": "mobile", "status": "PASS", "evidence": "Two computers and continuing work across a time-marker change remain legible without captions."}
+      ]
+    },
+    {
+      "shot": "b02",
+      "gates": [
+        {"gate": "character-performance", "status": "PASS", "evidence": "Bot returns from raised-arm surprise to a quiet, arms-down observer silhouette."},
+        {"gate": "physicality", "status": "NOT_ASSESSED", "evidence": "The crop exposes the token, but no consecutive window establishes the rim-uncovering attachment."},
+        {"gate": "energy", "status": "PASS", "evidence": "Identity reveal has a clear purpose and display rows continue developing during the short naming beat."},
+        {"gate": "art", "status": "PASS", "evidence": "Enlarged notch and paper edge preserve the introduced token's identity."},
+        {"gate": "composition", "status": "PASS", "evidence": "Token detail owns the close framing; Bot remains subordinate at lower right."},
+        {"gate": "mobile", "status": "PASS", "evidence": "Local DOT label and distinctive notch are readable in the caption-free detail."}
+      ]
+    },
+    {
+      "shot": "b03",
+      "gates": [
+        {"gate": "character-performance", "status": "NOT_APPLICABLE", "evidence": "Bot is explicitly absent."},
+        {"gate": "physicality", "status": "FAIL", "evidence": "Intermediate connector motion separates plug seating from the painted cable endpoint."},
+        {"gate": "energy", "status": "PASS", "evidence": "Enclosure clears and unequal routes develop sequentially into a connected arrangement."},
+        {"gate": "art", "status": "PASS", "evidence": "Unequal paper cards and slate routes form a recognizable asymmetric dock."},
+        {"gate": "composition", "status": "PASS", "evidence": "A central token and related app endpoints form one purposeful group; obsolete chat geometry clears."},
+        {"gate": "mobile", "status": "PASS", "evidence": "Chat containment becoming a calendar/mail/file network reads without captions."}
+      ]
+    },
+    {
+      "shot": "b04",
+      "gates": [
+        {"gate": "character-performance", "status": "NOT_APPLICABLE", "evidence": "Bot is explicitly absent."},
+        {"gate": "physicality", "status": "PASS", "evidence": "f287–299 maintains visible token-bottom/recess contact during the local settling sequence."},
+        {"gate": "energy", "status": "PASS", "evidence": "Cloud shelf enters above the network and the token transfers into its computer seat."},
+        {"gate": "art", "status": "PASS", "evidence": "Scalloped shelf and teal computer distinguish the new computing layer from app cards."},
+        {"gate": "composition", "status": "PASS", "evidence": "Upper computer becomes the new focal layer while retained connections explain its relationship."},
+        {"gate": "mobile", "status": "PASS", "evidence": "Cloud-computer silhouette and its separation above the app network are readable."}
+      ]
+    },
+    {
+      "shot": "b05",
+      "gates": [
+        {"gate": "character-performance", "status": "NOT_APPLICABLE", "evidence": "Bot is explicitly absent."},
+        {"gate": "physicality", "status": "PASS", "evidence": "All three consecutive windows show sheets reaching their stops, preceding ribbon segments clearing, and the draft emerging only after the third step."},
+        {"gate": "energy", "status": "PASS", "evidence": "Sequential sheets and ribbon compaction overlap with the separate foreground page turn."},
+        {"gate": "art", "status": "PASS", "evidence": "Cream folded ribbon, teal processed sheets and coral foreground page retain distinct paper identities."},
+        {"gate": "composition", "status": "PASS", "evidence": "Diagonal assignment progression is framed by a deliberately separate foreground activity."},
+        {"gate": "mobile", "status": "PASS", "evidence": "Ordered processing, completed steps and retained DRAFT output survive caption removal."}
+      ]
+    },
+    {
+      "shot": "b06",
+      "gates": [
+        {"gate": "character-performance", "status": "NOT_APPLICABLE", "evidence": "Bot is explicitly absent."},
+        {"gate": "physicality", "status": "NOT_ASSESSED", "evidence": "Slips visibly enter the pocket, but f422–446 conceals their exact stops behind its lip; successive seating and local compression cannot be established."},
+        {"gate": "energy", "status": "PASS", "evidence": "Folio opens, research slips collect and personal planning rows subsequently assemble."},
+        {"gate": "art", "status": "PASS", "evidence": "Unequal cream and marigold leaves, layered pocket and teal backing form a distinct folio."},
+        {"gate": "composition", "status": "PASS", "evidence": "Two related use categories read as one folio rather than unrelated active regions."},
+        {"gate": "mobile", "status": "PASS", "evidence": "Large folder and calendar pictograms distinguish document work from personal planning."}
+      ]
+    },
+    {
+      "shot": "b07",
+      "gates": [
+        {"gate": "character-performance", "status": "NOT_APPLICABLE", "evidence": "Bot is explicitly absent."},
+        {"gate": "physicality", "status": "PASS", "evidence": "Reader traverses before the checked review output develops; empty team windows remain under a PLANNED panel."},
+        {"gate": "energy", "status": "PASS", "evidence": "Inspection and proposed output precede the developing team-fold reveal; status is not a motionless caption hold."},
+        {"gate": "art", "status": "PASS", "evidence": "Vellum sleeve and plum closed fold have distinct physical layers and persistent status markings."},
+        {"gate": "composition", "status": "PASS", "evidence": "Present leaves clear; upper specialist layer gives way to the foreground planned-team layer."},
+        {"gate": "mobile", "status": "FAIL", "evidence": "The essential company-document inspection is too small and pale within the veiled sleeve."}
+      ]
+    },
+    {
+      "shot": "b08",
+      "gates": [
+        {"gate": "character-performance", "status": "NOT_APPLICABLE", "evidence": "Bot is explicitly absent."},
+        {"gate": "physicality", "status": "FAIL", "evidence": "Primary slip is already at the shutter before the impact window; declared approach-to-stop is not painted."},
+        {"gate": "energy", "status": "PASS", "evidence": "Tray progression and a second queued slip develop the pending-action arrangement; the closed boundary serves the pause."},
+        {"gate": "art", "status": "PASS", "evidence": "Coral shutter, dark lock, cream slip and human-held marigold key have distinct silhouettes."},
+        {"gate": "composition", "status": "PASS", "evidence": "Slip/shutter region dominates while the held key remains smaller and subordinate."},
+        {"gate": "mobile", "status": "PASS", "evidence": "Closed lock, pending envelope and withheld key communicate the permission boundary without captions."}
+      ]
+    },
+    {
+      "shot": "b09",
+      "gates": [
+        {"gate": "character-performance", "status": "NOT_APPLICABLE", "evidence": "Bot is explicitly absent."},
+        {"gate": "physicality", "status": "NOT_ASSESSED", "evidence": "Muse opening is visible, but supplied windows do not expose the Dots ticket/receiver interaction sufficiently to establish its matching approach."},
+        {"gate": "energy", "status": "PASS", "evidence": "Eligibility ticket approaches, Muse cover opens and the separate paid-extras tab appears in sequence."},
+        {"gate": "art", "status": "PASS", "evidence": "Unequal entrances, ticket and separate subscription tab preserve distinct material layers."},
+        {"gate": "composition", "status": "PASS", "evidence": "Paired access conditions form one comparison; paid extras remain subordinate."},
+        {"gate": "mobile", "status": "FAIL", "evidence": "Ticket overlays the meaningful receiver, leaving the required matching geometry unreadable."}
+      ]
+    },
+    {
+      "shot": "b10",
+      "gates": [
+        {"gate": "character-performance", "status": "NOT_APPLICABLE", "evidence": "Bot is explicitly absent."},
+        {"gate": "physicality", "status": "NOT_ASSESSED", "evidence": "f924 shows the upright panel and f939 the folded surface; consecutive f941–953 starts after the fold. Continuous bottom-hinge attachment cannot be verified."},
+        {"gate": "energy", "status": "PASS", "evidence": "Answer sheet develops, upright silhouette becomes a wider table, and the next workstation begins entering."},
+        {"gate": "art", "status": "PASS", "evidence": "Original blue answer face remains recognizable within attached cream wings and plum supports."},
+        {"gate": "composition", "status": "PASS", "evidence": "Vertical concentration changes to a horizontal working surface with directional space for the coworker."},
+        {"gate": "mobile", "status": "PASS", "evidence": "Answer-only panel becoming a shared work surface reads without captions."}
+      ]
+    },
+    {
+      "shot": "b11",
+      "gates": [
+        {"gate": "character-performance", "status": "NOT_APPLICABLE", "evidence": "Bot is explicitly absent."},
+        {"gate": "physicality", "status": "PASS", "evidence": "f1009–1021 keeps token bottom seated in the exposed recess; the day/night change does not break the contact."},
+        {"gate": "energy", "status": "PASS", "evidence": "Station occupation and developing work rows continue across the time-marker change."},
+        {"gate": "art", "status": "PASS", "evidence": "Uneven user stack and independent scalloped workstation retain the established paper vocabulary."},
+        {"gate": "composition", "status": "PASS", "evidence": "User stack at left and separate Dot computer at right form two distinct positions on one surface."},
+        {"gate": "mobile", "status": "PASS", "evidence": "Separate computing beside user work and persistence into night visibly pay off the opening."}
+      ]
+    },
+    {
+      "shot": "b12",
+      "gates": [
+        {"gate": "character-performance", "status": "NOT_APPLICABLE", "evidence": "Bot is explicitly absent."},
+        {"gate": "physicality", "status": "PASS", "evidence": "f1073–1085 maintains the hand/key grip and the readable gap; no insertion, transfer or opening occurs."},
+        {"gate": "energy", "status": "PASS", "evidence": "Approach ends in a purposeful unresolved pause, with the key retained and shutter closed."},
+        {"gate": "art", "status": "PASS", "evidence": "Same held paper key, shutter and notched waiting token preserve the approval callback."},
+        {"gate": "composition", "status": "PASS", "evidence": "Key approach and lock gap form the primary relationship; waiting token remains subordinate."},
+        {"gate": "mobile", "status": "PASS", "evidence": "Retained key, visible background gap and closed lock communicate withheld access without captions."}
+      ]
+    }
+  ],
+  "hierarchy_assessments": [
+    {"shot": "b01", "code": "COMPETING_FOCI", "status": "PASS", "evidence": "Bot and user crop support the separate-station introduction."},
+    {"shot": "b01", "code": "EXCESSIVE_OCCLUSION", "status": "PASS", "evidence": "Lower seat contact remains visible beneath its foreground lip."},
+    {"shot": "b01", "code": "UNNECESSARY_RETAINED_GEOMETRY", "status": "PASS", "evidence": "Both computers are needed to explain separation."},
+    {"shot": "b01", "code": "CAPTION_CARRIES_STORY", "status": "PASS", "evidence": "Second station and day/night persistence survive caption removal."},
+    {"shot": "b01", "code": "EFFECT_AS_ACTION", "status": "PASS", "evidence": "Station unfolds and token changes position physically."},
+    {"shot": "b01", "code": "TINY_HERO", "status": "PASS", "evidence": "Computer separation and time marker are prominent."},
+    {"shot": "b01", "code": "HIDDEN_DIAGNOSTIC", "status": "PASS", "evidence": "Air gap between stations is exposed."},
+    {"shot": "b01", "code": "LABEL_BEFORE_EVIDENCE", "status": "PASS", "evidence": "No confirmation label substitutes for station establishment."},
+
+    {"shot": "b02", "code": "COMPETING_FOCI", "status": "PASS", "evidence": "Token close-up dominates; Bot is subordinate."},
+    {"shot": "b02", "code": "EXCESSIVE_OCCLUSION", "status": "PASS", "evidence": "Named token and notch become exposed."},
+    {"shot": "b02", "code": "UNNECESSARY_RETAINED_GEOMETRY", "status": "PASS", "evidence": "Station framing preserves the introduced token context."},
+    {"shot": "b02", "code": "CAPTION_CARRIES_STORY", "status": "PASS", "evidence": "Local DOT name remains without narration captions."},
+    {"shot": "b02", "code": "EFFECT_AS_ACTION", "status": "PASS", "evidence": "Reveal changes the visible token silhouette."},
+    {"shot": "b02", "code": "TINY_HERO", "status": "PASS", "evidence": "Token is large in the detail framing."},
+    {"shot": "b02", "code": "HIDDEN_DIAGNOSTIC", "status": "PASS", "evidence": "Notch and name are clearly exposed."},
+    {"shot": "b02", "code": "LABEL_BEFORE_EVIDENCE", "status": "PASS", "evidence": "Naming identifies an already-established object."},
+
+    {"shot": "b03", "code": "COMPETING_FOCI", "status": "PASS", "evidence": "Three apps constitute one connected group."},
+    {"shot": "b03", "code": "EXCESSIVE_OCCLUSION", "status": "PASS", "evidence": "Plug and socket paths are exposed enough to diagnose their misalignment."},
+    {"shot": "b03", "code": "UNNECESSARY_RETAINED_GEOMETRY", "status": "PASS", "evidence": "Chat enclosure clears after containment ends."},
+    {"shot": "b03", "code": "CAPTION_CARRIES_STORY", "status": "PASS", "evidence": "Enclosure-to-app-network change reads caption-free."},
+    {"shot": "b03", "code": "EFFECT_AS_ACTION", "status": "PASS", "evidence": "Routes physically extend toward endpoints."},
+    {"shot": "b03", "code": "TINY_HERO", "status": "PASS", "evidence": "App pictograms and extending routes are legible."},
+    {"shot": "b03", "code": "HIDDEN_DIAGNOSTIC", "status": "PASS", "evidence": "Socket mouths remain visible; the failure is endpoint continuity."},
+    {"shot": "b03", "code": "LABEL_BEFORE_EVIDENCE", "status": "PASS", "evidence": "No confirmation label supplies the connection claim."},
+
+    {"shot": "b04", "code": "COMPETING_FOCI", "status": "PASS", "evidence": "New upper computer dominates related retained apps."},
+    {"shot": "b04", "code": "EXCESSIVE_OCCLUSION", "status": "PASS", "evidence": "Token-seat contact is visible."},
+    {"shot": "b04", "code": "UNNECESSARY_RETAINED_GEOMETRY", "status": "PASS", "evidence": "Network retention explains the cloud-computer relationship."},
+    {"shot": "b04", "code": "CAPTION_CARRIES_STORY", "status": "PASS", "evidence": "Cloud shelf and computer are recognizable caption-free."},
+    {"shot": "b04", "code": "EFFECT_AS_ACTION", "status": "PASS", "evidence": "Shelf enters and token transfers."},
+    {"shot": "b04", "code": "TINY_HERO", "status": "PASS", "evidence": "New station has a readable silhouette."},
+    {"shot": "b04", "code": "HIDDEN_DIAGNOSTIC", "status": "PASS", "evidence": "Upper shelf separation and exposed seat remain readable."},
+    {"shot": "b04", "code": "LABEL_BEFORE_EVIDENCE", "status": "PASS", "evidence": "Computing geometry precedes its explanatory caption."},
+
+    {"shot": "b05", "code": "COMPETING_FOCI", "status": "PASS", "evidence": "Foreground page deliberately establishes the background-work contrast."},
+    {"shot": "b05", "code": "EXCESSIVE_OCCLUSION", "status": "PASS", "evidence": "Foreground activity leaves assignment stops exposed."},
+    {"shot": "b05", "code": "UNNECESSARY_RETAINED_GEOMETRY", "status": "PASS", "evidence": "Completed steps retain meaningful progress history."},
+    {"shot": "b05", "code": "CAPTION_CARRIES_STORY", "status": "PASS", "evidence": "Sequential processing and draft emergence read without captions."},
+    {"shot": "b05", "code": "EFFECT_AS_ACTION", "status": "PASS", "evidence": "Sheets advance and ribbon segments compact."},
+    {"shot": "b05", "code": "TINY_HERO", "status": "PASS", "evidence": "Processed sheets and final draft are readable."},
+    {"shot": "b05", "code": "HIDDEN_DIAGNOSTIC", "status": "PASS", "evidence": "Ordered stops and draft exit remain exposed."},
+    {"shot": "b05", "code": "LABEL_BEFORE_EVIDENCE", "status": "PASS", "evidence": "Checks and draft follow successive sheet arrivals."},
+
+    {"shot": "b06", "code": "COMPETING_FOCI", "status": "PASS", "evidence": "Two proposed-use leaves form one classification."},
+    {"shot": "b06", "code": "EXCESSIVE_OCCLUSION", "status": "NOT_ASSESSED", "evidence": "Pocket lip conceals exact seating; supplied frames cannot establish the internal contact."},
+    {"shot": "b06", "code": "UNNECESSARY_RETAINED_GEOMETRY", "status": "PASS", "evidence": "Backing and hinge belong to the evolving folio."},
+    {"shot": "b06", "code": "CAPTION_CARRIES_STORY", "status": "PASS", "evidence": "Folder work and calendar planning remain distinguishable."},
+    {"shot": "b06", "code": "EFFECT_AS_ACTION", "status": "PASS", "evidence": "Leaves open and slips visibly collect."},
+    {"shot": "b06", "code": "TINY_HERO", "status": "PASS", "evidence": "Large use-category pictograms command the leaves."},
+    {"shot": "b06", "code": "HIDDEN_DIAGNOSTIC", "status": "PASS", "evidence": "Work/personal distinction remains exposed."},
+    {"shot": "b06", "code": "LABEL_BEFORE_EVIDENCE", "status": "PASS", "evidence": "Task collection and planning rows provide visible evidence."},
+
+    {"shot": "b07", "code": "COMPETING_FOCI", "status": "PASS", "evidence": "Specialist and planned-team layers develop sequentially within one status group."},
+    {"shot": "b07", "code": "EXCESSIVE_OCCLUSION", "status": "PASS", "evidence": "Veil preserves visible inspection/output order; readability fails through scale and contrast."},
+    {"shot": "b07", "code": "UNNECESSARY_RETAINED_GEOMETRY", "status": "PASS", "evidence": "Present leaves clear; backing retains folio identity."},
+    {"shot": "b07", "code": "CAPTION_CARRIES_STORY", "status": "PASS", "evidence": "Persistent PREVIEW and PLANNED artwork and empty sockets survive caption removal."},
+    {"shot": "b07", "code": "EFFECT_AS_ACTION", "status": "PASS", "evidence": "Reader traverses, output develops and team fold reveals empty windows."},
+    {"shot": "b07", "code": "TINY_HERO", "status": "FAIL", "evidence": "Company-document inspection is too small and pale inside the sleeve."},
+    {"shot": "b07", "code": "HIDDEN_DIAGNOSTIC", "status": "PASS", "evidence": "Status boundary and empty team sockets are readable; inspection scale is separately failed."},
+    {"shot": "b07", "code": "LABEL_BEFORE_EVIDENCE", "status": "PASS", "evidence": "Checks follow reader traversal; status labels qualify rather than confirm execution."},
+
+    {"shot": "b08", "code": "COMPETING_FOCI", "status": "PASS", "evidence": "Slip/shutter dominates the smaller held key."},
+    {"shot": "b08", "code": "EXCESSIVE_OCCLUSION", "status": "PASS", "evidence": "Stop edge and envelope are exposed."},
+    {"shot": "b08", "code": "UNNECESSARY_RETAINED_GEOMETRY", "status": "PASS", "evidence": "Closed shutter, held key and queued slips all serve permission."},
+    {"shot": "b08", "code": "CAPTION_CARRIES_STORY", "status": "PASS", "evidence": "Pending envelope behind a closed lock reads caption-free."},
+    {"shot": "b08", "code": "EFFECT_AS_ACTION", "status": "PASS", "evidence": "Tray and queued slip physically develop; missing primary approach is separately failed."},
+    {"shot": "b08", "code": "TINY_HERO", "status": "PASS", "evidence": "Envelope and stop occupy the primary region."},
+    {"shot": "b08", "code": "HIDDEN_DIAGNOSTIC", "status": "PASS", "evidence": "Closed boundary and withheld key are visible."},
+    {"shot": "b08", "code": "LABEL_BEFORE_EVIDENCE", "status": "PASS", "evidence": "No approval confirmation appears."},
+
+    {"shot": "b09", "code": "COMPETING_FOCI", "status": "PASS", "evidence": "Paired entrances serve one access comparison."},
+    {"shot": "b09", "code": "EXCESSIVE_OCCLUSION", "status": "NOT_ASSESSED", "evidence": "Ticket/receiver physical interaction cannot be established behind the overlap."},
+    {"shot": "b09", "code": "UNNECESSARY_RETAINED_GEOMETRY", "status": "PASS", "evidence": "Dots condition remains relevant while Muse opens."},
+    {"shot": "b09", "code": "CAPTION_CARRIES_STORY", "status": "PASS", "evidence": "Local paid-plan/free-tier artwork persists without narration captions."},
+    {"shot": "b09", "code": "EFFECT_AS_ACTION", "status": "PASS", "evidence": "Ticket approaches and Muse cover opens physically."},
+    {"shot": "b09", "code": "TINY_HERO", "status": "PASS", "evidence": "Both access entrances and primary condition labels are readable."},
+    {"shot": "b09", "code": "HIDDEN_DIAGNOSTIC", "status": "FAIL", "evidence": "Ticket overlays the matching receiver and obscures the intended requirement geometry."},
+    {"shot": "b09", "code": "LABEL_BEFORE_EVIDENCE", "status": "PASS", "evidence": "Condition labels identify terms; no success or passage confirmation is shown."},
+
+    {"shot": "b10", "code": "COMPETING_FOCI", "status": "PASS", "evidence": "Single answer panel broadens into one working surface."},
+    {"shot": "b10", "code": "EXCESSIVE_OCCLUSION", "status": "NOT_ASSESSED", "evidence": "No consecutive evidence covers the actual hinge fold."},
+    {"shot": "b10", "code": "UNNECESSARY_RETAINED_GEOMETRY", "status": "PASS", "evidence": "Original blue face becomes part of the expanded surface."},
+    {"shot": "b10", "code": "CAPTION_CARRIES_STORY", "status": "PASS", "evidence": "Answer-panel-to-work-surface transformation is visible caption-free."},
+    {"shot": "b10", "code": "EFFECT_AS_ACTION", "status": "PASS", "evidence": "Actual silhouette changes from upright panel to broad table."},
+    {"shot": "b10", "code": "TINY_HERO", "status": "PASS", "evidence": "Transforming panel and surface are readily visible."},
+    {"shot": "b10", "code": "HIDDEN_DIAGNOSTIC", "status": "NOT_ASSESSED", "evidence": "Hinge continuity during the unsampled transformation remains unverified."},
+    {"shot": "b10", "code": "LABEL_BEFORE_EVIDENCE", "status": "PASS", "evidence": "No ranking or confirmation label substitutes for the transformation."},
+
+    {"shot": "b11", "code": "COMPETING_FOCI", "status": "PASS", "evidence": "User tasks and Dot station express one coworker relationship."},
+    {"shot": "b11", "code": "EXCESSIVE_OCCLUSION", "status": "PASS", "evidence": "Independent token seat remains exposed."},
+    {"shot": "b11", "code": "UNNECESSARY_RETAINED_GEOMETRY", "status": "PASS", "evidence": "Shared surface and original answer face preserve the reframing."},
+    {"shot": "b11", "code": "CAPTION_CARRIES_STORY", "status": "PASS", "evidence": "Two work positions and day/night persistence read without captions."},
+    {"shot": "b11", "code": "EFFECT_AS_ACTION", "status": "PASS", "evidence": "Token seats and work continues across the marker change."},
+    {"shot": "b11", "code": "TINY_HERO", "status": "PASS", "evidence": "Workstation relationship and time change remain clear."},
+    {"shot": "b11", "code": "HIDDEN_DIAGNOSTIC", "status": "PASS", "evidence": "User stack and independent computer remain distinct."},
+    {"shot": "b11", "code": "LABEL_BEFORE_EVIDENCE", "status": "PASS", "evidence": "No completion label replaces continued work."},
+
+    {"shot": "b12", "code": "COMPETING_FOCI", "status": "PASS", "evidence": "Key and lock form one unresolved decision."},
+    {"shot": "b12", "code": "EXCESSIVE_OCCLUSION", "status": "PASS", "evidence": "Hand grip and key-to-lock gap are exposed."},
+    {"shot": "b12", "code": "UNNECESSARY_RETAINED_GEOMETRY", "status": "PASS", "evidence": "Returning shutter and waiting Dot complete the permission callback."},
+    {"shot": "b12", "code": "CAPTION_CARRIES_STORY", "status": "PASS", "evidence": "Human-held key stops short of a closed lock without captions."},
+    {"shot": "b12", "code": "EFFECT_AS_ACTION", "status": "PASS", "evidence": "Key approaches physically and remains withheld."},
+    {"shot": "b12", "code": "TINY_HERO", "status": "PASS", "evidence": "Key and lock are large enough to read."},
+    {"shot": "b12", "code": "HIDDEN_DIAGNOSTIC", "status": "PASS", "evidence": "Background gap remains clear throughout the consecutive window."},
+    {"shot": "b12", "code": "LABEL_BEFORE_EVIDENCE", "status": "PASS", "evidence": "No insertion, grant or approval confirmation appears."}
+  ]
+}

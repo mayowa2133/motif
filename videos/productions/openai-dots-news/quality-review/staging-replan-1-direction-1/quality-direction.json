@@ -1,0 +1,16 @@
+{
+  "pass": false,
+  "issues": [
+    "b04 contradicts b03's removal of the chat enclosure: its depth planes retain a background open-chat silhouette. Remove that layer from b04 or explicitly reconcile its persistence.",
+    "b07 produces a checked review sheet without directing a visible inspection or correction that earns the check. Show the review operation before confirmation; keep the entire proposed operation behind the PREVIEW veil.",
+    "b08's hero_object specifies a large key occupying roughly two-thirds of frame height, while its composition requires a smaller subordinate key. Revise the hero silhouette specification around the slip/shutter contact; reserve key dominance for b12.",
+    "b04 and b11 specify token/recess contact but do not name a caused local response. Their local_reaction fields repeat the seating action. Direct a bounded seat response through the production adapter, or explicitly justify rigid seating without deformation; do not enroll unsupported reaction targets.",
+    "b10 describes a blue answer panel becoming the table's left portion, but its material contract specifies a slate pedestal and plum underside without identifying that persistent blue face. Reconcile the material identity so the transformation preserves a recognizable source object."
+  ],
+  "message_preserved": true,
+  "outcome_preserved": true,
+  "evidence_before_labels": false,
+  "ending_delivered": true,
+  "notes": "Data-only direction review in motif-gold-v1. The independently verified structure PASS is accepted. Subjects, consequential changes, script-specific worlds, explicit environment choices, asset scopes/paths/metadata and agent-assisted additions are supplied. Bot absence agrees with art direction outside the opening. Optional null energy channels and empty reaction arrays are valid. Production capability resolution supplies implementation context, not creative approval; no selectors or additional bindings are assumed. The unresolved human-held key ending is clearly directed. The issues above concern planned causality and inconsistent direction, not missing painted evidence. Moving rough critics remain required before final artwork.",
+  "audience_narration": false
+}

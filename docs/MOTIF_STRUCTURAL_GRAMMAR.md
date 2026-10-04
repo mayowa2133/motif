@@ -1,6 +1,6 @@
 # Motif structural grammar 1.0
 
-Part of `motif-gold-v1`, above Quality System v1.1. The seven reference videos inform filmmaking relationships, not plots, characters, artwork or runtime inputs. Frozen VoiceStudio v6 remains a visual benchmark, not evidence for its narrated claims. The rejected reversible rowhouse is a negative example, never gold art.
+Part of `motif-gold-v1`, above Quality System v1.1. The seven reference videos inform filmmaking relationships, not plots, characters, artwork or rendered runtime assets. New productions retrieve private decoded evidence through Reference Calibration before planning; see REFERENCE_CALIBRATION.md. Frozen VoiceStudio v6 remains a visual benchmark, not evidence for its narrated claims. The rejected reversible rowhouse is a negative example, never gold art.
 
 **A setup persists while the same visual rule keeps evolving. A setup resets when the semantic rule changes.**
 

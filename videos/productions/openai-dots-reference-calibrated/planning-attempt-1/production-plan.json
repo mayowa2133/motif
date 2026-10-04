@@ -1,0 +1,1524 @@
+{
+  "schema_version": "script-1.0",
+  "script": "OpenAI just gave ChatGPT a tiny coworker with its own computer \u2014 and it doesn\u2019t clock out. They\u2019re called Dots. Instead of living inside one chat bubble, a Dot can connect to your apps, use its own cloud computer, and keep chewing through a multi-step job in the background. OpenAI is pitching them for real work and personal errands, with specialist Dots for companies, and teams of Dots planned later. But here\u2019s the catch: sensitive actions can still need your approval, and right now Dots require an eligible paid ChatGPT plan, while Meta\u2019s Muse offers a free tier. So the next AI race isn\u2019t just who has the smartest chatbot. It\u2019s who gets to become your always-on digital coworker. Would you give one the keys?",
+  "audience": "AI-curious adults and knowledge workers deciding whether persistent agents deserve access to their apps",
+  "style": "reference-expressive-high-energy-v1",
+  "rationale": "Derivation precedes staging: introduce/name persistent agency; escape/connect; provision a separate computer; advance an assigned job; propose uses; specialize; qualify future collaboration; interrupt for permission; compare access conditions; reframe competition; invite entrusted access. Adjacent propositions share a setup only while their governing rule develops. The opening introduces a small notched Dot token, connected work establishes its consequential behavior, and the ending returns that token to an unresolved access decision. Permission, commercial eligibility and future teamwork receive separate worlds. Supplied primary-source claim summaries support narration; references support material identity, hierarchy and persistence only. Interfaces and examples are explicitly illustrative, without product screenshots, performance measurements or claims of task success.",
+  "metaphor": "An identifiable notched agent token moves from the edge of conversation into consequential work, then encounters the boundaries of entrusted access. Each semantic world has its own physical rule; the token supplies continuity without carrying entire environments.",
+  "assets": [
+    {
+      "id": "shared-motif-runtime",
+      "description": "Reuse canonical Motif Bot v1 editable puppet, local fonts, tactile materials, registered adapters, event engine, lexical voice alignment, captions and quality gates. Exact existing paths must be resolved from the production registry before compilation.",
+      "reuse_path": ""
+    },
+    {
+      "id": "agency-props",
+      "description": "Requested production SVG bundle: small cream circular Dot token with a teal notch; separate user-computer silhouette and folded cloud-computer easel; peelable conversation boundary; assignment ribbon. Dot token is a conceptual symbol, never a Bot redesign or official avatar.",
+      "reuse_path": "videos/productions/openai-dots-reference-calibrated/assets/props/agency.svg"
+    },
+    {
+      "id": "connected-work-props",
+      "description": "Requested SVG bundle: enlarged generic app tabs, mating connector faces, recessed cloud workspace, and an identifiable research brief with two source folds that consolidate into an unfinished draft. No app logos or purported product UI.",
+      "reuse_path": "videos/productions/openai-dots-reference-calibrated/assets/props/connected-work.svg"
+    },
+    {
+      "id": "scope-props",
+      "description": "Requested SVG bundle: business brief and household planning envelope; specialist task fittings with permanent PREVIEW band; translucent team diagram under a closed PLANNED LATER cover.",
+      "reuse_path": "videos/productions/openai-dots-reference-calibrated/assets/props/scope.svg"
+    },
+    {
+      "id": "permission-props",
+      "description": "Requested SVG bundle: sensitive-change envelope, arresting paper stop, untouched approval control and scoped-access key with app-tab teeth. Same key returns in the closing invitation.",
+      "reuse_path": "videos/productions/openai-dots-reference-calibrated/assets/props/permission.svg"
+    },
+    {
+      "id": "access-comparison-props",
+      "description": "Requested SVG bundle: equal-size Dots and Muse entry leaves with different admission requirements; no scores, exclusive price, winner badge or unlimited-free claim.",
+      "reuse_path": "videos/productions/openai-dots-reference-calibrated/assets/props/access-comparison.svg"
+    },
+    {
+      "id": "trust-props",
+      "description": "Requested SVG bundle: fold-out editorial comparison object whose conversation face reveals a persistent-work face; isolated user-side key cradle and agent-side receiving recess.",
+      "reuse_path": "videos/productions/openai-dots-reference-calibrated/assets/props/trust.svg"
+    },
+    {
+      "id": "production-action-additions",
+      "description": "Requested production-scoped action and anchor contracts, not executable existing selectors: agency unfolding, connector engagement, job-state replacement, scope replacement, provisional-cover reveal, conditional permission stop, access-leaf comparison, editorial fold and unresolved key presentation. Extend registered paper and interactive UI adapters only after review.",
+      "reuse_path": "videos/productions/openai-dots-reference-calibrated/assets/props/action-additions.json"
+    }
+  ],
+  "beats": [
+    {
+      "id": "b01",
+      "narration": "OpenAI just gave ChatGPT a tiny coworker with its own computer \u2014 and it doesn\u2019t clock out. They\u2019re called Dots.",
+      "subject": "A conceptual Dot token paired with its own computer",
+      "action": "An assignment ribbon unfurls a small agent token and a separate folded computer; the user-computer lid closes while an assigned-work fold continues advancing on the agent side.",
+      "before_after": "One conversation-bound assignment becomes a visibly separate agent workspace that remains active after the user side closes.",
+      "focal_detail": "The physical gap between user and cloud computers, followed by the continuing assignment fold.",
+      "consequence": "The viewer understands separate computing and persistence without assuming unlimited autonomy or guaranteed uptime.",
+      "headline": "A COWORKER BEYOND THE CHAT",
+      "focus_target": "assignment fold at the separate cloud computer",
+      "framing": "subject",
+      "actions": [
+        {
+          "kind": "agent-assisted:agency-unfold",
+          "cue": "its own computer",
+          "requires": [
+            "agency-props",
+            "reviewed unfold hinges and separate computer anchors"
+          ],
+          "produces": [
+            "Distinct user and cloud-computer silhouettes"
+          ]
+        },
+        {
+          "kind": "agent-assisted:assigned-work-persist",
+          "cue": "doesn\u2019t clock out",
+          "requires": [
+            "reviewed assignment-fold state binding"
+          ],
+          "produces": [
+            "Assigned task progresses after user lid closes"
+          ]
+        }
+      ],
+      "needed_assets": [
+        "shared-motif-runtime",
+        "agency-props",
+        "production-action-additions"
+      ],
+      "quality": {
+        "purpose": "Introduce separate computing and persistent assigned work.",
+        "hero": "Dot token and folded cloud computer",
+        "primary_action": "Unfold independent workspace, then retain assigned-task progress as the user side closes.",
+        "performance": {
+          "state": "absent",
+          "target": ""
+        },
+        "before": "Assignment is confined to the user conversation side.",
+        "after": "A separate cloud workspace continues an assigned task.",
+        "focal_target": "assignment fold at the separate cloud computer",
+        "framing": "subject",
+        "reaction_radius": {
+          "origin": [
+            235,
+            340
+          ],
+          "radius": 55,
+          "duration": 0.3,
+          "targets": []
+        },
+        "secondary_motion": [
+          "Assignment ribbon curls settle after the workspace opens."
+        ],
+        "environment": [
+          "Cropped user-computer ledge",
+          "Recessed cloud-workspace backing"
+        ],
+        "exit_overlap": "Carry only the notched Dot token into the conversation-boundary setup.",
+        "energy": {
+          "dominant_action": "The separate workspace opens and its assignment advances.",
+          "character_response": null,
+          "local_reaction": null,
+          "residual_motion": "The opened ribbon retains a short paper curl recovery.",
+          "next_action_overlap": "The token approaches the next boundary after separation is readable."
+        },
+        "art_direction": {
+          "hero_object": "Cream notched token beside a teal folded cloud-computer easel",
+          "bot_role": "absent",
+          "materials": [
+            "Matte cream card",
+            "Teal folded paper",
+            "Dark display inset"
+          ],
+          "depth_planes": [
+            "Recessed backing",
+            "Computer easels",
+            "Foreground assignment ribbon"
+          ],
+          "composition": "Diagonal relationship between a cropped user computer and the larger operative cloud workspace; token remains small but identifiable.",
+          "intentional_irregularity": "The assignment ribbon has an unequal curled end that records its unfolding.",
+          "environment_mode": "physical",
+          "environment_justification": null
+        }
+      }
+    },
+    {
+      "id": "b02",
+      "narration": "Instead of living inside one chat bubble, a Dot can connect to your apps,",
+      "subject": "The boundary between conversation and connected apps",
+      "action": "Motif Bot peels open the conversation seam; the Dot token reaches a connector that engages before an app-source fold can cross.",
+      "before_after": "A sealed chat boundary becomes an open, connected passage.",
+      "focal_detail": "The mating connector faces touch and seat before source material moves.",
+      "consequence": "Connected access becomes a visible causal relationship rather than a floating app label.",
+      "headline": "CONNECTION CHANGES THE REACH",
+      "focus_target": "engaging connector faces",
+      "framing": "detail",
+      "actions": [
+        {
+          "kind": "agent-assisted:boundary-peel",
+          "cue": "one chat bubble",
+          "requires": [
+            "agency-props",
+            "reviewed seam grip and peel anchors"
+          ],
+          "produces": [
+            "Opened conversation boundary"
+          ]
+        },
+        {
+          "kind": "agent-assisted:connector-engage",
+          "cue": "connect to your apps,",
+          "requires": [
+            "connected-work-props",
+            "reviewed mating-face and source-passage anchors"
+          ],
+          "produces": [
+            "Engaged connector",
+            "Source fold passes only after engagement"
+          ]
+        }
+      ],
+      "needed_assets": [
+        "shared-motif-runtime",
+        "agency-props",
+        "connected-work-props",
+        "production-action-additions"
+      ],
+      "quality": {
+        "purpose": "Explain escape from conversation confinement through connected access.",
+        "hero": "Peelable chat boundary and app connector",
+        "primary_action": "Open the seam and engage a connector before material crosses.",
+        "performance": {
+          "state": "focused",
+          "target": "bot"
+        },
+        "before": "Source material remains outside the sealed conversation boundary.",
+        "after": "A seated connector permits source material to enter.",
+        "focal_target": "engaging connector faces",
+        "framing": "detail",
+        "reaction_radius": {
+          "origin": [
+            220,
+            330
+          ],
+          "radius": 100,
+          "duration": 0.25,
+          "targets": [
+            {
+              "id": "bot",
+              "position": [
+                275,
+                405
+              ],
+              "relevance": 0.9,
+              "amplitude": {
+                "x": 0,
+                "y": 1,
+                "rotation": -1
+              },
+              "delay": 0.03
+            }
+          ]
+        },
+        "secondary_motion": [
+          "The peeled seam relaxes after the opening becomes clear."
+        ],
+        "environment": [
+          "Paper interface edge",
+          "Recessed workspace layer",
+          "Cropped task holder"
+        ],
+        "exit_overlap": "Follow the entering source fold into the same workspace.",
+        "energy": {
+          "dominant_action": "Connector seating releases the source fold.",
+          "character_response": "Bot braces through the peel and recovers through the registered bot binding.",
+          "local_reaction": "A bounded registered Bot response follows connector contact; connector deformation requires the requested adapter.",
+          "residual_motion": "The seam curl recovers outside the main action transform.",
+          "next_action_overlap": "Source entry begins after connector engagement is readable."
+        },
+        "art_direction": {
+          "hero_object": "Large cream conversation seam with staggered teal connection tabs",
+          "bot_role": "participant",
+          "materials": [
+            "Cream paper edge",
+            "Teal connector card",
+            "Dark recessed backing"
+          ],
+          "depth_planes": [
+            "Workspace recess",
+            "Conversation seam",
+            "Bot and entering source fold"
+          ],
+          "composition": "The connector occupies the mobile-scale focal region; Bot is cropped closely enough for its bracing silhouette to read.",
+          "intentional_irregularity": "Unequal tab depths reveal distinct app connections without visual clutter.",
+          "environment_mode": "physical",
+          "environment_justification": null
+        }
+      }
+    },
+    {
+      "id": "b03",
+      "narration": "use its own cloud computer,",
+      "subject": "A distinct cloud workspace",
+      "action": "The entered source fold seats in the cloud-computer recess; Bot guides the task onto its working surface, with the user-computer fragment clearly separate.",
+      "before_after": "Connected source material waiting at the edge becomes an assigned input inside a separate computer.",
+      "focal_detail": "The input seats inside the cloud workspace rather than the user device.",
+      "consequence": "The cloud computer is understood as separate from the user's computer.",
+      "headline": "CONNECTION CHANGES THE REACH",
+      "focus_target": "source fold seated in cloud recess",
+      "framing": "subject",
+      "actions": [
+        {
+          "kind": "agent-assisted:cloud-input-seat",
+          "cue": "its own cloud computer,",
+          "requires": [
+            "connected-work-props",
+            "reviewed recess landing and Bot grip anchors"
+          ],
+          "produces": [
+            "Assigned input inside the separate cloud workspace"
+          ]
+        }
+      ],
+      "needed_assets": [
+        "shared-motif-runtime",
+        "agency-props",
+        "connected-work-props",
+        "production-action-additions"
+      ],
+      "quality": {
+        "purpose": "Locate assigned work inside a separate cloud computer.",
+        "hero": "Cloud recess receiving the identifiable brief",
+        "primary_action": "Seat connected source material inside the cloud workspace.",
+        "performance": {
+          "state": "focused",
+          "target": "bot"
+        },
+        "before": "The source fold waits at the connected boundary.",
+        "after": "The fold occupies the cloud-computer working surface.",
+        "focal_target": "source fold seated in cloud recess",
+        "framing": "subject",
+        "reaction_radius": {
+          "origin": [
+            205,
+            345
+          ],
+          "radius": 75,
+          "duration": 0.25,
+          "targets": []
+        },
+        "secondary_motion": [
+          "The source fold's raised corner settles after seating."
+        ],
+        "environment": [
+          "Paper interface edge",
+          "Recessed workspace layer",
+          "Cropped task holder"
+        ],
+        "exit_overlap": "Begin the first job-state change after the input has visibly seated.",
+        "energy": {
+          "dominant_action": "Source material lands inside the separate computer.",
+          "character_response": "Bot guides and releases the fold through requested inverse-grip choreography.",
+          "local_reaction": null,
+          "residual_motion": "The released corner settles.",
+          "next_action_overlap": "The seated input opens into its first work state."
+        },
+        "art_direction": {
+          "hero_object": "Teal cloud easel with a deep dark working recess",
+          "bot_role": "participant",
+          "materials": [
+            "Folded teal card",
+            "Dark display paper",
+            "Cream source stock"
+          ],
+          "depth_planes": [
+            "Workspace backing",
+            "Recess lip",
+            "Brief and Bot hands"
+          ],
+          "composition": "Cloud recess dominates; a cropped user-computer edge remains spatially disconnected.",
+          "intentional_irregularity": "One raised source corner preserves the brief's identity from its entry.",
+          "environment_mode": "physical",
+          "environment_justification": null
+        }
+      }
+    },
+    {
+      "id": "b04",
+      "narration": "and keep chewing through a multi-step job in the background.",
+      "subject": "One assigned research brief",
+      "action": "Bot unfolds two source sections, aligns their evidence fragments and consolidates them into an unfinished draft; a foreground conversation flap closes while the next draft fold continues behind it.",
+      "before_after": "An unworked assigned brief becomes a consolidated draft with its next step still pending.",
+      "focal_detail": "The same notched brief changes state; earlier fragments are replaced rather than accumulating.",
+      "consequence": "Background work reads as consequential development of one job, without claiming measured speed or automatic completion.",
+      "headline": "CONNECTION CHANGES THE REACH",
+      "focus_target": "brief changing into an unfinished draft",
+      "framing": "subject",
+      "actions": [
+        {
+          "kind": "agent-assisted:job-state-replace",
+          "cue": "a multi-step job",
+          "requires": [
+            "connected-work-props",
+            "reviewed source-to-draft state and grip anchors"
+          ],
+          "produces": [
+            "Sources consolidated into the same identifiable draft"
+          ]
+        },
+        {
+          "kind": "agent-assisted:background-layer-continue",
+          "cue": "in the background.",
+          "requires": [
+            "reviewed occlusion and pending-fold state bindings"
+          ],
+          "produces": [
+            "Assigned draft advances behind the closed foreground conversation flap"
+          ]
+        }
+      ],
+      "needed_assets": [
+        "shared-motif-runtime",
+        "connected-work-props",
+        "production-action-additions"
+      ],
+      "quality": {
+        "purpose": "Show successive meaningful work states continuing behind foreground inactivity.",
+        "hero": "Identifiable source brief becoming a draft",
+        "primary_action": "Replace source fragments with consolidated draft material and continue a pending fold behind the foreground flap.",
+        "performance": {
+          "state": "focused",
+          "target": "bot"
+        },
+        "before": "An assigned brief contains separate source folds.",
+        "after": "The same brief contains an unfinished draft with its next step advancing.",
+        "focal_target": "brief changing into an unfinished draft",
+        "framing": "subject",
+        "reaction_radius": {
+          "origin": [
+            205,
+            350
+          ],
+          "radius": 80,
+          "duration": 0.3,
+          "targets": []
+        },
+        "secondary_motion": [
+          "Consolidated paper edges recover from their final placement."
+        ],
+        "environment": [
+          "Paper interface edge",
+          "Recessed workspace layer",
+          "Cropped task holder"
+        ],
+        "exit_overlap": null,
+        "energy": {
+          "dominant_action": "Source states become a draft, then its pending fold advances.",
+          "character_response": "Bot's authored handling follows the brief through each state; canonical focused performance remains registered.",
+          "local_reaction": null,
+          "residual_motion": "Placed draft edges settle while the pending step starts.",
+          "next_action_overlap": "Foreground closure overlaps only after the consolidated draft is readable."
+        },
+        "art_direction": {
+          "hero_object": "Uneven cream research brief with two folds becoming one draft",
+          "bot_role": "participant",
+          "materials": [
+            "Cream source paper",
+            "Teal task notch",
+            "Dark workspace backing"
+          ],
+          "depth_planes": [
+            "Cloud workspace",
+            "Developing brief",
+            "Foreground conversation flap"
+          ],
+          "composition": "Establish the brief large before reducing it to a still-legible background region; Bot remains visibly involved with the assigned work.",
+          "intentional_irregularity": "An unfinished projecting fold distinguishes ongoing work from a completed output.",
+          "environment_mode": "physical",
+          "environment_justification": null
+        }
+      }
+    },
+    {
+      "id": "b05",
+      "narration": "OpenAI is pitching them for real work and personal errands,",
+      "subject": "Proposed work and personal-use categories",
+      "action": "An editorial paper fan opens a business brief, then replaces it with a household planning envelope at the same assignment contact; neither example executes an external action.",
+      "before_after": "One business-use proposal becomes a personal-use proposal.",
+      "focal_detail": "The changed task material at the common assignment fitting.",
+      "consequence": "The breadth of the pitch becomes legible while illustrative examples remain proposals.",
+      "headline": "THE PITCH: WORK AND ERRANDS",
+      "focus_target": "business brief replaced by household envelope",
+      "framing": "subject",
+      "actions": [
+        {
+          "kind": "agent-assisted:scope-replace",
+          "cue": "real work and personal errands,",
+          "requires": [
+            "scope-props",
+            "reviewed fan hinges and task fitting anchors"
+          ],
+          "produces": [
+            "Sequential business and personal proposal examples"
+          ]
+        }
+      ],
+      "needed_assets": [
+        "shared-motif-runtime",
+        "scope-props",
+        "production-action-additions"
+      ],
+      "quality": {
+        "purpose": "Show proposed uses without demonstrating unverified execution.",
+        "hero": "Business brief and household planning envelope",
+        "primary_action": "Replace one proposed task category with another at a shared assignment fitting.",
+        "performance": {
+          "state": "absent",
+          "target": ""
+        },
+        "before": "A business brief occupies the proposal fitting.",
+        "after": "A household planning envelope occupies it.",
+        "focal_target": "business brief replaced by household envelope",
+        "framing": "subject",
+        "reaction_radius": {
+          "origin": [
+            180,
+            335
+          ],
+          "radius": 65,
+          "duration": 0.3,
+          "targets": []
+        },
+        "secondary_motion": [
+          "The outgoing fan leaf closes behind the new proposal."
+        ],
+        "environment": [
+          "Cropped business folio edge",
+          "Household envelope pocket"
+        ],
+        "exit_overlap": null,
+        "energy": {
+          "dominant_action": "The proposal fan changes task category.",
+          "character_response": null,
+          "local_reaction": null,
+          "residual_motion": "The replaced leaf completes its hinge recovery.",
+          "next_action_overlap": null
+        },
+        "art_direction": {
+          "hero_object": "Asymmetric paper proposal fan",
+          "bot_role": "absent",
+          "materials": [
+            "Warm paper folio",
+            "Coral envelope stock",
+            "Teal fitting tab"
+          ],
+          "depth_planes": [
+            "Category pockets",
+            "Active proposal leaf",
+            "Foreground fitting"
+          ],
+          "composition": "One proposal commands attention at a time; business and domestic context appear through material changes rather than another dashboard.",
+          "intentional_irregularity": "The business leaf is long and folded; the personal envelope is short with an offset flap.",
+          "environment_mode": "physical",
+          "environment_justification": null
+        }
+      }
+    },
+    {
+      "id": "b06",
+      "narration": "with specialist Dots for companies,",
+      "subject": "Preview enterprise specialization",
+      "action": "A company task template opens to expose differently shaped specialist fittings; the Dot token seats beside the compatible fitting under a permanent PREVIEW band.",
+      "before_after": "An undifferentiated company template reveals a task-specific match.",
+      "focal_detail": "A fitting matches a particular task shape, with PREVIEW remaining readable.",
+      "consequence": "Specialization reads as task suitability in preview, without invented branded worker species or a completed task.",
+      "headline": "COMPANY SPECIALISTS \u00b7 PREVIEW",
+      "focus_target": "compatible specialist task fitting",
+      "framing": "detail",
+      "actions": [
+        {
+          "kind": "agent-assisted:specialist-fit-reveal",
+          "cue": "specialist Dots for companies,",
+          "requires": [
+            "scope-props",
+            "agency-props",
+            "reviewed fitting reveal and token seating anchors"
+          ],
+          "produces": [
+            "Preview-qualified specialist task relationship"
+          ]
+        }
+      ],
+      "needed_assets": [
+        "shared-motif-runtime",
+        "agency-props",
+        "scope-props",
+        "production-action-additions"
+      ],
+      "quality": {
+        "purpose": "Distinguish enterprise specialization while preserving preview status.",
+        "hero": "Company task template with specialist fittings",
+        "primary_action": "Reveal task-specific compatibility under an attached preview band.",
+        "performance": {
+          "state": "absent",
+          "target": ""
+        },
+        "before": "Company template conceals its task fittings.",
+        "after": "A compatible specialist fitting is exposed beside the Dot token.",
+        "focal_target": "compatible specialist task fitting",
+        "framing": "detail",
+        "reaction_radius": {
+          "origin": [
+            195,
+            330
+          ],
+          "radius": 60,
+          "duration": 0.25,
+          "targets": []
+        },
+        "secondary_motion": [
+          "The template's opening edge relaxes around the revealed fitting."
+        ],
+        "environment": [],
+        "exit_overlap": null,
+        "energy": {
+          "dominant_action": "The template reveals a task-specific fit.",
+          "character_response": null,
+          "local_reaction": null,
+          "residual_motion": "The opening template edge settles.",
+          "next_action_overlap": null
+        },
+        "art_direction": {
+          "hero_object": "Die-cut company template with a permanently attached PREVIEW band",
+          "bot_role": "absent",
+          "materials": [
+            "Dark teal template card",
+            "Cream task insert",
+            "Marigold preview band"
+          ],
+          "depth_planes": [
+            "Template backing",
+            "Exposed fitting",
+            "Preview band"
+          ],
+          "composition": "Close asymmetric crop makes the matching geometry dominant and the qualification impossible to crop away.",
+          "intentional_irregularity": "Unequal fitting shapes express different task suitability.",
+          "environment_mode": "minimal-isolated",
+          "environment_justification": "Isolating the fit prevents enterprise specialization from becoming another full working environment."
+        }
+      }
+    },
+    {
+      "id": "b07",
+      "narration": "and teams of Dots planned later.",
+      "subject": "Future teamwork",
+      "action": "A tracing-paper cover lifts only far enough to reveal an unassembled team diagram; its PLANNED LATER seal keeps the operative joint closed.",
+      "before_after": "An opaque future proposal becomes a visible but non-operational diagram.",
+      "focal_detail": "The unopened joint and attached PLANNED LATER seal.",
+      "consequence": "Teams are visibly future intention, never a present-tense working demonstration.",
+      "headline": "TEAMS ARE PLANNED LATER",
+      "focus_target": "sealed team-diagram joint",
+      "framing": "subject",
+      "actions": [
+        {
+          "kind": "agent-assisted:provisional-cover-reveal",
+          "cue": "planned later.",
+          "requires": [
+            "scope-props",
+            "reviewed cover hinge and closed-joint constraint"
+          ],
+          "produces": [
+            "Visible future diagram with no active teamwork"
+          ]
+        }
+      ],
+      "needed_assets": [
+        "shared-motif-runtime",
+        "scope-props",
+        "production-action-additions"
+      ],
+      "quality": {
+        "purpose": "Qualify planned teams through non-operational material state.",
+        "hero": "Sealed translucent team proposal",
+        "primary_action": "Reveal a diagram while leaving its working joint sealed.",
+        "performance": {
+          "state": "absent",
+          "target": ""
+        },
+        "before": "A covered proposal hides the team diagram.",
+        "after": "The diagram is visible beneath its still-sealed operational joint.",
+        "focal_target": "sealed team-diagram joint",
+        "framing": "subject",
+        "reaction_radius": {
+          "origin": [
+            185,
+            345
+          ],
+          "radius": 70,
+          "duration": 0.25,
+          "targets": []
+        },
+        "secondary_motion": [
+          "The lifted tracing-paper edge settles against its seal limit."
+        ],
+        "environment": [],
+        "exit_overlap": null,
+        "energy": {
+          "dominant_action": "The cover exposes a future proposal without releasing its joint.",
+          "character_response": null,
+          "local_reaction": null,
+          "residual_motion": "The cover relaxes at its constrained endpoint.",
+          "next_action_overlap": null
+        },
+        "art_direction": {
+          "hero_object": "Translucent folded team diagram held shut by a marigold seal",
+          "bot_role": "absent",
+          "materials": [
+            "Tracing paper",
+            "Cream diagram stock",
+            "Marigold paper seal"
+          ],
+          "depth_planes": [
+            "Unassembled diagram",
+            "Translucent cover",
+            "Attached seal"
+          ],
+          "composition": "A broad diagonal folded sheet replaces the specialist close-up; no moving agent ensemble appears.",
+          "intentional_irregularity": "Unjoined diagram ends remain separated rather than aligning into a functioning route.",
+          "environment_mode": "minimal-isolated",
+          "environment_justification": "Sparse provisional material makes future status the entire causal idea."
+        }
+      }
+    },
+    {
+      "id": "b08",
+      "narration": "But here\u2019s the catch: sensitive actions can still need your approval,",
+      "subject": "A sensitive action awaiting user authority",
+      "action": "A sensitive-change envelope approaches an arresting paper stop and halts before its outgoing slot; Bot leans back in anticipation while the approval control stays untouched and the scoped key remains on the user side.",
+      "before_after": "An advancing sensitive action becomes a pending request that cannot cross its boundary.",
+      "focal_detail": "The visible gap between the stopped envelope and outgoing slot.",
+      "consequence": "The user retains approval; no message, purchase or sensitive change is executed.",
+      "headline": "SENSITIVE ACTIONS MAY NEED APPROVAL",
+      "focus_target": "stopped envelope before the outgoing slot",
+      "framing": "detail",
+      "actions": [
+        {
+          "kind": "agent-assisted:conditional-permission-stop",
+          "cue": "need your approval,",
+          "requires": [
+            "permission-props",
+            "reviewed arrest anchor, outgoing boundary and untouched-control constraint"
+          ],
+          "produces": [
+            "Sensitive action remains pending on the user side of authority"
+          ]
+        }
+      ],
+      "needed_assets": [
+        "shared-motif-runtime",
+        "permission-props",
+        "production-action-additions"
+      ],
+      "quality": {
+        "purpose": "Interrupt autonomous progression at a conditional sensitive-action boundary.",
+        "hero": "Sensitive-change envelope stopped before its outgoing slot",
+        "primary_action": "Arrest the envelope before execution and leave approval unresolved.",
+        "performance": {
+          "state": "anticipating",
+          "target": "bot"
+        },
+        "before": "The sensitive-change envelope advances toward an outgoing slot.",
+        "after": "It waits at a stop; approval and key remain untouched.",
+        "focal_target": "stopped envelope before the outgoing slot",
+        "framing": "detail",
+        "reaction_radius": {
+          "origin": [
+            185,
+            330
+          ],
+          "radius": 100,
+          "duration": 0.3,
+          "targets": [
+            {
+              "id": "bot",
+              "position": [
+                265,
+                385
+              ],
+              "relevance": 0.9,
+              "amplitude": {
+                "x": 1,
+                "y": 0,
+                "rotation": 1
+              },
+              "delay": 0.04
+            }
+          ]
+        },
+        "secondary_motion": [
+          "The arrested envelope's lifted flap relaxes without crossing the stop."
+        ],
+        "environment": [],
+        "exit_overlap": null,
+        "energy": {
+          "dominant_action": "Advancing sensitive material stops before execution.",
+          "character_response": "Bot's anticipating posture and bounded registered response make the wait readable.",
+          "local_reaction": "Only the registered Bot target reacts; stop compression awaits its requested contact adapter.",
+          "residual_motion": "The envelope flap releases tension on the pending side.",
+          "next_action_overlap": null
+        },
+        "art_direction": {
+          "hero_object": "Coral sensitive-change envelope at a cream stopping boundary",
+          "bot_role": "reactor",
+          "materials": [
+            "Coral envelope paper",
+            "Cream stop card",
+            "Teal scoped-access key"
+          ],
+          "depth_planes": [
+            "Outgoing slot backing",
+            "Stopped envelope and boundary",
+            "User-side key and Bot"
+          ],
+          "composition": "A large empty stopping gap dominates; Bot's leaned silhouette supports the interruption without touching approval.",
+          "intentional_irregularity": "A projecting envelope flap retains the tension of an interrupted action.",
+          "environment_mode": "minimal-isolated",
+          "environment_justification": "Removing workplace context makes the unresolved authority boundary the unmistakable focus."
+        }
+      }
+    },
+    {
+      "id": "b09",
+      "narration": "and right now Dots require an eligible paid ChatGPT plan, while Meta\u2019s Muse offers a free tier.",
+      "subject": "Different commercial entry conditions",
+      "action": "Two equal-size entry leaves unfold sequentially: Dots exposes an eligible-paid-plan admission notch; Muse exposes a free-tier entrance with an attached more-with-subscriptions extension. Neither product is ranked.",
+      "before_after": "Covered entry conditions become readable, unequal admission requirements.",
+      "focal_detail": "Dots' eligible paid-plan requirement beside Muse's bounded free-tier opening.",
+      "consequence": "The comparison concerns access, without exclusive pricing, unlimited free use or performance superiority.",
+      "headline": "TWO DIFFERENT ENTRY CONDITIONS",
+      "focus_target": "paired admission conditions",
+      "framing": "subject",
+      "actions": [
+        {
+          "kind": "agent-assisted:access-leaf-compare",
+          "cue": "an eligible paid ChatGPT plan,",
+          "requires": [
+            "access-comparison-props",
+            "reviewed equal-scale admission-leaf hinges"
+          ],
+          "produces": [
+            "Dots eligible paid-plan condition; eligibility and rollout remain visibly qualified"
+          ]
+        },
+        {
+          "kind": "agent-assisted:access-leaf-compare",
+          "cue": "Muse offers a free tier.",
+          "requires": [
+            "access-comparison-props",
+            "reviewed bounded free-tier reveal"
+          ],
+          "produces": [
+            "Muse free-tier condition with a separate subscription extension"
+          ]
+        }
+      ],
+      "needed_assets": [
+        "shared-motif-runtime",
+        "access-comparison-props",
+        "production-action-additions"
+      ],
+      "quality": {
+        "purpose": "Compare access conditions separately from sensitive-action permission.",
+        "hero": "Paired Dots and Muse admission leaves",
+        "primary_action": "Expose different entry requirements at equal visual scale.",
+        "performance": {
+          "state": "absent",
+          "target": ""
+        },
+        "before": "Both product admission leaves conceal their conditions.",
+        "after": "Dots shows eligible paid-plan access and rollout qualification; Muse shows a bounded free tier.",
+        "focal_target": "paired admission conditions",
+        "framing": "subject",
+        "reaction_radius": {
+          "origin": [
+            180,
+            340
+          ],
+          "radius": 90,
+          "duration": 0.3,
+          "targets": []
+        },
+        "secondary_motion": [
+          "Each revealed leaf completes its paper hinge recovery before the paired comparison resolves."
+        ],
+        "environment": [],
+        "exit_overlap": null,
+        "energy": {
+          "dominant_action": "Sequential reveals establish the two admission conditions.",
+          "character_response": null,
+          "local_reaction": null,
+          "residual_motion": "Leaf edges settle without moving their readable labels.",
+          "next_action_overlap": "Muse's reveal begins after the Dots requirement is readable."
+        },
+        "art_direction": {
+          "hero_object": "Two equally legible folded admission leaves",
+          "bot_role": "absent",
+          "materials": [
+            "Cream card",
+            "Teal admission notch",
+            "Muted coral tier extension"
+          ],
+          "depth_planes": [
+            "Folded backing",
+            "Admission leaves",
+            "Condition tabs"
+          ],
+          "composition": "Vertically staggered equal-size leaves permit large mobile labels without resembling a leaderboard or centered browser panel.",
+          "intentional_irregularity": "The Muse subscription extension projects beyond its free-tier leaf; the Dots eligibility tab occupies a different edge.",
+          "environment_mode": "minimal-isolated",
+          "environment_justification": "A bare comparison isolates commercial conditions from the previous authority gate."
+        }
+      }
+    },
+    {
+      "id": "b10",
+      "narration": "So the next AI race isn\u2019t just who has the smartest chatbot. It\u2019s who gets to become your always-on digital coworker.",
+      "subject": "The editorial shift from conversation to persistent work",
+      "action": "A large folded comparison object turns its conversation face aside to reveal a deeper working face; the original Dot token enters that face and opens an assigned-work fold, while the conversation face remains visible as one part of the object.",
+      "before_after": "Conversation alone occupies the editorial frame; persistent assigned work becomes its dominant dimension.",
+      "focal_detail": "The revealed depth and working fold, rather than a score or race winner.",
+      "consequence": "The film reframes competition as a question of persistent work and entrusted access, without asserting a smartest model.",
+      "headline": "THE COMPETITION MOVES INTO WORK",
+      "focus_target": "persistent-work face revealed by the fold",
+      "framing": "subject",
+      "actions": [
+        {
+          "kind": "agent-assisted:editorial-fold-reframe",
+          "cue": "the smartest chatbot.",
+          "requires": [
+            "trust-props",
+            "reviewed face hinge and retained-conversation state"
+          ],
+          "produces": [
+            "Conversation remains one visible dimension of the argument"
+          ]
+        },
+        {
+          "kind": "agent-assisted:editorial-fold-reframe",
+          "cue": "your always-on digital coworker.",
+          "requires": [
+            "trust-props",
+            "agency-props",
+            "reviewed token seat and assigned-work fold"
+          ],
+          "produces": [
+            "Persistent-work dimension becomes dominant"
+          ]
+        }
+      ],
+      "needed_assets": [
+        "shared-motif-runtime",
+        "agency-props",
+        "trust-props",
+        "production-action-additions"
+      ],
+      "quality": {
+        "purpose": "Make the script's editorial reframe visible without inventing a benchmark.",
+        "hero": "Folded conversation-to-work comparison object",
+        "primary_action": "Reveal a persistent-work dimension while retaining conversation as part of the object.",
+        "performance": {
+          "state": "absent",
+          "target": ""
+        },
+        "before": "The conversation face dominates the folded object.",
+        "after": "A deeper persistent-work face dominates and receives the original token.",
+        "focal_target": "persistent-work face revealed by the fold",
+        "framing": "subject",
+        "reaction_radius": {
+          "origin": [
+            190,
+            340
+          ],
+          "radius": 90,
+          "duration": 0.35,
+          "targets": []
+        },
+        "secondary_motion": [
+          "The displaced conversation leaf settles at an oblique angle."
+        ],
+        "environment": [],
+        "exit_overlap": "The original token's notch leads the cut into the final receiving recess.",
+        "energy": {
+          "dominant_action": "The folded object's working dimension emerges and develops.",
+          "character_response": null,
+          "local_reaction": null,
+          "residual_motion": "The displaced conversation leaf recovers as the work fold opens.",
+          "next_action_overlap": "The token approaches the final receiving recess after the reframe is readable."
+        },
+        "art_direction": {
+          "hero_object": "Deep teal fold-out object with cream conversation and work faces",
+          "bot_role": "absent",
+          "materials": [
+            "Deep teal folded card",
+            "Cream face stock",
+            "Marigold editorial edge"
+          ],
+          "depth_planes": [
+            "Retained conversation leaf",
+            "Revealed work face",
+            "Token and assigned-work fold"
+          ],
+          "composition": "A broad angled silhouette transforms in depth; no literal race, trophy, numeric ranking or repeated dashboard.",
+          "intentional_irregularity": "The conversation leaf remains partly cropped while the working face extends toward the viewer.",
+          "environment_mode": "minimal-isolated",
+          "environment_justification": "The editorial reframe benefits from a single transforming object without a literal workplace."
+        }
+      }
+    },
+    {
+      "id": "b11",
+      "narration": "Would you give one the keys?",
+      "subject": "The viewer's unresolved access decision",
+      "action": "The scoped key from the permission setup rises on its user-side paper cradle toward the original Dot token's receiving recess, then stops across a clear gap. Bot watches with open, anticipating posture; no grip, transfer or insertion occurs.",
+      "before_after": "A key rests with the user; it becomes available for consideration while remaining on the user side.",
+      "focal_detail": "The unclosed gap between key teeth and receiving recess.",
+      "consequence": "The invitation stays unresolved and sensitive-action authority remains with the user.",
+      "headline": "HOW MUCH ACCESS WOULD YOU ENTRUST?",
+      "focus_target": "unclosed key-to-recess gap",
+      "framing": "detail",
+      "actions": [
+        {
+          "kind": "agent-assisted:unresolved-key-present",
+          "cue": "give one the keys?",
+          "requires": [
+            "permission-props",
+            "trust-props",
+            "agency-props",
+            "reviewed cradle stop and no-transfer constraint"
+          ],
+          "produces": [
+            "Key remains user-held in an unresolved invitation"
+          ]
+        }
+      ],
+      "needed_assets": [
+        "shared-motif-runtime",
+        "agency-props",
+        "permission-props",
+        "trust-props",
+        "production-action-additions"
+      ],
+      "quality": {
+        "purpose": "Pay off the opening agency token with an unresolved decision about entrusted access.",
+        "hero": "Scoped key separated from the original Dot token",
+        "primary_action": "Present the key toward a receiving recess and stop short of transfer.",
+        "performance": {
+          "state": "anticipating",
+          "target": "bot"
+        },
+        "before": "The scoped key rests in its user-side cradle.",
+        "after": "The key is offered for consideration but remains separated from the agent recess.",
+        "focal_target": "unclosed key-to-recess gap",
+        "framing": "detail",
+        "reaction_radius": {
+          "origin": [
+            175,
+            330
+          ],
+          "radius": 80,
+          "duration": 0.3,
+          "targets": []
+        },
+        "secondary_motion": [
+          "The cradle's folded edge relaxes at its stopping position."
+        ],
+        "environment": [],
+        "exit_overlap": null,
+        "energy": {
+          "dominant_action": "The user-side cradle approaches and stops before transfer.",
+          "character_response": "Bot holds an open anticipating silhouette without reaching for or accepting the key.",
+          "local_reaction": null,
+          "residual_motion": "Cradle recovery preserves the unclosed gap.",
+          "next_action_overlap": null
+        },
+        "art_direction": {
+          "hero_object": "Teal scoped-access key facing the cream notched Dot token",
+          "bot_role": "reactor",
+          "materials": [
+            "Teal key card",
+            "Cream token stock",
+            "Warm paper cradle"
+          ],
+          "depth_planes": [
+            "Receiving recess",
+            "Separated key and token",
+            "User-side cradle and cropped Bot"
+          ],
+          "composition": "Key and gap dominate the close frame; Bot's readable open posture stays subordinate.",
+          "intentional_irregularity": "Unequal app-tab key teeth recall the connected access introduced earlier.",
+          "environment_mode": "minimal-isolated",
+          "environment_justification": "The ending removes all operating environments so the remaining space reads as the viewer's decision."
+        }
+      }
+    }
+  ],
+  "ending_action": "The scoped key approaches but never transfers or enters the original Dot token's recess. Preserve the visible gap through the end of the actual spoken question; no approval, success mark, unlock or publishing action follows.",
+  "limitations": [
+    "Data-only proposal. No tools, code, files, web verification, speech generation, rendering or independent critic execution occurred. Claims rely on the supplied verified packet as of 2026-10-03; reference claims are not evidence.",
+    "Structure and direction are NOT_ASSESSED by independent critics. This plan grants no PASS, production approval or authorization to advance. A fresh independent structure PASS must precede direction review, speech generation and moving rough.",
+    "All listed production assets, metadata and action contracts are requested additions, not existing files, selectors, anchors or registered capabilities. Create and review them under this project's assets/props/ only; do not promote canonical assets.",
+    "Exact shared puppet, font, material, event-engine, caption and adapter paths were not supplied. The reused asset record deliberately leaves paths empty; registry resolution is required before compilation. Canonical Motif Bot v1 geometry remains locked.",
+    "Reuse registered paper finite actions where their complete contracts fit; use interactive-ui-v1 for its registered bot performance and reaction target. Calendar/arena and workshop adapters remain available but are not forced into unrelated access, specialization or future-team worlds.",
+    "Requested action kinds: agency-unfold, assigned-work-persist, boundary-peel, connector-engage, cloud-input-seat, job-state-replace, background-layer-continue, scope-replace, specialist-fit-reveal, provisional-cover-reveal, conditional-permission-stop, access-leaf-compare, editorial-fold-reframe and unresolved-key-present. They require explicit production-scoped adapter development and registration before compilation.",
+    "Requested anchor maps: computer hinges and assignment folds; Bot seam grip; connector mating faces and passage stop; cloud recess landing; source/draft folds and Bot grip/release; proposal hinges and fitting; specialist reveal and token seat; provisional cover and sealed joint; permission arrest, outgoing boundary and untouched control; admission-leaf hinges; editorial face hinge and token seat; final cradle stop and receiving recess. These names describe requirements, never proposed selectors claimed to exist.",
+    "Held materials require inverse grip resolution after main and local transforms. Unsupported attachment or focal/framing bindings block compilation. Only registered bot reaction targets are enrolled; other contact deformation belongs to explicitly requested reviewed choreography, not invented reaction selectors.",
+    "New SVG artwork descriptions are direction requirements. Begin with moving rough placeholders; no final artwork before both independent moving critics pass with and without captions. The rejected original stays frozen.",
+    "Actual exact-script Kokoro timings at the approved speed drive duration and lexical caption alignment. Use natural short coral paper chunks with stable letters; no scene, event, reaction, particle or duration quotas. No audio finishing in this rough-review task.",
+    "Reference evidence consists of supplied stills and ordered strips. Easing, exact contacts, continuous performance, audio synchronization and moving compliance remain unassessed.",
+    "Inspect declared contacts using consecutive native windows of six frames before and after each event, clipped to beat boundaries, alongside full-rate traces and playback. All ten quality gates and hierarchy diagnoses require explicit assessment; technical success is separate.",
+    "Allow at most two meaningful moving repairs within the supplied brief. Final moving QA, technical validation, audio boundaries and final human watching/listening approval remain required for any later final production. This proposal neither publishes nor grants sensitive-action approval.",
+    "The headline and permanent local qualification bands preserve PREVIEW, PLANNED LATER, conditional approval, eligible paid access and bounded free-tier meaning when narration captions are removed. Illustrative task states do not claim product UI, benchmark results, successful task completion or unrestricted proactive actions."
+  ],
+  "quality_mode": "motif-gold-v1",
+  "asset_usage": [
+    {
+      "id": "shared-motif-runtime",
+      "scope": "reused",
+      "path": "",
+      "metadata_path": "",
+      "agent_assisted": false
+    },
+    {
+      "id": "agency-props",
+      "scope": "production-specific",
+      "path": "videos/productions/openai-dots-reference-calibrated/assets/props/agency.svg",
+      "metadata_path": "videos/productions/openai-dots-reference-calibrated/assets/props/agency.metadata.json",
+      "agent_assisted": true
+    },
+    {
+      "id": "connected-work-props",
+      "scope": "production-specific",
+      "path": "videos/productions/openai-dots-reference-calibrated/assets/props/connected-work.svg",
+      "metadata_path": "videos/productions/openai-dots-reference-calibrated/assets/props/connected-work.metadata.json",
+      "agent_assisted": true
+    },
+    {
+      "id": "scope-props",
+      "scope": "production-specific",
+      "path": "videos/productions/openai-dots-reference-calibrated/assets/props/scope.svg",
+      "metadata_path": "videos/productions/openai-dots-reference-calibrated/assets/props/scope.metadata.json",
+      "agent_assisted": true
+    },
+    {
+      "id": "permission-props",
+      "scope": "production-specific",
+      "path": "videos/productions/openai-dots-reference-calibrated/assets/props/permission.svg",
+      "metadata_path": "videos/productions/openai-dots-reference-calibrated/assets/props/permission.metadata.json",
+      "agent_assisted": true
+    },
+    {
+      "id": "access-comparison-props",
+      "scope": "production-specific",
+      "path": "videos/productions/openai-dots-reference-calibrated/assets/props/access-comparison.svg",
+      "metadata_path": "videos/productions/openai-dots-reference-calibrated/assets/props/access-comparison.metadata.json",
+      "agent_assisted": true
+    },
+    {
+      "id": "trust-props",
+      "scope": "production-specific",
+      "path": "videos/productions/openai-dots-reference-calibrated/assets/props/trust.svg",
+      "metadata_path": "videos/productions/openai-dots-reference-calibrated/assets/props/trust.metadata.json",
+      "agent_assisted": true
+    },
+    {
+      "id": "production-action-additions",
+      "scope": "production-specific",
+      "path": "videos/productions/openai-dots-reference-calibrated/assets/props/action-additions.json",
+      "metadata_path": "videos/productions/openai-dots-reference-calibrated/assets/props/action-additions.metadata.json",
+      "agent_assisted": true
+    }
+  ],
+  "film_structure": {
+    "version": "structure-1.0",
+    "rhetorical_chapters": [
+      {
+        "id": "c01",
+        "purpose": "Introduce and name the persistent coworker proposition; semantic verbs: introduce, separate, persist, name.",
+        "narration_span": {
+          "start_word": 0,
+          "end_word": 20,
+          "text": "OpenAI just gave ChatGPT a tiny coworker with its own computer \u2014 and it doesn\u2019t clock out. They\u2019re called Dots."
+        }
+      },
+      {
+        "id": "c02",
+        "purpose": "Explain expanded agency through connected computing and developing assigned work; semantic verbs: escape, connect, seat, consolidate, continue.",
+        "narration_span": {
+          "start_word": 20,
+          "end_word": 49,
+          "text": "Instead of living inside one chat bubble, a Dot can connect to your apps, use its own cloud computer, and keep chewing through a multi-step job in the background."
+        }
+      },
+      {
+        "id": "c03",
+        "purpose": "Describe the pitch while distinguishing use categories, preview specialists and future teams; semantic verbs: propose, replace, specialize, qualify.",
+        "narration_span": {
+          "start_word": 49,
+          "end_word": 70,
+          "text": "OpenAI is pitching them for real work and personal errands, with specialist Dots for companies, and teams of Dots planned later."
+        }
+      },
+      {
+        "id": "c04",
+        "purpose": "Qualify autonomy and compare commercial entry conditions as different limits; semantic verbs: interrupt, await, admit, compare.",
+        "narration_span": {
+          "start_word": 70,
+          "end_word": 98,
+          "text": "But here\u2019s the catch: sensitive actions can still need your approval, and right now Dots require an eligible paid ChatGPT plan, while Meta\u2019s Muse offers a free tier."
+        }
+      },
+      {
+        "id": "c05",
+        "purpose": "Reframe the competition and return authority to the viewer; semantic verbs: reframe, reveal, offer, withhold.",
+        "narration_span": {
+          "start_word": 98,
+          "end_word": 125,
+          "text": "So the next AI race isn\u2019t just who has the smartest chatbot. It\u2019s who gets to become your always-on digital coworker. Would you give one the keys?"
+        }
+      }
+    ],
+    "setups": [
+      {
+        "setup_id": "s01-agency",
+        "chapter": "c01",
+        "narration_span": {
+          "start_word": 0,
+          "end_word": 20,
+          "text": "OpenAI just gave ChatGPT a tiny coworker with its own computer \u2014 and it doesn\u2019t clock out. They\u2019re called Dots."
+        },
+        "semantic_center": "Introduce a separately provisioned agent whose assigned work persists.",
+        "visual_rule": "An assignment unfolds into a distinct cloud workspace; closing the user side does not close assigned work.",
+        "relationship_archetype": "reveal / persistence",
+        "hero": "Dot token and folded cloud computer",
+        "bot_role": "absent",
+        "continuity_tokens": [
+          "dot-token"
+        ],
+        "environment_mode": "physical",
+        "palette_family": "Ochre claim stage with cream, teal and dark display",
+        "entry_state": "Conversation-bound assignment at the user side.",
+        "exit_state": "Named Dot token beside a separately active cloud workspace.",
+        "reason_for_persistence": "Provisioning, ongoing activity and naming develop the same introduced-agent relationship.",
+        "planned_reset_after": {
+          "kind": "object-led",
+          "reason": "Carry the small token into the mechanism while replacing the introductory workspace."
+        },
+        "beat_ids": [
+          "b01"
+        ]
+      },
+      {
+        "setup_id": "s02-connected-work",
+        "chapter": "c02",
+        "narration_span": {
+          "start_word": 20,
+          "end_word": 49,
+          "text": "Instead of living inside one chat bubble, a Dot can connect to your apps, use its own cloud computer, and keep chewing through a multi-step job in the background."
+        },
+        "semantic_center": "Connect source material, assign it to separate computing and advance the same job.",
+        "visual_rule": "Material crosses only after connection, seats in the cloud workspace, then replaces its previous work state.",
+        "relationship_archetype": "interface stage / process",
+        "hero": "Conversation seam, cloud recess and one developing research brief",
+        "bot_role": "participant",
+        "continuity_tokens": [
+          "dot-token",
+          "job-brief"
+        ],
+        "environment_mode": "physical",
+        "palette_family": "Jade source trail with cream and dark display",
+        "entry_state": "Sealed chat boundary; app-source material outside.",
+        "exit_state": "Connected research brief becomes an unfinished draft continuing behind the conversation flap.",
+        "reason_for_persistence": "Connection, computing and background development are successive states of one assigned material flow.",
+        "planned_reset_after": {
+          "kind": "hard-cut",
+          "reason": "The argument changes from executing an assigned process to describing proposed use categories."
+        },
+        "beat_ids": [
+          "b02",
+          "b03",
+          "b04"
+        ]
+      },
+      {
+        "setup_id": "s03-use-pitch",
+        "chapter": "c03",
+        "narration_span": {
+          "start_word": 49,
+          "end_word": 59,
+          "text": "OpenAI is pitching them for real work and personal errands,"
+        },
+        "semantic_center": "Propose business and personal task categories.",
+        "visual_rule": "Task-category material replaces the previous proposal at one shared fitting; no external action executes.",
+        "relationship_archetype": "proposal / replacement",
+        "hero": "Business brief and household planning envelope",
+        "bot_role": "absent",
+        "continuity_tokens": [],
+        "environment_mode": "physical",
+        "palette_family": "Coral wording workshop with warm paper and teal",
+        "entry_state": "Business proposal occupies the fitting.",
+        "exit_state": "Household planning proposal replaces it.",
+        "reason_for_persistence": "Both task categories develop the same editorial pitch rule.",
+        "planned_reset_after": {
+          "kind": "hard-cut",
+          "reason": "Task breadth changes to preview task-specific specialization."
+        },
+        "beat_ids": [
+          "b05"
+        ]
+      },
+      {
+        "setup_id": "s04-specialists",
+        "chapter": "c03",
+        "narration_span": {
+          "start_word": 59,
+          "end_word": 64,
+          "text": "with specialist Dots for companies,"
+        },
+        "semantic_center": "Specialize a company task relationship while retaining preview qualification.",
+        "visual_rule": "Expose compatible task geometry beneath a permanently attached PREVIEW band.",
+        "relationship_archetype": "selection / fit",
+        "hero": "Company task template with specialist fittings",
+        "bot_role": "absent",
+        "continuity_tokens": [
+          "dot-token"
+        ],
+        "environment_mode": "minimal-isolated",
+        "palette_family": "Dark teal support with cream and marigold",
+        "entry_state": "Company template conceals its specialist fittings.",
+        "exit_state": "Compatible fitting is exposed beside the token, still visibly preview-qualified.",
+        "reason_for_persistence": "The short proposition has one fit-and-qualification rule; no task execution is appended.",
+        "planned_reset_after": {
+          "kind": "hard-cut",
+          "reason": "Preview specialization and planned teamwork have different availability states."
+        },
+        "beat_ids": [
+          "b06"
+        ]
+      },
+      {
+        "setup_id": "s05-planned-teams",
+        "chapter": "c03",
+        "narration_span": {
+          "start_word": 64,
+          "end_word": 70,
+          "text": "and teams of Dots planned later."
+        },
+        "semantic_center": "Qualify teamwork as future intention.",
+        "visual_rule": "A proposal can become visible while its operational joint remains sealed.",
+        "relationship_archetype": "inspection / provisional plan",
+        "hero": "Sealed translucent team proposal",
+        "bot_role": "absent",
+        "continuity_tokens": [],
+        "environment_mode": "minimal-isolated",
+        "palette_family": "Warm paper and marigold qualification",
+        "entry_state": "Covered, unassembled team diagram.",
+        "exit_state": "Visible future diagram with sealed joint and PLANNED LATER qualification.",
+        "reason_for_persistence": "The reveal explains one availability distinction without demonstrating teamwork.",
+        "planned_reset_after": {
+          "kind": "hard-cut",
+          "reason": "Future capability changes to a present conditional authority boundary."
+        },
+        "beat_ids": [
+          "b07"
+        ]
+      },
+      {
+        "setup_id": "s06-permission",
+        "chapter": "c04",
+        "narration_span": {
+          "start_word": 70,
+          "end_word": 81,
+          "text": "But here\u2019s the catch: sensitive actions can still need your approval,"
+        },
+        "semantic_center": "Interrupt a sensitive action and await user authority.",
+        "visual_rule": "Sensitive material stops before its outgoing boundary; approval cannot be inferred from progress.",
+        "relationship_archetype": "gate / permission",
+        "hero": "Sensitive-change envelope stopped before its outgoing slot",
+        "bot_role": "reactor",
+        "continuity_tokens": [
+          "scoped-key"
+        ],
+        "environment_mode": "minimal-isolated",
+        "palette_family": "Coral limit with cream, teal and dark recess",
+        "entry_state": "Sensitive envelope approaches its outgoing slot; key remains user-side.",
+        "exit_state": "Envelope remains pending; approval control and key are untouched.",
+        "reason_for_persistence": "Approach, arrest and waiting develop one conditional approval rule.",
+        "planned_reset_after": {
+          "kind": "hard-cut",
+          "reason": "User authority and paid-plan eligibility are separate conditions."
+        },
+        "beat_ids": [
+          "b08"
+        ]
+      },
+      {
+        "setup_id": "s07-commercial-access",
+        "chapter": "c04",
+        "narration_span": {
+          "start_word": 81,
+          "end_word": 98,
+          "text": "and right now Dots require an eligible paid ChatGPT plan, while Meta\u2019s Muse offers a free tier."
+        },
+        "semantic_center": "Compare commercial entry conditions without comparing performance.",
+        "visual_rule": "Equal-scale admission leaves reveal unequal access requirements sequentially.",
+        "relationship_archetype": "comparison / admission",
+        "hero": "Paired Dots and Muse admission leaves",
+        "bot_role": "absent",
+        "continuity_tokens": [],
+        "environment_mode": "minimal-isolated",
+        "palette_family": "Warm cream comparison with teal and muted coral",
+        "entry_state": "Product admission conditions are folded closed.",
+        "exit_state": "Eligible paid access and bounded free-tier entry are equally legible.",
+        "reason_for_persistence": "Both sides answer the same access-condition comparison.",
+        "planned_reset_after": {
+          "kind": "hard-cut",
+          "reason": "Commercial evidence gives way to the script's editorial interpretation."
+        },
+        "beat_ids": [
+          "b09"
+        ]
+      },
+      {
+        "setup_id": "s08-editorial-reframe",
+        "chapter": "c05",
+        "narration_span": {
+          "start_word": 98,
+          "end_word": 119,
+          "text": "So the next AI race isn\u2019t just who has the smartest chatbot. It\u2019s who gets to become your always-on digital coworker."
+        },
+        "semantic_center": "Reframe the competitive question from conversation alone toward persistent assigned work.",
+        "visual_rule": "A retained conversation face gives way to the deeper work dimension of the same editorial object.",
+        "relationship_archetype": "transformation / reframe",
+        "hero": "Folded conversation-to-work comparison object",
+        "bot_role": "absent",
+        "continuity_tokens": [
+          "dot-token"
+        ],
+        "environment_mode": "minimal-isolated",
+        "palette_family": "Mint explanation with deep teal, cream and marigold",
+        "entry_state": "Conversation face occupies the foreground.",
+        "exit_state": "Persistent-work face dominates and contains the original token.",
+        "reason_for_persistence": "Both sentences develop one editorial contrast; the conversation face remains part of the expanded object.",
+        "planned_reset_after": {
+          "kind": "object-led",
+          "reason": "The token carries the argument into the closing access decision, leaving the editorial object behind."
+        },
+        "beat_ids": [
+          "b10"
+        ]
+      },
+      {
+        "setup_id": "s09-unresolved-keys",
+        "chapter": "c05",
+        "narration_span": {
+          "start_word": 119,
+          "end_word": 125,
+          "text": "Would you give one the keys?"
+        },
+        "semantic_center": "Offer a scoped-access decision without granting authority.",
+        "visual_rule": "A user-side key can approach an agent receiving recess but must remain separated until a human decides.",
+        "relationship_archetype": "unresolved handoff / callback",
+        "hero": "Scoped key separated from the original Dot token",
+        "bot_role": "reactor",
+        "continuity_tokens": [
+          "dot-token",
+          "scoped-key"
+        ],
+        "environment_mode": "minimal-isolated",
+        "palette_family": "Cream and teal trust close-up",
+        "entry_state": "Original Dot token faces the scoped key resting in its user-side cradle.",
+        "exit_state": "Key approaches but remains user-side across an unclosed gap.",
+        "reason_for_persistence": "The question develops only the possibility of entrusted access, never its execution.",
+        "planned_reset_after": {
+          "kind": "end",
+          "reason": "End on the unresolved decision with no unlock or approval."
+        },
+        "beat_ids": [
+          "b11"
+        ]
+      }
+    ],
+    "continuity_tokens": [
+      {
+        "id": "dot-token",
+        "origin_setup": "s01-agency",
+        "state_at_origin": "Small cream circular token with a teal notch; conceptual Dot identity beside a separate computer.",
+        "setups_used": [
+          "s01-agency",
+          "s02-connected-work",
+          "s04-specialists",
+          "s08-editorial-reframe",
+          "s09-unresolved-keys"
+        ],
+        "state_changes": [
+          {
+            "setup_id": "s02-connected-work",
+            "change": "Moves beyond the opened conversation seam into connected assigned work."
+          },
+          {
+            "setup_id": "s04-specialists",
+            "change": "Appears beside a compatible preview specialist fitting without changing token geometry."
+          },
+          {
+            "setup_id": "s08-editorial-reframe",
+            "change": "Seats within the persistent-work dimension of the editorial fold."
+          },
+          {
+            "setup_id": "s09-unresolved-keys",
+            "change": "Faces the scoped-access key while retaining an unclosed receiving gap."
+          }
+        ],
+        "final_destination": "Agent-side receiving recess, separated from the user-side key.",
+        "story_justification": "Keeps the same conceptual agent identifiable across capability, specialization and trust worlds without carrying their environments."
+      },
+      {
+        "id": "job-brief",
+        "origin_setup": "s02-connected-work",
+        "state_at_origin": "Uneven cream research brief with a distinctive raised corner and teal task notch.",
+        "setups_used": [
+          "s02-connected-work"
+        ],
+        "state_changes": [
+          {
+            "setup_id": "s02-connected-work",
+            "change": "Crosses the engaged connector, seats in cloud computing, opens into source folds and consolidates into an unfinished draft."
+          }
+        ],
+        "final_destination": "Cloud workspace with a pending draft fold still advancing.",
+        "story_justification": "Provides observable successive states for one assigned multi-step job; it does not become unrelated later props."
+      },
+      {
+        "id": "scoped-key",
+        "origin_setup": "s06-permission",
+        "state_at_origin": "Teal card key with unequal app-tab teeth, resting untouched on the user side.",
+        "setups_used": [
+          "s06-permission",
+          "s09-unresolved-keys"
+        ],
+        "state_changes": [
+          {
+            "setup_id": "s06-permission",
+            "change": "Remains untouched while the sensitive action stops."
+          },
+          {
+            "setup_id": "s09-unresolved-keys",
+            "change": "Approaches the original token on a user-side cradle and stops before transfer."
+          }
+        ],
+        "final_destination": "User-side cradle across a visible gap from the receiving recess.",
+        "story_justification": "Makes the final keys question recall retained approval and scoped access rather than unrestricted authority."
+      }
+    ]
+  }
+}

@@ -1,0 +1,75 @@
+{
+  "scope": "Production-scoped agent-assisted artwork and planned finite choreography; not evidence of autonomous artwork generation or canonical promotion.",
+  "reuse": [
+    "Locked Motif Bot v1 parts via build_motif_bot.assemble_pose/motif_performance",
+    "Existing MotifEventEngine.compileFrames",
+    "Existing voice alignment/captions/quality gates",
+    "Approved local fonts and paper materials"
+  ],
+  "additions": [
+    {
+      "setup": "s01-agency",
+      "visual_rule": "An assignment unfolds into a distinct cloud workspace; closing the user side does not close assigned work.",
+      "execution": "Trusted production source/art.py reusable SVG functions plus pure-time source adapter, to be implemented only after prerequisite review gates."
+    },
+    {
+      "setup": "s02-connected-work",
+      "visual_rule": "Material crosses only after connection, seats in the cloud workspace, then replaces its previous work state.",
+      "execution": "Trusted production source/art.py reusable SVG functions plus pure-time source adapter, to be implemented only after prerequisite review gates."
+    },
+    {
+      "setup": "s03-use-pitch",
+      "visual_rule": "Task-category material replaces the previous proposal at one shared fitting; no external action executes.",
+      "execution": "Trusted production source/art.py reusable SVG functions plus pure-time source adapter, to be implemented only after prerequisite review gates."
+    },
+    {
+      "setup": "s04-specialists",
+      "visual_rule": "Expose compatible task geometry beneath a permanently attached PREVIEW band.",
+      "execution": "Trusted production source/art.py reusable SVG functions plus pure-time source adapter, to be implemented only after prerequisite review gates."
+    },
+    {
+      "setup": "s05-planned-teams",
+      "visual_rule": "A proposal can become visible while its operational joint remains sealed.",
+      "execution": "Trusted production source/art.py reusable SVG functions plus pure-time source adapter, to be implemented only after prerequisite review gates."
+    },
+    {
+      "setup": "s06-permission",
+      "visual_rule": "Sensitive material stops before its outgoing boundary; approval cannot be inferred from progress.",
+      "execution": "Trusted production source/art.py reusable SVG functions plus pure-time source adapter, to be implemented only after prerequisite review gates."
+    },
+    {
+      "setup": "s07-commercial-access",
+      "visual_rule": "Equal-scale admission leaves reveal unequal access requirements sequentially.",
+      "execution": "Trusted production source/art.py reusable SVG functions plus pure-time source adapter, to be implemented only after prerequisite review gates."
+    },
+    {
+      "setup": "s08-editorial-reframe",
+      "visual_rule": "A retained conversation face gives way to the deeper work dimension of the same editorial object.",
+      "execution": "Trusted production source/art.py reusable SVG functions plus pure-time source adapter, to be implemented only after prerequisite review gates."
+    },
+    {
+      "setup": "s09-unresolved-keys",
+      "visual_rule": "A user-side key can approach an agent receiving recess but must remain separated until a human decides.",
+      "execution": "Trusted production source/art.py reusable SVG functions plus pure-time source adapter, to be implemented only after prerequisite review gates."
+    }
+  ],
+  "sources": [
+    {
+      "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-reference-calibrated/source/common.py",
+      "sha256": "939e743b6feef6438e44e4b263e7dffd18045f78594d691e97e741edc4d74aac"
+    },
+    {
+      "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-reference-calibrated/source/art.py",
+      "sha256": "1e0b83f9c93fe067d55835920d959e10a382d6b09eab081a0adddc5c88848536"
+    },
+    {
+      "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-reference-calibrated/source/concepts.py",
+      "sha256": "b8098bc5928078a82be5b2931e85439c1a9b1f91c27bdbc0b3f916938f747000"
+    },
+    {
+      "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-reference-calibrated/source/export_assets.py",
+      "sha256": "fee3ca90328471d1a221169c7379de47d5c0d95992c05cfc6509e10c59240b8c"
+    }
+  ],
+  "unsupported": "No novel adapter is silently treated as an existing registered selector. No external reference artwork is used."
+}

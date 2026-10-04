@@ -1,0 +1,962 @@
+[
+  {
+    "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-news/quality-review/rough/evidence-captions/b01-ordered.png",
+    "sha256": "ad9c6bbb5241c934f321335ebfbd7004ecd8bc0371889adca27fd8a57c484a33"
+  },
+  {
+    "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-news/quality-review/rough/evidence-captions/b01-native-00000.png",
+    "sha256": "e21f9e057bbc8bc64eafa77e5ad39c11ae33c05d090eb6fe4df44685399240ee"
+  },
+  {
+    "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-news/quality-review/rough/evidence-captions/b01-native-00083.png",
+    "sha256": "06c423444b2d2ce520521fe60571361c5a10c5f26c6aa6382c7f199e0781856e"
+  },
+  {
+    "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-news/quality-review/rough/evidence-captions/b01-native-00145.png",
+    "sha256": "e63e7b3b9f8c827fc7d06d340f826af7d2e127f49763c776672ed25252f24432"
+  },
+  {
+    "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-news/quality-review/rough/evidence-captions/b01-event-00-strip-00.png",
+    "sha256": "ffe9634b53712e1ec40952ecc4feddb923bb4b7cf266a8e2312a69ecc51aaf0f"
+  },
+  {
+    "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-news/quality-review/rough/evidence-captions/b01-event-00-strip-01.png",
+    "sha256": "84f22c5a7b8476e134941a274e0bf896a51547cc92d0466e8eaff32094345689"
+  },
+  {
+    "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-news/quality-review/rough/evidence-captions/b01-event-00-strip-02.png",
+    "sha256": "f9cb4c982b473f79eb2737ee48c240e5403ad44f1230bc5356dbd35524eecefe"
+  },
+  {
+    "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-news/quality-review/rough/evidence-captions/b01-event-00-strip-03.png",
+    "sha256": "c2f8df92596372f8fceef5dcb65efd1657a493a6b64d6ae66f14e73da8ff7db0"
+  },
+  {
+    "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-news/quality-review/rough/evidence-captions/b02-ordered.png",
+    "sha256": "4cc87930bcbce1f2b86012f475689a87d421b6e6531ad458bca503712e540c72"
+  },
+  {
+    "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-news/quality-review/rough/evidence-captions/b02-native-00146.png",
+    "sha256": "95ff73b317fb5eeab666db81807890554d2c330b6186a443f83f2181d9fefc67"
+  },
+  {
+    "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-news/quality-review/rough/evidence-captions/b02-native-00163.png",
+    "sha256": "b7f5683bb0f729a8dee7e5a53b353125cfa11067bdede5adcee3538098106312"
+  },
+  {
+    "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-news/quality-review/rough/evidence-captions/b02-native-00176.png",
+    "sha256": "fef07d479da96b3c07e172e9ef976272fe86e60de7801983daf3af1d1a429b1d"
+  },
+  {
+    "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-news/quality-review/rough/evidence-captions/b03-ordered.png",
+    "sha256": "b91fe34cc2d9e4c6aebd1e67d86581112e312b8c07ce6a0a4aafa1ad12395526"
+  },
+  {
+    "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-news/quality-review/rough/evidence-captions/b03-native-00177.png",
+    "sha256": "c4f26c0ca5abf7f4cc6d86a9f4b311165e4c462cca59ae717c19707521fa6b8b"
+  },
+  {
+    "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-news/quality-review/rough/evidence-captions/b03-native-00242.png",
+    "sha256": "cf955e8c65e1c0692bb00a4c01dcd9997294d1696a9eb860826ab1236935c7f7"
+  },
+  {
+    "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-news/quality-review/rough/evidence-captions/b03-native-00268.png",
+    "sha256": "b8bc1c8f0d98a30d8db384b7c4c067cfb2846ec363b71f609a5dda1df1d55ebd"
+  },
+  {
+    "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-news/quality-review/rough/evidence-captions/b03-event-00-strip-00.png",
+    "sha256": "3b0c8703d32076ace4f85f286671430dd88244d246f447aa5434c6a5ac3b5932"
+  },
+  {
+    "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-news/quality-review/rough/evidence-captions/b03-event-00-strip-01.png",
+    "sha256": "9590c23fa70a35e791be8290862200d889d2234d4f96e572386ff3f59c08d679"
+  },
+  {
+    "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-news/quality-review/rough/evidence-captions/b03-event-00-strip-02.png",
+    "sha256": "1ad0854a1565eb7161df5aeeaac5343919e3c81eb5016caf169569f0f85b89c5"
+  },
+  {
+    "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-news/quality-review/rough/evidence-captions/b03-event-00-strip-03.png",
+    "sha256": "d7d41e24d2a12c22247384ba541e6c600147511f7b0d25b9373eb8da32213a86"
+  },
+  {
+    "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-news/quality-review/rough/evidence-captions/b03-event-01-strip-00.png",
+    "sha256": "ff8d887ed488827b5fb274da88e90b6342a01814af91b7afc7b6364a52d2131f"
+  },
+  {
+    "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-news/quality-review/rough/evidence-captions/b03-event-01-strip-01.png",
+    "sha256": "3e58fc53e71aa75e9beff09f2119b03778b5cdfa5dc8f3c018a75b7b73447362"
+  },
+  {
+    "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-news/quality-review/rough/evidence-captions/b03-event-01-strip-02.png",
+    "sha256": "6a94ce3efa5beb68db0191633d61b15dfbb9fe477cfc0f97198743577a2f0f3b"
+  },
+  {
+    "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-news/quality-review/rough/evidence-captions/b04-ordered.png",
+    "sha256": "ae7a0f9d6429f638ea345ed103acc55b8ef861ad2553b2c88cf90f7e9e6ba26b"
+  },
+  {
+    "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-news/quality-review/rough/evidence-captions/b04-native-00269.png",
+    "sha256": "cbbd7e3835c865a9a5aa2002a1ee4f5da2ad34986a2a6ad9f209826e17cced92"
+  },
+  {
+    "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-news/quality-review/rough/evidence-captions/b04-native-00289.png",
+    "sha256": "a339517c138cdd65d02fce952b77eb576c49a187fb43e446db9cd3059b5d1f5a"
+  },
+  {
+    "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-news/quality-review/rough/evidence-captions/b04-native-00304.png",
+    "sha256": "c4d996f7fe52a9bb733bb14cfa0ae6c090b8df1833812bc1179b5be7803b3185"
+  },
+  {
+    "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-news/quality-review/rough/evidence-captions/b04-event-00-strip-00.png",
+    "sha256": "8d4b64724ac9ef1b73cbd4f65c65fb318d033c0f623f7d7a1d00c78071d51b63"
+  },
+  {
+    "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-news/quality-review/rough/evidence-captions/b04-event-00-strip-01.png",
+    "sha256": "40f58404d5c6223ab5f3a056985f0bf14c5c08a19c12fa6d713dadef69ae3c81"
+  },
+  {
+    "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-news/quality-review/rough/evidence-captions/b04-event-00-strip-02.png",
+    "sha256": "f841deb7b86d6ffcc6ecbad16bcfe9bb8c50669617e55bc919460c8c7e7cb1eb"
+  },
+  {
+    "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-news/quality-review/rough/evidence-captions/b04-event-01-strip-00.png",
+    "sha256": "5335492f6d531efeb76c688bebc3b49ff01b2c1f3e9c7291db107536110dc12a"
+  },
+  {
+    "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-news/quality-review/rough/evidence-captions/b04-event-01-strip-01.png",
+    "sha256": "cc5df11b50fa18ebeac49e8038d4ec150a7cab565e6618ef6fa01db766673717"
+  },
+  {
+    "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-news/quality-review/rough/evidence-captions/b04-event-01-strip-02.png",
+    "sha256": "d6a7119a4ec4c1c2a626c14baa3bbc4390f67612be06310daefba2b67d5b2ffe"
+  },
+  {
+    "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-news/quality-review/rough/evidence-captions/b04-event-01-strip-03.png",
+    "sha256": "c1dfc7c1a50c8d61ac06a61d819578b3880c21e947236eae6f62545a11c79fef"
+  },
+  {
+    "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-news/quality-review/rough/evidence-captions/b05-ordered.png",
+    "sha256": "8f59ac92a8e6f13bbf0487480dac087732ceb9dde519ec43063cd6106de0c294"
+  },
+  {
+    "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-news/quality-review/rough/evidence-captions/b05-native-00305.png",
+    "sha256": "929654005901e9d7072c279f024f0d4547e560b25cba76a6b46dfba38e37c121"
+  },
+  {
+    "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-news/quality-review/rough/evidence-captions/b05-native-00354.png",
+    "sha256": "f60c27df9c558f2a15d0ff65343b710a80e677837f1a2594ab3be2ea7bf1d7c2"
+  },
+  {
+    "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-news/quality-review/rough/evidence-captions/b05-native-00390.png",
+    "sha256": "37a11b9c869f5a334315302e2e7ce11c805638dd8c9ae86202d99b4522bbc1ec"
+  },
+  {
+    "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-news/quality-review/rough/evidence-captions/b05-event-00-strip-00.png",
+    "sha256": "2e5e4e18d156de39fd81f970963e1fefe4ff12faa5ef529ad436094cb9f8a355"
+  },
+  {
+    "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-news/quality-review/rough/evidence-captions/b05-event-00-strip-01.png",
+    "sha256": "70e1a84588d154f748ff413b5d3212121c06b9541f9e727f0a6aff62b252a110"
+  },
+  {
+    "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-news/quality-review/rough/evidence-captions/b05-event-00-strip-02.png",
+    "sha256": "2148245d1446b78aa0042e6790fc436ea60b6ffbf3491bdcbb3abc3287045268"
+  },
+  {
+    "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-news/quality-review/rough/evidence-captions/b05-event-00-strip-03.png",
+    "sha256": "44ef1f3f99bf02d06d10aa9101fd642b853df449c8eb4a61a47ee82684a9b24d"
+  },
+  {
+    "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-news/quality-review/rough/evidence-captions/b05-event-01-strip-00.png",
+    "sha256": "b9cd6fcd6e6d0f2f857168728b5f25f1dee51412b24f405044338577fc003daa"
+  },
+  {
+    "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-news/quality-review/rough/evidence-captions/b05-event-01-strip-01.png",
+    "sha256": "b6991e241ac27ba3c0fcdad8f462f742b8c160282be5262f7c0534f716a27805"
+  },
+  {
+    "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-news/quality-review/rough/evidence-captions/b05-event-01-strip-02.png",
+    "sha256": "c9aef42c3c325cb62af59e7c67aa9b2c88f0967f693ad09cddb4d541758225a9"
+  },
+  {
+    "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-news/quality-review/rough/evidence-captions/b05-event-01-strip-03.png",
+    "sha256": "2bed6223235fdde1680654984217e1bcb11fefd442c66251977eeee9245246cd"
+  },
+  {
+    "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-news/quality-review/rough/evidence-captions/b05-event-02-strip-00.png",
+    "sha256": "adcc12c7cfd0e212309478eec782650fbc5ea14cc17c9fd95c4f3a145a88983e"
+  },
+  {
+    "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-news/quality-review/rough/evidence-captions/b05-event-02-strip-01.png",
+    "sha256": "ba9c2e5e4ef2b39dc0280c6cba15e2bd29c70318bdbc89c3588a447fa5b674dc"
+  },
+  {
+    "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-news/quality-review/rough/evidence-captions/b05-event-02-strip-02.png",
+    "sha256": "334e0a8b913d925b86444d67eec2e78124b14e83eb0830a93c3f3e8dc624871e"
+  },
+  {
+    "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-news/quality-review/rough/evidence-captions/b05-event-02-strip-03.png",
+    "sha256": "f61d28795e0d95588e6911492fd0c791e90eb63897b99d5d084530b63b4a6e86"
+  },
+  {
+    "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-news/quality-review/rough/evidence-captions/b06-ordered.png",
+    "sha256": "6c0d7c92334a57ff188547d06c7287fbf5fd7e9bcfa84e0cff3a5e51b8f66e75"
+  },
+  {
+    "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-news/quality-review/rough/evidence-captions/b06-native-00391.png",
+    "sha256": "b19d2764a984cca1e183a070994bb4d78dd7a87364a6ef3dff8f624c3b7e981d"
+  },
+  {
+    "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-news/quality-review/rough/evidence-captions/b06-native-00446.png",
+    "sha256": "a27b60f9da401546f6bdde79b3b40254c963dd01e46b9747e2bdad8951144c94"
+  },
+  {
+    "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-news/quality-review/rough/evidence-captions/b06-native-00487.png",
+    "sha256": "7d60814c8d8375c2ea5e385de6359fe2836cd94dc81a8cd79404ae660619ebf4"
+  },
+  {
+    "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-news/quality-review/rough/evidence-captions/b06-event-00-strip-00.png",
+    "sha256": "1bed14fbda19b3ef64e8c0fc02b2c0da185a777b60650fd5f9c387caf4f467e9"
+  },
+  {
+    "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-news/quality-review/rough/evidence-captions/b06-event-00-strip-01.png",
+    "sha256": "0e003cf10769dc008746b9e3da85d3cb3419511535f6bc59211a19da694bfb4a"
+  },
+  {
+    "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-news/quality-review/rough/evidence-captions/b06-event-00-strip-02.png",
+    "sha256": "2ef6d7c95e8437183021572c8b67ff2ba44f63b07170d29b9581dbc5e1569fd5"
+  },
+  {
+    "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-news/quality-review/rough/evidence-captions/b06-event-00-strip-03.png",
+    "sha256": "fbab5394415e47b638284c8cdfe794e8777077ac3490c6528ba7dc363b432ec8"
+  },
+  {
+    "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-news/quality-review/rough/evidence-captions/b07-ordered.png",
+    "sha256": "033ae9467afb88f5928b1f246b17dad1250d4ecc81115f233f22b62b01f13dbb"
+  },
+  {
+    "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-news/quality-review/rough/evidence-captions/b07-native-00488.png",
+    "sha256": "3b8e2105ac0814ec7b6f80e6797ecc066e1d2dd95d92049a9b6d8721ed7e898a"
+  },
+  {
+    "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-news/quality-review/rough/evidence-captions/b07-native-00548.png",
+    "sha256": "50a3ec6af9112096aea314932ce214254c1f7d93a0a015f375bf9a4a4d1c87ee"
+  },
+  {
+    "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-news/quality-review/rough/evidence-captions/b07-native-00593.png",
+    "sha256": "48a84911a4836cbe6f9b00b8ac20d6a153312c42032ca670cd70cf603b9072a1"
+  },
+  {
+    "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-news/quality-review/rough/evidence-captions/b07-event-00-strip-00.png",
+    "sha256": "a250a3b0009a5853849ec383fe3277b3bc2274e29f83032221b36a667b7f9ebf"
+  },
+  {
+    "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-news/quality-review/rough/evidence-captions/b07-event-00-strip-01.png",
+    "sha256": "254e9d6742de5dbf74fd8bcdd6e519d5144d2e0c5e58d171d2f4cd2549e42b77"
+  },
+  {
+    "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-news/quality-review/rough/evidence-captions/b07-event-00-strip-02.png",
+    "sha256": "4d4435ae1dc1d366c209fb837f282f4697bad7116f0fb8116eb0ae0793eeb5cb"
+  },
+  {
+    "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-news/quality-review/rough/evidence-captions/b07-event-00-strip-03.png",
+    "sha256": "82dc81f48cf6ee1ea942291dad74a1bc1a489686f05334b205670acbcee3de0d"
+  },
+  {
+    "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-news/quality-review/rough/evidence-captions/b07-event-01-strip-00.png",
+    "sha256": "ae4a07650f7546df9b5c0a30d650da70cc00f44ab31730ddb67638bd665ee437"
+  },
+  {
+    "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-news/quality-review/rough/evidence-captions/b07-event-01-strip-01.png",
+    "sha256": "655e5138a638686b799893717f36a65f70d6930ee3cf8b13b79324dfd29c70fb"
+  },
+  {
+    "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-news/quality-review/rough/evidence-captions/b07-event-01-strip-02.png",
+    "sha256": "ddc702a93aeb904fa652563fa82e39d7d00e6fdabe91f986a674d5395e9bd7b3"
+  },
+  {
+    "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-news/quality-review/rough/evidence-captions/b07-event-01-strip-03.png",
+    "sha256": "d8a77c770dea9e5761f833114e7fb578f0dfa3b1b8754500efd65f046ec48a7f"
+  },
+  {
+    "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-news/quality-review/rough/evidence-captions/b08-ordered.png",
+    "sha256": "87b1fcf595d34bc477aaeac64b0b09f297de1e8c556236b62be44a18c93dd0cc"
+  },
+  {
+    "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-news/quality-review/rough/evidence-captions/b08-native-00594.png",
+    "sha256": "fb7fa4aec4060af5af713d33f281f8a89241a0a3b691ced5bfd5d4c62df18c55"
+  },
+  {
+    "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-news/quality-review/rough/evidence-captions/b08-native-00650.png",
+    "sha256": "c3d4bbeea9793f9f140621f24158366821200696d087470a756317c353ad4024"
+  },
+  {
+    "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-news/quality-review/rough/evidence-captions/b08-native-00692.png",
+    "sha256": "6be557704150c45a90a96786867186d12a0d133eb1137cec4ae425c612b43d21"
+  },
+  {
+    "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-news/quality-review/rough/evidence-captions/b08-event-00-strip-00.png",
+    "sha256": "64756626e49f686c8de0862f11dc956db0322293dc3e7055351b3adcdfb6fcaf"
+  },
+  {
+    "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-news/quality-review/rough/evidence-captions/b08-event-00-strip-01.png",
+    "sha256": "3efd38f9f66be1c73a6f751aa348afae7a3c6b2b7ba4610eff41cd69845b9f67"
+  },
+  {
+    "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-news/quality-review/rough/evidence-captions/b08-event-00-strip-02.png",
+    "sha256": "d4340c6436a4e8184787bd072eb23a8876a6c4d581c0fff275a37b0d7a616e00"
+  },
+  {
+    "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-news/quality-review/rough/evidence-captions/b08-event-00-strip-03.png",
+    "sha256": "4872b2cad7ddef1efc45babcb994647076e9ca360159ca74ffeb0bb3c25d99da"
+  },
+  {
+    "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-news/quality-review/rough/evidence-captions/b09-ordered.png",
+    "sha256": "b2f6bd6e48359ba706ecd94025431b4ab462c132a12fc8d0c0ca0bc000fad5aa"
+  },
+  {
+    "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-news/quality-review/rough/evidence-captions/b09-native-00693.png",
+    "sha256": "af6227ec1df1c3f05292834f0ecd11f6ec2a0a2c6577d0bae7ead9c9b5b1a305"
+  },
+  {
+    "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-news/quality-review/rough/evidence-captions/b09-native-00791.png",
+    "sha256": "548615802ea98fc74b29e952f9f3141792657408196856b9e7f67933e25c7194"
+  },
+  {
+    "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-news/quality-review/rough/evidence-captions/b09-native-00864.png",
+    "sha256": "e21fc63c737c2fcf41cb33f5363b8e334d9c238a198a60311b8b40b4dd94dd12"
+  },
+  {
+    "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-news/quality-review/rough/evidence-captions/b09-event-00-strip-00.png",
+    "sha256": "a81c410c8119b190a484337cb099c73b01f4485988dc3163aef0a469b1995d2a"
+  },
+  {
+    "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-news/quality-review/rough/evidence-captions/b09-event-00-strip-01.png",
+    "sha256": "6b758537e97d2feafcab44a58a6032e35cc265872f4828f02efcc953b728e033"
+  },
+  {
+    "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-news/quality-review/rough/evidence-captions/b09-event-00-strip-02.png",
+    "sha256": "dc924b73dc80d5aa95f9ea98f75e7e94643776891eb413ce781e5597c005dec8"
+  },
+  {
+    "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-news/quality-review/rough/evidence-captions/b09-event-00-strip-03.png",
+    "sha256": "08db458ee97f956c32da0d29a020e0a6813366e3ff3c63e0d79b3af1640c9333"
+  },
+  {
+    "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-news/quality-review/rough/evidence-captions/b09-event-01-strip-00.png",
+    "sha256": "d28d84a730f9bdf6ba3339eed3434ed2cebef0e518c028ace5642d132493531a"
+  },
+  {
+    "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-news/quality-review/rough/evidence-captions/b09-event-01-strip-01.png",
+    "sha256": "050d2787290ab5bbc141ec2a689467cebe51dba0e3c6201cadbcf4ec90676623"
+  },
+  {
+    "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-news/quality-review/rough/evidence-captions/b09-event-01-strip-02.png",
+    "sha256": "1314a0c2266303649e895f385d0e009fe544cc9b726a1497bfe55d842a8fc850"
+  },
+  {
+    "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-news/quality-review/rough/evidence-captions/b09-event-01-strip-03.png",
+    "sha256": "8589f03f2253827638aa835fa38f415ea8326b90aa85e25b8cff749efb2725b9"
+  },
+  {
+    "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-news/quality-review/rough/evidence-captions/b10-ordered.png",
+    "sha256": "ffbe10a607fb096b0cc0abe179df8642d7c94ba05111a1c7f1f2294027e9befb"
+  },
+  {
+    "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-news/quality-review/rough/evidence-captions/b10-native-00865.png",
+    "sha256": "e430c63299e979a75d9ca90d4c4d26dba562c8b26eff6a93999e3734b19cc5fc"
+  },
+  {
+    "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-news/quality-review/rough/evidence-captions/b10-native-00924.png",
+    "sha256": "58e951a7b270077e01bc5e562b9feb8a8a8c0fb10400fb9146b23766660c07b6"
+  },
+  {
+    "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-news/quality-review/rough/evidence-captions/b10-native-00968.png",
+    "sha256": "e57853283e4a8a38b4fa834f877b5a98e486590c49e1ab1b7beb9a0843891acb"
+  },
+  {
+    "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-news/quality-review/rough/evidence-captions/b10-event-00-strip-00.png",
+    "sha256": "727cbab60b97fdb547a3e46cd7dad7c3f1359df58e5b5e8839244c72084b0d57"
+  },
+  {
+    "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-news/quality-review/rough/evidence-captions/b10-event-00-strip-01.png",
+    "sha256": "c4bf6489ea40ca18a314c726745b7a2ff9dde4c3cf5f6024c6cf031b41253d46"
+  },
+  {
+    "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-news/quality-review/rough/evidence-captions/b10-event-00-strip-02.png",
+    "sha256": "f6ea6a9320849a9aaf3e53f56341cc25edd840144b8fe544c21b02abf213fdb0"
+  },
+  {
+    "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-news/quality-review/rough/evidence-captions/b10-event-00-strip-03.png",
+    "sha256": "c50299bb1cc0646fa21ad7453bbb0943f1d5dbce2a42785bf5c0c531863d342a"
+  },
+  {
+    "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-news/quality-review/rough/evidence-captions/b11-ordered.png",
+    "sha256": "af8f687956c2c6154c8ce26a9e0e547512be32563799fd0d6f9a660b61a866bf"
+  },
+  {
+    "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-news/quality-review/rough/evidence-captions/b11-native-00969.png",
+    "sha256": "58e16ce1b8244ffd59510854079622c911e2f670de5d5f99ac4aabae95047072"
+  },
+  {
+    "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-news/quality-review/rough/evidence-captions/b11-native-01015.png",
+    "sha256": "21f72bf07369ca8e3d06aca92e7a7cdda1b01956ae15a0feacaeae31a88f7829"
+  },
+  {
+    "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-news/quality-review/rough/evidence-captions/b11-native-01052.png",
+    "sha256": "9e4252aad9293cbf667e857c001eec7ee102928301a863d5cdfa6b7e332e8f00"
+  },
+  {
+    "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-news/quality-review/rough/evidence-captions/b11-event-00-strip-00.png",
+    "sha256": "dd30b51cba15103757e1758935a997dec05500ea8bc5503e2fc8766fd463b304"
+  },
+  {
+    "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-news/quality-review/rough/evidence-captions/b11-event-00-strip-01.png",
+    "sha256": "e91a90acf91ddd96cc0c0ddc59e8afe8583c8a3ec1b634d27404abf345af54c2"
+  },
+  {
+    "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-news/quality-review/rough/evidence-captions/b11-event-00-strip-02.png",
+    "sha256": "e12aec2df7535fe43eeaf719399afbada3e11ee10412862687930505c1a2f20b"
+  },
+  {
+    "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-news/quality-review/rough/evidence-captions/b11-event-00-strip-03.png",
+    "sha256": "7a0289af2ebc0cf6956d9c51a1308945048c07301f78ae3c74aa2bc2e5d24515"
+  },
+  {
+    "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-news/quality-review/rough/evidence-captions/b12-ordered.png",
+    "sha256": "b8087759d80c9b730aebd0f59f54dea5390894cdd7992cd644af38e3d5730f28"
+  },
+  {
+    "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-news/quality-review/rough/evidence-captions/b12-native-01053.png",
+    "sha256": "ff2cfb0308ec1ab1617b2003df652f31a9a4ce5047311df8cc814e0cfccb98ca"
+  },
+  {
+    "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-news/quality-review/rough/evidence-captions/b12-native-01080.png",
+    "sha256": "b7a769f4561c58122f74aa3ffc2758a840dba516ac71b96d847f44ba139f690f"
+  },
+  {
+    "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-news/quality-review/rough/evidence-captions/b12-native-01117.png",
+    "sha256": "017665a888e10dc1bb8678270cc089c27b290baff426c8228886b881d9697c2f"
+  },
+  {
+    "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-news/quality-review/rough/evidence-captions/b12-event-00-strip-00.png",
+    "sha256": "c9ab4669db3a5bb371c13a97d668bc645416b4773c367a0cd09a13ebaaf7ba90"
+  },
+  {
+    "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-news/quality-review/rough/evidence-captions/b12-event-00-strip-01.png",
+    "sha256": "93c046e05a98868fdd7dc2ec91b06e0879804ffe1ab1ada2a64af3e94a47752d"
+  },
+  {
+    "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-news/quality-review/rough/evidence-captions/b12-event-00-strip-02.png",
+    "sha256": "6b5f6b3dbbd4cb936e76d09674875ebd90fa2ea20c6b74bbfb53382160b7a94d"
+  },
+  {
+    "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-news/quality-review/rough/evidence-captions/b12-event-00-strip-03.png",
+    "sha256": "a2e920c0e19ae8c593f5b7604fc846e4dcf1cac5bed1d4a483d85f3badcfbd9b"
+  },
+  {
+    "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-news/quality-review/rough/evidence-no-captions/b01-ordered.png",
+    "sha256": "853686e55a799d092e794659af50dee5bf5dea9c42fa8fa9015e7cd3af5a845d"
+  },
+  {
+    "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-news/quality-review/rough/evidence-no-captions/b01-native-00000.png",
+    "sha256": "23862417e837d1d290ec0e4dcc8cc00a3a199afb0c061883077ef7fd7eb8d2b9"
+  },
+  {
+    "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-news/quality-review/rough/evidence-no-captions/b01-native-00083.png",
+    "sha256": "49fb506e40fede4ae3a1c1c83f4df0ee2ea5b643d0268c72175d6e77cddd6d4e"
+  },
+  {
+    "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-news/quality-review/rough/evidence-no-captions/b01-native-00145.png",
+    "sha256": "befc9649f488ab288f442e0f64f93a51143c17380977470160683062a706646e"
+  },
+  {
+    "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-news/quality-review/rough/evidence-no-captions/b01-event-00-strip-00.png",
+    "sha256": "39c783da393a27ca361d4f47c63194e547aa973ea6028f47f07e3f38adcf0605"
+  },
+  {
+    "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-news/quality-review/rough/evidence-no-captions/b01-event-00-strip-01.png",
+    "sha256": "66512caada9917c6a04158920b00e30cd3b9bd3f8326a8bbb7a46fea5b76f7e6"
+  },
+  {
+    "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-news/quality-review/rough/evidence-no-captions/b01-event-00-strip-02.png",
+    "sha256": "af56329cb6a5f91501cfc05f8ab9afec357de7ea1dddbc72f2a37f09fed31343"
+  },
+  {
+    "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-news/quality-review/rough/evidence-no-captions/b01-event-00-strip-03.png",
+    "sha256": "ee8c12e39594bf84ceda0e6029a132a4bd2c4904f481a150349d07a61a027db3"
+  },
+  {
+    "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-news/quality-review/rough/evidence-no-captions/b02-ordered.png",
+    "sha256": "45681ea7e8687a4e482fabe958ab6b89c036d570e6af18df7fcbb2446cad4fd7"
+  },
+  {
+    "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-news/quality-review/rough/evidence-no-captions/b02-native-00146.png",
+    "sha256": "fb3debbf73c714f59f04c08b43aed99952cc414153cfafe96a207f5860b691d1"
+  },
+  {
+    "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-news/quality-review/rough/evidence-no-captions/b02-native-00163.png",
+    "sha256": "ba45d776584e38bd9ca2113d47a1a2e4e63323752c3f5e52c38abb5c704cb6de"
+  },
+  {
+    "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-news/quality-review/rough/evidence-no-captions/b02-native-00176.png",
+    "sha256": "dd25aad3ad228c3cbb2007c008013349601d488fa5c92d1948ce6efe2b9c34cd"
+  },
+  {
+    "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-news/quality-review/rough/evidence-no-captions/b03-ordered.png",
+    "sha256": "2e8a32cb9009101b1f8b465375ee9f0fbea7016391956bb5163a6b52d5c6e720"
+  },
+  {
+    "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-news/quality-review/rough/evidence-no-captions/b03-native-00177.png",
+    "sha256": "1bc08c50899e7a3cb2d80936dc2d8f6db7bb23f13227f4409c11ab191e252c08"
+  },
+  {
+    "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-news/quality-review/rough/evidence-no-captions/b03-native-00242.png",
+    "sha256": "deb9f6cb4898ea99fd0b30af43312b9d626d4eaca7a320ab7bd117f6613106cc"
+  },
+  {
+    "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-news/quality-review/rough/evidence-no-captions/b03-native-00268.png",
+    "sha256": "cd1d517f3c62026507ee7b9541c7596633a62166c57873086f16b62dc6e234c7"
+  },
+  {
+    "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-news/quality-review/rough/evidence-no-captions/b03-event-00-strip-00.png",
+    "sha256": "bc90a19d56fe47f36441ae52ebc507eebcf5624e828f77d970482274d59d77d3"
+  },
+  {
+    "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-news/quality-review/rough/evidence-no-captions/b03-event-00-strip-01.png",
+    "sha256": "1342847253ddc5c5174c36627848610f9937c0cefa3a85dfd56cf8a51625ddb1"
+  },
+  {
+    "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-news/quality-review/rough/evidence-no-captions/b03-event-00-strip-02.png",
+    "sha256": "84ce841a72bdb85e6e74693db19ce9391fad79f8f57014d01c85903509339aac"
+  },
+  {
+    "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-news/quality-review/rough/evidence-no-captions/b03-event-00-strip-03.png",
+    "sha256": "f044f4623f592d53c0dc8a45555b4c4c4bf9a29e360a847a06201956fa068bac"
+  },
+  {
+    "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-news/quality-review/rough/evidence-no-captions/b03-event-01-strip-00.png",
+    "sha256": "ecce869e8e60a8be74f254c2a7bc3f03e9a0ffeadd698a053a8f38866e5d5a7b"
+  },
+  {
+    "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-news/quality-review/rough/evidence-no-captions/b03-event-01-strip-01.png",
+    "sha256": "f670ea8cd39f7ab066e60afb8a06dd9480eaae4b67453ca9108e062d46986a6c"
+  },
+  {
+    "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-news/quality-review/rough/evidence-no-captions/b03-event-01-strip-02.png",
+    "sha256": "866e72256d6805ace4d6cf20d2b2f8e7f66d0d06611d359ddd4afd45704796bf"
+  },
+  {
+    "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-news/quality-review/rough/evidence-no-captions/b04-ordered.png",
+    "sha256": "9978dced4f0c9f7f3090706bcbe3fb143b935946e30c41e4f4c4504735cf1228"
+  },
+  {
+    "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-news/quality-review/rough/evidence-no-captions/b04-native-00269.png",
+    "sha256": "b5a775742b8e357db2cf4154cfec5a30ae88e7ad86f54681fd91728584a7c775"
+  },
+  {
+    "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-news/quality-review/rough/evidence-no-captions/b04-native-00289.png",
+    "sha256": "0a5a89522254fb578b53f0a9e8e72adb25479dded94a1b1ee8d17a8db0c573f2"
+  },
+  {
+    "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-news/quality-review/rough/evidence-no-captions/b04-native-00304.png",
+    "sha256": "cb7b5087fbdf51d1d4107028873967a2600deab226a10d4fe2f08b9f59977a71"
+  },
+  {
+    "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-news/quality-review/rough/evidence-no-captions/b04-event-00-strip-00.png",
+    "sha256": "99d27906bdff071901a72734d44cfc61684d0830aad0419f75503252c3001539"
+  },
+  {
+    "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-news/quality-review/rough/evidence-no-captions/b04-event-00-strip-01.png",
+    "sha256": "78480d47a671400babe37e9c596d0cf12346943ec5c0132d03e4540ac5e0869e"
+  },
+  {
+    "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-news/quality-review/rough/evidence-no-captions/b04-event-00-strip-02.png",
+    "sha256": "ff01bf2ce2e9ab91eb0b81537f9d0121fb99495572ea06a584e4713d3614ec6d"
+  },
+  {
+    "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-news/quality-review/rough/evidence-no-captions/b04-event-01-strip-00.png",
+    "sha256": "7e38ffb97dab9ec2825e9780b00bca9bf24a016586fbd8353d66026eb286d767"
+  },
+  {
+    "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-news/quality-review/rough/evidence-no-captions/b04-event-01-strip-01.png",
+    "sha256": "ef0629185070cc9920e0f36e3366e0c8b10de23c37f6f07f37d946ec3da03280"
+  },
+  {
+    "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-news/quality-review/rough/evidence-no-captions/b04-event-01-strip-02.png",
+    "sha256": "2db24f92772294662706b73d78edc86980bbe00298aba53d2fb2077d73f96ec8"
+  },
+  {
+    "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-news/quality-review/rough/evidence-no-captions/b04-event-01-strip-03.png",
+    "sha256": "3dd8eea5650b239205ecf347875b89e3cae13cec82b52dccd83dd016db992f90"
+  },
+  {
+    "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-news/quality-review/rough/evidence-no-captions/b05-ordered.png",
+    "sha256": "5aab8cf26594623612da4ad04e22d49b7e706fc369338e7274055d068f971bea"
+  },
+  {
+    "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-news/quality-review/rough/evidence-no-captions/b05-native-00305.png",
+    "sha256": "f2cb60bef48f680e4845716522fc0bb4d70d6041710cfb3f517893b84266c58d"
+  },
+  {
+    "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-news/quality-review/rough/evidence-no-captions/b05-native-00354.png",
+    "sha256": "f9ebe4003a6bbc0b39752da6a0cc4ddfb0ca99c0d7795701827433c17c161dcb"
+  },
+  {
+    "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-news/quality-review/rough/evidence-no-captions/b05-native-00390.png",
+    "sha256": "867e3f966374b981f363ccd17b0fb72ebef142296e50e8d95b67523686918dde"
+  },
+  {
+    "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-news/quality-review/rough/evidence-no-captions/b05-event-00-strip-00.png",
+    "sha256": "638db1549e1ed89622918e14bbcf8441acac0b8b36d3c9d523a14c779ec226d3"
+  },
+  {
+    "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-news/quality-review/rough/evidence-no-captions/b05-event-00-strip-01.png",
+    "sha256": "9655c6f4c1d2316e19c3a864fbc501498abd671f714d612890c5a949e1b99867"
+  },
+  {
+    "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-news/quality-review/rough/evidence-no-captions/b05-event-00-strip-02.png",
+    "sha256": "0f4c6b1dce398688337926d8126addb8bb9ae2db5af19b8120235b369fec1277"
+  },
+  {
+    "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-news/quality-review/rough/evidence-no-captions/b05-event-00-strip-03.png",
+    "sha256": "2bc9d911bda60a19795821dfdb2be3b478262db0eaa178097074737d587639ef"
+  },
+  {
+    "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-news/quality-review/rough/evidence-no-captions/b05-event-01-strip-00.png",
+    "sha256": "76f78594ec01aeec33034631948c7add9fc85f3f847eaa194f7efa243721e11c"
+  },
+  {
+    "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-news/quality-review/rough/evidence-no-captions/b05-event-01-strip-01.png",
+    "sha256": "6db6d7e68897b04373def524a29cd7502a7c0fc6c4d28c77f2718971b25c4deb"
+  },
+  {
+    "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-news/quality-review/rough/evidence-no-captions/b05-event-01-strip-02.png",
+    "sha256": "23e2623c0575cb997a8d3738a59d9808330637662b9c6337092f228eee28304c"
+  },
+  {
+    "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-news/quality-review/rough/evidence-no-captions/b05-event-01-strip-03.png",
+    "sha256": "e0ab328885769e123b7ef221cf4b0acabf13da35b524fc5c678beb182c6a4db1"
+  },
+  {
+    "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-news/quality-review/rough/evidence-no-captions/b05-event-02-strip-00.png",
+    "sha256": "61a7d74dbfc6740185644978ba1189b2a4868b9097a5f386596dc58f0f2d2d83"
+  },
+  {
+    "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-news/quality-review/rough/evidence-no-captions/b05-event-02-strip-01.png",
+    "sha256": "faf1ddff9eed8de42aaac808939f4f21b8b6b4127e44a55c8a5054535951e788"
+  },
+  {
+    "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-news/quality-review/rough/evidence-no-captions/b05-event-02-strip-02.png",
+    "sha256": "b41a38404cff943ae9308f1fa0941507642cf40e0f78daa3a44266995206b16f"
+  },
+  {
+    "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-news/quality-review/rough/evidence-no-captions/b05-event-02-strip-03.png",
+    "sha256": "00d9e06946484d951d373a7cf20c7a1960b703d69a312bab58031af0f025d1f5"
+  },
+  {
+    "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-news/quality-review/rough/evidence-no-captions/b06-ordered.png",
+    "sha256": "642d996a85576900638eb9d7ea333a0befbce9acbb2c2506df1c851a099894d6"
+  },
+  {
+    "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-news/quality-review/rough/evidence-no-captions/b06-native-00391.png",
+    "sha256": "8b33dc50fd282989edafe7b764f62289ca1b97b090754a1ebfafad32bbdb17eb"
+  },
+  {
+    "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-news/quality-review/rough/evidence-no-captions/b06-native-00446.png",
+    "sha256": "9b8df9506af9c1bff008bcaded75a9c0cdd69fb173741420ee58ab3a15ce5cb4"
+  },
+  {
+    "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-news/quality-review/rough/evidence-no-captions/b06-native-00487.png",
+    "sha256": "67a464bc543d8aef3f03cd8faaafdea2c415fcdde376992ffcc5437b67c88353"
+  },
+  {
+    "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-news/quality-review/rough/evidence-no-captions/b06-event-00-strip-00.png",
+    "sha256": "1188bc683dd6fd32511a504b8b71330862ffce0906f2f3de3265fe5f5594a95a"
+  },
+  {
+    "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-news/quality-review/rough/evidence-no-captions/b06-event-00-strip-01.png",
+    "sha256": "9d928783177e8586e798a42885f154fabd0b41a17088e07ddfb665cef3b401a0"
+  },
+  {
+    "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-news/quality-review/rough/evidence-no-captions/b06-event-00-strip-02.png",
+    "sha256": "f88efe706290c96b5c3894bb06c1b53779cab300bb50e212e04ff342d030c8bf"
+  },
+  {
+    "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-news/quality-review/rough/evidence-no-captions/b06-event-00-strip-03.png",
+    "sha256": "cc2a0d25ad56b288b877eb55591824537654740d76dcafe6db61bee18d4cc470"
+  },
+  {
+    "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-news/quality-review/rough/evidence-no-captions/b07-ordered.png",
+    "sha256": "f9d80f3be497792303bfabae22d2bb8cc3c911abbcdcfb37a0a6cbbebf326bc8"
+  },
+  {
+    "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-news/quality-review/rough/evidence-no-captions/b07-native-00488.png",
+    "sha256": "8bc3ac952c4379280b584f07b57ca5e033e5d82e3cc5e3cff1b75332733a40d8"
+  },
+  {
+    "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-news/quality-review/rough/evidence-no-captions/b07-native-00548.png",
+    "sha256": "7e280000dff70b6deecc040954363d70c2e787a0432fa204a100b81d23e5932b"
+  },
+  {
+    "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-news/quality-review/rough/evidence-no-captions/b07-native-00593.png",
+    "sha256": "28f81cdb82ca2509ba966977fe1861395ba4ea81567a4c7c6441ffbad7332775"
+  },
+  {
+    "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-news/quality-review/rough/evidence-no-captions/b07-event-00-strip-00.png",
+    "sha256": "a47fae9b80163bcdf740e131387c30503ed9160cabf04eecda98751175e229a7"
+  },
+  {
+    "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-news/quality-review/rough/evidence-no-captions/b07-event-00-strip-01.png",
+    "sha256": "39465f0b59dd926d546d8c5eb52db9c6941b12ce102e613e79e8d0073b47eb27"
+  },
+  {
+    "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-news/quality-review/rough/evidence-no-captions/b07-event-00-strip-02.png",
+    "sha256": "e0cf5910f67766449867fae9a01fcadf9b3de88a091a99468eb71ccac3247eef"
+  },
+  {
+    "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-news/quality-review/rough/evidence-no-captions/b07-event-00-strip-03.png",
+    "sha256": "2aea7023e7ef603e77f16caaf6209290b82c031151ef01d5e5640dd20aa1c997"
+  },
+  {
+    "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-news/quality-review/rough/evidence-no-captions/b07-event-01-strip-00.png",
+    "sha256": "207330361fcb7ba756b498fd25125123646bdc1617d8ea80711427139e60361e"
+  },
+  {
+    "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-news/quality-review/rough/evidence-no-captions/b07-event-01-strip-01.png",
+    "sha256": "aba38352b076cdce6e21d8fa36b76b0b24f6ad1fa803770389597213164cf539"
+  },
+  {
+    "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-news/quality-review/rough/evidence-no-captions/b07-event-01-strip-02.png",
+    "sha256": "cd34bdd007a246a53ab431347181b5d1061a33ddc6b9ff0668beaf4406db9a4a"
+  },
+  {
+    "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-news/quality-review/rough/evidence-no-captions/b07-event-01-strip-03.png",
+    "sha256": "9927d8add2fcfc1f1d03885e6981c824eca73c4f669fd618e00030efc4737a97"
+  },
+  {
+    "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-news/quality-review/rough/evidence-no-captions/b08-ordered.png",
+    "sha256": "9fe17dd122276553157404f95ec7e1e96dab337968d9c7b799a89266490a14ad"
+  },
+  {
+    "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-news/quality-review/rough/evidence-no-captions/b08-native-00594.png",
+    "sha256": "28f81cdb82ca2509ba966977fe1861395ba4ea81567a4c7c6441ffbad7332775"
+  },
+  {
+    "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-news/quality-review/rough/evidence-no-captions/b08-native-00650.png",
+    "sha256": "05461cc821f238862ecc270ed6a755e02e1b99a55488439166909ccaa97171de"
+  },
+  {
+    "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-news/quality-review/rough/evidence-no-captions/b08-native-00692.png",
+    "sha256": "fec2bf48fd932233042ea3797192cfd0265eaf2f5dd16a1acfe771d052146f92"
+  },
+  {
+    "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-news/quality-review/rough/evidence-no-captions/b08-event-00-strip-00.png",
+    "sha256": "9176323b4526f091654cdc07f99f238b488b3ee6381295449e160dab40b16bf5"
+  },
+  {
+    "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-news/quality-review/rough/evidence-no-captions/b08-event-00-strip-01.png",
+    "sha256": "b9ed6b89a6b11f5aa8b942817c1b19c367c0928c68d22fe8b0b1feafbf3e1982"
+  },
+  {
+    "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-news/quality-review/rough/evidence-no-captions/b08-event-00-strip-02.png",
+    "sha256": "2e19c46281608e167aa44d2c9929fe818ddcd15ce841fc904e493837ef39e828"
+  },
+  {
+    "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-news/quality-review/rough/evidence-no-captions/b08-event-00-strip-03.png",
+    "sha256": "6f03bb9592715dd3da3edc024b2911575b3cccbad3066e08d40421dab47d0c22"
+  },
+  {
+    "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-news/quality-review/rough/evidence-no-captions/b09-ordered.png",
+    "sha256": "64825533907ccdf939a10c5abe6f2ed98dc6440a345123465507793fd05581c0"
+  },
+  {
+    "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-news/quality-review/rough/evidence-no-captions/b09-native-00693.png",
+    "sha256": "fec2bf48fd932233042ea3797192cfd0265eaf2f5dd16a1acfe771d052146f92"
+  },
+  {
+    "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-news/quality-review/rough/evidence-no-captions/b09-native-00791.png",
+    "sha256": "61a934b73e3e5bffa550e0a8b1163e0d7d60d6b066800d5d23011bc38e7fc2d7"
+  },
+  {
+    "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-news/quality-review/rough/evidence-no-captions/b09-native-00864.png",
+    "sha256": "9590073c2fd9acc0b17e52f1d361d1463523a9e86bd4ab156ef8fa92fa4b45d0"
+  },
+  {
+    "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-news/quality-review/rough/evidence-no-captions/b09-event-00-strip-00.png",
+    "sha256": "227ce27f60b38f0d6f7df60b3da189a26712d2dc9925ae081f02a7610d95bdf1"
+  },
+  {
+    "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-news/quality-review/rough/evidence-no-captions/b09-event-00-strip-01.png",
+    "sha256": "4ed76fb00baaf0cb7ccca1cdc0db1760393f5d59e389672ad4a4f48137826cf6"
+  },
+  {
+    "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-news/quality-review/rough/evidence-no-captions/b09-event-00-strip-02.png",
+    "sha256": "2ef305c085032b9898733890679aee29813780e97844fcdd0513cd9e4ec042b0"
+  },
+  {
+    "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-news/quality-review/rough/evidence-no-captions/b09-event-00-strip-03.png",
+    "sha256": "e2e3e8b5d1025185d3e4ff518c274f3049454ec3f3c9425faf9fe0ea25754297"
+  },
+  {
+    "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-news/quality-review/rough/evidence-no-captions/b09-event-01-strip-00.png",
+    "sha256": "888fdb7ccff7daf5470fda6e461a3dabb71878fc643934504183c203c58cda67"
+  },
+  {
+    "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-news/quality-review/rough/evidence-no-captions/b09-event-01-strip-01.png",
+    "sha256": "c984a17362d283ef423cbb3f0a82562ce40f00464bc2f6f400879ce0ac937ca2"
+  },
+  {
+    "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-news/quality-review/rough/evidence-no-captions/b09-event-01-strip-02.png",
+    "sha256": "ee3b85927e6556da321c44afc94228501371f56bbab50e4875a793889ea59344"
+  },
+  {
+    "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-news/quality-review/rough/evidence-no-captions/b09-event-01-strip-03.png",
+    "sha256": "557bee555635c5044e4aa79ef4936ef5f4ae0b0b884dd8938448146431761774"
+  },
+  {
+    "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-news/quality-review/rough/evidence-no-captions/b10-ordered.png",
+    "sha256": "3663dae91a2a0d1a399dbae9bf20d780d7d4da365ba3a570c5a3dacee5041281"
+  },
+  {
+    "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-news/quality-review/rough/evidence-no-captions/b10-native-00865.png",
+    "sha256": "48252fde866f1152724b4eac8cd362edf658389c23b743c2168941777dc295ba"
+  },
+  {
+    "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-news/quality-review/rough/evidence-no-captions/b10-native-00924.png",
+    "sha256": "01558f95a0c3cbfd035b5bf7491885db39b505105eeb052d4fa24399b7c393d6"
+  },
+  {
+    "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-news/quality-review/rough/evidence-no-captions/b10-native-00968.png",
+    "sha256": "853f89b01288603b8f7b9ea50171236d05d8acd6d4773a7370d4f6f95d2bfa0a"
+  },
+  {
+    "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-news/quality-review/rough/evidence-no-captions/b10-event-00-strip-00.png",
+    "sha256": "11647f1a9413224d177de8d9431dec7c0ffbb08a766a7c9577d63e9ad885a7df"
+  },
+  {
+    "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-news/quality-review/rough/evidence-no-captions/b10-event-00-strip-01.png",
+    "sha256": "d7ae4df8fb95294476944b06c16e252b863aa711c5fb0909d0de06a7be3cd5dc"
+  },
+  {
+    "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-news/quality-review/rough/evidence-no-captions/b10-event-00-strip-02.png",
+    "sha256": "e01afb0914fa2d474aa4ba12ea9d20793e94902d904460194c0da55248ec8350"
+  },
+  {
+    "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-news/quality-review/rough/evidence-no-captions/b10-event-00-strip-03.png",
+    "sha256": "61b96b67d7d5569dc2445c67cf24777445d214a9f0c6df79d718e396fa0329e4"
+  },
+  {
+    "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-news/quality-review/rough/evidence-no-captions/b11-ordered.png",
+    "sha256": "58d88964e4e526bf606aa9787b79bbecd2ff7ae364422fe003a59d409b9ce20e"
+  },
+  {
+    "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-news/quality-review/rough/evidence-no-captions/b11-native-00969.png",
+    "sha256": "e7bcade4ebe1092f22b1f0ff5aca1c2dd150dac19200d5a3c12eadc0c68f3b18"
+  },
+  {
+    "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-news/quality-review/rough/evidence-no-captions/b11-native-01015.png",
+    "sha256": "4a7a21becacb5d08a27df87ddf1cb9cb712e6a98cba7a23bff76d1dd6dcb9f4e"
+  },
+  {
+    "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-news/quality-review/rough/evidence-no-captions/b11-native-01052.png",
+    "sha256": "817356a24e69db19a5b430c3c9614504f1723f380a64e9c8d128e75f2507c035"
+  },
+  {
+    "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-news/quality-review/rough/evidence-no-captions/b11-event-00-strip-00.png",
+    "sha256": "e3666bd39dbe94ceeda36a297d706b0cd93cd58cac6bd9f4df6a3dc1adc27e7c"
+  },
+  {
+    "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-news/quality-review/rough/evidence-no-captions/b11-event-00-strip-01.png",
+    "sha256": "6d329372757ec05650c4110ad2437049d0da145ff79843aec1f4644b780ce533"
+  },
+  {
+    "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-news/quality-review/rough/evidence-no-captions/b11-event-00-strip-02.png",
+    "sha256": "5ac365067e5ff7b1069e4b30c0c60ebe42ece3ae9142deb5046bf4fa85b3378c"
+  },
+  {
+    "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-news/quality-review/rough/evidence-no-captions/b11-event-00-strip-03.png",
+    "sha256": "c7fcb2cfee8786ddb7e134153f32306dacbc2b02a1614c80ae685fa450e5514d"
+  },
+  {
+    "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-news/quality-review/rough/evidence-no-captions/b12-ordered.png",
+    "sha256": "20ec4f30197adc9dde4f87886c535e081b8bf340d56b7bd687812daf05b378c0"
+  },
+  {
+    "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-news/quality-review/rough/evidence-no-captions/b12-native-01053.png",
+    "sha256": "f61a960273fba248a9bd476c2e3bf8b14fa3f597d1f2c70f5e028397afca2a1f"
+  },
+  {
+    "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-news/quality-review/rough/evidence-no-captions/b12-native-01080.png",
+    "sha256": "d8ce4659dfd07f2b194da8b958356a021887c6ff5e7474c18135f70f61f107a7"
+  },
+  {
+    "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-news/quality-review/rough/evidence-no-captions/b12-native-01117.png",
+    "sha256": "3cb36631b8c8e7012b2d0e4055d6ad3b9df3283b84976730ff2ea49b70e3ce19"
+  },
+  {
+    "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-news/quality-review/rough/evidence-no-captions/b12-event-00-strip-00.png",
+    "sha256": "0ea24bbfd96c46da03946f67119df392801e7eff56bdb1525e02ba399a62e303"
+  },
+  {
+    "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-news/quality-review/rough/evidence-no-captions/b12-event-00-strip-01.png",
+    "sha256": "3281ba6263ac79b33780b3f349f4ec8fc763751f30e019be9ccac20346e0808e"
+  },
+  {
+    "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-news/quality-review/rough/evidence-no-captions/b12-event-00-strip-02.png",
+    "sha256": "5cce40994041d7a1b38acf1f41984fb6d4c609fc9638b1f6b0cb502c3a07e063"
+  },
+  {
+    "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-news/quality-review/rough/evidence-no-captions/b12-event-00-strip-03.png",
+    "sha256": "83d170a50d90edbe2c04dd77d1100bf89688a39a83b22b8642a82b95e6aca03a"
+  },
+  {
+    "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-news/quality-review/rough/gold-audiobook/audiobook-ordered.png",
+    "sha256": "ab7fd01ede92068fb9fd6d4cbd9415a9badd2c149e3ef1893606c9cffdf611fd"
+  },
+  {
+    "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-news/quality-review/rough/gold-audiobook/audiobook-native-00507.png",
+    "sha256": "278f5d9d6526da7de7b085c50e9426a8fd548df0613324ccf838f1fa42e97a7f"
+  },
+  {
+    "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-news/quality-review/rough/gold-audiobook/audiobook-native-00536.png",
+    "sha256": "dfe19b02e4c2087b155f23bea952bf75dd1110fc30bf489a035e1fdeed9940ad"
+  },
+  {
+    "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-news/quality-review/rough/gold-audiobook/audiobook-native-00558.png",
+    "sha256": "4f0a0f73e23aa823cc46a2050101e2d1baedb90e54380e08a6742d6851ab1260"
+  },
+  {
+    "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-news/quality-review/rough/gold-basement-completion/basement-completion-ordered.png",
+    "sha256": "c6098bdbdb9c3566881a1dede120dffd772dbf8ae2419812ba8de8d4e5b995f4"
+  },
+  {
+    "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-news/quality-review/rough/gold-basement-completion/basement-completion-native-00248.png",
+    "sha256": "2c0d06eccd1e345cdd089fe5fd32abb02a2501d549626d5d9718be476d5d5fb6"
+  },
+  {
+    "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-news/quality-review/rough/gold-basement-completion/basement-completion-native-00293.png",
+    "sha256": "a85eb2c0f65e4d1b13f6d0fa12980de079aa613fddae07f48dbea47bf2e99c44"
+  },
+  {
+    "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-news/quality-review/rough/gold-basement-completion/basement-completion-native-00327.png",
+    "sha256": "fdc9e82f7b34bc9821d85919e02425e07ca3b01bdabd2daacf094295197374e3"
+  },
+  {
+    "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-news/quality-review/rough/gold-recording/recording-ordered.png",
+    "sha256": "50354c631f465a51ce8a47ae3d1a0c89e98ca0e3547fa054ed97e4ef65e8e6dd"
+  },
+  {
+    "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-news/quality-review/rough/gold-recording/recording-native-00000.png",
+    "sha256": "5af33e4cd0ddffd15a840c227a0a407b1abb8a6615aca690a36b814f11efdb37"
+  },
+  {
+    "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-news/quality-review/rough/gold-recording/recording-native-00043.png",
+    "sha256": "023f9ec8ea77b4075ec473951770eadaa0794eb8e40652809b0a8b13240be329"
+  },
+  {
+    "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-news/quality-review/rough/gold-recording/recording-native-00075.png",
+    "sha256": "549e3b8fdfd79f233257256e50471f5176bbe25d1cd7bb2ced1feea68ed46e43"
+  }
+]

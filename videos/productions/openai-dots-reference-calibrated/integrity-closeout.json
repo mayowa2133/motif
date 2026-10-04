@@ -1,0 +1,17 @@
+{
+  "corpus": {
+    "videos": 7,
+    "setups": 91,
+    "source_integrity": "PASS"
+  },
+  "calibration_freshness": "PASS",
+  "quality/negative/dots-original-failed-manifest.json": {
+    "files": 1580,
+    "unchanged": true
+  },
+  "quality/gold/frozen-manifest.json": {
+    "files": 540,
+    "unchanged": true
+  },
+  "premature_animation": "BLOCKED as required"
+}

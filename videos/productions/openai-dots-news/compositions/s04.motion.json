@@ -1,0 +1,45 @@
+{
+  "setup": "s04",
+  "start": 13.02,
+  "duration": 6.789999999999999,
+  "rule": "Folio leaves reveal use categories; present leaves fold away before preview and planned layers become focal. Vellum and unopened folds encode status.",
+  "recipes": [
+    "cursor-drag: matched payload/contact transforms",
+    "press-release-spring: caused local material settle",
+    "viewport-change: token close view in same setup"
+  ],
+  "temporal_events": [
+    {
+      "kind": "contact",
+      "time": 14.25
+    },
+    {
+      "kind": "contact",
+      "time": 14.450000000000001
+    },
+    {
+      "kind": "contact",
+      "time": 14.65
+    },
+    {
+      "kind": "landing",
+      "time": 16.72
+    },
+    {
+      "kind": "contact",
+      "time": 17.37
+    },
+    {
+      "kind": "landing",
+      "time": 17.89
+    },
+    {
+      "kind": "landing",
+      "time": 19.61
+    }
+  ],
+  "exit": {
+    "kind": "hard-cut",
+    "reason": "Availability classification gives way to an execution boundary; the folio disappears."
+  }
+}

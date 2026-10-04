@@ -1,0 +1,27 @@
+{
+  "status": "REVISE_ART_DIRECTION",
+  "blocked": [
+    "s01-agency: hierarchy",
+    "s02-connected-work: character-role",
+    "s02-connected-work: hero-scale",
+    "s02-connected-work: hierarchy",
+    "s02-connected-work: set-specificity",
+    "s04-specialists: hierarchy",
+    "s04-specialists: set-specificity",
+    "s06-permission: character-role",
+    "s09-unresolved-keys: intentional-space",
+    "s09-unresolved-keys: set-specificity",
+    "No REFERENCE_SCENE_IMITATION is established by the supplied concepts and planned choreography.",
+    "REFERENCE_STRUCTURE_GAP blocks s02, s04 and s09 because their intended physical relationships are insufficiently expressed in the actual rough compositions.",
+    "The check-mark leaves in s01 and s02 imply completion despite the plan's unfinished-work constraint; resolve this through task-state design.",
+    "Shared paper rectangles do not alone establish insufficient world variety. The distinct semantic rules and justified isolated setups support the overall sequence.",
+    "global concept FAIL"
+  ],
+  "plan_sha256": "45c3cc329820a5fce32931be39e3b5818360fa2fef2fb9b2489f5cf14eece294",
+  "calibration_record_sha256": "e3a7894c37034d4ccd434b7ffd1ed6f993c50677293d348d7ba047ae03123e17",
+  "evidence_path": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-reference-calibrated/concept-evidence.json",
+  "evidence_sha256": "4ce444a71bc5d6eebb1d94f2167e49b7a1e52717e4a4d8fbcab0162f30f2681d",
+  "response_sha256": "089318e032e464eb14039fb66e83c5f3a48d0215942bd72f43c0f2118a862984",
+  "invocation_sha256": "23fe74f8d8b70e51814f6540d2103c4dfc48ed3b03f4caef7c32b67d418c4769",
+  "human_approval": false
+}

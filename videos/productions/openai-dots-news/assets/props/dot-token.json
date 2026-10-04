@@ -1,0 +1,53 @@
+{
+  "id": "dot-token",
+  "name": "Dot Token",
+  "category": "news-prop",
+  "sourceType": "vector",
+  "source": {
+    "file": "assets/props/dot-token.svg",
+    "reference": "Live original Dots plan; no external reference footage"
+  },
+  "state": "GENERATED",
+  "status": "generated",
+  "scope": "scene-specific",
+  "style": "reference-expressive-high-energy-v1",
+  "orientation": "front",
+  "dimensions": {
+    "width": 512,
+    "height": 512,
+    "unit": "px"
+  },
+  "artBox": {
+    "x": 0,
+    "y": 0,
+    "width": 512,
+    "height": 512
+  },
+  "materials": [
+    "Matte cream paper",
+    "Teal ink",
+    "Cut-card contact shadows"
+  ],
+  "layers": [
+    "body"
+  ],
+  "anchors": {
+    "center": [
+      0.5,
+      0.5
+    ],
+    "surface": [
+      0.5,
+      0.65
+    ]
+  },
+  "interactions": [
+    "Production-scoped dot-token state changes; see capability-resolution.json"
+  ],
+  "provenance": "Agent-authored editable SVG from production source/common.py and source/worlds.py; canonical puppet excluded from new prop masters",
+  "license": "project-original; existing Motif paper material reused",
+  "sha256": "e58f12f78b743db7f5a6d0813f7d375cc061d874571ecd52f05f6bc1fb09855d",
+  "version": 1,
+  "human_approved": false,
+  "meaning": "Agent-assisted modular SVG addition: a cream circular paper token with an asymmetric teal rim notch and small local DOT label. No face, limbs or official-avatar claim. Intended identity contract dot-token; notch preserves orientation through transfers."
+}

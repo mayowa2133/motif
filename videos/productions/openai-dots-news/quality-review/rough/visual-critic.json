@@ -1,0 +1,309 @@
+{
+  "role": "visual",
+  "inspection_scope": "Rough rendered evidence for b01–b12, including both caption modes, every supplied intermediate frame in the ordered event strips, native mobile stills, film progression and the three retrieved behavioral gold examples. Advancement is blocked by physicality failures. The declared two-repair budget is exhausted; these findings require human review before further production.",
+  "gates": [
+    {
+      "gate": "character-performance",
+      "status": "PASS",
+      "evidence": "Bot's opening head tilt, gathered hands and subsequent raised-arm, open-mouth surprise are readable at native size. The naming beat returns to a quiet observer posture."
+    },
+    {
+      "gate": "physicality",
+      "status": "FAIL",
+      "evidence": "The token-seat windows in b01, b04 and b11 do not paint a separated approach followed by first contact at the declared landing. The token already overlaps or rests within the recess before that event."
+    },
+    {
+      "gate": "energy",
+      "status": "PASS",
+      "evidence": "Unfolding, connection growth, sequential sheet processing, inspection, access uncovering and surface transformation develop the argument. Changing work rows support the time-marker callbacks. The final withheld-key pause serves the unresolved decision."
+    },
+    {
+      "gate": "art",
+      "status": "PASS",
+      "evidence": "Notched tokens, scalloped cloud bases, scored connectors, layered folio leaves, vellum boundaries and the retained paper key have distinguishable silhouettes and material layering. Irregularity remains designed and restrained."
+    },
+    {
+      "gate": "composition",
+      "status": "PASS",
+      "evidence": "The film progresses through distinct spatial rules. Retained app geometry supports the cloud reveal, foreground activity supports background processing, and paired entrances form one comparison. Minimal staging serves the declared propositions."
+    },
+    {
+      "gate": "mobile",
+      "status": "PASS",
+      "evidence": "Both caption modes preserve the principal relationships: separate computers, connected apps, ordered processing, qualified future layers, a closed approval boundary, unequal access requirements and a retained key. Local artwork labels remain legible independently of narration captions."
+    }
+  ],
+  "violations": [
+    {
+      "timestamp": 3.067,
+      "shot": "b01",
+      "gate": "physicality",
+      "observation": "At f92 the token is already nested at the elliptical recess, with the front lip crossing its body. Across f92–f98 there is no readable separated token-bottom approach establishing first contact at f98. Bot's surprise begins at f99, but the painted landing cause has already occurred before the supplied landing window.",
+      "gold_id": "basement-completion",
+      "smallest_correction": "After human review of the exhausted repair budget, preserve a visible token-bottom/recess gap through anticipation, close it at the actual landing frame, and trigger the shared seat response and Bot surprise afterward.",
+      "failure_code": null
+    },
+    {
+      "timestamp": 9.567,
+      "shot": "b04",
+      "gate": "physicality",
+      "observation": "At f287 the token already overlaps the recess. Through f287–f293 it shifts laterally within that overlap rather than establishing an exposed bottom-to-seat arrival at the declared landing. A caused compression following first contact is consequently unclear.",
+      "gold_id": "basement-completion",
+      "smallest_correction": "After human review, align the landing schedule with a painted separated approach, then maintain token-bottom contact during one bounded shared seat displacement.",
+      "failure_code": null
+    },
+    {
+      "timestamp": 33.633,
+      "shot": "b11",
+      "gate": "physicality",
+      "observation": "The token is already resting inside the elliptical recess at f1009 and remains seated throughout f1009–f1015. The declared landing at f1015 therefore has no visible first-contact transition in its consecutive window; the nearby sun-to-moon change cannot establish that contact.",
+      "gold_id": "basement-completion",
+      "smallest_correction": "After human review, place the actual first seat contact within its event window and show the token and recess settling together before the persistence payoff continues.",
+      "failure_code": null
+    }
+  ],
+  "sampling_limits": "Inspected supplied decoded images and all intermediate frames in the supplied consecutive event strips in both caption modes. Sparse ordered sheets establish broad progression but cannot prove unsampled attachment continuity. Pixel traces were treated only as change observations. No MP4 playback, listening, tools or web were used. Exact deformation magnitude and motion outside the supplied windows remain unverified. Gold comparisons are behavioral, not pixel matching.",
+  "shot_assessments": [
+    {
+      "shot": "b01",
+      "gates": [
+        {"gate": "character-performance", "status": "PASS", "evidence": "Readable anticipation posture precedes the raised-arm surprised silhouette."},
+        {"gate": "physicality", "status": "FAIL", "evidence": "f92–f98 already show a nested token; declared first landing is not painted as a new contact."},
+        {"gate": "energy", "status": "PASS", "evidence": "Station unfolding, Bot response and continuing work across the day/night change develop the introduction."},
+        {"gate": "art", "status": "PASS", "evidence": "Canonical Bot, notched token and scalloped cloud station retain distinct silhouettes."},
+        {"gate": "composition", "status": "PASS", "evidence": "Cropped user station and elevated independent station remain spatially distinct; Bot does not conceal their separation."},
+        {"gate": "mobile", "status": "PASS", "evidence": "Separate computing positions and continued activity through the moon reveal survive caption removal."}
+      ]
+    },
+    {
+      "shot": "b02",
+      "gates": [
+        {"gate": "character-performance", "status": "PASS", "evidence": "Bot returns to a restrained listening observer silhouette."},
+        {"gate": "physicality", "status": "PASS", "evidence": "f146–f155 uncover the same token without a visible identity break or detachment."},
+        {"gate": "energy", "status": "PASS", "evidence": "Uncovering and continued display activity serve the short naming beat."},
+        {"gate": "art", "status": "PASS", "evidence": "The asymmetric teal notch and cream token remain recognizable in the close framing."},
+        {"gate": "composition", "status": "PASS", "evidence": "Enlarged token owns the naming detail; retained Bot and station are subordinate context."},
+        {"gate": "mobile", "status": "PASS", "evidence": "The local DOT name and notch are clear in both caption modes."}
+      ]
+    },
+    {
+      "shot": "b03",
+      "gates": [
+        {"gate": "character-performance", "status": "NOT_APPLICABLE", "evidence": "Bot is explicitly absent."},
+        {"gate": "physicality", "status": "PASS", "evidence": "All supplied connector windows expose traveling plug ends and seated socket relationships; no brief detachment is visible after seating."},
+        {"gate": "energy", "status": "PASS", "evidence": "Enclosure removal gives way to successive connection growth."},
+        {"gate": "art", "status": "PASS", "evidence": "Unequal cards, slate leads and teal socket lips form a distinct tactile network."},
+        {"gate": "composition", "status": "PASS", "evidence": "The three spokes form one purposeful group around the persistent hub."},
+        {"gate": "mobile", "status": "PASS", "evidence": "Chat containment becoming app connections is readable without captions; socket endpoints remain exposed."}
+      ]
+    },
+    {
+      "shot": "b04",
+      "gates": [
+        {"gate": "character-performance", "status": "NOT_APPLICABLE", "evidence": "Bot is explicitly absent."},
+        {"gate": "physicality", "status": "FAIL", "evidence": "f287–f293 show existing token/recess overlap instead of a separated approach reaching first contact."},
+        {"gate": "energy", "status": "PASS", "evidence": "The new computing shelf unfolds above the established network."},
+        {"gate": "art", "status": "PASS", "evidence": "Computer rim and scalloped base distinguish the computing seat from app cards."},
+        {"gate": "composition", "status": "PASS", "evidence": "Upper computing shelf becomes primary while the lower network retains explanatory purpose."},
+        {"gate": "mobile", "status": "PASS", "evidence": "A separate cloud computer above connected apps is recognizable in both caption modes."}
+      ]
+    },
+    {
+      "shot": "b05",
+      "gates": [
+        {"gate": "character-performance", "status": "NOT_APPLICABLE", "evidence": "Bot is explicitly absent."},
+        {"gate": "physicality", "status": "PASS", "evidence": "The three consecutive windows show sheets arriving at ordered stops and traversed ribbon sections clearing; the draft appears after the third processing step."},
+        {"gate": "energy", "status": "PASS", "evidence": "Sequential processing continues alongside the distinct foreground page activity."},
+        {"gate": "art", "status": "PASS", "evidence": "Scored cream ribbon, teal sheets and coral foreground paper remain materially distinct."},
+        {"gate": "composition", "status": "PASS", "evidence": "Foreground activity frames the developing assignment; both regions support the background-work proposition."},
+        {"gate": "mobile", "status": "PASS", "evidence": "Ordered steps, completed marks and retained draft are readable without narration captions."}
+      ]
+    },
+    {
+      "shot": "b06",
+      "gates": [
+        {"gate": "character-performance", "status": "NOT_APPLICABLE", "evidence": "Bot is explicitly absent."},
+        {"gate": "physicality", "status": "PASS", "evidence": "All three supplied collection windows retain visible paper bottoms and the open teal retaining relationship; no hidden or briefly detached stop is apparent."},
+        {"gate": "energy", "status": "PASS", "evidence": "Research collection develops into a separate planning assembly."},
+        {"gate": "art", "status": "PASS", "evidence": "Cream research leaf and shorter gold calendar leaf have clear layered identities."},
+        {"gate": "composition", "status": "PASS", "evidence": "The paired leaves form one classification group; isolation serves the folio argument."},
+        {"gate": "mobile", "status": "PASS", "evidence": "Work papers and personal calendar planning are distinct at native size in both modes."}
+      ]
+    },
+    {
+      "shot": "b07",
+      "gates": [
+        {"gate": "character-performance", "status": "NOT_APPLICABLE", "evidence": "Bot is explicitly absent."},
+        {"gate": "physicality", "status": "PASS", "evidence": "Reader traversal precedes the proposed output and developing checks. The outlined PREVIEW layer remains separate; PLANNED sockets stay empty."},
+        {"gate": "energy", "status": "PASS", "evidence": "Inspection develops into output, then the planned-team fold becomes primary."},
+        {"gate": "art", "status": "PASS", "evidence": "Vellum perimeter, company document and plum fold preserve distinct layering."},
+        {"gate": "composition", "status": "PASS", "evidence": "Specialist inspection and subsequent team reveal belong to one availability folio."},
+        {"gate": "mobile", "status": "PASS", "evidence": "Large company mark, reader and checked output are legible; persistent PREVIEW and PLANNED artwork survives caption removal."}
+      ]
+    },
+    {
+      "shot": "b08",
+      "gates": [
+        {"gate": "character-performance", "status": "NOT_APPLICABLE", "evidence": "Bot is explicitly absent."},
+        {"gate": "physicality", "status": "PASS", "evidence": "The consecutive impact window shows the envelope closing its remaining gap to the exposed shutter edge, then remaining stopped. The retained key does not transfer."},
+        {"gate": "energy", "status": "PASS", "evidence": "Approach, bounded stop response and subsequent queued proposal develop the approval condition."},
+        {"gate": "art", "status": "PASS", "evidence": "Coral shutter, cream proposal, teal tray and human-held gold key are distinguishable."},
+        {"gate": "composition", "status": "PASS", "evidence": "Slip/shutter relationship owns the central region; the smaller key stays subordinate."},
+        {"gate": "mobile", "status": "PASS", "evidence": "Pending proposals, closed lock and withheld human key communicate the approval boundary without captions."}
+      ]
+    },
+    {
+      "shot": "b09",
+      "gates": [
+        {"gate": "character-performance", "status": "NOT_APPLICABLE", "evidence": "Bot is explicitly absent."},
+        {"gate": "physicality", "status": "PASS", "evidence": "Retained eligibility ticket, exposed receiver and blocked entrance remain simultaneously visible. Muse cover clears to reveal its entrance; no passage is fabricated."},
+        {"gate": "energy", "status": "PASS", "evidence": "Ticket approach, entrance uncovering and separate extras reveal develop the comparison."},
+        {"gate": "art", "status": "PASS", "evidence": "Unequal ledges, thick cream receiver and independent extras tab retain physical layering."},
+        {"gate": "composition", "status": "PASS", "evidence": "Both entrances form one access comparison; extras remain secondary."},
+        {"gate": "mobile", "status": "PASS", "evidence": "Required ticket versus open entrance is readable; local eligibility and free-tier labels remain present without narration captions."}
+      ]
+    },
+    {
+      "shot": "b10",
+      "gates": [
+        {"gate": "character-performance", "status": "NOT_APPLICABLE", "evidence": "Bot is explicitly absent."},
+        {"gate": "physicality", "status": "PASS", "evidence": "Across the overlapping consecutive windows, the blue face retains its bottom position while foreshortening into the expanding cream surface; no detached replacement is visible."},
+        {"gate": "energy", "status": "PASS", "evidence": "Answer output develops into a directional surface expansion and incoming coworker position."},
+        {"gate": "art", "status": "PASS", "evidence": "Persistent slate face, cream wings, teal base strip and plum supports remain identifiable."},
+        {"gate": "composition", "status": "PASS", "evidence": "Vertical concentration becomes horizontal work space, materially broadening the argument."},
+        {"gate": "mobile", "status": "PASS", "evidence": "Question/answer silhouette becoming a shared work surface survives caption removal."}
+      ]
+    },
+    {
+      "shot": "b11",
+      "gates": [
+        {"gate": "character-performance", "status": "NOT_APPLICABLE", "evidence": "Bot is explicitly absent."},
+        {"gate": "physicality", "status": "FAIL", "evidence": "f1009–f1015 already show the token seated; the declared landing has no visible first-contact transition."},
+        {"gate": "energy", "status": "PASS", "evidence": "Continuing work rows and day/night change support persistence after workstation occupation."},
+        {"gate": "art", "status": "PASS", "evidence": "Uneven user stack and independent scalloped computer base retain the opening's material identities."},
+        {"gate": "composition", "status": "PASS", "evidence": "Two distinct work positions share one task relationship, paying off the opening."},
+        {"gate": "mobile", "status": "PASS", "evidence": "User work, independent Dot computer and continued nighttime activity remain readable without captions."}
+      ]
+    },
+    {
+      "shot": "b12",
+      "gates": [
+        {"gate": "character-performance", "status": "NOT_APPLICABLE", "evidence": "Bot is explicitly absent."},
+        {"gate": "physicality", "status": "PASS", "evidence": "All supplied offer-window frames preserve the hand/key grip and a clear gap before the closed lock; no insertion or transfer occurs."},
+        {"gate": "energy", "status": "PASS", "evidence": "The key approaches and stops. The final quiet hold serves the unresolved choice."},
+        {"gate": "art", "status": "PASS", "evidence": "The same paper hand, gold key and coral shutter provide a recognizable callback."},
+        {"gate": "composition", "status": "PASS", "evidence": "Key and closed boundary form one decision relationship; waiting token is subordinate."},
+        {"gate": "mobile", "status": "PASS", "evidence": "Retained grip, substantial air gap and closed lock remain clear even after captions disappear."}
+      ]
+    }
+  ],
+  "hierarchy_assessments": [
+    {"shot":"b01","code":"COMPETING_FOCI","status":"PASS","evidence":"Station, observer and time marker support one introduction."},
+    {"shot":"b01","code":"EXCESSIVE_OCCLUSION","status":"PASS","evidence":"Bot does not conceal the seat or station separation."},
+    {"shot":"b01","code":"UNNECESSARY_RETAINED_GEOMETRY","status":"PASS","evidence":"User station establishes the independent second computer."},
+    {"shot":"b01","code":"CAPTION_CARRIES_STORY","status":"PASS","evidence":"Separate stations and nighttime work survive caption removal."},
+    {"shot":"b01","code":"EFFECT_AS_ACTION","status":"PASS","evidence":"Station unfolding is a physical silhouette change."},
+    {"shot":"b01","code":"TINY_HERO","status":"PASS","evidence":"The independent station commands sufficient native frame area."},
+    {"shot":"b01","code":"HIDDEN_DIAGNOSTIC","status":"PASS","evidence":"The station separation remains exposed."},
+    {"shot":"b01","code":"LABEL_BEFORE_EVIDENCE","status":"PASS","evidence":"No confirmation label substitutes for the station reveal."},
+
+    {"shot":"b02","code":"COMPETING_FOCI","status":"PASS","evidence":"Token detail dominates retained setup context."},
+    {"shot":"b02","code":"EXCESSIVE_OCCLUSION","status":"PASS","evidence":"Rim clears the token identity."},
+    {"shot":"b02","code":"UNNECESSARY_RETAINED_GEOMETRY","status":"PASS","evidence":"Station context identifies the same introduced token."},
+    {"shot":"b02","code":"CAPTION_CARRIES_STORY","status":"PASS","evidence":"Local DOT label remains without narration captions."},
+    {"shot":"b02","code":"EFFECT_AS_ACTION","status":"PASS","evidence":"Uncovering exposes actual token geometry."},
+    {"shot":"b02","code":"TINY_HERO","status":"PASS","evidence":"Token is enlarged and readable."},
+    {"shot":"b02","code":"HIDDEN_DIAGNOSTIC","status":"PASS","evidence":"Notch and name are fully exposed."},
+    {"shot":"b02","code":"LABEL_BEFORE_EVIDENCE","status":"PASS","evidence":"Naming identifies the visibly uncovered object."},
+
+    {"shot":"b03","code":"COMPETING_FOCI","status":"PASS","evidence":"App cards form one connected hub group."},
+    {"shot":"b03","code":"EXCESSIVE_OCCLUSION","status":"PASS","evidence":"Plug ends and socket faces remain exposed in every supplied window."},
+    {"shot":"b03","code":"UNNECESSARY_RETAINED_GEOMETRY","status":"PASS","evidence":"Obsolete chat boundary clears."},
+    {"shot":"b03","code":"CAPTION_CARRIES_STORY","status":"PASS","evidence":"Containment becomes app connections without captions."},
+    {"shot":"b03","code":"EFFECT_AS_ACTION","status":"PASS","evidence":"Leads extend and seat physically."},
+    {"shot":"b03","code":"TINY_HERO","status":"PASS","evidence":"The network and app pictograms are readable."},
+    {"shot":"b03","code":"HIDDEN_DIAGNOSTIC","status":"PASS","evidence":"Connected seams and exposed endpoints show reach."},
+    {"shot":"b03","code":"LABEL_BEFORE_EVIDENCE","status":"PASS","evidence":"Connected seams follow traveling endpoints."},
+
+    {"shot":"b04","code":"COMPETING_FOCI","status":"PASS","evidence":"Upper computer reveal develops the retained network."},
+    {"shot":"b04","code":"EXCESSIVE_OCCLUSION","status":"PASS","evidence":"Token and recess remain visible; failure concerns first-contact choreography."},
+    {"shot":"b04","code":"UNNECESSARY_RETAINED_GEOMETRY","status":"PASS","evidence":"Connected apps explain the computing shelf's role."},
+    {"shot":"b04","code":"CAPTION_CARRIES_STORY","status":"PASS","evidence":"Separate cloud computer appears above the app network."},
+    {"shot":"b04","code":"EFFECT_AS_ACTION","status":"PASS","evidence":"Shelf and computer physically unfold."},
+    {"shot":"b04","code":"TINY_HERO","status":"PASS","evidence":"Computing shelf is large enough to identify."},
+    {"shot":"b04","code":"HIDDEN_DIAGNOSTIC","status":"PASS","evidence":"Upper computing position remains distinct from lower apps."},
+    {"shot":"b04","code":"LABEL_BEFORE_EVIDENCE","status":"PASS","evidence":"Cloud identification accompanies a painted computer and base."},
+
+    {"shot":"b05","code":"COMPETING_FOCI","status":"PASS","evidence":"Foreground page and background process jointly express concurrent work."},
+    {"shot":"b05","code":"EXCESSIVE_OCCLUSION","status":"PASS","evidence":"Foreground leaf leaves the step-processing aperture exposed."},
+    {"shot":"b05","code":"UNNECESSARY_RETAINED_GEOMETRY","status":"PASS","evidence":"Traversed ribbon sections clear; completed steps retain purpose."},
+    {"shot":"b05","code":"CAPTION_CARRIES_STORY","status":"PASS","evidence":"Ordered processing and draft output survive caption removal."},
+    {"shot":"b05","code":"EFFECT_AS_ACTION","status":"PASS","evidence":"Sheets traverse stops and produce a retained output."},
+    {"shot":"b05","code":"TINY_HERO","status":"PASS","evidence":"Step cards and final draft are readable."},
+    {"shot":"b05","code":"HIDDEN_DIAGNOSTIC","status":"PASS","evidence":"Completed steps and draft exit remain exposed."},
+    {"shot":"b05","code":"LABEL_BEFORE_EVIDENCE","status":"PASS","evidence":"Draft appears after the third step; checks follow arrivals."},
+
+    {"shot":"b06","code":"COMPETING_FOCI","status":"PASS","evidence":"Two leaves form a single use-category group."},
+    {"shot":"b06","code":"EXCESSIVE_OCCLUSION","status":"PASS","evidence":"Open retaining aperture exposes the research-paper bottoms."},
+    {"shot":"b06","code":"UNNECESSARY_RETAINED_GEOMETRY","status":"PASS","evidence":"Backing folio supports subsequent status layers."},
+    {"shot":"b06","code":"CAPTION_CARRIES_STORY","status":"PASS","evidence":"Research collection and calendar planning remain distinct."},
+    {"shot":"b06","code":"EFFECT_AS_ACTION","status":"PASS","evidence":"Papers collect and planning rows assemble."},
+    {"shot":"b06","code":"TINY_HERO","status":"PASS","evidence":"Task pictograms and leaves dominate the folio."},
+    {"shot":"b06","code":"HIDDEN_DIAGNOSTIC","status":"PASS","evidence":"Research pocket and personal planning distinction are exposed."},
+    {"shot":"b06","code":"LABEL_BEFORE_EVIDENCE","status":"PASS","evidence":"Assembly supplies the visible use evidence."},
+
+    {"shot":"b07","code":"COMPETING_FOCI","status":"PASS","evidence":"Inspection and team fold develop one qualified availability group."},
+    {"shot":"b07","code":"EXCESSIVE_OCCLUSION","status":"PASS","evidence":"Translucent preview perimeter qualifies without hiding inspection."},
+    {"shot":"b07","code":"UNNECESSARY_RETAINED_GEOMETRY","status":"PASS","evidence":"Present-use leaves give way to future layers."},
+    {"shot":"b07","code":"CAPTION_CARRIES_STORY","status":"PASS","evidence":"Inspection, preview veil and empty planned slots persist without captions."},
+    {"shot":"b07","code":"EFFECT_AS_ACTION","status":"PASS","evidence":"Reader traversal precedes proposed output."},
+    {"shot":"b07","code":"TINY_HERO","status":"PASS","evidence":"Company document, broad reader and output are readable."},
+    {"shot":"b07","code":"HIDDEN_DIAGNOSTIC","status":"PASS","evidence":"Preview boundary and empty planned slots remain clear."},
+    {"shot":"b07","code":"LABEL_BEFORE_EVIDENCE","status":"PASS","evidence":"Checks develop after inspection; status labels qualify visible restrictions."},
+
+    {"shot":"b08","code":"COMPETING_FOCI","status":"PASS","evidence":"Central stop dominates the subordinate held key."},
+    {"shot":"b08","code":"EXCESSIVE_OCCLUSION","status":"PASS","evidence":"Leading envelope edge and shutter remain exposed."},
+    {"shot":"b08","code":"UNNECESSARY_RETAINED_GEOMETRY","status":"PASS","evidence":"Boundary, tray and key all explain pending approval."},
+    {"shot":"b08","code":"CAPTION_CARRIES_STORY","status":"PASS","evidence":"Stopped proposals and withheld key communicate permission."},
+    {"shot":"b08","code":"EFFECT_AS_ACTION","status":"PASS","evidence":"Envelope approaches and stops at a closed boundary."},
+    {"shot":"b08","code":"TINY_HERO","status":"PASS","evidence":"Envelope and lock relationship are sufficiently large."},
+    {"shot":"b08","code":"HIDDEN_DIAGNOSTIC","status":"PASS","evidence":"Approach gap, stopped edge and closed lock are visible."},
+    {"shot":"b08","code":"LABEL_BEFORE_EVIDENCE","status":"PASS","evidence":"Physical stop supplies approval evidence without a confirmation stamp."},
+
+    {"shot":"b09","code":"COMPETING_FOCI","status":"PASS","evidence":"Paired entrances constitute one purposeful comparison."},
+    {"shot":"b09","code":"EXCESSIVE_OCCLUSION","status":"PASS","evidence":"Ticket remains offset from the exposed receiver aperture."},
+    {"shot":"b09","code":"UNNECESSARY_RETAINED_GEOMETRY","status":"PASS","evidence":"Both ledges and separate extras support access distinctions."},
+    {"shot":"b09","code":"CAPTION_CARRIES_STORY","status":"PASS","evidence":"Ticket requirement and open free entrance remain visible with local artwork labels."},
+    {"shot":"b09","code":"EFFECT_AS_ACTION","status":"PASS","evidence":"Cover removal exposes an actual entrance difference."},
+    {"shot":"b09","code":"TINY_HERO","status":"PASS","evidence":"Receiver, eligibility ticket and free entrance are readable."},
+    {"shot":"b09","code":"HIDDEN_DIAGNOSTIC","status":"PASS","evidence":"Blocked entrance and matching dark aperture remain simultaneously exposed."},
+    {"shot":"b09","code":"LABEL_BEFORE_EVIDENCE","status":"PASS","evidence":"Labels qualify ticket and entrance geometry rather than asserting completed passage."},
+
+    {"shot":"b10","code":"COMPETING_FOCI","status":"PASS","evidence":"One answer structure transforms into one working surface."},
+    {"shot":"b10","code":"EXCESSIVE_OCCLUSION","status":"PASS","evidence":"Blue face bottom and expanding surface remain exposed."},
+    {"shot":"b10","code":"UNNECESSARY_RETAINED_GEOMETRY","status":"PASS","evidence":"Original answer face becomes a purposeful portion of the surface."},
+    {"shot":"b10","code":"CAPTION_CARRIES_STORY","status":"PASS","evidence":"Answer-only silhouette broadens into work space without captions."},
+    {"shot":"b10","code":"EFFECT_AS_ACTION","status":"PASS","evidence":"Foreshortening and attached expansion change physical silhouette."},
+    {"shot":"b10","code":"TINY_HERO","status":"PASS","evidence":"The transforming panel and surface are readable."},
+    {"shot":"b10","code":"HIDDEN_DIAGNOSTIC","status":"PASS","evidence":"Persistent blue face and broadened cream surface show the transformation."},
+    {"shot":"b10","code":"LABEL_BEFORE_EVIDENCE","status":"PASS","evidence":"No ranking or confirmation label replaces the transformation."},
+
+    {"shot":"b11","code":"COMPETING_FOCI","status":"PASS","evidence":"User stack and Dot workstation express one shared working relationship."},
+    {"shot":"b11","code":"EXCESSIVE_OCCLUSION","status":"PASS","evidence":"Seat is visible; failure concerns already-established contact."},
+    {"shot":"b11","code":"UNNECESSARY_RETAINED_GEOMETRY","status":"PASS","evidence":"Retained answer face and user stack support the coworker payoff."},
+    {"shot":"b11","code":"CAPTION_CARRIES_STORY","status":"PASS","evidence":"Separate workstation and nighttime activity communicate persistence."},
+    {"shot":"b11","code":"EFFECT_AS_ACTION","status":"PASS","evidence":"Workstation occupation and continuing task rows provide physical development."},
+    {"shot":"b11","code":"TINY_HERO","status":"PASS","evidence":"Independent workstation and user position are identifiable."},
+    {"shot":"b11","code":"HIDDEN_DIAGNOSTIC","status":"PASS","evidence":"Two work positions and continued display work remain exposed."},
+    {"shot":"b11","code":"LABEL_BEFORE_EVIDENCE","status":"PASS","evidence":"No confirmation supplies the coworker relationship before its painted arrangement."},
+
+    {"shot":"b12","code":"COMPETING_FOCI","status":"PASS","evidence":"Key and closed lock form one unresolved decision."},
+    {"shot":"b12","code":"EXCESSIVE_OCCLUSION","status":"PASS","evidence":"Grip, key tip and lock gap remain unobstructed."},
+    {"shot":"b12","code":"UNNECESSARY_RETAINED_GEOMETRY","status":"PASS","evidence":"Returning shutter and waiting token support the approval callback."},
+    {"shot":"b12","code":"CAPTION_CARRIES_STORY","status":"PASS","evidence":"Human retains the key before a closed boundary without captions."},
+    {"shot":"b12","code":"EFFECT_AS_ACTION","status":"PASS","evidence":"Actual key approach ends in a withheld transfer."},
+    {"shot":"b12","code":"TINY_HERO","status":"PASS","evidence":"Key and lock relationship remains readable."},
+    {"shot":"b12","code":"HIDDEN_DIAGNOSTIC","status":"PASS","evidence":"Substantial background gap separates key tip from lock."},
+    {"shot":"b12","code":"LABEL_BEFORE_EVIDENCE","status":"PASS","evidence":"No approval label or grant appears; the physical choice remains unresolved."}
+  ]
+}

@@ -1,0 +1,96 @@
+{
+  "type": "object",
+  "properties": {
+    "role": {
+      "type": "string",
+      "const": "reference-director"
+    },
+    "input_text": {
+      "type": "string",
+      "minLength": 1
+    },
+    "selected_setup_ids": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "targets": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "dimension": {
+            "type": "string",
+            "enum": [
+              "macro-rhythm",
+              "visual-density",
+              "interaction",
+              "character-performance",
+              "ui-physicalization",
+              "motion-hierarchy",
+              "set-richness",
+              "designed-irregularity",
+              "effect-character",
+              "typographic-rhythm",
+              "transition-rhythm"
+            ]
+          },
+          "expectation": {
+            "type": "string",
+            "minLength": 1
+          },
+          "evidence_ids": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            }
+          }
+        },
+        "required": [
+          "dimension",
+          "expectation",
+          "evidence_ids"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "creative_opportunities": {
+      "type": "array",
+      "minItems": 3,
+      "maxItems": 6,
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "anti_patterns": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "novelty_boundary": {
+      "type": "string",
+      "minLength": 1
+    },
+    "inspection_limits": {
+      "type": "string",
+      "minLength": 1
+    }
+  },
+  "required": [
+    "role",
+    "input_text",
+    "selected_setup_ids",
+    "targets",
+    "creative_opportunities",
+    "anti_patterns",
+    "novelty_boundary",
+    "inspection_limits"
+  ],
+  "additionalProperties": false
+}

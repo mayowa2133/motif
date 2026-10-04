@@ -1,0 +1,33 @@
+{
+  "setup": "s02",
+  "start": 5.9,
+  "duration": 4.27,
+  "rule": "An opened enclosure becomes a socketed app network; its cloud shelf subsequently unfolds above the same connections.",
+  "recipes": [
+    "cursor-drag: matched payload/contact transforms",
+    "press-release-spring: caused local material settle",
+    "viewport-change: token close view in same setup"
+  ],
+  "temporal_events": [
+    {
+      "kind": "contact",
+      "time": 8.54
+    },
+    {
+      "kind": "contact",
+      "time": 8.66
+    },
+    {
+      "kind": "contact",
+      "time": 8.780000000000001
+    },
+    {
+      "kind": "landing",
+      "time": 9.76
+    }
+  ],
+  "exit": {
+    "kind": "hard-cut",
+    "reason": "The next proposition changes from connection geometry to ordered temporal progress; the network is removed."
+  }
+}

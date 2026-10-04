@@ -1,0 +1,4 @@
+{
+  "status": "ABORTED_BEFORE_VERDICT",
+  "reason": "Implementer detected contact above shoulder; stopped own CLI before changing evidence. No approval/semantic verdict used."
+}

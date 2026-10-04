@@ -1,0 +1,14 @@
+{
+  "status": "REVISE_ART_DIRECTION",
+  "blocked": [
+    "s02-connected-work: character-role",
+    "global concept FAIL"
+  ],
+  "plan_sha256": "7951e23b688e1a9584389234d2be36f00158b7d32113a02af783f97f43263a88",
+  "calibration_record_sha256": "e3a7894c37034d4ccd434b7ffd1ed6f993c50677293d348d7ba047ae03123e17",
+  "evidence_path": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-reference-calibrated/concept-evidence.json",
+  "evidence_sha256": "ab6ebdcc9fc8624e42ddec0467dadefa993354e9cc264f6a4c1005ff57c3c3e9",
+  "response_sha256": "fd89c1a2adab088eadc7dcf2de332cba613759899dc713c2eca8b26b1f2040da",
+  "invocation_sha256": "382fc691f67f21536c82c2b40924782247e431b15d3057c761dd9123afba35fd",
+  "human_approval": false
+}

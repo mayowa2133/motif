@@ -119,17 +119,23 @@ def planning_context():
             '\nSTRUCTURE SCHEMA: ' + json.dumps(read(ROOT / 'schemas/film-structure.schema.json')))
 
 
-def critic_prompt(plan):
-    return ((ROOT / 'quality/structure-critic/PROMPT.md').read_text() +
+def critic_prompt(plan, project=None):
+    prompt=((ROOT / 'quality/structure-critic/PROMPT.md').read_text() +
             '\nGRAMMAR:\n' + (ROOT / 'docs/MOTIF_STRUCTURAL_GRAMMAR.md').read_text() +
             '\nINTERNAL BEHAVIORAL EXAMPLES: ' + json.dumps(read(ROOT / 'quality/structure-examples.json')) +
             '\nNEGATIVE BEHAVIOR (not gold art): ' + json.dumps(read(ROOT / 'quality/negative/rowhouse.json')['behavior']) +
             '\nPLAN: ' + json.dumps(plan))
+    if project:
+        from motif_reference import context
+        reference,_=context(project)
+        if reference:prompt+='\n'+(ROOT/'quality/reference-critic/PROMPT.md').read_text()+reference
+    return prompt
 
 
-def report_status(plan, report):
-    Draft202012Validator(read(ROOT / 'schemas/structure-critic.schema.json')).validate(report)
-    codes = set(read(ROOT / 'schemas/structure-critic.schema.json')['properties']['checks']['items']['properties']['check']['enum'])
+def report_status(plan, report, reference=False):
+    schema='reference-structure-critic' if reference else 'structure-critic'
+    Draft202012Validator(read(ROOT / f'schemas/{schema}.schema.json')).validate(report)
+    codes = set(read(ROOT / f'schemas/{schema}.schema.json')['properties']['checks']['items']['properties']['check']['enum'])
     checks = report['checks']
     setups = {s['setup_id'] for s in plan['film_structure']['setups']}
     if {c['check'] for c in checks} != codes or len(checks) != len(codes):
@@ -158,13 +164,17 @@ def structure_review(project, plan, config):
     check_structure(plan)
     if plan != read(project / 'production-plan.json'):
         raise ValueError('save exact plan before structure review')
-    report = model_call(project, 'quality-structure', critic_prompt(plan), 'schemas/structure-critic.schema.json', config)
-    status = report_status(plan, report)
+    from motif_reference import require_calibration,context,folder
+    calibrated=require_calibration(project) is not None
+    _,images=context(project)
+    report = model_call(project, 'quality-structure', critic_prompt(plan,project), 'schemas/'+('reference-structure-critic' if calibrated else 'structure-critic')+'.schema.json', config,**({'images':images} if images else {}))
+    status = report_status(plan, report,calibrated)
     write(project / 'quality-structure-record.json', {
         'status': status, 'plan_sha256': sha(project / 'production-plan.json'),
         'response_sha256': sha(project / 'quality-structure.json'),
         'invocation_sha256': sha(project / 'quality-structure-invocation.json'),
-        'policy_hashes': policy_hashes(), 'scope': 'data only; no painted approval'})
+        'policy_hashes': policy_hashes(), 'scope': 'data only; no painted approval',
+        **({'reference_calibration_sha256':sha(folder(project)/'record.json')} if calibrated else {})})
     if status != 'PASS':
         raise ValueError('structure REPLAN_REQUIRED: ' + json.dumps(report['violations']))
     return report
@@ -186,7 +196,11 @@ def require_structure(project):
                 raise ValueError('structure invocation inputs changed')
         if invocation['exit_code'] or invocation.get('saved_response_used') or invocation.get('model_fallback_used'):
             raise ValueError('structure needs a live independent invocation')
-        if record['status'] != 'PASS' or report_status(plan, report) != 'PASS':
+        from motif_reference import require_calibration,folder
+        calibrated=require_calibration(project) is not None
+        if calibrated and record.get('reference_calibration_sha256')!=sha(folder(project)/'record.json'):
+            raise ValueError('structure reference calibration stale')
+        if record['status'] != 'PASS' or report_status(plan, report,calibrated) != 'PASS':
             raise ValueError('structure REPLAN_REQUIRED')
     except (FileNotFoundError, KeyError) as error:
         raise ValueError('fresh structure review required before direction/rough') from error

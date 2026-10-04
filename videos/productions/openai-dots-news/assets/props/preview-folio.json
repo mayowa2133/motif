@@ -1,0 +1,53 @@
+{
+  "id": "preview-folio",
+  "name": "Preview Folio",
+  "category": "news-prop",
+  "sourceType": "vector",
+  "source": {
+    "file": "assets/props/preview-folio.svg",
+    "reference": "Live original Dots plan; no external reference footage"
+  },
+  "state": "GENERATED",
+  "status": "generated",
+  "scope": "scene-specific",
+  "style": "reference-expressive-high-energy-v1",
+  "orientation": "front",
+  "dimensions": {
+    "width": 720,
+    "height": 1280,
+    "unit": "px"
+  },
+  "artBox": {
+    "x": 0,
+    "y": 0,
+    "width": 720,
+    "height": 1280
+  },
+  "materials": [
+    "Matte cream paper",
+    "Teal ink",
+    "Cut-card contact shadows"
+  ],
+  "layers": [
+    "body"
+  ],
+  "anchors": {
+    "center": [
+      0.5,
+      0.5
+    ],
+    "surface": [
+      0.5,
+      0.65
+    ]
+  },
+  "interactions": [
+    "Production-scoped preview-folio state changes; see capability-resolution.json"
+  ],
+  "provenance": "Agent-authored editable SVG from production source/common.py and source/worlds.py; canonical puppet excluded from new prop masters",
+  "license": "project-original; existing Motif paper material reused",
+  "sha256": "cb1b241f82e67fdd19de55d4999b8884b373481c60a66433c684558e0a69b768",
+  "version": 1,
+  "human_approved": false,
+  "meaning": "Agent-assisted modular SVG addition: diagonal open folio with present work/errand leaves, a translucent PREVIEW specialist sleeve and an unopened PLANNED team foldout. Includes page hinges and token-rest anchors; preview and planned marks remain part of the artwork."
+}

@@ -1,0 +1,625 @@
+{
+  "role": "concept",
+  "status": "FAIL",
+  "setup_assessments": [
+    {
+      "setup_id": "s01-agency",
+      "checks": [
+        {
+          "check": "art-density",
+          "status": "PASS",
+          "evidence": "The two devices, assignment materials and cloud establish substantial explanatory content without requiring reference-level prop counts.",
+          "reference_id": "Dd2HMwIy6D3-s14"
+        ,
+          "correction": ""
+        },
+        {
+          "check": "character-role",
+          "status": "NOT_APPLICABLE",
+          "evidence": "Bot is intentionally absent; the conceptual Dot token is an identity object.",
+          "reference_id": "Dd2UAqOvDoO-s01",
+          "correction": ""
+        },
+        {
+          "check": "distinct-silhouettes",
+          "status": "FAIL",
+          "evidence": "Both computers use similar upright screen-and-keyboard silhouettes. The cloud silhouette floats above them rather than identifying a distinctly provisioned computer.",
+          "reference_id": "Dd2UAqOvDoO-s05",
+          "correction": "Give the cloud computer the planned folded-easel silhouette and make the user device visibly closable and subordinate."
+        },
+        {
+          "check": "hero-scale",
+          "status": "FAIL",
+          "evidence": "The computer is substantial, but the small cream token is lost among several pale foreground cards; its identifying notch is difficult to distinguish.",
+          "reference_id": "Dd2HMwIy6D3-s14",
+          "correction": "Isolate the token against the operative computer and enlarge its identifying notch enough to survive mobile viewing."
+        },
+        {
+          "check": "hierarchy",
+          "status": "FAIL",
+          "evidence": "The large overhead cloud and multiple foreground windows compete with the intended token, separate computer and continuing assignment relationship.",
+          "reference_id": "Dd2uCwTB6II-s02",
+          "correction": "Subordinate the cloud emblem and consolidate the foreground materials into one identifiable assignment attached to the cloud workspace."
+        },
+        {
+          "check": "intentional-space",
+          "status": "PASS",
+          "evidence": "A visible interval separates the smaller user device from the larger workspace; the upper and lower reserves permit editorial framing.",
+          "reference_id": "Dd45WmVPOfQ-s05",
+          "correction": ""
+        },
+        {
+          "check": "novelty",
+          "status": "PASS",
+          "evidence": "The paired computing arrangement does not reproduce any selected reference's combined hero, environment and choreography.",
+          "reference_id": "Dd2HMwIy6D3-s14",
+          "correction": ""
+        },
+        {
+          "check": "set-specificity",
+          "status": "FAIL",
+          "evidence": "REFERENCE_STRUCTURE_GAP: the rough shows a computer tableau, but no clearly attached assignment ribbon or independent working fold establishes the planned persistence relationship.",
+          "reference_id": "Dd2UAqOvDoO-s05",
+          "correction": "Stage one assignment physically across the cloud workspace, with a distinct user-side closure and a legible remaining work fold."
+        },
+        {
+          "check": "setup-variety",
+          "status": "PASS",
+          "evidence": "An introductory two-device arrangement has a justified role distinct from the later connection mechanism and authority boundary.",
+          "reference_id": "Dd4Le3YhCQt-s05",
+          "correction": ""
+        }
+      ]
+    },
+    {
+      "setup_id": "s02-connected-work",
+      "checks": [
+        {
+          "check": "art-density",
+          "status": "PASS",
+          "evidence": "The layered recess, folded material and foreground task tabs offer sufficient visual substance for one developing process.",
+          "reference_id": "Dd4oMBpyEq_-s07",
+          "correction": ""
+        },
+        {
+          "check": "character-role",
+          "status": "FAIL",
+          "evidence": "Bot has an extended arm, but its apparent ribbon contact does not communicate bracing at a conversation seam or handling the central brief.",
+          "reference_id": "Dd4oMBpyEq_-s07",
+          "correction": "Place Bot's grip at the operative seam or brief edge and pose its body so the handling relationship reads before facial detail."
+        },
+        {
+          "check": "distinct-silhouettes",
+          "status": "PASS",
+          "evidence": "The tall recessed frame, projecting folded brief and small foreground task tabs remain distinguishable.",
+          "reference_id": "Dd2UAqOvDoO-s01",
+          "correction": ""
+        },
+        {
+          "check": "hero-scale",
+          "status": "FAIL",
+          "evidence": "The frame and generic window are large, but the planned mating connector faces and conversation seam are not identifiable at any scale.",
+          "reference_id": "Dd2HMwIy6D3-s14",
+          "correction": "Make the actual seam and connector the enlarged focal feature, with the brief subordinate until it enters the recess."
+        },
+        {
+          "check": "hierarchy",
+          "status": "FAIL",
+          "evidence": "A blank generic window owns the composition while the mechanism that permits source passage is absent.",
+          "reference_id": "Dd2uCwTB6II-s02",
+          "correction": "Organize the frame around connector engagement, source passage and a recognizable brief rather than the window rectangle."
+        },
+        {
+          "check": "intentional-space",
+          "status": "PASS",
+          "evidence": "The recess and projecting paper establish usable depth and a foreground handling zone.",
+          "reference_id": "Dd2UAqOvDoO-s05",
+          "correction": ""
+        },
+        {
+          "check": "novelty",
+          "status": "PASS",
+          "evidence": "The folded recess does not reproduce the waveform, bug-office, construction or task-grid joint expressions.",
+          "reference_id": "Dd4oMBpyEq_-s07",
+          "correction": ""
+        },
+        {
+          "check": "set-specificity",
+          "status": "FAIL",
+          "evidence": "REFERENCE_STRUCTURE_GAP: the planned contact-before-passage rule is replaced in the rough by a framed window and floating task symbols. The two-source brief and pending draft identity are also unclear.",
+          "reference_id": "Dd2UAqOvDoO-s05",
+          "correction": "Show a seated connector, a constrained source passage and one distinctive brief whose folds support the successive work states."
+        },
+        {
+          "check": "setup-variety",
+          "status": "PASS",
+          "evidence": "Keeping connection, input seating and job development in one changing workspace follows the calibrated persistence rule.",
+          "reference_id": "Dd4Le3YhCQt-s05",
+          "correction": ""
+        }
+      ]
+    },
+    {
+      "setup_id": "s03-use-pitch",
+      "checks": [
+        {
+          "check": "art-density",
+          "status": "PASS",
+          "evidence": "The business sheet, household envelope and shared backing supply sufficient category context for a proposal setup.",
+          "reference_id": "Dd2UAqOvDoO-s05",
+          "correction": ""
+        },
+        {
+          "check": "character-role",
+          "status": "NOT_APPLICABLE",
+          "evidence": "Bot is intentionally absent from the editorial proposal.",
+          "reference_id": "Dd4oMBpyEq_-s07",
+          "correction": ""
+        },
+        {
+          "check": "distinct-silhouettes",
+          "status": "PASS",
+          "evidence": "The tall chart brief and broad coral envelope distinguish business and domestic materials.",
+          "reference_id": "Dd2UAqOvDoO-s01",
+          "correction": ""
+        },
+        {
+          "check": "hero-scale",
+          "status": "PASS",
+          "evidence": "Both category objects have mobile-scale presence, with large local labels.",
+          "reference_id": "Dd2HMwIy6D3-s14",
+          "correction": ""
+        },
+        {
+          "check": "hierarchy",
+          "status": "PASS",
+          "evidence": "The foreground envelope dominates this representative state while the business sheet remains a readable supporting category.",
+          "reference_id": "Dd2uCwTB6II-s02",
+          "correction": ""
+        },
+        {
+          "check": "intentional-space",
+          "status": "PASS",
+          "evidence": "The diagonal overlap groups the proposals without filling the entire frame.",
+          "reference_id": "Dd2UAqOvDoO-s05",
+          "correction": ""
+        },
+        {
+          "check": "novelty",
+          "status": "PASS",
+          "evidence": "A proposal fan and household envelope introduce a different manifestation from the selected interfaces and worksites.",
+          "reference_id": "Dd2UAqOvDoO-s05",
+          "correction": ""
+        },
+        {
+          "check": "set-specificity",
+          "status": "FAIL",
+          "evidence": "The round foreground fitting appears detached from both proposals; the rough reads as displayed category cards rather than replacement at a shared assignment contact.",
+          "reference_id": "Dd45WmVPOfQ-s05",
+          "correction": "Attach the fitting to the fan and visibly seat the active proposal in it, keeping the other leaf behind its hinge."
+        },
+        {
+          "check": "setup-variety",
+          "status": "PASS",
+          "evidence": "The paper proposal arrangement supplies a semantic reset from computing to proposed uses.",
+          "reference_id": "Dd2UAqOvDoO-s05",
+          "correction": ""
+        }
+      ]
+    },
+    {
+      "setup_id": "s04-specialists",
+      "checks": [
+        {
+          "check": "art-density",
+          "status": "PASS",
+          "evidence": "Three fitting shapes and a permanent qualification band are sufficient for an isolated compatibility explanation.",
+          "reference_id": "Dd2UAqOvDoO-s01",
+          "correction": ""
+        },
+        {
+          "check": "character-role",
+          "status": "NOT_APPLICABLE",
+          "evidence": "Bot is absent by design; specialization is carried by task geometry.",
+          "reference_id": "Dd2UAqOvDoO-s01",
+          "correction": ""
+        },
+        {
+          "check": "distinct-silhouettes",
+          "status": "PASS",
+          "evidence": "Circle, hexagonal fitting and star are immediately distinguishable.",
+          "reference_id": "Dd4Le3YhCQt-s05",
+          "correction": ""
+        },
+        {
+          "check": "hero-scale",
+          "status": "PASS",
+          "evidence": "The template and its fitting region are large enough for the matching relationship to be inspected.",
+          "reference_id": "Dd2HMwIy6D3-s14",
+          "correction": ""
+        },
+        {
+          "check": "hierarchy",
+          "status": "PASS",
+          "evidence": "The framed central fitting leads attention, and the ENTERPRISE PREVIEW band remains conspicuous.",
+          "reference_id": "Dd2UAqOvDoO-s01",
+          "correction": ""
+        },
+        {
+          "check": "intentional-space",
+          "status": "PASS",
+          "evidence": "Isolation is justified by the short fit-and-qualification proposition; additional workplace props are unnecessary.",
+          "reference_id": "Dd45WmVPOfQ-s05",
+          "correction": ""
+        },
+        {
+          "check": "novelty",
+          "status": "PASS",
+          "evidence": "The die-cut selection board avoids model-row ranking, crowned mascots and winner staging.",
+          "reference_id": "Dd2UAqOvDoO-s01",
+          "correction": ""
+        },
+        {
+          "check": "set-specificity",
+          "status": "FAIL",
+          "evidence": "The shapes resemble generic selection symbols. The detached small task card does not establish which company task matches which fitting.",
+          "reference_id": "Dd2UAqOvDoO-s01",
+          "correction": "Give the task insert a visibly corresponding contour and seat it at the compatible fitting; retain the attached PREVIEW band."
+        },
+        {
+          "check": "setup-variety",
+          "status": "PASS",
+          "evidence": "The compact fitting board has a different governing rule from proposed uses and the following sealed team diagram.",
+          "reference_id": "Dd4Le3YhCQt-s05",
+          "correction": ""
+        }
+      ]
+    },
+    {
+      "setup_id": "s05-planned-teams",
+      "checks": [
+        {
+          "check": "art-density",
+          "status": "PASS",
+          "evidence": "A folded proposal, separated dashed nodes and sealed joint communicate provisional status with purposeful economy.",
+          "reference_id": "Dd4Le3YhCQt-s05",
+          "correction": ""
+        },
+        {
+          "check": "character-role",
+          "status": "NOT_APPLICABLE",
+          "evidence": "No participating characters appear; an active ensemble would undermine the future qualification.",
+          "reference_id": "Dd4oMBpyEq_-s07",
+          "correction": ""
+        },
+        {
+          "check": "distinct-silhouettes",
+          "status": "PASS",
+          "evidence": "The broad folded sheet and projecting seal distinguish this setup from the specialist board.",
+          "reference_id": "Dd2UAqOvDoO-s05",
+          "correction": ""
+        },
+        {
+          "check": "hero-scale",
+          "status": "PASS",
+          "evidence": "The proposal sheet, diagram and PLANNED LATER band are substantial within the frame.",
+          "reference_id": "Dd2HMwIy6D3-s14",
+          "correction": ""
+        },
+        {
+          "check": "hierarchy",
+          "status": "PASS",
+          "evidence": "The diagram leads into the closed lower joint; the qualification remains attached to the same object.",
+          "reference_id": "Dd2uCwTB6II-s02",
+          "correction": ""
+        },
+        {
+          "check": "intentional-space",
+          "status": "PASS",
+          "evidence": "Separated diagram ends and surrounding quiet space support an unassembled future proposal.",
+          "reference_id": "Dd4Le3YhCQt-s05",
+          "correction": ""
+        },
+        {
+          "check": "novelty",
+          "status": "PASS",
+          "evidence": "A sealed planning sheet does not reproduce worker arrivals, crowd elimination or construction choreography.",
+          "reference_id": "Dd4oMBpyEq_-s07",
+          "correction": ""
+        },
+        {
+          "check": "set-specificity",
+          "status": "PASS",
+          "evidence": "The constrained cover, unfinished connections and lock-bearing seal provide a specific non-operational material rule.",
+          "reference_id": "Dd45WmVPOfQ-s05",
+          "correction": ""
+        },
+        {
+          "check": "setup-variety",
+          "status": "PASS",
+          "evidence": "The future diagram supplies a distinct availability state rather than extending the current work apparatus.",
+          "reference_id": "Dd2UAqOvDoO-s05",
+          "correction": ""
+        }
+      ]
+    },
+    {
+      "setup_id": "s06-permission",
+      "checks": [
+        {
+          "check": "art-density",
+          "status": "PASS",
+          "evidence": "Envelope, arresting boundary, outgoing slot and untouched user controls supply enough substance for dramatic isolation.",
+          "reference_id": "Dd45WmVPOfQ-s05",
+          "correction": ""
+        },
+        {
+          "check": "character-role",
+          "status": "FAIL",
+          "evidence": "Bot stands upright with a mild expression; its silhouette does not show the planned lean-back anticipation or response to the stopped envelope.",
+          "reference_id": "Dd45WmVPOfQ-s05",
+          "correction": "Pose Bot in a readable anticipating lean directed toward the stop while keeping its hands away from approval."
+        },
+        {
+          "check": "distinct-silhouettes",
+          "status": "PASS",
+          "evidence": "The horizontal envelope, thin cream stop and tall dark slot have distinct profiles.",
+          "reference_id": "Dd2UAqOvDoO-s01",
+          "correction": ""
+        },
+        {
+          "check": "hero-scale",
+          "status": "PASS",
+          "evidence": "The sensitive envelope and outgoing boundary are substantial; the small Bot remains subordinate.",
+          "reference_id": "Dd2HMwIy6D3-s14",
+          "correction": ""
+        },
+        {
+          "check": "hierarchy",
+          "status": "PASS",
+          "evidence": "The envelope-to-stop relationship dominates, with ASK and the scoped key below the operative boundary.",
+          "reference_id": "Dd2uCwTB6II-s02",
+          "correction": ""
+        },
+        {
+          "check": "intentional-space",
+          "status": "PASS",
+          "evidence": "The visible stopping interval is meaningful negative space, rather than evidence of insufficient density.",
+          "reference_id": "Dd45WmVPOfQ-s05",
+          "correction": ""
+        },
+        {
+          "check": "novelty",
+          "status": "PASS",
+          "evidence": "The arrested envelope and slot do not imitate the suspended checking apparatus and city expression.",
+          "reference_id": "Dd45WmVPOfQ-s05",
+          "correction": ""
+        },
+        {
+          "check": "set-specificity",
+          "status": "PASS",
+          "evidence": "The stop physically separates sensitive material from its outgoing slot; the untouched control reinforces pending authority.",
+          "reference_id": "Dd45WmVPOfQ-s05",
+          "correction": ""
+        },
+        {
+          "check": "setup-variety",
+          "status": "PASS",
+          "evidence": "The authority boundary clearly resets the developing-work rule and remains separate from commercial eligibility.",
+          "reference_id": "Dd2UAqOvDoO-s05",
+          "correction": ""
+        }
+      ]
+    },
+    {
+      "setup_id": "s07-commercial-access",
+      "checks": [
+        {
+          "check": "art-density",
+          "status": "PASS",
+          "evidence": "Two large admission leaves and their qualification tabs are sufficient for a focused access comparison.",
+          "reference_id": "Dd2uCwTB6II-s02",
+          "correction": ""
+        },
+        {
+          "check": "character-role",
+          "status": "NOT_APPLICABLE",
+          "evidence": "Bot is intentionally absent; commercial conditions are carried by the paired objects.",
+          "reference_id": "Dd2UAqOvDoO-s01",
+          "correction": ""
+        },
+        {
+          "check": "distinct-silhouettes",
+          "status": "PASS",
+          "evidence": "Comparable leaf shapes appropriately establish parity; different projecting condition tabs distinguish their requirements.",
+          "reference_id": "Dd2uCwTB6II-s02",
+          "correction": ""
+        },
+        {
+          "check": "hero-scale",
+          "status": "PASS",
+          "evidence": "Both leaves and primary access labels are large and equally inspectable.",
+          "reference_id": "Dd2HMwIy6D3-s14",
+          "correction": ""
+        },
+        {
+          "check": "hierarchy",
+          "status": "PASS",
+          "evidence": "Product names, primary entry conditions and smaller qualifications form a clear information order without scores or winner marks.",
+          "reference_id": "Dd2UAqOvDoO-s01",
+          "correction": ""
+        },
+        {
+          "check": "intentional-space",
+          "status": "PASS",
+          "evidence": "The vertical separation gives each condition a readable region and avoids conflation with the previous approval gate.",
+          "reference_id": "Dd2uCwTB6II-s02",
+          "correction": ""
+        },
+        {
+          "check": "novelty",
+          "status": "PASS",
+          "evidence": "Plain admission leaves avoid the selected task-cell scoreboard and reordered model-menu expressions.",
+          "reference_id": "Dd2uCwTB6II-s02",
+          "correction": ""
+        },
+        {
+          "check": "set-specificity",
+          "status": "PASS",
+          "evidence": "The attached subscription extension and explicit eligibility/rollout qualification give the comparison a purposeful material organization.",
+          "reference_id": "Dd2UAqOvDoO-s01",
+          "correction": ""
+        },
+        {
+          "check": "setup-variety",
+          "status": "PASS",
+          "evidence": "Paired admission requirements constitute a distinct comparison world with a justified sparse treatment.",
+          "reference_id": "Dd2uCwTB6II-s02",
+          "correction": ""
+        }
+      ]
+    },
+    {
+      "setup_id": "s08-editorial-reframe",
+      "checks": [
+        {
+          "check": "art-density",
+          "status": "PASS",
+          "evidence": "Retained conversation leaf, deep work face and continuity token provide sufficient layers for one editorial transformation.",
+          "reference_id": "Dd2UAqOvDoO-s05",
+          "correction": ""
+        },
+        {
+          "check": "character-role",
+          "status": "NOT_APPLICABLE",
+          "evidence": "Bot is absent; the object carries the reframe.",
+          "reference_id": "Dd2HMwIy6D3-s14",
+          "correction": ""
+        },
+        {
+          "check": "distinct-silhouettes",
+          "status": "PASS",
+          "evidence": "The narrow oblique conversation face and broad teal work face create a readable change in dimensional emphasis.",
+          "reference_id": "Dd2UAqOvDoO-s01",
+          "correction": ""
+        },
+        {
+          "check": "hero-scale",
+          "status": "PASS",
+          "evidence": "The transforming folded object owns the central frame.",
+          "reference_id": "Dd2HMwIy6D3-s14",
+          "correction": ""
+        },
+        {
+          "check": "hierarchy",
+          "status": "PASS",
+          "evidence": "The work face dominates while the conversation leaf remains visibly part of the same argument.",
+          "reference_id": "Dd2uCwTB6II-s02",
+          "correction": ""
+        },
+        {
+          "check": "intentional-space",
+          "status": "PASS",
+          "evidence": "The angled outline and interior intervals expose depth without requiring a literal workplace.",
+          "reference_id": "Dd2UAqOvDoO-s05",
+          "correction": ""
+        },
+        {
+          "check": "novelty",
+          "status": "PASS",
+          "evidence": "The fold-out editorial object avoids literal races, rankings and all selected reference joint expressions.",
+          "reference_id": "Dd4Le3YhCQt-s05",
+          "correction": ""
+        },
+        {
+          "check": "set-specificity",
+          "status": "FAIL",
+          "evidence": "The revealed face repeats a cloud emblem and generic window, with the token resting below. No identifiable assigned-work fold makes the new dimension more than another computer display.",
+          "reference_id": "Dd2UAqOvDoO-s05",
+          "correction": "Build the work face around a token receiving seat and an attached unfinished assignment fold, retaining the conversation face as the subordinate dimension."
+        },
+        {
+          "check": "setup-variety",
+          "status": "PASS",
+          "evidence": "The hinged dimensional reframe is architecturally distinct from access comparison and permission, despite reusing computing motifs.",
+          "reference_id": "Dd4Le3YhCQt-s05",
+          "correction": ""
+        }
+      ]
+    },
+    {
+      "setup_id": "s09-unresolved-keys",
+      "checks": [
+        {
+          "check": "art-density",
+          "status": "PASS",
+          "evidence": "Key, user-side cradle, token and watching Bot supply enough content for an unresolved closing decision.",
+          "reference_id": "Dd45WmVPOfQ-s05",
+          "correction": ""
+        },
+        {
+          "check": "character-role",
+          "status": "FAIL",
+          "evidence": "Bot's upright resting silhouette does not communicate the planned open anticipation directed toward the unclosed handoff.",
+          "reference_id": "Dd4oMBpyEq_-s07",
+          "correction": "Use a readable watching posture with an open, restrained silhouette and orientation toward the gap, without reaching for the key."
+        },
+        {
+          "check": "distinct-silhouettes",
+          "status": "PASS",
+          "evidence": "The toothed key, folded cradle and notched circular token are immediately distinguishable.",
+          "reference_id": "Dd2UAqOvDoO-s01",
+          "correction": ""
+        },
+        {
+          "check": "hero-scale",
+          "status": "PASS",
+          "evidence": "The key and token are large enough to make their separation the closing focal relationship.",
+          "reference_id": "Dd2HMwIy6D3-s14",
+          "correction": ""
+        },
+        {
+          "check": "hierarchy",
+          "status": "PASS",
+          "evidence": "The key-to-token interval dominates; Bot and ACCESS label remain supporting elements.",
+          "reference_id": "Dd2uCwTB6II-s02",
+          "correction": ""
+        },
+        {
+          "check": "intentional-space",
+          "status": "PASS",
+          "evidence": "The clear gap between key teeth and receiving notch expresses the withheld decision.",
+          "reference_id": "Dd45WmVPOfQ-s05",
+          "correction": ""
+        },
+        {
+          "check": "novelty",
+          "status": "PASS",
+          "evidence": "An incomplete scoped-key presentation is distinct from the selected checking, arena and scoreboard expressions.",
+          "reference_id": "Dd45WmVPOfQ-s05",
+          "correction": ""
+        },
+        {
+          "check": "set-specificity",
+          "status": "PASS",
+          "evidence": "The cradle visibly supports the key on one side while the receiving notch remains across an unclosed interval.",
+          "reference_id": "Dd45WmVPOfQ-s05",
+          "correction": ""
+        },
+        {
+          "check": "setup-variety",
+          "status": "PASS",
+          "evidence": "The ending recalls the permission key and opening token while discarding their previous environments, giving the callback a new unresolved rule.",
+          "reference_id": "Dd4Le3YhCQt-s05",
+          "correction": ""
+        }
+      ]
+    }
+  ],
+  "novelty_warnings": [
+    "No REFERENCE_SCENE_IMITATION is established by the supplied concepts and planned choreography.",
+    "The recurring generic window in s01, s02 and s08 risks flattening their different propositions. Resolve this through distinct operative relationships, rather than texture or added props.",
+    "REFERENCE_STRUCTURE_GAP is established where s01 omits the legible persistence attachment and s02 omits the calibrated connection-before-passage mechanism. These require composition and relationship repairs."
+  ],
+  "limits": "Inspected the attached concept contact sheets, all seven selected external representative/ordered/dense evidence groups, and the three internal gold still/ordered groups. This is a static prebuild concept assessment of nine setups and exactly nine checks each. FAIL findings block this concept gate; passing checks do not average them away. Production timestamps are unavailable, so findings are localized by setup rather than invented times. No MP4 playback, listening, finished texture judgment, continuous acting, exact contact timing, animation rhythm or moving-shot compliance is claimed. Lower density and absent Bot were accepted wherever the story justified them. Primary-source factual claims and asset availability were not independently verified."
+}

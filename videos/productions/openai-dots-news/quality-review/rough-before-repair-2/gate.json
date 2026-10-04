@@ -1,0 +1,40 @@
+{
+  "phase": "rough",
+  "status": "REPLAN_REQUIRED",
+  "blocked": [
+    "story: b03: cause-effect",
+    "story: b03: focal-hierarchy",
+    "story: b03: continuity",
+    "story: b10: cause-effect",
+    "story: b10: continuity",
+    "story: cause-effect",
+    "story: focal-hierarchy",
+    "story: continuity",
+    "visual: b01: character-performance",
+    "visual: b02: physicality",
+    "visual: b03: physicality",
+    "visual: b06: physicality",
+    "visual: b07: mobile",
+    "visual: b08: physicality",
+    "visual: b09: physicality",
+    "visual: b09: mobile",
+    "visual: b10: physicality",
+    "visual: character-performance",
+    "visual: physicality",
+    "visual: mobile",
+    "visual hierarchy: b06: EXCESSIVE_OCCLUSION",
+    "visual hierarchy: b07: TINY_HERO",
+    "visual hierarchy: b09: EXCESSIVE_OCCLUSION",
+    "visual hierarchy: b09: HIDDEN_DIAGNOSTIC",
+    "visual hierarchy: b10: EXCESSIVE_OCCLUSION",
+    "visual hierarchy: b10: HIDDEN_DIAGNOSTIC"
+  ],
+  "meaningful_repairs": 1,
+  "human_final_approval": "REQUIRED",
+  "publish": false,
+  "report_hashes": {
+    "story": "96a29855c91917e718dc7c546f086df7d2860e290c3795656c66f53d7ecf6f1a",
+    "visual": "f67ae51a0a938ec9fd5029929f4297c0c7567d4b20fe3b9c7d2a2f7e200d6212"
+  },
+  "evidence_sha256": "34d2923b218d241c7686e1f3953aa34ab617c01b455cf7ee043306f839b082f0"
+}

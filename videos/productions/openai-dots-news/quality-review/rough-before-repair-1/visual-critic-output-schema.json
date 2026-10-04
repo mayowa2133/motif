@@ -1,0 +1,228 @@
+{
+  "type": "object",
+  "properties": {
+    "role": {
+      "const": "visual",
+      "type": "string"
+    },
+    "inspection_scope": {
+      "type": "string"
+    },
+    "gates": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "gate": {
+            "enum": [
+              "character-performance",
+              "physicality",
+              "energy",
+              "art",
+              "composition",
+              "mobile"
+            ],
+            "type": "string"
+          },
+          "status": {
+            "enum": [
+              "PASS",
+              "FAIL",
+              "NOT_ASSESSED",
+              "NOT_APPLICABLE"
+            ],
+            "type": "string"
+          },
+          "evidence": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "required": [
+          "gate",
+          "status",
+          "evidence"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "violations": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "timestamp": {
+            "type": "number",
+            "minimum": 0
+          },
+          "shot": {
+            "type": "string",
+            "minLength": 1
+          },
+          "gate": {
+            "enum": [
+              "character-performance",
+              "physicality",
+              "energy",
+              "art",
+              "composition",
+              "mobile"
+            ],
+            "type": "string"
+          },
+          "observation": {
+            "type": "string",
+            "minLength": 1
+          },
+          "gold_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "smallest_correction": {
+            "type": "string",
+            "minLength": 1
+          },
+          "failure_code": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "enum": [
+              "COMPETING_FOCI",
+              "EXCESSIVE_OCCLUSION",
+              "UNNECESSARY_RETAINED_GEOMETRY",
+              "CAPTION_CARRIES_STORY",
+              "EFFECT_AS_ACTION",
+              "TINY_HERO",
+              "HIDDEN_DIAGNOSTIC",
+              "LABEL_BEFORE_EVIDENCE",
+              null
+            ]
+          }
+        },
+        "required": [
+          "timestamp",
+          "shot",
+          "gate",
+          "observation",
+          "gold_id",
+          "smallest_correction",
+          "failure_code"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "sampling_limits": {
+      "type": "string",
+      "minLength": 1
+    },
+    "shot_assessments": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "shot": {
+            "type": "string"
+          },
+          "gates": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "gate": {
+                  "enum": [
+                    "character-performance",
+                    "physicality",
+                    "energy",
+                    "art",
+                    "composition",
+                    "mobile"
+                  ],
+                  "type": "string"
+                },
+                "status": {
+                  "enum": [
+                    "PASS",
+                    "FAIL",
+                    "NOT_ASSESSED",
+                    "NOT_APPLICABLE"
+                  ],
+                  "type": "string"
+                },
+                "evidence": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              },
+              "required": [
+                "gate",
+                "status",
+                "evidence"
+              ],
+              "additionalProperties": false
+            }
+          }
+        },
+        "required": [
+          "shot",
+          "gates"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "hierarchy_assessments": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "shot": {
+            "type": "string",
+            "minLength": 1
+          },
+          "code": {
+            "type": "string",
+            "enum": [
+              "COMPETING_FOCI",
+              "EXCESSIVE_OCCLUSION",
+              "UNNECESSARY_RETAINED_GEOMETRY",
+              "CAPTION_CARRIES_STORY",
+              "EFFECT_AS_ACTION",
+              "TINY_HERO",
+              "HIDDEN_DIAGNOSTIC",
+              "LABEL_BEFORE_EVIDENCE"
+            ]
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "PASS",
+              "FAIL",
+              "NOT_ASSESSED"
+            ]
+          },
+          "evidence": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "required": [
+          "shot",
+          "code",
+          "status",
+          "evidence"
+        ],
+        "additionalProperties": false
+      }
+    }
+  },
+  "required": [
+    "role",
+    "inspection_scope",
+    "gates",
+    "violations",
+    "sampling_limits",
+    "shot_assessments",
+    "hierarchy_assessments"
+  ],
+  "additionalProperties": false
+}

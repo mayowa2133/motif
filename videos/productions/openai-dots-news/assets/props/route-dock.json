@@ -1,0 +1,53 @@
+{
+  "id": "route-dock",
+  "name": "Route Dock",
+  "category": "news-prop",
+  "sourceType": "vector",
+  "source": {
+    "file": "assets/props/route-dock.svg",
+    "reference": "Live original Dots plan; no external reference footage"
+  },
+  "state": "GENERATED",
+  "status": "generated",
+  "scope": "scene-specific",
+  "style": "reference-expressive-high-energy-v1",
+  "orientation": "front",
+  "dimensions": {
+    "width": 720,
+    "height": 1280,
+    "unit": "px"
+  },
+  "artBox": {
+    "x": 0,
+    "y": 0,
+    "width": 720,
+    "height": 1280
+  },
+  "materials": [
+    "Matte cream paper",
+    "Teal ink",
+    "Cut-card contact shadows"
+  ],
+  "layers": [
+    "body"
+  ],
+  "anchors": {
+    "center": [
+      0.5,
+      0.5
+    ],
+    "surface": [
+      0.5,
+      0.65
+    ]
+  },
+  "interactions": [
+    "Production-scoped route-dock state changes; see capability-resolution.json"
+  ],
+  "provenance": "Agent-authored editable SVG from production source/common.py and source/worlds.py; canonical puppet excluded from new prop masters",
+  "license": "project-original; existing Motif paper material reused",
+  "sha256": "16bd2b93f91c7d619cc03e39b4bdec6a078dbbb7dc86742d5e0997aec4d0c6d5",
+  "version": 1,
+  "human_approved": false,
+  "meaning": "Agent-assisted modular SVG addition: open-sided chat enclosure, three large app sockets and a separate scalloped cloud-computer shelf. Includes token-seat, app-socket mouths, connector endpoints and cloud-seat anchors."
+}

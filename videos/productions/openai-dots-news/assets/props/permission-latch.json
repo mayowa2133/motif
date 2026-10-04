@@ -1,0 +1,53 @@
+{
+  "id": "permission-latch",
+  "name": "Permission Latch",
+  "category": "news-prop",
+  "sourceType": "vector",
+  "source": {
+    "file": "assets/props/permission-latch.svg",
+    "reference": "Live original Dots plan; no external reference footage"
+  },
+  "state": "GENERATED",
+  "status": "generated",
+  "scope": "scene-specific",
+  "style": "reference-expressive-high-energy-v1",
+  "orientation": "front",
+  "dimensions": {
+    "width": 720,
+    "height": 1280,
+    "unit": "px"
+  },
+  "artBox": {
+    "x": 0,
+    "y": 0,
+    "width": 720,
+    "height": 1280
+  },
+  "materials": [
+    "Matte cream paper",
+    "Teal ink",
+    "Cut-card contact shadows"
+  ],
+  "layers": [
+    "body"
+  ],
+  "anchors": {
+    "center": [
+      0.5,
+      0.5
+    ],
+    "surface": [
+      0.5,
+      0.65
+    ]
+  },
+  "interactions": [
+    "Production-scoped permission-latch state changes; see capability-resolution.json"
+  ],
+  "provenance": "Agent-authored editable SVG from production source/common.py and source/worlds.py; canonical puppet excluded from new prop masters",
+  "license": "project-original; existing Motif paper material reused",
+  "sha256": "981cdbe5527b5779769e0ca242a2438e9840ddef1d4654ccb9ee3b69d8c1613c",
+  "version": 1,
+  "human_approved": false,
+  "meaning": "Agent-assisted modular SVG addition: oversized pending sensitive-action slip, closed permission shutter, key on the person's side and a flat paper human hand. Includes slip-stop, shutter-edge, palm-rest and key-contact anchors. Used for the approval caveat and closing callback."
+}

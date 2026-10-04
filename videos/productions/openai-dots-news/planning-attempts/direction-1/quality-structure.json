@@ -1,0 +1,95 @@
+{
+  "role": "structure",
+  "inspection_scope": "Complete supplied script, twelve beat contracts, eight setups, five rhetorical chapters, assets, limitations, transitions and continuity-token records. Assessed rhetorical progression, narration coverage, semantic rules, planned dominant actions and before/after states.",
+  "checks": [
+    {
+      "check": "METAPHOR_OVERLOAD",
+      "status": "PASS",
+      "evidence": "Each world develops a coherent relationship. s02 adds a computing seat to its connected-app arrangement; s04 replaces folio leaves to distinguish uses and availability; s07 transforms an answer pedestal into a coworker surface. Ordered work, execution permission and commercial access receive separate worlds rather than additional mechanisms on one retained set."
+    },
+    {
+      "check": "STATE_ACCUMULATION_WITHOUT_MEANING",
+      "status": "PASS",
+      "evidence": "s03 compresses processed assignment folds and produces a draft, making retained state evidence of progress. s04 folds present-use leaves away before future layers become focal. s05's second queued slip develops the same pending-action condition. Networks, folio machinery and work surfaces leave at semantic resets."
+    },
+    {
+      "check": "SEMANTIC_GROUP_OVERLOAD",
+      "status": "PASS",
+      "evidence": "The app sockets in s02 form one connected system; assignment stops and processed folds in s03 form one job; paired entrances in s06 form one access comparison. s04 stages present uses, specialists and teams through replacement and successive focal layers. No unrelated dominant groups are specified as simultaneously competing."
+    },
+    {
+      "check": "COMPOSITIONAL_STAGNATION",
+      "status": "PASS",
+      "evidence": "Contracts progress from separated computers to a diagonal socket network, deep accordion corridor, hinged folio, diagonal permission boundary, unequal entrances and a vertical-to-horizontal transformation. Related detail framings develop established geometry. s08's return to the shutter is a justified callback with a different action: human-held key approach rather than slip interruption."
+    },
+    {
+      "check": "CONTINUITY_TOKEN_OVERLOAD",
+      "status": "PASS",
+      "evidence": "The Dot has an ordered lifecycle from independent computer through connections, assignment, pitch, permission, access comparison and coworker station to the withheld final decision. The human key originates at s05 and returns at s08 without transfer. Neither token carries intervening worlds along, and both have explicit final destinations."
+    },
+    {
+      "check": "CLUTTER_WITHOUT_PURPOSE",
+      "status": "PASS",
+      "evidence": "Declared geometry serves location, action, status or composition: s01's desk and cable locate the user's computer; s02's unequal spokes distinguish endpoints; s03's folds encode processing; s04's veil and closed fold encode availability; s06's separate subscription tab qualifies the comparison. No purposeless decorative mechanism is specified."
+    },
+    {
+      "check": "WEAK_RESET_RHYTHM",
+      "status": "PASS",
+      "evidence": "Chapters move from introduction through mechanism and pitch to caveats, implication and choice. The chapter/setup spans cover [0,125) in order, and b01–b12 are assigned once. Connection-to-process, process-to-pitch, pitch-to-permission, permission-to-commercial-access and access-to-implication transitions remove the preceding world. Shared rules persist through naming, connected computing, folio replacement and the coworker transformation."
+    },
+    {
+      "check": "COMPETING_FOCI",
+      "status": "PASS",
+      "evidence": "Contracts sequence the important actions: station separation precedes naming; socket seating precedes cloud-shelf unfolding; assignment steps precede draft emergence; folio layers replace earlier focal content; access conditions reveal sequentially; pedestal transformation precedes coworker seating. In s05 the prominent foreground key supports human control while the slip supplies the active interruption; no independent key action is scheduled. s03's foreground page frames an aperture onto the progressing job."
+    },
+    {
+      "check": "CAPTION_CARRIES_STORY",
+      "status": "PASS",
+      "evidence": "Central state changes depict the argument: separated computers and changing day/night marker show independent persistence; seated connectors show reach; ordered folds and draft emergence show background work; veiling and unopened layers distinguish restricted status; a stopped slip shows withheld execution; ticket-dependent versus open entrances show access differences; surface expansion shows the coworker reframing; the final unclosed key-to-lock gap preserves choice. Necessary names and exact qualifications use local labels without replacing these actions."
+    }
+  ],
+  "setup_assessments": [
+    {
+      "setup_id": "s01",
+      "status": "PASS",
+      "evidence": "b01 changes one active computer into two separate stations and sustains the assignment through a day/night change. b02 uncovers the same seated token in closer framing. Naming develops the introduction; Bot remains a supporting reactor and leaves with the set."
+    },
+    {
+      "setup_id": "s02",
+      "status": "PASS",
+      "evidence": "b03 opens containment and physically seats app connectors. b04 adds an independent computing shelf above those still-relevant connections, shifting framing to its air gap. The retained network explains the computer's connected reach; it exits before ordered processing begins."
+    },
+    {
+      "setup_id": "s03",
+      "status": "PASS",
+      "evidence": "b05 advances one assignment through ordered stops, compresses completed folds and replaces an empty exit with an unsent draft. The separate foreground activity establishes background operation, while its cropped page leaves an aperture onto the causal process."
+    },
+    {
+      "setup_id": "s04",
+      "status": "PASS",
+      "evidence": "b06 assembles work and personal-planning pockets. b07 folds those leaves away, reveals the specialist behind a veil, then makes unopened team slots focal. The folio develops classification and status through replacement rather than retaining several active mechanisms."
+    },
+    {
+      "setup_id": "s05",
+      "status": "PASS",
+      "evidence": "b08 interrupts a pending slip at a closed shutter; the following slip remains in the same queue. The foreground human-held key establishes who controls permission and remains withheld. The shutter and queue leave before the commercial-access comparison."
+    },
+    {
+      "setup_id": "s06",
+      "status": "PASS",
+      "evidence": "b09 sequentially exposes a ticket-dependent Dots entrance and an unobstructed Muse landing. Separate subscription extras qualify the latter without becoming a performance contest. The token stays outside the Dots entrance, avoiding an unsupported eligibility or passage result."
+    },
+    {
+      "setup_id": "s07",
+      "status": "PASS",
+      "evidence": "b10 folds the narrow answer pedestal into a broader work plane, retaining answering as a subordinate component. b11 fills its empty coworker position and continues assigned work through a day/night change. Both beats develop the same expansion from exchange to participation."
+    },
+    {
+      "setup_id": "s08",
+      "status": "PASS",
+      "evidence": "b12 returns to the human-controlled boundary with the retained key, moves hand and key together, and stops before insertion. The closed shutter and remaining gap embody an unresolved decision. This callback carries meaningful identity and authority without retaining the coworker surface."
+    }
+  ],
+  "violations": [],
+  "limits": "Data-only review establishes no structural violation in the supplied plan. It cannot establish rendered/mobile performance, actual focal dominance, pixel visibility, contact execution, caption-free viewing success, narration timing or listening quality. Asset and adapter implementation claims were not verified; no final artwork or production approval is granted."
+}

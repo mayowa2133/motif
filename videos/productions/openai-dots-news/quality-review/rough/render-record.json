@@ -1,0 +1,21 @@
+{
+  "scope": "moving rough only; not finished art/audio",
+  "plan_sha256": "a693d9dc67fdcb17f619f781629b64edff46e5ae5b3c62513974f62cdcdd6316",
+  "events_sha256": "db251ecf6570a412daf847e50831a22cf0bbb81ec0a55a9ede76042ce099fbbd",
+  "with_captions": {
+    "width": 360,
+    "height": 640,
+    "fps": 30.0,
+    "frames": 1118,
+    "duration": 37.266666666666666,
+    "sha256": "8b23f58d259303bdb6da8b79d6a56d5a7a09529d02aa9d2bc05f368c8ada9c60"
+  },
+  "without_captions": {
+    "width": 360,
+    "height": 640,
+    "fps": 30.0,
+    "frames": 1118,
+    "duration": 37.266666666666666,
+    "sha256": "0c1e12b0ea6af5ee86c83ecac16fe654bc3639310316550c19ba84ace3595330"
+  }
+}

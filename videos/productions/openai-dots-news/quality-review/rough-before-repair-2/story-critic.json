@@ -1,0 +1,355 @@
+{
+  "role": "story",
+  "inspection_scope": "Rough ordinary production, b01–b12 and complete film progression. Inspected supplied ordered frames, native mobile stills and every intermediate frame in the supplied event strips, in both caption modes. Compared behavior with retrieved gold examples. REPLAN required for b03 attachment staging.",
+  "gates": [
+    {
+      "gate": "story",
+      "status": "PASS",
+      "evidence": "The film develops separate computing, app reach, ordered background work, proposed uses, availability qualifications, permission, access terms and the coworker implication. The independent workstation returns near the ending; the retained key closes the permission argument without granting access."
+    },
+    {
+      "gate": "cause-effect",
+      "status": "FAIL",
+      "evidence": "In b03, moving plugs reach the lower socket mouths while their painted cables terminate at different points on the app cards. The apparent connected result does not follow from a continuously attached connector."
+    },
+    {
+      "gate": "focal-hierarchy",
+      "status": "FAIL",
+      "evidence": "In b03, the large spokes and app pictograms dominate, but the declared explanatory detail—the seated socket seams—remains visually separated from the cable endpoints."
+    },
+    {
+      "gate": "continuity",
+      "status": "FAIL",
+      "evidence": "The Dot, cloud workstation and retained human key remain recognizable across the film. However, b03 breaks local object continuity between each moving plug and its cable."
+    }
+  ],
+  "violations": [
+    {
+      "timestamp": 8.533333,
+      "shot": "b03",
+      "gate": "cause-effect",
+      "observation": "Both caption modes show the mail and folder plugs moving down their cards toward the circular sockets while the cables remain attached to the cards' upper or side edges. Across frames 250–268, plug arrival changes the socket appearance without establishing the declared cable-to-socket connection.",
+      "gold_id": "audiobook",
+      "smallest_correction": "REPLAN the connection staging so each cable and plug share one painted endpoint throughout approach, seating and settle, terminating at the exposed socket mouth."
+    },
+    {
+      "timestamp": 8.866667,
+      "shot": "b03",
+      "gate": "focal-hierarchy",
+      "observation": "At the completed network state, the spokes visibly meet card edges while the emphasized circular socket mouths sit below those connections. Without captions, the frame communicates a network diagram but does not expose the promised seated seams.",
+      "gold_id": "recording",
+      "smallest_correction": "Make the actual joined cable ends and socket mouths the same visible focal detail; preserve the isolated network composition."
+    },
+    {
+      "timestamp": 8.566667,
+      "shot": "b03",
+      "gate": "continuity",
+      "observation": "The intermediate native frames show the teal plugs continuing along the app cards independently of their cable tips. The final cable geometry does not retain the attachment established by the moving plugs.",
+      "gold_id": "audiobook",
+      "smallest_correction": "Bind the cable tip to the plug position on every intermediate frame and retain that attachment after seating."
+    }
+  ],
+  "sampling_limits": "No video playback or listening was performed. Supplied pixel deltas establish painted change, not semantic action or attachment. Event windows were inspected in labeled order; sparse frames outside those windows cannot establish every intermediate transformation. In particular, b10's hinge attachment during folding is NOT_ASSESSED. The hierarchy rubric file was referenced but its contents were not supplied, so its individual codes could not be assessed.",
+  "shot_assessments": [
+    {
+      "shot": "b01",
+      "gates": [
+        {
+          "gate": "story",
+          "status": "PASS",
+          "evidence": "An edge-on station unfolds beside the cropped user computer; the token seats and the sun becomes a moon while work graphics continue changing. Bot's resting silhouette changes to raised arms and an open mouth, expressing the requested surprise."
+        },
+        {
+          "gate": "cause-effect",
+          "status": "PASS",
+          "evidence": "Station exposure precedes token seating. The landing window retains the token and recess relationship; the day/night change follows establishment of the working station."
+        },
+        {
+          "gate": "focal-hierarchy",
+          "status": "PASS",
+          "evidence": "The large elevated cloud computer and its separation from the user computer remain readable in both caption modes."
+        },
+        {
+          "gate": "continuity",
+          "status": "PASS",
+          "evidence": "The same notched token, station, observer and user-computer crop persist through unfolding, seating and the time change."
+        }
+      ]
+    },
+    {
+      "shot": "b02",
+      "gates": [
+        {
+          "gate": "story",
+          "status": "PASS",
+          "evidence": "Close framing exposes the previously nested token and its DOT identity. Bot returns to a quiet resting posture appropriate to the naming beat."
+        },
+        {
+          "gate": "cause-effect",
+          "status": "PASS",
+          "evidence": "The covering lip clears and the token becomes fully exposed; naming reinforces this visible reveal."
+        },
+        {
+          "gate": "focal-hierarchy",
+          "status": "PASS",
+          "evidence": "The enlarged token owns the detail view, with Bot subordinate at the right edge."
+        },
+        {
+          "gate": "continuity",
+          "status": "PASS",
+          "evidence": "The notch, paper body and surrounding workstation identify the same opening token despite the framing change."
+        }
+      ]
+    },
+    {
+      "shot": "b03",
+      "gates": [
+        {
+          "gate": "story",
+          "status": "PASS",
+          "evidence": "The chat boundary clears around the token and a three-app network develops. Isolation serves the declared containment-to-reach argument; Bot is explicitly absent."
+        },
+        {
+          "gate": "cause-effect",
+          "status": "FAIL",
+          "evidence": "Frames 250–268 show plugs reaching sockets independently of cable endpoints, so the joined result lacks the declared continuous connection."
+        },
+        {
+          "gate": "focal-hierarchy",
+          "status": "FAIL",
+          "evidence": "Spokes and app cards dominate while the lower socket mouths remain separated from the apparent cable connections."
+        },
+        {
+          "gate": "continuity",
+          "status": "FAIL",
+          "evidence": "Cable tips do not track their plugs through the consecutive seating frames."
+        }
+      ]
+    },
+    {
+      "shot": "b04",
+      "gates": [
+        {
+          "gate": "story",
+          "status": "PASS",
+          "evidence": "A distinct cloud computer enters above the retained network and receives the token, adding computing capability to the established app arrangement."
+        },
+        {
+          "gate": "cause-effect",
+          "status": "PASS",
+          "evidence": "Shelf exposure precedes token arrival; frames 287–299 show the token approaching and settling at the exposed recess."
+        },
+        {
+          "gate": "focal-hierarchy",
+          "status": "PASS",
+          "evidence": "The newly introduced upper workstation commands attention while the lower apps retain context."
+        },
+        {
+          "gate": "continuity",
+          "status": "PASS",
+          "evidence": "App positions persist and the recognizable token transfers from the hub to the workstation."
+        }
+      ]
+    },
+    {
+      "shot": "b05",
+      "gates": [
+        {
+          "gate": "story",
+          "status": "PASS",
+          "evidence": "Sheets traverse successive app stops, completed stages compact, and a draft emerges while a separate foreground page turns. The foreground/background justification is painted."
+        },
+        {
+          "gate": "cause-effect",
+          "status": "PASS",
+          "evidence": "All three supplied contact windows show ordered arrivals. The third stage completes before the DRAFT output appears in frames 382–383."
+        },
+        {
+          "gate": "focal-hierarchy",
+          "status": "PASS",
+          "evidence": "The diagonal process remains visible behind the foreground leaf, and its output becomes the concluding focal detail."
+        },
+        {
+          "gate": "continuity",
+          "status": "PASS",
+          "evidence": "The recurring sheets and successive stops preserve the assignment's identity; the output remains a retained draft."
+        }
+      ]
+    },
+    {
+      "shot": "b06",
+      "gates": [
+        {
+          "gate": "story",
+          "status": "PASS",
+          "evidence": "The folio develops distinct work and personal leaves: loose research sheets collect into a work pocket, followed by personal planning rows."
+        },
+        {
+          "gate": "cause-effect",
+          "status": "PASS",
+          "evidence": "Research sheets visibly enter the pocket before the personal checklist assembles. No purchase or sent message is depicted."
+        },
+        {
+          "gate": "focal-hierarchy",
+          "status": "PASS",
+          "evidence": "Large folder and calendar pictograms distinguish the two use contexts at native mobile size."
+        },
+        {
+          "gate": "continuity",
+          "status": "PASS",
+          "evidence": "The diagonal folio, separate leaves and token remain recognizable as task material accumulates."
+        }
+      ]
+    },
+    {
+      "shot": "b07",
+      "gates": [
+        {
+          "gate": "story",
+          "status": "PASS",
+          "evidence": "Present leaves give way to veiled company-document inspection, then a PLANNED layer containing empty slots. Persistent labels qualify visible mechanisms rather than replacing them."
+        },
+        {
+          "gate": "cause-effect",
+          "status": "PASS",
+          "evidence": "The reader traverses company-document rows before the checked review sheet develops. Empty team slots are revealed without showing an operating team."
+        },
+        {
+          "gate": "focal-hierarchy",
+          "status": "PASS",
+          "evidence": "The upper preview inspection leads first; the expanding planned fold subsequently becomes primary. Both status boundaries survive caption removal."
+        },
+        {
+          "gate": "continuity",
+          "status": "PASS",
+          "evidence": "The folio backing persists while its status layers replace the prior use leaves."
+        }
+      ]
+    },
+    {
+      "shot": "b08",
+      "gates": [
+        {
+          "gate": "story",
+          "status": "PASS",
+          "evidence": "A proposed-action slip approaches a closed shutter and remains pending; another slip queues behind it. The human retains the key."
+        },
+        {
+          "gate": "cause-effect",
+          "status": "PASS",
+          "evidence": "The slip's approach precedes its bounded stop response in frames 664–676. It stays on the Dot side of the closed boundary."
+        },
+        {
+          "gate": "focal-hierarchy",
+          "status": "PASS",
+          "evidence": "The shutter, lock and adjacent pending slip command the frame; the held key remains smaller and subordinate."
+        },
+        {
+          "gate": "continuity",
+          "status": "PASS",
+          "evidence": "The first slip remains at the stop during response and queue development; the key stays in the same human grip."
+        }
+      ]
+    },
+    {
+      "shot": "b09",
+      "gates": [
+        {
+          "gate": "story",
+          "status": "PASS",
+          "evidence": "The barred Dots entrance and eligible-plan ticket contrast with Muse's opening entrance. Free-tier and paid-extras labels remain distinct without implying capability equivalence."
+        },
+        {
+          "gate": "cause-effect",
+          "status": "PASS",
+          "evidence": "The Dots ticket approaches but does not grant passage; the Muse cover opens before the unobstructed entrance becomes the completed state."
+        },
+        {
+          "gate": "focal-hierarchy",
+          "status": "PASS",
+          "evidence": "Sequential ticket movement and cover opening direct attention across the paired entrances; the extras tab remains separate."
+        },
+        {
+          "gate": "continuity",
+          "status": "PASS",
+          "evidence": "The paired entrance silhouettes and Dots token remain identifiable through the access comparison."
+        }
+      ]
+    },
+    {
+      "shot": "b10",
+      "gates": [
+        {
+          "gate": "story",
+          "status": "PASS",
+          "evidence": "The narrow question/answer silhouette becomes part of a broader work surface, making the editorial reframing visible without a ranking or winner."
+        },
+        {
+          "gate": "cause-effect",
+          "status": "NOT_ASSESSED",
+          "evidence": "The before and after are supplied, but frames 925–940 covering the main fold are absent. The later landing window cannot establish continuous bottom-hinge attachment."
+        },
+        {
+          "gate": "focal-hierarchy",
+          "status": "PASS",
+          "evidence": "The isolated vertical-to-horizontal silhouette change owns the frame; the workstation begins entering after the broader surface is readable."
+        },
+        {
+          "gate": "continuity",
+          "status": "NOT_ASSESSED",
+          "evidence": "The blue answer face remains recognizable in the table, but its attachment throughout folding cannot be established from the supplied intermediate coverage."
+        }
+      ]
+    },
+    {
+      "shot": "b11",
+      "gates": [
+        {
+          "gate": "story",
+          "status": "PASS",
+          "evidence": "The independent Dot workstation joins the user's task position; work graphics continue through the sun-to-moon change, paying off the opening."
+        },
+        {
+          "gate": "cause-effect",
+          "status": "PASS",
+          "evidence": "The token descends to the exposed recess before the night state. Consecutive frames retain the seated relationship while work continues."
+        },
+        {
+          "gate": "focal-hierarchy",
+          "status": "PASS",
+          "evidence": "The user's left task stack and Dot's right computer form two readable work positions; the time marker reinforces persistence."
+        },
+        {
+          "gate": "continuity",
+          "status": "PASS",
+          "evidence": "The expanded work surface persists from b10, and the recognizable token and scalloped cloud computer recall the opening."
+        }
+      ]
+    },
+    {
+      "shot": "b12",
+      "gates": [
+        {
+          "gate": "story",
+          "status": "PASS",
+          "evidence": "The human-held key approaches and stops short of the closed lock. The final pause serves the unresolved access decision rather than a completed-action caption hold."
+        },
+        {
+          "gate": "cause-effect",
+          "status": "PASS",
+          "evidence": "Frames 1073–1085 preserve the key's grip and visible gap through the stop; no insertion, transfer or shutter opening follows."
+        },
+        {
+          "gate": "focal-hierarchy",
+          "status": "PASS",
+          "evidence": "The enlarged held key, lock and intervening gap explain the question without captions; the waiting Dot is subordinate."
+        },
+        {
+          "gate": "continuity",
+          "status": "PASS",
+          "evidence": "The permission shutter and retained human grip return from b08. The ending preserves human control and leaves the Dot beyond the boundary."
+        }
+      ]
+    }
+  ]
+}

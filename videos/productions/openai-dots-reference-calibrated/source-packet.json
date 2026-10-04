@@ -1,0 +1,60 @@
+{
+  "as_of": "2026-10-03 America/Toronto",
+  "sources": [
+    {
+      "id": "openai-announcement",
+      "url": "https://openai.com/index/introducing-dots/",
+      "published": "2026-09-29",
+      "status": "verified",
+      "claims": [
+        "Persistent agents with connected apps and their own cloud computer.",
+        "Specialist enterprise Dots preview; teams are a future intention.",
+        "Eligible Pro, Business Premium and Enterprise access; first Dot included in eligible plans.",
+        "Proactive research between tasks is read-only; sensitive actions may require approval."
+      ]
+    },
+    {
+      "id": "openai-help",
+      "url": "https://help.openai.com/en/articles/20001530-getting-started-with-your-dot",
+      "status": "verified",
+      "claims": [
+        "Gradual rollout and eligible-plan restrictions apply."
+      ]
+    },
+    {
+      "id": "meta-announcement",
+      "url": "https://about.fb.com/news/2026/09/introducing-muse-personal-ai-agent/",
+      "published": "2026-09-08",
+      "status": "verified",
+      "claims": [
+        "Muse is free for most uses, with subscriptions for more."
+      ]
+    },
+    {
+      "id": "wired",
+      "url": "https://www.wired.com/story/openai-dots-always-on-ai-agents-that-proactively-help/",
+      "published": "2026-09-29",
+      "status": "verified secondary; primary sources used for narration",
+      "claims": []
+    },
+    {
+      "id": "verge-supplied",
+      "url": "https://www.theverge.com/ai-artificial-intelligence/1004096/openai-chatgpt-dots-hands-on-agent",
+      "status": "direct access failed; security-check claim omitted from approved script",
+      "claims": []
+    }
+  ],
+  "script_change": {
+    "old": "early hands-on testing found public-site security checks can still stop them, and right now Dots are tied to the $100-a-month Pro tier while Meta\u2019s Muse is free",
+    "new": "sensitive actions can still need your approval, and right now Dots require an eligible paid ChatGPT plan, while Meta\u2019s Muse offers a free tier",
+    "approval": "Use the verified correction"
+  },
+  "visual_fact_rules": [
+    "Cloud computer is separate from the user computer.",
+    "Background assigned tasks may continue; proactive research is read-only.",
+    "Do not show unapproved spending, messaging or sensitive changes.",
+    "Specialists are preview; teams planned later.",
+    "Do not show $100 as exclusive Dots access or unlimited free Muse.",
+    "Use conceptual illustrative interfaces, not claimed screenshots or measured performance."
+  ]
+}

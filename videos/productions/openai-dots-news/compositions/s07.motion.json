@@ -1,0 +1,33 @@
+{
+  "setup": "s07",
+  "start": 28.83,
+  "duration": 6.260000000000005,
+  "rule": "A narrow answer pedestal folds into one edge of a broad work surface; an independent Dot workstation occupies the new coworker position and continues assigned work.",
+  "recipes": [
+    "cursor-drag: matched payload/contact transforms",
+    "press-release-spring: caused local material settle",
+    "viewport-change: token close view in same setup"
+  ],
+  "temporal_events": [
+    {
+      "kind": "contact",
+      "time": 30.81
+    },
+    {
+      "kind": "contact",
+      "time": 31.16
+    },
+    {
+      "kind": "landing",
+      "time": 31.56
+    },
+    {
+      "kind": "landing",
+      "time": 33.82
+    }
+  ],
+  "exit": {
+    "kind": "object-led",
+    "reason": "The recognizable Dot remains across the cut while the permission shutter returns; the work surface is removed."
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "status": "REVISE_ART_DIRECTION",
+  "blocked": [
+    "s02-connected-work: character-role",
+    "s02-connected-work: hero-scale",
+    "s02-connected-work: hierarchy",
+    "s02-connected-work: intentional-space",
+    "s02-connected-work: set-specificity",
+    "REFERENCE_STRUCTURE_GAP \u2014 s02-connected-work, beats b02\u2013b04: the actual rough does not establish the calibrated physical chain of connector engagement, input seating and development of one identifiable job. Its disconnected clusters and detached participant require composition replanning. This blocks the concept gate; texture changes cannot resolve it.",
+    "global concept FAIL"
+  ],
+  "plan_sha256": "45c3cc329820a5fce32931be39e3b5818360fa2fef2fb9b2489f5cf14eece294",
+  "calibration_record_sha256": "e3a7894c37034d4ccd434b7ffd1ed6f993c50677293d348d7ba047ae03123e17",
+  "evidence_path": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-reference-calibrated/concept-evidence.json",
+  "evidence_sha256": "3d3839d1d82b0879a6f05106de31fc724233447f79e65c8ee2183b5f03620dca",
+  "response_sha256": "bc00ad02040e03838abe80845f5c2c66ec3348af8cd70a9111ae9c24d698e5ff",
+  "invocation_sha256": "892dea55d901ed9863db6a9793d43e9878438b4a4b35b4275466c6749fa6d6d3",
+  "human_approval": false
+}

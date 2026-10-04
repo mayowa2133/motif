@@ -1,0 +1,15 @@
+{
+  "narration": "assets/voice/narration-af-nova.wav",
+  "review_input": "assets/voice/review-voice.wav",
+  "duration": 36.666,
+  "review_gain_db": 0,
+  "music": false,
+  "sfx": false,
+  "phase": "rough; audio finishing blocked until final painted gates",
+  "review_input_measurement": {
+    "integrated_lufs": -17.09,
+    "true_peak_dbtp": -2.29,
+    "lra_lu": 3.0
+  },
+  "subjective_listening": "not assessed"
+}

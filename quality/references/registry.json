@@ -1,0 +1,13 @@
+{
+  "corpus_id": "private-seven-v1",
+  "default_private_location": "~/.local/share/motif/reference-corpus/private-seven-v1",
+  "override": "MOTIF_REFERENCE_CORPUS",
+  "manifest_sha256": "88bb6090eadce9efc4e030edabe81ce6bffd165542d21bd73fc62174a7768dd9",
+  "videos": 7,
+  "setups": 91,
+  "private": true,
+  "external_frames_in_git": false,
+  "source_uploads_needed_for_later_runs": false,
+  "factual_source": false,
+  "render_dependency": false
+}

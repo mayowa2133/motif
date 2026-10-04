@@ -1,0 +1,21 @@
+{
+  "setup": "s05",
+  "start": 19.81,
+  "duration": 3.3000000000000007,
+  "rule": "A pending slip reaches a closed human-controlled shutter; the key stays on the person's side.",
+  "recipes": [
+    "cursor-drag: matched payload/contact transforms",
+    "press-release-spring: caused local material settle",
+    "viewport-change: token close view in same setup"
+  ],
+  "temporal_events": [
+    {
+      "kind": "impact",
+      "time": 22.35
+    }
+  ],
+  "exit": {
+    "kind": "hard-cut",
+    "reason": "Execution permission and commercial eligibility are different conditions; replace the shutter with access ledges."
+  }
+}

@@ -1,0 +1,145 @@
+{
+  "type": "object",
+  "properties": {
+    "role": {
+      "const": "structure",
+      "type": "string"
+    },
+    "inspection_scope": {
+      "type": "string",
+      "minLength": 1
+    },
+    "checks": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "check": {
+            "type": "string",
+            "enum": [
+              "METAPHOR_OVERLOAD",
+              "STATE_ACCUMULATION_WITHOUT_MEANING",
+              "SEMANTIC_GROUP_OVERLOAD",
+              "COMPOSITIONAL_STAGNATION",
+              "CONTINUITY_TOKEN_OVERLOAD",
+              "CLUTTER_WITHOUT_PURPOSE",
+              "WEAK_RESET_RHYTHM",
+              "COMPETING_FOCI",
+              "CAPTION_CARRIES_STORY",
+              "REFERENCE_STRUCTURE_GAP",
+              "REFERENCE_SCENE_IMITATION"
+            ]
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "PASS",
+              "FAIL",
+              "NOT_ASSESSED"
+            ]
+          },
+          "evidence": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "required": [
+          "check",
+          "status",
+          "evidence"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "setup_assessments": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "setup_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "PASS",
+              "FAIL",
+              "NOT_ASSESSED"
+            ]
+          },
+          "evidence": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "required": [
+          "setup_id",
+          "status",
+          "evidence"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "violations": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "code": {
+            "type": "string",
+            "enum": [
+              "METAPHOR_OVERLOAD",
+              "STATE_ACCUMULATION_WITHOUT_MEANING",
+              "SEMANTIC_GROUP_OVERLOAD",
+              "COMPOSITIONAL_STAGNATION",
+              "CONTINUITY_TOKEN_OVERLOAD",
+              "CLUTTER_WITHOUT_PURPOSE",
+              "WEAK_RESET_RHYTHM",
+              "COMPETING_FOCI",
+              "CAPTION_CARRIES_STORY",
+              "REFERENCE_STRUCTURE_GAP",
+              "REFERENCE_SCENE_IMITATION"
+            ]
+          },
+          "setup_ids": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "observation": {
+            "type": "string",
+            "minLength": 1
+          },
+          "smallest_structural_correction": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "required": [
+          "code",
+          "setup_ids",
+          "observation",
+          "smallest_structural_correction"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "limits": {
+      "type": "string",
+      "minLength": 1
+    }
+  },
+  "required": [
+    "role",
+    "inspection_scope",
+    "checks",
+    "setup_assessments",
+    "violations",
+    "limits"
+  ],
+  "additionalProperties": false
+}

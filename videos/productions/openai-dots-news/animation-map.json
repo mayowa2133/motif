@@ -1,0 +1,234 @@
+[
+  {
+    "setup": "s01",
+    "start": 0,
+    "duration": 5.9,
+    "rule": "A second independent station unfolds beside the user computer; assigned work continues through a day/night change. Naming uncovers the same seated token.",
+    "recipes": [
+      "cursor-drag: matched payload/contact transforms",
+      "press-release-spring: caused local material settle",
+      "viewport-change: token close view in same setup"
+    ],
+    "temporal_events": [
+      {
+        "kind": "landing",
+        "time": 3.28
+      },
+      {
+        "kind": "contact",
+        "time": 4.98
+      }
+    ],
+    "exit": {
+      "kind": "object-led",
+      "reason": "A tight token crop leads to the same notched token inside a chat enclosure; neither computer nor Bot travels to the next world."
+    }
+  },
+  {
+    "setup": "s02",
+    "start": 5.9,
+    "duration": 4.27,
+    "rule": "An opened enclosure becomes a socketed app network; its cloud shelf subsequently unfolds above the same connections.",
+    "recipes": [
+      "cursor-drag: matched payload/contact transforms",
+      "press-release-spring: caused local material settle",
+      "viewport-change: token close view in same setup"
+    ],
+    "temporal_events": [
+      {
+        "kind": "contact",
+        "time": 8.54
+      },
+      {
+        "kind": "contact",
+        "time": 8.66
+      },
+      {
+        "kind": "contact",
+        "time": 8.780000000000001
+      },
+      {
+        "kind": "landing",
+        "time": 9.76
+      }
+    ],
+    "exit": {
+      "kind": "hard-cut",
+      "reason": "The next proposition changes from connection geometry to ordered temporal progress; the network is removed."
+    }
+  },
+  {
+    "setup": "s03",
+    "start": 10.17,
+    "duration": 2.8499999999999996,
+    "rule": "Unprocessed accordion length passes ordered stops and compresses into completed folds; a draft exits behind the user's foreground page.",
+    "recipes": [
+      "cursor-drag: matched payload/contact transforms",
+      "press-release-spring: caused local material settle",
+      "viewport-change: token close view in same setup"
+    ],
+    "temporal_events": [
+      {
+        "kind": "contact",
+        "time": 11.143333333333333
+      },
+      {
+        "kind": "contact",
+        "time": 11.856666666666666
+      },
+      {
+        "kind": "contact",
+        "time": 12.57
+      }
+    ],
+    "exit": {
+      "kind": "hard-cut",
+      "reason": "A concrete process ends; the pitch categories require a new folio system rather than more machinery on the ribbon."
+    }
+  },
+  {
+    "setup": "s04",
+    "start": 13.02,
+    "duration": 6.789999999999999,
+    "rule": "Folio leaves reveal use categories; present leaves fold away before preview and planned layers become focal. Vellum and unopened folds encode status.",
+    "recipes": [
+      "cursor-drag: matched payload/contact transforms",
+      "press-release-spring: caused local material settle",
+      "viewport-change: token close view in same setup"
+    ],
+    "temporal_events": [
+      {
+        "kind": "contact",
+        "time": 14.25
+      },
+      {
+        "kind": "contact",
+        "time": 14.450000000000001
+      },
+      {
+        "kind": "contact",
+        "time": 14.65
+      },
+      {
+        "kind": "landing",
+        "time": 16.72
+      },
+      {
+        "kind": "contact",
+        "time": 17.37
+      },
+      {
+        "kind": "landing",
+        "time": 17.89
+      },
+      {
+        "kind": "landing",
+        "time": 19.61
+      }
+    ],
+    "exit": {
+      "kind": "hard-cut",
+      "reason": "Availability classification gives way to an execution boundary; the folio disappears."
+    }
+  },
+  {
+    "setup": "s05",
+    "start": 19.81,
+    "duration": 3.3000000000000007,
+    "rule": "A pending slip reaches a closed human-controlled shutter; the key stays on the person's side.",
+    "recipes": [
+      "cursor-drag: matched payload/contact transforms",
+      "press-release-spring: caused local material settle",
+      "viewport-change: token close view in same setup"
+    ],
+    "temporal_events": [
+      {
+        "kind": "impact",
+        "time": 22.35
+      }
+    ],
+    "exit": {
+      "kind": "hard-cut",
+      "reason": "Execution permission and commercial eligibility are different conditions; replace the shutter with access ledges."
+    }
+  },
+  {
+    "setup": "s06",
+    "start": 23.11,
+    "duration": 5.719999999999999,
+    "rule": "A required eligible-plan ticket entrance is compared with an open free-tier entrance; additional subscriptions remain separate.",
+    "recipes": [
+      "cursor-drag: matched payload/contact transforms",
+      "press-release-spring: caused local material settle",
+      "viewport-change: token close view in same setup"
+    ],
+    "temporal_events": [
+      {
+        "kind": "landing",
+        "time": 27.01
+      },
+      {
+        "kind": "contact",
+        "time": 27.560000000000002
+      }
+    ],
+    "exit": {
+      "kind": "hard-cut",
+      "reason": "The editorial implication needs a change of working relationship, not a winner emerging from the access comparison."
+    }
+  },
+  {
+    "setup": "s07",
+    "start": 28.83,
+    "duration": 6.260000000000005,
+    "rule": "A narrow answer pedestal folds into one edge of a broad work surface; an independent Dot workstation occupies the new coworker position and continues assigned work.",
+    "recipes": [
+      "cursor-drag: matched payload/contact transforms",
+      "press-release-spring: caused local material settle",
+      "viewport-change: token close view in same setup"
+    ],
+    "temporal_events": [
+      {
+        "kind": "contact",
+        "time": 30.81
+      },
+      {
+        "kind": "contact",
+        "time": 31.16
+      },
+      {
+        "kind": "landing",
+        "time": 31.56
+      },
+      {
+        "kind": "landing",
+        "time": 33.82
+      }
+    ],
+    "exit": {
+      "kind": "object-led",
+      "reason": "The recognizable Dot remains across the cut while the permission shutter returns; the work surface is removed."
+    }
+  },
+  {
+    "setup": "s08",
+    "start": 35.09,
+    "duration": 2.1766666666666623,
+    "rule": "The same human-held key approaches the same closed permission boundary but never enters or transfers.",
+    "recipes": [
+      "cursor-drag: matched payload/contact transforms",
+      "press-release-spring: caused local material settle",
+      "viewport-change: token close view in same setup"
+    ],
+    "temporal_events": [
+      {
+        "kind": "contact",
+        "time": 35.970000000000006
+      }
+    ],
+    "exit": {
+      "kind": "end",
+      "reason": "The human decision remains open; no automatic approval or subsequent execution is shown."
+    }
+  }
+]

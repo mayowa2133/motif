@@ -1,0 +1,159 @@
+{
+  "type": "object",
+  "properties": {
+    "role": {
+      "const": "story",
+      "type": "string"
+    },
+    "inspection_scope": {
+      "type": "string"
+    },
+    "gates": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "gate": {
+            "enum": [
+              "story",
+              "cause-effect",
+              "focal-hierarchy",
+              "continuity"
+            ],
+            "type": "string"
+          },
+          "status": {
+            "enum": [
+              "PASS",
+              "FAIL",
+              "NOT_ASSESSED",
+              "NOT_APPLICABLE"
+            ],
+            "type": "string"
+          },
+          "evidence": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "required": [
+          "gate",
+          "status",
+          "evidence"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "violations": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "timestamp": {
+            "type": "number",
+            "minimum": 0
+          },
+          "shot": {
+            "type": "string",
+            "minLength": 1
+          },
+          "gate": {
+            "enum": [
+              "story",
+              "cause-effect",
+              "focal-hierarchy",
+              "continuity"
+            ],
+            "type": "string"
+          },
+          "observation": {
+            "type": "string",
+            "minLength": 1
+          },
+          "gold_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "smallest_correction": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "required": [
+          "timestamp",
+          "shot",
+          "gate",
+          "observation",
+          "gold_id",
+          "smallest_correction"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "sampling_limits": {
+      "type": "string",
+      "minLength": 1
+    },
+    "shot_assessments": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "shot": {
+            "type": "string"
+          },
+          "gates": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "gate": {
+                  "enum": [
+                    "story",
+                    "cause-effect",
+                    "focal-hierarchy",
+                    "continuity"
+                  ],
+                  "type": "string"
+                },
+                "status": {
+                  "enum": [
+                    "PASS",
+                    "FAIL",
+                    "NOT_ASSESSED",
+                    "NOT_APPLICABLE"
+                  ],
+                  "type": "string"
+                },
+                "evidence": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              },
+              "required": [
+                "gate",
+                "status",
+                "evidence"
+              ],
+              "additionalProperties": false
+            }
+          }
+        },
+        "required": [
+          "shot",
+          "gates"
+        ],
+        "additionalProperties": false
+      }
+    }
+  },
+  "required": [
+    "role",
+    "inspection_scope",
+    "gates",
+    "violations",
+    "sampling_limits",
+    "shot_assessments"
+  ],
+  "additionalProperties": false
+}

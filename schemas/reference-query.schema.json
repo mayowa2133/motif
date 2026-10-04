@@ -1,0 +1,56 @@
+{
+  "type": "object",
+  "properties": {
+    "relationships": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "verb": {
+            "type": "string",
+            "enum": [
+              "compare",
+              "burden",
+              "accumulate",
+              "reveal",
+              "transform",
+              "process",
+              "handoff",
+              "test",
+              "gate",
+              "approval",
+              "block",
+              "background-work",
+              "selection",
+              "callback",
+              "price",
+              "restore",
+              "route",
+              "inspection",
+              "multi-agent-work",
+              "interface-interaction"
+            ]
+          },
+          "rationale": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "required": [
+          "verb",
+          "rationale"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "style_intent": {
+      "type": "string",
+      "minLength": 1
+    }
+  },
+  "required": [
+    "relationships",
+    "style_intent"
+  ],
+  "additionalProperties": false
+}

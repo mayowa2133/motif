@@ -60,7 +60,7 @@ def backend_config():
     path=Path(os.environ.get('CODEX_HOME',str(Path.home()/'.codex')))/'config.toml'
     config=tomllib.loads(path.read_text()) if path.exists() else {}
     if config.get('model_provider') not in (None,'openai'): raise ValueError('configured custom model provider is not supported by this small integration')
-    return {**cli,'backend':'codex-exec','execution':'self-contained command with live model planning', 'model':os.environ.get('MOTIF_PLANNER_MODEL',config.get('model')), 'reasoning_effort':config.get('model_reasoning_effort','low'), 'authentication_status':(status.stdout+status.stderr).strip(),'cli_version':command([cli['cli_path'],'--version'],ROOT).strip(),'sandbox':'read-only','ephemeral':True,'tools_requested':False,'default_model_if_unspecified':not os.environ.get('MOTIF_PLANNER_MODEL',config.get('model')), 'model_selection':'MOTIF_PLANNER_MODEL' if os.environ.get('MOTIF_PLANNER_MODEL') else 'existing Codex configuration','hyperframes':PIN}
+    return {**cli,'backend':'codex-exec','execution':'self-contained command with live model planning', 'model':os.environ.get('MOTIF_PLANNER_MODEL',config.get('model')), 'reasoning_effort':config.get('model_reasoning_effort','low'), 'authentication_status':(status.stdout+status.stderr).strip(),'cli_version':command([cli['cli_path'],'--version'],ROOT).strip(),'sandbox':'read-only','ephemeral':True,'tools_requested':False,'default_model_if_unspecified':not os.environ.get('MOTIF_PLANNER_MODEL',config.get('model')), 'model_selection':'MOTIF_PLANNER_MODEL' if os.environ.get('MOTIF_PLANNER_MODEL') else 'existing Codex configuration','hyperframes':PIN,'timeout_seconds':int(os.environ.get('MOTIF_MODEL_TIMEOUT','600'))}
 
 def model_call(project, name, prompt, schema, config, images=()):
     project=Path(project).resolve()
@@ -70,8 +70,19 @@ def model_call(project, name, prompt, schema, config, images=()):
         config={**config,**cli,'cli_version':command([cli['cli_path'],'--version'],ROOT).strip()}
     if not Path(config['cli_path']).is_file() or not os.access(config['cli_path'],os.X_OK):
         raise ValueError('recorded Codex CLI is unavailable: '+config['cli_path'])
+    if Path(schema).name=='reference-gate.schema.json':
+        prompt+='\nOutput contract: novelty_warnings is a BLOCKING array. Include only actual unresolved novelty or structural warnings. Put positive observations, no-imitation findings and general inspection limits in checks/limits. Use an empty array when no such warning exists. No PASS verdict is requested.'
     (project/(name+'-input.txt')).write_text(prompt)
     wire_schema=read(ROOT/schema)
+    # All ordinary new quality planners share this entry point. The independent
+    # director uses a different schema, so its calls cannot recurse into planning.
+    if 'quality_mode' in wire_schema.get('properties',{}) and (project/'brief.json').exists():
+        from motif_reference import calibrate,context
+        calibrate(project,config)
+        reference_prompt,reference_images=context(project)
+        prompt+=reference_prompt
+        images=tuple(images)+tuple(reference_images)
+        (project/(name+'-input.txt')).write_text(prompt)
     # New live plans select the quality profile; saved legacy plans still validate
     # against the optional extension. Flatten the condition for the CLI's supported
     # structured-output subset instead of introducing another planning framework.
@@ -84,8 +95,8 @@ def model_call(project, name, prompt, schema, config, images=()):
         contract=item['properties']['quality']['properties']
         # Explicit null is structured optionality in live output; stored legacy
         # plans may omit these keys and are normalized without file mutation.
-        for name in ('energy','art_direction'):
-            contract[name]['required']=list(contract[name]['properties'])
+        for contract_field in ('energy','art_direction'):
+            contract[contract_field]['required']=list(contract[contract_field]['properties'])
     if wire_schema.get('properties',{}).get('role',{}).get('const')=='visual':
         wire_schema['required']=list(wire_schema['properties'])
         violation=wire_schema['properties']['violations']['items']
@@ -94,20 +105,30 @@ def model_call(project, name, prompt, schema, config, images=()):
     write(schema_path,wire_schema)
     args=[config['cli_path'],'exec','--ignore-user-config','--ephemeral','--skip-git-repo-check','--sandbox','read-only','--json','--color','never','--output-schema',str(schema_path.resolve()),'-o',str(project/(name+'.json')),'-c','approval_policy="never"','-c','model_reasoning_effort='+json.dumps(config['reasoning_effort'])]
     if config['model']: args+=['--model',config['model']]
+    image_inputs=[]
     for image in images:
         if not Path(image).is_file(): raise ValueError('critic image missing: '+str(image))
+        image_inputs.append({'file':str(Path(image).resolve()),'sha256':sha(Path(image))})
         args+=['-i',str(Path(image).resolve())]
     args+=['-']
     # A fresh empty working directory prevents the planner reading evaluation fixtures or old outputs.
     with tempfile.TemporaryDirectory(prefix='motif-planning-') as cwd:
         print('MODEL '+name,flush=True)
         started_at=datetime.now(timezone.utc).isoformat()
-        process=subprocess.run(args,cwd=cwd,input=prompt,text=True,capture_output=True,timeout=600)
+        try:
+            process=subprocess.run(args,cwd=cwd,input=prompt,text=True,capture_output=True,timeout=config.get('timeout_seconds',600))
+        except subprocess.TimeoutExpired as error:
+            (project/(name+'-events.jsonl')).write_text((error.stdout or b'').decode() if isinstance(error.stdout,bytes) else error.stdout or '')
+            (project/(name+'-stderr.txt')).write_text((error.stderr or b'').decode() if isinstance(error.stderr,bytes) else error.stderr or '')
+            write(project/(name+'-invocation.json'),{'argv':args,'exit_code':124,'input_sha256':sha(project/(name+'-input.txt')),'output_schema_sha256':sha(schema_path),'configuration':config,'started_at_utc':started_at,'completed_at_utc':datetime.now(timezone.utc).isoformat(),'saved_response_used':False,'model_fallback_used':False,'error':'live call timed out'})
+            raise ValueError('live model call timed out; preserved evidence; no saved-response fallback: '+name) from error
         completed_at=datetime.now(timezone.utc).isoformat()
     (project/(name+'-events.jsonl')).write_text(process.stdout)
     (project/(name+'-stderr.txt')).write_text(process.stderr)
-    write(project/(name+'-invocation.json'),{'argv':args,'exit_code':process.returncode,'input_sha256':sha(project/(name+'-input.txt')),'output_schema_sha256':sha(schema_path),'configuration':config,'started_at_utc':started_at,'completed_at_utc':completed_at,'requested_model':config['model'],'resolved_model':None,'resolved_model_note':'CLI event stream does not expose a separately resolved model identifier','saved_response_used':False,'model_fallback_used':False})
+    write(project/(name+'-invocation.json'),{'argv':args,'exit_code':process.returncode,'input_sha256':sha(project/(name+'-input.txt')),'output_schema_sha256':sha(schema_path),'images':image_inputs,'configuration':config,'started_at_utc':started_at,'completed_at_utc':completed_at,'requested_model':config['model'],'resolved_model':None,'resolved_model_note':'CLI event stream does not expose a separately resolved model identifier','saved_response_used':False,'model_fallback_used':False})
     if process.returncode: raise ValueError('live planning backend failed; see '+str(project/(name+'-stderr.txt'))+'; no saved-response fallback was used')
+    if any(not Path(im['file']).is_file() or sha(Path(im['file']))!=im['sha256'] for im in image_inputs):
+        raise ValueError('model input image changed during review; invocation binds original evidence, fresh review required')
     value=read(project/(name+'.json'))
     Draft202012Validator(read(ROOT/schema)).validate(value)
     # Planner is a data-only stage, even though the CLI itself can expose tools.

@@ -7,3 +7,22 @@ node_modules/
 .hyperframes/
 videos/productions/*-attempt-*/
 videos/productions/*-gate-rejected/
+
+# Private external reference evidence is never distributed with productions.
+references/creative-corpus/
+videos/productions/*/reference-calibration/
+quality/validation/reference-calibration/private/
+
+# Dots validation keeps raw model transcripts and duplicate render evidence local.
+videos/productions/openai-dots*/**/*-input.txt
+videos/productions/openai-dots*/**/*-events.jsonl
+videos/productions/openai-dots*/**/*-stderr.txt
+videos/productions/openai-dots-news/quality-review/rough*/frames/
+videos/productions/openai-dots-news/quality-review/rough*/strips/
+videos/productions/openai-dots-news/quality-review/rough-preflight-*/
+videos/productions/openai-dots-reference-calibrated/planning-attempt-1/review/
+videos/productions/openai-dots-reference-calibrated/review/concepts-*/
+videos/productions/openai-dots-news/quality-review/rough*/captions/
+videos/productions/openai-dots-news/quality-review/rough*/no-captions/
+videos/productions/openai-dots-news/quality-review/rough*/evidence-*/
+videos/productions/openai-dots-news/quality-review/rough*/gold-*/

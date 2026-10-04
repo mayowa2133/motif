@@ -1,0 +1,18 @@
+{
+  "status": "PASS",
+  "plan_sha256": "45c3cc329820a5fce32931be39e3b5818360fa2fef2fb9b2489f5cf14eece294",
+  "response_sha256": "5309df4b2d664ab1aec4adc1340f9f759847fb25f99688d7cd46de66ed1b06d7",
+  "invocation_sha256": "f7dc99ba6a0b14cbd6a0f1160169b0591105f7a25275f0249c1b0cd5c3f4e572",
+  "policy_hashes": {
+    "docs/MOTIF_STRUCTURAL_GRAMMAR.md": "407e60b501a73d0612492028cd16e18e98e1217a55169b50238ed9afbbb9ec0b",
+    "quality/structure-critic/PROMPT.md": "e700e3fe1e57cd658e6b5df1c6e89982b1e136dfe3f5e3bd468bc152f95188b7",
+    "schemas/film-structure.schema.json": "eee77c580a98ce2e8df48253b1b3009fc7454720c2611deadc6e02728234b6bf",
+    "schemas/setup-contract.schema.json": "71a00f3716097c68de2a85819a5656dd4df53cac1960eeb527ea7b593bb54ec8",
+    "schemas/structure-critic.schema.json": "a26e23018c7beea439f60184f1985633848f744a19d15bad440054e7752ce602",
+    "quality/structure-examples.json": "fbbff255e35cbebe0cb6361c693251c817500896434da96d10504e8f4d034f7d",
+    "quality/negative/rowhouse.json": "5d70b0dadfe7a26553824a5c8aba4361e085f75bc4cc840e50aa1a0019416bde",
+    "scripts/motif_structure.py": "f7365f6cdee7e28e6a3e254449719cfda79e6fab2092878f169216016fc901c9"
+  },
+  "scope": "data only; no painted approval",
+  "reference_calibration_sha256": "e3a7894c37034d4ccd434b7ffd1ed6f993c50677293d348d7ba047ae03123e17"
+}

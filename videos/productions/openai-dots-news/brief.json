@@ -1,0 +1,20 @@
+{
+  "slug": "openai-dots-news",
+  "title": "OpenAI Dots \u2014 would you give one the keys?",
+  "script": "OpenAI just gave ChatGPT a tiny coworker with its own computer \u2014 and it doesn\u2019t clock out. They\u2019re called Dots. Instead of living inside one chat bubble, a Dot can connect to your apps, use its own cloud computer, and keep chewing through a multi-step job in the background. OpenAI is pitching them for real work and personal errands, with specialist Dots for companies, and teams of Dots planned later. But here\u2019s the catch: sensitive actions can still need your approval, and right now Dots require an eligible paid ChatGPT plan, while Meta\u2019s Muse offers a free tier. So the next AI race isn\u2019t just who has the smartest chatbot. It\u2019s who gets to become your always-on digital coworker. Would you give one the keys?",
+  "audience": "AI-curious adults and knowledge workers deciding whether persistent agents deserve access to their apps",
+  "style": "reference-expressive-high-energy-v1",
+  "voice_speed": 1.03,
+  "quality_mode": "motif-gold-v1",
+  "flow": "automation",
+  "duration_driver": "Exact supplied script with one user-approved verified caveat correction; actual Kokoro timings determine film duration.",
+  "planner_input": "Supplied script, verified facts, structural grammar, quality contracts, internal behavioral gold. No reference video or shot list.",
+  "creative_constraints": [
+    "No giant office or factory spanning unrelated mechanisms.",
+    "Interfaces may become tactile stages.",
+    "Small persistent Dot token; retain whole environments only while the semantic rule evolves.",
+    "Canonical Motif Bot v1 locked.",
+    "Macro structure critique before animation; rough/final story and visual critique; at most two meaningful moving repairs."
+  ],
+  "approval": "User approved the factual correction through async reply; final viewing/listening remains pending."
+}

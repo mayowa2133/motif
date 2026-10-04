@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512"><title>dot-token — conceptual news illustration</title><defs>
+<pattern id="grain" width="31" height="29" patternUnits="userSpaceOnUse">
+  <circle cx="4" cy="6" r="1.2" fill="#806F5D" opacity=".16"/>
+  <circle cx="23" cy="12" r=".85" fill="#806F5D" opacity=".13"/>
+  <circle cx="12" cy="24" r=".7" fill="#806F5D" opacity=".12"/>
+  <path d="M18 3 l2 .7 M5 20 l2 -.4" stroke="#806F5D" stroke-width=".8" opacity=".12"/>
+  <circle cx="28" cy="27" r="1.5" fill="#FFFFFF" opacity=".16"/>
+</pattern>
+<pattern id="darkGrain" width="29" height="31" patternUnits="userSpaceOnUse">
+  <circle cx="7" cy="9" r=".9" fill="#F4EBD8" opacity=".09"/>
+  <circle cx="20" cy="23" r=".7" fill="#F4EBD8" opacity=".08"/>
+</pattern>
+<pattern id="worldPaper" width="1365" height="1365" patternUnits="userSpaceOnUse"><image href="../materials/wall.png" width="1365" height="1365"/></pattern></defs><g id="body"><g opacity="1.00000" transform="translate(256.0000 256.0000) rotate(0.0000) scale(1.00000 1.00000)"><path d="M-180 0A180 180 0 1 1 180 0A180 180 0 1 1 -180 0" fill="#202C32" stroke="#202C32" stroke-width="0" stroke-linecap="round" stroke-linejoin="round" transform="translate(3 5)" opacity=".16"/><path d="M-180 0A180 180 0 1 1 180 0A180 180 0 1 1 -180 0" fill="#F4EBD8" stroke="#DCCDB3" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" /><path d="M-81.0 -154.8Q-125.99999999999999 -99.00000000000001 -165.6 -36.0" fill="none" stroke="#56BFB1" stroke-width="32.4" stroke-linecap="round" stroke-linejoin="round" /><text x="0" y="28.8" font-family="Inter" font-size="77.4" font-weight="900" fill="#202C32" text-anchor="middle">DOT</text><circle cx="111.6" cy="106.19999999999999" r="16.2" fill="#56BFB1"/></g></g></svg>

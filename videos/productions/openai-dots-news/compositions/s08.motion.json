@@ -1,0 +1,21 @@
+{
+  "setup": "s08",
+  "start": 35.09,
+  "duration": 2.1766666666666623,
+  "rule": "The same human-held key approaches the same closed permission boundary but never enters or transfers.",
+  "recipes": [
+    "cursor-drag: matched payload/contact transforms",
+    "press-release-spring: caused local material settle",
+    "viewport-change: token close view in same setup"
+  ],
+  "temporal_events": [
+    {
+      "kind": "contact",
+      "time": 35.970000000000006
+    }
+  ],
+  "exit": {
+    "kind": "end",
+    "reason": "The human decision remains open; no automatic approval or subsequent execution is shown."
+  }
+}

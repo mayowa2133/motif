@@ -1,0 +1,95 @@
+{
+  "role": "structure",
+  "inspection_scope": "Complete supplied plan: narration, rationale, assets, all twelve beat contracts, limitations, five rhetorical chapters, eight setups, reset contracts and both continuity-token lifecycles. Assessed planned structure and hierarchy before animation.",
+  "checks": [
+    {
+      "check": "METAPHOR_OVERLOAD",
+      "status": "PASS",
+      "evidence": "Separate worlds handle computing, app connections, ordered work, pitch classification, permission, commercial access and the coworker implication. In s02, the cloud shelf serves the retained app network rather than introducing unrelated machinery. In s04, task examples and the bounded specialist demonstration belong to successive folio layers distinguishing uses and availability."
+    },
+    {
+      "check": "STATE_ACCUMULATION_WITHOUT_MEANING",
+      "status": "PASS",
+      "evidence": "The chat enclosure clears in b03; the network exits before b05; processed assignment folds compress; present-use leaves fold away in b07. Retained specialist and team layers communicate the current availability distinction. Queued slips in b08 express pending actions, rather than obsolete mechanisms."
+    },
+    {
+      "check": "SEMANTIC_GROUP_OVERLOAD",
+      "status": "PASS",
+      "evidence": "App sockets form one connection group, accordion segments one assignment, folio layers one pitch classification and paired entrances one access comparison. Specialist inspection precedes the team-fold emphasis. No contract requires unrelated groups to dominate simultaneously."
+    },
+    {
+      "check": "COMPOSITIONAL_STAGNATION",
+      "status": "PASS",
+      "evidence": "Contracts change dominant silhouettes and staging: two offset computers, an asymmetric socket network, a deep accordion, a diagonal folio, a close permission stop, paired entrances and a vertical pedestal becoming a horizontal work surface. Repeated workstation and permission imagery has explicit opening/payoff and caveat/question relationships."
+    },
+    {
+      "check": "CONTINUITY_TOKEN_OVERLOAD",
+      "status": "PASS",
+      "evidence": "The notched Dot preserves agent identity while environments exit. Its placements change from computer seat to hub, assignment feed, pitch observer, waiting agent, access ledge and coworker station. The human-held key appears only at the approval caveat and closing callback, remaining untransferred throughout."
+    },
+    {
+      "check": "CLUTTER_WITHOUT_PURPOSE",
+      "status": "PASS",
+      "evidence": "Declared supporting geometry supplies location, contact, ordering, status, comparison or balance: the user's cable identifies its computer, socket routes express reach, accordion folds express progress, veil and closed folds qualify availability, and the separate subscription tab qualifies the access comparison. No specified decorative group lacks a structural function."
+    },
+    {
+      "check": "WEAK_RESET_RHYTHM",
+      "status": "PASS",
+      "evidence": "Connection resets to ordered processing; processing resets to pitch classification; classification resets to execution permission; permission resets to commercial access; access resets to the editorial implication. Naming, cloud seating and the coworker payoff develop their existing relationships. The closing callback removes the work surface and returns to the permission boundary."
+    },
+    {
+      "check": "COMPETING_FOCI",
+      "status": "PASS",
+      "evidence": "Contracts specify sequential socket contacts, ordered ribbon stops, successive folio layers and sequential access entrances. In b08, slip/shutter contact owns the central region while the held key stays subordinate; b12 reverses that hierarchy deliberately. The user's foreground page in b05 supports background persistence, and b11's time marker supports continuing work."
+    },
+    {
+      "check": "CAPTION_CARRIES_STORY",
+      "status": "PASS",
+      "evidence": "Central changes convey separate computing, expanded connections, ordered draft production, restricted future layers, stopped execution, unequal entry conditions, a broader work relationship and withheld access. Necessary names and commercial/status qualifiers have local artwork or UI identifiers; narration captions are not the sole source of the central causal action."
+    }
+  ],
+  "setup_assessments": [
+    {
+      "setup_id": "s01",
+      "status": "PASS",
+      "evidence": "One computer becomes two separate stations; assigned work continues through a day/night change; a detail view uncovers the same token for naming. The Bot reacts to introduction without becoming a separate proposition."
+    },
+    {
+      "setup_id": "s02",
+      "status": "PASS",
+      "evidence": "The token leaves containment, connectors seat in app sockets and the enclosure clears. The subsequent upper shelf provides the connected agent's computing seat, with the network retained as relevant support and removed at the next reset."
+    },
+    {
+      "setup_id": "s03",
+      "status": "PASS",
+      "evidence": "An extended assignment traverses ordered stops and compresses before its draft emerges. The separate foreground page establishes concurrent user activity; all processed folds remain meaningful evidence of that assignment."
+    },
+    {
+      "setup_id": "s04",
+      "status": "PASS",
+      "evidence": "Research and planning pockets establish proposed uses, then fold away. A bounded company-document inspection stays behind a preview veil before the closed, empty team fold becomes focal. These successive layers classify the pitch and its status without retaining active present-use machinery."
+    },
+    {
+      "setup_id": "s05",
+      "status": "PASS",
+      "evidence": "The sensitive-action slip physically meets a closed stop and remains pending; a second slip queues behind it. The already-held key stays subordinate on the person's side, reserving its primary role for the callback."
+    },
+    {
+      "setup_id": "s06",
+      "status": "PASS",
+      "evidence": "The matching ticket and blocked Dots entrance establish a requirement before Muse's entrance opens. Separate subscription extras remain subordinate. The paired geometry compares access rather than inventing a performance contest."
+    },
+    {
+      "setup_id": "s07",
+      "status": "PASS",
+      "evidence": "The attached answer face folds into a wider work surface rather than disappearing under a new label. The second workstation then gains the Dot, and assigned work persists through the time-marker change, completing the same reframing."
+    },
+    {
+      "setup_id": "s08",
+      "status": "PASS",
+      "evidence": "The callback changes the permission scene's dominant action from stopped execution to the human-held key approaching the lock. The retained grip, remaining gap and closed shutter preserve an unresolved decision."
+    }
+  ],
+  "violations": [],
+  "limits": "Data-only review cannot establish rendered/mobile performance, actual visibility, motion readability, contact execution, caption timing or listening quality. PASS means no structural violation was found in the supplied contracts; it does not verify factual claims, implementation availability or final artwork."
+}

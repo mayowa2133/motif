@@ -1,0 +1,12 @@
+{
+  "version": "reference-calibration-1.0",
+  "codes": {
+    "REFERENCE_ENERGY_GAP": "energy",
+    "REFERENCE_STAGE_RICHNESS_GAP": "art",
+    "REFERENCE_ACTING_GAP": "character-performance",
+    "REFERENCE_COMPOSITION_GAP": "composition",
+    "REFERENCE_INTERACTION_GAP": "physicality",
+    "REFERENCE_TACTILITY_GAP": "art"
+  },
+  "comparative": "creative ambition and clarity; never pixel similarity"
+}

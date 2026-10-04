@@ -1,0 +1,26 @@
+{
+  "status": "HUMAN_REVIEW_REQUIRED_BEFORE_MOTION",
+  "completed": [
+    "private seven-video corpus registration",
+    "Reference Calibration system integration",
+    "live targeted retrieval/Reference Director",
+    "A-G validation",
+    "93 unit tests",
+    "two live plans and structure reviews",
+    "caption-free concepts and independent concept critics"
+  ],
+  "blocked": [
+    "s02-connected-work character-role",
+    "s02-connected-work hero-scale",
+    "s02-connected-work hierarchy"
+  ],
+  "planning_attempts": 2,
+  "planning_attempt_limit": 2,
+  "concept_gate": "REVISE_ART_DIRECTION",
+  "opening_proof": null,
+  "moving_rough_with_captions": null,
+  "moving_rough_without_captions": null,
+  "reason": "Bounded planning budget exhausted at the internal concept gate; user prompt permits stopping for review here. No weak concept propagated into choreography.",
+  "review_document": "docs/REFERENCE_CALIBRATION_REVIEW.md",
+  "human_approval": false
+}

@@ -1,0 +1,1314 @@
+{
+  "mode": "motif-gold-v1",
+  "shots": [
+    {
+      "id": "b01",
+      "contract": {
+        "purpose": "Introduce a persistent coworker with its own computer.",
+        "hero": "cloud-desk",
+        "primary_action": "Bot listens before token approach, visibly anticipates during it, then changes to the full canonical surprised silhouette only after the token bottom reaches its exposed recess. Recess and token settle together. Independent work persists through the sun/moon change.",
+        "performance": {
+          "state": "surprised",
+          "target": "bot"
+        },
+        "before": "Cropped user computer active, independent station initially edge-on; Bot listening before the seat event.",
+        "after": "Independent station unfolded and Dot seated on an exposed recess; Bot surprised; same assigned ribbon continues while sun becomes moon.",
+        "focal_target": "cloud-desk.station-separation",
+        "framing": "establish",
+        "reaction_radius": {
+          "origin": [
+            225,
+            370
+          ],
+          "radius": 170,
+          "duration": 0.4,
+          "targets": [
+            {
+              "id": "bot",
+              "position": [
+                292,
+                455
+              ],
+              "relevance": 0.8,
+              "amplitude": {
+                "x": 0,
+                "y": -3,
+                "rotation": 2
+              },
+              "delay": 0.05
+            }
+          ]
+        },
+        "secondary_motion": [
+          "Registered Bot antenna follow-through after the opening response."
+        ],
+        "environment": [
+          "Cropped user desk edge",
+          "Separate cloud-computer pedestal",
+          "Foreground cable loop belonging to the user computer"
+        ],
+        "exit_overlap": "The ribbon keeps advancing while the naming detail begins.",
+        "energy": {
+          "dominant_action": "Separate the two computers and sustain the Dot's assignment.",
+          "character_response": "Listening before approach, canonical anticipation during approach, full surprised posture triggered only after measured seat contact.",
+          "local_reaction": "Bot listens before token approach, visibly anticipates during it, then changes to the full canonical surprised silhouette only after the token bottom reaches its exposed recess. Recess and token settle together. Independent work persists through the sun/moon change.",
+          "residual_motion": "Assigned ribbon continues with purpose into the naming beat.",
+          "next_action_overlap": "Naming begins after the separate station is readable."
+        },
+        "art_direction": {
+          "hero_object": "Two-computer silhouette with the cloud station occupying roughly two-thirds of the usable frame width.",
+          "bot_role": "reactor",
+          "materials": [
+            "Cream cut paper",
+            "Teal laminated computer rim",
+            "Corrugated cloud base",
+            "Canonical Bot materials"
+          ],
+          "depth_planes": [
+            "Foreground desk crop and Bot",
+            "Midground separate computer stations",
+            "Background warm paper field"
+          ],
+          "composition": "User computer enters from the left foreground; Dot's computer sits higher at right. Bot occupies a substantial lower-right silhouette without pointing or obscuring the separation.",
+          "intentional_irregularity": "The user desk crop is oblique; the cloud base has unequal scallops that establish its identity.",
+          "environment_mode": "physical",
+          "environment_justification": null
+        }
+      },
+      "span": {
+        "id": "b01",
+        "start": 0,
+        "actions": [
+          {
+            "action": {
+              "kind": "requested:dots-cloud-seat-v1",
+              "cue": "its own computer",
+              "requires": [
+                "dot-token",
+                "cloud-desk",
+                "cloud-desk token-seat contact anchor"
+              ],
+              "produces": [
+                "Dot seated on a visibly separate cloud computer"
+              ]
+            },
+            "time": 2.88,
+            "script_word_index": 8,
+            "heard_word": "its"
+          },
+          {
+            "action": {
+              "kind": "requested:dots-ribbon-advance-v1",
+              "cue": "it doesn\u2019t clock out.",
+              "requires": [
+                "cloud-desk",
+                "cloud-desk ribbon-entry anchor"
+              ],
+              "produces": [
+                "Assigned-work ribbon advances across the day/night change"
+              ]
+            },
+            "time": 3.98,
+            "script_word_index": 12,
+            "heard_word": "it"
+          }
+        ],
+        "end": 4.87
+      },
+      "setup": "s01",
+      "requested_actions": [
+        {
+          "kind": "requested:dots-cloud-seat-v1",
+          "cue": "its own computer",
+          "requires": [
+            "dot-token",
+            "cloud-desk",
+            "cloud-desk token-seat contact anchor"
+          ],
+          "produces": [
+            "Dot seated on a visibly separate cloud computer"
+          ]
+        },
+        {
+          "kind": "requested:dots-ribbon-advance-v1",
+          "cue": "it doesn\u2019t clock out.",
+          "requires": [
+            "cloud-desk",
+            "cloud-desk ribbon-entry anchor"
+          ],
+          "produces": [
+            "Assigned-work ribbon advances across the day/night change"
+          ]
+        }
+      ],
+      "executed_adapter": "s01",
+      "focus": "cloud-desk.station-separation",
+      "framing": "establish",
+      "performance": "source/common.py canonical state channel",
+      "reaction": "Numeric selected Bot response plus authored contact-specific local responses; empty target arrays do not enroll extras",
+      "status": "Executed provisional; moving approval required"
+    },
+    {
+      "id": "b02",
+      "contract": {
+        "purpose": "Establish the name and visual identity without inventing an official avatar.",
+        "hero": "dot-token",
+        "primary_action": "Uncover the token within the still-working station.",
+        "performance": {
+          "state": "listening",
+          "target": "bot"
+        },
+        "before": "The station rim partially covers the token.",
+        "after": "The full notch and local DOT label are exposed.",
+        "focal_target": "dot-token.notch",
+        "framing": "detail",
+        "reaction_radius": {
+          "origin": [
+            190,
+            320
+          ],
+          "radius": 90,
+          "duration": 0.25,
+          "targets": []
+        },
+        "secondary_motion": [],
+        "environment": [
+          "Cropped user desk edge",
+          "Separate cloud-computer pedestal",
+          "Foreground cable loop belonging to the user computer"
+        ],
+        "exit_overlap": null,
+        "energy": {
+          "dominant_action": "Expose the token's identity while the assignment ribbon remains visibly active.",
+          "character_response": "Bot listens using the registered interactive-ui-v1 performance target.",
+          "local_reaction": null,
+          "residual_motion": "The ribbon advances within the established station.",
+          "next_action_overlap": null
+        },
+        "art_direction": {
+          "hero_object": "Dot token enlarged to roughly one-third of frame width; the station remains identifiable around it.",
+          "bot_role": "reactor",
+          "materials": [
+            "Cream cut paper",
+            "Teal rim ink",
+            "Corrugated cloud base",
+            "Canonical Bot materials"
+          ],
+          "depth_planes": [
+            "Foreground cropped station rim",
+            "Midground token",
+            "Background computer and desk silhouettes"
+          ],
+          "composition": "Close framing favors the token off-center left. Bot remains partially visible at the lower-right edge, keeping the setup's observer role.",
+          "intentional_irregularity": "The token notch and uneven station rim distinguish the object without wobbling its geometry.",
+          "environment_mode": "physical",
+          "environment_justification": null
+        }
+      },
+      "span": {
+        "id": "b02",
+        "start": 4.87,
+        "actions": [
+          {
+            "action": {
+              "kind": "requested:dots-cloud-seat-v1",
+              "cue": "called Dots.",
+              "requires": [
+                "dot-token",
+                "cloud-desk",
+                "cloud-desk token-seat contact anchor"
+              ],
+              "produces": [
+                "Named token exposed without changing identity"
+              ]
+            },
+            "time": 5.19,
+            "script_word_index": 17,
+            "heard_word": "called"
+          }
+        ],
+        "end": 5.9
+      },
+      "setup": "s01",
+      "requested_actions": [
+        {
+          "kind": "requested:dots-cloud-seat-v1",
+          "cue": "called Dots.",
+          "requires": [
+            "dot-token",
+            "cloud-desk",
+            "cloud-desk token-seat contact anchor"
+          ],
+          "produces": [
+            "Named token exposed without changing identity"
+          ]
+        }
+      ],
+      "executed_adapter": "s01",
+      "focus": "dot-token.notch",
+      "framing": "detail",
+      "performance": "source/common.py canonical state channel",
+      "reaction": "Numeric selected Bot response plus authored contact-specific local responses; empty target arrays do not enroll extras",
+      "status": "Executed provisional; moving approval required"
+    },
+    {
+      "id": "b03",
+      "contract": {
+        "purpose": "Show connected apps as a change of reach.",
+        "hero": "route-dock",
+        "primary_action": "The enclosure clears. Three slate leads remain in front of each card lower corner, avoiding app pictograms. Each visible cable end and teal plug share exactly one moving endpoint and seat at the exposed bottom socket. No card surface may conceal this attachment.",
+        "performance": {
+          "state": "absent",
+          "target": ""
+        },
+        "before": "The token is bounded by one chat silhouette; app sockets are disconnected.",
+        "after": "The boundary is open and three distinct app sockets are joined to the token.",
+        "focal_target": "route-dock.socket-seams",
+        "framing": "subject",
+        "reaction_radius": {
+          "origin": [
+            180,
+            330
+          ],
+          "radius": 150,
+          "duration": 0.35,
+          "targets": []
+        },
+        "secondary_motion": [],
+        "environment": [],
+        "exit_overlap": "The final connector remains seated as the cloud shelf enters the same routing world.",
+        "energy": {
+          "dominant_action": "Replace containment with socketed connections.",
+          "character_response": null,
+          "local_reaction": "The enclosure clears. Three slate leads remain in front of each card lower corner, avoiding app pictograms. Each visible cable end and teal plug share exactly one moving endpoint and seat at the exposed bottom socket. No card surface may conceal this attachment.",
+          "residual_motion": null,
+          "next_action_overlap": "The separate cloud shelf begins unfolding after the last connection is legible."
+        },
+        "art_direction": {
+          "hero_object": "An asymmetric three-spoke app dock filling roughly three-quarters of frame width.",
+          "bot_role": "absent",
+          "materials": [
+            "Die-cut warm paper",
+            "Teal socket lips",
+            "Slate paper connectors",
+            "Layered contact shadows"
+          ],
+          "depth_planes": [
+            "Foreground exposed cable ends, plugs and socket lips",
+            "App cards behind their attached leads; pictograms unobscured",
+            "Pale paper field with departed enclosure removed"
+          ],
+          "composition": "Unequal app cards surround the hub. Cables pass across only the lower outside corners in front of each tile, continuously exposing their shared plug endpoint and socket connection without covering the pictograms.",
+          "intentional_irregularity": "Unequal spoke lengths separate the app silhouettes and prevent a decorative symmetrical diagram.",
+          "environment_mode": "minimal-isolated",
+          "environment_justification": "Isolation makes the change from a single enclosure to connected app endpoints readable without unrelated room props."
+        }
+      },
+      "span": {
+        "id": "b03",
+        "start": 5.9,
+        "actions": [
+          {
+            "action": {
+              "kind": "requested:dots-route-connect-v1",
+              "cue": "connect to your apps,",
+              "requires": [
+                "dot-token",
+                "route-dock",
+                "route-dock app-socket mouths and connector endpoint anchors"
+              ],
+              "produces": [
+                "Chat enclosure opened",
+                "Three visibly seated app connections"
+              ]
+            },
+            "time": 8.24,
+            "script_word_index": 29,
+            "heard_word": "connect"
+          }
+        ],
+        "end": 8.98
+      },
+      "setup": "s02",
+      "requested_actions": [
+        {
+          "kind": "requested:dots-route-connect-v1",
+          "cue": "connect to your apps,",
+          "requires": [
+            "dot-token",
+            "route-dock",
+            "route-dock app-socket mouths and connector endpoint anchors"
+          ],
+          "produces": [
+            "Chat enclosure opened",
+            "Three visibly seated app connections"
+          ]
+        }
+      ],
+      "executed_adapter": "s02",
+      "focus": "route-dock.socket-seams",
+      "framing": "subject",
+      "performance": "explicitly absent",
+      "reaction": "Numeric selected Bot response plus authored contact-specific local responses; empty target arrays do not enroll extras",
+      "status": "Executed provisional; moving approval required"
+    },
+    {
+      "id": "b04",
+      "contract": {
+        "purpose": "Distinguish app access from owning a separate cloud computer.",
+        "hero": "route-dock",
+        "primary_action": "Expose a seat recess whose surface meets the token bottom after the shelf opens.",
+        "performance": {
+          "state": "absent",
+          "target": ""
+        },
+        "before": "The app network has no exposed computing shelf.",
+        "after": "A distinct cloud computer is visible above the network.",
+        "focal_target": "route-dock.cloud-seat-gap",
+        "framing": "detail",
+        "reaction_radius": {
+          "origin": [
+            190,
+            275
+          ],
+          "radius": 95,
+          "duration": 0.3,
+          "targets": []
+        },
+        "secondary_motion": [],
+        "environment": [],
+        "exit_overlap": null,
+        "energy": {
+          "dominant_action": "Establish a separate cloud-computer seat above the app connections.",
+          "character_response": null,
+          "local_reaction": "Token bottom and exposed elliptical recess meet at the measured landing; a small caused recess-lip compression and shared vertical displacement settle together. No unrelated object is enrolled.",
+          "residual_motion": null,
+          "next_action_overlap": null
+        },
+        "art_direction": {
+          "hero_object": "Cloud-computer shelf at roughly half frame width with the connected app network partly visible below.",
+          "bot_role": "absent",
+          "materials": [
+            "Corrugated cloud shelf",
+            "Teal computer rim",
+            "Warm paper connectors"
+          ],
+          "depth_planes": [
+            "Lower retained connected apps",
+            "Upper independent cloud shelf with exposed token recess",
+            "Pale paper field; no retained chat enclosure"
+          ],
+          "composition": "The frame favors the upper shelf and its separation from the lower network, preserving the previous beat's geometry.",
+          "intentional_irregularity": "The cloud shelf projects farther on one side, making its supported ledge and air gap clear.",
+          "environment_mode": "minimal-isolated",
+          "environment_justification": "The isolated network lets the separate cloud seat remain the sole new proposition."
+        }
+      },
+      "span": {
+        "id": "b04",
+        "start": 8.98,
+        "actions": [
+          {
+            "action": {
+              "kind": "requested:dots-route-connect-v1",
+              "cue": "own cloud computer,",
+              "requires": [
+                "dot-token",
+                "route-dock",
+                "route-dock cloud-seat anchor"
+              ],
+              "produces": [
+                "Dot seated on the separate cloud-computer shelf"
+              ]
+            },
+            "time": 9.36,
+            "script_word_index": 35,
+            "heard_word": "own"
+          }
+        ],
+        "end": 10.17
+      },
+      "setup": "s02",
+      "requested_actions": [
+        {
+          "kind": "requested:dots-route-connect-v1",
+          "cue": "own cloud computer,",
+          "requires": [
+            "dot-token",
+            "route-dock",
+            "route-dock cloud-seat anchor"
+          ],
+          "produces": [
+            "Dot seated on the separate cloud-computer shelf"
+          ]
+        }
+      ],
+      "executed_adapter": "s02",
+      "focus": "route-dock.cloud-seat-gap",
+      "framing": "detail",
+      "performance": "explicitly absent",
+      "reaction": "Numeric selected Bot response plus authored contact-specific local responses; empty target arrays do not enroll extras",
+      "status": "Executed provisional; moving approval required"
+    },
+    {
+      "id": "b05",
+      "contract": {
+        "purpose": "Show background persistence and ordered work without autonomous sensitive execution.",
+        "hero": "job-fold",
+        "primary_action": "Each traversed accordion segment compacts toward its stop. A distinct foreground user leaf turns concurrently. Keep the draft exit empty until the third sheet reaches and clears its stop, then expose the unsent draft.",
+        "performance": {
+          "state": "absent",
+          "target": ""
+        },
+        "before": "The assignment accordion is extended and its draft exit is empty.",
+        "after": "Processed folds compress behind the stop; a draft emerges and remains unsent.",
+        "focal_target": "job-fold.draft-exit",
+        "framing": "subject",
+        "reaction_radius": {
+          "origin": [
+            210,
+            350
+          ],
+          "radius": 110,
+          "duration": 0.35,
+          "targets": []
+        },
+        "secondary_motion": [],
+        "environment": [],
+        "exit_overlap": null,
+        "energy": {
+          "dominant_action": "Advance and compress the assignment through causally ordered stops.",
+          "character_response": null,
+          "local_reaction": "Each traversed accordion segment compacts toward its stop. A distinct foreground user leaf turns concurrently. Keep the draft exit empty until the third sheet reaches and clears its stop, then expose the unsent draft.",
+          "residual_motion": null,
+          "next_action_overlap": "The next fold approaches only after the preceding step has visibly cleared."
+        },
+        "art_direction": {
+          "hero_object": "A deep diagonal accordion occupying about two-thirds of frame height.",
+          "bot_role": "absent",
+          "materials": [
+            "Scored cream paper",
+            "Teal step collars",
+            "Slate draft ink",
+            "Coral foreground user-sheet corner"
+          ],
+          "depth_planes": [
+            "Foreground turning user sheet",
+            "Midground assignment stops",
+            "Background compressed processed folds"
+          ],
+          "composition": "A cropped foreground page frames a clear aperture onto the working ribbon; the token is seated at the ribbon's active end.",
+          "intentional_irregularity": "Unequal accordion folds distinguish unprocessed length from compressed completed steps.",
+          "environment_mode": "minimal-isolated",
+          "environment_justification": "Foreground and background are the argument: a user's separate activity and a readable continuing assignment need no room."
+        }
+      },
+      "span": {
+        "id": "b05",
+        "start": 10.17,
+        "actions": [
+          {
+            "action": {
+              "kind": "requested:dots-ribbon-advance-v1",
+              "cue": "multi-step job in the background.",
+              "requires": [
+                "dot-token",
+                "job-fold",
+                "job-fold ribbon-feed, step-stop and draft-exit anchors"
+              ],
+              "produces": [
+                "Ordered assignment steps traversed",
+                "Draft retained for review"
+              ]
+            },
+            "time": 11.23,
+            "script_word_index": 43,
+            "heard_word": "multi"
+          }
+        ],
+        "end": 13.02
+      },
+      "setup": "s03",
+      "requested_actions": [
+        {
+          "kind": "requested:dots-ribbon-advance-v1",
+          "cue": "multi-step job in the background.",
+          "requires": [
+            "dot-token",
+            "job-fold",
+            "job-fold ribbon-feed, step-stop and draft-exit anchors"
+          ],
+          "produces": [
+            "Ordered assignment steps traversed",
+            "Draft retained for review"
+          ]
+        }
+      ],
+      "executed_adapter": "s03",
+      "focus": "job-fold.draft-exit",
+      "framing": "subject",
+      "performance": "explicitly absent",
+      "reaction": "Numeric selected Bot response plus authored contact-specific local responses; empty target arrays do not enroll extras",
+      "status": "Executed provisional; moving approval required"
+    },
+    {
+      "id": "b06",
+      "contract": {
+        "purpose": "Represent OpenAI's proposed uses without asserting universal availability or completed errands.",
+        "hero": "preview-folio",
+        "primary_action": "Loose research slips descend into an open-faced retaining pocket. Every slip bottom and its teal stop remain exposed through the aperture; the papers and stop deflect together only after arrival. Personal planning rows then assemble.",
+        "performance": {
+          "state": "absent",
+          "target": ""
+        },
+        "before": "Closed pitch folio and loose task slips.",
+        "after": "Research pages collected and personal planning slips organized in separate task pockets.",
+        "focal_target": "preview-folio.task-pockets",
+        "framing": "establish",
+        "reaction_radius": {
+          "origin": [
+            180,
+            350
+          ],
+          "radius": 140,
+          "duration": 0.35,
+          "targets": []
+        },
+        "secondary_motion": [],
+        "environment": [],
+        "exit_overlap": "The outer preview sleeve begins to lift after both present-use leaves are readable.",
+        "energy": {
+          "dominant_action": "Open and distinguish two proposed use contexts.",
+          "character_response": null,
+          "local_reaction": "Loose research slips descend into an open-faced retaining pocket. Every slip bottom and its teal stop remain exposed through the aperture; the papers and stop deflect together only after arrival. Personal planning rows then assemble.",
+          "residual_motion": null,
+          "next_action_overlap": "The next folio layer lifts without adding a separate mechanism."
+        },
+        "art_direction": {
+          "hero_object": "Broad diagonal folio with an open-faced teal retaining pocket that exposes incoming research page bottoms and their stop; shorter gold planning leaf.",
+          "bot_role": "absent",
+          "materials": [
+            "Warm paper leaves",
+            "Teal work pocket",
+            "Marigold personal pocket",
+            "Translucent vellum sleeve"
+          ],
+          "depth_planes": [
+            "Foreground lifted folio corner",
+            "Midground two use leaves",
+            "Background closed future layers"
+          ],
+          "composition": "The left page aperture reveals the full paper/stop relationship. No opaque pocket front hides collection; the shorter right leaf exposes calendar assembly.",
+          "intentional_irregularity": "The personal leaf is shorter, exposing the future sleeve edge without competing with present uses.",
+          "environment_mode": "minimal-isolated",
+          "environment_justification": "A pitch folio distinguishes use categories and status layers through its own physical structure."
+        }
+      },
+      "span": {
+        "id": "b06",
+        "start": 13.02,
+        "actions": [
+          {
+            "action": {
+              "kind": "requested:dots-folio-reveal-v1",
+              "cue": "real work and personal errands,",
+              "requires": [
+                "dot-token",
+                "preview-folio",
+                "preview-folio page-hinge and token-rest anchors"
+              ],
+              "produces": [
+                "Present-use work and personal leaves exposed"
+              ]
+            },
+            "time": 14.8,
+            "script_word_index": 54,
+            "heard_word": "real"
+          }
+        ],
+        "end": 16.25
+      },
+      "setup": "s04",
+      "requested_actions": [
+        {
+          "kind": "requested:dots-folio-reveal-v1",
+          "cue": "real work and personal errands,",
+          "requires": [
+            "dot-token",
+            "preview-folio",
+            "preview-folio page-hinge and token-rest anchors"
+          ],
+          "produces": [
+            "Present-use work and personal leaves exposed"
+          ]
+        }
+      ],
+      "executed_adapter": "s04",
+      "focus": "preview-folio.task-pockets",
+      "framing": "establish",
+      "performance": "explicitly absent",
+      "reaction": "Numeric selected Bot response plus authored contact-specific local responses; empty target arrays do not enroll extras",
+      "status": "Executed provisional; moving approval required"
+    },
+    {
+      "id": "b07",
+      "contract": {
+        "purpose": "Make the preview and planned qualifications inseparable from the future concepts.",
+        "hero": "preview-folio",
+        "primary_action": "Enlarge the company-document inspection jig within its sleeve: a large dark company mark and document rows are traversed by a broad contrasting reader, before a proposed sheet emerges and its checks develop. Keep a separately outlined creased translucent PREVIEW veil in front throughout. Then reveal the closed PLANNED team fold and empty sockets.",
+        "performance": {
+          "state": "absent",
+          "target": ""
+        },
+        "before": "Present-use leaves are exposed; future layers are closed.",
+        "after": "A veiled company-document review capability and an unopened empty-slot team fold distinguish preview specialists from future teams.",
+        "focal_target": "preview-folio.status-boundary",
+        "framing": "subject",
+        "reaction_radius": {
+          "origin": [
+            185,
+            330
+          ],
+          "radius": 130,
+          "duration": 0.35,
+          "targets": []
+        },
+        "secondary_motion": [],
+        "environment": [],
+        "exit_overlap": null,
+        "energy": {
+          "dominant_action": "Reveal status boundaries while replacing the prior leaves.",
+          "character_response": null,
+          "local_reaction": "Enlarge the company-document inspection jig within its sleeve: a large dark company mark and document rows are traversed by a broad contrasting reader, before a proposed sheet emerges and its checks develop. Keep a separately outlined creased translucent PREVIEW veil in front throughout. Then reveal the closed PLANNED team fold and empty sockets.",
+          "residual_motion": null,
+          "next_action_overlap": null
+        },
+        "art_direction": {
+          "hero_object": "Enlarged veiled company-document inspection jig: large dark company mark, visible document rows, broad reader and proposed checked output. Then the closed PLANNED team fold with empty sockets.",
+          "bot_role": "absent",
+          "materials": [
+            "Vellum PREVIEW veil",
+            "Slate specialist paper",
+            "Plum PLANNED fold",
+            "Cream backing"
+          ],
+          "depth_planes": [
+            "Foreground unopened team fold",
+            "Midground veiled specialist leaf",
+            "Background folded present-use leaves"
+          ],
+          "composition": "A broad inspection relation commands the upper diagonal. The separate creased veil has translucent fill and a clear perimeter, qualifying the preview without concealing the task. The team fold becomes primary afterward.",
+          "intentional_irregularity": "The team fold has unequal empty slots, conveying a proposed arrangement without multiplying active tokens.",
+          "environment_mode": "minimal-isolated",
+          "environment_justification": "An isolated proposed company-document review makes specialization concrete, while physical preview veiling and closed team sockets distinguish preview from future intent."
+        }
+      },
+      "span": {
+        "id": "b07",
+        "start": 16.25,
+        "actions": [
+          {
+            "action": {
+              "kind": "requested:dots-folio-reveal-v1",
+              "cue": "specialist Dots for companies,",
+              "requires": [
+                "preview-folio",
+                "preview-folio page-hinge anchors"
+              ],
+              "produces": [
+                "Specialist layer visible behind persistent PREVIEW veil"
+              ]
+            },
+            "time": 16.57,
+            "script_word_index": 60,
+            "heard_word": "specialist"
+          },
+          {
+            "action": {
+              "kind": "requested:dots-folio-reveal-v1",
+              "cue": "teams of Dots planned later.",
+              "requires": [
+                "preview-folio",
+                "preview-folio unopened team-fold anchor"
+              ],
+              "produces": [
+                "Empty team slots visible under persistent PLANNED fold"
+              ]
+            },
+            "time": 18.26,
+            "script_word_index": 65,
+            "heard_word": "teams"
+          }
+        ],
+        "end": 19.81
+      },
+      "setup": "s04",
+      "requested_actions": [
+        {
+          "kind": "requested:dots-folio-reveal-v1",
+          "cue": "specialist Dots for companies,",
+          "requires": [
+            "preview-folio",
+            "preview-folio page-hinge anchors"
+          ],
+          "produces": [
+            "Specialist layer visible behind persistent PREVIEW veil"
+          ]
+        },
+        {
+          "kind": "requested:dots-folio-reveal-v1",
+          "cue": "teams of Dots planned later.",
+          "requires": [
+            "preview-folio",
+            "preview-folio unopened team-fold anchor"
+          ],
+          "produces": [
+            "Empty team slots visible under persistent PLANNED fold"
+          ]
+        }
+      ],
+      "executed_adapter": "s04",
+      "focus": "preview-folio.status-boundary",
+      "framing": "subject",
+      "performance": "explicitly absent",
+      "reaction": "Numeric selected Bot response plus authored contact-specific local responses; empty target arrays do not enroll extras",
+      "status": "Executed provisional; moving approval required"
+    },
+    {
+      "id": "b08",
+      "contract": {
+        "purpose": "Show the approved sensitive-action caveat as a real stop.",
+        "hero": "permission-latch",
+        "primary_action": "A proposed envelope begins visibly separated from the shutter. Its linear approach retains a readable gap until the declared stop, then its leading midpoint meets the shutter and both settle together. A second proposal queues afterward. The smaller human-held key stays subordinate.",
+        "performance": {
+          "state": "absent",
+          "target": ""
+        },
+        "before": "The proposed slip is approaching the boundary.",
+        "after": "The first proposed slip is stopped; another queues behind it; key remains already held by the person.",
+        "focal_target": "permission-latch.slip-stop",
+        "framing": "detail",
+        "reaction_radius": {
+          "origin": [
+            190,
+            350
+          ],
+          "radius": 85,
+          "duration": 0.3,
+          "targets": []
+        },
+        "secondary_motion": [],
+        "environment": [],
+        "exit_overlap": null,
+        "energy": {
+          "dominant_action": "Interrupt the pending slip at the permission stop.",
+          "character_response": null,
+          "local_reaction": "A proposed envelope begins visibly separated from the shutter. Its linear approach retains a readable gap until the declared stop, then its leading midpoint meets the shutter and both settle together. A second proposal queues afterward. The smaller human-held key stays subordinate.",
+          "residual_motion": null,
+          "next_action_overlap": null
+        },
+        "art_direction": {
+          "hero_object": "Tall coral shutter with an exposed right-hand stop edge, large cream proposed-action slip and paper tray. Their contact owns the detail view; the smaller held key is subordinate at lower left.",
+          "bot_role": "absent",
+          "materials": [
+            "Coral paper shutter",
+            "Corrugated stop edge",
+            "Cream action slip",
+            "Marigold paper key",
+            "Flat cut-paper human hand"
+          ],
+          "depth_planes": [
+            "Small subordinate human-held key at near left",
+            "Primary slip/shutter boundary and tray at right center",
+            "Dot waiting beyond the closed boundary"
+          ],
+          "composition": "The approaching slip and corrugated stop occupy the central primary region. The already-held key is a smaller subordinate silhouette at lower left. The waiting Dot stays beyond the closed boundary. The key becomes primary only in b12.",
+          "intentional_irregularity": "A small paper tilt after contact exposes the slip edge while its leading midpoint stays attached to the corrugated stop.",
+          "environment_mode": "minimal-isolated",
+          "environment_justification": "An isolated permission boundary exposes the exact withheld contact and keeps the human decision unmistakable."
+        }
+      },
+      "span": {
+        "id": "b08",
+        "start": 19.81,
+        "actions": [
+          {
+            "action": {
+              "kind": "requested:dots-permission-stop-v1",
+              "cue": "need your approval,",
+              "requires": [
+                "dot-token",
+                "permission-latch",
+                "permission-latch slip-stop and shutter-edge anchors"
+              ],
+              "produces": [
+                "Sensitive action retained pending",
+                "Key retained on the person's side"
+              ]
+            },
+            "time": 22.35,
+            "script_word_index": 78,
+            "heard_word": "need"
+          }
+        ],
+        "end": 23.11
+      },
+      "setup": "s05",
+      "requested_actions": [
+        {
+          "kind": "requested:dots-permission-stop-v1",
+          "cue": "need your approval,",
+          "requires": [
+            "dot-token",
+            "permission-latch",
+            "permission-latch slip-stop and shutter-edge anchors"
+          ],
+          "produces": [
+            "Sensitive action retained pending",
+            "Key retained on the person's side"
+          ]
+        }
+      ],
+      "executed_adapter": "s05",
+      "focus": "permission-latch.slip-stop",
+      "framing": "detail",
+      "performance": "explicitly absent",
+      "reaction": "Numeric selected Bot response plus authored contact-specific local responses; empty target arrays do not enroll extras",
+      "status": "Executed provisional; moving approval required"
+    },
+    {
+      "id": "b09",
+      "contract": {
+        "purpose": "Compare verified access terms with eligible-plan and free-tier qualifications.",
+        "hero": "access-ledges",
+        "primary_action": "A matching eligibility ticket approaches but remains offset above-left of a fully exposed receiving slot. The blocked entrance, thick cream receiver housing, dark paper-width aperture and ticket all stay simultaneously readable. A short physical guide identifies the matching relationship. Muse then exposes an unobstructed entrance and separate paid extras.",
+        "performance": {
+          "state": "absent",
+          "target": ""
+        },
+        "before": "Dots barred entry and empty receiver face a retained ticket; Muse cover is closed.",
+        "after": "Dots requires an eligible paid-plan ticket; Muse exposes a free-tier landing with a separate subscription tab.",
+        "focal_target": "access-ledges.entry-comparison",
+        "framing": "subject",
+        "reaction_radius": {
+          "origin": [
+            180,
+            350
+          ],
+          "radius": 150,
+          "duration": 0.3,
+          "targets": []
+        },
+        "secondary_motion": [],
+        "environment": [],
+        "exit_overlap": null,
+        "energy": {
+          "dominant_action": "Reveal the different access conditions in sequence.",
+          "character_response": null,
+          "local_reaction": "A matching eligibility ticket approaches but remains offset above-left of a fully exposed receiving slot. The blocked entrance, thick cream receiver housing, dark paper-width aperture and ticket all stay simultaneously readable. A short physical guide identifies the matching relationship. Muse then exposes an unobstructed entrance and separate paid extras.",
+          "residual_motion": null,
+          "next_action_overlap": null
+        },
+        "art_direction": {
+          "hero_object": "Paired unequal entrances with an exposed thick paper receiver and matching retained ticket above-left; the free entrance has no receiver requirement.",
+          "bot_role": "absent",
+          "materials": [
+            "Teal Dots entrance",
+            "Slate-blue Muse entrance",
+            "Marigold eligibility ticket and matching receiver",
+            "Cream rollout note",
+            "Separate marigold subscription-extras tab"
+          ],
+          "depth_planes": [
+            "Foreground matching ticket and exposed receiver",
+            "Midground blocked and opening entrances",
+            "Plum paper field and separate extras tab"
+          ],
+          "composition": "The ticket stays above-left of the receiver, leaving its dark paper-width aperture and blocked entrance exposed. Their matching approach precedes the open Muse entrance; extras remain separate and secondary.",
+          "intentional_irregularity": "Unequal ledge heights keep this from resembling a scored contest; the extras tab is visibly separated from the free entrance.",
+          "environment_mode": "minimal-isolated",
+          "environment_justification": "Access geometry is the comparison; a shared room or race track would imply an unsupported capability contest."
+        }
+      },
+      "span": {
+        "id": "b09",
+        "start": 23.11,
+        "actions": [
+          {
+            "action": {
+              "kind": "requested:dots-access-compare-v1",
+              "cue": "eligible paid ChatGPT plan,",
+              "requires": [
+                "dot-token",
+                "access-ledges",
+                "access-ledges ticket-slot anchor"
+              ],
+              "produces": [
+                "Dots entrance visibly requires an eligible paid-plan ticket"
+              ]
+            },
+            "time": 24.85,
+            "script_word_index": 87,
+            "heard_word": "eligible"
+          },
+          {
+            "action": {
+              "kind": "requested:dots-access-compare-v1",
+              "cue": "Muse offers a free tier.",
+              "requires": [
+                "access-ledges",
+                "access-ledges free-tier landing anchor"
+              ],
+              "produces": [
+                "Muse free-tier entrance exposed",
+                "Subscription extras remain distinct"
+              ]
+            },
+            "time": 27.46,
+            "script_word_index": 93,
+            "heard_word": "muse"
+          }
+        ],
+        "end": 28.83
+      },
+      "setup": "s06",
+      "requested_actions": [
+        {
+          "kind": "requested:dots-access-compare-v1",
+          "cue": "eligible paid ChatGPT plan,",
+          "requires": [
+            "dot-token",
+            "access-ledges",
+            "access-ledges ticket-slot anchor"
+          ],
+          "produces": [
+            "Dots entrance visibly requires an eligible paid-plan ticket"
+          ]
+        },
+        {
+          "kind": "requested:dots-access-compare-v1",
+          "cue": "Muse offers a free tier.",
+          "requires": [
+            "access-ledges",
+            "access-ledges free-tier landing anchor"
+          ],
+          "produces": [
+            "Muse free-tier entrance exposed",
+            "Subscription extras remain distinct"
+          ]
+        }
+      ],
+      "executed_adapter": "s06",
+      "focus": "access-ledges.entry-comparison",
+      "framing": "subject",
+      "performance": "explicitly absent",
+      "reaction": "Numeric selected Bot response plus authored contact-specific local responses; empty target arrays do not enroll extras",
+      "status": "Executed provisional; moving approval required"
+    },
+    {
+      "id": "b10",
+      "contract": {
+        "purpose": "Reframe the competitive question without fabricated rankings.",
+        "hero": "coworker-shift",
+        "primary_action": "Keep the full answer panel bottom attached at a visible hinge. Its blue paper face folds into the left portion of the table while cream wings expand directly from its edges.",
+        "performance": {
+          "state": "absent",
+          "target": ""
+        },
+        "before": "A tall question/answer silhouette commands the frame.",
+        "after": "The original blue answer face is recognizably incorporated into the left portion of the wider working surface; no detached replacement.",
+        "focal_target": "coworker-shift.pedestal-hinge",
+        "framing": "establish",
+        "reaction_radius": {
+          "origin": [
+            180,
+            365
+          ],
+          "radius": 130,
+          "duration": 0.4,
+          "targets": []
+        },
+        "secondary_motion": [],
+        "environment": [],
+        "exit_overlap": "The work surface reaches its readable shape as the Dot's separate seat begins to enter.",
+        "energy": {
+          "dominant_action": "Replace a narrow answer pedestal with a broader working relationship.",
+          "character_response": null,
+          "local_reaction": "Keep the full answer panel bottom attached at a visible hinge. Its blue paper face folds into the left portion of the table while cream wings expand directly from its edges.",
+          "residual_motion": null,
+          "next_action_overlap": "The coworker seat enters only after the enlarged surface is recognizable."
+        },
+        "art_direction": {
+          "hero_object": "Tall slate-blue question-and-answer paper face that remains attached at its bottom hinge and becomes the left part of a broad working surface.",
+          "bot_role": "absent",
+          "materials": [
+            "Persistent slate-blue answer face (#64869A)",
+            "Cream paper wings directly attached to its side edges",
+            "Teal hinge strip",
+            "Plum paper support legs"
+          ],
+          "depth_planes": [
+            "Attached cream wings and original blue face",
+            "Visible shared bottom hinge",
+            "Warm paper field"
+          ],
+          "composition": "The action shifts from vertical concentration to a horizontal spread, creating a real compositional change rather than a new label on a panel.",
+          "intentional_irregularity": "One wing opens farther to provide the future Dot seat, making the expansion directional.",
+          "environment_mode": "minimal-isolated",
+          "environment_justification": "The isolated change of silhouette expresses the editorial reframing without an invented competitive race."
+        }
+      },
+      "span": {
+        "id": "b10",
+        "start": 28.83,
+        "actions": [
+          {
+            "action": {
+              "kind": "requested:dots-workplane-shift-v1",
+              "cue": "smartest chatbot.",
+              "requires": [
+                "coworker-shift",
+                "coworker-shift pedestal-hinge anchor"
+              ],
+              "produces": [
+                "Answer pedestal folded into a broader working surface"
+              ]
+            },
+            "time": 31.41,
+            "script_word_index": 108,
+            "heard_word": "smartest"
+          }
+        ],
+        "end": 32.31
+      },
+      "setup": "s07",
+      "requested_actions": [
+        {
+          "kind": "requested:dots-workplane-shift-v1",
+          "cue": "smartest chatbot.",
+          "requires": [
+            "coworker-shift",
+            "coworker-shift pedestal-hinge anchor"
+          ],
+          "produces": [
+            "Answer pedestal folded into a broader working surface"
+          ]
+        }
+      ],
+      "executed_adapter": "s07",
+      "focus": "coworker-shift.pedestal-hinge",
+      "framing": "establish",
+      "performance": "explicitly absent",
+      "reaction": "Numeric selected Bot response plus authored contact-specific local responses; empty target arrays do not enroll extras",
+      "status": "Executed provisional; moving approval required"
+    },
+    {
+      "id": "b11",
+      "contract": {
+        "purpose": "Pay off the opening's separate computer and persistent work as a relationship.",
+        "hero": "coworker-shift",
+        "primary_action": "The Dot lands on an exposed recess at its separate computer while work persists across the time-marker change.",
+        "performance": {
+          "state": "absent",
+          "target": ""
+        },
+        "before": "The expanded surface has one user task position and an empty coworker position.",
+        "after": "The Dot occupies its own workstation and its assigned draft work continues.",
+        "focal_target": "coworker-shift.independent-seat",
+        "framing": "subject",
+        "reaction_radius": {
+          "origin": [
+            235,
+            350
+          ],
+          "radius": 105,
+          "duration": 0.35,
+          "targets": []
+        },
+        "secondary_motion": [],
+        "environment": [],
+        "exit_overlap": null,
+        "energy": {
+          "dominant_action": "Establish a separate, continuing coworker position.",
+          "character_response": null,
+          "local_reaction": "Token bottom and exposed elliptical recess meet at the measured landing; a small caused recess-lip compression and shared vertical displacement settle together. No unrelated object is enrolled.",
+          "residual_motion": "The assigned ribbon remains in purposeful progress through the day/night change.",
+          "next_action_overlap": null
+        },
+        "art_direction": {
+          "hero_object": "Broad shared task surface with two distinct work positions and a large looping day/night marker.",
+          "bot_role": "absent",
+          "materials": [
+            "Cream task surface",
+            "Teal independent workstation",
+            "Slate task stack",
+            "Marigold day/night loop"
+          ],
+          "depth_planes": [
+            "Foreground user's paper stack",
+            "Midground two work positions",
+            "Background looping marker"
+          ],
+          "composition": "The user's stack anchors the near left; the Dot's own computer occupies the far right. The work ribbon joins the task relationship without merging the computers.",
+          "intentional_irregularity": "Uneven user paper stack at left contrasts with the independent computer and scalloped base at right; a ribbon continues along their task surface.",
+          "environment_mode": "minimal-isolated",
+          "environment_justification": "The work relationship is legible in two positions and continuing assigned work; additional office scenery would dilute the implication."
+        }
+      },
+      "span": {
+        "id": "b11",
+        "start": 32.31,
+        "actions": [
+          {
+            "action": {
+              "kind": "requested:dots-workplane-shift-v1",
+              "cue": "always-on digital coworker.",
+              "requires": [
+                "dot-token",
+                "coworker-shift",
+                "coworker-shift token-seat, task-rest and loop-track anchors"
+              ],
+              "produces": [
+                "Independent Dot workstation occupied",
+                "Assigned draft work continues across the day/night change"
+              ]
+            },
+            "time": 33.62,
+            "script_word_index": 116,
+            "heard_word": "always"
+          }
+        ],
+        "end": 35.09
+      },
+      "setup": "s07",
+      "requested_actions": [
+        {
+          "kind": "requested:dots-workplane-shift-v1",
+          "cue": "always-on digital coworker.",
+          "requires": [
+            "dot-token",
+            "coworker-shift",
+            "coworker-shift token-seat, task-rest and loop-track anchors"
+          ],
+          "produces": [
+            "Independent Dot workstation occupied",
+            "Assigned draft work continues across the day/night change"
+          ]
+        }
+      ],
+      "executed_adapter": "s07",
+      "focus": "coworker-shift.independent-seat",
+      "framing": "subject",
+      "performance": "explicitly absent",
+      "reaction": "Numeric selected Bot response plus authored contact-specific local responses; empty target arrays do not enroll extras",
+      "status": "Executed provisional; moving approval required"
+    },
+    {
+      "id": "b12",
+      "contract": {
+        "purpose": "Leave access and approval with the person while paying off the permission caveat.",
+        "hero": "permission-latch",
+        "primary_action": "The retained hand-key grip stops with a clearly readable background gap before the closed lock; no insertion or grant.",
+        "performance": {
+          "state": "absent",
+          "target": ""
+        },
+        "before": "The key rests in the person's hand, away from the closed shutter.",
+        "after": "The key approaches but remains in the hand; the shutter stays closed.",
+        "focal_target": "permission-latch.key-contact",
+        "framing": "detail",
+        "reaction_radius": {
+          "origin": [
+            180,
+            350
+          ],
+          "radius": 80,
+          "duration": 0.3,
+          "targets": []
+        },
+        "secondary_motion": [],
+        "environment": [],
+        "exit_overlap": null,
+        "energy": {
+          "dominant_action": "Offer access without completing the transfer.",
+          "character_response": null,
+          "local_reaction": "The retained hand-key grip stops with a clearly readable background gap before the closed lock; no insertion or grant.",
+          "residual_motion": null,
+          "next_action_overlap": null
+        },
+        "art_direction": {
+          "hero_object": "Large human-held paper key and closed permission shutter; the key spans roughly half frame width.",
+          "bot_role": "absent",
+          "materials": [
+            "Marigold key",
+            "Cream human-hand cutout",
+            "Coral shutter",
+            "Corrugated lock rim"
+          ],
+          "depth_planes": [
+            "Foreground human hand and retained key",
+            "Midground visible lock gap",
+            "Background waiting Dot token"
+          ],
+          "composition": "The hand and key enter from the near left; the lock sits above right. The gap is enlarged enough to survive mobile viewing, with the Dot visible beyond the closed boundary.",
+          "intentional_irregularity": "The angled key stops short of the lock rather than aligning into an implied automatic insertion.",
+          "environment_mode": "minimal-isolated",
+          "environment_justification": "The final choice requires an unobstructed human-held key, visible gap and closed boundary."
+        }
+      },
+      "span": {
+        "id": "b12",
+        "start": 35.09,
+        "actions": [
+          {
+            "action": {
+              "kind": "requested:dots-human-key-offer-v1",
+              "cue": "give one the keys?",
+              "requires": [
+                "dot-token",
+                "permission-latch",
+                "permission-latch palm-rest, key-contact and shutter-edge anchors"
+              ],
+              "produces": [
+                "Key offered but retained by the person",
+                "Closed shutter and untransferred access"
+              ]
+            },
+            "time": 35.52,
+            "script_word_index": 122,
+            "heard_word": "give"
+          }
+        ],
+        "end": 37.266666666666666
+      },
+      "setup": "s08",
+      "requested_actions": [
+        {
+          "kind": "requested:dots-human-key-offer-v1",
+          "cue": "give one the keys?",
+          "requires": [
+            "dot-token",
+            "permission-latch",
+            "permission-latch palm-rest, key-contact and shutter-edge anchors"
+          ],
+          "produces": [
+            "Key offered but retained by the person",
+            "Closed shutter and untransferred access"
+          ]
+        }
+      ],
+      "executed_adapter": "s08",
+      "focus": "permission-latch.key-contact",
+      "framing": "detail",
+      "performance": "explicitly absent",
+      "reaction": "Numeric selected Bot response plus authored contact-specific local responses; empty target arrays do not enroll extras",
+      "status": "Executed provisional; moving approval required"
+    }
+  ],
+  "hook": "provisional requested Dots bindings with explicit focus, role and contact channels",
+  "critic_consumers": [
+    "direction",
+    "story",
+    "visual"
+  ]
+}

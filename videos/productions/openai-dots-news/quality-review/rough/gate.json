@@ -1,0 +1,24 @@
+{
+  "phase": "rough",
+  "status": "HUMAN_REVIEW_REQUIRED",
+  "blocked": [
+    "story: b05: story",
+    "story: b05: continuity",
+    "story: b10: cause-effect",
+    "story: story",
+    "story: cause-effect",
+    "story: continuity",
+    "visual: b01: physicality",
+    "visual: b04: physicality",
+    "visual: b11: physicality",
+    "visual: physicality"
+  ],
+  "meaningful_repairs": 2,
+  "human_final_approval": "REQUIRED",
+  "publish": false,
+  "report_hashes": {
+    "story": "05dce78159ed24414a9aa596032ac1457a1f102e2be8595ac8dec7975deaa0d8",
+    "visual": "39417be6df2ab736f01750d67cb31eb377b318f296c46afc9d8d9e0dbd89ab1c"
+  },
+  "evidence_sha256": "fc8b64b32f2c802fdc62d4c3847f3ecd5dfc6fa6bf9507048917aeb6fee31407"
+}

@@ -102,11 +102,20 @@ def direction_review(project,plan,config):
     from motif_direct import model_call
     plan_check(plan)
     from motif_structure import require_structure
-    require_structure(project)
+    structure_record=require_structure(project)
+    from motif_reference import context,require_stage,folder
+    reference,reference_images=context(project)
+    if reference:require_stage(project,'concept')
     if plan!=read(project/'production-plan.json'):raise ValueError('direction input must match structure-reviewed saved plan')
-    prompt='Review shot contracts before animation. This is DATA ONLY, not visual QA. Identify weak subject/action/before/after/consequence, hero/material/depth/composition choices, unsupported interactions, ignored energy intentions. Art direction must be specific to this script. Return all planning-review schema fields. No tools.\n'+planning_context(json.dumps(plan))+'\nPLAN:'+json.dumps(plan)
-    result=model_call(project,'quality-direction',prompt,'schemas/planning-review.schema.json',config)
-    write(project/'quality-direction-record.json',{'plan_sha256':sha(project/'production-plan.json'),'response_sha256':sha(project/'quality-direction.json'),'invocation_sha256':sha(project/'quality-direction-invocation.json')})
+    resolution=read(project/'capability-resolution.json') if (project/'capability-resolution.json').exists() else None
+    if resolution:
+        for source in resolution.get('sources',[]):
+            path=Path(source['file']).resolve()
+            if not path.is_relative_to(project.resolve()) or not path.is_file() or sha(path)!=source['sha256']:
+                raise ValueError('stale or non-project capability resolution source')
+    prompt='Review shot contracts before animation. This is DATA ONLY, not visual QA. Identify weak subject/action/before/after/consequence, hero/material/depth/composition choices, unsupported interactions, ignored energy intentions. Art direction must be specific to this script. Structure PASS below has been independently verified by the calling gate; do not treat missing painted evidence as a planning failure. A production-scoped capability resolution is implementation context, not creative approval. Return all planning-review schema fields. No tools.\n'+planning_context(json.dumps(plan))+'\nVERIFIED STRUCTURE RECORD:'+json.dumps(structure_record)+'\nPROJECT CAPABILITY RESOLUTION:'+json.dumps(resolution)+'\nPLAN:'+json.dumps(plan)
+    result=model_call(project,'quality-direction',prompt+reference,'schemas/planning-review.schema.json',config,reference_images)
+    write(project/'quality-direction-record.json',{'plan_sha256':sha(project/'production-plan.json'),'response_sha256':sha(project/'quality-direction.json'),'invocation_sha256':sha(project/'quality-direction-invocation.json'),**({'reference_calibration_sha256':sha(folder(project)/'record.json'),'concept_gate_sha256':sha(project/'reference-gates/concept/record.json')} if reference else {})})
     if not result['pass']:raise ValueError('pre-animation direction failed: '+json.dumps(result['issues']))
     return result
 
@@ -190,9 +199,13 @@ def rough(project):
     plan=read(project/'production-plan.json');plan_check(plan)
     from motif_structure import require_structure
     require_structure(project)
+    from motif_reference import require_stage
+    require_stage(project,'concept');require_stage(project,'opening')
     if not (project/'quality-direction.json').exists() or not read(project/'quality-direction.json')['pass']:raise ValueError('pre-animation art/direction review required')
     direction=read(project/'quality-direction-record.json')
     if direction['plan_sha256']!=sha(project/'production-plan.json') or direction['response_sha256']!=sha(project/'quality-direction.json'):raise ValueError('pre-animation direction review is stale')
+    if (project/'reference-calibration/required.json').exists():
+        if direction.get('reference_calibration_sha256')!=sha(project/'reference-calibration/record.json') or direction.get('concept_gate_sha256')!=sha(project/'reference-gates/concept/record.json'):raise ValueError('direction reference/concept evidence stale')
     output=project/'quality-review/rough';output.mkdir(parents=True,exist_ok=True)
     for mode in ('captions','no-captions'):
         dest=output/mode
@@ -299,6 +312,9 @@ def critics(project,phase,config):
             if not eg['sheets']:raise ValueError('incomplete gold sample')
         else:eg=evidence(clip,dest,[{'id':g['id'],'startFrame':g['clip']['frames'][0],'endFrame':g['clip']['frames'][1]}])
         images += [Path(p) for p in eg['sheets']];gold_evidence.append({'id':g['id'],'notes':g['why_passes'],'evidence':eg})
+    from motif_reference import context,folder
+    reference,reference_images=context(project)
+    images+=reference_images
     image_manifest=[{'file':str(p.resolve()),'sha256':sha(p)} for p in images];write(base/'image-inputs.json',image_manifest)
     observations=[]
     for mode in ('with_captions','without_captions'):
@@ -308,8 +324,12 @@ def critics(project,phase,config):
     results={}
     for role in ('story','visual'):
         prompt=(ROOT/f'quality/{"story-critic" if role=="story" else "visual-critic"}/PROMPT.md').read_text()+'\n'+common
-        results[role]=model_call(base,role+'-critic',prompt,'schemas/'+role+'-critic.schema.json',config,images=images)
-    write(base/'critics-record.json',{'evidence_sha256':sha(base/'evidence.json'),'images_sha256':sha(base/'image-inputs.json'),'gold_ids':[g['id'] for g in gold],'invocations':['story-critic-invocation.json','visual-critic-invocation.json'],'report_hashes':{role:sha(base/(role+'-critic.json')) for role in ('story','visual')},'invocation_hashes':{role:sha(base/(role+'-critic-invocation.json')) for role in ('story','visual')},'scope':manifest['inspection'],'hierarchy_policy_sha256':sha(ROOT/'quality/rubric/hierarchy.json')})
+        if reference:
+            prompt+=reference
+            if role=='visual':prompt+='\n'+(ROOT/'quality/reference-critic/PROMPT.md').read_text()
+        schema='reference-visual-critic' if role=='visual' and reference else role+'-critic'
+        results[role]=model_call(base,role+'-critic',prompt,'schemas/'+schema+'.schema.json',config,images=images)
+    write(base/'critics-record.json',{'evidence_sha256':sha(base/'evidence.json'),'images_sha256':sha(base/'image-inputs.json'),'gold_ids':[g['id'] for g in gold],'invocations':['story-critic-invocation.json','visual-critic-invocation.json'],'report_hashes':{role:sha(base/(role+'-critic.json')) for role in ('story','visual')},'invocation_hashes':{role:sha(base/(role+'-critic-invocation.json')) for role in ('story','visual')},'scope':manifest['inspection'],'hierarchy_policy_sha256':sha(ROOT/'quality/rubric/hierarchy.json'),**({'reference_calibration_sha256':sha(folder(project)/'record.json'),'reference_policy_sha256':sha(ROOT/'quality/reference-critic/policy.json')} if reference else {})})
     return evaluate(project,phase)
 
 def hierarchy_failures(plan,report):
@@ -329,7 +349,7 @@ def hierarchy_failures(plan,report):
             if not (global_fail and shot_fail and violation):blocked.append('hierarchy failure must block mapped gate with correction: '+a['code'])
     for v in report['violations']:
         code=v.get('failure_code')
-        if code and (v['gate']!=mapping[code] or not any(a['shot']==v['shot'] and a['code']==code and a['status']=='FAIL' for a in assessments)):
+        if code in mapping and (v['gate']!=mapping[code] or not any(a['shot']==v['shot'] and a['code']==code and a['status']=='FAIL' for a in assessments)):
             blocked.append('hierarchy violation inconsistent: '+code)
     return blocked
 
@@ -348,7 +368,8 @@ def evaluate(project,phase,check_current_events=True):
         blocked+=source_freshness(project,manifest)
     reports={};story_bad=False
     for role in ('story','visual'):
-        r=read(base/(role+'-critic.json'));Draft202012Validator(read(ROOT/f'schemas/{role}-critic.schema.json')).validate(r);reports[role]=r
+        schema='reference-visual-critic' if role=='visual' and record.get('reference_calibration_sha256') else role+'-critic'
+        r=read(base/(role+'-critic.json'));Draft202012Validator(read(ROOT/f'schemas/{schema}.schema.json')).validate(r);reports[role]=r
         if record.get('report_hashes',{}).get(role)!=sha(base/(role+'-critic.json')) or record.get('invocation_hashes',{}).get(role)!=sha(base/(role+'-critic-invocation.json')):blocked.append('critic report/invocation changed')
         invocation=read(base/(role+'-critic-invocation.json'))
         if invocation['exit_code']!=0 or invocation.get('saved_response_used') or invocation.get('model_fallback_used'):blocked.append('no valid live '+role+' invocation')
@@ -371,6 +392,15 @@ def evaluate(project,phase,check_current_events=True):
             if g['status']=='FAIL' and not any(v['gate']==g['gate'] for v in r['violations']):blocked.append('failure missing correction: '+g['gate'])
         if any(v['gold_id'] not in record['gold_ids'] for v in r['violations']):blocked.append('violation references unretrieved gold')
     plan=read(project/'production-plan.json')
+    from motif_reference import require_calibration,reference_failures,folder,require_stage
+    try:
+        calibration=require_calibration(project)
+        if calibration:
+            if record.get('reference_calibration_sha256')!=sha(folder(project)/'record.json') or record.get('reference_policy_sha256')!=sha(ROOT/'quality/reference-critic/policy.json'):blocked.append('reference critic policy/calibration stale')
+            selected=read(folder(project)/'calibration.json')['selected_setup_ids']
+            blocked+=reference_failures(plan,reports['visual'],selected)
+            require_stage(project,'concept');require_stage(project,'opening')
+    except ValueError as error:blocked.append(str(error))
     if 'film_structure' in plan:
         from motif_structure import require_structure
         try:require_structure(project)

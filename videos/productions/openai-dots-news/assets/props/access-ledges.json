@@ -1,0 +1,53 @@
+{
+  "id": "access-ledges",
+  "name": "Access Ledges",
+  "category": "news-prop",
+  "sourceType": "vector",
+  "source": {
+    "file": "assets/props/access-ledges.svg",
+    "reference": "Live original Dots plan; no external reference footage"
+  },
+  "state": "GENERATED",
+  "status": "generated",
+  "scope": "scene-specific",
+  "style": "reference-expressive-high-energy-v1",
+  "orientation": "front",
+  "dimensions": {
+    "width": 720,
+    "height": 1280,
+    "unit": "px"
+  },
+  "artBox": {
+    "x": 0,
+    "y": 0,
+    "width": 720,
+    "height": 1280
+  },
+  "materials": [
+    "Matte cream paper",
+    "Teal ink",
+    "Cut-card contact shadows"
+  ],
+  "layers": [
+    "body"
+  ],
+  "anchors": {
+    "center": [
+      0.5,
+      0.5
+    ],
+    "surface": [
+      0.5,
+      0.65
+    ]
+  },
+  "interactions": [
+    "Production-scoped access-ledges state changes; see capability-resolution.json"
+  ],
+  "provenance": "Agent-authored editable SVG from production source/common.py and source/worlds.py; canonical puppet excluded from new prop masters",
+  "license": "project-original; existing Motif paper material reused",
+  "sha256": "01958296d934ee955b44bb1891a103229f60c9d6754e2cd0a37bac1f6e798708",
+  "version": 1,
+  "human_approved": false,
+  "meaning": "Agent-assisted modular SVG addition: unequal side-by-side access ledges. Dots ledge has an eligible paid-plan ticket slot and rollout veil; Muse ledge has an open free-tier entrance and a separate more-options subscription tab. No prices or equivalence of capabilities."
+}

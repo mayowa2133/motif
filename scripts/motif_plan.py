@@ -35,7 +35,9 @@ WORLD_SHOTS = {'calendar': {'calendar-wide','calendar-detail'}, 'arena': {'arena
 WORLD_SHOTS['workshop']={'workshop-wide'}
 
 def tokens(text):
-    return re.findall(r"[a-z0-9]+(?:'[a-z]+)?", text.lower())
+    # Typographic apostrophes carry the same lexical contraction as ASR's ASCII
+    # spelling. Normalize punctuation, never alter measured speech intervals.
+    return re.findall(r"[a-z0-9]+(?:'[a-z]+)?", text.lower().replace('\u2019', "'").replace('\u2018', "'"))
 
 def cue_index(sentence, cue):
     words, needle = tokens(sentence), tokens(cue)

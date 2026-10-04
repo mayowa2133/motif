@@ -1,0 +1,111 @@
+{
+  "type": "object",
+  "properties": {
+    "inspection_scope": {
+      "type": "string"
+    },
+    "videos": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "setups": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "start": {
+                  "type": "number"
+                },
+                "end": {
+                  "type": "number"
+                },
+                "semantic_center": {
+                  "type": "string"
+                },
+                "relationships": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "hero": {
+                  "type": "string"
+                },
+                "environment": {
+                  "type": "string"
+                },
+                "choreography": {
+                  "type": "string"
+                },
+                "character_role": {
+                  "type": "string"
+                },
+                "headline_caption": {
+                  "type": "string"
+                },
+                "motion_hierarchy": {
+                  "type": "string"
+                },
+                "physical_interaction": {
+                  "type": "string"
+                },
+                "transition": {
+                  "type": "string"
+                },
+                "irregularity": {
+                  "type": "string"
+                },
+                "material_art": {
+                  "type": "string"
+                },
+                "action_center": {
+                  "type": "number"
+                },
+                "confidence": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "start",
+                "end",
+                "semantic_center",
+                "relationships",
+                "hero",
+                "environment",
+                "choreography",
+                "character_role",
+                "headline_caption",
+                "motion_hierarchy",
+                "physical_interaction",
+                "transition",
+                "irregularity",
+                "material_art",
+                "action_center",
+                "confidence"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "audio_caption_rhythm": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "setups",
+          "audio_caption_rhythm"
+        ],
+        "additionalProperties": false
+      }
+    }
+  },
+  "required": [
+    "inspection_scope",
+    "videos"
+  ],
+  "additionalProperties": false
+}

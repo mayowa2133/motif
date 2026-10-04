@@ -1,0 +1,29 @@
+{
+  "status": "REVISE_ART_DIRECTION",
+  "blocked": [
+    "s01-agency: distinct-silhouettes",
+    "s01-agency: hero-scale",
+    "s01-agency: hierarchy",
+    "s01-agency: set-specificity",
+    "s02-connected-work: character-role",
+    "s02-connected-work: hero-scale",
+    "s02-connected-work: hierarchy",
+    "s02-connected-work: set-specificity",
+    "s03-use-pitch: set-specificity",
+    "s04-specialists: set-specificity",
+    "s06-permission: character-role",
+    "s08-editorial-reframe: set-specificity",
+    "s09-unresolved-keys: character-role",
+    "No REFERENCE_SCENE_IMITATION is established by the supplied concepts and planned choreography.",
+    "The recurring generic window in s01, s02 and s08 risks flattening their different propositions. Resolve this through distinct operative relationships, rather than texture or added props.",
+    "REFERENCE_STRUCTURE_GAP is established where s01 omits the legible persistence attachment and s02 omits the calibrated connection-before-passage mechanism. These require composition and relationship repairs.",
+    "global concept FAIL"
+  ],
+  "plan_sha256": "45c3cc329820a5fce32931be39e3b5818360fa2fef2fb9b2489f5cf14eece294",
+  "calibration_record_sha256": "e3a7894c37034d4ccd434b7ffd1ed6f993c50677293d348d7ba047ae03123e17",
+  "evidence_path": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-reference-calibrated/concept-evidence.json",
+  "evidence_sha256": "ce3f7b399c03df74de0000ba94b1415ec4087bbf439f96395e9d136bc24dab8a",
+  "response_sha256": "d28a4aa8614bba4b3e439345d09183e46fb69e56de7b8fb3cada47528f971f8f",
+  "invocation_sha256": "59f73c7c6505903f31798cfd877173da28310e052b02704a4a051a8658865f4b",
+  "human_approval": false
+}

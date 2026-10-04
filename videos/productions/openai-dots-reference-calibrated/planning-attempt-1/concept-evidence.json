@@ -1,0 +1,82 @@
+{
+  "caption_free": true,
+  "phase": "prebuild rough silhouettes, not final artwork or animation",
+  "setup_ids": [
+    "s01-agency",
+    "s02-connected-work",
+    "s03-use-pitch",
+    "s04-specialists",
+    "s05-planned-teams",
+    "s06-permission",
+    "s07-commercial-access",
+    "s08-editorial-reframe",
+    "s09-unresolved-keys"
+  ],
+  "previews": [
+    {
+      "setup_id": "s01-agency",
+      "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-reference-calibrated/review/concepts/s01-agency.png",
+      "sha256": "fffbb53dc8b566fd5f68f85a69879018de001f4009a6e91a1973c6186af75455",
+      "source": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-reference-calibrated/review/concepts/s01-agency.svg"
+    },
+    {
+      "setup_id": "s02-connected-work",
+      "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-reference-calibrated/review/concepts/s02-connected-work.png",
+      "sha256": "1efe9822e495e2cc10c07ec0e55fb8861171320f3d0069b086b98d17923e7245",
+      "source": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-reference-calibrated/review/concepts/s02-connected-work.svg"
+    },
+    {
+      "setup_id": "s03-use-pitch",
+      "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-reference-calibrated/review/concepts/s03-use-pitch.png",
+      "sha256": "5a1ae78af9ecce2d7041234b68d5e6ba4fe59a9ac7d44aaa7dd2abd94aadd172",
+      "source": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-reference-calibrated/review/concepts/s03-use-pitch.svg"
+    },
+    {
+      "setup_id": "s04-specialists",
+      "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-reference-calibrated/review/concepts/s04-specialists.png",
+      "sha256": "9f630f7377088c27d62eb9c90d0bee2b5a6d154dd20de1a749f1ed7dc9eb7b81",
+      "source": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-reference-calibrated/review/concepts/s04-specialists.svg"
+    },
+    {
+      "setup_id": "s05-planned-teams",
+      "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-reference-calibrated/review/concepts/s05-planned-teams.png",
+      "sha256": "33e2896713d8905e5f4d5359d9435b3c2bef0706fb5ee5342889158c5934444a",
+      "source": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-reference-calibrated/review/concepts/s05-planned-teams.svg"
+    },
+    {
+      "setup_id": "s06-permission",
+      "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-reference-calibrated/review/concepts/s06-permission.png",
+      "sha256": "e871a2baa0249ce2fc6db563bedaa28cfc7202eeef82ac23b80329bf106d7eb5",
+      "source": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-reference-calibrated/review/concepts/s06-permission.svg"
+    },
+    {
+      "setup_id": "s07-commercial-access",
+      "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-reference-calibrated/review/concepts/s07-commercial-access.png",
+      "sha256": "3d9ec2763efc28783992603e380e49112caf52e583b95089847184c56c19ff19",
+      "source": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-reference-calibrated/review/concepts/s07-commercial-access.svg"
+    },
+    {
+      "setup_id": "s08-editorial-reframe",
+      "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-reference-calibrated/review/concepts/s08-editorial-reframe.png",
+      "sha256": "0d3590525ae9e7a93be5da156688cd9be0a4d1a3b9fe1e3ceb90416b5a9341df",
+      "source": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-reference-calibrated/review/concepts/s08-editorial-reframe.svg"
+    },
+    {
+      "setup_id": "s09-unresolved-keys",
+      "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-reference-calibrated/review/concepts/s09-unresolved-keys.png",
+      "sha256": "9df2951db6579576a7463ee2b5b4f02636ffe4d03c2dd2bd2ff0015e0acb1486",
+      "source": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-reference-calibrated/review/concepts/s09-unresolved-keys.svg"
+    }
+  ],
+  "images": [
+    {
+      "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-reference-calibrated/review/concepts/contact-1.png",
+      "sha256": "e798749408e0c70a5abacb7d9a93d2cbca47a0b648fd9e5bc45e9bad74e80d9a"
+    },
+    {
+      "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-reference-calibrated/review/concepts/contact-2.png",
+      "sha256": "cae466a9d7506fda29ce61f10792c8bf4863b46e7345f6777f5b71760b2f91f8"
+    }
+  ],
+  "inspection": "actual authored static concept images; no playback; local conditional qualifications are not narration captions"
+}

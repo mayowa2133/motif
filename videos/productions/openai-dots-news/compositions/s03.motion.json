@@ -1,0 +1,29 @@
+{
+  "setup": "s03",
+  "start": 10.17,
+  "duration": 2.8499999999999996,
+  "rule": "Unprocessed accordion length passes ordered stops and compresses into completed folds; a draft exits behind the user's foreground page.",
+  "recipes": [
+    "cursor-drag: matched payload/contact transforms",
+    "press-release-spring: caused local material settle",
+    "viewport-change: token close view in same setup"
+  ],
+  "temporal_events": [
+    {
+      "kind": "contact",
+      "time": 11.143333333333333
+    },
+    {
+      "kind": "contact",
+      "time": 11.856666666666666
+    },
+    {
+      "kind": "contact",
+      "time": 12.57
+    }
+  ],
+  "exit": {
+    "kind": "hard-cut",
+    "reason": "A concrete process ends; the pitch categories require a new folio system rather than more machinery on the ribbon."
+  }
+}

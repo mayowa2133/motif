@@ -1,0 +1,43 @@
+{
+  "id": "dots-permission-rough-v1",
+  "name": "Permission",
+  "category": "prop",
+  "subcategory": "production-scoped",
+  "concepts": [
+    "persistent agency",
+    "entrusted access"
+  ],
+  "keywords": [
+    "permission"
+  ],
+  "style": "reference-expressive-high-energy-v1",
+  "orientation": "front-oblique",
+  "dimensions": {
+    "width": 720,
+    "height": 1280,
+    "unit": "px"
+  },
+  "artBox": {
+    "x": 0,
+    "y": 0,
+    "width": 720,
+    "height": 1280
+  },
+  "anchors": {},
+  "compatibleCharacters": [
+    "motif-bot"
+  ],
+  "supportedActions": [
+    "authored through source/art.py parameters"
+  ],
+  "sourceType": "vector",
+  "source": {
+    "file": "assets/props/permission.svg",
+    "reference": "Project-original SVG; external references calibrate relationships only; approved Motif material reused"
+  },
+  "version": 1,
+  "status": "review",
+  "preview": "review/concepts/",
+  "license": "project-original",
+  "limitations": "Composition bundle coordinate space; anchors for moving execution are explicitly authored in source adapters, not normalized canonical library anchors. No automatic canonical promotion."
+}
