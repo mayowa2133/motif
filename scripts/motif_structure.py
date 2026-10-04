@@ -167,6 +167,10 @@ def structure_review(project, plan, config):
     from motif_direct import model_call
     from motif_quality import write
     project = Path(project)
+    from motif_transfer_review import enabled
+    if enabled(project):
+        from motif_plan_shape import require_complete_plan
+        require_complete_plan(plan)
     check_structure(plan)
     if plan != read(project / 'production-plan.json'):
         raise ValueError('save exact plan before structure review')
@@ -192,6 +196,10 @@ def require_structure(project):
     """Fresh live independent assessment; a PASS flag alone is insufficient."""
     project = Path(project)
     plan = read(project / 'production-plan.json')
+    from motif_transfer_review import enabled
+    if enabled(project):
+        from motif_plan_shape import require_complete_plan
+        require_complete_plan(plan)
     check_structure(plan)
     try:
         record = read(project / 'quality-structure-record.json')

@@ -42,6 +42,9 @@ def deadlock_history(project,setup_id):
 
 def apply_patch(plan,setup_id,patch,transfer=False):
  """A model patch cannot overwrite unrelated setups/beats/token state changes."""
+ if transfer:
+  from motif_plan_shape import require_complete_plan
+  require_complete_plan(plan)
  Draft202012Validator(read(ROOT/'schemas/concept-replan.schema.json')).validate(patch)
  before=copy.deepcopy(plan);out=copy.deepcopy(plan);setups=out['film_structure']['setups'];old=next(s for s in setups if s['setup_id']==setup_id);index=setups.index(old);beat_ids=old['beat_ids']
  replacements=patch['setups'];beats=patch['beats'];ids=[s['setup_id'] for s in replacements]
