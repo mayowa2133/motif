@@ -22,7 +22,11 @@ def completed_review(base):
 def deadlock_history(project,setup_id):
  """Only completed live, distinct reviews count; aborted/copied reviews do not."""
  failures=[];seen=set()
- for record in sorted((Path(project)/'reference-gates').glob('*/record.json')):
+ p=Path(project)
+ # archive_review writes completed receipts here; include them in the same
+ # history given to the replan director, not only in guard_deadlock.
+ records=list((p/'reference-gates').glob('*/record.json'))+list((p/'concept-history').glob('*/record.json'))
+ for record in sorted(records):
   if 'aborted' in str(record):continue
   base=record.parent
   try:
