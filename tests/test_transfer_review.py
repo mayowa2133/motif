@@ -133,7 +133,7 @@ class TransferReviewTests(unittest.TestCase):
   self.plan['film_structure']['setups']=[{'setup_id':'split-a','beat_ids':['b'],'bot_role':'participant','relationship_archetype':'compare','visual_rule':'new'},{'setup_id':'split-b','beat_ids':['c'],'bot_role':'absent','relationship_archetype':'handoff','visual_rule':'other'}];write(self.p/'production-plan.json',self.plan)
   with self.assertRaisesRegex(ValueError,'deadlock'):tr.guard_transfer_deadlock(self.p) # Changed names/rules without validated escape insufficient.
   value=mr.read(patchfile);value['fixture_result']=copy.deepcopy(self.plan);write(patchfile,value)
-  with patch('motif_concept.apply_patch',side_effect=lambda old,sid,v:v['fixture_result']) as validation:
+  with patch('motif_concept.apply_patch',side_effect=lambda old,sid,v,**kwargs:v['fixture_result']) as validation:
    tr.record_escape(self.p,old,'u',patchfile);tr.guard_transfer_deadlock(self.p);validation.assert_called();self.assertTrue(old.exists())
    # A later real-family failure/escape must not resurrect already escaped history.
    prior_new=None
@@ -173,6 +173,25 @@ class TransferReviewTests(unittest.TestCase):
    with Image.open(native) as image:pixel=image.convert('RGB').getpixel((180,320))
    self.assertGreater(pixel[channel],200);self.assertEqual(len(entry['motion_observations']['frames']),12)
   # Test fixture is synthetic media, not a story, live critic or creative PASS.
+ def test_real_unmocked_transfer_escape_preserves_validation_without_old_limits(self):
+  from motif_concept import apply_patch
+  from test_structure import plan as fixture_plan
+  plan=fixture_plan();plan.update({'schema_version':'script-1.0','audience':'synthetic reviewer','style':'reference-expressive-high-energy-v1','rationale':'protocol fixture','metaphor':'own paper change','ending_action':'release','limitations':[],'assets':[{'id':'planning-paper','description':'synthetic own asset','reuse_path':''}]})
+  required=mr.read(ROOT/'schemas/script-production-plan.schema.json')['properties']['beats']['items']['required']
+  for b in plan['beats']:
+   for name in required:
+    if name not in b:b[name]='synthetic own '+name
+   b.update({'needed_assets':['planning-paper'],'actions':[{'kind':'own-action','cue':b['narration'].split()[0],'requires':[],'produces':[]}],'framing':'subject'})
+  original=plan['film_structure']['setups'][0];replacement=copy.deepcopy(original);replacement['relationship_archetype']='transform';replacement['visual_rule']='Own material changes state'
+  patch_value={'reason':'synthetic changed relationship','escape':'change-archetype','setups':[replacement],'beats':copy.deepcopy(plan['beats']),'token_changes':[]}
+  old=self.p/'transfer-concept-history/real';self.fake_call(old,'concept-critic','own complete real-validation fixture',tr.SCHEMA,tr.binding(self.p),());report=self.report(fail='hero-scale');report['setup_assessments'][0]['setup_id']=original['setup_id'];write(old/'concept-critic.json',report);write(old/'reviewed-plan.json',plan);write(old/'record.json',{'response_sha256':sha(old/'concept-critic.json'),'invocation_sha256':sha(old/'concept-critic-invocation.json'),'plan_sha256':sha(old/'reviewed-plan.json'),'reviewed_plan_sha256':sha(old/'reviewed-plan.json')})
+  output=apply_patch(plan,original['setup_id'],patch_value,transfer=True);write(self.p/'production-plan.json',output);patchfile=self.p/'real-patch.json';write(patchfile,patch_value)
+  tr.record_escape(self.p,old/'reviewed-plan.json',original['setup_id'],patchfile);tr.guard_transfer_deadlock(self.p)
+  limits=' '.join(output['limitations']);self.assertNotIn('eight unaffected',limits);self.assertNotIn('Private visual evidence',limits);self.assertNotIn('No animation or full rough is authorized',limits);self.assertIn('fresh own-evidence concept review',limits)
+  # Default scope retains its existing static-only constraints; transfer didn't weaken pure validation.
+  self.assertIn('No animation or full rough is authorized',' '.join(apply_patch(plan,original['setup_id'],patch_value)['limitations']))
+  bad=copy.deepcopy(patch_value);bad['beats'][0]['narration']='Changed copy'
+  with self.assertRaisesRegex(ValueError,'narration'):apply_patch(plan,original['setup_id'],bad,transfer=True)
  def test_opening_timing_must_cover_entire_video_and_be_finite(self):
   import motif_quality as q
   ev={**self.ev};ev['source_hashes']=dict(self.ev['source_hashes'])

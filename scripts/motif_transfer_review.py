@@ -179,7 +179,7 @@ def validated_escape(project,receipt):
  # existing pure scope/partition/narration/token validation, never its private replan flow.
  if patch['escape']!='split' and (len(replacements)!=1 or replacements[0]['relationship_archetype']==original['relationship_archetype']):raise ValueError('transfer escape requires changed relationship, not new wording')
  if patch['escape']=='split' and (len(replacements)<2 or len({s['relationship_archetype'] for s in replacements})<2):raise ValueError('transfer split requires distinct physical relationships')
- if apply_patch(old,receipt['replaced_setup'],patch)!=current:raise ValueError('transfer escape must equal exact validated current plan')
+ if apply_patch(old,receipt['replaced_setup'],patch,transfer=True)!=current:raise ValueError('transfer escape must equal exact validated current plan')
  if receipt['old_family']!=concept_families(old)[receipt['replaced_setup']] or receipt['new_families']!=concept_families(current):raise ValueError('transfer escape family changed')
  # Old plan must be an actual immutable completed own review, not invented history.
  found=False
