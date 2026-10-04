@@ -251,6 +251,21 @@ class TransferReviewTests(unittest.TestCase):
   for seed in ('1','2'):
    outputs.append(subprocess.check_output([sys.executable,'-c',script,str(ROOT/'scripts'),str(rawfile),str(fullfile)],env={**os.environ,'PYTHONHASHSEED':seed},text=True))
   self.assertEqual(outputs[0],outputs[1])
+ def test_missing_asset_usage_agent_assisted_migrates_without_rewriting_existing_values(self):
+  from motif_plan_shape import verify_augmentation
+  from motif_concept import apply_patch
+  raw,full=self.legacy_shape_fixture();del raw['asset_usage'][0]['agent_assisted'];old=self.legacy_shape_history(raw);original_sha=sha(old);normalized=self.p/'full-with-real-boolean.json';write(normalized,full)
+  details=verify_augmentation(raw,full);self.assertIn({'path':['asset_usage',0,'agent_assisted'],'value':True},details['explicit_added_fields'])
+  migration=tr.record_shape_migration(self.p,old,normalized);write(self.p/'production-plan.json',full)
+  with self.assertRaisesRegex(ValueError,'deadlock'):tr.guard_transfer_deadlock(self.p)
+  replacement=copy.deepcopy(full['film_structure']['setups'][0]);replacement['relationship_archetype']='transform';replacement['visual_rule']='Synthetic changed relationship';patch_value={'reason':'real nested-shape escape fixture','escape':'change-archetype','setups':[replacement],'beats':copy.deepcopy(full['beats']),'token_changes':[]};output=apply_patch(full,replacement['setup_id'],patch_value,transfer=True);write(self.p/'production-plan.json',output);patchfile=self.p/'nested-escape.json';write(patchfile,patch_value)
+  tr.record_escape(self.p,old,replacement['setup_id'],patchfile,migration);tr.guard_transfer_deadlock(self.p);self.assertEqual(sha(old),original_sha)
+  edited=copy.deepcopy(full);edited['asset_usage'][0]['scope']='reused'
+  with self.assertRaises(ValueError):verify_augmentation(raw,edited)
+  existing=copy.deepcopy(raw);existing['asset_usage'][0]['agent_assisted']=False
+  with self.assertRaises(ValueError):verify_augmentation(existing,full)
+  wrong=copy.deepcopy(full);wrong['asset_usage'][0]['agent_assisted']='true'
+  with self.assertRaises(ValueError):verify_augmentation(raw,wrong)
  def test_future_partial_plan_fails_before_live_review_or_contract(self):
   import motif_structure as st
   raw,full=self.legacy_shape_fixture();write(self.p/'production-plan.json',raw)

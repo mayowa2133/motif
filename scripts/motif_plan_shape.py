@@ -23,7 +23,7 @@ def verify_augmentation(raw,normalized):
  def compare(old,new,path=()):
   if isinstance(old,dict):
    if not isinstance(new,dict):raise ValueError('shape augmentation changed existing object')
-   allowed=root_required if not path else beat_required if len(path)==2 and path[0]=='beats' else set()
+   allowed=root_required if not path else beat_required if len(path)==2 and path[0]=='beats' else {'agent_assisted'} if len(path)==2 and path[0]=='asset_usage' else set()
    relocatable=RELOCATE_ROOT if not path else RELOCATE_BEAT if len(path)==2 and path[0]=='beats' else set()
    for key,value in old.items():
     if key in relocatable:
