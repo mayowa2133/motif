@@ -66,3 +66,15 @@ Word spans are zero-based half-open indices in whitespace-split narration. Chapt
 Structure checks: METAPHOR_OVERLOAD, STATE_ACCUMULATION_WITHOUT_MEANING, SEMANTIC_GROUP_OVERLOAD, COMPOSITIONAL_STAGNATION, CONTINUITY_TOKEN_OVERLOAD, CLUTTER_WITHOUT_PURPOSE, WEAK_RESET_RHYTHM; planned COMPETING_FOCI and CAPTION_CARRIES_STORY also block. The critic judges the sequence, not artwork. Moving hierarchy codes map into existing gates (see `quality/rubric/hierarchy.json`), never average away failures.
 
 This implementation validates internal planning fixtures only. It does not approve an original film or replan the rejected production. Preserve its evidence. The next production task starts from its exact script with no manually supplied shot list.
+
+## Concept simplification and hero succession
+
+Semantic coherence does not guarantee one stageable physical rule. Review actual beat heroes, causes, states and mechanisms: **COMPOUND_VISUAL_RULE** requires a split/simplification when separate causal relationships require separate apparatus. Multiple states of one process remain valid. This is semantic review, never a count of verbs/slashes.
+
+**GEOMETRY_PRUNING** lets the current hero dominate. Crop, fold, dim or remove inactive apparatus; **UNNECESSARY_VISIBLE_MECHANISM** blocks obsolete geometry competing for attention. A meaningful token may carry continuity across a reset without the old environment.
+
+Identify story subject, causal actor and Bot role per beat. Product tokens may perform their own functionality. **ACTOR_AMBIGUITY** blocks unclear causal ownership; do not require Bot to operate another agent's mechanism.
+
+Before animation, each planned physical interaction requires caption-free native BEFORE → CONTACT → AFTER proofs establishing actor, surface, support, ownership and blocked/unblocked state where applicable. Concept PASS requires clean images to communicate without diagnostic overlays. Retrieve bounded reference evidence per critical beat. Missing or unreadable contact proofs block.
+
+After two completed concept reviews reject the same concept family for hero/contact/hierarchy, archive it and require simplification, a new archetype or a split. This concept deadlock budget is separate from moving repairs. Preserve passing setups and exact narration during scoped replans. See CONCEPT_SIMPLIFICATION.md for executable contracts.

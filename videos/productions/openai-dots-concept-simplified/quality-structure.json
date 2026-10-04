@@ -1,0 +1,130 @@
+{
+  "role": "structure",
+  "inspection_scope": "Complete script, five rhetorical chapters, eleven beats, ten setups, active action requirements, continuity lifecycles, production calibration, and attached external/internal reference stills. Assessment concerns planned architecture and causal relationships.",
+  "checks": [
+    {
+      "check": "METAPHOR_OVERLOAD",
+      "status": "PASS",
+      "evidence": "App connection, computing, proposals, specialization, future teams, permission, commercial access, editorial interpretation, and entrusted access receive distinct worlds. b03–b04 retain one aperture and one developing assignment."
+    },
+    {
+      "check": "STATE_ACCUMULATION_WITHOUT_MEANING",
+      "status": "PASS",
+      "evidence": "b02 removes the conversation pocket before contact; b04 replaces outgoing work content and crops inactive computing geometry. b10 retains conversation specifically to communicate an expanded competitive criterion."
+    },
+    {
+      "check": "SEMANTIC_GROUP_OVERLOAD",
+      "status": "PASS",
+      "evidence": "Each beat identifies one consequential relationship. Paired commercial leaves form one comparison group; successive source, outline, and draft states form one assignment group."
+    },
+    {
+      "check": "COMPOSITIONAL_STAGNATION",
+      "status": "PASS",
+      "evidence": "Contracts alternate a diagonal two-device relationship, connection close-up, receiving aperture, cropped developing strip, proposal fan, specialist fitting, sealed diagram, stopping boundary, staggered comparison, angled editorial object, and unresolved key gap. Shared folding materials do not produce identical staging."
+    },
+    {
+      "check": "CONTINUITY_TOKEN_OVERLOAD",
+      "status": "PASS",
+      "evidence": "The Dot token records product identity and ownership across selected setups. The brief remains within its computing process. The key disappears after permission and returns for the closing authority question; previous environments do not accompany these tokens."
+    },
+    {
+      "check": "CLUTTER_WITHOUT_PURPOSE",
+      "status": "PASS",
+      "evidence": "Supports establish travel and entry; cropped device geometry establishes separate computing; unequal task shapes establish suitability; seals establish unavailable operation. Paper irregularity records identity, interruption, or unfinished work."
+    },
+    {
+      "check": "WEAK_RESET_RHYTHM",
+      "status": "PASS",
+      "evidence": "The ordered setup and chapter spans cover words 0–125 without gaps, and each beat is assigned once. Distinct claims reset their apparatus, while b03–b04 preserve continuing computation and b10 preserves its editorial contrast."
+    },
+    {
+      "check": "COMPETING_FOCI",
+      "status": "PASS",
+      "evidence": "b02 isolates contact; b04 crops to developing material; b08 prioritizes the stopped envelope over untouched controls and reacting Bot; b09 reveals comparison conditions sequentially; b11 subordinates Bot to the key gap."
+    },
+    {
+      "check": "CAPTION_CARRIES_STORY",
+      "status": "PASS",
+      "evidence": "Planned central changes communicate separation and persistence, contact-created connection, assignment development, proposal replacement, compatibility, sealed future operation, interrupted execution, differing admission conditions, expanded editorial scope, and withheld transfer. Local labels identify products and qualifications rather than substitute for these changes."
+    },
+    {
+      "check": "REFERENCE_STRUCTURE_GAP",
+      "status": "PASS",
+      "evidence": "b03–b04 develop recognizable material through successive states, comparable to audiobook and the construction strip's evolving workload. Permission and admission receive separate worlds; focal cropping follows the waveform and comparison evidence. The sparse ending has a consequential unresolved relationship rather than idle presentation."
+    },
+    {
+      "check": "REFERENCE_SCENE_IMITATION",
+      "status": "PASS",
+      "evidence": "The contracts do not reproduce selected references' joint hero, environment, and choreography: no waveform pair, shutter-browser comparison, bug-board ensemble, comment field, construction worker, elimination arena, scored grids, menu staircase, transcription stack, or library transformation."
+    },
+    {
+      "check": "COMPOUND_VISUAL_RULE",
+      "status": "PASS",
+      "evidence": "App contact resets before computing. b03 input capture and b04 changing content use the same supported strip-feed relationship. b01 establishes persistence by closing the user side of the introduced workspace. b10 reveals and opens the work dimension of one editorial object without appending a separate executing apparatus."
+    },
+    {
+      "check": "UNNECESSARY_VISIBLE_MECHANISM",
+      "status": "PASS",
+      "evidence": "The app terminal exits before computation; the computer body, input support, and inactive device are cropped during development. The permission controls support the pending authority state. Retained conversation geometry in b10 communicates the narrated 'isn't just' relationship."
+    },
+    {
+      "check": "ACTOR_AMBIGUITY",
+      "status": "PASS",
+      "evidence": "b02 assigns connection to the Dot token; b03–b04 assign computation to its owned computer and make the brief passive. Proposal and editorial folds present arguments rather than autonomous execution. Bot only reacts in permission and the ending, never approves, operates the computer, or accepts the key."
+    }
+  ],
+  "setup_assessments": [
+    {
+      "setup_id": "s01-agency",
+      "status": "PASS",
+      "evidence": "The separate workspace unfolds, then continued assigned activity survives closure of the user device. Both states establish the introduced agent's independence; only its identity token leaves."
+    },
+    {
+      "setup_id": "s02-app-access",
+      "status": "PASS",
+      "evidence": "One token closes a supported gap to a fixed terminal, causing connection marks to join. Conversation context is cropped before engagement; computing apparatus is absent."
+    },
+    {
+      "setup_id": "s02-cloud-process",
+      "status": "PASS",
+      "evidence": "b03 captures the identifiable brief at one aperture; b04 advances related source, outline, and unfinished-draft states through that same aperture. Earlier states exit, ownership remains subordinate, and inactive supports are cropped."
+    },
+    {
+      "setup_id": "s03-use-pitch",
+      "status": "PASS",
+      "evidence": "Business and household proposal materials replace one another at a shared fitting. Their common proposal relationship justifies persistence without suggesting external execution."
+    },
+    {
+      "setup_id": "s04-specialists",
+      "status": "PASS",
+      "evidence": "A close fitting reveal establishes task-specific compatibility; the attached preview band qualifies the relationship. No completed task or active team mechanism is added."
+    },
+    {
+      "setup_id": "s05-planned-teams",
+      "status": "PASS",
+      "evidence": "The translucent cover reveals an unassembled diagram while its operative joint remains sealed. Visibility changes without availability or teamwork execution changing."
+    },
+    {
+      "setup_id": "s06-permission",
+      "status": "PASS",
+      "evidence": "The sensitive envelope approaches and stops before execution. Untouched approval and user-side key support the pending state; Bot reacts without competing causal ownership."
+    },
+    {
+      "setup_id": "s07-commercial-access",
+      "status": "PASS",
+      "evidence": "Equal-size admission leaves expose different access requirements sequentially. This comparison replaces the permission apparatus and avoids ranking products or inventing performance evidence."
+    },
+    {
+      "setup_id": "s08-editorial-reframe",
+      "status": "PASS",
+      "evidence": "One angled editorial object expands from a conversation face to a work face. Token seating and the opening assignment fold elaborate that reveal; retained conversation is meaningful support for the expanded criterion."
+    },
+    {
+      "setup_id": "s09-unresolved-keys",
+      "status": "PASS",
+      "evidence": "The recalled scoped key approaches the identified agent recess and stops across an unclosed gap. Its cradle retains user ownership, Bot witnesses, and no approval or acceptance resolves the question."
+    }
+  ],
+  "violations": [],
+  "limits": "Data-only review cannot establish rendered/mobile performance, pixel visibility, contact readability, motion continuity, playback, listening, or narration synchronization. Attached images show reference examples, not production BEFORE/CONTACT/AFTER proofs; production contact and concept-image approval remain unassessed. Unsupported capabilities remain implementation requirements. Structural PASS does not approve artwork, execution, factual claims, or a finished film."
+}

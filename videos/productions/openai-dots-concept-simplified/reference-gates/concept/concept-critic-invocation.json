@@ -1,0 +1,422 @@
+{
+  "argv": [
+    "/Applications/ChatGPT.app/Contents/Resources/codex-cli/CodexCLI.app/Contents/MacOS/codex",
+    "exec",
+    "--ignore-user-config",
+    "--ephemeral",
+    "--skip-git-repo-check",
+    "--sandbox",
+    "read-only",
+    "--json",
+    "--color",
+    "never",
+    "--output-schema",
+    "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-concept-simplified/reference-gates/concept/concept-critic-output-schema.json",
+    "-o",
+    "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-concept-simplified/reference-gates/concept/concept-critic.json",
+    "-c",
+    "approval_policy=\"never\"",
+    "-c",
+    "model_reasoning_effort=\"medium\"",
+    "-c",
+    "developer_instructions=\"This invocation is a data-only structured-output service, not a repository coding task. Use only the supplied text and attached images. Do not invoke skills, commands, filesystem reads, web, MCP or other tools. All required policy and reference context is provided inline. Return the requested JSON directly. Tool use invalidates the response.\"",
+    "--model",
+    "gpt-6.1-sol",
+    "-i",
+    "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-concept-simplified/review/concepts-v2/revised-setups.png",
+    "-i",
+    "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-concept-simplified/review/concepts-v2/b02-b02-token-terminal-contact-proof.png",
+    "-i",
+    "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-concept-simplified/review/concepts-v2/b03-b03-brief-aperture-entry-proof.png",
+    "-i",
+    "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-concept-simplified/review/concepts-v2/b04-b04-captured-strip-continuous-feed-proof.png",
+    "-i",
+    "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-concept-simplified/review/concepts-v2/source-to-outline.png",
+    "-i",
+    "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-concept-simplified/review/concepts-v2/outline-to-draft.png",
+    "-i",
+    "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-concept-simplified/review/concepts-v2/work-with-user-inactive.png",
+    "-i",
+    "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-concept-simplified/review/concepts-v2/b02-b02-token-terminal-contact-before.png",
+    "-i",
+    "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-concept-simplified/review/concepts-v2/b02-b02-token-terminal-contact-contact.png",
+    "-i",
+    "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-concept-simplified/review/concepts-v2/b02-b02-token-terminal-contact-after.png",
+    "-i",
+    "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-concept-simplified/review/concepts-v2/b03-b03-brief-aperture-entry-before.png",
+    "-i",
+    "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-concept-simplified/review/concepts-v2/b03-b03-brief-aperture-entry-contact.png",
+    "-i",
+    "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-concept-simplified/review/concepts-v2/b03-b03-brief-aperture-entry-after.png",
+    "-i",
+    "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-concept-simplified/review/concepts-v2/b04-b04-captured-strip-continuous-feed-before.png",
+    "-i",
+    "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-concept-simplified/review/concepts-v2/b04-b04-captured-strip-continuous-feed-contact.png",
+    "-i",
+    "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-concept-simplified/review/concepts-v2/b04-b04-captured-strip-continuous-feed-after.png",
+    "-i",
+    "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-concept-simplified/reference-calibration/evidence/Dd2HMwIy6D3-s14/representative.jpg",
+    "-i",
+    "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-concept-simplified/reference-calibration/evidence/Dd2HMwIy6D3-s14/ordered.jpg",
+    "-i",
+    "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-concept-simplified/reference-calibration/evidence/Dd2HMwIy6D3-s14/dense.jpg",
+    "-i",
+    "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-concept-simplified/reference-calibration/evidence/Dd2UAqOvDoO-s06/representative.jpg",
+    "-i",
+    "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-concept-simplified/reference-calibration/evidence/Dd2UAqOvDoO-s06/ordered.jpg",
+    "-i",
+    "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-concept-simplified/reference-calibration/evidence/Dd2UAqOvDoO-s06/dense.jpg",
+    "-i",
+    "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-concept-simplified/reference-calibration/evidence/Dd4oMBpyEq_-s07/representative.jpg",
+    "-i",
+    "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-concept-simplified/reference-calibration/evidence/Dd4oMBpyEq_-s07/ordered.jpg",
+    "-i",
+    "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-concept-simplified/reference-calibration/evidence/Dd4oMBpyEq_-s07/dense.jpg",
+    "-i",
+    "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-concept-simplified/reference-calibration/evidence/Dd45WmVPOfQ-s10/representative.jpg",
+    "-i",
+    "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-concept-simplified/reference-calibration/evidence/Dd45WmVPOfQ-s10/ordered.jpg",
+    "-i",
+    "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-concept-simplified/reference-calibration/evidence/Dd45WmVPOfQ-s10/dense.jpg",
+    "-i",
+    "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-concept-simplified/reference-calibration/evidence/Dd2UAqOvDoO-s05/representative.jpg",
+    "-i",
+    "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-concept-simplified/reference-calibration/evidence/Dd2UAqOvDoO-s05/ordered.jpg",
+    "-i",
+    "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-concept-simplified/reference-calibration/evidence/Dd2UAqOvDoO-s05/dense.jpg",
+    "-i",
+    "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-concept-simplified/reference-calibration/evidence/Dd4Le3YhCQt-s05/representative.jpg",
+    "-i",
+    "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-concept-simplified/reference-calibration/evidence/Dd4Le3YhCQt-s05/ordered.jpg",
+    "-i",
+    "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-concept-simplified/reference-calibration/evidence/Dd4Le3YhCQt-s05/dense.jpg",
+    "-i",
+    "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-concept-simplified/reference-calibration/evidence/Dd2uCwTB6II-s02/representative.jpg",
+    "-i",
+    "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-concept-simplified/reference-calibration/evidence/Dd2uCwTB6II-s02/ordered.jpg",
+    "-i",
+    "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-concept-simplified/reference-calibration/evidence/Dd2uCwTB6II-s02/dense.jpg",
+    "-i",
+    "/Users/mayowaadesanya/Projects/motif/quality/gold/menu-landing/still.png",
+    "-i",
+    "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-concept-simplified/reference-calibration/internal-gold/menu-landing/menu-landing-ordered.png",
+    "-i",
+    "/Users/mayowaadesanya/Projects/motif/quality/gold/transcription/still.png",
+    "-i",
+    "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-concept-simplified/reference-calibration/internal-gold/transcription/transcription-ordered.png",
+    "-i",
+    "/Users/mayowaadesanya/Projects/motif/quality/gold/audiobook/still.png",
+    "-i",
+    "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-concept-simplified/reference-calibration/internal-gold/audiobook/audiobook-ordered.png",
+    "-i",
+    "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-concept-simplified/reference-calibration/beat-evidence/Dd15NcHvlNl-s20/representative.jpg",
+    "-i",
+    "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-concept-simplified/reference-calibration/beat-evidence/Dd15NcHvlNl-s20/ordered.jpg",
+    "-i",
+    "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-concept-simplified/reference-calibration/beat-evidence/Dd15NcHvlNl-s20/dense.jpg",
+    "-i",
+    "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-concept-simplified/reference-calibration/beat-evidence/Dd15NcHvlNl-s14/representative.jpg",
+    "-i",
+    "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-concept-simplified/reference-calibration/beat-evidence/Dd15NcHvlNl-s14/ordered.jpg",
+    "-i",
+    "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-concept-simplified/reference-calibration/beat-evidence/Dd15NcHvlNl-s14/dense.jpg",
+    "-i",
+    "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-concept-simplified/reference-calibration/beat-evidence/Dd45WmVPOfQ-s08/representative.jpg",
+    "-i",
+    "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-concept-simplified/reference-calibration/beat-evidence/Dd45WmVPOfQ-s08/ordered.jpg",
+    "-i",
+    "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-concept-simplified/reference-calibration/beat-evidence/Dd45WmVPOfQ-s08/dense.jpg",
+    "-i",
+    "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-concept-simplified/reference-calibration/beat-evidence/Dd15NcHvlNl-s13/representative.jpg",
+    "-i",
+    "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-concept-simplified/reference-calibration/beat-evidence/Dd15NcHvlNl-s13/ordered.jpg",
+    "-i",
+    "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-concept-simplified/reference-calibration/beat-evidence/Dd15NcHvlNl-s13/dense.jpg",
+    "-i",
+    "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-concept-simplified/reference-calibration/beat-evidence/Dd2HMwIy6D3-s14/representative.jpg",
+    "-i",
+    "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-concept-simplified/reference-calibration/beat-evidence/Dd2HMwIy6D3-s14/ordered.jpg",
+    "-i",
+    "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-concept-simplified/reference-calibration/beat-evidence/Dd2HMwIy6D3-s14/dense.jpg",
+    "-i",
+    "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-concept-simplified/reference-calibration/beat-evidence/Dd2HMwIy6D3-s17/representative.jpg",
+    "-i",
+    "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-concept-simplified/reference-calibration/beat-evidence/Dd2HMwIy6D3-s17/ordered.jpg",
+    "-i",
+    "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-concept-simplified/reference-calibration/beat-evidence/Dd2HMwIy6D3-s17/dense.jpg",
+    "-"
+  ],
+  "exit_code": 0,
+  "input_sha256": "be6faa5934537325c11aa46e4f8a19c1709244cbe861be472456d20adc21aa51",
+  "output_schema_sha256": "88868f1deab0ff1b67369f639785c8648bc0836b50a21ce2284dd0ed193c7833",
+  "images": [
+    {
+      "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-concept-simplified/review/concepts-v2/revised-setups.png",
+      "sha256": "e8e40632776575b0275c8a5cc4840e1cded043bce13dbe5997e3a7d606b06762"
+    },
+    {
+      "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-concept-simplified/review/concepts-v2/b02-b02-token-terminal-contact-proof.png",
+      "sha256": "65f652228d8dc7298f94e7da2b5dc9c6b61435e6b671787c5471af7bf917da89"
+    },
+    {
+      "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-concept-simplified/review/concepts-v2/b03-b03-brief-aperture-entry-proof.png",
+      "sha256": "b5fbc969b4df5f391b33a22be82addce031de9e9ce0a423b6cf82086323a686e"
+    },
+    {
+      "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-concept-simplified/review/concepts-v2/b04-b04-captured-strip-continuous-feed-proof.png",
+      "sha256": "485706b0907f97c0425a2c1bd0e0c847e17b307746004b23a8da3b5962431697"
+    },
+    {
+      "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-concept-simplified/review/concepts-v2/source-to-outline.png",
+      "sha256": "379d67e897eeccd6ea71801fe1a2aa83edbde7f267d7c96a280301284d1e5b40"
+    },
+    {
+      "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-concept-simplified/review/concepts-v2/outline-to-draft.png",
+      "sha256": "e023dc443e6cf0c54157a897fcbfd7d95c17389363e4df276524e563e58fc3ba"
+    },
+    {
+      "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-concept-simplified/review/concepts-v2/work-with-user-inactive.png",
+      "sha256": "8b8fecccdaf2ffaaeeac727e5adfc82a22035e50902125fc757f8d1196f6d594"
+    },
+    {
+      "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-concept-simplified/review/concepts-v2/b02-b02-token-terminal-contact-before.png",
+      "sha256": "1eb4793c8d8474f627279317c4cca86d41a2b461ad5830a8ef2b4e37ed69af36"
+    },
+    {
+      "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-concept-simplified/review/concepts-v2/b02-b02-token-terminal-contact-contact.png",
+      "sha256": "0758e1b55a50428f516d1e70fd3f49e5cea71999aa9de706aded674b3ea3feaf"
+    },
+    {
+      "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-concept-simplified/review/concepts-v2/b02-b02-token-terminal-contact-after.png",
+      "sha256": "04c361e4447330eaf28cbf0ed36f125ef4a12b09199a5513e76174363e35dd04"
+    },
+    {
+      "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-concept-simplified/review/concepts-v2/b03-b03-brief-aperture-entry-before.png",
+      "sha256": "97104a20065c274c3b7f7d3e0fab4886b42e767b2be664fda7e7c83b0ca2ff2e"
+    },
+    {
+      "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-concept-simplified/review/concepts-v2/b03-b03-brief-aperture-entry-contact.png",
+      "sha256": "9748b0f0e00b920be18891b27d880126fe7bb172340bcbd8e8fa2043aaafd86d"
+    },
+    {
+      "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-concept-simplified/review/concepts-v2/b03-b03-brief-aperture-entry-after.png",
+      "sha256": "52bb2bc97807dbb1b801758548fd6d2f534d9a66e7dce3d666be2a69089ad105"
+    },
+    {
+      "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-concept-simplified/review/concepts-v2/b04-b04-captured-strip-continuous-feed-before.png",
+      "sha256": "a21732ae22e5cfdca08851cc14f8eeb10c4117999809c6e76ce48e02fe6ae879"
+    },
+    {
+      "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-concept-simplified/review/concepts-v2/b04-b04-captured-strip-continuous-feed-contact.png",
+      "sha256": "c581937c1b85b8da01099a380620094f579cae9e8c550baf66ce471295e05bb6"
+    },
+    {
+      "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-concept-simplified/review/concepts-v2/b04-b04-captured-strip-continuous-feed-after.png",
+      "sha256": "54a3756e4997d9684b88f7c48105da129fdf548ef59775d42c49f61aede94476"
+    },
+    {
+      "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-concept-simplified/reference-calibration/evidence/Dd2HMwIy6D3-s14/representative.jpg",
+      "sha256": "8810696e4accda97c36f3d823cdfa99c0800938d15abc2062ee1a3db4645c862"
+    },
+    {
+      "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-concept-simplified/reference-calibration/evidence/Dd2HMwIy6D3-s14/ordered.jpg",
+      "sha256": "32b0eff39a04e1111ced7401af876d4b920f7d6c5fb04471c2931e8ae505df8e"
+    },
+    {
+      "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-concept-simplified/reference-calibration/evidence/Dd2HMwIy6D3-s14/dense.jpg",
+      "sha256": "83e4ed3fed19cd06b191aa94f0a7cb9d7f0d90c47200e9c9bb57a065a4691373"
+    },
+    {
+      "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-concept-simplified/reference-calibration/evidence/Dd2UAqOvDoO-s06/representative.jpg",
+      "sha256": "d522a1c2495a7cc078f8d3cb05e756daa5c1296c35469dd648b544d79be07d3b"
+    },
+    {
+      "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-concept-simplified/reference-calibration/evidence/Dd2UAqOvDoO-s06/ordered.jpg",
+      "sha256": "7b55ff7053c134f168ea4fd704fb6a4e23dec7a2a3c62be3d4309224443b8d3e"
+    },
+    {
+      "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-concept-simplified/reference-calibration/evidence/Dd2UAqOvDoO-s06/dense.jpg",
+      "sha256": "28ecbc7c7bc5ea9a6c5ae4eefd69f4d463a124cf9daedff633335c3bd9d22826"
+    },
+    {
+      "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-concept-simplified/reference-calibration/evidence/Dd4oMBpyEq_-s07/representative.jpg",
+      "sha256": "d9b8903931b20ce75bcf1e238a510946854cf659b0583dea23cfaeded8fd809b"
+    },
+    {
+      "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-concept-simplified/reference-calibration/evidence/Dd4oMBpyEq_-s07/ordered.jpg",
+      "sha256": "0ec465e309958089674a8ed03b9a944eb16dae2d8a109c06f360008d5ed0121a"
+    },
+    {
+      "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-concept-simplified/reference-calibration/evidence/Dd4oMBpyEq_-s07/dense.jpg",
+      "sha256": "51a4e6fe4a9177cb4314239ff705287f5f0e26a2405a88cdf6d2d061dd7287fe"
+    },
+    {
+      "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-concept-simplified/reference-calibration/evidence/Dd45WmVPOfQ-s10/representative.jpg",
+      "sha256": "a9a9ed55cbfb713b8ae29b4f5832fee3f314490a74c0db922c836a842ce3f52c"
+    },
+    {
+      "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-concept-simplified/reference-calibration/evidence/Dd45WmVPOfQ-s10/ordered.jpg",
+      "sha256": "8c6d5033a3592369ae89c4b8947fdd318b144abd80df83bbbd6afc266f0d572e"
+    },
+    {
+      "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-concept-simplified/reference-calibration/evidence/Dd45WmVPOfQ-s10/dense.jpg",
+      "sha256": "3fd957197434639c64f6193260e1acb1230468b14afa0d45ede3be4ad88e7c4c"
+    },
+    {
+      "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-concept-simplified/reference-calibration/evidence/Dd2UAqOvDoO-s05/representative.jpg",
+      "sha256": "411e374e3099b9f00949a61425fa7732ba59e793f934c7a97aff2d070639788a"
+    },
+    {
+      "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-concept-simplified/reference-calibration/evidence/Dd2UAqOvDoO-s05/ordered.jpg",
+      "sha256": "82752e9c4ba80ef65500f0e6c4b2d33b803ff67b57be67e942b91dfdda4155e6"
+    },
+    {
+      "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-concept-simplified/reference-calibration/evidence/Dd2UAqOvDoO-s05/dense.jpg",
+      "sha256": "7b493cb7d538f36b1982a98ac22a9c8ab8087e74cca36cde378f8b254f3bf519"
+    },
+    {
+      "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-concept-simplified/reference-calibration/evidence/Dd4Le3YhCQt-s05/representative.jpg",
+      "sha256": "e8285c33c5b288cfc5a4e23b70a9f0c97ee90130d1770c1eb46b18a4e4c1154c"
+    },
+    {
+      "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-concept-simplified/reference-calibration/evidence/Dd4Le3YhCQt-s05/ordered.jpg",
+      "sha256": "792c775e0b61dec0b0e0481ce10b5d14c893ad4729e74630c92d4a7fa22c4c0b"
+    },
+    {
+      "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-concept-simplified/reference-calibration/evidence/Dd4Le3YhCQt-s05/dense.jpg",
+      "sha256": "dcd4534127981db61649666591096c6c41ca81348e43262f60f6e69b5e5ca27c"
+    },
+    {
+      "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-concept-simplified/reference-calibration/evidence/Dd2uCwTB6II-s02/representative.jpg",
+      "sha256": "1debccbb3902a693e3f27ede19c38384513d975b442a933b85c0e2337f6764f4"
+    },
+    {
+      "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-concept-simplified/reference-calibration/evidence/Dd2uCwTB6II-s02/ordered.jpg",
+      "sha256": "7071fb29a629cf9b810fe0995fc22d07311b73876276a22c26725060e1c2fcf2"
+    },
+    {
+      "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-concept-simplified/reference-calibration/evidence/Dd2uCwTB6II-s02/dense.jpg",
+      "sha256": "d65580f14c307a58897770f307d43269719302d947602a1680a3eb723474ceba"
+    },
+    {
+      "file": "/Users/mayowaadesanya/Projects/motif/quality/gold/menu-landing/still.png",
+      "sha256": "83da8f8e9ba7e53dd57f0f2771be11aff1ff03ef0e17f40cb0372b8fbfd3b62c"
+    },
+    {
+      "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-concept-simplified/reference-calibration/internal-gold/menu-landing/menu-landing-ordered.png",
+      "sha256": "f5d877f7923b06e9a895e21b85363784fa0ab2ab7f0353292af2948eee633a3a"
+    },
+    {
+      "file": "/Users/mayowaadesanya/Projects/motif/quality/gold/transcription/still.png",
+      "sha256": "b9ac98b1a996a298afcffd9fe560f8615e87df354611df732cab2086ed093716"
+    },
+    {
+      "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-concept-simplified/reference-calibration/internal-gold/transcription/transcription-ordered.png",
+      "sha256": "a1125b9bba2721f62ea7a65534959cef64be89897448e75282886ad71da23c31"
+    },
+    {
+      "file": "/Users/mayowaadesanya/Projects/motif/quality/gold/audiobook/still.png",
+      "sha256": "760ce682dcb1990e00b595699dee4bc9f5908818269e855c3b23b6bccbeec575"
+    },
+    {
+      "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-concept-simplified/reference-calibration/internal-gold/audiobook/audiobook-ordered.png",
+      "sha256": "ab7fd01ede92068fb9fd6d4cbd9415a9badd2c149e3ef1893606c9cffdf611fd"
+    },
+    {
+      "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-concept-simplified/reference-calibration/beat-evidence/Dd15NcHvlNl-s20/representative.jpg",
+      "sha256": "e3aef14fd2df2000415169ddf2a70baaaa8dd6a00926e8d8939515e19cb9cf28"
+    },
+    {
+      "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-concept-simplified/reference-calibration/beat-evidence/Dd15NcHvlNl-s20/ordered.jpg",
+      "sha256": "c6ecdfdcb850387c664b2a3710a4a25b99428c52cc0849b88e9c14e4eac719e2"
+    },
+    {
+      "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-concept-simplified/reference-calibration/beat-evidence/Dd15NcHvlNl-s20/dense.jpg",
+      "sha256": "5ba7543c69c0eac47ebad1e7bafdb62583ed35661c7003d3fa516b3b382d29de"
+    },
+    {
+      "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-concept-simplified/reference-calibration/beat-evidence/Dd15NcHvlNl-s14/representative.jpg",
+      "sha256": "0e053016f33fd0a3a4e13abd13a6d582f21f57596c5fdaf2b1d7620acc57798a"
+    },
+    {
+      "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-concept-simplified/reference-calibration/beat-evidence/Dd15NcHvlNl-s14/ordered.jpg",
+      "sha256": "b103c7696a58d85589d0493e6d76c5741adfbd81204878c95e2adf6cde5750e6"
+    },
+    {
+      "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-concept-simplified/reference-calibration/beat-evidence/Dd15NcHvlNl-s14/dense.jpg",
+      "sha256": "926f1bcf05987b8cb8d096740bd71641c47d2b38160086f8bab0fb1f99a975ba"
+    },
+    {
+      "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-concept-simplified/reference-calibration/beat-evidence/Dd45WmVPOfQ-s08/representative.jpg",
+      "sha256": "b869e4236d68e76ab769125415cd8d9868922de3e634e98c23ec9bb8bd989dfa"
+    },
+    {
+      "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-concept-simplified/reference-calibration/beat-evidence/Dd45WmVPOfQ-s08/ordered.jpg",
+      "sha256": "9a34a9efdf21c2f6dcd9db25b8d0d7be39c88f316c844f3f4b74cda1f18af5d7"
+    },
+    {
+      "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-concept-simplified/reference-calibration/beat-evidence/Dd45WmVPOfQ-s08/dense.jpg",
+      "sha256": "21dc8b2093a5b72d7db01e271b5ce2690a522cdf1f43e457d277a846ae37ea08"
+    },
+    {
+      "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-concept-simplified/reference-calibration/beat-evidence/Dd15NcHvlNl-s13/representative.jpg",
+      "sha256": "5e19c583017d30867333718ddcb514a17168d2c3284ffa3f1875a6e1b57a8ee7"
+    },
+    {
+      "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-concept-simplified/reference-calibration/beat-evidence/Dd15NcHvlNl-s13/ordered.jpg",
+      "sha256": "cba32f9e5efa5c05fd4cd3d8c95c972e8a5fc5a3db71aa795153ef3ee746f646"
+    },
+    {
+      "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-concept-simplified/reference-calibration/beat-evidence/Dd15NcHvlNl-s13/dense.jpg",
+      "sha256": "a2e243a2a9a4a669a050a6f637c78721704af6c3f2fc5d92f558b5f952067e7b"
+    },
+    {
+      "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-concept-simplified/reference-calibration/beat-evidence/Dd2HMwIy6D3-s14/representative.jpg",
+      "sha256": "8810696e4accda97c36f3d823cdfa99c0800938d15abc2062ee1a3db4645c862"
+    },
+    {
+      "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-concept-simplified/reference-calibration/beat-evidence/Dd2HMwIy6D3-s14/ordered.jpg",
+      "sha256": "32b0eff39a04e1111ced7401af876d4b920f7d6c5fb04471c2931e8ae505df8e"
+    },
+    {
+      "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-concept-simplified/reference-calibration/beat-evidence/Dd2HMwIy6D3-s14/dense.jpg",
+      "sha256": "83e4ed3fed19cd06b191aa94f0a7cb9d7f0d90c47200e9c9bb57a065a4691373"
+    },
+    {
+      "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-concept-simplified/reference-calibration/beat-evidence/Dd2HMwIy6D3-s17/representative.jpg",
+      "sha256": "e145995585ca1573a5312e279ef5b5d96042e53c21eb892bb9b4d8d6851cb6c2"
+    },
+    {
+      "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-concept-simplified/reference-calibration/beat-evidence/Dd2HMwIy6D3-s17/ordered.jpg",
+      "sha256": "e48a4cd92a7dfda27cfa10ea3982e8bf50696463422e42efc116acd96ff80f04"
+    },
+    {
+      "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-concept-simplified/reference-calibration/beat-evidence/Dd2HMwIy6D3-s17/dense.jpg",
+      "sha256": "0765ae848f3cc351c358acb1f4413388726077043ab38f6e9c20fc9ab1a69ee8"
+    }
+  ],
+  "configuration": {
+    "cli_path": "/Applications/ChatGPT.app/Contents/Resources/codex-cli/CodexCLI.app/Contents/MacOS/codex",
+    "cli_selection": "desktop-bundled CLI",
+    "backend": "codex-exec",
+    "execution": "self-contained command with live model planning",
+    "model": "gpt-6.1-sol",
+    "reasoning_effort": "medium",
+    "authentication_status": "Logged in using ChatGPT",
+    "cli_version": "codex-cli 0.160.0",
+    "sandbox": "read-only",
+    "ephemeral": true,
+    "tools_requested": false,
+    "default_model_if_unspecified": false,
+    "model_selection": "existing Codex configuration",
+    "hyperframes": "0.8.98",
+    "timeout_seconds": 1200
+  },
+  "started_at_utc": "2026-10-04T04:45:46.709300+00:00",
+  "completed_at_utc": "2026-10-04T04:47:31.881946+00:00",
+  "requested_model": "gpt-6.1-sol",
+  "resolved_model": null,
+  "resolved_model_note": "CLI event stream does not expose a separately resolved model identifier",
+  "saved_response_used": false,
+  "model_fallback_used": false
+}

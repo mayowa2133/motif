@@ -7,7 +7,7 @@ from jsonschema import Draft202012Validator
 ROOT = Path(__file__).resolve().parents[1]
 INPUTS = ('docs/MOTIF_STRUCTURAL_GRAMMAR.md', 'quality/structure-critic/PROMPT.md',
           'schemas/film-structure.schema.json', 'schemas/setup-contract.schema.json',
-          'schemas/structure-critic.schema.json', 'quality/structure-examples.json',
+          'schemas/structure-critic.schema.json', 'schemas/reference-structure-critic.schema.json', 'quality/concept-director/PROMPT.md', 'quality/structure-examples.json',
           'quality/negative/rowhouse.json', 'scripts/motif_structure.py')
 
 
@@ -110,6 +110,7 @@ def check_structure(plan):
 def planning_context():
     return ('\nFILM STRUCTURE FIRST: derive rhetorical propositions and semantic verbs; '
             'group adjacent propositions by the same visual rule BEFORE choosing beats. '
+            'Semantic coherence is not sufficient: inspect actual hero/causal mechanisms for COMPOUND_VISUAL_RULE. Prune inactive geometry; identify subject, actor and Bot role. '
             'Return film_structure with half-open zero-based whitespace word spans and '
             'ordered beat_ids. Setup IDs are not shot IDs: multiple beats may develop one setup. '
             'Reuse capabilities, not plots. If finite bindings cannot execute the required '

@@ -1,0 +1,61 @@
+{
+  "setup_id": "s02-connected-work",
+  "completed_failures": 5,
+  "repeated_checks": [
+    "character-role",
+    "hierarchy",
+    "hero-scale"
+  ],
+  "escape_required": true,
+  "reviews": [
+    {
+      "record": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-reference-calibrated/reference-gates/concept/record.json",
+      "record_sha256": "673c5432297a1d979c88614acb32b985a6e1218d1dbe4be574582ec7d489264a",
+      "failed_checks": [
+        "character-role",
+        "hero-scale",
+        "hierarchy"
+      ],
+      "invocation_sha256": "a2fb79ba71f4f622f72470032f55e6300ffd63c15b44be813be83f1899181b05"
+    },
+    {
+      "record": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-reference-calibrated/reference-gates/concept-before-revision-1/record.json",
+      "record_sha256": "f4dafe653a317bb9be49021827cbf77a01d7a50507e9a991129803750914410d",
+      "failed_checks": [
+        "character-role",
+        "hero-scale",
+        "hierarchy"
+      ],
+      "invocation_sha256": "59f73c7c6505903f31798cfd877173da28310e052b02704a4a051a8658865f4b"
+    },
+    {
+      "record": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-reference-calibrated/reference-gates/concept-before-revision-2/record.json",
+      "record_sha256": "cfd32340acfa83d7ffcc3042fb909c4198c0d8e3f4aa1aa32f0c0042d9907bce",
+      "failed_checks": [
+        "character-role",
+        "hero-scale",
+        "hierarchy"
+      ],
+      "invocation_sha256": "23fe74f8d8b70e51814f6540d2103c4dfc48ed3b03f4caef7c32b67d418c4769"
+    },
+    {
+      "record": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-reference-calibrated/reference-gates/concept-plan2-before-revision-1/record.json",
+      "record_sha256": "04f9f284918669297896e21f6cf1d66df5f902fe2d51c5821b334b08b9b46b7d",
+      "failed_checks": [
+        "character-role",
+        "hero-scale",
+        "hierarchy"
+      ],
+      "invocation_sha256": "a86c15b82df6fd55220efba7a27586c5d9d3530884c819e3f9ee72e10151a343"
+    },
+    {
+      "record": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-reference-calibrated/reference-gates/concept-plan2-before-revision-2/record.json",
+      "record_sha256": "42b1ce7b027534c34d3341d32efc10a9cb292e894662a792af7a585a601d1164",
+      "failed_checks": [
+        "character-role"
+      ],
+      "invocation_sha256": "382fc691f67f21536c82c2b40924782247e431b15d3057c761dd9123afba35fd"
+    }
+  ],
+  "moving_budget_consumed": 0
+}

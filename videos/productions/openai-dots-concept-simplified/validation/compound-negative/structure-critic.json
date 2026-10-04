@@ -1,0 +1,150 @@
+{
+  "role": "structure",
+  "inspection_scope": "Complete supplied script, five rhetorical chapters, nine setups, eleven beat contracts, token lifecycles, production calibration and attached reference evidence. Structural review before animation.",
+  "checks": [
+    {
+      "check": "METAPHOR_OVERLOAD",
+      "status": "PASS",
+      "evidence": "Permission, commercial access, specialization, future teamwork and trust occupy distinct worlds. The connected-work problem is separate causal mechanisms within one apparatus, assessed under COMPOUND_VISUAL_RULE."
+    },
+    {
+      "check": "STATE_ACCUMULATION_WITHOUT_MEANING",
+      "status": "PASS",
+      "evidence": "b04 turns previous work faces out of view; b05 replaces proposals. The retained conversation face in b10 expresses the continuing editorial contrast."
+    },
+    {
+      "check": "SEMANTIC_GROUP_OVERLOAD",
+      "status": "PASS",
+      "evidence": "Contracts sequence dominant regions rather than activating unrelated groups together. Source excerpts, synthesis and draft belong to one assigned job."
+    },
+    {
+      "check": "COMPOSITIONAL_STAGNATION",
+      "status": "PASS",
+      "evidence": "Planned staging changes between diagonal computers, coupling detail, proposal fan, fitting close-up, sealed diagram, stopping gap, paired admission leaves, depth transformation and unresolved key contact."
+    },
+    {
+      "check": "CONTINUITY_TOKEN_OVERLOAD",
+      "status": "PASS",
+      "evidence": "The Dot token maintains agent identity, the brief records job development, and the key recalls retained authority. Each has an origin, ordered uses, state changes and destination; previous sets do not travel with them."
+    },
+    {
+      "check": "CLUTTER_WITHOUT_PURPOSE",
+      "status": "PASS",
+      "evidence": "Declared geometry supplies support, material origin, qualification, ownership or pending state. Irregular corners, projecting edges and unequal key teeth have specified narrative functions."
+    },
+    {
+      "check": "WEAK_RESET_RHYTHM",
+      "status": "FAIL",
+      "evidence": "s02-connected-work retains one setup across b02's connection-dependent passage, b03's input landing and b04's control-driven document transformation. Reframing suppresses earlier geometry but does not reset the changed causal rule."
+    },
+    {
+      "check": "COMPETING_FOCI",
+      "status": "PASS",
+      "evidence": "The contracts assign sequential primary actions and subordinate supporting geometry. b04 establishes draft identity before foreground closure and excludes the sleeve from the draft and operative hand."
+    },
+    {
+      "check": "CAPTION_CARRIES_STORY",
+      "status": "PASS",
+      "evidence": "Central actions specify separation, enabled passage, document development, task replacement, compatibility, sealed readiness, blocked execution, unequal admission and withheld transfer. Necessary local labels identify products and qualifications rather than bottom captions supplying all meaning."
+    },
+    {
+      "check": "REFERENCE_STRUCTURE_GAP",
+      "status": "PASS",
+      "evidence": "The plan transfers purposeful state development, task identity, isolated qualifications and semantic world variety from the supplied calibration. Its novel deck staging has structural defects assessed separately; lower density and absent Bot roles are justified."
+    },
+    {
+      "check": "REFERENCE_SCENE_IMITATION",
+      "status": "PASS",
+      "evidence": "No planned hero, environment and choreography combination reproduces the selected gift pedestal, construction site, shield ensemble, track race, suspended city apparatus, stacked chats, waveform room or internal gold scenes."
+    },
+    {
+      "check": "COMPOUND_VISUAL_RULE",
+      "status": "FAIL",
+      "evidence": "s02-connected-work changes from coupling closure permitting passage in b02, to pushing a carrier against a computer input stop in b03, to repeated control presses transforming fold faces in b04. A common deck and unchanged brief do not make these distinct causal relationships successive states of one physical rule."
+    },
+    {
+      "check": "UNNECESSARY_VISIBLE_MECHANISM",
+      "status": "PASS",
+      "evidence": "b03 crops the completed coupling and source wing; b04 reduces the computer to supporting context and turns obsolete work faces away. Other setups discard their apparatus at resets."
+    },
+    {
+      "check": "ACTOR_AMBIGUITY",
+      "status": "FAIL",
+      "evidence": "In s02-connected-work, b04 makes every source-to-synthesis-to-draft change depend on Bot pressing the next-step control. The Dot remains seated as identity while Motif Bot visibly performs and continues the work attributed to the product."
+    }
+  ],
+  "setup_assessments": [
+    {
+      "setup_id": "s01-agency",
+      "status": "PASS",
+      "evidence": "b01 develops one independent-workspace relationship: separation followed by persistence when the user side closes. Only agent identity crosses the reset."
+    },
+    {
+      "setup_id": "s02-connected-work",
+      "status": "FAIL",
+      "evidence": "b02–b04 combine connection-dependent passage, input placement and control-driven transformation without a rule reset; b04 assigns the product's continuing work to Bot."
+    },
+    {
+      "setup_id": "s03-use-pitch",
+      "status": "PASS",
+      "evidence": "b05 replaces business and personal proposals at one fitting without adding execution or retaining the preceding computer world."
+    },
+    {
+      "setup_id": "s04-specialists",
+      "status": "PASS",
+      "evidence": "b06 isolates task compatibility under a permanent preview qualification; no separate work process is appended."
+    },
+    {
+      "setup_id": "s05-planned-teams",
+      "status": "PASS",
+      "evidence": "b07 reveals one prospective diagram while its operational joint remains sealed. The broad diagonal sheet changes staging from the preceding fitting detail."
+    },
+    {
+      "setup_id": "s06-permission",
+      "status": "PASS",
+      "evidence": "b08 develops approach, arrest and waiting under one authority boundary. Bot reacts; approval remains untouched and the key stays user-side."
+    },
+    {
+      "setup_id": "s07-commercial-access",
+      "status": "PASS",
+      "evidence": "b09 sequentially exposes equal-scale admission conditions within one comparison, separately from sensitive-action authority."
+    },
+    {
+      "setup_id": "s08-editorial-reframe",
+      "status": "PASS",
+      "evidence": "b10 transforms one editorial object from conversation dominance to persistent-work dominance. Retaining its conversation face communicates the expanded argument."
+    },
+    {
+      "setup_id": "s09-unresolved-keys",
+      "status": "PASS",
+      "evidence": "b11 recalls the scoped key and original agent token through an incomplete handoff. The cradle approaches, Bot watches, and the receiving gap remains open."
+    }
+  ],
+  "violations": [
+    {
+      "code": "COMPOUND_VISUAL_RULE",
+      "setup_ids": [
+        "s02-connected-work"
+      ],
+      "observation": "b02 makes a closed coupling enable passage; b03 introduces carrier placement against an input stop; b04 introduces a next-step control and hinged content transformation. Shared support and task identity provide continuity but do not unify these mechanisms.",
+      "smallest_structural_correction": "Keep b02 as a connection setup. Make b03 a landing state that establishes the separate computer, then reset into b04's developing-job setup carrying only the identifiable brief. Remove completed coupling apparatus from the new work stage."
+    },
+    {
+      "code": "WEAK_RESET_RHYTHM",
+      "setup_ids": [
+        "s02-connected-work"
+      ],
+      "observation": "The planned detail-to-subject reframing changes the hero from coupling to input stop to work folds while preserving a setup whose governing causal relationship has changed.",
+      "smallest_structural_correction": "Record explicit setup boundaries between connection, separate-computer placement and job development, preserving the exact narration and brief identity across those resets."
+    },
+    {
+      "code": "ACTOR_AMBIGUITY",
+      "setup_ids": [
+        "s02-connected-work"
+      ],
+      "observation": "b04 requires Bot control contact for every work-fold advance, including continued drafting after the user-chat sleeve closes. The supposedly functional Dot token remains an identity marker, so the central action attributes product work to Motif Bot.",
+      "smallest_structural_correction": "In the separate job-development setup, assign fold advancement to the Dot-bound computer process. Make Bot a reactor or absent; preserve recognizable source-to-draft changes and continuation after foreground closure."
+    }
+  ],
+  "limits": "REPLAN_REQUIRED. This data-only review cannot establish rendered/mobile performance, contact readability, continuous motion, caption-free native comprehension or listening quality. Supplied images are reference evidence, not production BEFORE/CONTACT/AFTER proofs. Planned hierarchy passes do not approve execution, assets, factual claims or final artwork."
+}

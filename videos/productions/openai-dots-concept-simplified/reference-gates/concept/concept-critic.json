@@ -1,0 +1,201 @@
+{
+  "role": "concept",
+  "status": "FAIL",
+  "setup_assessments": [
+    {
+      "setup_id": "s02-app-access",
+      "checks": [
+        {
+          "check": "ACTOR_AMBIGUITY",
+          "status": "PASS",
+          "evidence": "b02 BEFORE/CONTACT/AFTER: the circular Dot changes position while the terminal stays fixed; no competing operator appears.",
+          "reference_id": "Dd15NcHvlNl-s20"
+       	        ,
+       		 "correction": ""
+        },
+        {
+          "check": "COMPOUND_VISUAL_RULE",
+          "status": "PASS",
+          "evidence": "b02 stages one connection rule: close the gap, establish contact, join the terminal marks. Computing and job development occupy the separate setup.",
+          "reference_id": "Dd15NcHvlNl-s14",
+          "correction": ""
+        },
+        {
+          "check": "CONTACT_PROOF_UNREADABLE",
+          "status": "PASS",
+          "evidence": "Images 8–10 show an open gap, rim-to-terminal adjacency with a dark receiving edge, and sustained contact with joined marks. The ledge supports both objects. This establishes static staging only.",
+          "reference_id": "Dd15NcHvlNl-s20",
+          "correction": ""
+        },
+        {
+          "check": "UNNECESSARY_VISIBLE_MECHANISM",
+          "status": "PASS",
+          "evidence": "The folder symbol and connecting line identify the app relationship; the terminal and ledge serve contact. No processing apparatus shares this composition.",
+          "reference_id": "Dd15NcHvlNl-s14",
+          "correction": ""
+        },
+        {
+          "check": "art-density",
+          "status": "PASS",
+          "evidence": "A small set of large shapes makes the disconnected-to-connected change readable. Additional reference prop density is unnecessary.",
+          "reference_id": "Dd45WmVPOfQ-s10",
+          "correction": ""
+        },
+        {
+          "check": "character-role",
+          "status": "NOT_APPLICABLE",
+          "evidence": "Bot is absent. The illustrative Dot token supplies product agency without requiring character acting.",
+          "reference_id": "Dd4oMBpyEq_-s07",
+          "correction": ""
+        },
+        {
+          "check": "distinct-silhouettes",
+          "status": "PASS",
+          "evidence": "Circular token, upright rectangular terminal and cropped app card remain distinguishable through contact.",
+          "reference_id": "Dd2uCwTB6II-s02",
+          "correction": ""
+        },
+        {
+          "check": "hero-scale",
+          "status": "PASS",
+          "evidence": "At native portrait size, both mating objects and the separated versus joined marks are large enough to inspect.",
+          "reference_id": "Dd2HMwIy6D3-s14",
+          "correction": ""
+        },
+        {
+          "check": "hierarchy",
+          "status": "PASS",
+          "evidence": "The contact pair occupies the foreground action region; the app card supplies context without adding a second changing result.",
+          "reference_id": "Dd15NcHvlNl-s14",
+          "correction": ""
+        },
+        {
+          "check": "intentional-space",
+          "status": "PASS",
+          "evidence": "The initial gap communicates disconnection, and open backing isolates the approach and receiving surface.",
+          "reference_id": "Dd45WmVPOfQ-s10",
+          "correction": ""
+        },
+        {
+          "check": "novelty",
+          "status": "PASS",
+          "evidence": "The supported token-to-terminal connection does not reproduce any selected reference's combined hero, environment and choreography.",
+          "reference_id": "Dd15NcHvlNl-s20",
+          "correction": ""
+        },
+        {
+          "check": "set-specificity",
+          "status": "PASS",
+          "evidence": "The fixed app terminal, routed app symbol and thick supporting ledge establish a purposeful access context.",
+          "reference_id": "Dd15NcHvlNl-s14",
+          "correction": ""
+        },
+        {
+          "check": "setup-variety",
+          "status": "PASS",
+          "evidence": "App engagement uses a foreground contact pair; cloud processing uses supported paper capture and successive job states. The apparatus reset follows the semantic change.",
+          "reference_id": "Dd2UAqOvDoO-s05",
+          "correction": ""
+        }
+      ]
+    },
+    {
+      "setup_id": "s02-cloud-process",
+      "checks": [
+        {
+          "check": "ACTOR_AMBIGUITY",
+          "status": "PASS",
+          "evidence": "b03/b04 retain the original circular token on an attached computer margin. The brief remains passive material, and no Bot or second operator appears.",
+          "reference_id": "Dd45WmVPOfQ-s08",
+          "correction": ""
+        },
+        {
+          "check": "COMPOUND_VISUAL_RULE",
+          "status": "PASS",
+          "evidence": "Input capture and subsequent source, outline and draft states use one aperture and one paper route. No new apparatus is introduced for each work state.",
+          "reference_id": "Dd2UAqOvDoO-s05",
+          "correction": ""
+        },
+        {
+          "check": "CONTACT_PROOF_UNREADABLE",
+          "status": "FAIL",
+          "evidence": "b03 CONTACT/AFTER, images 12–13: the leading edge reaches the open aperture region, but readable overlap beneath a receiving lip is not established. The short teal input-edge mark also becomes detached from the paper in AFTER. b04 shows supported related states, but its boundary samples do not resolve that missing capture relationship.",
+          "reference_id": "Dd15NcHvlNl-s13",
+          "correction": "Restage b03 CONTACT and AFTER so the same leading edge visibly passes beneath an identifiable receiving lip while retaining its attached task notch. Carry that overlap and identity into both b04 boundary proofs. Preserve the bottom support and attached ownership token."
+        },
+        {
+          "check": "UNNECESSARY_VISIBLE_MECHANISM",
+          "status": "PASS",
+          "evidence": "b03 includes input support and separated user-device context; b04 crops to the aperture, developing paper and ownership cue. No extra control deck or processing mechanism remains.",
+          "reference_id": "Dd45WmVPOfQ-s08",
+          "correction": ""
+        },
+        {
+          "check": "art-density",
+          "status": "PASS",
+          "evidence": "The cream work material becomes progressively organized while recognizable yellow and blue source shapes recur. Sparse content still communicates meaningful state development.",
+          "reference_id": "Dd2UAqOvDoO-s05",
+          "correction": ""
+        },
+        {
+          "check": "character-role",
+          "status": "NOT_APPLICABLE",
+          "evidence": "Bot is absent in b03 and b04; the ownership token is an illustrative product symbol.",
+          "reference_id": "Dd4oMBpyEq_-s07",
+          "correction": ""
+        },
+        {
+          "check": "distinct-silhouettes",
+          "status": "PASS",
+          "evidence": "Computer backing, open aperture, folded paper edge and small circular ownership token remain distinguishable. The user-device fragment stays separate.",
+          "reference_id": "Dd15NcHvlNl-s13",
+          "correction": ""
+        },
+        {
+          "check": "hero-scale",
+          "status": "PASS",
+          "evidence": "b03 makes the receiving computer and brief substantial; b04 enlarges the developing paper so its recurring source shapes and changed organization remain legible.",
+          "reference_id": "Dd2HMwIy6D3-s14",
+          "correction": ""
+        },
+        {
+          "check": "hierarchy",
+          "status": "PASS",
+          "evidence": "The wider b03 view establishes computing context. The tighter b04 view makes job development dominant and keeps the ownership token subordinate.",
+          "reference_id": "Dd2HMwIy6D3-s17",
+          "correction": ""
+        },
+        {
+          "check": "intentional-space",
+          "status": "PASS",
+          "evidence": "b03 separates the inactive user-device edge from the computer support; b04 removes that context and reserves the working window for successive content.",
+          "reference_id": "Dd4Le3YhCQt-s05",
+          "correction": ""
+        },
+        {
+          "check": "novelty",
+          "status": "PASS",
+          "evidence": "An aperture containing successive related paper states differs from the selected construction tableau, waveform panels, scrapbook reveal and internal library choreography.",
+          "reference_id": "Dd2UAqOvDoO-s05",
+          "correction": ""
+        },
+        {
+          "check": "set-specificity",
+          "status": "PASS",
+          "evidence": "The folded cloud backing, attached ownership margin, input ledge and recessed working aperture establish a specific miniature computing context.",
+          "reference_id": "Dd45WmVPOfQ-s08",
+          "correction": ""
+        },
+        {
+          "check": "setup-variety",
+          "status": "PASS",
+          "evidence": "This setup replaces app-contact apparatus with a distinct computing context, then develops that context through a justified closer crop rather than resetting at each task state.",
+          "reference_id": "Dd4Le3YhCQt-s05",
+          "correction": ""
+        }
+      ]
+    }
+  ],
+  "novelty_warnings": [],
+  "limits": "Reviewed only s02-app-access and s02-cloud-process using supplied caption-free native stills, proof sheets and reference evidence. FAIL blocks the scoped concept gate until capture staging is corrected. These are static staging assessments, not motion approval. No playback, listening, timing, continuous-feed verification, finished-texture assessment or hash verification occurred. Eight inherited setups receive no new approval. No unresolved reference structure or scene-imitation warning was found."
+}

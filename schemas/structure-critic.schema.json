@@ -25,7 +25,10 @@
               "CLUTTER_WITHOUT_PURPOSE",
               "WEAK_RESET_RHYTHM",
               "COMPETING_FOCI",
-              "CAPTION_CARRIES_STORY"
+              "CAPTION_CARRIES_STORY",
+              "COMPOUND_VISUAL_RULE",
+              "UNNECESSARY_VISIBLE_MECHANISM",
+              "ACTOR_AMBIGUITY"
             ]
           },
           "status": {
@@ -95,7 +98,10 @@
               "CLUTTER_WITHOUT_PURPOSE",
               "WEAK_RESET_RHYTHM",
               "COMPETING_FOCI",
-              "CAPTION_CARRIES_STORY"
+              "CAPTION_CARRIES_STORY",
+              "COMPOUND_VISUAL_RULE",
+              "UNNECESSARY_VISIBLE_MECHANISM",
+              "ACTOR_AMBIGUITY"
             ]
           },
           "setup_ids": {

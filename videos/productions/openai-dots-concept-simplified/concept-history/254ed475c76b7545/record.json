@@ -1,0 +1,18 @@
+{
+  "status": "REVISE_ART_DIRECTION",
+  "blocked": [
+    "s02-app-access: hero-scale",
+    "s02-app-access: hierarchy",
+    "s02-cloud-process: CONTACT_PROOF_UNREADABLE",
+    "s02-cloud-process: hierarchy",
+    "REFERENCE_STRUCTURE_GAP \u2014 s02-cloud-process, b03 BEFORE/CONTACT and b04 state boundaries: the proposed supported capture and continuous material development are not established by the actual staging. Fixed borders, detached source duplicates and a minimally changed draft weaken the calibrated physical relationship and meaningful state succession. Replan the strip passage and draft development before approval.",
+    "global concept FAIL"
+  ],
+  "plan_sha256": "5f209840bac2ffa95d6f07ed70da45f839a742896944d116738842118361a185",
+  "calibration_record_sha256": "98ab0bc17058fe42301cd62fdc84228b8938d0da06a34981a47fda120fb263e2",
+  "evidence_path": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-concept-simplified/concept-evidence.json",
+  "evidence_sha256": "e19f3b08aa7022319df2de69490da960dd1a785f287b49a5b4032f3dc716e2d3",
+  "response_sha256": "0c4a03548810c7c410da71732eafe95c27753a975ad657967296fc1652a20dc7",
+  "invocation_sha256": "254ed475c76b7545afee9880a8352c73a5673d3b681fc7bd9407f5e0969d6687",
+  "human_approval": false
+}

@@ -16,3 +16,8 @@ Required checks (PASS means no violation found, not a polished film):
 - CAPTION_CARRIES_STORY: central action lacks the meaning that captions alone supply.
 
 Each failed check requires at least one matching violation. A setup marked FAIL must be implicated in a violation and every implicated setup must be FAIL. Otherwise use PASS or NOT_ASSESSED. Replan architecture; do not propose texture or effect polish as a cure. Limits must state data-only review cannot establish rendered/mobile performance. Internal examples are behavioral evidence, not plots to copy.
+
+Concept simplification checks (inspect actual beat contracts, not only setup descriptions):
+- COMPOUND_VISUAL_RULE: Can every beat be understood as successive states of ONE physical rule? Related narration alone does not justify docking → relocation → process inside one apparatus. Split when each change needs a different hero relationship/mechanism. No slash/verb-count heuristic.
+- UNNECESSARY_VISIBLE_MECHANISM: planned inactive apparatus competes with the current hero. Allow tight reframing, folding, removal and dimming within valid setups; continuity need not carry a wide master world.
+- ACTOR_AMBIGUITY: distinguish story subject, causal actor and Bot role. Flag unclear competing agency; product tokens may act while Bot reacts/presents or is absent. Two agents alone is not failure.

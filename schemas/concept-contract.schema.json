@@ -1,0 +1,173 @@
+{
+  "type": "object",
+  "properties": {
+    "version": {
+      "const": "hero-succession-v1",
+      "type": "string"
+    },
+    "beats": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "beat_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "story_subject": {
+            "type": "string",
+            "minLength": 1
+          },
+          "causal_actor": {
+            "type": "string",
+            "minLength": 1
+          },
+          "bot_role": {
+            "type": "string",
+            "enum": [
+              "participant",
+              "reactor",
+              "presenter",
+              "absent"
+            ]
+          },
+          "physical_rule": {
+            "type": "string",
+            "minLength": 1
+          },
+          "hero": {
+            "type": "string",
+            "minLength": 1
+          },
+          "prune_inactive": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "relationships": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "verb": {
+                  "type": "string",
+                  "enum": [
+                    "compare",
+                    "burden",
+                    "accumulate",
+                    "reveal",
+                    "transform",
+                    "process",
+                    "handoff",
+                    "test",
+                    "gate",
+                    "approval",
+                    "block",
+                    "background-work",
+                    "selection",
+                    "callback",
+                    "price",
+                    "restore",
+                    "route",
+                    "inspection",
+                    "multi-agent-work",
+                    "interface-interaction"
+                  ]
+                },
+                "rationale": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              },
+              "required": [
+                "verb",
+                "rationale"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "interactions": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "actor": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "surface": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "support": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "ownership_before": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "ownership_after": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "before": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "contact": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "after": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "blocked_state": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              },
+              "required": [
+                "id",
+                "actor",
+                "surface",
+                "support",
+                "ownership_before",
+                "ownership_after",
+                "before",
+                "contact",
+                "after",
+                "blocked_state"
+              ],
+              "additionalProperties": false
+            }
+          }
+        },
+        "required": [
+          "beat_id",
+          "story_subject",
+          "causal_actor",
+          "bot_role",
+          "physical_rule",
+          "hero",
+          "prune_inactive",
+          "relationships",
+          "interactions"
+        ],
+        "additionalProperties": false
+      }
+    }
+  },
+  "required": [
+    "version",
+    "beats"
+  ],
+  "additionalProperties": false
+}

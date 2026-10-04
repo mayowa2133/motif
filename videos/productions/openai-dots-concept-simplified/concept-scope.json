@@ -1,0 +1,22 @@
+{
+  "original_project": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-reference-calibrated",
+  "original_plan_sha256": "7951e23b688e1a9584389234d2be36f00158b7d32113a02af783f97f43263a88",
+  "replaced_setup": "s02-connected-work",
+  "review_setup_ids": [
+    "s02-app-access",
+    "s02-cloud-process"
+  ],
+  "preserved_setup_ids": [
+    "s01-agency",
+    "s03-use-pitch",
+    "s04-specialists",
+    "s05-planned-teams",
+    "s06-permission",
+    "s07-commercial-access",
+    "s08-editorial-reframe",
+    "s09-unresolved-keys"
+  ],
+  "escape": "split",
+  "patch_sha256": "096e60688184e213c0dc0175b5b3dc97396a5c8f292c486bbfc873ebfaf17cbb",
+  "old_concepts_archived_in_place": true
+}

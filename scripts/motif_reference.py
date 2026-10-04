@@ -12,9 +12,10 @@ from jsonschema import Draft202012Validator
 ROOT=Path(__file__).resolve().parents[1]
 DEFAULT=Path.home()/'.local/share/motif/reference-corpus/private-seven-v1'
 DIMENSIONS={'macro-rhythm','visual-density','interaction','character-performance','ui-physicalization','motion-hierarchy','set-richness','designed-irregularity','effect-character','typographic-rhythm','transition-rhythm'}
-CONCEPT={'setup-variety','hero-scale','art-density','set-specificity','intentional-space','distinct-silhouettes','character-role','hierarchy','novelty'}
+CONCEPT={'setup-variety','hero-scale','art-density','set-specificity','intentional-space','distinct-silhouettes','character-role','hierarchy','novelty','COMPOUND_VISUAL_RULE','UNNECESSARY_VISIBLE_MECHANISM','ACTOR_AMBIGUITY','CONTACT_PROOF_UNREADABLE'}
 OPENING={'energy','acting','hierarchy','tactility','caption-rhythm','physicality','novelty'}
 POLICIES=['scripts/motif_reference.py','quality/reference-director/PROMPT.md','quality/reference-critic/PROMPT.md','quality/reference-critic/policy.json','schemas/reference-calibration.schema.json','schemas/reference-query.schema.json','schemas/reference-gate.schema.json']
+POLICIES+=['scripts/motif_concept.py','quality/concept-director/PROMPT.md','schemas/concept-contract.schema.json','schemas/concept-replan.schema.json','schemas/concept-beat-director.schema.json']
 POLICIES+=['schemas/reference-structure-critic.schema.json','schemas/reference-visual-critic.schema.json']
 
 def read(p):return json.loads(Path(p).read_text())
@@ -157,9 +158,16 @@ def stage_status(plan,report,stage,ids,setup_ids):
 def stage_review(project,stage,evidence_path,config):
  from motif_direct import model_call
  p=Path(project);require_calibration(p,required=True);plan=read(p/'production-plan.json');ev=read(evidence_path);ref,images=context(p);base=p/'reference-gates'/stage;base.mkdir(parents=True,exist_ok=True)
+ if stage=='concept':
+  from motif_concept import prepare,validate_contact_proofs,beat_context,guard_deadlock,archive_review
+  guard_deadlock(p,ev)
+  if not (folder(p)/'beat-record.json').exists():prepare(p,config)
+  validate_contact_proofs(p,ev)
+  extra,beat_images,_=beat_context(p);ref+=extra;images+=beat_images
+  archive_review(p)
  for item in ev['images']:
   if sha(item['file'])!=item['sha256']:raise ValueError('stage image evidence changed')
- images=[Path(x['file']) for x in ev['images']]+images
+ images=[Path(x['file']) for x in ev['images']]+[Path(im['file']) for row in ev.get('contact_proofs',[]) for im in row['frames'].values()]+images
  if not ev['images']:raise ValueError('actual stage images required')
  if stage=='concept':
   if ev.get('caption_free') is not True:raise ValueError('caption-free concept previews required')
@@ -175,10 +183,14 @@ def stage_review(project,stage,evidence_path,config):
   if not ev.get('source_hashes'):raise ValueError('opening rendered source fingerprint required')
   second=ev.get('without_captions')
   if not second or sha(second['file'])!=second['sha256']:raise ValueError('actual caption-free opening proof required')
- prompt=(ROOT/'quality/reference-critic/PROMPT.md').read_text()+f'\nYou are the independent {stage} Art/Reference Critic. This is an INTERNAL prebuild gate, not human approval. Return role {stage}. Assess every supplied setup and exactly these checks:'+json.dumps(sorted(CONCEPT if stage=='concept' else OPENING))+'. Concept: judge representative rough silhouette/scale/interaction composition, not finished texture or animation. Opening: inspect actual ordered full-rate and overview evidence, both caption modes; never claim playback/listening. Purposeful dramatic minimalism may pass; absent characters may be NOT_APPLICABLE only for acting/character-role.\nPLAN:'+json.dumps(plan)+'\nSTAGE EVIDENCE IMAGE ORDER (first attachments):'+json.dumps(ev)+ref
+ prompt=(ROOT/'quality/reference-critic/PROMPT.md').read_text()+f'\nYou are the independent {stage} Art/Reference Critic. This is an INTERNAL prebuild gate, not human approval. Return role {stage}. Assess exactly STAGE EVIDENCE review_setup_ids (or setup_ids when no scoped list) and exactly these checks:'+json.dumps(sorted(CONCEPT if stage=='concept' else OPENING))+'. Review only review_setup_ids when provided; other setups are inherited unchanged and not granted new approval. Concept: judge representative rough silhouette/scale/interaction composition, not finished texture or animation. Opening: inspect actual ordered full-rate and overview evidence, both caption modes; never claim playback/listening. Purposeful dramatic minimalism may pass; absent characters may be NOT_APPLICABLE only for acting/character-role.\nPLAN:'+json.dumps(plan)+'\nSTAGE EVIDENCE IMAGE ORDER (first attachments):'+json.dumps(ev)+ref
  name=stage+'-critic';report=model_call(base,name,prompt,'schemas/reference-gate.schema.json',config,images)
- selected=read(folder(p)/'calibration.json')['selected_setup_ids'];setup_ids=ev['setup_ids'];status=stage_status(plan,report,stage,selected,setup_ids)
- if stage=='concept' and set(setup_ids)!={s['setup_id'] for s in plan['film_structure']['setups']}:raise ValueError('every planned setup needs a concept preview')
+ selected=read(folder(p)/'calibration.json')['selected_setup_ids'];setup_ids=ev.get('review_setup_ids',ev['setup_ids'])
+ if stage=='concept':
+  from motif_concept import beat_context
+  _,_,beat_ids=beat_context(p);selected+=beat_ids
+ status=stage_status(plan,report,stage,selected,setup_ids)
+ if stage=='concept' and set(ev['setup_ids'])!={s['setup_id'] for s in plan['film_structure']['setups']}:raise ValueError('every planned setup needs a concept preview')
  write(base/'record.json',{**status,'plan_sha256':sha(p/'production-plan.json'),'calibration_record_sha256':sha(folder(p)/'record.json'),'evidence_path':str(Path(evidence_path).resolve()),'evidence_sha256':sha(evidence_path),'response_sha256':sha(base/(name+'.json')),'invocation_sha256':sha(base/(name+'-invocation.json')),'human_approval':False})
  if status['status']!='PASS':raise ValueError(stage+' '+status['status']+': '+json.dumps(status['blocked']))
  return report
@@ -200,7 +212,11 @@ def require_stage(project,stage):
    source=Path(source).resolve()
    if not source.is_relative_to(p.resolve()) or sha(source)!=digest:raise ValueError(stage+' source changed')
   if stage=='opening' and not ev.get('source_hashes'):raise ValueError('opening rendered source fingerprint required')
-  result=stage_status(plan,report,stage,read(folder(p)/'calibration.json')['selected_setup_ids'],ev['setup_ids'])
+  selected=read(folder(p)/'calibration.json')['selected_setup_ids']
+  if stage=='concept':
+   from motif_concept import validate_contact_proofs,beat_context
+   validate_contact_proofs(p,ev);_,_,beat_ids=beat_context(p);selected+=beat_ids
+  result=stage_status(plan,report,stage,selected,ev.get('review_setup_ids',ev['setup_ids']))
   if result['status']!='PASS' or r['status']!='PASS':raise ValueError(stage+' gate blocked')
   if stage=='concept' and set(ev['setup_ids'])!={s['setup_id'] for s in plan['film_structure']['setups']}:raise ValueError('concept coverage incomplete')
   return r

@@ -1,0 +1,36 @@
+{
+  "previous_dots_files": 1928,
+  "previous_dots_unchanged": true,
+  "changed_previous_files": [],
+  "frozen_gold_and_canonical_files": 540,
+  "gold_unchanged": true,
+  "changed_gold_files": [],
+  "preserved_setups": [
+    "s01-agency",
+    "s03-use-pitch",
+    "s04-specialists",
+    "s05-planned-teams",
+    "s06-permission",
+    "s07-commercial-access",
+    "s08-editorial-reframe",
+    "s09-unresolved-keys"
+  ],
+  "preserved_preview_hashes": {
+    "s01-agency": "fffbb53dc8b566fd5f68f85a69879018de001f4009a6e91a1973c6186af75455",
+    "s03-use-pitch": "5a1ae78af9ecce2d7041234b68d5e6ba4fe59a9ac7d44aaa7dd2abd94aadd172",
+    "s04-specialists": "9f630f7377088c27d62eb9c90d0bee2b5a6d154dd20de1a749f1ed7dc9eb7b81",
+    "s05-planned-teams": "33e2896713d8905e5f4d5359d9435b3c2bef0706fb5ee5342889158c5934444a",
+    "s06-permission": "e871a2baa0249ce2fc6db563bedaa28cfc7202eeef82ac23b80329bf106d7eb5",
+    "s07-commercial-access": "3d9ec2763efc28783992603e380e49112caf52e583b95089847184c56c19ff19",
+    "s08-editorial-reframe": "0d3590525ae9e7a93be5da156688cd9be0a4d1a3b9fe1e3ceb90416b5a9341df",
+    "s09-unresolved-keys": "9df2951db6579576a7463ee2b5b4f02636ffe4d03c2dd2bd2ff0015e0acb1486"
+  },
+  "corpus_videos": 7,
+  "corpus_setups": 91,
+  "corpus_source_integrity": "PASS",
+  "script_unchanged": true,
+  "native_contact_proofs": 3,
+  "state_boundaries": 2,
+  "animation_created": false,
+  "concept_evidence_sha256": "10d27fff5fe81411c5cc3b5270e15a84522fead834c8be621d8ae47b820cddc6"
+}

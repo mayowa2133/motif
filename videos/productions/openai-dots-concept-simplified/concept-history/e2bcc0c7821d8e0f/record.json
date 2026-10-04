@@ -1,0 +1,14 @@
+{
+  "status": "REVISE_ART_DIRECTION",
+  "blocked": [
+    "s02-cloud-process: CONTACT_PROOF_UNREADABLE",
+    "global concept FAIL"
+  ],
+  "plan_sha256": "5f209840bac2ffa95d6f07ed70da45f839a742896944d116738842118361a185",
+  "calibration_record_sha256": "98ab0bc17058fe42301cd62fdc84228b8938d0da06a34981a47fda120fb263e2",
+  "evidence_path": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-concept-simplified/concept-evidence.json",
+  "evidence_sha256": "10d27fff5fe81411c5cc3b5270e15a84522fead834c8be621d8ae47b820cddc6",
+  "response_sha256": "3ab98ae7cb976eec056178e236ffe1ae44d3217a775a97229a3962113f3eab4d",
+  "invocation_sha256": "e2bcc0c7821d8e0fe1b40e736c0db5616693dbae57b1584aaf702e14192b99df",
+  "human_approval": false
+}

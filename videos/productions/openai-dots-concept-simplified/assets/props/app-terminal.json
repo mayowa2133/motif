@@ -1,0 +1,62 @@
+{
+  "id": "app-terminal-concept-v1",
+  "name": "app terminal",
+  "category": "computing",
+  "subcategory": "production-concept",
+  "concepts": [
+    "connection",
+    "assigned-work"
+  ],
+  "keywords": [
+    "app-terminal",
+    "paper"
+  ],
+  "style": "reference-expressive-v1",
+  "orientation": "front",
+  "dimensions": {
+    "width": 620,
+    "height": 443,
+    "unit": "px"
+  },
+  "artBox": {
+    "x": 54,
+    "y": 418,
+    "width": 620,
+    "height": 443
+  },
+  "anchors": {
+    "surface": {
+      "x": 0.5983870967741935,
+      "y": 0.7200902934537246
+    },
+    "support": {
+      "x": 0.5983870967741935,
+      "y": 0.8781038374717833
+    }
+  },
+  "compatibleCharacters": [
+    "motif-bot"
+  ],
+  "supportedActions": [
+    "static-contact-proof"
+  ],
+  "sourceType": "vector",
+  "source": {
+    "disconnected": {
+      "file": "videos/productions/openai-dots-concept-simplified/assets/props/app-terminal-disconnected.svg",
+      "sha256": "a91a1f53b08848a74e45bd97aef6a0e58f400056b97100ec2e95f5e77a531aba"
+    },
+    "connected": {
+      "file": "videos/productions/openai-dots-concept-simplified/assets/props/app-terminal-connected.svg",
+      "sha256": "1e7cbd6402613ac04e4f0cfc6344c9fc1246c7c515cfbf2f4adeb68564562cf3"
+    }
+  },
+  "version": 1,
+  "status": "review",
+  "license": "project-original",
+  "required_capability_ids": [
+    "agent-assisted:app-terminal-artwork",
+    "agent-assisted:terminal-contact-anchors"
+  ],
+  "development": "Agent-assisted static SVG artwork only. No motion, mask/feed adapter or runtime registration implemented. Dot and job identity primitives reused unchanged. External references supply no pixels."
+}

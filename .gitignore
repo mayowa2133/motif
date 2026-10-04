@@ -26,3 +26,6 @@ videos/productions/openai-dots-news/quality-review/rough*/captions/
 videos/productions/openai-dots-news/quality-review/rough*/no-captions/
 videos/productions/openai-dots-news/quality-review/rough*/evidence-*/
 videos/productions/openai-dots-news/quality-review/rough*/gold-*/
+
+# Retained draft calibration attempts contain private external evidence.
+videos/productions/*/private-calibration-history/

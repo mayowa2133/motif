@@ -1,0 +1,13 @@
+{
+  "status": "BLOCKED_CONCEPT_DEADLOCK",
+  "scope": "original s02 / b02\u2013b04 only",
+  "structure": "PASS",
+  "app_connection": "PASS",
+  "cloud_process": "BLOCKED_CONTACT_PROOF_UNREADABLE",
+  "concept": "FAIL",
+  "reason": "b03 CONTACT/AFTER, images 12\u201313: the leading edge reaches the open aperture region, but readable overlap beneath a receiving lip is not established. The short teal input-edge mark also becomes detached from the paper in AFTER. b04 shows supported related states, but its boundary samples do not resolve that missing capture relationship.",
+  "required_next_action": "Fresh scoped simplification, changed relationship archetype or further split. No third cosmetic revision of this family. Await user review.",
+  "animation_created": false,
+  "rough_created": false,
+  "moving_budget_consumed": 0
+}

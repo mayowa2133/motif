@@ -1,0 +1,119 @@
+{
+  "version": "hero-succession-v1",
+  "beats": [
+    {
+      "beat_id": "b02",
+      "story_subject": "The Dot's connection to an app",
+      "causal_actor": "The original Dot token",
+      "bot_role": "absent",
+      "physical_rule": "Supported token travel closes a visible gap to a fixed terminal. Only rim-to-face contact joins the terminal's connection marks; local edge compression and recovery remain consequences of that same contact. Reset before b03: terminal engagement and computer input require different apparatus and cannot be treated as successive states of one mechanism. Carry only the original Dot identity across that reset. Agent-assisted terminal artwork and contact choreography require development and review. NOT_ASSESSED: no production caption-free native BEFORE, CONTACT or AFTER evidence is supplied.",
+      "hero": "The Dot token's rim meeting the fixed app-terminal face",
+      "prune_inactive": [
+        "Crop the conversation pocket before terminal contact dominates.",
+        "Exclude computer, brief, job strip and unrelated mechanisms.",
+        "Remove the terminal and travel surface after engagement reads; carry only the Dot token into the reset."
+      ],
+      "relationships": [
+        {
+          "verb": "interface-interaction",
+          "rationale": "App engagement must follow a product-caused surface interaction. Dd2uCwTB6II-s09 frames 834–846 show prompt material entering an interface region and a localized burst diminishing, but do not resolve physical submission contact. Cancellation frames 790–838 show a control-state change associated with the same receipt system, but the supplied samples do not establish exact contact. Transfer localized causality and persistent result identity only; neither reference proves the proposed rim-to-terminal connection."
+        }
+      ],
+      "interactions": [
+        {
+          "id": "b02-token-terminal-contact",
+          "actor": "The original Dot token",
+          "surface": "The fixed generic app terminal's face",
+          "support": "A thick jade surface continuously supports token travel; the terminal is fixed in its edge.",
+          "ownership_before": "The original token identifies the Dot; the app terminal is separate and disconnected.",
+          "ownership_after": "The same token establishes the Dot's engaged app relationship without transferring app ownership.",
+          "before": "Immediately before contact, a readable gap separates token rim and terminal face; connection marks remain separated and the support is visible.",
+          "contact": "The token rim meets the terminal face. Both mating surfaces and their contact shadow must be readable together; this contact alone releases the connection-mark closure and local terminal-edge compression.",
+          "after": "Immediately after contact, the token remains against the terminal and the connection marks are joined. The contacted edge recovers locally without breaking engagement.",
+          "blocked_state": "Connection-mark closure is blocked while any gap remains. NOT_ASSESSED: bounded consecutive caption-free native frames and full-rate playback must establish contact preceding activation; diagnostic markers cannot substitute."
+        }
+      ]
+    },
+    {
+      "beat_id": "b03",
+      "story_subject": "An assigned brief entering the Dot's separate cloud computer",
+      "causal_actor": "The Dot operating its own computer",
+      "bot_role": "absent",
+      "physical_rule": "After the b02 apparatus reset, the Dot's computer captures one passive supported brief through one broad aperture. The leading edge must meet the aperture lip before inward feed begins. The attached original Dot token establishes ownership; it does not become a second operator. Capture establishes the continuous feed used in b04. Agent-assisted computer, brief artwork, feed, masking and ownership bindings require implementation and review. NOT_ASSESSED: the supplied references do not prove this proposed input mechanism.",
+      "hero": "The identifiable brief entering the Dot-owned cloud-computer aperture",
+      "prune_inactive": [
+        "Remove the b02 app terminal and connection route.",
+        "Exclude source wings, task decks and detached panels.",
+        "Keep the inactive user device only as a separated cropped edge.",
+        "Subordinate the attached Dot token to the entering brief."
+      ],
+      "relationships": [
+        {
+          "verb": "handoff",
+          "rationale": "The brief changes from waiting outside to being captured by the Dot's computing surface. Audiobook frames 507–529 establish recognizable book material before pages appear within the output region, but the samples do not prove an aperture-entry contact. Transfer input identity across capture, without copying page flight or library apparatus."
+        },
+        {
+          "verb": "process",
+          "rationale": "Capture initiates the same supported feed that continues in b04. Audiobook frames 522–558 preserve source material while outputs develop within a dominant central region; this supports continuity of material and output, not the proposed computer's feed implementation."
+        }
+      ],
+      "interactions": [
+        {
+          "id": "b03-brief-aperture-entry",
+          "actor": "The Dot operating its computer; the brief is passive input material",
+          "surface": "The broad working aperture's lip",
+          "support": "A continuous shallow input support carries the brief to the aperture; the substantial computer frame supports the lip and attached ownership margin.",
+          "ownership_before": "The brief is assigned to the Dot but remains outside its computer. The original Dot token is attached to the computer's ownership margin; the inactive user device is separated by a clear gap.",
+          "ownership_after": "The same assigned brief is captured inside the Dot-owned computer. Its raised corner, cream stock and teal task notch remain identifiable; ownership does not change.",
+          "before": "Immediately before entry, the leading brief edge rests just outside the aperture on visible support. The aperture lip, original ownership token and separate user-device edge remain readable.",
+          "contact": "The leading brief edge meets the aperture lip before inward movement starts. Edge overlap must establish entry beneath the lip rather than disappearance behind an unrelated mask.",
+          "after": "Immediately after entry, the computer draws the brief inward and visibly captures it beneath the lip. Its identity border remains exposed; the raised corner settles locally.",
+          "blocked_state": "Inward feed is blocked until leading-edge contact. b04 progression depends on readable capture here. NOT_ASSESSED: caption-free native BEFORE, CONTACT and AFTER proofs are missing; feed, masking and ownership bindings remain unsupported proposed capabilities."
+        }
+      ]
+    },
+    {
+      "beat_id": "b04",
+      "story_subject": "The same assigned job developing through successive unfinished states",
+      "causal_actor": "The Dot continuing to operate its computer",
+      "bot_role": "absent",
+      "physical_rule": "Continue b03's captured strip through the same supported aperture without detachment or new apparatus. Source excerpts, outline and unfinished draft succeed one another in one working window; recognizable source shapes, the raised corner and teal notch preserve assignment identity. This is one continuing process rather than separate mechanisms. Earlier content exits instead of accumulating, and pending material remains entering at the end. Agent-assisted state artwork and continuing-feed choreography require implementation and review. NOT_ASSESSED: actual production state boundaries, continuous capture and native hierarchy have not been demonstrated.",
+      "hero": "The same captured brief developing into an unfinished draft",
+      "prune_inactive": [
+        "Crop the computer body.",
+        "Crop the completed input support and inactive user-device edge.",
+        "Retain only the aperture lip, necessary strip support and small attached Dot ownership margin.",
+        "Move earlier source and outline content out of the active window as each next state arrives.",
+        "Exclude completion badges and unrelated mechanisms."
+      ],
+      "relationships": [
+        {
+          "verb": "transform",
+          "rationale": "Recognizable source shapes must recur within the outline and unfinished draft. Audiobook frames 522–558 show recognizable page material followed by successive chapter outputs within one persistent region. Transfer source-to-output identity and hero dominance; the samples do not prove the proposed strip's state transitions."
+        },
+        {
+          "verb": "background-work",
+          "rationale": "The assignment visibly develops while the user context remains inactive. Dd2UAqOvDoO-s05 ordered frames 620–669 show project material progressing from clutter to organized rows; dense frames 639–651 bound continuing workload movement. Transfer meaningful progression within a persistent rule, without copying construction scenery or its completed verdict. These samples do not establish full-rate playback or continuous aperture contact."
+        },
+        {
+          "verb": "process",
+          "rationale": "b03 capture remains the enabling relationship throughout both source-to-outline and outline-to-draft passage. Each boundary needs its own bounded production evidence window, while the physical strip-to-lip contact remains one uninterrupted interaction."
+        }
+      ],
+      "interactions": [
+        {
+          "id": "b04-captured-strip-continuous-feed",
+          "actor": "The Dot operating its computer; the captured strip remains passive material",
+          "surface": "The same working-aperture lip established in b03",
+          "support": "The same shallow supported route continues beneath the cropped aperture lip; necessary support remains visible despite pruning the larger computer.",
+          "ownership_before": "The original assigned brief is already captured in the Dot-owned computer, with its identity border and attached Dot ownership cue visible.",
+          "ownership_after": "The same assignment remains captured and Dot-owned as an unfinished draft; its pending continuation remains exposed.",
+          "before": "Immediately before continued passage, the captured brief displays identifiable source excerpts beneath the lip. Before each state boundary, the current content remains readable alongside its raised corner, notch and recurring source shapes.",
+          "contact": "The moving strip maintains uninterrupted visible overlap beneath the same aperture lip through source-to-outline and outline-to-draft passage. These are content boundaries within one sustained contact, not separate impacts or newly introduced contacts.",
+          "after": "Immediately after each boundary, the next related state occupies the same working window and the previous content exits. At the final state, recognizable source shapes recur within an unfinished draft, the identity border persists and pending continuation is still entering.",
+          "blocked_state": "Continuation depends on established b03 capture. Each next state waits until the current relationship reads; no completion verdict or sensitive external action is released. NOT_ASSESSED: require caption-free native evidence around both state boundaries and a full-rate trace proving continuous support, capture, identity and hierarchy."
+        }
+      ]
+    }
+  ]
+}

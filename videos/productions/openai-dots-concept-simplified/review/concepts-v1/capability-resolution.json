@@ -1,0 +1,20 @@
+{
+  "scope": "Concept only",
+  "artwork": "3 production-scoped review families",
+  "choreography_implemented": false,
+  "canonical_changes": false,
+  "motion": "Not authorized; contact/masking/feed adapters remain development proposals",
+  "reused_identity": [
+    "canonical Motif Bot in eight byte-preserved previews",
+    "existing Dot token",
+    "existing cream/raised-corner/teal-notch brief",
+    "approved Motif paper material"
+  ],
+  "source_sha256": {
+    "videos/productions/openai-dots-concept-simplified/source/connected_art.py": "7048101144b18c3592f532ddd3a40e6bd0ccb931ea6520ed69a72c104be20127",
+    "videos/productions/openai-dots-concept-simplified/source/common.py": "939e743b6feef6438e44e4b263e7dffd18045f78594d691e97e741edc4d74aac",
+    "videos/productions/openai-dots-concept-simplified/source/export_assets.py": "032297b7a3257894ce36538489a8be669a600c13140409ca89f86539082662ef",
+    "videos/productions/openai-dots-concept-simplified/source/identity.py": "87fd0fbdc07b016e960d0851f05fb651e5a1a6279797a7832bbe6cd5783661a5",
+    "videos/productions/openai-dots-concept-simplified/source/concepts.py": "dd469eab921c325dd46ebf52a81f6ba67627ddb381ac3b7ea4612246c485267b"
+  }
+}

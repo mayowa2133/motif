@@ -86,7 +86,7 @@ def model_call(project, name, prompt, schema, config, images=()):
     # New live plans select the quality profile; saved legacy plans still validate
     # against the optional extension. Flatten the condition for the CLI's supported
     # structured-output subset instead of introducing another planning framework.
-    if 'quality_mode' in wire_schema.get('properties',{}):
+    if 'quality_mode' in wire_schema.get('properties',{}) or Path(schema).name=='concept-replan.schema.json':
         wire_schema.pop('allOf',None)
         wire_schema['required']=list(wire_schema['properties'])
         key='shots' if 'shots' in wire_schema['properties'] else 'beats'
@@ -104,6 +104,7 @@ def model_call(project, name, prompt, schema, config, images=()):
     schema_path=project/(name+'-output-schema.json')
     write(schema_path,wire_schema)
     args=[config['cli_path'],'exec','--ignore-user-config','--ephemeral','--skip-git-repo-check','--sandbox','read-only','--json','--color','never','--output-schema',str(schema_path.resolve()),'-o',str(project/(name+'.json')),'-c','approval_policy="never"','-c','model_reasoning_effort='+json.dumps(config['reasoning_effort'])]
+    args+=['-c','developer_instructions='+json.dumps('This invocation is a data-only structured-output service, not a repository coding task. Use only the supplied text and attached images. Do not invoke skills, commands, filesystem reads, web, MCP or other tools. All required policy and reference context is provided inline. Return the requested JSON directly. Tool use invalidates the response.')]
     if config['model']: args+=['--model',config['model']]
     image_inputs=[]
     for image in images:

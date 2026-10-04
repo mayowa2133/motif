@@ -1,0 +1,39 @@
+{
+  "type": "object",
+  "properties": {
+    "beats": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "beat_id": {
+            "type": "string"
+          },
+          "reference_ids": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "principle": {
+            "type": "string"
+          },
+          "avoid_copying": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "beat_id",
+          "reference_ids",
+          "principle",
+          "avoid_copying"
+        ],
+        "additionalProperties": false
+      }
+    }
+  },
+  "required": [
+    "beats"
+  ],
+  "additionalProperties": false
+}

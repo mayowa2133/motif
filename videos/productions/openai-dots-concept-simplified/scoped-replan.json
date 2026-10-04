@@ -1,0 +1,389 @@
+{
+  "reason": "Propositions: b02 establishes app access; b03 locates execution on the Dot's separate computer; b04 develops an assigned job without foreground attention. Five completed failures require abandoning the Bot-operated deck family. Split connection from computation and make the original Dot token the sole causal actor. Archive the rejected concept before applying this patch; preserve the exact script and all eight locked setups. Supplied connection evidence is limited: Dd2uCwTB6II-s09 frames [834,847) show prompt placement but do not resolve transfer or submission contact. Continuing-process evidence is stronger: audiobook frames [507,559) preserve recognizable material through changing output, and Dd2UAqOvDoO-s05 frames [639,652) preserve workload identity across sampled states. Transfer those relationships only. These stills do not prove replacement contacts or playback; production BEFORE, CONTACT and AFTER remain NOT_ASSESSED until caption-free native evidence is reviewed. This patch proposes agent-assisted artwork and action contracts, not executable choreography or a quality PASS. The unused moving-repair budget remains separate.",
+  "escape": "split",
+  "setups": [
+    {
+      "setup_id": "s02-app-access",
+      "chapter": "c02",
+      "narration_span": {
+        "start_word": 20,
+        "end_word": 34,
+        "text": "Instead of living inside one chat bubble, a Dot can connect to your apps,"
+      },
+      "semantic_center": "A Dot gains an engaged relationship with an app beyond conversation.",
+      "visual_rule": "The Dot token contacts a fixed app terminal; that contact changes the terminal from disconnected to connected.",
+      "relationship_archetype": "connection",
+      "hero": "Dot token meeting an app terminal across a visible gap",
+      "bot_role": "absent",
+      "continuity_tokens": [
+        "dot-token"
+      ],
+      "environment_mode": "physical",
+      "palette_family": "Jade access surface with cream and teal",
+      "entry_state": "The original token rests outside a cropped conversation pocket; the fixed app terminal is separated from it by an open gap.",
+      "exit_state": "The token contacts the terminal and its two separated connection marks become one continuous mark.",
+      "reason_for_persistence": "Departure from conversation establishes the starting relationship; terminal contact alone establishes app connection. No input transfer or job processing occurs here.",
+      "planned_reset_after": {
+        "kind": "object-led",
+        "reason": "Carry only the unchanged Dot token into separate computing; remove the app terminal and conversation pocket."
+      },
+      "beat_ids": [
+        "b02"
+      ]
+    },
+    {
+      "setup_id": "s02-cloud-process",
+      "chapter": "c02",
+      "narration_span": {
+        "start_word": 34,
+        "end_word": 49,
+        "text": "use its own cloud computer, and keep chewing through a multi-step job in the background."
+      },
+      "semantic_center": "The Dot's separate computer develops the same assigned job through successive unfinished states.",
+      "visual_rule": "The Dot-controlled computer draws one identifiable job strip through a supported working aperture, exposing successive source, outline and unfinished-draft states.",
+      "relationship_archetype": "input / continuing transformation",
+      "hero": "One job strip developing inside the separate cloud computer",
+      "bot_role": "absent",
+      "continuity_tokens": [
+        "dot-token",
+        "job-brief"
+      ],
+      "environment_mode": "physical",
+      "palette_family": "Dark teal computing surface with cream job paper and jade backing",
+      "entry_state": "The original Dot token is attached to the computer's ownership margin. The cream job brief rests at the open input aperture, with its raised corner and teal task notch visible. A separate inactive user-device edge is subordinate.",
+      "exit_state": "The same brief exposes an unfinished draft and begins revealing its pending continuation; the input edge and user-device context have been cropped away.",
+      "reason_for_persistence": "Input and development belong to one continuous strip-feeding process. The aperture first receives the brief, then reveals its changing work content; no docking apparatus, additional control mechanism or foreground closure is appended.",
+      "planned_reset_after": {
+        "kind": "hard-cut",
+        "reason": "The argument changes from developing assigned work to describing proposed use categories; leave the entire deck behind."
+      },
+      "beat_ids": [
+        "b03",
+        "b04"
+      ]
+    }
+  ],
+  "beats": [
+    {
+      "id": "b02",
+      "narration": "Instead of living inside one chat bubble, a Dot can connect to your apps,",
+      "subject": "The Dot's connection to an app",
+      "action": "The original Dot token travels on a supported surface away from a cropped conversation pocket and contacts a fixed generic app terminal. Only at contact do the terminal's separated connection marks meet.",
+      "before_after": "A visible gap and disconnected terminal become a contacted, engaged app relationship.",
+      "focal_detail": "The token's rim meets the terminal face before the connection mark closes.",
+      "consequence": "App access becomes visibly engaged through product agency.",
+      "headline": "ACCESS BEYOND CONVERSATION",
+      "focus_target": "token-to-terminal contact",
+      "framing": "detail",
+      "actions": [
+        {
+          "kind": "agent-assisted:product-terminal-connect",
+          "cue": "connect to your apps,",
+          "requires": [
+            "Agent-assisted generic app terminal and supported token route; no official interface or avatar",
+            "Original dot-token geometry preserved",
+            "Single causal actor: Dot token; terminal remains fixed",
+            "Terminal state change blocked until token rim contacts its face",
+            "Caption-free native BEFORE: open gap, disconnected mark and supporting surface visible",
+            "Caption-free native CONTACT: token rim, terminal face and contact shadow readable together",
+            "Caption-free native AFTER: sustained contact and joined connection mark",
+            "Contact proof currently NOT_ASSESSED; bounded consecutive native frames and full-rate playback required"
+          ],
+          "produces": [
+            "Engaged app connection",
+            "Unchanged original Dot identity available for the outgoing reset"
+          ]
+        }
+      ],
+      "needed_assets": [
+        "agency-props",
+        "agent-assisted:app-terminal-artwork",
+        "agent-assisted:product-terminal-connect-contract",
+        "agent-assisted:terminal-contact-anchors"
+      ],
+      "quality": {
+        "purpose": "Make app connection legible with one product actor and one contacted surface.",
+        "hero": "Dot token and app terminal contact",
+        "primary_action": "The Dot token closes the connection gap.",
+        "performance": {
+          "state": "absent",
+          "target": ""
+        },
+        "before": "Token and fixed terminal are separated; terminal connection marks are disconnected.",
+        "after": "Token contacts the terminal; its connection marks are joined.",
+        "focal_target": "token-to-terminal contact",
+        "framing": "detail",
+        "reaction_radius": {
+          "origin": [
+            180,
+            320
+          ],
+          "radius": 0.02,
+          "duration": 0.2,
+          "targets": []
+        },
+        "secondary_motion": [
+          "A short terminal-edge compression recovers locally after contact, subject to the proposed action contract."
+        ],
+        "environment": [
+          "Thick jade surface supporting token travel",
+          "Fixed terminal embedded in the surface edge",
+          "Conversation pocket cropped away before contact dominates"
+        ],
+        "exit_overlap": "Carry only the Dot token after the engaged state is readable.",
+        "energy": {
+          "dominant_action": "The token closes the visible contact gap.",
+          "character_response": null,
+          "local_reaction": "Only the contacted terminal edge compresses.",
+          "residual_motion": "The terminal edge recovers while contact remains established.",
+          "next_action_overlap": null
+        },
+        "art_direction": {
+          "hero_object": "Original cream Dot token against a broad teal app terminal",
+          "bot_role": "absent",
+          "materials": [
+            "Cream token card",
+            "Teal terminal stock",
+            "Jade support paper"
+          ],
+          "depth_planes": [
+            "Recessed backing",
+            "Supported access surface",
+            "Token rim and terminal face"
+          ],
+          "composition": "At 360 × 640, the contact pair fills the central action region. The gap and both mating surfaces remain readable without captions. Crop the conversation pocket before engagement; no computer, job strip or other mechanism shares this frame.",
+          "intentional_irregularity": "The conversation pocket has an offset edge; the operative terminal face stays precise.",
+          "environment_mode": "physical",
+          "environment_justification": null
+        }
+      }
+    },
+    {
+      "id": "b03",
+      "narration": "use its own cloud computer,",
+      "subject": "An assigned brief entering the Dot's separate cloud computer",
+      "action": "The original Dot token occupies the ownership margin of a substantial conceptual cloud computer. Its computer draws the supported brief into one broad working aperture. The brief's leading edge meets the aperture before travel inside begins; its raised corner and teal notch remain exposed.",
+      "before_after": "A brief waiting outside the computer becomes a captured input inside its working aperture.",
+      "focal_detail": "The brief's leading edge enters the computer while its identity border stays visible.",
+      "consequence": "The Dot's work is located on its own computing surface, visibly separate from the inactive user device.",
+      "headline": "A SEPARATE PLACE TO WORK",
+      "focus_target": "brief entering the cloud-computer aperture",
+      "framing": "subject",
+      "actions": [
+        {
+          "kind": "agent-assisted:dot-owned-job-feed",
+          "cue": "its own cloud computer,",
+          "requires": [
+            "Agent-assisted conceptual computer with one supported working aperture",
+            "Original dot-token on attached ownership margin; no Bot operator",
+            "Original job-brief identity: cream stock, raised corner and teal task notch",
+            "Single causal actor: Dot operating its computer; input strip is passive material",
+            "Separate user-device edge across a clear physical gap",
+            "Caption-free native BEFORE: brief outside aperture with support and ownership visible",
+            "Caption-free native CONTACT: leading brief edge meets aperture lip; overlap establishes entry",
+            "Caption-free native AFTER: brief captured inside aperture with identity border exposed",
+            "Proposed feed, masking and ownership bindings are unsupported agent-assisted capabilities requiring implementation and review",
+            "Input proof currently NOT_ASSESSED"
+          ],
+          "produces": [
+            "The identifiable brief enters the Dot's computer",
+            "One continuing job-feed process is established"
+          ]
+        }
+      ],
+      "needed_assets": [
+        "agency-props",
+        "agent-assisted:cloud-aperture-artwork",
+        "agent-assisted:job-brief-strip-artwork",
+        "agent-assisted:dot-owned-job-feed-contract",
+        "agent-assisted:input-contact-anchors"
+      ],
+      "quality": {
+        "purpose": "Establish separate computing through a readable input relationship.",
+        "hero": "Cloud computer receiving the identifiable brief",
+        "primary_action": "The Dot's computer draws the brief into its working aperture.",
+        "performance": {
+          "state": "absent",
+          "target": ""
+        },
+        "before": "Brief rests outside the cloud-computer aperture.",
+        "after": "Brief is captured inside the aperture; its identity border remains visible.",
+        "focal_target": "brief entering the cloud-computer aperture",
+        "framing": "subject",
+        "reaction_radius": {
+          "origin": [
+            180,
+            335
+          ],
+          "radius": 0.02,
+          "duration": 0.2,
+          "targets": []
+        },
+        "secondary_motion": [
+          "The raised brief corner settles after entry without losing its silhouette."
+        ],
+        "environment": [
+          "Thick dark computer frame",
+          "Continuous shallow input support",
+          "Separate cropped inactive user-device edge"
+        ],
+        "exit_overlap": "Continue the same brief's feed after capture is readable.",
+        "energy": {
+          "dominant_action": "The brief enters the working aperture.",
+          "character_response": null,
+          "local_reaction": "The paper corner yields locally at entry.",
+          "residual_motion": "Corner recovery follows capture.",
+          "next_action_overlap": "The first work state becomes visible after entry is established."
+        },
+        "art_direction": {
+          "hero_object": "Broad dark cloud-computer aperture receiving cream job paper",
+          "bot_role": "absent",
+          "materials": [
+            "Dark teal computer card",
+            "Cream brief paper",
+            "Jade recessed backing",
+            "Teal identity notch"
+          ],
+          "depth_planes": [
+            "Computer backing",
+            "Aperture lip and supported brief",
+            "Original token on attached ownership margin"
+          ],
+          "composition": "The computer and input fill the action region. The original token is an attached ownership cue, subordinate to the entering brief. The inactive user device appears only as a separated cropped edge. No app terminal, source wing, task deck or detached panel remains.",
+          "intentional_irregularity": "Preserve the brief's raised corner and teal notch through its aperture overlap.",
+          "environment_mode": "physical",
+          "environment_justification": null
+        }
+      }
+    },
+    {
+      "id": "b04",
+      "narration": "and keep chewing through a multi-step job in the background.",
+      "subject": "The same assigned job developing through successive unfinished states",
+      "action": "The Dot's computer continues drawing the same brief through its aperture. Recognizable source shapes first appear as excerpts, then recur inside an outline, then within an unfinished draft. Earlier content leaves the working window as the next state arrives. The identity border remains visible and a pending continuation is still entering at the end.",
+      "before_after": "Captured source material becomes an outline and an unfinished draft while the separate user context remains inactive.",
+      "focal_detail": "The same raised corner, task notch and source shapes survive the changing job content.",
+      "consequence": "Background work is visible development of one assignment, with no completion verdict or sensitive external action.",
+      "headline": "A SEPARATE PLACE TO WORK",
+      "focus_target": "same brief developing through the working aperture",
+      "framing": "detail",
+      "actions": [
+        {
+          "kind": "agent-assisted:dot-owned-job-feed",
+          "cue": "a multi-step job in the background.",
+          "requires": [
+            "b03 input capture established",
+            "Same supported strip and working aperture; no additional apparatus",
+            "Single causal actor remains the Dot operating its computer",
+            "Agent-assisted source, outline and unfinished-draft artwork on one identity-preserving strip",
+            "Earlier states leave the active window rather than accumulating",
+            "Crop inactive input support and user-device geometry as the developing brief becomes dominant",
+            "Caption-free native BEFORE: captured brief displays identifiable source material",
+            "Caption-free native CONTACT: moving strip stays visibly captured beneath the aperture lip during state passage",
+            "Caption-free native AFTER: recognizable source shapes recur in the unfinished draft; pending continuation remains exposed",
+            "Bounded native windows around each state boundary plus full-rate trace required; sampled reference order does not establish playback",
+            "Continuing-process and hierarchy proofs currently NOT_ASSESSED"
+          ],
+          "produces": [
+            "Identity-preserving source-to-outline-to-unfinished-draft development",
+            "Continuing assigned work without foreground user interaction",
+            "Pending continuation rather than a completion badge"
+          ]
+        }
+      ],
+      "needed_assets": [
+        "agency-props",
+        "agent-assisted:cloud-aperture-artwork",
+        "agent-assisted:job-brief-strip-artwork",
+        "agent-assisted:dot-owned-job-feed-contract",
+        "agent-assisted:input-contact-anchors"
+      ],
+      "quality": {
+        "purpose": "Show meaningful background progress through the established computing process.",
+        "hero": "Same brief developing into an unfinished draft",
+        "primary_action": "Feed successive related work states through one supported aperture.",
+        "performance": {
+          "state": "absent",
+          "target": ""
+        },
+        "before": "Captured job paper shows source excerpts.",
+        "after": "The same paper shows an unfinished draft with a pending continuation entering.",
+        "focal_target": "same brief developing through the working aperture",
+        "framing": "detail",
+        "reaction_radius": {
+          "origin": [
+            180,
+            335
+          ],
+          "radius": 0.02,
+          "duration": 0.2,
+          "targets": []
+        },
+        "secondary_motion": [
+          "A short paper-edge recovery follows each state passage without shifting the identity border."
+        ],
+        "environment": [
+          "Cropped computer aperture lip",
+          "Supported job strip",
+          "Small attached Dot ownership margin"
+        ],
+        "exit_overlap": null,
+        "energy": {
+          "dominant_action": "Recognizable job content develops through successive states.",
+          "character_response": null,
+          "local_reaction": "Paper movement stays confined to the captured strip.",
+          "residual_motion": "The outgoing work region settles beyond the active crop.",
+          "next_action_overlap": "Each next state enters only after the current relationship is readable."
+        },
+        "art_direction": {
+          "hero_object": "Cream identity-preserving job strip inside a cropped dark working aperture",
+          "bot_role": "absent",
+          "materials": [
+            "Cream job paper",
+            "Dark teal aperture card",
+            "Teal task notch"
+          ],
+          "depth_planes": [
+            "Recessed work backing",
+            "Developing brief",
+            "Aperture lip and ownership margin"
+          ],
+          "composition": "The developing job fills the central action region. Crop the computer body, completed input support and inactive user-device edge; retain only the aperture lip and original token needed to establish support and ownership. Source, outline and draft occupy the same working window successively. Captions and labels confirm meaning without supplying task identity.",
+          "intentional_irregularity": "Unequal source shapes become organized while the raised corner and one projecting pending edge preserve unfinished paper identity.",
+          "environment_mode": "physical",
+          "environment_justification": null
+        }
+      }
+    }
+  ],
+  "token_changes": [
+    {
+      "id": "dot-token",
+      "state_at_origin": "Small cream circular token with a teal notch; conceptual Dot identity beside a separate computer.",
+      "state_changes": [
+        {
+          "setup_id": "s02-app-access",
+          "change": "Leaves the cropped conversation pocket and directly contacts the fixed app terminal, establishing product agency without changing its geometry."
+        },
+        {
+          "setup_id": "s02-cloud-process",
+          "change": "Reappears on the separate computer's attached ownership margin; remains the sole product actor while the assigned brief develops."
+        }
+      ],
+      "final_destination": "Agent-side receiving recess, separated from the user-side key.",
+      "story_justification": "Replace only the former s02 state change with these two entries. Preserve its origin, identity and all locked specialist, editorial and closing state changes."
+    },
+    {
+      "id": "job-brief",
+      "state_at_origin": "Cream brief with the original distinctive raised corner and teal task notch, resting on the separate computer's shallow input support in s02-cloud-process.",
+      "state_changes": [
+        {
+          "setup_id": "s02-cloud-process",
+          "change": "Enters one working aperture and develops through source, outline and unfinished-draft regions of the same identity-preserving strip. Recognizable source shapes persist; a pending continuation is still entering at the end."
+        }
+      ],
+      "final_destination": "Captured inside the cloud-computer working aperture as an unfinished draft with continuing job material.",
+      "story_justification": "Retain the original job-brief identity while replacing its rejected app-pocket origin and deck route. Its supported input and development now belong to one continuing process; it does not appear in locked setups."
+    }
+  ]
+}

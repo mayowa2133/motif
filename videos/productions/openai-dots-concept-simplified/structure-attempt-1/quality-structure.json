@@ -1,0 +1,149 @@
+{
+  "role": "structure",
+  "inspection_scope": "Complete script, rhetorical chapters, all ten setups and eleven beat contracts, continuity records, assets, action requirements, limitations, production calibration, and attached reference stills. Structural review only.",
+  "checks": [
+    {
+      "check": "METAPHOR_OVERLOAD",
+      "status": "PASS",
+      "evidence": "The beat contracts separate app connection, continuing computation, proposed uses, specialization, future teams, permission, commercial access, editorial interpretation and entrusted access into distinct relationships."
+    },
+    {
+      "check": "STATE_ACCUMULATION_WITHOUT_MEANING",
+      "status": "PASS",
+      "evidence": "b04 replaces source, outline and draft content within one working window; b05 replaces task proposals. Permission and comparison mechanisms do not travel into subsequent setups."
+    },
+    {
+      "check": "SEMANTIC_GROUP_OVERLOAD",
+      "status": "PASS",
+      "evidence": "The planned active groups share their respective meanings: one developing assignment, specialist compatibility, paired admission conditions, or a withheld key transfer. No beat requires unrelated groups to act simultaneously."
+    },
+    {
+      "check": "COMPOSITIONAL_STAGNATION",
+      "status": "PASS",
+      "evidence": "Contracts alternate diagonal paired workspaces, a close connection gap, a cropped computing aperture, a proposal fan, asymmetric fitting, sealed diagram, stopping boundary, staggered comparison leaves and a depth-changing editorial fold. Similar paper materials do not imply identical staging."
+    },
+    {
+      "check": "CONTINUITY_TOKEN_OVERLOAD",
+      "status": "PASS",
+      "evidence": "The Dot token preserves product identity; the brief preserves assignment identity within computation; the scoped key connects withheld authority to the closing question. Each has recorded states and a destination."
+    },
+    {
+      "check": "CLUTTER_WITHOUT_PURPOSE",
+      "status": "PASS",
+      "evidence": "Specified supporting surfaces, lips, pockets, ownership margins and irregular edges establish support, context, identity or unfinished state. No decorative accumulation is required."
+    },
+    {
+      "check": "WEAK_RESET_RHYTHM",
+      "status": "PASS",
+      "evidence": "The setup sequence supplies meaningful resets between connection and computation, capability and pitch, specialization and future teamwork, permission and commercial eligibility, then interpretation and the final decision. b03–b04 appropriately retain one developing process."
+    },
+    {
+      "check": "COMPETING_FOCI",
+      "status": "PASS",
+      "evidence": "The beat compositions give dominance to the contact gap, entering brief, developing content, arrested envelope, admission conditions or final key gap. b04 explicitly crops inactive computer and user-device geometry; Bot reactions remain subordinate."
+    },
+    {
+      "check": "CAPTION_CARRIES_STORY",
+      "status": "PASS",
+      "evidence": "Central actions establish connection, separate working space, assignment development, replacement, compatibility, prospective inactivity, blocking and withheld transfer. Necessary local labels identify products and qualifications rather than requiring bottom captions to explain the action."
+    },
+    {
+      "check": "REFERENCE_STRUCTURE_GAP",
+      "status": "PASS",
+      "evidence": "The plan transfers meaningful state development from Dd2UAqOvDoO-s05 and Dd4Le3YhCQt-s03, concentrated interface relationships from Dd2uCwTB6II-s09 and Dd2HMwIy6D3-s14, and conditional boundaries from Dd45WmVPOfQ-s05. Its sparse closing decision has a clear story justification."
+    },
+    {
+      "check": "REFERENCE_SCENE_IMITATION",
+      "status": "PASS",
+      "evidence": "No planned hero, environment and choreography combination reproduces the selected construction site, shield ensemble, race, gift pedestal, stacked chats, paired waveform room or internal library, basement and billing scenes."
+    },
+    {
+      "check": "COMPOUND_VISUAL_RULE",
+      "status": "FAIL",
+      "evidence": "s02-app-access and s02-cloud-process have clean separate rules in b02–b04, but the rationale, connected-work assets and limitations still require a single connected-task deck with docking, seating, control-driven development and foreground closure. The complete plan therefore retains two incompatible architectures."
+    },
+    {
+      "check": "UNNECESSARY_VISIBLE_MECHANISM",
+      "status": "PASS",
+      "evidence": "The current b02–b04 compositions explicitly exclude the old terminal, wing, deck and detached panels from computation, then crop completed input support. Retained setups similarly discard previous apparatus at semantic resets. The contradictory legacy architecture is addressed under COMPOUND_VISUAL_RULE."
+    },
+    {
+      "check": "ACTOR_AMBIGUITY",
+      "status": "FAIL",
+      "evidence": "b02 assigns connection to the Dot token and b03–b04 assign computation to the Dot-owned computer, with Bot absent. However, the rationale and limitations still require Bot to push docking and carrier edges, press a next-step control, and keep its operative hand visible in replacement s02."
+    }
+  ],
+  "setup_assessments": [
+    {
+      "setup_id": "s01-agency",
+      "status": "PASS",
+      "evidence": "Unfolding establishes a separately provisioned workspace; continued assignment movement after user-side closure develops the same independence relationship. Only the identity token leaves."
+    },
+    {
+      "setup_id": "s02-app-access",
+      "status": "FAIL",
+      "evidence": "b02 defines one fixed-terminal contact caused by the Dot, but retained replacement-s02 requirements specify a Bot-operated docking deck. Architecture and causal ownership remain contradictory."
+    },
+    {
+      "setup_id": "s02-cloud-process",
+      "status": "FAIL",
+      "evidence": "b03–b04 define one supported strip-feeding process with successive unfinished states, but retained deck phases require seating, Bot control contact and foreground closure in another apparatus."
+    },
+    {
+      "setup_id": "s03-use-pitch",
+      "status": "PASS",
+      "evidence": "Business and household proposals replace each other at one fitting. Neither introduces an executed external action or retains the computing mechanism."
+    },
+    {
+      "setup_id": "s04-specialists",
+      "status": "PASS",
+      "evidence": "Task compatibility is the sole relationship; the attached preview qualification remains part of the fitting reveal. The token supplies identity rather than competing agency."
+    },
+    {
+      "setup_id": "s05-planned-teams",
+      "status": "PASS",
+      "evidence": "The diagram becomes visible while its operative joint stays sealed. This communicates prospective collaboration through one constrained reveal."
+    },
+    {
+      "setup_id": "s06-permission",
+      "status": "PASS",
+      "evidence": "Approach, arrest and waiting develop one permission boundary. Bot reacts without approving, and the key remains user-side."
+    },
+    {
+      "setup_id": "s07-commercial-access",
+      "status": "PASS",
+      "evidence": "Sequential equal-scale admission reveals answer one access comparison. Permission apparatus is removed, and no performance ranking is introduced."
+    },
+    {
+      "setup_id": "s08-editorial-reframe",
+      "status": "PASS",
+      "evidence": "A single editorial object reveals a deeper working dimension while retaining conversation as its subordinate face. The assignment fold develops that contrast without introducing a separate operational system."
+    },
+    {
+      "setup_id": "s09-unresolved-keys",
+      "status": "PASS",
+      "evidence": "The returning key approaches but never transfers. Its gap, user-side support and subordinate watching Bot preserve an unresolved authority decision."
+    }
+  ],
+  "violations": [
+    {
+      "code": "COMPOUND_VISUAL_RULE",
+      "setup_ids": [
+        "s02-app-access",
+        "s02-cloud-process"
+      ],
+      "observation": "The setup records and b02–b04 split fixed-terminal connection from continuous aperture processing. Yet the rationale, connected-work-props, contact-map asset and limitations retain the rejected single-deck architecture, including dock, seat, develop and foreground-close prerequisites. These are materially different hero relationships and apparatus, not alternate wording for the current beats.",
+      "smallest_structural_correction": "Preserve the split setups and b02–b04. Remove the superseded deck architecture and its phase prerequisites from the rationale, assets, asset_usage and limitations; replace them with requirements matching the terminal-contact and continuous job-feed contracts."
+    },
+    {
+      "code": "ACTOR_AMBIGUITY",
+      "setup_ids": [
+        "s02-app-access",
+        "s02-cloud-process"
+      ],
+      "observation": "The current contracts declare Bot absent and identify the Dot as the functional actor. Retained instructions instead require Bot palm anchors, docking and carrier pushing, supported control pressing and a visible operative hand. Implementing both would change who causes connection and job progress.",
+      "smallest_structural_correction": "Delete the superseded Bot participation and hand-contact requirements for replacement s02. Align all production requirements with Dot-token contact in b02 and Dot-owned computer feeding in b03–b04, keeping Bot absent."
+    }
+  ],
+  "limits": "REPLAN_REQUIRED because the complete plan contains conflicting architecture and actor requirements. This data-only review cannot establish rendered/mobile performance, contact-proof readability, continuous motion, narration synchronization or listening quality. Attached images are reference evidence, not production BEFORE/CONTACT/AFTER proofs. Structural PASS entries do not approve implementation or final artwork."
+}

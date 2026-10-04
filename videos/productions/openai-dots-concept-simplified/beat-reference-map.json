@@ -1,0 +1,496 @@
+{
+  "beats": [
+    {
+      "beat_id": "b02",
+      "reference_ids": [
+        "Dd15NcHvlNl-s20",
+        "Dd15NcHvlNl-s14"
+      ],
+      "principle": "Dd15NcHvlNl-s20 frames 1247\u20131261 show input text developing inside a persistent dominant comment panel; the character moves above it without establishing typing or Post contact. Dd15NcHvlNl-s14 frames 903\u2013915 retain a dominant post while a smaller terminal changes below; character overlap does not establish operation. Transfer the stable interaction region and localized change, but strengthen hierarchy around the proposed token-to-terminal junction. The subject is the Dot's app connection; the original Dot token is the sole causal actor, and Bot is absent. Keep the supporting surface, token rim and fixed terminal face readable together. A visible gap must precede contact; joined marks and local compression must follow that contact. Prune the conversation pocket and unrelated apparatus as this junction dominates. Reset before b03, carrying only Dot identity. NOT_ASSESSED: these references establish neither rim-to-face causality nor caption-free native BEFORE, CONTACT and AFTER proofs; the agent-assisted terminal and choreography require production review.",
+      "avoid_copying": "Do not reproduce the comment card, guide cover, developer post, terminal screenshot, orange character, taped banners or collage scenery. Do not treat character overlap, changing text or terminal progress as evidence of physical connection, submission or ownership.",
+      "private_evidence": [
+        {
+          "reference_id": "Dd15NcHvlNl-s20",
+          "evidence": {
+            "representative": {
+              "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-concept-simplified/reference-calibration/beat-evidence/Dd15NcHvlNl-s20/representative.jpg",
+              "sha256": "e3aef14fd2df2000415169ddf2a70baaaa8dd6a00926e8d8939515e19cb9cf28",
+              "source_frames": [
+                1229,
+                1244,
+                1260
+              ],
+              "timestamps": [
+                40.96666666666667,
+                41.46666666666667,
+                42.0
+              ]
+            },
+            "ordered": {
+              "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-concept-simplified/reference-calibration/beat-evidence/Dd15NcHvlNl-s20/ordered.jpg",
+              "sha256": "c6ecdfdcb850387c664b2a3710a4a25b99428c52cc0849b88e9c14e4eac719e2",
+              "source_frames": [
+                1227,
+                1234,
+                1241,
+                1248,
+                1255,
+                1261
+              ],
+              "timestamps": [
+                40.9,
+                41.13333333333333,
+                41.36666666666667,
+                41.6,
+                41.833333333333336,
+                42.03333333333333
+              ]
+            },
+            "dense": {
+              "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-concept-simplified/reference-calibration/beat-evidence/Dd15NcHvlNl-s20/dense.jpg",
+              "sha256": "5ba7543c69c0eac47ebad1e7bafdb62583ed35661c7003d3fa516b3b382d29de",
+              "source_frames": [
+                1239,
+                1240,
+                1241,
+                1242,
+                1243,
+                1244,
+                1245,
+                1246,
+                1247,
+                1248,
+                1249,
+                1250,
+                1251
+              ],
+              "timestamps": [
+                41.3,
+                41.333333333333336,
+                41.36666666666667,
+                41.4,
+                41.43333333333333,
+                41.46666666666667,
+                41.5,
+                41.53333333333333,
+                41.56666666666667,
+                41.6,
+                41.63333333333333,
+                41.666666666666664,
+                41.7
+              ]
+            }
+          }
+        },
+        {
+          "reference_id": "Dd15NcHvlNl-s14",
+          "evidence": {
+            "representative": {
+              "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-concept-simplified/reference-calibration/beat-evidence/Dd15NcHvlNl-s14/representative.jpg",
+              "sha256": "0e053016f33fd0a3a4e13abd13a6d582f21f57596c5fdaf2b1d7620acc57798a",
+              "source_frames": [
+                889,
+                905,
+                921
+              ],
+              "timestamps": [
+                29.633333333333333,
+                30.166666666666668,
+                30.7
+              ]
+            },
+            "ordered": {
+              "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-concept-simplified/reference-calibration/beat-evidence/Dd15NcHvlNl-s14/ordered.jpg",
+              "sha256": "b103c7696a58d85589d0493e6d76c5741adfbd81204878c95e2adf6cde5750e6",
+              "source_frames": [
+                887,
+                894,
+                901,
+                908,
+                915,
+                922
+              ],
+              "timestamps": [
+                29.566666666666666,
+                29.8,
+                30.033333333333335,
+                30.266666666666666,
+                30.5,
+                30.733333333333334
+              ]
+            },
+            "dense": {
+              "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-concept-simplified/reference-calibration/beat-evidence/Dd15NcHvlNl-s14/dense.jpg",
+              "sha256": "926f1bcf05987b8cb8d096740bd71641c47d2b38160086f8bab0fb1f99a975ba",
+              "source_frames": [
+                903,
+                904,
+                905,
+                906,
+                907,
+                908,
+                909,
+                910,
+                911,
+                912,
+                913,
+                914,
+                915
+              ],
+              "timestamps": [
+                30.1,
+                30.133333333333333,
+                30.166666666666668,
+                30.2,
+                30.233333333333334,
+                30.266666666666666,
+                30.3,
+                30.333333333333332,
+                30.366666666666667,
+                30.4,
+                30.433333333333334,
+                30.466666666666665,
+                30.5
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "beat_id": "b03",
+      "reference_ids": [
+        "Dd45WmVPOfQ-s08",
+        "Dd15NcHvlNl-s13"
+      ],
+      "principle": "Dd45WmVPOfQ-s08 frames 699\u2013711 show task placards moving around a persistent work station, including a departing tilted placard beneath the active one; they do not resolve a material handoff or input contact. Dd15NcHvlNl-s13 frames 870\u2013878 show a folder narrowing, reopening and exposing an identifiable page; frames 879\u2013882 add a stamp impression without showing a contacting stamp tool. Transfer material identity across a reveal and the removal of superseded material. The subject is the assigned brief entering the Dot-owned computer; the Dot operating that computer is the causal actor, the brief is passive, and Bot is absent. Make the brief's leading edge, continuous input support and aperture lip the dominant relationship. The attached Dot token supplies ownership rather than another operator; the cropped user device remains visibly separate. Entry beneath the lip must follow leading-edge contact and preserve the brief's identity border. Remove b02's terminal and route. NOT_ASSESSED: neither selected reference proves supported aperture capture; agent-assisted artwork, masking and feed need native BEFORE, CONTACT and AFTER review.",
+      "avoid_copying": "Do not reproduce workers, cranes, scaffolding, hanging task placards, usage panels, scrapbook pages, stamps or presenter characters. Do not import the reference's competing platform-and-panel hierarchy. Folder rotation, placard replacement and a appearing stamp impression cannot substitute for aperture-entry contact.",
+      "private_evidence": [
+        {
+          "reference_id": "Dd45WmVPOfQ-s08",
+          "evidence": {
+            "representative": {
+              "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-concept-simplified/reference-calibration/beat-evidence/Dd45WmVPOfQ-s08/representative.jpg",
+              "sha256": "b869e4236d68e76ab769125415cd8d9868922de3e634e98c23ec9bb8bd989dfa",
+              "source_frames": [
+                656,
+                703,
+                751
+              ],
+              "timestamps": [
+                21.866666666666667,
+                23.433333333333334,
+                25.033333333333335
+              ]
+            },
+            "ordered": {
+              "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-concept-simplified/reference-calibration/beat-evidence/Dd45WmVPOfQ-s08/ordered.jpg",
+              "sha256": "9a34a9efdf21c2f6dcd9db25b8d0d7be39c88f316c844f3f4b74cda1f18af5d7",
+              "source_frames": [
+                654,
+                661,
+                668,
+                675,
+                682,
+                689,
+                696,
+                703,
+                710,
+                717,
+                724,
+                731,
+                738,
+                745,
+                752
+              ],
+              "timestamps": [
+                21.8,
+                22.033333333333335,
+                22.266666666666666,
+                22.5,
+                22.733333333333334,
+                22.966666666666665,
+                23.2,
+                23.433333333333334,
+                23.666666666666668,
+                23.9,
+                24.133333333333333,
+                24.366666666666667,
+                24.6,
+                24.833333333333332,
+                25.066666666666666
+              ]
+            },
+            "dense": {
+              "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-concept-simplified/reference-calibration/beat-evidence/Dd45WmVPOfQ-s08/dense.jpg",
+              "sha256": "21dc8b2093a5b72d7db01e271b5ce2690a522cdf1f43e457d277a846ae37ea08",
+              "source_frames": [
+                699,
+                700,
+                701,
+                702,
+                703,
+                704,
+                705,
+                706,
+                707,
+                708,
+                709,
+                710,
+                711
+              ],
+              "timestamps": [
+                23.3,
+                23.333333333333332,
+                23.366666666666667,
+                23.4,
+                23.433333333333334,
+                23.466666666666665,
+                23.5,
+                23.533333333333335,
+                23.566666666666666,
+                23.6,
+                23.633333333333333,
+                23.666666666666668,
+                23.7
+              ]
+            }
+          }
+        },
+        {
+          "reference_id": "Dd15NcHvlNl-s13",
+          "evidence": {
+            "representative": {
+              "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-concept-simplified/reference-calibration/beat-evidence/Dd15NcHvlNl-s13/representative.jpg",
+              "sha256": "5e19c583017d30867333718ddcb514a17168d2c3284ffa3f1875a6e1b57a8ee7",
+              "source_frames": [
+                863,
+                874,
+                885
+              ],
+              "timestamps": [
+                28.766666666666666,
+                29.133333333333333,
+                29.5
+              ]
+            },
+            "ordered": {
+              "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-concept-simplified/reference-calibration/beat-evidence/Dd15NcHvlNl-s13/ordered.jpg",
+              "sha256": "cba32f9e5efa5c05fd4cd3d8c95c972e8a5fc5a3db71aa795153ef3ee746f646",
+              "source_frames": [
+                861,
+                868,
+                875,
+                882,
+                886
+              ],
+              "timestamps": [
+                28.7,
+                28.933333333333334,
+                29.166666666666668,
+                29.4,
+                29.533333333333335
+              ]
+            },
+            "dense": {
+              "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-concept-simplified/reference-calibration/beat-evidence/Dd15NcHvlNl-s13/dense.jpg",
+              "sha256": "a2e243a2a9a4a669a050a6f637c78721704af6c3f2fc5d92f558b5f952067e7b",
+              "source_frames": [
+                870,
+                871,
+                872,
+                873,
+                874,
+                875,
+                876,
+                877,
+                878,
+                879,
+                880,
+                881,
+                882
+              ],
+              "timestamps": [
+                29.0,
+                29.033333333333335,
+                29.066666666666666,
+                29.1,
+                29.133333333333333,
+                29.166666666666668,
+                29.2,
+                29.233333333333334,
+                29.266666666666666,
+                29.3,
+                29.333333333333332,
+                29.366666666666667,
+                29.4
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "beat_id": "b04",
+      "reference_ids": [
+        "Dd2HMwIy6D3-s14",
+        "Dd2HMwIy6D3-s17"
+      ],
+      "principle": "Dd2HMwIy6D3-s14 frames 720\u2013732 retain source and output waveform regions inside one dominant panel while their playheads advance; this supports persistent comparison, not demonstrated source transformation. Dd2HMwIy6D3-s17 frames 854\u2013860 show the Wi-Fi control changing from on to off while the progress bar advances; later ordered frames 867\u2013877 show a completion indicator. Transfer progression within a stable working region and subordination of contextual state. The subject is the same assignment developing into an unfinished draft; the Dot continues operating its computer, the captured strip remains passive, and Bot is absent. Crop to the working window, aperture lip, necessary support and small attached ownership cue. Preserve uninterrupted capture and recurring source shapes through source-to-outline and outline-to-draft boundaries; earlier content exits as the next state becomes dominant. Pending material remains entering. NOT_ASSESSED: these references prove neither continuous strip contact nor the proposed content boundaries. Agent-assisted state artwork and feed require caption-free native evidence at both boundaries plus full-rate continuity review.",
+      "avoid_copying": "Do not reproduce waveform panels, language tabs, Wi-Fi overlays, progress bars, laptop scenery or witness characters. Do not add completion checks or imply that advancing playheads prove transformation. Avoid accumulating multiple output panels or introducing a new mechanism for each content state.",
+      "private_evidence": [
+        {
+          "reference_id": "Dd2HMwIy6D3-s14",
+          "evidence": {
+            "representative": {
+              "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-concept-simplified/reference-calibration/beat-evidence/Dd2HMwIy6D3-s14/representative.jpg",
+              "sha256": "8810696e4accda97c36f3d823cdfa99c0800938d15abc2062ee1a3db4645c862",
+              "source_frames": [
+                704,
+                720,
+                736
+              ],
+              "timestamps": [
+                23.466666666666665,
+                24.0,
+                24.533333333333335
+              ]
+            },
+            "ordered": {
+              "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-concept-simplified/reference-calibration/beat-evidence/Dd2HMwIy6D3-s14/ordered.jpg",
+              "sha256": "32b0eff39a04e1111ced7401af876d4b920f7d6c5fb04471c2931e8ae505df8e",
+              "source_frames": [
+                702,
+                709,
+                716,
+                723,
+                730,
+                737
+              ],
+              "timestamps": [
+                23.4,
+                23.633333333333333,
+                23.866666666666667,
+                24.1,
+                24.333333333333332,
+                24.566666666666666
+              ]
+            },
+            "dense": {
+              "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-concept-simplified/reference-calibration/beat-evidence/Dd2HMwIy6D3-s14/dense.jpg",
+              "sha256": "83e4ed3fed19cd06b191aa94f0a7cb9d7f0d90c47200e9c9bb57a065a4691373",
+              "source_frames": [
+                720,
+                721,
+                722,
+                723,
+                724,
+                725,
+                726,
+                727,
+                728,
+                729,
+                730,
+                731,
+                732
+              ],
+              "timestamps": [
+                24.0,
+                24.033333333333335,
+                24.066666666666666,
+                24.1,
+                24.133333333333333,
+                24.166666666666668,
+                24.2,
+                24.233333333333334,
+                24.266666666666666,
+                24.3,
+                24.333333333333332,
+                24.366666666666667,
+                24.4
+              ]
+            }
+          }
+        },
+        {
+          "reference_id": "Dd2HMwIy6D3-s17",
+          "evidence": {
+            "representative": {
+              "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-concept-simplified/reference-calibration/beat-evidence/Dd2HMwIy6D3-s17/representative.jpg",
+              "sha256": "e145995585ca1573a5312e279ef5b5d96042e53c21eb892bb9b4d8d6851cb6c2",
+              "source_frames": [
+                841,
+                858,
+                876
+              ],
+              "timestamps": [
+                28.033333333333335,
+                28.6,
+                29.2
+              ]
+            },
+            "ordered": {
+              "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-concept-simplified/reference-calibration/beat-evidence/Dd2HMwIy6D3-s17/ordered.jpg",
+              "sha256": "e48a4cd92a7dfda27cfa10ea3982e8bf50696463422e42efc116acd96ff80f04",
+              "source_frames": [
+                839,
+                846,
+                853,
+                860,
+                867,
+                874,
+                877
+              ],
+              "timestamps": [
+                27.966666666666665,
+                28.2,
+                28.433333333333334,
+                28.666666666666668,
+                28.9,
+                29.133333333333333,
+                29.233333333333334
+              ]
+            },
+            "dense": {
+              "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-concept-simplified/reference-calibration/beat-evidence/Dd2HMwIy6D3-s17/dense.jpg",
+              "sha256": "0765ae848f3cc351c358acb1f4413388726077043ab38f6e9c20fc9ab1a69ee8",
+              "source_frames": [
+                849,
+                850,
+                851,
+                852,
+                853,
+                854,
+                855,
+                856,
+                857,
+                858,
+                859,
+                860,
+                861
+              ],
+              "timestamps": [
+                28.3,
+                28.333333333333332,
+                28.366666666666667,
+                28.4,
+                28.433333333333334,
+                28.466666666666665,
+                28.5,
+                28.533333333333335,
+                28.566666666666666,
+                28.6,
+                28.633333333333333,
+                28.666666666666668,
+                28.7
+              ]
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "external_pixels_in_assets": false,
+  "private_corpus_reprocessed": false,
+  "factual_source": false
+}

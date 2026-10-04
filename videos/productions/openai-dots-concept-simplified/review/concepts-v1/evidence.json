@@ -1,0 +1,275 @@
+{
+  "caption_free": true,
+  "phase": "static concept/contact proof only; no motion or final art",
+  "setup_ids": [
+    "s01-agency",
+    "s02-app-access",
+    "s02-cloud-process",
+    "s03-use-pitch",
+    "s04-specialists",
+    "s05-planned-teams",
+    "s06-permission",
+    "s07-commercial-access",
+    "s08-editorial-reframe",
+    "s09-unresolved-keys"
+  ],
+  "review_setup_ids": [
+    "s02-app-access",
+    "s02-cloud-process"
+  ],
+  "previews": [
+    {
+      "setup_id": "s01-agency",
+      "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-concept-simplified/review/concepts-v1/s01-agency.png",
+      "sha256": "fffbb53dc8b566fd5f68f85a69879018de001f4009a6e91a1973c6186af75455",
+      "inherited": true
+    },
+    {
+      "setup_id": "s02-app-access",
+      "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-concept-simplified/review/concepts-v1/s02-app-access.png",
+      "sha256": "cb868843616814aac382aeaa67af193d29a3d337f462478ce8f4120626ddd848",
+      "source": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-concept-simplified/review/concepts-v1/s02-app-access.svg",
+      "diagnostic": false
+    },
+    {
+      "setup_id": "s02-cloud-process",
+      "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-concept-simplified/review/concepts-v1/s02-cloud-process.png",
+      "sha256": "337ce0e4f0f51054fdf9102e7e66b9ba8bd4c2ac54855b498a9bbb53803ec5d7",
+      "source": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-concept-simplified/review/concepts-v1/s02-cloud-process.svg",
+      "diagnostic": false
+    },
+    {
+      "setup_id": "s03-use-pitch",
+      "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-concept-simplified/review/concepts-v1/s03-use-pitch.png",
+      "sha256": "5a1ae78af9ecce2d7041234b68d5e6ba4fe59a9ac7d44aaa7dd2abd94aadd172",
+      "inherited": true
+    },
+    {
+      "setup_id": "s04-specialists",
+      "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-concept-simplified/review/concepts-v1/s04-specialists.png",
+      "sha256": "9f630f7377088c27d62eb9c90d0bee2b5a6d154dd20de1a749f1ed7dc9eb7b81",
+      "inherited": true
+    },
+    {
+      "setup_id": "s05-planned-teams",
+      "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-concept-simplified/review/concepts-v1/s05-planned-teams.png",
+      "sha256": "33e2896713d8905e5f4d5359d9435b3c2bef0706fb5ee5342889158c5934444a",
+      "inherited": true
+    },
+    {
+      "setup_id": "s06-permission",
+      "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-concept-simplified/review/concepts-v1/s06-permission.png",
+      "sha256": "e871a2baa0249ce2fc6db563bedaa28cfc7202eeef82ac23b80329bf106d7eb5",
+      "inherited": true
+    },
+    {
+      "setup_id": "s07-commercial-access",
+      "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-concept-simplified/review/concepts-v1/s07-commercial-access.png",
+      "sha256": "3d9ec2763efc28783992603e380e49112caf52e583b95089847184c56c19ff19",
+      "inherited": true
+    },
+    {
+      "setup_id": "s08-editorial-reframe",
+      "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-concept-simplified/review/concepts-v1/s08-editorial-reframe.png",
+      "sha256": "0d3590525ae9e7a93be5da156688cd9be0a4d1a3b9fe1e3ceb90416b5a9341df",
+      "inherited": true
+    },
+    {
+      "setup_id": "s09-unresolved-keys",
+      "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-concept-simplified/review/concepts-v1/s09-unresolved-keys.png",
+      "sha256": "9df2951db6579576a7463ee2b5b4f02636ffe4d03c2dd2bd2ff0015e0acb1486",
+      "inherited": true
+    }
+  ],
+  "images": [
+    {
+      "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-concept-simplified/review/concepts-v1/revised-setups.png",
+      "sha256": "6c320268c0706f7dece6d00d0509f2dccf7f3f00ab87838fcc83b9cf6bc1f5ee"
+    },
+    {
+      "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-concept-simplified/review/concepts-v1/b02-b02-token-terminal-contact-proof.png",
+      "sha256": "d0d1d77540488791b12fca4d720d927818507d2eb22b5b7aaf7230680dc7f7e2"
+    },
+    {
+      "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-concept-simplified/review/concepts-v1/b03-b03-brief-aperture-entry-proof.png",
+      "sha256": "b3e6858f25bfee83fab7e95e75ffe7faed9c69e81a954da57b51bc4be2030c74"
+    },
+    {
+      "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-concept-simplified/review/concepts-v1/b04-b04-captured-strip-continuous-feed-proof.png",
+      "sha256": "b6f17588e9dd97ab0fe6a15e09ab4fc48c742b537e378db7c44dcccb277e988a"
+    },
+    {
+      "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-concept-simplified/review/concepts-v1/source-to-outline.png",
+      "sha256": "3e2cdd5671afe5fd25dad545447047f1309f06c68e5743e403b0dd0e32494393"
+    },
+    {
+      "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-concept-simplified/review/concepts-v1/outline-to-draft.png",
+      "sha256": "ef4afba4af7a272dbef09ff42b36b64135612a2c68aa558c62c861c09b1b4e03"
+    },
+    {
+      "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-concept-simplified/review/concepts-v1/work-after-chat-close.png",
+      "sha256": "5efa5787cdeed41b6db6cb46d00d63c57454935dc8329fb022632f8dc4edd221"
+    }
+  ],
+  "contact_proofs": [
+    {
+      "setup_id": "s02-app-access",
+      "beat_id": "b02",
+      "interaction_id": "b02-token-terminal-contact",
+      "frames": {
+        "before": {
+          "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-concept-simplified/review/concepts-v1/b02-b02-token-terminal-contact-before.png",
+          "sha256": "c59232ce9a791af53a34e792e1532368e29c3170a5b45208b852d67c758651a1",
+          "source": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-concept-simplified/review/concepts-v1/b02-b02-token-terminal-contact-before.svg",
+          "diagnostic": false
+        },
+        "contact": {
+          "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-concept-simplified/review/concepts-v1/b02-b02-token-terminal-contact-contact.png",
+          "sha256": "cb868843616814aac382aeaa67af193d29a3d337f462478ce8f4120626ddd848",
+          "source": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-concept-simplified/review/concepts-v1/b02-b02-token-terminal-contact-contact.svg",
+          "diagnostic": false
+        },
+        "after": {
+          "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-concept-simplified/review/concepts-v1/b02-b02-token-terminal-contact-after.png",
+          "sha256": "0c43c46cfc75042aa432623f8ecb62868cd3d60909647c3ad1a054b2123fb167",
+          "source": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-concept-simplified/review/concepts-v1/b02-b02-token-terminal-contact-after.svg",
+          "diagnostic": false
+        }
+      }
+    },
+    {
+      "setup_id": "s02-cloud-process",
+      "beat_id": "b03",
+      "interaction_id": "b03-brief-aperture-entry",
+      "frames": {
+        "before": {
+          "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-concept-simplified/review/concepts-v1/b03-b03-brief-aperture-entry-before.png",
+          "sha256": "29e7ccbee2066c3f2cdeee0fe5a9dfb367b07bef67c31d4fbab6c5affb539a06",
+          "source": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-concept-simplified/review/concepts-v1/b03-b03-brief-aperture-entry-before.svg",
+          "diagnostic": false
+        },
+        "contact": {
+          "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-concept-simplified/review/concepts-v1/b03-b03-brief-aperture-entry-contact.png",
+          "sha256": "337ce0e4f0f51054fdf9102e7e66b9ba8bd4c2ac54855b498a9bbb53803ec5d7",
+          "source": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-concept-simplified/review/concepts-v1/b03-b03-brief-aperture-entry-contact.svg",
+          "diagnostic": false
+        },
+        "after": {
+          "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-concept-simplified/review/concepts-v1/b03-b03-brief-aperture-entry-after.png",
+          "sha256": "46dabe3eb3c4e5f3c86b6cfa0b3f99b2c692aa0ae0900c6ad84dbc3c8440162b",
+          "source": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-concept-simplified/review/concepts-v1/b03-b03-brief-aperture-entry-after.svg",
+          "diagnostic": false
+        }
+      }
+    },
+    {
+      "setup_id": "s02-cloud-process",
+      "beat_id": "b04",
+      "interaction_id": "b04-captured-strip-continuous-feed",
+      "frames": {
+        "before": {
+          "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-concept-simplified/review/concepts-v1/b04-b04-captured-strip-continuous-feed-before.png",
+          "sha256": "e3a37507caae902e92873cf2590a72ed47b9bf7a286f410488ed425a191eb3b4",
+          "source": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-concept-simplified/review/concepts-v1/b04-b04-captured-strip-continuous-feed-before.svg",
+          "diagnostic": false
+        },
+        "contact": {
+          "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-concept-simplified/review/concepts-v1/b04-b04-captured-strip-continuous-feed-contact.png",
+          "sha256": "92942e7e869b21e994e34d307d408b8e60d44a283d62c9802699ebb175b4c0c6",
+          "source": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-concept-simplified/review/concepts-v1/b04-b04-captured-strip-continuous-feed-contact.svg",
+          "diagnostic": false
+        },
+        "after": {
+          "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-concept-simplified/review/concepts-v1/b04-b04-captured-strip-continuous-feed-after.png",
+          "sha256": "bdc92571ef3870cd1b9a218770776d2ea3bd0db94854b5834b6392dc47074197",
+          "source": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-concept-simplified/review/concepts-v1/b04-b04-captured-strip-continuous-feed-after.svg",
+          "diagnostic": false
+        }
+      }
+    }
+  ],
+  "state_boundaries": [
+    {
+      "beat_id": "b04",
+      "boundary": "source-to-outline",
+      "contact": "same sustained strip/lip contact, not a new impact",
+      "frames": {
+        "before": {
+          "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-concept-simplified/review/concepts-v1/b04-source-to-outline-before.png",
+          "sha256": "e3a37507caae902e92873cf2590a72ed47b9bf7a286f410488ed425a191eb3b4",
+          "source": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-concept-simplified/review/concepts-v1/b04-source-to-outline-before.svg",
+          "diagnostic": false
+        },
+        "contact": {
+          "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-concept-simplified/review/concepts-v1/b04-source-to-outline-contact.png",
+          "sha256": "92942e7e869b21e994e34d307d408b8e60d44a283d62c9802699ebb175b4c0c6",
+          "source": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-concept-simplified/review/concepts-v1/b04-source-to-outline-contact.svg",
+          "diagnostic": false
+        },
+        "after": {
+          "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-concept-simplified/review/concepts-v1/b04-source-to-outline-after.png",
+          "sha256": "88c2cce12abafee975e114686f9da147a70fb217410970e9aa0282a006bf8651",
+          "source": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-concept-simplified/review/concepts-v1/b04-source-to-outline-after.svg",
+          "diagnostic": false
+        }
+      }
+    },
+    {
+      "beat_id": "b04",
+      "boundary": "outline-to-draft",
+      "contact": "same sustained strip/lip contact, not a new impact",
+      "frames": {
+        "before": {
+          "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-concept-simplified/review/concepts-v1/b04-outline-to-draft-before.png",
+          "sha256": "88c2cce12abafee975e114686f9da147a70fb217410970e9aa0282a006bf8651",
+          "source": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-concept-simplified/review/concepts-v1/b04-outline-to-draft-before.svg",
+          "diagnostic": false
+        },
+        "contact": {
+          "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-concept-simplified/review/concepts-v1/b04-outline-to-draft-contact.png",
+          "sha256": "db821d7436fca659ba23396bfd4e0add344fc547380d9337358e4e9771fd64d3",
+          "source": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-concept-simplified/review/concepts-v1/b04-outline-to-draft-contact.svg",
+          "diagnostic": false
+        },
+        "after": {
+          "file": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-concept-simplified/review/concepts-v1/b04-outline-to-draft-after.png",
+          "sha256": "bdc92571ef3870cd1b9a218770776d2ea3bd0db94854b5834b6392dc47074197",
+          "source": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-concept-simplified/review/concepts-v1/b04-outline-to-draft-after.svg",
+          "diagnostic": false
+        }
+      }
+    }
+  ],
+  "source_hashes": {
+    "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-concept-simplified/source/connected_art.py": "7048101144b18c3592f532ddd3a40e6bd0ccb931ea6520ed69a72c104be20127",
+    "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-concept-simplified/source/common.py": "939e743b6feef6438e44e4b263e7dffd18045f78594d691e97e741edc4d74aac",
+    "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-concept-simplified/source/identity.py": "87fd0fbdc07b016e960d0851f05fb651e5a1a6279797a7832bbe6cd5783661a5",
+    "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-concept-simplified/source/concepts.py": "dd469eab921c325dd46ebf52a81f6ba67627ddb381ac3b7ea4612246c485267b",
+    "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-concept-simplified/concept-contract.json": "1165488464f1d4b00e3cea8e34319a0399467a4ac3f933ba4af7fa0698414787",
+    "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-concept-simplified/concept-scope.json": "efc8b409a5750db9f378eeaa4223cef4e19e750141b1df268685248c6e03512b",
+    "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-concept-simplified/reference-calibration/beat-record.json": "d8a3158e52e610a5df9f065601db668248fdbd3412265f313bec22327aa6e57d"
+  },
+  "preserved_scope": {
+    "original_project": "/Users/mayowaadesanya/Projects/motif/videos/productions/openai-dots-reference-calibrated",
+    "original_plan_sha256": "7951e23b688e1a9584389234d2be36f00158b7d32113a02af783f97f43263a88",
+    "replaced_setup": "s02-connected-work",
+    "review_setup_ids": [
+      "s02-app-access",
+      "s02-cloud-process"
+    ],
+    "preserved_setup_ids": [
+      "s01-agency",
+      "s03-use-pitch",
+      "s04-specialists",
+      "s05-planned-teams",
+      "s06-permission",
+      "s07-commercial-access",
+      "s08-editorial-reframe",
+      "s09-unresolved-keys"
+    ],
+    "escape": "split",
+    "patch_sha256": "096e60688184e213c0dc0175b5b3dc97396a5c8f292c486bbfc873ebfaf17cbb",
+    "old_concepts_archived_in_place": true
+  },
+  "inspection": "BEFORE/CONTACT/AFTER clean native images; sheet labels are outside composition; no playback/listening"
+}

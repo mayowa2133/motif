@@ -1,0 +1,62 @@
+{
+  "id": "cloud-aperture-concept-v1",
+  "name": "cloud aperture",
+  "category": "computing",
+  "subcategory": "production-concept",
+  "concepts": [
+    "connection",
+    "assigned-work"
+  ],
+  "keywords": [
+    "cloud-aperture",
+    "paper"
+  ],
+  "style": "reference-expressive-v1",
+  "orientation": "front",
+  "dimensions": {
+    "width": 623,
+    "height": 659,
+    "unit": "px"
+  },
+  "artBox": {
+    "x": 54,
+    "y": 354,
+    "width": 623,
+    "height": 659
+  },
+  "anchors": {
+    "entry": {
+      "x": 0.5553772070626003,
+      "y": 0.4673748103186646
+    },
+    "support": {
+      "x": 0.5553772070626003,
+      "y": 0.7207890743550834
+    },
+    "ownership": {
+      "x": 0.8972712680577849,
+      "y": 0.37329286798179057
+    }
+  },
+  "compatibleCharacters": [
+    "motif-bot"
+  ],
+  "supportedActions": [
+    "static-contact-proof"
+  ],
+  "sourceType": "vector",
+  "source": {
+    "empty": {
+      "file": "videos/productions/openai-dots-concept-simplified/assets/props/cloud-aperture-empty.svg",
+      "sha256": "5c2600e3fa1cf5bb0b8ddaf4fd0eee68e6f6a5bb265f5db23a730beee772b99c"
+    }
+  },
+  "version": 1,
+  "status": "review",
+  "license": "project-original",
+  "required_capability_ids": [
+    "agent-assisted:cloud-aperture-artwork",
+    "agent-assisted:input-contact-anchors"
+  ],
+  "development": "Agent-assisted static SVG artwork only. No motion, mask/feed adapter or runtime registration implemented. Dot and job identity primitives reused unchanged. External references supply no pixels."
+}

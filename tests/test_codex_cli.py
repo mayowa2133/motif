@@ -52,6 +52,19 @@ class CodexCliTests(unittest.TestCase):
    self.assertTrue((folder/'initial-plan.json').exists())
    self.assertTrue((folder/'initial-plan-invocation.json').exists())
    self.assertFalse((folder/'art_direction.json').exists())
+ def test_scoped_patch_wire_schema_requires_nullable_quality_fields(self):
+  from types import SimpleNamespace
+  with tempfile.TemporaryDirectory() as d:
+   folder=Path(d);cli=folder/'cli';cli.touch();cli.chmod(0o755)
+   def execute(args,**kwargs):
+    wire=json.loads(Path(args[args.index('--output-schema')+1]).read_text())
+    contracts=wire['properties']['beats']['items']['properties']['quality']['properties']
+    for name in ('energy','art_direction'):
+     self.assertEqual(set(contracts[name]['required']),set(contracts[name]['properties']))
+    Path(args[args.index('-o')+1]).write_text('{}')
+    return SimpleNamespace(returncode=0,stdout='',stderr='')
+   with patch('motif_direct.subprocess.run',side_effect=execute),patch('motif_direct.Draft202012Validator'):
+    model_call(folder,'scoped-replan','Data only.','schemas/concept-replan.schema.json',{'cli_path':str(cli),'model':'fixture','reasoning_effort':'medium'})
  def test_image_changed_during_live_call_cannot_receive_fresh_approval(self):
   from types import SimpleNamespace
   from motif_direct import sha

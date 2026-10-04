@@ -1,0 +1,65 @@
+{
+  "id": "job-strip-concept-v1",
+  "name": "job strip",
+  "category": "computing",
+  "subcategory": "production-concept",
+  "concepts": [
+    "connection",
+    "assigned-work"
+  ],
+  "keywords": [
+    "job-strip",
+    "paper"
+  ],
+  "style": "reference-expressive-v1",
+  "orientation": "front",
+  "dimensions": {
+    "width": 770,
+    "height": 354,
+    "unit": "px"
+  },
+  "artBox": {
+    "x": -110,
+    "y": 507,
+    "width": 770,
+    "height": 354
+  },
+  "anchors": {
+    "identity": {
+      "x": 0.23636363636363636,
+      "y": 0.12146892655367232
+    },
+    "captured_edge": {
+      "x": 0.8051948051948052,
+      "y": 0.8954802259887006
+    }
+  },
+  "compatibleCharacters": [
+    "motif-bot"
+  ],
+  "supportedActions": [
+    "static-contact-proof"
+  ],
+  "sourceType": "vector",
+  "source": {
+    "source": {
+      "file": "videos/productions/openai-dots-concept-simplified/assets/props/job-strip-source.svg",
+      "sha256": "c668649fce8a58a1726bb3b8730926092d03a5ad87eba76486f0b60e8ec583e6"
+    },
+    "outline": {
+      "file": "videos/productions/openai-dots-concept-simplified/assets/props/job-strip-outline.svg",
+      "sha256": "013b44bc05e49bcac1b82fc5158daf34cba4d0eee734d9ae39e407b9816acb60"
+    },
+    "unfinished-draft": {
+      "file": "videos/productions/openai-dots-concept-simplified/assets/props/job-strip-unfinished-draft.svg",
+      "sha256": "1c67e55afc2acfad120e197942ac1450668e929a9451b1944c107eba76c20169"
+    }
+  },
+  "version": 1,
+  "status": "review",
+  "license": "project-original",
+  "required_capability_ids": [
+    "agent-assisted:job-brief-strip-artwork"
+  ],
+  "development": "Agent-assisted static SVG artwork only. No motion, mask/feed adapter or runtime registration implemented. Dot and job identity primitives reused unchanged. External references supply no pixels."
+}

@@ -1,0 +1,11 @@
+{
+  "status": "PASS",
+  "actual_structure_status": "REPLAN_REQUIRED",
+  "compound_check": {
+    "check": "COMPOUND_VISUAL_RULE",
+    "status": "FAIL",
+    "evidence": "s02-connected-work changes from coupling closure permitting passage in b02, to pushing a carrier against a computer input stop in b03, to repeated control presses transforming fold faces in b04. A common deck and unchanged brief do not make these distinct causal relationships successive states of one physical rule."
+  },
+  "scope": "Live negative regression on preserved rejected plan; not new-film approval",
+  "response_sha256": "0b67f56eb84c147a3218f9ad4b3160c2f3e36334a1091e00b73a45580bd0732d"
+}
