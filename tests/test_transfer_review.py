@@ -1,5 +1,5 @@
 """Protocol tests with synthetic images and mocked responses, never creative approval."""
-import sys,json,tempfile,unittest,copy
+import sys,json,tempfile,unittest,copy,os,subprocess
 from pathlib import Path
 from unittest.mock import patch
 sys.path.insert(0,str(Path(__file__).resolve().parents[1]/'scripts'))
@@ -244,6 +244,13 @@ class TransferReviewTests(unittest.TestCase):
    with self.assertRaises(ValueError):verify_augmentation(raw,value)
   unknown=copy.deepcopy(raw);unknown['undeclared_semantic_field']='must not silently vanish'
   with self.assertRaises(ValueError):verify_augmentation(unknown,full)
+ def test_migration_details_replay_across_distinct_python_processes(self):
+  raw,full=self.legacy_shape_fixture();rawfile=self.p/'raw.json';fullfile=self.p/'full.json';write(rawfile,raw);write(fullfile,full)
+  script='import sys,json;sys.path.insert(0,sys.argv[1]);from motif_plan_shape import verify_augmentation;print(json.dumps(verify_augmentation(json.load(open(sys.argv[2])),json.load(open(sys.argv[3]))),sort_keys=True))'
+  outputs=[]
+  for seed in ('1','2'):
+   outputs.append(subprocess.check_output([sys.executable,'-c',script,str(ROOT/'scripts'),str(rawfile),str(fullfile)],env={**os.environ,'PYTHONHASHSEED':seed},text=True))
+  self.assertEqual(outputs[0],outputs[1])
  def test_future_partial_plan_fails_before_live_review_or_contract(self):
   import motif_structure as st
   raw,full=self.legacy_shape_fixture();write(self.p/'production-plan.json',raw)

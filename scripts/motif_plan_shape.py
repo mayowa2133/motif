@@ -31,7 +31,7 @@ def verify_augmentation(raw,normalized):
      annotations.append({'path':list(path+(key,)),'value':copy.deepcopy(value)});continue
     if key not in new:raise ValueError('shape augmentation removed existing semantic field: '+str(path+(key,)))
     compare(value,new[key],path+(key,))
-   for key in new.keys()-old.keys():
+   for key in sorted(new.keys()-old.keys()):
     if key not in allowed:raise ValueError('only missing required shape fields may be added: '+str(path+(key,)))
     additions.append({'path':list(path+(key,)),'value':copy.deepcopy(new[key])})
   elif isinstance(old,list):
