@@ -24,4 +24,36 @@ for(const f of [0,29,7,18,1,25,4,16,9,28]){
   const after=child.getGlobalTransform();for(const k of keys){const delta=Math.abs(after[k]-before[k]);maxDelta=Math.max(maxDelta,delta);assert(delta<1e-9,`${f}/${k}: ${delta}`)}checks++;
  }
 }
-console.log(JSON.stringify({transferChecks:checks,cachedTransferCounterexample:true,maxMatrixDelta:maxDelta,downloads:false,gpu:false}));
+// One additional fixture covers explicit pivot/skew; all tested scales positive.
+{
+ const {a,b,child}=fixture(13);child.pivot.set(17,-9);child.skew.set(.12,-.08);
+ const before=child.getGlobalTransform();
+ for(const parent of [b,a,b,a]){
+  reparentWithFreshTransform(child,parent);const after=child.getGlobalTransform();
+  for(const k of keys){const delta=Math.abs(after[k]-before[k]);maxDelta=Math.max(maxDelta,delta);assert(delta<1e-9)}checks++;
+ }
+}
+// A combined pivot/skew/reflection success fixture exercises Matrix.decompose.
+{
+ const {a,b,child}=fixture(16);child.pivot.set(17,-9);child.skew.set(.12,-.08);child.scale.x=-1.14;b.scale.y=-1.8;
+ const before=child.getGlobalTransform();
+ for(const parent of [b,a,b,a]){
+  reparentWithFreshTransform(child,parent);const after=child.getGlobalTransform();
+  for(const k of keys){const delta=Math.abs(after[k]-before[k]);maxDelta=Math.max(maxDelta,delta);assert(delta<1e-9)}checks++;
+ }
+}
+let rejectionChecks=0;
+for(const kind of ['origin','singular-destination','nonfinite-destination','self','descendant']){
+ const {a,b,child}=fixture(3);
+ let destination=b;
+ if(kind==='origin')child.origin.set(10,20);
+ if(kind==='singular-destination')b.scale.x=0;
+ if(kind==='nonfinite-destination')b.x=Infinity;
+ if(kind==='self')destination=child;
+ if(kind==='descendant'){destination=new Container();child.addChild(destination)}
+ const before=child.getGlobalTransform();const pose=[child.x,child.y,child.scale.x,child.scale.y,child.rotation,child.skew.x,child.skew.y];
+ assert.throws(()=>reparentWithFreshTransform(child,destination),RangeError);assert.equal(child.parent,a);
+ assert.deepEqual([child.x,child.y,child.scale.x,child.scale.y,child.rotation,child.skew.x,child.skew.y],pose);
+ const after=child.getGlobalTransform();for(const k of keys)assert.equal(before[k],after[k]);rejectionChecks++;
+}
+console.log(JSON.stringify({transferChecks:checks,freshFixtures:12,rejectionChecks,cachedTransferCounterexample:'unrendered identity caches',maxMatrixDelta:maxDelta,downloads:false,gpu:false}));
