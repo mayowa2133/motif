@@ -1,0 +1,175 @@
+{
+  "Dd45WmVPOfQ": {
+    "setup_count": 10,
+    "proposed_duration_median": 2.8166666666666664,
+    "proposed_duration_range": [
+      1.2333333333333334,
+      5.0
+    ],
+    "relationships": {
+      "inspection": 4,
+      "test": 2,
+      "accumulate": 3,
+      "interface-interaction": 4,
+      "selection": 2,
+      "reveal": 3,
+      "process": 2,
+      "handoff": 2,
+      "gate": 3,
+      "approval": 2,
+      "block": 1,
+      "burden": 1,
+      "background-work": 1
+    },
+    "annotation_limit": "Original live indexer proposals retained; not newly validated semantic boundaries."
+  },
+  "Dd4oMBpyEq_": {
+    "setup_count": 13,
+    "proposed_duration_median": 1.7666666666666666,
+    "proposed_duration_range": [
+      0.9666666666666667,
+      4.1
+    ],
+    "relationships": {
+      "reveal": 7,
+      "accumulate": 1,
+      "interface-interaction": 5,
+      "background-work": 1,
+      "inspection": 2,
+      "compare": 4,
+      "route": 1,
+      "multi-agent-work": 1,
+      "process": 1,
+      "approval": 2,
+      "callback": 2,
+      "test": 2,
+      "price": 2
+    },
+    "annotation_limit": "Original live indexer proposals retained; not newly validated semantic boundaries."
+  },
+  "Dd4Le3YhCQt": {
+    "setup_count": 10,
+    "proposed_duration_median": 3.1333333333333333,
+    "proposed_duration_range": [
+      1.0666666666666667,
+      5.1
+    ],
+    "relationships": {
+      "accumulate": 1,
+      "test": 3,
+      "multi-agent-work": 2,
+      "gate": 1,
+      "block": 1,
+      "reveal": 6,
+      "compare": 4,
+      "selection": 3,
+      "transform": 1,
+      "handoff": 2,
+      "approval": 1,
+      "interface-interaction": 2,
+      "callback": 1
+    },
+    "annotation_limit": "Original live indexer proposals retained; not newly validated semantic boundaries."
+  },
+  "Dd2uCwTB6II": {
+    "setup_count": 11,
+    "proposed_duration_median": 2.8666666666666667,
+    "proposed_duration_range": [
+      1.4,
+      4.7
+    ],
+    "relationships": {
+      "compare": 7,
+      "reveal": 7,
+      "inspection": 3,
+      "process": 1,
+      "selection": 3,
+      "price": 1,
+      "accumulate": 2,
+      "burden": 1,
+      "gate": 1,
+      "interface-interaction": 3,
+      "test": 4,
+      "handoff": 2,
+      "callback": 1
+    },
+    "annotation_limit": "Original live indexer proposals retained; not newly validated semantic boundaries."
+  },
+  "Dd2UAqOvDoO": {
+    "setup_count": 8,
+    "proposed_duration_median": 3.8833333333333333,
+    "proposed_duration_range": [
+      1.2,
+      5.333333333333333
+    ],
+    "relationships": {
+      "compare": 4,
+      "selection": 3,
+      "reveal": 3,
+      "interface-interaction": 4,
+      "test": 2,
+      "accumulate": 3,
+      "process": 3,
+      "inspection": 2,
+      "price": 1,
+      "burden": 1,
+      "approval": 1,
+      "background-work": 1,
+      "gate": 1,
+      "block": 1,
+      "route": 2
+    },
+    "annotation_limit": "Original live indexer proposals retained; not newly validated semantic boundaries."
+  },
+  "Dd2HMwIy6D3": {
+    "setup_count": 19,
+    "proposed_duration_median": 1.7333333333333334,
+    "proposed_duration_range": [
+      0.7333333333333333,
+      2.6666666666666665
+    ],
+    "relationships": {
+      "interface-interaction": 6,
+      "approval": 5,
+      "reveal": 5,
+      "accumulate": 2,
+      "compare": 3,
+      "price": 2,
+      "gate": 2,
+      "process": 8,
+      "background-work": 2,
+      "selection": 4,
+      "transform": 4,
+      "route": 2,
+      "callback": 1,
+      "block": 2
+    },
+    "annotation_limit": "Original live indexer proposals retained; not newly validated semantic boundaries."
+  },
+  "Dd15NcHvlNl": {
+    "setup_count": 20,
+    "proposed_duration_median": 1.9500000000000002,
+    "proposed_duration_range": [
+      0.8666666666666667,
+      3.7666666666666666
+    ],
+    "relationships": {
+      "burden": 5,
+      "accumulate": 5,
+      "compare": 5,
+      "inspection": 6,
+      "approval": 2,
+      "test": 4,
+      "reveal": 6,
+      "handoff": 5,
+      "process": 2,
+      "transform": 3,
+      "interface-interaction": 3,
+      "callback": 1,
+      "gate": 1,
+      "block": 1,
+      "price": 1
+    },
+    "annotation_limit": "Original live indexer proposals retained; not newly validated semantic boundaries."
+  }
+}
