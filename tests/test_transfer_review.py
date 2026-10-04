@@ -266,6 +266,15 @@ class TransferReviewTests(unittest.TestCase):
   with self.assertRaises(ValueError):verify_augmentation(existing,full)
   wrong=copy.deepcopy(full);wrong['asset_usage'][0]['agent_assisted']='true'
   with self.assertRaises(ValueError):verify_augmentation(raw,wrong)
+ def test_transfer_warning_field_semantics_match_reference_without_stripping_warnings(self):
+  from motif_direct import model_call
+  report=self.report();report['novelty_warnings']=['synthetic actual unresolved issue'];report['limits']='scope caveat belongs here'
+  def run(args,**kwargs):
+   self.assertIn('novelty_warnings is a BLOCKING array',kwargs['input']);self.assertIn('general inspection limits in checks/limits',kwargs['input'])
+   write(Path(args[args.index('-o')+1]),report);return subprocess.CompletedProcess(args,0,'','')
+  with patch('motif_direct.subprocess.run',side_effect=run):
+   result=model_call(self.p,'field-semantics','synthetic review',tr.SCHEMA,{'cli_path':sys.executable,'reasoning_effort':'low','model':None})
+  self.assertEqual(result['novelty_warnings'],report['novelty_warnings']);self.assertEqual(result['limits'],report['limits']);self.assertNotEqual(tr.status(self.plan,result,'concept',['u'])['status'],'PASS')
  def test_future_partial_plan_fails_before_live_review_or_contract(self):
   import motif_structure as st
   raw,full=self.legacy_shape_fixture();write(self.p/'production-plan.json',raw)

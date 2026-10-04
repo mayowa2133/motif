@@ -70,7 +70,7 @@ def model_call(project, name, prompt, schema, config, images=()):
         config={**config,**cli,'cli_version':command([cli['cli_path'],'--version'],ROOT).strip()}
     if not Path(config['cli_path']).is_file() or not os.access(config['cli_path'],os.X_OK):
         raise ValueError('recorded Codex CLI is unavailable: '+config['cli_path'])
-    if Path(schema).name=='reference-gate.schema.json':
+    if Path(schema).name in ('reference-gate.schema.json','transfer-gate.schema.json'):
         prompt+='\nOutput contract: novelty_warnings is a BLOCKING array. Include only actual unresolved novelty or structural warnings. Put positive observations, no-imitation findings and general inspection limits in checks/limits. Use an empty array when no such warning exists. No PASS verdict is requested.'
     (project/(name+'-input.txt')).write_text(prompt)
     wire_schema=read(ROOT/schema)
