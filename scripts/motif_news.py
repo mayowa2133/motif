@@ -20,6 +20,11 @@ def require_direction(project):
  if not read(project/'quality-direction.json')['pass'] or r['plan_sha256']!=sha(project/'production-plan.json') or r['response_sha256']!=sha(project/'quality-direction.json') or r['invocation_sha256']!=sha(project/'quality-direction-invocation.json'):
   raise ValueError('fresh independent direction review required')
  from motif_reference import require_calibration,require_stage,folder
+ from motif_transfer_review import binding
+ transfer=binding(project)
+ if transfer:
+  require_stage(project,'concept')
+  if any(r.get(k)!=v for k,v in transfer.items()) or r.get('transfer_concept_gate_sha256')!=sha(project/'transfer-gates/concept/record.json'):raise ValueError('direction transfer/concept evidence stale')
  if require_calibration(project):
   require_stage(project,'concept')
   if r.get('reference_calibration_sha256')!=sha(folder(project)/'record.json') or r.get('concept_gate_sha256')!=sha(project/'reference-gates/concept/record.json'):raise ValueError('direction reference/concept evidence stale')

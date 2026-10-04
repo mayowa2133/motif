@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """Explicit own-evidence transfer admission; never reference calibration."""
-import argparse,hashlib,json,shutil
+import argparse,hashlib,json,math,shutil
 from pathlib import Path
 from jsonschema import Draft202012Validator
 from motif_reference import ROOT,read,write,sha,CONCEPT,OPENING,valid_invocation
@@ -88,8 +88,9 @@ def opening_inputs(project,ev):
  if {r['setup_id'] for r in rows}!=ids or len(rows)!=len(ids):raise ValueError('complete own setup timing required')
  cursor=0
  for r in rows:
-  if not isinstance(r['start'],(int,float)) or not isinstance(r['end'],(int,float)) or r['start']!=cursor or not r['end']>r['start']:raise ValueError('setup timing must partition actual choreography')
+  if not isinstance(r['start'],(int,float)) or not isinstance(r['end'],(int,float)) or not math.isfinite(r['start']) or not math.isfinite(r['end']) or r['start']!=cursor or not r['end']>r['start']:raise ValueError('setup timing must partition actual choreography')
   cursor=r['end']
+ if cursor<info['duration']:raise ValueError('setup timing must cover complete actual opening')
  selected=[r for r in rows if r['start']<info['duration'] and r['end']>0]
  reviewed=review_setup_ids(plan,'opening',ev)
  if set(reviewed)!={r['setup_id'] for r in selected}:raise ValueError('opening scope must exactly match actual reviewed interval')

@@ -173,6 +173,28 @@ class TransferReviewTests(unittest.TestCase):
    with Image.open(native) as image:pixel=image.convert('RGB').getpixel((180,320))
    self.assertGreater(pixel[channel],200);self.assertEqual(len(entry['motion_observations']['frames']),12)
   # Test fixture is synthetic media, not a story, live critic or creative PASS.
+ def test_opening_timing_must_cover_entire_video_and_be_finite(self):
+  import motif_quality as q
+  ev={**self.ev};ev['source_hashes']=dict(self.ev['source_hashes'])
+  for field in ('video','without_captions'):
+   f=self.p/(field+'.test');f.write_text('synthetic probe fixture');ev[field]={'file':str(f),'sha256':sha(f)}
+  timing=self.p/'timing.json'
+  for end in (1,float('inf'),float('nan')):
+   write(timing,{'plan_sha256':sha(self.p/'production-plan.json'),'setups':[{'setup_id':'u','start':0,'end':end}]});ev['setup_timing']={'file':str(timing.resolve()),'sha256':sha(timing)};ev['source_hashes'][str(timing.resolve())]=sha(timing)
+   with patch.object(q,'probe_video',return_value={'duration':4,'width':360,'height':640,'fps':30,'frames':120}),self.assertRaises(ValueError):tr.opening_inputs(self.p,ev)
+ def test_voice_build_require_fresh_transfer_concept_and_direction_binding(self):
+  import motif_news as news
+  concept=self.p/'transfer-gates/concept/record.json';write(concept,{'fresh':'initial'});write(self.p/'quality-direction.json',{'pass':True});write(self.p/'quality-direction-invocation.json',{})
+  record={**tr.binding(self.p),'plan_sha256':sha(self.p/'production-plan.json'),'response_sha256':sha(self.p/'quality-direction.json'),'invocation_sha256':sha(self.p/'quality-direction-invocation.json'),'transfer_concept_gate_sha256':sha(concept)};write(self.p/'quality-direction-record.json',record)
+  with patch.object(news,'require_structure'),patch.object(mr,'require_stage',return_value={}) as stage:
+   news.require_direction(self.p);stage.assert_called_with(self.p,'concept')
+   write(concept,{'fresh':'replaced'})
+   with patch.object(news,'command') as tts,patch.object(news.runpy,'run_path') as build:
+    for action in (news.voice,news.build):
+     with self.assertRaisesRegex(ValueError,'transfer/concept evidence stale'):action(self.p)
+    tts.assert_not_called();build.assert_not_called()
+   record['transfer_concept_gate_sha256']=sha(concept);record['transfer_profile_sha256']='changed';write(self.p/'quality-direction-record.json',record)
+   with self.assertRaisesRegex(ValueError,'transfer/concept evidence stale'):news.require_direction(self.p)
  def test_transfer_news_plan_stops_before_concept_direction(self):
   import motif_news as news
   production=self.root/'videos/productions';production.mkdir(parents=True);project=production/'new';tr.enable(project,self.kit)
