@@ -22,12 +22,12 @@ def separate_frame_data(html_source, *, script_id, filename='frame-data.js'):
         raise ValueError('Expected an explicit Motif30fps frame table')
     readers = [f"JSON.parse(document.getElementById('{script_id}').textContent)",
                f'JSON.parse(document.getElementById("{script_id}").textContent)']
-    reader = next((r for r in readers if r in html_source), None)
-    if reader is None:
+    if not any(reader in html_source for reader in readers):
         raise ValueError('Declared frame table has no supported reader')
     key = json.dumps(script_id)
     value = f'window.MotifFrameTables[{key}]'
     output = html_source[:matches[0].start()] + f'<script src="{filename}"></script>' + html_source[matches[0].end():]
-    output = output.replace(reader, value)
+    for reader in readers:
+        output = output.replace(reader, value)
     script = 'window.MotifFrameTables=window.MotifFrameTables||{};\n' + value + '=' + raw + ';\n'
     return output, script

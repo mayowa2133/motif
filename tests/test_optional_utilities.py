@@ -92,6 +92,24 @@ process.stdout.write(JSON.stringify({spec:context.window.MotifFrameTables.frames
             self.assertEqual(result['states'], [self.states[i] for i in (0, 1, 2, 2, 0, 1, 1)])
             self.assertEqual(result['compiles'], 1)
 
+    def test_mixed_reader_quotes_execute_in_returned_html_load_order(self):
+        double_reader = self.reader.replace("'frames'", '"frames"')
+        source = self.block + '<script>window.results=[' + self.reader + ',' + double_reader + '];</script>'
+        html, script = separate_frame_data(source, script_id='frames')
+        probe = r'''
+const fs=require('node:fs'),vm=require('node:vm');
+const input=JSON.parse(fs.readFileSync(0,'utf8'));
+const context={window:{},document:{getElementById:id=>{throw new Error('Removed inline data queried: '+id);}}};
+for(const tag of input.html.matchAll(/<script\b([^>]*)>([\s\S]*?)<\/script>/g)){
+  const src=/\bsrc="([^"]+)"/.exec(tag[1]);
+  vm.runInNewContext(src?input.files[src[1]]:tag[2],context);
+}
+process.stdout.write(JSON.stringify(context.window.results));
+'''
+        run = subprocess.run(['node', '-e', probe], input=json.dumps({'html': html, 'files': {'frame-data.js': script}}), text=True, capture_output=True)
+        self.assertEqual(run.returncode, 0, run.stderr)
+        self.assertEqual(json.loads(run.stdout), [self.spec, self.spec])
+
     def test_missing_duplicate_or_unsupported_declared_data_stops(self):
         invalid = [self.html.replace(self.block, ''), self.block + self.html,
                    self.html.replace(self.reader, 'unsupportedReader()'),

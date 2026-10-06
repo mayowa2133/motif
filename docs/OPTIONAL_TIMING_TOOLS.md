@@ -21,7 +21,7 @@ Marker IDs must be nonempty and unique. A phrase needs exactly one match after c
 
 ## External frame data
 
-`scripts/motif_frame_data.py` exposes `separate_frame_data(html_source, script_id=..., filename=...)`, returning updated HTML and one local JavaScript data file. It moves the declared JSON frame table without reserializing it, then changes the supported `JSON.parse(document.getElementById(...).textContent)` reader to the corresponding `window.MotifFrameTables` entry. The external data script loads synchronously where the inline data appeared.
+`scripts/motif_frame_data.py` exposes `separate_frame_data(html_source, script_id=..., filename=...)`, returning updated HTML and one local JavaScript data file. It moves the declared JSON frame table without reserializing it, then changes all supported `JSON.parse(document.getElementById(...).textContent)` readers to the corresponding `window.MotifFrameTables` entry, including both single- and double-quoted ID spellings in the same HTML. The external data script loads synchronously where the inline data appeared.
 
 ```python
 from pathlib import Path
@@ -34,4 +34,4 @@ Path("frame-data.js").write_text(data)
 
 Exactly one declared JSON script and a supported reader are required. The table must identify schema `1.0`, 30 fps and an initial state. The output filename must be one local `.js` basename using letters, digits, dots, underscores or hyphens, beginning with a letter or digit. The existing finite-frame compiler continues to validate duration and contiguous explicit states. This utility reduces embedded HTML size; it does not reduce frame-table memory or certify render speed.
 
-The regression probe executes synthetic packed data with the existing compiler and checks exact states through forward, end-boundary, reverse and repeated seeks. Invalid or ambiguous marker schedules, unsupported declarations, and unsafe output names are rejected. These are mechanical checks, separate from rendering, playback, listening and creative review.
+The regression probes execute synthetic packed data with the existing compiler and check exact states through forward, end-boundary, reverse and repeated seeks. A mixed-reader regression executes the returned HTML's scripts in load order and rejects any access to the removed inline data element. Invalid or ambiguous marker schedules, unsupported declarations, and unsafe output names are rejected. These are mechanical checks, separate from rendering, playback, listening and creative review.
