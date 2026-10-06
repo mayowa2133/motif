@@ -1,5 +1,9 @@
 # Motif visual system
 
+[Local regression checks](CONTRIBUTING.md) describe the test dependencies and frozen-evidence portability. [Directing decisions](docs/DIRECTING_DECISIONS.md) collects reusable questions from completed studies while retaining their creative-validation limits.
+
+[Optional timing tools](docs/OPTIONAL_TIMING_TOOLS.md) provide explicit speech markers and lossless external frame-data packing without changing existing production compilers.
+
 Motif's initial style and mascot work lives here. The seven supplied videos define the visual style; the supplied robot defines the mascot identity.
 
 - [Reference analysis](docs/style-reference-analysis.md)

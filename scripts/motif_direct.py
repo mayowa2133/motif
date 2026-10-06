@@ -169,9 +169,8 @@ def run(brief_path,concept_path=None,feedback_path=None):
     for folder in ('assets/voice','assets/sfx','renders'): (project/folder).mkdir(parents=True)
     for name in ('gsap.min.js','motion-engine.js','motion-primitives.js'): shutil.copy2(ROOT/'videos/motif-calendar-reel/assets'/name,project/'assets'/name)
     for name in ('pop','click-soft','whoosh-short'): shutil.copy2(ROOT/f'videos/motif-calendar-reel/assets/sfx/{name}.mp3',project/f'assets/sfx/{name}.mp3')
-    font=Path('/System/Library/Fonts/Supplemental/Arial Bold.ttf')
-    if not font.exists(): raise ValueError('font missing: current local style uses Arial Bold; install/provide an explicitly cleared font')
-    shutil.copyfile(font,project/'assets/MotifSans.ttf')
+    from motif_runtime_portability import copy_cleared_font
+    write(project/'font-provenance.json',copy_cleared_font(project/'assets/MotifSans.ttf'))
     write(project/'package.json',{'name':brief['slug'],'private':True,'scripts':{k:f'npx --yes hyperframes@{PIN} {v}' for k,v in [('check','check'),('render','render'),('dev','preview')]}})
     shutil.copy2(ROOT/'videos/motif-calendar-reel/hyperframes.json',project/'hyperframes.json')
     concept=None

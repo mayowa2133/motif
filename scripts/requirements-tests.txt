@@ -1,0 +1,6 @@
+# Existing regression-suite dependencies; no render/model installation required.
+-r requirements-preview.txt
+-r requirements-planning.txt
+numpy==2.2.6
+fonttools==4.61.1
+brotli==1.2.0
