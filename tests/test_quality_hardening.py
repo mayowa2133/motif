@@ -110,7 +110,12 @@ class HardeningTests(unittest.TestCase):
    window=next(w for w in manifest[mode]['temporal_windows'] if w['shot']=='t02')
    self.assertEqual(window['frames'],list(range(84,97)));self.assertTrue(window['consecutive']);self.assertEqual(window['contact_frame'],90)
    self.assertTrue({91,92,93}<=set(window['frames']));self.assertEqual(len(window['strips_in_order']),4)
-   self.assertTrue(all(Path(v).is_file() for v in window['strips_in_order']))
+   # Frozen evidence records the original capture directory. Resolve its exact
+   # relative paths against this checkout without rewriting the evidence.
+   recorded_root=Path(manifest[mode]['motion_trace']).parent
+   local_root=p.parent/('evidence-captions' if mode=='with_captions' else 'evidence-no-captions')
+   for value in window['strips_in_order']:
+    self.assertTrue((local_root/Path(value).relative_to(recorded_root)).is_file())
   # The three broken frames are absent from the unchanged eight sparse samples.
   self.assertFalse({91,92,93}&{60+round(59*i/7) for i in range(8)})
  def test_ordinary_ui_compiler_consumes_fields_into_events(self):

@@ -32,6 +32,7 @@ videos/productions/*/private-calibration-history/
 
 # Turbo R&D: private review evidence and isolated tooling.
 .venv/
+.test-tools/
 private-audit/
 videos/productions/turbo-*/**/*-input.txt
 videos/productions/turbo-*/**/*-events.jsonl
