@@ -46,6 +46,9 @@ def painted_bounds(scene):
         elif role=='input':
             # Position is packet center; final packet edge meets the work grip.
             bounds.extend((a-w/2,b-h/2,a+w/2,b+h/2) for a,b in ((x,y),(grip[0]-w/2,grip[1])))
+            if scene.get('receipt_dock'):
+                dx,dy=scene['receipt_dock']['offset'];a,b=grip[0]-w/2+dx,grip[1]+dy
+                bounds.append((a-w/2,b-h/2,a+w/2,b+h/2))
         else:
             bounds.append((x,y,x+w,y+h))
             if role=='work' and (w<12 or h<22):raise ValueError('work progress ink exceeds object')
@@ -65,6 +68,14 @@ def validate(scene):
     ordered=[events[e] for e in event_order(scene)]
     if not 0<ordered[0] or not all(a<b for a,b in zip(ordered,ordered[1:])) or ordered[-1]>=scene['frames']:
         raise ValueError('request/stop/response/optional-arrival/resume/complete order invalid')
+    dock=scene.get('receipt_dock')
+    if dock is not None:
+        if (not isinstance(dock,dict) or set(dock)!={'clear_frame','offset'} or
+                'arrival' not in events or type(dock['clear_frame']) is not int or
+                not events['arrival']<dock['clear_frame']<events['resume'] or
+                not isinstance(dock['offset'],list) or len(dock['offset'])!=2 or
+                any(type(v) not in (int,float) or not math.isfinite(v) for v in dock['offset'])):
+            raise ValueError('receipt dock needs finite offset and arrival < clear frame < resume')
     nodes=scene.get('nodes',[])
     if len(nodes)!=len(ROLES) or {n['role'] for n in nodes}!=set(ROLES):
         raise ValueError('exact bounded scene roles required')
@@ -89,6 +100,13 @@ def validate(scene):
     if scene.get('mascot_contract') is not None:
         from motif_flat_mascot import validate_binding
         validate_binding(scene)
+    if dock is not None:
+        packet=next(n for n in nodes if n['role']=='input')
+        worker=next(n for n in nodes if n['role']=='worker')
+        dx,dy=dock['offset'];w,h=packet['size']
+        hand_radius=26*worker['size'][0]/240 if scene.get('mascot_contract') else 6
+        if not (dx<=-hand_radius or dx-w>=hand_radius or dy+h/2<=-hand_radius or dy-h/2>=hand_radius):
+            raise ValueError('receipt dock must clear the resumed hand bounds')
     painted_bounds(scene)
     response=scene.get('response_cue')
     if response is not None:
@@ -170,6 +188,9 @@ def svg_at(scene,frame,root=Path('.'),control=None,captions=False):
                 e=scene['events'];start,end=(e['response'],e.get('arrival',e['resume'])) if state['response_visible'] else (e['request'],e['stop'])
                 fraction=min(1,max(0,(frame-start)/(end-start)))
                 x+=(grip[0]-w/2-x)*fraction;y+=(grip[1]-y)*fraction
+                if state['response_visible'] and scene.get('receipt_dock') and frame>=e['arrival']:
+                    dock=scene['receipt_dock'];q=min(1,(frame-e['arrival'])/(dock['clear_frame']-e['arrival']))
+                    x+=dock['offset'][0]*q;y+=dock['offset'][1]*q
                 markup=f'<rect x="{x-w/2}" y="{y-h/2}" width="{w}" height="{h}" rx="4"/>'
                 if state['response_visible'] and scene.get('response_cue'):
                     color=scene['response_cue']['color']

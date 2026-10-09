@@ -55,6 +55,16 @@ neither fulfillment, editable-source verification nor film approval. The existin
 quality sampler and admission gates evaluate the actual artifact; task records
 cannot bypass them. No generic timeline editor or universal compiler is claimed.
 
+`sample_task(project, captions_movie, captionless_movie, shots)` connects the
+READY task to the existing rough-evidence sampler. Capture must already bind
+both distinct, project-local movies to the current inputs. The receipt locks the
+requested mode, current task/checkpoint, authored outputs, capture, evidence and
+all generated sample files. `require_sampled_task(project)` rejects changed or
+missing inputs, outputs, runtime code, movies, sheets or traces. Recapture and
+resample after edits. Its status is `SAMPLED_REVIEW_REQUIRED`; it never grants
+structure, direction, painted, final or human approval and never executes the
+authored source. A film requirement must use actual film authoring and its gates.
+
 ## Optional semantic repair and approved flat binding
 
 `response_cue={"shape":"check-packet","color":"#488553"}` adds a distinct
@@ -84,6 +94,16 @@ The reviewed retained-packet fixture masks part of the resumed grip. Perceived
 contact remains unassessed; this path cannot claim a fully visible hand/work grip
 or a creative gain. Preserve the packetless prior artifact as the visibility
 comparator and route requirements for visible grip to further native authoring.
+
+Optional `receipt_dock={"clear_frame":198,"offset":[0,-48]}` keeps the input
+unchanged through its explicit arrival, then moves the received packet linearly
+to a retained parking position before resume. Require
+`arrival < clear_frame < resume`, finite coordinates, painted bounds and enough
+separation from the resumed hand. Omitting it preserves prior SVG/state output.
+This is a bounded visibility repair: its numeric clearance cannot certify other
+occlusion, handling, full-speed contact or artistic gain. Actual encoded review
+of the tested dock sees the resumed endpoint clearly, with a transient neutral
+tab overlap during parking still recorded as a limitation.
 
 An optional `mascot_contract` points to a project-relative copy of the pinned
 approved reusable anchor JSON, SHA-256

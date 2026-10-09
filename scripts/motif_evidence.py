@@ -148,6 +148,22 @@ def capture_inputs(project):
     names=['production-scope.json','production-plan.json','scene-events.json']
     if (project/'render-config.json').exists():names.append('render-config.json')
     resources={}
+    if (project/'custom-authoring-task.json').exists():
+        from motif_custom_authoring import task_path
+        from motif_media_contracts import locked_resource
+        task=read(task_path(project))
+        if task['specification']['requirement']['mode']!=require_scope(project)['actual_mode']:
+            raise ValueError('custom task mode differs from production scope before capture')
+        if task.get('stage')!='READY_FOR_SHARED_QA' or not task.get('history'):
+            raise ValueError('custom task must be ready before capture')
+        outputs=task['history'][-1]['outputs']
+        if [x['path'] for x in outputs]!=[x['path'] for x in task['specification']['expected_outputs']]:
+            raise ValueError('complete custom output checkpoint required before capture')
+        names.append('custom-authoring-task.json')
+        for record in [*task['specification']['inputs'],*outputs]:
+            resources['custom:'+record['path']]=sha(locked_resource(project,record))
+        for name in ('motif_evidence.py','motif_custom_authoring.py','motif_media_contracts.py','motif_flat_mascot.py','motif_quality.py'):
+            resources['custom-runtime:'+name]=sha(Path(__file__).with_name(name))
     if (project/'resource-manifest.json').exists():
         from motif_media_contracts import locked_resource
         names.append('resource-manifest.json')

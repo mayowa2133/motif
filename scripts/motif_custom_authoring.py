@@ -83,3 +83,74 @@ def checkpoint(root,stage,active_seconds,elapsed_seconds,reason):
     task['quality_status']='UNASSESSED'
     write(path,task)
     return task
+
+
+def sample_task(root, with_captions, without_captions, shots):
+    """Attach actual captured roughs to the existing sampler; never approve them.
+
+    The caller authors and captures explicitly. This bridge executes no supplied
+    code and grants no structure, direction, painted, final or human gate pass.
+    """
+    from motif_quality import evidence_bundle, source_freshness
+    from motif_evidence import require_capture, require_scope
+    root=Path(root).resolve();path=task_path(root);task=read(path)
+    if task['stage']!='READY_FOR_SHARED_QA':
+        raise ValueError('custom outputs must be ready before shared QA')
+    for item in task['specification']['inputs']:locked_resource(root,item)
+    current=task['history'][-1]['outputs'] if task['history'] else []
+    if len(current)!=len(task['specification']['expected_outputs']):
+        raise ValueError('complete output checkpoint required')
+    for item in current:locked_resource(root,item)
+    scope=require_scope(root)
+    if task['specification']['requirement']['mode']!=scope['actual_mode']:
+        raise ValueError('custom task mode differs from production scope')
+    a,b=Path(with_captions).resolve(),Path(without_captions).resolve()
+    if a==b or any(not p.is_relative_to(root) for p in (a,b)):
+        raise ValueError('distinct project-local caption and picture outputs required')
+    capture=require_capture(root,artifacts=[a,b])
+    manifest=evidence_bundle(root,'rough',a,b,shots)
+    if source_freshness(root,manifest):raise ValueError('sampled custom sources changed')
+    value={'version':1,'status':'SAMPLED_REVIEW_REQUIRED','mode':scope['actual_mode'],
+           'task_sha256':sha(path),'capture_record':capture,
+           'evidence_sha256':sha(root/'quality-review/rough/evidence.json'),
+           'output_checkpoint':current,'film_approved':False,
+           'sampled_files':{str(p):sha(p) for k in ('with_captions','without_captions')
+                            for p in [*manifest[k]['sheets'],manifest[k]['motion_trace']]},
+           'limits':['Shared decoded-frame sampling is not a Gold gate pass.',
+                    'Structure/direction, independent critics, technical gates and human playback/listening remain required.']}
+    write(root/'custom-shared-qa.json',value)
+    return value
+
+
+def require_sampled_task(root):
+    """Fail closed when source, checkpoint, evidence or capture changes."""
+    from motif_quality import source_freshness
+    from motif_evidence import require_capture, require_scope
+    root=Path(root);value=read(root/'custom-shared-qa.json')
+    scope=require_scope(root)
+    if value.get('mode')!=scope['actual_mode']:
+        raise ValueError('custom QA receipt mode differs from production scope')
+    if value.get('status')!='SAMPLED_REVIEW_REQUIRED' or value.get('film_approved') is not False:
+        raise ValueError('invalid custom QA receipt')
+    if value['task_sha256']!=sha(task_path(root)):
+        raise ValueError('custom task checkpoint changed')
+    task=read(task_path(root))
+    if task['specification']['requirement']['mode']!=scope['actual_mode']:
+        raise ValueError('custom task mode differs from production scope')
+    if task.get('stage')!='READY_FOR_SHARED_QA' or not task.get('history') or value['output_checkpoint']!=task['history'][-1]['outputs']:
+        raise ValueError('custom output checkpoint differs from ready task')
+    for item in task['specification']['inputs']:locked_resource(root,item)
+    for item in value['output_checkpoint']:locked_resource(root,item)
+    path=root/'quality-review/rough/evidence.json'
+    if value['evidence_sha256']!=sha(path):raise ValueError('custom evidence changed')
+    manifest=read(path)
+    expected={str(p) for k in ('with_captions','without_captions')
+              for p in [*manifest[k]['sheets'],manifest[k]['motion_trace']]}
+    if set(value.get('sampled_files',{}))!=expected:
+        raise ValueError('custom sampled file coverage incomplete')
+    for path,digest in value['sampled_files'].items():
+        if not Path(path).resolve().is_relative_to(root.resolve()) or sha(path)!=digest:
+            raise ValueError('custom sampled frame/trace changed')
+    if source_freshness(root,manifest):raise ValueError('custom render sources changed')
+    require_capture(root,value['capture_record'],artifacts=[manifest[k]['video'] for k in ('with_captions','without_captions')])
+    return value
