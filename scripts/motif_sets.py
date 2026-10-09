@@ -185,9 +185,10 @@ def hero_placement(rig, rng):
 def _place_prop(name, rng, hero_box, role):
     """Candidate placement for one prop. role: edge | overlap | back."""
     p = PROPS[name];target_h = {'floor': (260, 520), 'wall': (150, 260), 'ceiling': (120, 300), 'sky': (110, 200)}[p.mount]
-    scale = min(rng.uniform(*target_h) / p.h, 760 / p.w)
-    w, h = p.w * scale, p.h * scale
     hx, hy, hw, hh = hero_box
+    scale = min(rng.uniform(*target_h) / p.h, 760 / p.w)
+    if role == 'overlap':scale = min(scale, rng.uniform(.25, .38) * hh / p.h)  # a foreground corner, never a wall in front of the hero
+    w, h = p.w * scale, p.h * scale
     if role == 'edge':
         side = rng.choice((-1, 1));x = (w * rng.uniform(.05, .35) if side < 0 else W - w * rng.uniform(.05, .35))
     elif role == 'overlap':
@@ -210,7 +211,7 @@ def _valid_item(item, hero_box, placed):
     if _in_headline(box) or _in_caption(box):return False
     if item['role'] == 'overlap':
         share = _overlap(box, hero_box) / (hero_box[2] * hero_box[3])
-        if not 0 < share <= .10 or box[3] > .6 * hero_box[3]:return False
+        if not 0 < share <= .08 or box[3] > .4 * hero_box[3]:return False
     elif item['layer'] == 'back' and item['role'] == 'back' and _overlap(box, hero_box) > .5 * box[2] * box[3]:return False
     for other in placed:
         if _overlap(box, other['box']) > .25 * min(box[2] * box[3], other['box'][2] * other['box'][3]):return False

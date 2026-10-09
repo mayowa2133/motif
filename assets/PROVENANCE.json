@@ -678,6 +678,21 @@
    "evidence": "videos/productions/voicestudio-craft-v6/assets/fonts/OFL-eb-garamond.txt"
   },
   {
+   "id": "font/Inter-900-latin",
+   "sha256": "08a195a0cb54f0aa04e00d7a57f175d8cad0923b62f99268d7279b4e982cb3e8",
+   "origin": "licensed",
+   "generator": "npm @fontsource/inter@5.1.0 files/inter-latin-900-normal.woff2",
+   "approval": {
+    "status": "PENDING",
+    "by": null,
+    "date": null,
+    "note": "Awaiting Mayowa review."
+   },
+   "path": "assets/fonts/Inter-900-latin.woff2",
+   "license": "SIL Open Font License 1.1",
+   "evidence": "assets/fonts/OFL-inter.txt"
+  },
+  {
    "id": "bot/v1/face-states/annoyed",
    "sha256": "0e778ce347d755e1cd080da72cb782f11483afb3b6c6f9fac4040d8e47e72788",
    "origin": "motif-authored-svg",

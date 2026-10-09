@@ -182,6 +182,9 @@ def bootstrap():
     for font, licence in (('Inter-700', 'OFL-inter.txt'), ('Inter-900', 'OFL-inter.txt'), ('EBGaramond-700', 'OFL-eb-garamond.txt')):
         add(data, entry_for(V6 / 'assets/fonts' / (font + '.woff2'), 'font/' + font, 'licensed', 'distributed font binary', LEGACY,
                             license='SIL Open Font License 1.1', evidence=(V6 / 'assets/fonts' / licence).relative_to(ROOT).as_posix()))
+    # Full Latin Inter 900 (the v6 copy is subset to v6's headline glyphs).
+    add(data, entry_for(ROOT / 'assets/fonts/Inter-900-latin.woff2', 'font/Inter-900-latin', 'licensed', 'npm @fontsource/inter@5.1.0 files/inter-latin-900-normal.woff2', PENDING,
+                        license='SIL Open Font License 1.1', evidence='assets/fonts/OFL-inter.txt'))
     for path in sorted((ROOT / 'assets/characters/motif-bot/canonical').rglob('*')):
         if path.is_file() and path.suffix.lower() in MEDIA:
             add(data, entry_for(path, 'bot/' + path.relative_to(ROOT / 'assets/characters/motif-bot/canonical').with_suffix('').as_posix(), 'motif-authored-svg',

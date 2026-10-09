@@ -361,7 +361,9 @@ def prepare(project, brief):
     for folder in ('assets/fonts', 'assets/materials', 'assets/voice', 'compositions', 'review'):(project / folder).mkdir(parents=True, exist_ok=True)
     for name in ('gsap.min.js', 'motion-engine.js', 'motion-primitives.js'):shutil.copy2(ROOT / 'videos/motif-calendar-reel/assets' / name, project / 'assets' / name)
     shutil.copy2(ROOT / 'assets/runtime/motif-frame-sequence.js', project / 'assets/motif-frame-sequence.js')
-    for name in ('Inter-700.woff2', 'Inter-900.woff2', 'EBGaramond-700.woff2', 'OFL-inter.txt', 'OFL-eb-garamond.txt'):shutil.copy2(V6 / 'assets/fonts' / name, project / 'assets/fonts' / name)
+    for name in ('Inter-700.woff2', 'EBGaramond-700.woff2', 'OFL-inter.txt', 'OFL-eb-garamond.txt'):shutil.copy2(V6 / 'assets/fonts' / name, project / 'assets/fonts' / name)
+    # v6's Inter 900 is subset to its own headline glyphs; reels need the full Latin set.
+    shutil.copy2(ROOT / 'assets/fonts/Inter-900-latin.woff2', project / 'assets/fonts/Inter-900.woff2')
     from motif_materials import install
     install(project)
     surface = project / 'assets/materials/world-paper.webp'
