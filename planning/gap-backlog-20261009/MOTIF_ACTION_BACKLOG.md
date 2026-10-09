@@ -1,8 +1,31 @@
 # Motif gap report: actionable backlog
 
-Planning baseline: **remote main `0f9ac3afeba522b9ffd906d71184f4e6326b4cc7`**, verified on 2026-10-09 after [PR #8](https://github.com/mayowa2133/motif/pull/8). This document authorizes no implementation, issues, renders or publication. Cycle 6 keeps capture priority; active/sealed productions and the paused Gabriel reel remain untouched.
+Original planning baseline: **remote main `0f9ac3afeba522b9ffd906d71184f4e6326b4cc7`** after [PR #8](https://github.com/mayowa2133/motif/pull/8). The user subsequently authorized implementation, isolated pilot capture, reviewed PRs and justified merges. [PR #9](https://github.com/mayowa2133/motif/pull/9) merged at `a75893ce0b06121afe5871a38f3f4f3e3c6942e3`. Active/sealed productions, the primary checkout and the paused Gabriel reel remain untouched. Pilot capture has finished and is released for Main Cycle 7.
 
 Source: Library `libfile_e12ba15fa71081918a534a559fc93fe4`, **Pasted text(5).txt**, all 300 lines read. The report's `ab8c467` analysis, incident descriptions and reported test counts are inputs to investigate, not newly verified findings. Production/reference files cited by the report were not opened for this plan.
+
+## Execution checkpoint — 2026-10-09
+
+| Package | Delivered / evidence | Remaining dependency |
+| --- | --- | --- |
+| B1 | PR #9: explicit entry scopes, hash-bound capture, technical coverage, truthful completion | Human dimensions remain unassessed |
+| B2 | PR #9: exact proposition spans, event/state/result/claim map; waiting fixture binds map to event schedule | Perceived causality; substantive factual claims need real sources |
+| B3 | Frozen study/review protocol; actual encoded still evidence; independent review separates rendered/perceived truth | Fresh first-exposure playback and actual listening; no whole-film approval |
+| B4 | Optional bounded waiting compiler, pure integer-frame seeking, native identities and retained state | Approved mascot resource hashes verified; flat action binding and semantic response repair pending; placeholder fixture cannot enter film mode |
+| B5 | Hash-bound licensed glyphs, explicit manual timing, integer picture/PCM sample contracts, saved mix | Complex shaping/bidi and measured-speech adapter unsupported; human reading/listening pending |
+| B6 | Actual ink bounds, grip geometry, complete decode coverage; independent selected-window still review | Perceived contact/readability and approved asset lifecycle |
+| B7 | PR #8 gate retained; no ready creative addition; failed/ambiguous pilot evidence preserved | Four genuinely unfamiliar matched script pairs, qualified viewer pool and equal effort preregistration |
+| B8 | Actual caption/recolor/retime encode proof; source/component editing explicitly distinguished from timeline editing | Select adequate existing authorized Cy2–6 full-reference handoff; preserve exposure scope and assess fidelity independently |
+| B9 | Relative hashed resources, fail-on-missing, two-location source/event/glyph rebuild on this machine | Second supported environment/platform and encoded rebuild validation |
+
+The second increment has independently reviewed code and **21 focused tests**. It passes 115 applicable Python and six Node tests. Its six new MP4 encodes are 240 frames at 30fps, 360×640, eight seconds. Preview/export decoded picture and synthetic audio match on this runtime. Full 240-frame evidence is decoded for each of five variants; reviewers inspect declared subsets, so decode coverage is not a claim that every frame was reviewed. The fixture uses placeholder front-facing shapes and has no accepted artistic advantage.
+
+Still review found an ambiguous repeated-looking response cue. The `Input ready` caption edit visibly reaches the encode but conflicts with its pending state. Preserve these as failed/ambiguous evidence, reject creative promotion, and retain `Await input` as the caption rollback target. No matched main-method film baseline exists for this new bounded family; fault controls are diagnostic errors, never a fabricated baseline or treatment win.
+
+Arena report source `libfile_350c30bd76f081918c6cb064b9dd9dc1` (Pasted text(6).txt, all 815 lines) is incorporated only through verified deltas: declared requirement → registered capability or scoped authoring task → editable composition → shared QA; data/rendered/perceived truth; saved-media parity; resumable stages/intervention records; actual editing probes and non-tournament transfer. This stays within B1–B9. Its old production incidents and 58-item architecture are not adopted wholesale.
+
+
+Approved-resource correction: `research/experiments/in-format-acting-20261007/provenance/SAFE_REUSE_PATHS_V01.json` identifies an existing permitted mascot/style/font packet. Exact hashes of its `MASCOT_BASE.svg`, anchor contract, style contract, Inter700 and OFL license match. No wholesale production folder was opened/copied. The old style contract includes depth/grain cues; current user direction for flat front-facing 2D takes precedence. Resources exist; action-specific flat binding still needs implementation and review. Existing completed Cy2–6 reference handoffs may serve B8 when their authorization/coverage is adequate; do not label exposed reference as held out. Four freshly authored synthetic tech-explainer scripts can supply the frozen transfer briefs without external reference.
 
 ## What already exists
 
@@ -17,7 +40,7 @@ Start with **B1 + B2 + the protocol portion of B3**, followed by one bounded pil
 
 Use a fresh illustrative brief: a visible external request arrives; one worker needs another actor's input; its work stops and stays stopped while input is pending; a visible response permits resumption and produces a retained result. This is a synthetic causal test, not a product claim or a reconstruction of any queued reference.
 
-The first package delivers a mode/evidence manifest, a proposition-to-picture map, a frozen baseline/candidate comparison plan and review forms. Subsequently implement only the smallest scene changes needed by observed baseline failures. B4/B5/B6 provide the narrow execution/readiness work when those failures justify it. Actual capture waits for producer allocation and separate implementation authorization.
+The first package delivers a mode/evidence manifest, a proposition-to-picture map, a frozen baseline/candidate comparison plan and review forms. Subsequently implement only the smallest scene changes needed by observed baseline failures. B4/B5/B6 provide the narrow execution/readiness work when those failures justify it. The user supplied implementation authorization and exclusive capture allocation; the technical pilot is now encoded. Future production capture follows the producer schedule.
 
 Acceptance for the package itself: every script proposition has an explicit evidence route; requested mode cannot be silently substituted; no output claims normal-speed or AV approval from stills. A failed pilot is useful evidence, not a reason to replace the baseline automatically.
 
@@ -45,7 +68,7 @@ Acceptance for the package itself: every script proposition has an explicit evid
 
 **Verify:** test reviewer detection using known, deliberately inserted onset/reset/ownership errors. Complete all declared critical frame intervals before claiming absence. Ask fresh viewers causal questions without giving them the producer's explanation first.
 
-**Dependencies:** B1/B2. **Done:** evaluated dimensions and unavailable dimensions are explicit; normal-speed evidence comes from actual playback, listening from actual listening. This task has **no normal-speed, listening or AV evidence**; frame critics do not supply it. Human review is already required—do not add another paper approval rule. Automated AV criticism remains a later feasibility hypothesis.
+**Dependencies:** B1/B2. **Done:** evaluated dimensions and unavailable dimensions are explicit; normal-speed evidence comes from actual playback, listening from actual listening. This task still has **no human normal-speed, listening or AV evidence**; frame critics and synthetic audio parity do not supply it. Human review is already required—do not add another paper approval rule. Automated AV criticism remains a later feasibility hypothesis.
 
 **Regression/rollback:** any stale report or false complete-coverage/playback claim invalidates advancement. Without playback/listening, keep those dimensions UNASSESSED and hold full-film acceptance; separately scoped technical findings may remain valid.
 
@@ -133,4 +156,4 @@ These are **proposed thresholds**, not validated universal quality norms. Freeze
 
 ## Evidence and planning limits
 
-This backlog was checked against current remote main and selected committed code/contracts, not against incident media. Current-source anchors include `QUALITY_SYSTEM.md`, `docs/PRODUCTION_PLAN_WORKFLOW.md`, `docs/DIRECTING_CHECKLIST.md`, `schemas/shot-contract.schema.json`, `quality/performance/README.md`, and the components named above. Existing source-informed observations remain scoped; no claim of general blind transfer, normal-speed comprehension, factual truth or automated AV review is made. No GitHub issues, implementation, captures, production edits or publishing were performed for this planning deliverable.
+This backlog was checked against current remote main and selected committed code/contracts, not against incident media. Current-source anchors include `QUALITY_SYSTEM.md`, `docs/PRODUCTION_PLAN_WORKFLOW.md`, `docs/DIRECTING_CHECKLIST.md`, `schemas/shot-contract.schema.json`, `quality/performance/README.md`, and the components named above. Existing source-informed observations remain scoped; no claim of general blind transfer, normal-speed comprehension, factual truth or automated AV review is made. The original planning deliverable performed no implementation or capture. Subsequent authorized execution is recorded in the checkpoint above. No source/reference production media was inspected; no creative method or new mascot artwork is promoted.

@@ -146,11 +146,18 @@ def technical_binding(name, record, events_sha256, video_sha256):
 def capture_inputs(project):
     project=Path(project)
     names=['production-scope.json','production-plan.json','scene-events.json']
+    if (project/'render-config.json').exists():names.append('render-config.json')
+    resources={}
+    if (project/'resource-manifest.json').exists():
+        from motif_media_contracts import locked_resource
+        names.append('resource-manifest.json')
+        for record in read(project/'resource-manifest.json')['resources']:
+            resources['resource:'+record['path']]=sha(locked_resource(project,record))
     scope=require_scope(project)
     if scope['actual_mode'] in FILM_MODES:
         evidence_inputs(project)
         names+=['causal-map.json','critical-intervals.json']
-    return {name:sha(project/name) for name in names}
+    return {**{name:sha(project/name) for name in names},**resources}
 
 
 def freeze_capture(project):

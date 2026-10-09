@@ -1,0 +1,26 @@
+{
+  "schema_version": "waiting-1.0",
+  "style": "flat-frontal-fixture",
+  "script": "An external request pauses work while input is pending. A response lets work resume and leaves a completed result.",
+  "fps": 30,
+  "frames": 240,
+  "events": {"request": 30, "stop": 60, "response": 150, "resume": 180, "complete": 210},
+  "nodes": [
+    {"id":"support","role":"support","position":[35,430],"size":[290,14],"layer":0,"color":"#B9ADA0"},
+    {"id":"worker","role":"worker","position":[70,290],"size":[45,140],"layer":1,"color":"#367F8A"},
+    {"id":"requester","role":"requester","position":[250,290],"size":[45,140],"layer":2,"color":"#B76751"},
+    {"id":"work","role":"work","position":[145,392],"size":[70,38],"layer":3,"color":"#367F8A"},
+    {"id":"input","role":"input","position":[250,381],"size":[26,22],"layer":4,"color":"#DEAC42"},
+    {"id":"result","role":"result","position":[162,346],"size":[36,36],"layer":5,"color":"#488553"}
+  ],
+  "text": [],
+  "causal_map": {"propositions":[{
+    "id":"pending-input","shot_id":"wait","word_range":[0,19],
+    "text":"An external request pauses work while input is pending. A response lets work resume and leaves a completed result.",
+    "subject":"worker","initiator":"requester","stimulus":"external request","action":"stop and await input",
+    "before":"working","after":"pending","persistent_result":"pending work remains until a response, completed result remains afterward",
+    "diagnostic_feature":"unchanged work-progress bar during pending interval and retained result square",
+    "stimulus_frame":30,"action_frame":60,"persistent_until_frame":239,"review_interval":[0,239],
+    "claim":{"status":"illustrative"}
+  }]}
+}
