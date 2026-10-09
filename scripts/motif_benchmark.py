@@ -1,6 +1,6 @@
 """Render every benchmark brief and build one contact sheet for scoring.
 
-    python scripts/motif_benchmark.py --out DIR [--allow-draft] [--tts-python PY] [--only slug,...]
+    python scripts/motif_benchmark.py --out DIR --local-draft [--allow-draft] [--tts-python PY] [--only slug,...]
 
 Each brief runs through motif_reel.run (no per-film code) with a review render.
 The sheet shows four moments per reel. Scores go in quality/scorecard.md.
@@ -20,11 +20,12 @@ def main():
     from motif_reel import run
     p = argparse.ArgumentParser(description=__doc__.split('\n')[0]);p.add_argument('--out', type=Path, required=True)
     p.add_argument('--allow-draft', action='store_true');p.add_argument('--tts-python', type=Path);p.add_argument('--only');p.add_argument('--no-render', action='store_true')
+    p.add_argument('--local-draft', action='store_true', help='explicit experimental draft scope; no creative approval')
     a = p.parse_args();only = set(a.only.split(',')) if a.only else None;rows, summary, looks, projects = [], [], [], []
     for brief in sorted(BRIEFS.glob('*.json')):
         slug = json.loads(brief.read_text())['slug']
         if only and slug not in only:continue
-        record = run(brief, a.out, a.allow_draft, False, not a.no_render, a.tts_python, avoid_looks=tuple(looks))
+        record = run(brief, a.out, a.allow_draft, False, not a.no_render, a.tts_python, avoid_looks=tuple(looks), local_draft=a.local_draft)
         looks.append(next(s['look'] for s in record['stages'] if s['stage'] == 'plan'));projects.append(a.out / slug)
         final = a.out / f'{slug}-finished';duration = next(s['duration'] for s in record['stages'] if s['stage'] == 'compile')
         stills = snapshot(final, at_times(final, [duration * k for k in (.04, .3, .6, .93)]), a.out / 'sheet' / slug, size=(360, 640))
