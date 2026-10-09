@@ -5,6 +5,7 @@ from unittest.mock import patch
 sys.dont_write_bytecode=True
 sys.path.insert(0,str(Path(__file__).resolve().parents[1]/'scripts'))
 from motif_quality import ROOT,read,write,sha,direction_review,rough,hierarchy_failures,repair
+from motif_evidence import declare
 from motif_structure import check_structure,report_status,require_structure,policy_hashes,structure_review
 P=ROOT/'quality/validation/structure-v1/fixtures-clean'
 
@@ -50,6 +51,8 @@ class StructureTests(unittest.TestCase):
  def test_ordinary_direction_and_rough_require_structure_before_io(self):
   with tempfile.TemporaryDirectory() as d:
    project=Path(d);p=plan();write(project/'production-plan.json',p)
+   # rough() validates the declared production scope first (test_evidence_integration); declare one so the structure gate is what stops it.
+   write(project/'brief.json',{'script':p.get('script','')});declare(project,'technical-fixture','UNIT')
    with patch('motif_direct.model_call') as model,patch('motif_quality.cmd') as renderer:
     with self.assertRaisesRegex(ValueError,'fresh structure'):direction_review(project,p,{})
     with self.assertRaisesRegex(ValueError,'fresh structure'):rough(project)

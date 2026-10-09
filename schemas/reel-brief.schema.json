@@ -1,0 +1,197 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://motif.local/schemas/reel-brief.schema.json",
+  "title": "Motif reel brief (script, fact packet, optional visual hints)",
+  "type": "object",
+  "required": [
+    "slug",
+    "title",
+    "topic",
+    "facts",
+    "beats",
+    "cta"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "slug": {
+      "type": "string",
+      "pattern": "^[a-z0-9][a-z0-9-]{2,60}$"
+    },
+    "title": {
+      "type": "string",
+      "minLength": 3
+    },
+    "topic": {
+      "type": "string",
+      "minLength": 3
+    },
+    "seed": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "voice": {
+      "type": "string",
+      "default": "af_nova"
+    },
+    "hook": {
+      "type": "object",
+      "properties": {
+        "alternates": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 8
+          },
+          "minItems": 1,
+          "maxItems": 5
+        },
+        "selected": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "headline": {
+          "type": "string",
+          "maxLength": 34
+        }
+      }
+    },
+    "facts": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "claim",
+          "source_url"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "claim": {
+            "type": "string"
+          },
+          "value": {
+            "type": "string"
+          },
+          "source_url": {
+            "type": "string",
+            "pattern": "^https?://"
+          },
+          "accessed": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "beats": {
+      "type": "array",
+      "minItems": 4,
+      "maxItems": 6,
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "narration",
+          "fact"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^[a-z0-9-]+$"
+          },
+          "narration": {
+            "type": "string",
+            "minLength": 8
+          },
+          "fact": {
+            "type": "string"
+          },
+          "headline": {
+            "type": "string",
+            "maxLength": 34
+          },
+          "payoff_headline": {
+            "type": "string",
+            "maxLength": 34
+          },
+          "visual": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "rig": {
+                "type": "string"
+              },
+              "params": {
+                "type": "object"
+              },
+              "room": {
+                "type": "string"
+              },
+              "insert": {
+                "type": "object",
+                "required": [
+                  "kind"
+                ],
+                "properties": {
+                  "kind": {
+                    "type": "string"
+                  },
+                  "args": {
+                    "type": "object"
+                  }
+                }
+              },
+              "costume": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "palette": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    },
+    "cta": {
+      "type": "object",
+      "required": [
+        "keyword",
+        "narration"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "keyword": {
+          "type": "string",
+          "pattern": "^[A-Za-z0-9]{2,16}$"
+        },
+        "narration": {
+          "type": "string"
+        },
+        "room": {
+          "type": "string"
+        }
+      }
+    },
+    "look": {
+      "type": "string",
+      "enum": [
+        "paper-craft",
+        "neon-arcade",
+        "primary-pop",
+        "candy-pastel",
+        "great-outdoors"
+      ],
+      "description": "Per-film look (scripts/motif_looks.py). Omitted: the planner picks one not used by recent films."
+    }
+  }
+}

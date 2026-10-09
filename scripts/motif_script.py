@@ -81,8 +81,9 @@ def storyboard(project,plan,spans):
 def prepare_local_assets(project):
  for folder in ('assets','assets/fonts','assets/materials','assets/props','compositions','renders','review'): (project/folder).mkdir(parents=True,exist_ok=True)
  for name in ('gsap.min.js','motion-engine.js','motion-primitives.js'):shutil.copy2(ROOT/'videos/motif-calendar-reel/assets'/name,project/'assets'/name)
- frozen=ROOT/'videos/productions/reference-reconstruction-full-fine-cut'
- shutil.copy2(frozen/'assets/materials/wall.png',project/'assets/materials/wall.png')
+ # Registered Motif material (see assets/PROVENANCE.json), not a copy from a reference study folder.
+ from motif_materials import install
+ install(project)
  # Local rendering dependencies only, never included in a review archive or source package.
  fontroot=Path.home()/'.agents/skills/hyperframes-creative/frame-presets/code-editorial/fonts'
  for name in ('Inter-700.woff2','EBGaramond-700.woff2','OFL-inter.txt','OFL-eb-garamond.txt'):shutil.copy2(fontroot/name,project/'assets/fonts'/name)

@@ -1,0 +1,141 @@
+{
+  "slug": "fixture-paper-notes",
+  "title": "Fixture: a free notes app (test data, not a real product)",
+  "topic": "free note taking",
+  "seed": 3,
+  "facts": [
+    {
+      "id": "f1",
+      "claim": "The notes app is free and open source",
+      "value": "12,000 stars",
+      "source_url": "https://example.com/fixture/notes-app"
+    },
+    {
+      "id": "f2",
+      "claim": "Paid note apps cost about $10 a month",
+      "value": "$10 a month",
+      "source_url": "https://example.com/fixture/pricing"
+    },
+    {
+      "id": "f3",
+      "claim": "It syncs notes across every device",
+      "value": "every device",
+      "source_url": "https://example.com/fixture/sync"
+    },
+    {
+      "id": "f4",
+      "claim": "An agent sorts your notes into folders automatically",
+      "value": "auto sorted",
+      "source_url": "https://example.com/fixture/agent"
+    },
+    {
+      "id": "f5",
+      "claim": "It passed an independent security review",
+      "value": "approved",
+      "source_url": "https://example.com/fixture/audit"
+    }
+  ],
+  "beats": [
+    {
+      "id": "free",
+      "narration": "A tiny team just released a free notes app, and in one week it already has twelve thousand stars on GitHub.",
+      "fact": "f1",
+      "headline": "FREE NOTES APP",
+      "payoff_headline": "12,000 STARS IN A WEEK",
+      "visual": {
+        "rig": "thermometer",
+        "params": {
+          "label": "STARS",
+          "target": "TRENDING",
+          "from": 5,
+          "to": 95,
+          "stars": 3
+        },
+        "room": "street"
+      }
+    },
+    {
+      "id": "cost",
+      "narration": "Most note apps quietly charge you around ten dollars every single month, and the bills keep stacking up.",
+      "fact": "f2",
+      "headline": "NOTE APPS CHARGE MONTHLY",
+      "payoff_headline": "$10 EVERY MONTH",
+      "visual": {
+        "rig": "receipt-stack",
+        "params": {
+          "amount": "$10",
+          "label": "MONTHS",
+          "from": 1,
+          "to": 12
+        },
+        "room": "office"
+      }
+    },
+    {
+      "id": "sync",
+      "narration": "This one syncs every note to your phone, your laptop and your tablet without a paid plan.",
+      "fact": "f3",
+      "headline": "SYNCS EVERY DEVICE",
+      "payoff_headline": "NO PAID PLAN",
+      "visual": {
+        "rig": "race-track",
+        "params": {
+          "labels": [
+            "PHONE",
+            "LAPTOP",
+            "TABLET"
+          ],
+          "progress": [
+            1.0,
+            1.0,
+            1.0
+          ]
+        },
+        "room": "living-room"
+      }
+    },
+    {
+      "id": "sort",
+      "narration": "And a small built in agent reads each new note and sorts it into the right folder for you.",
+      "fact": "f4",
+      "headline": "AN AGENT FILES NOTES",
+      "payoff_headline": "AUTO SORTED",
+      "visual": {
+        "rig": "conveyor",
+        "params": {
+          "items": [
+            "IDEA",
+            "TODO",
+            "RECIPE"
+          ],
+          "machine": "AGENT",
+          "output": "FOLDERS"
+        },
+        "room": "workshop"
+      }
+    },
+    {
+      "id": "safe",
+      "narration": "It even passed an independent security review, so your notes stay yours.",
+      "fact": "f5",
+      "headline": "SECURITY REVIEWED",
+      "payoff_headline": "YOUR NOTES STAY YOURS",
+      "visual": {
+        "rig": "stamp-gate",
+        "params": {
+          "document": "YOUR NOTES",
+          "stamp": "REVIEWED",
+          "verdict": "approved"
+        },
+        "room": "server-room"
+      }
+    }
+  ],
+  "cta": {
+    "keyword": "Notes",
+    "narration": "For the link, comment Notes."
+  },
+  "hook": {
+    "headline": "FREE NOTES, 12,000 STARS"
+  }
+}

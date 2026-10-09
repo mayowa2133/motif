@@ -1,0 +1,137 @@
+{
+  "slug": "bench-open-map",
+  "title": "The map anyone can edit",
+  "topic": "a free world map",
+  "seed": 53,
+  "hook": {
+    "alternates": [
+      "There is a map of the whole world that anyone can edit, and anyone can use for free."
+    ],
+    "selected": 0,
+    "headline": "A MAP ANYONE CAN EDIT"
+  },
+  "facts": [
+    {
+      "id": "f1",
+      "claim": "OpenStreetMap is built by a community of mappers who contribute and maintain data",
+      "value": "mappers",
+      "source_url": "https://www.openstreetmap.org/about",
+      "accessed": "2026-10-09"
+    },
+    {
+      "id": "f2",
+      "claim": "OpenStreetMap is open data usable for any purpose with credit",
+      "value": "any purpose",
+      "source_url": "https://www.openstreetmap.org/about",
+      "accessed": "2026-10-09"
+    },
+    {
+      "id": "f3",
+      "claim": "Works that build on OpenStreetMap data in certain ways must share under the same licence",
+      "value": "share alike",
+      "source_url": "https://www.openstreetmap.org/copyright",
+      "accessed": "2026-10-09"
+    }
+  ],
+  "beats": [
+    {
+      "id": "people",
+      "narration": "It is called OpenStreetMap, and it is drawn by volunteers, street by street.",
+      "fact": "f1",
+      "headline": "DRAWN BY VOLUNTEERS",
+      "payoff_headline": "STREET BY STREET",
+      "visual": {
+        "rig": "plate-stack",
+        "params": {
+          "count_from": 2,
+          "count_to": 14,
+          "label": "STREETS MAPPED"
+        },
+        "room": "park"
+      }
+    },
+    {
+      "id": "local",
+      "narration": "Locals fix the corner shop, the new bike lane, the bus stop.",
+      "fact": "f1",
+      "headline": "LOCALS FIX IT",
+      "payoff_headline": "SHOPS, LANES, STOPS",
+      "visual": {
+        "rig": "race-track",
+        "params": {
+          "labels": [
+            "SHOP",
+            "BIKE LANE",
+            "BUS STOP"
+          ],
+          "progress": [
+            1.0,
+            1.0,
+            1.0
+          ]
+        },
+        "room": "street"
+      }
+    },
+    {
+      "id": "use",
+      "narration": "You can use the data for any purpose, as long as you give credit.",
+      "fact": "f2",
+      "headline": "USE IT FOR ANYTHING",
+      "payoff_headline": "JUST GIVE CREDIT",
+      "visual": {
+        "rig": "stamp-gate",
+        "params": {
+          "document": "YOUR APP",
+          "stamp": "CREDITED",
+          "verdict": "approved"
+        },
+        "room": "beach"
+      }
+    },
+    {
+      "id": "cost",
+      "narration": "No per request fees for the data itself, which is why so many apps build on it.",
+      "fact": "f2",
+      "headline": "NO DATA FEES",
+      "payoff_headline": "APPS BUILD ON IT",
+      "visual": {
+        "rig": "magnet-pull",
+        "params": {
+          "count": 5,
+          "item": "APPS",
+          "label": "FREE DATA"
+        },
+        "room": "rooftop",
+        "insert": {
+          "kind": "price_tag",
+          "args": {
+            "amount": "$0",
+            "strike": "$$$"
+          }
+        }
+      }
+    },
+    {
+      "id": "share",
+      "narration": "And if you improve the map data, you share it back, so it keeps growing.",
+      "fact": "f3",
+      "headline": "IMPROVE IT",
+      "payoff_headline": "SHARE IT BACK",
+      "visual": {
+        "rig": "bridge-span",
+        "params": {
+          "planks": 6,
+          "left": "YOU",
+          "right": "THE MAP"
+        },
+        "room": "night-sky"
+      }
+    }
+  ],
+  "cta": {
+    "keyword": "Map",
+    "narration": "For the beginner editing guide, comment Map."
+  },
+  "look": "great-outdoors"
+}

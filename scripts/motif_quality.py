@@ -198,14 +198,14 @@ def probe_video(path):
     return {'width':s['width'],'height':s['height'],'fps':a/b,'frames':int(s['nb_read_frames']),'duration':int(s['nb_read_frames'])/(a/b),'sha256':sha(path)}
 
 def rough(project):
+    """Native moving rough, actual captions removed, using existing pinned render."""
     from motif_evidence import evidence_inputs
     evidence_inputs(project)
-    from motif_evidence import freeze_capture,seal_capture
-    capture_record=freeze_capture(project)
-    """Native moving rough, actual captions removed, using existing pinned render."""
     plan=read(project/'production-plan.json');plan_check(plan)
     from motif_structure import require_structure
     require_structure(project)
+    from motif_evidence import freeze_capture,seal_capture
+    capture_record=freeze_capture(project)
     from motif_reference import require_stage
     require_stage(project,'concept');require_stage(project,'opening')
     if not (project/'quality-direction.json').exists() or not read(project/'quality-direction.json')['pass']:raise ValueError('pre-animation art/direction review required')
@@ -569,8 +569,13 @@ def technical(project,video,checks):
         if scoped and record['status']=='PASS':technical_binding(name,record,sha(project/'scene-events.json'),sha(video))
         statuses[name]=record['status'];sources.append({'file':str(path),'sha256':sha(path),'check':name})
     sources.append({'file':str(checks.resolve()),'sha256':sha(checks)})
+    # Measured asset-origin check: a supplied PASS can never override an unknown or reference-derived asset.
+    from motif_provenance import check as provenance_check
+    origin=provenance_check(project)
+    if origin['status']=='FAIL':statuses['provenance']='FAIL'
+    elif 'provenance' not in supplied:statuses['provenance']='PASS'
     status='PASS' if all(v=='PASS' for v in statuses.values()) else 'PICTURE_PASS_AUDIO_PENDING' if all(v=='PASS' for k,v in statuses.items() if k not in ('loudness','true-peak')) else 'BLOCKED'
-    result={'status':status,'checks':statuses,'probe':info,'audio':audio,'sources':sources,'events_sha256':sha(project/'scene-events.json'),'video_sha256':sha(video),'human_listening':'REQUIRED; measurement is not listening approval'}
+    result={'status':status,'checks':statuses,'probe':info,'audio':audio,'sources':sources,'events_sha256':sha(project/'scene-events.json'),'video_sha256':sha(video),'human_listening':'REQUIRED; measurement is not listening approval','provenance_check':{k:v for k,v in origin.items() if k!='files'}}
     if scoped:result['supplemental']={'file':str(checks.resolve()),'sha256':sha(checks)}
     write(project/'quality-review/technical.json',result);return result
 

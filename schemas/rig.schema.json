@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Motif rig manifest",
+  "type": "object",
+  "required": ["name", "description", "tags", "states", "actions", "params_schema", "defaults", "bot_slot", "caption_safe", "footprint", "palettes"],
+  "additionalProperties": false,
+  "properties": {
+    "name": {"type": "string", "pattern": "^[a-z][a-z0-9-]+$"},
+    "description": {"type": "string", "minLength": 10},
+    "tags": {"type": "array", "items": {"type": "string"}, "minItems": 2},
+    "states": {"type": "array", "items": {"type": "string"}, "minItems": 2},
+    "actions": {"type": "object", "minProperties": 1, "additionalProperties": {
+      "type": "object", "required": ["from", "to", "frames", "contact", "contact_frame"], "additionalProperties": false,
+      "properties": {"from": {"type": "string"}, "to": {"type": "string"}, "frames": {"type": "integer", "minimum": 2}, "contact": {"type": "string"}, "contact_frame": {"type": "integer", "minimum": 0}}}},
+    "params_schema": {"type": "object"},
+    "defaults": {"type": "object"},
+    "bot_slot": {"type": "object", "required": ["x", "y", "scale", "role"], "properties": {"x": {"type": "number"}, "y": {"type": "number"}, "scale": {"type": "number", "exclusiveMinimum": 0}, "role": {"type": "string"}}},
+    "caption_safe": {"type": "array", "items": {"type": "number"}, "minItems": 4, "maxItems": 4},
+    "footprint": {"type": "array", "items": {"type": "number"}, "minItems": 4, "maxItems": 4},
+    "palettes": {"type": "array", "items": {"type": "string"}, "minItems": 2}
+  }
+}
