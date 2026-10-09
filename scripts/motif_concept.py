@@ -40,7 +40,7 @@ def deadlock_history(project,setup_id):
  counts={c:sum(c in r['failed_checks'] for r in failures) for c in CONTACT_CHECKS}
  return {'setup_id':setup_id,'completed_failures':len(failures),'repeated_checks':[c for c,n in counts.items() if n>=2],'escape_required':any(n>=2 for n in counts.values()),'reviews':failures,'moving_budget_consumed':0}
 
-def apply_patch(plan,setup_id,patch):
+def apply_patch(plan,setup_id,patch,transfer=False):
  """A model patch cannot overwrite unrelated setups/beats/token state changes."""
  Draft202012Validator(read(ROOT/'schemas/concept-replan.schema.json')).validate(patch)
  before=copy.deepcopy(plan);out=copy.deepcopy(plan);setups=out['film_structure']['setups'];old=next(s for s in setups if s['setup_id']==setup_id);index=setups.index(old);beat_ids=old['beat_ids']
@@ -65,7 +65,7 @@ def apply_patch(plan,setup_id,patch):
   t['state_changes']=sorted(state,key=lambda c:usage.index(c['setup_id']))
   if before['film_structure']['continuity_tokens'][out['film_structure']['continuity_tokens'].index(t)]['origin_setup']==setup_id:t['state_at_origin']=ch['state_at_origin']
   if usage[-1] in ids:t['final_destination']=ch['final_destination']
- out=refresh_scoped_requirements(before,out,beat_ids,patch)
+ out=refresh_scoped_requirements(before,out,beat_ids,patch,transfer=transfer)
  from motif_structure import check_structure
  check_structure(out)
  Draft202012Validator(read(ROOT/'schemas/script-production-plan.schema.json')).validate(out)
@@ -73,7 +73,7 @@ def apply_patch(plan,setup_id,patch):
   if s['setup_id']!=setup_id and next(x for x in setups if x['setup_id']==s['setup_id'])!=s:raise ValueError('passing setup modified')
  return out
 
-def refresh_scoped_requirements(before,out,beat_ids,patch):
+def refresh_scoped_requirements(before,out,beat_ids,patch,transfer=False):
  """Retire old scope's shared prose/resources; never leave two active architectures.
  Assets exclusive to locked beats remain byte-identical. Mixed action bundles are
  narrowed to actual unchanged requirements. New capability IDs come from the live
@@ -96,6 +96,14 @@ def refresh_scoped_requirements(before,out,beat_ids,patch):
  out['assets']=assets;out['asset_usage']=usages
  out['rationale']=patch['reason']
  out['metaphor']='Unchanged worlds retain their own setup rules. Replacement relationships: '+' '.join(s['visual_rule'] for s in patch['setups'])
+ if transfer:
+  out['limitations']=[
+   'Exact supplied script and unaffected setup/beat contracts remain unchanged. Superseded requirements and failed reviews are retained as history.',
+   'Scoped data requirements do not establish implementation, registered capability, painted quality or human approval. Empty capability paths require explicit project-authored development.',
+   'Canonical Motif Bot remains locked. Frozen textual priors supply directing criteria, not factual claims, source pixels or inherited visual approval.',
+   'All current setups require fresh own-evidence concept review. Subsequent direction, opening, moving and audio stages retain their admission gates; human moving review remains final.',
+   'Concept deadlock and moving repair budgets stay separate. A validated relationship/split escape permits fresh full-project review only.']
+  return out
  out['limitations']=[
   'Exact script, source packet and eight unaffected setup/beat contracts are preserved. Only the scoped relationships and their active capability requirements are replaced. Original metadata and failed reports remain archived, not active requirements.',
   'New requirements are live model-authored proposals. Empty capability paths mean agent-assisted development is required; no implementation, registered selector, animation or quality approval is implied.',
@@ -128,6 +136,8 @@ def select_beat_references(manifest,contracts,limit=2):
  return rows
 
 def prepare(project,config,beat_ids=None):
+ from motif_transfer_review import enabled,prepare as transfer_prepare
+ if enabled(project):return transfer_prepare(project,config,beat_ids)
  from motif_direct import model_call
  p=Path(project);require_calibration(p,True);plan=read(p/'production-plan.json');scope=read(p/'concept-scope.json') if (p/'concept-scope.json').exists() else None
  beat_ids=beat_ids or [b for s in plan['film_structure']['setups'] if not scope or s['setup_id'] in scope['review_setup_ids'] for b in s['beat_ids']]

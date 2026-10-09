@@ -107,7 +107,9 @@ def check_structure(plan):
             'chapters': len(chapters), 'scope': 'schema/references only; not semantic approval'}
 
 
-def planning_context():
+def planning_context(project=None):
+    from motif_transfer_review import enabled
+    grammar='' if project is not None and enabled(project) else (ROOT / 'docs/MOTIF_STRUCTURAL_GRAMMAR.md').read_text()
     return ('\nFILM STRUCTURE FIRST: derive rhetorical propositions and semantic verbs; '
             'group adjacent propositions by the same visual rule BEFORE choosing beats. '
             'Semantic coherence is not sufficient: inspect actual hero/causal mechanisms for COMPOUND_VISUAL_RULE. Prune inactive geometry; identify subject, actor and Bot role. '
@@ -116,11 +118,14 @@ def planning_context():
             'Reuse capabilities, not plots. If finite bindings cannot execute the required '
             'worlds, report explicit agent-assisted development; do not collapse them into '
             'one inappropriate metaphor. No shot/duration/reaction quotas.\n' +
-            (ROOT / 'docs/MOTIF_STRUCTURAL_GRAMMAR.md').read_text() +
+            grammar +
             '\nSTRUCTURE SCHEMA: ' + json.dumps(read(ROOT / 'schemas/film-structure.schema.json')))
 
 
 def critic_prompt(plan, project=None):
+    from motif_transfer_review import enabled
+    if project is not None and enabled(project):
+        return (ROOT/'quality/structure-critic/PROMPT.md').read_text()+planning_context(project)+'\nPLAN: '+json.dumps(plan)
     prompt=((ROOT / 'quality/structure-critic/PROMPT.md').read_text() +
             '\nGRAMMAR:\n' + (ROOT / 'docs/MOTIF_STRUCTURAL_GRAMMAR.md').read_text() +
             '\nINTERNAL BEHAVIORAL EXAMPLES: ' + json.dumps(read(ROOT / 'quality/structure-examples.json')) +
@@ -167,14 +172,16 @@ def structure_review(project, plan, config):
         raise ValueError('save exact plan before structure review')
     from motif_reference import require_calibration,context,folder
     calibrated=require_calibration(project) is not None
+    from motif_transfer_review import binding,context as transfer_context
+    transfer=binding(project)
     _,images=context(project)
-    report = model_call(project, 'quality-structure', critic_prompt(plan,project), 'schemas/'+('reference-structure-critic' if calibrated else 'structure-critic')+'.schema.json', config,**({'images':images} if images else {}))
+    report = model_call(project, 'quality-structure', critic_prompt(plan,project)+(transfer_context(project) if transfer else ''), 'schemas/'+('reference-structure-critic' if calibrated else 'structure-critic')+'.schema.json', {**config,**transfer},**({'images':images} if images else {}))
     status = report_status(plan, report,calibrated)
     write(project / 'quality-structure-record.json', {
         'status': status, 'plan_sha256': sha(project / 'production-plan.json'),
         'response_sha256': sha(project / 'quality-structure.json'),
         'invocation_sha256': sha(project / 'quality-structure-invocation.json'),
-        'policy_hashes': policy_hashes(), 'scope': 'data only; no painted approval',
+        'policy_hashes': policy_hashes(), 'scope': 'data only; no painted approval', **transfer,
         **({'reference_calibration_sha256':sha(folder(project)/'record.json')} if calibrated else {})})
     if status != 'PASS':
         raise ValueError('structure REPLAN_REQUIRED: ' + json.dumps(report['violations']))
@@ -199,6 +206,8 @@ def require_structure(project):
             raise ValueError('structure needs a live independent invocation')
         from motif_reference import require_calibration,folder
         calibrated=require_calibration(project) is not None
+        from motif_transfer_review import binding
+        if any(record.get(k)!=v for k,v in binding(project).items()):raise ValueError('structure transfer profile stale')
         if calibrated and record.get('reference_calibration_sha256')!=sha(folder(project)/'record.json'):
             raise ValueError('structure reference calibration stale')
         if record['status'] != 'PASS' or report_status(plan, report,calibrated) != 'PASS':

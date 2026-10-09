@@ -282,7 +282,7 @@ def plan_script(brief_path):
   from motif_paper_energy import STAGES
   prompt+='\nACTIVE PRESET OVERRIDES: '+json.dumps(read(ROOT/'assets/styles/reference-expressive-high-energy-v1.json'))+'\nUse these high-energy action bindings instead: '+json.dumps(STAGES)+'. One dominant focal idea supports overlapping reactions, living motion, caption hits and transitions. Do not apply quiet one-action-then-hold rules. No parked multi-second diagrams.'
  from motif_quality import planning_context,direction_review
- prompt+=planning_context(brief['script'])
+ prompt+=planning_context(brief['script'],project)
  plan=model_call(project,'initial-plan',prompt,'schemas/script-production-plan.schema.json',config)
  if plan.get('quality_mode')!='motif-gold-v1':raise ValueError('new script plans require motif-gold-v1')
  write(project/'production-plan.json',plan)
