@@ -34,6 +34,9 @@ def render_sources(project):
     for name in ('motif_quality','motif_quality_frames','motif_performance','motif_reaction','motif_plan_compile','motif_workshop','motif_script','motif_paper_investigation','motif_paper_energy','motif_ui_production','motif_ui_actions','motif_ui_components','build_motif_bot'):
         p=ROOT/'scripts'/(name+'.py')
         if p.exists():files.add(p)
+    if (project/'custom-authoring-task.json').exists():
+        for name in ('motif_evidence','motif_custom_authoring','motif_media_contracts','motif_flat_mascot'):
+            files.add(ROOT/'scripts'/(name+'.py'))
     return {str(p.resolve()):sha(p) for p in sorted(files)}
 
 def state_fingerprint(project):

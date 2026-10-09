@@ -43,6 +43,22 @@ def flat_scene(root):
 
 
 class WaitingTests(unittest.TestCase):
+    def test_optional_receipt_dock_preserves_arrival_and_clears_resumed_hand(self):
+        with tempfile.TemporaryDirectory() as d:
+            root=Path(d);s=flat_scene(root);s['events']['arrival']=160
+            base=copy.deepcopy(s);s['receipt_dock']={'clear_frame':170,'offset':[0,-48]};validate(s)
+            self.assertEqual(svg_at(s,160,root)[0],svg_at(base,160,root)[0])
+            def packet(frame):
+                tree=ET.fromstring(svg_at(s,frame,root)[0])
+                return next(x for x in tree.iter() if x.get('id')=='input')[0]
+            for f in range(160,180):self.assertTrue(state_at(s,f)['response_arrived'])
+            self.assertEqual(packet(170).attrib,packet(239).attrib)
+            self.assertLess(float(packet(180).get('y'))+float(packet(180).get('height')),411-26*70/240)
+            for dock in ({'clear_frame':180,'offset':[0,-48]}, {'clear_frame':160,'offset':[0,-48]},
+                         {'clear_frame':170,'offset':[0,0]}, {'clear_frame':170,'offset':[0,float('nan')]},
+                         {'clear_frame':170,'offset':[0,-500]}):
+                bad=copy.deepcopy(s);bad['receipt_dock']=dock
+                with self.assertRaises(ValueError):validate(bad)
     def test_approved_flat_native_geometry_and_contact_are_separate_from_perception(self):
         with tempfile.TemporaryDirectory() as d:
             p=Path(d);s=flat_scene(p);project(p,s);compile_waiting(p,s)
