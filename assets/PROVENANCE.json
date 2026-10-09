@@ -67,10 +67,10 @@
    "origin": "procedural-seeded",
    "generator": "python scripts/motif_materials.py --set motif-v1",
    "approval": {
-    "status": "PENDING",
-    "by": null,
-    "date": null,
-    "note": "Awaiting Mayowa review."
+    "status": "APPROVED",
+    "by": "Mayowa",
+    "date": "2026-10-09",
+    "note": "Approved the motif-v1 swatch sheet (review/phase-0/material-swatches.png) in the project thread."
    },
    "pixel_sha256": "3a2893228ceea6d9c08043fb408a74ba86983995ac9c5ff17440c87b1d4fd215",
    "path": "assets/materials/motif-v1/matte-paper.webp"
@@ -81,10 +81,10 @@
    "origin": "procedural-seeded",
    "generator": "python scripts/motif_materials.py --set motif-v1",
    "approval": {
-    "status": "PENDING",
-    "by": null,
-    "date": null,
-    "note": "Awaiting Mayowa review."
+    "status": "APPROVED",
+    "by": "Mayowa",
+    "date": "2026-10-09",
+    "note": "Approved the motif-v1 swatch sheet (review/phase-0/material-swatches.png) in the project thread."
    },
    "pixel_sha256": "b901127dfdf9015d6841487b171c810c1312819ff666df7b45fe45ecc6a3a9dc",
    "path": "assets/materials/motif-v1/felt.webp"
@@ -95,10 +95,10 @@
    "origin": "procedural-seeded",
    "generator": "python scripts/motif_materials.py --set motif-v1",
    "approval": {
-    "status": "PENDING",
-    "by": null,
-    "date": null,
-    "note": "Awaiting Mayowa review."
+    "status": "APPROVED",
+    "by": "Mayowa",
+    "date": "2026-10-09",
+    "note": "Approved the motif-v1 swatch sheet (review/phase-0/material-swatches.png) in the project thread."
    },
    "pixel_sha256": "54722c18167f284558ba209acae319d526af1649dd094d0f4f6e78400d2e3976",
    "path": "assets/materials/motif-v1/card.webp"
@@ -109,10 +109,10 @@
    "origin": "procedural-seeded",
    "generator": "python scripts/motif_materials.py --set motif-v1",
    "approval": {
-    "status": "PENDING",
-    "by": null,
-    "date": null,
-    "note": "Awaiting Mayowa review."
+    "status": "APPROVED",
+    "by": "Mayowa",
+    "date": "2026-10-09",
+    "note": "Approved the motif-v1 swatch sheet (review/phase-0/material-swatches.png) in the project thread."
    },
    "pixel_sha256": "e806dda984723d6127f54710056e58b936ce467fc514a4ccb70451194d33467e",
    "path": "assets/materials/motif-v1/kraft.webp"
@@ -123,10 +123,10 @@
    "origin": "procedural-seeded",
    "generator": "python scripts/motif_materials.py --set motif-v1",
    "approval": {
-    "status": "PENDING",
-    "by": null,
-    "date": null,
-    "note": "Awaiting Mayowa review."
+    "status": "APPROVED",
+    "by": "Mayowa",
+    "date": "2026-10-09",
+    "note": "Approved the motif-v1 swatch sheet (review/phase-0/material-swatches.png) in the project thread."
    },
    "pixel_sha256": "710409b3b67e65442f6fe2b6b0cb03dbe54941c7688756b2dc175371e74bc192",
    "path": "assets/materials/motif-v1/wood.webp"
@@ -137,10 +137,10 @@
    "origin": "procedural-seeded",
    "generator": "python scripts/motif_materials.py --set motif-v1",
    "approval": {
-    "status": "PENDING",
-    "by": null,
-    "date": null,
-    "note": "Awaiting Mayowa review."
+    "status": "APPROVED",
+    "by": "Mayowa",
+    "date": "2026-10-09",
+    "note": "Approved the motif-v1 swatch sheet (review/phase-0/material-swatches.png) in the project thread."
    },
    "pixel_sha256": "50d9b1b7ef476c93df3b7b3349adacb905f66f0ed95b7d6e06b28a36b6c99548",
    "path": "assets/materials/motif-v1/dark-card.webp"
@@ -151,10 +151,10 @@
    "origin": "procedural-seeded",
    "generator": "python scripts/motif_materials.py --set motif-v1-1024",
    "approval": {
-    "status": "PENDING",
-    "by": null,
-    "date": null,
-    "note": "Awaiting Mayowa review."
+    "status": "APPROVED",
+    "by": "Mayowa",
+    "date": "2026-10-09",
+    "note": "Approved the motif-v1 swatch sheet (review/phase-0/material-swatches.png) in the project thread."
    },
    "pixel_sha256": "1dff82b81124b676c1e83517b5c5d49f18de10f0f88da6b094bd0f71ba31aa26",
    "path": "assets/materials/motif-v1-1024/matte-paper.webp"
@@ -165,10 +165,10 @@
    "origin": "procedural-seeded",
    "generator": "python scripts/motif_materials.py --set motif-v1-1024",
    "approval": {
-    "status": "PENDING",
-    "by": null,
-    "date": null,
-    "note": "Awaiting Mayowa review."
+    "status": "APPROVED",
+    "by": "Mayowa",
+    "date": "2026-10-09",
+    "note": "Approved the motif-v1 swatch sheet (review/phase-0/material-swatches.png) in the project thread."
    },
    "pixel_sha256": "a7537330a31395f699a9f90772c608570446d2217a6af8699b455be706ea4c81",
    "path": "assets/materials/motif-v1-1024/felt.webp"
@@ -179,10 +179,10 @@
    "origin": "procedural-seeded",
    "generator": "python scripts/motif_materials.py --set motif-v1-1024",
    "approval": {
-    "status": "PENDING",
-    "by": null,
-    "date": null,
-    "note": "Awaiting Mayowa review."
+    "status": "APPROVED",
+    "by": "Mayowa",
+    "date": "2026-10-09",
+    "note": "Approved the motif-v1 swatch sheet (review/phase-0/material-swatches.png) in the project thread."
    },
    "pixel_sha256": "667bcb8191de3bb21431915729075fd8e520a3ed799d320f077c4acfc08c0056",
    "path": "assets/materials/motif-v1-1024/card.webp"
@@ -193,10 +193,10 @@
    "origin": "procedural-seeded",
    "generator": "python scripts/motif_materials.py --set motif-v1-1024",
    "approval": {
-    "status": "PENDING",
-    "by": null,
-    "date": null,
-    "note": "Awaiting Mayowa review."
+    "status": "APPROVED",
+    "by": "Mayowa",
+    "date": "2026-10-09",
+    "note": "Approved the motif-v1 swatch sheet (review/phase-0/material-swatches.png) in the project thread."
    },
    "pixel_sha256": "f65d7dfab22e3b8afdf445b59375de3fdb2e0519dabb83f6f3c969753b97b621",
    "path": "assets/materials/motif-v1-1024/kraft.webp"
@@ -207,10 +207,10 @@
    "origin": "procedural-seeded",
    "generator": "python scripts/motif_materials.py --set motif-v1-1024",
    "approval": {
-    "status": "PENDING",
-    "by": null,
-    "date": null,
-    "note": "Awaiting Mayowa review."
+    "status": "APPROVED",
+    "by": "Mayowa",
+    "date": "2026-10-09",
+    "note": "Approved the motif-v1 swatch sheet (review/phase-0/material-swatches.png) in the project thread."
    },
    "pixel_sha256": "4f7d9f547a7ee9baa5010b3b68ea76255d64133833fbdd815c88ce64d8041000",
    "path": "assets/materials/motif-v1-1024/wood.webp"
@@ -221,10 +221,10 @@
    "origin": "procedural-seeded",
    "generator": "python scripts/motif_materials.py --set motif-v1-1024",
    "approval": {
-    "status": "PENDING",
-    "by": null,
-    "date": null,
-    "note": "Awaiting Mayowa review."
+    "status": "APPROVED",
+    "by": "Mayowa",
+    "date": "2026-10-09",
+    "note": "Approved the motif-v1 swatch sheet (review/phase-0/material-swatches.png) in the project thread."
    },
    "pixel_sha256": "bfeb5282990a7c491efaffb0114d37c3616ffccd7127b73c1bcfcc69abb9909e",
    "path": "assets/materials/motif-v1-1024/dark-card.webp"

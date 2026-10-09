@@ -271,10 +271,11 @@ def swatch_sheet(out, set_names=('legacy-v0', 'motif-v1')):
     return out
 
 
-# Surface roles used by the shared pipeline, per set. legacy-v0 stays the default
-# until Mayowa approves the motif-v1 swatches; a brief opts in with "material_set".
+# Surface roles used by the shared pipeline, per set. Mayowa approved the motif-v1
+# swatches on 2026-10-09, so new projects use motif-v1; a brief can still pick
+# "material_set": "legacy-v0" (frozen productions keep their own committed files).
 ROLES = {'wall': {'legacy-v0': 'wall', 'motif-v1': 'matte-paper'}}
-DEFAULT_SET = 'legacy-v0'
+DEFAULT_SET = 'motif-v1'
 
 
 def install(project, set_name=None):

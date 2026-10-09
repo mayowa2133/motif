@@ -150,6 +150,7 @@ def add(data, entry):
 
 LEGACY = {'status': 'LEGACY_ACCEPTED', 'by': 'Mayowa', 'date': '2026-10-02', 'note': 'Shipped in VoiceStudio v6, accepted as the gold visual-craft benchmark.'}
 PENDING = {'status': 'PENDING', 'by': None, 'date': None, 'note': 'Awaiting Mayowa review.'}
+APPROVED_V1 = {'status': 'APPROVED', 'by': 'Mayowa', 'date': '2026-10-09', 'note': 'Approved the motif-v1 swatch sheet (review/phase-0/material-swatches.png) in the project thread.'}
 V6 = ROOT / 'videos/productions/voicestudio-craft-v6'
 
 
@@ -159,7 +160,7 @@ def bootstrap():
     for set_name, records in manifest.items():
         for name, record in records.items():
             add(data, entry_for(ROOT / record['path'], f'material/{set_name}/{name}', 'procedural-seeded',
-                                f'python scripts/motif_materials.py --set {set_name}', LEGACY if set_name == 'legacy-v0' else PENDING,
+                                f'python scripts/motif_materials.py --set {set_name}', LEGACY if set_name == 'legacy-v0' else APPROVED_V1 if set_name.startswith('motif-v1') else PENDING,
                                 note='Port of reference-reconstruction-01-finishing/materials.py: seeded noise, no image inputs; pixels reproduced by --check.' if set_name == 'legacy-v0' else None))
     add(data, entry_for(V6 / 'assets/materials/world-paper.webp', 'material/legacy-v0/wall@webp', 'motif-derived',
                         'scripts/motif_ui_production.py: lossless WebP of wall.png', LEGACY, derived_from='material/legacy-v0/wall'))
