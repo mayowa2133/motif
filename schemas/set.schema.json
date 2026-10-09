@@ -1,0 +1,44 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://motif.local/schemas/set.schema.json",
+  "title": "Motif set layout (one beat)",
+  "type": "object",
+  "required": ["room", "palette", "seed", "beat", "floor_y", "hero", "bot", "dressing", "lights", "bands"],
+  "properties": {
+    "room": {"enum": ["diner", "living-room", "night-sky", "office", "server-room", "stage", "street", "workshop"]},
+    "palette": {"enum": ["berry", "citrus", "cobalt", "lagoon", "meadow", "mint-coral", "plum-night", "sunrise"]},
+    "seed": {"type": "integer"},
+    "beat": {"type": "integer", "minimum": 0},
+    "variant": {"type": "integer", "minimum": 0},
+    "floor_y": {"type": "number"},
+    "empty_field": {"type": "number", "minimum": 0, "maximum": 0.45},
+    "hero": {
+      "type": "object",
+      "required": ["rig", "x", "y", "scale", "box"],
+      "properties": {
+        "rig": {"type": "string"}, "x": {"type": "number"}, "y": {"type": "number"},
+        "scale": {"type": "number", "exclusiveMinimum": 0},
+        "box": {"$ref": "#/$defs/box"}, "values": {"type": "object"}
+      }
+    },
+    "bot": {
+      "type": "object",
+      "required": ["x", "y", "scale", "costume"],
+      "properties": {"x": {"type": "number"}, "y": {"type": "number"}, "scale": {"type": "number"}, "costume": {"type": "array", "items": {"type": "string"}}, "role": {"type": "string"}}
+    },
+    "dressing": {
+      "type": "array", "minItems": 2, "maxItems": 4,
+      "items": {
+        "type": "object",
+        "required": ["prop", "x", "y", "scale", "box", "role", "layer"],
+        "properties": {
+          "prop": {"type": "string"}, "x": {"type": "number"}, "y": {"type": "number"}, "scale": {"type": "number"},
+          "box": {"$ref": "#/$defs/box"}, "role": {"enum": ["edge", "overlap", "back"]}, "layer": {"enum": ["back", "front"]}
+        }
+      }
+    },
+    "lights": {"type": "array", "items": {"type": "object", "required": ["kind", "colour"]}},
+    "bands": {"type": "object", "required": ["headline", "caption"], "properties": {"headline": {"$ref": "#/$defs/box"}, "caption": {"$ref": "#/$defs/box"}}}
+  },
+  "$defs": {"box": {"type": "array", "items": {"type": "number"}, "minItems": 4, "maxItems": 4}}
+}
