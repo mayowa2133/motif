@@ -62,8 +62,10 @@ response color and native check only during response frames. Its authoring floor
 keeps the check inside the packet; it does not certify phone perception. Leaving
 the field absent preserves the preceding SVG/state output. No gain is accepted
 until fresh encoded review. Optional `state_label` values pending/response/complete
-bind the limited phrases `Await input`, `Response received`, `Complete` to their
-declared state intervals. This rejects the failed pending `Input ready` package;
+bind the limited phrases `Await input`, `Response in transit`, `Complete` to their
+declared state intervals. `Response received` is rejected during transit: a
+numeric response state cannot establish receipt while the pictured packet is
+travelling. This also rejects the failed pending `Input ready` package;
 unbound arbitrary text still needs semantic review.
 
 An optional `mascot_contract` points to a project-relative copy of the pinned

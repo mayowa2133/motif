@@ -1,5 +1,8 @@
 # Semantic repair — preparation, not acceptance
 
+Historical preparation checkpoint (before the released repair capture). Current
+results and the rejected receipt caption are in `REPAIR_CAPTURE_RESULTS.md`.
+
 Parent-authorized follow-up to the ambiguous/negative pilot in PR #10, merged at
 `32cdc55718307f3584de705267489b3dbbe30bc4`. Main Cycle 7 owns capture. No repair or
 transfer render has run; no renderer is queued.

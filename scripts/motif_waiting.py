@@ -107,7 +107,7 @@ def validate(scene):
             raise ValueError('silent fixture text requires manual-lock; measured speech is unsupported')
         meaning=label.get('state_label')
         if meaning is not None:
-            phrases={'pending':'Await input','response':'Response received','complete':'Complete'}
+            phrases={'pending':'Await input','response':'Response in transit','complete':'Complete'}
             spans={'pending':(events['stop'],events['response']-1),
                    'response':(events['response'],events['resume']-1),
                    'complete':(events['complete'],scene['frames']-1)}

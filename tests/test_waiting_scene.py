@@ -110,6 +110,18 @@ class WaitingTests(unittest.TestCase):
             label.update(text='Await input',lines=['Await input'],frames=[60,179])
             with self.assertRaisesRegex(ValueError,'interval conflicts'):validate(s)
 
+    def test_response_transit_cannot_claim_receipt_before_delivery(self):
+        with tempfile.TemporaryDirectory() as d:
+            p=Path(d);s=scene();label=text_packet(p)
+            label.update(state_label='response',frames=[150,179],text='Response in transit',lines=['Response in transit'])
+            s['text']=[label];validate(s)
+            project(p,s);compile_waiting(p,s)
+            self.assertIn('aria-label="Response in transit"',svg_at(s,150,p,captions=True)[0])
+            label.update(text='Response received',lines=['Response received'])
+            with self.assertRaisesRegex(ValueError,'wording conflicts'):validate(s)
+            label.update(text='Response in transit',lines=['Response in transit'],frames=[150,180])
+            with self.assertRaisesRegex(ValueError,'interval conflicts'):validate(s)
+
     def test_native_ids_contact_center_and_mobile_bounds(self):
         s=scene();body,_=svg_at(s,0)
         for n in s['nodes']:self.assertIn('id="'+n['id']+'"',body)
