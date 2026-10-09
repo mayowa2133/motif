@@ -122,6 +122,36 @@ class WaitingTests(unittest.TestCase):
             label.update(text='Response in transit',lines=['Response in transit'],frames=[150,180])
             with self.assertRaisesRegex(ValueError,'interval conflicts'):validate(s)
 
+    def test_explicit_arrival_retains_packet_before_receipt_and_reaction(self):
+        s=scene();s['events'].update(arrival=160,resume=180)
+        validate(s)
+        self.assertTrue(state_at(s,159)['response_in_transit'])
+        self.assertFalse(state_at(s,159)['response_arrived'])
+        for frame in (160,161,179):
+            state=state_at(s,frame)
+            self.assertTrue(state['response_arrived']);self.assertTrue(state['response_visible'])
+            self.assertEqual(state['status'],'pending');self.assertFalse(state['contact'])
+        self.assertTrue(state_at(s,180)['contact'])
+        def packet(frame):
+            svg=ET.fromstring(svg_at(s,frame)[0])
+            return next(e for e in svg.iter() if e.get('id')=='input')[0].attrib
+        self.assertEqual(packet(160),packet(179));self.assertEqual(packet(179),packet(239))
+
+    def test_receipt_requires_arrival_and_label_delay_transit_cannot_extend(self):
+        with tempfile.TemporaryDirectory() as d:
+            p=Path(d);s=scene();label=text_packet(p,'Response received')
+            label.update(state_label='received',frames=[161,179]);s['text']=[label]
+            with self.assertRaisesRegex(ValueError,'explicit pictured arrival'):validate(s)
+            s['events']['arrival']=160;validate(s)
+            for bounds in ([159,179],[160,179],[161,210]):
+                label['frames']=bounds
+                with self.assertRaisesRegex(ValueError,'interval conflicts'):validate(s)
+            label.update(text='Response in transit',lines=['Response in transit'],state_label='response',frames=[150,160])
+            with self.assertRaisesRegex(ValueError,'interval conflicts'):validate(s)
+            for arrival in (150,180,False,159.5):
+                s['events']['arrival']=arrival
+                with self.assertRaises(ValueError):validate(s)
+
     def test_native_ids_contact_center_and_mobile_bounds(self):
         s=scene();body,_=svg_at(s,0)
         for n in s['nodes']:self.assertIn('id="'+n['id']+'"',body)

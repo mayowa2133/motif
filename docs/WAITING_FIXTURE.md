@@ -68,6 +68,23 @@ numeric response state cannot establish receipt while the pictured packet is
 travelling. This also rejects the failed pending `Input ready` package;
 unbound arbitrary text still needs semantic review.
 
+An optional integer `arrival` between response and resume separates transport
+from receipt. The response reaches its fixed work-side target at arrival and
+remains there through the final frame. Transit text ends at arrival-1. A received
+label requires the explicit event and begins after arrival, while reaction/work
+resumption must occur later. Request/resumed labels bind `Request submitted` and
+`Work resumes` to their event intervals. These data guards need encoded boundary
+review; they do not certify human comprehension. Omitting arrival preserves the
+preceding frame state and artwork.
+
+`--delivery` directly rasterizes the same saved vectors at 1080×1920 before encode;
+it does not upscale an earlier video. Its config records delivery dimensions.
+Native captions-off and delivery captions-on are distinct evidence outputs.
+The reviewed retained-packet fixture masks part of the resumed grip. Perceived
+contact remains unassessed; this path cannot claim a fully visible hand/work grip
+or a creative gain. Preserve the packetless prior artifact as the visibility
+comparator and route requirements for visible grip to further native authoring.
+
 An optional `mascot_contract` points to a project-relative copy of the pinned
 approved reusable anchor JSON, SHA-256
 `e530fab90984ec06e109afe937ab478b935c62a5698ac518e93bab0ba91c87d9`.
