@@ -20,4 +20,4 @@ def all_rigs():
 
 def _load():
     if _REGISTRY:return
-    from motif_rigs import library  # noqa: F401  registers the built-in rigs
+    from motif_rigs import library, library2  # noqa: F401  registers the built-in rigs

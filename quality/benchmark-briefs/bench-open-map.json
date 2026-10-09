@@ -47,7 +47,7 @@
           "count_to": 14,
           "label": "STREETS MAPPED"
         },
-        "room": "street"
+        "room": "park"
       }
     },
     {
@@ -57,17 +57,20 @@
       "headline": "LOCALS FIX IT",
       "payoff_headline": "SHOPS, LANES, STOPS",
       "visual": {
-        "rig": "conveyor",
+        "rig": "race-track",
         "params": {
-          "items": [
+          "labels": [
             "SHOP",
-            "BIKES",
+            "BIKE LANE",
             "BUS STOP"
           ],
-          "machine": "MAPPERS",
-          "output": "MAP"
+          "progress": [
+            1.0,
+            1.0,
+            1.0
+          ]
         },
-        "room": "workshop"
+        "room": "street"
       }
     },
     {
@@ -83,7 +86,7 @@
           "stamp": "CREDITED",
           "verdict": "approved"
         },
-        "room": "office"
+        "room": "beach"
       }
     },
     {
@@ -93,12 +96,13 @@
       "headline": "NO DATA FEES",
       "payoff_headline": "APPS BUILD ON IT",
       "visual": {
-        "rig": "hydraulic-press",
+        "rig": "magnet-pull",
         "params": {
-          "object": "MAP FEES",
-          "force": "OPEN DATA"
+          "count": 5,
+          "item": "APPS",
+          "label": "FREE DATA"
         },
-        "room": "diner",
+        "room": "rooftop",
         "insert": {
           "kind": "price_tag",
           "args": {
@@ -115,13 +119,11 @@
       "headline": "IMPROVE IT",
       "payoff_headline": "SHARE IT BACK",
       "visual": {
-        "rig": "stacked-meter",
+        "rig": "bridge-span",
         "params": {
-          "from": 2,
-          "to": 12,
-          "unit": "",
-          "label": "MAP DATA",
-          "rocket": false
+          "planks": 6,
+          "left": "YOU",
+          "right": "THE MAP"
         },
         "room": "night-sky"
       }
@@ -130,5 +132,6 @@
   "cta": {
     "keyword": "Map",
     "narration": "For the beginner editing guide, comment Map."
-  }
+  },
+  "look": "great-outdoors"
 }

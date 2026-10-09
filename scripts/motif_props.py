@@ -1,7 +1,7 @@
 """Motif's original set-dressing props, authored as cut-paper SVG.
 
 Every prop is drawn here from simple shapes in palette roles (motif_rigs.palettes),
-so each one renders in all eight palettes and the provenance origin is
+so each one renders in every palette and the provenance origin is
 motif-authored-svg. Nothing is traced or sampled from any reference.
 
 A prop's local origin is the bottom centre of its footprint; its box is
@@ -342,6 +342,49 @@ def _(p, c):
 @prop('hot-air-balloon', 160, 260, 'sky', ('growth', 'lift', 'travel', 'rise'))
 def _(p, c):
     return P('M0 -260Q80 -260 80 -170Q80 -110 20 -70H-20Q-80 -110 -80 -170Q-80 -260 0 -260Z', c['pop'], c) + P('M0 -260Q30 -200 20 -70H-20Q-30 -200 0 -260Z', c['secondary'], c, False) + L('M-20 -70L-16 -36M20 -70L16 -36', c['dark'], 3) + R(-20, -36, 40, 36, c['primary'], c, 4)
+
+
+
+# Outdoor, arcade, rooftop and bakery props (added with the per-film looks, 2026-10-09).
+
+@prop('tree', 260, 520, 'floor', ('park', 'nature', 'growth', 'outdoor', 'community'))
+def _(p, c):
+    crown = ''.join(O(x, y, r, c['floor'], c) for x, y, r in ((-70, -330, 90), (60, -350, 100), (0, -430, 95), (-20, -300, 80)))
+    lights = ''.join(f'<circle cx="{x}" cy="{y}" r="{r}" fill="{c["light"]}" opacity=".16"/>' for x, y, r in ((-40, -420, 40), (50, -380, 34)))
+    fruit = ''.join(O(x, y, 9, c['pop'], c, False) for x, y in ((-60, -320), (40, -300), (80, -380), (-10, -400)))
+    return P('M-22 0L-14 -260H14L22 0Z', c['metal'], c) + L('M0 -200L-46 -270M4 -230L50 -290', c['metal'], 12) + crown + lights + fruit
+
+
+@prop('beach-umbrella', 300, 420, 'floor', ('beach', 'summer', 'shade', 'outdoor', 'holiday'))
+def _(p, c):
+    canopy = 'M-150 -330Q0 -440 150 -330Z'
+    stripes = ''.join(P(f'M{x0} -330Q{(x0 + x1) / 2} -360 {x1} -330L0 -410Z', c['light'], c, False) for x0, x1 in ((-110, -60), (-10, 40), (90, 130)))
+    return L('M0 0L-8 -400', c['dark'], 9) + P(canopy, c['primary'], c) + stripes + O(-4, -414, 10, c['secondary'], c)
+
+
+@prop('arcade-cabinet', 200, 470, 'floor', ('arcade', 'game', 'play', 'retro', 'night', 'fun'))
+def _(p, c):
+    body = P('M-90 0V-380L-70 -470H70L90 -380V0Z', c['primary'], c)
+    screen = R(-62, -370, 124, 110, c['dark'], c, 10) + ''.join(f'<rect x="{-44 + k * 22}" y="{-340 + (k * 17) % 50}" width="14" height="14" fill="{[c["secondary"], c["accent"], c["pop"]][k % 3]}"/>' for k in range(5))
+    panel = P('M-90 -250H90L100 -200H-100Z', c['secondary'], c) + O(-40, -226, 12, c['pop'], c) + O(0, -226, 9, c['accent'], c) + O(30, -226, 9, c['accent'], c)
+    marquee = R(-70, -462, 140, 40, c['accent'], c, 6) + ''.join(O(x, -442, 6, c['light'], c, False) for x in (-40, -14, 12, 38))
+    return body + screen + panel + marquee + R(-40, -150, 80, 60, c['dark'], c, 8)
+
+
+@prop('water-tower', 260, 560, 'floor', ('rooftop', 'city', 'water', 'storage', 'supply'))
+def _(p, c):
+    legs = L('M-90 0L-70 -280M90 0L70 -280M-80 -140L80 -140M-90 0L70 -280M90 0L-70 -280', c['dark'], 9)
+    tank = P('M-110 -280V-470Q0 -500 110 -470V-280Q0 -260 -110 -280Z', c['secondary'], c) + ''.join(L(f'M{x} -278V-480', c['dark'], 3, 'opacity=".25"') for x in (-70, -30, 10, 50, 90))
+    return legs + tank + P('M-120 -470L0 -560L120 -470Z', c['primary'], c)
+
+
+@prop('cake-stand', 200, 300, 'floor', ('bakery', 'party', 'celebrate', 'birthday', 'sweet'))
+def _(p, c):
+    stand = L('M0 0V-110', c['metal'], 10) + P('M-60 0H60L40 -12H-40Z', c['metal'], c) + P('M-96 -110H96L84 -124H-84Z', c['light'], c)
+    cake = R(-80, -200, 160, 76, c['primary'], c, 10) + R(-60, -250, 120, 52, c['secondary'], c, 10)
+    icing = L('M-80 -186Q-60 -170 -40 -186Q-20 -170 0 -186Q20 -170 40 -186Q60 -170 80 -186', c['light'], 8)
+    candles = ''.join(R(x - 5, -290, 10, 40, c['accent'], c, 3) + f'<path d="M{x} -308Q{x + 8} -298 {x} -292Q{x - 8} -298 {x} -308Z" fill="{c["pop"]}"/>' for x in (-30, 0, 30))
+    return stand + cake + icing + candles
 
 
 def names(mount=None, tag=None):

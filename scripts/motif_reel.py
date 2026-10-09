@@ -92,20 +92,22 @@ def _insert_for(fact, text, cat):
     return {'kind': kind, 'args': args}
 
 
-def plan_reel(brief, allow_draft=False):
+def plan_reel(brief, allow_draft=False, avoid_looks=()):
     """Deterministic library-constrained planner (the live-Codex planner, when
     present, must produce the same schema and pass the same validation)."""
     from motif_library import catalog, retrieve
     from motif_reel_script import hook_line
-    from motif_rigs.palettes import rotation
+    import motif_looks
     cat = catalog(allow_draft);facts = {f['id']: f for f in brief['facts']};seed = brief.get('seed', 0)
-    palettes = rotation(len(brief['beats']) + 2, seed);used_rigs, rooms = [], []
+    look_id = motif_looks.choose(brief, avoid_looks);look = motif_looks.get(look_id)
+    palettes = motif_looks.palettes(look_id, len(brief['beats']) + 2, seed);used_rigs, rooms = [], []
     hook, _ = hook_line(brief)
     beats = []
 
     def room_for(text, hint=None):
         if hint:return hint
-        ranked = retrieve(cat, text, 'room', 8, exclude=rooms[-1:])
+        ranked = retrieve(cat, text, 'room', 20, exclude=rooms[-1:])
+        ranked = [r for r in ranked if r['id'] in look['rooms']] or ranked
         fresh = [r for r in ranked if r['id'] not in rooms]
         return (fresh or ranked)[0]['id'] if (fresh or ranked) else None
 
@@ -114,7 +116,7 @@ def plan_reel(brief, allow_draft=False):
     hook_insert = _insert_for(first_fact, hook, cat) if _number(first_fact.get('value')) else None
     beats.append({'id': 'hook', 'kind': 'hook', 'narration': hook, 'palette': palettes[0], 'shots': [
         {'id': 'hook', 'role': 'hook', 'headline': (brief.get('hook') or {}).get('headline') or _short(hook, 28), 'headline_b': _short(brief['topic'], 28), 'room': hook_room, 'rig': None,
-         'insert': hook_insert, 'bot': {'costume': [], 'face': 'excited', 'pose': 'celebrating'}, 'crowd': 9}]})
+         'insert': hook_insert, 'bot': {'costume': [], 'face': 'excited', 'pose': 'celebrating'}, 'crowd': 9 if look['hook'] == 'crowd' else 0, 'grammar': 'big-bot' if look['hook'] == 'number' and not hook_insert else look['hook']}]})
     for i, b in enumerate(brief['beats']):
         fact = facts[b['fact']];visual = b.get('visual', {});text = f'{b["narration"]} {fact["claim"]} {fact.get("value", "")}'
         rig_id = visual.get('rig') or (retrieve(cat, text, 'rig', 1, exclude=used_rigs) or retrieve(cat, text, 'rig', 1))[0]['id']
@@ -133,8 +135,9 @@ def plan_reel(brief, allow_draft=False):
     cta_room = room_for('celebrate launch ' + brief['cta']['narration'], brief['cta'].get('room'))
     beats.append({'id': 'cta', 'kind': 'cta', 'narration': brief['cta']['narration'], 'palette': palettes[-1], 'shots': [
         {'id': 'cta', 'role': 'cta', 'headline': _short(f'COMMENT {brief["cta"]["keyword"]}', 28), 'headline_b': _short(brief['cta']['narration'], 28), 'room': cta_room, 'rig': None,
-         'insert': {'kind': 'comment_end_card', 'args': {'keyword': brief['cta']['keyword']}}, 'bot': {'costume': ['party-hat'], 'face': 'excited', 'pose': 'celebrating'}, 'crowd': 7}]})
-    plan = {'schema_version': 'reel-1.0', 'quality_mode': 'motif-gold-v1', 'slug': brief['slug'], 'seed': seed, 'library': 'draft' if allow_draft else 'canonical', 'beats': beats, 'library_requests': [], 'warnings': default_label_warnings(beats)}
+         'insert': {'kind': 'comment_end_card', 'args': {'keyword': brief['cta']['keyword']}}, 'bot': {'costume': ['party-hat'], 'face': 'excited', 'pose': 'celebrating' if look['cta'] != 'card' else 'pointing'},
+         'crowd': 7 if look['cta'] == 'crowd' else 0, 'grammar': look['cta']}]})
+    plan = {'schema_version': 'reel-1.0', 'quality_mode': 'motif-gold-v1', 'slug': brief['slug'], 'seed': seed, 'look': look_id, 'library': 'draft' if allow_draft else 'canonical', 'beats': beats, 'library_requests': [], 'warnings': default_label_warnings(beats)}
     return plan
 
 
@@ -159,6 +162,8 @@ def validate_plan(plan, allow_draft=False):
     from motif_rigs.palettes import PALETTES
     cat = catalog(allow_draft);errors, requests = [], []
     rigs, rooms, costumes, inserts = ids(cat, 'rig'), ids(cat, 'room'), ids(cat, 'costume'), ids(cat, 'insert')
+    from motif_looks import LOOKS
+    if plan.get('look', 'paper-craft') not in LOOKS:errors.append(f'unknown look {plan.get("look")}')
     for beat in plan['beats']:
         if beat['palette'] not in PALETTES:errors.append(f'{beat["id"]}: unknown palette {beat["palette"]}')
         for shot in beat['shots']:
@@ -292,13 +297,13 @@ def insert_piece(insert, c_name, u, frame):
     raise ValueError(f'unsupported insert {kind}')
 
 
-def camera(markup, zoom, cx, cy):
+def camera(markup, zoom, cx, cy, dx=0.0, dy=0.0):
     """Per-piece camera so each top-level piece still moves independently."""
-    if abs(zoom - 1) < 1e-6:return markup
-    return f'<g transform="translate({cx:.2f} {cy:.2f}) scale({zoom:.5f}) translate({-cx:.2f} {-cy:.2f})">{markup}</g>'
+    if abs(zoom - 1) < 1e-6 and abs(dx) < 1e-6 and abs(dy) < 1e-6:return markup
+    return f'<g transform="translate({cx + dx:.2f} {cy + dy:.2f}) scale({zoom:.5f}) translate({-cx:.2f} {-cy:.2f})">{markup}</g>'
 
 
-def shot_frames(shot, layout, seed):
+def shot_frames(shot, layout, seed, look='paper-craft'):
     """World markup for every frame of one shot."""
     import motif_sets as ms
     from motif_bot_kit import crowd_layout, dressed_bot
@@ -306,6 +311,8 @@ def shot_frames(shot, layout, seed):
     from motif_rigs import get as get_rig
     from motif_rigs.base import ease, place
     from motif_rigs.palettes import palette
+    import motif_looks
+    L = motif_looks.get(look);grammar = shot.get('grammar', 'crowd')
     c = palette(shot['palette']);n = shot['frames'];room = ms.ROOMS[shot['room']]
     rig = get_rig(shot['rig']['id']) if shot['rig'] else None
     action = next(iter(rig.actions)) if rig else None;tc = rig.contact_t(action) if rig else 0
@@ -316,39 +323,50 @@ def shot_frames(shot, layout, seed):
     frames = []
     for f in range(n):
         u = f / max(1, n - 1);pieces = []
-        if shot['role'] == 'setup':zoom = 1.0 + .04 * u
-        elif shot['role'] == 'payoff':zoom = 1.12 + .05 * ease(u)
-        else:zoom = 1.0 + .06 * u
-        pieces.append(camera(room['draw'](c), zoom, cx, cy))
+        zoom, dx, dy = motif_looks.camera(L['camera'], shot['role'], u, f, n);dy += motif_looks.slide_offset(L['transition'], f)
+        cam = lambda markup: camera(markup, zoom, cx, cy, dx, dy)
+        if dy > 0:pieces.append(f'<rect width="720" height="1280" fill="{L["transition_colour"]}"/>')
+        pieces.append(cam(room['draw'](c)))
         for item in layout.get('dressing', []):
             if item['layer'] == 'back':
                 sway = 1.2 * math.sin(f * .09 + item['x'] * .01) if PROPS[item['prop']].mount in ('ceiling', 'sky') else 0
-                pieces.append(camera(f'<g transform="rotate({sway:.2f} {item["x"]:.1f} {item["box"][1]:.1f})">{place(PROPS[item["prop"]].render(c), item["x"], item["y"], item["scale"])}</g>', zoom, cx, cy))
+                pieces.append(cam(f'<g transform="rotate({sway:.2f} {item["x"]:.1f} {item["box"][1]:.1f})">{place(PROPS[item["prop"]].render(c), item["x"], item["y"], item["scale"])}</g>'))
         if rig:
             if shot['role'] == 'setup':t = tc * ease(min(1.0, u / .92))
             else:t = tc + (1 - tc) * min(1.0, u / .55)
-            h = layout['hero'];pieces.append(camera(place(rig.render(h['values'] or None, (action, t), shot['palette']), h['x'], h['y'], h['scale']), zoom, cx, cy))
+            h = layout['hero'];pieces.append(cam(place(rig.render(h['values'] or None, (action, t), shot['palette']), h['x'], h['y'], h['scale'])))
         b = layout['bot'];bot = shot['bot']
         if shot['role'] == 'setup':
             enter = min(1.0, u / .5);side = -1 if b['x'] < 360 else 1
             bx = b['x'] + side * 160 * (1 - ease(enter));walking = enter < 1
-            pieces.append(camera(dressed_bot(bx, b['y'], b['scale'], 'determined', 'standing', bot['costume'], shot['palette'], flip=side > 0, cycle='walk' if walking else None, phase=f / 10), zoom, cx, cy))
+            pieces.append(cam(dressed_bot(bx, b['y'], b['scale'], 'determined', 'standing', bot['costume'], shot['palette'], flip=side > 0, cycle='walk' if walking else None, phase=f / 10)))
         elif shot['role'] == 'payoff':
             hop = max(0.0, math.sin(min(1.0, u / .35) * math.pi)) * 30
-            pieces.append(camera(dressed_bot(b['x'], b['y'] - hop, b['scale'], bot['face'], bot['pose'] if u > .2 else 'standing', bot['costume'], shot['palette'], head=round(3 * math.sin(f * .3))), zoom, cx, cy))
+            pieces.append(cam(dressed_bot(b['x'], b['y'] - hop, b['scale'], bot['face'], bot['pose'] if u > .2 else 'standing', bot['costume'], shot['palette'], head=round(3 * math.sin(f * .3)))))
+        elif grammar == 'big-bot':
+            hop = abs(math.sin(f * .18)) * 18;tilt = 4 * math.sin(f * .15)
+            pieces.append(cam(dressed_bot(360, 1050 - hop, .55, bot['face'], bot['pose'], bot['costume'], shot['palette'], angle=tilt)))
+        elif grammar in ('number', 'card'):
+            hop = abs(math.sin(f * .22)) * 16
+            pieces.append(cam(dressed_bot(150 if grammar == 'card' else 560, 1030 - hop, .34, bot['face'], 'pointing', bot['costume'], shot['palette'], flip=grammar == 'number')))
         else:
             hop = abs(math.sin(f * .22)) * 26
-            pieces.append(camera(dressed_bot(360, 1010 - hop, .3, bot['face'], bot['pose'], bot['costume'], shot['palette']), zoom, cx, cy))
+            pieces.append(cam(dressed_bot(360, 1010 - hop, .3, bot['face'], bot['pose'], bot['costume'], shot['palette'])))
         for k, m in enumerate(members):
             bounce = abs(math.sin(f * .25 + k)) * 14
-            pieces.append(camera(dressed_bot(m['x'], m['y'] - bounce, m['s'], m['face'], 'celebrating' if (f // 8 + k) % 2 else m['pose'], m['costume'], shot['palette'], m['angle'], m['flip']), zoom, cx, cy))
+            pieces.append(cam(dressed_bot(m['x'], m['y'] - bounce, m['s'], m['face'], 'celebrating' if (f // 8 + k) % 2 else m['pose'], m['costume'], shot['palette'], m['angle'], m['flip'])))
         for item in layout.get('dressing', []):
-            if item['layer'] == 'front':pieces.append(camera(place(PROPS[item['prop']].render(c), item['x'], item['y'], item['scale']), zoom, cx, cy))
+            if item['layer'] == 'front':pieces.append(cam(place(PROPS[item['prop']].render(c), item['x'], item['y'], item['scale'])))
         if shot.get('insert') and (shot['role'] != 'payoff' or u > .25):
             start = .25 if shot['role'] == 'payoff' else 0;local = (u - start) / (1 - start)
-            pieces.append(insert_piece(shot['insert'], shot['palette'], local, int(local * (n - 1))))
+            piece = insert_piece(shot['insert'], shot['palette'], local, int(local * (n - 1)))
+            if grammar == 'number' and shot['role'] == 'hook':piece = f'<g transform="translate(360 560) scale(1.45) translate(-360 -400)">{piece}</g>'
+            elif grammar == 'card' and shot['role'] == 'cta':piece = f'<g transform="translate(420 520) scale(1.25) translate(-360 -420)">{piece}</g>'
+            pieces.append(piece)
         text = headlines[min(len(headlines) - 1, int(u * len(headlines)))]
-        pieces.append(headline_piece(text, c, f))
+        pieces.append(motif_looks.headline(L['headline'], text, c, f))
+        overlay = motif_looks.transition_in(L['transition'], f, L['transition_colour']) + motif_looks.transition_out(L['transition'], f, n, L['transition_colour'])
+        if overlay:pieces.append(overlay)
         frames.append(''.join(pieces))
     return frames
 
@@ -412,7 +430,7 @@ def compile_reel(project, plan, spans, voice_duration, seed=0):
                     layouts[key]['dressing'] = [d for d in probe['dressing'] if d['role'] != 'overlap']
                 except ValueError:pass
         layout = layouts[key];by_beat.setdefault(shot['beat'], []).append(shot['id'])
-        frames = shot_frames(shot, layout, seed + shot['start_frame'])
+        frames = shot_frames(shot, layout, seed + shot['start_frame'], plan.get('look', 'paper-craft'))
         dur = shot['frames'] / FPS
         events = [{'time': round(f / FPS, 9), 'target': f'#{shot["id"]}-world', 'action': 'SET', 'params': {'props': {'innerHTML': namespace(body, shot['id'])}}} for f, body in enumerate(frames) if f]
         write_composition(project, shot['id'], dur, frames[0], events, DEFS)
@@ -426,8 +444,10 @@ def compile_reel(project, plan, spans, voice_duration, seed=0):
             item = ledger['whoosh' if shot['role'] != 'payoff' else 'star'];cues.append({'shot': shot['id'], 'start': round(start + (.02 if shot['role'] != 'payoff' else dur * .3), 3), 'file': item['file'], 'duration': item['duration'], 'volume': .26, 'meaning': f'{shot["role"]} accent'})
     duration = frames_index[-1]['start'] + frames_index[-1]['duration']
     lines = [(b['id'], b['narration']) for b in plan['beats']];groups = caption_groups(lines, spans)
-    font = TTFont(project / 'assets/fonts/EBGaramond-700.woff2')
-    cap = lambda f: f'<g transform="translate(0 150)">{captions_frame(groups, f, font)}</g>'
+    import motif_looks
+    look = motif_looks.get(plan.get('look', 'paper-craft'))
+    fonts = {'serif': TTFont(project / 'assets/fonts/EBGaramond-700.woff2'), 'sans': TTFont(project / 'assets/fonts/Inter-900.woff2')}
+    cap = lambda f: motif_looks.captions(look['captions'], groups, f, fonts, look['caption_colours'])
     total = round(duration * FPS)
     capevents = [{'time': round(f / FPS, 9), 'target': '#captions-world', 'action': 'SET', 'params': {'props': {'innerHTML': namespace(cap(f), 'captions')}}} for f in range(1, total)]
     write_composition(project, 'captions', duration, cap(0), capevents, DEFS)
@@ -446,7 +466,7 @@ def codex_available():
     return shutil.which('codex') is not None
 
 
-def run(brief_path, out_root=None, allow_draft=False, stub_voice=False, render=False, python=None, finish=True):
+def run(brief_path, out_root=None, allow_draft=False, stub_voice=False, render=False, python=None, finish=True, avoid_looks=()):
     from motif_evidence import declare
     from motif_pacing import check as pacing, check_plan
     from motif_provenance import check as provenance
@@ -460,10 +480,10 @@ def run(brief_path, out_root=None, allow_draft=False, stub_voice=False, render=F
     if project.exists():raise FileExistsError(f'{project} exists; choose a fresh slug')
     project.mkdir(parents=True);write(project / 'brief.json', brief)
     script = script_record(brief);write(project / 'reel-script.json', script);stage('script', 'PASS', hook=script['hook'], hook_alternates=script['hook_alternates'])
-    plan = plan_reel(brief, allow_draft);errs, requests = validate_plan(plan, allow_draft)
+    plan = plan_reel(brief, allow_draft, avoid_looks);errs, requests = validate_plan(plan, allow_draft)
     if requests:write(project / 'library-requests.json', requests)
     if errs:stage('plan', 'FAIL', errors=errs);write(project / 'reel-record.json', record);raise ValueError('plan: ' + '; '.join(errs))
-    write(project / 'production-plan.json', plan);declare(project, 'original-film', 'motif_reel.run');stage('plan', 'PASS', shots=sum(len(b['shots']) for b in plan['beats']), warnings=plan['warnings'])
+    write(project / 'production-plan.json', plan);declare(project, 'original-film', 'motif_reel.run');stage('plan', 'PASS', look=plan['look'], shots=sum(len(b['shots']) for b in plan['beats']), warnings=plan['warnings'])
     prepare(project, brief)
     spans, voice_duration = voice(project, [(b['id'], b['narration']) for b in plan['beats']], brief.get('voice', 'af_nova'), stub_voice, python)
     stage('voice', 'STUB' if stub_voice else 'PASS', duration=round(voice_duration, 3))
@@ -490,7 +510,9 @@ def run(brief_path, out_root=None, allow_draft=False, stub_voice=False, render=F
     if finish:
         final = project.with_name(project.name + '-finished')
         from motif_finish import apply
-        apply(project, final, lights_path=project / 'finish-lights.json');stage('finish', 'PASS', project=str(final))
+        from motif_looks import finish_style
+        style = finish_style(plan['look'], project / 'finish-style.json')
+        apply(project, final, style_path=style, lights_path=project / 'finish-lights.json');stage('finish', 'PASS', project=str(final), style=f'motif-finish-v1+{plan["look"]}')
     origin = provenance(final);gate = pacing(final)
     stage('gate', 'PASS' if origin['status'] == 'PASS' and gate['status'] == 'PASS' else 'FAIL', provenance={k: origin[k] for k in ('status', 'checked', 'unknown', 'reference_derived', 'rejected')}, pacing=gate['status'])
     if render:

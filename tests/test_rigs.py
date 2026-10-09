@@ -35,7 +35,7 @@ class RigFrameworkTests(unittest.TestCase):
    from PIL import Image
    self.assertEqual(Image.open(rec['stills']['contact']).size,(360,640))
  def test_palette_rotation_never_repeats_neighbours_and_covers_all(self):
-  order=rotation(16)
+  order=rotation(2*len(PALETTES))
   self.assertTrue(all(a!=b for a,b in zip(order,order[1:])))
   self.assertEqual(set(order[:len(PALETTES)]),set(PALETTES))
 

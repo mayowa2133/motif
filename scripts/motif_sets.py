@@ -2,7 +2,7 @@
 
 A set is one beat's stage in the 720 x 1280 grid:
 
-  backdrop      one of Motif's eight original rooms, drawn in the beat's palette
+  backdrop      one of Motif's original rooms, drawn in the beat's palette
   dressing      2 to 4 props from motif_props; at least one crosses a frame
                 edge and at least one partly overlaps the hero, so the frame
                 reads as a place rather than a card on an empty field
@@ -132,6 +132,59 @@ def _living_room(c):
             + f'<rect y="{FLOOR - 160}" width="{W}" height="22" fill="{c["primary"]}" opacity=".7"/><rect y="{FLOOR - 140}" width="{W}" height="140" fill="{c["secondary"]}" opacity=".45"/>' + _floor(c, 'rug'))
 
 
+
+def _arcade(c):
+    tubes = ''.join(f'<path d="M{x} 120V{FLOOR - 260}" stroke="{col}" stroke-width="10" stroke-linecap="round" opacity=".85"/><path d="M{x} 120V{FLOOR - 260}" stroke="{col}" stroke-width="34" stroke-linecap="round" opacity=".14"/>'
+                    for x, col in ((60, c['primary']), (240, c['secondary']), (480, c['accent']), (660, c['primary'])))
+    zig = f'<path d="M0 {FLOOR - 200}' + ''.join(f'L{x} {FLOOR - 200 - (40 if (x // 60) % 2 else 0)}' for x in range(60, W + 60, 60)) + f'" fill="none" stroke="{c["pop"]}" stroke-width="8" opacity=".7"/>'
+    floor = f'<rect y="{FLOOR}" width="{W}" height="{H - FLOOR}" fill="{c["floor"]}"/>' + _tiles(c, c['secondary'], FLOOR, H, 60, .22) + f'<path d="M0 {FLOOR + 2}H{W}" stroke="{c["primary"]}" stroke-width="5" opacity=".7"/>'
+    return f'<rect width="{W}" height="{FLOOR}" fill="{c["dark"]}"/><rect width="{W}" height="{FLOOR}" fill="{c["wall"]}" opacity=".6"/>' + _diamonds(c, c['dark'], 80, .25) + tubes + zig + floor
+
+
+def _park(c):
+    sky = f'<rect width="{W}" height="{FLOOR}" fill="{c["wall"]}"/>' + _bands(c, (c['light'], c['wall'], c['secondary']), (.35, 0, .3))
+    hills = (f'<path d="M0 {FLOOR - 260}Q180 {FLOOR - 380} 380 {FLOOR - 270}Q560 {FLOOR - 180} 720 {FLOOR - 300}V{FLOOR}H0Z" fill="{c["floor"]}" opacity=".45"/>'
+             f'<path d="M0 {FLOOR - 120}Q240 {FLOOR - 210} 460 {FLOOR - 120}Q600 {FLOOR - 70} 720 {FLOOR - 130}V{FLOOR}H0Z" fill="{c["floor"]}" opacity=".75"/>')
+    trees = ''.join(f'<g opacity=".7">{place(PROPS["tree"].render(c), x, FLOOR - 90 - (x * 7) % 50, .45)}</g>' for x in (40, 200, 560, 690))
+    path_ = f'<path d="M300 {FLOOR}Q340 {FLOOR + 120} 260 {H}H460Q420 {FLOOR + 120} 420 {FLOOR}Z" fill="{c["secondary"]}" opacity=".7"/>'
+    clouds = ''.join(f'<g opacity=".8">{place(PROPS["cloud"].render(c), x, y, s)}</g>' for x, y, s in ((140, 300, .8), (520, 230, 1.0), (330, 470, .6), (650, 520, .55), (60, 560, .5)))
+    kites = ''.join(f'<path d="M{x} {y}l26 -40l26 40l-26 30Z" fill="{col}" stroke="{c["dark"]}" stroke-width="3"/><path d="M{x + 26} {y + 30}q-20 40 10 80q-30 40 0 90" fill="none" stroke="{c["dark"]}" stroke-width="2" opacity=".5"/>' for x, y, col in ((470, 380, c['pop']), (200, 420, c['accent'])))
+    fence = ''.join(f'<path d="M{x} {FLOOR - 10}V{FLOOR - 120}l12 -16l12 16V{FLOOR - 10}Z" fill="{c["light"]}" opacity=".75"/>' for x in range(0, W, 40)) + f'<rect y="{FLOOR - 90}" width="{W}" height="12" fill="{c["light"]}" opacity=".75"/>'
+    bushes = ''.join(f'<circle cx="{x}" cy="{FLOOR - 40}" r="{r}" fill="{c["floor"]}" stroke="{c["dark"]}" stroke-width="3" opacity=".95"/>' for x, r in ((30, 70), (110, 50), (620, 64), (700, 54)))
+    trees = trees + ''.join(f'<g opacity=".55">{place(PROPS["tree"].render(c), x, FLOOR - 230, .3)}</g>' for x in (120, 300, 420, 620))
+    grass = f'<rect y="{FLOOR}" width="{W}" height="{H - FLOOR}" fill="{c["floor"]}"/>' + ''.join(f'<path d="M{x} {y}l6 -16l6 16" fill="none" stroke="{c["light"]}" stroke-width="3" opacity=".3"/>' for x, y in [((k * 53) % W, FLOOR + 30 + (k * 37) % 200) for k in range(40)])
+    return sky + clouds + kites + hills + trees + fence + bushes + grass + path_ + f'<path d="M0 {FLOOR + 2}H{W}" stroke="{c["dark"]}" stroke-width="4" opacity=".2"/>'
+
+
+def _beach(c):
+    sky = f'<rect width="{W}" height="{FLOOR}" fill="{c["wall"]}"/>' + _bands(c, (c['light'], c['wall'], c['pop']), (.3, 0, .25))
+    sea_y = FLOOR - 330
+    sea = f'<rect y="{sea_y}" width="{W}" height="{FLOOR - sea_y}" fill="{c["accent"]}"/>' + ''.join(f'<path d="M{x} {y}q20 -12 40 0t40 0" fill="none" stroke="{c["light"]}" stroke-width="5" opacity=".55"/>' for x, y in [((k * 97) % 680, sea_y + 40 + (k * 61) % 240) for k in range(16)])
+    sun = f'<circle cx="160" cy="{sea_y - 10}" r="90" fill="{c["secondary"]}" opacity=".9"/><rect y="{sea_y}" width="{W}" height="20" fill="{c["accent"]}"/>'
+    sand = f'<path d="M0 {FLOOR - 80}Q360 {FLOOR - 140} 720 {FLOOR - 60}V{H}H0Z" fill="{c["secondary"]}"/>' + ''.join(f'<circle cx="{(k * 71) % W}" cy="{FLOOR + 20 + (k * 43) % 200}" r="3" fill="{c["dark"]}" opacity=".15"/>' for k in range(50))
+    clouds = ''.join(f'<g opacity=".85">{place(PROPS["cloud"].render(c), x, y, s)}</g>' for x, y, s in ((470, 260, 1.0), (180, 380, .7), (620, 470, .6), (330, 520, .5)))
+    birds = ''.join(f'<path d="M{x} {y}q14 -14 28 0q14 -14 28 0" fill="none" stroke="{c["dark"]}" stroke-width="4" opacity=".6"/>' for x, y in ((300, 330), (380, 290), (560, 380), (120, 250)))
+    boats = ''.join(f'<path d="M{x} {sea_y + 70}h70l-12 18h-46Z" fill="{c["light"]}"/><path d="M{x + 34} {sea_y + 66}V{sea_y - 10}L{x + 70} {sea_y + 60}Z" fill="{col}"/>' for x, col in ((420, c['pop']), (560, c['primary'])))
+    huts = ''.join(f'<rect x="{x}" y="{FLOOR - 230}" width="80" height="130" fill="{col}" stroke="{c["dark"]}" stroke-width="3"/><path d="M{x - 10} {FLOOR - 230}L{x + 40} {FLOOR - 280}L{x + 90} {FLOOR - 230}Z" fill="{c["light"]}" stroke="{c["dark"]}" stroke-width="3"/>'
+                   + ''.join(f'<rect x="{x + k}" y="{FLOOR - 230}" width="10" height="130" fill="{c["light"]}" opacity=".5"/>' for k in (14, 44)) for x, col in ((20, c['pop']), (120, c['primary']), (610, c['pop'])))
+    return sky + clouds + birds + sun + sea + boats + sand + huts + f'<path d="M0 {FLOOR + 2}H{W}" stroke="{c["dark"]}" stroke-width="3" opacity=".12"/>'
+
+
+def _rooftop(c):
+    sky = f'<rect width="{W}" height="{FLOOR}" fill="{c["wall"]}"/>' + _bands(c, (c['pop'], c['wall'], c['light']), (.25, 0, .35))
+    city = ''.join(f'<rect x="{x}" y="{FLOOR - h}" width="{w}" height="{h}" fill="{c["metal"]}" opacity=".55"/>' + ''.join(f'<rect x="{x + 12 + i * 22}" y="{FLOOR - h + 20 + j * 34}" width="10" height="16" fill="{c["light"]}" opacity=".45"/>' for i in range(max(1, (w - 20) // 22)) for j in range(max(1, (h - 40) // 34)) if (i + j + x) % 3)
+                   for x, w, h in ((0, 120, 420), (130, 90, 560), (230, 140, 380), (380, 100, 620), (490, 130, 460), (630, 90, 520)))
+    parapet = f'<rect y="{FLOOR - 70}" width="{W}" height="70" fill="{c["primary"]}"/><rect y="{FLOOR - 80}" width="{W}" height="14" fill="{c["light"]}" opacity=".6"/>' + ''.join(f'<path d="M{x} {FLOOR - 66}V{FLOOR}" stroke="{c["dark"]}" stroke-width="3" opacity=".2"/>' for x in range(40, W, 80))
+    return sky + city + parapet + _floor(c, 'tiles')
+
+
+def _bakery(c):
+    awning = ''.join(f'<path d="M{x} 0H{x + 60}V140Q{x + 30} 176 {x} 140Z" fill="{c["primary"] if (x // 60) % 2 else c["light"]}"/>' for x in range(0, W, 60))
+    shelves = ''.join(f'<rect x="40" y="{y}" width="640" height="16" fill="{c["secondary"]}" opacity=".85"/>' + ''.join(f'<circle cx="{x}" cy="{y - 24}" r="22" fill="{[c["pop"], c["accent"], c["primary"]][(x // 90) % 3]}" opacity=".75"/>' for x in range(90, 680, 90)) for y in (330, 470))
+    counter = f'<rect y="{FLOOR - 230}" width="{W}" height="230" fill="{c["secondary"]}" opacity=".6"/>'
+    return f'<rect width="{W}" height="{FLOOR}" fill="{c["wall"]}"/>' + _diamonds(c, c['light'], 40, .35) + shelves + awning + counter + _floor(c, 'tiles')
+
+
 ROOMS = {
     'office': {'draw': _office, 'dressing': ('plant', 'filing-cabinet', 'chair', 'bookshelf', 'cactus', 'trash-can', 'wall-clock', 'whiteboard', 'window', 'poster', 'wall-sign', 'pendant-lamp'), 'costumes': ('glasses', 'headset', 'bowtie'), 'lights': [{'kind': 'window', 'colour': '#FFF0CF'}]},
     'diner': {'draw': _diner, 'dressing': ('stool', 'diner-counter', 'fridge', 'trash-can', 'menu-board', 'neon-sign', 'wall-clock', 'pendant-lamp', 'string-lights'), 'costumes': ('chef-hat', 'apron', 'cap'), 'lights': [{'kind': 'lamp', 'colour': '#FFD58A'}]},
@@ -140,6 +193,11 @@ ROOMS = {
     'workshop': {'draw': _workshop, 'dressing': ('ladder', 'toolbox', 'crate', 'barrel', 'pegboard', 'shelf', 'pendant-lamp', 'stool'), 'costumes': ('hard-hat', 'hi-vis', 'apron', 'glasses'), 'lights': [{'kind': 'lamp', 'colour': '#FFD58A'}]},
     'night-sky': {'draw': _night_sky, 'dressing': ('moon', 'stars', 'cloud', 'street-lamp', 'bench', 'hot-air-balloon', 'cactus'), 'costumes': ('beanie', 'scarf', 'cape'), 'lights': [{'kind': 'lamp', 'colour': '#BFD8FF'}]},
     'server-room': {'draw': _server_room, 'dressing': ('server-rack', 'crate', 'trash-can', 'wall-sign', 'filing-cabinet', 'pendant-lamp'), 'costumes': ('headset', 'glasses', 'hi-vis'), 'lights': [{'kind': 'beam', 'colour': '#BFF3EA'}]},
+    'arcade': {'draw': _arcade, 'dressing': ('arcade-cabinet', 'neon-sign', 'speaker', 'stool', 'string-lights', 'poster', 'trash-can'), 'costumes': ('headset', 'cap', 'glasses'), 'lights': [{'kind': 'beam', 'colour': '#E7C6FF'}]},
+    'park': {'draw': _park, 'dressing': ('tree', 'bench', 'street-lamp', 'plant', 'trash-can', 'cloud', 'sun', 'hot-air-balloon'), 'costumes': ('cap', 'scarf', 'beanie'), 'lights': [{'kind': 'beam', 'colour': '#FFF6D8'}]},
+    'beach': {'draw': _beach, 'dressing': ('beach-umbrella', 'crate', 'barrel', 'sun', 'cloud', 'hot-air-balloon', 'cactus'), 'costumes': ('cap', 'glasses', 'party-hat'), 'lights': [{'kind': 'beam', 'colour': '#FFF2C8'}]},
+    'rooftop': {'draw': _rooftop, 'dressing': ('water-tower', 'crate', 'traffic-cone', 'string-lights', 'cloud', 'moon', 'barrel'), 'costumes': ('hi-vis', 'beanie', 'scarf'), 'lights': [{'kind': 'lamp', 'colour': '#FFD9B8'}]},
+    'bakery': {'draw': _bakery, 'dressing': ('cake-stand', 'diner-counter', 'stool', 'menu-board', 'wall-clock', 'pendant-lamp', 'plant'), 'costumes': ('chef-hat', 'apron', 'bowtie'), 'lights': [{'kind': 'lamp', 'colour': '#FFE2C2'}]},
     'living-room': {'draw': _living_room, 'dressing': ('sofa', 'armchair', 'floor-lamp', 'plant', 'coffee-table', 'bookshelf', 'framed-picture', 'window', 'shelf', 'string-lights'), 'costumes': ('scarf', 'beanie', 'glasses'), 'lights': [{'kind': 'lamp', 'colour': '#FFD58A'}]},
 }
 

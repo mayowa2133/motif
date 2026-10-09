@@ -84,7 +84,7 @@
             1.0
           ]
         },
-        "room": "office"
+        "room": "arcade"
       }
     },
     {
@@ -94,13 +94,15 @@
       "headline": "A TRILLION DATABASES",
       "payoff_headline": "OVER ONE TRILLION",
       "visual": {
-        "rig": "plate-stack",
+        "rig": "stacked-meter",
         "params": {
-          "count_from": 2,
-          "count_to": 16,
-          "label": "DATABASES"
+          "from": 2,
+          "to": 13,
+          "unit": "",
+          "label": "DATABASES",
+          "rocket": true
         },
-        "room": "server-room",
+        "room": "rooftop",
         "insert": {
           "kind": "progress_bar",
           "args": {
@@ -122,7 +124,7 @@
           "object": "LICENSE FEE",
           "force": "PUBLIC DOMAIN"
         },
-        "room": "workshop",
+        "room": "diner",
         "insert": {
           "kind": "price_tag",
           "args": {
@@ -149,12 +151,13 @@
           "machine": "SQLITE",
           "output": "ONE FILE"
         },
-        "room": "living-room"
+        "room": "stage"
       }
     }
   ],
   "cta": {
     "keyword": "SQLite",
     "narration": "For the links, comment SQLite."
-  }
+  },
+  "look": "primary-pop"
 }

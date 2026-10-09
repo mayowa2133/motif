@@ -48,11 +48,10 @@
       "headline": "ONE THREAD AT A TIME",
       "payoff_headline": "THE GLOBAL LOCK",
       "visual": {
-        "rig": "overflow-vehicle",
+        "rig": "lock-and-key",
         "params": {
-          "seats": 2,
-          "riders": 10,
-          "label": "ONE LOCK"
+          "label": "ONE THREAD",
+          "key": "GIL"
         },
         "room": "office"
       }
@@ -64,20 +63,12 @@
       "headline": "PYTHON 3.13",
       "payoff_headline": "LOCK TURNED OFF",
       "visual": {
-        "rig": "race-track",
+        "rig": "launch-pad",
         "params": {
-          "labels": [
-            "THREAD 1",
-            "THREAD 2",
-            "THREAD 3"
-          ],
-          "progress": [
-            1.0,
-            1.0,
-            1.0
-          ]
+          "label": "PYTHON 3.13",
+          "target": "NO LOCK"
         },
-        "room": "server-room"
+        "room": "workshop"
       }
     },
     {
@@ -93,7 +84,7 @@
           "stamp": "NO GIL",
           "verdict": "approved"
         },
-        "room": "workshop"
+        "room": "living-room"
       }
     },
     {
@@ -111,7 +102,7 @@
           "label": "CORES BUSY",
           "stars": 3
         },
-        "room": "living-room",
+        "room": "diner",
         "insert": {
           "kind": "gauge",
           "args": {
@@ -135,12 +126,13 @@
           "left_weight": 2,
           "right_weight": 8
         },
-        "room": "diner"
+        "room": "office"
       }
     }
   ],
   "cta": {
     "keyword": "Threads",
     "narration": "For the setup steps, comment Threads."
-  }
+  },
+  "look": "paper-craft"
 }

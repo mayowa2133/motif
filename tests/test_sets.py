@@ -60,8 +60,8 @@ class LibraryTests(unittest.TestCase):
             renders = {prop.render(p) for p in PALETTES}
             self.assertGreater(len(renders), 1, f'{name} ignores the palette')
 
-    def test_eight_rooms(self):
-        self.assertEqual(len(ms.ROOMS), 8)
+    def test_thirteen_rooms(self):
+        self.assertEqual(len(ms.ROOMS), 13)
         for room, spec in ms.ROOMS.items():
             for name in spec['dressing']:self.assertIn(name, PROPS, room)
 

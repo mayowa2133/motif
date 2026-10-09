@@ -55,15 +55,13 @@
       "headline": "SECURES THE WEB",
       "payoff_headline": "700 MILLION SITES",
       "visual": {
-        "rig": "stacked-meter",
+        "rig": "magnet-pull",
         "params": {
-          "from": 1,
-          "to": 12,
-          "unit": "",
-          "label": "WEBSITES",
-          "rocket": true
+          "count": 6,
+          "item": "SITES",
+          "label": "HTTPS"
         },
-        "room": "street",
+        "room": "night-sky",
         "insert": {
           "kind": "counter",
           "args": {
@@ -87,7 +85,7 @@
           "object": "CERT FEE",
           "force": "LET'S ENCRYPT"
         },
-        "room": "office",
+        "room": "server-room",
         "insert": {
           "kind": "price_tag",
           "args": {
@@ -104,14 +102,13 @@
       "headline": "RUN BY A NONPROFIT",
       "payoff_headline": "FUNDED BY DONATIONS",
       "visual": {
-        "rig": "balance-scale",
+        "rig": "sprout-grow",
         "params": {
-          "left_label": "PROFIT",
-          "right_label": "PUBLIC GOOD",
-          "left_weight": 1,
-          "right_weight": 7
+          "leaves": 4,
+          "label": "DONATIONS",
+          "bloom": "NONPROFIT"
         },
-        "room": "living-room"
+        "room": "stage"
       }
     },
     {
@@ -129,7 +126,7 @@
           "label": "DAYS",
           "stars": 0
         },
-        "room": "night-sky",
+        "room": "arcade",
         "insert": {
           "kind": "counter",
           "args": {
@@ -148,18 +145,19 @@
       "headline": "NOBODY HAS TO REMEMBER",
       "payoff_headline": "RENEWED AUTOMATICALLY",
       "visual": {
-        "rig": "stamp-gate",
+        "rig": "domino-run",
         "params": {
-          "document": "CERTIFICATE",
-          "stamp": "RENEWED",
-          "verdict": "approved"
+          "count": 7,
+          "label": "AUTO RENEW",
+          "target": "RENEWED"
         },
-        "room": "server-room"
+        "room": "rooftop"
       }
     }
   ],
   "cta": {
     "keyword": "Padlock",
     "narration": "Want the setup guide? Comment Padlock."
-  }
+  },
+  "look": "neon-arcade"
 }

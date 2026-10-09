@@ -55,12 +55,12 @@
       "headline": "FREE FOREVER",
       "payoff_headline": "OPEN SOURCE",
       "visual": {
-        "rig": "hydraulic-press",
+        "rig": "lock-and-key",
         "params": {
-          "object": "SUBSCRIPTION",
-          "force": "BLENDER"
+          "label": "BLENDER",
+          "key": "FREE"
         },
-        "room": "street",
+        "room": "bakery",
         "insert": {
           "kind": "price_tag",
           "args": {
@@ -77,11 +77,11 @@
       "headline": "USE IT FOR ANYTHING",
       "payoff_headline": "EVEN CLIENT WORK",
       "visual": {
-        "rig": "stamp-gate",
+        "rig": "bridge-span",
         "params": {
-          "document": "CLIENT JOB",
-          "stamp": "ALLOWED",
-          "verdict": "approved"
+          "planks": 5,
+          "left": "BLENDER",
+          "right": "CLIENTS"
         },
         "room": "office"
       }
@@ -103,7 +103,7 @@
           "machine": "BLENDER",
           "output": "FILM"
         },
-        "room": "workshop"
+        "room": "living-room"
       }
     },
     {
@@ -121,7 +121,7 @@
           "label": "REALISM",
           "stars": 3
         },
-        "room": "stage",
+        "room": "park",
         "insert": {
           "kind": "star_badge",
           "args": {
@@ -138,19 +138,19 @@
       "headline": "NO PLAN TO LOCK YOU IN",
       "payoff_headline": "FUNDED BY DONATIONS",
       "visual": {
-        "rig": "balance-scale",
+        "rig": "plate-stack",
         "params": {
-          "left_label": "LOCK IN",
-          "right_label": "DONATIONS",
-          "left_weight": 1,
-          "right_weight": 7
+          "count_from": 2,
+          "count_to": 14,
+          "label": "DONATIONS"
         },
-        "room": "living-room"
+        "room": "diner"
       }
     }
   ],
   "cta": {
     "keyword": "Blender",
     "narration": "For a starter guide, comment Blender."
-  }
+  },
+  "look": "candy-pastel"
 }

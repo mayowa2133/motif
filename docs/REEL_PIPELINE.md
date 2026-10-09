@@ -50,3 +50,19 @@ Every stage's result is in `reel-record.json`.
 - Word timing inside a take is proportional to characters, not measured. Whisper needs Hugging Face, which the cloud container can't reach.
 - Without a brief's `visual` hints, the deterministic planner picks rigs and rooms by tag overlap. It also writes headlines from the claim text. That works but reads generic, so author the hints.
 - Music is not in yet (plan 5.2 needs Mayowa's choice).
+
+## Per-film looks and the variety check
+
+Mayowa found the first five benchmark reels "pretty similar" (2026-10-09). Rotating palettes per scene was not enough: every film shared one headline tag, caption style, camera, cut style, warm grade, hook and CTA crowd shot and the same ten machines. Each film now gets a look (`scripts/motif_looks.py`) that fixes, for the whole film, a palette family, preferred rooms, headline and caption treatment, camera grammar, transition, hook/CTA shot grammar and a grade on top of the approved finish:
+
+| look | palettes | headline | captions | camera | transition | hook / CTA |
+|---|---|---|---|---|---|---|
+| paper-craft | sunrise, citrus, berry, lagoon | taped tag | coral tiles | push | cut | crowd / crowd |
+| neon-arcade | neon-violet, neon-teal, neon-ember, plum-night | outline | glow pill | punch | flash | big number / big Bot |
+| primary-pop | poppy, royal, sunflower | black slab | bar | snap | wipe | big Bot / card |
+| candy-pastel | candy, lilac, peach, mint-coral | bubble | stickers | float | slide | crowd / big Bot |
+| great-outdoors | sky, forest, meadow, cobalt | ribbon | underline | pan | iris | big number / crowd |
+
+A brief may name its `look`; otherwise the planner picks one not used by the previous films in the batch. `scripts/motif_variety.py` compares every pair of reels (look features, palettes, rooms, machines, colour histogram) and fails a pair scoring over 0.5 or sharing more than two machines. The first five reels scored 0.70 to 0.82 per pair; the re-briefed five score 0.07 to 0.24.
+
+The library grew with the looks: 10 palettes, 5 rooms (arcade, park, beach, rooftop, bakery), 5 props (tree, beach-umbrella, arcade-cabinet, water-tower, cake-stand) and 6 machines (domino-run, launch-pad, magnet-pull, lock-and-key, sprout-grow, bridge-span). These are DRAFT until Mayowa approves them, so the benchmark runs with `--allow-draft`. Known gap: living-room with plate-stack still fails the empty-field check.
