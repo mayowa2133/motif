@@ -111,7 +111,7 @@ def headline(style, text, c, f):
         body = back + front + ''.join(txt(l, 360, -h / 2 + 22 + size * .86 + k * size * 1.04, size, c['light'], 900, 'middle') for k, l in enumerate(lines))
         return g(body, slide, 110 + h / 2, -2.2)
     if style == 'outline':
-        size = min(label_size(l, 640, 78) for l in lines);pop = 1.0 if f >= 5 else .6 + .4 * (1 - (1 - f / 5) ** 3)
+        size = min(label_size(l, 540, 74) for l in lines);pop = 1.0 if f >= 5 else .6 + .4 * (1 - (1 - f / 5) ** 3)
         y0 = 150;out = ''
         for k, l in enumerate(lines):
             y = y0 + size * .86 + k * size * 1.05 - 40
