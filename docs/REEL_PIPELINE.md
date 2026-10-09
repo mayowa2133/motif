@@ -2,7 +2,7 @@
 
 ```
 python scripts/motif_reel.py run --brief quality/benchmark-briefs/bench-sqlite-everywhere.json \
-    --out /tmp/reels --allow-draft --render --tts-python <python with kokoro-onnx>
+    --out /tmp/reels --render --tts-python <python with kokoro-onnx>
 ```
 
 A reel is data only. The brief holds the following:
@@ -21,7 +21,7 @@ Everything drawn comes from the library:
 | Counters and inserts | `scripts/motif_inserts.py` | same |
 | 8 palettes, rotated per beat | `scripts/motif_rigs/palettes.py` | n/a |
 
-Only CANONICAL entries are offered to the planner. `--allow-draft` adds DRAFT entries for review renders made before Mayowa approves a batch.
+Only CANONICAL entries are offered to the planner. `--allow-draft` adds DRAFT entries for review renders made before Mayowa approves a batch. All 82 Phase 2 and 3 entries were approved by Mayowa on 2026-10-09, so `--allow-draft` is only needed for new, unreviewed entries.
 
 ## Stages
 

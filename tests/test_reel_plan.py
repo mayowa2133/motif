@@ -2,6 +2,7 @@ import copy
 import json
 import sys
 import unittest
+from unittest import mock
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1];sys.path.insert(0, str(ROOT / 'scripts'))
@@ -26,8 +27,12 @@ class PlanTests(unittest.TestCase):
 
     def test_drafts_are_not_offered_without_approval(self):
         plan = reel.plan_reel(BRIEF, allow_draft=True)
-        errors, requests = reel.validate_plan(plan, allow_draft=False)
-        if not any(e['status'] == 'CANONICAL' for e in catalog(False)):self.assertTrue(errors and requests)
+        with mock.patch('motif_library.approvals', return_value={'entries': {}}):
+            errors, requests = reel.validate_plan(plan, allow_draft=False)
+        self.assertTrue(errors and requests)
+
+    def test_approved_library_needs_no_draft_flag(self):
+        self.assertEqual(reel.validate_plan(reel.plan_reel(BRIEF), allow_draft=False), ([], []))
 
     def test_bad_rig_params_fail(self):
         plan = reel.plan_reel(BRIEF, allow_draft=True);plan['beats'][1]['shots'][0]['rig']['params'] = {'label': 'X' * 40}
