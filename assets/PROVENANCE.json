@@ -146,6 +146,90 @@
    "path": "assets/materials/motif-v1/dark-card.webp"
   },
   {
+   "id": "material/motif-v1-1024/matte-paper",
+   "sha256": "ca33986eda59d9935ad0ae100ce15a2c24409ba59efd422b9abce4609537e51c",
+   "origin": "procedural-seeded",
+   "generator": "python scripts/motif_materials.py --set motif-v1-1024",
+   "approval": {
+    "status": "PENDING",
+    "by": null,
+    "date": null,
+    "note": "Awaiting Mayowa review."
+   },
+   "pixel_sha256": "1dff82b81124b676c1e83517b5c5d49f18de10f0f88da6b094bd0f71ba31aa26",
+   "path": "assets/materials/motif-v1-1024/matte-paper.webp"
+  },
+  {
+   "id": "material/motif-v1-1024/felt",
+   "sha256": "b80b5620e50df4273f4df9847c26e4d60517160b20342ce4b8f98403297cc436",
+   "origin": "procedural-seeded",
+   "generator": "python scripts/motif_materials.py --set motif-v1-1024",
+   "approval": {
+    "status": "PENDING",
+    "by": null,
+    "date": null,
+    "note": "Awaiting Mayowa review."
+   },
+   "pixel_sha256": "a7537330a31395f699a9f90772c608570446d2217a6af8699b455be706ea4c81",
+   "path": "assets/materials/motif-v1-1024/felt.webp"
+  },
+  {
+   "id": "material/motif-v1-1024/card",
+   "sha256": "25297f1b65c248347ef421562169b993625189a72219ca62fe8788fed8257874",
+   "origin": "procedural-seeded",
+   "generator": "python scripts/motif_materials.py --set motif-v1-1024",
+   "approval": {
+    "status": "PENDING",
+    "by": null,
+    "date": null,
+    "note": "Awaiting Mayowa review."
+   },
+   "pixel_sha256": "667bcb8191de3bb21431915729075fd8e520a3ed799d320f077c4acfc08c0056",
+   "path": "assets/materials/motif-v1-1024/card.webp"
+  },
+  {
+   "id": "material/motif-v1-1024/kraft",
+   "sha256": "231f775155bf462bb6609d95aa11df2f984155687277b1e401d353da1a665df9",
+   "origin": "procedural-seeded",
+   "generator": "python scripts/motif_materials.py --set motif-v1-1024",
+   "approval": {
+    "status": "PENDING",
+    "by": null,
+    "date": null,
+    "note": "Awaiting Mayowa review."
+   },
+   "pixel_sha256": "f65d7dfab22e3b8afdf445b59375de3fdb2e0519dabb83f6f3c969753b97b621",
+   "path": "assets/materials/motif-v1-1024/kraft.webp"
+  },
+  {
+   "id": "material/motif-v1-1024/wood",
+   "sha256": "59d36c63a6d2702c0b5280a4db4348e6ed5ac04f2c7f8b43c611b9b891ebb2ea",
+   "origin": "procedural-seeded",
+   "generator": "python scripts/motif_materials.py --set motif-v1-1024",
+   "approval": {
+    "status": "PENDING",
+    "by": null,
+    "date": null,
+    "note": "Awaiting Mayowa review."
+   },
+   "pixel_sha256": "4f7d9f547a7ee9baa5010b3b68ea76255d64133833fbdd815c88ce64d8041000",
+   "path": "assets/materials/motif-v1-1024/wood.webp"
+  },
+  {
+   "id": "material/motif-v1-1024/dark-card",
+   "sha256": "d76a983b0bade2a8f0f86b830a411a32e5f2c0b8b28da9a9862af66f39492b72",
+   "origin": "procedural-seeded",
+   "generator": "python scripts/motif_materials.py --set motif-v1-1024",
+   "approval": {
+    "status": "PENDING",
+    "by": null,
+    "date": null,
+    "note": "Awaiting Mayowa review."
+   },
+   "pixel_sha256": "bfeb5282990a7c491efaffb0114d37c3616ffccd7127b73c1bcfcc69abb9909e",
+   "path": "assets/materials/motif-v1-1024/dark-card.webp"
+  },
+  {
    "id": "material/legacy-v0/wall@webp",
    "sha256": "f672f7d3472007b265c96259bdecd32e7a639db85dc48711dae8ed297ddfd11c",
    "origin": "motif-derived",

@@ -179,7 +179,13 @@ def motif_v1(name):
     return fn(np.random.default_rng(seed))
 
 
-SETS = {'legacy-v0': (LEGACY, legacy, 'png'), 'motif-v1': (tuple(MOTIF_V1), motif_v1, 'webp')}
+def motif_v1_1024(name):
+    """Half-size motif-v1 for finish overlays: still periodic, a quarter of the bytes."""
+    return motif_v1(name).resize((N // 2, N // 2), Image.Resampling.LANCZOS)
+
+
+SETS = {'legacy-v0': (LEGACY, legacy, 'png'), 'motif-v1': (tuple(MOTIF_V1), motif_v1, 'webp'),
+        'motif-v1-1024': (tuple(MOTIF_V1), motif_v1_1024, 'webp')}
 
 
 def path_for(set_name, name):

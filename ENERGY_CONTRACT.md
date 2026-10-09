@@ -19,3 +19,14 @@ Event-specific accents support contact or change and clear promptly. They must n
 ## v1.1 structured optionality
 
 `dominant_action` remains a nonempty string. Other energy fields may be omitted or null; never use dummy “none” text. `exit_overlap` may be null. Legacy contracts normalize in memory without rewriting approved plans. Missing channels do not grant an energy pass: an intentional pause must support the story in the painted evidence.
+
+## Reel pacing (v1.2, new reel mode)
+
+New 20 to 32 s paper reels (`motif_reel.py`) use concurrent secondary motion by default; frozen productions and the restrained style keep their existing behaviour. `scripts/motif_pacing.py` measures a built project, not the plan:
+
+- 7 to 15 hard cuts per ~26 s (scaled to the film's length);
+- no run of identical frames longer than 1.2 s;
+- every shot has at least one frame where two or more pieces move at once;
+- the headline changes at least every 3 s.
+
+Before anything is built, `check_plan()` requires a cut wherever the metaphor changes, a headline change at least every 3 s, and a 20 to 32 s runtime. VoiceStudio v6 passes; a fixture with a 3 s static hold fails.

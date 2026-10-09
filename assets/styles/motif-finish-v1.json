@@ -1,0 +1,72 @@
+{
+  "id": "motif-finish-v1",
+  "scope": "Opt-in finish pass for new reels (scripts/motif_finish.py). Frozen productions are never rewritten.",
+  "materials": {
+    "surface": "motif-v1-1024/matte-paper",
+    "surface_gain": 4,
+    "overlay": "motif-v1-1024/card",
+    "overlay_opacity": 1.0
+  },
+  "headline_band": null,
+  "vignette": {
+    "strength": 0.5,
+    "radius": 0.74,
+    "color": "#1B1410"
+  },
+  "edges": {
+    "frequency": 0.9,
+    "roughness": 1.6,
+    "seed": 7
+  },
+  "shadows": {
+    "dx": 3.0,
+    "dy": 5.0,
+    "color": "#1E1712",
+    "blur": [
+      1.5,
+      3.0,
+      5.0
+    ],
+    "opacity": [
+      0.28,
+      0.32,
+      0.38
+    ]
+  },
+  "micro": {
+    "rotate_deg": 0.5,
+    "offset_px": 1.0,
+    "seed": 11
+  },
+  "lights": {
+    "default": [
+      {
+        "kind": "lamp",
+        "x": 0.5,
+        "y": 0.32,
+        "radius": 0.85,
+        "color": "#FFD58A",
+        "strength": 0.55,
+        "blend": "soft-light"
+      },
+      {
+        "kind": "beam",
+        "x": 0.64,
+        "y": 0.1,
+        "to_y": 0.85,
+        "top_width": 0.08,
+        "bottom_width": 0.6,
+        "color": "#FFF0CF",
+        "strength": 0.12,
+        "blend": "screen"
+      }
+    ]
+  },
+  "skip_compositions": [
+    "captions"
+  ],
+  "ambient": {
+    "color": "#5E4E3E",
+    "opacity": 0.18
+  }
+}
