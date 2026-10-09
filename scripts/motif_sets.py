@@ -37,6 +37,10 @@ CAPTION = (0, 1090, 720, 190)
 SIDE = 90                          # dressing may enter the headline band only inside these side margins
 HERO_MIN = .35                     # hero height as a share of frame height
 EMPTY_FIELD_MAX = .45
+EDGE_VISIBLE = .7                  # an edge prop shows at least this share of its width (no stray fragments)
+BOT_SCALE = (.32, .4)              # Bot reads at about 17 to 21% of frame height
+BOT_LANE = 150                    # width kept free beside the hero for Bot
+BOT_HALF = 235                     # Bot half width in its local units
 FOCAL = (.18, .82)                 # focal band as a share of frame height
 
 
@@ -232,11 +236,15 @@ def _in_caption(box):
 
 
 def hero_placement(rig, rng):
-    fx, fy, fw, fh = rig.footprint
-    scale = min(700 / fw, (FLOOR - HEADLINE[1] - HEADLINE[3] - 10) / fh, 1.6)
+    """Hero on the floor, as large as the bands allow while leaving a lane on the
+    rig's Bot side (BOT_LANE) so Bot stands beside the machine, not over its labels."""
+    fx, fy, fw, fh = rig.footprint;tall = (FLOOR - HEADLINE[1] - HEADLINE[3] - 10) / fh
+    scale = min((W - BOT_LANE) / fw, tall, 1.6)
+    if fh * scale < HERO_MIN * H - 1e-6:scale = min(700 / fw, tall, 1.6)   # too wide to share: Bot overlaps instead
     if fh * scale < HERO_MIN * H - 1e-6:raise ValueError(f'{rig.name}: cannot reach {HERO_MIN:.0%} of frame height inside the bands')
+    side = -1 if rig.bot_slot['x'] < 0 else 1
     centre = -(fx + fw / 2) * scale;slack = max(0.0, (W - fw * scale) / 2 - 10)
-    x = 360 + centre + rng.uniform(-1, 1) * min(40, slack)
+    x = 360 + centre - side * slack + rng.uniform(-1, 1) * min(20, slack * .2)
     return {'rig': rig.name, 'x': round(x, 2), 'y': FLOOR, 'scale': round(scale, 4), 'box': [round(v, 2) for v in _box(x, FLOOR, scale, rig.footprint)]}
 
 
@@ -248,7 +256,9 @@ def _place_prop(name, rng, hero_box, role):
     if role == 'overlap':scale = min(scale, rng.uniform(.25, .38) * hh / p.h)  # a foreground corner, never a wall in front of the hero
     w, h = p.w * scale, p.h * scale
     if role == 'edge':
-        side = rng.choice((-1, 1));x = (w * rng.uniform(.05, .35) if side < 0 else W - w * rng.uniform(.05, .35))
+        # Cropped by the frame edge, but by at most 1 - EDGE_VISIBLE of its width: it reads as a whole object.
+        side = rng.choice((-1, 1));cut = rng.uniform(.08, 1 - EDGE_VISIBLE - .02);left = p.box[0] * scale
+        x = (-w * cut - left) if side < 0 else (W + w * cut - left - w)
     elif role == 'overlap':
         side = rng.choice((-1, 1));x = (hx + w * rng.uniform(.0, .3) if side < 0 else hx + hw - w * rng.uniform(.0, .3))
     else:  # fill the wider empty side beside the hero
@@ -264,9 +274,16 @@ def _place_prop(name, rng, hero_box, role):
             'layer': 'front' if role == 'overlap' else 'back'}
 
 
-def _valid_item(item, hero_box, placed):
+def visible_share(box):
+    return max(0.0, min(W, box[0] + box[2]) - max(0.0, box[0])) / max(1e-9, box[2])
+
+
+def _valid_item(item, hero_box, placed, bot_box=None):
     box = item['box']
+    # Nothing in front of Bot, and nothing on its patch of floor even behind it.
+    if bot_box and _overlap(box, bot_box) > (0 if item['layer'] == 'front' else .2 * box[2] * box[3]):return False
     if _in_headline(box) or _in_caption(box):return False
+    if visible_share(box) < EDGE_VISIBLE - 1e-6:return False
     if item['role'] == 'overlap':
         share = _overlap(box, hero_box) / (hero_box[2] * hero_box[3])
         if not 0 < share <= .08 or box[3] > .4 * hero_box[3]:return False
@@ -276,6 +293,22 @@ def _valid_item(item, hero_box, placed):
     return True
 
 
+def bot_placement(rig, hero, hero_box):
+    """Bot inside the action: on the floor at the rig's slot side, large enough to
+    read (BOT_SCALE), overlapping the hero's edge so it touches the machine, and
+    never cropped by the frame. Returns (x, y, scale, side)."""
+    slot = rig.bot_slot;s = min(BOT_SCALE[1], max(BOT_SCALE[0], slot['scale'] * hero['scale'] * 1.6))
+    half = BOT_HALF * s;left, right = hero_box[0], hero_box[0] + hero_box[2]
+    side = -1 if slot['x'] < 0 else 1
+    # Feet at the hero's edge, a sliver over the machine so it touches it.
+    x = left - half * .55 if side < 0 else right + half * .55
+    lo, hi = half + 12, W - half - 12
+    if not lo <= x <= hi:
+        other = right + half * .55 if side < 0 else left - half * .55
+        x, side = (other, -side) if lo <= other <= hi else (min(hi, max(lo, x)), side)
+    return x, FLOOR, s, side
+
+
 def solve(room, rig_name, values=None, palette=None, seed=0, beat=0, costume=None, count=4):
     """Deterministic set layout for one beat."""
     if room not in ROOMS:raise ValueError(f'unknown room {room}; choose from {sorted(ROOMS)}')
@@ -283,6 +316,8 @@ def solve(room, rig_name, values=None, palette=None, seed=0, beat=0, costume=Non
     palette = palette or rotation(beat + 1, seed)[beat]
     if palette not in PALETTES:raise ValueError(f'unknown palette {palette}')
     hero = hero_placement(rig, rng);hero_box = hero['box']
+    bx, by, bscale, side = bot_placement(rig, hero, hero_box);half = BOT_HALF * bscale
+    bot_box = (bx - half, by - 4.2 * half, 2 * half, 4.2 * half)
     pool = list(ROOMS[room]['dressing']);rng.shuffle(pool)
     roles = ['edge', 'overlap', 'back', 'back'][:max(2, min(4, count))];placed = []
     for role in roles:
@@ -292,22 +327,14 @@ def solve(room, rig_name, values=None, palette=None, seed=0, beat=0, costume=Non
         for attempt in range(60):
             if not candidates:break
             item = _place_prop(candidates[attempt % len(candidates)], rng, hero_box, role)
-            if _valid_item(item, hero_box, placed):placed.append(item);break
+            if _valid_item(item, hero_box, placed, bot_box):placed.append(item);break
     if not any(_crosses_edge(i['box']) for i in placed):raise ValueError(f'{room}/{rig_name}: no dressing reaches a frame edge')
     if not any(_overlap(i['box'], hero_box) > 0 for i in placed):raise ValueError(f'{room}/{rig_name}: no dressing overlaps the hero')
-    slot = rig.bot_slot;bx = hero['x'] + slot['x'] * hero['scale'];by = hero['y'] + slot['y'] * hero['scale']
-    bscale = min(.3, max(.14, slot['scale'] * hero['scale']))
-    if slot['y'] < -40:
-        # A raised slot needs a perch the set does not provide yet: Bot stands on the floor at the hero's nearer side.
-        by = FLOOR;left, right = hero_box[0], hero_box[0] + hero_box[2]
-        half = 235 * bscale  # Bot is about 470 units wide
-        bx = left - half * .4 if abs(bx - left) <= abs(bx - right) else right + half * .4
-    bx = min(W - 60, max(60, bx))
     costume = costume if costume is not None else [rng.choice(ROOMS[room]['costumes'])]
     for name in costume:
         if name not in COSTUMES:raise ValueError(f'unknown costume {name}')
     return {'room': room, 'palette': palette, 'seed': seed, 'beat': beat, 'floor_y': FLOOR, 'hero': {**hero, 'values': values or {}},
-            'bot': {'x': round(bx, 2), 'y': round(by, 2), 'scale': round(bscale, 4), 'costume': costume, 'role': slot.get('role', '')},
+            'bot': {'x': round(bx, 2), 'y': round(by, 2), 'scale': round(bscale, 4), 'costume': costume, 'role': rig.bot_slot.get('role', ''), 'side': side},
             'dressing': placed, 'lights': ROOMS[room]['lights'], 'bands': {'headline': list(HEADLINE), 'caption': list(CAPTION)}}
 
 

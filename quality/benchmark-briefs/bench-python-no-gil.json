@@ -3,6 +3,9 @@
   "title": "Python can drop its lock",
   "topic": "faster Python threads",
   "seed": 37,
+  "brand": {
+    "slug": "python"
+  },
   "hook": {
     "alternates": [
       "Python just let your code use every core at once, and almost nobody noticed."
@@ -54,7 +57,8 @@
           "key": "GIL"
         },
         "room": "office"
-      }
+      },
+      "relation": "unlock"
     },
     {
       "id": "freed",
@@ -69,7 +73,8 @@
           "target": "NO LOCK"
         },
         "room": "workshop"
-      }
+      },
+      "relation": "launch"
     },
     {
       "id": "install",
@@ -78,14 +83,18 @@
       "headline": "OFFICIAL INSTALLERS",
       "payoff_headline": "ONE CHECKBOX",
       "visual": {
-        "rig": "stamp-gate",
+        "rig": "conveyor",
         "params": {
-          "document": "INSTALLER",
-          "stamp": "NO GIL",
-          "verdict": "approved"
+          "items": [
+            "MAC",
+            "WINDOWS"
+          ],
+          "machine": "INSTALLER",
+          "output": "NO GIL"
         },
         "room": "living-room"
-      }
+      },
+      "relation": "transform"
     },
     {
       "id": "check",
@@ -94,13 +103,11 @@
       "headline": "ASK PYTHON ITSELF",
       "payoff_headline": "LOCK OFF?",
       "visual": {
-        "rig": "thermometer",
+        "rig": "stamp-gate",
         "params": {
-          "from": 10,
-          "to": 95,
-          "target": "NO LOCK",
-          "label": "CORES BUSY",
-          "stars": 3
+          "document": "GIL ENABLED?",
+          "stamp": "FALSE",
+          "verdict": "rejected"
         },
         "room": "diner",
         "insert": {
@@ -110,7 +117,8 @@
             "label": "CORES"
           }
         }
-      }
+      },
+      "relation": "approve"
     },
     {
       "id": "cost",
@@ -119,15 +127,20 @@
       "headline": "THE CATCH",
       "payoff_headline": "1 TO 8% SLOWER",
       "visual": {
-        "rig": "balance-scale",
+        "rig": "race-track",
         "params": {
-          "left_label": "1 THREAD",
-          "right_label": "MANY CORES",
-          "left_weight": 2,
-          "right_weight": 8
+          "labels": [
+            "SINGLE",
+            "NO GIL"
+          ],
+          "progress": [
+            1.0,
+            0.92
+          ]
         },
         "room": "office"
-      }
+      },
+      "relation": "race"
     }
   ],
   "cta": {

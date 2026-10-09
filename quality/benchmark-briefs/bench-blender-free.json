@@ -3,6 +3,9 @@
   "title": "A free film studio",
   "topic": "free 3D animation",
   "seed": 41,
+  "brand": {
+    "slug": "blender"
+  },
   "hook": {
     "alternates": [
       "There is a full movie studio you can download for free, forever."
@@ -68,7 +71,8 @@
             "strike": "$$$"
           }
         }
-      }
+      },
+      "relation": "unlock"
     },
     {
       "id": "commercial",
@@ -84,7 +88,8 @@
           "right": "CLIENTS"
         },
         "room": "office"
-      }
+      },
+      "relation": "connect"
     },
     {
       "id": "tools",
@@ -104,7 +109,8 @@
           "output": "FILM"
         },
         "room": "living-room"
-      }
+      },
+      "relation": "transform"
     },
     {
       "id": "render",
@@ -113,13 +119,12 @@
       "headline": "CYCLES ENGINE",
       "payoff_headline": "TRACES REAL LIGHT",
       "visual": {
-        "rig": "thermometer",
+        "rig": "balance-scale",
         "params": {
-          "from": 10,
-          "to": 95,
-          "target": "REAL",
-          "label": "REALISM",
-          "stars": 3
+          "left_label": "CYCLES",
+          "right_label": "REAL CAMERA",
+          "left_weight": 5,
+          "right_weight": 5
         },
         "room": "park",
         "insert": {
@@ -129,7 +134,8 @@
             "filled": 5
           }
         }
-      }
+      },
+      "relation": "trade-off"
     },
     {
       "id": "funded",
@@ -138,14 +144,15 @@
       "headline": "NO PLAN TO LOCK YOU IN",
       "payoff_headline": "FUNDED BY DONATIONS",
       "visual": {
-        "rig": "plate-stack",
+        "rig": "sprout-grow",
         "params": {
-          "count_from": 2,
-          "count_to": 14,
-          "label": "DONATIONS"
+          "leaves": 4,
+          "label": "DONATIONS",
+          "bloom": "BLENDER"
         },
         "room": "diner"
-      }
+      },
+      "relation": "grow"
     }
   ],
   "cta": {

@@ -3,6 +3,9 @@
   "title": "The map anyone can edit",
   "topic": "a free world map",
   "seed": 53,
+  "brand": {
+    "slug": "openstreetmap"
+  },
   "hook": {
     "alternates": [
       "There is a map of the whole world that anyone can edit, and anyone can use for free."
@@ -48,7 +51,8 @@
           "label": "STREETS MAPPED"
         },
         "room": "park"
-      }
+      },
+      "relation": "pile-up"
     },
     {
       "id": "local",
@@ -57,21 +61,19 @@
       "headline": "LOCALS FIX IT",
       "payoff_headline": "SHOPS, LANES, STOPS",
       "visual": {
-        "rig": "race-track",
+        "rig": "conveyor",
         "params": {
-          "labels": [
+          "items": [
             "SHOP",
-            "BIKE LANE",
+            "LANE",
             "BUS STOP"
           ],
-          "progress": [
-            1.0,
-            1.0,
-            1.0
-          ]
+          "machine": "LOCALS",
+          "output": "THE MAP"
         },
         "room": "street"
-      }
+      },
+      "relation": "transform"
     },
     {
       "id": "use",
@@ -87,7 +89,8 @@
           "verdict": "approved"
         },
         "room": "beach"
-      }
+      },
+      "relation": "approve"
     },
     {
       "id": "cost",
@@ -110,7 +113,8 @@
             "strike": "$$$"
           }
         }
-      }
+      },
+      "relation": "attract"
     },
     {
       "id": "share",
@@ -122,11 +126,12 @@
         "rig": "bridge-span",
         "params": {
           "planks": 6,
-          "left": "YOU",
+          "left": "YOUR FIX",
           "right": "THE MAP"
         },
         "room": "night-sky"
-      }
+      },
+      "relation": "connect"
     }
   ],
   "cta": {

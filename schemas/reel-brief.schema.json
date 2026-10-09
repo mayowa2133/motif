@@ -158,6 +158,28 @@
                 "type": "string"
               }
             }
+          },
+          "relation": {
+            "type": "string",
+            "description": "Shape of the claim (motif_semantics.RELATIONS); the machine must show it.",
+            "enum": [
+              "over-capacity",
+              "pile-up",
+              "cost-crush",
+              "race",
+              "trade-off",
+              "big-number",
+              "level",
+              "approve",
+              "transform",
+              "spread",
+              "attract",
+              "launch",
+              "unlock",
+              "grow",
+              "connect",
+              "everywhere"
+            ]
           }
         }
       }
@@ -192,6 +214,20 @@
         "great-outdoors"
       ],
       "description": "Per-film look (scripts/motif_looks.py). Omitted: the planner picks one not used by recent films."
+    },
+    "brand": {
+      "type": "object",
+      "required": [
+        "slug"
+      ],
+      "additionalProperties": false,
+      "description": "The product the reel is about; its mark (vendored in assets/brands) appears on the hook, on each machine and on the end card.",
+      "properties": {
+        "slug": {
+          "type": "string",
+          "pattern": "^[a-z0-9-]+$"
+        }
+      }
     }
   }
 }

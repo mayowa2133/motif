@@ -3,6 +3,9 @@
   "title": "SQLite is already on your phone",
   "topic": "the database in your pocket",
   "seed": 11,
+  "brand": {
+    "slug": "sqlite"
+  },
   "hook": {
     "alternates": [
       "The most used database in the world is free, tiny, and already in your pocket."
@@ -55,14 +58,19 @@
       "headline": "INSIDE EVERY PHONE",
       "payoff_headline": "ANDROID AND IPHONE",
       "visual": {
-        "rig": "overflow-vehicle",
+        "rig": "device-wall",
         "params": {
-          "seats": 6,
-          "riders": 12,
-          "label": "EVERY PHONE"
+          "kind": "phone",
+          "count": 6,
+          "label": "EVERY PHONE",
+          "names": [
+            "ANDROID",
+            "IPHONE"
+          ]
         },
         "room": "street"
-      }
+      },
+      "relation": "everywhere"
     },
     {
       "id": "browsers",
@@ -71,21 +79,20 @@
       "headline": "IN YOUR BROWSER TOO",
       "payoff_headline": "CHROME, FIREFOX, SAFARI",
       "visual": {
-        "rig": "race-track",
+        "rig": "device-wall",
         "params": {
-          "labels": [
+          "kind": "browser",
+          "count": 3,
+          "label": "EVERY BROWSER",
+          "names": [
             "CHROME",
             "FIREFOX",
             "SAFARI"
-          ],
-          "progress": [
-            1.0,
-            1.0,
-            1.0
           ]
         },
         "room": "arcade"
-      }
+      },
+      "relation": "everywhere"
     },
     {
       "id": "trillion",
@@ -110,7 +117,8 @@
             "label": "1,000,000,000,000"
           }
         }
-      }
+      },
+      "relation": "big-number"
     },
     {
       "id": "free",
@@ -132,7 +140,8 @@
             "strike": "$$$"
           }
         }
-      }
+      },
+      "relation": "cost-crush"
     },
     {
       "id": "onefile",
@@ -152,7 +161,8 @@
           "output": "ONE FILE"
         },
         "room": "stage"
-      }
+      },
+      "relation": "transform"
     }
   ],
   "cta": {

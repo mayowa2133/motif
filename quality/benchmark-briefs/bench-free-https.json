@@ -3,6 +3,9 @@
   "title": "Free HTTPS for every website",
   "topic": "free website security",
   "seed": 23,
+  "brand": {
+    "slug": "letsencrypt"
+  },
   "hook": {
     "alternates": [
       "That little padlock in your browser is free, and a nonprofit gives it away."
@@ -55,23 +58,16 @@
       "headline": "SECURES THE WEB",
       "payoff_headline": "700 MILLION SITES",
       "visual": {
-        "rig": "magnet-pull",
+        "rig": "device-wall",
         "params": {
+          "kind": "browser",
           "count": 6,
-          "item": "SITES",
-          "label": "HTTPS"
+          "label": "700 MILLION SITES",
+          "names": []
         },
-        "room": "night-sky",
-        "insert": {
-          "kind": "counter",
-          "args": {
-            "start": 0,
-            "end": 700,
-            "suffix": "M",
-            "label": "WEBSITES"
-          }
-        }
-      }
+        "room": "night-sky"
+      },
+      "relation": "everywhere"
     },
     {
       "id": "cost",
@@ -93,7 +89,8 @@
             "strike": "$$$"
           }
         }
-      }
+      },
+      "relation": "cost-crush"
     },
     {
       "id": "nonprofit",
@@ -109,7 +106,8 @@
           "bloom": "NONPROFIT"
         },
         "room": "stage"
-      }
+      },
+      "relation": "grow"
     },
     {
       "id": "expiry",
@@ -123,7 +121,7 @@
           "from": 5,
           "to": 90,
           "target": "90 DAYS",
-          "label": "DAYS",
+          "label": "CERT AGE IN DAYS",
           "stars": 0
         },
         "room": "arcade",
@@ -136,7 +134,8 @@
             "label": "LIFETIME"
           }
         }
-      }
+      },
+      "relation": "level"
     },
     {
       "id": "renew",
@@ -152,7 +151,8 @@
           "target": "RENEWED"
         },
         "room": "rooftop"
-      }
+      },
+      "relation": "spread"
     }
   ],
   "cta": {

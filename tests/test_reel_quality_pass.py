@@ -1,0 +1,102 @@
+"""The 2026-10-09 quality pass: metaphor fit, brand marks, Bot staging, edge
+props, motion floor (review items 1-5 and 7)."""
+import copy
+import json
+import shutil
+import subprocess
+import sys
+import tempfile
+import unittest
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parents[1];sys.path.insert(0, str(ROOT / 'scripts'))
+
+import motif_brand as brand
+import motif_reel as reel
+import motif_semantics as sem
+import motif_sets as ms
+from motif_rigs import all_rigs
+
+BENCH = sorted((ROOT / 'quality/benchmark-briefs').glob('*.json'))
+FIXTURE = json.loads((ROOT / 'tests/fixtures/reel-brief-fixture.json').read_text())
+
+
+class MetaphorFitTests(unittest.TestCase):
+    def test_every_rig_declares_relations(self):
+        self.assertEqual(set(sem.RIG_RELATIONS), set(all_rigs()))
+        for rels in sem.RIG_RELATIONS.values():self.assertTrue(set(rels) <= set(sem.RELATIONS))
+
+    def test_classifier_reads_the_common_claim_shapes(self):
+        self.assertEqual(sem.classify('It ships inside every Android phone and every iPhone.'), 'everywhere')
+        self.assertEqual(sem.classify('Certificates used to cost real money. Now they cost zero.'), 'cost-crush')
+        self.assertIsNone(sem.classify('It is a lovely day.'))
+
+    def test_mismatched_rig_is_a_plan_error(self):
+        brief = copy.deepcopy(FIXTURE);brief['beats'][0]['visual']['rig'] = 'thermometer'
+        errors, _ = reel.validate_plan(reel.plan_reel(brief, allow_draft=True), True)
+        self.assertTrue(any('metaphor mismatch' in e for e in errors), errors)
+
+    def test_planner_picks_a_fitting_rig_when_the_brief_names_none(self):
+        brief = copy.deepcopy(FIXTURE);del brief['beats'][2]['visual']['rig'];del brief['beats'][2]['visual']['params']
+        plan = reel.plan_reel(brief, allow_draft=True)
+        self.assertTrue(sem.fits(plan['beats'][3]['shots'][0]['rig']['id'], 'cost-crush'))
+
+    def test_benchmarks_pass_sound_off(self):
+        for path in BENCH:
+            b = json.loads(path.read_text());plan = reel.plan_reel(b, allow_draft=True)
+            self.assertEqual(reel.validate_plan(plan, True)[0], [], path.name)
+            self.assertEqual(sem.sound_off(plan, b)['failures'], [], path.name)
+
+    def test_sound_off_flags_placeholder_labels_and_missing_brand(self):
+        brief = json.loads(BENCH[-1].read_text());plan = reel.plan_reel(brief, allow_draft=True)
+        plan['beats'][1]['shots'][0]['rig']['params'] = {'kind': 'phone', 'count': 6, 'label': 'ITEMS'};plan['brand'] = None
+        result = sem.sound_off(plan, brief)
+        self.assertEqual(result['status'], 'FAIL')
+        self.assertTrue(any('placeholders' in f for f in result['failures']));self.assertTrue(any('brand' in f for f in result['failures']))
+
+
+class BrandTests(unittest.TestCase):
+    def test_vendored_marks_load_and_are_registered(self):
+        registry = json.loads((ROOT / 'assets/PROVENANCE.json').read_text())
+        ids = {e['id'] for e in registry['assets']}
+        for slug in brand.catalogue():
+            m = brand.mark(slug);self.assertTrue(m['path'].startswith('M'));self.assertRegex(m['hex'], r'^#[0-9A-Fa-f]{6}$')
+            self.assertIn(f'brand/simple-icons/{slug}', ids)
+        self.assertIn('<path', brand.badge('sqlite', 200, {'dark': '#000', 'light': '#fff'}))
+
+    def test_unknown_brand_is_rejected(self):
+        brief = copy.deepcopy(FIXTURE);brief['brand'] = {'slug': 'not-a-brand'}
+        errors, _ = reel.validate_plan(reel.plan_reel(brief, allow_draft=True), True)
+        self.assertTrue(any('brand' in e for e in errors), errors)
+
+
+class StagingTests(unittest.TestCase):
+    def test_edge_props_read_as_whole_objects_and_bot_stands_clear(self):
+        for room in ms.ROOMS:
+            for beat, rig in enumerate(sorted(all_rigs())):
+                layout = ms.solve(room, rig, seed=1, beat=beat);bot = layout['bot']
+                self.assertTrue(ms.BOT_SCALE[0] - 1e-6 <= bot['scale'] <= ms.BOT_SCALE[1] + 1e-6)
+                half = ms.BOT_HALF * bot['scale'];self.assertTrue(half <= bot['x'] <= ms.W - half, (room, rig))
+                bot_box = (bot['x'] - half, bot['y'] - 4.2 * half, 2 * half, 4.2 * half)
+                for item in layout['dressing']:
+                    self.assertGreaterEqual(ms.visible_share(item['box']), ms.EDGE_VISIBLE - 1e-6, (room, rig, item['prop']))
+                    if item['layer'] == 'front':self.assertEqual(ms._overlap(item['box'], bot_box), 0, (room, rig, item['prop']))
+
+
+@unittest.skipUnless(shutil.which('ffmpeg'), 'needs ffmpeg')
+class MotionTests(unittest.TestCase):
+    def clip(self, folder, source):
+        out = Path(folder) / 'clip.mp4'
+        subprocess.run(['ffmpeg', '-nostdin', '-v', 'error', '-f', 'lavfi', '-i', source, '-t', '2', '-pix_fmt', 'yuv420p', str(out)], check=True)
+        return out
+
+    def test_static_reel_fails_and_moving_reel_passes(self):
+        import motif_motion
+        with tempfile.TemporaryDirectory() as tmp:
+            self.assertEqual(motif_motion.measure(self.clip(tmp, 'color=c=red:s=180x320:r=30'))['status'], 'FAIL')
+        with tempfile.TemporaryDirectory() as tmp:
+            self.assertEqual(motif_motion.measure(self.clip(tmp, 'testsrc2=s=180x320:r=30'))['status'], 'PASS')
+
+
+if __name__ == '__main__':
+    unittest.main()

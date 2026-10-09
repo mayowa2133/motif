@@ -23,6 +23,6 @@ A press plate comes down on a labelled block and flattens it. Pressure, cost cut
 
 **Bot slot:** x 300, y 0, scale 0.22: pulls the lever.
 
-**Palettes:** renders in all 8 Motif palettes (berry, citrus, cobalt, lagoon, meadow, mint-coral, plum-night, sunrise); films rotate them per scene.
+**Palettes:** renders in all 19 Motif palettes (berry, candy, citrus, cobalt, forest, lagoon, lilac, meadow, mint-coral, neon-ember, neon-teal, neon-violet, peach, plum-night, poppy, royal, sky, sunflower, sunrise); films rotate them per scene.
 
 **Status:** draft proof; awaiting Mayowa approval (plan task 2.2).

@@ -12,7 +12,7 @@ def docs():
     folder = ROOT / 'docs/rigs';folder.mkdir(parents=True, exist_ok=True)
     for name, rig in motif_rigs.all_rigs().items():
         m = rig.manifest();lines = [f'# Rig: {name}', '', m['description'], '',
-                                    '**Origin:** original Motif design, authored SVG in `scripts/motif_rigs/library.py`. Style inputs: `docs/STYLE_BIBLE.md` and `docs/style-reference-analysis.md` only; no reference frame traced or copied.', '',
+                                    f'**Origin:** original Motif design, authored SVG in `scripts/{type(rig).__module__.replace(".", "/")}.py`. Style inputs: `docs/STYLE_BIBLE.md` and `docs/style-reference-analysis.md` only; no reference frame traced or copied.', '',
                                     f'**Tags:** {", ".join(m["tags"])}', '', f'**States:** {" → ".join(m["states"])}', '', '## Actions', '']
         for a, v in m['actions'].items():
             lines.append(f'- `{a}`: {v["from"]} → {v["to"]}, {v["frames"]} frames; contact `{v["contact"]}` closes at frame {v["contact_frame"]} (distance 0, tested).')
