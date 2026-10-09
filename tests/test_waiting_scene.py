@@ -6,6 +6,7 @@ import sys
 import tempfile
 import unittest
 import wave
+import xml.etree.ElementTree as ET
 from pathlib import Path
 sys.path[:0]=[str(Path(__file__).resolve().parents[1]/'scripts')]
 from motif_waiting import validate,state_at,svg_at,compile_waiting
@@ -31,7 +32,48 @@ def project(root,s):
     declare(root,'technical-fixture','UNIT')
 
 
+def flat_scene(root):
+    from motif_flat_mascot import CONTRACT_SHA
+    s=scene();shutil.copyfile(ROOT/'quality/causal-pilot/approved-front-anchor-contract.json',root/'front.json')
+    s['mascot_contract']={'path':'front.json','sha256':CONTRACT_SHA}
+    for n in s['nodes']:
+        if n['role'] in ('worker','requester'):
+            n.update(position=[50 if n['role']=='worker' else 260,430-70*251/240],size=[70,70*251/240],color='#e47d53')
+    return s
+
+
 class WaitingTests(unittest.TestCase):
+    def test_approved_flat_native_geometry_and_contact_are_separate_from_perception(self):
+        with tempfile.TemporaryDirectory() as d:
+            p=Path(d);s=flat_scene(p);project(p,s);compile_waiting(p,s)
+            body,state=svg_at(s,0,p);xml=ET.fromstring(body)
+            ids=[e.get('id') for e in xml.iter() if e.get('id')];self.assertEqual(len(ids),len(set(ids)))
+            for name in ['worker-shell','worker-eye-0','worker-eye-1','worker-hand','worker-hand-left']:self.assertIn(name,ids)
+            hand=next(e for e in xml.iter() if e.get('id')=='worker-hand')
+            self.assertAlmostEqual(float(hand.get('x'))+float(hand.get('width'))/2,145)
+            self.assertAlmostEqual(float(hand.get('y'))+float(hand.get('height'))/2,411)
+            self.assertNotIn('filter=',body);self.assertNotIn('<image',body)
+            self.assertEqual(validate(s)['perception'],'UNASSESSED')
+            self.assertEqual(svg_at(s,60,p)[0],svg_at(s,60,p)[0])
+
+    def test_flat_identity_hash_aspect_clipping_and_generated_id_rejection(self):
+        with tempfile.TemporaryDirectory() as d:
+            p=Path(d);original=flat_scene(p)
+            for mutation,error in ((lambda x:x['mascot_contract'].update(sha256='0'*64),'version'),
+                                   (lambda x:x['nodes'][1].update(color='#FF0000'),'fixed orange'),
+                                   (lambda x:x['nodes'][1].update(size=[70,140]),'aspect'),
+                                   (lambda x:x['nodes'][2].update(position=[280,350]),'painted'),
+                                   (lambda x:x['nodes'][3].update(id='worker-shell'),'generated')):
+                s=copy.deepcopy(original);mutation(s)
+                with self.assertRaisesRegex(ValueError,error):validate(s)
+            (p/'front.json').write_text('{}');project(p,original)
+            with self.assertRaisesRegex(ValueError,'missing or changed'):compile_waiting(p,original)
+
+    def test_declared_malformed_mascot_cannot_substitute_placeholder(self):
+        for record in ({},[],False,0,''):
+            s=scene();s['mascot_contract']=record
+            with self.assertRaisesRegex(ValueError,'resource record'):validate(s)
+            with self.assertRaisesRegex(ValueError,'resource record'):svg_at(s,0)
     def test_exact_event_boundaries_repeated_and_reverse_seeks(self):
         s=scene();validate(s)
         frames=[0,29,30,59,60,149,150,179,180,209,210,239,150,60,60,0]
@@ -47,6 +89,26 @@ class WaitingTests(unittest.TestCase):
         self.assertTrue(state_at(s,40)['request_visible'])
         self.assertFalse(state_at(s,40,'no-stimulus')['request_visible'])
         self.assertNotEqual(state_at(s,80,'continues-pending')['progress'],state_at(s,140,'continues-pending')['progress'])
+
+    def test_optional_response_shape_and_color_leave_baseline_unchanged(self):
+        s=scene();before,_=svg_at(s,150)
+        self.assertNotIn('stroke-linejoin="round"',before)
+        changed=copy.deepcopy(s);changed['response_cue']={'shape':'check-packet','color':'#488553'};validate(changed)
+        self.assertEqual(svg_at(s,149)[0],svg_at(changed,149)[0])
+        after,_=svg_at(changed,150)
+        self.assertIn('data-role="input" fill="#488553"',after)
+        self.assertIn('stroke-linejoin="round"',after)
+        changed['response_cue']['color']='#DEAC42'
+        with self.assertRaisesRegex(ValueError,'distinct'):validate(changed)
+
+    def test_state_bound_caption_rejects_failed_wording_and_late_interval(self):
+        with tempfile.TemporaryDirectory() as d:
+            p=Path(d);s=scene();label=text_packet(p);label.update(state_label='pending',frames=[60,149])
+            s['text']=[label];validate(s)
+            label.update(text='Input ready',lines=['Input ready'])
+            with self.assertRaisesRegex(ValueError,'wording conflicts'):validate(s)
+            label.update(text='Await input',lines=['Await input'],frames=[60,179])
+            with self.assertRaisesRegex(ValueError,'interval conflicts'):validate(s)
 
     def test_native_ids_contact_center_and_mobile_bounds(self):
         s=scene();body,_=svg_at(s,0)

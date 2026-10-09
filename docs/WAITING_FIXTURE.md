@@ -48,10 +48,37 @@ binding** to the registered capability or a scoped custom task. Unsupported film
 requirements cannot silently select this placeholder. `start_task` freezes named
 inputs/expected outputs; `checkpoint` validates unchanged inputs, monotonic
 PLAN/BUILD/READY_FOR_SHARED_QA stages, actual output hashes and operator-recorded
-active/elapsed seconds/reasons. It executes no arbitrary code. Ready-for-QA is
+active/elapsed seconds/reasons. Effort values may be explicitly null/UNAVAILABLE
+when uninstrumented; they never
+support an efficiency result. It executes no arbitrary code. Ready-for-QA is
 neither fulfillment, editable-source verification nor film approval. The existing
 quality sampler and admission gates evaluate the actual artifact; task records
 cannot bypass them. No generic timeline editor or universal compiler is claimed.
+
+## Optional semantic repair and approved flat binding
+
+`response_cue={"shape":"check-packet","color":"#488553"}` adds a distinct
+response color and native check only during response frames. Its authoring floor
+keeps the check inside the packet; it does not certify phone perception. Leaving
+the field absent preserves the preceding SVG/state output. No gain is accepted
+until fresh encoded review. Optional `state_label` values pending/response/complete
+bind the limited phrases `Await input`, `Response received`, `Complete` to their
+declared state intervals. This rejects the failed pending `Input ready` package;
+unbound arbitrary text still needs semantic review.
+
+An optional `mascot_contract` points to a project-relative copy of the pinned
+approved reusable anchor JSON, SHA-256
+`e530fab90984ec06e109afe937ab478b935c62a5698ac518e93bab0ba91c87d9`.
+It is the generic geometry named by `SAFE_REUSE_PATHS_V01.json`, not source shot
+material. The fixture resource is in `quality/causal-pilot`. Actor dimensions
+must preserve its 240:251 overall aspect and fixed orange. The native binding
+keeps its shell/four integral feet, eyes and tabs and adds an authored flat target
+connector. Older grain, rim/depth, shadow and perspective fields are omitted in
+accordance with the user's latest flat front-facing direction. Declared malformed
+resources fail; they cannot select placeholders. Contact math and unique IDs are
+checked; painted identity, contact and semantic benefit remain unassessed until
+the allocated encode/review. Film-mode rejection is retained even with this
+binding. No canonical asset promotion occurs.
 
 The 2026-10-09 isolated pilot decoded all 240 frames of five variants. Preview and
 export rebuilt from the same synthetic tone had identical decoded audio/picture

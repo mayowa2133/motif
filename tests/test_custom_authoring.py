@@ -81,5 +81,16 @@ class CustomAuthoringTests(unittest.TestCase):
             with self.assertRaisesRegex(ValueError,'symlink'):checkpoint(root,'BUILD',0,0,'test')
             self.assertFalse(outside.exists())
 
+    def test_unavailable_effort_is_explicit_and_never_zero(self):
+        with tempfile.TemporaryDirectory() as d:
+            root=Path(d);(root/'input.json').write_text('{}')
+            spec={'requirement':{'id':'r','statement':'author scene','mode':'technical-fixture','authoring_task':'task'},
+                  'inputs':[{'path':'input.json','sha256':sha(root/'input.json')}],
+                  'expected_outputs':[{'path':'scene.json','kind':'native-composition'}]}
+            start_task(root,spec);task=checkpoint(root,'BUILD',None,None,'author effort was not instrumented')
+            self.assertIsNone(task['history'][-1]['active_seconds'])
+            self.assertEqual(task['history'][-1]['measurement'],'UNAVAILABLE')
+            with self.assertRaisesRegex(ValueError,'measured'):checkpoint(root,'BUILD',None,1,'partial unknown timing')
+
 
 if __name__=='__main__':unittest.main()

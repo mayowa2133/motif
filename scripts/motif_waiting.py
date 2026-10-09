@@ -26,6 +26,11 @@ def painted_bounds(scene):
     for node in scene['nodes']:
         role=node['role'];x,y=node['position'];w,h=node['size']
         if role in ('worker','requester'):
+            if scene.get('mascot_contract') is not None:
+                from motif_flat_mascot import bounds as mascot_bounds
+                bounds.extend(mascot_bounds(node,None))
+                if role=='worker':bounds.extend(mascot_bounds(node,grip))
+                continue
             if h<=w:raise ValueError('actor body needs positive height below head')
             bounds.append((x,y,x+w,y+h))
             cx=x+w/2;head=y+w/2
@@ -62,6 +67,9 @@ def validate(scene):
     identities=[n['id'] for n in nodes]
     identities.extend(n['id']+'-hand' for n in nodes if n['role'] in ('worker','requester'))
     identities.extend(n['id']+'-progress' for n in nodes if n['role']=='work')
+    if scene.get('mascot_contract') is not None:
+        identities.extend(n['id']+suffix for n in nodes if n['role'] in ('worker','requester')
+                          for suffix in ('-shell','-eye-0','-eye-1','-hand-left','-connector'))
     if len(set(identities))!=len(identities):raise ValueError('unique native/generated element identities required')
     if len({n['layer'] for n in nodes})!=len(nodes):raise ValueError('resolved distinct layer order required')
     for node in nodes:
@@ -74,7 +82,18 @@ def validate(scene):
         if min(node['size'])<=0:raise ValueError('positive dimensions required')
         x,y=node['position'];w,h=node['size']
         if node['role']!='input' and (x<0 or y<0 or x+w>360 or y+h>640):raise ValueError('native phone geometry clipped')
+    if scene.get('mascot_contract') is not None:
+        from motif_flat_mascot import validate_binding
+        validate_binding(scene)
     painted_bounds(scene)
+    response=scene.get('response_cue')
+    if response is not None:
+        if (set(response)!= {'shape','color'} or response['shape']!='check-packet' or
+                not re.fullmatch(r'#[0-9A-Fa-f]{6}',response['color'])):
+            raise ValueError('response cue requires explicit check-packet and opaque color')
+        request=next(n for n in nodes if n['role']=='input')
+        if response['color'].lower()==request['color'].lower():raise ValueError('response needs distinct color plus shape')
+        if min(request['size'])<18:raise ValueError('response check needs declared native visibility floor')
     validate_map(scene['causal_map'],scene['script'],scene['frames'])
     props=scene['causal_map']['propositions']
     if (len(props)!=1 or props[0]['shot_id']!='wait' or
@@ -86,7 +105,18 @@ def validate(scene):
             raise ValueError('locked text interval outside scene')
         if label.get('timing_source')!='manual-lock':
             raise ValueError('silent fixture text requires manual-lock; measured speech is unsupported')
-    return {'status':'DATA_VALID','style_identity':'PLACEHOLDER_ONLY','perception':'UNASSESSED'}
+        meaning=label.get('state_label')
+        if meaning is not None:
+            phrases={'pending':'Await input','response':'Response received','complete':'Complete'}
+            spans={'pending':(events['stop'],events['response']-1),
+                   'response':(events['response'],events['resume']-1),
+                   'complete':(events['complete'],scene['frames']-1)}
+            if meaning not in phrases or label['text']!=phrases[meaning]:
+                raise ValueError('state-bound caption wording conflicts with bounded state')
+            start,end=spans[meaning]
+            if not start<=label['frames'][0]<=label['frames'][1]<=end:
+                raise ValueError('state-bound caption interval conflicts with bounded state')
+    return {'status':'DATA_VALID','style_identity':'APPROVED_GEOMETRY_FLAT_BINDING_REVIEW_REQUIRED' if scene.get('mascot_contract') is not None else 'PLACEHOLDER_ONLY','perception':'UNASSESSED'}
 
 
 def state_at(scene,frame,control=None):
@@ -105,14 +135,21 @@ def state_at(scene,frame,control=None):
 
 
 def svg_at(scene,frame,root=Path('.'),control=None,captions=False):
+    if scene.get('mascot_contract') is not None:
+        from motif_flat_mascot import validate_binding
+        validate_binding(scene)
     state=state_at(scene,frame,control);nodes={n['role']:n for n in scene['nodes']};body=[]
     grip=[nodes['work']['position'][0],nodes['work']['position'][1]+nodes['work']['size'][1]/2]
     for node in sorted(scene['nodes'],key=lambda n:n['layer']):
         role=node['role'];x,y=node['position'];w,h=node['size'];color=node['color'];markup=''
         if role in ('worker','requester'):
-            cx=x+w/2;head=y+w/2;hand=[x+w if role=='worker' else x,y+h*.65]
-            if role=='worker' and state['contact']:hand=grip
-            markup=(f'<circle cx="{cx}" cy="{head}" r="{w/2}"/><rect x="{x+w*.15}" y="{y+w}" width="{w*.7}" height="{h-w}" rx="8"/>'
+            if scene.get('mascot_contract') is not None:
+                from motif_flat_mascot import actor
+                markup=actor(root,scene['mascot_contract'],node,grip if role=='worker' and state['contact'] else None)
+            else:
+                cx=x+w/2;head=y+w/2;hand=[x+w if role=='worker' else x,y+h*.65]
+                if role=='worker' and state['contact']:hand=grip
+                markup=(f'<circle cx="{cx}" cy="{head}" r="{w/2}"/><rect x="{x+w*.15}" y="{y+w}" width="{w*.7}" height="{h-w}" rx="8"/>'
                     f'<path d="M{cx} {y+h*.55}L{hand[0]} {hand[1]}" fill="none" stroke="{color}" stroke-width="7"/>'
                     f'<circle id="{node["id"]}-hand" cx="{hand[0]}" cy="{hand[1]}" r="6"/>'
                     f'<circle cx="{cx-w*.16}" cy="{head}" r="2.4" fill="#FFFFFF"/><circle cx="{cx+w*.16}" cy="{head}" r="2.4" fill="#FFFFFF"/>')
@@ -122,6 +159,10 @@ def svg_at(scene,frame,root=Path('.'),control=None,captions=False):
                 fraction=min(1,max(0,(frame-start)/(end-start)))
                 x+=(grip[0]-w/2-x)*fraction;y+=(grip[1]-y)*fraction
                 markup=f'<rect x="{x-w/2}" y="{y-h/2}" width="{w}" height="{h}" rx="4"/>'
+                if state['response_visible'] and scene.get('response_cue'):
+                    color=scene['response_cue']['color']
+                    markup+=(f'<path d="M{x-w*.27} {y}L{x-w*.05} {y+h*.22}L{x+w*.29} {y-h*.24}" '
+                             'fill="none" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>')
         elif role!='result' or state['result_visible']:
             markup=f'<rect x="{x}" y="{y}" width="{w}" height="{h}" rx="5"/>'
             if role=='work':markup+=f'<rect id="{node["id"]}-progress" x="{x+5}" y="{y+10}" width="{max(2,(w-10)*state["progress"])}" height="12" fill="#FFFFFF"/>'
@@ -140,10 +181,14 @@ def compile_waiting(project,scene):
     if scene!=read(project/'production-plan.json'):
         raise ValueError('waiting input differs from saved production plan')
     if scope['actual_mode']!='technical-fixture':
-        raise ValueError('waiting placeholder rig is fixture-only; approved mascot/film perception are pending')
+        raise ValueError('waiting family is fixture-only; film perception gates are pending')
     for label in scene.get('text',[]):native_text(project,label)
     audio=saved_audio(project,scene)
     resources=[r for label in scene.get('text',[]) for r in (label['font'],label['license'])]
+    if scene.get('mascot_contract') is not None:
+        from motif_flat_mascot import CONTRACT_SHA
+        if scene['mascot_contract']['sha256']!=CONTRACT_SHA:raise ValueError('approved geometry version changed')
+        resources.append(scene['mascot_contract'])
     if scene.get('audio'):resources.append(scene['audio']['resource'])
     write(project/'resource-manifest.json',resource_inventory(project,resources))
     snapshots=[state_at(scene,f) for f in range(scene['frames'])]
@@ -185,6 +230,7 @@ def encode(project,scene,control=None,captions=False,name='candidate'):
         for label in scene.get('text',[]):native_text(project,label)
     write(project/'render-config.json',{'version':1,'control':control,'captions':captions,
           'compiler_sha256':sha(__file__),'media_contract_sha256':sha(Path(__file__).with_name('motif_media_contracts.py')),
+          'flat_mascot_sha256':sha(Path(__file__).with_name('motif_flat_mascot.py')) if scene.get('mascot_contract') is not None else None,
           'codec':'libx264 CRF18 yuv420p; optional saved PCM to AAC192k',
           'saved_audio':saved_audio(project,scene),'source_scene_sha256':sha(project/'production-plan.json')})
     capture=freeze_capture(project)
