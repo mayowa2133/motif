@@ -23,6 +23,16 @@ from motif_frame_snapshot import FONT_STYLE, _QuietHandler, _chromium
 FPS = 30
 
 
+def finish_encoder(ff, expected, written, output):
+    """Wait for the encoder and reject incomplete output before mix/export."""
+    try:ff.stdin.close()
+    finally:code = ff.wait()
+    if code:raise subprocess.CalledProcessError(code, ff.args)
+    if written != expected:raise ValueError(f'frame capture incomplete: {written}/{expected}')
+    if not Path(output).is_file() or Path(output).stat().st_size == 0:
+        raise ValueError('encoder produced no video')
+
+
 def clips(project):
     index = (Path(project) / 'index.html').read_text();out = []
     for m in re.finditer(r'data-composition-id="([^"]+)" data-composition-src="(compositions/[^"]+)" data-start="([\d.]+)" data-duration="([\d.]+)"', index):
@@ -73,7 +83,7 @@ def render(project, out, size=(720, 1280), audio=True):
                 finally:tmp.unlink()
             browser.close()
     finally:
-        server.shutdown();ff.stdin.close();ff.wait()
+        server.shutdown();finish_encoder(ff, total, written, silent)
     if not audio:silent.replace(out);return {'frames': written, 'file': str(out)}
     return {'frames': written, 'file': str(mix(project, silent, out, written / FPS))}
 

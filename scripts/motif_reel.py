@@ -1,6 +1,6 @@
 """One command from a reel brief to a finished, gated review render.
 
-    python scripts/motif_reel.py run --brief briefs/x.json [--allow-draft] [--render]
+    python scripts/motif_reel.py run --brief briefs/x.json --local-draft [--allow-draft] [--render]
 
 Stages (each writes its record into the project; nothing is per-film code):
 
@@ -8,18 +8,21 @@ Stages (each writes its record into the project; nothing is per-film code):
    2 plan        library-constrained plan: every shot names a room, rig, insert,
                  Bot costume and headline from the catalogue; unknown IDs fail and
                  missing capabilities become library_request records
-   3 structure   plan-level pacing (cuts, headline cadence, runtime); the live
-                 Codex structure/direction critics run when available
+   3 structure   plan-level pacing only; production requires an existing fresh
+                 independent structure review before voice/capture
    4 voice       one TTS take per line (hook, beats, CTA), measured durations
    5 compile     per-shot frame sequences from library data (motif_sets, rigs,
                  inserts, Bot kit), captions, SFX at rig contacts
    6 rough       pacing and empty-field checks on the native compositions
-   7 critics     live Codex story/visual critics when available, else recorded
-                 as not run
+   7 critics     NOT_PERFORMED in explicit local drafts; normal film checks use
+                 the existing production evidence gate, never inferred reviews
    8 finish      motif_finish pass with per-room lights
    9 gate        technical: provenance + pacing on the finished project
-  10 review      optional review render (motif_frame_render); stops at
-                 REVIEW_REQUIRED for Mayowa
+  10 review      optional review render; local drafts stop at DRAFT_REVIEW_REQUIRED
+
+The deterministic reel planner does not yet author the normal film structure
+contract. Normal runs block before voice/capture rather than bypassing that
+review. --allow-draft only admits draft library entries; it does not skip gates.
 
 The narration is the brief's text; timing comes from the measured clip
 durations. Word timing inside a clip is proportional to characters, which is
@@ -61,7 +64,7 @@ EDGE_WORDS = {'A', 'AN', 'AND', 'THE', 'IS', 'ARE', 'OF', 'TO', 'IN', 'ON', 'FOR
 
 def _short(text, limit=26):
     """Headline from a phrase: whole words only, never ending on a filler word."""
-    words = re.sub(r'[^\w$%.,\' -]', '', text).upper().replace(', ', ' ').rstrip('.').split()
+    words = re.sub(r'[^\w$%.,\' -]', '', text.replace('\u2212', '-')).upper().replace(', ', ' ').rstrip('.').split()
     while words and words[0] in EDGE_WORDS:words.pop(0)
     out = []
     for w in words:
@@ -72,17 +75,18 @@ def _short(text, limit=26):
 
 
 def _number(value):
-    m = re.search(r'(\$)?([\d,]+(?:\.\d+)?)\s*([kKmM%x]|\+)?', value or '')
+    m = re.search(r'([+-]?)(\$)?([+-]?)([\d,]+(?:\.\d+)?)\s*([kKmM%x]|\+)?', (value or '').replace('\u2212', '-'))
     if not m:return None
-    n = float(m.group(2).replace(',', ''));suffix = (m.group(3) or '')
-    return {'prefix': m.group(1) or '', 'value': int(n) if n == int(n) else n, 'suffix': suffix}
+    n = float(m.group(4).replace(',', ''))
+    if '-' in (m.group(1), m.group(3)):n = -n
+    return {'prefix': m.group(2) or '', 'value': int(n) if n == int(n) else n, 'suffix': m.group(5) or ''}
 
 
 def _insert_for(fact, text, cat):
     from motif_library import retrieve
     num = _number(fact.get('value'))
     if num and isinstance(num['value'], int):
-        unit = re.sub(r'[$\d,.%+]', '', fact.get('value', '')).strip()
+        unit = re.sub(r'[$\d,.%+\-\u2212]', '', fact.get('value', '')).strip()
         return {'kind': 'counter', 'args': {'start': 0, 'end': num['value'], 'prefix': num['prefix'], 'suffix': num['suffix'], 'label': _short(unit or fact['claim'], 16)}}
     from motif_library import words
     best = [e for e in retrieve(cat, text, 'insert', 3, exclude=('comment_end_card', 'counter')) if words(text) & set(e['tags'])]
@@ -143,12 +147,15 @@ def plan_reel(brief, allow_draft=False, avoid_looks=()):
 
 def default_label_warnings(beats):
     """Rig text left at library defaults reads as another film's words: flag it for the brief author."""
-    from motif_rigs import get as get_rig
+    from motif_rigs import all_rigs
+    rigs = all_rigs()
     out = []
     for beat in beats:
         for shot in beat['shots'][:1]:
             if not shot['rig']:continue
-            rig = get_rig(shot['rig']['id']);props = rig.params_schema['properties']
+            rig = rigs.get(shot['rig']['id'])
+            if rig is None:continue  # validate_plan records the missing capability.
+            props = rig.params_schema['properties']
             text = [k for k, v in props.items() if v.get('type') == 'string' or v.get('items', {}).get('type') == 'string']
             left = [k for k in text if k not in shot['rig'].get('params', {})]
             if left:out.append(f'{beat["id"]}: {rig.name} text params {left} use library defaults {[rig.defaults.get(k) for k in left]}; set visual.params in the brief')
@@ -163,6 +170,7 @@ def validate_plan(plan, allow_draft=False):
     cat = catalog(allow_draft);errors, requests = [], []
     rigs, rooms, costumes, inserts = ids(cat, 'rig'), ids(cat, 'room'), ids(cat, 'costume'), ids(cat, 'insert')
     from motif_looks import LOOKS
+    from motif_inserts import validate_insert
     if plan.get('look', 'paper-craft') not in LOOKS:errors.append(f'unknown look {plan.get("look")}')
     for beat in plan['beats']:
         if beat['palette'] not in PALETTES:errors.append(f'{beat["id"]}: unknown palette {beat["palette"]}')
@@ -175,6 +183,9 @@ def validate_plan(plan, allow_draft=False):
                     try:get_rig(shot['rig']['id']).params(shot['rig'].get('params'))
                     except Exception as e:errors.append(f'{where}: rig params invalid ({getattr(e, "message", e)})')
             if shot['insert'] and shot['insert']['kind'] not in inserts:requests.append({'kind': 'insert', 'id': shot['insert']['kind'], 'needed_by': where})
+            elif shot['insert']:
+                try:validate_insert(shot['insert'])
+                except ValueError as e:errors.append(f'{where}: insert args invalid ({e})')
             for c in shot['bot'].get('costume', []):
                 if c not in costumes:requests.append({'kind': 'costume', 'id': c, 'needed_by': where})
             if not shot.get('headline'):errors.append(f'{where}: headline missing')
@@ -466,63 +477,161 @@ def codex_available():
     return shutil.which('codex') is not None
 
 
-def run(brief_path, out_root=None, allow_draft=False, stub_voice=False, render=False, python=None, finish=True, avoid_looks=()):
-    from motif_evidence import declare
+class ReelFailure(ValueError):
+    """An unsuccessful stage with a saved, non-approval receipt."""
+
+
+def bind_capture_sources(project):
+    """Bind actual composition states and local resources via existing capture APIs."""
+    from motif_finish import SCRIPT
+    from motif_frame_render import clips
+    initial, events, shots = [], [], []
+    for clip in clips(project):
+        spec = json.loads(SCRIPT.search((project / clip['src']).read_text()).group(2))
+        initial.extend(spec['initial'])
+        events.extend({**e, 'time': round(clip['start'] + e['time'], 9)} for e in spec['events'])
+        if clip['id'] != 'captions':
+            shots.append({'id': clip['id'], 'startFrame': round(clip['start'] * FPS),
+                          'endFrame': round((clip['start'] + clip['duration']) * FPS)})
+    write(project / 'scene-events.json', {'schemaVersion': '1.0', 'fps': FPS,
+          'durationSec': max(s['endFrame'] for s in shots) / FPS,
+          'initial': initial, 'events': sorted(events, key=lambda e: e['time']), 'shots': shots})
+    paths = [project / 'index.html', *sorted((project / 'compositions').glob('*.html')),
+             *(p for p in sorted((project / 'assets').rglob('*')) if p.is_file())]
+    write(project / 'resource-manifest.json', {'resources': [
+          {'path': p.relative_to(project).as_posix(), 'sha256': sha(p)} for p in paths]})
+
+
+def check_production(project, phase='rough'):
+    """Use the existing gates on an already-authored production, without critics."""
+    from motif_evidence import evidence_inputs, require_capture, require_scope, FILM_MODES
+    from motif_quality import require_gate
+    from motif_structure import require_structure
+    project = Path(project)
+    if require_scope(project)['actual_mode'] not in FILM_MODES:
+        raise ValueError('production check requires an explicitly declared film project')
+    require_structure(project)
+    evidence_inputs(project)
+    require_capture(project)
+    return require_gate(project, phase)
+
+
+def run(brief_path, out_root=None, allow_draft=False, stub_voice=False, render=False, python=None, finish=True, avoid_looks=(), local_draft=False):
+    from motif_evidence import declare, evidence_inputs, freeze_capture, seal_capture
     from motif_pacing import check as pacing, check_plan
     from motif_provenance import check as provenance
     from motif_reel_script import script_record, validate
     import motif_sets as ms
-    brief = read(brief_path);record = {'brief': str(brief_path), 'stages': []}
-    stage = lambda name, status, **kw: record['stages'].append({'stage': name, 'status': status, **kw})
-    errors = validate(brief)
-    if errors:raise ValueError('script: ' + '; '.join(errors))
-    root = Path(out_root) if out_root else ROOT / 'videos/productions';project = root / brief['slug']
+    brief = read(brief_path)
+    root = Path(out_root) if out_root else ROOT / 'videos/productions'
+    # A malformed slug must never redirect receipt writes outside the output root.
+    if not re.fullmatch(r'[a-z0-9][a-z0-9-]{2,60}', str(brief.get('slug', ''))):
+        raise ValueError('script: a valid local slug is required before creating a project')
+    project = root / brief['slug']
     if project.exists():raise FileExistsError(f'{project} exists; choose a fresh slug')
     project.mkdir(parents=True);write(project / 'brief.json', brief)
-    script = script_record(brief);write(project / 'reel-script.json', script);stage('script', 'PASS', hook=script['hook'], hook_alternates=script['hook_alternates'])
-    plan = plan_reel(brief, allow_draft, avoid_looks);errs, requests = validate_plan(plan, allow_draft)
-    if requests:write(project / 'library-requests.json', requests)
-    if errs:stage('plan', 'FAIL', errors=errs);write(project / 'reel-record.json', record);raise ValueError('plan: ' + '; '.join(errs))
-    write(project / 'production-plan.json', plan);declare(project, 'original-film', 'motif_reel.run');stage('plan', 'PASS', look=plan['look'], shots=sum(len(b['shots']) for b in plan['beats']), warnings=plan['warnings'])
-    prepare(project, brief)
-    spans, voice_duration = voice(project, [(b['id'], b['narration']) for b in plan['beats']], brief.get('voice', 'af_nova'), stub_voice, python)
-    stage('voice', 'STUB' if stub_voice else 'PASS', duration=round(voice_duration, 3))
-    timing = {i: (s, e) for i, s, e in spans}
-    beats_t = []
-    for s in schedule(json.loads(json.dumps(plan)), spans, voice_duration):
-        a, n = s['start_frame'] / FPS, s['frames'] / FPS;metaphor = s['rig']['id'] if s['rig'] else s['role']
-        heads = [s['headline'], s.get('headline_b')] if s.get('split_headline') else [s['headline']]
-        for k, h in enumerate(heads):beats_t.append({'id': f'{s["id"]}.{k}', 'start': round(a + n * k / len(heads), 3), 'end': round(a + n * (k + 1) / len(heads), 3), 'headline': h, 'metaphor': metaphor, 'cut_before': True})
-    measured = validate(brief, measured=voice_duration + TAIL)
-    if measured:stage('voice-runtime', 'FAIL', errors=measured);write(project / 'reel-record.json', record);raise ValueError('voice: ' + '; '.join(measured))
-    structure = check_plan(beats_t, beats_t[-1]['end'])
-    stage('structure', 'FAIL' if structure else 'PASS', failures=structure, critics='live Codex structure/direction critics ' + ('run separately' if codex_available() else 'not available in this environment; not run'))
-    if structure:write(project / 'reel-record.json', record);raise ValueError('structure: ' + '; '.join(structure))
-    compiled = compile_reel(project, plan, spans, voice_duration, brief.get('seed', 0));stage('compile', 'PASS', duration=round(compiled['duration'], 3), shots=compiled['shots'])
-    rough = pacing(project)
-    from motif_frame_snapshot import at_times, snapshot
-    mids = [f['start'] + f['duration'] * .7 for f in compiled['frames_index']]
-    pngs = snapshot(project, at_times(project, mids), project / 'review/rough', size=(360, 640))
-    empty = ms.check_frames(pngs)
-    stage('rough', 'PASS' if rough['status'] == 'PASS' and empty['status'] == 'PASS' else 'FAIL', pacing=rough, empty_field=empty)
-    stage('critics', 'NOT_RUN', reason='live Codex story/visual critics need the Codex CLI' if not codex_available() else 'run motif_concept critics on review/rough')
-    final = project
-    if finish:
-        final = project.with_name(project.name + '-finished')
-        from motif_finish import apply
-        from motif_looks import finish_style
-        style = finish_style(plan['look'], project / 'finish-style.json')
-        apply(project, final, style_path=style, lights_path=project / 'finish-lights.json');stage('finish', 'PASS', project=str(final), style=f'motif-finish-v1+{plan["look"]}')
-    origin = provenance(final);gate = pacing(final)
-    stage('gate', 'PASS' if origin['status'] == 'PASS' and gate['status'] == 'PASS' else 'FAIL', provenance={k: origin[k] for k in ('status', 'checked', 'unknown', 'reference_derived', 'rejected')}, pacing=gate['status'])
-    if render:
-        from motif_frame_render import render as frame_render
-        out = final / 'renders/review.mp4';result = frame_render(final, out)
-        stage('render', 'PASS', file=str(out), frames=result['frames'])
-    stage('review', 'REVIEW_REQUIRED', note='Mayowa reviews on phone; technical passes do not approve the film')
-    write(project / 'reel-record.json', record)
-    if final != project:write(final / 'reel-record.json', record)
-    return record
+    record = {'brief': str(brief_path), 'mode': 'experimental-local-draft' if local_draft else 'original-film',
+              'film_approved': False, 'status': 'IN_PROGRESS', 'stages': []}
+    final = project;current = 'script'
+    def stage(name, status, **kw):
+        record['stages'].append({'stage': name, 'status': status, **kw})
+    def require_pass(name, passed):
+        if not passed:raise ReelFailure(f'{name} failed; advancement blocked')
+    try:
+        errors = validate(brief)
+        if errors:raise ReelFailure('script: ' + '; '.join(errors))
+        script = script_record(brief);write(project / 'reel-script.json', script)
+        stage('script', 'PASS', hook=script['hook'], hook_alternates=script['hook_alternates'])
+        current = 'plan'
+        plan = plan_reel(brief, allow_draft, avoid_looks);errs, requests = validate_plan(plan, allow_draft)
+        if requests:write(project / 'library-requests.json', requests)
+        if errs:stage('plan', 'FAIL', errors=errs);raise ReelFailure('plan: ' + '; '.join(errs))
+        write(project / 'production-plan.json', plan)
+        declare(project, 'technical-fixture' if local_draft else 'original-film', 'motif_reel.run')
+        stage('plan', 'PASS', look=plan['look'], shots=sum(len(b['shots']) for b in plan['beats']), warnings=plan['warnings'])
+        current = 'production-boundary'
+        if not local_draft:
+            from motif_structure import require_structure
+            # The deterministic reel plan cannot invent authored structure or a live review.
+            require_structure(project)
+            stage('production-boundary', 'PASS', scope='existing structure review; other film gates still required')
+        else:
+            stage('production-boundary', 'SCOPED_OUTPUT_ONLY', scope='experimental local draft; not original-film production')
+            stage('critics', 'NOT_PERFORMED', reason='explicit local draft; no model CLI invoked',
+                  reviews={k: 'NOT_PERFORMED' for k in ('structure', 'direction', 'story', 'visual')})
+        current = 'voice'
+        prepare(project, brief)
+        spans, voice_duration = voice(project, [(b['id'], b['narration']) for b in plan['beats']], brief.get('voice', 'af_nova'), stub_voice, python)
+        stage('voice', 'STUB' if stub_voice else 'PASS', duration=round(voice_duration, 3))
+        current = 'structure'
+        beats_t = []
+        for s in schedule(json.loads(json.dumps(plan)), spans, voice_duration):
+            a, n = s['start_frame'] / FPS, s['frames'] / FPS;metaphor = s['rig']['id'] if s['rig'] else s['role']
+            heads = [s['headline'], s.get('headline_b')] if s.get('split_headline') else [s['headline']]
+            for k, h in enumerate(heads):beats_t.append({'id': f'{s["id"]}.{k}', 'start': round(a + n * k / len(heads), 3), 'end': round(a + n * (k + 1) / len(heads), 3), 'headline': h, 'metaphor': metaphor, 'cut_before': True})
+        measured = validate(brief, measured=voice_duration + TAIL)
+        if measured:raise ReelFailure('voice runtime: ' + '; '.join(measured))
+        structure = check_plan(beats_t, beats_t[-1]['end'])
+        stage('structure', 'FAIL' if structure else 'PASS', failures=structure, scope='pacing data only; no independent structure approval')
+        require_pass('structure', not structure)
+        current = 'compile'
+        compiled = compile_reel(project, plan, spans, voice_duration, brief.get('seed', 0))
+        stage('compile', 'PASS', duration=round(compiled['duration'], 3), shots=compiled['shots'])
+        current = 'capture'
+        bind_capture_sources(project)
+        evidence_inputs(project)  # Film scopes require authored causal maps before capture.
+        capture = freeze_capture(project)
+        current = 'rough'
+        rough = pacing(project)
+        if rough['status'] != 'PASS':stage('rough', 'FAIL', pacing=rough)
+        require_pass('rough pacing', rough['status'] == 'PASS')
+        from motif_frame_snapshot import at_times, snapshot
+        mids = [f['start'] + f['duration'] * .7 for f in compiled['frames_index']]
+        pngs = snapshot(project, at_times(project, mids), project / 'review/rough', size=(360, 640))
+        seal_capture(project, capture, pngs)
+        empty = ms.check_frames(pngs)
+        stage('rough', 'PASS' if empty['status'] == 'PASS' else 'FAIL', pacing=rough, empty_field=empty)
+        require_pass('rough', empty['status'] == 'PASS')
+        current = 'critics'
+        if not local_draft:
+            check_production(project, 'rough')
+            stage('critics', 'PASS', scope='existing fresh production gate; no new invocation')
+        current = 'finish'
+        if finish:
+            from motif_finish import apply
+            from motif_looks import finish_style
+            style = finish_style(plan['look'], project / 'finish-style.json')
+            finished = project.with_name(project.name + '-finished')
+            apply(project, finished, style_path=style, lights_path=project / 'finish-lights.json')
+            final = finished
+            stage('finish', 'PASS', project=str(final), style=f'motif-finish-v1+{plan["look"]}')
+            bind_capture_sources(final)
+        current = 'gate'
+        origin = provenance(final);gate = pacing(final)
+        passed = origin['status'] == 'PASS' and gate['status'] == 'PASS'
+        stage('gate', 'PASS' if passed else 'FAIL', scope='asset provenance and pacing only',
+              provenance={k: origin[k] for k in ('status', 'checked', 'unknown', 'reference_derived', 'rejected')}, pacing=gate)
+        require_pass('gate', passed)
+        if not local_draft:check_production(final, 'final')
+        if render:
+            current = 'render'
+            evidence_inputs(final)
+            capture = freeze_capture(final)
+            from motif_frame_render import render as frame_render
+            out = final / 'renders/review.mp4';result = frame_render(final, out)
+            seal_capture(final, capture, [out])
+            stage('render', 'PASS', file=str(out), frames=result['frames'])
+        record['status'] = 'DRAFT_REVIEW_REQUIRED' if local_draft else 'REVIEW_REQUIRED'
+        stage('review', record['status'], note='No film approval; playback/listening and creative reviews remain required')
+        return record
+    except Exception as error:
+        record['status'] = 'BLOCKED';record['failure'] = {'stage': current, 'type': type(error).__name__, 'message': str(error)}
+        if not record['stages'] or record['stages'][-1]['stage'] != current or record['stages'][-1]['status'] != 'FAIL':
+            stage(current, 'FAIL', error=str(error))
+        raise ReelFailure(f'{current}: {error}; receipt: {project / "reel-record.json"}') from error
+    finally:
+        write(project / 'reel-record.json', record)
+        if final != project:write(final / 'reel-record.json', record)
 
 
 def main():
@@ -530,12 +639,19 @@ def main():
     r = sub.add_parser('run');r.add_argument('--brief', type=Path, required=True);r.add_argument('--out', type=Path)
     r.add_argument('--allow-draft', action='store_true', help='use DRAFT library entries (review renders before approval)')
     r.add_argument('--stub-voice', action='store_true');r.add_argument('--render', action='store_true');r.add_argument('--no-finish', action='store_true')
+    r.add_argument('--local-draft', action='store_true', help='experimental technical-fixture output; creative reviews NOT_PERFORMED, no model CLI')
     r.add_argument('--tts-python', type=Path, help='Python with kokoro-onnx for hyperframes tts')
     pl = sub.add_parser('plan');pl.add_argument('--brief', type=Path, required=True);pl.add_argument('--allow-draft', action='store_true')
+    pc = sub.add_parser('check-production');pc.add_argument('project', type=Path);pc.add_argument('--phase', choices=('rough', 'final'), default='rough')
     a = p.parse_args()
+    if a.cmd == 'check-production':
+        try:print(json.dumps(check_production(a.project, a.phase), indent=2))
+        except (ValueError, FileNotFoundError) as e:p.exit(1, f'Production blocked: {e}\n')
+        return
     if a.cmd == 'plan':
         plan = plan_reel(read(a.brief), a.allow_draft);errs, _ = validate_plan(plan, a.allow_draft);print(json.dumps({'plan': plan, 'errors': errs}, indent=2));raise SystemExit(1 if errs else 0)
-    record = run(a.brief, a.out, a.allow_draft, a.stub_voice, a.render, a.tts_python, not a.no_finish)
+    try:record = run(a.brief, a.out, a.allow_draft, a.stub_voice, a.render, a.tts_python, not a.no_finish, local_draft=a.local_draft)
+    except (ValueError, FileNotFoundError, FileExistsError) as e:p.exit(1, f'Reel blocked: {e}\n')
     print(json.dumps(record['stages'], indent=2))
 
 

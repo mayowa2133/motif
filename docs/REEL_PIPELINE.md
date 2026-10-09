@@ -2,7 +2,7 @@
 
 ```
 python scripts/motif_reel.py run --brief quality/benchmark-briefs/bench-sqlite-everywhere.json \
-    --out /tmp/reels --render --tts-python <python with kokoro-onnx>
+    --out /tmp/reels --local-draft --render --tts-python <python with kokoro-onnx>
 ```
 
 A reel is data only. The brief holds the following:
@@ -38,12 +38,22 @@ Only CANONICAL entries are offered to the planner. `--allow-draft` adds DRAFT en
 4. **Voice:** one TTS take per line. Timing comes from measured take lengths.
 5. **Compile:** per-shot frame sequences. The set is solved and checked for empty field. The camera pushes per piece. Bot walks in, reacts and hops. The insert counts or fills. Captions sit in the bottom band. SFX land at rig contacts.
 6. **Rough:** pacing check on the built compositions, plus the empty-field check on stills.
-7. **Critics:** live Codex critics when the Codex CLI exists. Otherwise the stage is recorded as not run.
+7. **Critics:** explicit local drafts record structure, direction, story and visual reviews as NOT_PERFORMED. This runner never invokes a model CLI.
 8. **Finish:** `motif_finish` with per-room lights.
 9. **Gate:** provenance and pacing on the finished project.
-10. **Review render:** `motif_frame_render.py` draws each frame in Chromium and pipes it to ffmpeg. The audio mix is narration plus SFX at -16 LUFS. The run stops at REVIEW_REQUIRED.
+10. **Review render:** `motif_frame_render.py` draws each frame in Chromium and pipes it to ffmpeg. The audio mix is narration plus SFX at -16 LUFS. A local draft stops at DRAFT_REVIEW_REQUIRED, with film approval false.
 
 Every stage's result is in `reel-record.json`.
+
+## Draft scope and production boundary
+
+`--local-draft` explicitly selects experimental output in the existing technical-fixture scope. It does not grant any creative review or production approval. `--allow-draft` retains its separate meaning: admit DRAFT library entries. It never skips a check.
+
+Normal runs require the existing fresh structure review before preparing assets or voicing. The deterministic reel plan does not yet author the required `film_structure`, so normal runs currently stop there with a BLOCKED receipt. Do not substitute pacing for that review. Integrating authored film structure and its reviews remains necessary before this planner can run as ordinary original-film production.
+
+For already-authored film projects, `python scripts/motif_reel.py check-production PROJECT --phase rough` (or `final`) checks the existing structure, causal evidence, frozen capture and quality gates. It does not generate reviews or alter their outcomes. A technical fixture cannot pass this command as a film.
+
+Rough pacing, empty-field, final provenance and final pacing failures stop advancement and return a nonzero CLI exit. Failures preserve their stage and reason in `reel-record.json`; no later finish or render is marked PASS. Composition states and local resources are bound through the existing capture records before snapshots or video capture. Encoder failure blocks audio mixing/export.
 
 ## Known limits
 

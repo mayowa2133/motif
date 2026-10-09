@@ -193,6 +193,14 @@ register(HydraulicPress(
 class RaceTrack(Rig):
     START, FINISH = -140, 230
 
+    def params(self, values=None):
+        p = super().params(values)
+        if len(p['labels']) != len(p['progress']):
+            raise ValueError('race-track labels and progress must have matching lengths')
+        if max(p['progress']) != 1:
+            raise ValueError('race-track leader must reach progress 1 at the finish contact')
+        return p
+
     def lane_y(self, p, i):return -60 - i * (360 / len(p['labels']))
 
     def runner_x(self, p, i, t, tc):

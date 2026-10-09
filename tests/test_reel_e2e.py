@@ -24,10 +24,10 @@ class ReelEndToEnd(unittest.TestCase):
     def test_fixture_brief_runs_without_per_film_code(self):
         from motif_reel import run
         with tempfile.TemporaryDirectory() as tmp:
-            record = run(FIXTURE, Path(tmp), allow_draft=True, stub_voice=True)
+            record = run(FIXTURE, Path(tmp), allow_draft=True, stub_voice=True, local_draft=True)
             stages = {s['stage']: s['status'] for s in record['stages']}
             for name in ('script', 'plan', 'structure', 'compile', 'rough', 'finish', 'gate'):self.assertEqual(stages[name], 'PASS', (name, record))
-            self.assertEqual(stages['review'], 'REVIEW_REQUIRED')
+            self.assertEqual(stages['review'], 'DRAFT_REVIEW_REQUIRED')
             for project in Path(tmp).iterdir():
                 self.assertEqual(list(project.rglob('*.py')), [], 'no project-local Python')
             final = Path(tmp) / 'fixture-paper-notes-finished'

@@ -20,6 +20,33 @@ from motif_rigs.palettes import palette as get_palette
 from motif_ui_components import card, g, path, rect, txt
 
 
+def validate_insert(insert):
+    """Check the arguments consumed by the reel compiler before voice/compile."""
+    from jsonschema import Draft202012Validator
+    text = {'type': 'string'}
+    fraction = {'type': 'number', 'minimum': 0, 'maximum': 1}
+    schemas = {
+        'counter': ({'start': {'type': 'integer'}, 'end': {'type': 'integer'}, 'prefix': text, 'suffix': text, 'label': text}, ['end']),
+        'price_tag': ({'amount': text, 'strike': {'type': ['string', 'null']}}, ['amount']),
+        'comment_end_card': ({'keyword': {'type': 'string', 'pattern': '^[A-Za-z0-9]{2,16}$'}}, ['keyword']),
+        'star_badge': ({'rating': {'type': 'integer', 'minimum': 1, 'maximum': 10}, 'filled': {'type': 'integer', 'minimum': 0}}, []),
+        'gauge': ({'value': fraction, 'label': text}, []),
+        'progress_bar': ({'fraction': fraction, 'label': text}, []),
+    }
+    kind = insert.get('kind')
+    if kind not in schemas:raise ValueError(f'unsupported insert {kind}')
+    props, required = schemas[kind]
+    schema = {'type': 'object', 'properties': props, 'required': required, 'additionalProperties': False}
+    args = insert.get('args', {})
+    errors = [e.message for e in Draft202012Validator(schema).iter_errors(args)]
+    if errors:raise ValueError('; '.join(errors))
+    if any(isinstance(v, float) and not math.isfinite(v) for v in args.values()):
+        raise ValueError('insert numbers must be finite')
+    if kind == 'star_badge' and args.get('filled', 5) > args.get('rating', 5):
+        raise ValueError('filled stars cannot exceed rating')
+    return args
+
+
 def counter_values(start, end, frames, settle_at=.8):
     """Integer value per frame: eased, monotonic, exactly `end` from settle_at on."""
     if frames < 2:return [end]
