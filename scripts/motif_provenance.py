@@ -29,7 +29,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 REGISTRY = ROOT / 'assets/PROVENANCE.json'
 ORIGINS = ('procedural-seeded', 'motif-image-gen', 'motif-authored-svg', 'motif-tts', 'motif-derived', 'licensed', 'reference-derived')
-RULE_ORIGINS = ('motif-tts', 'procedural-seeded')
+RULE_ORIGINS = ('motif-tts', 'procedural-seeded', 'licensed')  # licensed: cited product screenshots only
 APPROVALS = ('APPROVED', 'LEGACY_ACCEPTED', 'PENDING', 'REJECTED')
 MEDIA = {'.png', '.webp', '.jpg', '.jpeg', '.gif', '.svg', '.woff', '.woff2', '.ttf', '.otf', '.wav', '.mp3', '.m4a', '.aac', '.flac', '.ogg'}
 IMAGES = {'.png', '.webp', '.jpg', '.jpeg', '.gif'}
@@ -90,6 +90,8 @@ def project_rules(project, extra=None):
     for rule in rules:
         if rule.get('origin') not in RULE_ORIGINS:raise ValueError(f'project rule {rule.get("glob")}: per-film rules may only declare {RULE_ORIGINS}')
         if not rule.get('glob') or not rule.get('generator'):raise ValueError('project rule needs glob and generator')
+        if rule['origin'] == 'licensed' and not str(rule.get('source_url', '')).startswith(('http://', 'https://')):
+            raise ValueError(f'project rule {rule["glob"]}: a licensed per-film asset must cite its source_url')
     return rules
 
 
