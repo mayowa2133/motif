@@ -29,6 +29,7 @@ SOURCE_PATHS+=['videos/motif-calendar-reel/assets/'+n for n in ('gsap.min.js','m
 SOURCE_PATHS+=['scripts/motif_workshop.py','scripts/build_workshop_kit.py','schemas/creative-benchmark-concept.schema.json']
 
 SOURCE_PATHS+=['scripts/motif_quality.py','scripts/motif_quality_frames.py','quality/bindings.json','scripts/motif_performance.py','scripts/motif_reaction.py','scripts/motif_asset_quality.py','schemas/shot-contract.schema.json','schemas/story-critic.schema.json','schemas/visual-critic.schema.json','QUALITY_CONTRACT.md','ENERGY_CONTRACT.md','quality/gold/index.json','quality/rubric/gates.json']
+SOURCE_PATHS+=['scripts/motif_evidence.py','scripts/motif_causal.py']
 
 SOURCE_PATHS+=['scripts/motif_structure.py','docs/MOTIF_STRUCTURAL_GRAMMAR.md','quality/structure-critic/PROMPT.md','schemas/film-structure.schema.json','schemas/setup-contract.schema.json','schemas/structure-critic.schema.json','quality/structure-examples.json','quality/negative/rowhouse.json','quality/rubric/hierarchy.json','quality/visual-critic/PROMPT.md']
 
@@ -166,6 +167,8 @@ def run(brief_path,concept_path=None,feedback_path=None):
     config=backend_config()
     project.mkdir(parents=True)
     write(project/'brief.json',brief); write(project/'backend.json',config); write(project/'source-hashes.json',snapshot())
+    from motif_evidence import entry_scope
+    entry_scope(project, 'motif_direct.run')
     for folder in ('assets/voice','assets/sfx','renders'): (project/folder).mkdir(parents=True)
     for name in ('gsap.min.js','motion-engine.js','motion-primitives.js'): shutil.copy2(ROOT/'videos/motif-calendar-reel/assets'/name,project/'assets'/name)
     for name in ('pop','click-soft','whoosh-short'): shutil.copy2(ROOT/f'videos/motif-calendar-reel/assets/sfx/{name}.mp3',project/f'assets/sfx/{name}.mp3')
@@ -255,7 +258,8 @@ def run(brief_path,concept_path=None,feedback_path=None):
     if plan.get('quality_mode')=='motif-gold-v1':
         from motif_quality import rough, evidence_bundle, critics
         output=rough(project)
-        shots=[{'id':x['id'],'start':x['span']['start'],'end':x['span']['end'],'contacts':[a['time'] for a in x['span']['actions']]} for x in read(project/'quality-bindings.json')['shots']]
+        from motif_evidence import evidence_shots
+        shots=evidence_shots(read(project/'quality-bindings.json'),plan)
         evidence_bundle(project,'rough',output/'captions.mp4',output/'no-captions.mp4',shots)
         critics(project,'rough',config)
         return output/'captions.mp4'
@@ -294,6 +298,8 @@ if __name__=='__main__':
             from motif_script import align_voice, render_preview
             if not args.project: raise ValueError('script-preview requires --project')
             project=args.project.resolve()
+            from motif_evidence import require_scope
+            require_scope(project)
             plan=read(project/'production-plan.json'); brief=read(project/'brief.json')
             report=review_plan(plan,brief)
             if not report['pass']: raise ValueError('; '.join(report['issues']))

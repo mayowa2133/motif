@@ -24,7 +24,7 @@ def render_sources(project):
     for folder in ('assets','compositions','source','styles'):
         files.update(p for p in (project/folder).rglob('*') if p.is_file() and '__pycache__' not in p.parts and p.suffix not in ('.pyc','.log'))
     files.update(p for p in project.iterdir() if p.is_file() and p.suffix in ('.html','.css','.js','.svg'))
-    for name in ('style-preset.json','hyperframes.json','package.json','audio-plan.json','caption-events.json','quality-bindings.json'):
+    for name in ('style-preset.json','hyperframes.json','package.json','audio-plan.json','caption-events.json','quality-bindings.json','causal-map.json','critical-intervals.json','production-scope.json'):
         if (project/name).is_file():files.add(project/name)
     plan=read(project/'production-plan.json')
     for asset in plan.get('asset_usage',[]):
@@ -195,6 +195,10 @@ def probe_video(path):
     return {'width':s['width'],'height':s['height'],'fps':a/b,'frames':int(s['nb_read_frames']),'duration':int(s['nb_read_frames'])/(a/b),'sha256':sha(path)}
 
 def rough(project):
+    from motif_evidence import evidence_inputs
+    evidence_inputs(project)
+    from motif_evidence import freeze_capture,seal_capture
+    capture_record=freeze_capture(project)
     """Native moving rough, actual captions removed, using existing pinned render."""
     plan=read(project/'production-plan.json');plan_check(plan)
     from motif_structure import require_structure
@@ -223,16 +227,17 @@ def rough(project):
             log=subprocess.run(args,cwd=dest,text=True,capture_output=True);(dest/(name+'.log')).write_text(log.stdout+log.stderr)
             if log.returncode:raise ValueError('native '+name+' failed: '+str(dest/(name+'.log')))
     write(output/'render-record.json',{'scope':'moving rough only; not finished art/audio','plan_sha256':sha(project/'production-plan.json'),'events_sha256':sha(project/'scene-events.json'),'with_captions':probe_video(output/'captions.mp4'),'without_captions':probe_video(output/'no-captions.mp4')})
+    seal_capture(project,capture_record,[output/'captions.mp4',output/'no-captions.mp4'])
     return output
 
-def evidence(video,out,shots):
+def evidence(video,out,shots,delivery=False):
     """Decode actual native media; full-rate motion observations plus ordered sheets."""
     from PIL import Image,ImageDraw
     import numpy as np
     info=probe_video(video)
-    if (info['width'],info['height'])!=(360,640):raise ValueError('critic requires native 360×640 media')
+    if (info['width'],info['height'])!=(360,640) and not (delivery and (info['width'],info['height'])==(1080,1920)):raise ValueError('critic requires native 360×640 media or explicit 1080×1920 delivery sampling')
     out.mkdir(parents=True,exist_ok=False)
-    cmd(['ffmpeg','-v','error','-i',video,'-fps_mode','passthrough',out/'f-%05d.png'])
+    cmd(['ffmpeg','-v','error','-i',video,'-vf','scale=360:640','-fps_mode','passthrough',out/'f-%05d.png'])
     files=sorted(out.glob('f-*.png'));images=[];windows=[];trace=[];prev=None;unchanged=0;longest=0
     for i,p in enumerate(files):
         with Image.open(p) as im:crop=np.asarray(im.convert('RGB'))[140:510].astype('int16')
@@ -272,13 +277,39 @@ def evidence(video,out,shots):
                     draw.text((k*360+4,7),label,fill='#202c32')
                 path=out/f'{shot["id"]}-event-{event_no:02d}-strip-{offset//4:02d}.png';strip.save(path);images.append(path);strips.append(str(path))
             windows.append({'shot':shot['id'],'kind':event['kind'],'contact_frame':contact,'fps':info['fps'],'consecutive':True,'frames':consecutive,'times':[round(i/info['fps'],6) for i in consecutive],'strips_in_order':strips,'clipped_at_shot_boundary':len(consecutive)<13})
+        for interval_no,bounds in enumerate(shot.get('critical_intervals',[])):
+            from motif_causal import interval
+            consecutive=list(interval(bounds,len(files)))
+            if consecutive[0]<start or consecutive[-1]>=end:raise ValueError('critical interval outside declared shot')
+            strips=[]
+            for offset in range(0,len(consecutive),4):
+                row=consecutive[offset:offset+4];strip=Image.new('RGB',(360*len(row),668),'#eee5d5');draw=ImageDraw.Draw(strip)
+                for k,index in enumerate(row):
+                    with Image.open(files[index]) as im:strip.paste(im.convert('RGB'),(k*360,28))
+                    draw.text((k*360+4,7),f'{shot["id"]} critical f{index}',fill='#202c32')
+                path=out/f'{shot["id"]}-critical-{interval_no:02d}-{offset//4:03d}.png';strip.save(path);images.append(path);strips.append(str(path))
+            windows.append({'shot':shot['id'],'kind':'critical-interval','frames':consecutive,'consecutive':True,'strips_in_order':strips})
     write(out/'motion-trace.json',{'scope':'full-rate painted action-region changes; not semantic motion grading','region':[0,140,360,510],'longest_nearly_unchanged_seconds':longest/info['fps'],'frames':trace})
     # Keep review sheets and motion trace; no duplicate 30fps PNG archive.
     for p in files:p.unlink()
-    return {'video':str(Path(video).resolve()),'probe':info,'sheets':[str(p) for p in images],'temporal_windows':windows,'motion_trace':str(out/'motion-trace.json'),'trace_sha256':sha(out/'motion-trace.json')}
+    covered={shot['id']:sorted({f for w in windows if w['shot']==shot['id'] and w['kind']=='critical-interval' for f in w['frames']}) for shot in shots}
+    return {'video':str(Path(video).resolve()),'probe':info,'sheets':[str(p) for p in images],'temporal_windows':windows,'critical_coverage':covered,'motion_trace':str(out/'motion-trace.json'),'trace_sha256':sha(out/'motion-trace.json')}
 
 def evidence_bundle(project,phase,with_captions,without_captions,shots,delivery_picture=None):
     if phase=='final' and delivery_picture is None:raise ValueError('final QA requires the matching delivery picture before audio finishing')
+    from motif_evidence import require_scope,FILM_MODES,evidence_inputs
+    scope=require_scope(project)
+    scoped=scope['actual_mode'] in FILM_MODES
+    if scoped:
+        from motif_causal import coverage
+        evidence_inputs(project)
+        from motif_evidence import require_capture
+        capture_record=require_capture(project,artifacts=[with_captions,without_captions,*([delivery_picture] if delivery_picture else [])])
+        if scope['actual_mode'] in FILM_MODES:
+            plan=read(project/'production-plan.json')
+            declared={s['id']:s['critical_intervals'] for s in read(project/'critical-intervals.json')}
+            shots=[{**s,'critical_intervals':declared.get(s['id'],[])} for s in shots]
+            coverage(shots,probe_video(with_captions)['frames'],[b['id'] for b in plan.get('beats',plan.get('shots',[]))])
     base=project/'quality-review'/phase;base.mkdir(parents=True,exist_ok=True)
     a=evidence(with_captions,base/'evidence-captions',shots);b=evidence(without_captions,base/'evidence-no-captions',shots)
     if any(a['probe'][k]!=b['probe'][k] for k in ('fps','frames','duration')):raise ValueError('caption modes have different timing')
@@ -289,9 +320,17 @@ def evidence_bundle(project,phase,with_captions,without_captions,shots,delivery_
         delivery=probe_video(delivery_picture)
         if any(delivery[k]!=a['probe'][k] for k in ('fps','frames','duration')):raise ValueError('delivery and native preview timings differ')
         manifest['delivery_picture']={'file':str(delivery_picture.resolve()),'probe':delivery}
+        if scoped:
+            manifest['delivery_evidence']=evidence(delivery_picture,base/'evidence-delivery',shots,delivery=True)
+    if scoped:
+        manifest['production_scope_sha256']=sha(project/'production-scope.json')
+        manifest['capture_record']=capture_record
+        manifest['causal_map']=read(project/'causal-map.json')
     write(base/'evidence.json',manifest);return manifest
 
 def critics(project,phase,config):
+    from motif_evidence import require_scope
+    require_scope(project)
     from motif_direct import model_call
     base=project/'quality-review'/phase;manifest=read(base/'evidence.json');plan=read(project/'production-plan.json')
     if manifest['plan_sha256']!=sha(project/'production-plan.json') or manifest['events_sha256']!=sha(project/'scene-events.json'):raise ValueError('stale visual evidence')
@@ -301,6 +340,10 @@ def critics(project,phase,config):
     for mode in ('with_captions','without_captions'):
         e=manifest[mode]
         if sha(e['video'])!=e['probe']['sha256']:raise ValueError('preview changed after sampling')
+        images += [Path(p) for p in e['sheets']]
+    if 'delivery_evidence' in manifest:
+        e=manifest['delivery_evidence']
+        if sha(e['video'])!=e['probe']['sha256']:raise ValueError('delivery changed after direct sampling')
         images += [Path(p) for p in e['sheets']]
     # Gold stills plus ordered motion samples retrieved from their stable clip ranges.
     gold_evidence=[]
@@ -354,6 +397,8 @@ def hierarchy_failures(plan,report):
     return blocked
 
 def evaluate(project,phase,check_current_events=True):
+    from motif_evidence import require_scope,FILM_MODES
+    scope=require_scope(project)
     base=project/'quality-review'/phase;manifest=read(base/'evidence.json');record=read(base/'critics-record.json');blocked=[]
     if record['evidence_sha256']!=sha(base/'evidence.json') or record['images_sha256']!=sha(base/'image-inputs.json'):blocked.append('critic input manifest changed')
     for image in read(base/'image-inputs.json'):
@@ -363,6 +408,29 @@ def evaluate(project,phase,check_current_events=True):
         if sha(e['video'])!=e['probe']['sha256']:blocked.append('moving preview changed')
         if sha(e['motion_trace'])!=e['trace_sha256']:blocked.append('motion evidence changed')
     if manifest['plan_sha256']!=sha(project/'production-plan.json') or (check_current_events and manifest['events_sha256']!=sha(project/'scene-events.json')):blocked.append('plan/events changed; resample and re-critique')
+    if scope['actual_mode'] in FILM_MODES:
+        from motif_causal import coverage,verify_coverage
+        from motif_evidence import require_scope,FILM_MODES
+        try:
+            scope=require_scope(project)
+            if manifest.get('production_scope_sha256')!=sha(project/'production-scope.json'):raise ValueError('production scope evidence stale')
+            if scope['actual_mode'] in FILM_MODES:
+                plan=read(project/'production-plan.json')
+                from motif_evidence import evidence_inputs
+                evidence_inputs(project)
+                from motif_evidence import require_capture
+                require_capture(project,manifest['capture_record'],[manifest['with_captions']['video'],manifest['without_captions']['video']])
+                required=coverage(read(project/'critical-intervals.json'),manifest['with_captions']['probe']['frames'],[b['id'] for b in plan.get('beats',plan.get('shots',[]))])
+                for mode in ('with_captions','without_captions'):
+                    verify_coverage(required,manifest[mode].get('critical_coverage',{}))
+                if phase=='final':
+                    e=manifest.get('delivery_evidence',{})
+                    if e.get('probe',{}).get('sha256')!=manifest['delivery_picture']['probe']['sha256']:raise ValueError('direct delivery review missing')
+                    verify_coverage(required,e.get('critical_coverage',{}))
+                    if sha(e['video'])!=e['probe']['sha256'] or sha(e['motion_trace'])!=e['trace_sha256']:raise ValueError('direct delivery evidence changed')
+                    attached={i['file'] for i in read(base/'image-inputs.json')}
+                    if not set(e['sheets']).issubset(attached):raise ValueError('delivery pictures absent from critic inputs')
+        except (ValueError,KeyError,FileNotFoundError) as error:blocked.append('scoped coverage: '+str(error))
     if 'delivery_picture' in manifest and sha(manifest['delivery_picture']['file'])!=manifest['delivery_picture']['probe']['sha256']:blocked.append('delivery picture changed')
     if check_current_events:
         blocked+=source_freshness(project,manifest)
@@ -440,6 +508,8 @@ def repair(project,note):
     return items
 
 def require_gate(project,phase):
+    from motif_evidence import require_scope,FILM_MODES
+    scoped=require_scope(project)['actual_mode'] in FILM_MODES
     result=evaluate(project,phase)
     wanted='FINAL_ART_ALLOWED' if phase=='rough' else 'AUDIO_FINISH_ALLOWED'
     if result['status']!=wanted:raise ValueError('quality gate blocks advancement: '+result['status']+' '+str(result['blocked']))
@@ -458,6 +528,14 @@ def require_gate(project,phase):
         if technical.get('status') not in ('PASS','PICTURE_PASS_AUDIO_PENDING') or technical.get('events_sha256')!=sha(project/'scene-events.json') or technical.get('video_sha256')!=manifest_hash(project,'final'):raise ValueError('separate current technical report required')
         for record in technical.get('sources',[]):
             if sha(record['file'])!=record['sha256']:raise ValueError('technical evidence changed')
+        if scoped:
+            from motif_evidence import technical_binding
+            supplemental=read(technical['supplemental']['file'])
+            if sha(technical['supplemental']['file'])!=technical['supplemental']['sha256']:raise ValueError('technical check manifest changed')
+            for name in set(TECHNICAL)-{'frame-count','fps','dimensions','duration','loudness','true-peak'}:
+                record=supplemental.get(name,{})
+                technical_binding(name,record,sha(project/'scene-events.json'),manifest_hash(project,'final'))
+                if (record.get('status')!='PASS' or record.get('events_sha256')!=sha(project/'scene-events.json') or record.get('video_sha256')!=manifest_hash(project,'final') or not record.get('file') or sha(record['file'])!=record.get('sha256')):raise ValueError('technical check binding incomplete: '+name)
     return result
 
 def manifest_hash(project,phase):
@@ -478,15 +556,19 @@ def technical(project,video,checks):
         audio=loudness(video);statuses['loudness']='PASS' if abs(audio['integrated_lufs']-TARGET_I)<=.8 else 'FAIL';statuses['true-peak']='PASS' if audio['true_peak_dbtp']<=PEAK_CEILING else 'FAIL'
     except (ValueError,RuntimeError,KeyError,StopIteration):audio={'status':'NOT_ASSESSED'}
     supplied=read(checks)
+    from motif_evidence import require_scope, technical_binding,FILM_MODES
+    scoped=require_scope(project)['actual_mode'] in FILM_MODES
     for name,record in supplied.items():
         if name not in TECHNICAL or name in ('frame-count','fps','dimensions','duration','loudness','true-peak'):raise ValueError('not a supplemental technical check: '+name)
         path=Path(record['file']).resolve()
         if not path.is_file() or sha(path)!=record['sha256'] or record.get('events_sha256')!=sha(project/'scene-events.json') or record.get('video_sha256')!=sha(video):raise ValueError('stale supplemental technical evidence: '+name)
         if record.get('status') not in ('PASS','FAIL','NOT_ASSESSED') or not record.get('observation'):raise ValueError('technical result requires status and measured observation')
+        if scoped and record['status']=='PASS':technical_binding(name,record,sha(project/'scene-events.json'),sha(video))
         statuses[name]=record['status'];sources.append({'file':str(path),'sha256':sha(path),'check':name})
     sources.append({'file':str(checks.resolve()),'sha256':sha(checks)})
     status='PASS' if all(v=='PASS' for v in statuses.values()) else 'PICTURE_PASS_AUDIO_PENDING' if all(v=='PASS' for k,v in statuses.items() if k not in ('loudness','true-peak')) else 'BLOCKED'
     result={'status':status,'checks':statuses,'probe':info,'audio':audio,'sources':sources,'events_sha256':sha(project/'scene-events.json'),'video_sha256':sha(video),'human_listening':'REQUIRED; measurement is not listening approval'}
+    if scoped:result['supplemental']={'file':str(checks.resolve()),'sha256':sha(checks)}
     write(project/'quality-review/technical.json',result);return result
 
 def main():

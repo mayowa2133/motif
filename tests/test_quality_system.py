@@ -124,6 +124,9 @@ class QualityTests(unittest.TestCase):
    with self.assertRaisesRegex(ValueError,'one-off'):transition(meta,p,'CANONICAL',review)
  def reports(self,p,fail=None):
   # Unit reports aren't used as live validation evidence.
+  from motif_evidence import declare
+  write(p/'brief.json',{'scope':'legacy synthetic quality fixture'})
+  declare(p,'technical-fixture','unit.quality_reports')
   write(p/'production-plan.json',{'beats':[{'id':'unit','quality':contract()}]});write(p/'scene-events.json',{'events':[]})
   base=p/'quality-review/rough';base.mkdir(parents=True);video=base/'unit-media';video.write_bytes(b'unit-only');image=base/'unit-image';image.write_bytes(b'unit-only');trace=base/'trace.json';write(trace,{})
   e={'video':str(video),'probe':{'sha256':sha(video)},'motion_trace':str(trace),'trace_sha256':sha(trace)}

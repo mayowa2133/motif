@@ -28,6 +28,9 @@ def upgraded(slug):
 
 
 def compile_saved(folder,plan,dest):
+    from motif_evidence import declare
+    (dest/'brief.json').write_text('{"scope":"legacy unit fixture"}')
+    declare(dest,'technical-fixture','unit.compile_saved')
     words=json.loads((folder/'assets/voice/transcript.json').read_text())
     voice=json.loads((folder/'audio-plan.json').read_text())['tracks'][0]['duration']
     compile_plan(dest,plan,words,voice,[10,22])

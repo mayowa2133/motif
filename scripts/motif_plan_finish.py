@@ -7,6 +7,8 @@ import json
 from motif_produce import ROOT, TARGET_I, PEAK_CEILING, command, loudness, probe, video_hash, sha
 
 def finish(project, first, duration_range):
+    from motif_evidence import require_scope, completion
+    require_scope(project)
     plan_path=project/'production-plan.json'
     if plan_path.exists() and json.loads(plan_path.read_text()).get('quality_mode')=='motif-gold-v1':
         from motif_quality import require_gate,read
@@ -66,4 +68,5 @@ def finish(project, first, duration_range):
     if candidate.exists():
         candidate.unlink()
     command(["ffmpeg", "-hide_banner", "-y", "-i", str(final), "-vf", "scale=360:640", "-c:v", "libx264", "-crf", "22", "-preset", "medium", "-c:a", "copy", "-movflags", "+faststart", str(project / "renders/mobile.mp4")], ROOT, log=project / "mobile.log")
+    completion(project, final)
     return final

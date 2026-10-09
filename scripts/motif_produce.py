@@ -270,6 +270,8 @@ def produce(brief_path: Path) -> Path:
         raise FileExistsError(f"output exists; choose a fresh slug to preserve the prior run: {project}")
     project.mkdir(parents=True)
     (project / "brief.json").write_text(json.dumps(brief, indent=2) + "\n")
+    from motif_evidence import entry_scope
+    entry_scope(project, 'motif_produce.legacy-template', 'technical-fixture')
     scene, script, beats = story(brief)
     save_plan(project, brief, script, beats)  # before TTS, animation, or render
     prepare_project(project, scene, script)
@@ -341,6 +343,8 @@ def produce(brief_path: Path) -> Path:
     if candidate.exists():
         candidate.unlink()
     command(["ffmpeg", "-hide_banner", "-y", "-i", str(final), "-vf", "scale=360:640", "-c:v", "libx264", "-crf", "22", "-preset", "medium", "-c:a", "copy", "-movflags", "+faststart", str(project / "renders/mobile.mp4")], ROOT, log=project / "mobile.log")
+    from motif_evidence import completion
+    completion(project, final)
     return project
 
 
@@ -355,7 +359,7 @@ if __name__ == "__main__":
             print(json.dumps({"status": "supported", "template": "calendar-open-slot", "configurable_scene_fields": ["existing_title"], "fixed_times": ["3 PM", "4 PM"], "fixed_proposed_title": "FOCUS", "fixed_outcome": "approval_then_booking", "narration": "fixed_template_script"}))
         else:
             output = produce(args.brief.resolve())
-            print(f"PASS {output / 'renders/final.mp4'}")
+            print(f"SCOPED_OUTPUT_ONLY {output / 'renders/final.mp4'}; playback and visual review pending")
     except ValueError as error:
         print(json.dumps({"status": "rejected", "code": getattr(error, "code", "invalid_brief"), "reason": str(error)}), file=sys.stderr)
         raise SystemExit(2)
