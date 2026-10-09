@@ -197,6 +197,8 @@ class RaceTrack(Rig):
         p = super().params(values)
         if len(p['labels']) != len(p['progress']):
             raise ValueError('race-track labels and progress must have matching lengths')
+        if not all(math.isfinite(value) for value in p['progress']):
+            raise ValueError('race-track progress must be finite')
         if max(p['progress']) != 1:
             raise ValueError('race-track leader must reach progress 1 at the finish contact')
         return p

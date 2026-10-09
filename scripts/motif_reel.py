@@ -485,6 +485,9 @@ def bind_capture_sources(project):
     """Bind actual composition states and local resources via existing capture APIs."""
     from motif_finish import SCRIPT
     from motif_frame_render import clips
+    audio_plan = project / 'audio-plan.json'
+    if not audio_plan.is_file():
+        raise ValueError('reel capture requires audio-plan.json')
     initial, events, shots = [], [], []
     for clip in clips(project):
         spec = json.loads(SCRIPT.search((project / clip['src']).read_text()).group(2))
@@ -496,7 +499,7 @@ def bind_capture_sources(project):
     write(project / 'scene-events.json', {'schemaVersion': '1.0', 'fps': FPS,
           'durationSec': max(s['endFrame'] for s in shots) / FPS,
           'initial': initial, 'events': sorted(events, key=lambda e: e['time']), 'shots': shots})
-    paths = [project / 'index.html', *sorted((project / 'compositions').glob('*.html')),
+    paths = [project / 'index.html', audio_plan, *sorted((project / 'compositions').glob('*.html')),
              *(p for p in sorted((project / 'assets').rglob('*')) if p.is_file())]
     write(project / 'resource-manifest.json', {'resources': [
           {'path': p.relative_to(project).as_posix(), 'sha256': sha(p)} for p in paths]})

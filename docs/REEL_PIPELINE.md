@@ -53,7 +53,7 @@ Normal runs require the existing fresh structure review before preparing assets 
 
 For already-authored film projects, `python scripts/motif_reel.py check-production PROJECT --phase rough` (or `final`) checks the existing structure, causal evidence, frozen capture and quality gates. It does not generate reviews or alter their outcomes. A technical fixture cannot pass this command as a film.
 
-Rough pacing, empty-field, final provenance and final pacing failures stop advancement and return a nonzero CLI exit. Failures preserve their stage and reason in `reel-record.json`; no later finish or render is marked PASS. Composition states and local resources are bound through the existing capture records before snapshots or video capture. Encoder failure blocks audio mixing/export.
+Rough pacing, empty-field, final provenance and final pacing failures stop advancement and return a nonzero CLI exit. Failures preserve their stage and reason in `reel-record.json`; no later finish or render is marked PASS. Composition states, the required audio plan and local resources are bound through the existing capture records before snapshots or video capture. Changing or removing the audio plan invalidates capture evidence. Encoder failure blocks audio mixing/export.
 
 ## Known limits
 

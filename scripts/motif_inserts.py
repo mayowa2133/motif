@@ -40,9 +40,12 @@ def validate_insert(insert):
     args = insert.get('args', {})
     errors = [e.message for e in Draft202012Validator(schema).iter_errors(args)]
     if errors:raise ValueError('; '.join(errors))
+    for name, spec in props.items():
+        if spec.get('type') == 'integer' and name in args and type(args[name]) is not int:
+            raise ValueError(f'{name} must be a Python integer')
     if any(isinstance(v, float) and not math.isfinite(v) for v in args.values()):
         raise ValueError('insert numbers must be finite')
-    if kind == 'star_badge' and args.get('filled', 5) > args.get('rating', 5):
+    if kind == 'star_badge' and 'filled' in args and args['filled'] > args.get('rating', 5):
         raise ValueError('filled stars cannot exceed rating')
     return args
 

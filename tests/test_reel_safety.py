@@ -8,6 +8,7 @@ import unittest
 from contextlib import ExitStack
 from pathlib import Path
 from unittest.mock import Mock, patch
+from jsonschema.exceptions import ValidationError
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / 'scripts'))
@@ -34,6 +35,7 @@ def composition(project):
     (project / 'index.html').write_text('<div data-composition-id="unit" data-composition-src="compositions/unit.html" data-start="0" data-duration="1"></div>')
     (project / 'assets').mkdir(exist_ok=True)
     (project / 'assets/unit.txt').write_text('UNIT_ONLY')
+    (project / 'audio-plan.json').write_text(json.dumps({'sfx_cues': []}))
 
 
 class InputSafetyTests(unittest.TestCase):
@@ -61,6 +63,13 @@ class InputSafetyTests(unittest.TestCase):
             with self.subTest(insert=insert):
                 b = copy.deepcopy(BRIEF);b['beats'][0]['visual']['insert'] = insert
                 self.assertTrue(any('insert args invalid' in e for e in reel.validate_plan(reel.plan_reel(b))[0]))
+        b = copy.deepcopy(BRIEF);b['beats'][0]['visual']['insert'] = {'kind': 'star_badge', 'args': {'rating': 2}}
+        self.assertEqual(reel.validate_plan(reel.plan_reel(b))[0], [])
+        for kind, args in (('star_badge', {'rating': 5.0}), ('star_badge', {'filled': 5.0}),
+                           ('counter', {'end': 20.0}), ('counter', {'start': 0.0, 'end': 20})):
+            with self.subTest(kind=kind, args=args):
+                b = copy.deepcopy(BRIEF);b['beats'][0]['visual']['insert'] = {'kind': kind, 'args': args}
+                self.assertTrue(any('must be a Python integer' in e for e in reel.validate_plan(reel.plan_reel(b))[0]))
 
     def test_unknown_rig_survives_warning_generation_for_library_request(self):
         b = copy.deepcopy(BRIEF);b['beats'][0]['visual']['rig'] = 'rocket-launch'
@@ -76,6 +85,12 @@ class InputSafetyTests(unittest.TestCase):
                 with self.assertRaisesRegex(ValueError, message):get('race-track').params(params)
                 b = copy.deepcopy(BRIEF);b['beats'][0]['visual'] = {'rig': 'race-track', 'params': params}
                 self.assertTrue(any(message in e for e in reel.validate_plan(reel.plan_reel(b))[0]))
+        for progress in ([1, float('nan')], [float('nan'), 1], [1, float('inf')], [1, float('-inf')]):
+            with self.subTest(progress=progress):
+                params = {'labels': ['A', 'B'], 'progress': progress}
+                with self.assertRaises((ValueError, ValidationError)):get('race-track').params(params)
+                b = copy.deepcopy(BRIEF);b['beats'][0]['visual'] = {'rig': 'race-track', 'params': params}
+                self.assertTrue(reel.validate_plan(reel.plan_reel(b))[0])
         for n in (2, 3, 4):
             p = {'labels': ['A'] * n, 'progress': [1] + [.5] * (n - 1)}
             self.assertEqual(get('race-track').contact_gap(p, 'race'), 0)
@@ -173,6 +188,38 @@ class PipelineSafetyTests(unittest.TestCase):
         require_capture(self.project, artifacts=[self.project / 'renders/review.mp4'])
         (self.project / 'assets/unit.txt').write_text('CHANGED')
         with self.assertRaisesRegex(ValueError, 'resource missing or changed'):require_capture(self.project)
+
+    def test_audio_plan_changes_invalidate_capture(self):
+        with ExitStack() as stack:
+            self.mocks(stack)
+            reel.run(self.brief, self.root / 'out', local_draft=True, finish=False, render=True)
+        audio_plan = self.project / 'audio-plan.json'
+        original = audio_plan.read_text()
+        artifact = self.project / 'renders/review.mp4'
+        audio_plan.write_text(json.dumps({'sfx_cues': [{'start': .5, 'volume': .9, 'file': 'assets/unit.txt'}]}))
+        with self.assertRaisesRegex(ValueError, 'resource missing or changed'):
+            require_capture(self.project, artifacts=[artifact])
+        audio_plan.write_text(original)
+        require_capture(self.project, artifacts=[artifact])
+        audio_plan.unlink()
+        with self.assertRaisesRegex(ValueError, 'resource missing or changed'):
+            require_capture(self.project, artifacts=[artifact])
+
+    def test_missing_audio_plan_blocks_before_capture(self):
+        with ExitStack() as stack:
+            _, compile_mock, snapshots, renderer, finish = self.mocks(stack)
+            compile_ = compile_mock.side_effect
+            def without_audio_plan(*args):
+                result = compile_(*args)
+                (self.project / 'audio-plan.json').unlink()
+                return result
+            compile_mock.side_effect = without_audio_plan
+            with self.assertRaisesRegex(reel.ReelFailure, 'requires audio-plan.json'):
+                reel.run(self.brief, self.root / 'out', local_draft=True, render=True)
+            snapshots.assert_not_called();finish.assert_not_called();renderer.assert_not_called()
+        self.assertEqual(self.record()['status'], 'BLOCKED')
+        self.assertEqual(self.record()['failure']['stage'], 'capture')
+        self.assertFalse((self.project / 'capture-scope.json').exists())
 
     def test_cli_failure_has_nonzero_exit_and_receipt(self):
         result = subprocess.run([sys.executable, str(ROOT / 'scripts/motif_reel.py'), 'run', '--brief', str(self.brief), '--out', str(self.root / 'out')], capture_output=True, text=True)
