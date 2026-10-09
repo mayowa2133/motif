@@ -1,0 +1,579 @@
+{
+  "schema_version": 1,
+  "default_enabled": [],
+  "art_promotion": false,
+  "candidates": [
+    {
+      "id": "frontal-kit-v012",
+      "version": "0.1.2",
+      "optional": true,
+      "verdict": "positive",
+      "evidence_scope": "Setup-validation contract only: 997 root checks; 894 independent rejections; reported equality of 12696 state samples and 4064 paint operations; independently reproduced frozen suites. Technical eligibility for isolated fresh source integration.",
+      "limitations": [
+        "No new encode; no artistic, perception, release/process-readability, AV or canonical approval.",
+        "Original external-marker wrist visibility failure, minor raster seek mismatch and unlabelled release/process ambiguity remain inherited limitations.",
+        "The source-only trial is coordinator-prepared; it is not a fresh independent author/reviewer experiment."
+      ],
+      "baseline_sha256": "37adde24d3d2e666e083c68cf46e10656aa4095bec883d4ab928f2596b887619",
+      "artifact_sha256": "7de5f15fd1358b683d4fcd51017a67a085d46caad80e36724b51e57360b64efb",
+      "component_sha256": "7de5f15fd1358b683d4fcd51017a67a085d46caad80e36724b51e57360b64efb",
+      "hash_scope": "Reported artifact identity, not a current main film or new encoded baseline. null means not known/frozen in this registry.",
+      "eligible_scopes": [
+        "source_only"
+      ],
+      "known_regressions": [],
+      "dependencies": [],
+      "rollback_target": {
+        "git_commit": "ab8c4678b27a0ca93c3f6260c5d4b0945b2dc9d7",
+        "artifact_sha256": "37adde24d3d2e666e083c68cf46e10656aa4095bec883d4ab928f2596b887619",
+        "rule": "restore the preregistered last-good artifact/version set for the exact trial"
+      },
+      "evidence": [
+        {
+          "path": "research/experiments/frontal-interaction-kit-20261007/validation-v012-20261007/RESULTS.txt",
+          "sha256": "3caed324510efdef3e043d9e158598dab58ca047ec4cdc9628e9f8a27cebbbca",
+          "kind": "local research report"
+        }
+      ],
+      "effect_domains": [
+        "reliability"
+      ]
+    },
+    {
+      "id": "seed-layering-static",
+      "version": null,
+      "optional": true,
+      "verdict": "positive",
+      "evidence_scope": "Two blind model reviewers, one localized draw-order change; 360x640 encoded stills/contact sheets only; object/contact visibility gain in inspected poses.",
+      "limitations": [
+        "Static visibility only; no playback/listening, timing, release continuity or general artistic benefit.",
+        "Small object/grip ambiguity and deposit blending persist.",
+        "Can be considered for a visibility-only trial after a generic reusable intervention is frozen; no source-specific scene recipe transferred."
+      ],
+      "baseline_sha256": "8e7b6b682d7b35b0f4b0246f2fe23e53209ea480fa3b0064453314f1bdc38fcb",
+      "artifact_sha256": "7b9cdb56e1dc164818955acec63181f8a2015f8ee298e956b50f421c9e1b079f",
+      "component_sha256": null,
+      "hash_scope": "Reported artifact identity, not a current main film or new encoded baseline. null means not known/frozen in this registry.",
+      "eligible_scopes": [
+        "visibility_only"
+      ],
+      "known_regressions": [],
+      "dependencies": [],
+      "rollback_target": {
+        "git_commit": "ab8c4678b27a0ca93c3f6260c5d4b0945b2dc9d7",
+        "artifact_sha256": "8e7b6b682d7b35b0f4b0246f2fe23e53209ea480fa3b0064453314f1bdc38fcb",
+        "rule": "restore the preregistered last-good artifact/version set for the exact trial"
+      },
+      "evidence": [
+        {
+          "path": "research/experiments/acting-coverage-20261007/seed-layering-01/RESULTS.md",
+          "sha256": "a0be746e98d54aead35821741423b1f7c3caa952e176bc8821c0b91d850734af",
+          "kind": "local research report"
+        }
+      ],
+      "effect_domains": [
+        "static_visibility"
+      ]
+    },
+    {
+      "id": "seed-enlargement",
+      "version": null,
+      "optional": true,
+      "verdict": "negative",
+      "evidence_scope": "Tested enlargement has a sampled object identity gain, but greater palm/hand occlusion and failed separate deposit gate.",
+      "limitations": [
+        "Negative eligibility for this tested enlargement; no universal claim about object scaling.",
+        "No continuous playback, timing or audio assessment."
+      ],
+      "baseline_sha256": "7b9cdb56e1dc164818955acec63181f8a2015f8ee298e956b50f421c9e1b079f",
+      "artifact_sha256": null,
+      "component_sha256": null,
+      "hash_scope": "Reported artifact identity, not a current main film or new encoded baseline. null means not known/frozen in this registry.",
+      "eligible_scopes": [],
+      "known_regressions": [
+        {
+          "scopes": [
+            "visibility_only",
+            "production",
+            "source_only"
+          ],
+          "criterion": "contact",
+          "finding": "Both reviewers report greater palm/hand occlusion; deposition remains unresolved."
+        }
+      ],
+      "dependencies": [
+        "seed-layering-static"
+      ],
+      "rollback_target": {
+        "git_commit": "ab8c4678b27a0ca93c3f6260c5d4b0945b2dc9d7",
+        "artifact_sha256": "7b9cdb56e1dc164818955acec63181f8a2015f8ee298e956b50f421c9e1b079f",
+        "rule": "restore the preregistered last-good artifact/version set for the exact trial"
+      },
+      "evidence": [
+        {
+          "path": "research/experiments/acting-coverage-20261007/seed-size-01/RESULTS.md",
+          "sha256": "0f13544fb2dc118838910f0a42b36ed824f8e5fa4635ec630b4add0f02083591",
+          "kind": "local research report"
+        }
+      ],
+      "effect_domains": [
+        "static_visibility"
+      ]
+    },
+    {
+      "id": "nick-staging-method",
+      "version": null,
+      "optional": true,
+      "verdict": "inconclusive",
+      "evidence_scope": "Exploratory preference for one exact revision from decoded samples; extra revision effort confounds a method comparison.",
+      "limitations": [
+        "One film improvement is not general storyboard or staging proof.",
+        "Continuous playback/contact and AV unassessed.",
+        "No source-specific shots or art copied."
+      ],
+      "baseline_sha256": null,
+      "artifact_sha256": null,
+      "component_sha256": null,
+      "hash_scope": "Reported artifact identity, not a current main film or new encoded baseline. null means not known/frozen in this registry.",
+      "eligible_scopes": [],
+      "known_regressions": [
+        {
+          "scopes": [
+            "visibility_only",
+            "production",
+            "source_only"
+          ],
+          "criterion": "phone_readability",
+          "finding": "Sampled clipping, smaller secondary labels and transient panel occlusion in revised film."
+        }
+      ],
+      "dependencies": [],
+      "rollback_target": {
+        "git_commit": "ab8c4678b27a0ca93c3f6260c5d4b0945b2dc9d7",
+        "artifact_sha256": null,
+        "rule": "restore the preregistered last-good artifact/version set for the exact trial"
+      },
+      "evidence": [
+        {
+          "path": "research/experiments/nick-cartoon-adaptation-20261007/directed-revision-v02/review/independent-pair/PIXEL_REVIEW.json",
+          "sha256": "2fac3e6c9f02cfb9f55e7acabb8fc45ba3294b080f755ab58cb90443412f28b7",
+          "kind": "local research report"
+        }
+      ],
+      "effect_domains": [
+        "static_visibility",
+        "motion",
+        "timing"
+      ]
+    },
+    {
+      "id": "fresh-storyboard-method",
+      "version": null,
+      "optional": true,
+      "verdict": "inconclusive",
+      "evidence_scope": "One fresh matched method pair; no observed storyboard-first advantage in preregistered sampled comprehension.",
+      "limitations": [
+        "No full playback/listening; no general method superiority or speed claim.",
+        "Receipt-associated acting ambiguous in storyboard arm; exact event timing unassessed."
+      ],
+      "baseline_sha256": null,
+      "artifact_sha256": null,
+      "component_sha256": null,
+      "hash_scope": "Reported artifact identity, not a current main film or new encoded baseline. null means not known/frozen in this registry.",
+      "eligible_scopes": [],
+      "known_regressions": [],
+      "dependencies": [],
+      "rollback_target": {
+        "git_commit": "ab8c4678b27a0ca93c3f6260c5d4b0945b2dc9d7",
+        "artifact_sha256": null,
+        "rule": "restore the preregistered last-good artifact/version set for the exact trial"
+      },
+      "evidence": [
+        {
+          "path": "research/experiments/storyboard-transfer-20261007/RESULTS.md",
+          "sha256": "c64a1c1de01336b68b12f958bb856cbdf93808c4b3440ac06802790064b3fc57",
+          "kind": "local research report"
+        }
+      ],
+      "effect_domains": [
+        "static_visibility",
+        "timing",
+        "motion"
+      ]
+    },
+    {
+      "id": "causal-event-planning",
+      "version": null,
+      "optional": true,
+      "verdict": "inconclusive",
+      "evidence_scope": "One matched pair: no observed causal-contract advantage; operational chain demonstrated in both, satisfaction ambiguous.",
+      "limitations": [
+        "Satisfaction rubric too narrow for a general efficacy claim.",
+        "Full-speed motion, AV sync and listening unassessed."
+      ],
+      "baseline_sha256": null,
+      "artifact_sha256": null,
+      "component_sha256": null,
+      "hash_scope": "Reported artifact identity, not a current main film or new encoded baseline. null means not known/frozen in this registry.",
+      "eligible_scopes": [],
+      "known_regressions": [],
+      "dependencies": [],
+      "rollback_target": {
+        "git_commit": "ab8c4678b27a0ca93c3f6260c5d4b0945b2dc9d7",
+        "artifact_sha256": null,
+        "rule": "restore the preregistered last-good artifact/version set for the exact trial"
+      },
+      "evidence": [
+        {
+          "path": "research/experiments/causal-event-planning-20261007/RESULTS.json",
+          "sha256": "570e681b65d94d5254a279d5e48a0bef43caaa2d84aa4edcc84b3d0f5ed4e710",
+          "kind": "local research report"
+        }
+      ],
+      "effect_domains": [
+        "static_visibility",
+        "timing",
+        "motion"
+      ]
+    },
+    {
+      "id": "in-format-signaling",
+      "version": null,
+      "optional": true,
+      "verdict": "inconclusive",
+      "evidence_scope": "6/9 identifiable referents in each arm; zero gain under frozen sampled-phone criterion.",
+      "limitations": [
+        "Tie is no promotion, not deletion.",
+        "No full-speed or listening assessment."
+      ],
+      "baseline_sha256": null,
+      "artifact_sha256": null,
+      "component_sha256": null,
+      "hash_scope": "Reported artifact identity, not a current main film or new encoded baseline. null means not known/frozen in this registry.",
+      "eligible_scopes": [],
+      "known_regressions": [],
+      "dependencies": [],
+      "rollback_target": {
+        "git_commit": "ab8c4678b27a0ca93c3f6260c5d4b0945b2dc9d7",
+        "artifact_sha256": null,
+        "rule": "restore the preregistered last-good artifact/version set for the exact trial"
+      },
+      "evidence": [
+        {
+          "path": "research/experiments/in-format-signaling-20261007/review/RESULT_V01.txt",
+          "sha256": "57f3320e74c8bfe591c702497e039f4d6cc9fccdb6c717112021e443b939e646",
+          "kind": "local research report"
+        }
+      ],
+      "effect_domains": [
+        "static_visibility"
+      ]
+    },
+    {
+      "id": "in-format-hybrid-art",
+      "version": null,
+      "optional": true,
+      "verdict": "inconclusive",
+      "evidence_scope": "Frozen craft-and-cohesion threshold not met by either independent reviewer; no accepted gain.",
+      "limitations": [
+        "Readability retained in inspected stills only.",
+        "No art transfer/promotion. Reviewer-one cohesion loss and reviewer-two ties preserve disagreement."
+      ],
+      "baseline_sha256": null,
+      "artifact_sha256": null,
+      "component_sha256": null,
+      "hash_scope": "Reported artifact identity, not a current main film or new encoded baseline. null means not known/frozen in this registry.",
+      "eligible_scopes": [],
+      "known_regressions": [],
+      "dependencies": [],
+      "rollback_target": {
+        "git_commit": "ab8c4678b27a0ca93c3f6260c5d4b0945b2dc9d7",
+        "artifact_sha256": null,
+        "rule": "restore the preregistered last-good artifact/version set for the exact trial"
+      },
+      "evidence": [
+        {
+          "path": "research/experiments/in-format-hybrid-art-20261007/review/RESULT_V01.json",
+          "sha256": "32facab78100e6ab87cb40b21e8bc4e49d69c56ab5416b5fd62a953aa26d297a",
+          "kind": "local research report"
+        }
+      ],
+      "effect_domains": [
+        "static_visibility"
+      ]
+    },
+    {
+      "id": "adaptive-review-triage",
+      "version": null,
+      "optional": true,
+      "verdict": "inconclusive",
+      "evidence_scope": "Parent-supplied finding: useful for triage only; exact-event gate failed.",
+      "limitations": [
+        "No accepted gate-efficacy evidence registered; no automatic verdict or promotion role."
+      ],
+      "baseline_sha256": null,
+      "artifact_sha256": null,
+      "component_sha256": null,
+      "hash_scope": "Reported artifact identity, not a current main film or new encoded baseline. null means not known/frozen in this registry.",
+      "eligible_scopes": [],
+      "known_regressions": [],
+      "dependencies": [],
+      "rollback_target": {
+        "git_commit": "ab8c4678b27a0ca93c3f6260c5d4b0945b2dc9d7",
+        "artifact_sha256": null,
+        "rule": "restore the preregistered last-good artifact/version set for the exact trial"
+      },
+      "evidence": [],
+      "effect_domains": [
+        "reliability"
+      ]
+    },
+    {
+      "id": "free-hand-timing",
+      "version": null,
+      "optional": true,
+      "verdict": "unassessed",
+      "evidence_scope": "Parent-supplied finding: artistic timing quality pending.",
+      "limitations": [
+        "No judged timing quality; still-frame pass cannot establish motion or AV."
+      ],
+      "baseline_sha256": null,
+      "artifact_sha256": null,
+      "component_sha256": null,
+      "hash_scope": "Reported artifact identity, not a current main film or new encoded baseline. null means not known/frozen in this registry.",
+      "eligible_scopes": [],
+      "known_regressions": [],
+      "dependencies": [],
+      "rollback_target": {
+        "git_commit": "ab8c4678b27a0ca93c3f6260c5d4b0945b2dc9d7",
+        "artifact_sha256": null,
+        "rule": "restore the preregistered last-good artifact/version set for the exact trial"
+      },
+      "evidence": [],
+      "effect_domains": [
+        "motion",
+        "timing"
+      ]
+    },
+    {
+      "id": "visual-keypose-gate-method",
+      "version": null,
+      "optional": true,
+      "verdict": "inconclusive",
+      "evidence_scope": "Pilot narrow A1 release/settled-ownership signal; fresh transfer-01 primary T3 receive/release/settle tied for both reviewers. Reviewer ONE total tie45-45; Reviewer TWO direct46 vs treatment44, with disputed treatment reader contact/agency negative. No recurring advantage and no default promotion. Reports only; no independent media/source review in this update.",
+      "limitations": [
+        "One film per method per brief; independent authors/layout/staging differ; two reviewers of the same pair are not two film replications.",
+        "Active effort estimated rather than instrumented; equal ceilings do not establish exact effort parity.",
+        "Still-sequence reviews do not establish full-speed motion, listening, AV synchronization or audience comprehension.",
+        "Pilot narration setup amendment before capture is disclosed; transfer final narration/protocol were frozen before author spawn.",
+        "Primary transfer tie is no promotion, not research deletion. Disputed reader-contact negative is scoped to transfer-01, not universal method harm.",
+        "No reusable generic method/component version is frozen; source-specific poses, coordinates, trajectories or shot recipes were not imported.",
+        "Totals are the original reported C/A/O/S rubric, not a new aesthetic aggregate or an average of reviewer disagreement."
+      ],
+      "baseline_sha256": "d12fd0e64581e357053e8abe4a29964c3fac464dacc6856d130185e3700a9fbe",
+      "artifact_sha256": "161abff1905a0aa7f1b375ee5f13d5bffee2a5e69ea2184777105d4d90b96d9e",
+      "component_sha256": null,
+      "hash_scope": "Latest transfer MP4 identities as reported, not independently rehashed. Report hashes locally verified. No current main-film or reusable component identity.",
+      "eligible_scopes": [],
+      "known_regressions": [],
+      "dependencies": [],
+      "rollback_target": {
+        "git_commit": "ab8c4678b27a0ca93c3f6260c5d4b0945b2dc9d7",
+        "artifact_sha256": "d12fd0e64581e357053e8abe4a29964c3fac464dacc6856d130185e3700a9fbe",
+        "rule": "No candidate enabled. Preserve the existing exact-context last-good artifact/version set; transfer direct is the reported research comparator only, not a production replacement."
+      },
+      "evidence": [
+        {
+          "path": "research/experiments/visual-keypose-gate-20261008/REPORT.md",
+          "sha256": "0bdceb7d2fbad55668c6851372377d37c0fadf02c2df9e0e00a7468f185ad520",
+          "kind": "authorized experiment report; report content read, media identity reported not independently rehashed"
+        },
+        {
+          "path": "research/experiments/visual-keypose-gate-20261008/transfer-01/REPORT.md",
+          "sha256": "1fcfad3479667f163a490cb268fd247f21f717c101d0340de28e5bd5b6e5f9a8",
+          "kind": "authorized experiment report; report content read, media identity reported not independently rehashed"
+        }
+      ],
+      "effect_domains": [
+        "static_visibility"
+      ],
+      "default_promotion": false,
+      "research_retained": true,
+      "scoped_findings": [
+        {
+          "id": "pilot",
+          "verdict": "positive",
+          "scope": "Narrow provisional release/settled-submission ownership finding in one 22-second illustrative worker-queue pair; not general workflow efficacy",
+          "baseline_sha256": "78b47a9abd67241b2f6a86e4ed7d7eefc47f5b45c3eb76877706cef77b968390",
+          "artifact_sha256": "5e56ee29cc01b01e56ca63578b9b262dba5977daa3c4f6a159b9c85fe7afb9b5",
+          "hash_scope": "MP4 identities reported in authorized REPORT.md; no media opened or independently rehashed in registry update",
+          "reported_rubric_totals": {
+            "reviewer_one": {
+              "direct": 43,
+              "treatment": 45,
+              "applicable_maximum": 46
+            },
+            "reviewer_two": {
+              "direct": 43,
+              "treatment": 45,
+              "applicable_maximum": 46
+            }
+          },
+          "primary_findings": {
+            "A1_submit": {
+              "direct_C_A_O_S": [
+                2,
+                1,
+                1,
+                1
+              ],
+              "treatment_C_A_O_S": [
+                2,
+                1,
+                2,
+                2
+              ]
+            },
+            "A2_to_A6": "tied",
+            "contact_and_agency": "tied"
+          },
+          "reviewer_disagreement": "Direct result-appearance timing differed; report synthesis supports frame314 without changing raw reviews or agency scores",
+          "evidence": {
+            "path": "research/experiments/visual-keypose-gate-20261008/REPORT.md",
+            "sha256": "0bdceb7d2fbad55668c6851372377d37c0fadf02c2df9e0e00a7468f185ad520",
+            "kind": "authorized experiment report; report content read, media identity reported not independently rehashed"
+          }
+        },
+        {
+          "id": "transfer-01",
+          "verdict": "inconclusive",
+          "scope": "Primary receive/release/settle advantage did not recur in one fresh 22-second illustrative access-gate pair; disputed secondary contact/agency negative",
+          "baseline_sha256": "d12fd0e64581e357053e8abe4a29964c3fac464dacc6856d130185e3700a9fbe",
+          "artifact_sha256": "161abff1905a0aa7f1b375ee5f13d5bffee2a5e69ea2184777105d4d90b96d9e",
+          "hash_scope": "MP4 identities reported in authorized REPORT.md; no media opened or independently rehashed in registry update",
+          "primary_findings": {
+            "T3_receive_release_settle": {
+              "reviewer_one": {
+                "direct_C_A_O_S": [
+                  2,
+                  2,
+                  2,
+                  2
+                ],
+                "treatment_C_A_O_S": [
+                  2,
+                  2,
+                  2,
+                  2
+                ]
+              },
+              "reviewer_two": {
+                "direct_C_A_O_S": [
+                  2,
+                  2,
+                  2,
+                  2
+                ],
+                "treatment_C_A_O_S": [
+                  2,
+                  2,
+                  2,
+                  2
+                ]
+              }
+            },
+            "ownership_hold_frames": [
+              375,
+              419
+            ]
+          },
+          "reviewer_findings": [
+            {
+              "reviewer": "ONE",
+              "verdict": "inconclusive",
+              "direct_total": 45,
+              "treatment_total": 45,
+              "applicable_maximum": 46,
+              "T5_agency": {
+                "direct": 1,
+                "treatment": 1
+              },
+              "T6_use": {
+                "direct_C_A_O_S": [
+                  2,
+                  2,
+                  2,
+                  2
+                ],
+                "treatment_C_A_O_S": [
+                  2,
+                  2,
+                  2,
+                  2
+                ]
+              },
+              "interpretation": "Total tie; accepted treatment reader approach/contact-before-success."
+            },
+            {
+              "reviewer": "TWO",
+              "verdict": "negative",
+              "direct_total": 46,
+              "treatment_total": 44,
+              "applicable_maximum": 46,
+              "T5_agency": {
+                "direct": 2,
+                "treatment": 2
+              },
+              "T6_use": {
+                "direct_C_A_O_S": [
+                  2,
+                  2,
+                  2,
+                  2
+                ],
+                "treatment_C_A_O_S": [
+                  1,
+                  1,
+                  2,
+                  2
+                ]
+              },
+              "negative_scope": "This transfer pair T6 reader use, frames495-584; packet contact and causal agency ambiguous in treatment. Disputed by Reviewer ONE; not a reproduced hard regression or universal method harm."
+            }
+          ],
+          "frozen_success_condition_met": false,
+          "frozen_success_condition": "Recurring primary advantage without a new regression",
+          "evidence": {
+            "path": "research/experiments/visual-keypose-gate-20261008/transfer-01/REPORT.md",
+            "sha256": "1fcfad3479667f163a490cb268fd247f21f717c101d0340de28e5bd5b6e5f9a8",
+            "kind": "authorized experiment report; report content read, media identity reported not independently rehashed"
+          }
+        }
+      ],
+      "disputed_regressions": [
+        {
+          "scopes": [
+            "transfer-01:T6-reader-use"
+          ],
+          "context_id": "visual-keypose-gate-transfer-01",
+          "baseline_sha256": "d12fd0e64581e357053e8abe4a29964c3fac464dacc6856d130185e3700a9fbe",
+          "artifact_sha256": "161abff1905a0aa7f1b375ee5f13d5bffee2a5e69ea2184777105d4d90b96d9e",
+          "criterion": "contact",
+          "related_criterion": "factual_causality/agency",
+          "status": "disputed_secondary_negative",
+          "reviewer": "TWO",
+          "reviewer_disagreement": true,
+          "reproduced": false,
+          "hard_regression": false,
+          "frame_interval": [
+            495,
+            584
+          ],
+          "finding": "Reviewer TWO found treatment packet-to-reader contact/agency partial (1/1 vs direct2/2); Reviewer ONE scored both2/2. This exact transfer pair only; no accepted hard rollback finding or universal harmfulness claim."
+        }
+      ],
+      "hard_regression_evidence": "None accepted; the secondary negative is disputed and kept in disputed_regressions/scoped_findings."
+    }
+  ],
+  "scope_note": "Research ledger only. Default enablement is empty. Each actual trial supplies its own frozen same-brief baseline, last-good state and locally accessible hash-bound evidence. Local reports and generic rig assets are not distributed."
+}

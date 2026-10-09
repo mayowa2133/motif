@@ -33,3 +33,8 @@ Unrendered alternatives remain hypotheses. A reconstruction informed by released
 ## Provenance and limits
 
 This is original reusable prose synthesized from the final directing guide and frozen blind-result report of the completed studies. Source-specific footage, audio, frames, artwork, private paths and study implementation are excluded. Reported repairs are observations within those studies, not newly reproduced creative experiments. The transferable questions above still need evaluation on an unseen script.
+
+The [directing checklist](DIRECTING_CHECKLIST.md) adds portable questions and an
+encoded-review protocol from later completed repairs. Its novel-film claims remain
+hypotheses. The [optional experiment gate](../quality/experiment-gate/README.md)
+keeps scoped evidence, disagreements and rollback separate from production defaults.

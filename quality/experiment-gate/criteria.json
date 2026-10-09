@@ -1,0 +1,129 @@
+{
+  "schema_version": 1,
+  "criteria": {
+    "clarity": "The intended visible action and resulting state must remain identifiable in the same brief. State the specific task before review.",
+    "factual_causality": "Initiator, trigger, contact/transfer, process state and consequence remain truthful and distinct. Do not derive a technical result from gesture duration. An absence claim requires every decoded frame across its preregistered event interval.",
+    "mascot_style": "Latest user direction: flat, front-facing 2D mascot; preserve identity, attached anatomy and four feet. Side/rear poses excluded. No depth/perspective art promotion.",
+    "phone_readability": "Inspect whole native 360x640 frames: primary captions, relevant secondary labels, objects, clipping and occlusion. A visibility gain cannot compensate for a label or contact regression.",
+    "contact": "Required wrist/hand/prop/support relations remain readable and valid through declared event intervals. Numeric attachment proofs and static samples have separate limits.",
+    "technical_reliability": "Exact versions, setup validation, finite state, reproducible repeated/out-of-order sampling, correct event times, runtime and encoded output integrity. Preserve inherited warnings; no newly unexplained failure."
+  },
+  "scopes": {
+    "visibility_only": {
+      "clarity": [
+        "phone_stills"
+      ],
+      "factual_causality": [
+        "phone_stills"
+      ],
+      "mascot_style": [
+        "phone_stills"
+      ],
+      "phone_readability": [
+        "phone_stills"
+      ],
+      "contact": [
+        "phone_stills"
+      ],
+      "technical_reliability": [
+        "execution_checks"
+      ]
+    },
+    "source_only": {
+      "clarity": [
+        "phone_stills"
+      ],
+      "factual_causality": [
+        "phone_stills"
+      ],
+      "mascot_style": [
+        "phone_stills"
+      ],
+      "phone_readability": [
+        "phone_stills"
+      ],
+      "contact": [
+        "phone_stills"
+      ],
+      "technical_reliability": [
+        "execution_checks"
+      ]
+    },
+    "production": {
+      "clarity": [
+        "phone_stills",
+        "full_speed_playback",
+        "continuous_event_interval"
+      ],
+      "factual_causality": [
+        "phone_stills",
+        "full_speed_playback",
+        "continuous_event_interval"
+      ],
+      "mascot_style": [
+        "phone_stills",
+        "full_speed_playback",
+        "continuous_event_interval"
+      ],
+      "phone_readability": [
+        "phone_stills",
+        "full_speed_playback",
+        "continuous_event_interval"
+      ],
+      "contact": [
+        "full_speed_playback",
+        "continuous_event_interval"
+      ],
+      "technical_reliability": [
+        "execution_checks"
+      ]
+    },
+    "output_preserving_refactor": {
+      "clarity": [
+        "phone_stills",
+        "full_speed_playback",
+        "continuous_event_interval"
+      ],
+      "factual_causality": [
+        "phone_stills",
+        "full_speed_playback",
+        "continuous_event_interval"
+      ],
+      "mascot_style": [
+        "phone_stills",
+        "full_speed_playback",
+        "continuous_event_interval"
+      ],
+      "phone_readability": [
+        "phone_stills",
+        "full_speed_playback",
+        "continuous_event_interval"
+      ],
+      "contact": [
+        "full_speed_playback",
+        "continuous_event_interval"
+      ],
+      "technical_reliability": [
+        "execution_checks"
+      ]
+    }
+  },
+  "claims": [
+    "static_visibility",
+    "reliability",
+    "output_preserving_refactor",
+    "timing",
+    "motion",
+    "audio"
+  ],
+  "rules": [
+    "Freeze brief, artifact identities, component versions, criteria and event intervals before execution.",
+    "At most one new component per stage; compare each stage with both original and last good.",
+    "All six guardrails; no aggregate aesthetic score. A gain must be demonstrated against every required comparator.",
+    "One reproducible hard regression blocks this combination; reviewer disagreement or inadequate coverage is inconclusive.",
+    "A source-only pass cannot approve painted/perceived quality. Timing, motion and audio gains need suitable full-speed picture and listening evidence.",
+    "Byte-identical artifacts may support output-preserving technical refactors within their exact artifact type; source-state equality is not encoded pixel or AV equality.",
+    "A tie is no promotion; preserve research, reports, failures and last-good artifacts.",
+    "No automated Git promotion, merge, push, deployment, credential or account actions."
+  ]
+}
