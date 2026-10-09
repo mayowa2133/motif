@@ -53,7 +53,9 @@ def _capture(project, requests, out, size, fonts, base, paths):
             tmp = project / f'.snapshot-{stem}-{frame}.html'
             tmp.write_text(f'<!doctype html><html><head><meta charset="utf-8"><style>{fonts} html,body{{margin:0;background:#000}} svg{{display:block;width:{size[0]}px;height:{size[1]}px}}</style></head><body>{svg}</body></html>')
             try:
-                page.goto(base + tmp.name, wait_until='load', timeout=120000);page.evaluate('document.fonts.ready')
+                page.goto(base + tmp.name, wait_until='load', timeout=120000)
+                # SVG text triggers font loads lazily; request the faces explicitly before capture.
+                page.evaluate("Promise.all(['700 40px Inter','900 40px Inter','700 40px \"EB Garamond\"'].map(f => document.fonts.load(f).catch(() => null))).then(() => document.fonts.ready)")
                 path = out / f'{stem}-f{frame:04d}.png';page.screenshot(path=str(path));paths.append(path)
             finally:tmp.unlink()
         browser.close()

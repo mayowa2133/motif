@@ -1,0 +1,146 @@
+{
+  "slug": "bench-python-no-gil",
+  "title": "Python can drop its lock",
+  "topic": "faster Python threads",
+  "seed": 37,
+  "hook": {
+    "alternates": [
+      "Python just let your code use every core at once, and almost nobody noticed."
+    ],
+    "selected": 0,
+    "headline": "EVERY CORE AT ONCE"
+  },
+  "facts": [
+    {
+      "id": "f1",
+      "claim": "Starting with 3.13, CPython supports a free-threaded build with the GIL disabled",
+      "value": "3.13",
+      "source_url": "https://docs.python.org/3/howto/free-threading-python.html",
+      "accessed": "2026-10-09"
+    },
+    {
+      "id": "f2",
+      "claim": "The official macOS and Windows installers can install free-threaded binaries",
+      "value": "installers",
+      "source_url": "https://docs.python.org/3/howto/free-threading-python.html",
+      "accessed": "2026-10-09"
+    },
+    {
+      "id": "f3",
+      "claim": "sys._is_gil_enabled() reports whether the GIL is active",
+      "value": "one check",
+      "source_url": "https://docs.python.org/3/howto/free-threading-python.html",
+      "accessed": "2026-10-09"
+    },
+    {
+      "id": "f4",
+      "claim": "Single-thread overhead averages about 1% on macOS aarch64 to 8% on x86-64 Linux",
+      "value": "1-8%",
+      "source_url": "https://docs.python.org/3/howto/free-threading-python.html",
+      "accessed": "2026-10-09"
+    }
+  ],
+  "beats": [
+    {
+      "id": "lock",
+      "narration": "For years, one global lock let only one Python thread run at a time.",
+      "fact": "f1",
+      "headline": "ONE THREAD AT A TIME",
+      "payoff_headline": "THE GLOBAL LOCK",
+      "visual": {
+        "rig": "overflow-vehicle",
+        "params": {
+          "seats": 2,
+          "riders": 10,
+          "label": "ONE LOCK"
+        },
+        "room": "office"
+      }
+    },
+    {
+      "id": "freed",
+      "narration": "Since Python three thirteen, there is a build with that lock turned off.",
+      "fact": "f1",
+      "headline": "PYTHON 3.13",
+      "payoff_headline": "LOCK TURNED OFF",
+      "visual": {
+        "rig": "race-track",
+        "params": {
+          "labels": [
+            "THREAD 1",
+            "THREAD 2",
+            "THREAD 3"
+          ],
+          "progress": [
+            1.0,
+            1.0,
+            1.0
+          ]
+        },
+        "room": "server-room"
+      }
+    },
+    {
+      "id": "install",
+      "narration": "The official Mac and Windows installers can add it with one checkbox.",
+      "fact": "f2",
+      "headline": "OFFICIAL INSTALLERS",
+      "payoff_headline": "ONE CHECKBOX",
+      "visual": {
+        "rig": "stamp-gate",
+        "params": {
+          "document": "INSTALLER",
+          "stamp": "NO GIL",
+          "verdict": "approved"
+        },
+        "room": "workshop"
+      }
+    },
+    {
+      "id": "check",
+      "narration": "You can even ask Python itself whether the lock is on.",
+      "fact": "f3",
+      "headline": "ASK PYTHON ITSELF",
+      "payoff_headline": "LOCK OFF?",
+      "visual": {
+        "rig": "thermometer",
+        "params": {
+          "from": 10,
+          "to": 95,
+          "target": "NO LOCK",
+          "label": "CORES BUSY",
+          "stars": 3
+        },
+        "room": "living-room",
+        "insert": {
+          "kind": "gauge",
+          "args": {
+            "value": 0.95,
+            "label": "CORES"
+          }
+        }
+      }
+    },
+    {
+      "id": "cost",
+      "narration": "The catch: single threaded code runs about one to eight percent slower.",
+      "fact": "f4",
+      "headline": "THE CATCH",
+      "payoff_headline": "1 TO 8% SLOWER",
+      "visual": {
+        "rig": "balance-scale",
+        "params": {
+          "left_label": "1 THREAD",
+          "right_label": "MANY CORES",
+          "left_weight": 2,
+          "right_weight": 8
+        },
+        "room": "diner"
+      }
+    }
+  ],
+  "cta": {
+    "keyword": "Threads",
+    "narration": "For the setup steps, comment Threads."
+  }
+}

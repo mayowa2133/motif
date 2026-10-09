@@ -1,0 +1,165 @@
+{
+  "slug": "bench-free-https",
+  "title": "Free HTTPS for every website",
+  "topic": "free website security",
+  "seed": 23,
+  "hook": {
+    "alternates": [
+      "That little padlock in your browser is free, and a nonprofit gives it away."
+    ],
+    "selected": 0,
+    "headline": "THE PADLOCK IS FREE"
+  },
+  "facts": [
+    {
+      "id": "f1",
+      "claim": "Let's Encrypt provides certificates to more than 700 million websites",
+      "value": "700 million",
+      "source_url": "https://letsencrypt.org/",
+      "accessed": "2026-10-09"
+    },
+    {
+      "id": "f2",
+      "claim": "Let's Encrypt does not charge a fee for its certificates",
+      "value": "$0",
+      "source_url": "https://letsencrypt.org/docs/faq/",
+      "accessed": "2026-10-09"
+    },
+    {
+      "id": "f3",
+      "claim": "Let's Encrypt is a nonprofit project of the Internet Security Research Group",
+      "value": "nonprofit",
+      "source_url": "https://letsencrypt.org/docs/faq/",
+      "accessed": "2026-10-09"
+    },
+    {
+      "id": "f4",
+      "claim": "Default certificates last 90 days",
+      "value": "90 days",
+      "source_url": "https://letsencrypt.org/docs/faq/",
+      "accessed": "2026-10-09"
+    },
+    {
+      "id": "f5",
+      "claim": "ACME clients renew certificates routinely",
+      "value": "auto renew",
+      "source_url": "https://letsencrypt.org/docs/faq/",
+      "accessed": "2026-10-09"
+    }
+  ],
+  "beats": [
+    {
+      "id": "scale",
+      "narration": "It comes from Let's Encrypt, which secures more than seven hundred million websites.",
+      "fact": "f1",
+      "headline": "SECURES THE WEB",
+      "payoff_headline": "700 MILLION SITES",
+      "visual": {
+        "rig": "stacked-meter",
+        "params": {
+          "from": 1,
+          "to": 12,
+          "unit": "",
+          "label": "WEBSITES",
+          "rocket": true
+        },
+        "room": "street",
+        "insert": {
+          "kind": "counter",
+          "args": {
+            "start": 0,
+            "end": 700,
+            "suffix": "M",
+            "label": "WEBSITES"
+          }
+        }
+      }
+    },
+    {
+      "id": "cost",
+      "narration": "Certificates used to cost real money. Now they cost zero.",
+      "fact": "f2",
+      "headline": "CERTIFICATES COST MONEY",
+      "payoff_headline": "NOW THEY COST $0",
+      "visual": {
+        "rig": "hydraulic-press",
+        "params": {
+          "object": "CERT FEE",
+          "force": "LET'S ENCRYPT"
+        },
+        "room": "office",
+        "insert": {
+          "kind": "price_tag",
+          "args": {
+            "amount": "$0",
+            "strike": "$$$"
+          }
+        }
+      }
+    },
+    {
+      "id": "nonprofit",
+      "narration": "It is run by a nonprofit, funded by donations, not by selling your data.",
+      "fact": "f3",
+      "headline": "RUN BY A NONPROFIT",
+      "payoff_headline": "FUNDED BY DONATIONS",
+      "visual": {
+        "rig": "balance-scale",
+        "params": {
+          "left_label": "PROFIT",
+          "right_label": "PUBLIC GOOD",
+          "left_weight": 1,
+          "right_weight": 7
+        },
+        "room": "living-room"
+      }
+    },
+    {
+      "id": "expiry",
+      "narration": "Each certificate lasts ninety days, so stolen keys go stale fast.",
+      "fact": "f4",
+      "headline": "EACH CERT EXPIRES",
+      "payoff_headline": "90 DAYS",
+      "visual": {
+        "rig": "thermometer",
+        "params": {
+          "from": 5,
+          "to": 90,
+          "target": "90 DAYS",
+          "label": "DAYS",
+          "stars": 0
+        },
+        "room": "night-sky",
+        "insert": {
+          "kind": "counter",
+          "args": {
+            "start": 0,
+            "end": 90,
+            "suffix": " days",
+            "label": "LIFETIME"
+          }
+        }
+      }
+    },
+    {
+      "id": "renew",
+      "narration": "And software renews them for you, so nobody has to remember.",
+      "fact": "f5",
+      "headline": "NOBODY HAS TO REMEMBER",
+      "payoff_headline": "RENEWED AUTOMATICALLY",
+      "visual": {
+        "rig": "stamp-gate",
+        "params": {
+          "document": "CERTIFICATE",
+          "stamp": "RENEWED",
+          "verdict": "approved"
+        },
+        "room": "server-room"
+      }
+    }
+  ],
+  "cta": {
+    "keyword": "Padlock",
+    "narration": "Want the setup guide? Comment Padlock."
+  }
+}

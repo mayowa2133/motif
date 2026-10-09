@@ -1,0 +1,160 @@
+{
+  "slug": "bench-sqlite-everywhere",
+  "title": "SQLite is already on your phone",
+  "topic": "the database in your pocket",
+  "seed": 11,
+  "hook": {
+    "alternates": [
+      "The most used database in the world is free, tiny, and already in your pocket."
+    ],
+    "selected": 0,
+    "headline": "ALREADY IN YOUR POCKET"
+  },
+  "facts": [
+    {
+      "id": "f1",
+      "claim": "SQLite ships on every Android and every iPhone",
+      "value": "every phone",
+      "source_url": "https://www.sqlite.org/mostdeployed.html",
+      "accessed": "2026-10-09"
+    },
+    {
+      "id": "f2",
+      "claim": "SQLite is in every Firefox, Chrome and Safari browser",
+      "value": "every browser",
+      "source_url": "https://www.sqlite.org/mostdeployed.html",
+      "accessed": "2026-10-09"
+    },
+    {
+      "id": "f3",
+      "claim": "SQLite estimates over one trillion databases in active use",
+      "value": "1 trillion",
+      "source_url": "https://www.sqlite.org/mostdeployed.html",
+      "accessed": "2026-10-09"
+    },
+    {
+      "id": "f4",
+      "claim": "All SQLite code is dedicated to the public domain",
+      "value": "public domain",
+      "source_url": "https://www.sqlite.org/copyright.html",
+      "accessed": "2026-10-09"
+    },
+    {
+      "id": "f5",
+      "claim": "A SQLite database is a single disk file",
+      "value": "one file",
+      "source_url": "https://www.sqlite.org/onefile.html",
+      "accessed": "2026-10-09"
+    }
+  ],
+  "beats": [
+    {
+      "id": "phones",
+      "narration": "It is called SQLite, and it ships inside every Android phone and every iPhone.",
+      "fact": "f1",
+      "headline": "INSIDE EVERY PHONE",
+      "payoff_headline": "ANDROID AND IPHONE",
+      "visual": {
+        "rig": "overflow-vehicle",
+        "params": {
+          "seats": 6,
+          "riders": 12,
+          "label": "EVERY PHONE"
+        },
+        "room": "street"
+      }
+    },
+    {
+      "id": "browsers",
+      "narration": "Your browser runs it too, in Chrome, Firefox and Safari.",
+      "fact": "f2",
+      "headline": "IN YOUR BROWSER TOO",
+      "payoff_headline": "CHROME, FIREFOX, SAFARI",
+      "visual": {
+        "rig": "race-track",
+        "params": {
+          "labels": [
+            "CHROME",
+            "FIREFOX",
+            "SAFARI"
+          ],
+          "progress": [
+            1.0,
+            1.0,
+            1.0
+          ]
+        },
+        "room": "office"
+      }
+    },
+    {
+      "id": "trillion",
+      "narration": "The team estimates over a trillion SQLite databases are in use right now.",
+      "fact": "f3",
+      "headline": "A TRILLION DATABASES",
+      "payoff_headline": "OVER ONE TRILLION",
+      "visual": {
+        "rig": "plate-stack",
+        "params": {
+          "count_from": 2,
+          "count_to": 16,
+          "label": "DATABASES"
+        },
+        "room": "server-room",
+        "insert": {
+          "kind": "progress_bar",
+          "args": {
+            "fraction": 1.0,
+            "label": "1,000,000,000,000"
+          }
+        }
+      }
+    },
+    {
+      "id": "free",
+      "narration": "And it costs nothing, because the code is in the public domain.",
+      "fact": "f4",
+      "headline": "IT COSTS NOTHING",
+      "payoff_headline": "PUBLIC DOMAIN",
+      "visual": {
+        "rig": "hydraulic-press",
+        "params": {
+          "object": "LICENSE FEE",
+          "force": "PUBLIC DOMAIN"
+        },
+        "room": "workshop",
+        "insert": {
+          "kind": "price_tag",
+          "args": {
+            "amount": "$0",
+            "strike": "$$$"
+          }
+        }
+      }
+    },
+    {
+      "id": "onefile",
+      "narration": "Your whole database is just one file you can copy anywhere.",
+      "fact": "f5",
+      "headline": "THE WHOLE DATABASE",
+      "payoff_headline": "JUST ONE FILE",
+      "visual": {
+        "rig": "conveyor",
+        "params": {
+          "items": [
+            "TABLES",
+            "INDEXES",
+            "ROWS"
+          ],
+          "machine": "SQLITE",
+          "output": "ONE FILE"
+        },
+        "room": "living-room"
+      }
+    }
+  ],
+  "cta": {
+    "keyword": "SQLite",
+    "narration": "For the links, comment SQLite."
+  }
+}

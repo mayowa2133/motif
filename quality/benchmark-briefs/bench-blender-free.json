@@ -1,0 +1,156 @@
+{
+  "slug": "bench-blender-free",
+  "title": "A free film studio",
+  "topic": "free 3D animation",
+  "seed": 41,
+  "hook": {
+    "alternates": [
+      "There is a full movie studio you can download for free, forever."
+    ],
+    "selected": 0,
+    "headline": "A FREE MOVIE STUDIO"
+  },
+  "facts": [
+    {
+      "id": "f1",
+      "claim": "Blender is free and open source software, forever",
+      "value": "free forever",
+      "source_url": "https://www.blender.org/about/",
+      "accessed": "2026-10-09"
+    },
+    {
+      "id": "f2",
+      "claim": "Blender is licensed under the GNU GPL and can be used for any purpose, including commercial work",
+      "value": "any purpose",
+      "source_url": "https://www.blender.org/about/",
+      "accessed": "2026-10-09"
+    },
+    {
+      "id": "f3",
+      "claim": "Blender covers modeling, sculpting, animation, rendering, simulation, VFX and video editing",
+      "value": "7 tools",
+      "source_url": "https://www.blender.org/features/",
+      "accessed": "2026-10-09"
+    },
+    {
+      "id": "f4",
+      "claim": "Blender renders with the path-traced Cycles engine",
+      "value": "Cycles",
+      "source_url": "https://www.blender.org/features/",
+      "accessed": "2026-10-09"
+    },
+    {
+      "id": "f5",
+      "claim": "Blender is coordinated by the Blender Foundation and funded mainly by donations and Development Fund memberships",
+      "value": "donations",
+      "source_url": "https://www.blender.org/about/",
+      "accessed": "2026-10-09"
+    }
+  ],
+  "beats": [
+    {
+      "id": "free",
+      "narration": "It is called Blender, and it is free and open source, forever.",
+      "fact": "f1",
+      "headline": "FREE FOREVER",
+      "payoff_headline": "OPEN SOURCE",
+      "visual": {
+        "rig": "hydraulic-press",
+        "params": {
+          "object": "SUBSCRIPTION",
+          "force": "BLENDER"
+        },
+        "room": "street",
+        "insert": {
+          "kind": "price_tag",
+          "args": {
+            "amount": "$0",
+            "strike": "$$$"
+          }
+        }
+      }
+    },
+    {
+      "id": "commercial",
+      "narration": "You can use it for anything, even paid client work.",
+      "fact": "f2",
+      "headline": "USE IT FOR ANYTHING",
+      "payoff_headline": "EVEN CLIENT WORK",
+      "visual": {
+        "rig": "stamp-gate",
+        "params": {
+          "document": "CLIENT JOB",
+          "stamp": "ALLOWED",
+          "verdict": "approved"
+        },
+        "room": "office"
+      }
+    },
+    {
+      "id": "tools",
+      "narration": "Modeling, sculpting, animation, effects and video editing all live in one app.",
+      "fact": "f3",
+      "headline": "ONE APP",
+      "payoff_headline": "EVERY STAGE OF A FILM",
+      "visual": {
+        "rig": "conveyor",
+        "params": {
+          "items": [
+            "MODEL",
+            "ANIMATE",
+            "EDIT"
+          ],
+          "machine": "BLENDER",
+          "output": "FILM"
+        },
+        "room": "workshop"
+      }
+    },
+    {
+      "id": "render",
+      "narration": "Its Cycles engine traces light like a real camera.",
+      "fact": "f4",
+      "headline": "CYCLES ENGINE",
+      "payoff_headline": "TRACES REAL LIGHT",
+      "visual": {
+        "rig": "thermometer",
+        "params": {
+          "from": 10,
+          "to": 95,
+          "target": "REAL",
+          "label": "REALISM",
+          "stars": 3
+        },
+        "room": "stage",
+        "insert": {
+          "kind": "star_badge",
+          "args": {
+            "rating": 5,
+            "filled": 5
+          }
+        }
+      }
+    },
+    {
+      "id": "funded",
+      "narration": "And it is paid for by donations, not by locking you into a plan.",
+      "fact": "f5",
+      "headline": "NO PLAN TO LOCK YOU IN",
+      "payoff_headline": "FUNDED BY DONATIONS",
+      "visual": {
+        "rig": "balance-scale",
+        "params": {
+          "left_label": "LOCK IN",
+          "right_label": "DONATIONS",
+          "left_weight": 1,
+          "right_weight": 7
+        },
+        "room": "living-room"
+      }
+    }
+  ],
+  "cta": {
+    "keyword": "Blender",
+    "narration": "For a starter guide, comment Blender."
+  }
+}
