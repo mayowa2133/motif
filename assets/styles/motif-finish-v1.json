@@ -68,5 +68,12 @@
   "ambient": {
     "color": "#5E4E3E",
     "opacity": 0.18
+  },
+  "approval": {
+    "status": "APPROVED",
+    "by": "Mayowa",
+    "date": "2026-10-09",
+    "condition": "reels stay colourful and varied: palettes rotate per beat and every shot adds a light tinted by its palette (motif_reel.lights_for)",
+    "evidence": "review/phase-1/v6-finish-before-after.png; Mayowa in the project thread: \"applies to everything as long as it is colorful\""
   }
 }

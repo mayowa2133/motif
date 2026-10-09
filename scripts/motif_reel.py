@@ -245,6 +245,11 @@ def lights_for(layout):
             out.append({'kind': 'beam', 'x': cx, 'y': .05, 'to_y': .85, 'top_width': .08, 'bottom_width': .6, 'color': item['colour'], 'strength': .14, 'blend': 'screen'})
         else:
             out.append({'kind': 'lamp', 'x': cx, 'y': cy, 'radius': .85, 'color': item['colour'], 'strength': .5, 'blend': 'soft-light'})
+    # Mayowa approved the finish on condition the reels stay colourful: every
+    # shot also gets a light tinted by its own palette, so light colour varies per scene.
+    if layout.get('palette'):
+        from motif_rigs.palettes import palette
+        out.append({'kind': 'lamp', 'x': 1 - cx, 'y': .7, 'radius': .6, 'color': palette(layout['palette'])['accent'], 'strength': .28, 'blend': 'soft-light'})
     return out
 
 
