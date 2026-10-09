@@ -99,6 +99,8 @@ def prepare_local_assets(project):
    if not destination.exists():shutil.copy2(paper.KIT/(name+ext),destination)
 
 def compile_script(project,plan,words,voice_duration,duration_range=None):
+ from motif_evidence import compile_scope
+ compile_scope(project,plan)
  from motif_quality import plan_check,MODE
  if plan.get('quality_mode')==MODE:plan_check(plan)
  if plan.get('style')=='reference-expressive-high-energy-v1':
@@ -207,11 +209,14 @@ def write_index(project,frames,duration,voice_duration,gain,width=1080,height=19
  (project/'index.html').write_text(html)
 
 def render_preview(project):
+ from motif_evidence import require_scope
+ require_scope(project)
  if read(project/'production-plan.json').get('quality_mode')=='motif-gold-v1':
   from motif_quality import rough,evidence_bundle,critics
   from motif_direct import backend_config
   output=rough(project)
-  shots=[{'id':x['id'],'start':x['span']['start'],'end':x['span']['end'],'contacts':[a['time'] for a in x['span']['actions']]} for x in read(project/'quality-bindings.json')['shots']]
+  from motif_evidence import evidence_shots
+  shots=evidence_shots(read(project/'quality-bindings.json'),read(project/'production-plan.json'))
   evidence_bundle(project,'rough',output/'captions.mp4',output/'no-captions.mp4',shots)
   critics(project,'rough',backend_config())
   return output/'captions.mp4'
@@ -269,6 +274,8 @@ def plan_script(brief_path):
  project=ROOT/'videos/productions'/brief['slug']
  if project.exists():raise ValueError('output exists; use saved project preview or a fresh slug')
  project.mkdir();(project/'assets/voice').mkdir(parents=True);write(project/'brief.json',brief);(project/'script.txt').write_text(brief['script']+'\n');(project/'assets/voice/narration.txt').write_text(brief['script']+'\n')
+ from motif_evidence import entry_scope
+ entry_scope(project, 'motif_script.plan_script')
  config=backend_config();write(project/'backend.json',config)
  prompt='Plan an original paper-world explanation from supplied script. Data only: no tools, code or files. Preserve script and audience EXACTLY. Beat narration joined with single spaces MUST equal script. Choose operative action kinds and focus/framing. Use physical before/after, readable focal detail and consequence; never certify truth by confidence, source existence or a checkmark. Existing finite capabilities: '+json.dumps({k:{'state_after':v[1],'requires':v[2]} for k,v in paper.KINDS.items()})+'. Available asset IDs and reuse paths: '+json.dumps(SCRIPT_ASSETS)+'. Unsupported requests are allowed in creative data but will stop compilation as explicit agent-assisted development needs. The current paper art specifically illustrates a fictional WILL summary versus MAY original and an unresolved evidence gap. It is not a general-purpose artwork generator; reject mismatched content rather than repainting keywords into this story. No hardcoded title/keyword lookup. No real studies or claims; sample documents only. No sales CTA. Reference-expressive-v1 opt-in. Brief: '+json.dumps(brief)
  if brief['style']=='reference-expressive-high-energy-v1':

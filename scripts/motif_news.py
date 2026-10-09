@@ -51,6 +51,8 @@ def plan_news(brief_path,sources_path):
  if (project/'production-plan.json').exists():raise ValueError('saved project exists; resume it without implicit replanning')
  project.mkdir(parents=True,exist_ok=True);(project/'assets/voice').mkdir(parents=True,exist_ok=True)
  write(project/'brief.json',brief);write(project/'source-packet.json',sources)
+ from motif_evidence import entry_scope
+ entry_scope(project, 'motif_news.plan_news')
  for path in ('script.txt','assets/voice/narration.txt'):(project/path).write_text(brief['script']+'\n')
  config=backend_config();write(project/'backend.json',config);prompt=planner_prompt(brief,sources,project)
  plan=model_call(project,'initial-plan',prompt,'schemas/script-production-plan.schema.json',config);write(project/'production-plan.json',plan)

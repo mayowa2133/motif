@@ -140,6 +140,8 @@ def write_composition(project,id_,duration,first,events,defs=''):
  (project/'compositions'/f'{id_}.html').write_text(html);return spec
 
 def compile_ui(project,plan,words,voice_duration):
+ from motif_evidence import compile_scope
+ compile_scope(project,plan)
  from motif_quality import plan_check,MODE
  from motif_quality_frames import ui_frame
  quality_mode=plan.get('quality_mode')==MODE
@@ -215,6 +217,8 @@ def compile_ui(project,plan,words,voice_duration):
 def main():
  parser=argparse.ArgumentParser();parser.add_argument('--project',type=Path,required=True);parser.add_argument('--compile',action='store_true');parser.add_argument('--render',action='store_true');args=parser.parse_args();p=args.project.resolve()
  from motif_script import align_voice,render_preview
+ from motif_evidence import require_scope
+ require_scope(p)
  if args.compile:
   if (p/'speech-timing.json').exists():speech=read(p/'speech-timing.json');words,d=speech['words'],speech['duration']
   else:words,d=align_voice(p)

@@ -42,7 +42,11 @@ class PlanTests(unittest.TestCase):
         brief,plan=fixture(); self.assertTrue(review_plan(plan,brief)['pass'])
         words=[{'text':word,'start':i*.45+.05,'end':i*.45+.4} for i,word in enumerate(tokens(narration(plan)))]
         with tempfile.TemporaryDirectory() as tmp:
-            root=Path(tmp); compile_plan(root,plan,words,len(words)*.45+.5,[10,22])
+            root=Path(tmp)
+            from motif_evidence import declare
+            (root/'brief.json').write_text('{"scope":"legacy unit fixture"}')
+            declare(root,'technical-fixture','unit.production_plan')
+            compile_plan(root,plan,words,len(words)*.45+.5,[10,22])
             html=(root/'index.html').read_text(); spec=json.loads((root/'scene-events.json').read_text())
             self.assertIn('READ',html); self.assertNotIn('FOCUS',html)
             self.assertIn('The person approves',html)

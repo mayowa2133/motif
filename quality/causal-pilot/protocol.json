@@ -1,0 +1,19 @@
+{
+  "version": 1,
+  "status": "PROPOSED_REQUIRES_PREREGISTRATION",
+  "hypothesis": "An external request, retained pending state and visible response improve causal comprehension in a bounded flat frontal 2D scene.",
+  "capture": "PENDING_PARENT_ALLOCATION",
+  "human_playback": "UNASSESSED",
+  "listening_av": "UNASSESSED",
+  "transfer_pairs": 4,
+  "viewers_per_arm": 5,
+  "questions": ["cause-of-stop", "responsible-actor", "persistent-pending-state", "resume-condition"],
+  "proposed_per_question_floor": 4,
+  "proposed_gain": "At least one additional correct viewer on one question in at least two script pairs; no confirmed regression in any pair.",
+  "proposed_effort_ratio_ceiling": 1.25,
+  "creative_repair_passes": 2,
+  "author_minutes_ceiling": null,
+  "randomization_seed": null,
+  "required": ["same brief and mode", "baseline and candidate hashes", "separate first exposures", "two independent visual reviews", "complete critical intervals", "actual playback and listening", "active effort and elapsed time separately", "priced or unknown cost", "original and last-good comparisons"],
+  "promotion": "existing motif_experiment_gate only; no default adoption from synthetic fixtures"
+}
