@@ -61,8 +61,9 @@ def checkpoint(root,stage,active_seconds,elapsed_seconds,reason):
     root=Path(root);path=task_path(root);task=read(path)
     if stage not in STAGES or STAGES.index(stage)<STAGES.index(task['stage']):
         raise ValueError('invalid/backward stage; preserve history or start a fresh task')
-    if (any(type(v) not in (int,float) or not math.isfinite(v) or v<0 for v in (active_seconds,elapsed_seconds)) or
-            active_seconds>elapsed_seconds or not isinstance(reason,str) or not reason.strip()):
+    unavailable=active_seconds is None and elapsed_seconds is None
+    if ((not unavailable and (any(type(v) not in (int,float) or not math.isfinite(v) or v<0 for v in (active_seconds,elapsed_seconds)) or
+                              active_seconds>elapsed_seconds)) or not isinstance(reason,str) or not reason.strip()):
         raise ValueError('measured intervention reason and active/elapsed seconds required')
     spec=task['specification']
     for item in spec['inputs']:locked_resource(root,item)
@@ -77,7 +78,8 @@ def checkpoint(root,stage,active_seconds,elapsed_seconds,reason):
         raise ValueError('declared custom-authoring outputs missing')
     task['stage']=stage
     task['history'].append({'stage':stage,'active_seconds':active_seconds,'elapsed_seconds':elapsed_seconds,
-                            'reason':reason,'outputs':outputs,'measurement':'operator-recorded; no inferred efficiency gain'})
+                            'reason':reason,'outputs':outputs,
+                            'measurement':'UNAVAILABLE' if unavailable else 'operator-recorded; no inferred efficiency gain'})
     task['quality_status']='UNASSESSED'
     write(path,task)
     return task

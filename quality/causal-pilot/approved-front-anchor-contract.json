@@ -1,0 +1,345 @@
+{
+  "version": "0.3",
+  "status": "REFERENCE_GROUNDED_IMPLEMENTATION_TARGET; authored approximation",
+  "units": "local art units; origin = torso upper left",
+  "torso": [
+    0,
+    0,
+    240,
+    185
+  ],
+  "feet": [
+    [
+      30,
+      185,
+      31,
+      66
+    ],
+    [
+      77,
+      185,
+      30,
+      66
+    ],
+    [
+      163,
+      185,
+      30,
+      66
+    ],
+    [
+      207,
+      185,
+      31,
+      66
+    ]
+  ],
+  "shell_polygon": [
+    [
+      0,
+      0
+    ],
+    [
+      240,
+      0
+    ],
+    [
+      240,
+      185
+    ],
+    [
+      238,
+      185
+    ],
+    [
+      238,
+      251
+    ],
+    [
+      207,
+      251
+    ],
+    [
+      207,
+      185
+    ],
+    [
+      193,
+      185
+    ],
+    [
+      193,
+      251
+    ],
+    [
+      163,
+      251
+    ],
+    [
+      163,
+      185
+    ],
+    [
+      107,
+      185
+    ],
+    [
+      107,
+      251
+    ],
+    [
+      77,
+      251
+    ],
+    [
+      77,
+      185
+    ],
+    [
+      61,
+      185
+    ],
+    [
+      61,
+      251
+    ],
+    [
+      30,
+      251
+    ],
+    [
+      30,
+      185
+    ],
+    [
+      0,
+      185
+    ]
+  ],
+  "eye_rectangles": [
+    [
+      70,
+      27,
+      28,
+      44
+    ],
+    [
+      155,
+      27,
+      28,
+      44
+    ]
+  ],
+  "neutral_mouth": null,
+  "provenance": "One neutral registration calibrated from inspected original pixels; constructed vector, not creator geometry. Small rounding and occluded contours are authored.",
+  "points": {
+    "body_pivot": [
+      120,
+      251
+    ],
+    "support_0": [
+      45.5,
+      251
+    ],
+    "support_1": [
+      92,
+      251
+    ],
+    "support_2": [
+      178,
+      251
+    ],
+    "support_3": [
+      222.5,
+      251
+    ],
+    "face_origin": [
+      126.5,
+      49
+    ]
+  },
+  "hand_modes": {
+    "diamond": {
+      "left_polygon": [
+        [
+          -38,
+          54
+        ],
+        [
+          -7,
+          84
+        ],
+        [
+          -38,
+          114
+        ],
+        [
+          -69,
+          84
+        ]
+      ],
+      "right_polygon": [
+        [
+          278,
+          54
+        ],
+        [
+          309,
+          84
+        ],
+        [
+          278,
+          114
+        ],
+        [
+          247,
+          84
+        ]
+      ],
+      "grip_L": [
+        -38,
+        84
+      ],
+      "grip_R": [
+        278,
+        84
+      ],
+      "wrist_L": [
+        -7,
+        84
+      ],
+      "wrist_R": [
+        247,
+        84
+      ],
+      "fingertip_L": [
+        -69,
+        84
+      ],
+      "fingertip_R": [
+        309,
+        84
+      ]
+    },
+    "tab": {
+      "left_rect": [
+        -50,
+        85,
+        52,
+        48
+      ],
+      "right_rect": [
+        238,
+        85,
+        52,
+        48
+      ],
+      "grip_L": [
+        -24,
+        109
+      ],
+      "grip_R": [
+        264,
+        109
+      ],
+      "wrist_L": [
+        0,
+        109
+      ],
+      "wrist_R": [
+        240,
+        109
+      ],
+      "fingertip_L": [
+        -50,
+        109
+      ],
+      "fingertip_R": [
+        290,
+        109
+      ]
+    }
+  },
+  "anchor_provenance": "New operational anchors. Wrist=body-near edge; grip=palm centre; fingertip=distal contour. No recovered anatomical fingers.",
+  "face_controls": {
+    "gaze": "translate both eye rectangles together; no pupils",
+    "recommended_test_envelope": {
+      "dx": [
+        -12,
+        12
+      ],
+      "dy": [
+        -8,
+        20
+      ]
+    },
+    "envelope_provenance": "authored range, not measured physiological limits",
+    "eyes_slit": [
+      [
+        70,
+        43,
+        28,
+        13
+      ],
+      [
+        155,
+        43,
+        28,
+        13
+      ]
+    ],
+    "mouth_line": [
+      100,
+      103,
+      40,
+      14
+    ],
+    "mouth_square": [
+      104,
+      103,
+      32,
+      34
+    ]
+  },
+  "states": {
+    "neutral": {
+      "mouth": "none",
+      "eyes": "tall"
+    },
+    "focus": {
+      "mouth": "line",
+      "eyes": "slit"
+    },
+    "reaction": {
+      "mouth": "square",
+      "eyes": "tall"
+    }
+  },
+  "state_geometry_provenance": "Tall neutral features calibrated; line/square/slit categories observed; state dimensions and emotional labels are authored normalization.",
+  "palette": {
+    "MASCOT_BASE": "#e47d53",
+    "FACE_INK": "#171513",
+    "TOP_RIM": "#f6a27d",
+    "RIGHT_EDGE": "#d06f50",
+    "PAPER_BASE": "#ebe6d5",
+    "DARK_BASE": "#1e2630"
+  },
+  "shadow": {
+    "dx": 3,
+    "dy": 7,
+    "blur": 4,
+    "opacity": 0.31
+  },
+  "shadow_provenance": "Retained reconstruction renderer settings; original exact optical parameters unknown.",
+  "layer_order": [
+    "cast/contact_shadow",
+    "body_shell",
+    "rim_and_depth_edge",
+    "hands",
+    "eyes",
+    "mouth",
+    "optional_role_overlay"
+  ],
+  "side_back_turnaround": "UNRESOLVED; do not fabricate recovered views",
+  "contact_rule": "Project per-mode local anchors through full world/camera transform; solve held grip/support; mode switches remap anchors before painting."
+}
