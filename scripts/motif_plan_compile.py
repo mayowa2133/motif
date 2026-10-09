@@ -156,6 +156,9 @@ def align(plan, words):
 def compile_plan(project, plan, words, voice_duration, duration_range):
     from motif_evidence import compile_scope
     compile_scope(project, plan)
+    if plan.get('schema_version')=='waiting-1.0':
+        from motif_waiting import compile_waiting
+        return compile_waiting(project,plan)
     if plan.get('schema_version') == 'text-directed-1.0':
         from motif_ui_production import compile_ui
         return compile_ui(project, plan, words, voice_duration)
