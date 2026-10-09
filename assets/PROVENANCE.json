@@ -1,0 +1,4099 @@
+{
+ "version": 1,
+ "assets": [
+  {
+   "id": "material/legacy-v0/paper",
+   "sha256": "9ad253d2305ac685e5d76aabc9868d43e95010ab7b449493fda33f7816a1d93a",
+   "origin": "procedural-seeded",
+   "generator": "python scripts/motif_materials.py --set legacy-v0",
+   "approval": {
+    "status": "LEGACY_ACCEPTED",
+    "by": "Mayowa",
+    "date": "2026-10-02",
+    "note": "Shipped in VoiceStudio v6, accepted as the gold visual-craft benchmark."
+   },
+   "pixel_sha256": "87f3bbccedd17a2ce184e68311fae22c1eb17ec289eaf283e3719e28bebcebb6",
+   "path": "assets/materials/legacy-v0/paper.png",
+   "note": "Port of reference-reconstruction-01-finishing/materials.py: seeded noise, no image inputs; pixels reproduced by --check."
+  },
+  {
+   "id": "material/legacy-v0/card",
+   "sha256": "d0472a1c209cdd76396de2963e11da7cfe5fd1a613554b4c15a9b9c15eaf0a8f",
+   "origin": "procedural-seeded",
+   "generator": "python scripts/motif_materials.py --set legacy-v0",
+   "approval": {
+    "status": "LEGACY_ACCEPTED",
+    "by": "Mayowa",
+    "date": "2026-10-02",
+    "note": "Shipped in VoiceStudio v6, accepted as the gold visual-craft benchmark."
+   },
+   "pixel_sha256": "78fbb28589fbb7f698dbbd8a38ea1331001dd77950153c125ef814e21d659088",
+   "path": "assets/materials/legacy-v0/card.png",
+   "note": "Port of reference-reconstruction-01-finishing/materials.py: seeded noise, no image inputs; pixels reproduced by --check."
+  },
+  {
+   "id": "material/legacy-v0/wood",
+   "sha256": "16dec1d50a5ce9e09ca0303f8d438580bb26c1aa393c8117b33be8db1b49e181",
+   "origin": "procedural-seeded",
+   "generator": "python scripts/motif_materials.py --set legacy-v0",
+   "approval": {
+    "status": "LEGACY_ACCEPTED",
+    "by": "Mayowa",
+    "date": "2026-10-02",
+    "note": "Shipped in VoiceStudio v6, accepted as the gold visual-craft benchmark."
+   },
+   "pixel_sha256": "f694b71969a7c1fc6f5115c744e55c0972345d729f5725e7f447d7ac86ecad17",
+   "path": "assets/materials/legacy-v0/wood.png",
+   "note": "Port of reference-reconstruction-01-finishing/materials.py: seeded noise, no image inputs; pixels reproduced by --check."
+  },
+  {
+   "id": "material/legacy-v0/wall",
+   "sha256": "895076da1c99659050d444296daf8b21a06bf901c82550bc3333a95627cfc8bb",
+   "origin": "procedural-seeded",
+   "generator": "python scripts/motif_materials.py --set legacy-v0",
+   "approval": {
+    "status": "LEGACY_ACCEPTED",
+    "by": "Mayowa",
+    "date": "2026-10-02",
+    "note": "Shipped in VoiceStudio v6, accepted as the gold visual-craft benchmark."
+   },
+   "pixel_sha256": "12db3dece740606562b4af49e6bc8d459fe2b5ecb45912d0c20d79fb3ffb87d9",
+   "path": "assets/materials/legacy-v0/wall.png",
+   "note": "Port of reference-reconstruction-01-finishing/materials.py: seeded noise, no image inputs; pixels reproduced by --check."
+  },
+  {
+   "id": "material/motif-v1/matte-paper",
+   "sha256": "1d8d41d1f0c22f2452725467863461b5630aea45cdcfe41a6abd271bb1391c88",
+   "origin": "procedural-seeded",
+   "generator": "python scripts/motif_materials.py --set motif-v1",
+   "approval": {
+    "status": "PENDING",
+    "by": null,
+    "date": null,
+    "note": "Awaiting Mayowa review."
+   },
+   "pixel_sha256": "3a2893228ceea6d9c08043fb408a74ba86983995ac9c5ff17440c87b1d4fd215",
+   "path": "assets/materials/motif-v1/matte-paper.webp"
+  },
+  {
+   "id": "material/motif-v1/felt",
+   "sha256": "dd4e469c5f207f7e29276a5e48e857333d8dab1187de39fd926e6430ea73b77c",
+   "origin": "procedural-seeded",
+   "generator": "python scripts/motif_materials.py --set motif-v1",
+   "approval": {
+    "status": "PENDING",
+    "by": null,
+    "date": null,
+    "note": "Awaiting Mayowa review."
+   },
+   "pixel_sha256": "b901127dfdf9015d6841487b171c810c1312819ff666df7b45fe45ecc6a3a9dc",
+   "path": "assets/materials/motif-v1/felt.webp"
+  },
+  {
+   "id": "material/motif-v1/card",
+   "sha256": "4a505a50aa4a0f929751cacf3addbe1ab5c45004688b4646a503b98a02ecee98",
+   "origin": "procedural-seeded",
+   "generator": "python scripts/motif_materials.py --set motif-v1",
+   "approval": {
+    "status": "PENDING",
+    "by": null,
+    "date": null,
+    "note": "Awaiting Mayowa review."
+   },
+   "pixel_sha256": "54722c18167f284558ba209acae319d526af1649dd094d0f4f6e78400d2e3976",
+   "path": "assets/materials/motif-v1/card.webp"
+  },
+  {
+   "id": "material/motif-v1/kraft",
+   "sha256": "636d586513c349ada3d5b41cf23a1a1b2e49a07d901d91e5aef95fcbeecb06f6",
+   "origin": "procedural-seeded",
+   "generator": "python scripts/motif_materials.py --set motif-v1",
+   "approval": {
+    "status": "PENDING",
+    "by": null,
+    "date": null,
+    "note": "Awaiting Mayowa review."
+   },
+   "pixel_sha256": "e806dda984723d6127f54710056e58b936ce467fc514a4ccb70451194d33467e",
+   "path": "assets/materials/motif-v1/kraft.webp"
+  },
+  {
+   "id": "material/motif-v1/wood",
+   "sha256": "5521ad76d263c1b9cc4ea05b4ba8ad545814f8319ef1ade1fce8d494061b9dbf",
+   "origin": "procedural-seeded",
+   "generator": "python scripts/motif_materials.py --set motif-v1",
+   "approval": {
+    "status": "PENDING",
+    "by": null,
+    "date": null,
+    "note": "Awaiting Mayowa review."
+   },
+   "pixel_sha256": "710409b3b67e65442f6fe2b6b0cb03dbe54941c7688756b2dc175371e74bc192",
+   "path": "assets/materials/motif-v1/wood.webp"
+  },
+  {
+   "id": "material/motif-v1/dark-card",
+   "sha256": "0c3fe085429d6373a5bfd9f0ffed0ff5da65cd4e630427fc132e6a4a6262513a",
+   "origin": "procedural-seeded",
+   "generator": "python scripts/motif_materials.py --set motif-v1",
+   "approval": {
+    "status": "PENDING",
+    "by": null,
+    "date": null,
+    "note": "Awaiting Mayowa review."
+   },
+   "pixel_sha256": "50d9b1b7ef476c93df3b7b3349adacb905f66f0ed95b7d6e06b28a36b6c99548",
+   "path": "assets/materials/motif-v1/dark-card.webp"
+  },
+  {
+   "id": "material/legacy-v0/wall@webp",
+   "sha256": "f672f7d3472007b265c96259bdecd32e7a639db85dc48711dae8ed297ddfd11c",
+   "origin": "motif-derived",
+   "generator": "scripts/motif_ui_production.py: lossless WebP of wall.png",
+   "approval": {
+    "status": "LEGACY_ACCEPTED",
+    "by": "Mayowa",
+    "date": "2026-10-02",
+    "note": "Shipped in VoiceStudio v6, accepted as the gold visual-craft benchmark."
+   },
+   "pixel_sha256": "12db3dece740606562b4af49e6bc8d459fe2b5ecb45912d0c20d79fb3ffb87d9",
+   "path": "videos/productions/voicestudio-craft-v6/assets/materials/world-paper.webp",
+   "derived_from": "material/legacy-v0/wall"
+  },
+  {
+   "id": "art/art-v3/monitor",
+   "sha256": "93dcbbb3dc1d4d794a43e6d523318ba68bb1b3ede20861c546c74764730c28ba",
+   "origin": "motif-image-gen",
+   "generator": "built-in imagegen",
+   "approval": {
+    "status": "LEGACY_ACCEPTED",
+    "by": "Mayowa",
+    "date": "2026-10-02",
+    "note": "Shipped in VoiceStudio v6, accepted as the gold visual-craft benchmark."
+   },
+   "pixel_sha256": "22dbdd377651cccfacae001984f6446b45ca2b418967531eb6d0f9bbf4ccd086",
+   "path": "videos/productions/voicestudio-craft-v6/assets/art-v3/monitor.png",
+   "prompt": "Use case: illustration-story. Asset type: independent reusable physical monitor cutout for a tactile 2D animated film.\nCreate ONE beautiful desktop monitor, straight-on front view, on genuinely transparent background. Landscape canvas, monitor fills canvas with small transparent margin, stand and base fully visible. Large broad 16:10 dark plum blank display occupies most of the upper body, precise rounded display boundary. Substantial warm ivory paper casing with slightly asymmetric hand-cut contours, layered cardboard side backing peeking on right/bottom, a distinct thick lower lip, short stout muted teal pedestal and wide stable trapezoid foot. The screen is blank uninterrupted #241D29, no text, icons or reflections. Casing feels illustrated from layered printed paper with subtle dry gouache ink variation and fine sparse paper fibers, warm shadows at cut edges, three purposeful printed seam/edge marks. Flat cutout art, shallow depth only, sophisticated children's editorial illustration, broad shapes, restrained soft ink edges. Palette ivory #F4EBD8, tan #DCCDB3, deep charcoal #202C32, teal #318E85. No photorealism, no glossy 3D, no room, no desk, no characters, no labels, no cables, no lettering. The physical casing must feel designed and touchable, not a uniform vector rounded rectangle. Keep the screen unobstructed for later editable UI compositing.",
+   "evidence": "videos/productions/voicestudio-craft-v6/assets/art-v3/provenance.json"
+  },
+  {
+   "id": "art/art-v3/monitor@webp",
+   "sha256": "7d99150384a142adf52f944bd8893ef4848251c79dcd9091d4322bcdaf23bfc2",
+   "origin": "motif-derived",
+   "generator": "cwebp lossless derivative",
+   "approval": {
+    "status": "LEGACY_ACCEPTED",
+    "by": "Mayowa",
+    "date": "2026-10-02",
+    "note": "Shipped in VoiceStudio v6, accepted as the gold visual-craft benchmark."
+   },
+   "pixel_sha256": "22dbdd377651cccfacae001984f6446b45ca2b418967531eb6d0f9bbf4ccd086",
+   "path": "videos/productions/voicestudio-craft-v6/assets/art-v3/monitor.webp",
+   "derived_from": "art/art-v3/monitor"
+  },
+  {
+   "id": "art/art-v3/microphone",
+   "sha256": "086cbd699a2f9ff5dd67663c0a65e8c2d94f19609da17432de8fc68e4704b8da",
+   "origin": "motif-image-gen",
+   "generator": "built-in imagegen",
+   "approval": {
+    "status": "LEGACY_ACCEPTED",
+    "by": "Mayowa",
+    "date": "2026-10-02",
+    "note": "Shipped in VoiceStudio v6, accepted as the gold visual-craft benchmark."
+   },
+   "pixel_sha256": "8d6c8038926beabe196af28df4b7de8c6cc335fcdb64506b19bfebf4c03f654c",
+   "path": "videos/productions/voicestudio-craft-v6/assets/art-v3/microphone.png",
+   "prompt": "Use case: illustration-story. Reference image is a STYLE reference only. Make ONE independent front-view chunky retro studio microphone on a short floor tripod, genuine transparent background, portrait canvas, no other objects. Match the reference's warm dry-gouache printed paper cutout treatment, shallow cardboard undersides and softly inked broad contours. Rounded graphite/navy capsule with pale warm silver grille, only six purposeful bold grille divisions, a stout U-shaped teal mount, short graphite pole and three coherent substantial feet. No chrome or glossy shading. Slight hand-cut asymmetry, fine quiet paper fibers, warm low shadow at layer edges. Big graphic silhouette, clear flat layers. No text, room, characters, background, wires or waveform. Capsule and mount dominant; not a tiny mic on a long thin pole.",
+   "evidence": "videos/productions/voicestudio-craft-v6/assets/art-v3/provenance.json"
+  },
+  {
+   "id": "art/art-v3/microphone@webp",
+   "sha256": "04a4d6e6bdaafa653c1702f9f214538c057f0507a94cf5c644d3014a0d9a6e92",
+   "origin": "motif-derived",
+   "generator": "cwebp lossless derivative",
+   "approval": {
+    "status": "LEGACY_ACCEPTED",
+    "by": "Mayowa",
+    "date": "2026-10-02",
+    "note": "Shipped in VoiceStudio v6, accepted as the gold visual-craft benchmark."
+   },
+   "pixel_sha256": "8d6c8038926beabe196af28df4b7de8c6cc335fcdb64506b19bfebf4c03f654c",
+   "path": "videos/productions/voicestudio-craft-v6/assets/art-v3/microphone.webp",
+   "derived_from": "art/art-v3/microphone"
+  },
+  {
+   "id": "art/art-v3/stool",
+   "sha256": "3494aa4f3aa74814e0d46c1571187e10a1c59c77658ee4648a6999ac7676e4c9",
+   "origin": "motif-image-gen",
+   "generator": "built-in imagegen",
+   "approval": {
+    "status": "LEGACY_ACCEPTED",
+    "by": "Mayowa",
+    "date": "2026-10-02",
+    "note": "Shipped in VoiceStudio v6, accepted as the gold visual-craft benchmark."
+   },
+   "pixel_sha256": "199963acc4e4b7a3f0887a11ed45e8d8e092f166d36a5abd5787324d29191646",
+   "path": "videos/productions/voicestudio-craft-v6/assets/art-v3/stool.png",
+   "prompt": "Use case: illustration-story. Reference image is a STYLE reference only. Make ONE independent small blue wooden workshop stool, genuine transparent background. Straight-on with a slight view of seat top, shallow 2D paper cutout depth, whole stool visible. Match the reference's professionally illustrated printed-paper gouache character. Chunky uneven chamfered blue seat with a visible dark lower lip, two slightly splayed navy wooden legs and one deliberate pale-blue crossbrace. Warm paper cut edges, restrained dry brush print variation, broad purposeful shapes. Seat proportion wide, stool compact, sturdy enough for a small robot. No text, robot, monitor, room or extra props. No glossy 3D, thin arbitrary stick legs or clipart vector style.",
+   "evidence": "videos/productions/voicestudio-craft-v6/assets/art-v3/provenance.json"
+  },
+  {
+   "id": "art/art-v3/stool@webp",
+   "sha256": "c39fd2dc37ba428434e89fb357b5c57cc7a217a3f0ee608e62d9b98da5c29934",
+   "origin": "motif-derived",
+   "generator": "cwebp lossless derivative",
+   "approval": {
+    "status": "LEGACY_ACCEPTED",
+    "by": "Mayowa",
+    "date": "2026-10-02",
+    "note": "Shipped in VoiceStudio v6, accepted as the gold visual-craft benchmark."
+   },
+   "pixel_sha256": "199963acc4e4b7a3f0887a11ed45e8d8e092f166d36a5abd5787324d29191646",
+   "path": "videos/productions/voicestudio-craft-v6/assets/art-v3/stool.webp",
+   "derived_from": "art/art-v3/stool"
+  },
+  {
+   "id": "art/art-v3/old-computer",
+   "sha256": "01724e4f85af4651c6f3bcaf43c741a2019c53b7cc17a73969bdad774a4b0e88",
+   "origin": "motif-image-gen",
+   "generator": "built-in imagegen",
+   "approval": {
+    "status": "LEGACY_ACCEPTED",
+    "by": "Mayowa",
+    "date": "2026-10-02",
+    "note": "Shipped in VoiceStudio v6, accepted as the gold visual-craft benchmark."
+   },
+   "pixel_sha256": "88a2bc513b409815b4a1b6b93c6408c47549aca94f0bdf3ef7c76a0bcc8509a8",
+   "path": "videos/productions/voicestudio-craft-v6/assets/art-v3/old-computer.png",
+   "prompt": "Use case: illustration-story. Reference image is a STYLE reference only. One independent vintage desktop CRT-like computer monitor, straight-on, on genuine transparent background. Landscape canvas, broad thick off-white beige casing around a compact almost-square blank dark-plum display. Screen clearly smaller relative to casing than the reference. Chunky trapezoid cream stand and broad simple base, slightly sagging lower lip, three visible inset ventilation slits at one side, one small faded teal status light. Warm yellowed printed cardboard casing, shallow tan backing, fine sparse fibers and a few deliberate edge scuffs. Professionally illustrated tactile 2D paper-cutout, matte dry gouache colors, broad distinct contours, slight handmade asymmetry. Not a realistic CRT photograph or 3D render. No lettering, icons, reflections, room, washer or characters. Keep the blank screen an uninterrupted region for editable UI compositing.",
+   "evidence": "videos/productions/voicestudio-craft-v6/assets/art-v3/provenance.json"
+  },
+  {
+   "id": "art/art-v3/old-computer@webp",
+   "sha256": "fc32180643e382f810913f0ec5d1479a4fdfe3573c9e465f77c19b241e222791",
+   "origin": "motif-derived",
+   "generator": "cwebp lossless derivative",
+   "approval": {
+    "status": "LEGACY_ACCEPTED",
+    "by": "Mayowa",
+    "date": "2026-10-02",
+    "note": "Shipped in VoiceStudio v6, accepted as the gold visual-craft benchmark."
+   },
+   "pixel_sha256": "88a2bc513b409815b4a1b6b93c6408c47549aca94f0bdf3ef7c76a0bcc8509a8",
+   "path": "videos/productions/voicestudio-craft-v6/assets/art-v3/old-computer.webp",
+   "derived_from": "art/art-v3/old-computer"
+  },
+  {
+   "id": "art/art-v4/monitor",
+   "sha256": "40e006951da9963edaa214263c332b01a4d4de0f68ba4353ae16c9b225ac9495",
+   "origin": "motif-image-gen",
+   "generator": "image_gen referenced-image edit/generation; original PNGs unmodified; cwebp lossless derivative; editable SVG content and choreography",
+   "approval": {
+    "status": "LEGACY_ACCEPTED",
+    "by": "Mayowa",
+    "date": "2026-10-02",
+    "note": "Shipped in VoiceStudio v6, accepted as the gold visual-craft benchmark."
+   },
+   "pixel_sha256": "b8b4d030c8f3c882292175395e5e20391317686960b48079fe3bb8205e234c96",
+   "path": "videos/productions/voicestudio-craft-v6/assets/art-v4/monitor.png",
+   "prompt": "Edit the attached physical monitor into a more individually illustrated handmade paper object for a lively cute 2D paper-animation world. Keep its straight-on orthographic view, landscape aspect, complete teal stand and foot, and the same enormous uninterrupted dark-plum blank display opening in the same position. Redraw the outer ivory casing with a gently asymmetric broad silhouette: an unusually generous lower cream lip, slightly rounded chamfered upper corners, subtle offset tan cardboard backing at bottom/right, one small irregular teal repair patch on the lower lip, and three bold purposeful vent marks. Flatten the shading into printed matte cut paper and restrained dry gouache; each material feels like a separate layered paper piece. Fine quiet fibers INSIDE shapes only. No realistic bevels, gradients, gloss, reflections, global haze, surrounding shadow, text or room. Exact dark display is #241D29 and must remain blank with sharp usable edges. Warm ivory #F4EBD8, tan #DCCDB3 and muted teal #318E85. Asset fills frame with modest fully transparent padding; silhouette and base entirely present. The casing should feel crafted and specific, not stock UI chrome.",
+   "evidence": "videos/productions/voicestudio-craft-v6/assets/art-v4/provenance.json",
+   "edit_of": "assets/art-v3/monitor.png"
+  },
+  {
+   "id": "art/art-v4/monitor@webp",
+   "sha256": "8fdd6253b70c98baa5c72b1741b0943ea621e585838d7f64bcf000f00c6422ab",
+   "origin": "motif-derived",
+   "generator": "cwebp lossless derivative",
+   "approval": {
+    "status": "LEGACY_ACCEPTED",
+    "by": "Mayowa",
+    "date": "2026-10-02",
+    "note": "Shipped in VoiceStudio v6, accepted as the gold visual-craft benchmark."
+   },
+   "pixel_sha256": "b8b4d030c8f3c882292175395e5e20391317686960b48079fe3bb8205e234c96",
+   "path": "videos/productions/voicestudio-craft-v6/assets/art-v4/monitor.webp",
+   "derived_from": "art/art-v4/monitor"
+  },
+  {
+   "id": "art/art-v4/washer",
+   "sha256": "797b9e59a5f40f7055dd1193f9417af6dfcf5c0d364b130d7869f95a25916a81",
+   "origin": "motif-image-gen",
+   "generator": "image_gen referenced-image edit/generation; original PNGs unmodified; cwebp lossless derivative; editable SVG content and choreography",
+   "approval": {
+    "status": "LEGACY_ACCEPTED",
+    "by": "Mayowa",
+    "date": "2026-10-02",
+    "note": "Shipped in VoiceStudio v6, accepted as the gold visual-craft benchmark."
+   },
+   "pixel_sha256": "3f39992e0af82a83cfa670a0d4f1b392a3bf5d48115ca910f832710426a7d978",
+   "path": "videos/productions/voicestudio-craft-v6/assets/art-v4/washer.png",
+   "prompt": "Create one independent illustration of a small front-loading basement washing machine. The attached image is a style reference only: match its warm matte gouache PRINTED PAPER cutout construction and shallow 2D cardboard depth. Straight-on front elevation, broad compact squarish body, no room or floor. Off-white body with slightly imperfect asymmetric broad silhouette, clearly separate top control strip, one oversized cream control dial at upper right, a coral on/off pill at upper left, quiet worn teal paper repair patch at lower left, thick inset circular ivory door ring around an uninterrupted dark slate circular opening. The opening must be empty dark #344B58 so separately animated laundry can be composited inside later. Small cream latch at right of the ring. Lower edge has shallow tan underside; body feels like a heavy layered cardboard shell. Only a few deliberate vent slits and dry printed marks; no fine technical complexity. No writing, logos, characters, clothes, cables, cast ground shadow, diffuse halo or background. Genuine transparent background. Broad charming tactile shapes, flat 2D, no glossy 3D, realistic reflections or photographic lighting. Whole casing visible with narrow transparent margin.",
+   "evidence": "videos/productions/voicestudio-craft-v6/assets/art-v4/provenance.json",
+   "edit_of": "assets/art-v3/monitor.png"
+  },
+  {
+   "id": "art/art-v4/washer@webp",
+   "sha256": "1c2ead0fba6c12da0571bec3f159089895105f8f65ee654b788edcaeba9ba401",
+   "origin": "motif-derived",
+   "generator": "cwebp lossless derivative",
+   "approval": {
+    "status": "LEGACY_ACCEPTED",
+    "by": "Mayowa",
+    "date": "2026-10-02",
+    "note": "Shipped in VoiceStudio v6, accepted as the gold visual-craft benchmark."
+   },
+   "pixel_sha256": "3f39992e0af82a83cfa670a0d4f1b392a3bf5d48115ca910f832710426a7d978",
+   "path": "videos/productions/voicestudio-craft-v6/assets/art-v4/washer.webp",
+   "derived_from": "art/art-v4/washer"
+  },
+  {
+   "id": "art/art-v4/book",
+   "sha256": "650184805c63121d984d57e9a310683b4a56bc2f8316d68b84ba1cd0ce8077bf",
+   "origin": "motif-image-gen",
+   "generator": "image_gen referenced-image edit/generation; original PNGs unmodified; cwebp lossless derivative; editable SVG content and choreography",
+   "approval": {
+    "status": "LEGACY_ACCEPTED",
+    "by": "Mayowa",
+    "date": "2026-10-02",
+    "note": "Shipped in VoiceStudio v6, accepted as the gold visual-craft benchmark."
+   },
+   "pixel_sha256": "8e4dc688b81d2897dedee83ed6339efa74c0275f4739b51430ff6ad2c9884aa5",
+   "path": "videos/productions/voicestudio-craft-v6/assets/art-v4/book.png",
+   "prompt": "Create one independent open storybook illustration in the attached image's warm tactile printed PAPER CUTOUT style. Reference is for material language only. Front view with slight shallow view of the open page spread, flat 2D editorial collage, whole book on genuinely transparent background. A distinctive wide asymmetrical open book with thick coral-red cut-card cover backing, generous ivory page block with a few irregular layered page edges visible along bottom, raised center fold, left page curls gently at outer corner, right page has one dog-ear, narrow teal cloth bookmark hanging from bottom. The open ivory pages are BLANK except for 3 to 4 broad faint warm-gray PRINTED horizontal curved marks per side, not readable words. Each half has intentionally different curvature and width. Subtle dry gouache paper variations attached inside each piece; shallow tan undersides offset lower right. No glossy 3D, realism, realistic perspective, shadows outside silhouette, halos, objects, characters, lettering or room. Broad confident distinct silhouette that reads at phone size; more finished and individual than a generic vector book icon. Keep center fold and all cover edges visible; landscape canvas.",
+   "evidence": "videos/productions/voicestudio-craft-v6/assets/art-v4/provenance.json",
+   "edit_of": "assets/art-v3/monitor.png"
+  },
+  {
+   "id": "art/art-v4/book@webp",
+   "sha256": "62bd3aa2c3acf12a5b7663e2de13904d16d66a2afb4286f5406dfdaef099e913",
+   "origin": "motif-derived",
+   "generator": "cwebp lossless derivative",
+   "approval": {
+    "status": "LEGACY_ACCEPTED",
+    "by": "Mayowa",
+    "date": "2026-10-02",
+    "note": "Shipped in VoiceStudio v6, accepted as the gold visual-craft benchmark."
+   },
+   "pixel_sha256": "8e4dc688b81d2897dedee83ed6339efa74c0275f4739b51430ff6ad2c9884aa5",
+   "path": "videos/productions/voicestudio-craft-v6/assets/art-v4/book.webp",
+   "derived_from": "art/art-v4/book"
+  },
+  {
+   "id": "sfx/v6/paper",
+   "sha256": "4d2b74395799aeb6c55a0e6438acf9b55ee774fdfd00897e447f6fdd1133ed09",
+   "origin": "procedural-seeded",
+   "generator": "original deterministic filtered-noise and resonator construction; seed 7301",
+   "approval": {
+    "status": "LEGACY_ACCEPTED",
+    "by": "Mayowa",
+    "date": "2026-10-02",
+    "note": "Shipped in VoiceStudio v6, accepted as the gold visual-craft benchmark."
+   },
+   "path": "videos/productions/voicestudio-craft-v6/assets/sfx/paper.wav",
+   "evidence": "videos/productions/voicestudio-craft-v6/sfx-source-manifest.json"
+  },
+  {
+   "id": "sfx/v6/flutter",
+   "sha256": "1efa6cdedef354b471cddf9cc709c9a542b2709b350c68658128435b7d891beb",
+   "origin": "procedural-seeded",
+   "generator": "original deterministic filtered-noise and resonator construction; seed 7302",
+   "approval": {
+    "status": "LEGACY_ACCEPTED",
+    "by": "Mayowa",
+    "date": "2026-10-02",
+    "note": "Shipped in VoiceStudio v6, accepted as the gold visual-craft benchmark."
+   },
+   "path": "videos/productions/voicestudio-craft-v6/assets/sfx/flutter.wav",
+   "evidence": "videos/productions/voicestudio-craft-v6/sfx-source-manifest.json"
+  },
+  {
+   "id": "sfx/v6/cloth",
+   "sha256": "ea0a6766674ad492d69c51fbefe3543fbaadce65f679f9ac9e74ba98725fac89",
+   "origin": "procedural-seeded",
+   "generator": "original deterministic filtered-noise and resonator construction; seed 7303",
+   "approval": {
+    "status": "LEGACY_ACCEPTED",
+    "by": "Mayowa",
+    "date": "2026-10-02",
+    "note": "Shipped in VoiceStudio v6, accepted as the gold visual-craft benchmark."
+   },
+   "path": "videos/productions/voicestudio-craft-v6/assets/sfx/cloth.wav",
+   "evidence": "videos/productions/voicestudio-craft-v6/sfx-source-manifest.json"
+  },
+  {
+   "id": "sfx/v6/key1",
+   "sha256": "afe0043845b4c2fca520a8f373d540afb070faab66127caa565bf42efba3eee9",
+   "origin": "procedural-seeded",
+   "generator": "original deterministic filtered-noise and resonator construction; seed 7304",
+   "approval": {
+    "status": "LEGACY_ACCEPTED",
+    "by": "Mayowa",
+    "date": "2026-10-02",
+    "note": "Shipped in VoiceStudio v6, accepted as the gold visual-craft benchmark."
+   },
+   "path": "videos/productions/voicestudio-craft-v6/assets/sfx/key1.wav",
+   "evidence": "videos/productions/voicestudio-craft-v6/sfx-source-manifest.json"
+  },
+  {
+   "id": "sfx/v6/key2",
+   "sha256": "974c8cc171c99dc2b28f7f81dade1ecb1ecc85d6e017d5355b17a94c1408dc77",
+   "origin": "procedural-seeded",
+   "generator": "original deterministic filtered-noise and resonator construction; seed 7305",
+   "approval": {
+    "status": "LEGACY_ACCEPTED",
+    "by": "Mayowa",
+    "date": "2026-10-02",
+    "note": "Shipped in VoiceStudio v6, accepted as the gold visual-craft benchmark."
+   },
+   "path": "videos/productions/voicestudio-craft-v6/assets/sfx/key2.wav",
+   "evidence": "videos/productions/voicestudio-craft-v6/sfx-source-manifest.json"
+  },
+  {
+   "id": "sfx/v6/key3",
+   "sha256": "bbfe8a44acaa20dc169866a3613a845e8c585240aef24cd0c17f49be36866202",
+   "origin": "procedural-seeded",
+   "generator": "original deterministic filtered-noise and resonator construction; seed 7306",
+   "approval": {
+    "status": "LEGACY_ACCEPTED",
+    "by": "Mayowa",
+    "date": "2026-10-02",
+    "note": "Shipped in VoiceStudio v6, accepted as the gold visual-craft benchmark."
+   },
+   "path": "videos/productions/voicestudio-craft-v6/assets/sfx/key3.wav",
+   "evidence": "videos/productions/voicestudio-craft-v6/sfx-source-manifest.json"
+  },
+  {
+   "id": "sfx/v6/pop",
+   "sha256": "d16333de561a8d85310b54d72ac21e3d343b4202db3f2bc91f04dee344ee5fe9",
+   "origin": "procedural-seeded",
+   "generator": "original deterministic filtered-noise and resonator construction; seed 7307",
+   "approval": {
+    "status": "LEGACY_ACCEPTED",
+    "by": "Mayowa",
+    "date": "2026-10-02",
+    "note": "Shipped in VoiceStudio v6, accepted as the gold visual-craft benchmark."
+   },
+   "path": "videos/productions/voicestudio-craft-v6/assets/sfx/pop.wav",
+   "evidence": "videos/productions/voicestudio-craft-v6/sfx-source-manifest.json"
+  },
+  {
+   "id": "sfx/v6/spring",
+   "sha256": "f3654108376963bfc4a7d1ab913f3039bdbb20f33be1396b0ad4a1a391d775a7",
+   "origin": "procedural-seeded",
+   "generator": "original deterministic filtered-noise and resonator construction; seed 7308",
+   "approval": {
+    "status": "LEGACY_ACCEPTED",
+    "by": "Mayowa",
+    "date": "2026-10-02",
+    "note": "Shipped in VoiceStudio v6, accepted as the gold visual-craft benchmark."
+   },
+   "path": "videos/productions/voicestudio-craft-v6/assets/sfx/spring.wav",
+   "evidence": "videos/productions/voicestudio-craft-v6/sfx-source-manifest.json"
+  },
+  {
+   "id": "sfx/v6/star",
+   "sha256": "6a6697aef0d0b8e7bb6fa138f9a35be8c9e65c19074ff33882ad09e606b91879",
+   "origin": "procedural-seeded",
+   "generator": "original deterministic filtered-noise and resonator construction; seed 7309",
+   "approval": {
+    "status": "LEGACY_ACCEPTED",
+    "by": "Mayowa",
+    "date": "2026-10-02",
+    "note": "Shipped in VoiceStudio v6, accepted as the gold visual-craft benchmark."
+   },
+   "path": "videos/productions/voicestudio-craft-v6/assets/sfx/star.wav",
+   "evidence": "videos/productions/voicestudio-craft-v6/sfx-source-manifest.json"
+  },
+  {
+   "id": "sfx/v6/reject",
+   "sha256": "4d90a5b9aff9f73d709e5318334b455e3572925a7a31e7ddb2a0aa1b25c2b1c1",
+   "origin": "procedural-seeded",
+   "generator": "original deterministic filtered-noise and resonator construction; seed 7310",
+   "approval": {
+    "status": "LEGACY_ACCEPTED",
+    "by": "Mayowa",
+    "date": "2026-10-02",
+    "note": "Shipped in VoiceStudio v6, accepted as the gold visual-craft benchmark."
+   },
+   "path": "videos/productions/voicestudio-craft-v6/assets/sfx/reject.wav",
+   "evidence": "videos/productions/voicestudio-craft-v6/sfx-source-manifest.json"
+  },
+  {
+   "id": "sfx/v6/washer",
+   "sha256": "7fe4605ed7bbe76ca0bc890b628428a6ab3b6c95e7bfcb0feb3ab6325135b93c",
+   "origin": "procedural-seeded",
+   "generator": "original deterministic filtered-noise and resonator construction; seed 7311",
+   "approval": {
+    "status": "LEGACY_ACCEPTED",
+    "by": "Mayowa",
+    "date": "2026-10-02",
+    "note": "Shipped in VoiceStudio v6, accepted as the gold visual-craft benchmark."
+   },
+   "path": "videos/productions/voicestudio-craft-v6/assets/sfx/washer.wav",
+   "evidence": "videos/productions/voicestudio-craft-v6/sfx-source-manifest.json"
+  },
+  {
+   "id": "sfx/v6/whoosh",
+   "sha256": "774765be3f9a6319984f8e039fc2990af2ef7f193794a9b7501a6fc943058d85",
+   "origin": "procedural-seeded",
+   "generator": "original deterministic filtered-noise and resonator construction; seed 7312",
+   "approval": {
+    "status": "LEGACY_ACCEPTED",
+    "by": "Mayowa",
+    "date": "2026-10-02",
+    "note": "Shipped in VoiceStudio v6, accepted as the gold visual-craft benchmark."
+   },
+   "path": "videos/productions/voicestudio-craft-v6/assets/sfx/whoosh.wav",
+   "evidence": "videos/productions/voicestudio-craft-v6/sfx-source-manifest.json"
+  },
+  {
+   "id": "font/Inter-700",
+   "sha256": "6f56409fd3d64bb85f7d070bce20749db2d66b6d63cec586cc22d1c761be2491",
+   "origin": "licensed",
+   "generator": "distributed font binary",
+   "approval": {
+    "status": "LEGACY_ACCEPTED",
+    "by": "Mayowa",
+    "date": "2026-10-02",
+    "note": "Shipped in VoiceStudio v6, accepted as the gold visual-craft benchmark."
+   },
+   "path": "videos/productions/voicestudio-craft-v6/assets/fonts/Inter-700.woff2",
+   "license": "SIL Open Font License 1.1",
+   "evidence": "videos/productions/voicestudio-craft-v6/assets/fonts/OFL-inter.txt"
+  },
+  {
+   "id": "font/Inter-900",
+   "sha256": "4eee5bf043412480a84a56c48562655acfc60c14a578f7beb48e6a338be20206",
+   "origin": "licensed",
+   "generator": "distributed font binary",
+   "approval": {
+    "status": "LEGACY_ACCEPTED",
+    "by": "Mayowa",
+    "date": "2026-10-02",
+    "note": "Shipped in VoiceStudio v6, accepted as the gold visual-craft benchmark."
+   },
+   "path": "videos/productions/voicestudio-craft-v6/assets/fonts/Inter-900.woff2",
+   "license": "SIL Open Font License 1.1",
+   "evidence": "videos/productions/voicestudio-craft-v6/assets/fonts/OFL-inter.txt"
+  },
+  {
+   "id": "font/EBGaramond-700",
+   "sha256": "5d0f8a497a48fd2a3611d07acc844f65c9fbb35419eafa4e1295f5f0f95f86e4",
+   "origin": "licensed",
+   "generator": "distributed font binary",
+   "approval": {
+    "status": "LEGACY_ACCEPTED",
+    "by": "Mayowa",
+    "date": "2026-10-02",
+    "note": "Shipped in VoiceStudio v6, accepted as the gold visual-craft benchmark."
+   },
+   "path": "videos/productions/voicestudio-craft-v6/assets/fonts/EBGaramond-700.woff2",
+   "license": "SIL Open Font License 1.1",
+   "evidence": "videos/productions/voicestudio-craft-v6/assets/fonts/OFL-eb-garamond.txt"
+  },
+  {
+   "id": "bot/v1/face-states/annoyed",
+   "sha256": "0e778ce347d755e1cd080da72cb782f11483afb3b6c6f9fac4040d8e47e72788",
+   "origin": "motif-authored-svg",
+   "generator": "python scripts/build_motif_bot.py",
+   "approval": {
+    "status": "LEGACY_ACCEPTED",
+    "by": "Mayowa",
+    "date": "2026-10-02",
+    "note": "Canonical Motif Bot v1 (Direction A)."
+   },
+   "path": "assets/characters/motif-bot/canonical/v1/face-states/annoyed.svg"
+  },
+  {
+   "id": "bot/v1/face-states/confused",
+   "sha256": "9e65d9a9c80e921ea231422e0b47f0c0c08f7416c078b376c5d6c4a2abbdf4f9",
+   "origin": "motif-authored-svg",
+   "generator": "python scripts/build_motif_bot.py",
+   "approval": {
+    "status": "LEGACY_ACCEPTED",
+    "by": "Mayowa",
+    "date": "2026-10-02",
+    "note": "Canonical Motif Bot v1 (Direction A)."
+   },
+   "path": "assets/characters/motif-bot/canonical/v1/face-states/confused.svg"
+  },
+  {
+   "id": "bot/v1/face-states/determined",
+   "sha256": "d0e1cdefbb659e2463ef86cbcebf129fb17658e9ac90d383908b1a280c22b240",
+   "origin": "motif-authored-svg",
+   "generator": "python scripts/build_motif_bot.py",
+   "approval": {
+    "status": "LEGACY_ACCEPTED",
+    "by": "Mayowa",
+    "date": "2026-10-02",
+    "note": "Canonical Motif Bot v1 (Direction A)."
+   },
+   "path": "assets/characters/motif-bot/canonical/v1/face-states/determined.svg"
+  },
+  {
+   "id": "bot/v1/face-states/excited",
+   "sha256": "576be96284808cdb98f2e51934b0221bc092eab0cab7f447f2775cf20c4292b5",
+   "origin": "motif-authored-svg",
+   "generator": "python scripts/build_motif_bot.py",
+   "approval": {
+    "status": "LEGACY_ACCEPTED",
+    "by": "Mayowa",
+    "date": "2026-10-02",
+    "note": "Canonical Motif Bot v1 (Direction A)."
+   },
+   "path": "assets/characters/motif-bot/canonical/v1/face-states/excited.svg"
+  },
+  {
+   "id": "bot/v1/face-states/happy",
+   "sha256": "fe37889dd8344a4aa5215c5685913ad6a79443885f460995cc10bd9fb2013965",
+   "origin": "motif-authored-svg",
+   "generator": "python scripts/build_motif_bot.py",
+   "approval": {
+    "status": "LEGACY_ACCEPTED",
+    "by": "Mayowa",
+    "date": "2026-10-02",
+    "note": "Canonical Motif Bot v1 (Direction A)."
+   },
+   "path": "assets/characters/motif-bot/canonical/v1/face-states/happy.svg"
+  },
+  {
+   "id": "bot/v1/face-states/neutral",
+   "sha256": "90ff60f2b2ca88a15e9991e8581b982a5d286488de1446494ace5291218faf9b",
+   "origin": "motif-authored-svg",
+   "generator": "python scripts/build_motif_bot.py",
+   "approval": {
+    "status": "LEGACY_ACCEPTED",
+    "by": "Mayowa",
+    "date": "2026-10-02",
+    "note": "Canonical Motif Bot v1 (Direction A)."
+   },
+   "path": "assets/characters/motif-bot/canonical/v1/face-states/neutral.svg"
+  },
+  {
+   "id": "bot/v1/face-states/proud",
+   "sha256": "7b396d140cd958049c892b2e6cd821add98acb26839cb83b44bbbf842108dc45",
+   "origin": "motif-authored-svg",
+   "generator": "python scripts/build_motif_bot.py",
+   "approval": {
+    "status": "LEGACY_ACCEPTED",
+    "by": "Mayowa",
+    "date": "2026-10-02",
+    "note": "Canonical Motif Bot v1 (Direction A)."
+   },
+   "path": "assets/characters/motif-bot/canonical/v1/face-states/proud.svg"
+  },
+  {
+   "id": "bot/v1/face-states/shocked",
+   "sha256": "f5cdc4bb27d8c20e68f8db338f9095e589b9036adf7b6e8934d34167cbb6809b",
+   "origin": "motif-authored-svg",
+   "generator": "python scripts/build_motif_bot.py",
+   "approval": {
+    "status": "LEGACY_ACCEPTED",
+    "by": "Mayowa",
+    "date": "2026-10-02",
+    "note": "Canonical Motif Bot v1 (Direction A)."
+   },
+   "path": "assets/characters/motif-bot/canonical/v1/face-states/shocked.svg"
+  },
+  {
+   "id": "bot/v1/face-states/sleepy",
+   "sha256": "1f64b83cecf10bfdedcbec9538fd7c83c0b1bfef75cc007e4e1aaa5f076bb51b",
+   "origin": "motif-authored-svg",
+   "generator": "python scripts/build_motif_bot.py",
+   "approval": {
+    "status": "LEGACY_ACCEPTED",
+    "by": "Mayowa",
+    "date": "2026-10-02",
+    "note": "Canonical Motif Bot v1 (Direction A)."
+   },
+   "path": "assets/characters/motif-bot/canonical/v1/face-states/sleepy.svg"
+  },
+  {
+   "id": "bot/v1/face-states/surprised",
+   "sha256": "fd293aea6125e1f21bc63eef3b1d89c80b8035ad0561729224f0fdd2cf552087",
+   "origin": "motif-authored-svg",
+   "generator": "python scripts/build_motif_bot.py",
+   "approval": {
+    "status": "LEGACY_ACCEPTED",
+    "by": "Mayowa",
+    "date": "2026-10-02",
+    "note": "Canonical Motif Bot v1 (Direction A)."
+   },
+   "path": "assets/characters/motif-bot/canonical/v1/face-states/surprised.svg"
+  },
+  {
+   "id": "bot/v1/face-states/thinking",
+   "sha256": "19667cbd766611b11deaebf9885fb2dd3f1a6b5b722069a5c7460a9be15b79d1",
+   "origin": "motif-authored-svg",
+   "generator": "python scripts/build_motif_bot.py",
+   "approval": {
+    "status": "LEGACY_ACCEPTED",
+    "by": "Mayowa",
+    "date": "2026-10-02",
+    "note": "Canonical Motif Bot v1 (Direction A)."
+   },
+   "path": "assets/characters/motif-bot/canonical/v1/face-states/thinking.svg"
+  },
+  {
+   "id": "bot/v1/face-states/worried",
+   "sha256": "b241131991441e381542668f704ab796f4a0f8af7ea771c08af4ca479f5a443b",
+   "origin": "motif-authored-svg",
+   "generator": "python scripts/build_motif_bot.py",
+   "approval": {
+    "status": "LEGACY_ACCEPTED",
+    "by": "Mayowa",
+    "date": "2026-10-02",
+    "note": "Canonical Motif Bot v1 (Direction A)."
+   },
+   "path": "assets/characters/motif-bot/canonical/v1/face-states/worried.svg"
+  },
+  {
+   "id": "bot/v1/hands/fist",
+   "sha256": "1c3331ca1dfb0d8763b956d2acc617c739fd770edb460e06b0e2f9ce708a3dfd",
+   "origin": "motif-authored-svg",
+   "generator": "python scripts/build_motif_bot.py",
+   "approval": {
+    "status": "LEGACY_ACCEPTED",
+    "by": "Mayowa",
+    "date": "2026-10-02",
+    "note": "Canonical Motif Bot v1 (Direction A)."
+   },
+   "path": "assets/characters/motif-bot/canonical/v1/hands/fist.svg"
+  },
+  {
+   "id": "bot/v1/hands/grip",
+   "sha256": "a3b56e48858c70be719d8e161435123d1a7e0aeda3f1599ec60fa759fec8911f",
+   "origin": "motif-authored-svg",
+   "generator": "python scripts/build_motif_bot.py",
+   "approval": {
+    "status": "LEGACY_ACCEPTED",
+    "by": "Mayowa",
+    "date": "2026-10-02",
+    "note": "Canonical Motif Bot v1 (Direction A)."
+   },
+   "path": "assets/characters/motif-bot/canonical/v1/hands/grip.svg"
+  },
+  {
+   "id": "bot/v1/hands/mitten",
+   "sha256": "d07276d191fe3ea3b5349fc1893f6fc375536053efc0e934123befc976210c9d",
+   "origin": "motif-authored-svg",
+   "generator": "python scripts/build_motif_bot.py",
+   "approval": {
+    "status": "LEGACY_ACCEPTED",
+    "by": "Mayowa",
+    "date": "2026-10-02",
+    "note": "Canonical Motif Bot v1 (Direction A)."
+   },
+   "path": "assets/characters/motif-bot/canonical/v1/hands/mitten.svg"
+  },
+  {
+   "id": "bot/v1/hands/open",
+   "sha256": "13a34f5fb626239c73d61c028b0a9d7218ed59130232a132504459e91a6045cf",
+   "origin": "motif-authored-svg",
+   "generator": "python scripts/build_motif_bot.py",
+   "approval": {
+    "status": "LEGACY_ACCEPTED",
+    "by": "Mayowa",
+    "date": "2026-10-02",
+    "note": "Canonical Motif Bot v1 (Direction A)."
+   },
+   "path": "assets/characters/motif-bot/canonical/v1/hands/open.svg"
+  },
+  {
+   "id": "bot/v1/hands/point",
+   "sha256": "0c2227b9946b2423cc7e2890785695ea1fd5482fd06f53d92f2fffe45a896a81",
+   "origin": "motif-authored-svg",
+   "generator": "python scripts/build_motif_bot.py",
+   "approval": {
+    "status": "LEGACY_ACCEPTED",
+    "by": "Mayowa",
+    "date": "2026-10-02",
+    "note": "Canonical Motif Bot v1 (Direction A)."
+   },
+   "path": "assets/characters/motif-bot/canonical/v1/hands/point.svg"
+  },
+  {
+   "id": "bot/v1/motif-bot-front-neutral-v1",
+   "sha256": "1874a8274c8ae532e2d100c513c63865351195dbefcb7f7ebd319bc56b95eef4",
+   "origin": "motif-authored-svg",
+   "generator": "python scripts/build_motif_bot.py",
+   "approval": {
+    "status": "LEGACY_ACCEPTED",
+    "by": "Mayowa",
+    "date": "2026-10-02",
+    "note": "Canonical Motif Bot v1 (Direction A)."
+   },
+   "path": "assets/characters/motif-bot/canonical/v1/motif-bot-front-neutral-v1.svg"
+  },
+  {
+   "id": "bot/v1/parts/antennae",
+   "sha256": "97842a29fa44ce80dbc2f24d8c8351bad8d07c1c570df88e85eacb4cfe58b7dd",
+   "origin": "motif-authored-svg",
+   "generator": "python scripts/build_motif_bot.py",
+   "approval": {
+    "status": "LEGACY_ACCEPTED",
+    "by": "Mayowa",
+    "date": "2026-10-02",
+    "note": "Canonical Motif Bot v1 (Direction A)."
+   },
+   "path": "assets/characters/motif-bot/canonical/v1/parts/antennae.svg"
+  },
+  {
+   "id": "bot/v1/parts/body",
+   "sha256": "046af03d11cf8825aa67e42138f487775745b6fa23aae72f459565f2cab5c493",
+   "origin": "motif-authored-svg",
+   "generator": "python scripts/build_motif_bot.py",
+   "approval": {
+    "status": "LEGACY_ACCEPTED",
+    "by": "Mayowa",
+    "date": "2026-10-02",
+    "note": "Canonical Motif Bot v1 (Direction A)."
+   },
+   "path": "assets/characters/motif-bot/canonical/v1/parts/body.svg"
+  },
+  {
+   "id": "bot/v1/parts/face-panel",
+   "sha256": "09b6a080b09ca7ca3a95541f04b1b144464463478e8761d98b9a24412410ccc3",
+   "origin": "motif-authored-svg",
+   "generator": "python scripts/build_motif_bot.py",
+   "approval": {
+    "status": "LEGACY_ACCEPTED",
+    "by": "Mayowa",
+    "date": "2026-10-02",
+    "note": "Canonical Motif Bot v1 (Direction A)."
+   },
+   "path": "assets/characters/motif-bot/canonical/v1/parts/face-panel.svg"
+  },
+  {
+   "id": "bot/v1/parts/face-state",
+   "sha256": "38a89e34ea0e84cca13f8344244f04f93fe92498eae86250cf067a41a6be44fe",
+   "origin": "motif-authored-svg",
+   "generator": "python scripts/build_motif_bot.py",
+   "approval": {
+    "status": "LEGACY_ACCEPTED",
+    "by": "Mayowa",
+    "date": "2026-10-02",
+    "note": "Canonical Motif Bot v1 (Direction A)."
+   },
+   "path": "assets/characters/motif-bot/canonical/v1/parts/face-state.svg"
+  },
+  {
+   "id": "bot/v1/parts/head",
+   "sha256": "8ffb5a9091f088821cf3b3f43542bc7bff4ccb9aef9c57543fc0a181f2864dfe",
+   "origin": "motif-authored-svg",
+   "generator": "python scripts/build_motif_bot.py",
+   "approval": {
+    "status": "LEGACY_ACCEPTED",
+    "by": "Mayowa",
+    "date": "2026-10-02",
+    "note": "Canonical Motif Bot v1 (Direction A)."
+   },
+   "path": "assets/characters/motif-bot/canonical/v1/parts/head.svg"
+  },
+  {
+   "id": "bot/v1/parts/left-arm",
+   "sha256": "7545b493ab68903ce8f8b746eccdedaaf6997c55b8e6a466b77ffad43be036ec",
+   "origin": "motif-authored-svg",
+   "generator": "python scripts/build_motif_bot.py",
+   "approval": {
+    "status": "LEGACY_ACCEPTED",
+    "by": "Mayowa",
+    "date": "2026-10-02",
+    "note": "Canonical Motif Bot v1 (Direction A)."
+   },
+   "path": "assets/characters/motif-bot/canonical/v1/parts/left-arm.svg"
+  },
+  {
+   "id": "bot/v1/parts/left-foot",
+   "sha256": "4b3628a2e21f309d4da3d77c8b962e09f09b7f7c7f56ac724afaf1cf74447303",
+   "origin": "motif-authored-svg",
+   "generator": "python scripts/build_motif_bot.py",
+   "approval": {
+    "status": "LEGACY_ACCEPTED",
+    "by": "Mayowa",
+    "date": "2026-10-02",
+    "note": "Canonical Motif Bot v1 (Direction A)."
+   },
+   "path": "assets/characters/motif-bot/canonical/v1/parts/left-foot.svg"
+  },
+  {
+   "id": "bot/v1/parts/left-hand",
+   "sha256": "d32e4dd60e20b7bcf666ea258bcfc1dfe65974200d68a3199a655696a9d84d90",
+   "origin": "motif-authored-svg",
+   "generator": "python scripts/build_motif_bot.py",
+   "approval": {
+    "status": "LEGACY_ACCEPTED",
+    "by": "Mayowa",
+    "date": "2026-10-02",
+    "note": "Canonical Motif Bot v1 (Direction A)."
+   },
+   "path": "assets/characters/motif-bot/canonical/v1/parts/left-hand.svg"
+  },
+  {
+   "id": "bot/v1/parts/left-leg",
+   "sha256": "632c6ab684f2bba5602e7594cdd78a34a3bb4236a4d29a582007980f75fcd079",
+   "origin": "motif-authored-svg",
+   "generator": "python scripts/build_motif_bot.py",
+   "approval": {
+    "status": "LEGACY_ACCEPTED",
+    "by": "Mayowa",
+    "date": "2026-10-02",
+    "note": "Canonical Motif Bot v1 (Direction A)."
+   },
+   "path": "assets/characters/motif-bot/canonical/v1/parts/left-leg.svg"
+  },
+  {
+   "id": "bot/v1/parts/right-arm",
+   "sha256": "db0901373e7ef259506cb849066242960b46258360ca0db92e9e5c471106a1aa",
+   "origin": "motif-authored-svg",
+   "generator": "python scripts/build_motif_bot.py",
+   "approval": {
+    "status": "LEGACY_ACCEPTED",
+    "by": "Mayowa",
+    "date": "2026-10-02",
+    "note": "Canonical Motif Bot v1 (Direction A)."
+   },
+   "path": "assets/characters/motif-bot/canonical/v1/parts/right-arm.svg"
+  },
+  {
+   "id": "bot/v1/parts/right-foot",
+   "sha256": "d790e160a3c9b9ec9db28b8c49deb5806668c950d4c287e6e3c9731d695a09fc",
+   "origin": "motif-authored-svg",
+   "generator": "python scripts/build_motif_bot.py",
+   "approval": {
+    "status": "LEGACY_ACCEPTED",
+    "by": "Mayowa",
+    "date": "2026-10-02",
+    "note": "Canonical Motif Bot v1 (Direction A)."
+   },
+   "path": "assets/characters/motif-bot/canonical/v1/parts/right-foot.svg"
+  },
+  {
+   "id": "bot/v1/parts/right-hand",
+   "sha256": "58da0de769a52b79e8a79f708367ea8cca6484b0e146b75a70cf2c3b1e1f9288",
+   "origin": "motif-authored-svg",
+   "generator": "python scripts/build_motif_bot.py",
+   "approval": {
+    "status": "LEGACY_ACCEPTED",
+    "by": "Mayowa",
+    "date": "2026-10-02",
+    "note": "Canonical Motif Bot v1 (Direction A)."
+   },
+   "path": "assets/characters/motif-bot/canonical/v1/parts/right-hand.svg"
+  },
+  {
+   "id": "bot/v1/parts/right-leg",
+   "sha256": "ce748748791f8096be6fb9281ad4ac59623f9d6d5fab51ce9899fd23a05291bb",
+   "origin": "motif-authored-svg",
+   "generator": "python scripts/build_motif_bot.py",
+   "approval": {
+    "status": "LEGACY_ACCEPTED",
+    "by": "Mayowa",
+    "date": "2026-10-02",
+    "note": "Canonical Motif Bot v1 (Direction A)."
+   },
+   "path": "assets/characters/motif-bot/canonical/v1/parts/right-leg.svg"
+  },
+  {
+   "id": "bot/v1/views/back",
+   "sha256": "c873666fc3bfc14b43a329750e32f12e197ed07d3f252c2f6038762560872317",
+   "origin": "motif-authored-svg",
+   "generator": "python scripts/build_motif_bot.py",
+   "approval": {
+    "status": "LEGACY_ACCEPTED",
+    "by": "Mayowa",
+    "date": "2026-10-02",
+    "note": "Canonical Motif Bot v1 (Direction A)."
+   },
+   "path": "assets/characters/motif-bot/canonical/v1/views/back.svg"
+  },
+  {
+   "id": "bot/v1/views/front-three-quarter-left",
+   "sha256": "e39e0dbd2cce3058967da543895d6a2226ae2f6f3c7466a003e3550758016369",
+   "origin": "motif-authored-svg",
+   "generator": "python scripts/build_motif_bot.py",
+   "approval": {
+    "status": "LEGACY_ACCEPTED",
+    "by": "Mayowa",
+    "date": "2026-10-02",
+    "note": "Canonical Motif Bot v1 (Direction A)."
+   },
+   "path": "assets/characters/motif-bot/canonical/v1/views/front-three-quarter-left.svg"
+  },
+  {
+   "id": "bot/v1/views/front-three-quarter-right",
+   "sha256": "86bf1a38a8b42cef0e90967d13ae83f78bde4ab99d2e6a61b3ffdef5654b0017",
+   "origin": "motif-authored-svg",
+   "generator": "python scripts/build_motif_bot.py",
+   "approval": {
+    "status": "LEGACY_ACCEPTED",
+    "by": "Mayowa",
+    "date": "2026-10-02",
+    "note": "Canonical Motif Bot v1 (Direction A)."
+   },
+   "path": "assets/characters/motif-bot/canonical/v1/views/front-three-quarter-right.svg"
+  },
+  {
+   "id": "bot/v1/views/front",
+   "sha256": "b5bdf4b899f50b70d0d27961a3824686eb493c575a89712b01fd0aa52c334b2d",
+   "origin": "motif-authored-svg",
+   "generator": "python scripts/build_motif_bot.py",
+   "approval": {
+    "status": "LEGACY_ACCEPTED",
+    "by": "Mayowa",
+    "date": "2026-10-02",
+    "note": "Canonical Motif Bot v1 (Direction A)."
+   },
+   "path": "assets/characters/motif-bot/canonical/v1/views/front.svg"
+  },
+  {
+   "id": "bot/v1/views/left-side",
+   "sha256": "9db48d138d1dc11e477406b637608c904ede52a7c9a1524b6ea9f0643e067eb2",
+   "origin": "motif-authored-svg",
+   "generator": "python scripts/build_motif_bot.py",
+   "approval": {
+    "status": "LEGACY_ACCEPTED",
+    "by": "Mayowa",
+    "date": "2026-10-02",
+    "note": "Canonical Motif Bot v1 (Direction A)."
+   },
+   "path": "assets/characters/motif-bot/canonical/v1/views/left-side.svg"
+  },
+  {
+   "id": "bot/v1/views/right-side",
+   "sha256": "a07c26e7236528d1f78ed25a122c4b0f073d40d4c9eafd02c6730bc7e403aac1",
+   "origin": "motif-authored-svg",
+   "generator": "python scripts/build_motif_bot.py",
+   "approval": {
+    "status": "LEGACY_ACCEPTED",
+    "by": "Mayowa",
+    "date": "2026-10-02",
+    "note": "Canonical Motif Bot v1 (Direction A)."
+   },
+   "path": "assets/characters/motif-bot/canonical/v1/views/right-side.svg"
+  },
+  {
+   "id": "scene/book-workshop/assembly-cradle",
+   "sha256": "178b3ac72c9549427ad1c99f283de9171e67b68b4d57fa48b96499bf6617e887",
+   "origin": "motif-authored-svg",
+   "generator": "authored scene SVG; see sibling metadata json",
+   "approval": {
+    "status": "LEGACY_ACCEPTED",
+    "by": "Mayowa",
+    "date": "2026-10-02",
+    "note": "Shipped in VoiceStudio v6, accepted as the gold visual-craft benchmark."
+   },
+   "path": "assets/scenes/book-workshop/assembly-cradle.svg"
+  },
+  {
+   "id": "scene/book-workshop/assembly-cradle@png",
+   "sha256": "52222e54948a6228817769fbcba5e9fb3032650e38fd714436ce077c4cad11f5",
+   "origin": "motif-derived",
+   "generator": "raster preview of the SVG master",
+   "approval": {
+    "status": "LEGACY_ACCEPTED",
+    "by": "Mayowa",
+    "date": "2026-10-02",
+    "note": "Shipped in VoiceStudio v6, accepted as the gold visual-craft benchmark."
+   },
+   "pixel_sha256": "0a2212b9163ddf1ebd241cc22f3856514072eac2709d6936c1cf357a49d46e6c",
+   "path": "assets/scenes/book-workshop/assembly-cradle.png",
+   "derived_from": "scene/book-workshop/assembly-cradle"
+  },
+  {
+   "id": "scene/book-workshop/hinged-crease-jig",
+   "sha256": "82f90c2331cd1fba77174ca7f5bbb1a93ad37df7a09ec92b5660f287f674581d",
+   "origin": "motif-authored-svg",
+   "generator": "authored scene SVG; see sibling metadata json",
+   "approval": {
+    "status": "LEGACY_ACCEPTED",
+    "by": "Mayowa",
+    "date": "2026-10-02",
+    "note": "Shipped in VoiceStudio v6, accepted as the gold visual-craft benchmark."
+   },
+   "path": "assets/scenes/book-workshop/hinged-crease-jig.svg"
+  },
+  {
+   "id": "scene/book-workshop/hinged-crease-jig@png",
+   "sha256": "110dc91a3f679e63426b2d5e47b4337764a678fa86ce4b5d6685451d11b5c2d9",
+   "origin": "motif-derived",
+   "generator": "raster preview of the SVG master",
+   "approval": {
+    "status": "LEGACY_ACCEPTED",
+    "by": "Mayowa",
+    "date": "2026-10-02",
+    "note": "Shipped in VoiceStudio v6, accepted as the gold visual-craft benchmark."
+   },
+   "pixel_sha256": "2a93385190ca69a6cf19ae3ecab96c1ca1f76bcc571cb57323c68c6caf96d4f2",
+   "path": "assets/scenes/book-workshop/hinged-crease-jig.png",
+   "derived_from": "scene/book-workshop/hinged-crease-jig"
+  },
+  {
+   "id": "scene/book-workshop/project-folio-kit",
+   "sha256": "81de26f44e18b6a60116091399292862617c18d830b3fc76f915a00c38bddb3d",
+   "origin": "motif-authored-svg",
+   "generator": "authored scene SVG; see sibling metadata json",
+   "approval": {
+    "status": "LEGACY_ACCEPTED",
+    "by": "Mayowa",
+    "date": "2026-10-02",
+    "note": "Shipped in VoiceStudio v6, accepted as the gold visual-craft benchmark."
+   },
+   "path": "assets/scenes/book-workshop/project-folio-kit.svg"
+  },
+  {
+   "id": "scene/book-workshop/project-folio-kit@png",
+   "sha256": "a3a760e4e88742eef02f939471ecb1723b9730eaebdb0db6f7e6ac11e690fc3a",
+   "origin": "motif-derived",
+   "generator": "raster preview of the SVG master",
+   "approval": {
+    "status": "LEGACY_ACCEPTED",
+    "by": "Mayowa",
+    "date": "2026-10-02",
+    "note": "Shipped in VoiceStudio v6, accepted as the gold visual-craft benchmark."
+   },
+   "pixel_sha256": "b1f4c08bb0989e8f69925142527cb44136637906e7a627e3b5e289f88d51eaea",
+   "path": "assets/scenes/book-workshop/project-folio-kit.png",
+   "derived_from": "scene/book-workshop/project-folio-kit"
+  },
+  {
+   "id": "scene/book-workshop/receiving-hands",
+   "sha256": "95468b80eb9b28516d95e3dec06aacedb0972cc06595aabe1c39c8e0d32c31cb",
+   "origin": "motif-authored-svg",
+   "generator": "authored scene SVG; see sibling metadata json",
+   "approval": {
+    "status": "LEGACY_ACCEPTED",
+    "by": "Mayowa",
+    "date": "2026-10-02",
+    "note": "Shipped in VoiceStudio v6, accepted as the gold visual-craft benchmark."
+   },
+   "path": "assets/scenes/book-workshop/receiving-hands.svg"
+  },
+  {
+   "id": "scene/book-workshop/receiving-hands@png",
+   "sha256": "8234c9d8184ce5a0d1261a0058cd61fc4d0b0ad2037fd6cf6173eff4390ce827",
+   "origin": "motif-derived",
+   "generator": "raster preview of the SVG master",
+   "approval": {
+    "status": "LEGACY_ACCEPTED",
+    "by": "Mayowa",
+    "date": "2026-10-02",
+    "note": "Shipped in VoiceStudio v6, accepted as the gold visual-craft benchmark."
+   },
+   "pixel_sha256": "5cb8b9c2a0440338836c269426c063659e67d6efeed16d00d63a4bba27b881bb",
+   "path": "assets/scenes/book-workshop/receiving-hands.png",
+   "derived_from": "scene/book-workshop/receiving-hands"
+  },
+  {
+   "id": "scene/book-workshop/tabletop-page-press",
+   "sha256": "a95d2646662d2b88bf20b210de4cd2468fd7c011046b879b32cbebbae14b262f",
+   "origin": "motif-authored-svg",
+   "generator": "authored scene SVG; see sibling metadata json",
+   "approval": {
+    "status": "LEGACY_ACCEPTED",
+    "by": "Mayowa",
+    "date": "2026-10-02",
+    "note": "Shipped in VoiceStudio v6, accepted as the gold visual-craft benchmark."
+   },
+   "path": "assets/scenes/book-workshop/tabletop-page-press.svg"
+  },
+  {
+   "id": "scene/book-workshop/tabletop-page-press@png",
+   "sha256": "cbd9b47e660c0012147d27d074ef059a0c71fb1204c613f00cbd47ef57f68802",
+   "origin": "motif-derived",
+   "generator": "raster preview of the SVG master",
+   "approval": {
+    "status": "LEGACY_ACCEPTED",
+    "by": "Mayowa",
+    "date": "2026-10-02",
+    "note": "Shipped in VoiceStudio v6, accepted as the gold visual-craft benchmark."
+   },
+   "pixel_sha256": "3bf38c47f78d699d0947db6b6cf96ba80f49da50e61ac3754e0f82a7697d1d16",
+   "path": "assets/scenes/book-workshop/tabletop-page-press.png",
+   "derived_from": "scene/book-workshop/tabletop-page-press"
+  },
+  {
+   "id": "scene/demo-03/appointment-card",
+   "sha256": "ade3b74aee61903a5a1201235c5aed9a8a73056738f5051e3b75ee39ab9e0daf",
+   "origin": "motif-authored-svg",
+   "generator": "authored scene SVG; see sibling metadata json",
+   "approval": {
+    "status": "LEGACY_ACCEPTED",
+    "by": "Mayowa",
+    "date": "2026-10-02",
+    "note": "Shipped in VoiceStudio v6, accepted as the gold visual-craft benchmark."
+   },
+   "path": "assets/scenes/demo-03/appointment-card.svg"
+  },
+  {
+   "id": "scene/demo-03/approval-tab",
+   "sha256": "ffc145d360ced75d0ed344cc3ea3e6a25919952df05bbbc34caee9b346396c64",
+   "origin": "motif-authored-svg",
+   "generator": "authored scene SVG; see sibling metadata json",
+   "approval": {
+    "status": "LEGACY_ACCEPTED",
+    "by": "Mayowa",
+    "date": "2026-10-02",
+    "note": "Shipped in VoiceStudio v6, accepted as the gold visual-craft benchmark."
+   },
+   "path": "assets/scenes/demo-03/approval-tab.svg"
+  },
+  {
+   "id": "scene/demo-03/calendar-board",
+   "sha256": "dab2299a1e865392d516f927e96ea96463701656dc1ee90f660242af73ece589",
+   "origin": "motif-authored-svg",
+   "generator": "authored scene SVG; see sibling metadata json",
+   "approval": {
+    "status": "LEGACY_ACCEPTED",
+    "by": "Mayowa",
+    "date": "2026-10-02",
+    "note": "Shipped in VoiceStudio v6, accepted as the gold visual-craft benchmark."
+   },
+   "path": "assets/scenes/demo-03/calendar-board.svg"
+  },
+  {
+   "id": "scene/demo-03/human-fingertip",
+   "sha256": "73e8af80704c44aebedee890c96c616612f125dd95aa8583c5426f60cb65d96f",
+   "origin": "motif-authored-svg",
+   "generator": "authored scene SVG; see sibling metadata json",
+   "approval": {
+    "status": "LEGACY_ACCEPTED",
+    "by": "Mayowa",
+    "date": "2026-10-02",
+    "note": "Shipped in VoiceStudio v6, accepted as the gold visual-craft benchmark."
+   },
+   "path": "assets/scenes/demo-03/human-fingertip.svg"
+  },
+  {
+   "id": "scene/demo-03/proposal-slip",
+   "sha256": "57d82b597aaf3be433664b8cb4b7f826863cfecf704e82077307221b78d17f1c",
+   "origin": "motif-authored-svg",
+   "generator": "authored scene SVG; see sibling metadata json",
+   "approval": {
+    "status": "LEGACY_ACCEPTED",
+    "by": "Mayowa",
+    "date": "2026-10-02",
+    "note": "Shipped in VoiceStudio v6, accepted as the gold visual-craft benchmark."
+   },
+   "path": "assets/scenes/demo-03/proposal-slip.svg"
+  },
+  {
+   "id": "scene/paper-investigation/answer-card",
+   "sha256": "d0c14faf9f24673f9821b2c5107aeb9ab344d76e101c29fd3307e6c4b1d78d96",
+   "origin": "motif-authored-svg",
+   "generator": "authored scene SVG; see sibling metadata json",
+   "approval": {
+    "status": "LEGACY_ACCEPTED",
+    "by": "Mayowa",
+    "date": "2026-10-02",
+    "note": "Shipped in VoiceStudio v6, accepted as the gold visual-craft benchmark."
+   },
+   "path": "assets/scenes/paper-investigation/answer-card.svg"
+  },
+  {
+   "id": "scene/paper-investigation/blank-scrap",
+   "sha256": "4955598f2b73285ac181c52c35fff2d6915a691fd1205cb665f74f4e66d9e183",
+   "origin": "motif-authored-svg",
+   "generator": "authored scene SVG; see sibling metadata json",
+   "approval": {
+    "status": "LEGACY_ACCEPTED",
+    "by": "Mayowa",
+    "date": "2026-10-02",
+    "note": "Shipped in VoiceStudio v6, accepted as the gold visual-craft benchmark."
+   },
+   "path": "assets/scenes/paper-investigation/blank-scrap.svg"
+  },
+  {
+   "id": "scene/paper-investigation/connector-strip",
+   "sha256": "74b65694aa5d5e56479fd280560dbdcde2fffa448eea9ac9849b5e830d9859bf",
+   "origin": "motif-authored-svg",
+   "generator": "authored scene SVG; see sibling metadata json",
+   "approval": {
+    "status": "LEGACY_ACCEPTED",
+    "by": "Mayowa",
+    "date": "2026-10-02",
+    "note": "Shipped in VoiceStudio v6, accepted as the gold visual-craft benchmark."
+   },
+   "path": "assets/scenes/paper-investigation/connector-strip.svg"
+  },
+  {
+   "id": "scene/paper-investigation/decision-bookmark",
+   "sha256": "a7535dffa144b150d63d7b6ebce151cc6ca9556f9cae2edbcf51e8d7f7ff4386",
+   "origin": "motif-authored-svg",
+   "generator": "authored scene SVG; see sibling metadata json",
+   "approval": {
+    "status": "LEGACY_ACCEPTED",
+    "by": "Mayowa",
+    "date": "2026-10-02",
+    "note": "Shipped in VoiceStudio v6, accepted as the gold visual-craft benchmark."
+   },
+   "path": "assets/scenes/paper-investigation/decision-bookmark.svg"
+  },
+  {
+   "id": "scene/paper-investigation/evidence-frame",
+   "sha256": "e5db369f2cba3d97e3806f62a8940c6d9abe50892d815fcf3211f095826c0706",
+   "origin": "motif-authored-svg",
+   "generator": "authored scene SVG; see sibling metadata json",
+   "approval": {
+    "status": "LEGACY_ACCEPTED",
+    "by": "Mayowa",
+    "date": "2026-10-02",
+    "note": "Shipped in VoiceStudio v6, accepted as the gold visual-craft benchmark."
+   },
+   "path": "assets/scenes/paper-investigation/evidence-frame.svg"
+  },
+  {
+   "id": "scene/paper-investigation/source-leaf",
+   "sha256": "7037249da15fab586530ed0ac14d205f004066aa86000fa591c941b16ba2cc8b",
+   "origin": "motif-authored-svg",
+   "generator": "authored scene SVG; see sibling metadata json",
+   "approval": {
+    "status": "LEGACY_ACCEPTED",
+    "by": "Mayowa",
+    "date": "2026-10-02",
+    "note": "Shipped in VoiceStudio v6, accepted as the gold visual-craft benchmark."
+   },
+   "path": "assets/scenes/paper-investigation/source-leaf.svg"
+  },
+  {
+   "id": "scene/paper-investigation/summary-flap",
+   "sha256": "e333e47b793d2eb89ba906d02985c253e9ef2c8bb7cbf7f159472592a7987447",
+   "origin": "motif-authored-svg",
+   "generator": "authored scene SVG; see sibling metadata json",
+   "approval": {
+    "status": "LEGACY_ACCEPTED",
+    "by": "Mayowa",
+    "date": "2026-10-02",
+    "note": "Shipped in VoiceStudio v6, accepted as the gold visual-craft benchmark."
+   },
+   "path": "assets/scenes/paper-investigation/summary-flap.svg"
+  },
+  {
+   "id": "scene/scene-01/computing/desktop-monitor",
+   "sha256": "6d9773d4d872989029ef32eeb9f146728d808aaf20b63c99f712770c8c22a357",
+   "origin": "motif-authored-svg",
+   "generator": "authored scene SVG; see sibling metadata json",
+   "approval": {
+    "status": "LEGACY_ACCEPTED",
+    "by": "Mayowa",
+    "date": "2026-10-02",
+    "note": "Shipped in VoiceStudio v6, accepted as the gold visual-craft benchmark."
+   },
+   "path": "assets/scenes/scene-01/computing/desktop-monitor.svg"
+  },
+  {
+   "id": "scene/scene-01/computing/keyboard",
+   "sha256": "404edbe4bfad6e80fee85d7f28054f4e0e82dff5e79f2647e672448de41a9bb6",
+   "origin": "motif-authored-svg",
+   "generator": "authored scene SVG; see sibling metadata json",
+   "approval": {
+    "status": "LEGACY_ACCEPTED",
+    "by": "Mayowa",
+    "date": "2026-10-02",
+    "note": "Shipped in VoiceStudio v6, accepted as the gold visual-craft benchmark."
+   },
+   "path": "assets/scenes/scene-01/computing/keyboard.svg"
+  },
+  {
+   "id": "scene/scene-01/computing/laptop",
+   "sha256": "9876fc86e95603aa8b88068b204bb11aab77f09385f3408f58b1d7902a7f87b1",
+   "origin": "motif-authored-svg",
+   "generator": "authored scene SVG; see sibling metadata json",
+   "approval": {
+    "status": "LEGACY_ACCEPTED",
+    "by": "Mayowa",
+    "date": "2026-10-02",
+    "note": "Shipped in VoiceStudio v6, accepted as the gold visual-craft benchmark."
+   },
+   "path": "assets/scenes/scene-01/computing/laptop.svg"
+  },
+  {
+   "id": "scene/scene-01/computing/mouse",
+   "sha256": "530db4510437188c624a4ea8f7a838c0f4092c4e29bed04388a306195f189216",
+   "origin": "motif-authored-svg",
+   "generator": "authored scene SVG; see sibling metadata json",
+   "approval": {
+    "status": "LEGACY_ACCEPTED",
+    "by": "Mayowa",
+    "date": "2026-10-02",
+    "note": "Shipped in VoiceStudio v6, accepted as the gold visual-craft benchmark."
+   },
+   "path": "assets/scenes/scene-01/computing/mouse.svg"
+  },
+  {
+   "id": "scene/scene-01/desk-props/coffee-mug",
+   "sha256": "8462d2eca41e088fb539d86eef02c949f07f428f8f63042b35cc2133b198bba0",
+   "origin": "motif-authored-svg",
+   "generator": "authored scene SVG; see sibling metadata json",
+   "approval": {
+    "status": "LEGACY_ACCEPTED",
+    "by": "Mayowa",
+    "date": "2026-10-02",
+    "note": "Shipped in VoiceStudio v6, accepted as the gold visual-craft benchmark."
+   },
+   "path": "assets/scenes/scene-01/desk-props/coffee-mug.svg"
+  },
+  {
+   "id": "scene/scene-01/desk-props/desk-lamp",
+   "sha256": "43b3d420095b0b77105b7aa1771d77e2c2495a3515efa34378f0b73759d10036",
+   "origin": "motif-authored-svg",
+   "generator": "authored scene SVG; see sibling metadata json",
+   "approval": {
+    "status": "LEGACY_ACCEPTED",
+    "by": "Mayowa",
+    "date": "2026-10-02",
+    "note": "Shipped in VoiceStudio v6, accepted as the gold visual-craft benchmark."
+   },
+   "path": "assets/scenes/scene-01/desk-props/desk-lamp.svg"
+  },
+  {
+   "id": "scene/scene-01/desk-props/document",
+   "sha256": "5d77df9ac80b88e5fdfaab38add7fa7752c2649803a92110d2e7a3901ead7ae0",
+   "origin": "motif-authored-svg",
+   "generator": "authored scene SVG; see sibling metadata json",
+   "approval": {
+    "status": "LEGACY_ACCEPTED",
+    "by": "Mayowa",
+    "date": "2026-10-02",
+    "note": "Shipped in VoiceStudio v6, accepted as the gold visual-craft benchmark."
+   },
+   "path": "assets/scenes/scene-01/desk-props/document.svg"
+  },
+  {
+   "id": "scene/scene-01/desk-props/late-night-clock",
+   "sha256": "57b2d9cc82b374057307b03f0dcdf383c2145e2d6e0adc05043db826b8472c97",
+   "origin": "motif-authored-svg",
+   "generator": "authored scene SVG; see sibling metadata json",
+   "approval": {
+    "status": "LEGACY_ACCEPTED",
+    "by": "Mayowa",
+    "date": "2026-10-02",
+    "note": "Shipped in VoiceStudio v6, accepted as the gold visual-craft benchmark."
+   },
+   "path": "assets/scenes/scene-01/desk-props/late-night-clock.svg"
+  },
+  {
+   "id": "scene/scene-01/desk-props/small-plant",
+   "sha256": "b62a594d2df26d2ea7582e63d3b2bbdc496a69ea306148bcc910d503c3c2d79f",
+   "origin": "motif-authored-svg",
+   "generator": "authored scene SVG; see sibling metadata json",
+   "approval": {
+    "status": "LEGACY_ACCEPTED",
+    "by": "Mayowa",
+    "date": "2026-10-02",
+    "note": "Shipped in VoiceStudio v6, accepted as the gold visual-craft benchmark."
+   },
+   "path": "assets/scenes/scene-01/desk-props/small-plant.svg"
+  },
+  {
+   "id": "scene/scene-01/environment/floor",
+   "sha256": "56568145b456c53fd1c687906534427afdf88a2cad2cac99cdb4b38e947f5ba1",
+   "origin": "motif-authored-svg",
+   "generator": "authored scene SVG; see sibling metadata json",
+   "approval": {
+    "status": "LEGACY_ACCEPTED",
+    "by": "Mayowa",
+    "date": "2026-10-02",
+    "note": "Shipped in VoiceStudio v6, accepted as the gold visual-craft benchmark."
+   },
+   "path": "assets/scenes/scene-01/environment/floor.svg"
+  },
+  {
+   "id": "scene/scene-01/environment/night-sky-moon",
+   "sha256": "b7ac8950e0311e76dbca53c77950ed44aa076cf9093f348a4b4788edd7c0453f",
+   "origin": "motif-authored-svg",
+   "generator": "authored scene SVG; see sibling metadata json",
+   "approval": {
+    "status": "LEGACY_ACCEPTED",
+    "by": "Mayowa",
+    "date": "2026-10-02",
+    "note": "Shipped in VoiceStudio v6, accepted as the gold visual-craft benchmark."
+   },
+   "path": "assets/scenes/scene-01/environment/night-sky-moon.svg"
+  },
+  {
+   "id": "scene/scene-01/environment/wall-background",
+   "sha256": "8c63362ec7774cc79b67bf9b5f43016b6d4db2992c2c5fd794e86e6674e67362",
+   "origin": "motif-authored-svg",
+   "generator": "authored scene SVG; see sibling metadata json",
+   "approval": {
+    "status": "LEGACY_ACCEPTED",
+    "by": "Mayowa",
+    "date": "2026-10-02",
+    "note": "Shipped in VoiceStudio v6, accepted as the gold visual-craft benchmark."
+   },
+   "path": "assets/scenes/scene-01/environment/wall-background.svg"
+  },
+  {
+   "id": "scene/scene-01/environment/window",
+   "sha256": "a36e7b8a96374864563780c61139aa527e99a66b768f6ecfed2a8d2e8402b1b0",
+   "origin": "motif-authored-svg",
+   "generator": "authored scene SVG; see sibling metadata json",
+   "approval": {
+    "status": "LEGACY_ACCEPTED",
+    "by": "Mayowa",
+    "date": "2026-10-02",
+    "note": "Shipped in VoiceStudio v6, accepted as the gold visual-craft benchmark."
+   },
+   "path": "assets/scenes/scene-01/environment/window.svg"
+  },
+  {
+   "id": "scene/scene-01/furniture/chair",
+   "sha256": "cd24a7dee491e4c36f4dbc3d9da1721ea58b336a2ef98db528fb90c27be8baf3",
+   "origin": "motif-authored-svg",
+   "generator": "authored scene SVG; see sibling metadata json",
+   "approval": {
+    "status": "LEGACY_ACCEPTED",
+    "by": "Mayowa",
+    "date": "2026-10-02",
+    "note": "Shipped in VoiceStudio v6, accepted as the gold visual-craft benchmark."
+   },
+   "path": "assets/scenes/scene-01/furniture/chair.svg"
+  },
+  {
+   "id": "scene/scene-01/furniture/desk",
+   "sha256": "7da9c9a288aae3b66e0735ca606fe5edcb915b050946cfb70ecb109dd56b1566",
+   "origin": "motif-authored-svg",
+   "generator": "authored scene SVG; see sibling metadata json",
+   "approval": {
+    "status": "LEGACY_ACCEPTED",
+    "by": "Mayowa",
+    "date": "2026-10-02",
+    "note": "Shipped in VoiceStudio v6, accepted as the gold visual-craft benchmark."
+   },
+   "path": "assets/scenes/scene-01/furniture/desk.svg"
+  },
+  {
+   "id": "scene/scene-01/ui/notification-card",
+   "sha256": "3754edc9240e34a8161fb05ecd5b6d8211d924cf10f41e52b629467d836adc3a",
+   "origin": "motif-authored-svg",
+   "generator": "authored scene SVG; see sibling metadata json",
+   "approval": {
+    "status": "LEGACY_ACCEPTED",
+    "by": "Mayowa",
+    "date": "2026-10-02",
+    "note": "Shipped in VoiceStudio v6, accepted as the gold visual-craft benchmark."
+   },
+   "path": "assets/scenes/scene-01/ui/notification-card.svg"
+  },
+  {
+   "id": "scene/scene-01/ui/task-progress-panel",
+   "sha256": "7cea9a552ab9036279152de4ca0dd1029b46560a077b74dd76a471b28e44b6b8",
+   "origin": "motif-authored-svg",
+   "generator": "authored scene SVG; see sibling metadata json",
+   "approval": {
+    "status": "LEGACY_ACCEPTED",
+    "by": "Mayowa",
+    "date": "2026-10-02",
+    "note": "Shipped in VoiceStudio v6, accepted as the gold visual-craft benchmark."
+   },
+   "path": "assets/scenes/scene-01/ui/task-progress-panel.svg"
+  },
+  {
+   "id": "scene/scene-02/contestants/agent-token-blue",
+   "sha256": "bc3018d3c5534f6f3629820c1a8c700a5182f8e847b5f0db64812a1481b79296",
+   "origin": "motif-authored-svg",
+   "generator": "authored scene SVG; see sibling metadata json",
+   "approval": {
+    "status": "LEGACY_ACCEPTED",
+    "by": "Mayowa",
+    "date": "2026-10-02",
+    "note": "Shipped in VoiceStudio v6, accepted as the gold visual-craft benchmark."
+   },
+   "path": "assets/scenes/scene-02/contestants/agent-token-blue.svg"
+  },
+  {
+   "id": "scene/scene-02/contestants/agent-token-coral",
+   "sha256": "9de5f039adf1b6162ad587cf60fab2fefae844f5350b408bab9bfd7595870dc0",
+   "origin": "motif-authored-svg",
+   "generator": "authored scene SVG; see sibling metadata json",
+   "approval": {
+    "status": "LEGACY_ACCEPTED",
+    "by": "Mayowa",
+    "date": "2026-10-02",
+    "note": "Shipped in VoiceStudio v6, accepted as the gold visual-craft benchmark."
+   },
+   "path": "assets/scenes/scene-02/contestants/agent-token-coral.svg"
+  },
+  {
+   "id": "scene/scene-02/contestants/agent-token-teal",
+   "sha256": "f90ed4a1bfb17a460a0d37c6b58b85864d9490e7d15eb1364c9a3080a5ed7cde",
+   "origin": "motif-authored-svg",
+   "generator": "authored scene SVG; see sibling metadata json",
+   "approval": {
+    "status": "LEGACY_ACCEPTED",
+    "by": "Mayowa",
+    "date": "2026-10-02",
+    "note": "Shipped in VoiceStudio v6, accepted as the gold visual-craft benchmark."
+   },
+   "path": "assets/scenes/scene-02/contestants/agent-token-teal.svg"
+  },
+  {
+   "id": "scene/scene-02/environment/arena-arch",
+   "sha256": "62274d9b367e8abc98c53f01749db894cb6be895abd3d60f3034e2d8633f13d2",
+   "origin": "motif-authored-svg",
+   "generator": "authored scene SVG; see sibling metadata json",
+   "approval": {
+    "status": "LEGACY_ACCEPTED",
+    "by": "Mayowa",
+    "date": "2026-10-02",
+    "note": "Shipped in VoiceStudio v6, accepted as the gold visual-craft benchmark."
+   },
+   "path": "assets/scenes/scene-02/environment/arena-arch.svg"
+  },
+  {
+   "id": "scene/scene-02/environment/arena-floor",
+   "sha256": "836404966ddf1f4a44b2a189fff5fef40d0adda0a628283804459732e2b46436",
+   "origin": "motif-authored-svg",
+   "generator": "authored scene SVG; see sibling metadata json",
+   "approval": {
+    "status": "LEGACY_ACCEPTED",
+    "by": "Mayowa",
+    "date": "2026-10-02",
+    "note": "Shipped in VoiceStudio v6, accepted as the gold visual-craft benchmark."
+   },
+   "path": "assets/scenes/scene-02/environment/arena-floor.svg"
+  },
+  {
+   "id": "scene/scene-02/environment/arena-wall",
+   "sha256": "f8b460e24c1c5029deb8eee6b89f02116cdb9cc07262cd76e5f91f5c06152730",
+   "origin": "motif-authored-svg",
+   "generator": "authored scene SVG; see sibling metadata json",
+   "approval": {
+    "status": "LEGACY_ACCEPTED",
+    "by": "Mayowa",
+    "date": "2026-10-02",
+    "note": "Shipped in VoiceStudio v6, accepted as the gold visual-craft benchmark."
+   },
+   "path": "assets/scenes/scene-02/environment/arena-wall.svg"
+  },
+  {
+   "id": "scene/scene-02/environment/crowd-tiers",
+   "sha256": "8ded9c9e27e74540534a073cdd7807cc09075ebfa319d860480f7582d96eb97c",
+   "origin": "motif-authored-svg",
+   "generator": "authored scene SVG; see sibling metadata json",
+   "approval": {
+    "status": "LEGACY_ACCEPTED",
+    "by": "Mayowa",
+    "date": "2026-10-02",
+    "note": "Shipped in VoiceStudio v6, accepted as the gold visual-craft benchmark."
+   },
+   "path": "assets/scenes/scene-02/environment/crowd-tiers.svg"
+  },
+  {
+   "id": "scene/scene-02/furniture/arena-stage",
+   "sha256": "b140c30f212cdc60c43f85de03b5a9d1417ab60e521c9fd2a727781fa6a49c9b",
+   "origin": "motif-authored-svg",
+   "generator": "authored scene SVG; see sibling metadata json",
+   "approval": {
+    "status": "LEGACY_ACCEPTED",
+    "by": "Mayowa",
+    "date": "2026-10-02",
+    "note": "Shipped in VoiceStudio v6, accepted as the gold visual-craft benchmark."
+   },
+   "path": "assets/scenes/scene-02/furniture/arena-stage.svg"
+  },
+  {
+   "id": "scene/scene-02/furniture/podium",
+   "sha256": "4488ed1e2df5a776a28939e12b8e5f2dafa77dd4f026d3b2568d8778e1df0524",
+   "origin": "motif-authored-svg",
+   "generator": "authored scene SVG; see sibling metadata json",
+   "approval": {
+    "status": "LEGACY_ACCEPTED",
+    "by": "Mayowa",
+    "date": "2026-10-02",
+    "note": "Shipped in VoiceStudio v6, accepted as the gold visual-craft benchmark."
+   },
+   "path": "assets/scenes/scene-02/furniture/podium.svg"
+  },
+  {
+   "id": "scene/scene-02/fx/paper-confetti",
+   "sha256": "c1a6ff871774f9feb15fc8c26a66531688dd2c37635b4cbe7c69772787f59ee9",
+   "origin": "motif-authored-svg",
+   "generator": "authored scene SVG; see sibling metadata json",
+   "approval": {
+    "status": "LEGACY_ACCEPTED",
+    "by": "Mayowa",
+    "date": "2026-10-02",
+    "note": "Shipped in VoiceStudio v6, accepted as the gold visual-craft benchmark."
+   },
+   "path": "assets/scenes/scene-02/fx/paper-confetti.svg"
+  },
+  {
+   "id": "scene/scene-02/props/evaluation-board",
+   "sha256": "bdf463d0a02f7a843a2a23711bd02595a1fcffe9ba30d839224558996510cef6",
+   "origin": "motif-authored-svg",
+   "generator": "authored scene SVG; see sibling metadata json",
+   "approval": {
+    "status": "LEGACY_ACCEPTED",
+    "by": "Mayowa",
+    "date": "2026-10-02",
+    "note": "Shipped in VoiceStudio v6, accepted as the gold visual-craft benchmark."
+   },
+   "path": "assets/scenes/scene-02/props/evaluation-board.svg"
+  },
+  {
+   "id": "scene/scene-02/props/winner-seal",
+   "sha256": "0b3ad60b07aaae8ec83374bf5c4fa46cc98d16a861e3a2728f0e845d04741b9a",
+   "origin": "motif-authored-svg",
+   "generator": "authored scene SVG; see sibling metadata json",
+   "approval": {
+    "status": "LEGACY_ACCEPTED",
+    "by": "Mayowa",
+    "date": "2026-10-02",
+    "note": "Shipped in VoiceStudio v6, accepted as the gold visual-craft benchmark."
+   },
+   "path": "assets/scenes/scene-02/props/winner-seal.svg"
+  },
+  {
+   "id": "scene/scene-02/story/answer-sheet",
+   "sha256": "bff917ddb9cd14365c8b5f7bbf2bb2ea02cd1a68464927b1c848c8b3a5a25668",
+   "origin": "motif-authored-svg",
+   "generator": "authored scene SVG; see sibling metadata json",
+   "approval": {
+    "status": "LEGACY_ACCEPTED",
+    "by": "Mayowa",
+    "date": "2026-10-02",
+    "note": "Shipped in VoiceStudio v6, accepted as the gold visual-craft benchmark."
+   },
+   "path": "assets/scenes/scene-02/story/answer-sheet.svg"
+  },
+  {
+   "id": "scene/scene-02/story/inspection-lens",
+   "sha256": "4716fdba23ca462110912b8058e6a8af3fd3e455a526db930e7a684f8d335058",
+   "origin": "motif-authored-svg",
+   "generator": "authored scene SVG; see sibling metadata json",
+   "approval": {
+    "status": "LEGACY_ACCEPTED",
+    "by": "Mayowa",
+    "date": "2026-10-02",
+    "note": "Shipped in VoiceStudio v6, accepted as the gold visual-craft benchmark."
+   },
+   "path": "assets/scenes/scene-02/story/inspection-lens.svg"
+  },
+  {
+   "id": "scene/scene-02/story/link-test-stencil",
+   "sha256": "8a87feddcb3da5521aa55821ff83820d635d0f92e255d28cd1f507467f028f85",
+   "origin": "motif-authored-svg",
+   "generator": "authored scene SVG; see sibling metadata json",
+   "approval": {
+    "status": "LEGACY_ACCEPTED",
+    "by": "Mayowa",
+    "date": "2026-10-02",
+    "note": "Shipped in VoiceStudio v6, accepted as the gold visual-craft benchmark."
+   },
+   "path": "assets/scenes/scene-02/story/link-test-stencil.svg"
+  },
+  {
+   "id": "scene/scene-03/environment/factory-floor",
+   "sha256": "4fec1ed03c70ac4081950c11b40dcc4b006ff90cdc5f6fa44fa6bb2561784793",
+   "origin": "motif-authored-svg",
+   "generator": "authored scene SVG; see sibling metadata json",
+   "approval": {
+    "status": "LEGACY_ACCEPTED",
+    "by": "Mayowa",
+    "date": "2026-10-02",
+    "note": "Shipped in VoiceStudio v6, accepted as the gold visual-craft benchmark."
+   },
+   "path": "assets/scenes/scene-03/environment/factory-floor.svg"
+  },
+  {
+   "id": "scene/scene-03/environment/factory-wall",
+   "sha256": "44f0efacc19030f3f84555056d1ad57248acf58e134cf97638e05f89c736d264",
+   "origin": "motif-authored-svg",
+   "generator": "authored scene SVG; see sibling metadata json",
+   "approval": {
+    "status": "LEGACY_ACCEPTED",
+    "by": "Mayowa",
+    "date": "2026-10-02",
+    "note": "Shipped in VoiceStudio v6, accepted as the gold visual-craft benchmark."
+   },
+   "path": "assets/scenes/scene-03/environment/factory-wall.svg"
+  },
+  {
+   "id": "scene/scene-03/environment/wall-pipes",
+   "sha256": "dca0cb47089b5ffdb639045d85deb371dbf83987fbc450d442926a006c24c560",
+   "origin": "motif-authored-svg",
+   "generator": "authored scene SVG; see sibling metadata json",
+   "approval": {
+    "status": "LEGACY_ACCEPTED",
+    "by": "Mayowa",
+    "date": "2026-10-02",
+    "note": "Shipped in VoiceStudio v6, accepted as the gold visual-craft benchmark."
+   },
+   "path": "assets/scenes/scene-03/environment/wall-pipes.svg"
+  },
+  {
+   "id": "scene/scene-03/machine/conveyor-belt",
+   "sha256": "8f5de4c2729fb99180721fc818f104eb278c497db4982d94fe2f7750893ff95d",
+   "origin": "motif-authored-svg",
+   "generator": "authored scene SVG; see sibling metadata json",
+   "approval": {
+    "status": "LEGACY_ACCEPTED",
+    "by": "Mayowa",
+    "date": "2026-10-02",
+    "note": "Shipped in VoiceStudio v6, accepted as the gold visual-craft benchmark."
+   },
+   "path": "assets/scenes/scene-03/machine/conveyor-belt.svg"
+  },
+  {
+   "id": "scene/scene-03/machine/paper-grabber",
+   "sha256": "014e02bee5dd3f9b0d63e701eec1053b1818e123a10f97df86717f17761b5b16",
+   "origin": "motif-authored-svg",
+   "generator": "authored scene SVG; see sibling metadata json",
+   "approval": {
+    "status": "LEGACY_ACCEPTED",
+    "by": "Mayowa",
+    "date": "2026-10-02",
+    "note": "Shipped in VoiceStudio v6, accepted as the gold visual-craft benchmark."
+   },
+   "path": "assets/scenes/scene-03/machine/paper-grabber.svg"
+  },
+  {
+   "id": "scene/scene-03/machine/reject-bin",
+   "sha256": "7225a78663d5125ef91bcf2f4fac57c0e36ec268d2f23e5802b54b76312c4539",
+   "origin": "motif-authored-svg",
+   "generator": "authored scene SVG; see sibling metadata json",
+   "approval": {
+    "status": "LEGACY_ACCEPTED",
+    "by": "Mayowa",
+    "date": "2026-10-02",
+    "note": "Shipped in VoiceStudio v6, accepted as the gold visual-craft benchmark."
+   },
+   "path": "assets/scenes/scene-03/machine/reject-bin.svg"
+  },
+  {
+   "id": "scene/scene-03/machine/scan-beam",
+   "sha256": "979d729228fc4aa2cf69148632038709ba712ebdb5102486c0d9640f0b2cb729",
+   "origin": "motif-authored-svg",
+   "generator": "authored scene SVG; see sibling metadata json",
+   "approval": {
+    "status": "LEGACY_ACCEPTED",
+    "by": "Mayowa",
+    "date": "2026-10-02",
+    "note": "Shipped in VoiceStudio v6, accepted as the gold visual-craft benchmark."
+   },
+   "path": "assets/scenes/scene-03/machine/scan-beam.svg"
+  },
+  {
+   "id": "scene/scene-03/machine/scanner-frame",
+   "sha256": "8febadd11d1e191ad1a2bf3f0f77c776a8fe9912113c1864b34db154a5604875",
+   "origin": "motif-authored-svg",
+   "generator": "authored scene SVG; see sibling metadata json",
+   "approval": {
+    "status": "LEGACY_ACCEPTED",
+    "by": "Mayowa",
+    "date": "2026-10-02",
+    "note": "Shipped in VoiceStudio v6, accepted as the gold visual-craft benchmark."
+   },
+   "path": "assets/scenes/scene-03/machine/scanner-frame.svg"
+  },
+  {
+   "id": "scene/scene-03/props/quality-gauge",
+   "sha256": "4275edb22a5b31d7f16da539e66e85896c372433c22024ff26bcd16cd619e03e",
+   "origin": "motif-authored-svg",
+   "generator": "authored scene SVG; see sibling metadata json",
+   "approval": {
+    "status": "LEGACY_ACCEPTED",
+    "by": "Mayowa",
+    "date": "2026-10-02",
+    "note": "Shipped in VoiceStudio v6, accepted as the gold visual-craft benchmark."
+   },
+   "path": "assets/scenes/scene-03/props/quality-gauge.svg"
+  },
+  {
+   "id": "scene/scene-03/props/scan-sign",
+   "sha256": "83f7433376659955c5e4667f2011213cf47a81e92590c766d60a805ae138d56d",
+   "origin": "motif-authored-svg",
+   "generator": "authored scene SVG; see sibling metadata json",
+   "approval": {
+    "status": "LEGACY_ACCEPTED",
+    "by": "Mayowa",
+    "date": "2026-10-02",
+    "note": "Shipped in VoiceStudio v6, accepted as the gold visual-craft benchmark."
+   },
+   "path": "assets/scenes/scene-03/props/scan-sign.svg"
+  },
+  {
+   "id": "scene/scene-03/workflow/caught-bug",
+   "sha256": "0f28724e3d8f25519b2643a3b08952b541095700b199782440414cb12a095972",
+   "origin": "motif-authored-svg",
+   "generator": "authored scene SVG; see sibling metadata json",
+   "approval": {
+    "status": "LEGACY_ACCEPTED",
+    "by": "Mayowa",
+    "date": "2026-10-02",
+    "note": "Shipped in VoiceStudio v6, accepted as the gold visual-craft benchmark."
+   },
+   "path": "assets/scenes/scene-03/workflow/caught-bug.svg"
+  },
+  {
+   "id": "scene/scene-03/workflow/clean-code-sheet",
+   "sha256": "b8bc38c1746a2dec922c7cc4b76773d361e9c2309a86df7b5f488efb239e4910",
+   "origin": "motif-authored-svg",
+   "generator": "authored scene SVG; see sibling metadata json",
+   "approval": {
+    "status": "LEGACY_ACCEPTED",
+    "by": "Mayowa",
+    "date": "2026-10-02",
+    "note": "Shipped in VoiceStudio v6, accepted as the gold visual-craft benchmark."
+   },
+   "path": "assets/scenes/scene-03/workflow/clean-code-sheet.svg"
+  },
+  {
+   "id": "scene/scene-03/workflow/incoming-code-sheet",
+   "sha256": "4e7d6d5d9cc81e8c5fbce9616330d9272023df1cd477360f82758b19b0887989",
+   "origin": "motif-authored-svg",
+   "generator": "authored scene SVG; see sibling metadata json",
+   "approval": {
+    "status": "LEGACY_ACCEPTED",
+    "by": "Mayowa",
+    "date": "2026-10-02",
+    "note": "Shipped in VoiceStudio v6, accepted as the gold visual-craft benchmark."
+   },
+   "path": "assets/scenes/scene-03/workflow/incoming-code-sheet.svg"
+  },
+  {
+   "id": "scene/scene-03/workflow/pass-stamp",
+   "sha256": "cf8e8411597cab38044dbf2d42c2048dc7255da45032e9efc06b42db4f25f66c",
+   "origin": "motif-authored-svg",
+   "generator": "authored scene SVG; see sibling metadata json",
+   "approval": {
+    "status": "LEGACY_ACCEPTED",
+    "by": "Mayowa",
+    "date": "2026-10-02",
+    "note": "Shipped in VoiceStudio v6, accepted as the gold visual-craft benchmark."
+   },
+   "path": "assets/scenes/scene-03/workflow/pass-stamp.svg"
+  },
+  {
+   "id": "reference/boundary-01.png",
+   "sha256": "50fc2191eb0e273ff419600fdff8164013df34bdba8d07e05777aa810fb23738",
+   "origin": "reference-derived",
+   "generator": "reference study capture",
+   "approval": {
+    "status": "REJECTED",
+    "by": "policy",
+    "date": "2026-10-09",
+    "note": "Reference media are never render inputs."
+   },
+   "pixel_sha256": "71c15c8a6098fa36eabfc49a6cd96a27f21119cb121beba3e594c064acc4e542",
+   "path": "references/reconstruction/study/boundary-01.png"
+  },
+  {
+   "id": "reference/boundary-02.png",
+   "sha256": "f2b66dff88eef1e4ef934fab22889ddd0ca9e3705f1e8e0385e7990cd453103e",
+   "origin": "reference-derived",
+   "generator": "reference study capture",
+   "approval": {
+    "status": "REJECTED",
+    "by": "policy",
+    "date": "2026-10-09",
+    "note": "Reference media are never render inputs."
+   },
+   "pixel_sha256": "73884aca227964ce30403d07cfbc74389fe7422241876c6490b8ba49e7460e2c",
+   "path": "references/reconstruction/study/boundary-02.png"
+  },
+  {
+   "id": "reference/boundary-03.png",
+   "sha256": "41d2a1a3daaea8f4edc00c53e8ed41ba7a8a540328a7a85b1666b8daf772bb88",
+   "origin": "reference-derived",
+   "generator": "reference study capture",
+   "approval": {
+    "status": "REJECTED",
+    "by": "policy",
+    "date": "2026-10-09",
+    "note": "Reference media are never render inputs."
+   },
+   "pixel_sha256": "fc668988146fd2b90e469d254cec173dc089d469087a9e40e07a333cb315697f",
+   "path": "references/reconstruction/study/boundary-03.png"
+  },
+  {
+   "id": "reference/boundary-04.png",
+   "sha256": "991c4e64c5f3d9f759302ba7db0a77bd85ab33a3a0f7685f3870c89eb18195d5",
+   "origin": "reference-derived",
+   "generator": "reference study capture",
+   "approval": {
+    "status": "REJECTED",
+    "by": "policy",
+    "date": "2026-10-09",
+    "note": "Reference media are never render inputs."
+   },
+   "pixel_sha256": "f28204d573c7ce6847735b60d9eb3adae75c50813df5426c7fd64e148c88e985",
+   "path": "references/reconstruction/study/boundary-04.png"
+  },
+  {
+   "id": "reference/boundary-05.png",
+   "sha256": "36b3ff95a7141df4590313b395a7d1b7cee19e1412b86dbb1d01c58067d13211",
+   "origin": "reference-derived",
+   "generator": "reference study capture",
+   "approval": {
+    "status": "REJECTED",
+    "by": "policy",
+    "date": "2026-10-09",
+    "note": "Reference media are never render inputs."
+   },
+   "pixel_sha256": "7ccec62d4e89355136164c5448030c0d0d374e213779e0e2bca42bd58150975d",
+   "path": "references/reconstruction/study/boundary-05.png"
+  },
+  {
+   "id": "reference/boundary-06.png",
+   "sha256": "78b064c68cb97b77ecf1505f86901953db6d6dc46735544db1acbb381d070d22",
+   "origin": "reference-derived",
+   "generator": "reference study capture",
+   "approval": {
+    "status": "REJECTED",
+    "by": "policy",
+    "date": "2026-10-09",
+    "note": "Reference media are never render inputs."
+   },
+   "pixel_sha256": "f9138c5b78842f53c39006addf6dd20aa6cd09a3313f17b4009f89b81c0b578f",
+   "path": "references/reconstruction/study/boundary-06.png"
+  },
+  {
+   "id": "reference/boundary-07.png",
+   "sha256": "8712965e24ad469dd55b7ed991a4260ce850a2d98d96a633b02f42edfe9ba799",
+   "origin": "reference-derived",
+   "generator": "reference study capture",
+   "approval": {
+    "status": "REJECTED",
+    "by": "policy",
+    "date": "2026-10-09",
+    "note": "Reference media are never render inputs."
+   },
+   "pixel_sha256": "c499a8aa15d943171e7c2760e06e3e0cc22f13a087dadf5c947959775f567f21",
+   "path": "references/reconstruction/study/boundary-07.png"
+  },
+  {
+   "id": "reference/boundary-08.png",
+   "sha256": "9096465008f5e7ab16e250f473da653b569322f95047407ed06c6216e487373e",
+   "origin": "reference-derived",
+   "generator": "reference study capture",
+   "approval": {
+    "status": "REJECTED",
+    "by": "policy",
+    "date": "2026-10-09",
+    "note": "Reference media are never render inputs."
+   },
+   "pixel_sha256": "1701268876852cf150f1c79854c68f25838db4cf763bc75eab697efce31faab0",
+   "path": "references/reconstruction/study/boundary-08.png"
+  },
+  {
+   "id": "reference/overview/001.png",
+   "sha256": "fbf1d5bec22c2c1252dfacb98af6ada84cb188debf4b9b361dcc73bb5b0b8865",
+   "origin": "reference-derived",
+   "generator": "reference study capture",
+   "approval": {
+    "status": "REJECTED",
+    "by": "policy",
+    "date": "2026-10-09",
+    "note": "Reference media are never render inputs."
+   },
+   "pixel_sha256": "4ef2c1161c6a374f63ee6075c865b92dfee439c3c59435e0c86fbfab703db359",
+   "path": "references/reconstruction/study/overview/001.png"
+  },
+  {
+   "id": "reference/overview/002.png",
+   "sha256": "7a711287fbe67fcfbd13fa25a42abdff4454fb351dc560946ee85e9b32ee8206",
+   "origin": "reference-derived",
+   "generator": "reference study capture",
+   "approval": {
+    "status": "REJECTED",
+    "by": "policy",
+    "date": "2026-10-09",
+    "note": "Reference media are never render inputs."
+   },
+   "pixel_sha256": "89ffea9cf48a40de7fd4111698985a96cfa265709901b2ecbc2756ef0bf703b7",
+   "path": "references/reconstruction/study/overview/002.png"
+  },
+  {
+   "id": "reference/overview/003.png",
+   "sha256": "ff547900e647e89817bdb31f9bcc64d30163991689ec42c1c75852294332b64a",
+   "origin": "reference-derived",
+   "generator": "reference study capture",
+   "approval": {
+    "status": "REJECTED",
+    "by": "policy",
+    "date": "2026-10-09",
+    "note": "Reference media are never render inputs."
+   },
+   "pixel_sha256": "19964ff33283abdd0d70b586b85b1f78b786b30a628c37e37c9a03ab201e5a6c",
+   "path": "references/reconstruction/study/overview/003.png"
+  },
+  {
+   "id": "reference/overview/004.png",
+   "sha256": "ef6d16d60ffb1e745599116f1bebee0e6c3beea68f39be4d7762e9ce8b7adf4b",
+   "origin": "reference-derived",
+   "generator": "reference study capture",
+   "approval": {
+    "status": "REJECTED",
+    "by": "policy",
+    "date": "2026-10-09",
+    "note": "Reference media are never render inputs."
+   },
+   "pixel_sha256": "92c242ee4800920ce2e9c967674700e31d89ecfd119e38c0e4d04ae223653d82",
+   "path": "references/reconstruction/study/overview/004.png"
+  },
+  {
+   "id": "reference/overview/005.png",
+   "sha256": "0595ac3f7461b16ad6a44568b2e9f05d5194b7a2eebd74bb0a770e50fdb74a0c",
+   "origin": "reference-derived",
+   "generator": "reference study capture",
+   "approval": {
+    "status": "REJECTED",
+    "by": "policy",
+    "date": "2026-10-09",
+    "note": "Reference media are never render inputs."
+   },
+   "pixel_sha256": "1e4c6afd9c73eef4f1a5287022c3ff1a5ea7717200e23901b3a8655157544535",
+   "path": "references/reconstruction/study/overview/005.png"
+  },
+  {
+   "id": "reference/overview/006.png",
+   "sha256": "22239b01ca49dd18b94ea68fa286a32d39b3470d5332e020205d67e0628838a2",
+   "origin": "reference-derived",
+   "generator": "reference study capture",
+   "approval": {
+    "status": "REJECTED",
+    "by": "policy",
+    "date": "2026-10-09",
+    "note": "Reference media are never render inputs."
+   },
+   "pixel_sha256": "57257c574f68c9c1fe3adad681a1e6c509cf9be4f7f338e1be4c5ab621e0ca65",
+   "path": "references/reconstruction/study/overview/006.png"
+  },
+  {
+   "id": "reference/overview/007.png",
+   "sha256": "bc2086f1f1f2ed90982eaca5b93a6c2b34af7f9170cd48b82e51a3cfdb980803",
+   "origin": "reference-derived",
+   "generator": "reference study capture",
+   "approval": {
+    "status": "REJECTED",
+    "by": "policy",
+    "date": "2026-10-09",
+    "note": "Reference media are never render inputs."
+   },
+   "pixel_sha256": "f757a557248884b36ff0a69d1b5f1872ded0d944b6a29bf7d437fafa6d65dbb5",
+   "path": "references/reconstruction/study/overview/007.png"
+  },
+  {
+   "id": "reference/overview/008.png",
+   "sha256": "282bd6753d5950c72bca160dff140b183c2e66c1dd37230587f6b962d342130d",
+   "origin": "reference-derived",
+   "generator": "reference study capture",
+   "approval": {
+    "status": "REJECTED",
+    "by": "policy",
+    "date": "2026-10-09",
+    "note": "Reference media are never render inputs."
+   },
+   "pixel_sha256": "527729614aa446197a4a3fd3be1875fce8255e60e164a295b5ab46c4148bab45",
+   "path": "references/reconstruction/study/overview/008.png"
+  },
+  {
+   "id": "reference/overview/009.png",
+   "sha256": "f54f82104373a26defc4d626e6d668b62552754fa6710e41b5696b25dabeb337",
+   "origin": "reference-derived",
+   "generator": "reference study capture",
+   "approval": {
+    "status": "REJECTED",
+    "by": "policy",
+    "date": "2026-10-09",
+    "note": "Reference media are never render inputs."
+   },
+   "pixel_sha256": "c38b696ac4f4b115ac76cbf72434e7924adae7e453de03ccb88a801a69f82a89",
+   "path": "references/reconstruction/study/overview/009.png"
+  },
+  {
+   "id": "reference/overview/010.png",
+   "sha256": "1f0b0ab33d001d4341918c5cd72cc91bf7806e67e6b6869eb8107305bd1dd281",
+   "origin": "reference-derived",
+   "generator": "reference study capture",
+   "approval": {
+    "status": "REJECTED",
+    "by": "policy",
+    "date": "2026-10-09",
+    "note": "Reference media are never render inputs."
+   },
+   "pixel_sha256": "9caccd1ab7a34291ae339febaa717bd2a45cc38cd7761e22e38b0fa1a51b6692",
+   "path": "references/reconstruction/study/overview/010.png"
+  },
+  {
+   "id": "reference/overview/011.png",
+   "sha256": "83846493b6c29af05a300cecced8e4fd159e81e69f1b112ccafce1eff138eefd",
+   "origin": "reference-derived",
+   "generator": "reference study capture",
+   "approval": {
+    "status": "REJECTED",
+    "by": "policy",
+    "date": "2026-10-09",
+    "note": "Reference media are never render inputs."
+   },
+   "pixel_sha256": "7873e3fcc33f83e9aea76c466469298649859aff57b8b027301a6aeaab26688e",
+   "path": "references/reconstruction/study/overview/011.png"
+  },
+  {
+   "id": "reference/overview/012.png",
+   "sha256": "896d4b2e00310d62dc586d38e1536a0e7098a60838ba2cb523fb148a466e819a",
+   "origin": "reference-derived",
+   "generator": "reference study capture",
+   "approval": {
+    "status": "REJECTED",
+    "by": "policy",
+    "date": "2026-10-09",
+    "note": "Reference media are never render inputs."
+   },
+   "pixel_sha256": "4c7dd447053ee89ada98a107a57d6405b0cef25e8850bbf15c3d785473de7501",
+   "path": "references/reconstruction/study/overview/012.png"
+  },
+  {
+   "id": "reference/overview/013.png",
+   "sha256": "5fd06f263166f476ea1268297f67368369424239b3899f00512e82c39d976e25",
+   "origin": "reference-derived",
+   "generator": "reference study capture",
+   "approval": {
+    "status": "REJECTED",
+    "by": "policy",
+    "date": "2026-10-09",
+    "note": "Reference media are never render inputs."
+   },
+   "pixel_sha256": "f6c38c6b2165d6273625510fa6849df4c6efd431de12f76ba4736f33f61dc38e",
+   "path": "references/reconstruction/study/overview/013.png"
+  },
+  {
+   "id": "reference/overview/014.png",
+   "sha256": "acd1620f1dadfec360a2757af443bdb9ea9f479094b554d4c6c834c874f22d38",
+   "origin": "reference-derived",
+   "generator": "reference study capture",
+   "approval": {
+    "status": "REJECTED",
+    "by": "policy",
+    "date": "2026-10-09",
+    "note": "Reference media are never render inputs."
+   },
+   "pixel_sha256": "38d403bfbe52c719c2ed8948007874d7c58ea6a2bb5b0018ee3fd17f83815bef",
+   "path": "references/reconstruction/study/overview/014.png"
+  },
+  {
+   "id": "reference/overview/015.png",
+   "sha256": "45130d58b93c00cfa4e8df0aae38cfc03fbb4d4769caa057e998243fcc1ecccc",
+   "origin": "reference-derived",
+   "generator": "reference study capture",
+   "approval": {
+    "status": "REJECTED",
+    "by": "policy",
+    "date": "2026-10-09",
+    "note": "Reference media are never render inputs."
+   },
+   "pixel_sha256": "8eb5e5465d6f5dfcd011194dc54bfcb29907ece42c0734077a9298c157aa2719",
+   "path": "references/reconstruction/study/overview/015.png"
+  },
+  {
+   "id": "reference/overview/016.png",
+   "sha256": "4c45f478e159aba53ea2c79d2e1ee52e1464e33f3b60ab8e1f64371d08bfce5d",
+   "origin": "reference-derived",
+   "generator": "reference study capture",
+   "approval": {
+    "status": "REJECTED",
+    "by": "policy",
+    "date": "2026-10-09",
+    "note": "Reference media are never render inputs."
+   },
+   "pixel_sha256": "3b37ee1d06bfca9708096a7b60ab41a8685660378fd8b94c31e0f946a38bb048",
+   "path": "references/reconstruction/study/overview/016.png"
+  },
+  {
+   "id": "reference/overview/017.png",
+   "sha256": "348d318cd72379fc05397cdfda70107a12686e2b7fc114fec229dac3e5ca0fd6",
+   "origin": "reference-derived",
+   "generator": "reference study capture",
+   "approval": {
+    "status": "REJECTED",
+    "by": "policy",
+    "date": "2026-10-09",
+    "note": "Reference media are never render inputs."
+   },
+   "pixel_sha256": "8fad5cbf2870c0b930d0496ea09d27d1f20603f21324a1b10c38cd76c5063bf4",
+   "path": "references/reconstruction/study/overview/017.png"
+  },
+  {
+   "id": "reference/overview/019.png",
+   "sha256": "950867daa91598776fcdb5a4efd55c1c8284d069bd2106e38bc525380b915064",
+   "origin": "reference-derived",
+   "generator": "reference study capture",
+   "approval": {
+    "status": "REJECTED",
+    "by": "policy",
+    "date": "2026-10-09",
+    "note": "Reference media are never render inputs."
+   },
+   "pixel_sha256": "432ff02357c518dd2c9cdb498e10473e8af0fec4ac157a17d0f0cdde549d1f49",
+   "path": "references/reconstruction/study/overview/019.png"
+  },
+  {
+   "id": "reference/overview/020.png",
+   "sha256": "1c615ef4cb389cca39ca8d1b8eea804a7b92f65d0cda2a8dc82c74d99763c672",
+   "origin": "reference-derived",
+   "generator": "reference study capture",
+   "approval": {
+    "status": "REJECTED",
+    "by": "policy",
+    "date": "2026-10-09",
+    "note": "Reference media are never render inputs."
+   },
+   "pixel_sha256": "be5cf5eb1a3a21accc652b47ebd7362c7678928dad475e7953239f3b96c0793a",
+   "path": "references/reconstruction/study/overview/020.png"
+  },
+  {
+   "id": "reference/overview/021.png",
+   "sha256": "8a0b71c64cac818ecf1787f820dff873c90d4f745b7669c1ce511e108e50e2e1",
+   "origin": "reference-derived",
+   "generator": "reference study capture",
+   "approval": {
+    "status": "REJECTED",
+    "by": "policy",
+    "date": "2026-10-09",
+    "note": "Reference media are never render inputs."
+   },
+   "pixel_sha256": "ddfd80f0f9a4fad62a1645bd6b1365b1d42aafc5ae3cded5c0338b7032534843",
+   "path": "references/reconstruction/study/overview/021.png"
+  },
+  {
+   "id": "reference/overview/022.png",
+   "sha256": "7235c4b9057715a6ddb5c8c4f23f122b9f21e447baf922ae607f754e58ffd473",
+   "origin": "reference-derived",
+   "generator": "reference study capture",
+   "approval": {
+    "status": "REJECTED",
+    "by": "policy",
+    "date": "2026-10-09",
+    "note": "Reference media are never render inputs."
+   },
+   "pixel_sha256": "9a69c537d64f336a9338b7d480e563e4308f2e65692876d3fbf076153acd0382",
+   "path": "references/reconstruction/study/overview/022.png"
+  },
+  {
+   "id": "reference/overview/023.png",
+   "sha256": "48a8f5893b0d81e3c665bc6ef1fdf708edc0adb5e3701cb6e437937dd287006f",
+   "origin": "reference-derived",
+   "generator": "reference study capture",
+   "approval": {
+    "status": "REJECTED",
+    "by": "policy",
+    "date": "2026-10-09",
+    "note": "Reference media are never render inputs."
+   },
+   "pixel_sha256": "cdc32680582eab7c3e40a69bd52c239dbad6e13c180d3fad8c134f8ddc6566b0",
+   "path": "references/reconstruction/study/overview/023.png"
+  },
+  {
+   "id": "reference/overview/024.png",
+   "sha256": "772a1d62b0cb808ec8e9d46deec5488964dd2082cf7964066326e91f7b859115",
+   "origin": "reference-derived",
+   "generator": "reference study capture",
+   "approval": {
+    "status": "REJECTED",
+    "by": "policy",
+    "date": "2026-10-09",
+    "note": "Reference media are never render inputs."
+   },
+   "pixel_sha256": "44b588837360b06e7ae58a8eb808d9757dafab4a53633ad86490aa7441d9d1f8",
+   "path": "references/reconstruction/study/overview/024.png"
+  },
+  {
+   "id": "reference/overview/025.png",
+   "sha256": "003b1eeb8aaa40b82bb49a4f0ad18d8f8790cfc137568e0def3d8ac7f4f126d8",
+   "origin": "reference-derived",
+   "generator": "reference study capture",
+   "approval": {
+    "status": "REJECTED",
+    "by": "policy",
+    "date": "2026-10-09",
+    "note": "Reference media are never render inputs."
+   },
+   "pixel_sha256": "4df19b4e0e1817fefc714fa1c6e6ae5de8f312895b8593c7704709e261f78dad",
+   "path": "references/reconstruction/study/overview/025.png"
+  },
+  {
+   "id": "reference/overview/026.png",
+   "sha256": "b21cbae6863059355ce8574be165013911793554e2ba487c82419ef4037697d4",
+   "origin": "reference-derived",
+   "generator": "reference study capture",
+   "approval": {
+    "status": "REJECTED",
+    "by": "policy",
+    "date": "2026-10-09",
+    "note": "Reference media are never render inputs."
+   },
+   "pixel_sha256": "f246fd14c359cf68ecd92748920b10f387d35b073129538ec9d9b9dbe94518f3",
+   "path": "references/reconstruction/study/overview/026.png"
+  },
+  {
+   "id": "reference/overview/027.png",
+   "sha256": "09b21db89b98e35a6819dbb1a61088e2d6c1df15f7f5fff4dffb8b9bb5f789ba",
+   "origin": "reference-derived",
+   "generator": "reference study capture",
+   "approval": {
+    "status": "REJECTED",
+    "by": "policy",
+    "date": "2026-10-09",
+    "note": "Reference media are never render inputs."
+   },
+   "pixel_sha256": "15b08461bf6792bfe95a910b7d677d9cceec40bc519cffe69de10635bac30522",
+   "path": "references/reconstruction/study/overview/027.png"
+  },
+  {
+   "id": "reference/overview/028.png",
+   "sha256": "988a75071cc360a5e2acae26df11839ce05cfdd6135d1ee95708d68932ffcbc6",
+   "origin": "reference-derived",
+   "generator": "reference study capture",
+   "approval": {
+    "status": "REJECTED",
+    "by": "policy",
+    "date": "2026-10-09",
+    "note": "Reference media are never render inputs."
+   },
+   "pixel_sha256": "469e92f5c1b5b8b7671f5a06c9b0ce4b04b7fdd0cd62f12bb7dc950d8fafa146",
+   "path": "references/reconstruction/study/overview/028.png"
+  },
+  {
+   "id": "reference/overview/029.png",
+   "sha256": "a9a217143aa410ffc74d0a83c64ac4e4c58a6f477f7a6a7c67633e01e81f9657",
+   "origin": "reference-derived",
+   "generator": "reference study capture",
+   "approval": {
+    "status": "REJECTED",
+    "by": "policy",
+    "date": "2026-10-09",
+    "note": "Reference media are never render inputs."
+   },
+   "pixel_sha256": "58de71ff7751229bf24df6852b87f8960f0bb5215e63da1706de349d89a3fa7e",
+   "path": "references/reconstruction/study/overview/029.png"
+  },
+  {
+   "id": "reference/overview/030.png",
+   "sha256": "e7ae7310e854078c022599aadb30ebe409c4042b53bb437b9ce4f0a0bc33435f",
+   "origin": "reference-derived",
+   "generator": "reference study capture",
+   "approval": {
+    "status": "REJECTED",
+    "by": "policy",
+    "date": "2026-10-09",
+    "note": "Reference media are never render inputs."
+   },
+   "pixel_sha256": "58738e24f2409073cef9c7ab35f5344cfbba93b5ae4d608bd2842972ab91d5aa",
+   "path": "references/reconstruction/study/overview/030.png"
+  },
+  {
+   "id": "reference/overview/031.png",
+   "sha256": "adfca19a830cfefc58ae495685b87c48743e4dddf86378bc40640e47ec0c1d5c",
+   "origin": "reference-derived",
+   "generator": "reference study capture",
+   "approval": {
+    "status": "REJECTED",
+    "by": "policy",
+    "date": "2026-10-09",
+    "note": "Reference media are never render inputs."
+   },
+   "pixel_sha256": "0550834006f0e396eda2a681a3754604b940ac0ed9dba4059d65f9dac7b938fb",
+   "path": "references/reconstruction/study/overview/031.png"
+  },
+  {
+   "id": "reference/overview/032.png",
+   "sha256": "4c1255ffe48327dbae57afc476c2fce92d6490b1c5cb3f3c10efabede0ad06e3",
+   "origin": "reference-derived",
+   "generator": "reference study capture",
+   "approval": {
+    "status": "REJECTED",
+    "by": "policy",
+    "date": "2026-10-09",
+    "note": "Reference media are never render inputs."
+   },
+   "pixel_sha256": "0f130b71e59ab615fffabff262dc4b424b3c85334146de8c5151ad3687386fbc",
+   "path": "references/reconstruction/study/overview/032.png"
+  },
+  {
+   "id": "reference/overview/033.png",
+   "sha256": "66b4bb47e4613b59d6ed11e86c2c93fca5325081539d312f4cea61c30297ec8e",
+   "origin": "reference-derived",
+   "generator": "reference study capture",
+   "approval": {
+    "status": "REJECTED",
+    "by": "policy",
+    "date": "2026-10-09",
+    "note": "Reference media are never render inputs."
+   },
+   "pixel_sha256": "23aca86019708823321d6050fd4197993ac758412ca80fd782b5d69a0ad38af8",
+   "path": "references/reconstruction/study/overview/033.png"
+  },
+  {
+   "id": "reference/overview/034.png",
+   "sha256": "b2aece61751935b84d5aed92d92fbe60a88c1c2b7d02ef98ae4b9a216224683d",
+   "origin": "reference-derived",
+   "generator": "reference study capture",
+   "approval": {
+    "status": "REJECTED",
+    "by": "policy",
+    "date": "2026-10-09",
+    "note": "Reference media are never render inputs."
+   },
+   "pixel_sha256": "f4a653f9ee74904ecc222efb01233160097a9a9bbf3727529f749c8b15f85f5d",
+   "path": "references/reconstruction/study/overview/034.png"
+  },
+  {
+   "id": "reference/overview/035.png",
+   "sha256": "98b7ddefd5c9faa240b72da2227750bc7853fbf2a4873e0c6a83880ca136d6dc",
+   "origin": "reference-derived",
+   "generator": "reference study capture",
+   "approval": {
+    "status": "REJECTED",
+    "by": "policy",
+    "date": "2026-10-09",
+    "note": "Reference media are never render inputs."
+   },
+   "pixel_sha256": "fb65a18e5ae0d3b3703a74cee29bdfe6f7d3917ba666dd130f027ee874a16537",
+   "path": "references/reconstruction/study/overview/035.png"
+  },
+  {
+   "id": "reference/overview/036.png",
+   "sha256": "b89066e2fd26d0cfbde6d800a59e7fca1fa96f512c64e450065460f167c34232",
+   "origin": "reference-derived",
+   "generator": "reference study capture",
+   "approval": {
+    "status": "REJECTED",
+    "by": "policy",
+    "date": "2026-10-09",
+    "note": "Reference media are never render inputs."
+   },
+   "pixel_sha256": "df5af400a8f1323983f38cab7a5746cf0c8fae84f253be318239a8f1baca68f3",
+   "path": "references/reconstruction/study/overview/036.png"
+  },
+  {
+   "id": "reference/overview/037.png",
+   "sha256": "7ab2043bf6e1c60b66b964e4db81478fb42222530100df4fdf81392814491f4e",
+   "origin": "reference-derived",
+   "generator": "reference study capture",
+   "approval": {
+    "status": "REJECTED",
+    "by": "policy",
+    "date": "2026-10-09",
+    "note": "Reference media are never render inputs."
+   },
+   "pixel_sha256": "b61f8b695b8e6bce1cca9a89bd3f1d0ee34186cb7c9cbecbe6613ca679403533",
+   "path": "references/reconstruction/study/overview/037.png"
+  },
+  {
+   "id": "reference/overview/038.png",
+   "sha256": "de1d65ef339e155ca797d242fd69141b5a6d29380c739895b87190313207356e",
+   "origin": "reference-derived",
+   "generator": "reference study capture",
+   "approval": {
+    "status": "REJECTED",
+    "by": "policy",
+    "date": "2026-10-09",
+    "note": "Reference media are never render inputs."
+   },
+   "pixel_sha256": "7e0e8dfafab0d6cdddfdeb3195f2d69a66ffdb1bb3456587205785ac2805cd2d",
+   "path": "references/reconstruction/study/overview/038.png"
+  },
+  {
+   "id": "reference/overview/039.png",
+   "sha256": "d125913a7a3dc201836ec4e38b2889810349166fdcd0622cb9ff2e4a0754aa1c",
+   "origin": "reference-derived",
+   "generator": "reference study capture",
+   "approval": {
+    "status": "REJECTED",
+    "by": "policy",
+    "date": "2026-10-09",
+    "note": "Reference media are never render inputs."
+   },
+   "pixel_sha256": "eb8152927d65ac296fba4dfcfbe8b036d41c0840c7cbd522fb50a4c6759fe236",
+   "path": "references/reconstruction/study/overview/039.png"
+  },
+  {
+   "id": "reference/overview/040.png",
+   "sha256": "80b979d38ba03f88f7442e97d4f566698a83f7e832eb9bab8476640b436f9fef",
+   "origin": "reference-derived",
+   "generator": "reference study capture",
+   "approval": {
+    "status": "REJECTED",
+    "by": "policy",
+    "date": "2026-10-09",
+    "note": "Reference media are never render inputs."
+   },
+   "pixel_sha256": "30d7d8196b14a4e6e6fbabec915d25ad507c588df83bff0aaaea78083935f66f",
+   "path": "references/reconstruction/study/overview/040.png"
+  },
+  {
+   "id": "reference/overview/041.png",
+   "sha256": "de8a9115836d7b3fbd7d4c3c1ebb0a78782227cef8accbb5b38b6a85674d9b26",
+   "origin": "reference-derived",
+   "generator": "reference study capture",
+   "approval": {
+    "status": "REJECTED",
+    "by": "policy",
+    "date": "2026-10-09",
+    "note": "Reference media are never render inputs."
+   },
+   "pixel_sha256": "a8118569564c564fd8ac31c5a0b0216ea9268756a192e03a22dfa6bc8e3df7cb",
+   "path": "references/reconstruction/study/overview/041.png"
+  },
+  {
+   "id": "reference/overview/042.png",
+   "sha256": "8dcc5552f343a80f0d9be387bc071ba733febb9c91646896dc062c486e52e7f2",
+   "origin": "reference-derived",
+   "generator": "reference study capture",
+   "approval": {
+    "status": "REJECTED",
+    "by": "policy",
+    "date": "2026-10-09",
+    "note": "Reference media are never render inputs."
+   },
+   "pixel_sha256": "1da66bd5831a214a2441ef7c83f847a246cad9d133e3b73174f8a00c80ad76db",
+   "path": "references/reconstruction/study/overview/042.png"
+  },
+  {
+   "id": "reference/overview-sheet.jpg",
+   "sha256": "f827d2a9e7592db6ad602083478ecb24f4e710e8a26be166e782ee0e1123ff5b",
+   "origin": "reference-derived",
+   "generator": "reference study capture",
+   "approval": {
+    "status": "REJECTED",
+    "by": "policy",
+    "date": "2026-10-09",
+    "note": "Reference media are never render inputs."
+   },
+   "pixel_sha256": "56c041508b1966839fbf24d4b3976eb5eeaf346ef5a71967cdb8ed45c70214c1",
+   "path": "references/reconstruction/study/overview-sheet.jpg"
+  },
+  {
+   "id": "reference/passage/001.png",
+   "sha256": "0245039f992b7a33c62008b70686a59cbe986602afcf6b0a9f5eb0a42fd76c1b",
+   "origin": "reference-derived",
+   "generator": "reference study capture",
+   "approval": {
+    "status": "REJECTED",
+    "by": "policy",
+    "date": "2026-10-09",
+    "note": "Reference media are never render inputs."
+   },
+   "pixel_sha256": "9b0260e38155d68e1b078b48ebb6429de4271dad5f034c8dd42bfcf0c4a7a90d",
+   "path": "references/reconstruction/study/passage/001.png"
+  },
+  {
+   "id": "reference/passage/002.png",
+   "sha256": "e870d11278213230d622173e29122c008048eb77b39599486564afd6e1d0a1ef",
+   "origin": "reference-derived",
+   "generator": "reference study capture",
+   "approval": {
+    "status": "REJECTED",
+    "by": "policy",
+    "date": "2026-10-09",
+    "note": "Reference media are never render inputs."
+   },
+   "pixel_sha256": "1bebc79d701ce19e63cc02d00b7d58166c2af2478c52f202120b217eddae79c0",
+   "path": "references/reconstruction/study/passage/002.png"
+  },
+  {
+   "id": "reference/passage/003.png",
+   "sha256": "bfb8f876eb09b2fabde3c4be87c7c0e481ec7ab800e2650ee30b2349d3f4581b",
+   "origin": "reference-derived",
+   "generator": "reference study capture",
+   "approval": {
+    "status": "REJECTED",
+    "by": "policy",
+    "date": "2026-10-09",
+    "note": "Reference media are never render inputs."
+   },
+   "pixel_sha256": "4e970c2da346bcd439d05047d732a171f0c9b3dfbad518b7fd2bb5ad337739e0",
+   "path": "references/reconstruction/study/passage/003.png"
+  },
+  {
+   "id": "reference/passage/004.png",
+   "sha256": "30279f1d63177aa81c7aea7eb4cf782c3443d7a6a8c927b73208957fc553bb05",
+   "origin": "reference-derived",
+   "generator": "reference study capture",
+   "approval": {
+    "status": "REJECTED",
+    "by": "policy",
+    "date": "2026-10-09",
+    "note": "Reference media are never render inputs."
+   },
+   "pixel_sha256": "59035fc1790dc6bd8208071eb92d01d2d3d4c6d86cbe435d8162a7ae1925cd3a",
+   "path": "references/reconstruction/study/passage/004.png"
+  },
+  {
+   "id": "reference/passage/005.png",
+   "sha256": "a925ab9eb6e279064e522a4508be523bca01cd41fb3575360624e6cb19574f3b",
+   "origin": "reference-derived",
+   "generator": "reference study capture",
+   "approval": {
+    "status": "REJECTED",
+    "by": "policy",
+    "date": "2026-10-09",
+    "note": "Reference media are never render inputs."
+   },
+   "pixel_sha256": "531765153a2a19d9bc894abc2c98c7533eace259ab84f216eff8667dcc216930",
+   "path": "references/reconstruction/study/passage/005.png"
+  },
+  {
+   "id": "reference/passage/006.png",
+   "sha256": "2e5f540224ff7a9d7e41dd5d47d5ff6ac58975d57c7de5d1eba193ea16752bee",
+   "origin": "reference-derived",
+   "generator": "reference study capture",
+   "approval": {
+    "status": "REJECTED",
+    "by": "policy",
+    "date": "2026-10-09",
+    "note": "Reference media are never render inputs."
+   },
+   "pixel_sha256": "31ec9763c0a767a570bdf5bedd9298754b65874706e4d207634c188b648e855c",
+   "path": "references/reconstruction/study/passage/006.png"
+  },
+  {
+   "id": "reference/passage/007.png",
+   "sha256": "6aa735d2f1c845163dbd523327263a3d99f2b7f48148130bb6451c715f3e97ea",
+   "origin": "reference-derived",
+   "generator": "reference study capture",
+   "approval": {
+    "status": "REJECTED",
+    "by": "policy",
+    "date": "2026-10-09",
+    "note": "Reference media are never render inputs."
+   },
+   "pixel_sha256": "a8769f8cbb98c28b197cd686c953da79b896333ee1eea0a983c35cf76722dfb4",
+   "path": "references/reconstruction/study/passage/007.png"
+  },
+  {
+   "id": "reference/passage/008.png",
+   "sha256": "d4109e369d6f654b0bde15302fd71f3bd55c7925e426e21ec354243899007cf2",
+   "origin": "reference-derived",
+   "generator": "reference study capture",
+   "approval": {
+    "status": "REJECTED",
+    "by": "policy",
+    "date": "2026-10-09",
+    "note": "Reference media are never render inputs."
+   },
+   "pixel_sha256": "b9dbb70ef809f71cccb6f1071c8b4e382be2ec0bc2392825ce85b1d57ecbabea",
+   "path": "references/reconstruction/study/passage/008.png"
+  },
+  {
+   "id": "reference/passage/009.png",
+   "sha256": "b0b66c0c7f4a969a35c3627b93ebee085e7b5c4c3a506e4bc1cab57c50b3a452",
+   "origin": "reference-derived",
+   "generator": "reference study capture",
+   "approval": {
+    "status": "REJECTED",
+    "by": "policy",
+    "date": "2026-10-09",
+    "note": "Reference media are never render inputs."
+   },
+   "pixel_sha256": "a829a8c0a9d594e7d1b3cd5041c7d97104c75e81a8926855fd848a3e1481e68a",
+   "path": "references/reconstruction/study/passage/009.png"
+  },
+  {
+   "id": "reference/passage/010.png",
+   "sha256": "ae856916330ae80b9e18ba98d52d3401333102c5ef8b29131f540dc6a9bfa01c",
+   "origin": "reference-derived",
+   "generator": "reference study capture",
+   "approval": {
+    "status": "REJECTED",
+    "by": "policy",
+    "date": "2026-10-09",
+    "note": "Reference media are never render inputs."
+   },
+   "pixel_sha256": "f193de7c7e4ffbae9ece4222c8259e8f5d5815625517816a563c103aa6e3928a",
+   "path": "references/reconstruction/study/passage/010.png"
+  },
+  {
+   "id": "reference/passage/011.png",
+   "sha256": "d240fbfd6b5785318f0d80d8377a5488cee99bfd8bf51bb8d8f6aeb00e0ae6f1",
+   "origin": "reference-derived",
+   "generator": "reference study capture",
+   "approval": {
+    "status": "REJECTED",
+    "by": "policy",
+    "date": "2026-10-09",
+    "note": "Reference media are never render inputs."
+   },
+   "pixel_sha256": "093bbc5dd6c1eb35e8cc00cd296af1c979999afd5c2166973c5c96bd30b2d8ca",
+   "path": "references/reconstruction/study/passage/011.png"
+  },
+  {
+   "id": "reference/passage/012.png",
+   "sha256": "cb10e44bcb5bf1f3cfd5e398fe6461c3ce09afd7871488638a2e51e4fa013287",
+   "origin": "reference-derived",
+   "generator": "reference study capture",
+   "approval": {
+    "status": "REJECTED",
+    "by": "policy",
+    "date": "2026-10-09",
+    "note": "Reference media are never render inputs."
+   },
+   "pixel_sha256": "0fec98a2ed37cee53f4a16ff3579a44c9a977e0a08bd9905e0bba51ba64c3357",
+   "path": "references/reconstruction/study/passage/012.png"
+  },
+  {
+   "id": "reference/passage/013.png",
+   "sha256": "3560d960f87544c3dd8e7bcaa8b65dafca3a2057180e6f8167413fa014127abf",
+   "origin": "reference-derived",
+   "generator": "reference study capture",
+   "approval": {
+    "status": "REJECTED",
+    "by": "policy",
+    "date": "2026-10-09",
+    "note": "Reference media are never render inputs."
+   },
+   "pixel_sha256": "54d2398ffbc6c1d1e2ede6a1f94d45fcb570fde26e54c2fe94c43e8a0da8d3a6",
+   "path": "references/reconstruction/study/passage/013.png"
+  },
+  {
+   "id": "reference/passage/014.png",
+   "sha256": "badb5a0e55fe4698207ebd39ba8eb5f1f44bddaa069b0a0d961a724a4a9ffa06",
+   "origin": "reference-derived",
+   "generator": "reference study capture",
+   "approval": {
+    "status": "REJECTED",
+    "by": "policy",
+    "date": "2026-10-09",
+    "note": "Reference media are never render inputs."
+   },
+   "pixel_sha256": "77960bc3614901a0fc6c2acf1b85ef976a6b918bdd26bf44b8a504a1e5c83a45",
+   "path": "references/reconstruction/study/passage/014.png"
+  },
+  {
+   "id": "reference/passage/015.png",
+   "sha256": "37725533e6336c75a1571fe7b187f6aa9d8cc3599b717776229ca01d2c583a9a",
+   "origin": "reference-derived",
+   "generator": "reference study capture",
+   "approval": {
+    "status": "REJECTED",
+    "by": "policy",
+    "date": "2026-10-09",
+    "note": "Reference media are never render inputs."
+   },
+   "pixel_sha256": "63e5dbc355bb734108c5709f2ee1cc0874aea6f4a00031e35022d21676c2e748",
+   "path": "references/reconstruction/study/passage/015.png"
+  },
+  {
+   "id": "reference/passage/016.png",
+   "sha256": "b6bef7ca9dd144f137186f383dbd91a95dd31e48d2e3054a6bf41277ffdc1516",
+   "origin": "reference-derived",
+   "generator": "reference study capture",
+   "approval": {
+    "status": "REJECTED",
+    "by": "policy",
+    "date": "2026-10-09",
+    "note": "Reference media are never render inputs."
+   },
+   "pixel_sha256": "07a9935f90b22f4fe9241c8567df4212df5c1b4a517dc51741ad234c801a69c7",
+   "path": "references/reconstruction/study/passage/016.png"
+  },
+  {
+   "id": "reference/passage/017.png",
+   "sha256": "340a6a5082b8d6cf5fd8caad196063090d42284bc584470960a40b94c1bbddd7",
+   "origin": "reference-derived",
+   "generator": "reference study capture",
+   "approval": {
+    "status": "REJECTED",
+    "by": "policy",
+    "date": "2026-10-09",
+    "note": "Reference media are never render inputs."
+   },
+   "pixel_sha256": "ae90f2ca8c3171e4df68bffdd4f5c1682aeb63208b8e3b589447cd99a66e29fd",
+   "path": "references/reconstruction/study/passage/017.png"
+  },
+  {
+   "id": "reference/passage/018.png",
+   "sha256": "fa2a4cca4ce2851d2a6465508e536bfb8f35a469229cf7a8c4d8804e9a13d74b",
+   "origin": "reference-derived",
+   "generator": "reference study capture",
+   "approval": {
+    "status": "REJECTED",
+    "by": "policy",
+    "date": "2026-10-09",
+    "note": "Reference media are never render inputs."
+   },
+   "pixel_sha256": "7a8481bdcfb2f778eafc0597d67f84d87eeb74f1e9281511a6c26fc4ed732081",
+   "path": "references/reconstruction/study/passage/018.png"
+  },
+  {
+   "id": "reference/passage/019.png",
+   "sha256": "01575b2db90ba4d7b1f7fa4f6687eac860c7a58e189d3dd5bca4ecd57a746b7c",
+   "origin": "reference-derived",
+   "generator": "reference study capture",
+   "approval": {
+    "status": "REJECTED",
+    "by": "policy",
+    "date": "2026-10-09",
+    "note": "Reference media are never render inputs."
+   },
+   "pixel_sha256": "7ff0d77beff007feba4e37b7b1292f63e2690abb312adb2fa56c79b1e69982ed",
+   "path": "references/reconstruction/study/passage/019.png"
+  },
+  {
+   "id": "reference/passage/020.png",
+   "sha256": "f59e15024c168c187df211caae2f2493d5babb38dd0b2ad9368821fda69df46c",
+   "origin": "reference-derived",
+   "generator": "reference study capture",
+   "approval": {
+    "status": "REJECTED",
+    "by": "policy",
+    "date": "2026-10-09",
+    "note": "Reference media are never render inputs."
+   },
+   "pixel_sha256": "57795c3e9c24ab6d3299cead136472918c6917b9174d5300eb081475ee92d79b",
+   "path": "references/reconstruction/study/passage/020.png"
+  },
+  {
+   "id": "reference/passage/021.png",
+   "sha256": "68440c73982f5faa475f98c3835e177bbfbc80cdba68515ac77c13c52cd1c83f",
+   "origin": "reference-derived",
+   "generator": "reference study capture",
+   "approval": {
+    "status": "REJECTED",
+    "by": "policy",
+    "date": "2026-10-09",
+    "note": "Reference media are never render inputs."
+   },
+   "pixel_sha256": "2467df3dc676d6670556c043f77f596bff267411c214b5746ec461e6edd58ee5",
+   "path": "references/reconstruction/study/passage/021.png"
+  },
+  {
+   "id": "reference/passage/022.png",
+   "sha256": "8ceadcdc71ce738a596111daba923dbf42ad06de8675df7f6ee88139de2d9afa",
+   "origin": "reference-derived",
+   "generator": "reference study capture",
+   "approval": {
+    "status": "REJECTED",
+    "by": "policy",
+    "date": "2026-10-09",
+    "note": "Reference media are never render inputs."
+   },
+   "pixel_sha256": "fc5db5c3628c6c96788684e1db4b063aa94aa7e94026d72e73b4ff6e9df21389",
+   "path": "references/reconstruction/study/passage/022.png"
+  },
+  {
+   "id": "reference/passage/023.png",
+   "sha256": "3680620e5ea011e0d82ec51555f08f72a16a69a96962d7568e43e63591284261",
+   "origin": "reference-derived",
+   "generator": "reference study capture",
+   "approval": {
+    "status": "REJECTED",
+    "by": "policy",
+    "date": "2026-10-09",
+    "note": "Reference media are never render inputs."
+   },
+   "pixel_sha256": "1ec41737e5d045e55ae31f9c51aee2c58b5c8953428aaab528090f77e7d1c6ea",
+   "path": "references/reconstruction/study/passage/023.png"
+  },
+  {
+   "id": "reference/passage/024.png",
+   "sha256": "61f15c5e29c73d5122b47c9fd9cc903f71debdfc71a80b5da7a978f344be262a",
+   "origin": "reference-derived",
+   "generator": "reference study capture",
+   "approval": {
+    "status": "REJECTED",
+    "by": "policy",
+    "date": "2026-10-09",
+    "note": "Reference media are never render inputs."
+   },
+   "pixel_sha256": "6e25bde72babef365d830759edced2981f7130f5a6189706c0fd1b3480d41ba4",
+   "path": "references/reconstruction/study/passage/024.png"
+  },
+  {
+   "id": "reference/passage/025.png",
+   "sha256": "3a78d27d8c1c88e98316b19ed7d99d9195c41756c1726c1e3bdbda88fb0c5d01",
+   "origin": "reference-derived",
+   "generator": "reference study capture",
+   "approval": {
+    "status": "REJECTED",
+    "by": "policy",
+    "date": "2026-10-09",
+    "note": "Reference media are never render inputs."
+   },
+   "pixel_sha256": "adfdbf8e894c6409804c5d203d0057ff09de19c64c3ce1bc3069a0eb0ce0c58f",
+   "path": "references/reconstruction/study/passage/025.png"
+  },
+  {
+   "id": "reference/passage/026.png",
+   "sha256": "be37da79c3b775e2536bae51e09d2887d77920d4a65420793c17445460445ce6",
+   "origin": "reference-derived",
+   "generator": "reference study capture",
+   "approval": {
+    "status": "REJECTED",
+    "by": "policy",
+    "date": "2026-10-09",
+    "note": "Reference media are never render inputs."
+   },
+   "pixel_sha256": "669fc61cc7876f3ef8cf4b8a8919e1082fe734330c85c22584d9f847b93871ef",
+   "path": "references/reconstruction/study/passage/026.png"
+  },
+  {
+   "id": "reference/passage/027.png",
+   "sha256": "ca1d3c7398896625960262d5c8a8a52e8a8293bd6cbe86241591195557eadaa7",
+   "origin": "reference-derived",
+   "generator": "reference study capture",
+   "approval": {
+    "status": "REJECTED",
+    "by": "policy",
+    "date": "2026-10-09",
+    "note": "Reference media are never render inputs."
+   },
+   "pixel_sha256": "2e7f6046191ad0b8f942a133b39aa25909d25b9c2019425736d18271af71cff1",
+   "path": "references/reconstruction/study/passage/027.png"
+  },
+  {
+   "id": "reference/passage/028.png",
+   "sha256": "dfc070e627401750c32ee8abd2e304c092dddd96c93e89d6637b9e4c771756a0",
+   "origin": "reference-derived",
+   "generator": "reference study capture",
+   "approval": {
+    "status": "REJECTED",
+    "by": "policy",
+    "date": "2026-10-09",
+    "note": "Reference media are never render inputs."
+   },
+   "pixel_sha256": "3d210545570fd852b3cd1792211ac6e70976eb3f8160548fc2a4743844e5ae75",
+   "path": "references/reconstruction/study/passage/028.png"
+  },
+  {
+   "id": "reference/passage/029.png",
+   "sha256": "3e029117a35a422971ce576647b8712db41b7f3c9e76d449a7d55eceb4c63716",
+   "origin": "reference-derived",
+   "generator": "reference study capture",
+   "approval": {
+    "status": "REJECTED",
+    "by": "policy",
+    "date": "2026-10-09",
+    "note": "Reference media are never render inputs."
+   },
+   "pixel_sha256": "08a989646be2afbeb2e264d25d41bcc9b8a3e0ca4cf3639b40de079e9a74a15e",
+   "path": "references/reconstruction/study/passage/029.png"
+  },
+  {
+   "id": "reference/passage/030.png",
+   "sha256": "0fccfb97b3b9d2e6f0b3a4284ea3423e5361a8427ad094332725fa75c259f572",
+   "origin": "reference-derived",
+   "generator": "reference study capture",
+   "approval": {
+    "status": "REJECTED",
+    "by": "policy",
+    "date": "2026-10-09",
+    "note": "Reference media are never render inputs."
+   },
+   "pixel_sha256": "bb2aa7958771949d8db5985d502cdd4587a1c441e6b55319db3ab16f8a224dd9",
+   "path": "references/reconstruction/study/passage/030.png"
+  },
+  {
+   "id": "reference/passage/031.png",
+   "sha256": "3aca7c08c16778e5d61b54b1bc4c2f6703dc041c6ab12b43968ee31a502527b3",
+   "origin": "reference-derived",
+   "generator": "reference study capture",
+   "approval": {
+    "status": "REJECTED",
+    "by": "policy",
+    "date": "2026-10-09",
+    "note": "Reference media are never render inputs."
+   },
+   "pixel_sha256": "3d7e6e13759ef9626d8ef1d2f22b274385d1d88782467cb9f79629e4506a77cc",
+   "path": "references/reconstruction/study/passage/031.png"
+  },
+  {
+   "id": "reference/passage/032.png",
+   "sha256": "bd24d30a020b6e30343154db099a4f4456bd0d35b91c780510c72130c82ec21d",
+   "origin": "reference-derived",
+   "generator": "reference study capture",
+   "approval": {
+    "status": "REJECTED",
+    "by": "policy",
+    "date": "2026-10-09",
+    "note": "Reference media are never render inputs."
+   },
+   "pixel_sha256": "9adabadaf08129d0ed7c3434c919a9eeab43d866c5e9f5d994f452b68e29808a",
+   "path": "references/reconstruction/study/passage/032.png"
+  },
+  {
+   "id": "reference/passage/033.png",
+   "sha256": "013fb70d3e4d12469f67f14946ee7d6db65dc0793fcb5957eda87b31c5c89657",
+   "origin": "reference-derived",
+   "generator": "reference study capture",
+   "approval": {
+    "status": "REJECTED",
+    "by": "policy",
+    "date": "2026-10-09",
+    "note": "Reference media are never render inputs."
+   },
+   "pixel_sha256": "e3252b0011fe9fa1d8979011d1b84b5f72f84f443d2a6d9aad25f4bc8c7c2869",
+   "path": "references/reconstruction/study/passage/033.png"
+  },
+  {
+   "id": "reference/passage/034.png",
+   "sha256": "bf289fd138aceca39ee02f1e9c48ba76c842d7552cb09e18564a90820cf3428c",
+   "origin": "reference-derived",
+   "generator": "reference study capture",
+   "approval": {
+    "status": "REJECTED",
+    "by": "policy",
+    "date": "2026-10-09",
+    "note": "Reference media are never render inputs."
+   },
+   "pixel_sha256": "f3fcbe9667011006c424fecb69cb772f9b9f34288d1d5943edbed18969a86989",
+   "path": "references/reconstruction/study/passage/034.png"
+  },
+  {
+   "id": "reference/passage/035.png",
+   "sha256": "143d5402182f61865a8dbca6d13785d55bf01af2bd533ed1226102846aeedaec",
+   "origin": "reference-derived",
+   "generator": "reference study capture",
+   "approval": {
+    "status": "REJECTED",
+    "by": "policy",
+    "date": "2026-10-09",
+    "note": "Reference media are never render inputs."
+   },
+   "pixel_sha256": "3e0b968a28114029d006016920e7a9051986846dd0334eea0ae7e87e7ed766c1",
+   "path": "references/reconstruction/study/passage/035.png"
+  },
+  {
+   "id": "reference/passage/036.png",
+   "sha256": "2ae5bc420aa8d84d74d7acd92bccca0a1ac36da4da879de0bb9c9b20bc42073e",
+   "origin": "reference-derived",
+   "generator": "reference study capture",
+   "approval": {
+    "status": "REJECTED",
+    "by": "policy",
+    "date": "2026-10-09",
+    "note": "Reference media are never render inputs."
+   },
+   "pixel_sha256": "a94fd1d73f8eaed23227711d9bae82e23b5e9b4812d163f3dd67ecb1537b3c64",
+   "path": "references/reconstruction/study/passage/036.png"
+  },
+  {
+   "id": "reference/passage/037.png",
+   "sha256": "2a02441b814e041bc8b83a18eb88461a742a7466f267c421bd097909132db9a3",
+   "origin": "reference-derived",
+   "generator": "reference study capture",
+   "approval": {
+    "status": "REJECTED",
+    "by": "policy",
+    "date": "2026-10-09",
+    "note": "Reference media are never render inputs."
+   },
+   "pixel_sha256": "f3ab85c7c5f5cd196d95d7c5b69a27e080ca874e1ebd50a1379eb2a6448f7cea",
+   "path": "references/reconstruction/study/passage/037.png"
+  },
+  {
+   "id": "reference/passage/038.png",
+   "sha256": "8f80832b9f106f3cd22d953fb58e1c30011ab0b943948c690504249a1df55cf9",
+   "origin": "reference-derived",
+   "generator": "reference study capture",
+   "approval": {
+    "status": "REJECTED",
+    "by": "policy",
+    "date": "2026-10-09",
+    "note": "Reference media are never render inputs."
+   },
+   "pixel_sha256": "19828efb4d5fa5ec07e67a03576bd3072bfb0eec1ef1e33a84bda5002c6c8377",
+   "path": "references/reconstruction/study/passage/038.png"
+  },
+  {
+   "id": "reference/passage/039.png",
+   "sha256": "f87982175deaa3904acef4f17100acaf8d4b3a27698b9822146fa1fc84a2ad20",
+   "origin": "reference-derived",
+   "generator": "reference study capture",
+   "approval": {
+    "status": "REJECTED",
+    "by": "policy",
+    "date": "2026-10-09",
+    "note": "Reference media are never render inputs."
+   },
+   "pixel_sha256": "dc639644aa9b593a916a0d05a6817f3ea60d47935c2ee388f4f678ffe1f5d89d",
+   "path": "references/reconstruction/study/passage/039.png"
+  },
+  {
+   "id": "reference/passage/040.png",
+   "sha256": "4214f4744cd54cc287bc51a1040fe9ab13e7c365694aa5529218464aeb1c386c",
+   "origin": "reference-derived",
+   "generator": "reference study capture",
+   "approval": {
+    "status": "REJECTED",
+    "by": "policy",
+    "date": "2026-10-09",
+    "note": "Reference media are never render inputs."
+   },
+   "pixel_sha256": "c6dc5b30b988abc3f4096c09cfca2bf2626b4402bd2f6062f9c79b55e6a3016f",
+   "path": "references/reconstruction/study/passage/040.png"
+  },
+  {
+   "id": "reference/passage/041.png",
+   "sha256": "20bfa003aee4f500b9924849f36152d287f01353786dea7facb419a76043b7b1",
+   "origin": "reference-derived",
+   "generator": "reference study capture",
+   "approval": {
+    "status": "REJECTED",
+    "by": "policy",
+    "date": "2026-10-09",
+    "note": "Reference media are never render inputs."
+   },
+   "pixel_sha256": "a2c55d560ef7d62cd3d52bde628e0818d1a3f6d4add0e61856cf1d33fa2db25d",
+   "path": "references/reconstruction/study/passage/041.png"
+  },
+  {
+   "id": "reference/passage/042.png",
+   "sha256": "99725cd33c12498ad09e65a7bd7cf6e34a274f3b9c35e1ae987994408ac86c16",
+   "origin": "reference-derived",
+   "generator": "reference study capture",
+   "approval": {
+    "status": "REJECTED",
+    "by": "policy",
+    "date": "2026-10-09",
+    "note": "Reference media are never render inputs."
+   },
+   "pixel_sha256": "e1a9044f4ddbb771c4d62b8a7203389b1f1bf7edc732642ac6aa929b8bce8540",
+   "path": "references/reconstruction/study/passage/042.png"
+  },
+  {
+   "id": "reference/passage/043.png",
+   "sha256": "334dd7123050fdbe7c776a119065a29f82770103e2aac431d4e59433965c9f95",
+   "origin": "reference-derived",
+   "generator": "reference study capture",
+   "approval": {
+    "status": "REJECTED",
+    "by": "policy",
+    "date": "2026-10-09",
+    "note": "Reference media are never render inputs."
+   },
+   "pixel_sha256": "c8927cfb09809d9766621d3c15339521c2ee1e99596f505b50acdeae56ced785",
+   "path": "references/reconstruction/study/passage/043.png"
+  },
+  {
+   "id": "reference/passage/044.png",
+   "sha256": "64820b08e1d5c69b6eede56acab0f714a410b06b519e8d0baec2cadfc50feab3",
+   "origin": "reference-derived",
+   "generator": "reference study capture",
+   "approval": {
+    "status": "REJECTED",
+    "by": "policy",
+    "date": "2026-10-09",
+    "note": "Reference media are never render inputs."
+   },
+   "pixel_sha256": "7cf78b4f80ac6ed4a5ecfbe173590c0abe0b26006ea7b9bf67f02f8bbc976bcd",
+   "path": "references/reconstruction/study/passage/044.png"
+  },
+  {
+   "id": "reference/passage/045.png",
+   "sha256": "e1976016576599d9e1ebbec2eacd93600a6ee0cc77990af78f1d63be6b006d34",
+   "origin": "reference-derived",
+   "generator": "reference study capture",
+   "approval": {
+    "status": "REJECTED",
+    "by": "policy",
+    "date": "2026-10-09",
+    "note": "Reference media are never render inputs."
+   },
+   "pixel_sha256": "6b766932ecc5c61a394a1e34ac3e0af11e50696094ce343637fb6dcc130f47d4",
+   "path": "references/reconstruction/study/passage/045.png"
+  },
+  {
+   "id": "reference/passage/046.png",
+   "sha256": "887c65d4dec03e4d3edb5fc8ae1aad7d69e3bdb20cb7defaa947a9d006abb73d",
+   "origin": "reference-derived",
+   "generator": "reference study capture",
+   "approval": {
+    "status": "REJECTED",
+    "by": "policy",
+    "date": "2026-10-09",
+    "note": "Reference media are never render inputs."
+   },
+   "pixel_sha256": "a2179471b7e93d518b2f20a1546464de729211f5c45ab2f0a39e2832c6708848",
+   "path": "references/reconstruction/study/passage/046.png"
+  },
+  {
+   "id": "reference/passage/047.png",
+   "sha256": "71e114f10b3429a9fff447929b09d0b500b20ae06a2f19908baa4f20ca70860a",
+   "origin": "reference-derived",
+   "generator": "reference study capture",
+   "approval": {
+    "status": "REJECTED",
+    "by": "policy",
+    "date": "2026-10-09",
+    "note": "Reference media are never render inputs."
+   },
+   "pixel_sha256": "17c4287e096d2227bd515ece1409523217736a4dc0cd1899c862e16568525e86",
+   "path": "references/reconstruction/study/passage/047.png"
+  },
+  {
+   "id": "reference/passage/048.png",
+   "sha256": "7570c62e4c2471aa8974bf25ce580995b9d4a7dea53074e825e695e68f79b57e",
+   "origin": "reference-derived",
+   "generator": "reference study capture",
+   "approval": {
+    "status": "REJECTED",
+    "by": "policy",
+    "date": "2026-10-09",
+    "note": "Reference media are never render inputs."
+   },
+   "pixel_sha256": "af72d86534c0def61586e5e05ad6b072a4883becb6803c3c06f17f2f9f5be939",
+   "path": "references/reconstruction/study/passage/048.png"
+  },
+  {
+   "id": "reference/passage/049.png",
+   "sha256": "6208969b326c795692308ff1cd67b87b72da9614be7c338f1728f85ba6feb91b",
+   "origin": "reference-derived",
+   "generator": "reference study capture",
+   "approval": {
+    "status": "REJECTED",
+    "by": "policy",
+    "date": "2026-10-09",
+    "note": "Reference media are never render inputs."
+   },
+   "pixel_sha256": "9fb42fa0ed0c96918d6b12afb11fdeb9b72e02beb3ca3bf233bb3017bdb2ef54",
+   "path": "references/reconstruction/study/passage/049.png"
+  },
+  {
+   "id": "reference/passage/050.png",
+   "sha256": "f06aa039cf47abd941e7eef2b4769cf0305c1b91e507f54e88e343921f487b57",
+   "origin": "reference-derived",
+   "generator": "reference study capture",
+   "approval": {
+    "status": "REJECTED",
+    "by": "policy",
+    "date": "2026-10-09",
+    "note": "Reference media are never render inputs."
+   },
+   "pixel_sha256": "c17020265e6a2710f23e53e671f19a929a90a934f47cf1fafbfed1f4f17972c3",
+   "path": "references/reconstruction/study/passage/050.png"
+  },
+  {
+   "id": "reference/passage/051.png",
+   "sha256": "ab0bd9c9a7b4148c92fd10eda7b1702783b38cc624b493b8ffa20c225a8f14c2",
+   "origin": "reference-derived",
+   "generator": "reference study capture",
+   "approval": {
+    "status": "REJECTED",
+    "by": "policy",
+    "date": "2026-10-09",
+    "note": "Reference media are never render inputs."
+   },
+   "pixel_sha256": "54b5c328d33622ee55242edaf3c7bdfbfdcb5b9985b2e5eb71bb26b49eb15bf3",
+   "path": "references/reconstruction/study/passage/051.png"
+  },
+  {
+   "id": "reference/passage/052.png",
+   "sha256": "84e89414711c8043c01e2c03fa0dda607d67d03907419395216796a4d4d64ab9",
+   "origin": "reference-derived",
+   "generator": "reference study capture",
+   "approval": {
+    "status": "REJECTED",
+    "by": "policy",
+    "date": "2026-10-09",
+    "note": "Reference media are never render inputs."
+   },
+   "pixel_sha256": "00fbc52f52603ef077e52330c559322e99aeb7dadcf550ab701477d5451616d4",
+   "path": "references/reconstruction/study/passage/052.png"
+  },
+  {
+   "id": "reference/passage/053.png",
+   "sha256": "d86ad6ed57b1d2a958209de2e3174c37b5b8c87b7c33f3e456a39052518a6caf",
+   "origin": "reference-derived",
+   "generator": "reference study capture",
+   "approval": {
+    "status": "REJECTED",
+    "by": "policy",
+    "date": "2026-10-09",
+    "note": "Reference media are never render inputs."
+   },
+   "pixel_sha256": "1e373ae079ad17815f127343a329bfcd68e08c0c603aea9851344acf9837d106",
+   "path": "references/reconstruction/study/passage/053.png"
+  },
+  {
+   "id": "reference/passage/054.png",
+   "sha256": "a608fdb021ee96375f5d65edabb2380c51689d5e80f6e78c5ada7e8e78d200b4",
+   "origin": "reference-derived",
+   "generator": "reference study capture",
+   "approval": {
+    "status": "REJECTED",
+    "by": "policy",
+    "date": "2026-10-09",
+    "note": "Reference media are never render inputs."
+   },
+   "pixel_sha256": "4d3011ed84f6b67d472300db63c0e99e0aa4869790ab70ac8a0cb004fda88950",
+   "path": "references/reconstruction/study/passage/054.png"
+  },
+  {
+   "id": "reference/passage/055.png",
+   "sha256": "e2c157c6133960b5f314857daa31baa7496d821a835a8834f6bc8f03ee85d053",
+   "origin": "reference-derived",
+   "generator": "reference study capture",
+   "approval": {
+    "status": "REJECTED",
+    "by": "policy",
+    "date": "2026-10-09",
+    "note": "Reference media are never render inputs."
+   },
+   "pixel_sha256": "8d7440ccd75cd70c5fc62925c0ea83785bb4a4540d612752ae3448fb9ad02e7c",
+   "path": "references/reconstruction/study/passage/055.png"
+  },
+  {
+   "id": "reference/passage/056.png",
+   "sha256": "00e95de44e8d3daaec5cf5dc7cb74b1bfbaf8aca609aa21cb67b40e2a06c6aba",
+   "origin": "reference-derived",
+   "generator": "reference study capture",
+   "approval": {
+    "status": "REJECTED",
+    "by": "policy",
+    "date": "2026-10-09",
+    "note": "Reference media are never render inputs."
+   },
+   "pixel_sha256": "8744debde97bc0999ea76a554bc350752d7d2ec26914c13a9aa25ba66ab5253f",
+   "path": "references/reconstruction/study/passage/056.png"
+  },
+  {
+   "id": "reference/passage/057.png",
+   "sha256": "4e24548bf6421057754c2ab78ca07398b677c245c5615c4f948acfb9705ed132",
+   "origin": "reference-derived",
+   "generator": "reference study capture",
+   "approval": {
+    "status": "REJECTED",
+    "by": "policy",
+    "date": "2026-10-09",
+    "note": "Reference media are never render inputs."
+   },
+   "pixel_sha256": "a9496d2d3ba1fc7033ae1f0a10be2357a7b8778d2b390d333dad51681bb8aa53",
+   "path": "references/reconstruction/study/passage/057.png"
+  },
+  {
+   "id": "reference/passage/058.png",
+   "sha256": "897a2e287a7d3348492fee288fdac0096da69174683113e7d4879ab07f1e5b22",
+   "origin": "reference-derived",
+   "generator": "reference study capture",
+   "approval": {
+    "status": "REJECTED",
+    "by": "policy",
+    "date": "2026-10-09",
+    "note": "Reference media are never render inputs."
+   },
+   "pixel_sha256": "00303f07c279e892890986cdfd59adcbed0c8af677194f8403f97e3961da5363",
+   "path": "references/reconstruction/study/passage/058.png"
+  },
+  {
+   "id": "reference/passage/059.png",
+   "sha256": "4c62c4279f9f26162e0a24592a706679624331aca917d1cddc49c6b1f825f226",
+   "origin": "reference-derived",
+   "generator": "reference study capture",
+   "approval": {
+    "status": "REJECTED",
+    "by": "policy",
+    "date": "2026-10-09",
+    "note": "Reference media are never render inputs."
+   },
+   "pixel_sha256": "a73cf68ef128d531f73fa0fe271739d486134260660771f517b3b03a318bcf3f",
+   "path": "references/reconstruction/study/passage/059.png"
+  },
+  {
+   "id": "reference/passage/060.png",
+   "sha256": "2ebac6302eecf00bc11530282b472d783ebe1d85c4fa3ff5bb9f8e4a8f153d06",
+   "origin": "reference-derived",
+   "generator": "reference study capture",
+   "approval": {
+    "status": "REJECTED",
+    "by": "policy",
+    "date": "2026-10-09",
+    "note": "Reference media are never render inputs."
+   },
+   "pixel_sha256": "d3fc2a9928a77ba5bd6797b010d294426c1c4ed5bf87008ff4c07b3f2b6e9ee9",
+   "path": "references/reconstruction/study/passage/060.png"
+  },
+  {
+   "id": "reference/passage/061.png",
+   "sha256": "08e4be46b7910fa652f053c4763f669382c0730d80de46302ec7cf5dfe9303d7",
+   "origin": "reference-derived",
+   "generator": "reference study capture",
+   "approval": {
+    "status": "REJECTED",
+    "by": "policy",
+    "date": "2026-10-09",
+    "note": "Reference media are never render inputs."
+   },
+   "pixel_sha256": "d77b4cd23498d6dbc25e60d93c4c13be8202433473976cbb010ae8a821f9d091",
+   "path": "references/reconstruction/study/passage/061.png"
+  },
+  {
+   "id": "reference/passage/062.png",
+   "sha256": "a729567ecb44427de495923f8fc84e3ea9eb05d1bf8e49e9f0bb9e4205f85a27",
+   "origin": "reference-derived",
+   "generator": "reference study capture",
+   "approval": {
+    "status": "REJECTED",
+    "by": "policy",
+    "date": "2026-10-09",
+    "note": "Reference media are never render inputs."
+   },
+   "pixel_sha256": "2863c139b74a9132fbbe85d1581164db611f269de61ab93f869e4e087d5845f8",
+   "path": "references/reconstruction/study/passage/062.png"
+  },
+  {
+   "id": "reference/passage/063.png",
+   "sha256": "35573cb611851853fcc46fa11a0a5aa832b209c8827b94a5e504ddbfc40d5cf0",
+   "origin": "reference-derived",
+   "generator": "reference study capture",
+   "approval": {
+    "status": "REJECTED",
+    "by": "policy",
+    "date": "2026-10-09",
+    "note": "Reference media are never render inputs."
+   },
+   "pixel_sha256": "fa0d52db96a3c6968a74d4d5452f1b294b922d454157684032b6bd7d660f1720",
+   "path": "references/reconstruction/study/passage/063.png"
+  },
+  {
+   "id": "reference/passage/064.png",
+   "sha256": "221900b99d1ed61370a0a853dc26ad4c9e6f2ee768aeced75e3d9d816d268871",
+   "origin": "reference-derived",
+   "generator": "reference study capture",
+   "approval": {
+    "status": "REJECTED",
+    "by": "policy",
+    "date": "2026-10-09",
+    "note": "Reference media are never render inputs."
+   },
+   "pixel_sha256": "7645c79b2a40a7884e0fe67d8808cfe3561d4311a511cacd135c59244a153f4f",
+   "path": "references/reconstruction/study/passage/064.png"
+  },
+  {
+   "id": "reference/passage/065.png",
+   "sha256": "35dd9c1c1d123d8c393ade3f760aa5e67586cbc2e0ebd15837e04ff205cd510b",
+   "origin": "reference-derived",
+   "generator": "reference study capture",
+   "approval": {
+    "status": "REJECTED",
+    "by": "policy",
+    "date": "2026-10-09",
+    "note": "Reference media are never render inputs."
+   },
+   "pixel_sha256": "9914c123afec0190302d8b2634de69f3294ea44e1a88c52d511a92c0ed2e741e",
+   "path": "references/reconstruction/study/passage/065.png"
+  },
+  {
+   "id": "reference/passage/066.png",
+   "sha256": "fb7e0dff191c02529c778edbeb5c9bc3b820e1f9186f90c11b53417e1039a709",
+   "origin": "reference-derived",
+   "generator": "reference study capture",
+   "approval": {
+    "status": "REJECTED",
+    "by": "policy",
+    "date": "2026-10-09",
+    "note": "Reference media are never render inputs."
+   },
+   "pixel_sha256": "0e653bfef552145946acea404b2ceadf9e5e7c86f216edd9b41eac6f7ed7d8c9",
+   "path": "references/reconstruction/study/passage/066.png"
+  },
+  {
+   "id": "reference/passage/067.png",
+   "sha256": "b961bcc5a8e5d7915c97f7ffb2659bc3bcb5b7c533a5895b1ed739fd1e9a0cae",
+   "origin": "reference-derived",
+   "generator": "reference study capture",
+   "approval": {
+    "status": "REJECTED",
+    "by": "policy",
+    "date": "2026-10-09",
+    "note": "Reference media are never render inputs."
+   },
+   "pixel_sha256": "cb70036bd963bf6b3be1a71fe7909df250067f7d712c5b89f0fcb7cebb5ffc31",
+   "path": "references/reconstruction/study/passage/067.png"
+  },
+  {
+   "id": "reference/passage/068.png",
+   "sha256": "fd88d9f2b8f000c3d3439396b3092842d9d3a8321b1697f10e4604982467d238",
+   "origin": "reference-derived",
+   "generator": "reference study capture",
+   "approval": {
+    "status": "REJECTED",
+    "by": "policy",
+    "date": "2026-10-09",
+    "note": "Reference media are never render inputs."
+   },
+   "pixel_sha256": "681ea077d158eee1d1d36f5eefd81d1de1647b659e29feff5d9cf225f330181d",
+   "path": "references/reconstruction/study/passage/068.png"
+  },
+  {
+   "id": "reference/passage/069.png",
+   "sha256": "9ae6696c803a5aad84738753e6de371acc7b894acfccc21a28707dc240da1ab5",
+   "origin": "reference-derived",
+   "generator": "reference study capture",
+   "approval": {
+    "status": "REJECTED",
+    "by": "policy",
+    "date": "2026-10-09",
+    "note": "Reference media are never render inputs."
+   },
+   "pixel_sha256": "60163485b8a66fcde5ace962401f37144c1f67003c70e61abe3c84e9e55c1066",
+   "path": "references/reconstruction/study/passage/069.png"
+  },
+  {
+   "id": "reference/passage/070.png",
+   "sha256": "bde0554a8683ba919a6c342716ad464803c9c0ec2c260441799a6e7f9b1c1bf8",
+   "origin": "reference-derived",
+   "generator": "reference study capture",
+   "approval": {
+    "status": "REJECTED",
+    "by": "policy",
+    "date": "2026-10-09",
+    "note": "Reference media are never render inputs."
+   },
+   "pixel_sha256": "81d8f7a0e0bd86afd663130f650c68cf2719433aa53b6b2d7776b11b0b10f8c9",
+   "path": "references/reconstruction/study/passage/070.png"
+  },
+  {
+   "id": "reference/passage/071.png",
+   "sha256": "e549e106a08ecd874076ecf60443e696a3436ab8adfa78b35913cc695030c61c",
+   "origin": "reference-derived",
+   "generator": "reference study capture",
+   "approval": {
+    "status": "REJECTED",
+    "by": "policy",
+    "date": "2026-10-09",
+    "note": "Reference media are never render inputs."
+   },
+   "pixel_sha256": "b762f753429505bd7e683893b7459432a94d6bac09822ccd60504bf35f1cc45b",
+   "path": "references/reconstruction/study/passage/071.png"
+  },
+  {
+   "id": "reference/passage/072.png",
+   "sha256": "f59a0c0bd5c90bdc3e45d8aef35d3056b6825244c6dee062eba9ae9c08e7c8d2",
+   "origin": "reference-derived",
+   "generator": "reference study capture",
+   "approval": {
+    "status": "REJECTED",
+    "by": "policy",
+    "date": "2026-10-09",
+    "note": "Reference media are never render inputs."
+   },
+   "pixel_sha256": "431bf74774777fc5278cc6ac429da07d05d10fb1f950bff5dafae1cebc676daf",
+   "path": "references/reconstruction/study/passage/072.png"
+  },
+  {
+   "id": "reference/passage/073.png",
+   "sha256": "def9f840f291491bd3bc7ebb1f317338ea44e4ac9a79571ffcc2c1dc21e13e3e",
+   "origin": "reference-derived",
+   "generator": "reference study capture",
+   "approval": {
+    "status": "REJECTED",
+    "by": "policy",
+    "date": "2026-10-09",
+    "note": "Reference media are never render inputs."
+   },
+   "pixel_sha256": "6c8ee1ca79d80a914d29bed3255c3aa1d8b6166720ab5214098d16878550f82b",
+   "path": "references/reconstruction/study/passage/073.png"
+  },
+  {
+   "id": "reference/passage/074.png",
+   "sha256": "e33f5389f326701574971324971d892bdc117103c504595d7531d6cc894c2493",
+   "origin": "reference-derived",
+   "generator": "reference study capture",
+   "approval": {
+    "status": "REJECTED",
+    "by": "policy",
+    "date": "2026-10-09",
+    "note": "Reference media are never render inputs."
+   },
+   "pixel_sha256": "c52987dce030419395af609ffe98b690d468ee93de021c39b9937378a8972753",
+   "path": "references/reconstruction/study/passage/074.png"
+  },
+  {
+   "id": "reference/passage/075.png",
+   "sha256": "8ca514c9da4de511362f97c00a7e2878f2923111b1c406a1d2df05bec8dd2947",
+   "origin": "reference-derived",
+   "generator": "reference study capture",
+   "approval": {
+    "status": "REJECTED",
+    "by": "policy",
+    "date": "2026-10-09",
+    "note": "Reference media are never render inputs."
+   },
+   "pixel_sha256": "0de2368cacfef06074183cd25cc429a28cbd2050660e34219dc24484259ff4af",
+   "path": "references/reconstruction/study/passage/075.png"
+  },
+  {
+   "id": "reference/passage/076.png",
+   "sha256": "75842a5b64c10697a994cd4c10da2bdeaf0948238cb8f0268133241ddf0a77c1",
+   "origin": "reference-derived",
+   "generator": "reference study capture",
+   "approval": {
+    "status": "REJECTED",
+    "by": "policy",
+    "date": "2026-10-09",
+    "note": "Reference media are never render inputs."
+   },
+   "pixel_sha256": "98aa48c4f57b5c2ef7bc9364b9123b75ee63f4a3a4858184da2988a481d44ca8",
+   "path": "references/reconstruction/study/passage/076.png"
+  },
+  {
+   "id": "reference/passage/077.png",
+   "sha256": "eed6620ceaa66acbdb8f394447ef70de9fa5013ecb1789a5a47c90431e68152c",
+   "origin": "reference-derived",
+   "generator": "reference study capture",
+   "approval": {
+    "status": "REJECTED",
+    "by": "policy",
+    "date": "2026-10-09",
+    "note": "Reference media are never render inputs."
+   },
+   "pixel_sha256": "2ed8178b092edd9832811b7cd151983a862ccf521709f8d832bb246a7b18a747",
+   "path": "references/reconstruction/study/passage/077.png"
+  },
+  {
+   "id": "reference/passage/078.png",
+   "sha256": "1da14e09e6ccdb0a95a6e26eef816225c5bb9086eb974e9921e25835f5b122d5",
+   "origin": "reference-derived",
+   "generator": "reference study capture",
+   "approval": {
+    "status": "REJECTED",
+    "by": "policy",
+    "date": "2026-10-09",
+    "note": "Reference media are never render inputs."
+   },
+   "pixel_sha256": "301e673a4637ab97ad72ae8853868eec8e873173ed54d2a370fd637e68d8c399",
+   "path": "references/reconstruction/study/passage/078.png"
+  },
+  {
+   "id": "reference/passage/079.png",
+   "sha256": "c3e3d80438d3c603d5335d6a8bb403abd477b2f90db797ed8dc076a634b2f2c5",
+   "origin": "reference-derived",
+   "generator": "reference study capture",
+   "approval": {
+    "status": "REJECTED",
+    "by": "policy",
+    "date": "2026-10-09",
+    "note": "Reference media are never render inputs."
+   },
+   "pixel_sha256": "5aed5518da36d5f0aedb21c52cda5667f03e3446e49ba697b06140e42725567d",
+   "path": "references/reconstruction/study/passage/079.png"
+  },
+  {
+   "id": "reference/passage/080.png",
+   "sha256": "c6a17277e56a44067311fd4d7180ceb59dbad873838b56959f6138dae84e431c",
+   "origin": "reference-derived",
+   "generator": "reference study capture",
+   "approval": {
+    "status": "REJECTED",
+    "by": "policy",
+    "date": "2026-10-09",
+    "note": "Reference media are never render inputs."
+   },
+   "pixel_sha256": "43a0bfe60f2cff53024abd51b34ab3eb5fe77a594ab066a4e527439b7e8e4bf8",
+   "path": "references/reconstruction/study/passage/080.png"
+  },
+  {
+   "id": "reference/passage-sheet.jpg",
+   "sha256": "89eceea860a49f5ccfea4b4517cf4f7b4bf6732ff5fec9e81f377c6583e168d2",
+   "origin": "reference-derived",
+   "generator": "reference study capture",
+   "approval": {
+    "status": "REJECTED",
+    "by": "policy",
+    "date": "2026-10-09",
+    "note": "Reference media are never render inputs."
+   },
+   "pixel_sha256": "09119ab68d4b66ec08e9dea03239d2f75dce9a56450693e0a224cb3b8aae43cb",
+   "path": "references/reconstruction/study/passage-sheet.jpg"
+  },
+  {
+   "id": "reference/reference.wav",
+   "sha256": "abe76ef3410092f3f69c60c0dd0e5d5380bb6573cf6b4a32dddd6cab8d57942b",
+   "origin": "reference-derived",
+   "generator": "reference study capture",
+   "approval": {
+    "status": "REJECTED",
+    "by": "policy",
+    "date": "2026-10-09",
+    "note": "Reference media are never render inputs."
+   },
+   "path": "references/reconstruction/study/reference.wav"
+  },
+  {
+   "id": "reference/remainder/00.png",
+   "sha256": "62e070ef1b70a649185661bba41c42c9ac9c677a09c56468d9f1993e8bb58d3a",
+   "origin": "reference-derived",
+   "generator": "reference study capture",
+   "approval": {
+    "status": "REJECTED",
+    "by": "policy",
+    "date": "2026-10-09",
+    "note": "Reference media are never render inputs."
+   },
+   "pixel_sha256": "42132430aae5a7d3e458ce62d3e7af7b9f1a45d673cfe48fe3044fa0e0669fef",
+   "path": "references/reconstruction/study/remainder/00.png"
+  },
+  {
+   "id": "reference/remainder/01.png",
+   "sha256": "1df82ff11a353d0671d5d6c8badc486a2eb0b64ae0e5fd352db98dcface7c6e1",
+   "origin": "reference-derived",
+   "generator": "reference study capture",
+   "approval": {
+    "status": "REJECTED",
+    "by": "policy",
+    "date": "2026-10-09",
+    "note": "Reference media are never render inputs."
+   },
+   "pixel_sha256": "77fc2f67e8ee20be84daeae34b44b23f703d50a8c2d213e5fab16164e88e9f4c",
+   "path": "references/reconstruction/study/remainder/01.png"
+  },
+  {
+   "id": "reference/remainder/02.png",
+   "sha256": "d01a99432471a08582256a54ed028b6334ec9d318aaec3e35737e8d2d453b13f",
+   "origin": "reference-derived",
+   "generator": "reference study capture",
+   "approval": {
+    "status": "REJECTED",
+    "by": "policy",
+    "date": "2026-10-09",
+    "note": "Reference media are never render inputs."
+   },
+   "pixel_sha256": "fe75ab984844a1c419f46b9163794fe0f3450182e5b0a5b31cb81ae62a3d8f1e",
+   "path": "references/reconstruction/study/remainder/02.png"
+  },
+  {
+   "id": "reference/remainder/03.png",
+   "sha256": "cd337b2753906eab130739a68300768e57fa2058b646a803b1137c18babed33e",
+   "origin": "reference-derived",
+   "generator": "reference study capture",
+   "approval": {
+    "status": "REJECTED",
+    "by": "policy",
+    "date": "2026-10-09",
+    "note": "Reference media are never render inputs."
+   },
+   "pixel_sha256": "906835398cd3af298bb6d787d59a74ffa3728afd77c75c61644124a2f85bebea",
+   "path": "references/reconstruction/study/remainder/03.png"
+  },
+  {
+   "id": "reference/remainder/04.png",
+   "sha256": "c748e0b09a357931cbbe61dd0c093c22f29aa49c75f7336efe6cc36b7306a24e",
+   "origin": "reference-derived",
+   "generator": "reference study capture",
+   "approval": {
+    "status": "REJECTED",
+    "by": "policy",
+    "date": "2026-10-09",
+    "note": "Reference media are never render inputs."
+   },
+   "pixel_sha256": "881607c3f84ef5e853f0151877d46df71a8cf24c79ea44c9865adb1cb152f60b",
+   "path": "references/reconstruction/study/remainder/04.png"
+  },
+  {
+   "id": "reference/remainder/05.png",
+   "sha256": "81e448558931d0fde0564a9eb366c203c1cf2ae8f19d9fcfc2104f2cd6e19fac",
+   "origin": "reference-derived",
+   "generator": "reference study capture",
+   "approval": {
+    "status": "REJECTED",
+    "by": "policy",
+    "date": "2026-10-09",
+    "note": "Reference media are never render inputs."
+   },
+   "pixel_sha256": "04ac829f9a24d1d6c13157338d009fba85b7a4ce4f3acfcebb521aca5c6bd09b",
+   "path": "references/reconstruction/study/remainder/05.png"
+  },
+  {
+   "id": "reference/remainder/06.png",
+   "sha256": "116a805de2815fbe38331ea299cce3eef87bda59e8830308b72db717aaed1848",
+   "origin": "reference-derived",
+   "generator": "reference study capture",
+   "approval": {
+    "status": "REJECTED",
+    "by": "policy",
+    "date": "2026-10-09",
+    "note": "Reference media are never render inputs."
+   },
+   "pixel_sha256": "fac4be980be7ed0709f8d0c48206e6fe3db7d60e16e819772882a31295ea65ed",
+   "path": "references/reconstruction/study/remainder/06.png"
+  },
+  {
+   "id": "reference/remainder/07.png",
+   "sha256": "7e394aabc70ea44813f9a2ceab0fbc67e42b0d738e0b89814f9ab02bdd1f5d58",
+   "origin": "reference-derived",
+   "generator": "reference study capture",
+   "approval": {
+    "status": "REJECTED",
+    "by": "policy",
+    "date": "2026-10-09",
+    "note": "Reference media are never render inputs."
+   },
+   "pixel_sha256": "e4186c7d976b9b66286ddeffd0f6bd0509f84d23ddadf806cca2b7c7fdcc2731",
+   "path": "references/reconstruction/study/remainder/07.png"
+  },
+  {
+   "id": "reference/remainder/08.png",
+   "sha256": "71670edaae0c7c83dea7c3f7dd7eb46ff4888dccad16a346ae733255bbf2848e",
+   "origin": "reference-derived",
+   "generator": "reference study capture",
+   "approval": {
+    "status": "REJECTED",
+    "by": "policy",
+    "date": "2026-10-09",
+    "note": "Reference media are never render inputs."
+   },
+   "pixel_sha256": "cd5b1ace21663a6027aa4b6fc46446916ca137ddafd0afecbc14a11838f4fd7a",
+   "path": "references/reconstruction/study/remainder/08.png"
+  },
+  {
+   "id": "reference/remainder/09.png",
+   "sha256": "43bdd8553227e8d3bf7c4b2219c89270ec934400eef3a0c6d47f5c7d940e1728",
+   "origin": "reference-derived",
+   "generator": "reference study capture",
+   "approval": {
+    "status": "REJECTED",
+    "by": "policy",
+    "date": "2026-10-09",
+    "note": "Reference media are never render inputs."
+   },
+   "pixel_sha256": "825f66b40dbbd709cbd90bbc2e1c07ed1fa2b22998fd1f098cffbd52d23f483b",
+   "path": "references/reconstruction/study/remainder/09.png"
+  },
+  {
+   "id": "reference/remainder/10.png",
+   "sha256": "ff0f9da818ecdcd7979ae6c7f83ac331e636083c3c9a9f9d8ad4ac654f256d6e",
+   "origin": "reference-derived",
+   "generator": "reference study capture",
+   "approval": {
+    "status": "REJECTED",
+    "by": "policy",
+    "date": "2026-10-09",
+    "note": "Reference media are never render inputs."
+   },
+   "pixel_sha256": "f865bcda4e4914faf83c420b8c0ee0842a282fb24bc6d46cce70145306f30a4a",
+   "path": "references/reconstruction/study/remainder/10.png"
+  },
+  {
+   "id": "reference/remainder/11.png",
+   "sha256": "51cbe40bf91d425cab3186afd43896bb06d39219005734bf0e0697f2d3907bf2",
+   "origin": "reference-derived",
+   "generator": "reference study capture",
+   "approval": {
+    "status": "REJECTED",
+    "by": "policy",
+    "date": "2026-10-09",
+    "note": "Reference media are never render inputs."
+   },
+   "pixel_sha256": "6b7aff421756e74160952118e4eb1caa231e6ac34cfb80cfdf7e5ee1ab82a730",
+   "path": "references/reconstruction/study/remainder/11.png"
+  },
+  {
+   "id": "reference/remainder/12.png",
+   "sha256": "307ae1a2e19308332a7089654014f2eb049a2c0a0b2a6c496b9f2d58f956b505",
+   "origin": "reference-derived",
+   "generator": "reference study capture",
+   "approval": {
+    "status": "REJECTED",
+    "by": "policy",
+    "date": "2026-10-09",
+    "note": "Reference media are never render inputs."
+   },
+   "pixel_sha256": "444854271b150de60b953b5c4be5eb1b2b9c21876c0cbe1e8e10b70d70be998e",
+   "path": "references/reconstruction/study/remainder/12.png"
+  },
+  {
+   "id": "reference/remainder/13.png",
+   "sha256": "6dce7d9a1fdb362c375f4e224a1e8184539cb2652cc79d7193ca465e1e392a1f",
+   "origin": "reference-derived",
+   "generator": "reference study capture",
+   "approval": {
+    "status": "REJECTED",
+    "by": "policy",
+    "date": "2026-10-09",
+    "note": "Reference media are never render inputs."
+   },
+   "pixel_sha256": "f190e9e9575855a2f273d3032a9174a157671d44e3768ac1f7717c77c2d49471",
+   "path": "references/reconstruction/study/remainder/13.png"
+  },
+  {
+   "id": "reference/remainder/14.png",
+   "sha256": "8233077097e3e0836d10c375ed2688b3e24807e76a7312261c0af6285be17c24",
+   "origin": "reference-derived",
+   "generator": "reference study capture",
+   "approval": {
+    "status": "REJECTED",
+    "by": "policy",
+    "date": "2026-10-09",
+    "note": "Reference media are never render inputs."
+   },
+   "pixel_sha256": "5b417ee3628d6ad6b2e676599292a8ba51f293f676061f157270a04a5332f6ae",
+   "path": "references/reconstruction/study/remainder/14.png"
+  },
+  {
+   "id": "reference/remainder/15.png",
+   "sha256": "7f05af7ea50a480277450aa4eb156bf2b351b325248e6a37daa83e7a60fb53cb",
+   "origin": "reference-derived",
+   "generator": "reference study capture",
+   "approval": {
+    "status": "REJECTED",
+    "by": "policy",
+    "date": "2026-10-09",
+    "note": "Reference media are never render inputs."
+   },
+   "pixel_sha256": "5714b0b46bcede3bc4ba5bd434960287d3b36582813a73dd22f65ecfca62eded",
+   "path": "references/reconstruction/study/remainder/15.png"
+  },
+  {
+   "id": "reference/remainder/16.png",
+   "sha256": "8e3ad0f76145283766666d9554239c0a76c881c71c5f9e131e9bfacff916524b",
+   "origin": "reference-derived",
+   "generator": "reference study capture",
+   "approval": {
+    "status": "REJECTED",
+    "by": "policy",
+    "date": "2026-10-09",
+    "note": "Reference media are never render inputs."
+   },
+   "pixel_sha256": "e7d25ceca6e02d522ba04c7c5d6c4593fa28534bdc301750662b290763de4245",
+   "path": "references/reconstruction/study/remainder/16.png"
+  },
+  {
+   "id": "reference/remainder/17.png",
+   "sha256": "e7233409122f70256bff4f1d13a6960b3aa4bfe175511ff1bd33bcdc58cccc08",
+   "origin": "reference-derived",
+   "generator": "reference study capture",
+   "approval": {
+    "status": "REJECTED",
+    "by": "policy",
+    "date": "2026-10-09",
+    "note": "Reference media are never render inputs."
+   },
+   "pixel_sha256": "8f21507e485a993d57ec733b60db69fa8d46876461aa5a148928dc4a69b8e1ab",
+   "path": "references/reconstruction/study/remainder/17.png"
+  },
+  {
+   "id": "reference/remainder/18.png",
+   "sha256": "95a14b6dadd851f692338a63e526955f400753ffb2d996c8e785a33e79c47dfd",
+   "origin": "reference-derived",
+   "generator": "reference study capture",
+   "approval": {
+    "status": "REJECTED",
+    "by": "policy",
+    "date": "2026-10-09",
+    "note": "Reference media are never render inputs."
+   },
+   "pixel_sha256": "03f83d86f5f9ad074dc2c45fd15245273116eb9bd655c52889caab483ff01294",
+   "path": "references/reconstruction/study/remainder/18.png"
+  },
+  {
+   "id": "reference/remainder/evidence.jpg",
+   "sha256": "7b13c6a0477ef1da7652553513e25a7e5dc9e2214502a874ffc2723506ed20f9",
+   "origin": "reference-derived",
+   "generator": "reference study capture",
+   "approval": {
+    "status": "REJECTED",
+    "by": "policy",
+    "date": "2026-10-09",
+    "note": "Reference media are never render inputs."
+   },
+   "pixel_sha256": "5f447798f0afb93453a92be504201ff6afc657efcef582b42e7de8352267a63f",
+   "path": "references/reconstruction/study/remainder/evidence.jpg"
+  }
+ ]
+}

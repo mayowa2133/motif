@@ -1,0 +1,56 @@
+{
+  "legacy-v0": {
+    "paper": {
+      "path": "assets/materials/legacy-v0/paper.png",
+      "pixel_sha256": "87f3bbccedd17a2ce184e68311fae22c1eb17ec289eaf283e3719e28bebcebb6",
+      "sha256": "9ad253d2305ac685e5d76aabc9868d43e95010ab7b449493fda33f7816a1d93a"
+    },
+    "card": {
+      "path": "assets/materials/legacy-v0/card.png",
+      "pixel_sha256": "78fbb28589fbb7f698dbbd8a38ea1331001dd77950153c125ef814e21d659088",
+      "sha256": "d0472a1c209cdd76396de2963e11da7cfe5fd1a613554b4c15a9b9c15eaf0a8f"
+    },
+    "wood": {
+      "path": "assets/materials/legacy-v0/wood.png",
+      "pixel_sha256": "f694b71969a7c1fc6f5115c744e55c0972345d729f5725e7f447d7ac86ecad17",
+      "sha256": "16dec1d50a5ce9e09ca0303f8d438580bb26c1aa393c8117b33be8db1b49e181"
+    },
+    "wall": {
+      "path": "assets/materials/legacy-v0/wall.png",
+      "pixel_sha256": "12db3dece740606562b4af49e6bc8d459fe2b5ecb45912d0c20d79fb3ffb87d9",
+      "sha256": "895076da1c99659050d444296daf8b21a06bf901c82550bc3333a95627cfc8bb"
+    }
+  },
+  "motif-v1": {
+    "matte-paper": {
+      "path": "assets/materials/motif-v1/matte-paper.webp",
+      "pixel_sha256": "3a2893228ceea6d9c08043fb408a74ba86983995ac9c5ff17440c87b1d4fd215",
+      "sha256": "1d8d41d1f0c22f2452725467863461b5630aea45cdcfe41a6abd271bb1391c88"
+    },
+    "felt": {
+      "path": "assets/materials/motif-v1/felt.webp",
+      "pixel_sha256": "b901127dfdf9015d6841487b171c810c1312819ff666df7b45fe45ecc6a3a9dc",
+      "sha256": "dd4e469c5f207f7e29276a5e48e857333d8dab1187de39fd926e6430ea73b77c"
+    },
+    "card": {
+      "path": "assets/materials/motif-v1/card.webp",
+      "pixel_sha256": "54722c18167f284558ba209acae319d526af1649dd094d0f4f6e78400d2e3976",
+      "sha256": "4a505a50aa4a0f929751cacf3addbe1ab5c45004688b4646a503b98a02ecee98"
+    },
+    "kraft": {
+      "path": "assets/materials/motif-v1/kraft.webp",
+      "pixel_sha256": "e806dda984723d6127f54710056e58b936ce467fc514a4ccb70451194d33467e",
+      "sha256": "636d586513c349ada3d5b41cf23a1a1b2e49a07d901d91e5aef95fcbeecb06f6"
+    },
+    "wood": {
+      "path": "assets/materials/motif-v1/wood.webp",
+      "pixel_sha256": "710409b3b67e65442f6fe2b6b0cb03dbe54941c7688756b2dc175371e74bc192",
+      "sha256": "5521ad76d263c1b9cc4ea05b4ba8ad545814f8319ef1ade1fce8d494061b9dbf"
+    },
+    "dark-card": {
+      "path": "assets/materials/motif-v1/dark-card.webp",
+      "pixel_sha256": "50d9b1b7ef476c93df3b7b3349adacb905f66f0ed95b7d6e06b28a36b6c99548",
+      "sha256": "0c3fe085429d6373a5bfd9f0ffed0ff5da65cd4e630427fc132e6a4a6262513a"
+    }
+  }
+}
