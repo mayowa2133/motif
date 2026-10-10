@@ -252,6 +252,14 @@ class AppScreen(Rig):
             out += rect(lx, py - r * 2.2 - fs * .8, lw, fs * 1.35, '#FFFFFF', 6, c['dark'] if new else None, 2) + txt(line, lx + 7, py - r * 2.2 + fs * .3, fs, c['dark'], 800 if new else 700)
         return out
 
+    def reveal(self, p):
+        """Where the result shows: the stick the file lands in, the newest map pin, or the result card."""
+        x, y, w, h = self.screen(p)
+        if p.get('send_to'):return (self.USB[0], self.USB[1] - 40)
+        if p['ui'] == 'map':
+            n = len(p.get('lines') or []) or 1;px, py = self.PINS[(n - 1) % 4];return (x + w * px, y + 44 + (h - 44) * py)
+        return (x + w / 2, y + h * .68)
+
     def file_icon(self, c, name):
         body = path('M-30 -38H14L30 -22V38H-30Z', c['dark'], 3, '#FFFFFF') + path('M14 -38V-22H30', c['dark'], 3)
         body += rect(-20, -8, 40, 6, c['secondary'], 3) + rect(-20, 6, 30, 6, c['secondary'], 3)

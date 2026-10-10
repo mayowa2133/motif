@@ -144,7 +144,8 @@
           "days_to": 90,
           "stamp": "RENEWED"
         },
-        "room": "arcade"
+        "room": "arcade",
+        "closeup": true
       },
       "relation": "spread"
     }

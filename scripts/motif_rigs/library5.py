@@ -58,6 +58,10 @@ class Certificate(Rig):
 
     # Timeline ---------------------------------------------------------------
 
+    def reveal(self, p):
+        """The close-up lands on the days counter: it is what expires and what the renewal resets."""
+        cx, cy, cw, ch = self.CARD;return (cx + cw / 2, cy + 272)
+
     def printed_text(self, p):
         """The card prints its title, counter and caption as well as the params' strings."""
         return [p['domain'], p.get('issuer') or '', 'CERTIFICATE', 'DAYS LEFT', str(p['days_from']), str(p['days_to'])] + ([p['stamp']] if p['mode'] == 'renew' else [])

@@ -153,7 +153,7 @@ def plan_reel(brief, allow_draft=False, avoid_looks=()):
         beats.append({'id': b['id'], 'kind': 'claim', 'relation': relation, 'narration': b['narration'], 'fact': b['fact'], 'palette': visual.get('palette') or palettes[i + 1], 'shots': [
             {'id': f'{b["id"]}-a', 'role': 'setup', 'headline': setup, 'headline_b': _short(b['narration'], 26), 'room': room, 'rig': {'id': rig_id, 'params': params, **({'hold': True} if visual.get('hold') else {})}, 'insert': None,
              'bot': {'costume': costume, 'face': 'determined', 'pose': 'walking'}},
-            {'id': f'{b["id"]}-b', 'role': 'payoff', 'headline': payoff, 'headline_b': _short(fact['claim'], 26), 'room': room, 'rig': {'id': rig_id, 'params': params, **({'hold': True} if visual.get('hold') else {})}, 'insert': insert,
+            {'id': f'{b["id"]}-b', 'role': 'payoff', 'headline': payoff, 'headline_b': _short(fact['claim'], 26), 'room': room, 'rig': {'id': rig_id, 'params': params, **({'hold': True} if visual.get('hold') else {})}, 'insert': insert, **({'closeup': True} if visual.get('closeup') and not visual.get('hold') else {}),
              'bot': {'costume': costume, 'face': 'surprised', 'pose': 'pointing'}}]})
         if beat_brand != brand:
             for shot in beats[-1]['shots']:shot['brand'] = beat_brand
@@ -375,6 +375,9 @@ def insert_piece(insert, c_name, u, frame):
     raise ValueError(f'unsupported insert {kind}')
 
 
+CLOSEUP_ZOOM = .42
+
+
 def camera(markup, zoom, cx, cy, dx=0.0, dy=0.0):
     """Per-piece camera so each top-level piece still moves independently."""
     if abs(zoom - 1) < 1e-6 and abs(dx) < 1e-6 and abs(dy) < 1e-6:return markup
@@ -491,7 +494,18 @@ def shot_frames(shot, layout, seed, look='paper-craft', brand=None, prev=None, c
             pz, pdx, pdy = motif_looks.camera(L['camera'], prev[0], 1.0, prev[1] - 1, prev[1]);k = ease(min(1.0, f / 10))
             zoom, dx, dy = pz + (zoom - pz) * k, pdx + (dx - pdx) * k, pdy + (dy - pdy) * k
         else:dy += motif_looks.slide_offset(L['transition'], f)
-        cam = lambda markup: camera(markup, zoom, cx, cy, dx, dy)
+        pcx, pcy = cx, cy
+        if shot.get('closeup') and poof_at:
+            # Round 9 (Codex's v11 critique): the references cut close on the thing that changed.
+            # The payoff snaps in on it, holds while it reads, then eases back out.
+            ax, ay = poof_at
+            if hasattr(rig, 'reveal'):
+                # Some machines change somewhere other than where they are touched (a file lands in a stick).
+                h = layout['hero'];rx, ry = rig.reveal({**rig.defaults, **(h.get('values') or {})});ax, ay = h['x'] + rx * h['scale'], h['y'] + ry * h['scale']
+            k = ease(min(1.0, f / 7)) * (1 - ease(max(0.0, (u - .6) / .4)))
+            pcx, pcy = cx + (ax - cx) * k, cy + (ay - cy) * k
+            zoom *= 1 + CLOSEUP_ZOOM * k;dx += (360 - ax) * .55 * k;dy += (680 - ay) * .55 * k
+        cam = lambda markup: camera(markup, zoom, pcx, pcy, dx, dy)
         if dy > 0:pieces.append(f'<rect width="720" height="1280" fill="{L["transition_colour"]}"/>')
         pieces.append(cam(room['draw'](c)))
         for k, item in enumerate(layout.get('dressing', [])):

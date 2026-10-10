@@ -156,6 +156,15 @@ class Round8StoryTests(unittest.TestCase):
         self.assertIn('bus stop', svg);self.assertIn('OSM', svg)
 
 
+class CloseupTests(unittest.TestCase):
+    def test_reveal_beats_snap_in_on_what_changed(self):
+        brief = json.loads((ROOT / 'quality/benchmark-briefs/bench-sqlite-everywhere.json').read_text())
+        beat = [b for b in reel.plan_reel(brief, allow_draft=True)['beats'] if b['id'] == 'onefile'][0]
+        self.assertTrue(beat['shots'][1].get('closeup'));self.assertFalse(beat['shots'][0].get('closeup'))
+        rig = all_rigs()['app-screen']
+        self.assertEqual(rig.reveal({**rig.defaults, 'send_to': 'USB'})[0], rig.USB[0])
+
+
 class ContinuityTests(unittest.TestCase):
     def test_poof_swells_then_clears_and_camera_never_holds_still(self):
         import motif_looks

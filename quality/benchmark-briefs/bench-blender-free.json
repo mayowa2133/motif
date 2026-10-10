@@ -125,7 +125,8 @@
           "result": "LIKE A CAMERA",
           "subject": "teapot"
         },
-        "room": "workshop"
+        "room": "workshop",
+        "closeup": true
       },
       "relation": "transform"
     },

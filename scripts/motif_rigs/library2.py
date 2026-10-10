@@ -261,6 +261,10 @@ register(MagnetPull(
 class LockAndKey(Rig):
     SLOT = (-150, -250)
 
+    def reveal(self, p):
+        """The close-up frames the shackle springing out of the body, not the key."""
+        return (0, -400)
+
     def key_x(self, t, tc, action, start):
         if not action:return self.SLOT[0] if start == 'open' else -520
         return lerp(-520, self.SLOT[0], ease(t_in(t, tc)))

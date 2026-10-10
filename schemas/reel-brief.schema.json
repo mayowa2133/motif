@@ -189,6 +189,10 @@
                   "null"
                 ],
                 "description": "This beat's product mark when it differs from the film's (null: none)."
+              },
+              "closeup": {
+                "type": "boolean",
+                "description": "The payoff snaps in close on the machine's contact point (the reveal), then eases back out."
               }
             }
           },

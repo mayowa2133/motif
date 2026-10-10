@@ -162,7 +162,8 @@
           "button": "COPY",
           "send_to": "USB"
         },
-        "room": "stage"
+        "room": "stage",
+        "closeup": true
       },
       "relation": "demo"
     }
