@@ -36,10 +36,14 @@ HEADLINE = (0, 80, 720, 230)       # x, y, w, h
 CAPTION = (0, 1090, 720, 190)
 SIDE = 90                          # dressing may enter the headline band only inside these side margins
 HERO_MIN = .35                     # hero height as a share of frame height
+HERO_WIDE = (.3, .7)               # or, for a wide machine, this share of height and of width
 EMPTY_FIELD_MAX = .45
 EDGE_VISIBLE = .7                  # an edge prop shows at least this share of its width (no stray fragments)
 BOT_SCALE = (.32, .4)              # Bot reads at about 17 to 21% of frame height
 BOT_LANE = 150                    # width kept free beside the hero for Bot
+HERO_SAFE = 40                    # hero clear of the frame edge so camera push-ins never crop it
+PROP_MAX_SCALE = 1.8              # beyond this a small prop reads as a blank panel or a giant
+BOT_TOUCH = .9                    # Bot stands at the hero edge, a sliver over it, clear of edge labels
 BOT_HALF = 235                     # Bot half width in its local units
 FOCAL = (.18, .82)                 # focal band as a share of frame height
 
@@ -235,16 +239,26 @@ def _in_caption(box):
     return box[1] + box[3] > CAPTION[1] + 1e-6
 
 
+def hero_big_enough(w, h):
+    """The hero reads as the subject: HERO_MIN of frame height, or a wide machine
+    at HERO_WIDE (share of height, share of width)."""
+    return h >= HERO_MIN * H - 1e-6 or (h >= HERO_WIDE[0] * H - 1e-6 and w >= HERO_WIDE[1] * W - 1e-6)
+
+
 def hero_placement(rig, rng):
     """Hero on the floor, as large as the bands allow while leaving a lane on the
     rig's Bot side (BOT_LANE) so Bot stands beside the machine, not over its labels."""
     fx, fy, fw, fh = rig.footprint;tall = (FLOOR - HEADLINE[1] - HEADLINE[3] - 10) / fh
-    scale = min((W - BOT_LANE) / fw, tall, 1.6)
-    if fh * scale < HERO_MIN * H - 1e-6:scale = min(700 / fw, tall, 1.6)   # too wide to share: Bot overlaps instead
-    if fh * scale < HERO_MIN * H - 1e-6:raise ValueError(f'{rig.name}: cannot reach {HERO_MIN:.0%} of frame height inside the bands')
+    scale = min((W - BOT_LANE - HERO_SAFE) / fw, tall, 1.6)
+    if not hero_big_enough(fw * scale, fh * scale):
+        # Wide machine: just big enough (tall, or wide and nearly tall) so Bot keeps a lane clear of its edge labels.
+        need = min(HERO_MIN * H / fh, max(HERO_WIDE[0] * H / fh, HERO_WIDE[1] * W / fw)) + 1e-4
+        scale = min(need, (W - 2 * HERO_SAFE) / fw, tall)
+    if not hero_big_enough(fw * scale, fh * scale):scale = min(700 / fw, tall, 1.6)   # the widest machines trade the camera margin for size
+    if not hero_big_enough(fw * scale, fh * scale):raise ValueError(f'{rig.name}: cannot reach {HERO_MIN:.0%} of frame height inside the bands')
     side = -1 if rig.bot_slot['x'] < 0 else 1
-    centre = -(fx + fw / 2) * scale;slack = max(0.0, (W - fw * scale) / 2 - 10)
-    x = 360 + centre - side * slack + rng.uniform(-1, 1) * min(20, slack * .2)
+    centre = -(fx + fw / 2) * scale;slack = max(0.0, (W - fw * scale) / 2 - HERO_SAFE)
+    x = 360 + centre - side * (slack - rng.uniform(0, 1) * min(20, slack * .2))  # jitter inward only
     return {'rig': rig.name, 'x': round(x, 2), 'y': FLOOR, 'scale': round(scale, 4), 'box': [round(v, 2) for v in _box(x, FLOOR, scale, rig.footprint)]}
 
 
@@ -252,7 +266,7 @@ def _place_prop(name, rng, hero_box, role, bot_side=0):
     """Candidate placement for one prop. role: edge | overlap | back."""
     p = PROPS[name];target_h = {'floor': (260, 520), 'wall': (150, 260), 'ceiling': (120, 300), 'sky': (110, 200)}[p.mount]
     hx, hy, hw, hh = hero_box
-    scale = min(rng.uniform(*target_h) / p.h, 760 / p.w)
+    scale = min(rng.uniform(*target_h) / p.h, 760 / p.w, PROP_MAX_SCALE)
     if role == 'overlap':scale = min(scale, rng.uniform(.25, .38) * hh / p.h)  # a foreground corner, never a wall in front of the hero
     w, h = p.w * scale, p.h * scale
     if role == 'edge':
@@ -302,10 +316,10 @@ def bot_placement(rig, hero, hero_box):
     half = BOT_HALF * s;left, right = hero_box[0], hero_box[0] + hero_box[2]
     side = -1 if slot['x'] < 0 else 1
     # Feet at the hero's edge, a sliver over the machine so it touches it.
-    x = left - half * .55 if side < 0 else right + half * .55
-    lo, hi = half + 40, W - half - 40  # room for camera push-ins (punch/pan) without cropping Bot
+    x = left - half * BOT_TOUCH if side < 0 else right + half * BOT_TOUCH
+    lo, hi = half + 55, W - half - 55  # room for camera push-ins (punch/pan) without cropping Bot
     if not lo <= x <= hi:
-        other = right + half * .55 if side < 0 else left - half * .55
+        other = right + half * BOT_TOUCH if side < 0 else left - half * BOT_TOUCH
         x, side = (other, -side) if lo <= other <= hi else (min(hi, max(lo, x)), side)
     return x, FLOOR, s, side
 

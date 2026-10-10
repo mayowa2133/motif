@@ -280,7 +280,10 @@ def _(p, c):
 
 @prop('wall-sign', 260, 90, 'wall', ('office', 'street', 'brand', 'label'))
 def _(p, c):
-    return L('M-80 -90V-120M80 -90V-120', c['metal'], 4) + R(-130, -90, 260, 90, c['accent'], c, 10) + R(-100, -60, 200, 22, c['light'], c, 4, False)
+    # A wayfinding sign: arrow pictogram and a round badge, never a blank text bar that reads as empty UI.
+    return (L('M-80 -90V-120M80 -90V-120', c['metal'], 4) + R(-130, -90, 260, 90, c['accent'], c, 10)
+            + P('M-100 -54H10V-70L58 -45L10 -20V-36H-100Z', c['light'], c) + f'<circle cx="92" cy="-45" r="20" fill="{c["primary"]}" stroke="{c["dark"]}" stroke-width="3"/>'
+            + f'<circle cx="92" cy="-45" r="7" fill="{c["light"]}"/>')
 
 
 # Ceiling props ---------------------------------------------------------------

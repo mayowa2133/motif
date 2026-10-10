@@ -142,13 +142,13 @@ class AppScreen(Rig):
 
     def button(self, p):
         x, y, w, h = self.screen(p)
-        return (x + w - 70, y + h - 46)
+        return (x + 70, y + h - 46)  # bottom-left: Bot stands on the right and must not hide the key
 
     def cursor_pos(self, p, t, tc, action):
         bx, by = self.button(p)
         if not action:return (bx, by)
         u = ease(min(1.0, t_in(t, tc) * 1.25)) if t < tc else 1.0
-        return (lerp(bx - 260, bx, u), lerp(by + 170, by, u))
+        return (lerp(bx + 260, bx, u), lerp(by + 170, by, u))
 
     def device(self, p, c):
         x, y, w, h = self.screen(p);d = p['device'];out = ''

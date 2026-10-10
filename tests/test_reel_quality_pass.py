@@ -112,3 +112,24 @@ class MusicTests(unittest.TestCase):
             with wave.open(str(Path(tmp) / 'a.wav')) as w:self.assertAlmostEqual(w.getnframes() / w.getframerate(), 3.0, places=2)
             motif_music.bed(Path(tmp) / 'c.wav', 3.0, 'candy-pastel', 4)
             self.assertNotEqual((Path(tmp) / 'a.wav').read_bytes(), (Path(tmp) / 'c.wav').read_bytes())
+
+
+class Round4SlipTests(unittest.TestCase):
+    def test_range_values_get_no_counter_and_cta_offer_drops_the_keyword(self):
+        brief = copy.deepcopy(FIXTURE);brief['facts'][0]['value'] = '1 to 8%';brief['beats'][0]['visual'].pop('insert', None)
+        brief['cta']['narration'] = f'For the setup steps, comment {brief["cta"]["keyword"]}.'
+        plan = reel.plan_reel(brief, allow_draft=True)
+        self.assertNotEqual((plan['beats'][1]['shots'][1].get('insert') or {}).get('kind'), 'counter')
+        self.assertNotIn('COMMENT', plan['beats'][-1]['shots'][0]['headline_b'])
+
+    def test_heroes_keep_a_camera_margin_and_props_stay_in_scale(self):
+        for room in ms.ROOMS:
+            for beat, rig in enumerate(sorted(all_rigs())):
+                layout = ms.solve(room, rig, seed=1, beat=beat);x, _, w, _ = layout['hero']['box']
+                if all_rigs()[rig].footprint[2] * layout['hero']['scale'] <= ms.W - 2 * ms.HERO_SAFE + 1e-6:
+                    self.assertGreaterEqual(x, ms.HERO_SAFE - 1e-6, (room, rig));self.assertLessEqual(x + w, ms.W - ms.HERO_SAFE + 1e-6, (room, rig))
+                for item in layout['dressing']:self.assertLessEqual(item['scale'], ms.PROP_MAX_SCALE + 1e-6)
+
+    def test_app_screen_key_sits_away_from_bot(self):
+        rig = all_rigs()['app-screen']
+        for device in rig.SIZES:self.assertLess(rig.button({**rig.defaults, 'device': device})[0], 0)

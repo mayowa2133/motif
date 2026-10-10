@@ -27,7 +27,7 @@ class SolverTests(unittest.TestCase):
             for beat, rig in enumerate(sorted(all_rigs())):
                 layout = ms.solve(room, rig, seed=0, beat=beat);SCHEMA.validate(layout)
                 hero = layout['hero']['box']
-                self.assertGreaterEqual(hero[3], ms.HERO_MIN * ms.H - 1e-6, f'{room}/{rig} hero too small')
+                self.assertTrue(ms.hero_big_enough(hero[2], hero[3]), f'{room}/{rig} hero too small')
                 boxes = [d['box'] for d in layout['dressing']]
                 self.assertTrue(any(ms._crosses_edge(b) for b in boxes), f'{room}/{rig}: nothing crosses a frame edge')
                 self.assertTrue(any(ms._overlap(b, hero) > 0 for b in boxes), f'{room}/{rig}: nothing overlaps the hero')
