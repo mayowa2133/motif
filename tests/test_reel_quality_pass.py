@@ -133,3 +133,13 @@ class Round4SlipTests(unittest.TestCase):
     def test_app_screen_key_sits_away_from_bot(self):
         rig = all_rigs()['app-screen']
         for device in rig.SIZES:self.assertLess(rig.button({**rig.defaults, 'device': device})[0], 0)
+
+
+class ContinuityTests(unittest.TestCase):
+    def test_poof_swells_then_clears_and_camera_never_holds_still(self):
+        import motif_looks
+        from motif_rigs.palettes import palette
+        c = palette('sunrise')
+        self.assertIn('<circle', reel.poof(100, 100, 3, c));self.assertEqual(reel.poof(100, 100, 12, c), '')
+        frames = [motif_looks.camera('push', 'setup', f / 59, f, 60) for f in range(60)]
+        self.assertGreater(max(d for _, d, _ in frames) - min(d for _, d, _ in frames), 4)

@@ -188,7 +188,14 @@ def captions(style, groups, f, fonts, colours):
 # Camera, transitions -----------------------------------------------------------------
 
 def camera(style, role, u, f, n):
-    """(zoom, dx, dy) for frame f (u = f / (n - 1)) of a shot with this role."""
+    """(zoom, dx, dy) for frame f (u = f / (n - 1)) of a shot with this role, plus a
+    slow handheld drift: the references never hold a frame perfectly still
+    (median frame change 2.7-4.7 against Motif's 1.5-2.1, 2026-10-10)."""
+    z, dx, dy = _camera(style, role, u, f, n)
+    return z * (1 + .006 * math.sin(f * .09)), dx + 5 * math.sin(f * .07 + 1), dy + 4 * math.sin(f * .053)
+
+
+def _camera(style, role, u, f, n):
     from motif_rigs.base import ease
     if style == 'push':
         return ({'setup': 1.0 + .04 * u, 'payoff': 1.12 + .05 * ease(u)}.get(role, 1.0 + .06 * u), 0, 0)

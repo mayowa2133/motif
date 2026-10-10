@@ -366,6 +366,23 @@ def entrance(f, delay, frames=9):
     return (.86 + .14 * ease(u)) * over, 60 * (1 - ease(u)), min(1.0, u * 2.5)
 
 
+def poof(x, y, f, c, size=1.0, frames=12):
+    """A cut-paper smoke puff at (x, y): puffs swell outward and fade over `frames`.
+    The references mark an in-place change (an object swapped, a state flipped)
+    with a puff like this instead of cutting away."""
+    if f >= frames:return ''
+    from motif_rigs.base import ease
+    u = f / frames;grow = ease(min(1.0, u * 1.6));fade = 1 if u < .45 else max(0.0, 1 - (u - .45) / .55);out = ''
+    for k in range(7):
+        a = k * 2 * math.pi / 7 + .4;d = (18 + 62 * grow) * size;r = (16 + 30 * grow) * size * (1 - .25 * (k % 2))
+        out += f'<circle cx="{x + d * math.cos(a):.1f}" cy="{y + d * math.sin(a) * .8:.1f}" r="{r:.1f}" fill="{c["light"]}" stroke="{c["dark"]}" stroke-width="3"/>'
+    out += f'<circle cx="{x:.1f}" cy="{y:.1f}" r="{(26 + 34 * grow) * size:.1f}" fill="{c["light"]}"/>'
+    for k in range(6):
+        a = k * math.pi / 3 + .2;r0 = (60 + 70 * grow) * size;r1 = r0 + 22 * size
+        out += f'<path d="M{x + r0 * math.cos(a):.1f} {y + r0 * math.sin(a):.1f}L{x + r1 * math.cos(a):.1f} {y + r1 * math.sin(a):.1f}" stroke="{c["dark"]}" stroke-width="4" stroke-linecap="round"/>'
+    return f'<g opacity="{fade:.3f}">{out}</g>'
+
+
 def pop_in(markup, f, delay, anchor):
     s, dy, o = entrance(f, delay)
     if s == 1 and dy == 0 and o == 1:return markup
@@ -423,6 +440,11 @@ def shot_frames(shot, layout, seed, look='paper-craft', brand=None, prev=None, c
         bot = layout['bot'];half = 235 * bot['scale']
         sticker_at = (min(720 - 56, max(56, bot['x'])), max(370, bot['y'] - 4.2 * half - 60))
     else:sticker_at = None
+    poof_at = None
+    if rig and prev:
+        # The payoff opens on the change itself: a puff where the machine made contact.
+        h = layout['hero'];(lx, ly), _ = rig.contacts(h.get('values'), (action, tc))[rig.actions[action].contact]
+        poof_at = (h['x'] + lx * h['scale'], h['y'] + ly * h['scale'])
     frames = []
     for f in range(n):
         u = f / max(1, n - 1);pieces = []
@@ -452,6 +474,7 @@ def shot_frames(shot, layout, seed, look='paper-craft', brand=None, prev=None, c
                 mark = f'<g transform="translate({sticker_at[0]:.1f} {sticker_at[1]:.1f})">{sticker(brand, 92, -8 + wob)}</g>'
                 hero += mark if prev else pop_in(mark, f, 2, sticker_at)
             hero_at = len(pieces);pieces.append(cam(boil(hero, f, f'{shot["id"]}-hero', .6)))
+            if prev and shot['role'] == 'payoff' and poof_at:pieces.append(cam(poof(*poof_at, f, c, h['scale'] * 1.1)))
         b = layout['bot'];bot = shot['bot']
         if rig:
             side = b.get('side', -1 if b['x'] < 360 else 1)
