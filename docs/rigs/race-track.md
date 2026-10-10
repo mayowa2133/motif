@@ -29,7 +29,7 @@ Two to four labelled racers; the leader reaches the finish line. Competition, be
 }
 ```
 
-**Bot slot:** x 0, y -470, scale 0.2: referee with flag above the track.
+**Bot slot:** x -300, y 0, scale 0.2: waves the start flag beside the track.
 
 **Palettes:** renders in all 19 Motif palettes (berry, candy, citrus, cobalt, forest, lagoon, lilac, meadow, mint-coral, neon-ember, neon-teal, neon-violet, peach, plum-night, poppy, royal, sky, sunflower, sunrise); films rotate them per scene.
 

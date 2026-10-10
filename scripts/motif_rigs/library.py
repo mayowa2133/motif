@@ -226,7 +226,7 @@ register(RaceTrack(
                    'required': ['labels', 'progress'], 'additionalProperties': False},
     defaults={'labels': ['OPEN', 'CLOSED', 'LOCAL'], 'progress': [1.0, .62, .8]}, states=('start', 'finish'),
     actions={'race': Action('race', 'start', 'finish', 60, 'finish-line', 44)},
-    bot_slot={'x': 0, 'y': -470, 'scale': .2, 'role': 'referee with flag above the track'}, tags=('competition', 'benchmark', 'speed', 'ranking', 'versus'),
+    bot_slot={'x': -300, 'y': 0, 'scale': .2, 'role': 'waves the start flag beside the track'}, tags=('competition', 'benchmark', 'speed', 'ranking', 'versus'),
     footprint=(-280, -470, 560, 470)))
 
 

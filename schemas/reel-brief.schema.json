@@ -178,7 +178,8 @@
               "unlock",
               "grow",
               "connect",
-              "everywhere"
+              "everywhere",
+              "demo"
             ]
           }
         }

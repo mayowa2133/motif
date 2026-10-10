@@ -83,18 +83,21 @@
       "headline": "OFFICIAL INSTALLERS",
       "payoff_headline": "ONE CHECKBOX",
       "visual": {
-        "rig": "conveyor",
+        "rig": "app-screen",
         "params": {
-          "items": [
-            "MAC",
-            "WINDOWS"
+          "device": "laptop",
+          "ui": "window",
+          "title": "Python installer",
+          "lines": [
+            "Install for all users",
+            "Free-threaded binaries"
           ],
-          "machine": "INSTALLER",
-          "output": "NO GIL"
+          "result": "NO GIL",
+          "button": "INSTALL"
         },
         "room": "living-room"
       },
-      "relation": "transform"
+      "relation": "demo"
     },
     {
       "id": "check",
@@ -103,22 +106,20 @@
       "headline": "ASK PYTHON ITSELF",
       "payoff_headline": "LOCK OFF?",
       "visual": {
-        "rig": "stamp-gate",
+        "rig": "app-screen",
         "params": {
-          "document": "GIL ENABLED?",
-          "stamp": "FALSE",
-          "verdict": "rejected"
+          "device": "monitor",
+          "ui": "terminal",
+          "title": "python3.13t",
+          "lines": [
+            "import sys",
+            "sys._is_gil_enabled()"
+          ],
+          "result": "False"
         },
-        "room": "diner",
-        "insert": {
-          "kind": "gauge",
-          "args": {
-            "value": 0.95,
-            "label": "CORES"
-          }
-        }
+        "room": "diner"
       },
-      "relation": "approve"
+      "relation": "demo"
     },
     {
       "id": "cost",

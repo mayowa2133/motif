@@ -150,19 +150,20 @@
       "headline": "THE WHOLE DATABASE",
       "payoff_headline": "JUST ONE FILE",
       "visual": {
-        "rig": "conveyor",
+        "rig": "app-screen",
         "params": {
-          "items": [
-            "TABLES",
-            "INDEXES",
-            "ROWS"
+          "device": "laptop",
+          "ui": "window",
+          "title": "My files",
+          "lines": [
+            "app.db  (whole database)"
           ],
-          "machine": "SQLITE",
-          "output": "ONE FILE"
+          "result": "ONE FILE",
+          "button": "COPY"
         },
         "room": "stage"
       },
-      "relation": "transform"
+      "relation": "demo"
     }
   ],
   "cta": {

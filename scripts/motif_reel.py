@@ -41,7 +41,7 @@ PIN = '0.8.99'
 V6 = ROOT / 'videos/productions/voicestudio-craft-v6'
 SHOT_MAX = 2.9          # headline must change at least every 3 s
 DELIVERY = (1080, 1920)  # delivery size; compositions stay on the 720 x 1280 design grid
-BOIL_STEP = 3           # stop-motion boil: pieces shift every 3 frames (10 fps)
+BOIL_STEP = 2           # stop-motion boil: pieces shift every 2 frames (15 fps, animating on twos)
 SPEED = 1.2             # Kokoro af_nova reel pace (measured about 3.7 words/s)
 TAIL = .7
 

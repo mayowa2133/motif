@@ -61,19 +61,22 @@
       "headline": "LOCALS FIX IT",
       "payoff_headline": "SHOPS, LANES, STOPS",
       "visual": {
-        "rig": "conveyor",
+        "rig": "app-screen",
         "params": {
-          "items": [
-            "SHOP",
-            "LANE",
-            "BUS STOP"
+          "device": "phone",
+          "ui": "window",
+          "title": "Map editor",
+          "lines": [
+            "corner shop",
+            "new bike lane",
+            "bus stop"
           ],
-          "machine": "LOCALS",
-          "output": "THE MAP"
+          "result": "MAP FIXED",
+          "button": "SAVE"
         },
         "room": "street"
       },
-      "relation": "transform"
+      "relation": "demo"
     },
     {
       "id": "use",

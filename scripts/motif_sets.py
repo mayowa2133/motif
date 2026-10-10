@@ -248,7 +248,7 @@ def hero_placement(rig, rng):
     return {'rig': rig.name, 'x': round(x, 2), 'y': FLOOR, 'scale': round(scale, 4), 'box': [round(v, 2) for v in _box(x, FLOOR, scale, rig.footprint)]}
 
 
-def _place_prop(name, rng, hero_box, role):
+def _place_prop(name, rng, hero_box, role, bot_side=0):
     """Candidate placement for one prop. role: edge | overlap | back."""
     p = PROPS[name];target_h = {'floor': (260, 520), 'wall': (150, 260), 'ceiling': (120, 300), 'sky': (110, 200)}[p.mount]
     hx, hy, hw, hh = hero_box
@@ -260,7 +260,8 @@ def _place_prop(name, rng, hero_box, role):
         side = rng.choice((-1, 1));cut = rng.uniform(.08, 1 - EDGE_VISIBLE - .02);left = p.box[0] * scale
         x = (-w * cut - left) if side < 0 else (W + w * cut - left - w)
     elif role == 'overlap':
-        side = rng.choice((-1, 1));x = (hx + w * rng.uniform(.0, .3) if side < 0 else hx + hw - w * rng.uniform(.0, .3))
+        side = rng.choice((-1, 1)) if not bot_side else -bot_side  # the foreground corner away from Bot
+        x = (hx + w * rng.uniform(.0, .3) if side < 0 else hx + hw - w * rng.uniform(.0, .3))
     else:  # fill the wider empty side beside the hero
         left, right = hx, W - (hx + hw)
         if max(left, right) > w * .5:x = rng.uniform(w * .1, max(w * .1, left - w * .3)) if left >= right else rng.uniform(min(W - w * .1, hx + hw + w * .3), W - w * .1)
@@ -326,7 +327,7 @@ def solve(room, rig_name, values=None, palette=None, seed=0, beat=0, costume=Non
         if role == 'edge':candidates = [n for n in candidates if PROPS[n].mount in ('floor', 'wall', 'ceiling')]
         for attempt in range(60):
             if not candidates:break
-            item = _place_prop(candidates[attempt % len(candidates)], rng, hero_box, role)
+            item = _place_prop(candidates[attempt % len(candidates)], rng, hero_box, role, side)
             if _valid_item(item, hero_box, placed, bot_box):placed.append(item);break
     if not any(_crosses_edge(i['box']) for i in placed):raise ValueError(f'{room}/{rig_name}: no dressing reaches a frame edge')
     if not any(_overlap(i['box'], hero_box) > 0 for i in placed):raise ValueError(f'{room}/{rig_name}: no dressing overlaps the hero')

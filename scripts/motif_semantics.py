@@ -24,6 +24,7 @@ Every claim beat therefore names one relation, the shape of what it says:
   grow             something small is nurtured into something big (community)
   connect          a gap is bridged between two parties
   everywhere       the same thing is inside many devices or places
+  demo             the product doing it on screen (a command, a checkbox, a setting, a download)
 
 Each rig declares the relations it can show (RIG_RELATIONS). The planner may
 only place a rig whose relations include the beat's; a mismatch is a plan
@@ -35,7 +36,7 @@ mark is somewhere in the frame.
 import re
 
 RELATIONS = ('over-capacity', 'pile-up', 'cost-crush', 'race', 'trade-off', 'big-number', 'level', 'approve',
-             'transform', 'spread', 'attract', 'launch', 'unlock', 'grow', 'connect', 'everywhere')
+             'transform', 'spread', 'attract', 'launch', 'unlock', 'grow', 'connect', 'everywhere', 'demo')
 
 RIG_RELATIONS = {
     'overflow-vehicle': ('over-capacity',),
@@ -55,6 +56,7 @@ RIG_RELATIONS = {
     'sprout-grow': ('grow',),
     'bridge-span': ('connect',),
     'device-wall': ('everywhere',),
+    'app-screen': ('demo',),
 }
 
 # Words that suggest a relation when a brief does not name one. Deliberately
@@ -75,6 +77,7 @@ CUES = {
     'unlock': ('turned off', 'unlock', 'open source', 'free and open', 'forever'),
     'grow': ('volunteers', 'community', 'donations', 'grows', 'growing'),
     'connect': ('share it back', 'connect', 'bridge', 'together'),
+    'demo': ('ask python', 'one checkbox', 'one click', 'type ', 'run ', 'command', 'download', 'settings', 'install'),
     'everywhere': ('every phone', 'every iphone', 'every android', 'every browser', 'inside every', 'on every', 'everywhere'),
 }
 

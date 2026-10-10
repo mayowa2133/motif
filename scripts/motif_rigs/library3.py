@@ -50,7 +50,7 @@ class DeviceWall(Rig):
         return max(0.0, min(1.0, (after - begin) / .12))
 
     def device(self, p, k, x, y, w, h, c, glow):
-        kind = p['kind'];slug = p.get('logo');screen_off = c['dark']
+        kind = p['kind'];slug = p.get('logo');screen_off = c['metal']  # an unlit screen is grey glass, not a black slab
         if kind == 'phone':
             frame = rect(x - w / 2, y - h / 2, w, h, c['dark'], 16) + rect(x - w / 2 + 6, y - h / 2 + 14, w - 12, h - 28, screen_off, 6)
             sx, sy, sw, sh = x - w / 2 + 6, y - h / 2 + 14, w - 12, h - 28
@@ -63,6 +63,7 @@ class DeviceWall(Rig):
             frame = rect(x - w / 2, y - h / 2, w, h * .82, c['dark'], 8) + path(f'M{x - w / 2 - 14:.1f} {y + h * .32:.1f}H{x + w / 2 + 14:.1f}L{x + w / 2:.1f} {y + h * .44:.1f}H{x - w / 2:.1f}Z', c['metal'], 2, c['metal'])
             sx, sy, sw, sh = x - w / 2 + 7, y - h / 2 + 7, w - 14, h * .82 - 14
             frame += rect(sx, sy, sw, sh, screen_off, 4)
+        frame += f'<path d="M{sx + sw * .15:.1f} {sy + sh * .1:.1f}L{sx + sw * .55:.1f} {sy + sh * .1:.1f}L{sx + sw * .15:.1f} {sy + sh * .55:.1f}Z" fill="#FFFFFF" opacity="{.22 * (1 - glow):.3f}"/>'
         shadow = rect(x - w / 2 + 6, y - h / 2 + 9, w, h, c['dark'], 12).replace('<rect', '<rect opacity=".18"')
         out = shadow + frame
         if glow > 0:
@@ -119,3 +120,120 @@ register(DeviceWall(
     actions={'light-up': Action('light-up', 'dark', 'lit', 60, 'stamp-screen', 22)},
     bot_slot={'x': 300, 'y': 0, 'scale': .24, 'role': 'points at the screens as they light'}, tags=('everywhere', 'inside', 'every', 'device', 'phone', 'browser', 'ubiquitous', 'installed', 'ships'),
     footprint=(-300, -640, 600, 640)))
+
+
+class AppScreen(Rig):
+    """The product in use, recreated as a cut-paper screen (no screenshots).
+
+    Round-2 critique against the references (2026-10-10): their strongest
+    frames show the product doing the thing (a signup form, a tool panel, a
+    download page), while Motif only ever showed machines *about* the
+    product. AppScreen is a large monitor, laptop or phone whose screen is a
+    Motif-drawn terminal, app window or browser page. The brief's own lines
+    type in, a cursor travels to the run key, and the result pops at contact.
+    """
+    SIZES = {'monitor': (550, 380), 'laptop': (470, 320), 'phone': (270, 480)}
+
+    def screen(self, p):
+        """(x, y, w, h) of the screen area; local origin is the floor under the rig."""
+        w, h = self.SIZES[p['device']]
+        top = -620 if p['device'] == 'phone' else (-560 if p['device'] == 'monitor' else -440)
+        return (-w / 2, top, w, h)
+
+    def button(self, p):
+        x, y, w, h = self.screen(p)
+        return (x + w - 70, y + h - 46)
+
+    def cursor_pos(self, p, t, tc, action):
+        bx, by = self.button(p)
+        if not action:return (bx, by)
+        u = ease(min(1.0, t_in(t, tc) * 1.25)) if t < tc else 1.0
+        return (lerp(bx - 260, bx, u), lerp(by + 170, by, u))
+
+    def device(self, p, c):
+        x, y, w, h = self.screen(p);d = p['device'];out = ''
+        if d == 'monitor':
+            out += rect(-40, y + h + 22, 80, -(y + h + 22) - 40, c['metal'], 6, c['dark'], 3) + rect(-120, -46, 240, 30, c['metal'], 10, c['dark'], 3)
+            out += rect(x - 22, y - 22, w + 44, h + 44, c['dark'], 22)
+        elif d == 'laptop':
+            out += rect(x - 18, y - 18, w + 36, h + 36, c['dark'], 18)
+            out += path(f'M{x - 70:.1f} {y + h + 18:.1f}H{x + w + 70:.1f}L{x + w + 30:.1f} {y + h + 64:.1f}H{x - 30:.1f}Z', c['dark'], 3, c['metal'])
+            out += rect(-170, -24, 340, 24, c['floor'], 4).replace('<rect', '<rect opacity=".35"')
+        else:
+            out += rect(x - 16, y - 34, w + 32, h + 68, c['dark'], 34) + rect(-26, y - 22, 52, 8, c['metal'], 4)
+        return rect(x - 10, y - 4, w + 44, h + 48, c['dark'], 22).replace('<rect', '<rect opacity=".16"') + out
+
+    def ui(self, p, c, typed, done):
+        x, y, w, h = self.screen(p);kind = p['ui'];lines = p.get('lines') or [];logo = p.get('logo')
+        dark = kind == 'terminal';bg = '#1E2430' if dark else c['light'];ink = '#E8F0EA' if dark else c['dark']
+        out = rect(x, y, w, h, bg, 8)
+        bar = 44
+        out += rect(x, y, w, bar, c['metal'] if not dark else '#2E3646', 8) + rect(x, y + bar - 8, w, 8, c['metal'] if not dark else '#2E3646')
+        if p['device'] != 'phone':
+            out += ''.join(f'<circle cx="{x + 20 + i * 18:.1f}" cy="{y + bar / 2:.1f}" r="5.5" fill="{col}"/>' for i, col in enumerate(('#FF6159', '#FFBD2E', '#28C941')))
+        title = p.get('title') or '';tx = x + (78 if p['device'] != 'phone' else 18)
+        if kind == 'browser':
+            out += rect(tx - 6, y + 6, w - (tx - x) - 14, bar - 12, c['light'], 11)
+            out += path(f'M{tx + 6:.1f} {y + bar / 2 + 4:.1f}h12v-7h-12z M{tx + 8:.1f} {y + bar / 2 - 3:.1f}v-3a4 4 0 0 1 8 0v3', c['accent'], 2.4)
+            out += txt(title, tx + 26, y + bar / 2 + 7, 20, c['dark'], 700)
+        else:
+            out += txt(title, tx, y + bar / 2 + 7, 20, ink, 800)
+        if logo:
+            from motif_brand import glyph
+            s = 28;out += f'<g transform="translate({x + w - s - 12:.1f} {y + (bar - s) / 2:.1f})">{glyph(logo, s, None if not dark else "#FFFFFF")}</g>'
+        size = min(40 if p['device'] != 'phone' else 30, (w - 50) / max(8, max((len(l) for l in lines), default=8) * .62))
+        ly = y + bar + 24 + size;budget = typed
+        for i, line in enumerate(lines):
+            shown = line[:max(0, int(budget))];budget -= len(line)
+            if kind == 'terminal':
+                out += txt(('> ' if i == 0 else '  ') + shown, x + 20, ly, size, ink, 600)
+            elif kind == 'window':
+                tick = budget >= 0
+                out += rect(x + 20, ly - size * .8, size * .9, size * .9, c['light'], 4, c['dark'], 2.5)
+                if tick and shown:out += path(f'M{x + 24:.1f} {ly - size * .38:.1f}l{size * .22:.1f} {size * .22:.1f}l{size * .38:.1f} -{size * .5:.1f}', c['accent'], 3.5)
+                out += txt(shown, x + 32 + size, ly, size * .86, c['dark'], 700)
+            else:
+                out += rect(x + 20, ly - size * .78, max(40, len(shown) * size * .56), size * 1.0, c['secondary'], 6).replace('<rect', '<rect opacity=".28"') + txt(shown, x + 26, ly, size * .86, c['dark'], 700)
+            ly += size * 1.55
+            if budget < 0:
+                if 0 <= int(budget + len(line)) < len(line) + 1 and kind == 'terminal':
+                    cx = x + 20 + (len(shown) + 2) * size * .58
+                    out += rect(cx, ly - size * 1.55 - size * .8, size * .5, size * .95, ink)
+                break
+        bx, by = self.button(p);label = p.get('button') or ('RUN' if kind == 'terminal' else 'OK')
+        out += rect(bx - 52, by - 22, 104, 44, c['accent'] if not done else c['primary'], 12, c['dark'], 3) + txt(label, bx, by + 7, 20, c['dark'], 900, 'middle')
+        if done and p.get('result'):
+            res = p['result'];rw = max(170, len(res) * 30 + 50);rx, ry = x + w / 2, y + h * .68
+            out += g(rect(-rw / 2 + 5, -40, rw, 80, c['dark'], 14).replace('<rect', '<rect opacity=".22"') + rect(-rw / 2, -44, rw, 80, c['pop'] if c['pop'] != c['light'] else c['accent'], 14, c['dark'], 3)
+                     + txt(res, 0, 12, 40, c['dark'], 900, 'middle'), rx, ry, -3, done)
+        return out
+
+    def draw(self, p, pose, c):
+        start, end, action, t = pose;tc = self.contact_t('run') if action else 0
+        total = sum(len(l) for l in (p.get('lines') or []))
+        if action:typed = total * min(1.0, t / max(1e-6, tc * .8));done = 0.0 if t < tc else min(1.0, .55 + .45 * ease(t_after(t, tc) * 3)) + settle(t_after(t, tc), .08)
+        else:typed, done = (total, 1.0) if start == 'done' else (0, 0.0)
+        body = self.device(p, c) + self.ui(p, c, typed, done)
+        cx, cy = self.cursor_pos(p, t, tc, action) if action else self.button(p)
+        press = .85 if action and abs(t - tc) < .03 else 1.0
+        body += g(path('M0 0L0 34L9 26L16 41L23 38L16 23L28 23Z', c['dark'], 3, '#FFFFFF'), cx - 2, cy - 2, 0, press)
+        return body
+
+    def seams(self, p, pose):
+        start, end, action, t = pose;tc = self.contact_t('run')
+        return {'cursor-press': (self.cursor_pos(p, t if action else 1, tc, action), self.button(p))}
+
+
+register(AppScreen(
+    name='app-screen', description='The product in use: a monitor, laptop or phone showing a Motif-drawn terminal, app window or browser page; the brief\'s lines type in, the cursor presses run and the result pops. Demos, commands, settings, checkboxes, downloads.',
+    params_schema={'type': 'object', 'properties': {
+        'device': {'enum': ['monitor', 'laptop', 'phone']}, 'ui': {'enum': ['terminal', 'window', 'browser']},
+        'title': {'type': 'string', 'maxLength': 26}, 'lines': {'type': 'array', 'items': {'type': 'string', 'maxLength': 30}, 'minItems': 1, 'maxItems': 4},
+        'result': {'type': 'string', 'maxLength': 14}, 'button': {'type': ['string', 'null'], 'maxLength': 8}, 'logo': {'type': ['string', 'null']}},
+        'required': ['device', 'ui', 'lines'], 'additionalProperties': False},
+    defaults={'device': 'monitor', 'ui': 'terminal', 'title': 'Terminal', 'lines': ['run the thing'], 'result': 'DONE', 'button': None, 'logo': None},
+    states=('idle', 'done'),
+    actions={'run': Action('run', 'idle', 'done', 60, 'cursor-press', 30)},
+    bot_slot={'x': 300, 'y': 0, 'scale': .24, 'role': 'watches the screen and reacts to the result'},
+    tags=('demo', 'screen', 'app', 'terminal', 'command', 'install', 'download', 'checkbox', 'setting', 'browser', 'website', 'click'),
+    footprint=(-300, -680, 600, 680)))
