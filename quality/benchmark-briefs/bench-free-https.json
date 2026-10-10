@@ -124,16 +124,7 @@
           "label": "CERT AGE IN DAYS",
           "stars": 0
         },
-        "room": "arcade",
-        "insert": {
-          "kind": "counter",
-          "args": {
-            "start": 0,
-            "end": 90,
-            "suffix": " days",
-            "label": "LIFETIME"
-          }
-        }
+        "room": "arcade"
       },
       "relation": "level"
     },

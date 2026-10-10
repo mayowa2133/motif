@@ -43,6 +43,7 @@ BOT_SCALE = (.32, .4)              # Bot reads at about 17 to 21% of frame heigh
 BOT_LANE = 150                    # width kept free beside the hero for Bot
 HERO_SAFE = 40                    # hero clear of the frame edge so camera push-ins never crop it
 PROP_MAX_SCALE = 1.8              # beyond this a small prop reads as a blank panel or a giant
+BOT_BEHIND = .25                  # Bot overlapping the hero by more than this share of its width stands behind it
 BOT_TOUCH = .9                    # Bot stands at the hero edge, a sliver over it, clear of edge labels
 BOT_HALF = 235                     # Bot half width in its local units
 FOCAL = (.18, .82)                 # focal band as a share of frame height
@@ -349,7 +350,9 @@ def solve(room, rig_name, values=None, palette=None, seed=0, beat=0, costume=Non
     for name in costume:
         if name not in COSTUMES:raise ValueError(f'unknown costume {name}')
     return {'room': room, 'palette': palette, 'seed': seed, 'beat': beat, 'floor_y': FLOOR, 'hero': {**hero, 'values': values or {}},
-            'bot': {'x': round(bx, 2), 'y': round(by, 2), 'scale': round(bscale, 4), 'costume': costume, 'role': rig.bot_slot.get('role', ''), 'side': side},
+            'bot': {'x': round(bx, 2), 'y': round(by, 2), 'scale': round(bscale, 4), 'costume': costume, 'role': rig.bot_slot.get('role', ''), 'side': side,
+                    # Squeezed onto a wide machine: Bot peeks from behind it so the machine's labels stay readable.
+                    'behind': min(bx + half, hero_box[0] + hero_box[2]) - max(bx - half, hero_box[0]) > BOT_BEHIND * 2 * half},
             'dressing': placed, 'lights': ROOMS[room]['lights'], 'bands': {'headline': list(HEADLINE), 'caption': list(CAPTION)}}
 
 
@@ -361,7 +364,8 @@ def compose(layout, pose=None, face='happy', bot_pose='standing'):
         if item['layer'] == 'back':out.append(place(PROPS[item['prop']].render(c), item['x'], item['y'], item['scale']))
     h = layout['hero'];out.append(place(rig.render(h.get('values') or None, pose, layout['palette']), h['x'], h['y'], h['scale']))
     b = layout['bot']
-    if b:out.append(dressed_bot(b['x'], b['y'], b['scale'], face=face, pose=bot_pose, costume=b['costume'], palette=layout['palette']))
+    if b and b.get('behind'):out.insert(len(out) - 1, dressed_bot(b['x'], b['y'], b['scale'], face=face, pose=bot_pose, costume=b['costume'], palette=layout['palette']))
+    elif b:out.append(dressed_bot(b['x'], b['y'], b['scale'], face=face, pose=bot_pose, costume=b['costume'], palette=layout['palette']))
     for item in layout['dressing']:
         if item['layer'] == 'front':out.append(place(PROPS[item['prop']].render(c), item['x'], item['y'], item['scale']))
     return ''.join(out)

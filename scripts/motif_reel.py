@@ -432,7 +432,7 @@ def shot_frames(shot, layout, seed, look='paper-craft', brand=None):
                 # The product's mark on the machine: the frame names its subject without the caption.
                 wob = 3 * math.sin(f * .3)
                 hero += pop_in(f'<g transform="translate({sticker_at[0]:.1f} {sticker_at[1]:.1f})">{sticker(brand, 92, -8 + wob)}</g>', f, 4, sticker_at)
-            pieces.append(cam(boil(hero, f, f'{shot["id"]}-hero', .6)))
+            hero_at = len(pieces);pieces.append(cam(boil(hero, f, f'{shot["id"]}-hero', .6)))
         b = layout['bot'];bot = shot['bot']
         if rig:
             side = b.get('side', -1 if b['x'] < 360 else 1)
@@ -440,7 +440,8 @@ def shot_frames(shot, layout, seed, look='paper-craft', brand=None):
             face = bot['face'] if shot['role'] == 'payoff' and face == 'excited' and bot.get('face') else face
             body = dressed_bot(b['x'] + bdx, b['y'] + bdy, b['scale'], face, pose, bot['costume'], shot['palette'], flip=side > 0, cycle=cycle, phase=f / 10, head=round(4 * math.sin(f * .3)))
             if squash != 1:body = f'<g transform="translate({b["x"]:.1f} {b["y"]:.1f}) scale({2 - squash:.3f} {squash:.3f}) translate({-b["x"]:.1f} {-b["y"]:.1f})">{body}</g>'
-            pieces.append(cam(body))
+            if b.get('behind'):pieces.insert(hero_at, cam(body))  # squeezed onto a wide machine: peeks from behind it
+            else:pieces.append(cam(body))
         elif grammar == 'big-bot':
             hop = abs(math.sin(f * .18)) * 18;tilt = 4 * math.sin(f * .15)
             pieces.append(cam(dressed_bot(360 if not brand else 540, 1050 - hop, .5 if not brand else .42, bot['face'], bot['pose'], bot['costume'], shot['palette'], angle=tilt)))
