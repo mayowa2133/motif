@@ -303,7 +303,7 @@ def bot_placement(rig, hero, hero_box):
     side = -1 if slot['x'] < 0 else 1
     # Feet at the hero's edge, a sliver over the machine so it touches it.
     x = left - half * .55 if side < 0 else right + half * .55
-    lo, hi = half + 12, W - half - 12
+    lo, hi = half + 40, W - half - 40  # room for camera push-ins (punch/pan) without cropping Bot
     if not lo <= x <= hi:
         other = right + half * .55 if side < 0 else left - half * .55
         x, side = (other, -side) if lo <= other <= hi else (min(hi, max(lo, x)), side)
