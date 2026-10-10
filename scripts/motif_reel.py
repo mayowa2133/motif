@@ -149,9 +149,9 @@ def plan_reel(brief, allow_draft=False, avoid_looks=()):
         setup = b.get('headline') or _short(fact['claim'], 26);payoff = b.get('payoff_headline') or _short(fact.get('value') or b['narration'], 26)
         if payoff == setup:payoff = _short(b['narration'], 26)
         beats.append({'id': b['id'], 'kind': 'claim', 'relation': relation, 'narration': b['narration'], 'fact': b['fact'], 'palette': visual.get('palette') or palettes[i + 1], 'shots': [
-            {'id': f'{b["id"]}-a', 'role': 'setup', 'headline': setup, 'headline_b': _short(b['narration'], 26), 'room': room, 'rig': {'id': rig_id, 'params': params}, 'insert': None,
+            {'id': f'{b["id"]}-a', 'role': 'setup', 'headline': setup, 'headline_b': _short(b['narration'], 26), 'room': room, 'rig': {'id': rig_id, 'params': params, **({'hold': True} if visual.get('hold') else {})}, 'insert': None,
              'bot': {'costume': costume, 'face': 'determined', 'pose': 'walking'}},
-            {'id': f'{b["id"]}-b', 'role': 'payoff', 'headline': payoff, 'headline_b': _short(fact['claim'], 26), 'room': room, 'rig': {'id': rig_id, 'params': params}, 'insert': insert,
+            {'id': f'{b["id"]}-b', 'role': 'payoff', 'headline': payoff, 'headline_b': _short(fact['claim'], 26), 'room': room, 'rig': {'id': rig_id, 'params': params, **({'hold': True} if visual.get('hold') else {})}, 'insert': insert,
              'bot': {'costume': costume, 'face': 'surprised', 'pose': 'pointing'}}]})
     # Hero-first opening (review item 5, round 2): the hook shows the first claim's machine
     # already in action with the product mark, the way the references open on the metaphor.
@@ -442,7 +442,10 @@ def shot_frames(shot, layout, seed, look='paper-craft', brand=None, prev=None, c
         sticker_at = (min(720 - 56, max(56, bot['x'])), max(370, bot['y'] - 4.2 * half - 60))
     else:sticker_at = None
     poof_at = None
-    if rig and prev:
+    # A held beat keeps its machine in the start state (Codex's v11 critique: Python's lock opened
+    # while the narration was still explaining the restriction). A later beat performs the change.
+    hold = bool(rig and shot['rig'].get('hold'))
+    if rig and prev and not hold:
         # The payoff opens on the change itself: a puff where the machine made contact.
         h = layout['hero'];(lx, ly), _ = rig.contacts(h.get('values'), (action, tc))[rig.actions[action].contact]
         poof_at = (h['x'] + lx * h['scale'], h['y'] + ly * h['scale'])
@@ -470,9 +473,11 @@ def shot_frames(shot, layout, seed, look='paper-craft', brand=None, prev=None, c
             if shot['role'] == 'setup':t = tc * ease(min(1.0, u / .92))
             elif shot['role'] == 'hook':t = min(1.0, .35 * tc + ease(min(1.0, u / .6)))  # already moving at frame 0
             else:t = tc + (1 - tc) * min(1.0, u / .55)
+            if hold:t = 0.0
             h = layout['hero'];breathe = 1 + (.018 if shot['role'] == 'payoff' else .01) * math.sin(f * .21)
             hero = place(rig.render(h['values'] or None, (action, t), shot['palette']), h['x'], h['y'], h['scale'] * breathe)
-            hero = f'<g transform="rotate({.7 * math.sin(f * .13):.3f} {h["x"]:.1f} {h["y"]:.1f})">{hero}</g>'  # the machine rocks on its base
+            rock = .7 * math.sin(f * .13) + (1.6 * math.sin(f * .9) * (math.sin(f * .11) > .3) if hold else 0)  # a held machine strains against itself
+            hero = f'<g transform="rotate({rock:.3f} {h["x"]:.1f} {h["y"]:.1f})">{hero}</g>'  # the machine rocks on its base
             if brand and shot['role'] != 'hook':
                 from motif_brand import sticker
                 # The product's mark on the machine: the frame names its subject without the caption.

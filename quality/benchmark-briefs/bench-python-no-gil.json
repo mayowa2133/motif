@@ -53,10 +53,11 @@
       "visual": {
         "rig": "lock-and-key",
         "params": {
-          "label": "ONE THREAD",
-          "key": "GIL"
+          "label": "GLOBAL LOCK",
+          "key": "3.13"
         },
-        "room": "office"
+        "room": "office",
+        "hold": true
       },
       "relation": "unlock"
     },
@@ -67,14 +68,14 @@
       "headline": "PYTHON 3.13",
       "payoff_headline": "LOCK TURNED OFF",
       "visual": {
-        "rig": "launch-pad",
+        "rig": "lock-and-key",
         "params": {
-          "label": "PYTHON 3.13",
-          "target": "NO LOCK"
+          "label": "GLOBAL LOCK",
+          "key": "3.13"
         },
-        "room": "workshop"
+        "room": "office"
       },
-      "relation": "launch"
+      "relation": "unlock"
     },
     {
       "id": "install",

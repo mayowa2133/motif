@@ -183,6 +183,8 @@ class AppScreen(Rig):
             s = 28;out += f'<g transform="translate({x + w - s - 12:.1f} {y + (bar - s) / 2:.1f})">{glyph(logo, s, None if not dark else "#FFFFFF")}</g>'
         size = min(40 if p['device'] != 'phone' else 30, (w - 50) / max(8, max((len(l) for l in lines), default=8) * .62))
         ly = y + bar + 24 + size;budget = typed
+        if kind == 'map':
+            out += self.map_view(p, c, typed, done);lines = []
         for i, line in enumerate(lines):
             shown = line[:max(0, int(budget))];budget -= len(line)
             if kind == 'terminal':
@@ -202,18 +204,81 @@ class AppScreen(Rig):
                 break
         bx, by = self.button(p);label = p.get('button') or ('RUN' if kind == 'terminal' else 'OK')
         out += rect(bx - 52, by - 22, 104, 44, c['accent'] if not done else c['primary'], 12, c['dark'], 3) + txt(label, bx, by + 7, 20, c['dark'], 900, 'middle')
+        if p.get('credit'):
+            cw = len(p['credit']) * 9.4 + 18
+            out += rect(x + w - cw - 8, y + h - 34, cw, 26, '#FFFFFF', 6).replace('<rect', '<rect opacity=".9"') + txt(p['credit'], x + w - 17, y + h - 15, 15, c['dark'], 700, 'end')
         if done and p.get('result'):
-            res = p['result'];rw = max(170, len(res) * 30 + 50);rx, ry = x + w / 2, y + h * .68
+            res = p['result'];rw = max(170, len(res) * 30 + 50);rx, ry = x + w / 2, (y + bar + 46 if kind == 'map' else y + h * .68);fit = min(1.0, (w - 16) / rw)
             out += g(rect(-rw / 2 + 5, -40, rw, 80, c['dark'], 14).replace('<rect', '<rect opacity=".22"') + rect(-rw / 2, -44, rw, 80, c['pop'] if c['pop'] != c['light'] else c['accent'], 14, c['dark'], 3)
-                     + txt(res, 0, 12, 40, c['dark'], 900, 'middle'), rx, ry, -3, done)
+                     + txt(res, 0, 12, 40, c['dark'], 900, 'middle'), rx, ry, -3, done * fit)
         return out
+
+    USB = (-172, -34)  # left of centre: Bot stands on the right
+    PINS = ((.22, .58), (.74, .5), (.55, .86), (.86, .72))  # below the result card's band
+
+    def map_view(self, p, c, typed, done):
+        """A Motif-drawn street map: blocks, a park, water, roads, and one pin per line.
+
+        Round 8 (Codex's v11 critique): OpenStreetMap's editor showed checkbox rows, so the
+        edit never looked like a map, and the next beat lost it. Pins drop in as the lines
+        'type'; the last line is the new edit and gets the accent colour and a pulse.
+        """
+        x, y, w, h = self.screen(p);bar = 44;my, mh = y + bar, h - bar;out = rect(x, my, w, mh, '#EDE6D6')
+        X = lambda u: x + w * u;Y = lambda v: my + mh * v
+        for bx0, by0, bx1, by1 in ((.04, .06, .26, .26), (.32, .06, .66, .26), (.04, .34, .26, .58), (.32, .34, .66, .58), (.72, .64, .96, .94), (.04, .66, .26, .94)):
+            out += rect(X(bx0), Y(by0), X(bx1) - X(bx0), Y(by1) - Y(by0), '#DCCFB8', 6)
+        out += rect(X(.72), Y(.06), X(.96) - X(.72), Y(.56) - Y(.06), '#B7D99A', 14)          # park
+        out += path(f'M{X(.32):.1f} {Y(1):.1f}C{X(.4):.1f} {Y(.78):.1f} {X(.58):.1f} {Y(.9):.1f} {X(.66):.1f} {Y(.66):.1f}V{Y(1):.1f}Z', '#9CC6E8', 1, '#9CC6E8')  # river bend
+        road = lambda d, wd:path(d, '#C9BDA6', wd + 4) + path(d, '#FFFFFF', wd)
+        for v in (.3, .62):out += road(f'M{x:.1f} {Y(v):.1f}H{x + w:.1f}', 12)
+        for u in (.29, .69):out += road(f'M{X(u):.1f} {my:.1f}V{my + mh:.1f}', 12)
+        out += road(f'M{x:.1f} {Y(.96):.1f}L{x + w:.1f} {Y(.12):.1f}', 7)                    # the new bike lane cuts across
+        lines = p.get('lines') or [];budget = typed;fs = 17 if p['device'] == 'phone' else 18
+        for i, line in enumerate(lines):
+            shown = budget > 0;budget -= len(line)
+            if not shown:break
+            new = i == len(lines) - 1;px, py = X(self.PINS[i % 4][0]), Y(self.PINS[i % 4][1])
+            drop = 1.0 if budget >= 0 else max(.2, 1 + budget / max(1, len(line)))
+            col = c['accent'] if new else c['secondary'];r = 15 if new else 11
+            if new and done:out += f'<circle cx="{px:.1f}" cy="{py:.1f}" r="{r + 10 + 14 * done:.1f}" fill="none" stroke="{col}" stroke-width="4" opacity="{max(0, 1 - done * .7):.2f}"/>'
+            pin = path(f'M0 0C-{r * .2:.1f} -{r:.1f} -{r * 1.2:.1f} -{r * 1.3:.1f} -{r * 1.2:.1f} -{r * 2.2:.1f}A{r * 1.2:.1f} {r * 1.2:.1f} 0 1 1 {r * 1.2:.1f} -{r * 2.2:.1f}C{r * 1.2:.1f} -{r * 1.3:.1f} {r * .2:.1f} -{r:.1f} 0 0Z', c['dark'], 3, col)
+            pin += f'<circle cx="0" cy="{-r * 2.2:.1f}" r="{r * .45:.1f}" fill="#FFFFFF"/>'
+            out += g(pin, px, py, 0, drop)
+            right = self.PINS[i % 4][0] < .6;lw = len(line) * fs * .58 + 14;lx = px + 20 if right else px - 20 - lw
+            out += rect(lx, py - r * 2.2 - fs * .8, lw, fs * 1.35, '#FFFFFF', 6, c['dark'] if new else None, 2) + txt(line, lx + 7, py - r * 2.2 + fs * .3, fs, c['dark'], 800 if new else 700)
+        return out
+
+    def file_icon(self, c, name):
+        body = path('M-30 -38H14L30 -22V38H-30Z', c['dark'], 3, '#FFFFFF') + path('M14 -38V-22H30', c['dark'], 3)
+        body += rect(-20, -8, 40, 6, c['secondary'], 3) + rect(-20, 6, 30, 6, c['secondary'], 3)
+        return body
+
+    def usb(self, p, c, filled):
+        """A USB stick on the floor in front of the device: where COPY sends the file."""
+        ux, uy = self.USB
+        body = rect(-92, -26, 150, 52, c['primary'], 16, c['dark'], 3) + rect(58, -16, 42, 32, c['metal'], 4, c['dark'], 3)
+        body += rect(70, -8, 9, 7, c['dark']) + rect(84, -8, 9, 7, c['dark'])
+        body += f'<circle cx="-70" cy="0" r="7" fill="{c["accent"] if filled else c["dark"]}"/>' + txt(p['send_to'], -8, 8, 22, c['dark'], 900, 'middle')
+        return g(rect(-88, -18, 150, 52, c['dark'], 16).replace('<rect', '<rect opacity=".18"') + body, ux, uy, -6, 1.35)
+
+    def send(self, p, c, k):
+        """k in [0, 1]: the file leaves the screen and lands in the stick's slot."""
+        x, y, w, h = self.screen(p);sx, sy = x + 44, y + 84;ex, ey = self.USB[0], self.USB[1] - 50
+        u = k * k * (3 - 2 * k);fx = lerp(sx, ex, u) - 110 * math.sin(math.pi * u);fy = lerp(sy, ey, u) - 140 * math.sin(math.pi * u)
+        return g(self.file_icon(c, (p.get('lines') or ['file'])[0].split()[0]), fx, fy, -14 + 20 * u, lerp(1.25, .9, u))
 
     def draw(self, p, pose, c):
         start, end, action, t = pose;tc = self.contact_t('run') if action else 0
         total = sum(len(l) for l in (p.get('lines') or []))
         if action:typed = total * min(1.0, t / max(1e-6, tc * .8));done = 0.0 if t < tc else min(1.0, .55 + .45 * ease(t_after(t, tc) * 3)) + settle(t_after(t, tc), .08)
         else:typed, done = (total, 1.0) if start == 'done' else (0, 0.0)
+        if p.get('prefilled'):typed = total
         body = self.device(p, c) + self.ui(p, c, typed, done)
+        if p.get('send_to'):
+            k = (min(1.0, t_after(t, tc) * 1.5) if t >= tc else 0.0) if action else (1.0 if start == 'done' else 0.0)
+            body += self.usb(p, c, k >= 1)
+            if 0 < k < 1:body += self.send(p, c, k)
+            elif k >= 1:body += g(self.file_icon(c, (p.get('lines') or ['file'])[0].split()[0]), self.USB[0], self.USB[1] - 84, 8, .85)
         cx, cy = self.cursor_pos(p, t, tc, action) if action else self.button(p)
         press = .85 if action and abs(t - tc) < .03 else 1.0
         body += g(path('M0 0L0 34L9 26L16 41L23 38L16 23L28 23Z', c['dark'], 3, '#FFFFFF'), cx - 2, cy - 2, 0, press)
@@ -225,13 +290,14 @@ class AppScreen(Rig):
 
 
 register(AppScreen(
-    name='app-screen', description='The product in use: a monitor, laptop or phone showing a Motif-drawn terminal, app window or browser page; the brief\'s lines type in, the cursor presses run and the result pops. Demos, commands, settings, checkboxes, downloads.',
+    name='app-screen', description='The product in use: a monitor, laptop or phone showing a Motif-drawn terminal, app window, browser page or street map (lines become map pins); the brief\'s lines type in, the cursor presses run and the result pops. send_to puts a USB stick in front and the file flies into it; credit adds a corner attribution; prefilled starts with the lines already in. Demos, commands, settings, checkboxes, downloads.',
     params_schema={'type': 'object', 'properties': {
-        'device': {'enum': ['monitor', 'laptop', 'phone']}, 'ui': {'enum': ['terminal', 'window', 'browser']},
+        'device': {'enum': ['monitor', 'laptop', 'phone']}, 'ui': {'enum': ['terminal', 'window', 'browser', 'map']},
         'title': {'type': 'string', 'maxLength': 26}, 'lines': {'type': 'array', 'items': {'type': 'string', 'maxLength': 30}, 'minItems': 1, 'maxItems': 4},
-        'result': {'type': 'string', 'maxLength': 14}, 'button': {'type': ['string', 'null'], 'maxLength': 8}, 'logo': {'type': ['string', 'null']}},
+        'result': {'type': 'string', 'maxLength': 14}, 'button': {'type': ['string', 'null'], 'maxLength': 8}, 'logo': {'type': ['string', 'null']},
+        'send_to': {'type': ['string', 'null'], 'maxLength': 6}, 'credit': {'type': ['string', 'null'], 'maxLength': 34}, 'prefilled': {'type': 'boolean'}},
         'required': ['device', 'ui', 'lines'], 'additionalProperties': False},
-    defaults={'device': 'monitor', 'ui': 'terminal', 'title': 'Terminal', 'lines': ['run the thing'], 'result': 'DONE', 'button': None, 'logo': None},
+    defaults={'device': 'monitor', 'ui': 'terminal', 'title': 'Terminal', 'lines': ['run the thing'], 'result': 'DONE', 'button': None, 'logo': None, 'send_to': None, 'credit': None, 'prefilled': False},
     states=('idle', 'done'),
     actions={'run': Action('run', 'idle', 'done', 60, 'cursor-press', 30)},
     bot_slot={'x': 300, 'y': 0, 'scale': .24, 'role': 'watches the screen and reacts to the result'},

@@ -148,7 +148,7 @@
       "narration": "Your whole database is just one file you can copy anywhere.",
       "fact": "f5",
       "headline": "THE WHOLE DATABASE",
-      "payoff_headline": "JUST ONE FILE",
+      "payoff_headline": "COPY IT ANYWHERE",
       "visual": {
         "rig": "app-screen",
         "params": {
@@ -159,7 +159,8 @@
             "app.db  (whole database)"
           ],
           "result": "ONE FILE",
-          "button": "COPY"
+          "button": "COPY",
+          "send_to": "USB"
         },
         "room": "stage"
       },

@@ -135,6 +135,27 @@ class Round4SlipTests(unittest.TestCase):
         for device in rig.SIZES:self.assertLess(rig.button({**rig.defaults, 'device': device})[0], 0)
 
 
+class Round8StoryTests(unittest.TestCase):
+    """Codex's v11 critique: each machine must demonstrate the claim and carry its object forward."""
+
+    def test_held_beat_keeps_the_lock_shut_and_the_next_beat_opens_the_same_lock(self):
+        brief = json.loads((ROOT / 'quality/benchmark-briefs/bench-python-no-gil.json').read_text())
+        lock, freed = reel.plan_reel(brief, allow_draft=True)['beats'][1:3]
+        self.assertTrue(all(s['rig'].get('hold') for s in lock['shots']))
+        self.assertEqual(lock['shots'][0]['rig']['id'], freed['shots'][0]['rig']['id'])
+        self.assertEqual(lock['shots'][0]['rig']['params'], freed['shots'][0]['rig']['params'])
+        self.assertFalse(freed['shots'][0]['rig'].get('hold'))
+
+    def test_copy_sends_the_file_to_the_stick_and_the_map_shows_its_pins(self):
+        rig = all_rigs()['app-screen']
+        usb = {**rig.defaults, 'device': 'laptop', 'ui': 'window', 'lines': ['app.db'], 'send_to': 'USB'}
+        before, after = rig.render(usb, ('run', .2), 'sunrise'), rig.render(usb, ('run', 1.0), 'sunrise')
+        self.assertIn('USB', before);self.assertGreater(len(after), len(before))
+        m = {**rig.defaults, 'device': 'phone', 'ui': 'map', 'lines': ['shop', 'bus stop'], 'prefilled': True, 'credit': 'OSM'}
+        svg = rig.render(m, ('run', 0.0), 'sunrise')
+        self.assertIn('bus stop', svg);self.assertIn('OSM', svg)
+
+
 class ContinuityTests(unittest.TestCase):
     def test_poof_swells_then_clears_and_camera_never_holds_still(self):
         import motif_looks

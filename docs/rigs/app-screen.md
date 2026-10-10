@@ -1,6 +1,6 @@
 # Rig: app-screen
 
-The product in use: a monitor, laptop or phone showing a Motif-drawn terminal, app window or browser page; the brief's lines type in, the cursor presses run and the result pops. Demos, commands, settings, checkboxes, downloads.
+The product in use: a monitor, laptop or phone showing a Motif-drawn terminal, app window, browser page or street map (lines become map pins); the brief's lines type in, the cursor presses run and the result pops. send_to puts a USB stick in front and the file flies into it; credit adds a corner attribution; prefilled starts with the lines already in. Demos, commands, settings, checkboxes, downloads.
 
 **Origin:** original Motif design, authored SVG in `scripts/motif_rigs/library3.py`. Style inputs: `docs/STYLE_BIBLE.md` and `docs/style-reference-analysis.md` only; no reference frame traced or copied.
 
@@ -24,7 +24,10 @@ The product in use: a monitor, laptop or phone showing a Motif-drawn terminal, a
   ],
   "result": "DONE",
   "button": null,
-  "logo": null
+  "logo": null,
+  "send_to": null,
+  "credit": null,
+  "prefilled": false
 }
 ```
 

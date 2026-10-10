@@ -156,6 +156,10 @@
               },
               "palette": {
                 "type": "string"
+              },
+              "hold": {
+                "type": "boolean",
+                "description": "Keep the machine in its start state through the beat; a later beat shows the change."
               }
             }
           },

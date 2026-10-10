@@ -64,7 +64,7 @@
         "rig": "app-screen",
         "params": {
           "device": "phone",
-          "ui": "window",
+          "ui": "map",
           "title": "Map editor",
           "lines": [
             "corner shop",
@@ -85,15 +85,24 @@
       "headline": "USE IT FOR ANYTHING",
       "payoff_headline": "JUST GIVE CREDIT",
       "visual": {
-        "rig": "stamp-gate",
+        "rig": "app-screen",
         "params": {
-          "document": "YOUR APP",
-          "stamp": "CREDITED",
-          "verdict": "approved"
+          "device": "laptop",
+          "ui": "map",
+          "title": "your-app.com",
+          "lines": [
+            "corner shop",
+            "new bike lane",
+            "bus stop"
+          ],
+          "result": "CREDITED",
+          "button": "SHIP",
+          "prefilled": true,
+          "credit": "\u00a9 OpenStreetMap contributors"
         },
         "room": "beach"
       },
-      "relation": "approve"
+      "relation": "demo"
     },
     {
       "id": "cost",
