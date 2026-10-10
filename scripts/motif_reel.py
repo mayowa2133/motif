@@ -399,12 +399,13 @@ def bot_motion(role, u, f, n, tc, side, entering=True):
         walk = min(1.0, u / .25) if entering else 1.0  # a short step in: Bot is in frame at the cut
         if walk < 1:return 'standing', 'determined', side * 80 * (1 - ease(walk)), 0.0, 1.0, 'walk'
         at = u / max(1e-6, tc * .92) if tc else 1.0
-        if at < .92:return 'pointing', 'determined', 0.0, -4 * abs(math.sin(f * .35)), 1.0, None
+        if at < .92:  # works the machine: alternating gestures, bobbing and leaning, never a held pose
+            return ('pointing' if (f // 16) % 2 == 0 else 'presenting'), 'determined', 6 * math.sin(f * .17), -9 * abs(math.sin(f * .3)), 1.0, None
         hit = max(0.0, min(1.0, (at - .92) / .3))
         return 'presenting', 'surprised', 0.0, -26 * math.sin(hit * math.pi), 1 - .1 * math.sin(hit * math.pi), None
     if role == 'payoff':
         hop = max(0.0, math.sin(min(1.0, u / .3) * math.pi)) * 40 + abs(math.sin(f * .26)) * 10 * (u > .3)
-        return ('celebrating' if (f // 7) % 2 else 'presenting') if u > .2 else 'standing', 'excited', 0.0, -hop, 1.0, None
+        return ('celebrating' if (f // 7) % 2 else 'presenting') if u > .2 else 'standing', 'excited', 7 * math.sin(f * .2) * (u > .3), -hop, 1.0, None
     return 'celebrating', 'excited', 0.0, -abs(math.sin(f * .2)) * 20, 1.0, None
 
 
@@ -458,15 +459,20 @@ def shot_frames(shot, layout, seed, look='paper-craft', brand=None, prev=None, c
         pieces.append(cam(room['draw'](c)))
         for k, item in enumerate(layout.get('dressing', [])):
             if item['layer'] == 'back':
-                sway = 1.6 * math.sin(f * .09 + item['x'] * .01) if PROPS[item['prop']].mount in ('ceiling', 'sky') else .5 * math.sin(f * .07 + k)
-                body = f'<g transform="rotate({sway:.2f} {item["x"]:.1f} {item["box"][1]:.1f})">{place(PROPS[item["prop"]].render(c), item["x"], item["y"], item["scale"])}</g>'
+                # Round 8 (2026-10-10): the references' frames never settle, so every prop keeps a slow
+                # life of its own: hanging and sky pieces swing and drift, floor pieces rock on their base.
+                mount = PROPS[item['prop']].mount;air = mount in ('ceiling', 'sky')
+                sway = (2.4 if air else 1.1) * math.sin(f * (.09 if air else .075) + item['x'] * .01 + k)
+                pivot_y = item['y'] if mount == 'floor' else item['box'][1];drift = 12 * math.sin(f * .025 + k) if mount == 'sky' else 0
+                body = f'<g transform="translate({drift:.2f} 0) rotate({sway:.2f} {item["x"]:.1f} {pivot_y:.1f})">{place(PROPS[item["prop"]].render(c), item["x"], item["y"], item["scale"])}</g>'
                 pieces.append(cam(boil(body, f, f'{shot["id"]}-d{k}', .8)))
         if rig:
             if shot['role'] == 'setup':t = tc * ease(min(1.0, u / .92))
             elif shot['role'] == 'hook':t = min(1.0, .35 * tc + ease(min(1.0, u / .6)))  # already moving at frame 0
             else:t = tc + (1 - tc) * min(1.0, u / .55)
-            h = layout['hero'];breathe = 1 + .012 * math.sin(f * .21) if shot['role'] == 'payoff' else 1.0
+            h = layout['hero'];breathe = 1 + (.018 if shot['role'] == 'payoff' else .01) * math.sin(f * .21)
             hero = place(rig.render(h['values'] or None, (action, t), shot['palette']), h['x'], h['y'], h['scale'] * breathe)
+            hero = f'<g transform="rotate({.7 * math.sin(f * .13):.3f} {h["x"]:.1f} {h["y"]:.1f})">{hero}</g>'  # the machine rocks on its base
             if brand and shot['role'] != 'hook':
                 from motif_brand import sticker
                 # The product's mark on the machine: the frame names its subject without the caption.
