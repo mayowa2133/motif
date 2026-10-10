@@ -1,0 +1,377 @@
+{
+  "slug": "adapt-second-brain",
+  "title": "Build a second brain with Claude and Obsidian",
+  "topic": "a second brain that remembers what you read",
+  "format": "long",
+  "seed": 23,
+  "brand": {
+    "slug": "claude"
+  },
+  "mascot": "memo",
+  "hook": {
+    "alternates": [
+      "You save articles, podcasts and book notes all year, and forget almost all of it."
+    ],
+    "selected": 0,
+    "headline": "SAVED IT. FORGOT IT.",
+    "visual": {
+      "rig": "knowledge-vault",
+      "params": {
+        "mode": "forget",
+        "items": [
+          "ARTICLE",
+          "PODCAST",
+          "BOOK NOTE",
+          "VIDEO",
+          "THREAD"
+        ],
+        "count": 12,
+        "label": "SAVED 312"
+      },
+      "room": "living-room",
+      "palette": "sunrise"
+    }
+  },
+  "facts": [
+    {
+      "id": "f1",
+      "claim": "An Obsidian vault is a folder of plain Markdown files on your own computer",
+      "value": "a folder",
+      "source_url": "https://obsidian.md/help/data-storage",
+      "accessed": "2026-10-10"
+    },
+    {
+      "id": "f2",
+      "claim": "Claude Code runs in your terminal and works on the files in the folder you start it in",
+      "value": "your folder",
+      "source_url": "https://code.claude.com/docs/en/overview",
+      "accessed": "2026-10-10"
+    },
+    {
+      "id": "f3",
+      "claim": "The LLM wiki pattern keeps raw sources untouched and has the model write a separate wiki of linked Markdown pages",
+      "value": "raw + wiki",
+      "source_url": "https://gist.github.com/karpathy/442a6bf555914893e9891c11519de94f",
+      "accessed": "2026-10-10"
+    },
+    {
+      "id": "f4",
+      "claim": "Claude Code reads a CLAUDE.md file of your instructions at the start of every session",
+      "value": "CLAUDE.md",
+      "source_url": "https://code.claude.com/docs/en/memory",
+      "accessed": "2026-10-10"
+    },
+    {
+      "id": "f5",
+      "claim": "When a new source arrives the model reads it and integrates it into existing wiki pages",
+      "value": "ingest",
+      "source_url": "https://gist.github.com/karpathy/442a6bf555914893e9891c11519de94f",
+      "accessed": "2026-10-10"
+    },
+    {
+      "id": "f6",
+      "claim": "Questions are answered from the wiki pages, and good answers are filed back into the wiki as new pages",
+      "value": "query",
+      "source_url": "https://gist.github.com/karpathy/442a6bf555914893e9891c11519de94f",
+      "accessed": "2026-10-10"
+    },
+    {
+      "id": "f7",
+      "claim": "A periodic lint pass looks for contradictions, outdated claims and gaps",
+      "value": "lint",
+      "source_url": "https://gist.github.com/karpathy/442a6bf555914893e9891c11519de94f",
+      "accessed": "2026-10-10"
+    }
+  ],
+  "beats": [
+    {
+      "id": "vault",
+      "narration": "So build a second brain. Step one: download Obsidian and create a vault.",
+      "fact": "f1",
+      "headline": "STEP 1: MAKE A VAULT",
+      "payoff_headline": "JUST A FOLDER OF NOTES",
+      "relation": "demo",
+      "visual": {
+        "rig": "app-screen",
+        "params": {
+          "device": "laptop",
+          "ui": "window",
+          "title": "Obsidian",
+          "lines": [
+            "Create new vault",
+            "Name: second-brain"
+          ],
+          "result": "VAULT READY",
+          "button": "CREATE",
+          "logo": "obsidian"
+        },
+        "room": "office",
+        "palette": "berry",
+        "brand": "obsidian"
+      }
+    },
+    {
+      "id": "claude-code",
+      "narration": "Step two: open Claude Code inside that vault folder.",
+      "fact": "f2",
+      "headline": "STEP 2: OPEN CLAUDE CODE",
+      "payoff_headline": "INSIDE THE VAULT",
+      "relation": "demo",
+      "visual": {
+        "rig": "app-screen",
+        "params": {
+          "device": "monitor",
+          "ui": "terminal",
+          "title": "second-brain",
+          "lines": [
+            "cd second-brain",
+            "claude"
+          ],
+          "result": "CLAUDE IS IN",
+          "logo": "claude"
+        },
+        "room": "workshop",
+        "palette": "citrus"
+      }
+    },
+    {
+      "id": "folders",
+      "narration": "Make two folders. Raw, for everything you save, and wiki, where Claude writes the clean version.",
+      "fact": "f3",
+      "headline": "TWO FOLDERS",
+      "payoff_headline": "RAW IN, WIKI OUT",
+      "relation": "transform",
+      "visual": {
+        "rig": "knowledge-vault",
+        "params": {
+          "mode": "setup",
+          "raw_label": "RAW",
+          "wiki_label": "WIKI"
+        },
+        "room": "living-room",
+        "palette": "lagoon/sky"
+      }
+    },
+    {
+      "id": "rules",
+      "narration": "Step three, the key part: a rules file that tells Claude how to keep the wiki.",
+      "fact": "f4",
+      "headline": "STEP 3: THE RULES FILE",
+      "payoff_headline": "CLAUDE READS IT FIRST",
+      "relation": "demo",
+      "visual": {
+        "rig": "app-screen",
+        "params": {
+          "device": "laptop",
+          "ui": "window",
+          "title": "CLAUDE.md",
+          "lines": [
+            "Never edit raw/",
+            "One idea per wiki page",
+            "Link pages, cite sources"
+          ],
+          "result": "RULES SAVED",
+          "button": "SAVE",
+          "logo": "claude"
+        },
+        "room": "diner",
+        "palette": "sunrise"
+      }
+    },
+    {
+      "id": "collect",
+      "narration": "Now drop everything into raw. Articles, book notes, podcasts, meeting transcripts.",
+      "fact": "f5",
+      "headline": "DROP IT ALL IN RAW",
+      "payoff_headline": "EVERYTHING YOU SAVED",
+      "relation": "pile-up",
+      "visual": {
+        "rig": "knowledge-vault",
+        "params": {
+          "mode": "collect",
+          "items": [
+            "ARTICLE",
+            "BOOK NOTE",
+            "PODCAST",
+            "MEETING",
+            "VIDEO"
+          ],
+          "raw_label": "RAW",
+          "wiki_label": "WIKI"
+        },
+        "room": "office",
+        "palette": "lagoon/berry"
+      }
+    },
+    {
+      "id": "compile",
+      "narration": "Claude reads the pile and writes linked wiki pages, one idea per page.",
+      "fact": "f5",
+      "headline": "CLAUDE WRITES THE WIKI",
+      "payoff_headline": "LINKED PAGES",
+      "relation": "transform",
+      "visual": {
+        "rig": "knowledge-vault",
+        "params": {
+          "mode": "compile",
+          "items": [
+            "ARTICLE",
+            "BOOK NOTE",
+            "PODCAST",
+            "MEETING",
+            "VIDEO"
+          ],
+          "pages": [
+            "SLEEP",
+            "FOCUS",
+            "HABITS",
+            "PRICING",
+            "HIRING",
+            "WRITING",
+            "HEALTH",
+            "MY GAPS"
+          ],
+          "pages_from": 0,
+          "pages_to": 7,
+          "raw_label": "RAW",
+          "wiki_label": "WIKI"
+        },
+        "room": "workshop",
+        "palette": "lagoon/citrus"
+      }
+    },
+    {
+      "id": "ask",
+      "narration": "Then ask it anything, like where are the gaps in my knowledge. It answers with citations.",
+      "fact": "f6",
+      "headline": "ASK YOUR WIKI",
+      "payoff_headline": "ANSWERS WITH SOURCES",
+      "relation": "transform",
+      "visual": {
+        "rig": "knowledge-vault",
+        "params": {
+          "mode": "ask",
+          "items": [
+            "ARTICLE",
+            "BOOK NOTE",
+            "PODCAST",
+            "MEETING",
+            "VIDEO"
+          ],
+          "pages": [
+            "SLEEP",
+            "FOCUS",
+            "HABITS",
+            "PRICING",
+            "HIRING",
+            "WRITING",
+            "HEALTH",
+            "MY GAPS"
+          ],
+          "pages_from": 7,
+          "pages_to": 7,
+          "question": "WHERE ARE MY GAPS?",
+          "answer": "MY GAPS",
+          "cite": [
+            1,
+            4,
+            6
+          ],
+          "raw_label": "RAW",
+          "wiki_label": "WIKI"
+        },
+        "room": "living-room",
+        "palette": "lagoon"
+      }
+    },
+    {
+      "id": "save",
+      "narration": "Every answer gets saved back into the wiki, so it gets smarter each time you use it.",
+      "fact": "f6",
+      "headline": "SAVED BACK TO THE WIKI",
+      "payoff_headline": "SMARTER EVERY DAY",
+      "relation": "grow",
+      "visual": {
+        "rig": "knowledge-vault",
+        "params": {
+          "mode": "save",
+          "items": [
+            "ARTICLE",
+            "BOOK NOTE",
+            "PODCAST",
+            "MEETING",
+            "VIDEO"
+          ],
+          "pages": [
+            "SLEEP",
+            "FOCUS",
+            "HABITS",
+            "PRICING",
+            "HIRING",
+            "WRITING",
+            "HEALTH",
+            "MY GAPS"
+          ],
+          "pages_from": 7,
+          "pages_to": 7,
+          "question": "WHERE ARE MY GAPS?",
+          "answer": "MY GAPS",
+          "cite": [
+            1,
+            4,
+            6
+          ],
+          "raw_label": "RAW",
+          "wiki_label": "WIKI"
+        },
+        "room": "office",
+        "palette": "lagoon/sunrise"
+      }
+    },
+    {
+      "id": "check",
+      "narration": "And once a week, Claude checks the wiki for contradictions and outdated notes.",
+      "fact": "f7",
+      "headline": "WEEKLY HEALTH CHECK",
+      "payoff_headline": "OUTDATED NOTE FIXED",
+      "relation": "approve",
+      "visual": {
+        "rig": "knowledge-vault",
+        "params": {
+          "mode": "check",
+          "items": [
+            "ARTICLE",
+            "BOOK NOTE",
+            "PODCAST",
+            "MEETING",
+            "VIDEO"
+          ],
+          "pages": [
+            "SLEEP",
+            "FOCUS",
+            "HABITS",
+            "PRICING",
+            "HIRING",
+            "WRITING",
+            "HEALTH",
+            "MY GAPS"
+          ],
+          "pages_from": 8,
+          "pages_to": 8,
+          "flag": 3,
+          "flag_label": "OUTDATED",
+          "stamp": "ALL CHECKED",
+          "raw_label": "RAW",
+          "wiki_label": "WIKI"
+        },
+        "room": "workshop",
+        "palette": "lagoon/berry"
+      }
+    }
+  ],
+  "cta": {
+    "keyword": "BRAIN",
+    "narration": "Build it once, use it forever. For the setup, comment BRAIN."
+  },
+  "look": "paper-craft"
+}

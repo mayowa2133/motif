@@ -1,4 +1,4 @@
-"""Reel script step: the 20 to 32 s paper-reel format.
+"""Reel script step: the 20 to 32 s paper-reel format (and a 30 to 62 s long format).
 
   hook      one line (3 alternates; Mayowa picks, the brief records the pick)
   beats     4 to 6 claim beats, each citing one fact from the fact packet
@@ -20,6 +20,12 @@ SCHEMA = json.loads((ROOT / 'schemas/reel-brief.schema.json').read_text())
 WORDS_PER_SECOND = 3.7
 GAP = .12                       # pause between clause takes
 RUNTIME = (20.0, 32.0)
+# The long format (adaptations, how-tos) keeps the same grammar over more beats.
+FORMATS = {'short': {'runtime': RUNTIME, 'beats': (4, 6)}, 'long': {'runtime': (30.0, 62.0), 'beats': (4, 10)}}
+
+
+def limits(brief):
+    return FORMATS[brief.get('format', 'short')]
 
 
 def count(text):
@@ -63,8 +69,10 @@ def validate(brief, measured=None):
     if len({b['id'] for b in brief['beats']}) != len(brief['beats']):errors.append('duplicate beat ids')
     if errors:return errors
     if brief['cta']['keyword'].lower() not in brief['cta']['narration'].lower():errors.append('cta narration must say the keyword')
-    runtime = measured if measured is not None else estimate(brief)
-    if not RUNTIME[0] <= runtime <= RUNTIME[1]:errors.append(f'runtime {runtime:.1f} s outside {RUNTIME[0]:.0f}-{RUNTIME[1]:.0f} s at {WORDS_PER_SECOND:.2f} words/s')
+    lim = limits(brief);lo, hi = lim['beats']
+    if not lo <= len(brief['beats']) <= hi:errors.append(f'{len(brief["beats"])} beats outside {lo}-{hi} for the {brief.get("format", "short")} format')
+    runtime = measured if measured is not None else estimate(brief);rt = lim['runtime']
+    if not rt[0] <= runtime <= rt[1]:errors.append(f'runtime {runtime:.1f} s outside {rt[0]:.0f}-{rt[1]:.0f} s at {WORDS_PER_SECOND:.2f} words/s')
     return errors
 
 

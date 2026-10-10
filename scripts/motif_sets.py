@@ -27,7 +27,7 @@ from motif_bot_kit import COSTUMES, dressed_bot
 from motif_props import PROPS
 from motif_rigs import get as get_rig
 from motif_rigs.base import place
-from motif_rigs.palettes import PALETTES, palette as get_palette, rotation
+from motif_rigs.palettes import PALETTES, known, palette as get_palette, rotation
 
 ROOT = Path(__file__).resolve().parents[1]
 W, H = 720, 1280
@@ -596,8 +596,13 @@ def visible_share(box):
     return max(0.0, min(W, box[0] + box[2]) - max(0.0, box[0])) / max(1e-9, box[2])
 
 
-def _valid_item(item, hero_box, placed, bot_box=None):
+from motif_lessons import OCCLUDED
+
+
+def _valid_item(item, hero_box, placed, bot_box=None, labels=()):
     box = item['box']
+    # Front dressing never covers a machine label (lesson L011, motif_lessons).
+    if item['layer'] == 'front' and any(_overlap(box, t) > OCCLUDED * t[2] * t[3] for t in labels):return False
     # Nothing in front of Bot, and nothing on its patch of floor even behind it.
     if bot_box and _overlap(box, bot_box) > (0 if item['layer'] == 'front' else .2 * box[2] * box[3]):return False
     if _in_headline(box) or _in_caption(box):return False
@@ -632,10 +637,12 @@ def solve(room, rig_name, values=None, palette=None, seed=0, beat=0, costume=Non
     if room not in ROOMS:raise ValueError(f'unknown room {room}; choose from {sorted(ROOMS)}')
     rig = get_rig(rig_name);rng = _rng(room, rig_name, seed, beat)
     palette = palette or rotation(beat + 1, seed)[beat]
-    if palette not in PALETTES:raise ValueError(f'unknown palette {palette}')
+    if not known(palette):raise ValueError(f'unknown palette {palette}')
     hero = hero_placement(rig, rng);hero_box = hero['box']
     bx, by, bscale, side = bot_placement(rig, hero, hero_box);half = BOT_HALF * bscale
     bot_box = (bx - half, by - 4.2 * half, 2 * half, 4.2 * half)
+    from motif_lessons import hero_labels
+    labels = [t['box'] for pose in ('contact', 'end') for t in hero_labels({'hero': {**hero, 'values': values or {}}, 'palette': palette}, pose)]
     pool = list(ROOMS[room]['dressing']);rng.shuffle(pool)
     roles = ['edge', 'overlap', 'back', 'back'][:max(2, min(4, count))];placed = []
     for role in roles:
@@ -645,7 +652,7 @@ def solve(room, rig_name, values=None, palette=None, seed=0, beat=0, costume=Non
         for attempt in range(60):
             if not candidates:break
             item = _place_prop(candidates[attempt % len(candidates)], rng, hero_box, role, side)
-            if _valid_item(item, hero_box, placed, bot_box):placed.append(item);break
+            if _valid_item(item, hero_box, placed, bot_box, labels):placed.append(item);break
     if not any(_crosses_edge(i['box']) for i in placed):raise ValueError(f'{room}/{rig_name}: no dressing reaches a frame edge')
     if not any(_overlap(i['box'], hero_box) > 0 for i in placed):raise ValueError(f'{room}/{rig_name}: no dressing overlaps the hero')
     costume = costume if costume is not None else [rng.choice(ROOMS[room]['costumes'])]

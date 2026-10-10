@@ -1,0 +1,121 @@
+{
+  "about": "Every lesson a reviewed Motif reel taught. motif_lessons.CHECKS runs the 'check' lessons on every new reel; the others name the pipeline stage or brief rule that enforces them. Add lessons with: python scripts/motif_improve.py lesson ...",
+  "lessons": [
+    {
+      "id": "L001",
+      "date": "2026-10-09",
+      "source": "Mayowa, phase 5 benchmark",
+      "symptom": "Five reels all looked alike",
+      "rule": "Each film gets its own look (palette family, rooms, headline, captions, camera, transitions) and the cross-film variety check must pass",
+      "enforced_by": "motif_variety.py",
+      "level": "gate"
+    },
+    {
+      "id": "L002",
+      "date": "2026-10-09",
+      "source": "Post-PR14 review",
+      "symptom": "Machines were decoration; labels did the explaining (bus under INSIDE EVERY PHONE)",
+      "rule": "Every claim beat declares a relation and its machine must show that relation; labels name the claim's own nouns",
+      "enforced_by": "sound-off stage",
+      "level": "gate"
+    },
+    {
+      "id": "L003",
+      "date": "2026-10-09",
+      "source": "Post-PR14 review",
+      "symptom": "No real product on screen",
+      "rule": "When a brief names a product, its vendored mark appears on the hook, the machines and the end card",
+      "enforced_by": "sound-off stage (subject)",
+      "level": "gate"
+    },
+    {
+      "id": "L004",
+      "date": "2026-10-10",
+      "source": "Transitions/sound study",
+      "symptom": "6-7 frame entrances after each cut; sets restarted mid-beat",
+      "rule": "Hard cuts with a complete, moving scene on frame 1; one set per idea, continuing shots never re-enter",
+      "enforced_by": "motif_reel.shot_frames",
+      "level": "gate"
+    },
+    {
+      "id": "L005",
+      "date": "2026-10-10",
+      "source": "Transitions/sound study",
+      "symptom": "Quieter than the references, gaps in the audio",
+      "rule": "Mix near -14 LUFS with the original music bed ducked under the voice, no gaps",
+      "enforced_by": "render stage",
+      "level": "gate"
+    },
+    {
+      "id": "L006",
+      "date": "2026-10-09",
+      "source": "Energy contract",
+      "symptom": "Headlines sat too long",
+      "rule": "The headline changes at least every 3 s",
+      "enforced_by": "pacing stage",
+      "level": "gate"
+    },
+    {
+      "id": "L007",
+      "date": "2026-10-10",
+      "source": "Codex critique of v11",
+      "symptom": "Python's lock opened before the narration finished explaining the restriction",
+      "rule": "A machine shows the change only when the narration reaches it; use visual.hold for setup beats",
+      "enforced_by": "brief",
+      "level": "brief"
+    },
+    {
+      "id": "L008",
+      "date": "2026-10-10",
+      "source": "Codex critique of v11",
+      "symptom": "Attractive metaphors that did not demonstrate the claim; the certificate lost its identity between beats",
+      "rule": "Keep objects and consequences connected: the same object carries forward and its change demonstrates the claim",
+      "enforced_by": "brief",
+      "level": "brief"
+    },
+    {
+      "id": "L009",
+      "date": "2026-10-10",
+      "source": "Round 8 follow-up",
+      "symptom": "The Python lock was pink in one beat and teal in the next",
+      "rule": "Beats that carry the same machine keep its colours; vary only walls and floor with an object/room palette",
+      "check": "shared-object-palette",
+      "level": "gate"
+    },
+    {
+      "id": "L010",
+      "date": "2026-10-10",
+      "source": "Second-brain adaptation, cut 2",
+      "symptom": "ANSWERS WITH SOURCES then ANSWERS GET SAVED read as one 4.3 s headline",
+      "rule": "Consecutive headlines never open with the same word",
+      "check": "headline-openers",
+      "level": "gate"
+    },
+    {
+      "id": "L011",
+      "date": "2026-10-10",
+      "source": "Second-brain adaptation, cut 2",
+      "symptom": "A front crate hid the wiki board's PAGES counter",
+      "rule": "Front set dressing never covers a machine label",
+      "check": "label-occlusion",
+      "level": "gate"
+    },
+    {
+      "id": "L012",
+      "date": "2026-10-10",
+      "source": "Second-brain adaptation, cut 2",
+      "symptom": "Wiki page titles were small on a phone",
+      "rule": "Machine labels are at least 24 px tall in the 1080 x 1920 delivery",
+      "check": "label-legibility",
+      "level": "warn"
+    },
+    {
+      "id": "L013",
+      "date": "2026-10-10",
+      "source": "Claude review of second-brain cut 3",
+      "symptom": "hook item tags clip their labels (BOOK NOT, PODCA) when drawn at 1.4x in forget mode",
+      "rule": "Machine labels must fit their tag at the drawn scale; no clipped words",
+      "level": "brief"
+    }
+  ]
+}
