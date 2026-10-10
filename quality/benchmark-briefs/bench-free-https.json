@@ -116,13 +116,13 @@
       "headline": "EACH CERT EXPIRES",
       "payoff_headline": "90 DAYS",
       "visual": {
-        "rig": "thermometer",
+        "rig": "certificate",
         "params": {
-          "from": 5,
-          "to": 90,
-          "target": "90 DAYS",
-          "label": "CERT AGE IN DAYS",
-          "stars": 0
+          "domain": "yoursite.com",
+          "issuer": "Let's Encrypt",
+          "mode": "expire",
+          "days_from": 90,
+          "days_to": 3
         },
         "room": "arcade"
       },
@@ -135,13 +135,16 @@
       "headline": "NOBODY HAS TO REMEMBER",
       "payoff_headline": "RENEWED AUTOMATICALLY",
       "visual": {
-        "rig": "domino-run",
+        "rig": "certificate",
         "params": {
-          "count": 7,
-          "label": "AUTO RENEW",
-          "target": "RENEWED"
+          "domain": "yoursite.com",
+          "issuer": "Let's Encrypt",
+          "mode": "renew",
+          "days_from": 3,
+          "days_to": 90,
+          "stamp": "RENEWED"
         },
-        "room": "rooftop"
+        "room": "arcade"
       },
       "relation": "spread"
     }

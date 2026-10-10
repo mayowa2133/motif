@@ -145,7 +145,7 @@ def plan_reel(brief, allow_draft=False, avoid_looks=()):
         insert = visual.get('insert') or _insert_for(fact, text, cat)
         # The machine already prints the number: a second counter would only collide with it.
         num = _number(fact.get('value'))
-        if not visual.get('insert') and num and any(str(num['value']) in t.replace(',', '') for t in rig_text(params)):insert = None
+        if not visual.get('insert') and num and any(str(num['value']) in t.replace(',', '') for t in rig_text(params, rig_id)):insert = None
         setup = b.get('headline') or _short(fact['claim'], 26);payoff = b.get('payoff_headline') or _short(fact.get('value') or b['narration'], 26)
         if payoff == setup:payoff = _short(b['narration'], 26)
         beats.append({'id': b['id'], 'kind': 'claim', 'relation': relation, 'narration': b['narration'], 'fact': b['fact'], 'palette': visual.get('palette') or palettes[i + 1], 'shots': [

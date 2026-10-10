@@ -58,6 +58,7 @@ RIG_RELATIONS = {
     'device-wall': ('everywhere',),
     'app-screen': ('demo',),
     'light-render': ('transform',),
+    'certificate': ('level', 'spread'),
 }
 
 # Words that suggest a relation when a brief does not name one. Deliberately
@@ -122,8 +123,12 @@ def _words(text):
     return {_stem(w) for w in re.findall(r"[a-z0-9']+", str(text).lower()) if w not in STOP and len(w) > 1}
 
 
-def rig_text(params):
-    """Every string a rig will print, from its params."""
+def rig_text(params, rig=None):
+    """Every string a rig will print, from its params (plus the rig's own printed text when it declares it)."""
+    if rig:
+        from motif_rigs import get
+        printed = getattr(get(rig), 'printed_text', None)
+        if printed:return printed({**get(rig).defaults, **(params or {})})
     out = []
     for v in (params or {}).values():
         if isinstance(v, str):out.append(v)
@@ -147,7 +152,7 @@ def sound_off(plan, brief=None):
         shot = beat['shots'][0];rig = (shot.get('rig') or {}).get('id');params = (shot.get('rig') or {}).get('params', {})
         relation = beat.get('relation') or relation_of(briefs.get(beat['id'], beat), facts.get(beat.get('fact')))
         text = beat['narration'] + ' ' + (facts.get(beat.get('fact'), {}).get('claim') or '') + ' ' + (facts.get(beat.get('fact'), {}).get('value') or '')
-        labels = rig_text(params);shared = sorted(set().union(*[_words(l) for l in labels]) & _words(text)) if labels else []
+        labels = rig_text(params, rig);shared = sorted(set().union(*[_words(l) for l in labels]) & _words(text)) if labels else []
         # A stock word is only a placeholder when the claim itself never says it.
         placeholder = [l for l in labels if l.strip().upper() in GENERIC and not _words(l) & _words(text)]
         row = {'beat': beat['id'], 'rig': rig, 'relation': relation, 'relation_ok': bool(relation and rig and fits(rig, relation)),
