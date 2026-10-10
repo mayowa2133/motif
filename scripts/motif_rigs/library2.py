@@ -166,24 +166,87 @@ class LockAndKey(Rig):
         if not action:return self.SLOT[0] if start == 'open' else -520
         return lerp(-520, self.SLOT[0], ease(t_in(t, tc)))
 
+    @staticmethod
+    def _chain(x0, y0, x1, y1, n, c):
+        """Cut-paper chain from (x0, y0) to (x1, y1): alternating face-on and edge-on links."""
+        ang = math.degrees(math.atan2(y1 - y0, x1 - x0));out = ''
+        for k in range(n):
+            f = (k + .5) / n;x = lerp(x0, x1, f);y = lerp(y0, y1, f)
+            if k % 2 == 0:
+                link = rect(-19, -11, 38, 22, 'none', 11, c['dark'], 11) + rect(-19, -11, 38, 22, 'none', 11, c['metal'], 6)
+            else:
+                link = rect(-19, -4, 38, 8, c['metal'], 4, c['dark'], 3)
+            out += g(link, x, y, ang)
+        return out
+
+    @staticmethod
+    def _sparkle(x, y, r, col, c, o):
+        d = f'M{x} {y - r}Q{x + r * .18} {y - r * .18} {x + r} {y}Q{x + r * .18} {y + r * .18} {x} {y + r}Q{x - r * .18} {y + r * .18} {x - r} {y}Q{x - r * .18} {y - r * .18} {x} {y - r}Z'
+        return path(d, c['dark'], 3, col, extra=f'opacity="{o:.3f}"')
+
+    def _key(self, c):
+        """Key in slot-local units: (0, 0) is the shoulder at the keyway; the blade runs +x into the lock."""
+        d = c['dark'];k = c['secondary']
+        blade = f'M-6 -12H92L104 -2V12H86V20H74V12H58V24H44V12H30V18H18V12H-6Z'
+        s = path(blade, d, 0, d, 'transform="translate(5 6)" opacity=".18"') + path(blade, d, 3, k) + path('M4 -5H84', d, 2, extra='opacity=".35"')
+        s += rect(-30, -18, 26, 36, k, 6, d, 3) + path('M-24 -18V18M-14 -18V18', d, 2, extra='opacity=".3"')
+        s += f'<circle cx="-72" cy="0" r="44" fill="{k}" stroke="{d}" stroke-width="4"/>'
+        s += f'<circle cx="-72" cy="0" r="26" fill="none" stroke="{d}" stroke-width="2" opacity=".35"/>'
+        s += f'<circle cx="-72" cy="0" r="14" fill="{c["light"]}" stroke="{d}" stroke-width="3"/>'
+        s += g(path('M-104 -14A34 34 0 0 1 -86 -34', '#FFFFFF', 6), opacity=.45)
+        s += f'<circle cx="-100" cy="26" r="6" fill="{c["light"]}" stroke="{d}" stroke-width="3"/>'
+        return s
+
     def draw(self, p, pose, c):
         start, end, action, t = pose;tc = self.contact_t('unlock') if action else 0
         after = t_after(t, tc) if action else (1.0 if start == 'open' else 0)
         lift = 90 * ease(min(1.0, after * 2.2));turn = 90 * ease(min(1.0, after * 3))
-        shackle = path(f'M-90 {-420 - lift}V{-520 - lift}Q-90 {-640 - lift} 0 {-640 - lift}Q90 {-640 - lift} 90 {-520 - lift}V{-420 - lift + (0 if lift else 0)}', c['metal'], 34)
-        body = rect(-200, -30, 400, 30, c['floor'], 6) + shackle
-        body += path('M-150 -430H150V-60Q150 -30 120 -30H-120Q-150 -30 -150 -60Z', c['dark'], 0, c['dark'], 'transform="translate(7 9)" opacity=".2"')
-        body += path('M-150 -430H150V-60Q150 -30 120 -30H-120Q-150 -30 -150 -60Z', c['primary'], 4, c['primary'])
-        body += f'<circle cx="0" cy="-250" r="34" fill="{c["dark"]}"/>' + rect(-12, -250, 24, 70, c['dark'], 6) + rect(-150, -264, 26, 28, c['dark'], 4)
-        body += g(card(220, 54, c['light'], .06) + txt(p['label'], 110, 37, label_size(p['label'], 200, 28), c['dark'], 900, 'middle'), -110, -140)
+        d = c['dark'];sx, sy = self.SLOT
+        body = g(rect(-230, -14, 460, 18, d, 9), opacity=.16) + rect(-190, -34, 380, 34, c['floor'], 8, d, 3)
+        # Chain anchors and a chain threaded through the shackle; once the lock opens each half drops and hangs.
+        drop = 84 * ease(min(1.0, after * 1.6)) + (settle(after, 7) if after else 0)
+        chains = {}
+        for side in (-1, 1):
+            ax, ay = side * 252, -600
+            body += rect(ax - 14, ay - 34, 28, 68, c['metal'], 6, d, 3) + f'<circle cx="{ax}" cy="{ay - 20}" r="4" fill="{d}"/><circle cx="{ax}" cy="{ay + 20}" r="4" fill="{d}"/>'
+            L = math.hypot(252, 50);a0 = math.atan2(50, -side * 252) + math.radians(-side * drop)
+            chains[side] = self._chain(ax, ay, ax + L * math.cos(a0), ay + L * math.sin(a0), 7, c)
+        # Shackle: ink edge, metal bar, highlight, and the notch on the long leg.
+        sh_d = f'M-90 {-420 - lift}V{-520 - lift}Q-90 {-640 - lift} 0 {-640 - lift}Q90 {-640 - lift} 90 {-520 - lift}V{-420 - lift}'
+        body += chains[1] + path(sh_d, d, 42, extra='transform="translate(7 8)" opacity=".18"') + path(sh_d, d, 42) + path(sh_d, c['metal'], 34)
+        body += g(path(f'M-98 {-440 - lift}V{-520 - lift}Q-98 {-630 - lift} -10 {-632 - lift}', '#FFFFFF', 6), opacity=.4)
+        body += rect(80, -470 - lift, 20, 14, d, 3) + chains[-1]
+        # Key goes behind the lock body so the blade disappears into the keyway.
         x = self.key_x(t, tc, action, start)
-        key = (rect(-150, -14, 150, 28, c['secondary'], 6, c['dark'], 3) + path('M-60 14V34M-30 14V40', c['dark'], 8)
-               + f'<circle cx="-200" cy="0" r="62" fill="{c["secondary"]}" stroke="{c["dark"]}" stroke-width="4"/><circle cx="-200" cy="0" r="46" fill="{c["light"]}"/>')
-        bow = g(txt(p['key'], 0, 9, label_size(p['key'], 96, 24), c['dark'], 900, 'middle'), -200, 0)
-        # The turn reads as the key flattening edge-on, then springing back (no swing out of the slot).
         squash = 1 - .75 * math.sin(math.radians(turn) * 2) if turn < 90 else 1.0
-        body += f'<g transform="translate({x:.2f} {self.SLOT[1]}) scale(1 {squash:.4f})">{key}{bow}</g>'
-        body += burst(0, -560 - lift, after if action else 0, c, 8, 40, 140)
+        body += f'<g transform="translate({x:.2f} {sy}) scale(1 {squash:.4f})">{self._key(c)}</g>'
+        shell = 'M-150 -430H150V-60Q150 -30 120 -30H-120Q-150 -30 -150 -60Z'
+        body += path(shell, d, 0, d, 'transform="translate(8 9)" opacity=".2"') + path(shell, d, 4, c['primary'])
+        body += g(path('M-150 -60Q-150 -30 -120 -30H120Q150 -30 150 -60V-430H122V-74Q122 -58 106 -58H-150Z', d, 0, d), opacity=.14)
+        body += g(rect(-138, -418, 18, 330, '#FFFFFF', 9), opacity=.22)
+        body += rect(-150, -440, 300, 34, c['metal'], 8, d, 4) + g(rect(-140, -435, 200, 6, '#FFFFFF', 3), opacity=.35)
+        for rx in (-128, 128):
+            for ry in (-386, -56):body += f'<circle cx="{rx}" cy="{ry}" r="7" fill="{c["metal"]}" stroke="{d}" stroke-width="3"/>'
+        # Side keyway plate on the left edge.
+        body += rect(sx - 8, sy - 30, 34, 60, c['metal'], 6, d, 3) + rect(sx - 8, sy - 12, 22, 24, d, 4)
+        # Keyhole escutcheon on the face.
+        body += rect(-50, -320, 100, 150, c['metal'], 30, d, 4) + g(rect(-40, -312, 30, 6, '#FFFFFF', 3), opacity=.35)
+        body += f'<circle cx="0" cy="-262" r="24" fill="{d}"/>' + path('M-10 -258L-18 -198H18L10 -258Z', d, 0, d)
+        for ry in (-306, -184):body += f'<circle cx="0" cy="{ry}" r="5" fill="{c["light"]}" stroke="{d}" stroke-width="2"/>'
+        body += g(card(220, 54, c['light'], .06) + txt(p['label'], 110, 37, label_size(p['label'], 200, 28), d, 900, 'middle'), -110, -140)
+        # Paper tag on a string from the key's bow carries the key word.
+        sway = settle(after, 5) if action else 0
+        tx, ty = x - 100, sy + 26 * squash
+        tag_card = card(140, 52, c['accent'], .08) + f'<circle cx="16" cy="26" r="6" fill="{c["wall"]}" stroke="{d}" stroke-width="2"/>'
+        tag_card += txt(p['key'], 78, 36, label_size(p['key'], 100, 30), d if c['accent'] != d else c['light'], 900, 'middle')
+        body += path(f'M{tx} {ty}Q{tx - 4} {ty + 22} {tx + 4} {ty + 40}', d, 3) + g(g(tag_card, -16, -26), tx + 4, ty + 64, -6 + sway)
+        if action:
+            body += burst(0, -560 - lift, after, c, 8, 40, 140)
+            if 0 < after < 1:
+                o = 1 - after
+                for k, (px_, py_, r0) in enumerate(((-200, -470, 26), (196, -420, 22), (-178, -330, 16), (210, -300, 18), (160, -690, 20), (-150, -700, 15))):
+                    sc = ease(min(1.0, after * 3 - k * .15)) if after * 3 > k * .15 else 0
+                    if sc > 0:body += self._sparkle(px_, py_, r0 * sc, c['pop'] if k % 2 else c['accent'], c, o)
         return body
 
     def seams(self, p, pose):
@@ -209,26 +272,102 @@ class SproutGrow(Rig):
     def drop(self, t, tc):
         u = ease_in(max(0.0, t - tc * .5) / (tc * .5)) if t < tc else 1.0;return (lerp(self.SPOUT[0], 0, u), lerp(self.SPOUT[1], self.SOIL, u))
 
+    @staticmethod
+    def _drop_shape(x, y, r, c, o=1.0):
+        """A cut-paper water drop whose bottom point sits at (x, y)."""
+        return f'<path d="M{x:.1f} {y - 2.4 * r:.1f}Q{x + 1.3 * r:.1f} {y - .55 * r:.1f} {x:.1f} {y:.1f}Q{x - 1.3 * r:.1f} {y - .55 * r:.1f} {x:.1f} {y - 2.4 * r:.1f}Z" fill="{c["accent"]}" stroke="{c["dark"]}" stroke-width="2" opacity="{o:.3f}"/>'
+
+    def _can(self, c):
+        """Watering can in can-local units; the spout tip is at (120, -90)."""
+        d = c['dark'];k = c['secondary']
+        s = path('M-62 -60Q-20 -104 22 -60', d, 14) + path('M-62 -60Q-20 -104 22 -60', c['metal'], 8)
+        s += path('M-80 -30Q-132 -14 -84 26', d, 14) + path('M-80 -30Q-132 -14 -84 26', k, 8)
+        s += path('M30 -10L104 -78', d, 18) + path('M30 -10L104 -78', k, 12)
+        s += g(path('M96 -96L128 -66L116 -54L84 -84Z', d, 3, c['metal']), 0, 0)
+        s += ''.join(f'<circle cx="{106 + 5 * i:.1f}" cy="{-79 + 5 * i:.1f}" r="1.8" fill="{d}"/>' for i in range(3))
+        body = 'M-84 -62H40Q46 -62 46 -56V36Q46 44 38 44H-76Q-84 44 -84 36Z'
+        s += path(body, d, 0, d, 'transform="translate(6 7)" opacity=".18"') + path(body, d, 4, k)
+        s += rect(-84, -40, 130, 14, c['metal'], 0, d, 3) + rect(-84, 18, 130, 12, c['metal'], 0, d, 3)
+        s += g(rect(-74, -54, 10, 86, '#FFFFFF', 5), opacity=.3) + path('M-50 -18V10M-30 -18V10M-10 -18V10M10 -18V10', d, 2, extra='opacity=".18"')
+        s += ''.join(f'<circle cx="{x}" cy="{y}" r="3" fill="{d}"/>' for x in (-72, 34) for y in (-33, 24))
+        return s
+
+    def _leaf(self, col, c):
+        d = c['dark']
+        s = path('M0 0Q46 -60 118 -6Q56 34 0 0Z', d, 3, col) + g(path('M0 0Q56 34 118 -6Q60 4 0 0Z', '#000000', 0, '#000000'), opacity=.12)
+        s += path('M4 0Q60 -8 112 -6', d, 2.5, extra='opacity=".55"') + path('M40 -4L58 -24M70 -5L88 -22M48 -2L62 12', d, 2, extra='opacity=".4"')
+        return s
+
+    def _bloom(self, c):
+        d = c['dark'];pop = c['pop'];s = ''
+        for k in range(8):
+            a = k * 45 + 22.5;s += g(f'<ellipse cx="0" cy="-42" rx="17" ry="30" fill="{pop}" stroke="{d}" stroke-width="3"/>', 0, 0, a)
+        for k in range(6):
+            a = k * 60;s += g(f'<ellipse cx="0" cy="-30" rx="15" ry="24" fill="{pop}" stroke="{d}" stroke-width="3"/>'
+                              + f'<ellipse cx="0" cy="-30" rx="9" ry="16" fill="#FFFFFF" opacity=".22"/>', 0, 0, a)
+        s += f'<circle r="24" fill="{c["secondary"]}" stroke="{d}" stroke-width="3"/>'
+        s += ''.join(f'<circle cx="{12 * math.cos(k * 2.4):.1f}" cy="{12 * math.sin(k * 2.4):.1f}" r="2.6" fill="{d}" opacity=".55"/>' for k in range(9))
+        s += '<ellipse cx="-8" cy="-10" rx="8" ry="5" fill="#FFFFFF" opacity=".4"/>'
+        return s
+
     def draw(self, p, pose, c):
         start, end, action, t = pose;tc = self.contact_t('water') if action else 0
         grow = ease(t_after(t, tc)) if action else (1.0 if start == 'grown' else 0)
+        after = t_after(t, tc) if action else 0
         tilt = 40 * ease(min(1.0, t / max(1e-9, tc * .5))) if action else 0
-        can = g(path('M-80 -60H40V40H-80Z', c['secondary'], 3, c['secondary']) + path('M40 -40L120 -90', c['secondary'], 16) + path('M-80 -30Q-130 -10 -80 30', c['dark'], 8), -180, -450, tilt)
-        body = can
-        if action and tc * .5 <= t <= tc:
-            x, y = self.drop(t, tc);body += f'<path d="M{x:.1f} {y - 26:.1f}Q{x + 14:.1f} {y - 6:.1f} {x:.1f} {y:.1f}Q{x - 14:.1f} {y - 6:.1f} {x:.1f} {y - 26:.1f}Z" fill="{c["accent"]}" stroke="{c["dark"]}" stroke-width="2"/>'
+        d = c['dark'];body = g(self._can(c), -180, -450, tilt)
+        # Pot shadow, saucer and terracotta body (drawn behind the stem only for the shadow).
+        body += g(rect(-150, -10, 300, 14, d, 7), opacity=.16)
         top = self.SOIL - (40 + 100 * p['leaves']) * grow
-        body += path(f'M0 {self.SOIL}Q-20 {(self.SOIL + top) / 2} 0 {top}', c['floor'], 12) if grow > 0 else ''
+        # Garden stake with twine ties beside the stem.
+        body += path('M58 -150L66 -380', d, 12) + path('M58 -150L66 -380', c['metal'], 6) + path('M60 -376H72', d, 4)
+        if grow > 0:
+            stem = f'M0 {self.SOIL}Q-20 {(self.SOIL + top) / 2} 0 {top}'
+            body += path(stem, d, 16) + path(stem, c['secondary'], 9) + g(path(f'M-3 {self.SOIL}Q-22 {(self.SOIL + top) / 2} -3 {top}', '#FFFFFF', 2.5), opacity=.3)
+        for ty in (-230, -320):
+            if top < ty - 10:body += path(f'M{-14 if ty < -300 else -12} {ty}Q24 {ty - 10} 64 {ty + 4}', c['accent'], 3) + path(f'M{-14 if ty < -300 else -12} {ty}Q24 {ty + 8} 64 {ty + 4}', d, 2, extra='opacity=".6"')
         for k in range(p['leaves']):
             ly = self.SOIL - 60 - 100 * k
             if ly > top + 10:
-                side = -1 if k % 2 else 1;s = min(1.0, (ly - top) / 80)
-                body += g(path('M0 0Q50 -50 100 0Q50 30 0 0Z', c['floor'], 3, c['secondary'] if k % 2 else c['accent']), 0, ly, -20 if side > 0 else 200, s)
+                side = -1 if k % 2 else 1;s = min(1.0, (ly - top) / 80);sway = settle(after, 4) * side
+                body += g(self._leaf(c['secondary'] if k % 2 else c['accent'], c), -4 * side, ly, (-20 if side > 0 else 200) + sway, s)
         if grow > .8:
             u = (grow - .8) / .2
-            body += g(''.join(f'<circle cx="{34 * math.cos(a):.1f}" cy="{34 * math.sin(a):.1f}" r="26" fill="{c["pop"]}" stroke="{c["dark"]}" stroke-width="3"/>' for a in [k * math.pi / 3 for k in range(6)]) + f'<circle r="24" fill="{c["secondary"]}" stroke="{c["dark"]}" stroke-width="3"/>', 0, top, 0, u) + tag(p['bloom'], 0, top - 90, 170, c, c['light'])
-        body += path('M-130 -150H130L100 0H-100Z', c['primary'], 4, c['primary']) + rect(-140, -170, 280, 34, c['primary'], 8, c['dark'], 3) + f'<ellipse cx="0" cy="{self.SOIL}" rx="118" ry="14" fill="{c["dark"]}" opacity=".6"/>'
-        return body + g(card(200, 46, c['light'], .06) + txt(p['label'], 100, 32, label_size(p['label'], 180, 24), c['dark'], 900, 'middle'), -100, -96)
+            body += g(self._bloom(c), 0, top, 12 * (1 - u), 1.2 * u)
+            size = label_size(p['bloom'], 196, 28)
+            body += path(f'M0 {top - 72}V{top - 86}', d, 3) + tag(p['bloom'], 0, top - 106, 214, c, c['light'], size)
+        elif grow <= 0:
+            # A seed with its first curl, waiting in the soil.
+            body += path(f'M0 {self.SOIL - 2}Q-4 {self.SOIL - 18} 6 {self.SOIL - 26}', d, 7) + path(f'M0 {self.SOIL - 2}Q-4 {self.SOIL - 18} 6 {self.SOIL - 26}', c['secondary'], 3)
+            body += g(self._leaf(c['accent'], c), 6, self.SOIL - 26, -30, .22)
+        pot = 'M-128 -150H128L100 -4H-100Z'
+        body += path(pot, d, 0, d, 'transform="translate(7 8)" opacity=".2"') + path(pot, d, 4, c['primary'])
+        body += g(path('M70 -150H128L100 -4H58Z', '#000000', 0, '#000000'), opacity=.12) + g(path('M-112 -146L-90 -10', '#FFFFFF', 8), opacity=.25)
+        body += rect(-118, -40, 236, 10, c['primary'], 0, d, 3) + rect(-112, -12, 224, 14, c['primary'], 6, d, 3)
+        body += path('M-146 -176H146V-138H-146Z', d, 4, c['primary']) + g(rect(-138, -172, 200, 6, '#FFFFFF', 3), opacity=.3)
+        body += g(rect(-146, -150, 292, 12, '#000000', 0), opacity=.14)
+        # Soil with crumbs and pebbles; it darkens where the water lands.
+        body += f'<ellipse cx="0" cy="{self.SOIL - 8}" rx="126" ry="14" fill="{d}"/>' + f'<ellipse cx="0" cy="{self.SOIL - 6}" rx="118" ry="10" fill="{c["floor"]}"/>'
+        body += ''.join(f'<circle cx="{x}" cy="{self.SOIL - 6 + yy}" r="{r}" fill="{d}" opacity=".45"/>' for x, yy, r in ((-90, -2, 3), (-62, 3, 2.5), (-30, -4, 2), (34, 3, 3), (72, -3, 2.5), (98, 1, 2)))
+        body += f'<ellipse cx="-74" cy="{self.SOIL - 8}" rx="9" ry="5" fill="{c["metal"]}" stroke="{d}" stroke-width="2"/><ellipse cx="88" cy="{self.SOIL - 7}" rx="7" ry="4" fill="{c["light"]}" stroke="{d}" stroke-width="2"/>'
+        if after > 0 or (action and t >= tc):
+            wet = min(1.0, after * 4 + .4)
+            body += f'<ellipse cx="0" cy="{self.SOIL - 6}" rx="{30 + 40 * wet:.1f}" ry="6" fill="{d}" opacity=".35"/>'
+            if after < .4:
+                o = 1 - after / .4;r = 20 + 60 * after / .4
+                body += path(f'M{-r:.1f} {self.SOIL - 12}Q{-r - 8:.1f} {self.SOIL - 30} {-r - 2:.1f} {self.SOIL - 40}M{r:.1f} {self.SOIL - 12}Q{r + 8:.1f} {self.SOIL - 30} {r + 2:.1f} {self.SOIL - 40}', c['accent'], 5, extra=f'opacity="{o:.3f}"')
+        # Water drops fall in front of the pot so the contact with the soil stays visible.
+        water = ''
+        if action and tc * .5 <= t <= tc:
+            x, y = self.drop(t, tc);water += self._drop_shape(x, y, 11, c)
+            for k, lag in enumerate((.18, .36)):
+                tt = t - lag * tc * .5
+                if tt >= tc * .5:
+                    x2, y2 = self.drop(tt, tc);water += self._drop_shape(x2, y2, 8 - 2 * k, c, .85)
+        elif action and tc * .35 < t < tc * .5:
+            water += self._drop_shape(self.SPOUT[0] + 4, self.SPOUT[1] + 18, 6, c, .8)
+        body += water
+        return body + g(card(200, 46, c['light'], .06) + txt(p['label'], 100, 32, label_size(p['label'], 180, 24), d, 900, 'middle'), -100, -96)
 
     def seams(self, p, pose):
         start, end, action, t = pose;tc = self.contact_t('water')

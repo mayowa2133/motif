@@ -245,22 +245,70 @@ class BalanceScale(Rig):
 
     def stop_top(self, p):
         side = 1 if p['right_weight'] > p['left_weight'] else -1
-        return self.pan_bottom(side, (1 if side > 0 else -1) * self.TILT)
+        return self.pan_bottom(side, self.angle(p, 1, 0))
+
+    @staticmethod
+    def _weight(col, c, w=44, h=34, knob=False):
+        """One stacked weight block: ink outline, top-edge highlight, a small handle on the top row."""
+        d = c['dark'];s = ''
+        if knob:s += path(f'M{w / 2 - 8} 2V-6H{w / 2 + 8}V2', d, 4)
+        s += rect(1, 1, w - 2, h - 2, col, 5, d, 3) + g(rect(5, 4, w - 16, 4, '#FFFFFF', 2), opacity=.45)
+        s += g(rect(w - 9, 5, 4, h - 10, '#000000', 2), opacity=.15)
+        return s
+
+    def _dial(self, a, c):
+        """Arc dial under the pivot with a needle that turns with the beam."""
+        d = c['dark'];px, py = self.PIVOT;r0, r1 = 58, 96
+        def pt(r, deg):return px + r * math.cos(math.radians(deg)), py + r * math.sin(math.radians(deg))
+        (ax, ay), (bx, by), (cx_, cy_), (dx, dy) = pt(r1, 58), pt(r1, 122), pt(r0, 122), pt(r0, 58)
+        fan = f'M{ax:.1f} {ay:.1f}A{r1} {r1} 0 0 1 {bx:.1f} {by:.1f}L{cx_:.1f} {cy_:.1f}A{r0} {r0} 0 0 0 {dx:.1f} {dy:.1f}Z'
+        s = path(fan, d, 0, d, 'transform="translate(5 6)" opacity=".18"') + path(fan, d, 3, c['light'])
+        for k in range(-3, 4):
+            (x1, y1), (x2, y2) = pt(r1 - 4, 90 + k * 9), pt(r1 - (16 if k == 0 else 10), 90 + k * 9)
+            s += path(f'M{x1:.1f} {y1:.1f}L{x2:.1f} {y2:.1f}', c['accent'] if k == 0 else d, 4 if k == 0 else 2.5)
+        s += g(path(f'M-4 0L0 {r1 - 8}L4 0Z', d, 3, c['pop']), px, py, a)
+        return s
 
     def draw(self, p, pose, c):
         start, end, action, t = pose;tc = self.contact_t('tip') if action else 1;t = t if action else (1 if start == 'tipped' else 0)
-        a = self.angle(p, t, tc);px, py = self.PIVOT
-        body = rect(-150, -40, 300, 40, c['dark'], 8) + rect(-18, py, 36, -py - 40, c['metal'], 6) + path(f'M-60 {py + 10}L0 {py - 30}L60 {py + 10}Z', c['primary'], 2, c['primary'])
+        a = self.angle(p, t, tc);px, py = self.PIVOT;d = c['dark']
+        # Stepped plinth with feet, fluted pillar with collars.
+        body = g(rect(-200, -10, 400, 14, d, 7), opacity=.16)
+        body += rect(-150, -14, 30, 14, d, 4) + rect(120, -14, 30, 14, d, 4)
+        body += g(rect(-160, -42, 320, 30, d, 8), 6, 6, opacity=.18) + rect(-160, -42, 320, 30, c['metal'], 8, d, 3) + g(rect(-150, -38, 220, 5, '#FFFFFF', 2), opacity=.35)
+        body += rect(-100, -64, 200, 24, c['primary'], 8, d, 3) + g(rect(-92, -60, 120, 4, '#FFFFFF', 2), opacity=.3)
+        body += g(rect(-18, py, 36, -py - 64, d, 6), 6, 0, opacity=.18) + rect(-18, py, 36, -py - 64, c['metal'], 6, d, 3)
+        body += path(f'M-6 {py + 30}V-80M6 {py + 30}V-80', d, 2, extra='opacity=".3"') + g(rect(-13, py + 10, 5, -py - 84, '#FFFFFF', 2), opacity=.3)
+        for cy in (-84, py + 104):body += rect(-28, cy, 56, 18, c['primary'], 6, d, 3)
         if p['left_weight'] != p['right_weight']:
-            sx, sy = self.stop_top(p);body += rect(sx - 40, sy, 80, -40 - sy, c['secondary'], 6)
-        body += g(rect(-self.ARM - 20, -10, 2 * self.ARM + 40, 20, c['primary'], 8), px, py, a)
+            sx, sy = self.stop_top(p)
+            body += g(rect(sx - 30, sy + 18, 60, -40 - sy - 18, d, 6), 6, 6, opacity=.18) + rect(sx - 30, sy + 18, 60, -40 - sy - 18, c['secondary'], 6, d, 3)
+            body += path(f'M{sx - 30} {sy + 60}H{sx + 30}M{sx - 30} {sy + 100}H{sx + 30}', d, 2, extra='opacity=".3"')
+            body += rect(sx - 44, sy, 88, 20, c['accent'], 8, d, 3) + g(rect(sx - 36, sy + 4, 50, 4, '#FFFFFF', 2), opacity=.4)
+        body += self._dial(a, c)
+        # Beam: ink-edged bar with a centre rib, end caps and hooks; pivot cap and finial on top.
+        beam = rect(-self.ARM - 14, -11, 2 * self.ARM + 28, 22, c['primary'], 10, d, 3) + g(rect(-self.ARM, -7, 2 * self.ARM - 40, 5, '#FFFFFF', 2), opacity=.35)
+        beam += path(f'M{-self.ARM + 30} 4H{-40}M40 4H{self.ARM - 30}', d, 2, extra='opacity=".25"')
+        for side in (-1, 1):
+            beam += f'<circle cx="{side * (self.ARM + 6)}" cy="0" r="16" fill="{c["secondary"]}" stroke="{d}" stroke-width="3"/>'
+        body += g(g(beam, 6, 7, opacity=.15) + beam, px, py, a)
+        body += path(f'M-40 {py + 12}L0 {py - 30}L40 {py + 12}Z', d, 3, c['primary'])
+        body += f'<circle cx="{px}" cy="{py}" r="14" fill="{c["metal"]}" stroke="{d}" stroke-width="3"/><circle cx="{px}" cy="{py}" r="4" fill="{d}"/>'
+        body += f'<circle cx="{px}" cy="{py - 40}" r="10" fill="{c["secondary"]}" stroke="{d}" stroke-width="3"/>'
         swing = settle(t_after(t, tc), 4)
         for side, label, weight in ((-1, p['left_label'], p['left_weight']), (1, p['right_label'], p['right_weight'])):
             bx, by = self.pan_bottom(side, a);top = by - self.HANG
-            body += path(f'M{bx} {top}L{bx - 60} {by - 20}M{bx} {top}L{bx + 60} {by - 20}', c['metal'], 3)
-            body += path(f'M{bx - 85} {by - 22}Q{bx} {by + 10} {bx + 85} {by - 22}Z', c['secondary'], 2, c['secondary'])
-            for k in range(weight):body += g(card(44, 34, c['accent'] if side < 0 else c['pop'], .1), bx - 66 + (k % 3) * 44, by - 56 - (k // 3) * 34, swing)
-            body += tag(label, bx, by + 40, 170, c, c['light'])
+            # Chains: dashed ink links over metal, from a ring under the beam end to the pan rim.
+            ch = f'M{bx} {top + 14}L{bx - 70} {by - 24}M{bx} {top + 14}L{bx + 70} {by - 24}M{bx} {top + 14}L{bx} {by - 30}'
+            body += path(ch, d, 7) + path(ch, c['metal'], 4) + path(ch, d, 2, extra='stroke-dasharray="3 7" opacity=".7"')
+            body += f'<circle cx="{bx}" cy="{top + 10}" r="8" fill="none" stroke="{d}" stroke-width="6"/><circle cx="{bx}" cy="{top + 10}" r="8" fill="none" stroke="{c["metal"]}" stroke-width="3"/>'
+            bowl = f'M{bx - 88} {by - 22}Q{bx} {by + 14} {bx + 88} {by - 22}Z'
+            body += path(bowl, d, 0, d, 'transform="translate(5 7)" opacity=".18"') + path(bowl, d, 3, c['secondary'])
+            body += g(path(f'M{bx - 70} {by - 16}Q{bx - 30} {by - 2} {bx + 10} {by - 4}', '#FFFFFF', 4), opacity=.35)
+            for k in range(weight):
+                body += g(self._weight(c['accent'] if side < 0 else c['pop'], c, knob=(k // 3 == (weight - 1) // 3)), bx - 66 + (k % 3) * 44, by - 56 - (k // 3) * 34, swing)
+            body += rect(bx - 94, by - 28, 188, 10, c['metal'], 5, d, 3)
+            body += tag(label, bx, by + 40, 190, c, c['light'], max(22, label_size(label, 150, 26)))
         return body
 
     def seams(self, p, pose):
@@ -405,18 +453,102 @@ register(ReceiptStack(
 class StampGate(Rig):
     DOC_TOP = -250
 
+    @staticmethod
+    def _shade(shape, dx=6, dy=7, o=.18):
+        """Soft cut-paper drop shadow: the same shape in ink, offset and faint."""
+        return g(shape, dx, dy, opacity=o)
+
+    @staticmethod
+    def _rough_rect(w, h, step=9, amp=2.2, seed=0):
+        """A rectangle outline with a deterministic rubber-stamp wobble."""
+        pts = []
+        for side in range(4):
+            n = int((w if side % 2 == 0 else h) / step)
+            for k in range(n):
+                f = k / n;j = amp * math.sin(seed + len(pts) * 2.39) * math.cos(len(pts) * 1.13)
+                if side == 0:pts.append((-w / 2 + f * w, -h / 2 + j))
+                elif side == 1:pts.append((w / 2 + j, -h / 2 + f * h))
+                elif side == 2:pts.append((w / 2 - f * w, h / 2 + j))
+                else:pts.append((-w / 2 + j, h / 2 - f * h))
+        return 'M' + 'L'.join(f'{x:.1f} {y:.1f}' for x, y in pts) + 'Z'
+
+    def _stamp(self, c, mark, inked):
+        """Chunky rubber stamp; local origin at the face centre line, face bottom at y=20."""
+        d = c['dark']
+        s = rect(-56, 8, 112, 12, mark if inked else c['metal'], 3, d, 3)
+        s += rect(-64, -20, 128, 30, c['primary'], 7, d, 3) + g(rect(-56, -15, 70, 6, '#FFFFFF', 3), opacity=.35)
+        s += path('M-40 -20V10M40 -20V10', d, 2, extra='opacity=".25"')
+        s += rect(-24, -38, 48, 20, c['metal'], 5, d, 3) + path('M-24 -28H24', d, 2, extra='opacity=".3"')
+        s += path('M-12 -38C-20 -60 -6 -76 -11 -96L11 -96C6 -76 20 -60 12 -38Z', c['primary'], 3, c['primary'])
+        s += path('M-12 -38C-20 -60 -6 -76 -11 -96L11 -96C6 -76 20 -60 12 -38Z', d, 3)
+        s += path('M-15 -52H15M-13 -62H13', d, 3) + g(path('M-4 -44C-9 -60 -1 -74 -4 -90', '#FFFFFF', 4), opacity=.35)
+        s += f'<circle cx="0" cy="-118" r="27" fill="{c["secondary"]}" stroke="{d}" stroke-width="3"/>'
+        s += f'<ellipse cx="-9" cy="-127" rx="9" ry="6" fill="#FFFFFF" opacity=".4"/>'
+        return s
+
     def draw(self, p, pose, c):
         start, end, action, t = pose;tc = self.contact_t('stamp') if action else 1;t = t if action else (1 if start == 'stamped' else 0)
         u = t_in(t, tc);after = t_after(t, tc);ok = p['verdict'] == 'approved'
         stamp_y = lerp(-620, self.DOC_TOP, ease_in(u)) - (120 * ease(after * 2) if after else 0)
-        body = rect(-260, -40, 520, 40, c['dark'], 6) + rect(-220, -250, 300, 210, c['secondary'], 10)
-        body += g(card(240, 150, c['light'], .1) + txt(p['document'], 120, 52, label_size(p['document'], 210, 24), c['dark'], 900, 'middle') + path('M30 90H210M30 112H170', c['metal'], 3), -190, self.DOC_TOP)
+        d = c['dark'];mark = c['accent'] if ok else c['pop'];sh = self._shade
+        # Floor shadow, desk (top, drawer, legs) and the ink pad.
+        body = g(rect(-250, -8, 600, 10, d, 5), opacity=.15)
+        legs = rect(-232, -60, 18, 60, c['metal'], 4, d, 3) + rect(92, -60, 18, 60, c['metal'], 4, d, 3) + rect(-214, -36, 306, 8, c['metal'], 3, d, 3)
+        body += sh(rect(-232, -60, 18, 60, d) + rect(92, -60, 18, 60, d)) + legs
+        body += sh(rect(-248, -78, 374, 20, d, 6)) + rect(-248, -78, 374, 20, c['primary'], 6, d, 3) + g(rect(-240, -74, 200, 4, '#FFFFFF', 2), opacity=.3)
+        body += rect(-170, -58, 120, 22, c['primary'], 4, d, 3) + rect(-122, -50, 24, 6, d, 3)
+        body += sh(rect(84, -96, 40, 18, d, 4)) + rect(84, -96, 40, 18, c['metal'], 4, d, 3) + rect(88, -101, 32, 7, mark, 3, d, 2)
+        # In-tray board with the queue of documents waiting behind the active one.
+        body += sh(rect(-224, -272, 308, 196, d, 12)) + rect(-224, -272, 308, 196, c['secondary'], 12, d, 3)
+        body += g(rect(-212, -262, 284, 10, '#FFFFFF', 5), opacity=.25)
+        for bx in (-210, 70):body += f'<circle cx="{bx}" cy="-258" r="4.5" fill="{c["metal"]}" stroke="{d}" stroke-width="2"/>'
+        for k, (dx, dy, a) in enumerate(((-26, -24, -5), (-10, -12, 3))):
+            back = card(240, 175, c['light'], .1) + path(f'M24 {16 + k * 4}H{120 + k * 30}', c['metal'], 3)
+            body += g(back, -190 + dx, self.DOC_TOP + dy, a)
+        doc = card(240, 175, c['light'], .1) + rect(0, 0, 240, 10, mark, 0)
+        doc += txt(p['document'], 120, 52, label_size(p['document'], 210, 24), d, 900, 'middle')
+        doc += path('M60 66H180', mark, 3) + path('M30 96H210M30 112H190M30 128H150', c['metal'], 3)
+        doc += path('M150 150C158 140 164 156 172 146S186 150 200 144', d, 2) + rect(30, 140, 34, 18, 'none', 3, c['metal'], 2)
+        body += g(doc, -190, self.DOC_TOP)
+        body += sh(rect(-228, -108, 312, 32, d, 6)) + rect(-228, -108, 312, 32, c['secondary'], 6, d, 3)
+        body += g(card(44, 22, c['light'], .05) + txt('IN', 22, 17, 15, d, 900, 'middle'), -94, -103)
         if after > 0:
-            mark = c['accent'] if ok else c['pop']
-            body += g(rect(-70, -26, 140, 52, 'none', 8, mark, 6) + txt(p['stamp'], 0, 10, label_size(p['stamp'], 120, 26), mark, 900, 'middle'), -70, self.DOC_TOP + 80, -8, opacity=min(1.0, after * 4))
-        body += g(rect(-60, -10, 120, 30, c['primary'], 6) + rect(-14, -110, 28, 100, c['metal'], 4) + f'<circle cx="0" cy="-120" r="30" fill="{c["primary"]}"/>', -70, stamp_y - 20)
+            # Big tilted imprint with rough rubber edges, popping in then settling.
+            pop = 1 + .22 * (1 - ease(min(1.0, after * 3)))
+            fg = ink(mark, c)
+            imp = path(self._rough_rect(164, 62, seed=1), mark, 5, mark, extra='opacity=".94"') + path(self._rough_rect(146, 46, 11, 1.4, 4), fg, 2, extra='opacity=".55"')
+            imp += txt(p['stamp'], 0, 11, label_size(p['stamp'], 132, 30), fg, 900, 'middle')
+            body += g(imp, -70, self.DOC_TOP + 104, -7, pop, opacity=min(1.0, after * 4))
+            if after < .5:
+                # Ink splatter and impact ticks around the landing point.
+                f = after / .5;o = 1 - f
+                for k in range(7):
+                    ang = math.radians(196 + k * 25);r = 70 + 40 * ease(f) + (k % 3) * 8
+                    body += f'<circle cx="{-70 + r * math.cos(ang):.1f}" cy="{self.DOC_TOP + 4 + r * .55 * math.sin(ang):.1f}" r="{4 + (k % 2) * 3}" fill="{mark}" opacity="{o:.3f}"/>'
+                body += path(f'M-150 {self.DOC_TOP - 6}L-172 {self.DOC_TOP - 18}M10 {self.DOC_TOP - 6}L32 {self.DOC_TOP - 18}M-160 {self.DOC_TOP + 8}L-186 {self.DOC_TOP + 8}M20 {self.DOC_TOP + 8}L46 {self.DOC_TOP + 8}', d, 4, extra=f'opacity="{o:.3f}"')
+        # The stamp: a soft shadow on the paper tightens as it comes down.
+        if u > .35 and after < .5:
+            k = (u - .35) / .65;body += f'<ellipse cx="-66" cy="{self.DOC_TOP + 6}" rx="{30 + 34 * k:.1f}" ry="5" fill="{d}" opacity="{.18 * k * (1 - after * 2):.3f}"/>'
+        body += g(self._stamp(c, mark, True), -70, stamp_y - 20)
+        # Gate: rest fork, post with base, signal light and verdict sign, counterweighted striped arm.
         gate = -80 * ease(after) if ok else 6 * settle(after)
-        body += rect(130, -300, 30, 260, c['metal'], 6) + g(rect(0, -14, 220, 28, c['pop'] if not ok else c['accent'], 8) + ''.join(rect(20 + k * 50, -14, 25, 28, c['light']) for k in range(4)), 145, -280, gate)
+        lit = after > 0;lamp = mark if lit else c['metal']
+        body += sh(rect(332, -264, 14, 264, d)) + rect(332, -264, 14, 264, c['metal'], 4, d, 3) + path('M326 -270V-258H352V-270', d, 4)
+        body += sh(rect(122, -18, 46, 18, d, 4)) + rect(122, -18, 46, 18, c['metal'], 4, d, 3)
+        body += sh(rect(128, -310, 34, 296, d, 6)) + rect(128, -310, 34, 296, c['metal'], 6, d, 3) + g(rect(134, -302, 6, 280, '#FFFFFF', 3), opacity=.3)
+        body += rect(122, -320, 46, 14, c['dark'], 4) + path('M128 -300H104V-318', d, 5)
+        if lit:body += path('M104 -378V-392M78 -362L68 -370M130 -362L140 -370', lamp, 4, extra=f'opacity="{min(1.0, after * 3):.3f}"')
+        bulb = 'M86 -318V-342A18 18 0 0 1 122 -342V-318Z'
+        body += sh(path(bulb, d, 0, d)) + rect(80, -322, 48, 10, c['metal'], 4, d, 3) + path(bulb, lamp, 3, lamp) + path(bulb, d, 3)
+        body += g(path('M95 -338A9 9 0 0 1 104 -348', '#FFFFFF', 4), opacity=.5)
+        body += f'<circle cx="145" cy="-200" r="17" fill="{c["light"]}" stroke="{d}" stroke-width="3"/>'
+        glyph = ('M137 -200L143 -193L154 -207' if ok else 'M138 -207L152 -193M152 -207L138 -193') if lit else 'M138 -200H152'
+        body += path(glyph, mark if lit else c['metal'], 4)
+        arm_col = c['pop'] if not ok else c['accent']
+        arm = rect(-40, -18, 34, 36, c['metal'], 5, d, 3) + rect(0, -14, 220, 28, arm_col, 8)
+        arm += ''.join(rect(20 + k * 50, -14, 25, 28, c['light']) for k in range(4)) + rect(0, -14, 220, 28, 'none', 8, d, 3)
+        arm += f'<circle cx="0" cy="0" r="9" fill="{c["metal"]}" stroke="{d}" stroke-width="3"/>'
+        body += g(g(arm, 6, 7, opacity=.15) + arm, 145, -280, gate)
         return body
 
     def seams(self, p, pose):
