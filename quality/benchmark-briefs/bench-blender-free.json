@@ -119,23 +119,15 @@
       "headline": "CYCLES ENGINE",
       "payoff_headline": "TRACES REAL LIGHT",
       "visual": {
-        "rig": "balance-scale",
+        "rig": "light-render",
         "params": {
-          "left_label": "CYCLES",
-          "right_label": "REAL CAMERA",
-          "left_weight": 5,
-          "right_weight": 5
+          "label": "CYCLES",
+          "result": "LIKE A CAMERA",
+          "subject": "teapot"
         },
-        "room": "park",
-        "insert": {
-          "kind": "star_badge",
-          "args": {
-            "rating": 5,
-            "filled": 5
-          }
-        }
+        "room": "workshop"
       },
-      "relation": "trade-off"
+      "relation": "transform"
     },
     {
       "id": "funded",

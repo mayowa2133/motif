@@ -57,6 +57,7 @@ RIG_RELATIONS = {
     'bridge-span': ('connect',),
     'device-wall': ('everywhere',),
     'app-screen': ('demo',),
+    'light-render': ('transform',),
 }
 
 # Words that suggest a relation when a brief does not name one. Deliberately
