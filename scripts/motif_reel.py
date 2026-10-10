@@ -89,7 +89,7 @@ def _insert_for(fact, text, cat):
         unit = re.sub(r'[$\d,.%+]', '', fact.get('value', '')).strip()
         return {'kind': 'counter', 'args': {'start': 0, 'end': num['value'], 'prefix': num['prefix'], 'suffix': num['suffix'], 'label': _short(unit or fact['claim'], 16)}}
     from motif_library import words
-    best = [e for e in retrieve(cat, text, 'insert', 3, exclude=('comment_end_card', 'counter')) if words(text) & set(e['tags'])]
+    best = [e for e in retrieve(cat, text, 'insert', 3, exclude=('comment_end_card', 'counter', 'progress_bar')) if words(text) & set(e['tags'])]
     # No insert beats a filler one: a full progress bar labelled with a stray word
     # was clutter that fought the rig's own labels (2026-10-09 review, item 5).
     if not best:return None
