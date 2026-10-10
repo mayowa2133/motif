@@ -118,22 +118,60 @@ class PlateStack(Rig):
         """Origin of plate k; its underside (y + 6) rests on the rim below (y - 20) or the counter (-46)."""
         return -52 - k * self.PLATE
 
+    def _counter(self, c):
+        """Buffet counter: floor shadow, panelled cabinet with knobs, top slab with lip; top surface at y=-46."""
+        d = c['dark'];s = g(rect(-236, -8, 472, 12, d, 6), opacity=.16)
+        s += g(rect(-220, -40, 440, 40, d, 6), 6, 4, opacity=.15) + rect(-220, -40, 440, 40, c['primary'], 6, d, 3)
+        s += rect(-216, -8, 432, 6, d, 3)
+        for x in (-206, 132):
+            s += rect(x, -30, 74, 20, 'none', 4, d, 2) + g(rect(x + 4, -27, 40, 3, '#FFFFFF', 1.5), opacity=.3)
+            s += f'<circle cx="{x + (62 if x > 0 else 12)}" cy="-20" r="4" fill="{c["metal"]}" stroke="{d}" stroke-width="2"/>'
+        s += g(rect(-230, -46, 460, 14, d, 6), 4, 4, opacity=.18) + rect(-230, -46, 460, 14, c['secondary'], 6, d, 3)
+        s += g(rect(-222, -43, 300, 3, '#FFFFFF', 1.5), opacity=.45) + path('M-226 -35H226', d, 2, extra='opacity=".2"')
+        return s
+
+    def _props(self, c):
+        """Napkin stack (left) and a cutlery pot (right), both standing on the counter top."""
+        d = c['dark'];s = ''
+        for k, col in enumerate((c['light'], c['pop'], c['light'])):
+            y = -58 - k * 10;s += rect(-214 + k * 2, y, 66 - k * 4, 11, col, 3, d, 2)
+        s += path('M-190 -88V-58', c['accent'], 4)
+        for dx, a, kind in ((-12, -12, 0), (2, 4, 1), (14, 14, 0)):
+            stem = rect(-3, -66, 6, 60, c['metal'], 3, d, 2)
+            head = (path('M-7 -84V-66H7V-84M0 -84V-66', d, 2.5, c['metal']) if kind == 0 else f'<ellipse cx="0" cy="-74" rx="9" ry="12" fill="{c["metal"]}" stroke="{d}" stroke-width="2"/>')
+            s += g(stem + head, 186 + dx, -70, a)
+        pot = 'M160 -112H212L206 -48H166Z'
+        s += path(pot, d, 0, d, 'transform="translate(4 4)" opacity=".18"') + path(pot, d, 3, c['accent'])
+        s += path('M164 -92H208M166 -70H206', d, 2, extra='opacity=".3"') + g(path('M170 -106L174 -54', '#FFFFFF', 4), opacity=.35)
+        return s
+
+    def _plate(self, y, k, c, wob=0):
+        """One dinner plate: ink rim, inner well, coloured band with dots, glint, foot ring shadow."""
+        d = c['dark'];rim = 'M-110 0Q-118 -16 -96 -20H96Q118 -16 110 0Q100 8 0 8Q-100 8 -110 0Z'
+        col = [c['primary'], c['accent'], c['pop']][k % 3]
+        s = path(rim, d, 0, d, 'transform="translate(3 5)" opacity=".2"') + path(rim, d, 3, c['light'])
+        s += path('M-100 2Q0 13 100 2', d, 2, extra='opacity=".22"') + path('M-84 -16Q0 -11 84 -16', d, 2, extra='opacity=".2"')
+        s += path('M-80 -8H80', col, 4) + ''.join(f'<circle cx="{x}" cy="-8" r="2.6" fill="{col}"/>' for x in (-94, 94))
+        s += g(path('M-104 -4Q-108 -14 -90 -17', '#FFFFFF', 3), opacity=.6)
+        return g(s, 0, y, wob)
+
     def draw(self, p, pose, c):
         start, end, action, t = pose;tc = self.contact_t('stack') if action else 0
         n0, n1 = p['count_from'], p['count_to'];resting = n1 if (start == 'tall' and not action) else n0
-        body = rect(-220, -40, 440, 40, c['floor'], 6) + rect(-230, -46, 460, 14, c['secondary'], 6)  # buffet counter
-        def plate(y, k, wob=0):
-            return g(path('M-110 0Q-118 -16 -96 -20H96Q118 -16 110 0Q100 8 0 8Q-100 8 -110 0Z', c['dark'], 0, c['dark'], 'transform="translate(3 5)" opacity=".2"')
-                     + path('M-110 0Q-118 -16 -96 -20H96Q118 -16 110 0Q100 8 0 8Q-100 8 -110 0Z', c['light'], 2, c['light'])
-                     + path('M-80 -10H80', [c['primary'], c['accent'], c['pop']][k % 3], 4), 0, y, wob)
+        body = self._counter(c) + self._props(c)
         lean = settle(t_after(t, tc), 3) if action else 0
-        for k in range(resting):body += plate(self.plate_y(k), k, lean * k / max(1, resting))
+        for k in range(resting):body += self._plate(self.plate_y(k), k, c, lean * k / max(1, resting))
         if action:
             # Plates n0 .. n1-1 drop in turn; the last lands exactly at the contact frame.
             for j, k in enumerate(range(n0, n1)):
                 land = tc * (j + 1) / max(1, n1 - n0);u = t_in(t, land)
                 y = lerp(-900, self.plate_y(k), ease_in(u))
-                body += plate(y, k, lean * k / max(1, n1) if u >= 1 else 4 * (1 - u))
+                body += self._plate(y, k, c, lean * k / max(1, n1) if u >= 1 else 4 * (1 - u))
+            # Puff lines at the top plate the moment it lands.
+            after = t_after(t, tc)
+            if 0 < after < .4:
+                o = 1 - after / .4;yt = self.plate_y(n1 - 1);r = 124 + 30 * after / .4
+                body += path(f'M{-r} {yt - 6}L{-r - 22} {yt - 16}M{r} {yt - 6}L{r + 22} {yt - 16}M{-r + 4} {yt + 6}H{-r - 22}M{r - 4} {yt + 6}H{r + 22}', c['dark'], 4, extra=f'opacity="{o:.3f}"')
         body += tag(p['label'], 0, -14, 260, c, c['light'])
         return body
 
@@ -157,18 +195,75 @@ register(PlateStack(
 class HydraulicPress(Rig):
     OBJ_TOP = -230
 
+    @staticmethod
+    def _rivets(pts, c, r=4.5):
+        return ''.join(f'<circle cx="{x}" cy="{y}" r="{r}" fill="{c["metal"]}" stroke="{c["dark"]}" stroke-width="2"/>' for x, y in pts)
+
+    def _frame(self, c):
+        """Base with hazard band, two riveted columns with foot collars, crown beam with rivets and lower lip."""
+        d = c['dark'];s = g(rect(-262, -8, 524, 12, d, 6), opacity=.16)
+        s += rect(-250, -40, 500, 40, d, 6) + g(rect(-242, -36, 330, 4, '#FFFFFF', 2), opacity=.2)
+        s += ''.join(path(f'M{x} -12L{x + 10} -30H{x + 22}L{x + 12} -12Z', c['secondary'], 0, c['secondary']) for x in range(-124, 112, 26))
+        s += rect(-130, -32, 260, 22, 'none', 3, c['metal'], 2) + self._rivets([(-160, -20), (160, -20), (-236, -20), (236, -20)], c, 4)
+        for x0 in (-230, 190):
+            s += g(rect(x0, -640, 40, 600, d, 6), 6, 0, opacity=.18) + rect(x0, -640, 40, 600, c['metal'], 6, d, 3)
+            s += g(rect(x0 + 6, -628, 7, 576, '#FFFFFF', 3), opacity=.3) + g(rect(x0 + 28, -628, 6, 576, '#000000', 3), opacity=.12)
+            s += path(f'M{x0 + 4} -460H{x0 + 36}M{x0 + 4} -300H{x0 + 36}', d, 2, extra='opacity=".25"')
+            s += rect(x0 - 8, -66, 56, 26, c['primary'], 5, d, 3) + self._rivets([(x0 + 6, -53), (x0 + 34, -53)], c, 3.5)
+        s += g(rect(-250, -690, 500, 60, d, 10), 6, 6, opacity=.18) + rect(-250, -690, 500, 60, c['primary'], 10, d, 3)
+        s += g(rect(-240, -684, 340, 6, '#FFFFFF', 3), opacity=.35) + g(rect(-246, -642, 492, 9, '#000000', 4), opacity=.15)
+        s += self._rivets([(x, y) for x in (-226, -186, -146, 146, 186, 226) for y in (-674, -648)], c, 4)
+        # Cylinder housing under the crown: the ram slides out of it.
+        s += rect(-46, -634, 92, 40, c['metal'], 6, d, 3) + path('M-46 -620H46M-46 -606H46', d, 2, extra='opacity=".3"') + g(rect(-38, -630, 12, 32, '#FFFFFF', 4), opacity=.3)
+        return s
+
+    def _gauge(self, c, level):
+        """Pressure gauge on the right column, hose up to the crown; needle swings with level 0..1."""
+        d = c['dark'];gx, gy = 210, -470;s = path(f'M{gx + 14} {gy - 26}C246 -540 248 -600 238 -630', d, 9) + path(f'M{gx + 14} {gy - 26}C246 -540 248 -600 238 -630', c['secondary'], 5)
+        s += f'<circle cx="{gx + 5}" cy="{gy + 6}" r="32" fill="{d}" opacity=".18"/><circle cx="{gx}" cy="{gy}" r="32" fill="{c["metal"]}" stroke="{d}" stroke-width="3"/>'
+        s += f'<circle cx="{gx}" cy="{gy}" r="24" fill="{c["light"]}" stroke="{d}" stroke-width="2"/>'
+        red = f'M{gx + 24 * math.cos(math.radians(-30)):.1f} {gy + 24 * math.sin(math.radians(-30)):.1f}A24 24 0 0 1 {gx + 24 * math.cos(math.radians(40)):.1f} {gy + 24 * math.sin(math.radians(40)):.1f}'
+        s += path(red, c['pop'], 6)
+        for k in range(5):
+            a = math.radians(-210 + k * 62.5);s += path(f'M{gx + 17 * math.cos(a):.1f} {gy + 17 * math.sin(a):.1f}L{gx + 22 * math.cos(a):.1f} {gy + 22 * math.sin(a):.1f}', d, 2)
+        s += g(path('M-3 0L0 -20L3 0Z', d, 2.5, d), gx, gy, -120 + 220 * level) + f'<circle cx="{gx}" cy="{gy}" r="4" fill="{d}"/>'
+        s += g(path(f'M{gx - 20} {gy - 8}A22 22 0 0 1 {gx - 6} {gy - 21}', '#FFFFFF', 3), opacity=.6)
+        return s
+
     def draw(self, p, pose, c):
         start, end, action, t = pose;tc = self.contact_t('press') if action else 0
         u = t_in(t, tc) if action else (1 if start == 'crushed' else 0);squash = ease(t_after(t, tc)) if action else (1 if start == 'crushed' else 0)
-        plate_y = lerp(-600, self.OBJ_TOP, ease_in(u)) + 90 * squash
-        body = rect(-250, -40, 500, 40, c['dark'], 6) + rect(-230, -640, 40, 600, c['metal'], 6) + rect(190, -640, 40, 600, c['metal'], 6) + rect(-250, -690, 500, 60, c['primary'], 10)
-        body += rect(-12, -630, 24, plate_y + 630 - 40, c['metal'], 4)
+        plate_y = lerp(-600, self.OBJ_TOP, ease_in(u)) + 90 * squash;d = c['dark']
+        body = self._frame(c) + self._gauge(c, min(1.0, .15 + .65 * ease_in(u) + .2 * squash))
+        # Chrome ram rod out of the cylinder.
+        rod_h = plate_y - 40 + 598
+        if rod_h > 0:body += rect(-13, -598, 26, rod_h, c['metal'], 4, d, 3) + g(rect(-8, -596, 5, rod_h - 4, '#FFFFFF', 2), opacity=.45)
+        # The block: soft floor shadow, paper card, side creases once crushed.
         h = (-self.OBJ_TOP - 40) * (1 - .45 * squash);w = 200 * (1 + .35 * squash)
-        body += g(card(w, h, c['secondary'], .1) + txt(p['object'], w / 2, h / 2 + 8, label_size(p['object'], w - 20, 26), ink(c['secondary'], c), 900, 'middle'), -w / 2, -40 - h)
-        body += g(card(300, 40, c['accent'], .08), -150, plate_y - 40)
-        for k in range(3 if squash > .05 else 0):
-            a = -30 + k * 30;r = 130 + 40 * squash
-            body += path(f'M{r * math.sin(math.radians(a)) * 1.3:.1f} {-60 - k * 15}l{20 * (1 if a >= 0 else -1)} {-6}', c['pop'], 6)
+        body += g(rect(-w / 2 - 6, -46, w + 20, 8, d, 4), opacity=.2)
+        blk = card(w, h, c['secondary'], .1) + g(rect(8, 8, w - 40, 6, '#FFFFFF', 3), opacity=.35)
+        blk += path(f'M12 {h - 14}H{w - 12}', d, 2, extra='opacity=".18"')
+        if squash > .05:
+            o = min(1.0, squash * 2)
+            blk += path(f'M0 {h * .3}L14 {h * .42}L4 {h * .55}M{w} {h * .35}L{w - 16} {h * .5}L{w - 4} {h * .62}', d, 3, extra=f'opacity="{o:.3f}"')
+        blk += txt(p['object'], w / 2, h / 2 + 8, label_size(p['object'], w - 20, 26), ink(c['secondary'], c), 900, 'middle')
+        body += g(blk, -w / 2, -40 - h)
+        # Approach shadow on the block's top, tightening as the plate closes in.
+        if .3 < u < 1:
+            k = (u - .3) / .7;body += f'<ellipse cx="0" cy="{self.OBJ_TOP + 6}" rx="{60 + 70 * k:.1f}" ry="5" fill="{d}" opacity="{.2 * k:.3f}"/>'
+        # Press plate with guide arms riding collars on both columns.
+        py = plate_y - 40
+        for sd in (-1, 1):
+            body += rect(150 if sd > 0 else -190, py + 12, 40, 14, c['metal'], 3, d, 3)
+            body += rect(184 if sd > 0 else -236, py + 4, 52, 30, c['primary'], 6, d, 3) + self._rivets([(sd * 210, py + 19)], c, 4)
+        body += g(rect(-150, py, 300, 40, d, 8), 5, 6, opacity=.2) + rect(-150, py, 300, 40, c['accent'], 8, d, 3)
+        body += g(rect(-140, py + 5, 200, 5, '#FFFFFF', 2), opacity=.4) + g(rect(-146, py + 29, 292, 8, '#000000', 3), opacity=.18)
+        body += self._rivets([(-128, py + 20), (-96, py + 20), (96, py + 20), (128, py + 20)], c, 4) + rect(-30, py - 6, 60, 10, c['metal'], 3, d, 3)
+        for k, sd in enumerate((-1, 1, -1, 1) if squash > .05 else ()):
+            body += path(f'M{sd * (w / 2 + 12):.1f} {-56 - (k // 2) * 26}l{20 * sd} {-6}', c['pop'], 6)
+        if 0 < squash < 1:
+            o = 1 - squash;sx = w / 2 + 18
+            body += path(f'M{-sx} {-70}l-22 -10M{sx} {-70}l22 -10M{-sx} {-100}l-26 0M{sx} {-100}l26 0', d, 4, extra=f'opacity="{o:.3f}"')
         body += tag(p['force'], 0, -660, 240, c, c['light'])
         return body
 
@@ -378,18 +473,52 @@ class Thermometer(Rig):
 
     def level(self, v):return lerp(self.BOTTOM, self.TOP, v / 100)
 
+    def _mount(self, c):
+        """Screwed wooden backing board, stepped stand and top cap with hanging ring."""
+        d = c['dark'];s = g(rect(-170, -8, 340, 12, d, 6), opacity=.16)
+        s += g(rect(-112, -676, 236, 630, d, 18), 6, 6, opacity=.18) + rect(-112, -676, 236, 630, c['primary'], 18, d, 3)
+        s += g(rect(-102, -666, 12, 600, '#FFFFFF', 6), opacity=.25) + path('M-80 -640V-120M104 -640V-120', d, 2, extra='opacity=".14"')
+        s += ''.join(f'<circle cx="{x}" cy="{y}" r="6" fill="{c["metal"]}" stroke="{d}" stroke-width="2"/>' + path(f'M{x - 3} {y - 3}L{x + 3} {y + 3}', d, 2) for x, y in ((-92, -656), (104, -656), (-92, -232), (104, -232)))
+        s += rect(-160, -46, 320, 46, c['secondary'], 8, d, 3) + g(rect(-152, -42, 200, 5, '#FFFFFF', 2), opacity=.35)
+        s += rect(-130, -64, 260, 22, c['metal'], 6, d, 3) + g(rect(-122, -60, 140, 4, '#FFFFFF', 2), opacity=.35)
+        return s
+
     def draw(self, p, pose, c):
         start, end, action, t = pose;tc = self.contact_t('heat') if action else 1;t = t if action else (1 if start == 'hot' else 0)
-        y = lerp(self.level(p['from']), self.level(p['to']), ease(t_in(t, tc)))
-        body = rect(-70, -660, 140, 620, c['light'], 70, c['dark'], 4) + f'<circle cx="0" cy="-110" r="80" fill="{c["pop"]}" stroke="{c["dark"]}" stroke-width="4"/>'
-        body += rect(-30, y, 60, -110 - y, c['pop'], 20)
-        for k in range(0, 101, 20):
-            ty = self.level(k);body += path(f'M40 {ty}H70', c['dark'], 3) + txt(str(k), 82, ty + 8, 22, c['dark'], 800)
-        ty = self.level(p['to']);body += path(f'M-90 {ty}H90', c['accent'], 5) + tag(p['target'], -190, ty, 160, c, c['secondary'])
+        y = lerp(self.level(p['from']), self.level(p['to']), ease(t_in(t, tc)));d = c['dark'];heat = ease(t_in(t, tc))
+        body = self._mount(c)
+        # Glass tube: ink edge, faint bore, long glint; cap at the top.
+        body += rect(30, -646, 100, 520, c['light'], 10, d, 3) + g(rect(116, -640, 8, 508, '#000000', 3), opacity=.08)
+        body += g(rect(-70, -660, 140, 620, d, 70), 5, 6, opacity=.15) + rect(-70, -660, 140, 620, c['light'], 70, d, 4)
+        body += g(rect(-36, -632, 72, 520, c['metal'], 30), opacity=.18)
+        body += rect(-34, -676, 68, 22, c['metal'], 6, d, 3) + path('M-34 -665H34', d, 2, extra='opacity=".3"')
+        # Bulb with inner ring and highlight.
+        body += f'<circle cx="0" cy="-110" r="80" fill="{c["pop"]}" stroke="{d}" stroke-width="4"/>'
+        body += f'<circle cx="0" cy="-110" r="62" fill="none" stroke="{d}" stroke-width="2" opacity=".18"/>'
+        body += f'<ellipse cx="-30" cy="-140" rx="20" ry="13" fill="#FFFFFF" opacity=".4"/><circle cx="-46" cy="-116" r="5" fill="#FFFFFF" opacity=".35"/>'
+        # Mercury column with a bright core and a meniscus line at its top.
+        body += rect(-30, y, 60, -110 - y, c['pop'], 20) + g(rect(-18, y + 10, 10, max(0, -130 - y), '#FFFFFF', 5), opacity=.35)
+        body += path(f'M-22 {y + 6}Q0 {y - 2} 22 {y + 6}', d, 2, extra='opacity=".25"')
+        body += g(rect(-58, -630, 10, 470, '#FFFFFF', 5), opacity=.45) + g(rect(-56, -164, 6, 20, '#FFFFFF', 3), opacity=.45)
+        for k in range(0, 101, 10):
+            ty = self.level(k);major = k % 20 == 0
+            body += path(f'M{40 if major else 52} {ty}H70', d, 3 if major else 2)
+            if major:body += txt(str(k), 82, ty + 8, 22, d, 800)
+        # Heat waves either side of the bulb, stronger as it warms.
+        if heat > .05:
+            for sd in (-1, 1):
+                for j in range(2):
+                    x = sd * (140 + j * 20);w = f'M{x} -96q{-8 * sd} -14 0 -28q{8 * sd} -14 0 -28'
+                    body += path(w, c['pop'], 4, extra=f'opacity="{heat * (.9 - .3 * j):.3f}"')
+        ty = self.level(p['to'])
+        body += path(f'M-90 {ty}H90', c['accent'], 5) + path(f'M90 {ty - 10}L104 {ty}L90 {ty + 10}Z', d, 2, c['accent'])
+        body += tag(p['target'], -190, ty, 160, c, c['secondary'])
         stars = p['stars'];after = t_after(t, tc)
         for k in range(stars):
             u = max(0.0, min(1.0, after * stars - k));s = ease(u) * (1 + settle(u, .3))
-            if s > 0:body += g(path('M0 -30L9 -9L30 0L9 9L0 30L-9 9L-30 0L-9 -9Z', c['secondary'], 2, c['secondary']), 150 + (k % 2) * 60, -560 + k * 70, a=20 * k, s=s)
+            if s > 0:
+                st = path('M0 -30L9 -9L30 0L9 9L0 30L-9 9L-30 0L-9 -9Z', d, 3, c['secondary']) + g(path('M-3 -18L0 -8', '#FFFFFF', 3), opacity=.6)
+                body += g(st, 150 + (k % 2) * 60, -560 + k * 70, a=20 * k, s=s)
         return body + tag(p['label'], 0, -20, 240, c, c['light'])
 
     def seams(self, p, pose):

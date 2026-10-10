@@ -41,18 +41,47 @@ class DominoRun(Rig):
         u = 0.0 if t <= begin else min(1.0, (t - begin) / max(1e-9, land - begin))
         return (self.FINAL if k == n - 1 else math.radians(52)) * ease_in(u)
 
+    def _domino(self, k, c):
+        """One domino in pivot-local units: bottom-right corner at (0, 0)."""
+        d = c['dark'];W, H = self.W, self.H;col = c['primary'] if k % 2 else c['accent']
+        s = rect(-W, -H, W, H, col, 5, d, 3) + g(rect(-9, -H + 4, 6, H - 8, d, 3), opacity=.18)
+        s += g(rect(-W + 4, -H + 6, 5, H - 12, '#FFFFFF', 2.5), opacity=.35) + path(f'M{-W + 4} {-H / 2}H-4', d, 3)
+        s += f'<circle cx="{-W / 2}" cy="{-H / 2}" r="3" fill="{c["metal"]}" stroke="{d}" stroke-width="1.5"/>'
+        for half, n in ((-H, k % 3 + 1), (-H / 2, (k + 1) % 3 + 1)):
+            for j in range(n):s += f'<circle cx="{-W / 2}" cy="{half + H / 2 * (j + 1) / (n + 1):.1f}" r="4.2" fill="{c["light"]}" stroke="{d}" stroke-width="1.5"/>'
+        return s
+
+    def _bell(self, c):
+        """Desk bell in bell-local units: rim from (0, 0) to (100, 0), dome up to y=-78."""
+        d = c['dark'];k = c['secondary'];dome = 'M0 0Q-6 -70 50 -78Q106 -70 100 0Z'
+        s = path(dome, d, 0, d, 'transform="translate(5 7)" opacity=".18"') + path(dome, d, 3, k)
+        s += g(path('M64 -4Q94 -10 92 -40Q84 -68 58 -76Q86 -58 82 -4Z', d, 0, d), opacity=.16)
+        s += g(path('M16 -18Q14 -54 42 -66', '#FFFFFF', 7), opacity=.4) + path('M8 -26Q50 -36 92 -26', d, 2, extra='opacity=".3"')
+        s += rect(-6, -8, 112, 14, c['metal'], 6, d, 3) + g(rect(0, -6, 60, 4, '#FFFFFF', 2), opacity=.35)
+        s += rect(42, -96, 16, 20, c['metal'], 4, d, 3) + f'<circle cx="50" cy="-98" r="10" fill="{c["pop"]}" stroke="{d}" stroke-width="3"/>'
+        s += f'<circle cx="50" cy="8" r="12" fill="{c["pop"]}" stroke="{d}" stroke-width="3"/><circle cx="46" cy="4" r="3.5" fill="#FFFFFF" opacity=".45"/>'
+        return s
+
     def draw(self, p, pose, c):
         start, end, action, t = pose;tc = self.contact_t('topple') if action else 0
-        body = rect(-280, -16, 560, 16, c['floor'], 4)
-        bx, by = self.bell_point(p);ring = t_after(t, tc) if action else (1.0 if start == 'fallen' else 0)
+        d = c['dark'];bx, by = self.bell_point(p)
+        # Wooden track with end caps, grain and a start mark.
+        body = g(rect(-280, -6, 560, 10, d, 5), opacity=.15) + rect(-280, -18, 560, 18, c['floor'], 5, d, 3)
+        body += g(rect(-272, -15, 360, 4, '#FFFFFF', 2), opacity=.25) + path('M-200 -6H-120M-40 -9H60M150 -5H230', d, 2, extra='opacity=".22"')
+        for ex in (-280, 262):body += rect(ex, -22, 18, 22, c['metal'], 4, d, 3) + f'<circle cx="{ex + 9}" cy="-11" r="3" fill="{d}"/>'
+        body += rect(-262, -24, 10, 6, c['pop'], 2, d, 2)
+        ring = t_after(t, tc) if action else (1.0 if start == 'fallen' else 0)
         swing = settle(ring, 14) if action else 0
-        bell = path('M0 0Q-6 -70 50 -78Q106 -70 100 0Z', c['dark'], 0, c['dark'], 'transform="translate(5 7)" opacity=".18"') + path('M0 0Q-6 -70 50 -78Q106 -70 100 0Z', c['secondary'], 3, c['secondary']) + f'<circle cx="50" cy="8" r="12" fill="{c["pop"]}"/>'
-        body += rect(bx + 46, by - 10, 8, -by + 10, c['metal'], 3) + g(bell, bx, by + 30 - 30, swing) + tag(p['target'], bx + 50, by - 110, 150, c, c['light'])
+        # Bell post on a screwed foot plate, with a collar under the bell.
+        body += rect(bx + 14, -30, 72, 14, c['metal'], 5, d, 3) + ''.join(f'<circle cx="{bx + x}" cy="-23" r="3" fill="{d}"/>' for x in (24, 76))
+        body += rect(bx + 44, by - 10, 12, -by - 20, c['metal'], 3, d, 3) + g(rect(bx + 46, by - 4, 3, -by - 30, '#FFFFFF', 1.5), opacity=.35)
+        body += rect(bx + 38, -60, 24, 10, c['metal'], 3, d, 2)
+        body += g(self._bell(c), bx, by, swing) + tag(p['target'], bx + 50, by - 142, 150, c, c['light'])
         body += burst(bx + 50, by - 30, ring if action else 0, c)
         for k in range(p['count']):
             a = self.angle(p, k, t, tc, action, start);xr = self.right(k)
-            face = rect(-self.W, -self.H, self.W, self.H, c['primary'] if k % 2 else c['accent'], 5, c['dark'], 3) + f'<circle cx="{-self.W / 2}" cy="{-self.H * .7}" r="5" fill="{c["light"]}"/><circle cx="{-self.W / 2}" cy="{-self.H * .3}" r="5" fill="{c["light"]}"/>'
-            body += f'<g transform="translate({xr:.2f} 0) rotate({math.degrees(a):.3f})">{face}</g>'
+            body += g(rect(-self.W, -self.H, self.W, self.H, d, 5), xr + 4, 2, math.degrees(a), opacity=.16)
+            body += f'<g transform="translate({xr:.2f} 0) rotate({math.degrees(a):.3f})">{self._domino(k, c)}</g>'
         return body + tag(p['label'], -60, -200, 240, c, c['light'])
 
     def seams(self, p, pose):
@@ -80,22 +109,65 @@ class LaunchPad(Rig):
         if not action:return self.RING_Y + self.NOSE if start == 'flying' else self.BASE0
         return lerp(self.BASE0, self.RING_Y + self.NOSE, ease_in(t_in(t, tc)))
 
+    def _rocket(self, c):
+        """Rocket in rocket-local units: base at y=0, nose tip at y=-NOSE."""
+        d = c['dark'];N = self.NOSE
+        hull = f'M-60 0V-200C-60 -246 -24 {-N + 16} 0 {-N}C24 {-N + 16} 60 -246 60 -200V0Z'
+        fin = 'M-60 -20L-112 22V-70L-60 -112Z'
+        s = path(hull, d, 0, d, 'transform="translate(6 8)" opacity=".18"')
+        s += rect(-34, -4, 68, 26, c['metal'], 6, d, 3) + path('M-26 8H26', d, 2, extra='opacity=".35"')
+        fins = path(fin, d, 3, c['primary']) + g(path('M-60 -20L-112 22V0L-60 -50Z', d, 0, d), opacity=.15)
+        s += fins + g(fins, 0, 0, 0, -1, -1)
+        s += path(hull, d, 4, c['light']) + g(path('M24 -6V-200C24 -240 14 -270 4 -292C40 -262 56 -236 56 -200V-6Z', d, 0, d), opacity=.13)
+        s += g(path('M-44 -16V-196C-44 -226 -32 -250 -20 -266', '#FFFFFF', 8), opacity=.45)
+        cone = f'M-44 -236C-30 -268 -12 {-N + 8} 0 {-N}C12 {-N + 8} 30 -268 44 -236Q0 -224 -44 -236Z'
+        s += path(cone, d, 3, c['pop']) + g(path('M-30 -248C-22 -266 -12 -280 -4 -288', '#FFFFFF', 4), opacity=.4)
+        s += rect(-60, -62, 120, 16, c['accent'], 0, d, 3) + path('M-60 -110H60', d, 2, extra='opacity=".3"')
+        s += ''.join(f'<circle cx="{x}" cy="-54" r="3" fill="{d}"/>' for x in (-44, -22, 0, 22, 44))
+        s += f'<circle cx="0" cy="-170" r="38" fill="{c["metal"]}" stroke="{d}" stroke-width="4"/>'
+        s += ''.join(f'<circle cx="{34 * math.cos(k * math.pi / 4):.1f}" cy="{-170 + 34 * math.sin(k * math.pi / 4):.1f}" r="2.5" fill="{d}"/>' for k in range(8))
+        s += f'<circle cx="0" cy="-170" r="26" fill="{c["accent"]}" stroke="{d}" stroke-width="3"/>' + g(path('M-14 -176A16 16 0 0 1 -2 -188', '#FFFFFF', 5), opacity=.55)
+        return s
+
+    def _gantry(self, x0, x1, c):
+        """Lattice launch tower leaning in from the pad at x0 to the top at x1."""
+        d = c['dark'];s = path(f'M{x0} -40L{x1} -360', d, 14) + path(f'M{x0} -40L{x1} -360', c['metal'], 8)
+        s += path(f'M{x0 - 30 * (1 if x0 < 0 else -1)} -40L{x1 - 16 * (1 if x0 < 0 else -1)} -360', d, 6)
+        ox = -30 if x0 < 0 else 30;ix = -16 if x0 < 0 else 16;pts = []
+        for k in range(6):
+            f = k / 5;pts.append((lerp(x0, x1, f), lerp(-40, -360, f), lerp(x0 + ox, x1 + ix, f)))
+        for k in range(5):
+            (a, y0, b), (a2, y1, b2) = pts[k], pts[k + 1];s += path(f'M{b} {y0}L{a2} {y1}M{b} {y0}H{a}', d, 3, extra='opacity=".7"')
+        s += rect(x1 + (-26 if x0 < 0 else -6), -372, 32, 14, c['secondary'], 4, d, 3)
+        s += f'<circle cx="{x1 + (-10 if x0 < 0 else 10)}" cy="-382" r="7" fill="{c["pop"]}" stroke="{d}" stroke-width="2"/>'
+        return s
+
     def draw(self, p, pose, c):
         start, end, action, t = pose;tc = self.contact_t('lift') if action else 0
         y = self.base_y(t, tc, action, start);after = t_after(t, tc) if action else (1.0 if start == 'flying' else 0)
-        body = rect(-200, -40, 400, 40, c['metal'], 6) + rect(-150, -60, 300, 24, c['dark'], 6) + path('M-170 -40L-120 -360M170 -40L120 -360', c['metal'], 10)
-        # The target ring: rocket nose meets its lower edge at the contact.
-        body += f'<ellipse cx="0" cy="{self.RING_Y}" rx="120" ry="30" fill="none" stroke="{c["secondary"]}" stroke-width="14"/>' + tag(p['target'], 0, self.RING_Y - 80, 150, c, c['secondary'])
+        d = c['dark']
+        # Pad: shadow, stepped concrete base with hazard band, bolts and the launch deck.
+        body = g(rect(-220, -8, 440, 12, d, 6), opacity=.16) + self._gantry(-170, -120, c) + self._gantry(170, 120, c)
+        body += rect(-200, -40, 400, 40, c['metal'], 6, d, 3) + g(rect(-192, -36, 260, 5, '#FFFFFF', 2.5), opacity=.3)
+        body += ''.join(path(f'M{x} -40L{x + 20} 0', c['secondary'], 9) for x in (-196, -172, 152, 176))
+        body += ''.join(f'<circle cx="{x}" cy="-30" r="4" fill="{d}"/>' for x in (-130, -100, 100, 130))
+        body += rect(-150, -62, 300, 26, d, 6) + rect(-140, -56, 280, 6, c['metal'], 3) + ''.join(rect(x, -52, 14, 10, c['metal'], 2) for x in (-120, -86, 72, 106))
+        # The target ring: rocket nose meets its centre line at the contact. Back half, then front half over the nose.
+        ry = self.RING_Y;lit = after > 0
+        body += path(f'M-120 {ry}A120 30 0 0 1 120 {ry}', d, 22) + path(f'M-120 {ry}A120 30 0 0 1 120 {ry}', c['secondary'], 14)
+        body += tag(p['target'], 0, ry - 80, 150, c, c['secondary'])
         flame_h = 40 + 90 * min(1.0, t * 3) if action else (120 if start == 'flying' else 0)
         if flame_h:
-            body += path(f'M-40 {y}Q0 {y + flame_h * 1.4} 40 {y}Z', c['pop'], 0, c['pop']) + path(f'M-22 {y}Q0 {y + flame_h} 22 {y}Z', c['secondary'], 0, c['secondary'])
-            if action:body += ''.join(f'<circle cx="{(k * 47) % 260 - 130}" cy="{-20 - (k * 13) % 30}" r="{18 + (k % 3) * 8}" fill="{c["light"]}" opacity="{.5 * min(1.0, t * 4):.3f}"/>' for k in range(7))
-        rocket = (path(f'M-60 {y}V{y - 200}Q0 {y - self.NOSE - 40} 60 {y - 200}V{y}Z', c['dark'], 0, c['dark'], 'transform="translate(6 8)" opacity=".18"')
-                  + path(f'M-60 {y}V{y - 200}Q0 {y - self.NOSE - 40} 60 {y - 200}V{y}Z', c['light'], 3, c['light'])
-                  + path(f'M-60 {y - 20}L-110 {y + 20}V{y - 80}L-60 {y - 110}Z', c['primary'], 3, c['primary']) + path(f'M60 {y - 20}L110 {y + 20}V{y - 80}L60 {y - 110}Z', c['primary'], 3, c['primary'])
-                  + f'<circle cx="0" cy="{y - 170}" r="30" fill="{c["accent"]}" stroke="{c["dark"]}" stroke-width="4"/>')
-        nose_fix = path(f'M-20 {y - self.NOSE + 6}Q0 {y - self.NOSE - 4} 20 {y - self.NOSE + 6}', c['pop'], 8)
-        body += rocket + nose_fix + burst(0, self.RING_Y, after, c, 10, 60, 170)
+            yb = y + 22
+            body += path(f'M-40 {yb}Q0 {yb + flame_h * 1.4} 40 {yb}Z', c['pop'], 3, c['pop']) + path(f'M-26 {yb}Q0 {yb + flame_h} 26 {yb}Z', c['secondary'], 0, c['secondary'])
+            body += path(f'M-10 {yb}Q0 {yb + flame_h * .55} 10 {yb}Z', c['light'], 0, c['light'])
+            if action:body += ''.join(f'<circle cx="{(k * 47) % 260 - 130}" cy="{-20 - (k * 13) % 30}" r="{18 + (k % 3) * 8}" fill="{c["light"]}" stroke="{d}" stroke-width="2" opacity="{.6 * min(1.0, t * 4):.3f}"/>' for k in range(7))
+        body += g(self._rocket(c), 0, y)
+        front = path(f'M-120 {ry}A120 30 0 0 0 120 {ry}', d, 22) + path(f'M-120 {ry}A120 30 0 0 0 120 {ry}', c['secondary'], 14)
+        front += g(path(f'M-100 {ry + 10}A110 26 0 0 0 -20 {ry + 29}', '#FFFFFF', 4), opacity=.4)
+        for k in range(8):
+            a = math.pi * (k + .5) / 8;front += f'<circle cx="{120 * math.cos(a):.1f}" cy="{ry + 30 * math.sin(a):.1f}" r="5" fill="{c["pop"] if lit and k % 2 else c["light"]}" stroke="{d}" stroke-width="2"/>'
+        body += front + burst(0, self.RING_Y, after, c, 10, 60, 170)
         return body + tag(p['label'], 0, -14, 240, c, c['light'])
 
     def seams(self, p, pose):
@@ -128,17 +200,44 @@ class MagnetPull(Rig):
         land = tc * (k + 1) / n;u = ease_in(t_in(t, land));(x0, y0), (x1, y1) = self.origin(k), self.stuck(k)
         return (lerp(x0, x1, u), lerp(y0, y1, u) - 60 * math.sin(math.pi * u))
 
+    def _magnet(self, c):
+        """Horseshoe magnet with steel pole tips, a catch plate across its face, and its stand."""
+        d = c['dark'];F = self.FACE
+        shoe = f'M{F} -520H230Q300 -520 300 -330Q300 -140 230 -140H{F}V-210H220Q230 -210 230 -330Q230 -450 220 -450H{F}Z'
+        s = rect(242, -150, 36, 150, d, 4) + rect(248, -150, 24, 150, c['metal'], 4, d, 3) + g(rect(252, -146, 5, 140, '#FFFFFF', 2.5), opacity=.35)
+        s += rect(236, -158, 48, 18, c['metal'], 4, d, 3) + rect(240, -96, 40, 12, c['metal'], 3, d, 2)
+        s += path(shoe, d, 0, d, 'transform="translate(7 8)" opacity=".2"') + path(shoe, d, 4, c['primary'])
+        s += g(path('M196 -450H220Q230 -450 230 -330Q230 -210 220 -210H196V-224H212Q216 -224 216 -330Q216 -436 212 -436H196Z', d, 0, d), opacity=.18)
+        s += g(path('M200 -504H232Q284 -504 286 -330', '#FFFFFF', 8), opacity=.32) + g(path('M290 -300Q288 -170 236 -156H200', d, 8), opacity=.14)
+        s += path('M190 -520V-450M190 -210V-140', d, 2.5, extra='opacity=".35"')
+        for y0 in (-520, -210):
+            s += rect(F, y0, 46, 70, c['light'], 3, d, 3) + rect(F + 8, y0, 8, 70, c['metal'], 0) + path(f'M{F + 24} {y0 + 4}V{y0 + 66}', d, 2, extra='opacity=".3"')
+            s += f'<circle cx="{F + 36}" cy="{y0 + 14}" r="3.5" fill="{d}"/><circle cx="{F + 36}" cy="{y0 + 56}" r="3.5" fill="{d}"/>'
+        # Steel catch plate bolted across the poles: the face the cards stick to.
+        s += g(rect(F - 74, -500, 74, 340, d, 8), 6, 6, opacity=.15) + rect(F - 74, -500, 74, 340, c['metal'], 8, d, 3)
+        s += g(rect(F - 66, -490, 8, 320, '#FFFFFF', 4), opacity=.35) + path(''.join(f'M{F - 50} {y}H{F - 14}' for y in range(-470, -170, 40)), d, 2, extra='opacity=".18"')
+        s += ''.join(f'<circle cx="{F - 37}" cy="{y}" r="5" fill="{c["metal"]}" stroke="{d}" stroke-width="2.5"/>' for y in (-486, -174))
+        return s
+
+    def _clip(self, c):
+        """Little steel paper clip on a card's top-left edge (card-local units)."""
+        d = c['dark'];return path('M10 10V-6Q10 -12 16 -12Q22 -12 22 -6V12Q22 16 18 16Q14 16 14 12V0', d, 6) + path('M10 10V-6Q10 -12 16 -12Q22 -12 22 -6V12Q22 16 18 16Q14 16 14 12V0', c['metal'], 3)
+
     def draw(self, p, pose, c):
-        start, end, action, t = pose;tc = self.contact_t('pull') if action else 0;n = p['count']
-        mag = (path(f'M{self.FACE} -520H230Q300 -520 300 -330Q300 -140 230 -140H{self.FACE}V-210H220Q230 -210 230 -330Q230 -450 220 -450H{self.FACE}Z', c['primary'], 3, c['primary'])
-               + rect(self.FACE, -520, 36, 70, c['light'], 2, c['dark'], 3) + rect(self.FACE, -210, 36, 70, c['light'], 2, c['dark'], 3) + rect(250, -140, 20, 140, c['metal'], 4))
+        from motif_rigs.library import ink
+        start, end, action, t = pose;tc = self.contact_t('pull') if action else 0;n = p['count'];d = c['dark']
         after = t_after(t, tc) if action else 0
-        waves = ''.join(path(f'M{self.FACE - 20 - r} -400Q{self.FACE - 40 - r} -330 {self.FACE - 20 - r} -260', c['accent'], 5, extra=f'opacity="{.6 * (1 - after):.3f}"') for r in (30, 70, 110)) if action and after < 1 else ''
-        body = rect(-280, -16, 560, 16, c['floor'], 4) + mag + waves
+        waves = ''.join(path(f'M{self.FACE - 90 - r} -400Q{self.FACE - 110 - r} -330 {self.FACE - 90 - r} -260', c['accent'], 5, extra=f'opacity="{.6 * (1 - after):.3f}"') for r in (30, 70, 110)) if action and after < 1 else ''
+        # Floor strip with plank seams, then the magnet rig.
+        body = g(rect(-280, -6, 580, 10, d, 5), opacity=.15) + rect(-280, -16, 560, 16, c['floor'], 4, d, 3)
+        body += g(rect(-272, -13, 300, 4, '#FFFFFF', 2), opacity=.25) + path('M-140 -16V0M20 -16V0M180 -16V0', d, 2, extra='opacity=".3"')
+        body += self._magnet(c) + waves
         for k in range(n):
             x, y = self.pos(k, n, t, tc, action, start)
-            body += g(card(70, 56, [c['secondary'], c['accent'], c['pop']][k % 3], .08) + txt(p['item'], 35, 36, label_size(p['item'], 62, 18), c['dark'], 900, 'middle'), x - 70, y - 28, -6 + 4 * (k % 3))
-        body += burst(self.FACE, -330, after, c)
+            fill = [c['secondary'], c['accent'], c['pop']][k % 3]
+            cd = card(70, 56, fill, .08) + txt(p['item'], 35, 36, label_size(p['item'], 62, 18), ink(fill, c), 900, 'middle') + self._clip(c)
+            body += g(cd, x - 70, y - 28, -6 + 4 * (k % 3))
+        body += burst(self.FACE - 40, -330, after, c)
         return body + tag(p['label'], 200, -40, 200, c, c['light'])
 
     def seams(self, p, pose):
