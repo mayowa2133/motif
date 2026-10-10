@@ -44,8 +44,17 @@ PALETTES = {
 }
 
 
+def known(name):
+    """A palette name, or "object/room": the first palette's object colours on the second's walls and floor."""
+    return all(part in PALETTES for part in name.split('/')) and name.count('/') <= 1
+
+
 def palette(name):
-    if name not in PALETTES:raise ValueError(f'unknown palette {name}; choose from {sorted(PALETTES)}')
+    if not known(name):raise ValueError(f'unknown palette {name}; choose from {sorted(PALETTES)} or "object/room"')
+    if '/' in name:
+        # One object carried across beats keeps its colours while the rooms around it change
+        # (Codex's v11 critique: match palettes on shared objects; Mayowa: keep scenes colourful).
+        obj, room = name.split('/');return {**PALETTES[obj], 'wall': PALETTES[room]['wall'], 'floor': PALETTES[room]['floor']}
     return PALETTES[name]
 
 

@@ -27,7 +27,7 @@ from motif_bot_kit import COSTUMES, dressed_bot
 from motif_props import PROPS
 from motif_rigs import get as get_rig
 from motif_rigs.base import place
-from motif_rigs.palettes import PALETTES, palette as get_palette, rotation
+from motif_rigs.palettes import PALETTES, known, palette as get_palette, rotation
 
 ROOT = Path(__file__).resolve().parents[1]
 W, H = 720, 1280
@@ -632,7 +632,7 @@ def solve(room, rig_name, values=None, palette=None, seed=0, beat=0, costume=Non
     if room not in ROOMS:raise ValueError(f'unknown room {room}; choose from {sorted(ROOMS)}')
     rig = get_rig(rig_name);rng = _rng(room, rig_name, seed, beat)
     palette = palette or rotation(beat + 1, seed)[beat]
-    if palette not in PALETTES:raise ValueError(f'unknown palette {palette}')
+    if not known(palette):raise ValueError(f'unknown palette {palette}')
     hero = hero_placement(rig, rng);hero_box = hero['box']
     bx, by, bscale, side = bot_placement(rig, hero, hero_box);half = BOT_HALF * bscale
     bot_box = (bx - half, by - 4.2 * half, 2 * half, 4.2 * half)

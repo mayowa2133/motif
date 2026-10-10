@@ -4273,6 +4273,38 @@
    "license": "CC0-1.0 icon data; trademark of its owner, nominative use",
    "source_url": "https://github.com/sqlite/sqlite/blob/43e862723ec680542ca6f608f9963c0993dd7324/art/sqlite370.eps",
    "evidence": "assets/brands/simple-icons/LICENSE.md"
+  },
+  {
+   "id": "brand/simple-icons/claude",
+   "sha256": "12fc05ae2a2936593596edf3ec94cc5c9ac2979c5d8bb9afb6075d112af1a1fa",
+   "origin": "licensed",
+   "generator": "npm simple-icons@13.21.0 icons/claude.svg",
+   "approval": {
+    "status": "APPROVED",
+    "by": "policy",
+    "date": "2026-10-09",
+    "note": "Nominative use of the product mark to identify the subject of the reel; icon data CC0 from simple-icons."
+   },
+   "path": "assets/brands/simple-icons/claude.svg",
+   "license": "CC0-1.0 icon data; trademark of its owner, nominative use",
+   "source_url": "https://claude.ai",
+   "evidence": "assets/brands/simple-icons/LICENSE.md"
+  },
+  {
+   "id": "brand/simple-icons/obsidian",
+   "sha256": "ceee016a3e7afcfa931e19b3dfa9eb26685fc8a9b4f177ff921e358d628abb33",
+   "origin": "licensed",
+   "generator": "npm simple-icons@13.21.0 icons/obsidian.svg",
+   "approval": {
+    "status": "APPROVED",
+    "by": "policy",
+    "date": "2026-10-09",
+    "note": "Nominative use of the product mark to identify the subject of the reel; icon data CC0 from simple-icons."
+   },
+   "path": "assets/brands/simple-icons/obsidian.svg",
+   "license": "CC0-1.0 icon data; trademark of its owner, nominative use",
+   "source_url": "https://obsidian.md",
+   "evidence": "assets/brands/simple-icons/LICENSE.md"
   }
  ]
 }

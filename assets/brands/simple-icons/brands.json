@@ -31,6 +31,18 @@
       "hex": "#7EBC6F",
       "source": "https://www.openstreetmap.org",
       "guidelines": "https://wiki.osmfoundation.org/wiki/Trademark_Policy"
+    },
+    "claude": {
+      "title": "Claude",
+      "hex": "#D97757",
+      "source": "https://claude.ai",
+      "guidelines": null
+    },
+    "obsidian": {
+      "title": "Obsidian",
+      "hex": "#7C3AED",
+      "source": "https://obsidian.md",
+      "guidelines": null
     }
   }
 }

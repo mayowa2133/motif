@@ -122,7 +122,7 @@ def plan_reel(brief, allow_draft=False, avoid_looks=()):
         return (fresh or ranked)[0]['id'] if (fresh or ranked) else None
 
     first_fact = facts[brief['beats'][0]['fact']]
-    hook_room = room_for(brief['topic'] + ' ' + hook, (brief.get('hook') or {}).get('room'));rooms.append(hook_room)
+    hook_room = room_for(brief['topic'] + ' ' + hook, (brief.get('hook') or {}).get('room') or ((brief.get('hook') or {}).get('visual') or {}).get('room'));rooms.append(hook_room)
     hook_insert = _insert_for(first_fact, hook, cat) if _number(first_fact.get('value')) else None
     beats.append({'id': 'hook', 'kind': 'hook', 'narration': hook, 'palette': palettes[0], 'shots': [
         {'id': 'hook', 'role': 'hook', 'headline': (brief.get('hook') or {}).get('headline') or _short(hook, 28), 'headline_b': _short(brief['topic'], 28), 'room': hook_room, 'rig': None,
@@ -148,16 +148,28 @@ def plan_reel(brief, allow_draft=False, avoid_looks=()):
         if not visual.get('insert') and num and any(str(num['value']) in t.replace(',', '') for t in rig_text(params, rig_id)):insert = None
         setup = b.get('headline') or _short(fact['claim'], 26);payoff = b.get('payoff_headline') or _short(fact.get('value') or b['narration'], 26)
         if payoff == setup:payoff = _short(b['narration'], 26)
+        beat_brand = visual['brand'] if 'brand' in visual else brand
+        if beat_brand != brand and 'logo' in _get_rig(rig_id).params_schema['properties'] and params.get('logo') == brand:params['logo'] = beat_brand
         beats.append({'id': b['id'], 'kind': 'claim', 'relation': relation, 'narration': b['narration'], 'fact': b['fact'], 'palette': visual.get('palette') or palettes[i + 1], 'shots': [
             {'id': f'{b["id"]}-a', 'role': 'setup', 'headline': setup, 'headline_b': _short(b['narration'], 26), 'room': room, 'rig': {'id': rig_id, 'params': params, **({'hold': True} if visual.get('hold') else {})}, 'insert': None,
              'bot': {'costume': costume, 'face': 'determined', 'pose': 'walking'}},
             {'id': f'{b["id"]}-b', 'role': 'payoff', 'headline': payoff, 'headline_b': _short(fact['claim'], 26), 'room': room, 'rig': {'id': rig_id, 'params': params, **({'hold': True} if visual.get('hold') else {})}, 'insert': insert,
              'bot': {'costume': costume, 'face': 'surprised', 'pose': 'pointing'}}]})
+        if beat_brand != brand:
+            for shot in beats[-1]['shots']:shot['brand'] = beat_brand
     # Hero-first opening (review item 5, round 2): the hook shows the first claim's machine
     # already in action with the product mark, the way the references open on the metaphor.
     # The first claim beat then replays it from the start with its own setup.
     first_claim = beats[1]['shots'][0]
-    if (brief.get('hook') or {}).get('hero', True):
+    hook_visual = (brief.get('hook') or {}).get('visual')
+    if hook_visual:
+        # The hook's own machine: a film can open on the problem before its first step.
+        from motif_rigs import get as _get_rig
+        hp = dict(hook_visual.get('params', {}))
+        if brand and 'logo' in _get_rig(hook_visual['rig']).params_schema['properties'] and 'logo' not in hp:hp['logo'] = brand
+        beats[0]['shots'][0].update({'rig': {'id': hook_visual['rig'], 'params': hp}, 'insert': None, 'crowd': 0, 'grammar': 'hero'})
+        if hook_visual.get('palette'):beats[0]['palette'] = hook_visual['palette']
+    elif (brief.get('hook') or {}).get('hero', True):
         beats[0]['shots'][0].update({'rig': copy.deepcopy(first_claim['rig']), 'insert': None, 'crowd': 0, 'grammar': 'hero'})
     cta_room = room_for('celebrate launch ' + brief['cta']['narration'], brief['cta'].get('room'))
     beats.append({'id': 'cta', 'kind': 'cta', 'narration': brief['cta']['narration'], 'palette': palettes[-1], 'shots': [
@@ -178,6 +190,11 @@ def default_label_warnings(beats):
             rig = get_rig(shot['rig']['id']);props = rig.params_schema['properties']
             text = [k for k, v in props.items() if v.get('type') == 'string' or v.get('items', {}).get('type') == 'string']
             left = [k for k in text if k not in shot['rig'].get('params', {})]
+            printed = getattr(rig, 'printed_text', None)
+            if printed:
+                # A rig that declares what it prints only leaves a default on screen when that default is printed.
+                on = set(printed(rig.params(shot['rig'].get('params'))))
+                left = [k for k in left if any(x in on for x in (rig.defaults.get(k) if isinstance(rig.defaults.get(k), list) else [rig.defaults.get(k)]))]
             if left:out.append(f'{beat["id"]}: {rig.name} text params {left} use library defaults {[rig.defaults.get(k) for k in left]}; set visual.params in the brief')
     return out
 
@@ -186,7 +203,7 @@ def validate_plan(plan, allow_draft=False):
     """Every ID must exist in the (approved) catalogue; params must fit the rig schema."""
     from motif_library import catalog, ids
     from motif_rigs import get as get_rig
-    from motif_rigs.palettes import PALETTES
+    from motif_rigs.palettes import known
     cat = catalog(allow_draft);errors, requests = [], []
     rigs, rooms, costumes, inserts = ids(cat, 'rig'), ids(cat, 'room'), ids(cat, 'costume'), ids(cat, 'insert')
     from motif_looks import LOOKS
@@ -202,7 +219,7 @@ def validate_plan(plan, allow_draft=False):
         elif rig and rig in RIG_RELATIONS and not fits(rig, beat['relation']):
             errors.append(f'{beat["id"]}: metaphor mismatch: {rig} shows {RIG_RELATIONS[rig]}, the claim is {beat["relation"]} (fits: {rigs_for(beat["relation"])})')
     for beat in plan['beats']:
-        if beat['palette'] not in PALETTES:errors.append(f'{beat["id"]}: unknown palette {beat["palette"]}')
+        if not known(beat['palette']):errors.append(f'{beat["id"]}: unknown palette {beat["palette"]}')
         for shot in beat['shots']:
             where = shot['id']
             if shot['room'] not in rooms:requests.append({'kind': 'room', 'id': shot['room'], 'needed_by': where})
@@ -425,7 +442,7 @@ def shot_frames(shot, layout, seed, look='paper-craft', brand=None, prev=None, c
     from motif_rigs.base import ease, place
     from motif_rigs.palettes import palette
     import motif_looks
-    L = motif_looks.get(look);grammar = shot.get('grammar', 'crowd')
+    L = motif_looks.get(look);grammar = shot.get('grammar', 'crowd');brand = shot.get('brand', brand)
     c = palette(shot['palette']);n = shot['frames'];room = ms.ROOMS[shot['room']]
     rig = get_rig(shot['rig']['id']) if shot['rig'] else None
     action = next(iter(rig.actions)) if rig else None;tc = rig.contact_t(action) if rig else 0
@@ -538,7 +555,7 @@ def shot_frames(shot, layout, seed, look='paper-craft', brand=None, prev=None, c
 
 
 SOUND = {'overflow-vehicle': 'spring', 'plate-stack': 'paper', 'hydraulic-press': 'reject', 'race-track': 'star', 'balance-scale': 'cloth',
-         'stacked-meter': 'pop', 'thermometer': 'star', 'receipt-stack': 'paper', 'stamp-gate': 'reject', 'conveyor': 'key1'}
+         'stacked-meter': 'pop', 'thermometer': 'star', 'receipt-stack': 'paper', 'stamp-gate': 'reject', 'conveyor': 'key1', 'knowledge-vault': 'paper'}
 
 
 def prepare(project, brief):
@@ -675,7 +692,8 @@ def run(brief_path, out_root=None, allow_draft=False, stub_voice=False, render=F
         for k, h in enumerate(heads):beats_t.append({'id': f'{s["id"]}.{k}', 'start': round(a + n * k / len(heads), 3), 'end': round(a + n * (k + 1) / len(heads), 3), 'headline': h, 'metaphor': metaphor, 'cut_before': True})
     measured = validate(brief, measured=voice_duration + TAIL)
     if measured:stage('voice-runtime', 'FAIL', errors=measured);write(project / 'reel-record.json', record);raise ValueError('voice: ' + '; '.join(measured))
-    structure = check_plan(beats_t, beats_t[-1]['end'])
+    from motif_reel_script import limits
+    structure = check_plan(beats_t, beats_t[-1]['end'], limits(brief)['runtime'])
     stage('structure', 'FAIL' if structure else 'PASS', failures=structure, critics='live Codex structure/direction critics ' + ('run separately' if codex_available() else 'not available in this environment; not run'))
     if structure:write(project / 'reel-record.json', record);raise ValueError('structure: ' + '; '.join(structure))
     compiled = compile_reel(project, plan, spans, voice_duration, brief.get('seed', 0));stage('compile', 'PASS', duration=round(compiled['duration'], 3), shots=compiled['shots'])
