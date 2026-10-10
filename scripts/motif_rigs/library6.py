@@ -173,7 +173,7 @@ class KnowledgeVault(Rig):
         col = mix(col, GREY, grey);d = c['dark']
         out = g(card(104, 58, col, .1), -52, -29)
         out += rect(-44, -20, 22, 18, mix(col, '#FFFFFF', .5), 3, d, 2) + rect(-16, -16, 52, 4, mix(col, d, .35), 2) + rect(-16, -8, 38, 4, mix(col, d, .35), 2)
-        out += txt(label, 0, 20, label_size(label, 92, 17), ink(col, c), 900, 'middle')
+        out += txt(label, 0, 21, label_size(label, 96, 21), ink(col, c), 900, 'middle')
         if q > 0:out += g(f'<circle r="15" fill="{c["light"]}" stroke="{d}" stroke-width="2.5"/>' + txt('?', 0, 8, 22, d, 900, 'middle'), 40, -24, 0, ease(clamp(q * 1.8)))
         return out
 
@@ -382,7 +382,7 @@ class KnowledgeVault(Rig):
         if mode == 'ask':qk = ease(seg(u, 0, .3)) if t <= tc else 1.0;qo = 1.0
         else:qk = 1.0;qo = 1 - seg(t_in(t, tc), 0, .25) if t <= tc else 0.0
         if qo > 0:
-            q = g(card(qw, qh, c['light'], .08), -qw / 2, -qh / 2) + txt('ASK', -qw / 2 + 16, -qh / 2 + 26, 17, mix(d, c['light'], .35), 900)
+            q = g(card(qw, qh, c['light'], .08), -qw / 2, -qh / 2) + txt('ASK', -qw / 2 + 16, -qh / 2 + 26, 21, mix(d, c['light'], .35), 900)
             words = p['question'].split();lines, cur = [], ''
             for w_ in words:
                 if len(cur + ' ' + w_) > 13 and cur:lines.append(cur);cur = w_
@@ -462,6 +462,9 @@ class KnowledgeVault(Rig):
         dst = self.slot(b - 1 if mode == 'compile' else (min(a, MAX_PAGES - 1) if mode == 'save' else p['flag']))
         pair = ((cx, cy + self.PAGE[1] / 2), dst)
         return {'vault-contact': pair, 'page-slot': pair}
+
+    def identity(self, p):
+        return None if p['mode'] == 'forget' else self.name
 
     def printed_text(self, p):
         mode = p['mode']

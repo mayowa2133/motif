@@ -134,6 +134,10 @@ class AppScreen(Rig):
     """
     SIZES = {'monitor': (550, 380), 'laptop': (470, 320), 'phone': (270, 480)}
 
+    def identity(self, p):
+        # One window or terminal is one object; a different title is a different screen.
+        return f'{self.name}:{p.get("title")}'
+
     def screen(self, p):
         """(x, y, w, h) of the screen area; local origin is the floor under the rig."""
         w, h = self.SIZES[p['device']]

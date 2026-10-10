@@ -7,6 +7,7 @@
   "brand": {
     "slug": "claude"
   },
+  "mascot": "memo",
   "hook": {
     "alternates": [
       "You save articles, podcasts and book notes all year, and forget almost all of it."
@@ -194,7 +195,9 @@
             "PODCAST",
             "MEETING",
             "VIDEO"
-          ]
+          ],
+          "raw_label": "RAW",
+          "wiki_label": "WIKI"
         },
         "room": "office",
         "palette": "lagoon/berry"
@@ -229,7 +232,9 @@
             "MY GAPS"
           ],
           "pages_from": 0,
-          "pages_to": 7
+          "pages_to": 7,
+          "raw_label": "RAW",
+          "wiki_label": "WIKI"
         },
         "room": "workshop",
         "palette": "lagoon/citrus"
@@ -271,7 +276,9 @@
             1,
             4,
             6
-          ]
+          ],
+          "raw_label": "RAW",
+          "wiki_label": "WIKI"
         },
         "room": "living-room",
         "palette": "lagoon"
@@ -281,7 +288,7 @@
       "id": "save",
       "narration": "Every answer gets saved back into the wiki, so it gets smarter each time you use it.",
       "fact": "f6",
-      "headline": "ANSWERS GET SAVED",
+      "headline": "SAVED BACK TO THE WIKI",
       "payoff_headline": "SMARTER EVERY DAY",
       "relation": "grow",
       "visual": {
@@ -313,7 +320,9 @@
             1,
             4,
             6
-          ]
+          ],
+          "raw_label": "RAW",
+          "wiki_label": "WIKI"
         },
         "room": "office",
         "palette": "lagoon/sunrise"
@@ -351,7 +360,9 @@
           "pages_to": 8,
           "flag": 3,
           "flag_label": "OUTDATED",
-          "stamp": "ALL CHECKED"
+          "stamp": "ALL CHECKED",
+          "raw_label": "RAW",
+          "wiki_label": "WIKI"
         },
         "room": "workshop",
         "palette": "lagoon/berry"

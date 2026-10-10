@@ -272,6 +272,17 @@
       ],
       "default": "short",
       "description": "short: 20-32 s, 4-6 beats (the benchmark format). long: 30-62 s, 4-10 beats, for adaptations and how-tos."
+    },
+    "mascot": {
+      "type": "string",
+      "enum": [
+        "bot",
+        "kit",
+        "memo",
+        "lumo"
+      ],
+      "default": "bot",
+      "description": "The film's host character (scripts/motif_mascots.py). Same poses, cycles, faces and costumes as Bot."
     }
   }
 }

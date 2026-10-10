@@ -43,7 +43,7 @@ Only CANONICAL entries are offered to the planner. `--allow-draft` adds DRAFT en
 9. **Gate:** provenance and pacing on the finished project.
 10. **Review render:** `motif_frame_render.py` draws each frame in Chromium and pipes it to ffmpeg. The audio mix is narration plus SFX at -16 LUFS. The run stops at REVIEW_REQUIRED.
 
-Every stage's result is in `reel-record.json`.
+Every stage's result is in `reel-record.json`. A lessons stage after compile runs the checks in `quality/lessons.json`; see `AGENTS.md` for the agent playbook and `docs/IMPROVEMENT_LOOP.md` for the retro/lesson/regress loop.
 
 ## Known limits
 
