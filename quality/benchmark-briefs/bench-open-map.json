@@ -3,6 +3,9 @@
   "title": "The map anyone can edit",
   "topic": "a free world map",
   "seed": 53,
+  "brand": {
+    "slug": "openstreetmap"
+  },
   "hook": {
     "alternates": [
       "There is a map of the whole world that anyone can edit, and anyone can use for free."
@@ -48,7 +51,8 @@
           "label": "STREETS MAPPED"
         },
         "room": "park"
-      }
+      },
+      "relation": "pile-up"
     },
     {
       "id": "local",
@@ -57,21 +61,22 @@
       "headline": "LOCALS FIX IT",
       "payoff_headline": "SHOPS, LANES, STOPS",
       "visual": {
-        "rig": "race-track",
+        "rig": "app-screen",
         "params": {
-          "labels": [
-            "SHOP",
-            "BIKE LANE",
-            "BUS STOP"
+          "device": "phone",
+          "ui": "map",
+          "title": "Map editor",
+          "lines": [
+            "corner shop",
+            "new bike lane",
+            "bus stop"
           ],
-          "progress": [
-            1.0,
-            1.0,
-            1.0
-          ]
+          "result": "MAP FIXED",
+          "button": "SAVE"
         },
         "room": "street"
-      }
+      },
+      "relation": "demo"
     },
     {
       "id": "use",
@@ -80,14 +85,24 @@
       "headline": "USE IT FOR ANYTHING",
       "payoff_headline": "JUST GIVE CREDIT",
       "visual": {
-        "rig": "stamp-gate",
+        "rig": "app-screen",
         "params": {
-          "document": "YOUR APP",
-          "stamp": "CREDITED",
-          "verdict": "approved"
+          "device": "laptop",
+          "ui": "map",
+          "title": "your-app.com",
+          "lines": [
+            "corner shop",
+            "new bike lane",
+            "bus stop"
+          ],
+          "result": "CREDITED",
+          "button": "SHIP",
+          "prefilled": true,
+          "credit": "\u00a9 OpenStreetMap contributors"
         },
         "room": "beach"
-      }
+      },
+      "relation": "demo"
     },
     {
       "id": "cost",
@@ -110,7 +125,8 @@
             "strike": "$$$"
           }
         }
-      }
+      },
+      "relation": "attract"
     },
     {
       "id": "share",
@@ -119,14 +135,15 @@
       "headline": "IMPROVE IT",
       "payoff_headline": "SHARE IT BACK",
       "visual": {
-        "rig": "bridge-span",
+        "rig": "sprout-grow",
         "params": {
-          "planks": 6,
-          "left": "YOU",
-          "right": "THE MAP"
+          "leaves": 5,
+          "label": "YOUR FIX",
+          "bloom": "THE MAP"
         },
         "room": "night-sky"
-      }
+      },
+      "relation": "grow"
     }
   ],
   "cta": {

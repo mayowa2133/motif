@@ -188,7 +188,14 @@ def captions(style, groups, f, fonts, colours):
 # Camera, transitions -----------------------------------------------------------------
 
 def camera(style, role, u, f, n):
-    """(zoom, dx, dy) for frame f (u = f / (n - 1)) of a shot with this role."""
+    """(zoom, dx, dy) for frame f (u = f / (n - 1)) of a shot with this role, plus a
+    slow handheld drift: the references never hold a frame perfectly still
+    (median frame change 2.7-4.7 against Motif's 1.5-2.1, 2026-10-10)."""
+    z, dx, dy = _camera(style, role, u, f, n)
+    return z * (1 + .006 * math.sin(f * .09)), dx + 5 * math.sin(f * .07 + 1), dy + 4 * math.sin(f * .053)
+
+
+def _camera(style, role, u, f, n):
     from motif_rigs.base import ease
     if style == 'push':
         return ({'setup': 1.0 + .04 * u, 'payoff': 1.12 + .05 * ease(u)}.get(role, 1.0 + .06 * u), 0, 0)
@@ -202,19 +209,21 @@ def camera(style, role, u, f, n):
         return (1.06 + .02 * math.sin(f * .07), 14 * math.sin(f * .05), 9 * math.cos(f * .06))
     if style == 'pan':
         direction = -1 if role == 'payoff' else 1
-        return (1.13 + (.04 * ease(u) if role == 'payoff' else 0), direction * (32 - 64 * ease(u)), 0)
+        return (1.08 + (.03 * ease(u) if role == 'payoff' else 0), direction * (20 - 40 * ease(u)), 0)
     raise ValueError(f'unknown camera {style}')
 
 
 def transition_in(style, f, colour):
     """Overlay drawn on the first frames of a shot (a depth-0 piece)."""
     from motif_rigs.base import ease
-    if style == 'wipe' and f < 7:
-        x = 760 * ease(f / 7);return f'<path d="M{x - 60:.1f} 0H{x + 900:.1f}V1280H{x + 60:.1f}Z" fill="{colour}"/>'
-    if style == 'flash' and f < 5:
-        return f'<rect width="720" height="1280" fill="{colour}" opacity="{.85 * (1 - f / 5):.3f}"/>'
-    if style == 'iris' and f < 8:
-        r = 20 + 880 * ease(f / 8);return f'<path d="M0 0H720V1280H0Z M360 {640 - r:.1f}A{r:.1f} {r:.1f} 0 1 0 360 {640 + r:.1f}A{r:.1f} {r:.1f} 0 1 0 360 {640 - r:.1f}Z" fill="{colour}" fill-rule="evenodd"/>'
+    if style == 'wipe' and f < 3:
+        # A slanted band sweeps off to the right; the frame is never fully covered (v4 review:
+        # a full-cover wipe gave ~0.4 s of near-black at every cut).
+        x = -200 + 1100 * ease((f + 1) / 3);return f'<path d="M{x - 60:.1f} 0H{x + 240:.1f}L{x + 120:.1f} 1280H{x - 180:.1f}Z" fill="{colour}"/>'
+    if style == 'flash' and f < 3:
+        return f'<rect width="720" height="1280" fill="{colour}" opacity="{.6 * (1 - f / 3):.3f}"/>'
+    if style == 'iris' and f < 4:
+        r = 260 + 640 * ease((f + 1) / 4);return f'<path d="M0 0H720V1280H0Z M360 {640 - r:.1f}A{r:.1f} {r:.1f} 0 1 0 360 {640 + r:.1f}A{r:.1f} {r:.1f} 0 1 0 360 {640 - r:.1f}Z" fill="{colour}" fill-rule="evenodd"/>'
     return ''
 
 
@@ -222,17 +231,17 @@ def transition_out(style, f, n, colour):
     """Overlay drawn on the last frames of a shot."""
     from motif_rigs.base import ease_in
     left = n - 1 - f
-    if style == 'wipe' and left < 5:
-        x = -900 + 900 * ease_in((5 - left) / 5);return f'<path d="M{x - 60:.1f} 0H{x + 720:.1f}L{x + 840:.1f} 1280H{x + 60:.1f}Z" fill="{colour}"/>'
-    if style == 'iris' and left < 6:
-        r = 900 - 880 * ease_in((6 - left) / 6);return f'<path d="M0 0H720V1280H0Z M360 {640 - r:.1f}A{r:.1f} {r:.1f} 0 1 0 360 {640 + r:.1f}A{r:.1f} {r:.1f} 0 1 0 360 {640 - r:.1f}Z" fill="{colour}" fill-rule="evenodd"/>'
+    if style == 'wipe' and left < 2:
+        x = -300 + 500 * ease_in((2 - left) / 2);return f'<path d="M{x - 60:.1f} 0H{x + 240:.1f}L{x + 120:.1f} 1280H{x - 180:.1f}Z" fill="{colour}"/>'
+    if style == 'iris' and left < 3:
+        r = 900 - 640 * ease_in((3 - left) / 3);return f'<path d="M0 0H720V1280H0Z M360 {640 - r:.1f}A{r:.1f} {r:.1f} 0 1 0 360 {640 + r:.1f}A{r:.1f} {r:.1f} 0 1 0 360 {640 - r:.1f}Z" fill="{colour}" fill-rule="evenodd"/>'
     return ''
 
 
 def slide_offset(style, f):
     """Slide transition: the new shot rises into place over its first frames."""
     from motif_rigs.base import ease
-    return 320 * (1 - ease(f / 8)) if style == 'slide' and f < 8 else 0.0
+    return 120 * (1 - ease((f + 1) / 4)) if style == 'slide' and f < 4 else 0.0
 
 
 def fingerprint_of(look):

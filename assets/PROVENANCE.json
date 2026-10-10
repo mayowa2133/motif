@@ -4193,6 +4193,86 @@
    },
    "pixel_sha256": "5f447798f0afb93453a92be504201ff6afc657efcef582b42e7de8352267a63f",
    "path": "references/reconstruction/study/remainder/evidence.jpg"
+  },
+  {
+   "id": "brand/simple-icons/blender",
+   "sha256": "ec86e2c9cf9fc25f5c8d3bf2e8d201c0dce6683137f37a1e61f992da6566bff5",
+   "origin": "licensed",
+   "generator": "npm simple-icons@13.21.0 icons/blender.svg",
+   "approval": {
+    "status": "APPROVED",
+    "by": "policy",
+    "date": "2026-10-09",
+    "note": "Nominative use of the product mark to identify the subject of the reel; icon data CC0 from simple-icons."
+   },
+   "path": "assets/brands/simple-icons/blender.svg",
+   "license": "CC0-1.0 icon data; trademark of its owner, nominative use",
+   "source_url": "https://www.blender.org/about/logo",
+   "evidence": "assets/brands/simple-icons/LICENSE.md"
+  },
+  {
+   "id": "brand/simple-icons/letsencrypt",
+   "sha256": "1307c2a85ba8ea8fb6e738d2eef463eadfce19b1b1295084daff4663c4fdbddd",
+   "origin": "licensed",
+   "generator": "npm simple-icons@13.21.0 icons/letsencrypt.svg",
+   "approval": {
+    "status": "APPROVED",
+    "by": "policy",
+    "date": "2026-10-09",
+    "note": "Nominative use of the product mark to identify the subject of the reel; icon data CC0 from simple-icons."
+   },
+   "path": "assets/brands/simple-icons/letsencrypt.svg",
+   "license": "CC0-1.0 icon data; trademark of its owner, nominative use",
+   "source_url": "https://letsencrypt.org/trademarks/",
+   "evidence": "assets/brands/simple-icons/LICENSE.md"
+  },
+  {
+   "id": "brand/simple-icons/openstreetmap",
+   "sha256": "10c2abae1298f240bbfb939986c2b21b87f56b5b4f53adcf0dc12cd4dc8fe417",
+   "origin": "licensed",
+   "generator": "npm simple-icons@13.21.0 icons/openstreetmap.svg",
+   "approval": {
+    "status": "APPROVED",
+    "by": "policy",
+    "date": "2026-10-09",
+    "note": "Nominative use of the product mark to identify the subject of the reel; icon data CC0 from simple-icons."
+   },
+   "path": "assets/brands/simple-icons/openstreetmap.svg",
+   "license": "CC0-1.0 icon data; trademark of its owner, nominative use",
+   "source_url": "https://www.openstreetmap.org",
+   "evidence": "assets/brands/simple-icons/LICENSE.md"
+  },
+  {
+   "id": "brand/simple-icons/python",
+   "sha256": "ad9468e1c4903f73ae7eebfbe980f0f727a10db695be3d914e7d8bd25356a862",
+   "origin": "licensed",
+   "generator": "npm simple-icons@13.21.0 icons/python.svg",
+   "approval": {
+    "status": "APPROVED",
+    "by": "policy",
+    "date": "2026-10-09",
+    "note": "Nominative use of the product mark to identify the subject of the reel; icon data CC0 from simple-icons."
+   },
+   "path": "assets/brands/simple-icons/python.svg",
+   "license": "CC0-1.0 icon data; trademark of its owner, nominative use",
+   "source_url": "https://www.python.org/community/logos/",
+   "evidence": "assets/brands/simple-icons/LICENSE.md"
+  },
+  {
+   "id": "brand/simple-icons/sqlite",
+   "sha256": "71d4153bc9661dfe6b92dad70f737ec2b6c7c839311e502b4ca66fe664fe12b6",
+   "origin": "licensed",
+   "generator": "npm simple-icons@13.21.0 icons/sqlite.svg",
+   "approval": {
+    "status": "APPROVED",
+    "by": "policy",
+    "date": "2026-10-09",
+    "note": "Nominative use of the product mark to identify the subject of the reel; icon data CC0 from simple-icons."
+   },
+   "path": "assets/brands/simple-icons/sqlite.svg",
+   "license": "CC0-1.0 icon data; trademark of its owner, nominative use",
+   "source_url": "https://github.com/sqlite/sqlite/blob/43e862723ec680542ca6f608f9963c0993dd7324/art/sqlite370.eps",
+   "evidence": "assets/brands/simple-icons/LICENSE.md"
   }
  ]
 }

@@ -3,6 +3,9 @@
   "title": "A free film studio",
   "topic": "free 3D animation",
   "seed": 41,
+  "brand": {
+    "slug": "blender"
+  },
   "hook": {
     "alternates": [
       "There is a full movie studio you can download for free, forever."
@@ -68,7 +71,8 @@
             "strike": "$$$"
           }
         }
-      }
+      },
+      "relation": "unlock"
     },
     {
       "id": "commercial",
@@ -77,14 +81,15 @@
       "headline": "USE IT FOR ANYTHING",
       "payoff_headline": "EVEN CLIENT WORK",
       "visual": {
-        "rig": "bridge-span",
+        "rig": "stamp-gate",
         "params": {
-          "planks": 5,
-          "left": "BLENDER",
-          "right": "CLIENTS"
+          "document": "CLIENT WORK",
+          "stamp": "ALLOWED",
+          "verdict": "approved"
         },
         "room": "office"
-      }
+      },
+      "relation": "approve"
     },
     {
       "id": "tools",
@@ -104,7 +109,8 @@
           "output": "FILM"
         },
         "room": "living-room"
-      }
+      },
+      "relation": "transform"
     },
     {
       "id": "render",
@@ -113,23 +119,15 @@
       "headline": "CYCLES ENGINE",
       "payoff_headline": "TRACES REAL LIGHT",
       "visual": {
-        "rig": "thermometer",
+        "rig": "light-render",
         "params": {
-          "from": 10,
-          "to": 95,
-          "target": "REAL",
-          "label": "REALISM",
-          "stars": 3
+          "label": "CYCLES",
+          "result": "LIKE A CAMERA",
+          "subject": "teapot"
         },
-        "room": "park",
-        "insert": {
-          "kind": "star_badge",
-          "args": {
-            "rating": 5,
-            "filled": 5
-          }
-        }
-      }
+        "room": "workshop"
+      },
+      "relation": "transform"
     },
     {
       "id": "funded",
@@ -138,14 +136,15 @@
       "headline": "NO PLAN TO LOCK YOU IN",
       "payoff_headline": "FUNDED BY DONATIONS",
       "visual": {
-        "rig": "plate-stack",
+        "rig": "sprout-grow",
         "params": {
-          "count_from": 2,
-          "count_to": 14,
-          "label": "DONATIONS"
+          "leaves": 4,
+          "label": "DONATIONS",
+          "bloom": "BLENDER"
         },
         "room": "diner"
-      }
+      },
+      "relation": "grow"
     }
   ],
   "cta": {

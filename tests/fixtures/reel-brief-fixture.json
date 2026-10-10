@@ -43,16 +43,17 @@
       "headline": "FREE NOTES APP",
       "payoff_headline": "12,000 STARS IN A WEEK",
       "visual": {
-        "rig": "thermometer",
+        "rig": "stacked-meter",
         "params": {
-          "label": "STARS",
-          "target": "TRENDING",
-          "from": 5,
-          "to": 95,
-          "stars": 3
+          "from": 1,
+          "to": 12,
+          "unit": "k",
+          "label": "GITHUB STARS",
+          "rocket": true
         },
         "room": "street"
-      }
+      },
+      "relation": "big-number"
     },
     {
       "id": "cost",
@@ -69,7 +70,8 @@
           "to": 12
         },
         "room": "office"
-      }
+      },
+      "relation": "pile-up"
     },
     {
       "id": "sync",
@@ -78,21 +80,14 @@
       "headline": "SYNCS EVERY DEVICE",
       "payoff_headline": "NO PAID PLAN",
       "visual": {
-        "rig": "race-track",
+        "rig": "hydraulic-press",
         "params": {
-          "labels": [
-            "PHONE",
-            "LAPTOP",
-            "TABLET"
-          ],
-          "progress": [
-            1.0,
-            1.0,
-            1.0
-          ]
+          "object": "PAID PLAN",
+          "force": "FREE SYNC"
         },
         "room": "living-room"
-      }
+      },
+      "relation": "cost-crush"
     },
     {
       "id": "sort",
@@ -112,7 +107,8 @@
           "output": "FOLDERS"
         },
         "room": "workshop"
-      }
+      },
+      "relation": "transform"
     },
     {
       "id": "safe",
@@ -128,7 +124,8 @@
           "verdict": "approved"
         },
         "room": "server-room"
-      }
+      },
+      "relation": "approve"
     }
   ],
   "cta": {

@@ -1,0 +1,36 @@
+{
+  "package": "simple-icons@13.21.0",
+  "license": "CC0-1.0 (icon data); trademarks belong to their owners, used nominatively to identify the product",
+  "brands": {
+    "sqlite": {
+      "title": "SQLite",
+      "hex": "#003B57",
+      "source": "https://github.com/sqlite/sqlite/blob/43e862723ec680542ca6f608f9963c0993dd7324/art/sqlite370.eps",
+      "guidelines": null
+    },
+    "python": {
+      "title": "Python",
+      "hex": "#3776AB",
+      "source": "https://www.python.org/community/logos/",
+      "guidelines": "https://www.python.org/community/logos/"
+    },
+    "blender": {
+      "title": "Blender",
+      "hex": "#E87D0D",
+      "source": "https://www.blender.org/about/logo",
+      "guidelines": "https://www.blender.org/about/logo"
+    },
+    "letsencrypt": {
+      "title": "Let's Encrypt",
+      "hex": "#003A70",
+      "source": "https://letsencrypt.org/trademarks/",
+      "guidelines": "https://letsencrypt.org/trademarks/"
+    },
+    "openstreetmap": {
+      "title": "OpenStreetMap",
+      "hex": "#7EBC6F",
+      "source": "https://www.openstreetmap.org",
+      "guidelines": "https://wiki.osmfoundation.org/wiki/Trademark_Policy"
+    }
+  }
+}

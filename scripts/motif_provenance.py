@@ -195,6 +195,9 @@ def bootstrap():
                                      'authored scene SVG; see sibling metadata json', LEGACY))
         preview = path.with_suffix('.png')
         if preview.exists():add(data, entry_for(preview, master['id'] + '@png', 'motif-derived', 'raster preview of the SVG master', LEGACY, derived_from=master['id']))
+    # Product marks shown nominatively in reels (simple-icons, CC0 icon data).
+    from motif_brand import provenance_entries
+    for entry in provenance_entries():add(data, entry)
     # Deny-list: reference study media. Registered so a copy anywhere fails the check by hash.
     study = ROOT / 'references/reconstruction/study'
     for path in sorted(study.rglob('*')):

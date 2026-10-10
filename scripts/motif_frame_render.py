@@ -78,16 +78,32 @@ def render(project, out, size=(720, 1280), audio=True):
     return {'frames': written, 'file': str(mix(project, silent, out, written / FPS))}
 
 
+# 2026-10-10 sound study against the references: they master near -14 LUFS (ours -16.7), the
+# voice carries ~8 dB more 2-4 kHz presence and less 100-250 Hz boom, and the bed fills the
+# pauses between lines instead of dropping out.
+LOUDNESS = -13  # single-pass loudnorm lands about 1 LU low: measures -14 like the references
+VOICE_EQ = 'highpass=f=90,equalizer=f=200:t=o:w=1:g=-3,equalizer=f=3200:t=o:w=1.2:g=5,highshelf=f=7000:g=2'
+MUSIC_EQ = 'equalizer=f=90:t=o:w=1.5:g=-5,highshelf=f=3000:g=4,lowpass=f=12000'
+
+
 def mix(project, silent, out, duration):
     """Narration + SFX cues, loudness-normalised on the combined mix."""
     plan = json.loads((project / 'audio-plan.json').read_text()) if (project / 'audio-plan.json').exists() else {}
     index = (project / 'index.html').read_text()
     voice = re.search(r'<audio id="narration" src="([^"]+)"[^>]*data-volume="([\d.]+)"', index)
-    inputs = ['-i', str(silent), '-i', str(project / (voice.group(1) if voice else plan['narration']))];filters = ['[1:a]aresample=48000[v0]'];labels = ['[v0]']
-    for k, cue in enumerate(c for c in plan.get('sfx_cues', []) if c['start'] < duration):
+    inputs = ['-i', str(silent), '-i', str(project / (voice.group(1) if voice else plan['narration']))];filters = [f'[1:a]aresample=48000,{VOICE_EQ},asplit=2[v0][vkey]'];labels = ['[v0]']
+    cues = [c for c in plan.get('sfx_cues', []) if c['start'] < duration]
+    for k, cue in enumerate(cues):
         inputs += ['-i', str(project / cue['file'])];delay = int(cue['start'] * 1000)
         filters.append(f'[{k + 2}:a]aresample=48000,volume={cue["volume"]},adelay={delay}|{delay}[s{k}]');labels.append(f'[s{k}]')
-    filters.append(f'{"".join(labels)}amix=inputs={len(labels)}:normalize=0,apad,atrim=0:{duration:.3f},loudnorm=I=-16:TP=-1.5:LRA=11[a]')
+    music = plan.get('music')
+    if music and (project / music['file']).exists():
+        # Music bed, ducked under the voice with a sidechain compressor keyed on the narration.
+        inputs += ['-i', str(project / music['file'])];k = len(cues) + 2
+        filters.append(f'[{k}:a]aresample=48000,{MUSIC_EQ},volume={music.get("volume", .22)}[m0]')
+        filters.append('[m0][vkey]sidechaincompress=threshold=0.02:ratio=4:attack=15:release=350[mus]');labels.append('[mus]')
+    else:filters[0] = f'[1:a]aresample=48000,{VOICE_EQ}[v0]'
+    filters.append(f'{"".join(labels)}amix=inputs={len(labels)}:normalize=0,apad,atrim=0:{duration:.3f},loudnorm=I={LOUDNESS}:TP=-1:LRA=9[a]')
     subprocess.run(['ffmpeg', '-v', 'error', '-y', *inputs, '-filter_complex', ';'.join(filters), '-map', '0:v', '-map', '[a]', '-c:v', 'copy', '-c:a', 'aac', '-b:a', '192k', '-ar', '48000', '-movflags', '+faststart', str(out)], check=True)
     silent.unlink()
     return out

@@ -3,6 +3,9 @@
   "title": "Python can drop its lock",
   "topic": "faster Python threads",
   "seed": 37,
+  "brand": {
+    "slug": "python"
+  },
   "hook": {
     "alternates": [
       "Python just let your code use every core at once, and almost nobody noticed."
@@ -50,11 +53,13 @@
       "visual": {
         "rig": "lock-and-key",
         "params": {
-          "label": "ONE THREAD",
-          "key": "GIL"
+          "label": "GLOBAL LOCK",
+          "key": "3.13"
         },
-        "room": "office"
-      }
+        "room": "office",
+        "hold": true
+      },
+      "relation": "unlock"
     },
     {
       "id": "freed",
@@ -63,13 +68,14 @@
       "headline": "PYTHON 3.13",
       "payoff_headline": "LOCK TURNED OFF",
       "visual": {
-        "rig": "launch-pad",
+        "rig": "lock-and-key",
         "params": {
-          "label": "PYTHON 3.13",
-          "target": "NO LOCK"
+          "label": "GLOBAL LOCK",
+          "key": "3.13"
         },
-        "room": "workshop"
-      }
+        "room": "office"
+      },
+      "relation": "unlock"
     },
     {
       "id": "install",
@@ -78,14 +84,21 @@
       "headline": "OFFICIAL INSTALLERS",
       "payoff_headline": "ONE CHECKBOX",
       "visual": {
-        "rig": "stamp-gate",
+        "rig": "app-screen",
         "params": {
-          "document": "INSTALLER",
-          "stamp": "NO GIL",
-          "verdict": "approved"
+          "device": "laptop",
+          "ui": "window",
+          "title": "Python installer",
+          "lines": [
+            "Install for all users",
+            "Free-threaded binaries"
+          ],
+          "result": "NO GIL",
+          "button": "INSTALL"
         },
         "room": "living-room"
-      }
+      },
+      "relation": "demo"
     },
     {
       "id": "check",
@@ -94,23 +107,20 @@
       "headline": "ASK PYTHON ITSELF",
       "payoff_headline": "LOCK OFF?",
       "visual": {
-        "rig": "thermometer",
+        "rig": "app-screen",
         "params": {
-          "from": 10,
-          "to": 95,
-          "target": "NO LOCK",
-          "label": "CORES BUSY",
-          "stars": 3
+          "device": "monitor",
+          "ui": "terminal",
+          "title": "python3.13t",
+          "lines": [
+            "import sys",
+            "sys._is_gil_enabled()"
+          ],
+          "result": "False"
         },
-        "room": "diner",
-        "insert": {
-          "kind": "gauge",
-          "args": {
-            "value": 0.95,
-            "label": "CORES"
-          }
-        }
-      }
+        "room": "diner"
+      },
+      "relation": "demo"
     },
     {
       "id": "cost",
@@ -121,13 +131,14 @@
       "visual": {
         "rig": "balance-scale",
         "params": {
-          "left_label": "1 THREAD",
-          "right_label": "MANY CORES",
+          "left_label": "SINGLE -8%",
+          "right_label": "ALL CORES",
           "left_weight": 2,
           "right_weight": 8
         },
         "room": "office"
-      }
+      },
+      "relation": "trade-off"
     }
   ],
   "cta": {

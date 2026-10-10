@@ -3,6 +3,9 @@
   "title": "Free HTTPS for every website",
   "topic": "free website security",
   "seed": 23,
+  "brand": {
+    "slug": "letsencrypt"
+  },
   "hook": {
     "alternates": [
       "That little padlock in your browser is free, and a nonprofit gives it away."
@@ -55,23 +58,16 @@
       "headline": "SECURES THE WEB",
       "payoff_headline": "700 MILLION SITES",
       "visual": {
-        "rig": "magnet-pull",
+        "rig": "device-wall",
         "params": {
+          "kind": "browser",
           "count": 6,
-          "item": "SITES",
-          "label": "HTTPS"
+          "label": "700 MILLION SITES",
+          "names": []
         },
-        "room": "night-sky",
-        "insert": {
-          "kind": "counter",
-          "args": {
-            "start": 0,
-            "end": 700,
-            "suffix": "M",
-            "label": "WEBSITES"
-          }
-        }
-      }
+        "room": "night-sky"
+      },
+      "relation": "everywhere"
     },
     {
       "id": "cost",
@@ -93,7 +89,8 @@
             "strike": "$$$"
           }
         }
-      }
+      },
+      "relation": "cost-crush"
     },
     {
       "id": "nonprofit",
@@ -109,7 +106,8 @@
           "bloom": "NONPROFIT"
         },
         "room": "stage"
-      }
+      },
+      "relation": "grow"
     },
     {
       "id": "expiry",
@@ -118,25 +116,17 @@
       "headline": "EACH CERT EXPIRES",
       "payoff_headline": "90 DAYS",
       "visual": {
-        "rig": "thermometer",
+        "rig": "certificate",
         "params": {
-          "from": 5,
-          "to": 90,
-          "target": "90 DAYS",
-          "label": "DAYS",
-          "stars": 0
+          "domain": "yoursite.com",
+          "issuer": "Let's Encrypt",
+          "mode": "expire",
+          "days_from": 90,
+          "days_to": 3
         },
-        "room": "arcade",
-        "insert": {
-          "kind": "counter",
-          "args": {
-            "start": 0,
-            "end": 90,
-            "suffix": " days",
-            "label": "LIFETIME"
-          }
-        }
-      }
+        "room": "arcade"
+      },
+      "relation": "level"
     },
     {
       "id": "renew",
@@ -145,14 +135,18 @@
       "headline": "NOBODY HAS TO REMEMBER",
       "payoff_headline": "RENEWED AUTOMATICALLY",
       "visual": {
-        "rig": "domino-run",
+        "rig": "certificate",
         "params": {
-          "count": 7,
-          "label": "AUTO RENEW",
-          "target": "RENEWED"
+          "domain": "yoursite.com",
+          "issuer": "Let's Encrypt",
+          "mode": "renew",
+          "days_from": 3,
+          "days_to": 90,
+          "stamp": "RENEWED"
         },
-        "room": "rooftop"
-      }
+        "room": "arcade"
+      },
+      "relation": "spread"
     }
   ],
   "cta": {
