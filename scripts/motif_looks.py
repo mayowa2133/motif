@@ -209,8 +209,10 @@ def camera(style, role, u, f, n):
 def transition_in(style, f, colour):
     """Overlay drawn on the first frames of a shot (a depth-0 piece)."""
     from motif_rigs.base import ease
-    if style == 'wipe' and f < 7:
-        x = 760 * ease(f / 7);return f'<path d="M{x - 60:.1f} 0H{x + 900:.1f}V1280H{x + 60:.1f}Z" fill="{colour}"/>'
+    if style == 'wipe' and f < 5:
+        # A slanted band sweeps off to the right; the frame is never fully covered (v4 review:
+        # a full-cover wipe gave ~0.4 s of near-black at every cut).
+        x = -200 + 1100 * ease(f / 5);return f'<path d="M{x - 60:.1f} 0H{x + 240:.1f}L{x + 120:.1f} 1280H{x - 180:.1f}Z" fill="{colour}"/>'
     if style == 'flash' and f < 5:
         return f'<rect width="720" height="1280" fill="{colour}" opacity="{.85 * (1 - f / 5):.3f}"/>'
     if style == 'iris' and f < 8:
@@ -222,8 +224,8 @@ def transition_out(style, f, n, colour):
     """Overlay drawn on the last frames of a shot."""
     from motif_rigs.base import ease_in
     left = n - 1 - f
-    if style == 'wipe' and left < 5:
-        x = -900 + 900 * ease_in((5 - left) / 5);return f'<path d="M{x - 60:.1f} 0H{x + 720:.1f}L{x + 840:.1f} 1280H{x + 60:.1f}Z" fill="{colour}"/>'
+    if style == 'wipe' and left < 3:
+        x = -300 + 500 * ease_in((3 - left) / 3);return f'<path d="M{x - 60:.1f} 0H{x + 240:.1f}L{x + 120:.1f} 1280H{x - 180:.1f}Z" fill="{colour}"/>'
     if style == 'iris' and left < 6:
         r = 900 - 880 * ease_in((6 - left) / 6);return f'<path d="M0 0H720V1280H0Z M360 {640 - r:.1f}A{r:.1f} {r:.1f} 0 1 0 360 {640 + r:.1f}A{r:.1f} {r:.1f} 0 1 0 360 {640 - r:.1f}Z" fill="{colour}" fill-rule="evenodd"/>'
     return ''

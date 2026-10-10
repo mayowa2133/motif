@@ -458,7 +458,7 @@ def shot_frames(shot, layout, seed, look='paper-craft', brand=None):
             from motif_brand import badge
             # Hook: the product is the first thing on screen (visible at frame 0, then settles).
             big = shot['role'] == 'hook' and not shot.get('insert') and not rig;size = 300 if big else 190
-            if shot['role'] == 'hook' and rig:bx, by = min(570, max(150, sticker_at[0])), max(430, sticker_at[1] - 30);size = 200  # over Bot's lane, clear of the machine
+            if shot['role'] == 'hook' and rig:bx, by = min(600, max(120, sticker_at[0])), max(400, sticker_at[1] - 20);size = 150  # over Bot's lane, clear of the machine
             elif big:bx, by = (300, 600) if grammar == 'big-bot' else (360, 560)
             elif shot['role'] == 'hook':bx, by = 170, 840
             elif grammar == 'card':bx, by = 580, 820

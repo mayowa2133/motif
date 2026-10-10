@@ -81,15 +81,15 @@
       "headline": "USE IT FOR ANYTHING",
       "payoff_headline": "EVEN CLIENT WORK",
       "visual": {
-        "rig": "bridge-span",
+        "rig": "stamp-gate",
         "params": {
-          "planks": 5,
-          "left": "BLENDER",
-          "right": "CLIENTS"
+          "document": "CLIENT WORK",
+          "stamp": "ALLOWED",
+          "verdict": "approved"
         },
         "room": "office"
       },
-      "relation": "connect"
+      "relation": "approve"
     },
     {
       "id": "tools",
