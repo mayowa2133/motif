@@ -100,3 +100,15 @@ class MotionTests(unittest.TestCase):
 
 if __name__ == '__main__':
     unittest.main()
+
+
+class MusicTests(unittest.TestCase):
+    def test_bed_is_deterministic_and_fits_the_reel(self):
+        import wave
+        import motif_music
+        with tempfile.TemporaryDirectory() as tmp:
+            a = motif_music.bed(Path(tmp) / 'a.wav', 3.0, 'neon-arcade', 4);b = motif_music.bed(Path(tmp) / 'b.wav', 3.0, 'neon-arcade', 4)
+            self.assertEqual((Path(tmp) / 'a.wav').read_bytes(), (Path(tmp) / 'b.wav').read_bytes());self.assertEqual(a['mode'], 'minor')
+            with wave.open(str(Path(tmp) / 'a.wav')) as w:self.assertAlmostEqual(w.getnframes() / w.getframerate(), 3.0, places=2)
+            motif_music.bed(Path(tmp) / 'c.wav', 3.0, 'candy-pastel', 4)
+            self.assertNotEqual((Path(tmp) / 'a.wav').read_bytes(), (Path(tmp) / 'c.wav').read_bytes())

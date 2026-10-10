@@ -83,10 +83,18 @@ def mix(project, silent, out, duration):
     plan = json.loads((project / 'audio-plan.json').read_text()) if (project / 'audio-plan.json').exists() else {}
     index = (project / 'index.html').read_text()
     voice = re.search(r'<audio id="narration" src="([^"]+)"[^>]*data-volume="([\d.]+)"', index)
-    inputs = ['-i', str(silent), '-i', str(project / (voice.group(1) if voice else plan['narration']))];filters = ['[1:a]aresample=48000[v0]'];labels = ['[v0]']
-    for k, cue in enumerate(c for c in plan.get('sfx_cues', []) if c['start'] < duration):
+    inputs = ['-i', str(silent), '-i', str(project / (voice.group(1) if voice else plan['narration']))];filters = ['[1:a]aresample=48000,asplit=2[v0][vkey]'];labels = ['[v0]']
+    cues = [c for c in plan.get('sfx_cues', []) if c['start'] < duration]
+    for k, cue in enumerate(cues):
         inputs += ['-i', str(project / cue['file'])];delay = int(cue['start'] * 1000)
         filters.append(f'[{k + 2}:a]aresample=48000,volume={cue["volume"]},adelay={delay}|{delay}[s{k}]');labels.append(f'[s{k}]')
+    music = plan.get('music')
+    if music and (project / music['file']).exists():
+        # Music bed, ducked under the voice with a sidechain compressor keyed on the narration.
+        inputs += ['-i', str(project / music['file'])];k = len(cues) + 2
+        filters.append(f'[{k}:a]aresample=48000,volume={music.get("volume", .22)}[m0]')
+        filters.append('[m0][vkey]sidechaincompress=threshold=0.02:ratio=6:attack=15:release=350[mus]');labels.append('[mus]')
+    else:filters[0] = '[1:a]aresample=48000[v0]'
     filters.append(f'{"".join(labels)}amix=inputs={len(labels)}:normalize=0,apad,atrim=0:{duration:.3f},loudnorm=I=-16:TP=-1.5:LRA=11[a]')
     subprocess.run(['ffmpeg', '-v', 'error', '-y', *inputs, '-filter_complex', ';'.join(filters), '-map', '0:v', '-map', '[a]', '-c:v', 'copy', '-c:a', 'aac', '-b:a', '192k', '-ar', '48000', '-movflags', '+faststart', str(out)], check=True)
     silent.unlink()

@@ -42,6 +42,7 @@ PIN = '0.8.99'
 V6 = ROOT / 'videos/productions/voicestudio-craft-v6'
 SHOT_MAX = 2.9          # headline must change at least every 3 s
 DELIVERY = (1080, 1920)  # delivery size; compositions stay on the 720 x 1280 design grid
+MUSIC_VOLUME = .22        # bed level before ducking; sits roughly 18-20 dB under the voice
 BOIL_STEP = 2           # stop-motion boil: pieces shift every 2 frames (15 fps, animating on twos)
 SPEED = 1.2             # Kokoro af_nova reel pace (measured about 3.7 words/s)
 TAIL = .7
@@ -499,7 +500,8 @@ def prepare(project, brief):
     write(project / 'asset-provenance.json', {'rules': [
         {'glob': 'assets/voice/*', 'origin': 'motif-tts', 'generator': f'hyperframes {PIN} tts, voice {brief.get("voice", "af_nova")}, one take per line of the brief'},
         {'glob': 'assets/voice/clauses/*', 'origin': 'motif-tts', 'generator': f'hyperframes {PIN} tts clause takes and generated silence'},
-        {'glob': 'assets/sfx/*', 'origin': 'procedural-seeded', 'generator': 'motif_ui_production.make_sounds (seeded filtered noise and resonators)'}]})
+        {'glob': 'assets/sfx/*', 'origin': 'procedural-seeded', 'generator': 'motif_ui_production.make_sounds (seeded filtered noise and resonators)'},
+        {'glob': 'assets/music/*', 'origin': 'procedural-seeded', 'generator': 'motif_music.bed (synthesised chords, bass, arpeggio and drums; no samples)'}]})
 
 
 def caption_groups(lines, spans):
@@ -559,7 +561,13 @@ def compile_reel(project, plan, spans, voice_duration, seed=0):
     total = round(duration * FPS)
     capevents = [{'time': round(f / FPS, 9), 'target': '#captions-world', 'action': 'SET', 'params': {'props': {'innerHTML': namespace(cap(f), 'captions')}}} for f in range(1, total)]
     write_composition(project, 'captions', duration, cap(0), capevents, DEFS)
-    write(project / 'audio-plan.json', {'duration': voice_duration, 'narration': 'assets/voice/narration-af-nova.wav', 'sfx_cues': cues, 'music': False, 'subjective_listening': 'not assessed'})
+    music = False
+    if plan.get('music', True):
+        # An original bed under the voice (the references all run music; review item 6).
+        from motif_music import bed
+        music = bed(project / 'assets/music/bed.wav', duration, plan.get('look', 'paper-craft'), plan.get('seed', 0))
+        music.update({'file': 'assets/music/bed.wav', 'volume': MUSIC_VOLUME})
+    write(project / 'audio-plan.json', {'duration': voice_duration, 'narration': 'assets/voice/narration-af-nova.wav', 'sfx_cues': cues, 'music': music, 'subjective_listening': 'not assessed'})
     write_index(project, frames_index, duration, voice_duration, 0)
     write(project / 'shots.json', [{k: v for k, v in s.items()} for s in shots])
     write(project / 'set-layouts.json', {f'{k[0]}': v for k, v in layouts.items()})
