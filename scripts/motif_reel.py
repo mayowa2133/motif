@@ -26,6 +26,7 @@ durations. Word timing inside a clip is proportional to characters, which is
 an approximation and is recorded as such.
 """
 import argparse
+import copy
 import hashlib
 import json
 import math
@@ -150,6 +151,12 @@ def plan_reel(brief, allow_draft=False, avoid_looks=()):
              'bot': {'costume': costume, 'face': 'determined', 'pose': 'walking'}},
             {'id': f'{b["id"]}-b', 'role': 'payoff', 'headline': payoff, 'headline_b': _short(fact['claim'], 26), 'room': room, 'rig': {'id': rig_id, 'params': params}, 'insert': insert,
              'bot': {'costume': costume, 'face': 'surprised', 'pose': 'pointing'}}]})
+    # Hero-first opening (review item 5, round 2): the hook shows the first claim's machine
+    # already in action with the product mark, the way the references open on the metaphor.
+    # The first claim beat then replays it from the start with its own setup.
+    first_claim = beats[1]['shots'][0]
+    if (brief.get('hook') or {}).get('hero', True):
+        beats[0]['shots'][0].update({'rig': copy.deepcopy(first_claim['rig']), 'insert': None, 'crowd': 0, 'grammar': 'hero'})
     cta_room = room_for('celebrate launch ' + brief['cta']['narration'], brief['cta'].get('room'))
     beats.append({'id': 'cta', 'kind': 'cta', 'narration': brief['cta']['narration'], 'palette': palettes[-1], 'shots': [
         {'id': 'cta', 'role': 'cta', 'headline': _short(f'COMMENT {brief["cta"]["keyword"]}', 28), 'headline_b': _short(brief['cta']['narration'], 28), 'room': cta_room, 'rig': None,
@@ -414,10 +421,11 @@ def shot_frames(shot, layout, seed, look='paper-craft', brand=None):
                 pieces.append(cam(boil(pop_in(body, f, 2 + 2 * k, (item['x'], item['y'])), f, f'{shot["id"]}-d{k}', .8)))
         if rig:
             if shot['role'] == 'setup':t = tc * ease(min(1.0, u / .92))
+            elif shot['role'] == 'hook':t = min(1.0, .35 * tc + ease(min(1.0, u / .6)))  # already moving at frame 0
             else:t = tc + (1 - tc) * min(1.0, u / .55)
             h = layout['hero'];breathe = 1 + .012 * math.sin(f * .21) if shot['role'] == 'payoff' else 1.0
             hero = place(rig.render(h['values'] or None, (action, t), shot['palette']), h['x'], h['y'], h['scale'] * breathe)
-            if brand:
+            if brand and shot['role'] != 'hook':
                 from motif_brand import sticker
                 # The product's mark on the machine: the frame names its subject without the caption.
                 wob = 3 * math.sin(f * .3)
@@ -448,8 +456,9 @@ def shot_frames(shot, layout, seed, look='paper-craft', brand=None):
         if brand and shot['role'] in ('hook', 'cta'):
             from motif_brand import badge
             # Hook: the product is the first thing on screen (visible at frame 0, then settles).
-            big = shot['role'] == 'hook' and not shot.get('insert');size = 300 if big else 190
-            if big:bx, by = (300, 600) if grammar == 'big-bot' else (360, 560)
+            big = shot['role'] == 'hook' and not shot.get('insert') and not rig;size = 300 if big else 190
+            if shot['role'] == 'hook' and rig:bx, by = min(570, max(150, sticker_at[0])), max(430, sticker_at[1] - 30);size = 200  # over Bot's lane, clear of the machine
+            elif big:bx, by = (300, 600) if grammar == 'big-bot' else (360, 560)
             elif shot['role'] == 'hook':bx, by = 170, 840
             elif grammar == 'card':bx, by = 580, 820
             else:bx, by = 170, 720

@@ -126,15 +126,15 @@
       "headline": "IMPROVE IT",
       "payoff_headline": "SHARE IT BACK",
       "visual": {
-        "rig": "bridge-span",
+        "rig": "sprout-grow",
         "params": {
-          "planks": 6,
-          "left": "YOUR FIX",
-          "right": "THE MAP"
+          "leaves": 5,
+          "label": "YOUR FIX",
+          "bloom": "THE MAP"
         },
         "room": "night-sky"
       },
-      "relation": "connect"
+      "relation": "grow"
     }
   ],
   "cta": {

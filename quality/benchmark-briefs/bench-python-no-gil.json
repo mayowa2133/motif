@@ -128,20 +128,16 @@
       "headline": "THE CATCH",
       "payoff_headline": "1 TO 8% SLOWER",
       "visual": {
-        "rig": "race-track",
+        "rig": "balance-scale",
         "params": {
-          "labels": [
-            "SINGLE",
-            "NO GIL"
-          ],
-          "progress": [
-            1.0,
-            0.92
-          ]
+          "left_label": "SINGLE -8%",
+          "right_label": "ALL CORES",
+          "left_weight": 2,
+          "right_weight": 8
         },
         "room": "office"
       },
-      "relation": "race"
+      "relation": "trade-off"
     }
   ],
   "cta": {

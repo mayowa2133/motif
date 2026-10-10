@@ -202,7 +202,7 @@ def camera(style, role, u, f, n):
         return (1.06 + .02 * math.sin(f * .07), 14 * math.sin(f * .05), 9 * math.cos(f * .06))
     if style == 'pan':
         direction = -1 if role == 'payoff' else 1
-        return (1.13 + (.04 * ease(u) if role == 'payoff' else 0), direction * (32 - 64 * ease(u)), 0)
+        return (1.08 + (.03 * ease(u) if role == 'payoff' else 0), direction * (20 - 40 * ease(u)), 0)
     raise ValueError(f'unknown camera {style}')
 
 
