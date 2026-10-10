@@ -50,18 +50,22 @@ def bed(out, duration, look='paper-craft', seed=0):
     for i in range(bars):
         chord = prog[i % 4];s = i * bar
         for m in chord:note(s, bar * .98, hz(root + m - 12), .045, 0, .6, (1, .2))           # soft pad
-        note(s, beat * 1.8, hz(root + chord[0] - 24), .16, 0, 2.2, (1, .5, .1))              # bass on 1
-        note(s + 2 * beat, beat * 1.8, hz(root + chord[0] - 24), .12, 0, 2.2, (1, .5, .1))   # and 3
+        # 2026-10-10 sound study: the references' beds are bright and light; ours sat almost all
+        # below 250 Hz. Bass and kick down, pluck and a bell sparkle up, hats instead of a dull shaker.
+        note(s, beat * 1.8, hz(root + chord[0] - 24), .1, 0, 2.2, (1, .5, .2))               # bass on 1
+        note(s + 2 * beat, beat * 1.8, hz(root + chord[0] - 24), .08, 0, 2.2, (1, .5, .2))  # and 3
         for k, idx in enumerate(pattern):                                                    # pluck arpeggio in eighths
-            note(s + k * beat / 2, beat * .9, hz(root + chord[idx] + 12), .05 * bright + .02, (-.4, .4)[k % 2], 6.0)
+            note(s + k * beat / 2, beat * .9, hz(root + chord[idx] + 12), .07 * bright + .04, (-.4, .4)[k % 2], 6.0, (1, .5, .3, .15))
+        note(s, bar * .5, hz(root + chord[2] + 24), .03 + .02 * bright, (.3, -.3)[i % 2], 4.0, (1, 0, .3))  # bell sparkle on the bar
         for k in range(4):                                                                   # kick on beats, shaker on offbeats
             a = int((s + k * beat) * RATE);b = min(n, a + int(.18 * RATE))
             if a < n:
-                kt = t[:b - a];kick = np.sin(2 * np.pi * (50 + 90 * np.exp(-kt * 30)) * kt) * np.exp(-kt * 14) * .22
+                kt = t[:b - a];kick = np.sin(2 * np.pi * (50 + 90 * np.exp(-kt * 30)) * kt) * np.exp(-kt * 14) * .11
                 left[a:b] += kick;right[a:b] += kick
             a = int((s + k * beat + beat / 2) * RATE);b = min(n, a + int(.05 * RATE))
             if a < n:
-                noise = np.random.default_rng(r + i * 4 + k).standard_normal(b - a) * np.exp(-t[:b - a] * 90) * .035 * bright
+                raw = np.random.default_rng(r + i * 4 + k).standard_normal(b - a + 1);hat = np.diff(np.diff(raw, prepend=0))  # crude high-pass: a hat, not a thud
+                noise = hat[:b - a] * np.exp(-t[:b - a] * 110) * .03 * (.5 + bright)
                 left[a:b] += noise * .8;right[a:b] += noise
     end = int(duration * RATE);fade = int(1.2 * RATE)
     stereo = np.stack([left[:end], right[:end]], 1);stereo[:int(.3 * RATE)] *= np.linspace(0, 1, int(.3 * RATE))[:, None]

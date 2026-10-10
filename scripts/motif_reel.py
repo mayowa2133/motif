@@ -42,7 +42,7 @@ PIN = '0.8.99'
 V6 = ROOT / 'videos/productions/voicestudio-craft-v6'
 SHOT_MAX = 2.9          # headline must change at least every 3 s
 DELIVERY = (1080, 1920)  # delivery size; compositions stay on the 720 x 1280 design grid
-MUSIC_VOLUME = .22        # bed level before ducking; sits roughly 18-20 dB under the voice
+MUSIC_VOLUME = .3         # bed level before ducking; fills the pauses like the references
 BOIL_STEP = 2           # stop-motion boil: pieces shift every 2 frames (15 fps, animating on twos)
 SPEED = 1.2             # Kokoro af_nova reel pace (measured about 3.7 words/s)
 TAIL = .7
@@ -243,6 +243,13 @@ def voice(project, lines, name='af_nova', stub=False, python=None):
         elif not out.exists():
             subprocess.run(['npx', '--yes', f'hyperframes@{PIN}', 'tts', f'--text-file={out.with_suffix(".txt").name}', f'--voice={name}', f'--speed={SPEED}', f'--output={out.name}', '--json'],
                            cwd=folder, env=env, check=True, capture_output=True, timeout=900)
+        if not stub:
+            # TTS pads each take with ~0.25 s of silence at both ends, which left 0.6 s holes between
+            # lines; the references' delivery never stops (2026-10-10 sound study). Trim to 40 ms.
+            tight = out.with_name(out.stem + '.tight.wav')
+            trim = 'silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.04'
+            subprocess.run(['ffmpeg', '-v', 'error', '-y', '-i', str(out), '-af', f'{trim},areverse,{trim},areverse', str(tight)], check=True)
+            out = tight
         takes.append((id_, out))
     gap = folder / 'gap.wav';_silence(gap, GAP)
     listing = folder / 'concat.txt';listing.write_text(''.join(f"file '{p.name}'\nfile 'gap.wav'\n" for _, p in takes[:-1]) + f"file '{takes[-1][1].name}'\n")
@@ -366,14 +373,14 @@ def pop_in(markup, f, delay, anchor):
     return f'<g opacity="{o:.3f}" transform="translate({ax:.1f} {ay + dy:.1f}) scale({s:.4f}) translate({-ax:.1f} {-ay:.1f})">{markup}</g>'
 
 
-def bot_motion(role, u, f, n, tc, side):
+def bot_motion(role, u, f, n, tc, side, entering=True):
     """Bot acting synced to the machine: (pose, face, dx, dy, squash, cycle).
     setup: walks in from its side, then works the machine (pointing/presenting)
     and recoils at the contact; payoff: reacts to the result and keeps moving."""
     from motif_rigs.base import ease
     if role == 'setup':
-        walk = min(1.0, u / .4)
-        if walk < 1:return 'standing', 'determined', side * 170 * (1 - ease(walk)), 0.0, 1.0, 'walk'
+        walk = min(1.0, u / .25) if entering else 1.0  # a short step in: Bot is in frame at the cut
+        if walk < 1:return 'standing', 'determined', side * 80 * (1 - ease(walk)), 0.0, 1.0, 'walk'
         at = u / max(1e-6, tc * .92) if tc else 1.0
         if at < .92:return 'pointing', 'determined', 0.0, -4 * abs(math.sin(f * .35)), 1.0, None
         hit = max(0.0, min(1.0, (at - .92) / .3))
@@ -384,8 +391,15 @@ def bot_motion(role, u, f, n, tc, side):
     return 'celebrating', 'excited', 0.0, -abs(math.sin(f * .2)) * 20, 1.0, None
 
 
-def shot_frames(shot, layout, seed, look='paper-craft', brand=None):
-    """World markup for every frame of one shot."""
+def shot_frames(shot, layout, seed, look='paper-craft', brand=None, prev=None, continued=False):
+    """World markup for every frame of one shot.
+
+    prev: (role, frames) of the shot this one continues (same beat, same set). The
+    references hold the set across a beat and only cut between beats, so a
+    continuing shot has no transition, nothing pops in again and the camera eases
+    on from where the previous shot left it. continued: the next shot continues
+    this one, so no outgoing transition. A new scene is complete on its first
+    frame (2026-10-10 transitions study)."""
     import motif_sets as ms
     from motif_bot_kit import crowd_layout, dressed_bot
     from motif_props import PROPS
@@ -412,7 +426,11 @@ def shot_frames(shot, layout, seed, look='paper-craft', brand=None):
     frames = []
     for f in range(n):
         u = f / max(1, n - 1);pieces = []
-        zoom, dx, dy = motif_looks.camera(L['camera'], shot['role'], u, f, n);dy += motif_looks.slide_offset(L['transition'], f)
+        zoom, dx, dy = motif_looks.camera(L['camera'], shot['role'], u, f, n)
+        if prev:
+            pz, pdx, pdy = motif_looks.camera(L['camera'], prev[0], 1.0, prev[1] - 1, prev[1]);k = ease(min(1.0, f / 10))
+            zoom, dx, dy = pz + (zoom - pz) * k, pdx + (dx - pdx) * k, pdy + (dy - pdy) * k
+        else:dy += motif_looks.slide_offset(L['transition'], f)
         cam = lambda markup: camera(markup, zoom, cx, cy, dx, dy)
         if dy > 0:pieces.append(f'<rect width="720" height="1280" fill="{L["transition_colour"]}"/>')
         pieces.append(cam(room['draw'](c)))
@@ -420,7 +438,7 @@ def shot_frames(shot, layout, seed, look='paper-craft', brand=None):
             if item['layer'] == 'back':
                 sway = 1.6 * math.sin(f * .09 + item['x'] * .01) if PROPS[item['prop']].mount in ('ceiling', 'sky') else .5 * math.sin(f * .07 + k)
                 body = f'<g transform="rotate({sway:.2f} {item["x"]:.1f} {item["box"][1]:.1f})">{place(PROPS[item["prop"]].render(c), item["x"], item["y"], item["scale"])}</g>'
-                pieces.append(cam(boil(pop_in(body, f, 2 + 2 * k, (item['x'], item['y'])), f, f'{shot["id"]}-d{k}', .8)))
+                pieces.append(cam(boil(body, f, f'{shot["id"]}-d{k}', .8)))
         if rig:
             if shot['role'] == 'setup':t = tc * ease(min(1.0, u / .92))
             elif shot['role'] == 'hook':t = min(1.0, .35 * tc + ease(min(1.0, u / .6)))  # already moving at frame 0
@@ -431,12 +449,13 @@ def shot_frames(shot, layout, seed, look='paper-craft', brand=None):
                 from motif_brand import sticker
                 # The product's mark on the machine: the frame names its subject without the caption.
                 wob = 3 * math.sin(f * .3)
-                hero += pop_in(f'<g transform="translate({sticker_at[0]:.1f} {sticker_at[1]:.1f})">{sticker(brand, 92, -8 + wob)}</g>', f, 4, sticker_at)
+                mark = f'<g transform="translate({sticker_at[0]:.1f} {sticker_at[1]:.1f})">{sticker(brand, 92, -8 + wob)}</g>'
+                hero += mark if prev else pop_in(mark, f, 2, sticker_at)
             hero_at = len(pieces);pieces.append(cam(boil(hero, f, f'{shot["id"]}-hero', .6)))
         b = layout['bot'];bot = shot['bot']
         if rig:
             side = b.get('side', -1 if b['x'] < 360 else 1)
-            pose, face, bdx, bdy, squash, cycle = bot_motion(shot['role'], u, f, n, tc, side)
+            pose, face, bdx, bdy, squash, cycle = bot_motion(shot['role'], u, f, n, tc, side, entering=not prev)
             face = bot['face'] if shot['role'] == 'payoff' and face == 'excited' and bot.get('face') else face
             body = dressed_bot(b['x'] + bdx, b['y'] + bdy, b['scale'], face, pose, bot['costume'], shot['palette'], flip=side > 0, cycle=cycle, phase=f / 10, head=round(4 * math.sin(f * .3)))
             if squash != 1:body = f'<g transform="translate({b["x"]:.1f} {b["y"]:.1f}) scale({2 - squash:.3f} {squash:.3f}) translate({-b["x"]:.1f} {-b["y"]:.1f})">{body}</g>'
@@ -475,8 +494,10 @@ def shot_frames(shot, layout, seed, look='paper-craft', brand=None):
             elif grammar == 'card' and shot['role'] == 'cta':piece = f'<g transform="translate(420 520) scale(1.25) translate(-360 -420)">{piece}</g>'
             pieces.append(piece)
         text = headlines[min(len(headlines) - 1, int(u * len(headlines)))]
-        pieces.append(motif_looks.headline(L['headline'], text, c, f))
-        overlay = motif_looks.transition_in(L['transition'], f, L['transition_colour']) + motif_looks.transition_out(L['transition'], f, n, L['transition_colour'])
+        # After a cut the headline is already mostly in (the references' title is on screen at the cut);
+        # a continuing shot's new headline gets its full entrance.
+        pieces.append(motif_looks.headline(L['headline'], text, c, f if prev else f + 3))
+        overlay = ('' if prev else motif_looks.transition_in(L['transition'], f, L['transition_colour'])) + ('' if continued else motif_looks.transition_out(L['transition'], f, n, L['transition_colour']))
         if overlay:pieces.append(overlay)
         frames.append(''.join(pieces))
     return frames
@@ -542,7 +563,10 @@ def compile_reel(project, plan, spans, voice_duration, seed=0):
                     layouts[key]['dressing'] = [d for d in probe['dressing'] if d['role'] != 'overlap']
                 except ValueError:pass
         layout = layouts[key];by_beat.setdefault(shot['beat'], []).append(shot['id'])
-        frames = shot_frames(shot, layout, seed + shot['start_frame'], plan.get('look', 'paper-craft'), plan.get('brand'))
+        i = shots.index(shot);same = lambda a, b: a['beat'] == b['beat'] and a['room'] == b['room'] and a.get('rig') == b.get('rig')
+        prev = (shots[i - 1]['role'], shots[i - 1]['frames']) if i and same(shots[i - 1], shot) else None
+        continued = i + 1 < len(shots) and same(shots[i + 1], shot)
+        frames = shot_frames(shot, layout, seed + shot['start_frame'], plan.get('look', 'paper-craft'), plan.get('brand'), prev, continued)
         dur = shot['frames'] / FPS
         events = [{'time': round(f / FPS, 9), 'target': f'#{shot["id"]}-world', 'action': 'SET', 'params': {'props': {'innerHTML': namespace(body, shot['id'])}}} for f, body in enumerate(frames) if f]
         write_composition(project, shot['id'], dur, frames[0], events, DEFS)
