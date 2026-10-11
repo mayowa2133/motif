@@ -82,6 +82,12 @@ class ReviewLoop(Rig):
         sx, sy = self.sheet_at(side)
         return sx - side * (self.SHEET[0] / 2 + 62), sy - 74 + j * 58
 
+    def focus(self, p, role):
+        # The setup eases in on the station doing the work: Astra's desk tabbing the plan, the
+        # tower Astra builds. The payoff cuts back wide for the result.
+        spots = {'audit': (self.DESK_X - 60, self.SHEET_Y), 'build': (80, -260)}
+        return spots.get(p['mode']) if role == 'setup' else None
+
     def block_slot(self, i, x=0):
         return x, -self.BLOCK[1] / 2 - 4 - i * (self.BLOCK[1] + 4)
 

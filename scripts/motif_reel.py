@@ -204,9 +204,10 @@ def plan_reel(brief, allow_draft=False, avoid_looks=()):
         # The hook's own machine: a film can open on the problem before its first step.
         from motif_rigs import get as _get_rig
         hp = dict(hook_visual.get('params', {}))
-        if brand and 'logo' in _get_rig(hook_visual['rig']).params_schema['properties'] and 'logo' not in hp:hp['logo'] = brand
+        if brand and hook_visual.get('brand', brand) and 'logo' in _get_rig(hook_visual['rig']).params_schema['properties'] and 'logo' not in hp:hp['logo'] = brand
         beats[0]['shots'][0].update({'rig': {'id': hook_visual['rig'], 'params': hp}, 'insert': None, 'crowd': 0, 'grammar': 'hero'})
         if hook_visual.get('palette'):beats[0]['palette'] = hook_visual['palette']
+        if 'brand' in hook_visual:beats[0]['shots'][0]['brand'] = hook_visual['brand']  # Claudex cut 3: no Claude badge on the self-grading model
     elif (brief.get('hook') or {}).get('hero', True):
         beats[0]['shots'][0].update({'rig': copy.deepcopy(first_claim['rig']), 'insert': None, 'crowd': 0, 'grammar': 'hero'})
     _assign_wallpapers(beats, seed)
@@ -428,6 +429,9 @@ def insert_piece(insert, c_name, u, frame):
     raise ValueError(f'unsupported insert {kind}')
 
 
+FOCUS_ZOOM = .16  # how far a setup eases in on the acting part of a wide machine (Rig.focus)
+
+
 def camera(markup, zoom, cx, cy, dx=0.0, dy=0.0):
     """Per-piece camera so each top-level piece still moves independently."""
     if abs(zoom - 1) < 1e-6 and abs(dx) < 1e-6 and abs(dy) < 1e-6:return markup
@@ -612,7 +616,10 @@ def shot_frames(shot, layout, seed, look='paper-craft', brand=None, prev=None, c
         # The payoff opens on the change itself: a puff where the machine made contact.
         h = layout['hero'];(lx, ly), _ = rig.contacts(h.get('values'), (action, tc))[rig.actions[action].contact]
         poof_at = (h['x'] + lx * h['scale'], h['y'] + ly * h['scale'])
-    carry_to = hit = None
+    carry_to = hit = focus = None
+    if rig and not prev:
+        spot = rig.focus(rig.params(layout['hero'].get('values') or None), shot['role'])
+        if spot:h = layout['hero'];focus = (h['x'] + spot[0] * h['scale'], h['y'] + spot[1] * h['scale'])
     if rig:
         h = layout['hero'];(lx, ly), _ = rig.contacts(h.get('values'), (action, tc))[rig.actions[action].contact]
         hit = (h['x'] + lx * h['scale'], h['y'] + ly * h['scale'])
@@ -629,13 +636,18 @@ def shot_frames(shot, layout, seed, look='paper-craft', brand=None, prev=None, c
         elif prev:
             pz, pdx, pdy = motif_looks.camera(L['camera'], prev[0], 1.0, prev[1] - 1, prev[1]);k = ease(min(1.0, f / 10))
             zoom, dx, dy = pz + (zoom - pz) * k, pdx + (dx - pdx) * k, pdy + (dy - pdy) * k
-        else:dy += motif_looks.slide_offset(L['transition'], f)
+        else:
+            dy += motif_looks.slide_offset(L['transition'], f)
+            if focus:
+                # Ease in on the part of the machine that is acting, never past the room's edges.
+                k = ease(min(1.0, u / .6));zoom += FOCUS_ZOOM * k;ccx = focus[0]
+                dx = min((zoom - 1) * ccx, max((1 - zoom) * (720 - ccx), dx + k * (360 - ccx)))
         if fc is not None and f >= fc:
             # Contact punch (2026-10-11 motion study): the references' frames change in sudden events
             # (11-25% of frames) where Motif eased everything (2%); the moment the machine makes contact
             # the camera kicks in and shakes for a few frames.
             k = math.exp(-(f - fc) / 3.5);zoom += .07 * k;dx += 9 * math.sin((f - fc) * 2.6) * k;dy += 5 * math.cos((f - fc) * 3.1) * k
-        fy = cy
+        fy = focus[1] if focus and not prev else cy
         cam = lambda markup: camera(markup, zoom, ccx, fy, dx, dy)
         if dy > 0:pieces.append(f'<rect width="720" height="1280" fill="{L["transition_colour"]}"/>')
         pieces.append(cam(room['draw'](c)))

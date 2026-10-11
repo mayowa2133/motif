@@ -55,7 +55,22 @@ class ReviewLoopTests(unittest.TestCase):
         from motif_reel import plan_reel, validate_plan
         plan = plan_reel(BRIEF, allow_draft=True)
         self.assertEqual(validate_plan(plan, True)[0], [])
-        self.assertEqual(plan['beats'][0]['shots'][0]['rig']['params']['mode'], 'plan')
+        self.assertEqual(plan['beats'][0]['shots'][0]['rig']['params']['mode'], 'solo')
+
+
+    def test_setup_eases_in_on_the_acting_station(self):
+        rig = motif_rigs.get('review-loop')
+        for mode in ('audit', 'build'):
+            p = rig.params({'mode': mode});x, y = rig.focus(p, 'setup')
+            fx, fy, fw, fh = rig.footprint
+            self.assertTrue(fx <= x <= fx + fw and fy <= y <= fy + fh, mode)
+            self.assertIsNone(rig.focus(p, 'payoff'))
+        self.assertIsNone(rig.focus(rig.params({'mode': 'loop'}), 'setup'))
+
+    def test_hook_can_drop_the_product_badge(self):
+        from motif_reel import plan_reel
+        plan = plan_reel(BRIEF, allow_draft=True)
+        self.assertIsNone(plan['beats'][0]['shots'][0]['brand'])
 
 
 class CheckTests(unittest.TestCase):
@@ -63,7 +78,7 @@ class CheckTests(unittest.TestCase):
         # Claudex brief: check passed, then run failed L010 because the hook's second headline was only split after voicing.
         from motif_reel import check_brief
         self.assertEqual(check_brief(BRIEF, True)['status'], 'PASS')
-        bad = json.loads(json.dumps(BRIEF));bad['hook']['headline_b'] = '1 TASK, 2 MODELS'
+        bad = json.loads(json.dumps(BRIEF));bad['hook']['headline_b'] = 'AI MISSED 3 BUGS'
         report = check_brief(bad, True)
         self.assertEqual(report['status'], 'FAIL')
         self.assertTrue(any(x.startswith('L010') for x in report['lessons']))

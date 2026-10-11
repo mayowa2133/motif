@@ -12,25 +12,25 @@
   "voice": "bf_emma",
   "hook": {
     "alternates": [
-      "A free skill now puts Claude and GPT-6 Astra on the same task."
+      "Your AI just graded its own code an A plus. It had three bugs."
     ],
     "selected": 0,
-    "headline": "CLAUDE + GPT-6 ASTRA",
-    "headline_b": "SAME TASK, 2 MODELS",
+    "headline": "AI GRADED ITSELF: A+",
+    "headline_b": "IT HAD 3 BUGS",
     "visual": {
       "rig": "review-loop",
       "params": {
-        "mode": "plan",
+        "mode": "solo",
         "steps": [
           "SCHEMA",
           "LOGIN",
           "API",
           "TESTS"
         ],
-        "left": "CLAUDE",
-        "right": "ASTRA",
-        "left_logo": "claude",
-        "right_logo": "openai",
+        "solo": "1 MODEL",
+        "bug": 2,
+        "bugs": 3,
+        "grade": "A+",
         "roles": [
           "PLANS",
           "AUDITS"
@@ -47,7 +47,8 @@
         "stamp": "HOLDS UP"
       },
       "room": "rooftop",
-      "palette": "royal/ink-navy"
+      "palette": "sunflower/ink-navy",
+      "brand": null
     }
   },
   "facts": [
@@ -96,49 +97,8 @@
   ],
   "beats": [
     {
-      "id": "solo",
-      "narration": "Usually one model plans the work, builds it, then grades it.",
-      "fact": "f2",
-      "relation": "approve",
-      "headline": "1 MODEL GRADES ITSELF",
-      "payoff_headline": "A+, WITH 3 BUGS",
-      "visual": {
-        "rig": "review-loop",
-        "params": {
-          "mode": "solo",
-          "steps": [
-            "SCHEMA",
-            "LOGIN",
-            "API",
-            "TESTS"
-          ],
-          "solo": "1 MODEL",
-          "bug": 2,
-          "bugs": 3,
-          "grade": "A+",
-          "roles": [
-            "PLANS",
-            "AUDITS"
-          ],
-          "new_roles": [
-            "AUDITS",
-            "BUILDS"
-          ],
-          "solo_roles": [
-            "PLANS",
-            "BUILDS",
-            "GRADES"
-          ],
-          "stamp": "HOLDS UP"
-        },
-        "room": "street",
-        "palette": "sunflower/slate",
-        "brand": null
-      }
-    },
-    {
       "id": "plan",
-      "narration": "Claudex splits the job. First, Claude writes the plan.",
+      "narration": "Claudex fixes that with two models. First, Claude writes the plan.",
       "fact": "f3",
       "relation": "demo",
       "headline": "STEP 1: CLAUDE PLANS",
@@ -206,6 +166,34 @@
         },
         "room": "stage",
         "palette": "royal/dusk-teal",
+        "brand": "openai"
+      }
+    },
+    {
+      "id": "notes",
+      "narration": "Its notes go straight back: no tests, no auth, no rate limit.",
+      "fact": "f3",
+      "relation": "demo",
+      "headline": "AUDIT.MD: NO AUTH, NO TESTS",
+      "payoff_headline": "VERDICT: REVISE THE PLAN",
+      "visual": {
+        "rig": "app-screen",
+        "params": {
+          "device": "laptop",
+          "ui": "note",
+          "title": "AUDIT.md",
+          "lines": [
+            "# Astra's audit",
+            "- Tests: none",
+            "- Login: no auth",
+            "- API: no rate limit",
+            "Verdict: revise"
+          ],
+          "result": "SENT BACK",
+          "logo": "openai"
+        },
+        "room": "server-room",
+        "palette": "poppy/slate",
         "brand": "openai"
       }
     },

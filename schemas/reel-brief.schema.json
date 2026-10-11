@@ -72,6 +72,13 @@
             },
             "palette": {
               "type": "string"
+            },
+            "brand": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "description": "The hook's product mark when it differs from the film's (null: none, e.g. a hook about the problem before the product)."
             }
           },
           "required": [

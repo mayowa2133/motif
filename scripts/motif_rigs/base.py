@@ -71,6 +71,11 @@ class Rig:
         carried forward and keep its colours (lesson L009). None: not a carried object."""
         return self.name
 
+    def focus(self, p, role):
+        """Point (local units) the camera eases in on during a shot with this role, or None to stay
+        wide. A wide machine uses it so the part that is acting reads big (Claudex cut 2 review)."""
+        return None
+
     def params(self, values=None):
         merged = {**copy.deepcopy(self.defaults), **(values or {})}
         Draft202012Validator(self.params_schema).validate(merged)
