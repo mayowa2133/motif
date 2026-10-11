@@ -1,0 +1,249 @@
+{
+  "about": "Every lesson a reviewed Motif reel taught. motif_lessons.CHECKS runs the 'check' lessons on every new reel; the others name the pipeline stage or brief rule that enforces them. Add lessons with: python scripts/motif_improve.py lesson ...",
+  "lessons": [
+    {
+      "id": "L001",
+      "date": "2026-10-09",
+      "source": "Mayowa, phase 5 benchmark",
+      "symptom": "Five reels all looked alike",
+      "rule": "Each film gets its own look (palette family, rooms, headline, captions, camera, transitions) and the cross-film variety check must pass",
+      "enforced_by": "motif_variety.py",
+      "level": "gate"
+    },
+    {
+      "id": "L002",
+      "date": "2026-10-09",
+      "source": "Post-PR14 review",
+      "symptom": "Machines were decoration; labels did the explaining (bus under INSIDE EVERY PHONE)",
+      "rule": "Every claim beat declares a relation and its machine must show that relation; labels name the claim's own nouns",
+      "enforced_by": "sound-off stage",
+      "level": "gate"
+    },
+    {
+      "id": "L003",
+      "date": "2026-10-09",
+      "source": "Post-PR14 review",
+      "symptom": "No real product on screen",
+      "rule": "When a brief names a product, its vendored mark appears on the hook, the machines and the end card",
+      "enforced_by": "sound-off stage (subject)",
+      "level": "gate"
+    },
+    {
+      "id": "L004",
+      "date": "2026-10-10",
+      "source": "Transitions/sound study",
+      "symptom": "6-7 frame entrances after each cut; sets restarted mid-beat",
+      "rule": "Hard cuts with a complete, moving scene on frame 1; one set per idea, continuing shots never re-enter",
+      "enforced_by": "motif_reel.shot_frames",
+      "level": "gate"
+    },
+    {
+      "id": "L005",
+      "date": "2026-10-10",
+      "source": "Transitions/sound study",
+      "symptom": "Quieter than the references, gaps in the audio",
+      "rule": "Mix near -14 LUFS with the original music bed ducked under the voice, no gaps",
+      "enforced_by": "render stage",
+      "level": "gate"
+    },
+    {
+      "id": "L006",
+      "date": "2026-10-09",
+      "source": "Energy contract",
+      "symptom": "Headlines sat too long",
+      "rule": "The headline changes at least every 3 s",
+      "enforced_by": "pacing stage",
+      "level": "gate"
+    },
+    {
+      "id": "L007",
+      "date": "2026-10-10",
+      "source": "Codex critique of v11",
+      "symptom": "Python's lock opened before the narration finished explaining the restriction",
+      "rule": "A machine shows the change only when the narration reaches it; use visual.hold for setup beats",
+      "enforced_by": "brief",
+      "level": "brief"
+    },
+    {
+      "id": "L008",
+      "date": "2026-10-10",
+      "source": "Codex critique of v11",
+      "symptom": "Attractive metaphors that did not demonstrate the claim; the certificate lost its identity between beats",
+      "rule": "Keep objects and consequences connected: the same object carries forward and its change demonstrates the claim",
+      "enforced_by": "brief",
+      "level": "brief"
+    },
+    {
+      "id": "L009",
+      "date": "2026-10-10",
+      "source": "Round 8 follow-up",
+      "symptom": "The Python lock was pink in one beat and teal in the next",
+      "rule": "Beats that carry the same machine keep its colours; vary only walls and floor with an object/room palette",
+      "check": "shared-object-palette",
+      "level": "gate"
+    },
+    {
+      "id": "L010",
+      "date": "2026-10-10",
+      "source": "Second-brain adaptation, cut 2",
+      "symptom": "ANSWERS WITH SOURCES then ANSWERS GET SAVED read as one 4.3 s headline",
+      "rule": "Consecutive headlines never open with the same word",
+      "check": "headline-openers",
+      "level": "gate"
+    },
+    {
+      "id": "L011",
+      "date": "2026-10-10",
+      "source": "Second-brain adaptation, cut 2",
+      "symptom": "A front crate hid the wiki board's PAGES counter",
+      "rule": "Front set dressing never covers a machine label",
+      "check": "label-occlusion",
+      "level": "gate"
+    },
+    {
+      "id": "L012",
+      "date": "2026-10-10",
+      "source": "Second-brain adaptation, cut 2",
+      "symptom": "Wiki page titles were small on a phone",
+      "rule": "Machine labels are at least 24 px tall in the 1080 x 1920 delivery",
+      "check": "label-legibility",
+      "level": "warn"
+    },
+    {
+      "id": "L013",
+      "date": "2026-10-10",
+      "source": "Claude review of second-brain cut 3",
+      "symptom": "hook item tags clip their labels (BOOK NOT, PODCA) when drawn at 1.4x in forget mode",
+      "rule": "Machine labels must fit their tag at the drawn scale; no clipped words",
+      "level": "brief"
+    },
+    {
+      "id": "L014",
+      "date": "2026-10-11",
+      "source": "Second-brain cut 3 vs references (2026-10-11)",
+      "symptom": "One vault room held from 0:12 to 0:40 while the references change setting every 2-3 s",
+      "rule": "Consecutive beats never share a set; carry the object between sets instead",
+      "check": "set-variety",
+      "level": "gate"
+    },
+    {
+      "id": "L015",
+      "date": "2026-10-11",
+      "source": "Second-brain cut 3 vs references (2026-10-11)",
+      "symptom": "Two-line headline cards took 15% of the frame and said vague things (SMARTER EVERY DAY)",
+      "rule": "Headlines are one short line (30 characters at most) stating a specific fact: a number, a name or a step",
+      "check": "headline-length",
+      "level": "warn"
+    },
+    {
+      "id": "L016",
+      "date": "2026-10-11",
+      "source": "Second-brain cut 3 vs references (2026-10-11)",
+      "symptom": "The product appeared once, as a three-line dialog; the references show the app in use in most shots",
+      "rule": "A film about a product shows it in use (app-screen views: files, note, graph, chat, terminal) in at least a third of its claim beats",
+      "check": "product-on-screen",
+      "level": "warn"
+    },
+    {
+      "id": "L017",
+      "date": "2026-10-11",
+      "source": "Second-brain cut 3 vs references (2026-10-11)",
+      "symptom": "The host peeked from behind the machine, half hidden at the frame edge, and mostly watched",
+      "rule": "The host stands in front of the machine, inside the frame, acting on it",
+      "check": "host-in-front",
+      "level": "gate"
+    },
+    {
+      "id": "L018",
+      "date": "2026-10-11",
+      "source": "Second-brain cut 3 vs references (2026-10-11)",
+      "symptom": "Flat vector fills and bright pastel walls read as clean illustration, not paper",
+      "rule": "Rooms are muted crumpled paper with the bright colour on the objects (look cut-paper or object/room palettes with the dusk family)",
+      "level": "brief"
+    },
+    {
+      "id": "L019",
+      "date": "2026-10-11",
+      "source": "Second-brain cut 3 vs references (2026-10-11)",
+      "symptom": "43.6 s against the references' 20-30 s",
+      "rule": "Keep adaptations near 30 s (35 s at most): cut beats rather than speed up the voice",
+      "level": "brief"
+    },
+    {
+      "id": "L020",
+      "date": "2026-10-11",
+      "source": "Claude review of second-brain cut 4",
+      "symptom": "the product sticker floats over screen content (covers 3 GAPS, SAVED and a graph node) and the host covers the crate's items",
+      "rule": "Brand stickers and the host never cover a machine or screen label",
+      "level": "gate",
+      "check": "sticker-clear"
+    },
+    {
+      "id": "L021",
+      "date": "2026-10-11",
+      "source": "Claude review of second-brain cut 5",
+      "symptom": "the CTA headline was cut at four words and read BUILD IT ONCE USE",
+      "rule": "A headline stops at the end of a phrase: whole clauses, never cut mid-phrase",
+      "level": "gate",
+      "check": "headline-whole"
+    },
+    {
+      "id": "L022",
+      "date": "2026-10-11",
+      "source": "Claude review of second-brain cut 5",
+      "symptom": "5 of 12 sets showed the same striped wall, so new rooms still read as one place",
+      "rule": "Consecutive sets never share a wall pattern and no wall covers more than a third of the sets; papered rooms take a per-beat wallpaper",
+      "level": "gate",
+      "check": "wall-variety"
+    },
+    {
+      "id": "L023",
+      "date": "2026-10-11",
+      "source": "Claude review of second-brain cut 5",
+      "symptom": "Memo stood and watched in 9 of 12 frames",
+      "rule": "The host acts on the object: for machines it feeds it carries a note in and throws it in at the contact",
+      "level": "brief"
+    },
+    {
+      "id": "L024",
+      "date": "2026-10-11",
+      "source": "Claude review of second-brain cut 5",
+      "symptom": "the terminal read '> cd sec' and the chat sat half blank for most of their shots",
+      "rule": "App screens are mostly full on the first frame and finish fast; give terminal and chat views several lines of real content",
+      "level": "brief"
+    },
+    {
+      "id": "L025",
+      "date": "2026-10-11",
+      "source": "Claude review of second-brain cut 6 stills",
+      "symptom": "the terminal's CLAUDE IS IN sticker and the file tree's VAULT READY sticker covered screen lines",
+      "rule": "A machine's labels never sit on each other; result stickers on text screens go below the text",
+      "level": "warn",
+      "check": "label-collision"
+    },
+    {
+      "id": "L026",
+      "date": "2026-10-11",
+      "source": "Claude motion study, cut 6 vs seven references",
+      "symptom": "cut 6 drifted as much as the references but changed the whole picture 0.6 times a second (refs 0.7-1.9) and had 0.8 large changes a second (refs 1.1-4.3)",
+      "rule": "Raise sudden-change rates with things that happen in the scene; the motion stage reports picture changes and large changes per second (refs 0.7-1.9 and 1.1-4.3) but does not gate them (see L027)",
+      "level": "brief"
+    },
+    {
+      "id": "L027",
+      "date": "2026-10-11",
+      "source": "Mayowa, second-brain cut 7",
+      "symptom": "hard snap zooms inside each shot (to hit motion targets) looked choppy, not smooth; cut 6 looked better",
+      "rule": "Camera moves inside a shot are eased, never hard snaps; do not chase a motion number with the camera. Mayowa's eye beats the metric",
+      "level": "brief"
+    },
+    {
+      "id": "L028",
+      "date": "2026-10-11",
+      "source": "Mayowa approved cut 8 plan (after L027)",
+      "symptom": "objects glided into place while the references' objects slam and bounce; the host was about a sixth of frame height",
+      "rule": "Energy lives in the objects: machines wind up, squash and bounce on the hit and throw paper scraps; pages slap on and overshoot. The hero leaves a host lane so the host stays at least ~19% of frame height",
+      "level": "brief"
+    }
+  ]
+}

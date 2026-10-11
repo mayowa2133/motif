@@ -6,7 +6,7 @@
   "required": ["room", "palette", "seed", "beat", "floor_y", "hero", "bot", "dressing", "lights", "bands"],
   "properties": {
     "room": {"enum": ["arcade", "bakery", "beach", "diner", "living-room", "night-sky", "office", "park", "rooftop", "server-room", "stage", "street", "workshop"]},
-    "palette": {"enum": ["berry", "candy", "citrus", "cobalt", "forest", "lagoon", "lilac", "meadow", "mint-coral", "neon-ember", "neon-teal", "neon-violet", "peach", "plum-night", "poppy", "royal", "sky", "sunflower", "sunrise"]},
+    "palette": {"type": "string", "pattern": "^(berry|candy|citrus|cobalt|dusk-teal|forest|ink-navy|lagoon|lilac|mauve|meadow|mint-coral|mustard|neon-ember|neon-teal|neon-violet|peach|plum-night|poppy|royal|sky|slate|sunflower|sunrise)(/(berry|candy|citrus|cobalt|dusk-teal|forest|ink-navy|lagoon|lilac|mauve|meadow|mint-coral|mustard|neon-ember|neon-teal|neon-violet|peach|plum-night|poppy|royal|sky|slate|sunflower|sunrise))?$"},
     "seed": {"type": "integer"},
     "beat": {"type": "integer", "minimum": 0},
     "variant": {"type": "integer", "minimum": 0},

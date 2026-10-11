@@ -41,11 +41,28 @@ PALETTES = {
     # Outdoor family: sky, grass, sun (film look great-outdoors).
     'sky': {'wall': '#9FD8F5', 'floor': '#4C9A4F', 'primary': '#F2994A', 'secondary': '#F6E27A', 'accent': '#E2574C', 'pop': '#2F6FD6', 'light': PAPER, 'dark': '#1E2B33', 'metal': '#8AA0AA'},
     'forest': {'wall': '#BFE3AE', 'floor': '#2F5E3A', 'primary': '#D2603F', 'secondary': '#F2C14E', 'accent': '#2E86AB', 'pop': '#F28FAD', 'light': PAPER, 'dark': '#1C2A20', 'metal': '#86967F'},
+    # Dusk family (2026-10-11 reference comparison): the references' rooms are muted mid-tone
+    # paper walls (dusty teal, ink navy, mustard, mauve, slate) over brown wood floors, with the
+    # bright colour on the objects. Used as the room half of "object/room" (film look paper-craft).
+    'dusk-teal': {'wall': '#6F9C9A', 'floor': '#5B3E2E', 'primary': '#DF806B', 'secondary': '#EBC46B', 'accent': '#F4EBD8', 'pop': '#B9457A', 'light': PAPER, 'dark': INK, 'metal': '#8FA3A6'},
+    'ink-navy': {'wall': '#34426A', 'floor': '#4A3426', 'primary': '#EBC46B', 'secondary': '#DF806B', 'accent': '#56BFB1', 'pop': '#F293B6', 'light': PAPER, 'dark': '#16192A', 'metal': '#8794A8'},
+    'mustard': {'wall': '#C99B45', 'floor': '#5A3B26', 'primary': '#3E64B8', 'secondary': '#DF806B', 'accent': '#F4EBD8', 'pop': '#B60B50', 'light': PAPER, 'dark': INK, 'metal': '#9C8A70'},
+    'mauve': {'wall': '#7E5F8E', 'floor': '#3E2C2A', 'primary': '#EBC46B', 'secondary': '#56BFB1', 'accent': '#F293B6', 'pop': '#DF806B', 'light': PAPER, 'dark': '#1A1622', 'metal': '#A39BB0'},
+    'slate': {'wall': '#8DA0AE', 'floor': '#5E4330', 'primary': '#DF806B', 'secondary': '#56BFB1', 'accent': '#EBC46B', 'pop': '#3E64B8', 'light': PAPER, 'dark': INK, 'metal': '#7D8A8C'},
 }
 
 
+def known(name):
+    """A palette name, or "object/room": the first palette's object colours on the second's walls and floor."""
+    return all(part in PALETTES for part in name.split('/')) and name.count('/') <= 1
+
+
 def palette(name):
-    if name not in PALETTES:raise ValueError(f'unknown palette {name}; choose from {sorted(PALETTES)}')
+    if not known(name):raise ValueError(f'unknown palette {name}; choose from {sorted(PALETTES)} or "object/room"')
+    if '/' in name:
+        # One object carried across beats keeps its colours while the rooms around it change
+        # (Codex's v11 critique: match palettes on shared objects; Mayowa: keep scenes colourful).
+        obj, room = name.split('/');return {**PALETTES[obj], 'wall': PALETTES[room]['wall'], 'floor': PALETTES[room]['floor']}
     return PALETTES[name]
 
 

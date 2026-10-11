@@ -66,6 +66,11 @@ class Rig:
 
     # Shared behaviour -----------------------------------------------------
 
+    def identity(self, p):
+        """Which on-screen object these params draw; beats with the same identity are one object
+        carried forward and keep its colours (lesson L009). None: not a carried object."""
+        return self.name
+
     def params(self, values=None):
         merged = {**copy.deepcopy(self.defaults), **(values or {})}
         Draft202012Validator(self.params_schema).validate(merged)

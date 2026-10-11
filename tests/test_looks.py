@@ -10,7 +10,7 @@ sys.path.insert(0, str(ROOT / 'scripts'))
 
 import motif_looks as looks
 import motif_variety as variety
-from motif_rigs.palettes import PALETTES, palette
+from motif_rigs.palettes import PALETTES, known, palette
 
 
 def parses(markup):
@@ -22,7 +22,7 @@ class LookTests(unittest.TestCase):
     def test_looks_are_structurally_different(self):
         names = sorted(looks.LOOKS)
         for a in names:
-            self.assertTrue(set(looks.LOOKS[a]['palettes']) <= set(PALETTES), a)
+            self.assertTrue(all(known(n) for n in looks.LOOKS[a]['palettes']), a)
             for b in names:
                 if a < b:
                     same = [k for k in looks.FEATURES if looks.LOOKS[a][k] == looks.LOOKS[b][k]]

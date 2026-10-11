@@ -20,4 +20,4 @@ def all_rigs():
 
 def _load():
     # Import every library module, even when one was imported directly first.
-    from motif_rigs import library, library2, library3, library4, library5  # noqa: F401  registers the built-in rigs
+    from motif_rigs import library, library2, library3, library4, library5, library6  # noqa: F401  registers the built-in rigs

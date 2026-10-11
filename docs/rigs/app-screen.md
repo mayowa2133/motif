@@ -33,6 +33,6 @@ The product in use: a monitor, laptop or phone showing a Motif-drawn terminal, a
 
 **Bot slot:** x 300, y 0, scale 0.24: watches the screen and reacts to the result.
 
-**Palettes:** renders in all 19 Motif palettes (berry, candy, citrus, cobalt, forest, lagoon, lilac, meadow, mint-coral, neon-ember, neon-teal, neon-violet, peach, plum-night, poppy, royal, sky, sunflower, sunrise); films rotate them per scene.
+**Palettes:** renders in all 24 Motif palettes (berry, candy, citrus, cobalt, dusk-teal, forest, ink-navy, lagoon, lilac, mauve, meadow, mint-coral, mustard, neon-ember, neon-teal, neon-violet, peach, plum-night, poppy, royal, sky, slate, sunflower, sunrise); films rotate them per scene.
 
 **Status:** draft proof; awaiting Mayowa approval (plan task 2.2).

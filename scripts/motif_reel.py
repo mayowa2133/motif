@@ -30,6 +30,7 @@ import copy
 import hashlib
 import json
 import math
+import random
 import re
 import shutil
 import subprocess
@@ -45,6 +46,13 @@ DELIVERY = (1080, 1920)  # delivery size; compositions stay on the 720 x 1280 de
 MUSIC_VOLUME = .3         # bed level before ducking; fills the pauses like the references
 BOIL_STEP = 2           # stop-motion boil: pieces shift every 2 frames (15 fps, animating on twos)
 SPEED = 1.2             # Kokoro af_nova reel pace (measured about 3.7 words/s)
+# Approved narration voices (Mayowa, 2026-10-11, from six samples): a brief names one with "voice",
+# otherwise the film's seed picks one so films do not all sound alike.
+VOICES = ('af_heart', 'af_bella', 'bf_emma')
+
+
+def voice_for(brief):
+    return brief.get('voice') or VOICES[brief.get('seed', 0) % len(VOICES)]
 TAIL = .7
 
 
@@ -60,19 +68,48 @@ def sha(p):return hashlib.sha256(Path(p).read_bytes()).hexdigest()
 
 # 2 Plan --------------------------------------------------------------------------------
 
-EDGE_WORDS = {'A', 'AN', 'AND', 'THE', 'IS', 'ARE', 'OF', 'TO', 'IN', 'ON', 'FOR', 'YOUR', 'YOU', 'IT', 'ITS', 'THIS', 'THAT', 'WITH', 'JUST', 'EVEN', 'BUT', 'OR', 'SO', 'AT', 'BY', 'ABOUT', 'ONE', 'EVERY', 'ACROSS', 'INTO', 'FROM', 'HAS', 'HAVE', 'WILL', 'CAN', 'QUIETLY', 'MOST', 'ALREADY'}
+EDGE_WORDS = {'A', 'AN', 'AND', 'THE', 'IS', 'ARE', 'OF', 'TO', 'IN', 'ON', 'FOR', 'YOUR', 'YOU', 'IT', 'ITS', 'AS', 'WHEN', 'IF', 'THEN', 'THAN', 'WHICH', 'WHO', 'VIA', 'THIS', 'THAT', 'WITH', 'JUST', 'EVEN', 'BUT', 'OR', 'SO', 'AT', 'BY', 'ABOUT', 'ONE', 'EVERY', 'ACROSS', 'INTO', 'FROM', 'HAS', 'HAVE', 'WILL', 'CAN', 'QUIETLY', 'MOST', 'ALREADY'}
 
 
-def _short(text, limit=26):
-    """Headline from a phrase: whole words only, never ending on a filler word."""
+def _words(text):
     words = re.sub(r'[^\w$%.,\' -]', '', text).upper().replace(', ', ' ').rstrip('.').split()
     while words and words[0] in EDGE_WORDS:words.pop(0)
+    return words
+
+
+def _fit(words, limit):
     out = []
     for w in words:
         if len(' '.join(out + [w])) > limit:break
         out.append(w)
     while len(out) > 1 and out[-1] in EDGE_WORDS:out.pop()
-    return ' '.join(out) or text[:limit].upper()
+    return out
+
+
+def _clip(text, limit=26):
+    """(headline, cut): the longest run of whole clauses that fits, so a headline never stops mid-phrase
+    (cut 5's CTA read BUILD IT ONCE USE); `cut` is True only when no whole clause fits."""
+    clauses = [c for c in re.split(r'(?<=[,.;:?!])\s+|\s+[-\u2013\u2014]\s+', text.strip()) if _words(c)]
+    out = []
+    for c in clauses:
+        w = _words(c) if not out else re.sub(r'[^\w$%.,\' -]', '', c).upper().replace(', ', ' ').rstrip('.,').split()
+        if len(' '.join(out + w)) > limit:break
+        out += w
+    out = [w.rstrip('.,') for w in out]
+    while len(out) > 1 and out[-1] in EDGE_WORDS:out.pop()
+    if out:return ' '.join(out), False
+    words = _words(text);out = _fit(words, limit)
+    if len(out) < len(words) and words[len(out)] not in EDGE_WORDS:
+        # Mid-phrase: back off to the last connector ("FREE AND OPEN" -> "FREE"), a phrase boundary.
+        j = max((k for k in range(2, len(out)) if out[k] in EDGE_WORDS), default=None)
+        if j is None:return ' '.join(out) or text[:limit].upper(), True
+        out = _fit(out[:j], limit)
+    return ' '.join(out) or text[:limit].upper(), False
+
+
+def _short(text, limit=26):
+    """Headline from a phrase: whole clauses where they fit, else whole words never ending on a filler word."""
+    return _clip(text, limit)[0]
 
 
 def _number(value):
@@ -122,10 +159,10 @@ def plan_reel(brief, allow_draft=False, avoid_looks=()):
         return (fresh or ranked)[0]['id'] if (fresh or ranked) else None
 
     first_fact = facts[brief['beats'][0]['fact']]
-    hook_room = room_for(brief['topic'] + ' ' + hook, (brief.get('hook') or {}).get('room'));rooms.append(hook_room)
+    hook_room = room_for(brief['topic'] + ' ' + hook, (brief.get('hook') or {}).get('room') or ((brief.get('hook') or {}).get('visual') or {}).get('room'));rooms.append(hook_room)
     hook_insert = _insert_for(first_fact, hook, cat) if _number(first_fact.get('value')) else None
     beats.append({'id': 'hook', 'kind': 'hook', 'narration': hook, 'palette': palettes[0], 'shots': [
-        {'id': 'hook', 'role': 'hook', 'headline': (brief.get('hook') or {}).get('headline') or _short(hook, 28), 'headline_b': _short(brief['topic'], 28), 'room': hook_room, 'rig': None,
+        {'id': 'hook', 'role': 'hook', 'headline': (brief.get('hook') or {}).get('headline') or _short(hook, 28), 'headline_b': (brief.get('hook') or {}).get('headline_b') or _short(brief['topic'], 28), 'headline_b_cut': not (brief.get('hook') or {}).get('headline_b') and _clip(brief['topic'], 28)[1], 'room': hook_room, 'rig': None,
          'insert': hook_insert, 'bot': {'costume': [], 'face': 'excited', 'pose': 'celebrating'}, 'crowd': 9 if look['hook'] == 'crowd' else 0, 'grammar': 'big-bot' if look['hook'] == 'number' and not hook_insert else look['hook']}]})
     for i, b in enumerate(brief['beats']):
         fact = facts[b['fact']];visual = b.get('visual', {});text = f'{b["narration"]} {fact["claim"]} {fact.get("value", "")}'
@@ -148,23 +185,37 @@ def plan_reel(brief, allow_draft=False, avoid_looks=()):
         if not visual.get('insert') and num and any(str(num['value']) in t.replace(',', '') for t in rig_text(params, rig_id)):insert = None
         setup = b.get('headline') or _short(fact['claim'], 26);payoff = b.get('payoff_headline') or _short(fact.get('value') or b['narration'], 26)
         if payoff == setup:payoff = _short(b['narration'], 26)
+        beat_brand = visual['brand'] if 'brand' in visual else brand
+        if beat_brand != brand and 'logo' in _get_rig(rig_id).params_schema['properties'] and params.get('logo') == brand:params['logo'] = beat_brand
         beats.append({'id': b['id'], 'kind': 'claim', 'relation': relation, 'narration': b['narration'], 'fact': b['fact'], 'palette': visual.get('palette') or palettes[i + 1], 'shots': [
-            {'id': f'{b["id"]}-a', 'role': 'setup', 'headline': setup, 'headline_b': _short(b['narration'], 26), 'room': room, 'rig': {'id': rig_id, 'params': params, **({'hold': True} if visual.get('hold') else {})}, 'insert': None,
+            {'id': f'{b["id"]}-a', 'role': 'setup', 'headline': setup, 'headline_b': _short(b['narration'], 26), 'headline_b_cut': _clip(b['narration'], 26)[1], 'room': room, 'rig': {'id': rig_id, 'params': params, **({'hold': True} if visual.get('hold') else {})}, 'insert': None,
              'bot': {'costume': costume, 'face': 'determined', 'pose': 'walking'}},
-            {'id': f'{b["id"]}-b', 'role': 'payoff', 'headline': payoff, 'headline_b': _short(fact['claim'], 26), 'room': room, 'rig': {'id': rig_id, 'params': params, **({'hold': True} if visual.get('hold') else {})}, 'insert': insert,
+            {'id': f'{b["id"]}-b', 'role': 'payoff', 'headline': payoff, 'headline_b': _short(fact['claim'], 26), 'headline_b_cut': _clip(fact['claim'], 26)[1], 'room': room, 'rig': {'id': rig_id, 'params': params, **({'hold': True} if visual.get('hold') else {})}, 'insert': insert,
              'bot': {'costume': costume, 'face': 'surprised', 'pose': 'pointing'}}]})
+        if beat_brand != brand:
+            for shot in beats[-1]['shots']:shot['brand'] = beat_brand
     # Hero-first opening (review item 5, round 2): the hook shows the first claim's machine
     # already in action with the product mark, the way the references open on the metaphor.
     # The first claim beat then replays it from the start with its own setup.
     first_claim = beats[1]['shots'][0]
-    if (brief.get('hook') or {}).get('hero', True):
+    hook_visual = (brief.get('hook') or {}).get('visual')
+    if hook_visual:
+        # The hook's own machine: a film can open on the problem before its first step.
+        from motif_rigs import get as _get_rig
+        hp = dict(hook_visual.get('params', {}))
+        if brand and 'logo' in _get_rig(hook_visual['rig']).params_schema['properties'] and 'logo' not in hp:hp['logo'] = brand
+        beats[0]['shots'][0].update({'rig': {'id': hook_visual['rig'], 'params': hp}, 'insert': None, 'crowd': 0, 'grammar': 'hero'})
+        if hook_visual.get('palette'):beats[0]['palette'] = hook_visual['palette']
+    elif (brief.get('hook') or {}).get('hero', True):
         beats[0]['shots'][0].update({'rig': copy.deepcopy(first_claim['rig']), 'insert': None, 'crowd': 0, 'grammar': 'hero'})
+    _assign_wallpapers(beats, seed)
+    _keep_object_palettes(beats, {b['id'] for b in brief['beats'] if (b.get('visual') or {}).get('palette')} | ({'hook'} if (hook_visual or {}).get('palette') else set()))
     cta_room = room_for('celebrate launch ' + brief['cta']['narration'], brief['cta'].get('room'))
     beats.append({'id': 'cta', 'kind': 'cta', 'narration': brief['cta']['narration'], 'palette': palettes[-1], 'shots': [
-        {'id': 'cta', 'role': 'cta', 'headline': _short(f'COMMENT {brief["cta"]["keyword"]}', 28), 'headline_b': _short(re.sub(r'[,.?!]?\s*comment\s+\S+\s*$', '', brief['cta']['narration'], flags=re.I), 28), 'room': cta_room, 'rig': None,
+        {'id': 'cta', 'role': 'cta', 'headline': _short(f'COMMENT {brief["cta"]["keyword"]}', 28), 'headline_b': brief['cta'].get('headline_b') or _short(re.sub(r'[,.?!]?\s*comment\s+\S+\s*$', '', brief['cta']['narration'], flags=re.I), 28), 'headline_b_cut': not brief['cta'].get('headline_b') and _clip(re.sub(r'[,.?!]?\s*comment\s+\S+\s*$', '', brief['cta']['narration'], flags=re.I), 28)[1], 'room': cta_room, 'rig': None,
          'insert': {'kind': 'comment_end_card', 'args': {'keyword': brief['cta']['keyword']}}, 'bot': {'costume': ['party-hat'], 'face': 'excited', 'pose': 'celebrating' if look['cta'] != 'card' else 'pointing'},
          'crowd': 7 if look['cta'] == 'crowd' else 0, 'grammar': look['cta']}]})
-    plan = {'schema_version': 'reel-1.1', 'quality_mode': 'motif-gold-v1', 'slug': brief['slug'], 'seed': seed, 'look': look_id, 'brand': brand, 'library': 'draft' if allow_draft else 'canonical', 'beats': beats, 'library_requests': [], 'warnings': default_label_warnings(beats)}
+    plan = {'schema_version': 'reel-1.1', 'quality_mode': 'motif-gold-v1', 'slug': brief['slug'], 'seed': seed, 'look': look_id, 'brand': brand, 'mascot': brief.get('mascot', 'bot'), 'library': 'draft' if allow_draft else 'canonical', 'beats': beats, 'library_requests': [], 'warnings': default_label_warnings(beats)}
     return plan
 
 
@@ -178,15 +229,50 @@ def default_label_warnings(beats):
             rig = get_rig(shot['rig']['id']);props = rig.params_schema['properties']
             text = [k for k, v in props.items() if v.get('type') == 'string' or v.get('items', {}).get('type') == 'string']
             left = [k for k in text if k not in shot['rig'].get('params', {})]
+            printed = getattr(rig, 'printed_text', None)
+            if printed:
+                # A rig that declares what it prints only leaves a default on screen when that default is printed.
+                on = set(printed(rig.params(shot['rig'].get('params'))))
+                left = [k for k in left if any(x in on for x in (rig.defaults.get(k) if isinstance(rig.defaults.get(k), list) else [rig.defaults.get(k)]))]
             if left:out.append(f'{beat["id"]}: {rig.name} text params {left} use library defaults {[rig.defaults.get(k) for k in left]}; set visual.params in the brief')
     return out
+
+
+def _assign_wallpapers(beats, seed):
+    """One wallpaper per beat for rooms with a papered wall: never the previous beat's wall, and the
+    least used so far (cut 5 review: 5 of 12 sets showed the same stripes)."""
+    import motif_sets as ms
+    order = list(ms.WALLPAPERS);random.Random(seed).shuffle(order);used = {};prev = None
+    for beat in beats:
+        room = beat['shots'][0].get('room')
+        if room not in ms.PAPERED:
+            prev = ms.wall_of(room, None) if room else prev;continue
+        pick = min((w for w in order if w != prev), key=lambda w: (used.get(w, 0), order.index(w)))
+        used[pick] = used.get(pick, 0) + 1;prev = pick
+        for shot in beat['shots']:shot['wallpaper'] = pick
+
+
+def _keep_object_palettes(beats, explicit):
+    """Lesson L009: a machine that returns in a later beat keeps its colours; only the room palette rotates."""
+    from motif_rigs import get as _get_rig
+    seen = {}
+    for beat in beats:
+        rig = beat['shots'][0].get('rig')
+        if not rig:continue
+        try:r = _get_rig(rig['id']);key = r.identity(r.params(rig.get('params')))
+        except Exception:continue  # unknown rig or bad params: validate_plan reports it
+        if key is None:continue
+        if key in seen and beat['id'] not in explicit:
+            obj = seen[key].split('/')[0];mine, _, room = beat['palette'].partition('/')
+            if obj != mine:beat['palette'] = f'{obj}/{room or mine}'
+        seen.setdefault(key, beat['palette'])
 
 
 def validate_plan(plan, allow_draft=False):
     """Every ID must exist in the (approved) catalogue; params must fit the rig schema."""
     from motif_library import catalog, ids
     from motif_rigs import get as get_rig
-    from motif_rigs.palettes import PALETTES
+    from motif_rigs.palettes import known
     cat = catalog(allow_draft);errors, requests = [], []
     rigs, rooms, costumes, inserts = ids(cat, 'rig'), ids(cat, 'room'), ids(cat, 'costume'), ids(cat, 'insert')
     from motif_looks import LOOKS
@@ -202,7 +288,7 @@ def validate_plan(plan, allow_draft=False):
         elif rig and rig in RIG_RELATIONS and not fits(rig, beat['relation']):
             errors.append(f'{beat["id"]}: metaphor mismatch: {rig} shows {RIG_RELATIONS[rig]}, the claim is {beat["relation"]} (fits: {rigs_for(beat["relation"])})')
     for beat in plan['beats']:
-        if beat['palette'] not in PALETTES:errors.append(f'{beat["id"]}: unknown palette {beat["palette"]}')
+        if not known(beat['palette']):errors.append(f'{beat["id"]}: unknown palette {beat["palette"]}')
         for shot in beat['shots']:
             where = shot['id']
             if shot['room'] not in rooms:requests.append({'kind': 'room', 'id': shot['room'], 'needed_by': where})
@@ -390,7 +476,56 @@ def pop_in(markup, f, delay, anchor):
     return f'<g opacity="{o:.3f}" transform="translate({ax:.1f} {ay + dy:.1f}) scale({s:.4f}) translate({-ax:.1f} {-ay:.1f})">{markup}</g>'
 
 
-def bot_motion(role, u, f, n, tc, side, entering=True):
+ACTS = {'app-screen': ('typing', 'pointing', 'inspecting'), 'knowledge-vault': ('pushing', 'pointing', 'pulling')}
+
+
+# Machines the host feeds (cut 5 review: Memo stood and watched in 9 of 12 frames). In a setup shot the
+# host carries a note in, throws it into the machine's contact point so it lands on the contact, and a
+# puff marks the hit: host, object and consequence stay one action.
+CARRY = {'app-screen', 'knowledge-vault'}
+
+
+def contact_age(f, fc, prev, hold):
+    """Frames since the machine's contact: counted from fc in a setup and carried on into the payoff
+    that continues it, so a reaction started on the hit finishes across the cut."""
+    if hold:return None
+    if fc is not None and f >= fc:return f - fc
+    if prev and prev[0] == 'setup':return f + prev[1] - round(.92 * (prev[1] - 1))
+    return None
+
+
+def impact(f, fc, n, prev, hold):
+    """Vertical squash of the machine around its contact: a small wind-up before the hit, then a
+    damped bounce (positive = squashed)."""
+    if hold:return 0.0
+    if fc is not None and fc - 6 <= f < fc:return -.035 * (f - fc + 6) / 6
+    d = contact_age(f, fc, prev, hold)
+    if d is None or d > 24:return 0.0
+    return .085 * math.exp(-d / 5) * math.cos(d * .75)
+
+
+def confetti(x, y, d, c, size=1.0, frames=18):
+    """Paper scraps thrown out of the hit: they fly out, tumble and fall under gravity."""
+    if d >= frames:return ''
+    out = '';cols = (c['pop'], c['accent'], c['light'], c['primary'])
+    for k in range(12):
+        a = -math.pi * (.08 + .84 * k / 11);v = (9 + 5 * (k % 3)) * size
+        px = x + math.cos(a) * v * d;py = y + math.sin(a) * v * d + .9 * size * d * d
+        fade = 1 if d < frames * .6 else max(0.0, 1 - (d - frames * .6) / (frames * .4))
+        out += (f'<rect x="{-7 * size:.1f}" y="{-4 * size:.1f}" width="{14 * size:.1f}" height="{8 * size:.1f}" fill="{cols[k % 4]}" stroke="{c["dark"]}" stroke-width="1.5" opacity="{fade:.2f}" '
+                f'transform="translate({px:.1f} {py:.1f}) rotate({k * 47 + d * (22 + 9 * (k % 4)):.0f})"/>')
+    return out
+
+
+def carried_note(x, y, angle, c, s=1.0):
+    """A paper note the host carries: a sticky square with three ink lines."""
+    lines = ''.join(f'<path d="M-20 {ly} H{w - 20}" stroke="{c["dark"]}" stroke-width="3.5" stroke-linecap="round"/>' for ly, w in ((-9, 40), (1, 32), (11, 24)))
+    return (f'<g transform="translate({x:.1f} {y:.1f}) rotate({angle:.1f}) scale({s:.3f})">'
+            f'<rect x="-29" y="-23" width="58" height="46" rx="3" fill="{c["pop"]}" stroke="{c["dark"]}" stroke-width="3.5"/>'
+            f'<rect x="-12" y="-28" width="24" height="9" fill="{c["light"]}" opacity=".85" transform="rotate(-6)"/>{lines}</g>')
+
+
+def bot_motion(role, u, f, n, tc, side, entering=True, acts=('pointing', 'presenting')):
     """Bot acting synced to the machine: (pose, face, dx, dy, squash, cycle).
     setup: walks in from its side, then works the machine (pointing/presenting)
     and recoils at the contact; payoff: reacts to the result and keeps moving."""
@@ -400,13 +535,30 @@ def bot_motion(role, u, f, n, tc, side, entering=True):
         if walk < 1:return 'standing', 'determined', side * 80 * (1 - ease(walk)), 0.0, 1.0, 'walk'
         at = u / max(1e-6, tc * .92) if tc else 1.0
         if at < .92:  # works the machine: alternating gestures, bobbing and leaning, never a held pose
-            return ('pointing' if (f // 16) % 2 == 0 else 'presenting'), 'determined', 6 * math.sin(f * .17), -9 * abs(math.sin(f * .3)), 1.0, None
+            return acts[(f // 16) % len(acts)], 'determined', 6 * math.sin(f * .17), -9 * abs(math.sin(f * .3)), 1.0, None
         hit = max(0.0, min(1.0, (at - .92) / .3))
         return 'presenting', 'surprised', 0.0, -26 * math.sin(hit * math.pi), 1 - .1 * math.sin(hit * math.pi), None
     if role == 'payoff':
         hop = max(0.0, math.sin(min(1.0, u / .3) * math.pi)) * 40 + abs(math.sin(f * .26)) * 10 * (u > .3)
         return ('celebrating' if (f // 7) % 2 else 'presenting') if u > .2 else 'standing', 'excited', 7 * math.sin(f * .2) * (u > .3), -hop, 1.0, None
     return 'celebrating', 'excited', 0.0, -abs(math.sin(f * .2)) * 20, 1.0, None
+
+
+def sticker_spot(layout, rig, half):
+    """Where the product sticker sits: above the host's head when that is clear, else the clearest
+    corner of the machine. It never covers a machine or screen label or the host (lesson L020:
+    cut 4's sticker hid "3 GAPS", "SAVED" and a graph node)."""
+    from motif_lessons import _overlap, hero_labels
+    bot = layout['bot'];hx, hy, hw, hh = layout['hero']['box']
+    labels = [t['box'] for pose in ('contact', 'end') for t in hero_labels(layout, pose)]
+    host = (bot['x'] - half, bot['y'] - 4.2 * half, 2 * half, 4.2 * half)
+    spots = [(bot['x'], bot['y'] - 4.2 * half - 60), (hx + 40, hy + 30), (hx + hw - 40, hy + 30), (hx + 40, hy - 30), (hx + hw - 40, hy - 30),
+             (hx + 40, hy + hh * .5), (hx + hw - 40, hy + hh * .5)]
+    def cost(i):
+        x, y = spots[i];x = min(720 - 56, max(56, x));y = max(370, y);box = (x - 50, y - 50, 100, 100)
+        return sum(_overlap(box, t) for t in labels) + _overlap(box, host) * .5 + i
+    x, y = spots[min(range(len(spots)), key=cost)]
+    return (min(720 - 56, max(56, x)), max(370, y))
 
 
 def shot_frames(shot, layout, seed, look='paper-craft', brand=None, prev=None, continued=False):
@@ -425,8 +577,9 @@ def shot_frames(shot, layout, seed, look='paper-craft', brand=None, prev=None, c
     from motif_rigs.base import ease, place
     from motif_rigs.palettes import palette
     import motif_looks
-    L = motif_looks.get(look);grammar = shot.get('grammar', 'crowd')
+    L = motif_looks.get(look);grammar = shot.get('grammar', 'crowd');brand = shot.get('brand', brand);M = shot.get('mascot', 'bot')
     c = palette(shot['palette']);n = shot['frames'];room = ms.ROOMS[shot['room']]
+    if shot.get('wallpaper'):c = {**c, 'wallpaper': shot['wallpaper']}
     rig = get_rig(shot['rig']['id']) if shot['rig'] else None
     action = next(iter(rig.actions)) if rig else None;tc = rig.contact_t(action) if rig else 0
     hb = layout['hero']['box'] if layout.get('hero') else (160, 500, 400, 540)
@@ -439,9 +592,11 @@ def shot_frames(shot, layout, seed, look='paper-craft', brand=None, prev=None, c
     # The product mark floats in Bot's lane above its head: it never covers the rig's own labels.
     if rig:
         bot = layout['bot'];half = 235 * bot['scale']
-        sticker_at = (min(720 - 56, max(56, bot['x'])), max(370, bot['y'] - 4.2 * half - 60))
+        sticker_at = sticker_spot(layout, rig, half)
     else:sticker_at = None
     poof_at = None
+    reframe = L.get('reframe') if prev and shot['role'] == 'payoff' and rig else None
+    fc = round(.92 * (n - 1)) if rig and shot['role'] == 'setup' and not (shot['rig'] or {}).get('hold') else None
     # A held beat keeps its machine in the start state (Codex's v11 critique: Python's lock opened
     # while the narration was still explaining the restriction). A later beat performs the change.
     hold = bool(rig and shot['rig'].get('hold'))
@@ -449,15 +604,31 @@ def shot_frames(shot, layout, seed, look='paper-craft', brand=None, prev=None, c
         # The payoff opens on the change itself: a puff where the machine made contact.
         h = layout['hero'];(lx, ly), _ = rig.contacts(h.get('values'), (action, tc))[rig.actions[action].contact]
         poof_at = (h['x'] + lx * h['scale'], h['y'] + ly * h['scale'])
+    carry_to = hit = None
+    if rig:
+        h = layout['hero'];(lx, ly), _ = rig.contacts(h.get('values'), (action, tc))[rig.actions[action].contact]
+        hit = (h['x'] + lx * h['scale'], h['y'] + ly * h['scale'])
+        if fc is not None and rig.name in CARRY:carry_to = hit
     frames = []
     for f in range(n):
         u = f / max(1, n - 1);pieces = []
         zoom, dx, dy = motif_looks.camera(L['camera'], shot['role'], u, f, n)
-        if prev:
+        ccx = cx
+        if prev and reframe:
+            # Reframe cut (2026-10-11 reference comparison): the payoff cuts to a closer framing on the
+            # machine, so the picture changes every 2-3 s while the set and its objects stay the same.
+            zoom = reframe + .04 * u;ccx = 360
+        elif prev:
             pz, pdx, pdy = motif_looks.camera(L['camera'], prev[0], 1.0, prev[1] - 1, prev[1]);k = ease(min(1.0, f / 10))
             zoom, dx, dy = pz + (zoom - pz) * k, pdx + (dx - pdx) * k, pdy + (dy - pdy) * k
         else:dy += motif_looks.slide_offset(L['transition'], f)
-        cam = lambda markup: camera(markup, zoom, cx, cy, dx, dy)
+        if fc is not None and f >= fc:
+            # Contact punch (2026-10-11 motion study): the references' frames change in sudden events
+            # (11-25% of frames) where Motif eased everything (2%); the moment the machine makes contact
+            # the camera kicks in and shakes for a few frames.
+            k = math.exp(-(f - fc) / 3.5);zoom += .07 * k;dx += 9 * math.sin((f - fc) * 2.6) * k;dy += 5 * math.cos((f - fc) * 3.1) * k
+        fy = cy
+        cam = lambda markup: camera(markup, zoom, ccx, fy, dx, dy)
         if dy > 0:pieces.append(f'<rect width="720" height="1280" fill="{L["transition_colour"]}"/>')
         pieces.append(cam(room['draw'](c)))
         for k, item in enumerate(layout.get('dressing', [])):
@@ -477,7 +648,11 @@ def shot_frames(shot, layout, seed, look='paper-craft', brand=None, prev=None, c
             h = layout['hero'];breathe = 1 + (.018 if shot['role'] == 'payoff' else .01) * math.sin(f * .21)
             hero = place(rig.render(h['values'] or None, (action, t), shot['palette']), h['x'], h['y'], h['scale'] * breathe)
             rock = .7 * math.sin(f * .13) + (1.6 * math.sin(f * .9) * (math.sin(f * .11) > .3) if hold else 0)  # a held machine strains against itself
-            hero = f'<g transform="rotate({rock:.3f} {h["x"]:.1f} {h["y"]:.1f})">{hero}</g>'  # the machine rocks on its base
+            # The machine reacts to the hit with squash and stretch (cut 8: the references' objects slam and
+            # bounce where ours glided; Mayowa wants the camera smooth, so the energy lives in the object).
+            sq = impact(f, fc, n, prev, hold)
+            if sq:rock += 3.5 * sq
+            hero = f'<g transform="translate({h["x"]:.1f} {h["y"]:.1f}) scale({1 + .55 * sq:.4f} {1 - sq:.4f}) rotate({rock:.3f}) translate({-h["x"]:.1f} {-h["y"]:.1f})">{hero}</g>'  # the machine rocks on its base
             if brand and shot['role'] != 'hook':
                 from motif_brand import sticker
                 # The product's mark on the machine: the frame names its subject without the caption.
@@ -485,28 +660,38 @@ def shot_frames(shot, layout, seed, look='paper-craft', brand=None, prev=None, c
                 mark = f'<g transform="translate({sticker_at[0]:.1f} {sticker_at[1]:.1f})">{sticker(brand, 92, -8 + wob)}</g>'
                 hero += mark if prev else pop_in(mark, f, 2, sticker_at)
             hero_at = len(pieces);pieces.append(cam(boil(hero, f, f'{shot["id"]}-hero', .6)))
-            if prev and shot['role'] == 'payoff' and poof_at:pieces.append(cam(poof(*poof_at, f, c, h['scale'] * 1.1)))
+            if prev and shot['role'] == 'payoff' and poof_at:pieces.append(cam(poof(*poof_at, f, c, h['scale'] * (.6 if rig.name == 'app-screen' else 1.1))))  # small on screens: the puff hid the answer
+            since = contact_age(f, fc, prev, hold)
+            if since is not None and hit:pieces.append(cam(confetti(*hit, since, c, max(.8, h['scale'] * 1.4))))
         b = layout['bot'];bot = shot['bot']
         if rig:
             side = b.get('side', -1 if b['x'] < 360 else 1)
-            pose, face, bdx, bdy, squash, cycle = bot_motion(shot['role'], u, f, n, tc, side, entering=not prev)
+            pose, face, bdx, bdy, squash, cycle = bot_motion(shot['role'], u, f, n, tc, side, entering=not prev, acts=ACTS.get(rig.name, ('pointing', 'presenting')))
             face = bot['face'] if shot['role'] == 'payoff' and face == 'excited' and bot.get('face') else face
-            body = dressed_bot(b['x'] + bdx, b['y'] + bdy, b['scale'], face, pose, bot['costume'], shot['palette'], flip=side > 0, cycle=cycle, phase=f / 10, head=round(4 * math.sin(f * .3)))
+            body = dressed_bot(b['x'] + bdx, b['y'] + bdy, b['scale'], face, pose, bot['costume'], shot['palette'], flip=side > 0, cycle=cycle, phase=f / 10, head=round(4 * math.sin(f * .3)), mascot=M)
             if squash != 1:body = f'<g transform="translate({b["x"]:.1f} {b["y"]:.1f}) scale({2 - squash:.3f} {squash:.3f}) translate({-b["x"]:.1f} {-b["y"]:.1f})">{body}</g>'
             if b.get('behind'):pieces.insert(hero_at, cam(body))  # squeezed onto a wide machine: peeks from behind it
             else:pieces.append(cam(body))
+            if carry_to:
+                half = 235 * b['scale'];ns = max(.8, half / 80);t0 = max(1, fc - 9)
+                hand = (b['x'] + bdx - side * half * .8, b['y'] + bdy - 2.3 * half)
+                if f < t0:pieces.append(cam(carried_note(*hand, -8 * side + 4 * math.sin(f * .3), c, ns)))
+                elif f < fc:
+                    p = ease((f - t0) / (fc - t0));x = hand[0] + (carry_to[0] - hand[0]) * p;y = hand[1] + (carry_to[1] - hand[1]) * p - 150 * math.sin(math.pi * p)
+                    pieces.append(cam(carried_note(x, y, -side * 330 * p, c, ns * (1 - .3 * p))))
+                else:pieces.append(cam(poof(*carry_to, f - fc, c, .55)))
         elif grammar == 'big-bot':
             hop = abs(math.sin(f * .18)) * 18;tilt = 4 * math.sin(f * .15)
-            pieces.append(cam(dressed_bot(360 if not brand else 540, 1050 - hop, .5 if not brand else .42, bot['face'], bot['pose'], bot['costume'], shot['palette'], angle=tilt)))
+            pieces.append(cam(dressed_bot(360 if not brand else 540, 1050 - hop, .5 if not brand else .42, bot['face'], bot['pose'], bot['costume'], shot['palette'], angle=tilt, mascot=M)))
         elif grammar in ('number', 'card'):
             hop = abs(math.sin(f * .22)) * 16
-            pieces.append(cam(dressed_bot(150 if grammar == 'card' else 560, 1030 - hop, .38, bot['face'], 'pointing', bot['costume'], shot['palette'], flip=grammar == 'number')))
+            pieces.append(cam(dressed_bot(150 if grammar == 'card' else 560, 1030 - hop, .38, bot['face'], 'pointing', bot['costume'], shot['palette'], flip=grammar == 'number', mascot=M)))
         else:
             hop = abs(math.sin(f * .22)) * 26
-            pieces.append(cam(dressed_bot(360, 1010 - hop, .38, bot['face'], bot['pose'], bot['costume'], shot['palette'])))
+            pieces.append(cam(dressed_bot(360, 1010 - hop, .38, bot['face'], bot['pose'], bot['costume'], shot['palette'], mascot=M)))
         for k, m in enumerate(members):
             bounce = abs(math.sin(f * .25 + k)) * 14
-            pieces.append(cam(pop_in(dressed_bot(m['x'], m['y'] - bounce, m['s'], m['face'], 'celebrating' if (f // 8 + k) % 2 else m['pose'], m['costume'], shot['palette'], m['angle'], m['flip']), f, 3 + k, (m['x'], m['y']))))
+            pieces.append(cam(pop_in(dressed_bot(m['x'], m['y'] - bounce, m['s'], m['face'], 'celebrating' if (f // 8 + k) % 2 else m['pose'], m['costume'], shot['palette'], m['angle'], m['flip'], mascot=M), f, 3 + k, (m['x'], m['y']))))
         for k, item in enumerate(layout.get('dressing', [])):
             if item['layer'] == 'front':pieces.append(cam(boil(place(PROPS[item['prop']].render(c), item['x'], item['y'], item['scale']), f, f'{shot["id"]}-f{k}', .8)))
         if brand and shot['role'] in ('hook', 'cta'):
@@ -538,7 +723,7 @@ def shot_frames(shot, layout, seed, look='paper-craft', brand=None, prev=None, c
 
 
 SOUND = {'overflow-vehicle': 'spring', 'plate-stack': 'paper', 'hydraulic-press': 'reject', 'race-track': 'star', 'balance-scale': 'cloth',
-         'stacked-meter': 'pop', 'thermometer': 'star', 'receipt-stack': 'paper', 'stamp-gate': 'reject', 'conveyor': 'key1'}
+         'stacked-meter': 'pop', 'thermometer': 'star', 'receipt-stack': 'paper', 'stamp-gate': 'reject', 'conveyor': 'key1', 'knowledge-vault': 'paper'}
 
 
 def prepare(project, brief):
@@ -555,7 +740,7 @@ def prepare(project, brief):
     shutil.copy2(V6 / 'hyperframes.json', project / 'hyperframes.json')
     write(project / 'package.json', {'name': project.name, 'private': True, 'scripts': {k: f'npx --yes hyperframes@{PIN} {v}' for k, v in (('check', 'check'), ('render', 'render'), ('dev', 'preview'))}})
     write(project / 'asset-provenance.json', {'rules': [
-        {'glob': 'assets/voice/*', 'origin': 'motif-tts', 'generator': f'hyperframes {PIN} tts, voice {brief.get("voice", "af_nova")}, one take per line of the brief'},
+        {'glob': 'assets/voice/*', 'origin': 'motif-tts', 'generator': f'hyperframes {PIN} tts, voice {voice_for(brief)}, one take per line of the brief'},
         {'glob': 'assets/voice/clauses/*', 'origin': 'motif-tts', 'generator': f'hyperframes {PIN} tts clause takes and generated silence'},
         {'glob': 'assets/sfx/*', 'origin': 'procedural-seeded', 'generator': 'motif_ui_production.make_sounds (seeded filtered noise and resonators)'},
         {'glob': 'assets/music/*', 'origin': 'procedural-seeded', 'generator': 'motif_music.bed (synthesised chords, bass, arpeggio and drums; no samples)'}]})
@@ -600,6 +785,7 @@ def compile_reel(project, plan, spans, voice_duration, seed=0):
         i = shots.index(shot);same = lambda a, b: a['beat'] == b['beat'] and a['room'] == b['room'] and a.get('rig') == b.get('rig')
         prev = (shots[i - 1]['role'], shots[i - 1]['frames']) if i and same(shots[i - 1], shot) else None
         continued = i + 1 < len(shots) and same(shots[i + 1], shot)
+        shot.setdefault('mascot', plan.get('mascot', 'bot'))
         frames = shot_frames(shot, layout, seed + shot['start_frame'], plan.get('look', 'paper-craft'), plan.get('brand'), prev, continued)
         dur = shot['frames'] / FPS
         events = [{'time': round(f / FPS, 9), 'target': f'#{shot["id"]}-world', 'action': 'SET', 'params': {'props': {'innerHTML': namespace(body, shot['id'])}}} for f, body in enumerate(frames) if f]
@@ -665,7 +851,7 @@ def run(brief_path, out_root=None, allow_draft=False, stub_voice=False, render=F
     stage('sound-off', meaning['status'], failures=meaning['failures'])
     if meaning['status'] != 'PASS':write(project / 'reel-record.json', record);raise ValueError('sound-off: ' + '; '.join(meaning['failures']))
     prepare(project, brief)
-    spans, voice_duration = voice(project, [(b['id'], b['narration']) for b in plan['beats']], brief.get('voice', 'af_nova'), stub_voice, python)
+    spans, voice_duration = voice(project, [(b['id'], b['narration']) for b in plan['beats']], voice_for(brief), stub_voice, python)
     stage('voice', 'STUB' if stub_voice else 'PASS', duration=round(voice_duration, 3))
     timing = {i: (s, e) for i, s, e in spans}
     beats_t = []
@@ -675,10 +861,14 @@ def run(brief_path, out_root=None, allow_draft=False, stub_voice=False, render=F
         for k, h in enumerate(heads):beats_t.append({'id': f'{s["id"]}.{k}', 'start': round(a + n * k / len(heads), 3), 'end': round(a + n * (k + 1) / len(heads), 3), 'headline': h, 'metaphor': metaphor, 'cut_before': True})
     measured = validate(brief, measured=voice_duration + TAIL)
     if measured:stage('voice-runtime', 'FAIL', errors=measured);write(project / 'reel-record.json', record);raise ValueError('voice: ' + '; '.join(measured))
-    structure = check_plan(beats_t, beats_t[-1]['end'])
+    from motif_reel_script import limits
+    structure = check_plan(beats_t, beats_t[-1]['end'], limits(brief)['runtime'])
     stage('structure', 'FAIL' if structure else 'PASS', failures=structure, critics='live Codex structure/direction critics ' + ('run separately' if codex_available() else 'not available in this environment; not run'))
     if structure:write(project / 'reel-record.json', record);raise ValueError('structure: ' + '; '.join(structure))
     compiled = compile_reel(project, plan, spans, voice_duration, brief.get('seed', 0));stage('compile', 'PASS', duration=round(compiled['duration'], 3), shots=compiled['shots'])
+    from motif_lessons import run as lessons
+    learned = lessons(project, plan);write(project / 'lessons.json', learned)
+    stage('lessons', learned['status'], results=[{k: r[k] for k in ('lesson', 'status', 'findings')} for r in learned['lessons'] if r['status'] != 'PASS'])
     rough = pacing(project)
     from motif_frame_snapshot import at_times, snapshot
     mids = [f['start'] + f['duration'] * .7 for f in compiled['frames_index']]
@@ -694,18 +884,64 @@ def run(brief_path, out_root=None, allow_draft=False, stub_voice=False, render=F
         style = finish_style(plan['look'], project / 'finish-style.json')
         apply(project, final, style_path=style, lights_path=project / 'finish-lights.json');stage('finish', 'PASS', project=str(final), style=f'motif-finish-v1+{plan["look"]}')
     origin = provenance(final);gate = pacing(final)
-    stage('gate', 'PASS' if origin['status'] == 'PASS' and gate['status'] == 'PASS' else 'FAIL', provenance={k: origin[k] for k in ('status', 'checked', 'unknown', 'reference_derived', 'rejected')}, pacing=gate['status'])
+    stage('gate', 'PASS' if origin['status'] == 'PASS' and gate['status'] == 'PASS' and learned['status'] == 'PASS' else 'FAIL', provenance={k: origin[k] for k in ('status', 'checked', 'unknown', 'reference_derived', 'rejected')}, pacing=gate['status'], lessons=learned['status'])
     if render:
         from motif_frame_render import render as frame_render
         out = final / 'renders/review.mp4';result = frame_render(final, out, DELIVERY)
         from motif_motion import measure
         motion = measure(out);write(final / 'motion.json', motion)
         stage('render', 'PASS', file=str(out), frames=result['frames'], size=list(DELIVERY))
-        stage('motion', motion['status'], **{k: motion[k] for k in ('median_moving_share', 'floor', 'longest_static_s')})
+        stage('motion', motion['status'], **{k: motion[k] for k in ('median_moving_share', 'floor', 'changes_per_s', 'events_per_s', 'longest_static_s')})
     stage('review', 'REVIEW_REQUIRED', note='Mayowa reviews on phone; technical passes do not approve the film')
     write(project / 'reel-record.json', record)
     if final != project:write(final / 'reel-record.json', record)
     return record
+
+
+def catalog_for_agents():
+    """What a brief author (human or agent) may name, in one JSON document."""
+    import motif_looks
+    from motif_brand import catalogue as brands
+    from motif_bot_kit import COSTUMES
+    from motif_library import approvals
+    from motif_mascots import catalog as mascots
+    from motif_rigs import all_rigs
+    from motif_rigs.palettes import PALETTES
+    from motif_semantics import RELATIONS, RIG_RELATIONS
+    import motif_sets as ms
+    status = approvals()['entries']
+    rigs = {}
+    for name, rig in sorted(all_rigs().items()):
+        props = rig.params_schema['properties']
+        rigs[name] = {'description': rig.description, 'relations': list(RIG_RELATIONS.get(name, ())), 'status': status.get(f'rig/{name}', 'DRAFT'),
+                      'params': {k: v for k, v in props.items()}, 'required': rig.params_schema.get('required', []), 'defaults': rig.defaults,
+                      'modes': props.get('mode', {}).get('enum')}
+    from motif_lessons import ledger
+    return {'relations': list(RELATIONS), 'machines': rigs, 'rooms': sorted(ms.ROOMS), 'palettes': sorted(PALETTES),
+            'palette_note': 'A beat palette is one name, or "object/room": the first palette colours the machine, the second the walls and floor. Beats that carry the same machine must keep its object palette.',
+            'looks': {k: {'rooms': list(v['rooms']), 'palettes': list(v['palettes'])} for k, v in motif_looks.LOOKS.items()},
+            'costumes': sorted(c for c in COSTUMES if c != 'none'), 'inserts': ['counter', 'star_badge', 'price_tag', 'gauge', 'progress_bar'],
+            'brands': sorted(brands()), 'voices': list(VOICES), **mascots(),
+            'brief_rules': [f'{l["id"]}: {l["rule"]}' for l in ledger()['lessons']]}
+
+
+def check_brief(brief, allow_draft=False):
+    """Everything that can be checked before voicing: script, plan, library, sound-off, plan-level lessons."""
+    from motif_reel_script import estimate, validate
+    from motif_semantics import sound_off
+    out = {'script': validate(brief)}
+    if out['script']:return {'status': 'FAIL', **out}
+    plan = plan_reel(brief, allow_draft);errs, requests = validate_plan(plan, allow_draft)
+    out.update({'estimated_runtime': round(estimate(brief), 1), 'plan': errs, 'library_requests': requests, 'warnings': plan['warnings']})
+    out['sound_off'] = sound_off(plan, brief)['failures']
+    from motif_lessons import CHECKS, PLAN_CHECKS, ledger
+    out['lessons'] = [];out['lesson_warnings'] = []
+    for lesson in ledger()['lessons']:
+        if lesson.get('check') not in PLAN_CHECKS:continue
+        found = [f'{lesson["id"]} {f["where"]}: {f["detail"]}' for f in CHECKS[lesson['check']](None, plan, {})]
+        (out['lessons'] if lesson.get('level') == 'gate' else out['lesson_warnings']).extend(found)
+    bad = out['plan'] or out['sound_off'] or out['lessons']
+    return {'status': 'FAIL' if bad else 'PASS', **out}
 
 
 def main():
@@ -715,7 +951,13 @@ def main():
     r.add_argument('--stub-voice', action='store_true');r.add_argument('--render', action='store_true');r.add_argument('--no-finish', action='store_true')
     r.add_argument('--tts-python', type=Path, help='Python with kokoro-onnx for hyperframes tts')
     pl = sub.add_parser('plan');pl.add_argument('--brief', type=Path, required=True);pl.add_argument('--allow-draft', action='store_true')
+    ck = sub.add_parser('check', help='fast brief check for authors and agents: script, plan, sound-off (no voice, no render)')
+    ck.add_argument('--brief', type=Path, required=True);ck.add_argument('--allow-draft', action='store_true')
+    sub.add_parser('catalog', help='everything a brief may name (machines, modes, rooms, palettes, looks, mascots, costumes, inserts, brands, relations) as JSON')
     a = p.parse_args()
+    if a.cmd == 'catalog':print(json.dumps(catalog_for_agents(), indent=1));return
+    if a.cmd == 'check':
+        report = check_brief(read(a.brief), a.allow_draft);print(json.dumps(report, indent=2));raise SystemExit(0 if report['status'] == 'PASS' else 1)
     if a.cmd == 'plan':
         plan = plan_reel(read(a.brief), a.allow_draft);errs, _ = validate_plan(plan, a.allow_draft);print(json.dumps({'plan': plan, 'errors': errs}, indent=2));raise SystemExit(1 if errs else 0)
     record = run(a.brief, a.out, a.allow_draft, a.stub_voice, a.render, a.tts_python, not a.no_finish)

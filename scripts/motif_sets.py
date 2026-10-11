@@ -27,7 +27,7 @@ from motif_bot_kit import COSTUMES, dressed_bot
 from motif_props import PROPS
 from motif_rigs import get as get_rig
 from motif_rigs.base import place
-from motif_rigs.palettes import PALETTES, palette as get_palette, rotation
+from motif_rigs.palettes import PALETTES, known, palette as get_palette, rotation
 
 ROOT = Path(__file__).resolve().parents[1]
 W, H = 720, 1280
@@ -39,7 +39,8 @@ HERO_MIN = .35                     # hero height as a share of frame height
 HERO_WIDE = (.3, .7)               # or, for a wide machine, this share of height and of width
 EMPTY_FIELD_MAX = .45
 EDGE_VISIBLE = .7                  # an edge prop shows at least this share of its width (no stray fragments)
-BOT_SCALE = (.32, .4)              # Bot reads at about 17 to 21% of frame height
+BOT_SCALE = (.42, .5)              # host reads at about 22 to 27% of frame height (refs ~30%; was .32-.4 until cut 7)
+BOT_MIN = .36                      # it may shrink to this (19%) rather than hide a machine label (front_spot)
 BOT_LANE = 150                    # width kept free beside the hero for Bot
 HERO_SAFE = 40                    # hero clear of the frame edge so camera push-ins never crop it
 PROP_MAX_SCALE = 1.8              # beyond this a small prop reads as a blank panel or a giant
@@ -86,6 +87,36 @@ def _diamonds(c, colour, size=56, opacity=.22, y1=FLOOR):
         for x in range(-size if row % 2 else -size // 2, W + size, size):
             out += f'<path d="M{x} {y + size / 2}L{x + size / 2} {y}L{x + size} {y + size / 2}L{x + size / 2} {y + size}Z" fill="{colour}" opacity="{opacity}"/>'
     return out
+
+
+# Wallpapers (cut 5 review: 5 of 12 sets read as the same striped wall). Rooms with a papered wall
+# take the pattern the planner gives each beat in c['wallpaper'], so a room can return in a film with
+# a different wall; without one they keep their original pattern.
+def _wallpaper(c, kind, colour, op, y1=FLOOR):
+    if kind == 'dots':
+        return ''.join(f'<circle cx="{x + (30 if (y // 60) % 2 else 0)}" cy="{y}" r="9" fill="{colour}" opacity="{op}"/>' for y in range(30, y1, 60) for x in range(0, W + 60, 60))
+    if kind == 'diamonds':return _diamonds(c, colour, 48, op, y1)
+    if kind == 'plaid':
+        return (''.join(f'<rect x="{x}" width="34" height="{y1}" fill="{colour}" opacity="{op * .7:.3f}"/>' for x in range(10, W, 96))
+                + ''.join(f'<rect y="{y}" width="{W}" height="34" fill="{colour}" opacity="{op * .7:.3f}"/>' for y in range(10, y1, 96))
+                + ''.join(f'<path d="M{x} 0V{y1}" stroke="{c["dark"]}" stroke-width="2" opacity=".08"/>' for x in range(60, W, 96)))
+    if kind == 'scallops':
+        return ''.join(f'<path d="M{x} {y}a30 30 0 0 1 60 0" fill="none" stroke="{colour}" stroke-width="7" opacity="{op}"/>' for y in range(40, y1, 44) for x in range(-30 if (y // 44) % 2 else 0, W, 60))
+    if kind == 'chevrons':
+        return ''.join(f'<path d="M-20 {y}' + ''.join(f'L{x + 30} {y - 22}L{x + 60} {y}' for x in range(-20, W + 40, 60)) + f'" fill="none" stroke="{colour}" stroke-width="10" opacity="{op}"/>' for y in range(40, y1, 70))
+    if kind == 'florets':
+        return ''.join(''.join(f'<circle cx="{x + dx}" cy="{y + dy}" r="7" fill="{colour}" opacity="{op}"/>' for dx, dy in ((-8, 0), (8, 0), (0, -8), (0, 8))) + f'<circle cx="{x}" cy="{y}" r="4" fill="{c["light"]}" opacity="{op}"/>'
+                       for y in range(50, y1, 90) for x in range(40 + (45 if (y // 90) % 2 else 0), W, 90))
+    return _stripes(c, colour, 60, 22, op)
+
+
+WALLPAPERS = ('stripes', 'dots', 'diamonds', 'plaid', 'scallops', 'chevrons', 'florets')
+PAPERED = {'office', 'diner', 'living-room'}  # rooms whose wall takes c['wallpaper']
+
+
+def wall_of(room, wallpaper):
+    """The wall a viewer sees for a room and the beat's wallpaper (for the wall-variety lesson)."""
+    return (wallpaper or {'office': 'stripes', 'diner': 'stripes', 'living-room': 'diamonds'}[room]) if room in PAPERED else room
 
 
 def _office_boards(c, vy=600):
@@ -165,7 +196,7 @@ def _office(c):
     wainscot = (f'<rect y="{y0}" width="{W}" height="220" fill="{c["secondary"]}" opacity=".55"/>' + panels
                 + f'<rect y="{y0 - 14}" width="{W}" height="18" fill="{c["secondary"]}"/><rect y="{y0 - 14}" width="{W}" height="4" fill="{c["light"]}" opacity=".5"/><rect y="{y0 + 4}" width="{W}" height="8" fill="{c["dark"]}" opacity=".1"/>'
                 + f'<rect y="{FLOOR - 30}" width="{W}" height="30" fill="{c["secondary"]}"/><rect y="{FLOOR - 30}" width="{W}" height="4" fill="{c["light"]}" opacity=".45"/><rect y="{FLOOR - 26}" width="{W}" height="26" fill="{c["dark"]}" opacity=".08"/>')
-    return (f'<rect width="{W}" height="{FLOOR}" fill="{c["wall"]}"/>' + _bands(c, (c['dark'], c['wall'], c['light']), (.12, 0, .1)) + _stripes(c, c['secondary'], 60, 22, .16) + paper
+    return (f'<rect width="{W}" height="{FLOOR}" fill="{c["wall"]}"/>' + _bands(c, (c['dark'], c['wall'], c['light']), (.12, 0, .1)) + _wallpaper(c, c.get('wallpaper', 'stripes'), c['secondary'], .16) + paper
             + crown + wainscot + _office_boards(c) + _office_window(c, 40) + _office_window(c, 530)
             + f'<rect y="{FLOOR}" width="{W}" height="14" fill="{c["dark"]}" opacity=".12"/><path d="M0 {FLOOR + 2}H{W}" stroke="{c["dark"]}" stroke-width="4" opacity=".35"/>')
 
@@ -179,7 +210,7 @@ def _diner(c):
               f'<rect y="{y0 + 22}" width="{W}" height="8" fill="{c["metal"]}" opacity=".8"/><rect y="{y0 + 22}" width="{W}" height="2" fill="{c["light"]}" opacity=".7"/><rect y="{y0 + 30}" width="{W}" height="8" fill="{c["dark"]}" opacity=".08"/>')
     kick = f'<rect y="{FLOOR - 44}" width="{W}" height="44" fill="{c["metal"]}" opacity=".75"/>' + ''.join(f'<path d="M0 {y}H{W}" stroke="{c["light"]}" stroke-width="2" opacity=".35"/>' for y in range(FLOOR - 38, FLOOR, 9))
     ports = ''.join(f'<circle cx="{x}" cy="470" r="58" fill="{c["metal"]}" opacity=".7"/><circle cx="{x}" cy="470" r="46" fill="{c["light"]}" opacity=".55"/><path d="M{x - 26} 450a32 32 0 0 1 30 -22" fill="none" stroke="{c["light"]}" stroke-width="6" stroke-linecap="round" opacity=".8"/>' for x in (40, 680))
-    return (f'<rect width="{W}" height="{FLOOR}" fill="{c["wall"]}"/>' + _bands(c, (c['dark'], c['wall'], c['light']), (.1, 0, .06)) + _stripes(c, c['secondary'], 80, 40, .3) + soffit + ports
+    return (f'<rect width="{W}" height="{FLOOR}" fill="{c["wall"]}"/>' + _bands(c, (c['dark'], c['wall'], c['light']), (.1, 0, .06)) + (_wallpaper(c, c['wallpaper'], c['secondary'], .3) if c.get('wallpaper') else _stripes(c, c['secondary'], 80, 40, .3)) + soffit + ports
             + _tiles(c, c['light'], y0, FLOOR, 50, .45) + grout + f'<rect y="{y0}" width="{W}" height="22" fill="{c["pop"]}"/>' + chrome + kick
             + _diner_checker(c) + f'<path d="M0 {FLOOR + 2}H{W}" stroke="{c["dark"]}" stroke-width="4" opacity=".35"/>')
 
@@ -394,7 +425,7 @@ def _living_room(c):
     floor = _room_planks(c, c['floor'], c['dark']) + _room_floor_light(c, 'living') + f'<path d="M120 {FLOOR}H420L620 {H}H200Z" fill="{c["light"]}" opacity=".05"/>'
     rug = (f'<ellipse cx="360" cy="{FLOOR + 78}" rx="318" ry="54" fill="{c["dark"]}" opacity=".12"/><ellipse cx="360" cy="{FLOOR + 70}" rx="300" ry="46" fill="{c["pop"]}" opacity=".55"/>'
            f'<ellipse cx="360" cy="{FLOOR + 70}" rx="262" ry="34" fill="none" stroke="{c["light"]}" stroke-width="4" stroke-dasharray="14 10" opacity=".35"/>')
-    return (f'<rect width="{W}" height="{FLOOR}" fill="{c["wall"]}"/>' + _diamonds(c, c['light'], 34, .3, FLOOR - 170) + _room_grain(c, 1) + crown + picture_rail + rail
+    return (f'<rect width="{W}" height="{FLOOR}" fill="{c["wall"]}"/>' + (_wallpaper(c, c['wallpaper'], c['light'], .3, FLOOR - 170) if c.get('wallpaper') else _diamonds(c, c['light'], 34, .3, FLOOR - 170)) + _room_grain(c, 1) + crown + picture_rail + rail
             + _bands(c, (c['dark'], c['wall'], c['light']), (.1, 0, .08)) + _room_shaft(c, 0, 150, 120, 300, 140, FLOOR, .07)
             + f'<rect y="{FLOOR - 170}" width="{W}" height="170" fill="{c["secondary"]}" opacity=".45"/><rect y="{FLOOR - 176}" width="{W}" height="16" fill="{c["primary"]}" opacity=".7"/><rect y="{FLOOR - 160}" width="{W}" height="5" fill="{c["dark"]}" opacity=".12"/>'
             + panels + _room_skirting(c, c['primary'], 24, .75) + floor + rug + _room_edges(c, 'living', .1)
@@ -552,6 +583,9 @@ def hero_placement(rig, rng):
     """Hero on the floor, as large as the bands allow while leaving a lane on the
     rig's Bot side (BOT_LANE) so Bot stands beside the machine, not over its labels."""
     fx, fy, fw, fh = rig.footprint;tall = (FLOOR - HEADLINE[1] - HEADLINE[3] - 10) / fh
+    # The host stands in front of the machine (front_spot), so no lane is kept beside it: the hero
+    # fills the width like the references' screens and objects (2026-10-11 comparison).
+    # Cut 8: a full lane again so the host can be bigger (it shrank to the floor in every beat of cut 7).
     scale = min((W - BOT_LANE - HERO_SAFE) / fw, tall, 1.6)
     if not hero_big_enough(fw * scale, fh * scale):
         # Wide machine: just big enough (tall, or wide and nearly tall) so Bot keeps a lane clear of its edge labels.
@@ -596,8 +630,13 @@ def visible_share(box):
     return max(0.0, min(W, box[0] + box[2]) - max(0.0, box[0])) / max(1e-9, box[2])
 
 
-def _valid_item(item, hero_box, placed, bot_box=None):
+from motif_lessons import OCCLUDED
+
+
+def _valid_item(item, hero_box, placed, bot_box=None, labels=()):
     box = item['box']
+    # Front dressing never covers a machine label (lesson L011, motif_lessons).
+    if item['layer'] == 'front' and any(_overlap(box, t) > OCCLUDED * t[2] * t[3] for t in labels):return False
     # Nothing in front of Bot, and nothing on its patch of floor even behind it.
     if bot_box and _overlap(box, bot_box) > (0 if item['layer'] == 'front' else .2 * box[2] * box[3]):return False
     if _in_headline(box) or _in_caption(box):return False
@@ -627,14 +666,35 @@ def bot_placement(rig, hero, hero_box):
     return x, FLOOR, s, side
 
 
+def front_spot(x, side, half, hero_box, labels):
+    """Where the host stands in front of the machine: as close to its slot (x) as possible while its
+    body covers as little of the machine's labels as possible, and always inside the frame. When no
+    spot is clear it may shrink a little (to 75%) rather than hide a label. Returns (x, side, shrink)."""
+    def cost(cx, k):
+        h = half * k;box = (cx - h * 1.05, FLOOR - 4.2 * h, 2.1 * h, 4.2 * h)  # arms out (cut 5: Memo's hand sat on the heap)
+        cover = sum(_overlap(box, t) / max(1.0, t[2] * t[3]) for t in labels)
+        return cover * 1000 + abs(cx - x) + (1 - k) * 400
+    best = None
+    for k in (1.0, .88, .75):
+        lo, hi = half * k + 55, W - half * k - 55
+        for i in range(41):
+            cx = lo + (hi - lo) * i / 40;c = cost(cx, k)
+            if best is None or c < best[0]:best = (c, cx, k)
+    _, bx, k = best
+    return bx, (-1 if bx < hero_box[0] + hero_box[2] / 2 else 1), k
+
+
 def solve(room, rig_name, values=None, palette=None, seed=0, beat=0, costume=None, count=4):
     """Deterministic set layout for one beat."""
     if room not in ROOMS:raise ValueError(f'unknown room {room}; choose from {sorted(ROOMS)}')
     rig = get_rig(rig_name);rng = _rng(room, rig_name, seed, beat)
     palette = palette or rotation(beat + 1, seed)[beat]
-    if palette not in PALETTES:raise ValueError(f'unknown palette {palette}')
+    if not known(palette):raise ValueError(f'unknown palette {palette}')
     hero = hero_placement(rig, rng);hero_box = hero['box']
+    from motif_lessons import hero_labels
+    labels = [t['box'] for pose in ('contact', 'end') for t in hero_labels({'hero': {**hero, 'values': values or {}}, 'palette': palette}, pose)]
     bx, by, bscale, side = bot_placement(rig, hero, hero_box);half = BOT_HALF * bscale
+    bx, side, shrink = front_spot(bx, side, half, hero_box, labels);bscale = max(BOT_MIN, bscale * shrink);half = BOT_HALF * bscale
     bot_box = (bx - half, by - 4.2 * half, 2 * half, 4.2 * half)
     pool = list(ROOMS[room]['dressing']);rng.shuffle(pool)
     roles = ['edge', 'overlap', 'back', 'back'][:max(2, min(4, count))];placed = []
@@ -645,7 +705,14 @@ def solve(room, rig_name, values=None, palette=None, seed=0, beat=0, costume=Non
         for attempt in range(60):
             if not candidates:break
             item = _place_prop(candidates[attempt % len(candidates)], rng, hero_box, role, side)
-            if _valid_item(item, hero_box, placed, bot_box):placed.append(item);break
+            if _valid_item(item, hero_box, placed, bot_box, labels):placed.append(item);break
+    # Big heroes leave little floor: if fewer than two pieces fit, try more edge pieces on either side.
+    for attempt in range(120):
+        if len(placed) >= 2:break
+        candidates = [n for n in pool if n not in {i['prop'] for i in placed} and PROPS[n].mount in ('floor', 'wall', 'ceiling')]
+        if not candidates:break
+        item = _place_prop(candidates[attempt % len(candidates)], rng, hero_box, 'edge', side)
+        if _valid_item(item, hero_box, placed, bot_box, labels):placed.append(item)
     if not any(_crosses_edge(i['box']) for i in placed):raise ValueError(f'{room}/{rig_name}: no dressing reaches a frame edge')
     if not any(_overlap(i['box'], hero_box) > 0 for i in placed):raise ValueError(f'{room}/{rig_name}: no dressing overlaps the hero')
     costume = costume if costume is not None else [rng.choice(ROOMS[room]['costumes'])]
@@ -653,8 +720,9 @@ def solve(room, rig_name, values=None, palette=None, seed=0, beat=0, costume=Non
         if name not in COSTUMES:raise ValueError(f'unknown costume {name}')
     return {'room': room, 'palette': palette, 'seed': seed, 'beat': beat, 'floor_y': FLOOR, 'hero': {**hero, 'values': values or {}},
             'bot': {'x': round(bx, 2), 'y': round(by, 2), 'scale': round(bscale, 4), 'costume': costume, 'role': rig.bot_slot.get('role', ''), 'side': side,
-                    # Squeezed onto a wide machine: Bot peeks from behind it so the machine's labels stay readable.
-                    'behind': min(bx + half, hero_box[0] + hero_box[2]) - max(bx - half, hero_box[0]) > BOT_BEHIND * 2 * half},
+                    # Always in front of the machine (2026-10-11 reference comparison: the host acts on the
+                    # object; peeking from behind it read as passive and half hidden).
+                    'behind': False},
             'dressing': placed, 'lights': ROOMS[room]['lights'], 'bands': {'headline': list(HEADLINE), 'caption': list(CAPTION)}}
 
 

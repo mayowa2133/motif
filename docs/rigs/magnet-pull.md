@@ -24,6 +24,6 @@ A giant magnet pulls small cards across the floor until they all stick to it. At
 
 **Bot slot:** x -200, y 0, scale 0.22: watches the cards fly past.
 
-**Palettes:** renders in all 19 Motif palettes (berry, candy, citrus, cobalt, forest, lagoon, lilac, meadow, mint-coral, neon-ember, neon-teal, neon-violet, peach, plum-night, poppy, royal, sky, sunflower, sunrise); films rotate them per scene.
+**Palettes:** renders in all 24 Motif palettes (berry, candy, citrus, cobalt, dusk-teal, forest, ink-navy, lagoon, lilac, mauve, meadow, mint-coral, mustard, neon-ember, neon-teal, neon-violet, peach, plum-night, poppy, royal, sky, slate, sunflower, sunrise); films rotate them per scene.
 
 **Status:** draft proof; awaiting Mayowa approval (plan task 2.2).

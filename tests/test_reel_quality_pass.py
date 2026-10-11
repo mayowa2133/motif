@@ -75,7 +75,7 @@ class StagingTests(unittest.TestCase):
         for room in ms.ROOMS:
             for beat, rig in enumerate(sorted(all_rigs())):
                 layout = ms.solve(room, rig, seed=1, beat=beat);bot = layout['bot']
-                self.assertTrue(ms.BOT_SCALE[0] - 1e-6 <= bot['scale'] <= ms.BOT_SCALE[1] + 1e-6)
+                self.assertTrue(ms.BOT_MIN - 1e-6 <= bot['scale'] <= ms.BOT_SCALE[1] + 1e-6)
                 half = ms.BOT_HALF * bot['scale'];self.assertTrue(half <= bot['x'] <= ms.W - half, (room, rig))
                 bot_box = (bot['x'] - half, bot['y'] - 4.2 * half, 2 * half, 4.2 * half)
                 for item in layout['dressing']:
@@ -95,7 +95,12 @@ class MotionTests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as tmp:
             self.assertEqual(motif_motion.measure(self.clip(tmp, 'color=c=red:s=180x320:r=30'))['status'], 'FAIL')
         with tempfile.TemporaryDirectory() as tmp:
-            self.assertEqual(motif_motion.measure(self.clip(tmp, 'testsrc2=s=180x320:r=30'))['status'], 'PASS')
+            drift = motif_motion.measure(self.clip(tmp, 'testsrc2=s=180x320:r=30'))
+            self.assertGreaterEqual(drift['median_moving_share'], motif_motion.FLOOR)
+            self.assertEqual(drift['status'], 'PASS')
+            self.assertIn('events_per_s', drift)  # reported, not gated (L027)
+        with tempfile.TemporaryDirectory() as tmp:
+            self.assertEqual(motif_motion.measure(self.clip(tmp, "testsrc2=s=180x320:r=30,negate=enable='lt(mod(t,1),0.5)'"))['status'], 'PASS')
 
 
 if __name__ == '__main__':

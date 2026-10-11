@@ -40,7 +40,10 @@ def frames(path):
 
 
 def headline(markup):
-    """Headline = the largest heavy (font-weight 800+) text in the frame."""
+    """Headline = text marked data-headline (a headline smaller than the machine's labels, look
+    paper-craft strip), else the largest heavy (font-weight 800+) text in the frame."""
+    marked = [m.group(1).strip() for m in re.finditer(r'<text data-headline[^>]*>([^<]+)</text>', markup)]
+    if marked:return ' '.join(marked)
     best = None
     for m in re.finditer(r'<text([^>]*)>([^<]+)</text>', markup):
         attrs = m.group(1);weight = re.search(r'font-weight="(\d+)"', attrs);size = re.search(r'font-size="([\d.]+)"', attrs)
@@ -86,7 +89,7 @@ def check(project):
     return {'status': 'FAIL' if failures else 'PASS', 'failures': failures, 'measured': r}
 
 
-def check_plan(beats, duration):
+def check_plan(beats, duration, runtime=(20, 32)):
     """Plan-level reel rules, before anything is built.
 
     beats: [{id, start, end, headline, metaphor, cut_before}] in seconds."""
@@ -96,7 +99,7 @@ def check_plan(beats, duration):
     changes = [beats[0]['start']] + [b['start'] for a, b in zip(beats, beats[1:]) if a['headline'] != b['headline']] + [duration]
     for x, y in zip(changes, changes[1:]):
         if y - x > HEADLINE_EVERY + 1e-6:failures.append(f'headline held {y - x:.2f} s from {x:.2f} s')
-    if not 20 <= duration <= 32:failures.append(f'runtime {duration:.2f} s outside 20-32 s')
+    if not runtime[0] <= duration <= runtime[1]:failures.append(f'runtime {duration:.2f} s outside {runtime[0]:g}-{runtime[1]:g} s')
     return failures
 
 

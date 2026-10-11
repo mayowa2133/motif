@@ -169,11 +169,15 @@ def _like_body(svg, p):
     return svg
 
 
-def dressed_bot(x, y, s=.245, face='happy', pose='standing', costume=(), palette='sunrise', angle=0, flip=False, cycle=None, phase=0.0, head=0):
-    """Bot at feet (x, y). `cycle` + `phase` select a stride frame (8 per cycle)."""
+def dressed_bot(x, y, s=.245, face='happy', pose='standing', costume=(), palette='sunrise', angle=0, flip=False, cycle=None, phase=0.0, head=0, mascot='bot'):
+    """Bot (or another mascot from motif_mascots) at feet (x, y). `cycle` + `phase` select a stride frame (8 per cycle)."""
     c = get_palette(palette) if isinstance(palette, str) else palette
     step = int(round((phase % 1.0) * PHASES)) % PHASES if cycle else 0
-    body = _body(pose, face, head, cycle, step);_, _, p = _pose_params(pose, head, cycle, step)
+    if mascot and mascot != 'bot':
+        from motif_mascots import body as mascot_body
+        body = mascot_body(mascot, pose, face, head, cycle, step)
+    else:body = _body(pose, face, head, cycle, step)
+    _, _, p = _pose_params(pose, head, cycle, step)
     behind, hat, front = outfit(costume, c)
     if hat:hat = f'<g transform="rotate({p.get("head_tilt", 0)} {HEAD_PIVOT[0]} {HEAD_PIVOT[1]})">{hat}</g>'
     piece = (_like_body(behind, p) if behind else '') + body + (_like_body(front + hat, p) if front or hat else '')
