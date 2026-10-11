@@ -80,8 +80,9 @@ class KnowledgeVault(Rig):
 
     def heap_at(self, k):
         """Centre and tilt of the k-th forgotten item on the floor heap."""
-        col, row = k % 5, k // 5
-        return -240 + col * 120 + (row % 2) * 50 + (-10, 12, -6, 8, 0)[col], -44 - row * 60, (-12, 8, -5, 14, -9, 6, 11)[k % 7]
+        # Four columns, not five (cut 5: the wide heap ran under the host at the frame edge).
+        col, row = k % 4, k // 4
+        return -150 + col * 104 + (row % 2) * 40 + (-10, 12, -6, 8)[col], -44 - row * 56, (-12, 8, -5, 14, -9, 6, 11)[k % 7]
 
     def counts(self, p):
         a = min(p['pages_from'], len(p['pages']));b = min(max(p['pages_to'], a), len(p['pages']))
@@ -430,6 +431,13 @@ class KnowledgeVault(Rig):
                 k_ = (tt - launch) / (land - launch)
                 x = lerp(x0, x1, ease(k_));y = lerp(-900, y1, ease_in(k_));ang = lerp(-25 + 10 * (k % 5), a1, k_)
                 falling += g(self.item(label, k, c), x, y, ang, 1.15)
+        if t > tc:
+            # The leak never stops (cut 5: once the rain landed, the brain floated with nothing tying it
+            # to the heap): items keep dripping out of the brain's underside and vanish into the pile.
+            for j in range(4):
+                k_ = (after * 2.2 + j / 4) % 1.0;x2, y2, a2 = self.heap_at((j * 3 + 1) % n)
+                x = lerp(bx + (-40, 25, -10, 45)[j], x2, ease(k_));y = lerp(by + 150, y2 - 30, ease_in(k_))
+                falling += g(self.item(items[(j + 2) % len(items)], j, c, grey=k_), x, y, lerp(-20 + 12 * j, a2, k_), 1.0 - .25 * k_, opacity=1 - k_ ** 3)
         body += falling + landed
         body += f'<g transform="translate({bx} {by + 60}) scale(1.45) translate({-bx} {-by})">{self.brain(0.0, c, leaky=True)}</g>'
         lab = p['label'];w = max(220, len(lab) * 24 + 50)

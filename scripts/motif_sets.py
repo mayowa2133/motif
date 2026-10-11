@@ -89,6 +89,36 @@ def _diamonds(c, colour, size=56, opacity=.22, y1=FLOOR):
     return out
 
 
+# Wallpapers (cut 5 review: 5 of 12 sets read as the same striped wall). Rooms with a papered wall
+# take the pattern the planner gives each beat in c['wallpaper'], so a room can return in a film with
+# a different wall; without one they keep their original pattern.
+def _wallpaper(c, kind, colour, op, y1=FLOOR):
+    if kind == 'dots':
+        return ''.join(f'<circle cx="{x + (30 if (y // 60) % 2 else 0)}" cy="{y}" r="9" fill="{colour}" opacity="{op}"/>' for y in range(30, y1, 60) for x in range(0, W + 60, 60))
+    if kind == 'diamonds':return _diamonds(c, colour, 48, op, y1)
+    if kind == 'plaid':
+        return (''.join(f'<rect x="{x}" width="34" height="{y1}" fill="{colour}" opacity="{op * .7:.3f}"/>' for x in range(10, W, 96))
+                + ''.join(f'<rect y="{y}" width="{W}" height="34" fill="{colour}" opacity="{op * .7:.3f}"/>' for y in range(10, y1, 96))
+                + ''.join(f'<path d="M{x} 0V{y1}" stroke="{c["dark"]}" stroke-width="2" opacity=".08"/>' for x in range(60, W, 96)))
+    if kind == 'scallops':
+        return ''.join(f'<path d="M{x} {y}a30 30 0 0 1 60 0" fill="none" stroke="{colour}" stroke-width="7" opacity="{op}"/>' for y in range(40, y1, 44) for x in range(-30 if (y // 44) % 2 else 0, W, 60))
+    if kind == 'chevrons':
+        return ''.join(f'<path d="M-20 {y}' + ''.join(f'L{x + 30} {y - 22}L{x + 60} {y}' for x in range(-20, W + 40, 60)) + f'" fill="none" stroke="{colour}" stroke-width="10" opacity="{op}"/>' for y in range(40, y1, 70))
+    if kind == 'florets':
+        return ''.join(''.join(f'<circle cx="{x + dx}" cy="{y + dy}" r="7" fill="{colour}" opacity="{op}"/>' for dx, dy in ((-8, 0), (8, 0), (0, -8), (0, 8))) + f'<circle cx="{x}" cy="{y}" r="4" fill="{c["light"]}" opacity="{op}"/>'
+                       for y in range(50, y1, 90) for x in range(40 + (45 if (y // 90) % 2 else 0), W, 90))
+    return _stripes(c, colour, 60, 22, op)
+
+
+WALLPAPERS = ('stripes', 'dots', 'diamonds', 'plaid', 'scallops', 'chevrons', 'florets')
+PAPERED = {'office', 'diner', 'living-room'}  # rooms whose wall takes c['wallpaper']
+
+
+def wall_of(room, wallpaper):
+    """The wall a viewer sees for a room and the beat's wallpaper (for the wall-variety lesson)."""
+    return (wallpaper or {'office': 'stripes', 'diner': 'stripes', 'living-room': 'diamonds'}[room]) if room in PAPERED else room
+
+
 def _office_boards(c, vy=600):
     """Floor planks running toward the viewer, converging on a far vanishing point, with staggered end joints."""
     px = lambda x, y: x + (x - 360) * (y - FLOOR) / vy
@@ -166,7 +196,7 @@ def _office(c):
     wainscot = (f'<rect y="{y0}" width="{W}" height="220" fill="{c["secondary"]}" opacity=".55"/>' + panels
                 + f'<rect y="{y0 - 14}" width="{W}" height="18" fill="{c["secondary"]}"/><rect y="{y0 - 14}" width="{W}" height="4" fill="{c["light"]}" opacity=".5"/><rect y="{y0 + 4}" width="{W}" height="8" fill="{c["dark"]}" opacity=".1"/>'
                 + f'<rect y="{FLOOR - 30}" width="{W}" height="30" fill="{c["secondary"]}"/><rect y="{FLOOR - 30}" width="{W}" height="4" fill="{c["light"]}" opacity=".45"/><rect y="{FLOOR - 26}" width="{W}" height="26" fill="{c["dark"]}" opacity=".08"/>')
-    return (f'<rect width="{W}" height="{FLOOR}" fill="{c["wall"]}"/>' + _bands(c, (c['dark'], c['wall'], c['light']), (.12, 0, .1)) + _stripes(c, c['secondary'], 60, 22, .16) + paper
+    return (f'<rect width="{W}" height="{FLOOR}" fill="{c["wall"]}"/>' + _bands(c, (c['dark'], c['wall'], c['light']), (.12, 0, .1)) + _wallpaper(c, c.get('wallpaper', 'stripes'), c['secondary'], .16) + paper
             + crown + wainscot + _office_boards(c) + _office_window(c, 40) + _office_window(c, 530)
             + f'<rect y="{FLOOR}" width="{W}" height="14" fill="{c["dark"]}" opacity=".12"/><path d="M0 {FLOOR + 2}H{W}" stroke="{c["dark"]}" stroke-width="4" opacity=".35"/>')
 
@@ -180,7 +210,7 @@ def _diner(c):
               f'<rect y="{y0 + 22}" width="{W}" height="8" fill="{c["metal"]}" opacity=".8"/><rect y="{y0 + 22}" width="{W}" height="2" fill="{c["light"]}" opacity=".7"/><rect y="{y0 + 30}" width="{W}" height="8" fill="{c["dark"]}" opacity=".08"/>')
     kick = f'<rect y="{FLOOR - 44}" width="{W}" height="44" fill="{c["metal"]}" opacity=".75"/>' + ''.join(f'<path d="M0 {y}H{W}" stroke="{c["light"]}" stroke-width="2" opacity=".35"/>' for y in range(FLOOR - 38, FLOOR, 9))
     ports = ''.join(f'<circle cx="{x}" cy="470" r="58" fill="{c["metal"]}" opacity=".7"/><circle cx="{x}" cy="470" r="46" fill="{c["light"]}" opacity=".55"/><path d="M{x - 26} 450a32 32 0 0 1 30 -22" fill="none" stroke="{c["light"]}" stroke-width="6" stroke-linecap="round" opacity=".8"/>' for x in (40, 680))
-    return (f'<rect width="{W}" height="{FLOOR}" fill="{c["wall"]}"/>' + _bands(c, (c['dark'], c['wall'], c['light']), (.1, 0, .06)) + _stripes(c, c['secondary'], 80, 40, .3) + soffit + ports
+    return (f'<rect width="{W}" height="{FLOOR}" fill="{c["wall"]}"/>' + _bands(c, (c['dark'], c['wall'], c['light']), (.1, 0, .06)) + (_wallpaper(c, c['wallpaper'], c['secondary'], .3) if c.get('wallpaper') else _stripes(c, c['secondary'], 80, 40, .3)) + soffit + ports
             + _tiles(c, c['light'], y0, FLOOR, 50, .45) + grout + f'<rect y="{y0}" width="{W}" height="22" fill="{c["pop"]}"/>' + chrome + kick
             + _diner_checker(c) + f'<path d="M0 {FLOOR + 2}H{W}" stroke="{c["dark"]}" stroke-width="4" opacity=".35"/>')
 
@@ -395,7 +425,7 @@ def _living_room(c):
     floor = _room_planks(c, c['floor'], c['dark']) + _room_floor_light(c, 'living') + f'<path d="M120 {FLOOR}H420L620 {H}H200Z" fill="{c["light"]}" opacity=".05"/>'
     rug = (f'<ellipse cx="360" cy="{FLOOR + 78}" rx="318" ry="54" fill="{c["dark"]}" opacity=".12"/><ellipse cx="360" cy="{FLOOR + 70}" rx="300" ry="46" fill="{c["pop"]}" opacity=".55"/>'
            f'<ellipse cx="360" cy="{FLOOR + 70}" rx="262" ry="34" fill="none" stroke="{c["light"]}" stroke-width="4" stroke-dasharray="14 10" opacity=".35"/>')
-    return (f'<rect width="{W}" height="{FLOOR}" fill="{c["wall"]}"/>' + _diamonds(c, c['light'], 34, .3, FLOOR - 170) + _room_grain(c, 1) + crown + picture_rail + rail
+    return (f'<rect width="{W}" height="{FLOOR}" fill="{c["wall"]}"/>' + (_wallpaper(c, c['wallpaper'], c['light'], .3, FLOOR - 170) if c.get('wallpaper') else _diamonds(c, c['light'], 34, .3, FLOOR - 170)) + _room_grain(c, 1) + crown + picture_rail + rail
             + _bands(c, (c['dark'], c['wall'], c['light']), (.1, 0, .08)) + _room_shaft(c, 0, 150, 120, 300, 140, FLOOR, .07)
             + f'<rect y="{FLOOR - 170}" width="{W}" height="170" fill="{c["secondary"]}" opacity=".45"/><rect y="{FLOOR - 176}" width="{W}" height="16" fill="{c["primary"]}" opacity=".7"/><rect y="{FLOOR - 160}" width="{W}" height="5" fill="{c["dark"]}" opacity=".12"/>'
             + panels + _room_skirting(c, c['primary'], 24, .75) + floor + rug + _room_edges(c, 'living', .1)
@@ -640,7 +670,7 @@ def front_spot(x, side, half, hero_box, labels):
     body covers as little of the machine's labels as possible, and always inside the frame. When no
     spot is clear it may shrink a little (to 75%) rather than hide a label. Returns (x, side, shrink)."""
     def cost(cx, k):
-        h = half * k;box = (cx - h * .8, FLOOR - 4.2 * h, 1.6 * h, 4.2 * h)
+        h = half * k;box = (cx - h * 1.05, FLOOR - 4.2 * h, 2.1 * h, 4.2 * h)  # arms out (cut 5: Memo's hand sat on the heap)
         cover = sum(_overlap(box, t) / max(1.0, t[2] * t[3]) for t in labels)
         return cover * 1000 + abs(cx - x) + (1 - k) * 400
     best = None

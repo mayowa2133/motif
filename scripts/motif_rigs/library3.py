@@ -215,7 +215,10 @@ class AppScreen(Rig):
             out += rect(x + w - cw - 8, y + h - 34, cw, 26, '#FFFFFF', 6).replace('<rect', '<rect opacity=".9"') + txt(p['credit'], x + w - 17, y + h - 15, 15, c['dark'], 700, 'end')
         if done and p.get('result'):
             res = p['result'];rw = max(170, len(res) * 30 + 50);rx, ry = x + w / 2, (y + bar + 46 if kind == 'map' else y + h * .68);fit = min(1.0, (w - 16) / rw)
-            if kind in self.VIEWS:fit = min(.72, (w * .5) / rw);rx, ry = x + w - rw * fit / 2 - 14, (y + h - 34 if kind == 'chat' else y + 44 + 34)  # a corner sticker clear of the view (chat: below the answer)
+            if kind in self.VIEWS or kind == 'terminal':
+                # A corner sticker clear of the content: below it where text runs down the screen
+                # (chat, terminal, file tree; cut 6 stills: CLAUDE IS IN and VAULT READY covered lines).
+                fit = min(.72, (w * .5) / rw);rx, ry = x + w - rw * fit / 2 - 14, (y + h - 34 if kind in ('chat', 'terminal', 'files') else y + 44 + 34)
             out += g(rect(-rw / 2 + 5, -40, rw, 80, c['dark'], 14).replace('<rect', '<rect opacity=".22"') + rect(-rw / 2, -44, rw, 80, c['pop'] if c['pop'] != c['light'] else c['accent'], 14, c['dark'], 3)
                      + txt(res, 0, 12, 40, c['dark'], 900, 'middle'), rx, ry, -3, done * fit)
         return out
@@ -374,7 +377,14 @@ class AppScreen(Rig):
     def draw(self, p, pose, c):
         start, end, action, t = pose;tc = self.contact_t('run') if action else 0
         total = sum(len(l) for l in (p.get('lines') or []))
-        if action:typed = total * min(1.0, t / max(1e-6, tc * .8));done = 0.0 if t < tc else min(1.0, .55 + .45 * ease(t_after(t, tc) * 3)) + settle(t_after(t, tc), .08)
+        # The screen is already full on the first frame and finishes fast (cut 5 review: the terminal
+        # read "> cd sec" and the chat sat half blank for most of their shots). A chat's answer is the
+        # result, so it appears only after the question is sent.
+        lines = p.get('lines') or []
+        if action and p['ui'] == 'chat' and lines:
+            q = len(lines[0]);typed = q * min(1.0, .5 + t / max(1e-6, tc)) if t < tc else q + (total - q) * min(1.0, t_after(t, tc) * 4)
+        elif action:typed = total * min(1.0, .4 + .6 * t / max(1e-6, tc * .6))
+        if action:done = 0.0 if t < tc else min(1.0, .55 + .45 * ease(t_after(t, tc) * 3)) + settle(t_after(t, tc), .08)
         else:typed, done = (total, 1.0) if start == 'done' else (0, 0.0)
         if p.get('prefilled'):typed = total
         body = self.device(p, c) + self.ui(p, c, typed, done)

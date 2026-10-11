@@ -214,7 +214,35 @@ def check_headline_whole(project, plan, layouts):
             if shot.get('headline_b_cut') and (shot.get('split_headline') or (project is None and shot['role'] in ('hook', 'cta')))]
 
 
+def check_wall_variety(project, plan, layouts):
+    """Sets look different, not only differently named: consecutive beats never show the same wall
+    pattern and no wall covers more than a third of the film's sets (cut 5: 5 of 12 sets were stripes)."""
+    import motif_sets as ms
+    walls = [(b['id'], ms.wall_of(b['shots'][0]['room'], b['shots'][0].get('wallpaper'))) for b in plan['beats'] if b['shots'][0].get('room') in ms.ROOMS]
+    out = [{'where': b, 'detail': f'same wall as {a} ({w})'} for (a, v), (b, w) in zip(walls, walls[1:]) if v == w and a != 'hook']
+    for w in sorted({w for _, w in walls}):
+        n = sum(1 for _, x in walls if x == w)
+        if n >= 3 and n * 3 > len(walls):out.append({'where': 'film', 'detail': f'{n} of {len(walls)} sets show the {w} wall'})
+    return out
+
+
+def check_label_collision(project, plan, layouts):
+    """A machine's own labels never sit on each other at the end of a beat (cut 6 stills: the terminal's
+    CLAUDE IS IN sticker covered its last line). Single marks such as "?" are decoration."""
+    out = []
+    for beat, layout in layouts.items():
+        if not layout.get('hero'):continue
+        ts = [t for t in hero_labels(layout) if len(t['text'].strip()) > 1]
+        for i, a in enumerate(ts):
+            for b in ts[i + 1:]:
+                small = min(a['box'][2] * a['box'][3], b['box'][2] * b['box'][3])
+                if small and _overlap(a['box'], b['box']) / small > OCCLUDED:out.append({'where': beat, 'detail': f'"{a["text"]}" and "{b["text"]}" overlap'})
+    return out
+
+
 CHECKS = {
+    'label-collision': check_label_collision,
+    'wall-variety': check_wall_variety,
     'headline-whole': check_headline_whole,
     'sticker-clear': check_sticker_clear,
     'set-variety': check_set_variety,
@@ -229,7 +257,7 @@ CHECKS = {
 
 
 # Checks that need only the plan, so `motif_reel.py check` runs them before any voice or render.
-PLAN_CHECKS = ('headline-openers', 'shared-object-palette', 'set-variety', 'headline-length', 'product-on-screen', 'headline-whole')
+PLAN_CHECKS = ('headline-openers', 'shared-object-palette', 'set-variety', 'headline-length', 'product-on-screen', 'headline-whole', 'wall-variety')
 
 
 def run(project, plan=None, layouts=None):

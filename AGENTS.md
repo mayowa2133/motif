@@ -44,7 +44,8 @@ quality bar). Copy the closest one and change it.
    least a third of the beats with `app-screen` views: `files` (folder tree),
    `note` (Markdown page, `[[links]]` become chips), `graph` (one node per
    line), `chat` (question, then an answer with `[n]` citations), `terminal`,
-   `window`, `browser`. Fill them with the film's real content.
+   `window`, `browser`. Fill them with the film's real content: several lines
+   (a terminal with two commands looks empty), since screens start mostly typed.
 5. **A new set every beat.** Consecutive beats never share a room. Continuity
    comes from the object and the host travelling between sets, not from
    holding one room. Aim for about 30 s (35 s at most); cut beats rather than
@@ -70,7 +71,9 @@ quality bar). Copy the closest one and change it.
 11. **Headlines.** One short line (30 characters at most), uppercase, stating
    a specific fact: a number, a name or a step ("PILE IN, 7 WIKI PAGES OUT",
    not "SMARTER EVERY DAY"). A new one at least every 3 s; consecutive
-   headlines never start with the same word.
+   headlines never start with the same word. The hook and CTA hold long enough
+   for a second headline: author `hook.headline_b` / `cta.headline_b`, or the
+   planner cuts one from the narration at a phrase boundary.
 12. **CTA.** `cta.keyword` must be said in `cta.narration`.
 
 The full rule list is `brief_rules` in `catalog` (from `quality/lessons.json`).

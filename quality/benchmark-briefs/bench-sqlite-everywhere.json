@@ -169,7 +169,8 @@
   ],
   "cta": {
     "keyword": "SQLite",
-    "narration": "For the links, comment SQLite."
+    "narration": "For the links, comment SQLite.",
+    "room": "park"
   },
   "look": "primary-pop"
 }

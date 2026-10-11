@@ -135,7 +135,10 @@
           "title": "second-brain",
           "lines": [
             "cd second-brain",
-            "claude"
+            "claude",
+            "* Welcome to Claude Code",
+            "cwd: ~/second-brain",
+            "4 files: raw/ wiki/ CLAUDE.md"
           ],
           "result": "CLAUDE IS IN",
           "logo": "claude"

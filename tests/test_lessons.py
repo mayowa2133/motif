@@ -124,9 +124,26 @@ def test_sticker_and_host_keep_screen_labels_clear():
 def test_headlines_stop_at_a_clause():
     import motif_reel
     assert motif_reel._clip('Build it once, use it forever.', 28) == ('BUILD IT ONCE', False)
-    head, cut = motif_reel._clip('Obsidian keeps every note as a plain Markdown file', 28)
-    assert cut and not head.endswith(' AS')
+    assert motif_reel._clip('The notes app is free and open source', 26) == ('NOTES APP IS FREE', False)
+    assert motif_reel._clip('Weekly lint passes flag stale outdated contradictory claims', 26)[1]
     plan = {'beats': [{'id': 'cta', 'shots': [{'id': 'cta', 'role': 'cta', 'headline': 'COMMENT X', 'headline_b': 'BUILD IT ONCE USE', 'headline_b_cut': True}]}]}
     assert L.check_headline_whole(None, plan, {})
     plan['beats'][0]['shots'][0]['role'] = 'setup'
     assert not L.check_headline_whole(None, plan, {})
+
+
+def test_wallpapers_vary_and_the_check_catches_repeats():
+    import motif_reel
+    beats = [{'id': f'b{k}', 'shots': [{'room': r}]} for k, r in enumerate(['office', 'diner', 'office', 'living-room', 'diner', 'office'])]
+    motif_reel._assign_wallpapers(beats, 3)
+    walls = [b['shots'][0]['wallpaper'] for b in beats]
+    assert all(a != b for a, b in zip(walls, walls[1:])) and len(set(walls)) == len(walls)
+    assert not L.check_wall_variety(None, {'beats': beats}, {})
+    for b in beats:b['shots'][0]['wallpaper'] = 'stripes'
+    assert L.check_wall_variety(None, {'beats': beats}, {})
+
+
+def test_label_collision_ignores_marks():
+    layout = _layout()
+    found = L.check_label_collision(None, {}, {'b': layout})
+    assert all('"?"' not in f['detail'] for f in found)

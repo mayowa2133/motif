@@ -186,6 +186,40 @@
       "rule": "A headline stops at the end of a phrase: whole clauses, never cut mid-phrase",
       "level": "gate",
       "check": "headline-whole"
+    },
+    {
+      "id": "L022",
+      "date": "2026-10-11",
+      "source": "Claude review of second-brain cut 5",
+      "symptom": "5 of 12 sets showed the same striped wall, so new rooms still read as one place",
+      "rule": "Consecutive sets never share a wall pattern and no wall covers more than a third of the sets; papered rooms take a per-beat wallpaper",
+      "level": "gate",
+      "check": "wall-variety"
+    },
+    {
+      "id": "L023",
+      "date": "2026-10-11",
+      "source": "Claude review of second-brain cut 5",
+      "symptom": "Memo stood and watched in 9 of 12 frames",
+      "rule": "The host acts on the object: for machines it feeds it carries a note in and throws it in at the contact",
+      "level": "brief"
+    },
+    {
+      "id": "L024",
+      "date": "2026-10-11",
+      "source": "Claude review of second-brain cut 5",
+      "symptom": "the terminal read '> cd sec' and the chat sat half blank for most of their shots",
+      "rule": "App screens are mostly full on the first frame and finish fast; give terminal and chat views several lines of real content",
+      "level": "brief"
+    },
+    {
+      "id": "L025",
+      "date": "2026-10-11",
+      "source": "Claude review of second-brain cut 6 stills",
+      "symptom": "the terminal's CLAUDE IS IN sticker and the file tree's VAULT READY sticker covered screen lines",
+      "rule": "A machine's labels never sit on each other; result stickers on text screens go below the text",
+      "level": "warn",
+      "check": "label-collision"
     }
   ]
 }

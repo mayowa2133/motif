@@ -76,3 +76,8 @@ proven on old films and a library change breaks nothing.
 | L018 paper rooms | cut 3 vs references (flat vector, bright walls) | paper-craft look: crumpled material, dusk room palettes, darker grade |
 | L019 runtime | cut 3 vs references (43.6 s vs 20-30 s) | brief rule |
 | L020 sticker clear | second-brain cut 4 (logo stickers covered screen text) | sticker placement + check, gate |
+| L021 whole headlines | second-brain cut 5 (CTA read BUILD IT ONCE USE) | planner cuts at clause or connector; check, gate |
+| L022 wall variety | second-brain cut 5 (5 of 12 sets striped) | per-beat wallpapers in papered rooms; check, gate |
+| L023 host acts | second-brain cut 5 (Memo watched in 9 of 12 frames) | host carries a note and throws it in at contact; brief rule |
+| L024 full screens | second-brain cut 5 (terminal read "> cd sec") | app screens start 40% typed; chat answers after send; brief rule |
+| L025 label collision | second-brain cut 6 stills (CLAUDE IS IN over the last line) | result stickers below text; check, warn |
