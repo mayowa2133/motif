@@ -483,7 +483,7 @@ ACTS = {'app-screen': ('typing', 'pointing', 'inspecting'), 'knowledge-vault': (
 # Machines the host feeds (cut 5 review: Memo stood and watched in 9 of 12 frames). In a setup shot the
 # host carries a note in, throws it into the machine's contact point so it lands on the contact, and a
 # puff marks the hit: host, object and consequence stay one action.
-CARRY = {'app-screen', 'knowledge-vault', 'review-loop'}
+CARRY = {'app-screen', 'knowledge-vault'}  # not review-loop: its contacts are labels (a tab, a stamp), so a thrown note covered them (Claudex cut 1)
 
 
 def contact_age(f, fc, prev, hold):

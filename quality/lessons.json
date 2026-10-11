@@ -271,6 +271,15 @@
       "rule": "Only a standalone number in a fact value becomes a counter insert; digits inside names (GPT-6) never do",
       "enforced_by": "planner: _number",
       "level": "brief"
+    },
+    {
+      "id": "L032",
+      "date": "2026-10-11",
+      "source": "Mayowa on Claudex cut 1 (2026-10-11)",
+      "symptom": "choosing the primary-pop look brought back a wipe and a snap zoom at every cut, big slab headlines, a black caption bar and a flat unpapered surface: the approved fixes lived only in the paper-craft look",
+      "rule": "Every look keeps the approved base: hard cuts, an eased camera (push, pan, float), the taped strip headline, paper captions and the paper finish; a look varies only palettes, rooms, accents and hook/CTA staging",
+      "check": "approved-look",
+      "level": "gate"
     }
   ]
 }

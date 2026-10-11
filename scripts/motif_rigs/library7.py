@@ -487,6 +487,7 @@ register(ReviewLoop(
               'bug': 2, 'bug_label': 'BUG', 'banner': None, 'solo': '1 MODEL', 'solo_logo': None, 'solo_roles': ['PLANS', 'BUILDS', 'GRADES'], 'grade': 'A+', 'bugs': 3},
     states=('idle', 'done'),
     actions={'run': Action('run', 'idle', 'done', 66, 'loop-contact', 46)},
-    bot_slot={'x': -340, 'y': 0, 'scale': .22, 'role': 'carries the sheet between desks, points at objections and cheers the stamp'},
+    bot_slot={'x': -340, 'y': 0, 'scale': .22, 'role': 'carries the sheet between desks, points at objections and cheers the stamp',
+              'keep_clear': ((-310, -520, 220, 520), (90, -520, 220, 520))},
     tags=('review', 'audit', 'plan', 'check', 'checks', 'second', 'opinion', 'pair', 'two', 'models', 'feedback', 'homework', 'grade', 'judge', 'critic', 'swap', 'roles', 'build', 'bug', 'bugs', 'loop', 'rounds'),
     footprint=(-320, -800, 640, 800)))

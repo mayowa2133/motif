@@ -47,7 +47,7 @@
         "stamp": "HOLDS UP"
       },
       "room": "rooftop",
-      "palette": "royal/sunflower"
+      "palette": "royal/ink-navy"
     }
   },
   "facts": [
@@ -132,7 +132,7 @@
           "stamp": "HOLDS UP"
         },
         "room": "street",
-        "palette": "sunflower/poppy",
+        "palette": "sunflower/slate",
         "brand": null
       }
     },
@@ -160,7 +160,7 @@
           "logo": "claude"
         },
         "room": "diner",
-        "palette": "poppy/royal"
+        "palette": "poppy/mauve"
       }
     },
     {
@@ -293,7 +293,7 @@
           "stamp": "HOLDS UP"
         },
         "room": "office",
-        "palette": "royal/poppy"
+        "palette": "royal/ink-navy"
       }
     },
     {
@@ -376,7 +376,7 @@
           "stamp": "HOLDS UP"
         },
         "room": "street",
-        "palette": "royal/sunflower"
+        "palette": "royal/mauve"
       }
     },
     {
@@ -404,7 +404,7 @@
           "logo": "claude"
         },
         "room": "living-room",
-        "palette": "sunflower/royal"
+        "palette": "sunflower/dusk-teal"
       }
     }
   ],

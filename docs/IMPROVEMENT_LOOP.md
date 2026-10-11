@@ -87,3 +87,4 @@ proven on old films and a library change breaks nothing.
 | L029 one mark per product | Claudex cut 1 (sticker doubled the desk badge) | compiler skips the sticker and hook badge when the machine draws the mark |
 | L030 check sees split headlines | Claudex cut 1 (check PASS, run failed L010 on the hook) | check splits hook and CTA headlines; CTA headline_b may not repeat COMMENT |
 | L031 numbers in names | Claudex cut 1 (GPT-6 and a bare comma read as numbers) | planner counts only standalone numbers |
+| L032 approved look | Mayowa on Claudex cut 1 ("I don't like the transitions") | every look keeps the hard cut, taped strip and paper finish; a gate fails a look that uses a rejected style |

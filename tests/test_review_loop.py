@@ -93,3 +93,28 @@ class NumberTests(unittest.TestCase):
 
 if __name__ == '__main__':
     unittest.main()
+
+
+class ApprovedLookTests(unittest.TestCase):
+    def test_every_look_keeps_the_approved_base(self):
+        # Claudex cut 1: primary-pop's wipes and snap zooms came back because the approved styles lived in one look.
+        import motif_looks
+        for look in motif_looks.LOOKS:self.assertEqual(motif_looks.unapproved(look), [], look)
+
+    def test_a_rejected_style_fails_the_gate(self):
+        import motif_looks
+        from motif_lessons import check_approved_look
+        saved = motif_looks.LOOKS['primary-pop']
+        try:
+            motif_looks.LOOKS['primary-pop'] = {**saved, 'camera': 'snap', 'transition': 'wipe'}
+            self.assertEqual(len(check_approved_look(None, {'look': 'primary-pop'}, {})), 2)
+        finally:
+            motif_looks.LOOKS['primary-pop'] = saved
+
+    def test_every_look_gets_the_paper_finish(self):
+        import tempfile
+        import motif_looks
+        with tempfile.TemporaryDirectory() as tmp:
+            for look in motif_looks.LOOKS:
+                style = json.loads(motif_looks.finish_style(look, Path(tmp) / f'{look}.json').read_text())
+                self.assertEqual(style['materials']['overlay'], 'motif-v1-1024/crumpled', look)

@@ -240,7 +240,16 @@ def check_label_collision(project, plan, layouts):
     return out
 
 
+def check_approved_look(project, plan, layouts):
+    """The film's look keeps every style Mayowa approved: hard cuts, an eased camera, the taped strip
+    headline and paper captions (Claudex cut 1: primary-pop brought back wipes and snap zooms)."""
+    from motif_looks import unapproved
+    look = (plan or {}).get('look')
+    return [{'where': 'film', 'detail': d} for d in unapproved(look)] if look else []
+
+
 CHECKS = {
+    'approved-look': check_approved_look,
     'label-collision': check_label_collision,
     'wall-variety': check_wall_variety,
     'headline-whole': check_headline_whole,
@@ -257,7 +266,7 @@ CHECKS = {
 
 
 # Checks that need only the plan, so `motif_reel.py check` runs them before any voice or render.
-PLAN_CHECKS = ('headline-openers', 'shared-object-palette', 'set-variety', 'headline-length', 'product-on-screen', 'headline-whole', 'wall-variety')
+PLAN_CHECKS = ('approved-look', 'headline-openers', 'shared-object-palette', 'set-variety', 'headline-length', 'product-on-screen', 'headline-whole', 'wall-variety')
 
 
 def run(project, plan=None, layouts=None):

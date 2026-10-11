@@ -47,27 +47,49 @@ LOOKS = {
                   'shadows': {'dx': 4.0, 'dy': 7.0, 'blur': [2.5, 4.5, 7.0], 'opacity': [.36, .42, .48]}}},
     'neon-arcade': {
         'palettes': ('neon-violet', 'neon-teal', 'neon-ember', 'plum-night'), 'rooms': ('arcade', 'server-room', 'night-sky', 'stage', 'rooftop'),
-        'headline': 'outline', 'captions': 'glow', 'camera': 'punch', 'transition': 'flash', 'hook': 'number', 'cta': 'big-bot',
-        'transition_colour': '#FFF6E8', 'caption_colours': {'fill': '#0E0A1F', 'text': '#FFF6E8', 'active': '#FDE047', 'glow': '#FF4FA3'},
+        'headline': 'strip', 'captions': 'sticker', 'camera': 'push', 'transition': 'cut', 'hook': 'number', 'cta': 'big-bot',
+        'transition_colour': '#FFF6E8', 'caption_colours': {'fill': '#0E0A1F', 'text': '#FFF6E8', 'active': '#FF4FA3', 'edge': '#FDE047'},
         'grade': {'ambient': {'color': '#2A1A5E', 'opacity': .1}, 'vignette': {'strength': .55, 'radius': .78, 'color': '#05030F'}}},
     'primary-pop': {
-        'palettes': ('poppy', 'royal', 'sunflower'), 'rooms': ('street', 'diner', 'stage', 'rooftop', 'arcade'),
-        'headline': 'slab', 'captions': 'bar', 'camera': 'snap', 'transition': 'wipe', 'hook': 'big-bot', 'cta': 'card',
-        'transition_colour': '#141414', 'caption_colours': {'fill': '#141414', 'text': '#FFF8EC', 'active': '#FFD23F'},
-        'grade': {'ambient': {'color': '#000000', 'opacity': .03}, 'vignette': {'strength': .16, 'radius': .8, 'color': '#000000'}}},
+        # Claudex cut 1 (2026-10-11): saturated walls read flat and loud; bright objects now sit in muted paper rooms.
+        'palettes': ('poppy/ink-navy', 'royal/slate', 'sunflower/dusk-teal'), 'rooms': ('street', 'diner', 'stage', 'rooftop', 'arcade'),
+        'headline': 'strip', 'captions': 'sticker', 'camera': 'pan', 'transition': 'cut', 'hook': 'big-bot', 'cta': 'card',
+        'transition_colour': '#141414', 'caption_colours': {'fill': '#FFF8EC', 'text': '#141414', 'active': '#FFD23F', 'edge': '#141414'},
+        'grade': {'ambient': {'color': '#1E2A4A', 'opacity': .16}, 'vignette': {'strength': .5, 'radius': .74, 'color': '#0A0E1A'}}},
     'candy-pastel': {
         'palettes': ('candy', 'lilac', 'peach', 'mint-coral'), 'rooms': ('bakery', 'living-room', 'diner', 'park', 'office'),
-        'headline': 'bubble', 'captions': 'sticker', 'camera': 'float', 'transition': 'slide', 'hook': 'crowd', 'cta': 'big-bot',
+        'headline': 'strip', 'captions': 'sticker', 'camera': 'float', 'transition': 'cut', 'hook': 'crowd', 'cta': 'big-bot',
         'transition_colour': '#FFFDF7', 'caption_colours': {'fill': '#FFFDF7', 'text': '#3A2A4A', 'active': '#FFB255', 'edge': '#3A2A4A'},
         'grade': {'ambient': {'color': '#D98BB5', 'opacity': .06}, 'vignette': {'strength': .2, 'radius': .8, 'color': '#5A3050'}}},
     'great-outdoors': {
         'palettes': ('sky', 'forest', 'meadow', 'cobalt'), 'rooms': ('park', 'beach', 'street', 'night-sky', 'rooftop'),
-        'headline': 'ribbon', 'captions': 'underline', 'camera': 'pan', 'transition': 'iris', 'hook': 'number', 'cta': 'crowd',
+        'headline': 'strip', 'captions': 'tiles', 'camera': 'pan', 'transition': 'cut', 'hook': 'number', 'cta': 'crowd',
         'transition_colour': '#1E2B33', 'caption_colours': {'fill': '#1E2B33', 'text': '#FFFFFF', 'active': '#F6E27A'},
         'grade': {'ambient': {'color': '#FFE7A0', 'opacity': .06}, 'vignette': {'strength': .3, 'radius': .78, 'color': '#1C3020'}}},
 }
 
 FEATURES = ('headline', 'captions', 'camera', 'transition', 'hook', 'cta')
+
+# What Mayowa approved over the second-brain cuts holds for EVERY look (Claudex cut 1, 2026-10-11: those
+# fixes lived only in paper-craft, so choosing primary-pop brought back wipes, snap zooms, big slab
+# headlines and a flat surface). A look varies palettes, rooms, accents and hook/CTA staging, never these.
+APPROVED = {
+    'transition': ('cut',),                       # L004: hard cuts, a complete moving scene on frame 1
+    'camera': ('push', 'pan', 'float'),           # L027: the camera always eases; no snap or punch zooms
+    'headline': ('strip',),                       # L015: one short taped strip stating a fact
+    'captions': ('tiles', 'sticker'),             # paper word tiles, never a black bar
+}
+# L018: every look is paper. The paper-craft finish (crumpled material, cut edges, deep shadows,
+# vignette) is the base grade; a look only tints it.
+PAPER_GRADE = {'materials': {'overlay': 'motif-v1-1024/crumpled', 'overlay_opacity': 1.0},
+               'vignette': {'strength': .5, 'radius': .74, 'color': '#120C08'},
+               'edges': {'frequency': .7, 'roughness': 3.2},
+               'shadows': {'dx': 4.0, 'dy': 7.0, 'blur': [2.5, 4.5, 7.0], 'opacity': [.36, .42, .48]}}
+
+
+def unapproved(look):
+    """Features of a look outside what Mayowa approved (lesson L032)."""
+    l = get(look);return [f'{look}: {k} {l[k]!r} not in {list(v)}' for k, v in APPROVED.items() if l[k] not in v]
 
 
 def get(name):
@@ -91,6 +113,7 @@ def palettes(look, count, seed=0):
 def finish_style(look, path):
     """The approved motif-finish-v1 pass with the look's grade overrides, written to `path`."""
     style = json.loads(FINISH_V1.read_text());grade = get(look)['grade']
+    for key, value in PAPER_GRADE.items():style[key] = {**style.get(key, {}), **value}
     for key, value in grade.items():style[key] = {**style.get(key, {}), **value}
     style['id'] = f'motif-finish-v1+{look}';style['look'] = look
     Path(path).write_text(json.dumps(style, indent=2) + '\n')
