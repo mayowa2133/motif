@@ -1,0 +1,416 @@
+{
+  "slug": "adapt-claudex",
+  "title": "Two AI models that check each other's work",
+  "topic": "a skill that makes Claude and GPT-6 Astra plan, build and audit each other's work",
+  "format": "long",
+  "seed": 57,
+  "brand": {
+    "slug": "claude"
+  },
+  "mascot": "bot",
+  "look": "primary-pop",
+  "voice": "bf_emma",
+  "hook": {
+    "alternates": [
+      "A free skill now puts Claude and GPT-6 Astra on the same task."
+    ],
+    "selected": 0,
+    "headline": "CLAUDE + GPT-6 ASTRA",
+    "headline_b": "SAME TASK, 2 MODELS",
+    "visual": {
+      "rig": "review-loop",
+      "params": {
+        "mode": "plan",
+        "steps": [
+          "SCHEMA",
+          "LOGIN",
+          "API",
+          "TESTS"
+        ],
+        "left": "CLAUDE",
+        "right": "ASTRA",
+        "left_logo": "claude",
+        "right_logo": "openai",
+        "roles": [
+          "PLANS",
+          "AUDITS"
+        ],
+        "new_roles": [
+          "AUDITS",
+          "BUILDS"
+        ],
+        "solo_roles": [
+          "PLANS",
+          "BUILDS",
+          "GRADES"
+        ],
+        "stamp": "HOLDS UP"
+      },
+      "room": "rooftop",
+      "palette": "royal/sunflower"
+    }
+  },
+  "facts": [
+    {
+      "id": "f1",
+      "claim": "GPT-6 Astra is OpenAI's newest model, which OpenAI calls its best model for software engineering",
+      "value": "GPT-6 Astra",
+      "source_url": "https://openai.com/index/gpt-6-astra/",
+      "accessed": "2026-10-11"
+    },
+    {
+      "id": "f2",
+      "claim": "Language models used as judges recognise and favour their own generations over others'",
+      "value": "self-preference",
+      "source_url": "https://arxiv.org/abs/2404.13076",
+      "accessed": "2026-10-11"
+    },
+    {
+      "id": "f3",
+      "claim": "In the Claudex skill Claude writes the plan first and GPT-6 Astra audits it",
+      "value": "plan, then audit",
+      "source_url": "https://www.instagram.com/reel/DeW79CbCkO3/",
+      "accessed": "2026-10-11"
+    },
+    {
+      "id": "f4",
+      "claim": "The two models keep revising and auditing until the plan holds up",
+      "value": "until it holds up",
+      "source_url": "https://www.instagram.com/reel/DeW79CbCkO3/",
+      "accessed": "2026-10-11"
+    },
+    {
+      "id": "f5",
+      "claim": "Then the roles switch: Astra builds the project and Claude audits the implementation",
+      "value": "roles swap",
+      "source_url": "https://www.instagram.com/reel/DeW79CbCkO3/",
+      "accessed": "2026-10-11"
+    },
+    {
+      "id": "f6",
+      "claim": "A Claude Code skill is a folder with a SKILL.md file, under .claude/skills/",
+      "value": "SKILL.md",
+      "source_url": "https://code.claude.com/docs/en/skills",
+      "accessed": "2026-10-11"
+    }
+  ],
+  "beats": [
+    {
+      "id": "solo",
+      "narration": "Usually one model plans the work, builds it, then grades it.",
+      "fact": "f2",
+      "relation": "approve",
+      "headline": "1 MODEL GRADES ITSELF",
+      "payoff_headline": "A+, WITH 3 BUGS",
+      "visual": {
+        "rig": "review-loop",
+        "params": {
+          "mode": "solo",
+          "steps": [
+            "SCHEMA",
+            "LOGIN",
+            "API",
+            "TESTS"
+          ],
+          "solo": "1 MODEL",
+          "bug": 2,
+          "bugs": 3,
+          "grade": "A+",
+          "roles": [
+            "PLANS",
+            "AUDITS"
+          ],
+          "new_roles": [
+            "AUDITS",
+            "BUILDS"
+          ],
+          "solo_roles": [
+            "PLANS",
+            "BUILDS",
+            "GRADES"
+          ],
+          "stamp": "HOLDS UP"
+        },
+        "room": "street",
+        "palette": "sunflower/poppy",
+        "brand": null
+      }
+    },
+    {
+      "id": "plan",
+      "narration": "Claudex splits the job. First, Claude writes the plan.",
+      "fact": "f3",
+      "relation": "demo",
+      "headline": "STEP 1: CLAUDE PLANS",
+      "payoff_headline": "4 STEPS IN PLAN.MD",
+      "visual": {
+        "rig": "app-screen",
+        "params": {
+          "device": "laptop",
+          "ui": "note",
+          "title": "PLAN.md",
+          "lines": [
+            "# Plan",
+            "- [ ] Schema",
+            "- [ ] Login",
+            "- [ ] API",
+            "- [ ] Tests"
+          ],
+          "result": "PLAN READY",
+          "logo": "claude"
+        },
+        "room": "diner",
+        "palette": "poppy/royal"
+      }
+    },
+    {
+      "id": "audit",
+      "narration": "Then GPT-6 Astra audits it and flags every gap.",
+      "fact": "f1",
+      "relation": "approve",
+      "headline": "STEP 2: ASTRA AUDITS",
+      "payoff_headline": "3 GAPS FLAGGED",
+      "visual": {
+        "rig": "review-loop",
+        "params": {
+          "mode": "audit",
+          "steps": [
+            "SCHEMA",
+            "LOGIN",
+            "API",
+            "TESTS"
+          ],
+          "left": "CLAUDE",
+          "right": "ASTRA",
+          "left_logo": "claude",
+          "right_logo": "openai",
+          "gaps": [
+            "NO TESTS",
+            "AUTH?",
+            "NO LIMIT"
+          ],
+          "roles": [
+            "PLANS",
+            "AUDITS"
+          ],
+          "new_roles": [
+            "AUDITS",
+            "BUILDS"
+          ],
+          "solo_roles": [
+            "PLANS",
+            "BUILDS",
+            "GRADES"
+          ],
+          "stamp": "HOLDS UP"
+        },
+        "room": "stage",
+        "palette": "royal/dusk-teal",
+        "brand": "openai"
+      }
+    },
+    {
+      "id": "loop",
+      "narration": "They go back and forth until the plan actually holds up.",
+      "fact": "f4",
+      "relation": "approve",
+      "headline": "ROUND 3: 0 GAPS LEFT",
+      "payoff_headline": "PLAN HOLDS UP",
+      "visual": {
+        "rig": "review-loop",
+        "params": {
+          "mode": "loop",
+          "steps": [
+            "SCHEMA",
+            "LOGIN",
+            "API",
+            "TESTS"
+          ],
+          "left": "CLAUDE",
+          "right": "ASTRA",
+          "left_logo": "claude",
+          "right_logo": "openai",
+          "gaps": [
+            "NO TESTS",
+            "AUTH?",
+            "NO LIMIT"
+          ],
+          "rounds": 3,
+          "stamp": "HOLDS UP",
+          "roles": [
+            "PLANS",
+            "AUDITS"
+          ],
+          "new_roles": [
+            "AUDITS",
+            "BUILDS"
+          ],
+          "solo_roles": [
+            "PLANS",
+            "BUILDS",
+            "GRADES"
+          ]
+        },
+        "room": "arcade",
+        "palette": "royal/mustard"
+      }
+    },
+    {
+      "id": "swap",
+      "narration": "Then they swap seats. Astra builds the project.",
+      "fact": "f5",
+      "relation": "transform",
+      "headline": "SWAP: ASTRA BUILDS",
+      "payoff_headline": "CLAUDE AUDITS NOW",
+      "visual": {
+        "rig": "review-loop",
+        "params": {
+          "mode": "swap",
+          "steps": [
+            "SCHEMA",
+            "LOGIN",
+            "API",
+            "TESTS"
+          ],
+          "left": "CLAUDE",
+          "right": "ASTRA",
+          "left_logo": "claude",
+          "right_logo": "openai",
+          "rounds": 3,
+          "roles": [
+            "PLANS",
+            "AUDITS"
+          ],
+          "new_roles": [
+            "AUDITS",
+            "BUILDS"
+          ],
+          "solo_roles": [
+            "PLANS",
+            "BUILDS",
+            "GRADES"
+          ],
+          "stamp": "HOLDS UP"
+        },
+        "room": "office",
+        "palette": "royal/poppy"
+      }
+    },
+    {
+      "id": "build",
+      "narration": "And Claude audits the code, catching the bug before it ships.",
+      "fact": "f5",
+      "relation": "approve",
+      "headline": "1 BUG CAUGHT: NO AUTH",
+      "payoff_headline": "FIXED BEFORE IT SHIPS",
+      "visual": {
+        "rig": "review-loop",
+        "params": {
+          "mode": "build",
+          "steps": [
+            "SCHEMA",
+            "LOGIN",
+            "API",
+            "TESTS"
+          ],
+          "left": "CLAUDE",
+          "right": "ASTRA",
+          "left_logo": "claude",
+          "right_logo": "openai",
+          "new_roles": [
+            "AUDITS",
+            "BUILDS"
+          ],
+          "bug": 2,
+          "bug_label": "NO AUTH",
+          "roles": [
+            "PLANS",
+            "AUDITS"
+          ],
+          "solo_roles": [
+            "PLANS",
+            "BUILDS",
+            "GRADES"
+          ],
+          "stamp": "HOLDS UP"
+        },
+        "room": "workshop",
+        "palette": "royal/slate"
+      }
+    },
+    {
+      "id": "ship",
+      "narration": "Two frontier models check each other, so no AI marks its own homework.",
+      "fact": "f2",
+      "relation": "approve",
+      "headline": "2 MODELS SIGN OFF",
+      "payoff_headline": "0 SELF-GRADED WORK",
+      "visual": {
+        "rig": "review-loop",
+        "params": {
+          "mode": "ship",
+          "steps": [
+            "SCHEMA",
+            "LOGIN",
+            "API",
+            "TESTS"
+          ],
+          "left": "CLAUDE",
+          "right": "ASTRA",
+          "left_logo": "claude",
+          "right_logo": "openai",
+          "new_roles": [
+            "AUDITS",
+            "BUILDS"
+          ],
+          "banner": "2 JUDGES",
+          "roles": [
+            "PLANS",
+            "AUDITS"
+          ],
+          "solo_roles": [
+            "PLANS",
+            "BUILDS",
+            "GRADES"
+          ],
+          "stamp": "HOLDS UP"
+        },
+        "room": "street",
+        "palette": "royal/sunflower"
+      }
+    },
+    {
+      "id": "skill",
+      "narration": "It's a skill, so you drop it into Claude Code or Codex and reuse it on every build.",
+      "fact": "f6",
+      "relation": "demo",
+      "headline": "1 FOLDER, 1 SKILL.MD",
+      "payoff_headline": "REUSE IT EVERY BUILD",
+      "visual": {
+        "rig": "app-screen",
+        "params": {
+          "device": "monitor",
+          "ui": "files",
+          "title": "my-app",
+          "lines": [
+            "my-app/",
+            "  .claude/",
+            "    skills/",
+            "      claudex/",
+            "        SKILL.md",
+            "  src/"
+          ],
+          "result": "SKILL ADDED",
+          "logo": "claude"
+        },
+        "room": "living-room",
+        "palette": "sunflower/royal"
+      }
+    }
+  ],
+  "cta": {
+    "keyword": "CLAUDEX",
+    "narration": "Let your AIs check each other. Comment CLAUDEX for the skill.",
+    "headline_b": "LET AIS CHECK EACH OTHER"
+  }
+}

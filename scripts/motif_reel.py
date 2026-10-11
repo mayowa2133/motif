@@ -113,7 +113,8 @@ def _short(text, limit=26):
 
 
 def _number(value):
-    m = re.search(r'(\$)?([\d,]+(?:\.\d+)?)\s*([kKmM%x]|\+)?', value or '')
+    # A number needs a digit ("plan, then audit" has only a comma) and must not be part of a name ("GPT-6").
+    m = re.search(r'(?<![A-Za-z\d-])(\$)?(\d[\d,]*(?:\.\d+)?)\s*([kKmM%x]|\+)?', value or '')
     if not m:return None
     n = float(m.group(2).replace(',', ''));suffix = (m.group(3) or '')
     return {'prefix': m.group(1) or '', 'value': int(n) if n == int(n) else n, 'suffix': suffix}
@@ -476,13 +477,13 @@ def pop_in(markup, f, delay, anchor):
     return f'<g opacity="{o:.3f}" transform="translate({ax:.1f} {ay + dy:.1f}) scale({s:.4f}) translate({-ax:.1f} {-ay:.1f})">{markup}</g>'
 
 
-ACTS = {'app-screen': ('typing', 'pointing', 'inspecting'), 'knowledge-vault': ('pushing', 'pointing', 'pulling')}
+ACTS = {'app-screen': ('typing', 'pointing', 'inspecting'), 'knowledge-vault': ('pushing', 'pointing', 'pulling'), 'review-loop': ('pointing', 'inspecting', 'pushing')}
 
 
 # Machines the host feeds (cut 5 review: Memo stood and watched in 9 of 12 frames). In a setup shot the
 # host carries a note in, throws it into the machine's contact point so it lands on the contact, and a
 # puff marks the hit: host, object and consequence stay one action.
-CARRY = {'app-screen', 'knowledge-vault'}
+CARRY = {'app-screen', 'knowledge-vault', 'review-loop'}
 
 
 def contact_age(f, fc, prev, hold):
@@ -542,6 +543,13 @@ def bot_motion(role, u, f, n, tc, side, entering=True, acts=('pointing', 'presen
         hop = max(0.0, math.sin(min(1.0, u / .3) * math.pi)) * 40 + abs(math.sin(f * .26)) * 10 * (u > .3)
         return ('celebrating' if (f // 7) % 2 else 'presenting') if u > .2 else 'standing', 'excited', 7 * math.sin(f * .2) * (u > .3), -hop, 1.0, None
     return 'celebrating', 'excited', 0.0, -abs(math.sin(f * .2)) * 20, 1.0, None
+
+
+def rig_shows_mark(shot, brand):
+    """The machine already draws this product's mark (a logo param): a second sticker doubles it
+    (Claudex cut 1: the Claude sticker sat on top of the CLAUDE desk badge). Lesson L029."""
+    params = (shot.get('rig') or {}).get('params') or {}
+    return any(k.endswith('logo') and v == brand for k, v in params.items())
 
 
 def sticker_spot(layout, rig, half):
@@ -653,7 +661,7 @@ def shot_frames(shot, layout, seed, look='paper-craft', brand=None, prev=None, c
             sq = impact(f, fc, n, prev, hold)
             if sq:rock += 3.5 * sq
             hero = f'<g transform="translate({h["x"]:.1f} {h["y"]:.1f}) scale({1 + .55 * sq:.4f} {1 - sq:.4f}) rotate({rock:.3f}) translate({-h["x"]:.1f} {-h["y"]:.1f})">{hero}</g>'  # the machine rocks on its base
-            if brand and shot['role'] != 'hook':
+            if brand and shot['role'] != 'hook' and not rig_shows_mark(shot, brand):
                 from motif_brand import sticker
                 # The product's mark on the machine: the frame names its subject without the caption.
                 wob = 3 * math.sin(f * .3)
@@ -694,7 +702,7 @@ def shot_frames(shot, layout, seed, look='paper-craft', brand=None, prev=None, c
             pieces.append(cam(pop_in(dressed_bot(m['x'], m['y'] - bounce, m['s'], m['face'], 'celebrating' if (f // 8 + k) % 2 else m['pose'], m['costume'], shot['palette'], m['angle'], m['flip'], mascot=M), f, 3 + k, (m['x'], m['y']))))
         for k, item in enumerate(layout.get('dressing', [])):
             if item['layer'] == 'front':pieces.append(cam(boil(place(PROPS[item['prop']].render(c), item['x'], item['y'], item['scale']), f, f'{shot["id"]}-f{k}', .8)))
-        if brand and shot['role'] in ('hook', 'cta'):
+        if brand and shot['role'] in ('hook', 'cta') and not rig_shows_mark(shot, brand):
             from motif_brand import badge
             # Hook: the product is the first thing on screen (visible at frame 0, then settles).
             big = shot['role'] == 'hook' and not shot.get('insert') and not rig;size = 300 if big else 190
@@ -723,7 +731,7 @@ def shot_frames(shot, layout, seed, look='paper-craft', brand=None, prev=None, c
 
 
 SOUND = {'overflow-vehicle': 'spring', 'plate-stack': 'paper', 'hydraulic-press': 'reject', 'race-track': 'star', 'balance-scale': 'cloth',
-         'stacked-meter': 'pop', 'thermometer': 'star', 'receipt-stack': 'paper', 'stamp-gate': 'reject', 'conveyor': 'key1', 'knowledge-vault': 'paper'}
+         'stacked-meter': 'pop', 'thermometer': 'star', 'receipt-stack': 'paper', 'stamp-gate': 'reject', 'conveyor': 'key1', 'knowledge-vault': 'paper', 'review-loop': 'paper'}
 
 
 def prepare(project, brief):

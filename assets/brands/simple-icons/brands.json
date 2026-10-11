@@ -43,6 +43,12 @@
       "hex": "#7C3AED",
       "source": "https://obsidian.md",
       "guidelines": null
+    },
+    "openai": {
+      "title": "OpenAI",
+      "hex": "#412991",
+      "source": "https://openai.com/brand",
+      "guidelines": "https://openai.com/brand"
     }
   }
 }

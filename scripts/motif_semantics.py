@@ -60,6 +60,7 @@ RIG_RELATIONS = {
     'light-render': ('transform',),
     'certificate': ('level', 'spread'),
     'knowledge-vault': ('pile-up', 'transform', 'grow', 'approve'),
+    'review-loop': ('approve', 'transform', 'trade-off'),
 }
 
 # Words that suggest a relation when a brief does not name one. Deliberately
