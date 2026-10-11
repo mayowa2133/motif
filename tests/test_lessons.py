@@ -107,3 +107,15 @@ def test_add_lesson_requires_known_check(tmp_path, monkeypatch):
         motif_improve.add_lesson('s', 'sym', 'rule', check='nope')
     new = motif_improve.add_lesson('s', 'sym', 'rule', check='headline-openers')
     assert new['level'] == 'gate' and new['id'] == f'L{len(L.ledger()["lessons"]):03d}'
+
+
+def test_sticker_and_host_keep_screen_labels_clear():
+    import motif_sets as ms
+    from motif_reel import sticker_spot
+    chat = {'device': 'monitor', 'ui': 'chat', 'title': 'Claude Code', 'lines': ['Where are my gaps?', 'No notes on PRICING [1]', 'HIRING has no source [4]'], 'result': '3 GAPS', 'logo': 'claude'}
+    layout = ms.solve('workshop', 'app-screen', get('app-screen').params(chat), 'citrus/mauve', seed=23, beat=6)
+    x, y = sticker_spot(layout, None, 235 * layout['bot']['scale'])
+    box = (x - 46, y - 46, 92, 92)
+    for t in L.hero_labels(layout):
+        assert L._overlap(box, t['box']) <= L.OCCLUDED * t['box'][2] * t['box'][3], t['text']
+    assert L.check_host_in_front(None, None, {'ask': layout}) == []

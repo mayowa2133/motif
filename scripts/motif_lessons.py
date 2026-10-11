@@ -192,7 +192,22 @@ def check_host_in_front(project, plan, layouts):
     return out
 
 
+def check_sticker_clear(project, plan, layouts):
+    """The product sticker never covers a machine or screen label (cut 4 hid "3 GAPS" under it)."""
+    from motif_reel import sticker_spot
+    if not plan.get('brand') and not any(s.get('brand') for b in plan['beats'] for s in b['shots']):return []
+    out = []
+    for beat, layout in layouts.items():
+        if not layout.get('hero') or not layout.get('bot'):continue
+        x, y = sticker_spot(layout, None, 235 * layout['bot']['scale']);box = (x - 46, y - 46, 92, 92)
+        for t in hero_labels(layout):
+            area = t['box'][2] * t['box'][3]
+            if area and _overlap(box, t['box']) / area > OCCLUDED:out.append({'where': beat, 'detail': f'product sticker covers "{t["text"]}"'})
+    return out
+
+
 CHECKS = {
+    'sticker-clear': check_sticker_clear,
     'set-variety': check_set_variety,
     'headline-length': check_headline_length,
     'product-on-screen': check_product_on_screen,

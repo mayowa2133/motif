@@ -75,7 +75,7 @@ class StagingTests(unittest.TestCase):
         for room in ms.ROOMS:
             for beat, rig in enumerate(sorted(all_rigs())):
                 layout = ms.solve(room, rig, seed=1, beat=beat);bot = layout['bot']
-                self.assertTrue(ms.BOT_SCALE[0] - 1e-6 <= bot['scale'] <= ms.BOT_SCALE[1] + 1e-6)
+                self.assertTrue(ms.BOT_MIN - 1e-6 <= bot['scale'] <= ms.BOT_SCALE[1] + 1e-6)
                 half = ms.BOT_HALF * bot['scale'];self.assertTrue(half <= bot['x'] <= ms.W - half, (room, rig))
                 bot_box = (bot['x'] - half, bot['y'] - 4.2 * half, 2 * half, 4.2 * half)
                 for item in layout['dressing']:

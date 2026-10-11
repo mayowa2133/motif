@@ -215,7 +215,7 @@ class AppScreen(Rig):
             out += rect(x + w - cw - 8, y + h - 34, cw, 26, '#FFFFFF', 6).replace('<rect', '<rect opacity=".9"') + txt(p['credit'], x + w - 17, y + h - 15, 15, c['dark'], 700, 'end')
         if done and p.get('result'):
             res = p['result'];rw = max(170, len(res) * 30 + 50);rx, ry = x + w / 2, (y + bar + 46 if kind == 'map' else y + h * .68);fit = min(1.0, (w - 16) / rw)
-            if kind in self.VIEWS:fit = min(.72, (w * .5) / rw);rx, ry = x + w - rw * fit / 2 - 14, y + 44 + 34  # a corner sticker under the title bar: clear of the view and the host
+            if kind in self.VIEWS:fit = min(.72, (w * .5) / rw);rx, ry = x + w - rw * fit / 2 - 14, (y + h - 34 if kind == 'chat' else y + 44 + 34)  # a corner sticker clear of the view (chat: below the answer)
             out += g(rect(-rw / 2 + 5, -40, rw, 80, c['dark'], 14).replace('<rect', '<rect opacity=".22"') + rect(-rw / 2, -44, rw, 80, c['pop'] if c['pop'] != c['light'] else c['accent'], 14, c['dark'], 3)
                      + txt(res, 0, 12, 40, c['dark'], 900, 'middle'), rx, ry, -3, done * fit)
         return out

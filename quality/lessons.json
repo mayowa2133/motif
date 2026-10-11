@@ -175,7 +175,8 @@
       "source": "Claude review of second-brain cut 4",
       "symptom": "the product sticker floats over screen content (covers 3 GAPS, SAVED and a graph node) and the host covers the crate's items",
       "rule": "Brand stickers and the host never cover a machine or screen label",
-      "level": "brief"
+      "level": "gate",
+      "check": "sticker-clear"
     }
   ]
 }

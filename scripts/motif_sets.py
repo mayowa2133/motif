@@ -40,6 +40,7 @@ HERO_WIDE = (.3, .7)               # or, for a wide machine, this share of heigh
 EMPTY_FIELD_MAX = .45
 EDGE_VISIBLE = .7                  # an edge prop shows at least this share of its width (no stray fragments)
 BOT_SCALE = (.32, .4)              # Bot reads at about 17 to 21% of frame height
+BOT_MIN = .26                      # it may shrink to this (14%) rather than hide a machine label (front_spot)
 BOT_LANE = 150                    # width kept free beside the hero for Bot
 HERO_SAFE = 40                    # hero clear of the frame edge so camera push-ins never crop it
 PROP_MAX_SCALE = 1.8              # beyond this a small prop reads as a blank panel or a giant
@@ -636,15 +637,20 @@ def bot_placement(rig, hero, hero_box):
 
 def front_spot(x, side, half, hero_box, labels):
     """Where the host stands in front of the machine: as close to its slot (x) as possible while its
-    body covers as little of the machine's labels as possible, and always inside the frame.
-    Returns (x, side), side being which side of the hero's centre it ends up on."""
-    lo, hi = half + 55, W - half - 55
-    def cost(cx):
-        box = (cx - half * .8, FLOOR - 4.2 * half, 1.6 * half, 4.2 * half)
+    body covers as little of the machine's labels as possible, and always inside the frame. When no
+    spot is clear it may shrink a little (to 75%) rather than hide a label. Returns (x, side, shrink)."""
+    def cost(cx, k):
+        h = half * k;box = (cx - h * .8, FLOOR - 4.2 * h, 1.6 * h, 4.2 * h)
         cover = sum(_overlap(box, t) / max(1.0, t[2] * t[3]) for t in labels)
-        return cover * 1000 + abs(cx - x)
-    best = min((lo + (hi - lo) * k / 40 for k in range(41)), key=cost)
-    return best, (-1 if best < hero_box[0] + hero_box[2] / 2 else 1)
+        return cover * 1000 + abs(cx - x) + (1 - k) * 400
+    best = None
+    for k in (1.0, .88, .75):
+        lo, hi = half * k + 55, W - half * k - 55
+        for i in range(41):
+            cx = lo + (hi - lo) * i / 40;c = cost(cx, k)
+            if best is None or c < best[0]:best = (c, cx, k)
+    _, bx, k = best
+    return bx, (-1 if bx < hero_box[0] + hero_box[2] / 2 else 1), k
 
 
 def solve(room, rig_name, values=None, palette=None, seed=0, beat=0, costume=None, count=4):
@@ -657,7 +663,7 @@ def solve(room, rig_name, values=None, palette=None, seed=0, beat=0, costume=Non
     from motif_lessons import hero_labels
     labels = [t['box'] for pose in ('contact', 'end') for t in hero_labels({'hero': {**hero, 'values': values or {}}, 'palette': palette}, pose)]
     bx, by, bscale, side = bot_placement(rig, hero, hero_box);half = BOT_HALF * bscale
-    bx, side = front_spot(bx, side, half, hero_box, labels)
+    bx, side, shrink = front_spot(bx, side, half, hero_box, labels);bscale = max(BOT_MIN, bscale * shrink);half = BOT_HALF * bscale
     bot_box = (bx - half, by - 4.2 * half, 2 * half, 4.2 * half)
     pool = list(ROOMS[room]['dressing']);rng.shuffle(pool)
     roles = ['edge', 'overlap', 'back', 'back'][:max(2, min(4, count))];placed = []

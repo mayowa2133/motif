@@ -446,6 +446,23 @@ def bot_motion(role, u, f, n, tc, side, entering=True, acts=('pointing', 'presen
     return 'celebrating', 'excited', 0.0, -abs(math.sin(f * .2)) * 20, 1.0, None
 
 
+def sticker_spot(layout, rig, half):
+    """Where the product sticker sits: above the host's head when that is clear, else the clearest
+    corner of the machine. It never covers a machine or screen label or the host (lesson L020:
+    cut 4's sticker hid "3 GAPS", "SAVED" and a graph node)."""
+    from motif_lessons import _overlap, hero_labels
+    bot = layout['bot'];hx, hy, hw, hh = layout['hero']['box']
+    labels = [t['box'] for pose in ('contact', 'end') for t in hero_labels(layout, pose)]
+    host = (bot['x'] - half, bot['y'] - 4.2 * half, 2 * half, 4.2 * half)
+    spots = [(bot['x'], bot['y'] - 4.2 * half - 60), (hx + 40, hy + 30), (hx + hw - 40, hy + 30), (hx + 40, hy - 30), (hx + hw - 40, hy - 30),
+             (hx + 40, hy + hh * .5), (hx + hw - 40, hy + hh * .5)]
+    def cost(i):
+        x, y = spots[i];x = min(720 - 56, max(56, x));y = max(370, y);box = (x - 50, y - 50, 100, 100)
+        return sum(_overlap(box, t) for t in labels) + _overlap(box, host) * .5 + i
+    x, y = spots[min(range(len(spots)), key=cost)]
+    return (min(720 - 56, max(56, x)), max(370, y))
+
+
 def shot_frames(shot, layout, seed, look='paper-craft', brand=None, prev=None, continued=False):
     """World markup for every frame of one shot.
 
@@ -476,10 +493,11 @@ def shot_frames(shot, layout, seed, look='paper-craft', brand=None, prev=None, c
     # The product mark floats in Bot's lane above its head: it never covers the rig's own labels.
     if rig:
         bot = layout['bot'];half = 235 * bot['scale']
-        sticker_at = (min(720 - 56, max(56, bot['x'])), max(370, bot['y'] - 4.2 * half - 60))
+        sticker_at = sticker_spot(layout, rig, half)
     else:sticker_at = None
     poof_at = None
     reframe = L.get('reframe') if prev and shot['role'] == 'payoff' and rig else None
+    fc = round(.92 * (n - 1)) if rig and shot['role'] == 'setup' and not (shot['rig'] or {}).get('hold') else None
     # A held beat keeps its machine in the start state (Codex's v11 critique: Python's lock opened
     # while the narration was still explaining the restriction). A later beat performs the change.
     hold = bool(rig and shot['rig'].get('hold'))
@@ -500,6 +518,11 @@ def shot_frames(shot, layout, seed, look='paper-craft', brand=None, prev=None, c
             pz, pdx, pdy = motif_looks.camera(L['camera'], prev[0], 1.0, prev[1] - 1, prev[1]);k = ease(min(1.0, f / 10))
             zoom, dx, dy = pz + (zoom - pz) * k, pdx + (dx - pdx) * k, pdy + (dy - pdy) * k
         else:dy += motif_looks.slide_offset(L['transition'], f)
+        if fc is not None and f >= fc:
+            # Contact punch (2026-10-11 motion study): the references' frames change in sudden events
+            # (11-25% of frames) where Motif eased everything (2%); the moment the machine makes contact
+            # the camera kicks in and shakes for a few frames.
+            k = math.exp(-(f - fc) / 3.5);zoom += .07 * k;dx += 9 * math.sin((f - fc) * 2.6) * k;dy += 5 * math.cos((f - fc) * 3.1) * k
         cam = lambda markup: camera(markup, zoom, ccx, cy, dx, dy)
         if dy > 0:pieces.append(f'<rect width="720" height="1280" fill="{L["transition_colour"]}"/>')
         pieces.append(cam(room['draw'](c)))
