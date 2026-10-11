@@ -81,3 +81,4 @@ proven on old films and a library change breaks nothing.
 | L023 host acts | second-brain cut 5 (Memo watched in 9 of 12 frames) | host carries a note and throws it in at contact; brief rule |
 | L024 full screens | second-brain cut 5 (terminal read "> cd sec") | app screens start 40% typed; chat answers after send; brief rule |
 | L025 label collision | second-brain cut 6 stills (CLAUDE IS IN over the last line) | result stickers below text; check, warn |
+| L026 motion events | cut 6 vs references (0.6 picture changes/s vs 0.7-1.9) | snap framings per shot + stronger contact kick; motion stage gate |

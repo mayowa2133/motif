@@ -95,7 +95,11 @@ class MotionTests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as tmp:
             self.assertEqual(motif_motion.measure(self.clip(tmp, 'color=c=red:s=180x320:r=30'))['status'], 'FAIL')
         with tempfile.TemporaryDirectory() as tmp:
-            self.assertEqual(motif_motion.measure(self.clip(tmp, 'testsrc2=s=180x320:r=30'))['status'], 'PASS')
+            drift = motif_motion.measure(self.clip(tmp, 'testsrc2=s=180x320:r=30'))
+            self.assertGreaterEqual(drift['median_moving_share'], motif_motion.FLOOR)
+            self.assertEqual(drift['status'], 'FAIL')  # steady drift with no sudden events (L026)
+        with tempfile.TemporaryDirectory() as tmp:
+            self.assertEqual(motif_motion.measure(self.clip(tmp, "testsrc2=s=180x320:r=30,negate=enable='lt(mod(t,1),0.5)'"))['status'], 'PASS')
 
 
 if __name__ == '__main__':

@@ -220,6 +220,14 @@
       "rule": "A machine's labels never sit on each other; result stickers on text screens go below the text",
       "level": "warn",
       "check": "label-collision"
+    },
+    {
+      "id": "L026",
+      "date": "2026-10-11",
+      "source": "Claude motion study, cut 6 vs seven references",
+      "symptom": "cut 6 drifted as much as the references but changed the whole picture 0.6 times a second (refs 0.7-1.9) and had 0.8 large changes a second (refs 1.1-4.3)",
+      "rule": "Every shot cuts to a closer or wider framing of its set at least once and the contact lands in a close-up; the motion stage gates picture changes >= 0.7/s and large changes >= 1.0/s",
+      "level": "gate"
     }
   ]
 }
