@@ -56,7 +56,7 @@ python scripts/motif_improve.py regress
 ```
 
 Re-checks every brief in `quality/benchmark-briefs/` and
-`quality/adaptation-briefs/` against the current rules, so a new rule is
+`quality/adaptation-briefs/` and `quality/new-topic-briefs/` against the current rules, so a new rule is
 proven on old films and a library change breaks nothing.
 
 ## History

@@ -31,7 +31,7 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / 'scripts'))
 RUN_LOG = ROOT / 'quality/run-log.jsonl'
 BACKLOG = ROOT / 'quality/library-backlog.json'
-BRIEF_DIRS = (ROOT / 'quality/benchmark-briefs', ROOT / 'quality/adaptation-briefs')
+BRIEF_DIRS = (ROOT / 'quality/benchmark-briefs', ROOT / 'quality/adaptation-briefs', ROOT / 'quality/new-topic-briefs')
 
 
 def _read(p, default=None):

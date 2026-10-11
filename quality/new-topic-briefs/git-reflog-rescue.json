@@ -1,0 +1,58 @@
+{
+  "slug": "git-reflog-rescue",
+  "title": "Git still has the work you just deleted",
+  "topic": "getting deleted commits back with git reflog",
+  "format": "short",
+  "seed": 41,
+  "mascot": "kit",
+  "look": "neon-arcade",
+  "hook": {
+    "alternates": [
+      "You just wiped three days of commits. Git still has them."
+    ],
+    "selected": 0,
+    "headline": "3 DAYS OF WORK, GONE?",
+    "headline_b": "GIT KEPT A RECEIPT",
+    "visual": {
+      "rig": "stacked-meter",
+      "params": {"from": 9, "to": 6, "unit": "", "label": "COMMITS", "rocket": false},
+      "room": "night-sky",
+      "palette": "neon-teal/plum-night"
+    }
+  },
+  "facts": [
+    {"id": "f1", "claim": "A git commit records a snapshot of the project's staged contents", "value": "a snapshot", "source_url": "https://git-scm.com/docs/git-commit", "accessed": "2026-10-11"},
+    {"id": "f2", "claim": "A branch in Git is a lightweight movable pointer to a commit", "value": "a pointer", "source_url": "https://git-scm.com/book/en/v2/Git-Branching-Branches-in-a-Nutshell", "accessed": "2026-10-11"},
+    {"id": "f3", "claim": "git reset --hard discards changes and moves the branch back to an earlier commit", "value": "--hard", "source_url": "https://git-scm.com/docs/git-reset", "accessed": "2026-10-11"},
+    {"id": "f4", "claim": "Reflogs record when the tips of branches were updated in the local repository", "value": "every move", "source_url": "https://git-scm.com/docs/git-reflog", "accessed": "2026-10-11"},
+    {"id": "f5", "claim": "Reflog entries are kept for 90 days by default before git gc may expire them", "value": "90 days", "source_url": "https://git-scm.com/docs/git-gc", "accessed": "2026-10-11"}
+  ],
+  "beats": [
+    {
+      "id": "commit", "narration": "Every commit saves a snapshot of your whole project.", "fact": "f1", "relation": "demo",
+      "headline": "1 COMMIT = 1 SNAPSHOT", "payoff_headline": "SAVED AS 4F2A9C1",
+      "visual": {"rig": "app-screen", "params": {"device": "monitor", "ui": "terminal", "title": "my-app", "lines": ["git add .", "git commit -m \"login page\"", "[main 4f2a9c1] login page", "3 files changed"], "result": "SAVED"}, "room": "arcade", "palette": "neon-violet"}
+    },
+    {
+      "id": "stack", "narration": "Commit often, and the snapshots stack up into nine save points.", "fact": "f2", "relation": "big-number",
+      "headline": "9 SAVE POINTS", "payoff_headline": "MAIN POINTS AT THE TOP",
+      "visual": {"rig": "stacked-meter", "params": {"from": 1, "to": 9, "unit": "", "label": "COMMITS", "rocket": false}, "room": "server-room", "palette": "neon-teal/neon-ember"}
+    },
+    {
+      "id": "oops", "narration": "Then one hard reset throws the last three away.", "fact": "f3", "relation": "demo",
+      "headline": "RESET --HARD HEAD~3", "payoff_headline": "THREE COMMITS GONE",
+      "visual": {"rig": "app-screen", "params": {"device": "laptop", "ui": "terminal", "title": "my-app", "lines": ["git reset --hard HEAD~3", "HEAD is now at 4f2a9c1", "git log --oneline", "4f2a9c1 login page"], "result": "GONE?"}, "room": "stage", "palette": "neon-violet/plum-night"}
+    },
+    {
+      "id": "reflog", "narration": "But git reflog remembers every place your branch has been.", "fact": "f4", "relation": "demo",
+      "headline": "REFLOG LOGS EVERY MOVE", "payoff_headline": "THERE IT IS: C13F8AA",
+      "visual": {"rig": "app-screen", "params": {"device": "monitor", "ui": "terminal", "title": "my-app", "lines": ["git reflog", "4f2a9c1 HEAD@{0}: reset", "c13f8aa HEAD@{1}: commit", "9be71d0 HEAD@{2}: commit"], "result": "FOUND"}, "room": "rooftop", "palette": "neon-violet/neon-ember"}
+    },
+    {
+      "id": "restore", "narration": "Reset back to that line and your work is home. Git keeps those entries for ninety days.", "fact": "f5", "relation": "unlock",
+      "headline": "90 DAYS TO GET IT BACK", "payoff_headline": "WORK RESTORED",
+      "visual": {"rig": "lock-and-key", "params": {"label": "LOST WORK", "key": "REFLOG"}, "room": "arcade", "palette": "neon-ember/neon-violet"}
+    }
+  ],
+  "cta": {"keyword": "GIT", "narration": "Save this for your next scary reset. Comment GIT for the cheat sheet."}
+}
