@@ -46,6 +46,13 @@ DELIVERY = (1080, 1920)  # delivery size; compositions stay on the 720 x 1280 de
 MUSIC_VOLUME = .3         # bed level before ducking; fills the pauses like the references
 BOIL_STEP = 2           # stop-motion boil: pieces shift every 2 frames (15 fps, animating on twos)
 SPEED = 1.2             # Kokoro af_nova reel pace (measured about 3.7 words/s)
+# Approved narration voices (Mayowa, 2026-10-11, from six samples): a brief names one with "voice",
+# otherwise the film's seed picks one so films do not all sound alike.
+VOICES = ('af_heart', 'af_bella', 'bf_emma')
+
+
+def voice_for(brief):
+    return brief.get('voice') or VOICES[brief.get('seed', 0) % len(VOICES)]
 TAIL = .7
 
 
@@ -733,7 +740,7 @@ def prepare(project, brief):
     shutil.copy2(V6 / 'hyperframes.json', project / 'hyperframes.json')
     write(project / 'package.json', {'name': project.name, 'private': True, 'scripts': {k: f'npx --yes hyperframes@{PIN} {v}' for k, v in (('check', 'check'), ('render', 'render'), ('dev', 'preview'))}})
     write(project / 'asset-provenance.json', {'rules': [
-        {'glob': 'assets/voice/*', 'origin': 'motif-tts', 'generator': f'hyperframes {PIN} tts, voice {brief.get("voice", "af_nova")}, one take per line of the brief'},
+        {'glob': 'assets/voice/*', 'origin': 'motif-tts', 'generator': f'hyperframes {PIN} tts, voice {voice_for(brief)}, one take per line of the brief'},
         {'glob': 'assets/voice/clauses/*', 'origin': 'motif-tts', 'generator': f'hyperframes {PIN} tts clause takes and generated silence'},
         {'glob': 'assets/sfx/*', 'origin': 'procedural-seeded', 'generator': 'motif_ui_production.make_sounds (seeded filtered noise and resonators)'},
         {'glob': 'assets/music/*', 'origin': 'procedural-seeded', 'generator': 'motif_music.bed (synthesised chords, bass, arpeggio and drums; no samples)'}]})
@@ -844,7 +851,7 @@ def run(brief_path, out_root=None, allow_draft=False, stub_voice=False, render=F
     stage('sound-off', meaning['status'], failures=meaning['failures'])
     if meaning['status'] != 'PASS':write(project / 'reel-record.json', record);raise ValueError('sound-off: ' + '; '.join(meaning['failures']))
     prepare(project, brief)
-    spans, voice_duration = voice(project, [(b['id'], b['narration']) for b in plan['beats']], brief.get('voice', 'af_nova'), stub_voice, python)
+    spans, voice_duration = voice(project, [(b['id'], b['narration']) for b in plan['beats']], voice_for(brief), stub_voice, python)
     stage('voice', 'STUB' if stub_voice else 'PASS', duration=round(voice_duration, 3))
     timing = {i: (s, e) for i, s, e in spans}
     beats_t = []
@@ -914,7 +921,7 @@ def catalog_for_agents():
             'palette_note': 'A beat palette is one name, or "object/room": the first palette colours the machine, the second the walls and floor. Beats that carry the same machine must keep its object palette.',
             'looks': {k: {'rooms': list(v['rooms']), 'palettes': list(v['palettes'])} for k, v in motif_looks.LOOKS.items()},
             'costumes': sorted(c for c in COSTUMES if c != 'none'), 'inserts': ['counter', 'star_badge', 'price_tag', 'gauge', 'progress_bar'],
-            'brands': sorted(brands()), **mascots(),
+            'brands': sorted(brands()), 'voices': list(VOICES), **mascots(),
             'brief_rules': [f'{l["id"]}: {l["rule"]}' for l in ledger()['lessons']]}
 
 

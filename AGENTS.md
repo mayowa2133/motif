@@ -75,6 +75,8 @@ quality bar). Copy the closest one and change it.
    for a second headline: author `hook.headline_b` / `cta.headline_b`, or the
    planner cuts one from the narration at a phrase boundary.
 12. **CTA.** `cta.keyword` must be said in `cta.narration`.
+13. **Voice.** Optionally name a `voice` from `catalog`'s `voices` (`af_heart`,
+   `af_bella`, `bf_emma`, approved by Mayowa); otherwise the seed picks one.
 
 The full rule list is `brief_rules` in `catalog` (from `quality/lessons.json`).
 `check` enforces the measurable ones.

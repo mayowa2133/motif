@@ -31,7 +31,7 @@
     },
     "voice": {
       "type": "string",
-      "default": "af_nova"
+      "description": "Kokoro voice. Approved: af_heart, af_bella, bf_emma (default: picked from these by seed); af_nova was the original voice."
     },
     "hook": {
       "type": "object",
