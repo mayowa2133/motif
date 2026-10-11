@@ -164,6 +164,29 @@ def dark_card(rng):
     return compose(.4 * mottle + .45 * tooth, 30, [strokes(rng, 2200, (5, 16), .25, 1, (180, 220), (8, 18)), sparkle])
 
 
+def creases(rng, count, width=(3.0, 9.0), length=(500, 1600)):
+    """Fold lines of crumpled paper: each crease is a straight segment (on the torus) whose
+    two sides catch the light differently, a lit ridge on one side and a shadow on the other."""
+    yy, xx = np.mgrid[0:N, 0:N].astype(float);field = np.zeros((N, N))
+    for _ in range(count):
+        x0, y0 = rng.random(2) * N;a = rng.random() * np.pi;L = rng.uniform(*length);w = rng.uniform(*width)
+        ux, uy = np.cos(a), np.sin(a)
+        dx = (xx - x0 + N / 2) % N - N / 2;dy = (yy - y0 + N / 2) % N - N / 2   # wrap: no seam at the tile edge
+        along = dx * ux + dy * uy;across = -dx * uy + dy * ux
+        fade = np.clip(1 - (np.abs(along) / (L / 2)) ** 4, 0, 1)
+        field += np.sign(across) * np.exp(-np.abs(across) / w) * fade * rng.uniform(.5, 1)
+    return field / (np.abs(field).max() + 1e-12)
+
+
+def crumpled(rng):
+    """Crumpled, smoothed-out paper (2026-10-11 reference comparison): broad uneven light
+    across facets, long fold lines and paper tooth, so flat fills read as handled paper."""
+    facets = spectral(rng, 1.5, 6);mottle = spectral(rng, 6, 22);tooth = spectral(rng, 200, 800)
+    folds = creases(rng, 55, width=(4.0, 14.0))
+    fibres = strokes(rng, 5000, (6, 22), .25, 1, (96, 128), (12, 26))
+    return compose(.5 * facets + .55 * folds + .35 * mottle + .4 * tooth, 92, [fibres])
+
+
 MOTIF_V1 = {
     'matte-paper': (matte_paper, 11001, 'Warm cream matte paper: soft mottling, paper tooth, sparse short fibres.'),
     'felt': (felt, 11002, 'Felt: dense light and dark curled hairs over fuzzy tooth.'),
@@ -171,6 +194,7 @@ MOTIF_V1 = {
     'kraft': (kraft, 11004, 'Kraft: long dark fibres, pale fibres, dark flecks, stronger mottling.'),
     'wood': (wood, 11005, 'Wood veneer: horizontal anisotropic grain, figure and long grain lines.'),
     'dark-card': (dark_card, 11006, 'Dark card: mottling with light fibres and sparse pale flecks for dark surfaces.'),
+    'crumpled': (crumpled, 11007, 'Crumpled paper smoothed flat: broad facet light, long fold lines with lit and shaded sides, tooth and fibres.'),
 }
 
 

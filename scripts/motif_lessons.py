@@ -150,12 +150,62 @@ def check_shared_object_palette(project, plan, layouts):
     return out
 
 
+def check_set_variety(project, plan, layouts):
+    """Consecutive beats never share a set: the references change the setting for every idea
+    (every 1.8-3.7 s), and cut 3 held one vault room for 28 s (2026-10-11 comparison)."""
+    out = [];prev = None
+    for beat in plan['beats']:
+        room = beat['shots'][0].get('room')
+        # The hook may open in the first claim's set (hero-first opening: it previews that machine).
+        if room and prev and room == prev[1] and prev[0] != 'hook':out.append({'where': beat['id'], 'detail': f'same room as {prev[0]} ({room})'})
+        prev = (beat['id'], room)
+    return out
+
+
+def check_headline_length(project, plan, layouts):
+    """Headlines fit one short line (the references' taped strip): at most 30 characters."""
+    return [{'where': shot['id'], 'detail': f'"{shot["headline"]}" is {len(shot["headline"])} characters'}
+            for beat in plan['beats'] for shot in beat['shots'] if len(shot['headline']) > 30]
+
+
+def check_product_on_screen(project, plan, layouts):
+    """A film about a product shows the product in use: at least a third of its claim beats are an
+    app-screen view (cut 3 showed Obsidian once, as a three-line dialog)."""
+    if not plan.get('brand'):return []
+    claims = [b for b in plan['beats'] if b['kind'] == 'claim']
+    shown = [b for b in claims if (b['shots'][0].get('rig') or {}).get('id') == 'app-screen']
+    if claims and len(shown) * 3 < len(claims):
+        return [{'where': 'film', 'detail': f'{len(shown)} of {len(claims)} claim beats show the product on screen'}]
+    return []
+
+
+def check_host_in_front(project, plan, layouts):
+    """The host stands in front of the machine and inside the frame, so it reads as acting on it
+    (cut 3's host peeked from behind the vault, half hidden at the frame edge)."""
+    out = []
+    for beat, layout in layouts.items():
+        b = layout.get('bot') or {}
+        if not b or not layout.get('hero'):continue
+        half = 235 * b['scale']
+        if b.get('behind'):out.append({'where': beat, 'detail': 'host stands behind the machine'})
+        if b['x'] - half < 0 or b['x'] + half > 720:out.append({'where': beat, 'detail': f'host cut by the frame edge (x {b["x"]:.0f})'})
+    return out
+
+
 CHECKS = {
+    'set-variety': check_set_variety,
+    'headline-length': check_headline_length,
+    'product-on-screen': check_product_on_screen,
+    'host-in-front': check_host_in_front,
     'label-legibility': check_label_legibility,
     'label-occlusion': check_label_occlusion,
     'headline-openers': check_headline_openers,
     'shared-object-palette': check_shared_object_palette,
 }
+
+
+# Checks that need only the plan, so `motif_reel.py check` runs them before any voice or render.
+PLAN_CHECKS = ('headline-openers', 'shared-object-palette', 'set-variety', 'headline-length', 'product-on-screen')
 
 
 def run(project, plan=None, layouts=None):

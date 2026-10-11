@@ -425,11 +425,11 @@ class KnowledgeVault(Rig):
             grey = clamp(after * 1.6 - k * .06) if t > tc else 0.0
             if tt >= land:
                 bump = 5 * settle(clamp((tt - land) / (.2 * tc)), 1)
-                landed += g(self.item(label, k, c, grey, q=clamp(after * 1.6 - k * .08) if t > tc else 0), x1, y1 + bump, a1, 1.4)
+                landed += g(self.item(label, k, c, grey, q=clamp(after * 1.6 - k * .08) if t > tc else 0), x1, y1 + bump, a1, 1.15)
             elif tt >= launch:
                 k_ = (tt - launch) / (land - launch)
                 x = lerp(x0, x1, ease(k_));y = lerp(-900, y1, ease_in(k_));ang = lerp(-25 + 10 * (k % 5), a1, k_)
-                falling += g(self.item(label, k, c), x, y, ang, 1.4)
+                falling += g(self.item(label, k, c), x, y, ang, 1.15)
         body += falling + landed
         body += f'<g transform="translate({bx} {by + 60}) scale(1.45) translate({-bx} {-by})">{self.brain(0.0, c, leaky=True)}</g>'
         lab = p['label'];w = max(220, len(lab) * 24 + 50)

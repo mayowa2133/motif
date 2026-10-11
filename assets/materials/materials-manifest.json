@@ -51,6 +51,11 @@
       "path": "assets/materials/motif-v1/dark-card.webp",
       "pixel_sha256": "50d9b1b7ef476c93df3b7b3349adacb905f66f0ed95b7d6e06b28a36b6c99548",
       "sha256": "0c3fe085429d6373a5bfd9f0ffed0ff5da65cd4e630427fc132e6a4a6262513a"
+    },
+    "crumpled": {
+      "path": "assets/materials/motif-v1/crumpled.webp",
+      "pixel_sha256": "5ba7a5e6328530205fae1ec674daf0c4766d56fad6a1061df91ca5da31ee2888",
+      "sha256": "6e1d6b0fc65a3640e6ce47c9279c30a20b5eb1119bf1e067112dbaeea497bb17"
     }
   },
   "motif-v1-1024": {
@@ -83,6 +88,11 @@
       "path": "assets/materials/motif-v1-1024/dark-card.webp",
       "pixel_sha256": "bfeb5282990a7c491efaffb0114d37c3616ffccd7127b73c1bcfcc69abb9909e",
       "sha256": "d76a983b0bade2a8f0f86b830a411a32e5f2c0b8b28da9a9862af66f39492b72"
+    },
+    "crumpled": {
+      "path": "assets/materials/motif-v1-1024/crumpled.webp",
+      "pixel_sha256": "c83cc2d61f6f8181da3b6fe61e43c0b3222a7025d9bcfa51833402d6f569630d",
+      "sha256": "4f4553bf716f9a7cf3c791b5d1d23493343c5d3d03fe0fd7f42cb3dea74c2e4f"
     }
   }
 }

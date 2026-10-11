@@ -68,3 +68,10 @@ proven on old films and a library change breaks nothing.
 | L010 headline openers | second-brain cut 2 (headline held 4.3 s) | check, gate |
 | L011 label occlusion | second-brain cut 2 (crate covered PAGES 7) | solver rule + check, gate |
 | L012 label legibility | second-brain cut 2 (21 px page titles) | check, warn |
+| L013 clipped tags | second-brain cut 3 retro | vault forget mode redrawn; brief rule |
+| L014 set variety | cut 3 vs references (one room for 28 s) | check, gate |
+| L015 headline length | cut 3 vs references (two-line vague cards) | check, warn; strip headline in paper-craft |
+| L016 product on screen | cut 3 vs references (product shown once) | check, warn; app-screen files/note/graph/chat views |
+| L017 host in front | cut 3 vs references (host half hidden behind the machine) | solver rule + check, gate |
+| L018 paper rooms | cut 3 vs references (flat vector, bright walls) | paper-craft look: crumpled material, dusk room palettes, darker grade |
+| L019 runtime | cut 3 vs references (43.6 s vs 20-30 s) | brief rule |

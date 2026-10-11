@@ -210,9 +210,9 @@ def _keep_object_palettes(beats, explicit):
         try:r = _get_rig(rig['id']);key = r.identity(r.params(rig.get('params')))
         except Exception:continue  # unknown rig or bad params: validate_plan reports it
         if key is None:continue
-        if key in seen and beat['id'] not in explicit and '/' not in beat['palette']:
-            obj = seen[key].split('/')[0]
-            if obj != beat['palette']:beat['palette'] = f'{obj}/{beat["palette"]}'
+        if key in seen and beat['id'] not in explicit:
+            obj = seen[key].split('/')[0];mine, _, room = beat['palette'].partition('/')
+            if obj != mine:beat['palette'] = f'{obj}/{room or mine}'
         seen.setdefault(key, beat['palette'])
 
 
@@ -424,7 +424,10 @@ def pop_in(markup, f, delay, anchor):
     return f'<g opacity="{o:.3f}" transform="translate({ax:.1f} {ay + dy:.1f}) scale({s:.4f}) translate({-ax:.1f} {-ay:.1f})">{markup}</g>'
 
 
-def bot_motion(role, u, f, n, tc, side, entering=True):
+ACTS = {'app-screen': ('typing', 'pointing', 'inspecting'), 'knowledge-vault': ('pushing', 'pointing', 'pulling')}
+
+
+def bot_motion(role, u, f, n, tc, side, entering=True, acts=('pointing', 'presenting')):
     """Bot acting synced to the machine: (pose, face, dx, dy, squash, cycle).
     setup: walks in from its side, then works the machine (pointing/presenting)
     and recoils at the contact; payoff: reacts to the result and keeps moving."""
@@ -434,7 +437,7 @@ def bot_motion(role, u, f, n, tc, side, entering=True):
         if walk < 1:return 'standing', 'determined', side * 80 * (1 - ease(walk)), 0.0, 1.0, 'walk'
         at = u / max(1e-6, tc * .92) if tc else 1.0
         if at < .92:  # works the machine: alternating gestures, bobbing and leaning, never a held pose
-            return ('pointing' if (f // 16) % 2 == 0 else 'presenting'), 'determined', 6 * math.sin(f * .17), -9 * abs(math.sin(f * .3)), 1.0, None
+            return acts[(f // 16) % len(acts)], 'determined', 6 * math.sin(f * .17), -9 * abs(math.sin(f * .3)), 1.0, None
         hit = max(0.0, min(1.0, (at - .92) / .3))
         return 'presenting', 'surprised', 0.0, -26 * math.sin(hit * math.pi), 1 - .1 * math.sin(hit * math.pi), None
     if role == 'payoff':
@@ -476,6 +479,7 @@ def shot_frames(shot, layout, seed, look='paper-craft', brand=None, prev=None, c
         sticker_at = (min(720 - 56, max(56, bot['x'])), max(370, bot['y'] - 4.2 * half - 60))
     else:sticker_at = None
     poof_at = None
+    reframe = L.get('reframe') if prev and shot['role'] == 'payoff' and rig else None
     # A held beat keeps its machine in the start state (Codex's v11 critique: Python's lock opened
     # while the narration was still explaining the restriction). A later beat performs the change.
     hold = bool(rig and shot['rig'].get('hold'))
@@ -487,11 +491,16 @@ def shot_frames(shot, layout, seed, look='paper-craft', brand=None, prev=None, c
     for f in range(n):
         u = f / max(1, n - 1);pieces = []
         zoom, dx, dy = motif_looks.camera(L['camera'], shot['role'], u, f, n)
-        if prev:
+        ccx = cx
+        if prev and reframe:
+            # Reframe cut (2026-10-11 reference comparison): the payoff cuts to a closer framing on the
+            # machine, so the picture changes every 2-3 s while the set and its objects stay the same.
+            zoom = reframe + .04 * u;ccx = 360
+        elif prev:
             pz, pdx, pdy = motif_looks.camera(L['camera'], prev[0], 1.0, prev[1] - 1, prev[1]);k = ease(min(1.0, f / 10))
             zoom, dx, dy = pz + (zoom - pz) * k, pdx + (dx - pdx) * k, pdy + (dy - pdy) * k
         else:dy += motif_looks.slide_offset(L['transition'], f)
-        cam = lambda markup: camera(markup, zoom, cx, cy, dx, dy)
+        cam = lambda markup: camera(markup, zoom, ccx, cy, dx, dy)
         if dy > 0:pieces.append(f'<rect width="720" height="1280" fill="{L["transition_colour"]}"/>')
         pieces.append(cam(room['draw'](c)))
         for k, item in enumerate(layout.get('dressing', [])):
@@ -523,7 +532,7 @@ def shot_frames(shot, layout, seed, look='paper-craft', brand=None, prev=None, c
         b = layout['bot'];bot = shot['bot']
         if rig:
             side = b.get('side', -1 if b['x'] < 360 else 1)
-            pose, face, bdx, bdy, squash, cycle = bot_motion(shot['role'], u, f, n, tc, side, entering=not prev)
+            pose, face, bdx, bdy, squash, cycle = bot_motion(shot['role'], u, f, n, tc, side, entering=not prev, acts=ACTS.get(rig.name, ('pointing', 'presenting')))
             face = bot['face'] if shot['role'] == 'payoff' and face == 'excited' and bot.get('face') else face
             body = dressed_bot(b['x'] + bdx, b['y'] + bdy, b['scale'], face, pose, bot['costume'], shot['palette'], flip=side > 0, cycle=cycle, phase=f / 10, head=round(4 * math.sin(f * .3)), mascot=M)
             if squash != 1:body = f'<g transform="translate({b["x"]:.1f} {b["y"]:.1f}) scale({2 - squash:.3f} {squash:.3f}) translate({-b["x"]:.1f} {-b["y"]:.1f})">{body}</g>'
@@ -783,8 +792,12 @@ def check_brief(brief, allow_draft=False):
     plan = plan_reel(brief, allow_draft);errs, requests = validate_plan(plan, allow_draft)
     out.update({'estimated_runtime': round(estimate(brief), 1), 'plan': errs, 'library_requests': requests, 'warnings': plan['warnings']})
     out['sound_off'] = sound_off(plan, brief)['failures']
-    from motif_lessons import check_headline_openers, check_shared_object_palette
-    out['lessons'] = [f['where'] + ': ' + f['detail'] for f in check_headline_openers(None, plan, {}) + check_shared_object_palette(None, plan, {})]
+    from motif_lessons import CHECKS, PLAN_CHECKS, ledger
+    out['lessons'] = [];out['lesson_warnings'] = []
+    for lesson in ledger()['lessons']:
+        if lesson.get('check') not in PLAN_CHECKS:continue
+        found = [f'{lesson["id"]} {f["where"]}: {f["detail"]}' for f in CHECKS[lesson['check']](None, plan, {})]
+        (out['lessons'] if lesson.get('level') == 'gate' else out['lesson_warnings']).extend(found)
     bad = out['plan'] or out['sound_off'] or out['lessons']
     return {'status': 'FAIL' if bad else 'PASS', **out}
 

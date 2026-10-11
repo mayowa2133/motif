@@ -73,7 +73,7 @@
           "label": "GLOBAL LOCK",
           "key": "3.13"
         },
-        "room": "office"
+        "room": "workshop"
       },
       "relation": "unlock"
     },

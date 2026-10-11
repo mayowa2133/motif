@@ -40,7 +40,10 @@ def frames(path):
 
 
 def headline(markup):
-    """Headline = the largest heavy (font-weight 800+) text in the frame."""
+    """Headline = text marked data-headline (a headline smaller than the machine's labels, look
+    paper-craft strip), else the largest heavy (font-weight 800+) text in the frame."""
+    marked = [m.group(1).strip() for m in re.finditer(r'<text data-headline[^>]*>([^<]+)</text>', markup)]
+    if marked:return ' '.join(marked)
     best = None
     for m in re.finditer(r'<text([^>]*)>([^<]+)</text>', markup):
         attrs = m.group(1);weight = re.search(r'font-weight="(\d+)"', attrs);size = re.search(r'font-size="([\d.]+)"', attrs)

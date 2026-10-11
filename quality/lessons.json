@@ -116,6 +116,58 @@
       "symptom": "hook item tags clip their labels (BOOK NOT, PODCA) when drawn at 1.4x in forget mode",
       "rule": "Machine labels must fit their tag at the drawn scale; no clipped words",
       "level": "brief"
+    },
+    {
+      "id": "L014",
+      "date": "2026-10-11",
+      "source": "Second-brain cut 3 vs references (2026-10-11)",
+      "symptom": "One vault room held from 0:12 to 0:40 while the references change setting every 2-3 s",
+      "rule": "Consecutive beats never share a set; carry the object between sets instead",
+      "check": "set-variety",
+      "level": "gate"
+    },
+    {
+      "id": "L015",
+      "date": "2026-10-11",
+      "source": "Second-brain cut 3 vs references (2026-10-11)",
+      "symptom": "Two-line headline cards took 15% of the frame and said vague things (SMARTER EVERY DAY)",
+      "rule": "Headlines are one short line (30 characters at most) stating a specific fact: a number, a name or a step",
+      "check": "headline-length",
+      "level": "warn"
+    },
+    {
+      "id": "L016",
+      "date": "2026-10-11",
+      "source": "Second-brain cut 3 vs references (2026-10-11)",
+      "symptom": "The product appeared once, as a three-line dialog; the references show the app in use in most shots",
+      "rule": "A film about a product shows it in use (app-screen views: files, note, graph, chat, terminal) in at least a third of its claim beats",
+      "check": "product-on-screen",
+      "level": "warn"
+    },
+    {
+      "id": "L017",
+      "date": "2026-10-11",
+      "source": "Second-brain cut 3 vs references (2026-10-11)",
+      "symptom": "The host peeked from behind the machine, half hidden at the frame edge, and mostly watched",
+      "rule": "The host stands in front of the machine, inside the frame, acting on it",
+      "check": "host-in-front",
+      "level": "gate"
+    },
+    {
+      "id": "L018",
+      "date": "2026-10-11",
+      "source": "Second-brain cut 3 vs references (2026-10-11)",
+      "symptom": "Flat vector fills and bright pastel walls read as clean illustration, not paper",
+      "rule": "Rooms are muted crumpled paper with the bright colour on the objects (look cut-paper or object/room palettes with the dusk family)",
+      "level": "brief"
+    },
+    {
+      "id": "L019",
+      "date": "2026-10-11",
+      "source": "Second-brain cut 3 vs references (2026-10-11)",
+      "symptom": "43.6 s against the references' 20-30 s",
+      "rule": "Keep adaptations near 30 s (35 s at most): cut beats rather than speed up the voice",
+      "level": "brief"
     }
   ]
 }

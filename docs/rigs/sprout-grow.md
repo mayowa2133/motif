@@ -24,6 +24,6 @@ A watering can drips onto a pot and a plant shoots up into bloom. Growth from sm
 
 **Bot slot:** x 220, y 0, scale 0.22: waters the pot.
 
-**Palettes:** renders in all 19 Motif palettes (berry, candy, citrus, cobalt, forest, lagoon, lilac, meadow, mint-coral, neon-ember, neon-teal, neon-violet, peach, plum-night, poppy, royal, sky, sunflower, sunrise); films rotate them per scene.
+**Palettes:** renders in all 24 Motif palettes (berry, candy, citrus, cobalt, dusk-teal, forest, ink-navy, lagoon, lilac, mauve, meadow, mint-coral, mustard, neon-ember, neon-teal, neon-violet, peach, plum-night, poppy, royal, sky, slate, sunflower, sunrise); films rotate them per scene.
 
 **Status:** draft proof; awaiting Mayowa approval (plan task 2.2).

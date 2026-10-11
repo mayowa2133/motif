@@ -552,7 +552,9 @@ def hero_placement(rig, rng):
     """Hero on the floor, as large as the bands allow while leaving a lane on the
     rig's Bot side (BOT_LANE) so Bot stands beside the machine, not over its labels."""
     fx, fy, fw, fh = rig.footprint;tall = (FLOOR - HEADLINE[1] - HEADLINE[3] - 10) / fh
-    scale = min((W - BOT_LANE - HERO_SAFE) / fw, tall, 1.6)
+    # The host stands in front of the machine (front_spot), so no lane is kept beside it: the hero
+    # fills the width like the references' screens and objects (2026-10-11 comparison).
+    scale = min((W - BOT_LANE / 2 - HERO_SAFE) / fw, tall, 1.6)
     if not hero_big_enough(fw * scale, fh * scale):
         # Wide machine: just big enough (tall, or wide and nearly tall) so Bot keeps a lane clear of its edge labels.
         need = min(HERO_MIN * H / fh, max(HERO_WIDE[0] * H / fh, HERO_WIDE[1] * W / fw)) + 1e-4
@@ -632,6 +634,19 @@ def bot_placement(rig, hero, hero_box):
     return x, FLOOR, s, side
 
 
+def front_spot(x, side, half, hero_box, labels):
+    """Where the host stands in front of the machine: as close to its slot (x) as possible while its
+    body covers as little of the machine's labels as possible, and always inside the frame.
+    Returns (x, side), side being which side of the hero's centre it ends up on."""
+    lo, hi = half + 55, W - half - 55
+    def cost(cx):
+        box = (cx - half * .8, FLOOR - 4.2 * half, 1.6 * half, 4.2 * half)
+        cover = sum(_overlap(box, t) / max(1.0, t[2] * t[3]) for t in labels)
+        return cover * 1000 + abs(cx - x)
+    best = min((lo + (hi - lo) * k / 40 for k in range(41)), key=cost)
+    return best, (-1 if best < hero_box[0] + hero_box[2] / 2 else 1)
+
+
 def solve(room, rig_name, values=None, palette=None, seed=0, beat=0, costume=None, count=4):
     """Deterministic set layout for one beat."""
     if room not in ROOMS:raise ValueError(f'unknown room {room}; choose from {sorted(ROOMS)}')
@@ -639,10 +654,11 @@ def solve(room, rig_name, values=None, palette=None, seed=0, beat=0, costume=Non
     palette = palette or rotation(beat + 1, seed)[beat]
     if not known(palette):raise ValueError(f'unknown palette {palette}')
     hero = hero_placement(rig, rng);hero_box = hero['box']
-    bx, by, bscale, side = bot_placement(rig, hero, hero_box);half = BOT_HALF * bscale
-    bot_box = (bx - half, by - 4.2 * half, 2 * half, 4.2 * half)
     from motif_lessons import hero_labels
     labels = [t['box'] for pose in ('contact', 'end') for t in hero_labels({'hero': {**hero, 'values': values or {}}, 'palette': palette}, pose)]
+    bx, by, bscale, side = bot_placement(rig, hero, hero_box);half = BOT_HALF * bscale
+    bx, side = front_spot(bx, side, half, hero_box, labels)
+    bot_box = (bx - half, by - 4.2 * half, 2 * half, 4.2 * half)
     pool = list(ROOMS[room]['dressing']);rng.shuffle(pool)
     roles = ['edge', 'overlap', 'back', 'back'][:max(2, min(4, count))];placed = []
     for role in roles:
@@ -653,6 +669,13 @@ def solve(room, rig_name, values=None, palette=None, seed=0, beat=0, costume=Non
             if not candidates:break
             item = _place_prop(candidates[attempt % len(candidates)], rng, hero_box, role, side)
             if _valid_item(item, hero_box, placed, bot_box, labels):placed.append(item);break
+    # Big heroes leave little floor: if fewer than two pieces fit, try more edge pieces on either side.
+    for attempt in range(120):
+        if len(placed) >= 2:break
+        candidates = [n for n in pool if n not in {i['prop'] for i in placed} and PROPS[n].mount in ('floor', 'wall', 'ceiling')]
+        if not candidates:break
+        item = _place_prop(candidates[attempt % len(candidates)], rng, hero_box, 'edge', side)
+        if _valid_item(item, hero_box, placed, bot_box, labels):placed.append(item)
     if not any(_crosses_edge(i['box']) for i in placed):raise ValueError(f'{room}/{rig_name}: no dressing reaches a frame edge')
     if not any(_overlap(i['box'], hero_box) > 0 for i in placed):raise ValueError(f'{room}/{rig_name}: no dressing overlaps the hero')
     costume = costume if costume is not None else [rng.choice(ROOMS[room]['costumes'])]
@@ -660,8 +683,9 @@ def solve(room, rig_name, values=None, palette=None, seed=0, beat=0, costume=Non
         if name not in COSTUMES:raise ValueError(f'unknown costume {name}')
     return {'room': room, 'palette': palette, 'seed': seed, 'beat': beat, 'floor_y': FLOOR, 'hero': {**hero, 'values': values or {}},
             'bot': {'x': round(bx, 2), 'y': round(by, 2), 'scale': round(bscale, 4), 'costume': costume, 'role': rig.bot_slot.get('role', ''), 'side': side,
-                    # Squeezed onto a wide machine: Bot peeks from behind it so the machine's labels stay readable.
-                    'behind': min(bx + half, hero_box[0] + hero_box[2]) - max(bx - half, hero_box[0]) > BOT_BEHIND * 2 * half},
+                    # Always in front of the machine (2026-10-11 reference comparison: the host acts on the
+                    # object; peeking from behind it read as passive and half hidden).
+                    'behind': False},
             'dressing': placed, 'lights': ROOMS[room]['lights'], 'bands': {'headline': list(HEADLINE), 'caption': list(CAPTION)}}
 
 

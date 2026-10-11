@@ -57,7 +57,7 @@ Mayowa found the first five benchmark reels "pretty similar" (2026-10-09). Rotat
 
 | look | palettes | headline | captions | camera | transition | hook / CTA |
 |---|---|---|---|---|---|---|
-| paper-craft | sunrise, citrus, berry, lagoon | taped tag | coral tiles | push | cut | crowd / crowd |
+| paper-craft | sunrise, lagoon, berry, citrus objects on dusk paper rooms | taped strip | coral tiles | push + reframe cut | cut | crowd / crowd |
 | neon-arcade | neon-violet, neon-teal, neon-ember, plum-night | outline | glow pill | punch | flash | big number / big Bot |
 | primary-pop | poppy, royal, sunflower | black slab | bar | snap | wipe | big Bot / card |
 | candy-pastel | candy, lilac, peach, mint-coral | bubble | stickers | float | slide | crowd / big Bot |

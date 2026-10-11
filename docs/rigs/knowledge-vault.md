@@ -55,6 +55,6 @@ A second-brain machine that keeps its identity across beats: a RAW crate, a WIKI
 
 **Bot slot:** x -330, y 0, scale 0.22: feeds the crate, watches the claw and cheers as the brain fills.
 
-**Palettes:** renders in all 19 Motif palettes (berry, candy, citrus, cobalt, forest, lagoon, lilac, meadow, mint-coral, neon-ember, neon-teal, neon-violet, peach, plum-night, poppy, royal, sky, sunflower, sunrise); films rotate them per scene.
+**Palettes:** renders in all 24 Motif palettes (berry, candy, citrus, cobalt, dusk-teal, forest, ink-navy, lagoon, lilac, mauve, meadow, mint-coral, mustard, neon-ember, neon-teal, neon-violet, peach, plum-night, poppy, royal, sky, slate, sunflower, sunrise); films rotate them per scene.
 
 **Status:** draft proof; awaiting Mayowa approval (plan task 2.2).

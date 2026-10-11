@@ -8,7 +8,7 @@ fixes those choices for a whole film, so variety is structural:
 
   palettes    a palette family; scenes rotate inside it (neighbours differ)
   rooms       the rooms the planner prefers for this film
-  headline    headline treatment (tag, slab, outline, ribbon, bubble)
+  headline    headline treatment (strip, tag, slab, outline, ribbon, bubble)
   captions    caption treatment (tiles, bar, glow, sticker, underline)
   camera      camera grammar (push, punch, snap, float, pan)
   transition  shot transition (cut, wipe, flash, slide, iris)
@@ -33,10 +33,18 @@ FINISH_V1 = ROOT / 'assets/styles/motif-finish-v1.json'
 
 LOOKS = {
     'paper-craft': {
-        'palettes': ('sunrise', 'citrus', 'berry', 'lagoon'), 'rooms': ('office', 'workshop', 'diner', 'living-room'),
-        'headline': 'tag', 'captions': 'tiles', 'camera': 'push', 'transition': 'cut', 'hook': 'crowd', 'cta': 'crowd',
-        'transition_colour': '#F4EBD8', 'caption_colours': {'fill': '#CC744F', 'text': '#FFF4DD', 'active': '#FFF4DD'},
-        'grade': {}},
+        # Upgraded 2026-10-11 after comparing with the reference reels: muted crumpled-paper rooms over
+        # brown floors with the bright colour on the objects (object/room palettes), a small one-line
+        # taped headline strip, a closer reframe cut on each payoff, rougher cut edges, deeper shadows
+        # and a darker grade.
+        'palettes': ('sunrise/dusk-teal', 'lagoon/ink-navy', 'berry/mustard', 'citrus/mauve', 'berry/slate'),
+        'rooms': ('office', 'workshop', 'diner', 'living-room', 'stage', 'street'),
+        'headline': 'strip', 'captions': 'tiles', 'camera': 'push', 'transition': 'cut', 'hook': 'crowd', 'cta': 'crowd', 'reframe': 1.16,
+        'transition_colour': '#2A2420', 'caption_colours': {'fill': '#CC744F', 'text': '#FFF4DD', 'active': '#FFF4DD'},
+        'grade': {'materials': {'overlay': 'motif-v1-1024/crumpled', 'overlay_opacity': 1.0},
+                  'ambient': {'color': '#4A3A2E', 'opacity': .24}, 'vignette': {'strength': .62, 'radius': .72, 'color': '#120C08'},
+                  'edges': {'frequency': .7, 'roughness': 3.2},
+                  'shadows': {'dx': 4.0, 'dy': 7.0, 'blur': [2.5, 4.5, 7.0], 'opacity': [.36, .42, .48]}}},
     'neon-arcade': {
         'palettes': ('neon-violet', 'neon-teal', 'neon-ember', 'plum-night'), 'rooms': ('arcade', 'server-room', 'night-sky', 'stage', 'rooftop'),
         'headline': 'outline', 'captions': 'glow', 'camera': 'punch', 'transition': 'flash', 'hook': 'number', 'cta': 'big-bot',
@@ -96,12 +104,37 @@ def _lines(text):
     return [text] if len(text) <= 16 else _wrap(text)
 
 
+def strip_headline(text, c, f):
+    """A torn paper strip taped across the top: one line, small, the picture keeps the frame.
+    The references' headline is a single taped line about 5% of frame height that states a
+    fact (2026-10-11 comparison); long text wraps to two lines rather than shrinking past 30 px."""
+    from motif_rigs.library import label_size
+    from motif_ui_components import g, txt
+    lines = [text] if label_size(text, 620, 44) >= 30 else _lines(text)
+    size = min(label_size(l, 620, 44) for l in lines);h = 26 + size * 1.08 * len(lines)
+    w = min(690, max(len(l) for l in lines) * size * .62 + 64)
+    key = int(hashlib.sha256(text.encode()).hexdigest()[:8], 16)
+    # Torn top and bottom edges: a deterministic ragged line per headline.
+    n = 22;jag = lambda i, edge: 3.5 * (((key >> ((i + edge * 7) % 28)) & 7) / 7 - .5)
+    top = ' '.join(f'L{-w / 2 + w * i / n:.1f} {-h / 2 + jag(i, 0):.1f}' for i in range(n + 1))
+    bottom = ' '.join(f'L{w / 2 - w * i / n:.1f} {h / 2 + jag(i, 1):.1f}' for i in range(n + 1))
+    shape = f'M{-w / 2:.1f} {-h / 2:.1f} {top} {bottom}Z'
+    body = (f'<path d="{shape}" transform="translate(3 5)" fill="#1E1712" opacity=".22"/>'
+            f'<path d="{shape}" fill="{c["light"]}"/><path d="{shape}" fill="url(#worldPaper)" opacity=".12"/>')
+    body += ''.join(txt(l, 0, -h / 2 + 13 + size * .84 + k * size * 1.08, size, c['dark'], 900, 'middle').replace('<text ', '<text data-headline ', 1) for k, l in enumerate(lines))
+    tape = lambda x, a: f'<g transform="translate({x:.1f} {-h / 2 + 4:.1f}) rotate({a})"><rect x="-34" y="-13" width="68" height="26" fill="#E8D9A8" opacity=".82"/></g>'
+    body += tape(-w / 2 + 18, -28) + tape(w / 2 - 18, 24)
+    drop = 1.0 if f >= 5 else 1 + .06 * (1 - f / 5)
+    return g(body, 360, 132 + h / 2, -1.4 + .5 * math.sin(f * .07), drop)
+
+
 def headline(style, text, c, f):
     """Headline in the headline band (y 80 to 310) at frame f of its shot."""
     from motif_rigs.library import ink, label_size
     from motif_ui_components import card, g, txt
     from motif_reel import headline_piece
     if style == 'tag':return headline_piece(text, c, f)
+    if style == 'strip':return strip_headline(text, c, f)
     lines = _lines(text);esc = lambda s: s.replace('&', '&amp;').replace('<', '&lt;')
     if style == 'slab':
         size = min(label_size(l, 640, 70) for l in lines);h = 44 + size * 1.04 * len(lines)

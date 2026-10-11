@@ -40,25 +40,38 @@ quality bar). Copy the closest one and change it.
    Write narration in plain speech, about 3.7 words per second.
 3. **Format.** `"format": "short"` (default, 20-32 s, 4-6 beats) or `"long"`
    (30-62 s, 4-10 beats).
-4. **Visual hints.** Author them; the fallback planner reads generic. Per beat:
+4. **Show the product.** For a film about an app, put it on screen in at
+   least a third of the beats with `app-screen` views: `files` (folder tree),
+   `note` (Markdown page, `[[links]]` become chips), `graph` (one node per
+   line), `chat` (question, then an answer with `[n]` citations), `terminal`,
+   `window`, `browser`. Fill them with the film's real content.
+5. **A new set every beat.** Consecutive beats never share a room. Continuity
+   comes from the object and the host travelling between sets, not from
+   holding one room. Aim for about 30 s (35 s at most); cut beats rather than
+   speed up the voice.
+6. **Visual hints.** Author them; the fallback planner reads generic. Per beat:
    `visual.rig` + `params` (labels use the claim's own nouns), `room`,
    `palette`, optional `insert`, `costume`, `brand`, `hold`. The hook can have
    its own machine via `hook.visual`.
-5. **Relation.** Each claim beat names a `relation` its machine can show
+7. **Relation.** Each claim beat names a `relation` its machine can show
    (`catalog` lists `relations` and which machines show each).
-6. **Palettes.** One name, or `"object/room"` (e.g. `"lagoon/berry"`): the
+8. **Palettes.** One name, or `"object/room"` (e.g. `"lagoon/berry"`): the
    first colours the machine, the second the walls and floor. A machine that
    appears in several beats keeps its object palette; vary only the room.
-7. **Brand.** If the film is about a product, set `brand.slug` (and
+   The dusk room palettes (`dusk-teal`, `ink-navy`, `mustard`, `mauve`,
+   `slate`) give the references' muted paper walls with bright objects.
+9. **Brand.** If the film is about a product, set `brand.slug` (and
    `visual.brand` on beats about a second product). The mark must exist in
    `assets/brands/brands.json`; to add one, vendor the CC0 Simple Icons SVG and
    record it with `scripts/motif_provenance.py`.
-8. **Look.** Optionally name a `look` (`paper-craft`, `neon-arcade`,
+10. **Look.** Optionally name a `look` (`paper-craft`, `neon-arcade`,
    `primary-pop`, `candy-pastel`, `great-outdoors`); otherwise the planner picks
    one not used by recent films. Films must not look alike.
-9. **Headlines.** Short, uppercase, a new one at least every 3 s; consecutive
+11. **Headlines.** One short line (30 characters at most), uppercase, stating
+   a specific fact: a number, a name or a step ("PILE IN, 7 WIKI PAGES OUT",
+   not "SMARTER EVERY DAY"). A new one at least every 3 s; consecutive
    headlines never start with the same word.
-10. **CTA.** `cta.keyword` must be said in `cta.narration`.
+12. **CTA.** `cta.keyword` must be said in `cta.narration`.
 
 The full rule list is `brief_rules` in `catalog` (from `quality/lessons.json`).
 `check` enforces the measurable ones.

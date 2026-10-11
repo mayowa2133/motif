@@ -15,7 +15,7 @@ import math
 
 from motif_rigs import register
 from motif_rigs.base import Action, Rig, ease, lerp
-from motif_rigs.library import label_size, settle, t_after, t_in, tag
+from motif_rigs.library import ink, label_size, settle, t_after, t_in, tag
 from motif_ui_components import card, g, path, rect, txt
 
 
@@ -189,6 +189,8 @@ class AppScreen(Rig):
         ly = y + bar + 24 + size;budget = typed
         if kind == 'map':
             out += self.map_view(p, c, typed, done);lines = []
+        elif kind in self.VIEWS:
+            out += getattr(self, kind + '_view')(p, c, typed, done);lines = []
         for i, line in enumerate(lines):
             shown = line[:max(0, int(budget))];budget -= len(line)
             if kind == 'terminal':
@@ -213,8 +215,106 @@ class AppScreen(Rig):
             out += rect(x + w - cw - 8, y + h - 34, cw, 26, '#FFFFFF', 6).replace('<rect', '<rect opacity=".9"') + txt(p['credit'], x + w - 17, y + h - 15, 15, c['dark'], 700, 'end')
         if done and p.get('result'):
             res = p['result'];rw = max(170, len(res) * 30 + 50);rx, ry = x + w / 2, (y + bar + 46 if kind == 'map' else y + h * .68);fit = min(1.0, (w - 16) / rw)
+            if kind in self.VIEWS:fit = min(.72, (w * .5) / rw);rx, ry = x + w - rw * fit / 2 - 14, y + 44 + 34  # a corner sticker under the title bar: clear of the view and the host
             out += g(rect(-rw / 2 + 5, -40, rw, 80, c['dark'], 14).replace('<rect', '<rect opacity=".22"') + rect(-rw / 2, -44, rw, 80, c['pop'] if c['pop'] != c['light'] else c['accent'], 14, c['dark'], 3)
                      + txt(res, 0, 12, 40, c['dark'], 900, 'middle'), rx, ry, -3, done * fit)
+        return out
+
+    # Product views (2026-10-11 reference comparison): the references show the real app doing the
+    # thing in most shots. These recreate common app surfaces in Motif's own drawing, with the
+    # brief's lines as the content, so a film can show the product rather than a machine about it.
+    VIEWS = ('files', 'note', 'graph', 'chat')
+
+    def _shown(self, lines, typed):
+        """(line, visible share) per line as the typing budget reaches it."""
+        out, budget = [], typed
+        for line in lines:
+            out.append((line, max(0.0, min(1.0, budget / max(1, len(line))))));budget -= len(line)
+        return out
+
+    def files_view(self, p, c, typed, done):
+        """A file tree: names ending in / are folders, leading spaces indent; rows pop in as they type."""
+        x, y, w, h = self.screen(p);top = y + 44;out = rect(x, top, w * .3, h - 44, c['metal']).replace('<rect', '<rect opacity=".35"')
+        rows = self._shown(p.get('lines') or [], typed);size = min(30, (h - 120) / max(4, len(rows)) / 1.6)
+        for i, (line, k) in enumerate(rows):
+            if k <= 0:break
+            depth = (len(line) - len(line.lstrip(' '))) // 2;name = line.strip();folder = name.endswith('/')
+            ry = top + 24 + i * size * 1.6;rx = x + 24 + depth * 34
+            icon = (path(f'M0 0H{size * .45:.1f}L{size * .6:.1f} {size * .18:.1f}H{size * 1.1:.1f}V{size * .85:.1f}H0Z', c['dark'], 2.5, c['secondary']) if folder
+                    else path(f'M0 0H{size * .6:.1f}L{size * .85:.1f} {size * .25:.1f}V{size:.1f}H0Z', c['dark'], 2.5, '#FFFFFF'))
+            row = g(icon, rx, ry, 0, 1) + txt(name, rx + size * 1.35, ry + size * .78, size * .9, c['dark'], 800 if folder else 600)
+            out += g(row, 0, 0, 0, 1, 1, min(1.0, k * 1.5))
+        return out
+
+    def note_view(self, p, c, typed, done):
+        """A Markdown note: the first line is the page title, the rest body lines where [[name]] is a link chip."""
+        import re
+        x, y, w, h = self.screen(p);top = y + 44;lines = p.get('lines') or [];rows = self._shown(lines, typed)
+        out = ''
+        if rows and rows[0][1] > 0:
+            title = rows[0][0];ts = min(46, (w - 60) / max(6, len(title) * .62))
+            out += txt(title, x + 26, top + 18 + ts, ts, c['dark'], 900) + rect(x + 26, top + 30 + ts, w - 52, 3, c['secondary'])
+        body_top = top + 64 + min(46, (w - 60) / max(6, len(lines[0] if lines else 'x') * .62));size = min(30, (w - 60) / max(14, max((len(l) for l in lines[1:]), default=14) * .6))
+        for i, (line, k) in enumerate(rows[1:]):
+            if k <= 0:break
+            ly = body_top + i * size * 1.7;lx = x + 26
+            shown = line[:max(1, int(len(line) * k))]
+            for part in re.split(r'(\[\[[^\]]*\]?\]?)', shown):
+                if not part:continue
+                if part.startswith('[['):
+                    name = part.strip('[]');pw = len(name) * size * .6 + 16
+                    out += rect(lx, ly - size * .86, pw, size * 1.2, c['accent'], 8).replace('<rect', '<rect opacity=".28"') + txt(name, lx + 8, ly, size, c['dark'], 800) + rect(lx + 8, ly + 4, pw - 16, 2.5, c['dark'])
+                    lx += pw + 8
+                else:
+                    out += txt(part, lx, ly, size, c['dark'], 600);lx += len(part) * size * .58
+        return out
+
+    def graph_view(self, p, c, typed, done):
+        """A knowledge graph: one node per line, linked to the first (the hub) and to their neighbours;
+        nodes and links grow in as the lines type, and the newest node pulses at the result."""
+        x, y, w, h = self.screen(p);top = y + 44;gh = h - 44;out = rect(x, top, w, gh, '#232532')
+        lines = p.get('lines') or [];rows = self._shown(lines, typed);n = len(lines)
+        cx, cy = x + w / 2, top + gh * .45
+        pts = [(cx, cy)] + [(cx + w * .38 * math.cos(-math.pi / 2 + 2 * math.pi * i / max(1, n - 1)), cy + gh * .33 * math.sin(-math.pi / 2 + 2 * math.pi * i / max(1, n - 1))) for i in range(n - 1)]
+        for i in range(1, n):
+            k = rows[i][1]
+            if k <= 0:continue
+            (x0, y0), (x1, y1) = pts[0], pts[i]
+            out += path(f'M{x0:.1f} {y0:.1f}L{x0 + (x1 - x0) * k:.1f} {y0 + (y1 - y0) * k:.1f}', '#8C8FA8', 3)
+            if i > 1 and rows[i - 1][1] >= 1:
+                (x2, y2) = pts[i - 1];out += path(f'M{x2:.1f} {y2:.1f}L{x2 + (x1 - x2) * k:.1f} {y2 + (y1 - y2) * k:.1f}', '#5C5F78', 2)
+        fs = min(22, w / 18)
+        for i, (line, k) in enumerate(rows):
+            if k <= 0:continue
+            px, py = pts[i];r = (22 if i == 0 else 13) * min(1.0, k * 2);col = c['accent'] if i == 0 else ('#A88BFA' if i < n - 1 or not done else c['pop'])
+            if i == n - 1 and done:out += f'<circle cx="{px:.1f}" cy="{py:.1f}" r="{r + 8 + 12 * done:.1f}" fill="none" stroke="{c["pop"]}" stroke-width="3" opacity="{max(0, 1 - done * .6):.2f}"/>'
+            out += f'<circle cx="{px:.1f}" cy="{py:.1f}" r="{r:.1f}" fill="{col}"/>'
+            out += txt(line, px, py + r + fs + 2, fs, '#E8E9F2', 700, 'middle')
+        return out
+
+    def chat_view(self, p, c, typed, done):
+        """An assistant chat: the first line is the question (right bubble), the rest the answer (left),
+        where [n] becomes a citation chip."""
+        import re
+        x, y, w, h = self.screen(p);top = y + 44;lines = p.get('lines') or [];rows = self._shown(lines, typed)
+        size = min(26, (w * .7) / max(14, max((len(l) for l in lines), default=14) * .56));out = ''
+        if rows and rows[0][1] > 0:
+            q = rows[0][0];qw = min(w - 40, len(q) * size * .56 + 34)
+            out += rect(x + w - 20 - qw, top + 18, qw, size * 1.9, c['secondary'], 16) + txt(q[:max(1, int(len(q) * rows[0][1]))], x + w - 20 - qw + 17, top + 18 + size * 1.28, size, ink(c['secondary'], c), 700)
+        ay = top + 40 + size * 2.4
+        if len(rows) > 1 and rows[1][1] > 0:
+            aw = w * .8;ah = (len(rows) - 1) * size * 1.6 + 26
+            out += rect(x + 20, ay - 10, aw, ah, '#FFFFFF', 16, c['dark'], 2)
+        for i, (line, k) in enumerate(rows[1:]):
+            if k <= 0:break
+            ly = ay + 16 + size * .8 + i * size * 1.6;lx = x + 36
+            for part in re.split(r'(\[\d+\])', line[:max(1, int(len(line) * k))]):
+                if not part:continue
+                if re.fullmatch(r'\[\d+\]', part):
+                    out += f'<circle cx="{lx + size * .5:.1f}" cy="{ly - size * .32:.1f}" r="{size * .5:.1f}" fill="{c["pop"]}" stroke="{c["dark"]}" stroke-width="2"/>' + txt(part[1:-1], lx + size * .5, ly - size * .32 + size * .3, size * .7, c['dark'], 900, 'middle')
+                    lx += size * 1.2
+                else:
+                    out += txt(part, lx, ly, size, c['dark'], 600);lx += len(part) * size * .58
         return out
 
     USB = (-172, -34)  # left of centre: Bot stands on the right
@@ -296,8 +396,8 @@ class AppScreen(Rig):
 register(AppScreen(
     name='app-screen', description='The product in use: a monitor, laptop or phone showing a Motif-drawn terminal, app window, browser page or street map (lines become map pins); the brief\'s lines type in, the cursor presses run and the result pops. send_to puts a USB stick in front and the file flies into it; credit adds a corner attribution; prefilled starts with the lines already in. Demos, commands, settings, checkboxes, downloads.',
     params_schema={'type': 'object', 'properties': {
-        'device': {'enum': ['monitor', 'laptop', 'phone']}, 'ui': {'enum': ['terminal', 'window', 'browser', 'map']},
-        'title': {'type': 'string', 'maxLength': 26}, 'lines': {'type': 'array', 'items': {'type': 'string', 'maxLength': 30}, 'minItems': 1, 'maxItems': 4},
+        'device': {'enum': ['monitor', 'laptop', 'phone']}, 'ui': {'enum': ['terminal', 'window', 'browser', 'map', 'files', 'note', 'graph', 'chat']},
+        'title': {'type': 'string', 'maxLength': 26}, 'lines': {'type': 'array', 'items': {'type': 'string', 'maxLength': 34}, 'minItems': 1, 'maxItems': 7},
         'result': {'type': 'string', 'maxLength': 14}, 'button': {'type': ['string', 'null'], 'maxLength': 8}, 'logo': {'type': ['string', 'null']},
         'send_to': {'type': ['string', 'null'], 'maxLength': 6}, 'credit': {'type': ['string', 'null'], 'maxLength': 34}, 'prefilled': {'type': 'boolean'}},
         'required': ['device', 'ui', 'lines'], 'additionalProperties': False},
