@@ -478,32 +478,6 @@ ACTS = {'app-screen': ('typing', 'pointing', 'inspecting'), 'knowledge-vault': (
 CARRY = {'app-screen', 'knowledge-vault'}
 
 
-SNAP_EVERY = 36  # frames per framing: the references cut to a new picture every 0.5-1.4 s
-
-
-def snap_framings(role, n, fc, hit, bot):
-    """{frame: (zoom factor, fixed point)} for the frames of a shot shown in a snap framing.
-
-    The 2026-10-11 motion study (cut 6 against seven references): our in-shot drift matched the
-    references, but they change the whole picture 0.7-1.9 times a second and have 1.1-4.3 large
-    frame changes a second against our 0.8. So a shot alternates hard between its base framing and
-    a close one: in a setup the close framings take the host, then the contact as it lands (the
-    contact punch fires inside it); a payoff alternates its reframe with a pulled-back wide."""
-    if n < 30:return {}
-    host = (bot['x'], bot['y'] - 2.6 * 235 * bot['scale']) if bot else hit
-    out = {};half = n // 2
-    for f in range(n):
-        seg = f // SNAP_EVERY
-        if role == 'setup':
-            # Base framing, then a close framing for the rest of the shot that lands on the contact;
-            # long setups first cut in on the host.
-            if f >= min(half, fc - 10 if fc is not None else half):out[f] = (1.32, hit)
-            elif seg % 2:out[f] = (1.32, host)
-        elif role == 'payoff' and f >= half:out[f] = (.86, (360, 700))
-        elif role == 'hook' and seg % 2:out[f] = (1.25, hit)
-    return out
-
-
 def carried_note(x, y, angle, c, s=1.0):
     """A paper note the host carries: a sticky square with three ink lines."""
     lines = ''.join(f'<path d="M-20 {ly} H{w - 20}" stroke="{c["dark"]}" stroke-width="3.5" stroke-linecap="round"/>' for ly, w in ((-9, 40), (1, 32), (11, 24)))
@@ -596,7 +570,6 @@ def shot_frames(shot, layout, seed, look='paper-craft', brand=None, prev=None, c
         h = layout['hero'];(lx, ly), _ = rig.contacts(h.get('values'), (action, tc))[rig.actions[action].contact]
         hit = (h['x'] + lx * h['scale'], h['y'] + ly * h['scale'])
         if fc is not None and rig.name in CARRY:carry_to = hit
-    snaps = snap_framings(shot['role'], n, fc, hit, layout.get('bot')) if rig else {}
     frames = []
     for f in range(n):
         u = f / max(1, n - 1);pieces = []
@@ -614,13 +587,8 @@ def shot_frames(shot, layout, seed, look='paper-craft', brand=None, prev=None, c
             # Contact punch (2026-10-11 motion study): the references' frames change in sudden events
             # (11-25% of frames) where Motif eased everything (2%); the moment the machine makes contact
             # the camera kicks in and shakes for a few frames.
-            k = math.exp(-(f - fc) / 3.5);zoom += .12 * k;dx += 14 * math.sin((f - fc) * 2.6) * k;dy += 8 * math.cos((f - fc) * 3.1) * k
+            k = math.exp(-(f - fc) / 3.5);zoom += .07 * k;dx += 9 * math.sin((f - fc) * 2.6) * k;dy += 5 * math.cos((f - fc) * 3.1) * k
         fy = cy
-        if f in snaps:
-            # Snap framing (cut 6 motion study): a hard cut to a closer or wider framing of the same set.
-            sz, (tx, ty) = snaps[f];zoom = max(1.0, zoom * sz);ccx, fy = tx, ty;dx += (360 - tx) * .45 * (sz > 1);dy += (700 - ty) * .3 * (sz > 1)
-            # Keep the set filling the frame: the pan never uncovers an edge.
-            dx = min(ccx * (zoom - 1), max(-(720 - ccx) * (zoom - 1), dx));dy = min(fy * (zoom - 1), max(-(1280 - fy) * (zoom - 1), dy))
         cam = lambda markup: camera(markup, zoom, ccx, fy, dx, dy)
         if dy > 0:pieces.append(f'<rect width="720" height="1280" fill="{L["transition_colour"]}"/>')
         pieces.append(cam(room['draw'](c)))

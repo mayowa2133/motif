@@ -13,7 +13,9 @@ Events (2026-10-11 motion study, cut 6 against seven references): the
 references change the whole picture (over 30% of pixels) 0.7-1.9 times a
 second and have 1.1-4.3 large frame changes (mean change over 12 levels) a
 second; cut 6 had 0.6 and 0.8 while its median moving share matched them.
-Gate: picture changes >= CHANGES_MIN and large changes >= EVENTS_MIN a second.
+These two rates are reported, not gated: cut 7 reached them with hard snap
+zooms inside each shot and Mayowa found it choppy (lesson L027). Raise them
+with things that happen in the scene, not with camera cuts.
 This is a floor against a reel that settles and waits; it does not score
 whether the movement is good, which only a person watching can judge.
 """
@@ -42,7 +44,7 @@ def measure(path, floor=FLOOR):
     median = float(np.median(kept)) if len(kept) else 0.0
     longest = best / RATE
     seconds = len(frames) / RATE;changes = float((moving > .3).sum()) / seconds;events = float((mean > 12).sum()) / seconds
-    status = 'PASS' if median >= floor and longest <= STATIC_MAX and changes >= CHANGES_MIN and events >= EVENTS_MIN else 'FAIL'
+    status = 'PASS' if median >= floor and longest <= STATIC_MAX else 'FAIL'
     return {'file': str(path), 'status': status, 'median_moving_share': round(median, 4), 'mean_abs_change': round(float(np.median(mean[~cuts])), 3) if len(kept) else 0,
             'floor': floor, 'changes_per_s': round(changes, 2), 'events_per_s': round(events, 2), 'longest_static_s': round(longest, 2), 'static_max_s': STATIC_MAX, 'cuts_excluded': int(cuts.sum()), 'samples': int(len(moving))}
 

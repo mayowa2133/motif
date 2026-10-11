@@ -226,8 +226,16 @@
       "date": "2026-10-11",
       "source": "Claude motion study, cut 6 vs seven references",
       "symptom": "cut 6 drifted as much as the references but changed the whole picture 0.6 times a second (refs 0.7-1.9) and had 0.8 large changes a second (refs 1.1-4.3)",
-      "rule": "Every shot cuts to a closer or wider framing of its set at least once and the contact lands in a close-up; the motion stage gates picture changes >= 0.7/s and large changes >= 1.0/s",
-      "level": "gate"
+      "rule": "Raise sudden-change rates with things that happen in the scene; the motion stage reports picture changes and large changes per second (refs 0.7-1.9 and 1.1-4.3) but does not gate them (see L027)",
+      "level": "brief"
+    },
+    {
+      "id": "L027",
+      "date": "2026-10-11",
+      "source": "Mayowa, second-brain cut 7",
+      "symptom": "hard snap zooms inside each shot (to hit motion targets) looked choppy, not smooth; cut 6 looked better",
+      "rule": "Camera moves inside a shot are eased, never hard snaps; do not chase a motion number with the camera. Mayowa's eye beats the metric",
+      "level": "brief"
     }
   ]
 }
