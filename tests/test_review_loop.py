@@ -58,6 +58,29 @@ class ReviewLoopTests(unittest.TestCase):
         self.assertEqual(plan['beats'][0]['shots'][0]['rig']['params']['mode'], 'plan')
 
 
+class CheckTests(unittest.TestCase):
+    def test_check_sees_the_hook_second_headline(self):
+        # Claudex brief: check passed, then run failed L010 because the hook's second headline was only split after voicing.
+        from motif_reel import check_brief
+        self.assertEqual(check_brief(BRIEF, True)['status'], 'PASS')
+        bad = json.loads(json.dumps(BRIEF));bad['hook']['headline_b'] = '1 TASK, 2 MODELS'
+        report = check_brief(bad, True)
+        self.assertEqual(report['status'], 'FAIL')
+        self.assertTrue(any(x.startswith('L010') for x in report['lessons']))
+
+    def test_no_second_sticker_on_a_machine_that_draws_the_mark(self):
+        from motif_reel import rig_shows_mark
+        shot = {'rig': {'id': 'review-loop', 'params': {'left_logo': 'claude', 'right_logo': 'openai'}}}
+        self.assertTrue(rig_shows_mark(shot, 'claude'))
+        self.assertFalse(rig_shows_mark(shot, 'obsidian'))
+        self.assertFalse(rig_shows_mark({'rig': None}, 'claude'))
+
+    def test_cta_second_headline_cannot_repeat_comment(self):
+        import motif_reel_script as rs
+        bad = json.loads(json.dumps(BRIEF));bad['cta']['headline_b'] = 'COMMENT CLAUDEX'
+        self.assertTrue(any('headline_b' in e for e in rs.validate(bad)))
+
+
 class NumberTests(unittest.TestCase):
     def test_names_and_commas_are_not_numbers(self):
         # The Claudex brief (2026-10-11) crashed on "plan, then audit" and would have counted to 6 for "GPT-6 Astra".

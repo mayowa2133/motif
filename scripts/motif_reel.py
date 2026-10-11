@@ -942,6 +942,14 @@ def check_brief(brief, allow_draft=False):
     plan = plan_reel(brief, allow_draft);errs, requests = validate_plan(plan, allow_draft)
     out.update({'estimated_runtime': round(estimate(brief), 1), 'plan': errs, 'library_requests': requests, 'warnings': plan['warnings']})
     out['sound_off'] = sound_off(plan, brief)['failures']
+    # Before voicing, shot lengths are unknown; the hook and CTA always run long enough to show their
+    # second headline, so check them as split (Claudex brief: check passed, then run failed L010 on
+    # the hook's second headline and held one CTA card for 3.8 s).
+    for beat in plan['beats']:
+        for shot in beat['shots']:
+            if shot.get('role') in ('hook', 'cta') and shot.get('headline_b'):shot['split_headline'] = True
+            if shot.get('role') == 'cta' and (shot.get('headline_b') or '').upper() == (shot.get('headline') or '').upper():
+                out['plan'].append('cta: second headline repeats the first, so one card holds the whole end')
     from motif_lessons import CHECKS, PLAN_CHECKS, ledger
     out['lessons'] = [];out['lesson_warnings'] = []
     for lesson in ledger()['lessons']:

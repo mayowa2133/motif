@@ -244,6 +244,33 @@
       "symptom": "objects glided into place while the references' objects slam and bounce; the host was about a sixth of frame height",
       "rule": "Energy lives in the objects: machines wind up, squash and bounce on the hit and throw paper scraps; pages slap on and overshoot. The hero leaves a host lane so the host stays at least ~19% of frame height",
       "level": "brief"
+    },
+    {
+      "id": "L029",
+      "date": "2026-10-11",
+      "source": "Claude, Claudex adaptation cut 1 (2026-10-11)",
+      "symptom": "the Claude product sticker sat on top of the CLAUDE desk badge the machine already drew",
+      "rule": "One mark per product per frame: no sticker or hook badge when the machine draws that product's mark itself (a *logo param)",
+      "enforced_by": "compiler: rig_shows_mark",
+      "level": "brief"
+    },
+    {
+      "id": "L030",
+      "date": "2026-10-11",
+      "source": "Claude, Claudex adaptation cut 1 (2026-10-11)",
+      "symptom": "check printed PASS, then run failed: the hook's second headline opened like the next beat's (L010) and the CTA held one card 3.8 s",
+      "rule": "check treats hook and CTA as split into their two headlines, and a CTA second headline never repeats COMMENT <keyword>",
+      "enforced_by": "check_brief + script validate",
+      "level": "brief"
+    },
+    {
+      "id": "L031",
+      "date": "2026-10-11",
+      "source": "Claude, Claudex adaptation cut 1 (2026-10-11)",
+      "symptom": "a fact value 'plan, then audit' crashed the planner and 'GPT-6 Astra' would have become a counter to 6",
+      "rule": "Only a standalone number in a fact value becomes a counter insert; digits inside names (GPT-6) never do",
+      "enforced_by": "planner: _number",
+      "level": "brief"
     }
   ]
 }

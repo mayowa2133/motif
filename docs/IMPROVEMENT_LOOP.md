@@ -84,3 +84,6 @@ proven on old films and a library change breaks nothing.
 | L026 motion events | cut 6 vs references (0.6 picture changes/s vs 0.7-1.9) | motion stage reports the rates (gate removed by L027) |
 | L027 smooth camera | Mayowa on cut 7 (snap zooms looked choppy) | snap framings removed; brief rule: eased camera, scene events over camera cuts |
 | L028 lively objects, bigger host | cut 6 review (objects glide, host a sixth of frame) | impact squash + confetti at contacts, page slap overshoot; host lane and floor .36 |
+| L029 one mark per product | Claudex cut 1 (sticker doubled the desk badge) | compiler skips the sticker and hook badge when the machine draws the mark |
+| L030 check sees split headlines | Claudex cut 1 (check PASS, run failed L010 on the hook) | check splits hook and CTA headlines; CTA headline_b may not repeat COMMENT |
+| L031 numbers in names | Claudex cut 1 (GPT-6 and a bare comma read as numbers) | planner counts only standalone numbers |
