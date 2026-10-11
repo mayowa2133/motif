@@ -75,3 +75,4 @@ proven on old films and a library change breaks nothing.
 | L017 host in front | cut 3 vs references (host half hidden behind the machine) | solver rule + check, gate |
 | L018 paper rooms | cut 3 vs references (flat vector, bright walls) | paper-craft look: crumpled material, dusk room palettes, darker grade |
 | L019 runtime | cut 3 vs references (43.6 s vs 20-30 s) | brief rule |
+| L020 sticker clear | second-brain cut 4 (logo stickers covered screen text) | sticker placement + check, gate |
