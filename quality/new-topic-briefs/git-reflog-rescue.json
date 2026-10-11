@@ -54,5 +54,5 @@
       "visual": {"rig": "lock-and-key", "params": {"label": "LOST WORK", "key": "REFLOG"}, "room": "arcade", "palette": "neon-ember/neon-violet"}
     }
   ],
-  "cta": {"keyword": "GIT", "narration": "Save this for your next scary reset. Comment GIT for the cheat sheet."}
+  "cta": {"keyword": "GIT", "narration": "Save this for your next scary reset. Comment GIT for the cheat sheet.", "headline_b": "SAVE IT FOR YOUR NEXT RESET"}
 }

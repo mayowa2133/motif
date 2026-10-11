@@ -104,6 +104,7 @@ def _clip(text, limit=26):
         j = max((k for k in range(2, len(out)) if out[k] in EDGE_WORDS), default=None)
         if j is None:return ' '.join(out) or text[:limit].upper(), True
         out = _fit(out[:j], limit)
+        if len(out) < 2:return ' '.join(out), True  # one word is not a headline (git film CTA read SAVE)
     return ' '.join(out) or text[:limit].upper(), False
 
 
@@ -596,6 +597,9 @@ def shot_frames(shot, layout, seed, look='paper-craft', brand=None, prev=None, c
     else:sticker_at = None
     poof_at = None
     reframe = L.get('reframe') if prev and shot['role'] == 'payoff' and rig else None
+    if reframe:
+        # Never zoom the machine past the frame edge (git film: the SAVED and GONE? stickers were cut off).
+        reframe = max(1.0, min(reframe, 360 / max(1.0, 360 - hb[0]), 360 / max(1.0, hb[0] + hb[2] - 360)))
     fc = round(.92 * (n - 1)) if rig and shot['role'] == 'setup' and not (shot['rig'] or {}).get('hold') else None
     # A held beat keeps its machine in the start state (Codex's v11 critique: Python's lock opened
     # while the narration was still explaining the restriction). A later beat performs the change.
