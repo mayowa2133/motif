@@ -168,6 +168,14 @@
       "symptom": "43.6 s against the references' 20-30 s",
       "rule": "Keep adaptations near 30 s (35 s at most): cut beats rather than speed up the voice",
       "level": "brief"
+    },
+    {
+      "id": "L020",
+      "date": "2026-10-11",
+      "source": "Claude review of second-brain cut 4",
+      "symptom": "the product sticker floats over screen content (covers 3 GAPS, SAVED and a graph node) and the host covers the crate's items",
+      "rule": "Brand stickers and the host never cover a machine or screen label",
+      "level": "brief"
     }
   ]
 }
