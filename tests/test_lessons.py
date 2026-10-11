@@ -119,3 +119,14 @@ def test_sticker_and_host_keep_screen_labels_clear():
     for t in L.hero_labels(layout):
         assert L._overlap(box, t['box']) <= L.OCCLUDED * t['box'][2] * t['box'][3], t['text']
     assert L.check_host_in_front(None, None, {'ask': layout}) == []
+
+
+def test_headlines_stop_at_a_clause():
+    import motif_reel
+    assert motif_reel._clip('Build it once, use it forever.', 28) == ('BUILD IT ONCE', False)
+    head, cut = motif_reel._clip('Obsidian keeps every note as a plain Markdown file', 28)
+    assert cut and not head.endswith(' AS')
+    plan = {'beats': [{'id': 'cta', 'shots': [{'id': 'cta', 'role': 'cta', 'headline': 'COMMENT X', 'headline_b': 'BUILD IT ONCE USE', 'headline_b_cut': True}]}]}
+    assert L.check_headline_whole(None, plan, {})
+    plan['beats'][0]['shots'][0]['role'] = 'setup'
+    assert not L.check_headline_whole(None, plan, {})

@@ -77,6 +77,11 @@
           "required": [
             "rig"
           ]
+        },
+        "headline_b": {
+          "type": "string",
+          "maxLength": 30,
+          "description": "Second headline for this long shot (otherwise the planner cuts one from the narration at a clause boundary)."
         }
       }
     },
@@ -236,6 +241,11 @@
         },
         "room": {
           "type": "string"
+        },
+        "headline_b": {
+          "type": "string",
+          "maxLength": 30,
+          "description": "Second headline for this long shot (otherwise the planner cuts one from the narration at a clause boundary)."
         }
       }
     },

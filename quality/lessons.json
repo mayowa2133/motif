@@ -177,6 +177,15 @@
       "rule": "Brand stickers and the host never cover a machine or screen label",
       "level": "gate",
       "check": "sticker-clear"
+    },
+    {
+      "id": "L021",
+      "date": "2026-10-11",
+      "source": "Claude review of second-brain cut 5",
+      "symptom": "the CTA headline was cut at four words and read BUILD IT ONCE USE",
+      "rule": "A headline stops at the end of a phrase: whole clauses, never cut mid-phrase",
+      "level": "gate",
+      "check": "headline-whole"
     }
   ]
 }

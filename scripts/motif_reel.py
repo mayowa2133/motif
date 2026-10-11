@@ -60,19 +60,41 @@ def sha(p):return hashlib.sha256(Path(p).read_bytes()).hexdigest()
 
 # 2 Plan --------------------------------------------------------------------------------
 
-EDGE_WORDS = {'A', 'AN', 'AND', 'THE', 'IS', 'ARE', 'OF', 'TO', 'IN', 'ON', 'FOR', 'YOUR', 'YOU', 'IT', 'ITS', 'THIS', 'THAT', 'WITH', 'JUST', 'EVEN', 'BUT', 'OR', 'SO', 'AT', 'BY', 'ABOUT', 'ONE', 'EVERY', 'ACROSS', 'INTO', 'FROM', 'HAS', 'HAVE', 'WILL', 'CAN', 'QUIETLY', 'MOST', 'ALREADY'}
+EDGE_WORDS = {'A', 'AN', 'AND', 'THE', 'IS', 'ARE', 'OF', 'TO', 'IN', 'ON', 'FOR', 'YOUR', 'YOU', 'IT', 'ITS', 'AS', 'WHEN', 'IF', 'THEN', 'THAN', 'WHICH', 'WHO', 'VIA', 'THIS', 'THAT', 'WITH', 'JUST', 'EVEN', 'BUT', 'OR', 'SO', 'AT', 'BY', 'ABOUT', 'ONE', 'EVERY', 'ACROSS', 'INTO', 'FROM', 'HAS', 'HAVE', 'WILL', 'CAN', 'QUIETLY', 'MOST', 'ALREADY'}
 
 
-def _short(text, limit=26):
-    """Headline from a phrase: whole words only, never ending on a filler word."""
+def _words(text):
     words = re.sub(r'[^\w$%.,\' -]', '', text).upper().replace(', ', ' ').rstrip('.').split()
     while words and words[0] in EDGE_WORDS:words.pop(0)
+    return words
+
+
+def _fit(words, limit):
     out = []
     for w in words:
         if len(' '.join(out + [w])) > limit:break
         out.append(w)
     while len(out) > 1 and out[-1] in EDGE_WORDS:out.pop()
-    return ' '.join(out) or text[:limit].upper()
+    return out
+
+
+def _clip(text, limit=26):
+    """(headline, cut): the longest run of whole clauses that fits, so a headline never stops mid-phrase
+    (cut 5's CTA read BUILD IT ONCE USE); `cut` is True only when no whole clause fits."""
+    clauses = [c for c in re.split(r'(?<=[,.;:?!])\s+|\s+[-\u2013\u2014]\s+', text.strip()) if _words(c)]
+    out = []
+    for c in clauses:
+        w = _words(c) if not out else re.sub(r'[^\w$%.,\' -]', '', c).upper().replace(', ', ' ').rstrip('.,').split()
+        if len(' '.join(out + w)) > limit:break
+        out += w
+    if out:return ' '.join(out).rstrip('.,'), False
+    words = _words(text);out = _fit(words, limit)
+    return ' '.join(out) or text[:limit].upper(), len(out) < len(words)
+
+
+def _short(text, limit=26):
+    """Headline from a phrase: whole clauses where they fit, else whole words never ending on a filler word."""
+    return _clip(text, limit)[0]
 
 
 def _number(value):
@@ -125,7 +147,7 @@ def plan_reel(brief, allow_draft=False, avoid_looks=()):
     hook_room = room_for(brief['topic'] + ' ' + hook, (brief.get('hook') or {}).get('room') or ((brief.get('hook') or {}).get('visual') or {}).get('room'));rooms.append(hook_room)
     hook_insert = _insert_for(first_fact, hook, cat) if _number(first_fact.get('value')) else None
     beats.append({'id': 'hook', 'kind': 'hook', 'narration': hook, 'palette': palettes[0], 'shots': [
-        {'id': 'hook', 'role': 'hook', 'headline': (brief.get('hook') or {}).get('headline') or _short(hook, 28), 'headline_b': _short(brief['topic'], 28), 'room': hook_room, 'rig': None,
+        {'id': 'hook', 'role': 'hook', 'headline': (brief.get('hook') or {}).get('headline') or _short(hook, 28), 'headline_b': (brief.get('hook') or {}).get('headline_b') or _short(brief['topic'], 28), 'headline_b_cut': not (brief.get('hook') or {}).get('headline_b') and _clip(brief['topic'], 28)[1], 'room': hook_room, 'rig': None,
          'insert': hook_insert, 'bot': {'costume': [], 'face': 'excited', 'pose': 'celebrating'}, 'crowd': 9 if look['hook'] == 'crowd' else 0, 'grammar': 'big-bot' if look['hook'] == 'number' and not hook_insert else look['hook']}]})
     for i, b in enumerate(brief['beats']):
         fact = facts[b['fact']];visual = b.get('visual', {});text = f'{b["narration"]} {fact["claim"]} {fact.get("value", "")}'
@@ -151,9 +173,9 @@ def plan_reel(brief, allow_draft=False, avoid_looks=()):
         beat_brand = visual['brand'] if 'brand' in visual else brand
         if beat_brand != brand and 'logo' in _get_rig(rig_id).params_schema['properties'] and params.get('logo') == brand:params['logo'] = beat_brand
         beats.append({'id': b['id'], 'kind': 'claim', 'relation': relation, 'narration': b['narration'], 'fact': b['fact'], 'palette': visual.get('palette') or palettes[i + 1], 'shots': [
-            {'id': f'{b["id"]}-a', 'role': 'setup', 'headline': setup, 'headline_b': _short(b['narration'], 26), 'room': room, 'rig': {'id': rig_id, 'params': params, **({'hold': True} if visual.get('hold') else {})}, 'insert': None,
+            {'id': f'{b["id"]}-a', 'role': 'setup', 'headline': setup, 'headline_b': _short(b['narration'], 26), 'headline_b_cut': _clip(b['narration'], 26)[1], 'room': room, 'rig': {'id': rig_id, 'params': params, **({'hold': True} if visual.get('hold') else {})}, 'insert': None,
              'bot': {'costume': costume, 'face': 'determined', 'pose': 'walking'}},
-            {'id': f'{b["id"]}-b', 'role': 'payoff', 'headline': payoff, 'headline_b': _short(fact['claim'], 26), 'room': room, 'rig': {'id': rig_id, 'params': params, **({'hold': True} if visual.get('hold') else {})}, 'insert': insert,
+            {'id': f'{b["id"]}-b', 'role': 'payoff', 'headline': payoff, 'headline_b': _short(fact['claim'], 26), 'headline_b_cut': _clip(fact['claim'], 26)[1], 'room': room, 'rig': {'id': rig_id, 'params': params, **({'hold': True} if visual.get('hold') else {})}, 'insert': insert,
              'bot': {'costume': costume, 'face': 'surprised', 'pose': 'pointing'}}]})
         if beat_brand != brand:
             for shot in beats[-1]['shots']:shot['brand'] = beat_brand
@@ -174,7 +196,7 @@ def plan_reel(brief, allow_draft=False, avoid_looks=()):
     _keep_object_palettes(beats, {b['id'] for b in brief['beats'] if (b.get('visual') or {}).get('palette')} | ({'hook'} if (hook_visual or {}).get('palette') else set()))
     cta_room = room_for('celebrate launch ' + brief['cta']['narration'], brief['cta'].get('room'))
     beats.append({'id': 'cta', 'kind': 'cta', 'narration': brief['cta']['narration'], 'palette': palettes[-1], 'shots': [
-        {'id': 'cta', 'role': 'cta', 'headline': _short(f'COMMENT {brief["cta"]["keyword"]}', 28), 'headline_b': _short(re.sub(r'[,.?!]?\s*comment\s+\S+\s*$', '', brief['cta']['narration'], flags=re.I), 28), 'room': cta_room, 'rig': None,
+        {'id': 'cta', 'role': 'cta', 'headline': _short(f'COMMENT {brief["cta"]["keyword"]}', 28), 'headline_b': brief['cta'].get('headline_b') or _short(re.sub(r'[,.?!]?\s*comment\s+\S+\s*$', '', brief['cta']['narration'], flags=re.I), 28), 'headline_b_cut': not brief['cta'].get('headline_b') and _clip(re.sub(r'[,.?!]?\s*comment\s+\S+\s*$', '', brief['cta']['narration'], flags=re.I), 28)[1], 'room': cta_room, 'rig': None,
          'insert': {'kind': 'comment_end_card', 'args': {'keyword': brief['cta']['keyword']}}, 'bot': {'costume': ['party-hat'], 'face': 'excited', 'pose': 'celebrating' if look['cta'] != 'card' else 'pointing'},
          'crowd': 7 if look['cta'] == 'crowd' else 0, 'grammar': look['cta']}]})
     plan = {'schema_version': 'reel-1.1', 'quality_mode': 'motif-gold-v1', 'slug': brief['slug'], 'seed': seed, 'look': look_id, 'brand': brand, 'mascot': brief.get('mascot', 'bot'), 'library': 'draft' if allow_draft else 'canonical', 'beats': beats, 'library_requests': [], 'warnings': default_label_warnings(beats)}

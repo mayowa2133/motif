@@ -206,7 +206,16 @@ def check_sticker_clear(project, plan, layouts):
     return out
 
 
+def check_headline_whole(project, plan, layouts):
+    """A headline made from narration stops at a clause boundary, never mid-phrase (cut 5's CTA read
+    BUILD IT ONCE USE). Before voicing (no project) the hook and CTA, the shots long enough to split, count."""
+    return [{'where': shot['id'], 'detail': f'"{shot["headline_b"]}" stops mid-phrase; shorten the line or author the headline'}
+            for beat in plan['beats'] for shot in beat['shots']
+            if shot.get('headline_b_cut') and (shot.get('split_headline') or (project is None and shot['role'] in ('hook', 'cta')))]
+
+
 CHECKS = {
+    'headline-whole': check_headline_whole,
     'sticker-clear': check_sticker_clear,
     'set-variety': check_set_variety,
     'headline-length': check_headline_length,
@@ -220,7 +229,7 @@ CHECKS = {
 
 
 # Checks that need only the plan, so `motif_reel.py check` runs them before any voice or render.
-PLAN_CHECKS = ('headline-openers', 'shared-object-palette', 'set-variety', 'headline-length', 'product-on-screen')
+PLAN_CHECKS = ('headline-openers', 'shared-object-palette', 'set-variety', 'headline-length', 'product-on-screen', 'headline-whole')
 
 
 def run(project, plan=None, layouts=None):
