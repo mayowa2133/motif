@@ -294,9 +294,9 @@ class KnowledgeVault(Rig):
         for i, st in shown.items():
             sx, sy = self.slot(i);pop = st.get('pop', 1.0)
             if pop <= 0:continue
-            sc = .4 + .6 * ease(pop) + .12 * settle(clamp(pop), 1) if pop < 1 else 1.0
+            sc = .4 + .6 * ease(pop) + .25 * settle(clamp(pop), 1) if pop < 1 else 1.0  # pages slap on and overshoot (cut 8)
             jolt = 0.0
-            if mode in ('compile', 'save', 'check') and t > tc and i == (b - 1 if mode == 'compile' else (min(a, MAX_PAGES - 1) if mode == 'save' else p['flag'])):jolt = 10 * settle(clamp(after * 1.5), 1)
+            if mode in ('compile', 'save', 'check') and t > tc and i == (b - 1 if mode == 'compile' else (min(a, MAX_PAGES - 1) if mode == 'save' else p['flag'])):jolt = 20 * settle(clamp(after * 1.5), 1)
             if mode == 'save' and i == min(a, MAX_PAGES - 1):title = p['answer']
             else:title = titles[i] if i < len(titles) else ''
             fill = st.get('fill') or (mix(c['light'], GREEN, .25) if mode == 'check' and i == p['flag'] and t > tc else None)
@@ -322,7 +322,7 @@ class KnowledgeVault(Rig):
                 if tt >= land:x, y, ang = x1, y1, a1;k_ = 1.0
                 else:
                     k_ = (tt - launch) / (land - launch);x = lerp(x0, x1, ease(k_));y = lerp(y0, y1, ease_in(k_)) - 180 * math.sin(k_ * math.pi);ang = lerp(-40, a1, k_)
-                bump = 6 * settle(clamp((tt - land) / (.2 * tc)), 1) if tt >= land else 0
+                bump = 16 * settle(clamp((tt - land) / (.2 * tc)), 1) if tt >= land else 0
                 body += g(self.item(items[k], k, c), x, y + bump, ang)
         body += self.crate_front(c, p['raw_label'], raw_k)
         if mode in ('ask', 'save'):body += self.ask_cards(p, c, t, tc, after, mode)

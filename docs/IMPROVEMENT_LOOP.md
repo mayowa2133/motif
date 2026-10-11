@@ -83,3 +83,4 @@ proven on old films and a library change breaks nothing.
 | L025 label collision | second-brain cut 6 stills (CLAUDE IS IN over the last line) | result stickers below text; check, warn |
 | L026 motion events | cut 6 vs references (0.6 picture changes/s vs 0.7-1.9) | motion stage reports the rates (gate removed by L027) |
 | L027 smooth camera | Mayowa on cut 7 (snap zooms looked choppy) | snap framings removed; brief rule: eased camera, scene events over camera cuts |
+| L028 lively objects, bigger host | cut 6 review (objects glide, host a sixth of frame) | impact squash + confetti at contacts, page slap overshoot; host lane and floor .36 |

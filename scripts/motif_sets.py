@@ -40,7 +40,7 @@ HERO_WIDE = (.3, .7)               # or, for a wide machine, this share of heigh
 EMPTY_FIELD_MAX = .45
 EDGE_VISIBLE = .7                  # an edge prop shows at least this share of its width (no stray fragments)
 BOT_SCALE = (.42, .5)              # host reads at about 22 to 27% of frame height (refs ~30%; was .32-.4 until cut 7)
-BOT_MIN = .32                      # it may shrink to this (17%) rather than hide a machine label (front_spot)
+BOT_MIN = .36                      # it may shrink to this (19%) rather than hide a machine label (front_spot)
 BOT_LANE = 150                    # width kept free beside the hero for Bot
 HERO_SAFE = 40                    # hero clear of the frame edge so camera push-ins never crop it
 PROP_MAX_SCALE = 1.8              # beyond this a small prop reads as a blank panel or a giant
@@ -585,7 +585,8 @@ def hero_placement(rig, rng):
     fx, fy, fw, fh = rig.footprint;tall = (FLOOR - HEADLINE[1] - HEADLINE[3] - 10) / fh
     # The host stands in front of the machine (front_spot), so no lane is kept beside it: the hero
     # fills the width like the references' screens and objects (2026-10-11 comparison).
-    scale = min((W - BOT_LANE / 2 - HERO_SAFE) / fw, tall, 1.6)
+    # Cut 8: a full lane again so the host can be bigger (it shrank to the floor in every beat of cut 7).
+    scale = min((W - BOT_LANE - HERO_SAFE) / fw, tall, 1.6)
     if not hero_big_enough(fw * scale, fh * scale):
         # Wide machine: just big enough (tall, or wide and nearly tall) so Bot keeps a lane clear of its edge labels.
         need = min(HERO_MIN * H / fh, max(HERO_WIDE[0] * H / fh, HERO_WIDE[1] * W / fw)) + 1e-4

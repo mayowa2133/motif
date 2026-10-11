@@ -478,6 +478,38 @@ ACTS = {'app-screen': ('typing', 'pointing', 'inspecting'), 'knowledge-vault': (
 CARRY = {'app-screen', 'knowledge-vault'}
 
 
+def contact_age(f, fc, prev, hold):
+    """Frames since the machine's contact: counted from fc in a setup and carried on into the payoff
+    that continues it, so a reaction started on the hit finishes across the cut."""
+    if hold:return None
+    if fc is not None and f >= fc:return f - fc
+    if prev and prev[0] == 'setup':return f + prev[1] - round(.92 * (prev[1] - 1))
+    return None
+
+
+def impact(f, fc, n, prev, hold):
+    """Vertical squash of the machine around its contact: a small wind-up before the hit, then a
+    damped bounce (positive = squashed)."""
+    if hold:return 0.0
+    if fc is not None and fc - 6 <= f < fc:return -.035 * (f - fc + 6) / 6
+    d = contact_age(f, fc, prev, hold)
+    if d is None or d > 24:return 0.0
+    return .085 * math.exp(-d / 5) * math.cos(d * .75)
+
+
+def confetti(x, y, d, c, size=1.0, frames=18):
+    """Paper scraps thrown out of the hit: they fly out, tumble and fall under gravity."""
+    if d >= frames:return ''
+    out = '';cols = (c['pop'], c['accent'], c['light'], c['primary'])
+    for k in range(12):
+        a = -math.pi * (.08 + .84 * k / 11);v = (9 + 5 * (k % 3)) * size
+        px = x + math.cos(a) * v * d;py = y + math.sin(a) * v * d + .9 * size * d * d
+        fade = 1 if d < frames * .6 else max(0.0, 1 - (d - frames * .6) / (frames * .4))
+        out += (f'<rect x="{-7 * size:.1f}" y="{-4 * size:.1f}" width="{14 * size:.1f}" height="{8 * size:.1f}" fill="{cols[k % 4]}" stroke="{c["dark"]}" stroke-width="1.5" opacity="{fade:.2f}" '
+                f'transform="translate({px:.1f} {py:.1f}) rotate({k * 47 + d * (22 + 9 * (k % 4)):.0f})"/>')
+    return out
+
+
 def carried_note(x, y, angle, c, s=1.0):
     """A paper note the host carries: a sticky square with three ink lines."""
     lines = ''.join(f'<path d="M-20 {ly} H{w - 20}" stroke="{c["dark"]}" stroke-width="3.5" stroke-linecap="round"/>' for ly, w in ((-9, 40), (1, 32), (11, 24)))
@@ -609,7 +641,11 @@ def shot_frames(shot, layout, seed, look='paper-craft', brand=None, prev=None, c
             h = layout['hero'];breathe = 1 + (.018 if shot['role'] == 'payoff' else .01) * math.sin(f * .21)
             hero = place(rig.render(h['values'] or None, (action, t), shot['palette']), h['x'], h['y'], h['scale'] * breathe)
             rock = .7 * math.sin(f * .13) + (1.6 * math.sin(f * .9) * (math.sin(f * .11) > .3) if hold else 0)  # a held machine strains against itself
-            hero = f'<g transform="rotate({rock:.3f} {h["x"]:.1f} {h["y"]:.1f})">{hero}</g>'  # the machine rocks on its base
+            # The machine reacts to the hit with squash and stretch (cut 8: the references' objects slam and
+            # bounce where ours glided; Mayowa wants the camera smooth, so the energy lives in the object).
+            sq = impact(f, fc, n, prev, hold)
+            if sq:rock += 3.5 * sq
+            hero = f'<g transform="translate({h["x"]:.1f} {h["y"]:.1f}) scale({1 + .55 * sq:.4f} {1 - sq:.4f}) rotate({rock:.3f}) translate({-h["x"]:.1f} {-h["y"]:.1f})">{hero}</g>'  # the machine rocks on its base
             if brand and shot['role'] != 'hook':
                 from motif_brand import sticker
                 # The product's mark on the machine: the frame names its subject without the caption.
@@ -617,7 +653,9 @@ def shot_frames(shot, layout, seed, look='paper-craft', brand=None, prev=None, c
                 mark = f'<g transform="translate({sticker_at[0]:.1f} {sticker_at[1]:.1f})">{sticker(brand, 92, -8 + wob)}</g>'
                 hero += mark if prev else pop_in(mark, f, 2, sticker_at)
             hero_at = len(pieces);pieces.append(cam(boil(hero, f, f'{shot["id"]}-hero', .6)))
-            if prev and shot['role'] == 'payoff' and poof_at:pieces.append(cam(poof(*poof_at, f, c, h['scale'] * 1.1)))
+            if prev and shot['role'] == 'payoff' and poof_at:pieces.append(cam(poof(*poof_at, f, c, h['scale'] * (.6 if rig.name == 'app-screen' else 1.1))))  # small on screens: the puff hid the answer
+            since = contact_age(f, fc, prev, hold)
+            if since is not None and hit:pieces.append(cam(confetti(*hit, since, c, max(.8, h['scale'] * 1.4))))
         b = layout['bot'];bot = shot['bot']
         if rig:
             side = b.get('side', -1 if b['x'] < 360 else 1)

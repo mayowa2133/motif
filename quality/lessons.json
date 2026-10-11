@@ -236,6 +236,14 @@
       "symptom": "hard snap zooms inside each shot (to hit motion targets) looked choppy, not smooth; cut 6 looked better",
       "rule": "Camera moves inside a shot are eased, never hard snaps; do not chase a motion number with the camera. Mayowa's eye beats the metric",
       "level": "brief"
+    },
+    {
+      "id": "L028",
+      "date": "2026-10-11",
+      "source": "Mayowa approved cut 8 plan (after L027)",
+      "symptom": "objects glided into place while the references' objects slam and bounce; the host was about a sixth of frame height",
+      "rule": "Energy lives in the objects: machines wind up, squash and bounce on the hit and throw paper scraps; pages slap on and overshoot. The hero leaves a host lane so the host stays at least ~19% of frame height",
+      "level": "brief"
     }
   ]
 }
