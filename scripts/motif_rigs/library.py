@@ -287,6 +287,7 @@ register(HydraulicPress(
 
 class RaceTrack(Rig):
     START, FINISH = -140, 230
+    close_framing = False  # the race is the whole track: close in, it reads as a slab (uv film)
 
     def lane_y(self, p, i):return -60 - i * (360 / len(p['labels']))
 

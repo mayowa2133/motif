@@ -144,6 +144,11 @@ class AppScreen(Rig):
         top = -620 if p['device'] == 'phone' else (-560 if p['device'] == 'monitor' else -440)
         return (-w / 2, top, w, h)
 
+    def focus(self, p, role):
+        # Close framing: the screen itself fills the frame (the references show the product big).
+        if role != 'close':return None
+        x, y, w, h = self.screen(p);return (x + w / 2, y + h / 2, w, h)
+
     def button(self, p):
         x, y, w, h = self.screen(p)
         return (x + 70, y + h - 46)  # bottom-left: Bot stands on the right and must not hide the key
@@ -169,7 +174,7 @@ class AppScreen(Rig):
 
     def ui(self, p, c, typed, done):
         x, y, w, h = self.screen(p);kind = p['ui'];lines = p.get('lines') or [];logo = p.get('logo')
-        dark = kind == 'terminal';bg = '#1E2430' if dark else c['light'];ink = '#E8F0EA' if dark else c['dark']
+        dark = kind in ('terminal', 'cli');bg = ('#262624' if kind == 'cli' else '#1E2430') if dark else ('#FFFFFF' if kind == 'pr' else c['light']);ink = '#E8F0EA' if dark else c['dark']
         out = rect(x, y, w, h, bg, 8)
         bar = 44
         out += rect(x, y, w, bar, c['metal'] if not dark else '#2E3646', 8) + rect(x, y + bar - 8, w, 8, c['metal'] if not dark else '#2E3646')
@@ -186,6 +191,8 @@ class AppScreen(Rig):
             from motif_brand import glyph
             s = 28;out += f'<g transform="translate({x + w - s - 12:.1f} {y + (bar - s) / 2:.1f})">{glyph(logo, s, None if not dark else "#FFFFFF")}</g>'
         size = min(40 if p['device'] != 'phone' else 30, (w - 50) / max(8, max((len(l) for l in lines), default=8) * .62))
+        # Lines end above the run key (uv film rough: an 8-line terminal ran under RUN and off the screen).
+        size = min(size, (h - bar - 24 - 84) / max(1.0, len(lines) * 1.55 - .55))
         ly = y + bar + 24 + size;budget = typed
         if kind == 'map':
             out += self.map_view(p, c, typed, done);lines = []
@@ -193,7 +200,11 @@ class AppScreen(Rig):
             out += getattr(self, kind + '_view')(p, c, typed, done);lines = []
         for i, line in enumerate(lines):
             shown = line[:max(0, int(budget))];budget -= len(line)
-            if kind == 'terminal':
+            if kind == 'terminal' and any(l.startswith('$ ') for l in lines):
+                # '$ ' lines are commands, the rest their output in grey, as a real shell reads.
+                cmd = line.startswith('$ ')
+                out += (txt('$', x + 20, ly, size, '#7FD08A', 800) + txt(shown[2:], x + 20 + size * .9, ly, size, ink, 700)) if cmd else txt(shown, x + 20 + size * .9, ly, size * .92, '#9AA6B8', 600)
+            elif kind == 'terminal':
                 out += txt(('> ' if i == 0 else '  ') + shown, x + 20, ly, size, ink, 600)
             elif kind == 'window':
                 tick = budget >= 0
@@ -208,7 +219,7 @@ class AppScreen(Rig):
                     cx = x + 20 + (len(shown) + 2) * size * .58
                     out += rect(cx, ly - size * 1.55 - size * .8, size * .5, size * .95, ink)
                 break
-        bx, by = self.button(p);label = p.get('button') or ('RUN' if kind == 'terminal' else 'OK')
+        bx, by = self.button(p);label = p.get('button') or ('RUN' if kind == 'terminal' else ('ENTER' if kind == 'cli' else ('MERGE' if kind == 'pr' else 'OK')))
         out += rect(bx - 52, by - 22, 104, 44, c['accent'] if not done else c['primary'], 12, c['dark'], 3) + txt(label, bx, by + 7, 20, c['dark'], 900, 'middle')
         if p.get('credit'):
             cw = len(p['credit']) * 9.4 + 18
@@ -216,17 +227,18 @@ class AppScreen(Rig):
         if done and p.get('result'):
             res = p['result'];rw = max(170, len(res) * 30 + 50);rx, ry = x + w / 2, (y + bar + 46 if kind == 'map' else y + h * .68);fit = min(1.0, (w - 16) / rw)
             if kind in self.VIEWS or kind == 'terminal':
+                if kind == 'cli':kind = 'terminal'
                 # A corner sticker clear of the content: below it where text runs down the screen
                 # (chat, terminal, file tree; cut 6 stills: CLAUDE IS IN and VAULT READY covered lines).
-                fit = min(.72, (w * .5) / rw);rx, ry = x + w - rw * fit / 2 - 14, (y + h - 34 if kind in ('chat', 'terminal', 'files') else y + 44 + 34)
-            out += g(rect(-rw / 2 + 5, -40, rw, 80, c['dark'], 14).replace('<rect', '<rect opacity=".22"') + rect(-rw / 2, -44, rw, 80, c['pop'] if c['pop'] != c['light'] else c['accent'], 14, c['dark'], 3)
+                fit = min(.72, (w * .5) / rw);rx, ry = x + w - rw * fit / 2 - 14, (y + h - 34 if kind in ('chat', 'terminal', 'files', 'note', 'pr') else y + 44 + 34)
+            out += g(rect(-rw / 2 + 5, -40, rw, 80, c['dark'], 14).replace('<rect', '<rect opacity=".22"') + rect(-rw / 2, -44, rw, 80, c['pop'] if c['pop'] not in (c['light'], c['dark']) else c['accent'], 14, c['dark'], 3)
                      + txt(res, 0, 12, 40, c['dark'], 900, 'middle'), rx, ry, -3, done * fit)
         return out
 
     # Product views (2026-10-11 reference comparison): the references show the real app doing the
     # thing in most shots. These recreate common app surfaces in Motif's own drawing, with the
     # brief's lines as the content, so a film can show the product rather than a machine about it.
-    VIEWS = ('files', 'note', 'graph', 'chat')
+    VIEWS = ('files', 'note', 'graph', 'chat', 'cli', 'pr')
 
     def _shown(self, lines, typed):
         """(line, visible share) per line as the typing budget reaches it."""
@@ -236,17 +248,41 @@ class AppScreen(Rig):
         return out
 
     def files_view(self, p, c, typed, done):
-        """A file tree: names ending in / are folders, leading spaces indent; rows pop in as they type."""
-        x, y, w, h = self.screen(p);top = y + 44;out = rect(x, top, w * .3, h - 44, c['metal']).replace('<rect', '<rect opacity=".35"')
-        rows = self._shown(p.get('lines') or [], typed);size = min(30, (h - 120) / max(4, len(rows)) / 1.6)
+        """A file tree: names ending in / are folders, leading spaces indent; rows pop in as they type.
+        With a pane (plan-to-9 phase 1: editors show the open file beside the tree), the last file in
+        the tree is open on the right in a tab, its lines numbered, typing in after the tree."""
+        lines = p.get('lines') or [];pane = p.get('pane') or []
+        x, y, w, h = self.screen(p);top = y + 44;tw = w * (.42 if pane else .3)
+        out = rect(x, top, tw, h - 44, c['metal']).replace('<rect', '<rect opacity=".35"')
+        rows = self._shown(lines, typed);size = min(30, (h - 130) / max(4, len(rows)) / 1.6)
+        if pane:
+            size = min(size, max(12, (tw - 30) / max(1.0, max(((len(l) - len(l.lstrip(' '))) // 2) * .9 + 1.35 + len(l.strip()) * .55 for l in lines))))
+        indent = size * .9 if pane else 34
         for i, (line, k) in enumerate(rows):
             if k <= 0:break
             depth = (len(line) - len(line.lstrip(' '))) // 2;name = line.strip();folder = name.endswith('/')
-            ry = top + 24 + i * size * 1.6;rx = x + 24 + depth * 34
+            ry = top + 24 + i * size * 1.6;rx = x + 16 + depth * indent
             icon = (path(f'M0 0H{size * .45:.1f}L{size * .6:.1f} {size * .18:.1f}H{size * 1.1:.1f}V{size * .85:.1f}H0Z', c['dark'], 2.5, c['secondary']) if folder
                     else path(f'M0 0H{size * .6:.1f}L{size * .85:.1f} {size * .25:.1f}V{size:.1f}H0Z', c['dark'], 2.5, '#FFFFFF'))
+            if pane and not folder and name == next((l.strip() for l in reversed(lines) if not l.strip().endswith('/')), None):
+                out += rect(x + 4, ry - size * .3, tw - 8, size * 1.5, c['accent'], 5).replace('<rect', '<rect opacity=".35"')
             row = g(icon, rx, ry, 0, 1) + txt(name, rx + size * 1.35, ry + size * .78, size * .9, c['dark'], 800 if folder else 600)
             out += g(row, 0, 0, 0, 1, 1, min(1.0, k * 1.5))
+        if pane:
+            open_file = next((l.strip() for l in reversed(lines) if not l.strip().endswith('/')), 'file')
+            px = x + tw;pw = w - tw;left = typed - sum(len(l) for l in lines)
+            out += rect(px, top, pw, 34, c['metal']).replace('<rect', '<rect opacity=".55"') + rect(px + 8, top + 4, len(open_file) * 10 + 34, 30, '#FFFFFF', 5)
+            out += txt(open_file, px + 24, top + 25, 16, c['dark'], 800)
+            ps = min(19, (pw - 60) / max(14, max(len(l) for l in pane) * .56), (h - 44 - 34 - 70) / max(1, len(pane) * 1.5))
+            for i, (line, k) in enumerate(self._shown(pane, max(0, left))):
+                if k <= 0:break
+                ly = top + 34 + 16 + ps + i * ps * 1.5;shown = line[:max(1, int(len(line) * k))]
+                out += txt(str(i + 1), px + 30, ly, ps * .8, '#9A968E', 600, 'end')
+                head = line.startswith('#');meta = line == '---' or (':' in line and not head and i < 5)
+                if meta and ':' in shown:
+                    key, _, val = shown.partition(':');out += txt(key + ':', px + 40, ly, ps, '#8250DF', 700) + txt(val.strip(), px + 40 + (len(key) + 1.6) * ps * .58, ly, ps, c['dark'], 600)
+                else:
+                    out += txt(shown, px + 40, ly, ps * (1.15 if head else 1), c['dark'] if not line == '---' else '#9A968E', 900 if head else 600)
         return out
 
     def note_view(self, p, c, typed, done):
@@ -255,12 +291,14 @@ class AppScreen(Rig):
         x, y, w, h = self.screen(p);top = y + 44;lines = p.get('lines') or [];rows = self._shown(lines, typed)
         out = ''
         if rows and rows[0][1] > 0:
-            title = rows[0][0];ts = min(46, (w - 60) / max(6, len(title) * .62))
+            title = rows[0][0];ts = min(40, (w - 60) / max(6, len(title) * .62))
             out += txt(title, x + 26, top + 18 + ts, ts, c['dark'], 900) + rect(x + 26, top + 30 + ts, w - 52, 3, c['secondary'])
-        body_top = top + 64 + min(46, (w - 60) / max(6, len(lines[0] if lines else 'x') * .62));size = min(30, (w - 60) / max(14, max((len(l) for l in lines[1:]), default=14) * .6))
+        ts = min(40, (w - 60) / max(6, len(lines[0] if lines else 'x') * .62));size = min(30, (w - 60) / max(14, max((len(l) for l in lines[1:]), default=14) * .6))
+        # Body lines end above the run key (Claudex cut 3: the OK key covered the last line).
+        size = min(size, (y + h - 72 - top - 34 - ts) / (1.1 + max(0, len(lines) - 2) * 1.55));body_top = top + 34 + ts + size * 1.1
         for i, (line, k) in enumerate(rows[1:]):
             if k <= 0:break
-            ly = body_top + i * size * 1.7;lx = x + 26
+            ly = body_top + i * size * 1.55;lx = x + 26
             shown = line[:max(1, int(len(line) * k))]
             for part in re.split(r'(\[\[[^\]]*\]?\]?)', shown):
                 if not part:continue
@@ -294,6 +332,180 @@ class AppScreen(Rig):
             out += f'<circle cx="{px:.1f}" cy="{py:.1f}" r="{r:.1f}" fill="{col}"/>'
             out += txt(line, px, py + r + fs + 2, fs, '#E8E9F2', 700, 'middle')
         return out
+
+    AGENTS = {'claude': ('Claude Code', '#D97757'), 'openai': ('Codex', '#E8E8E8')}
+    # The footer each agent's terminal shows (plan-to-9 phase 1: the real product's chrome, not a blank box).
+    FOOTERS = {'claude': ('? for shortcuts', 'accept edits on'), 'openai': ('Enter to send', '98% context left')}
+    CLI_KINDS = {'> ': 1, '* ': 1, '- ': 1, '+ ': 1, 'x ': 1, '[ ] ': 1, '[x] ': 1, '? ': 3.25}
+
+    @staticmethod
+    def star(cx, cy, r, col, turn=0.0):
+        """The thinking spinner: a six-armed asterisk drawn as paths (fonts may lack the glyph)."""
+        d = ''.join(f'M{cx:.1f} {cy:.1f}L{cx + r * math.cos(turn + i * math.pi / 3):.1f} {cy + r * math.sin(turn + i * math.pi / 3):.1f}' for i in range(6))
+        return path(d, col, max(2.0, r * .32))
+
+    @staticmethod
+    def _clip(x, y, w, h, body):
+        import zlib
+        cid = f'clip{zlib.crc32(f"{x:.1f},{y:.1f},{w:.1f},{h:.1f}".encode()) % 10 ** 8}'
+        return f'<clipPath id="{cid}"><rect x="{x:.1f}" y="{y:.1f}" width="{w:.1f}" height="{h:.1f}"/></clipPath><g clip-path="url(#{cid})">{body}</g>'
+
+    def cli_view(self, p, c, typed, done):
+        """A coding agent in the terminal, redrawn in Motif's paper style with the real product's layout
+        (plan-to-9 phase 1: reference 09's screens are dense, ours were a sparse block of text).
+
+        A welcome box carries the agent's mark, name and folder; then the session, where '> ' is the
+        prompt, '* ' an action (a dot that turns green once done), '- ' its result under a hook,
+        '+ ' / 'x ' added and removed diff lines, '[ ] ' / '[x] ' todos ([x] ticks and strikes through
+        once typed) and '? ' a permission prompt with Yes / No. While the agent works a spinner turns
+        under the last line; long sessions scroll up as they type. An input box and the agent's footer
+        sit at the bottom."""
+        from motif_brand import glyph
+        x, y, w, h = self.screen(p);top = y + 44;lines = p.get('lines') or [];rows = self._shown(lines, typed)
+        logo = p.get('logo') or '';name, accent = self.AGENTS.get(logo, (p.get('title') or 'Agent', c['accent']))
+        name = p.get('agent') or name;bh = 54;out = ''
+        # The welcome box is the first thing in the session and scrolls away with it, as in the real tool.
+        head = rect(x + 14, top + 10, w - 28, bh, 'none', 10, accent, 2.5)
+        if logo:head += f'<g transform="translate({x + 28:.1f} {top + 10 + (bh - 30) / 2:.1f})">{glyph(logo, 30, accent)}</g>'
+        nx = x + (72 if logo else 30)
+        head += txt(name, nx, top + 10 + bh * .47, 21, '#F5F2EC', 800) + txt(p.get('cwd') or '/help for help', nx, top + 10 + bh * .83, 14, '#9A968E', 600)
+        foot_l, foot_r = self.FOOTERS.get(logo, ('Enter to send', ''))
+        box = 36;by = y + h - box - 26;bx = x + 140
+        area_top = top + 10 + bh + 8;area_h = by - 6 - area_top
+        units = sum(self.CLI_KINDS.get(next((m for m in self.CLI_KINDS if l.startswith(m)), ''), 1) for l in lines) + 1
+        size = max(14.5, min(20, (w - 70) / max(14, max((len(l) for l in lines), default=14) * .55), (area_h + bh + 8) / max(1, units * 1.42)))
+        step = size * 1.42;body = head;ly = bh + 8 + size * 1.05;turn = typed * .35
+        area_top -= bh + 8;area_h += bh + 8
+        for line, k in rows:
+            if k <= 0:break
+            mark = next((m for m in self.CLI_KINDS if line.startswith(m)), '');text = line[len(mark):]
+            shown = text[:max(1, int(len(text) * k))];lx = x + 26;yy = area_top + ly
+            if mark == '> ':
+                body += rect(x + 18, yy - size * 1.0, w - 36, size * 1.35, '#3A3835', 6) + txt('>', lx, yy, size, '#9A968E', 800) + txt(shown, lx + size * .9, yy, size, '#F5F2EC', 600)
+            elif mark == '* ':
+                col = '#5FB85F' if k >= 1 else accent
+                body += f'<circle cx="{lx + size * .3:.1f}" cy="{yy - size * .33:.1f}" r="{size * .26:.1f}" fill="{col}"/>' + txt(shown, lx + size * .9, yy, size, '#F5F2EC', 800)
+            elif mark == '- ':
+                body += path(f'M{lx + size * .6:.1f} {yy - size * .9:.1f}V{yy - size * .3:.1f}H{lx + size * 1.1:.1f}', '#8A867E', 2.2) + txt(shown, lx + size * 1.4, yy, size * .92, '#B9B4AA', 600)
+            elif mark in ('+ ', 'x '):
+                add = mark == '+ ';n = sum(1 for l, _ in rows[:rows.index((line, k))] if l[:2] in ('+ ', 'x ')) + 12
+                body += rect(lx + size * 1.2, yy - size * .98, w - 52 - size * 1.2, size * 1.3, '#23482A' if add else '#5A2424', 3)
+                body += txt(str(n), lx + size * 1.05, yy, size * .8, '#7D7A73', 600, 'end') + txt('+' if add else '-', lx + size * 1.5, yy, size, '#7FD08A' if add else '#F08A8A', 800)
+                body += txt(shown, lx + size * 2.3, yy, size * .92, '#DDF5DF' if add else '#F7DADA', 600)
+            elif mark in ('[ ] ', '[x] '):
+                ticked = mark == '[x] ' and k >= 1;bs = size * .78;bx0 = lx + size * 1.3
+                body += rect(bx0, yy - bs * 1.05, bs, bs, 'none', 2, '#B9B4AA', 2)
+                if ticked:body += path(f'M{bx0 + bs * .2:.1f} {yy - bs * .55:.1f}l{bs * .25:.1f} {bs * .28:.1f}l{bs * .45:.1f} -{bs * .6:.1f}', '#5FB85F', 3)
+                body += txt(shown, bx0 + bs * 1.5, yy, size * .92, '#8A867E' if ticked else '#F5F2EC', 600)
+                if ticked:body += rect(bx0 + bs * 1.5, yy - size * .33, len(shown) * size * .5, 2, '#8A867E')
+            elif mark == '? ':
+                ph = step * 3.05;py0 = yy - size * 1.05
+                body += rect(x + 18, py0, w - 36, ph, 'none', 8, accent, 2) + txt(shown, lx, py0 + size * 1.25, size, '#F5F2EC', 800)
+                for j, opt in enumerate(('1. Yes', '2. No')):
+                    oy = py0 + size * 1.25 + step * (j + 1) * .9;on = j == 0
+                    body += txt(('> ' if on else '  ') + opt, lx + size * .4, oy, size * .92, accent if on else '#B9B4AA', 800 if on else 600)
+                ly += step * 2.25
+            else:
+                body += txt(shown, lx, yy, size, '#D8D4CC', 600)
+            ly += step
+            if k < 1:break
+        if done <= 0 and typed > 0:
+            sy = area_top + ly;body += self.star(x + 26 + size * .35, sy - size * .35, size * .42, accent, turn) + txt('Thinking... (esc to interrupt)', x + 26 + size * 1.1, sy, size * .9, accent, 700)
+            ly += step
+        # Scroll a whole row at a time, as a terminal does, so no half-cut line sits under the welcome box.
+        over = ly - size * .6 - area_h;shift = math.ceil(over / step) * step if over > 0 else 0.0
+        out += self._clip(x + 4, area_top - 2, w - 8, area_h + 4, f'<g transform="translate(0 {-shift:.1f})">{body}</g>')
+        out += rect(bx, by, x + w - 14 - bx, box, 'none', 10, '#6E6A63', 2) + txt('>', bx + 14, by + box / 2 + 7, 20, '#9A968E', 800)
+        if done <= 0:out += rect(bx + 34, by + 9, 10, box - 18, '#F5F2EC')
+        out += txt(foot_l, bx + 4, y + h - 8, 13, '#7D7A73', 600) + txt(foot_r, x + w - 18, y + h - 8, 13, '#7D7A73', 600, 'end')
+        return out
+
+    def pr_view(self, p, c, typed, done):
+        """A pull request page in the style of a code host (plan-to-9 phase 1): the first line is the PR
+        title with an Open pill that turns Merged at the result, a tab row, then rows where '✓ ' (or '+ ') / 'x '
+        are passing and failing checks and '@name: text' a review comment with an avatar."""
+        x, y, w, h = self.screen(p);top = y + 44;lines = p.get('lines') or [];rows = self._shown(lines, typed);out = ''
+        if not rows or rows[0][1] <= 0:return out
+        title = rows[0][0];ts = min(26, (w - 60) / max(8, len(title) * .58))
+        out += txt(title[:max(1, int(len(title) * rows[0][1]))], x + 22, top + 14 + ts, ts, c['dark'], 900)
+        merged = done > 0;pill = 'Merged' if merged else 'Open';pc = '#8250DF' if merged else '#1F883D'
+        py = top + 26 + ts;out += rect(x + 22, py, 92, 28, pc, 14) + txt(pill, x + 68, py + 20, 16, '#FFFFFF', 800, 'middle')
+        out += txt(f'{max(0, len(lines) - 1)} checks, 2 reviewers', x + 126, py + 20, 15, '#6E7781', 600)
+        ty = py + 44
+        for i, (tab, tw) in enumerate((('Conversation', 118), ('Commits', 80), ('Checks', 70), ('Files changed', 120))):
+            tx = x + 22 + sum((118, 80, 70, 120)[:i]) + i * 10
+            if tx + tw > x + w - 10:break
+            out += txt(tab, tx, ty, 15, c['dark'] if i == 0 else '#6E7781', 800 if i == 0 else 600)
+            if i == 0:out += rect(tx - 4, ty + 9, tw, 3, '#FD8C73', 1)
+        out += rect(x + 14, ty + 13, w - 28, 1.5, '#D0D7DE')
+        size = min(19, (w - 90) / max(16, max((len(l) for l in lines[1:]), default=16) * .55), (y + h - 70 - ty - 24) / max(1, (len(lines) - 1) * 1.75));ly = ty + 24 + size
+        for line, k in rows[1:]:
+            if k <= 0:break
+            mark = line[:2] if line[:2] in ('+ ', 'x ', '✓ ') else ('@' if line.startswith('@') else '')
+            text = line[len(mark):] if mark != '@' else line;shown = text[:max(1, int(len(text) * k))];lx = x + 26
+            if mark in ('+ ', 'x ', '✓ '):
+                ok = mark != 'x ';col = '#1F883D' if ok else '#CF222E';cx, cy, r = lx + size * .5, ly - size * .35, size * .55
+                out += f'<circle cx="{cx:.1f}" cy="{cy:.1f}" r="{r:.1f}" fill="{col}"/>'
+                out += path(f'M{cx - r * .45:.1f} {cy:.1f}l{r * .32:.1f} {r * .35:.1f}l{r * .6:.1f} -{r * .7:.1f}', '#FFFFFF', 2.4) if ok else path(f'M{cx - r * .4:.1f} {cy - r * .4:.1f}l{r * .8:.1f} {r * .8:.1f}M{cx + r * .4:.1f} {cy - r * .4:.1f}l-{r * .8:.1f} {r * .8:.1f}', '#FFFFFF', 2.4)
+                out += txt(shown, lx + size * 1.5, ly, size, c['dark'], 700)
+            elif mark == '@':
+                who, _, said = shown.partition(':');bw = w - 52;cy0 = ly - size * 1.05
+                out += f'<circle cx="{lx + size * .55:.1f}" cy="{ly - size * .2:.1f}" r="{size * .6:.1f}" fill="{c["secondary"]}" stroke="{c["dark"]}" stroke-width="1.5"/>'
+                out += rect(lx + size * 1.5, cy0 - size * .15, bw - size * 1.5, size * 1.5, '#F6F8FA', 6, '#D0D7DE', 1.5)
+                out += txt(who.lstrip('@'), lx + size * 1.9, ly, size * .9, c['dark'], 900) + txt(said.strip(), lx + size * 1.9 + (len(who.lstrip('@')) + 1.2) * size * .58, ly, size * .9, '#424A53', 600)
+                ly += size * .25
+            else:
+                out += txt(shown, lx, ly, size, '#424A53', 600)
+            ly += size * 1.75
+        return out
+
+    def printed_text(self, p):
+        name = (p.get('agent') or self.AGENTS.get(p.get('logo') or '', ('',))[0]) if p['ui'] == 'cli' else None
+        return [t for t in [p.get('title'), *(p.get('lines') or []), *(p.get('pane') or []), p.get('cwd'), *(((p.get('stack') or {}).get('title'),) + tuple((p.get('stack') or {}).get('lines') or [])), p.get('result'), p.get('credit'), *(p.get('cards') or []), name] if t]
+
+    # Chrome each view draws besides its lines (title bar, welcome box, input, footer, tabs, pills).
+    CHROME = {'cli': 5, 'pr': 7, 'files': 2, 'note': 2, 'chat': 2, 'graph': 1, 'map': 6, 'terminal': 2, 'window': 2, 'browser': 3}
+
+    def detail(self, p):
+        """Pieces of UI on the screen: its lines, the open file's lines, the cards and the view's chrome
+        (scorecard line screen_detail; reference 09's product screens carry about 10 to 24)."""
+        return len(p.get('lines') or []) + len(p.get('pane') or []) + len(p.get('cards') or []) + (1 + len((p.get('stack') or {}).get('lines') or []) if p.get('stack') else 0) + self.CHROME.get(p['ui'], 1) + (1 if p.get('logo') else 0)
+
+    def cards(self, p, c, typed):
+        """Collage cards (Claudex cut 4 grade: reference 09 layers tilted paper cards over its screens):
+        up to two taped notes overhanging the screen edges, pasted on as the session types."""
+        x, y, w, h = self.screen(p);total = max(1, sum(len(l) for l in (p.get('lines') or [])));out = ''
+        # On the screen's top and bottom edges, clear of its lines, its mark and the result chip.
+        spots = ((x + w * .06, y - 46, -6), (x + w * .04, y + h + 2, 4))
+        for i, label in enumerate((p.get('cards') or [])[:2]):
+            k = min(1.0, max(0.0, (typed / total - (.35 + .3 * i)) * 6))
+            if k <= 0:continue
+            cw = len(label) * 17 + 44;cx, cy, ang = spots[i]
+            card = (rect(5, 7, cw, 58, '#000000', 6).replace('<rect', '<rect opacity=".2"') + rect(0, 0, cw, 58, '#FFF7E3', 6, c['dark'], 2.5)
+                    + rect(cw / 2 - 30, -10, 60, 20, c['accent'], 3).replace('<rect', '<rect opacity=".7"') + txt(label, cw / 2, 39, 28, c['dark'], 900, 'middle'))
+            out += g(card, cx, cy, ang * (2 - k), .9 + .1 * k, .9 + .1 * k, k)
+        return out
+
+    def stack(self, p, c, typed):
+        """A second window pasted behind the screen, offset up and out with its own tilt (plan-to-9 phase 2:
+        reference 09 layers the site, a price tag and the bill in one frame). It slides out from behind
+        the screen as the session starts typing."""
+        st = p.get('stack')
+        if not st:return ''
+        x, y, w, h = self.screen(p);total = max(1, sum(len(l) for l in (p.get('lines') or [])))
+        k = min(1.0, max(0.0, (typed / total - .05) * 5));k = k * k * (3 - 2 * k)
+        # Peeking out above the screen's top-right edge, no higher than the gap under the headline strip
+        # in a close shot (the host stands bottom right, the cards sit top left and bottom left).
+        sw, sh = w * .56, h * .6;sx = x + w * .5;sy = y - 118
+        lines = st.get('lines') or [];fs = min(20, (sw - 40) / max(10, max((len(l) for l in lines), default=10) * .56))
+        body = rect(6, 8, sw, sh, '#000000', 10).replace('<rect', '<rect opacity=".2"') + rect(0, 0, sw, sh, '#FFFDF7', 10, c['dark'], 3)
+        body += rect(0, 0, sw, 34, c['metal'], 10) + rect(0, 26, sw, 8, c['metal'])
+        body += ''.join(f'<circle cx="{16 + i * 14}" cy="17" r="4.5" fill="{col}"/>' for i, col in enumerate(('#FF6159', '#FFBD2E', '#28C941')))
+        body += txt(st.get('title') or '', 62, 24, 16, c['dark'], 800)
+        for i, line in enumerate(lines[:5]):
+            head = line.startswith('#');ly = 34 + 14 + fs + i * fs * 1.5
+            body += txt(line.lstrip('# ') if head else line, 16, ly, fs * (1.1 if head else 1), c['dark'], 900 if head else 600)
+        return g(body, sx - (1 - k) * sw * .4, sy + (1 - k) * 100, 4 - 3 * (1 - k), .85 + .15 * k, 1, min(1.0, k * 1.5))
 
     def chat_view(self, p, c, typed, done):
         """An assistant chat: the first line is the question (right bubble), the rest the answer (left),
@@ -376,18 +588,21 @@ class AppScreen(Rig):
 
     def draw(self, p, pose, c):
         start, end, action, t = pose;tc = self.contact_t('run') if action else 0
-        total = sum(len(l) for l in (p.get('lines') or []))
+        total = sum(len(l) for l in (p.get('lines') or []) + (p.get('pane') or []))
         # The screen is already full on the first frame and finishes fast (cut 5 review: the terminal
         # read "> cd sec" and the chat sat half blank for most of their shots). A chat's answer is the
         # result, so it appears only after the question is sent.
         lines = p.get('lines') or []
         if action and p['ui'] == 'chat' and lines:
             q = len(lines[0]);typed = q * min(1.0, .5 + t / max(1e-6, tc)) if t < tc else q + (total - q) * min(1.0, t_after(t, tc) * 4)
+        elif action and p['ui'] in ('cli', 'pr', 'files', 'terminal'):
+            # Dense screens keep typing up to the contact so the software moves all through the shot (plan-to-9 phase 1).
+            typed = total * min(1.0, .3 + .7 * t / max(1e-6, tc))
         elif action:typed = total * min(1.0, .4 + .6 * t / max(1e-6, tc * .6))
         if action:done = 0.0 if t < tc else min(1.0, .55 + .45 * ease(t_after(t, tc) * 3)) + settle(t_after(t, tc), .08)
         else:typed, done = (total, 1.0) if start == 'done' else (0, 0.0)
         if p.get('prefilled'):typed = total
-        body = self.device(p, c) + self.ui(p, c, typed, done)
+        body = self.stack(p, c, typed) + self.device(p, c) + self.ui(p, c, typed, done) + self.cards(p, c, typed)
         if p.get('send_to'):
             k = (min(1.0, t_after(t, tc) * 1.5) if t >= tc else 0.0) if action else (1.0 if start == 'done' else 0.0)
             body += self.usb(p, c, k >= 1)
@@ -404,14 +619,17 @@ class AppScreen(Rig):
 
 
 register(AppScreen(
-    name='app-screen', description='The product in use: a monitor, laptop or phone showing a Motif-drawn terminal, app window, browser page or street map (lines become map pins); the brief\'s lines type in, the cursor presses run and the result pops. send_to puts a USB stick in front and the file flies into it; credit adds a corner attribution; prefilled starts with the lines already in. Demos, commands, settings, checkboxes, downloads.',
+    name='app-screen', description='The product in use: a monitor, laptop or phone showing a Motif-drawn terminal, coding-agent session (cli: > prompt, * action, - result, + / x diff, [ ] / [x] todo, ? permission), pull request (pr: title, then ✓ / x checks and @name: comments), file tree (files, with pane = the open file), stack = a second window pasted behind, app window, browser page or street map (lines become map pins); the brief\'s lines type in, the cursor presses run and the result pops. send_to puts a USB stick in front and the file flies into it; credit adds a corner attribution; prefilled starts with the lines already in. Demos, commands, settings, checkboxes, downloads.',
     params_schema={'type': 'object', 'properties': {
-        'device': {'enum': ['monitor', 'laptop', 'phone']}, 'ui': {'enum': ['terminal', 'window', 'browser', 'map', 'files', 'note', 'graph', 'chat']},
-        'title': {'type': 'string', 'maxLength': 26}, 'lines': {'type': 'array', 'items': {'type': 'string', 'maxLength': 34}, 'minItems': 1, 'maxItems': 7},
+        'device': {'enum': ['monitor', 'laptop', 'phone']}, 'ui': {'enum': ['terminal', 'window', 'browser', 'map', 'files', 'note', 'graph', 'chat', 'cli', 'pr']},
+        'stack': {'type': ['object', 'null'], 'properties': {'title': {'type': 'string', 'maxLength': 20}, 'lines': {'type': 'array', 'items': {'type': 'string', 'maxLength': 30}, 'maxItems': 5}}, 'additionalProperties': False},
+        'pane': {'type': 'array', 'items': {'type': 'string', 'maxLength': 34}, 'maxItems': 10}, 'cwd': {'type': ['string', 'null'], 'maxLength': 24},
+        'agent': {'type': ['string', 'null'], 'maxLength': 16}, 'cards': {'type': 'array', 'items': {'type': 'string', 'maxLength': 18}, 'maxItems': 2},
+        'title': {'type': 'string', 'maxLength': 26}, 'lines': {'type': 'array', 'items': {'type': 'string', 'maxLength': 34}, 'minItems': 1, 'maxItems': 12},
         'result': {'type': 'string', 'maxLength': 14}, 'button': {'type': ['string', 'null'], 'maxLength': 8}, 'logo': {'type': ['string', 'null']},
         'send_to': {'type': ['string', 'null'], 'maxLength': 6}, 'credit': {'type': ['string', 'null'], 'maxLength': 34}, 'prefilled': {'type': 'boolean'}},
         'required': ['device', 'ui', 'lines'], 'additionalProperties': False},
-    defaults={'device': 'monitor', 'ui': 'terminal', 'title': 'Terminal', 'lines': ['run the thing'], 'result': 'DONE', 'button': None, 'logo': None, 'send_to': None, 'credit': None, 'prefilled': False},
+    defaults={'device': 'monitor', 'ui': 'terminal', 'title': 'Terminal', 'lines': ['run the thing'], 'result': 'DONE', 'button': None, 'logo': None, 'send_to': None, 'credit': None, 'prefilled': False, 'agent': None, 'cards': [], 'pane': [], 'cwd': None, 'stack': None},
     states=('idle', 'done'),
     actions={'run': Action('run', 'idle', 'done', 60, 'cursor-press', 30)},
     bot_slot={'x': 300, 'y': 0, 'scale': .24, 'role': 'watches the screen and reacts to the result'},

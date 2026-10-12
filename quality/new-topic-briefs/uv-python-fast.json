@@ -1,0 +1,275 @@
+{
+  "slug": "uv-python-fast",
+  "title": "uv makes Python installs fast",
+  "topic": "uv, the Python package and project manager written in Rust",
+  "format": "short",
+  "seed": 73,
+  "mascot": "lumo",
+  "look": "candy-pastel",
+  "voice": "af_bella",
+  "brand": {
+    "slug": "uv"
+  },
+  "hook": {
+    "alternates": [
+      "Your Python script won't run on a new laptop? One tool fixes that."
+    ],
+    "selected": 0,
+    "headline": "YOUR SCRIPT WON'T RUN?",
+    "headline_b": "ONE TOOL FIXES IT",
+    "visual": {
+      "rig": "app-screen",
+      "params": {
+        "device": "laptop",
+        "ui": "terminal",
+        "title": "~/scripts",
+        "lines": [
+          "$ python weather.py",
+          "Traceback (most recent call last):",
+          "  File \"weather.py\", line 1",
+          "    import requests",
+          "ModuleNotFoundError: No module",
+          "  named 'requests'"
+        ],
+        "result": "BROKEN"
+      },
+      "room": "office",
+      "palette": "lilac/peach",
+      "framing": "close",
+      "brand": null
+    }
+  },
+  "facts": [
+    {
+      "id": "f1",
+      "claim": "uv is an extremely fast Python package and project manager, written in Rust, 10-100x faster than pip",
+      "value": "10-100x",
+      "source_url": "https://github.com/astral-sh/uv",
+      "accessed": "2026-10-12"
+    },
+    {
+      "id": "f2",
+      "claim": "uv is a single tool to replace pip, pip-tools, pipx, poetry, pyenv, twine, virtualenv, and more",
+      "value": "one tool",
+      "source_url": "https://github.com/astral-sh/uv",
+      "accessed": "2026-10-12"
+    },
+    {
+      "id": "f4",
+      "claim": "uv automatically downloads missing Python versions as needed, so you do not need to install Python to get started",
+      "value": "Python versions",
+      "source_url": "https://docs.astral.sh/uv/guides/install-python/",
+      "accessed": "2026-10-12"
+    },
+    {
+      "id": "f5",
+      "claim": "uv is disk-space efficient, with a global cache for dependency deduplication",
+      "value": "global cache",
+      "source_url": "https://docs.astral.sh/uv/concepts/cache/",
+      "accessed": "2026-10-12"
+    },
+    {
+      "id": "f6",
+      "claim": "uv add --script writes inline dependency metadata into a script, and uv run creates an environment with those dependencies",
+      "value": "inline metadata",
+      "source_url": "https://docs.astral.sh/uv/guides/scripts/",
+      "accessed": "2026-10-12"
+    }
+  ],
+  "beats": [
+    {
+      "id": "tools",
+      "narration": "Normally you'd juggle pyenv, virtualenv and pip. uv does all three jobs.",
+      "fact": "f2",
+      "relation": "demo",
+      "headline": "3 TOOLS, 1 COMMAND EACH",
+      "payoff_headline": "ONE TOOL REPLACES 3",
+      "visual": {
+        "rig": "app-screen",
+        "params": {
+          "device": "monitor",
+          "ui": "terminal",
+          "title": "~/scripts",
+          "logo": "uv",
+          "lines": [
+            "# was: pyenv install 3.13",
+            "$ uv python install 3.13",
+            "Installed Python 3.13",
+            "# was: python -m venv .venv",
+            "$ uv venv",
+            "Creating virtual environment",
+            "# was: pip install rich",
+            "$ uv pip install rich",
+            "Installed 4 packages"
+          ],
+          "result": "3 IN 1",
+          "cards": [
+            "NO PYENV",
+            "NO PIP"
+          ],
+          "stack": {
+            "title": "pip freeze",
+            "lines": [
+              "markdown-it-py",
+              "mdurl",
+              "pygments",
+              "rich"
+            ]
+          }
+        },
+        "room": "bakery",
+        "palette": "lilac/dusk-teal",
+        "act": "cheers",
+        "entrance": "slide"
+      }
+    },
+    {
+      "id": "deps",
+      "narration": "First, uv add writes the packages your script needs right into the file.",
+      "fact": "f6",
+      "relation": "demo",
+      "headline": "UV ADD --SCRIPT",
+      "payoff_headline": "PACKAGES INSIDE THE FILE",
+      "visual": {
+        "rig": "app-screen",
+        "params": {
+          "device": "monitor",
+          "ui": "files",
+          "title": "scripts",
+          "logo": "uv",
+          "lines": [
+            "scripts/",
+            "  clean.py",
+            "  report.py",
+            "  weather.py"
+          ],
+          "pane": [
+            "# /// script",
+            "# requires-python = \">=3.13\"",
+            "# dependencies = [",
+            "#   \"requests\",",
+            "#   \"rich\",",
+            "# ]",
+            "# ///",
+            "import requests",
+            "import rich"
+          ],
+          "result": "ADDED",
+          "cards": [
+            "REQUESTS",
+            "RICH"
+          ],
+          "stack": {
+            "title": "terminal",
+            "lines": [
+              "uv add --script weather.py",
+              "  requests rich",
+              "Updated weather.py"
+            ]
+          }
+        },
+        "room": "living-room",
+        "palette": "lilac/slate",
+        "act": "types",
+        "entrance": "pop"
+      }
+    },
+    {
+      "id": "speed",
+      "narration": "It installs them ten to a hundred times faster than pip, because it's written in Rust.",
+      "fact": "f1",
+      "relation": "race",
+      "headline": "10-100X FASTER THAN PIP",
+      "payoff_headline": "WRITTEN IN RUST",
+      "visual": {
+        "rig": "race-track",
+        "params": {
+          "labels": [
+            "PIP",
+            "UV"
+          ],
+          "progress": [
+            0.12,
+            1.0
+          ]
+        },
+        "room": "stage",
+        "palette": "mint-coral/mauve",
+        "act": "gasps",
+        "entrance": "drop"
+      }
+    },
+    {
+      "id": "cache",
+      "narration": "Every script shares one cache, so a package never downloads twice.",
+      "fact": "f5",
+      "relation": "attract",
+      "headline": "1 CACHE FOR EVERY SCRIPT",
+      "payoff_headline": "NOTHING DOWNLOADS TWICE",
+      "visual": {
+        "rig": "magnet-pull",
+        "params": {
+          "count": 5,
+          "item": "SCRIPT",
+          "label": "1 CACHE"
+        },
+        "room": "diner",
+        "palette": "peach/ink-navy",
+        "act": "inspects",
+        "entrance": "walk"
+      }
+    },
+    {
+      "id": "run",
+      "narration": "Then uv run even fetches the right Python, and your script just runs.",
+      "fact": "f4",
+      "relation": "demo",
+      "headline": "UV RUN FETCHES PYTHON 3.13",
+      "payoff_headline": "WEATHER.PY RUNS",
+      "visual": {
+        "rig": "app-screen",
+        "params": {
+          "device": "laptop",
+          "ui": "terminal",
+          "title": "~/scripts",
+          "logo": "uv",
+          "lines": [
+            "$ uv run weather.py",
+            "Downloading cpython-3.13",
+            "Installed Python 3.13",
+            "Resolved 9 packages",
+            "Installed 9 packages",
+            "Sunny, 21 C",
+            "$ uv run weather.py",
+            "Sunny, 21 C"
+          ],
+          "result": "IT RUNS",
+          "cards": [
+            "PYTHON 3.13"
+          ],
+          "stack": {
+            "title": "weather.py",
+            "lines": [
+              "# /// script",
+              "# dependencies = [",
+              "#   \"requests\", \"rich\"",
+              "# ]"
+            ]
+          }
+        },
+        "room": "street",
+        "palette": "lilac/mustard",
+        "act": "smug",
+        "entrance": "slide"
+      }
+    }
+  ],
+  "cta": {
+    "keyword": "UV",
+    "narration": "Comment UV and I'll send you the setup.",
+    "headline_b": "GET THE SETUP"
+  },
+  "carry": {
+    "label": "weather.py"
+  }
+}

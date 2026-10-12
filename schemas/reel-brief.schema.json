@@ -72,6 +72,20 @@
             },
             "palette": {
               "type": "string"
+            },
+            "brand": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "description": "The hook's product mark when it differs from the film's (null: none, e.g. a hook about the problem before the product)."
+            },
+            "framing": {
+              "enum": [
+                "wide",
+                "close"
+              ],
+              "description": "close: the hook opens big on the acting part (a product screen); default wide."
             }
           },
           "required": [
@@ -184,6 +198,13 @@
               "palette": {
                 "type": "string"
               },
+              "framing": {
+                "enum": [
+                  "wide",
+                  "close"
+                ],
+                "description": "close: the camera holds in on the acting part (Rig.focus close) and the host stands small in front; default close on app-screen, wide elsewhere."
+              },
               "hold": {
                 "type": "boolean",
                 "description": "Keep the machine in its start state through the beat; a later beat shows the change."
@@ -194,6 +215,27 @@
                   "null"
                 ],
                 "description": "This beat's product mark when it differs from the film's (null: none)."
+              },
+              "act": {
+                "enum": [
+                  "cheers",
+                  "gasps",
+                  "inspects",
+                  "shrugs",
+                  "smug",
+                  "stamps",
+                  "types"
+                ],
+                "description": "The host's act this beat (motif_acts): how it works the machine, hits on the contact and reacts. Default: by relation."
+              },
+              "entrance": {
+                "enum": [
+                  "walk",
+                  "pop",
+                  "drop",
+                  "slide"
+                ],
+                "description": "How the host arrives in the set. Default: rotates by beat."
               }
             }
           },
@@ -293,6 +335,21 @@
       ],
       "default": "bot",
       "description": "The film's host character (scripts/motif_mascots.py). Same poses, cycles, faces and costumes as Bot."
+    },
+    "carry": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "label"
+      ],
+      "properties": {
+        "label": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 14
+        }
+      },
+      "description": "The film's one object, carried by the host through every set as a labelled card and thrown into the product screens (AGENTS.md: story first)."
     }
   }
 }

@@ -4333,6 +4333,54 @@
    },
    "pixel_sha256": "c83cc2d61f6f8181da3b6fe61e43c0b3222a7025d9bcfa51833402d6f569630d",
    "path": "assets/materials/motif-v1-1024/crumpled.webp"
+  },
+  {
+   "id": "brand/simple-icons/openai",
+   "sha256": "2b4a04ddc2395b20d168694d3850ce2050a702c4a0cdeb4d8b31b9a970481a8c",
+   "origin": "licensed",
+   "generator": "npm simple-icons@13.21.0 icons/openai.svg",
+   "approval": {
+    "status": "APPROVED",
+    "by": "policy",
+    "date": "2026-10-09",
+    "note": "Nominative use of the product mark to identify the subject of the reel; icon data CC0 from simple-icons."
+   },
+   "path": "assets/brands/simple-icons/openai.svg",
+   "license": "CC0-1.0 icon data; trademark of its owner, nominative use",
+   "source_url": "https://openai.com/brand",
+   "evidence": "assets/brands/simple-icons/LICENSE.md"
+  },
+  {
+   "id": "brand/simple-icons/github",
+   "sha256": "3bf8cceead820aec50d4ee825a3fd02c5a1cd6665cc9cf4cbf3d9c8861a204bb",
+   "origin": "licensed",
+   "generator": "npm simple-icons@13.21.0 icons/github.svg",
+   "approval": {
+    "status": "APPROVED",
+    "by": "policy",
+    "date": "2026-10-12",
+    "note": "Nominative use of the product mark to identify the subject of the reel; icon data CC0 from simple-icons."
+   },
+   "path": "assets/brands/simple-icons/github.svg",
+   "license": "CC0-1.0 icon data; trademark of its owner, nominative use",
+   "source_url": "https://github.com/logos",
+   "evidence": "assets/brands/simple-icons/LICENSE.md"
+  },
+  {
+   "id": "brand/simple-icons/uv",
+   "sha256": "5ad031d1a80f9be4e9e1e2aa24bc76117284e5486a306de5b92c8c1777d5f38d",
+   "origin": "licensed",
+   "generator": "npm simple-icons@13.21.0 icons/uv.svg",
+   "approval": {
+    "status": "APPROVED",
+    "by": "policy",
+    "date": "2026-10-12",
+    "note": "Nominative use of the product mark to identify the subject of the reel; icon data CC0 from simple-icons."
+   },
+   "path": "assets/brands/simple-icons/uv.svg",
+   "license": "CC0-1.0 icon data; trademark of its owner, nominative use",
+   "source_url": "https://docs.astral.sh/uv/",
+   "evidence": "assets/brands/simple-icons/LICENSE.md"
   }
  ]
 }

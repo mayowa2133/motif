@@ -84,3 +84,11 @@ proven on old films and a library change breaks nothing.
 | L026 motion events | cut 6 vs references (0.6 picture changes/s vs 0.7-1.9) | motion stage reports the rates (gate removed by L027) |
 | L027 smooth camera | Mayowa on cut 7 (snap zooms looked choppy) | snap framings removed; brief rule: eased camera, scene events over camera cuts |
 | L028 lively objects, bigger host | cut 6 review (objects glide, host a sixth of frame) | impact squash + confetti at contacts, page slap overshoot; host lane and floor .36 |
+| L029 one mark per product | Claudex cut 1 (sticker doubled the desk badge) | compiler skips the sticker and hook badge when the machine draws the mark |
+| L030 check sees split headlines | Claudex cut 1 (check PASS, run failed L010 on the hook) | check splits hook and CTA headlines; CTA headline_b may not repeat COMMENT |
+| L031 numbers in names | Claudex cut 1 (GPT-6 and a bare comma read as numbers) | planner counts only standalone numbers |
+| L032 approved look | Mayowa on Claudex cut 1 ("I don't like the transitions") | every look keeps the hard cut, taped strip and paper finish; a gate fails a look that uses a rejected style |
+| L033 shot variety | Claudex cut 3 grade (six of twelve frames the same two-desk wide shot; product small) | planner flips framing to avoid repeats, product screens framed close with a small host; gate fails a repeated composition |
+| L034 host acts | Claudex cut 6 grade (Bot helped, the reference character performs) | acting library (motif_acts): a named act per beat with wind-up, hit and held reaction, plus an entrance; gate fails a repeated or unknown act or a standing hold over 1 s |
+| L035 layered product | Claudex cut 6 grade (one object per frame; reference 09 layers 2 to 4) | app-screen stack window behind plus taped cards; warns on a close product screen with fewer than two pieces |
+| L036 framing and end card | uv film grade (race track framed close read as a slab; a 12-word CTA held 2 of 12 frames) | Rig.close_framing (race-track stays wide), the planner keeps the hook pair's framing; warns on a CTA over 10 words |

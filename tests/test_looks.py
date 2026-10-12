@@ -25,8 +25,11 @@ class LookTests(unittest.TestCase):
             self.assertTrue(all(known(n) for n in looks.LOOKS[a]['palettes']), a)
             for b in names:
                 if a < b:
-                    same = [k for k in looks.FEATURES if looks.LOOKS[a][k] == looks.LOOKS[b][k]]
-                    self.assertLessEqual(len(same), 1, f'{a} and {b} share {same}')
+                    # Transitions and headlines are fixed by Mayowa's approved base (lesson L032); looks
+                    # differ in the rest of their staging.
+                    free = [k for k in looks.FEATURES if k not in ('transition', 'headline')]
+                    differ = [k for k in free if looks.LOOKS[a][k] != looks.LOOKS[b][k]]
+                    self.assertGreaterEqual(len(differ), 2, f'{a} and {b} differ only in {differ}')
                     self.assertFalse(set(looks.LOOKS[a]['palettes']) & set(looks.LOOKS[b]['palettes']), f'{a} and {b} share palettes')
 
     def test_scene_palettes_rotate_inside_the_family(self):
@@ -58,7 +61,9 @@ class LookTests(unittest.TestCase):
         base = json.loads(looks.FINISH_V1.read_text())
         with tempfile.TemporaryDirectory() as tmp:
             style = json.loads(Path(looks.finish_style('neon-arcade', Path(tmp) / 's.json')).read_text())
-        self.assertEqual(style['materials'], base['materials']);self.assertNotEqual(style['vignette'], base['vignette'])
+        # Every look gets the approved paper finish (L018, L032): crumpled material over the base surface.
+        self.assertEqual(style['materials']['surface'], base['materials']['surface'])
+        self.assertEqual(style['materials']['overlay'], 'motif-v1-1024/crumpled');self.assertNotEqual(style['vignette'], base['vignette'])
 
 
 class VarietyTests(unittest.TestCase):

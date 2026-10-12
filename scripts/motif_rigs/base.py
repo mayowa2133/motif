@@ -71,6 +71,25 @@ class Rig:
         carried forward and keep its colours (lesson L009). None: not a carried object."""
         return self.name
 
+    # Whether a close framing still reads (uv film grade: the race track framed close was a dark slab
+    # of track with the racers cut off). A machine whose story is its whole length stays wide.
+    close_framing = True
+
+    def focus(self, p, role):
+        """Point (local units) the camera eases in on during a shot with this role, or None to stay
+        wide. A wide machine uses it so the part that is acting reads big (Claudex cut 2 review).
+        Role 'close' returns (x, y, span): the point a close framing centres and the width it fills;
+        by default the machine's contact (where the change happens) and 60% of its width."""
+        if role != 'close' or not self.close_framing:return None
+        action = next(iter(self.actions));(x, y), _ = self.contacts(p, (action, self.contact_t(action)))[self.actions[action].contact]
+        return (x, y, max(280.0, .6 * self.footprint[2]))
+
+    def host_track(self, p, pose):
+        """Where the host walks during this pose: (x in local units, moving, facing) or None to keep
+        its slot. A machine whose object travels uses it so the host carries the object (Claudex
+        cut 5 grade: on the desk beats Bot only stood and pointed)."""
+        return None
+
     def params(self, values=None):
         merged = {**copy.deepcopy(self.defaults), **(values or {})}
         Draft202012Validator(self.params_schema).validate(merged)

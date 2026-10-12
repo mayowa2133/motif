@@ -694,7 +694,10 @@ def solve(room, rig_name, values=None, palette=None, seed=0, beat=0, costume=Non
     from motif_lessons import hero_labels
     labels = [t['box'] for pose in ('contact', 'end') for t in hero_labels({'hero': {**hero, 'values': values or {}}, 'palette': palette}, pose)]
     bx, by, bscale, side = bot_placement(rig, hero, hero_box);half = BOT_HALF * bscale
-    bx, side, shrink = front_spot(bx, side, half, hero_box, labels);bscale = max(BOT_MIN, bscale * shrink);half = BOT_HALF * bscale
+    # A machine with stations the host must not stand in front of (review-loop's two desks, Claudex cut 1
+    # review: Bot hid the planner's desk) lists them as keep_clear boxes in its own units.
+    clear = [_box(hero['x'], FLOOR, hero['scale'], b) for b in rig.bot_slot.get('keep_clear', ())]
+    bx, side, shrink = front_spot(bx, side, half, hero_box, labels + clear);bscale = max(BOT_MIN, bscale * shrink);half = BOT_HALF * bscale
     bot_box = (bx - half, by - 4.2 * half, 2 * half, 4.2 * half)
     pool = list(ROOMS[room]['dressing']);rng.shuffle(pool)
     roles = ['edge', 'overlap', 'back', 'back'][:max(2, min(4, count))];placed = []

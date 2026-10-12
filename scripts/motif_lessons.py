@@ -240,7 +240,76 @@ def check_label_collision(project, plan, layouts):
     return out
 
 
+def check_approved_look(project, plan, layouts):
+    """The film's look keeps every style Mayowa approved: hard cuts, an eased camera, the taped strip
+    headline and paper captions (Claudex cut 1: primary-pop brought back wipes and snap zooms)."""
+    from motif_looks import unapproved
+    look = (plan or {}).get('look')
+    return [{'where': 'film', 'detail': d} for d in unapproved(look)] if look else []
+
+
+def check_shot_variety(project, plan, layouts):
+    """Consecutive beats never share a composition: the same machine at the same framing (Claudex cut 3
+    grade: six of twelve frames were the same two-desk wide shot; the references change the shot every idea)."""
+    from motif_reel import composition
+    out, prev, prev_kind = [], None, None
+    for beat in (plan or {}).get('beats', []):
+        shot = next((s for s in beat.get('shots', []) if s.get('rig')), None)
+        key = composition(shot) if shot else None
+        # The hero-first hook previews the first claim's machine on purpose; that pair is exempt.
+        if key and key == prev and prev_kind != 'hook':out.append({'where': beat['id'], 'detail': f'{key[0]} {key[1]} again: change the framing (visual.framing) or the machine'})
+        prev, prev_kind = key, beat.get('kind')
+    return out
+
+
+def check_host_acts(project, plan, layouts):
+    """The host performs in every claim beat (plan-to-9 phase 2; Claudex cut 6 grade: Bot helped, the
+    reference character performs): a known act, never the previous beat's, and no plain standing
+    pose held for more than a second."""
+    from motif_acts import ACTS, ENTRANCES, standing_run
+    out, prev = [], None
+    for beat in (plan or {}).get('beats', []):
+        if beat.get('kind') != 'claim':continue
+        bot = (beat.get('shots') or [{}])[0].get('bot') or {}
+        act, entrance = bot.get('act'), bot.get('entrance', 'walk')
+        if act not in ACTS:out.append({'where': beat['id'], 'detail': f'host act {act!r} unknown: pick one of {sorted(ACTS)} (visual.act)'});prev = act;continue
+        if act == prev:out.append({'where': beat['id'], 'detail': f'host does {act} again: give this beat a different visual.act'})
+        if entrance not in ENTRANCES:out.append({'where': beat['id'], 'detail': f'entrance {entrance!r} unknown: {list(ENTRANCES)}'})
+        elif standing_run(act, entrance) > 30:out.append({'where': beat['id'], 'detail': f'{act} holds a plain standing pose over 1 s'})
+        prev = act
+    return out
+
+
+def check_layered_product(project, plan, layouts):
+    """Close product shots layer at least two pasted pieces (cards, a window behind) on the screen, as
+    reference 09 does with its site, price tag and bill (plan-to-9 phase 2)."""
+    from motif_reel import framing_of
+    out = []
+    for beat in (plan or {}).get('beats', []):
+        if beat.get('kind') != 'claim':continue
+        shot = next((s for s in beat.get('shots', []) if s.get('rig')), None)
+        if not shot or shot['rig']['id'] != 'app-screen' or framing_of(shot) != 'close':continue
+        p = shot['rig'].get('params') or {};pieces = len(p.get('cards') or []) + (1 if p.get('stack') else 0)
+        if pieces < 2:out.append({'where': beat['id'], 'detail': f'product screen layers {pieces} piece(s): add cards or a stack window (2 or more)'})
+    return out
+
+
+def check_cta_short(project, plan, layouts):
+    """The end card is a beat, not a scene: about two seconds of narration (uv film grade: a 12-word CTA
+    held 2 of 12 sampled frames; the references' 'Comment X' card holds about one)."""
+    out = []
+    for beat in (plan or {}).get('beats', []):
+        if beat.get('kind') == 'cta' and len(beat.get('narration', '').split()) > 10:
+            out.append({'where': beat['id'], 'detail': f'CTA narration is {len(beat["narration"].split())} words: keep it to 10 or fewer'})
+    return out
+
+
 CHECKS = {
+    'cta-short': check_cta_short,
+    'host-acts': check_host_acts,
+    'layered-product': check_layered_product,
+    'approved-look': check_approved_look,
+    'shot-variety': check_shot_variety,
     'label-collision': check_label_collision,
     'wall-variety': check_wall_variety,
     'headline-whole': check_headline_whole,
@@ -257,7 +326,7 @@ CHECKS = {
 
 
 # Checks that need only the plan, so `motif_reel.py check` runs them before any voice or render.
-PLAN_CHECKS = ('headline-openers', 'shared-object-palette', 'set-variety', 'headline-length', 'product-on-screen', 'headline-whole', 'wall-variety')
+PLAN_CHECKS = ('cta-short', 'host-acts', 'layered-product', 'approved-look', 'shot-variety', 'headline-openers', 'shared-object-palette', 'set-variety', 'headline-length', 'product-on-screen', 'headline-whole', 'wall-variety')
 
 
 def run(project, plan=None, layouts=None):

@@ -5,7 +5,7 @@ Motif turns a JSON brief into a narrated 2D paper-style short-form reel. A reel 
 library and gates the result. Never write per-film code, never hand-draw a frame,
 never copy a reference reel's characters, metaphors or layouts.
 
-## The loop in five commands
+## The loop in six commands
 
 ```bash
 python scripts/motif_reel.py catalog > /tmp/catalog.json     # 1. what a brief may name
@@ -14,6 +14,7 @@ python scripts/motif_reel.py check --brief BRIEF --allow-draft # 3. fast: script
 python scripts/motif_reel.py run --brief BRIEF --out RUNS \
     --tts-python <python with kokoro-onnx> --allow-draft --render  # 4. voice, compile, gate, render
 python scripts/motif_improve.py retro RUNS/<slug> [--feedback "what the reviewer said"]  # 5. learn
+python scripts/motif_scorecard.py RUNS/<slug>                   # 6. score against the references
 ```
 
 Repeat 3 until it prints `PASS` before you spend a render (a 45 s reel takes
@@ -35,17 +36,25 @@ quality bar). Copy the closest one and change it.
    second-brain reel's vault: a leaky brain, then a RAW crate, then a WIKI board
    that fills, answers and gets checked). Each beat is one change to it.
    Objects and consequences stay connected; a pretty metaphor that does not
-   demonstrate the claim is a failure.
+   demonstrate the claim is a failure. When the object is a file or a
+   thing the viewer owns (`weather.py`), set `"carry": {"label": ...}`: the
+   host carries it as a labelled card into every set and throws it into the
+   product screens.
 2. **Facts.** Every claim beat cites a fact with an http(s) `source_url`.
    Write narration in plain speech, about 3.7 words per second.
 3. **Format.** `"format": "short"` (default, 20-32 s, 4-6 beats) or `"long"`
    (30-62 s, 4-10 beats).
 4. **Show the product.** For a film about an app, put it on screen in at
-   least a third of the beats with `app-screen` views: `files` (folder tree),
-   `note` (Markdown page, `[[links]]` become chips), `graph` (one node per
-   line), `chat` (question, then an answer with `[n]` citations), `terminal`,
-   `window`, `browser`. Fill them with the film's real content: several lines
-   (a terminal with two commands looks empty), since screens start mostly typed.
+   least a third of the beats with `app-screen` views: `cli` (a coding agent's
+   session: `> ` prompt, `* ` action, `- ` result, `+ `/`x ` diff lines,
+   `[ ] `/`[x] ` todos, `? ` permission prompt; `logo` picks the agent's
+   chrome), `pr` (pull request: title, then `✓ `/`x ` checks and
+   `@name: text` reviews), `files` (folder tree; `pane` opens the last file
+   beside it), `note` (Markdown page, `[[links]]` become chips), `graph` (one
+   node per line), `chat` (question, then an answer with `[n]` citations),
+   `terminal`, `window`, `browser`. Fill them with the film's real content:
+   8 to 12 lines, as dense as the real product (the scorecard's
+   `screen_detail` line fails a screen emptier than the references).
 5. **A new set every beat.** Consecutive beats never share a room. Continuity
    comes from the object and the host travelling between sets, not from
    holding one room. Aim for about 30 s (35 s at most); cut beats rather than
@@ -53,7 +62,11 @@ quality bar). Copy the closest one and change it.
 6. **Visual hints.** Author them; the fallback planner reads generic. Per beat:
    `visual.rig` + `params` (labels use the claim's own nouns), `room`,
    `palette`, optional `insert`, `costume`, `brand`, `hold`. The hook can have
-   its own machine via `hook.visual`.
+   its own machine via `hook.visual`. Give the host an `act` (`types`,
+   `stamps`, `gasps`, `smug`, `shrugs`, `cheers`, `inspects`: never the same
+   twice in a row) and an `entrance` (`walk`, `pop`, `drop`, `slide`), and
+   layer close product screens with two pieces or more: `cards` and a `stack`
+   window behind (`{"title": ..., "lines": [...]}`).
 7. **Relation.** Each claim beat names a `relation` its machine can show
    (`catalog` lists `relations` and which machines show each).
 8. **Palettes.** One name, or `"object/room"` (e.g. `"lagoon/berry"`): the

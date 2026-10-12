@@ -37,6 +37,9 @@ import subprocess
 import wave
 from pathlib import Path
 
+from motif_acts import ACTS as HOST_ACTS, ENTRANCES, act_motion, default_act
+
+
 ROOT = Path(__file__).resolve().parents[1]
 FPS = 30
 PIN = '0.8.99'
@@ -113,7 +116,8 @@ def _short(text, limit=26):
 
 
 def _number(value):
-    m = re.search(r'(\$)?([\d,]+(?:\.\d+)?)\s*([kKmM%x]|\+)?', value or '')
+    # A number needs a digit ("plan, then audit" has only a comma) and must not be part of a name ("GPT-6").
+    m = re.search(r'(?<![A-Za-z\d-])(\$)?(\d[\d,]*(?:\.\d+)?)\s*([kKmM%x]|\+)?', value or '')
     if not m:return None
     n = float(m.group(2).replace(',', ''));suffix = (m.group(3) or '')
     return {'prefix': m.group(1) or '', 'value': int(n) if n == int(n) else n, 'suffix': suffix}
@@ -147,7 +151,7 @@ def plan_reel(brief, allow_draft=False, avoid_looks=()):
     cat = catalog(allow_draft);facts = {f['id']: f for f in brief['facts']};seed = brief.get('seed', 0)
     brand = (brief.get('brand') or {}).get('slug')
     look_id = motif_looks.choose(brief, avoid_looks);look = motif_looks.get(look_id)
-    palettes = motif_looks.palettes(look_id, len(brief['beats']) + 2, seed);used_rigs, rooms = [], []
+    palettes = motif_looks.palettes(look_id, len(brief['beats']) + 2, seed);used_rigs, rooms = [], [];last_act = None
     hook, _ = hook_line(brief)
     beats = []
 
@@ -186,12 +190,15 @@ def plan_reel(brief, allow_draft=False, avoid_looks=()):
         setup = b.get('headline') or _short(fact['claim'], 26);payoff = b.get('payoff_headline') or _short(fact.get('value') or b['narration'], 26)
         if payoff == setup:payoff = _short(b['narration'], 26)
         beat_brand = visual['brand'] if 'brand' in visual else brand
+        # The host's act and entrance (motif_acts, plan-to-9 phase 2): authored, else by relation, never repeating the last beat's.
+        act = visual.get('act') or default_act(relation, rig_id, last_act);last_act = act
+        entrance = visual.get('entrance') or ENTRANCES[(i + seed) % len(ENTRANCES)]
         if beat_brand != brand and 'logo' in _get_rig(rig_id).params_schema['properties'] and params.get('logo') == brand:params['logo'] = beat_brand
         beats.append({'id': b['id'], 'kind': 'claim', 'relation': relation, 'narration': b['narration'], 'fact': b['fact'], 'palette': visual.get('palette') or palettes[i + 1], 'shots': [
-            {'id': f'{b["id"]}-a', 'role': 'setup', 'headline': setup, 'headline_b': _short(b['narration'], 26), 'headline_b_cut': _clip(b['narration'], 26)[1], 'room': room, 'rig': {'id': rig_id, 'params': params, **({'hold': True} if visual.get('hold') else {})}, 'insert': None,
-             'bot': {'costume': costume, 'face': 'determined', 'pose': 'walking'}},
-            {'id': f'{b["id"]}-b', 'role': 'payoff', 'headline': payoff, 'headline_b': _short(fact['claim'], 26), 'headline_b_cut': _clip(fact['claim'], 26)[1], 'room': room, 'rig': {'id': rig_id, 'params': params, **({'hold': True} if visual.get('hold') else {})}, 'insert': insert,
-             'bot': {'costume': costume, 'face': 'surprised', 'pose': 'pointing'}}]})
+            {'id': f'{b["id"]}-a', 'role': 'setup', 'headline': setup, 'headline_b': _short(b['narration'], 26), 'headline_b_cut': _clip(b['narration'], 26)[1], 'room': room, 'rig': {'id': rig_id, 'params': params, **({'hold': True} if visual.get('hold') else {}), **({'framing': visual['framing']} if visual.get('framing') else {})}, 'insert': None,
+             'bot': {'costume': costume, 'face': 'determined', 'pose': 'walking', 'act': act, 'entrance': entrance}},
+            {'id': f'{b["id"]}-b', 'role': 'payoff', 'headline': payoff, 'headline_b': _short(fact['claim'], 26), 'headline_b_cut': _clip(fact['claim'], 26)[1], 'room': room, 'rig': {'id': rig_id, 'params': params, **({'hold': True} if visual.get('hold') else {}), **({'framing': visual['framing']} if visual.get('framing') else {})}, 'insert': insert,
+             'bot': {'costume': costume, 'face': 'surprised', 'pose': 'pointing', 'act': act, 'entrance': entrance}}]})
         if beat_brand != brand:
             for shot in beats[-1]['shots']:shot['brand'] = beat_brand
     # Hero-first opening (review item 5, round 2): the hook shows the first claim's machine
@@ -203,19 +210,21 @@ def plan_reel(brief, allow_draft=False, avoid_looks=()):
         # The hook's own machine: a film can open on the problem before its first step.
         from motif_rigs import get as _get_rig
         hp = dict(hook_visual.get('params', {}))
-        if brand and 'logo' in _get_rig(hook_visual['rig']).params_schema['properties'] and 'logo' not in hp:hp['logo'] = brand
-        beats[0]['shots'][0].update({'rig': {'id': hook_visual['rig'], 'params': hp}, 'insert': None, 'crowd': 0, 'grammar': 'hero'})
+        if brand and hook_visual.get('brand', brand) and 'logo' in _get_rig(hook_visual['rig']).params_schema['properties'] and 'logo' not in hp:hp['logo'] = brand
+        beats[0]['shots'][0].update({'rig': {'id': hook_visual['rig'], 'params': hp, **({'framing': hook_visual['framing']} if hook_visual.get('framing') else {})}, 'insert': None, 'crowd': 0, 'grammar': 'hero'})
         if hook_visual.get('palette'):beats[0]['palette'] = hook_visual['palette']
+        if 'brand' in hook_visual:beats[0]['shots'][0]['brand'] = hook_visual['brand']  # Claudex cut 3: no Claude badge on the self-grading model
     elif (brief.get('hook') or {}).get('hero', True):
         beats[0]['shots'][0].update({'rig': copy.deepcopy(first_claim['rig']), 'insert': None, 'crowd': 0, 'grammar': 'hero'})
     _assign_wallpapers(beats, seed)
+    _vary_framing(beats)
     _keep_object_palettes(beats, {b['id'] for b in brief['beats'] if (b.get('visual') or {}).get('palette')} | ({'hook'} if (hook_visual or {}).get('palette') else set()))
     cta_room = room_for('celebrate launch ' + brief['cta']['narration'], brief['cta'].get('room'))
     beats.append({'id': 'cta', 'kind': 'cta', 'narration': brief['cta']['narration'], 'palette': palettes[-1], 'shots': [
         {'id': 'cta', 'role': 'cta', 'headline': _short(f'COMMENT {brief["cta"]["keyword"]}', 28), 'headline_b': brief['cta'].get('headline_b') or _short(re.sub(r'[,.?!]?\s*comment\s+\S+\s*$', '', brief['cta']['narration'], flags=re.I), 28), 'headline_b_cut': not brief['cta'].get('headline_b') and _clip(re.sub(r'[,.?!]?\s*comment\s+\S+\s*$', '', brief['cta']['narration'], flags=re.I), 28)[1], 'room': cta_room, 'rig': None,
          'insert': {'kind': 'comment_end_card', 'args': {'keyword': brief['cta']['keyword']}}, 'bot': {'costume': ['party-hat'], 'face': 'excited', 'pose': 'celebrating' if look['cta'] != 'card' else 'pointing'},
          'crowd': 7 if look['cta'] == 'crowd' else 0, 'grammar': look['cta']}]})
-    plan = {'schema_version': 'reel-1.1', 'quality_mode': 'motif-gold-v1', 'slug': brief['slug'], 'seed': seed, 'look': look_id, 'brand': brand, 'mascot': brief.get('mascot', 'bot'), 'library': 'draft' if allow_draft else 'canonical', 'beats': beats, 'library_requests': [], 'warnings': default_label_warnings(beats)}
+    plan = {'schema_version': 'reel-1.1', 'quality_mode': 'motif-gold-v1', 'slug': brief['slug'], 'seed': seed, 'look': look_id, 'brand': brand, 'mascot': brief.get('mascot', 'bot'), 'carry': (brief.get('carry') or {}).get('label'), 'library': 'draft' if allow_draft else 'canonical', 'beats': beats, 'library_requests': [], 'warnings': default_label_warnings(beats)}
     return plan
 
 
@@ -250,6 +259,28 @@ def _assign_wallpapers(beats, seed):
         pick = min((w for w in order if w != prev), key=lambda w: (used.get(w, 0), order.index(w)))
         used[pick] = used.get(pick, 0) + 1;prev = pick
         for shot in beat['shots']:shot['wallpaper'] = pick
+
+
+def _vary_framing(beats):
+    """L033: consecutive beats never share a composition. Where a beat would repeat the previous one
+    (same machine at the same framing) and the brief did not choose its framing, flip it, when the
+    machine has a close spot (Rig.focus 'close'). Applies to setup and payoff alike."""
+    from motif_rigs import get as _get_rig
+    prev = prev_kind = None
+    for beat in beats:
+        shots = [s for s in beat['shots'] if s.get('rig')]
+        if not shots:prev = prev_kind = None;continue
+        r = shots[0]['rig'];key = composition(shots[0])
+        # The hero-first hook previews the first claim's shot on purpose (the check exempts that pair).
+        if key == prev and not r.get('framing') and beat.get('kind') != 'hook' and prev_kind != 'hook':
+            other = 'wide' if key[1] == 'close' else 'close'
+            rig = _get_rig(r['id'])
+            try:spot = rig.focus(rig.params(r.get('params') or None), 'close')
+            except Exception:spot = None  # bad params: the plan validator reports them
+            if other == 'wide' or spot:
+                for s in shots:s['rig'] = {**s['rig'], 'framing': other}
+                key = composition(shots[0])
+        prev, prev_kind = key, beat.get('kind')
 
 
 def _keep_object_palettes(beats, explicit):
@@ -427,6 +458,36 @@ def insert_piece(insert, c_name, u, frame):
     raise ValueError(f'unsupported insert {kind}')
 
 
+CLOSE_FILL = .86          # close framing: the subject's span fills this share of frame width
+CLOSE_ZOOM = (1.15, 1.9)  # and the camera zoom stays in this range
+CLOSE_TALL = 600          # and its height stays within this many pixels
+CLOSE_Y = 640             # where the close subject's centre sits (between headline and captions)
+CLOSE_TILT = 2.5          # degrees a close product screen leans, alternating by beat
+CLOSE_HOST = .27          # host scale in a close framing (about 20% of frame height)
+
+
+def framing_of(shot):
+    """'close' or 'wide': a beat's visual.framing, else close on product screens (the references
+    show the product big) and wide on machines."""
+    r = shot.get('rig') or {}
+    return r.get('framing') or ('close' if r.get('id') == 'app-screen' and shot.get('role') != 'hook' else 'wide')
+
+
+def composition(shot):
+    """What a viewer sees as 'the same shot again': the machine and its framing. Two different
+    product screens in a row are different shots (reference 09 runs several screens back to back)."""
+    r = shot.get('rig') or {};key = (r.get('id'), framing_of(shot))
+    if r.get('id') == 'app-screen':key += ((r.get('params') or {}).get('title'),)
+    return key
+
+
+def shot_index(shot):
+    return int(hashlib.sha256(shot['id'].split('-')[0].encode()).hexdigest()[:4], 16)
+
+
+FOCUS_ZOOM = .16  # how far a setup eases in on the acting part of a wide machine (Rig.focus)
+
+
 def camera(markup, zoom, cx, cy, dx=0.0, dy=0.0):
     """Per-piece camera so each top-level piece still moves independently."""
     if abs(zoom - 1) < 1e-6 and abs(dx) < 1e-6 and abs(dy) < 1e-6:return markup
@@ -476,13 +537,13 @@ def pop_in(markup, f, delay, anchor):
     return f'<g opacity="{o:.3f}" transform="translate({ax:.1f} {ay + dy:.1f}) scale({s:.4f}) translate({-ax:.1f} {-ay:.1f})">{markup}</g>'
 
 
-ACTS = {'app-screen': ('typing', 'pointing', 'inspecting'), 'knowledge-vault': ('pushing', 'pointing', 'pulling')}
+ACTS = {'app-screen': ('typing', 'pointing', 'inspecting'), 'knowledge-vault': ('pushing', 'pointing', 'pulling'), 'review-loop': ('pointing', 'inspecting', 'pushing')}
 
 
 # Machines the host feeds (cut 5 review: Memo stood and watched in 9 of 12 frames). In a setup shot the
 # host carries a note in, throws it into the machine's contact point so it lands on the contact, and a
 # puff marks the hit: host, object and consequence stay one action.
-CARRY = {'app-screen', 'knowledge-vault'}
+CARRY = {'app-screen', 'knowledge-vault'}  # not review-loop: its contacts are labels (a tab, a stamp), so a thrown note covered them (Claudex cut 1)
 
 
 def contact_age(f, fc, prev, hold):
@@ -517,8 +578,14 @@ def confetti(x, y, d, c, size=1.0, frames=18):
     return out
 
 
-def carried_note(x, y, angle, c, s=1.0):
-    """A paper note the host carries: a sticky square with three ink lines."""
+def carried_note(x, y, angle, c, s=1.0, label=None):
+    """A paper note the host carries: a sticky square with three ink lines, or the film's carried
+    object (brief.carry) as a file card with its name, so one object travels through every set."""
+    if label:
+        from motif_ui_components import card, g as group, txt
+        w = max(80, 14 * len(label) + 34);tab = c['pop'] if c['pop'] not in (c['light'], c['dark']) else c['accent']
+        return (f'<g transform="translate({x:.1f} {y:.1f}) rotate({angle:.1f}) scale({s:.3f})">'
+                + group(card(w, 50, c['light'], .08) + f'<rect x="0" y="0" width="12" height="50" fill="{tab}"/>' + txt(label, w / 2 + 6, 34, 24, c['dark'], 800, 'middle'), -w / 2, -25) + '</g>')
     lines = ''.join(f'<path d="M-20 {ly} H{w - 20}" stroke="{c["dark"]}" stroke-width="3.5" stroke-linecap="round"/>' for ly, w in ((-9, 40), (1, 32), (11, 24)))
     return (f'<g transform="translate({x:.1f} {y:.1f}) rotate({angle:.1f}) scale({s:.3f})">'
             f'<rect x="-29" y="-23" width="58" height="46" rx="3" fill="{c["pop"]}" stroke="{c["dark"]}" stroke-width="3.5"/>'
@@ -542,6 +609,13 @@ def bot_motion(role, u, f, n, tc, side, entering=True, acts=('pointing', 'presen
         hop = max(0.0, math.sin(min(1.0, u / .3) * math.pi)) * 40 + abs(math.sin(f * .26)) * 10 * (u > .3)
         return ('celebrating' if (f // 7) % 2 else 'presenting') if u > .2 else 'standing', 'excited', 7 * math.sin(f * .2) * (u > .3), -hop, 1.0, None
     return 'celebrating', 'excited', 0.0, -abs(math.sin(f * .2)) * 20, 1.0, None
+
+
+def rig_shows_mark(shot, brand):
+    """The machine already draws this product's mark (a logo param): a second sticker doubles it
+    (Claudex cut 1: the Claude sticker sat on top of the CLAUDE desk badge). Lesson L029."""
+    params = (shot.get('rig') or {}).get('params') or {}
+    return any(k.endswith('logo') and v == brand for k, v in params.items())
 
 
 def sticker_spot(layout, rig, half):
@@ -577,7 +651,7 @@ def shot_frames(shot, layout, seed, look='paper-craft', brand=None, prev=None, c
     from motif_rigs.base import ease, place
     from motif_rigs.palettes import palette
     import motif_looks
-    L = motif_looks.get(look);grammar = shot.get('grammar', 'crowd');brand = shot.get('brand', brand);M = shot.get('mascot', 'bot')
+    L = motif_looks.get(look);grammar = shot.get('grammar', 'crowd');brand = shot.get('brand', brand);M = shot.get('mascot', 'bot');carry = shot.get('carry')
     c = palette(shot['palette']);n = shot['frames'];room = ms.ROOMS[shot['room']]
     if shot.get('wallpaper'):c = {**c, 'wallpaper': shot['wallpaper']}
     rig = get_rig(shot['rig']['id']) if shot['rig'] else None
@@ -604,7 +678,19 @@ def shot_frames(shot, layout, seed, look='paper-craft', brand=None, prev=None, c
         # The payoff opens on the change itself: a puff where the machine made contact.
         h = layout['hero'];(lx, ly), _ = rig.contacts(h.get('values'), (action, tc))[rig.actions[action].contact]
         poof_at = (h['x'] + lx * h['scale'], h['y'] + ly * h['scale'])
-    carry_to = hit = None
+    carry_to = hit = focus = close = None
+    if rig and framing_of(shot) == 'close':
+        spot = rig.focus(rig.params(layout['hero'].get('values') or None), 'close')
+        if spot:
+            # Close framing (Claudex cut 3 grade): the product or the acting part fills the frame, the
+            # way the references open each idea on a big screen or object; the host stands small in front.
+            h = layout['hero'];fx_, fy_ = h['x'] + spot[0] * h['scale'], h['y'] + spot[1] * h['scale']
+            z = CLOSE_FILL * 720 / (spot[2] * h['scale'])
+            if len(spot) > 3:z = min(z, CLOSE_TALL / (spot[3] * h['scale']))  # a tall subject (a phone) fits between headline and captions
+            close = (fx_, fy_, min(CLOSE_ZOOM[1], max(CLOSE_ZOOM[0], z)))
+    if rig and not prev and not close:
+        spot = rig.focus(rig.params(layout['hero'].get('values') or None), shot['role'])
+        if spot:h = layout['hero'];focus = (h['x'] + spot[0] * h['scale'], h['y'] + spot[1] * h['scale'])
     if rig:
         h = layout['hero'];(lx, ly), _ = rig.contacts(h.get('values'), (action, tc))[rig.actions[action].contact]
         hit = (h['x'] + lx * h['scale'], h['y'] + ly * h['scale'])
@@ -621,13 +707,23 @@ def shot_frames(shot, layout, seed, look='paper-craft', brand=None, prev=None, c
         elif prev:
             pz, pdx, pdy = motif_looks.camera(L['camera'], prev[0], 1.0, prev[1] - 1, prev[1]);k = ease(min(1.0, f / 10))
             zoom, dx, dy = pz + (zoom - pz) * k, pdx + (dx - pdx) * k, pdy + (dy - pdy) * k
-        else:dy += motif_looks.slide_offset(L['transition'], f)
+        else:
+            dy += motif_looks.slide_offset(L['transition'], f)
+            if focus:
+                # Ease in on the part of the machine that is acting, never past the room's edges.
+                k = ease(min(1.0, u / .6));zoom += FOCUS_ZOOM * k;ccx = focus[0]
+                dx = min((zoom - 1) * ccx, max((1 - zoom) * (720 - ccx), dx + k * (360 - ccx)))
+        if close:
+            # Held close framing across setup and payoff: a slow push, the subject centred, room edges never shown.
+            zoom = close[2] * (1 + .03 * u + (.03 if prev else 0));ccx = close[0]
+            dx = min((zoom - 1) * ccx, max((1 - zoom) * (720 - ccx), 360 - ccx + 4 * math.sin(f * .07)))
+            dy = min((zoom - 1) * close[1], max((1 - zoom) * (1280 - close[1]), CLOSE_Y - close[1] + 3 * math.sin(f * .053)))
         if fc is not None and f >= fc:
             # Contact punch (2026-10-11 motion study): the references' frames change in sudden events
             # (11-25% of frames) where Motif eased everything (2%); the moment the machine makes contact
             # the camera kicks in and shakes for a few frames.
             k = math.exp(-(f - fc) / 3.5);zoom += .07 * k;dx += 9 * math.sin((f - fc) * 2.6) * k;dy += 5 * math.cos((f - fc) * 3.1) * k
-        fy = cy
+        fy = close[1] if close else (focus[1] if focus and not prev else cy)
         cam = lambda markup: camera(markup, zoom, ccx, fy, dx, dy)
         if dy > 0:pieces.append(f'<rect width="720" height="1280" fill="{L["transition_colour"]}"/>')
         pieces.append(cam(room['draw'](c)))
@@ -652,34 +748,65 @@ def shot_frames(shot, layout, seed, look='paper-craft', brand=None, prev=None, c
             # bounce where ours glided; Mayowa wants the camera smooth, so the energy lives in the object).
             sq = impact(f, fc, n, prev, hold)
             if sq:rock += 3.5 * sq
+            if close and rig.name == 'app-screen':rock += CLOSE_TILT * (1 if shot_index(shot) % 2 else -1)  # a pasted-on collage tilt
             hero = f'<g transform="translate({h["x"]:.1f} {h["y"]:.1f}) scale({1 + .55 * sq:.4f} {1 - sq:.4f}) rotate({rock:.3f}) translate({-h["x"]:.1f} {-h["y"]:.1f})">{hero}</g>'  # the machine rocks on its base
-            if brand and shot['role'] != 'hook':
+            if brand and shot['role'] != 'hook' and not rig_shows_mark(shot, brand):
                 from motif_brand import sticker
                 # The product's mark on the machine: the frame names its subject without the caption.
                 wob = 3 * math.sin(f * .3)
                 mark = f'<g transform="translate({sticker_at[0]:.1f} {sticker_at[1]:.1f})">{sticker(brand, 92, -8 + wob)}</g>'
                 hero += mark if prev else pop_in(mark, f, 2, sticker_at)
             hero_at = len(pieces);pieces.append(cam(boil(hero, f, f'{shot["id"]}-hero', .6)))
-            if prev and shot['role'] == 'payoff' and poof_at:pieces.append(cam(poof(*poof_at, f, c, h['scale'] * (.6 if rig.name == 'app-screen' else 1.1))))  # small on screens: the puff hid the answer
+            if prev and shot['role'] == 'payoff' and poof_at and not close:pieces.append(cam(poof(*poof_at, f, c, h['scale'] * (.6 if rig.name == 'app-screen' else 1.1))))  # small on screens: the puff hid the answer
             since = contact_age(f, fc, prev, hold)
             if since is not None and hit:pieces.append(cam(confetti(*hit, since, c, max(.8, h['scale'] * 1.4))))
         b = layout['bot'];bot = shot['bot']
         if rig:
             side = b.get('side', -1 if b['x'] < 360 else 1)
-            pose, face, bdx, bdy, squash, cycle = bot_motion(shot['role'], u, f, n, tc, side, entering=not prev, acts=ACTS.get(rig.name, ('pointing', 'presenting')))
+            if bot.get('act') in HOST_ACTS:pose, face, bdx, bdy, squash, cycle = act_motion(bot['act'], bot.get('entrance', 'walk'), shot['role'], u, f, n, tc, side, entering=not prev)
+            else:pose, face, bdx, bdy, squash, cycle = bot_motion(shot['role'], u, f, n, tc, side, entering=not prev, acts=ACTS.get(rig.name, ('pointing', 'presenting')))
             face = bot['face'] if shot['role'] == 'payoff' and face == 'excited' and bot.get('face') else face
+            track = None if close else rig.host_track(rig.params(h.get('values') or None), (action, t))
+            if track:
+                # The host carries the machine's travelling object (Rig.host_track).
+                tx_, moving, facing = track;b = {**b, 'x': h['x'] + tx_ * h['scale']};bdx = 0
+                if moving:pose, cycle, side = 'carrying-object', 'carry', facing
             body = dressed_bot(b['x'] + bdx, b['y'] + bdy, b['scale'], face, pose, bot['costume'], shot['palette'], flip=side > 0, cycle=cycle, phase=f / 10, head=round(4 * math.sin(f * .3)), mascot=M)
             if squash != 1:body = f'<g transform="translate({b["x"]:.1f} {b["y"]:.1f}) scale({2 - squash:.3f} {squash:.3f}) translate({-b["x"]:.1f} {-b["y"]:.1f})">{body}</g>'
-            if b.get('behind'):pieces.insert(hero_at, cam(body))  # squeezed onto a wide machine: peeks from behind it
+            if close:
+                # Small and in front of the big subject, outside the camera (refs: about 20% of frame height).
+                hx = 590 if side > 0 or rig.name == 'app-screen' else 130
+                body = dressed_bot(hx + bdx * .5, 1048 + bdy * .5, CLOSE_HOST, face, pose, bot['costume'], shot['palette'], flip=hx > 360, cycle=cycle, phase=f / 10, head=round(4 * math.sin(f * .3)), mascot=M)
+                pieces.append(body)
+                if carry_to:
+                    # The host acts on the product: it holds a note, then throws it into the run key
+                    # (Claudex cut 4 grade: Bot stood beside the screens and only pointed).
+                    half = 235 * CLOSE_HOST;ns = max(.8, half / 80);t0 = max(1, fc - 9);sd = 1 if hx > 360 else -1
+                    hand = (hx + bdx * .5 - sd * half * .8, 1048 + bdy * .5 - 2.3 * half)
+                    tx, ty = ccx + dx + zoom * (carry_to[0] - ccx), fy + dy + zoom * (carry_to[1] - fy)
+                    if f < t0:pieces.append(carried_note(*hand, -8 * sd + 4 * math.sin(f * .3), c, ns, carry))
+                    elif f < fc:
+                        p_ = ease((f - t0) / (fc - t0));x_ = hand[0] + (tx - hand[0]) * p_;y_ = hand[1] + (ty - hand[1]) * p_ - 150 * math.sin(math.pi * p_)
+                        pieces.append(carried_note(x_, y_, -sd * 330 * p_, c, ns * (1 - .3 * p_), carry))
+                    else:pieces.append(poof(tx, ty, f - fc, c, .55))
+                elif carry and not (shot['role'] == 'payoff' and rig.name in CARRY):  # once thrown in, it stays in the machine
+                    # The film's carried object stays in the host's hand (brief.carry).
+                    half = 235 * CLOSE_HOST;sd = 1 if hx > 360 else -1
+                    pieces.append(carried_note(hx + bdx * .5 - sd * half * 1.05, 1048 + bdy * .5 - 1.15 * half, -8 * sd + 4 * math.sin(f * .3), c, max(.7, half / 110), carry))
+            elif b.get('behind'):pieces.insert(hero_at, cam(body))  # squeezed onto a wide machine: peeks from behind it
             else:pieces.append(cam(body))
-            if carry_to:
+            if carry_to and not close:
                 half = 235 * b['scale'];ns = max(.8, half / 80);t0 = max(1, fc - 9)
                 hand = (b['x'] + bdx - side * half * .8, b['y'] + bdy - 2.3 * half)
-                if f < t0:pieces.append(cam(carried_note(*hand, -8 * side + 4 * math.sin(f * .3), c, ns)))
+                if f < t0:pieces.append(cam(carried_note(*hand, -8 * side + 4 * math.sin(f * .3), c, ns, carry)))
                 elif f < fc:
                     p = ease((f - t0) / (fc - t0));x = hand[0] + (carry_to[0] - hand[0]) * p;y = hand[1] + (carry_to[1] - hand[1]) * p - 150 * math.sin(math.pi * p)
-                    pieces.append(cam(carried_note(x, y, -side * 330 * p, c, ns * (1 - .3 * p))))
+                    pieces.append(cam(carried_note(x, y, -side * 330 * p, c, ns * (1 - .3 * p), carry)))
                 else:pieces.append(cam(poof(*carry_to, f - fc, c, .55)))
+            elif carry and not close and not b.get('behind') and not (shot['role'] == 'payoff' and rig.name in CARRY):
+                # Held at the host's side, clear of its face and the machine's labels.
+                half = 235 * b['scale']
+                pieces.append(cam(carried_note(b['x'] + bdx - side * half * 1.05, b['y'] + bdy - 1.15 * half, -8 * side + 4 * math.sin(f * .3), c, max(.7, half / 110), carry)))
         elif grammar == 'big-bot':
             hop = abs(math.sin(f * .18)) * 18;tilt = 4 * math.sin(f * .15)
             pieces.append(cam(dressed_bot(360 if not brand else 540, 1050 - hop, .5 if not brand else .42, bot['face'], bot['pose'], bot['costume'], shot['palette'], angle=tilt, mascot=M)))
@@ -694,7 +821,7 @@ def shot_frames(shot, layout, seed, look='paper-craft', brand=None, prev=None, c
             pieces.append(cam(pop_in(dressed_bot(m['x'], m['y'] - bounce, m['s'], m['face'], 'celebrating' if (f // 8 + k) % 2 else m['pose'], m['costume'], shot['palette'], m['angle'], m['flip'], mascot=M), f, 3 + k, (m['x'], m['y']))))
         for k, item in enumerate(layout.get('dressing', [])):
             if item['layer'] == 'front':pieces.append(cam(boil(place(PROPS[item['prop']].render(c), item['x'], item['y'], item['scale']), f, f'{shot["id"]}-f{k}', .8)))
-        if brand and shot['role'] in ('hook', 'cta'):
+        if brand and shot['role'] in ('hook', 'cta') and not rig_shows_mark(shot, brand):
             from motif_brand import badge
             # Hook: the product is the first thing on screen (visible at frame 0, then settles).
             big = shot['role'] == 'hook' and not shot.get('insert') and not rig;size = 300 if big else 190
@@ -723,7 +850,7 @@ def shot_frames(shot, layout, seed, look='paper-craft', brand=None, prev=None, c
 
 
 SOUND = {'overflow-vehicle': 'spring', 'plate-stack': 'paper', 'hydraulic-press': 'reject', 'race-track': 'star', 'balance-scale': 'cloth',
-         'stacked-meter': 'pop', 'thermometer': 'star', 'receipt-stack': 'paper', 'stamp-gate': 'reject', 'conveyor': 'key1', 'knowledge-vault': 'paper'}
+         'stacked-meter': 'pop', 'thermometer': 'star', 'receipt-stack': 'paper', 'stamp-gate': 'reject', 'conveyor': 'key1', 'knowledge-vault': 'paper', 'review-loop': 'paper'}
 
 
 def prepare(project, brief):
@@ -786,6 +913,7 @@ def compile_reel(project, plan, spans, voice_duration, seed=0):
         prev = (shots[i - 1]['role'], shots[i - 1]['frames']) if i and same(shots[i - 1], shot) else None
         continued = i + 1 < len(shots) and same(shots[i + 1], shot)
         shot.setdefault('mascot', plan.get('mascot', 'bot'))
+        if plan.get('carry'):shot.setdefault('carry', plan['carry'])
         frames = shot_frames(shot, layout, seed + shot['start_frame'], plan.get('look', 'paper-craft'), plan.get('brand'), prev, continued)
         dur = shot['frames'] / FPS
         events = [{'time': round(f / FPS, 9), 'target': f'#{shot["id"]}-world', 'action': 'SET', 'params': {'props': {'innerHTML': namespace(body, shot['id'])}}} for f, body in enumerate(frames) if f]
@@ -796,6 +924,14 @@ def compile_reel(project, plan, spans, voice_duration, seed=0):
         if shot['rig'] and shot['role'] == 'setup':
             rig = get_rig(shot['rig']['id']);item = ledger[SOUND.get(rig.name, 'pop')]
             cues.append({'shot': shot['id'], 'start': round(start + dur * .92, 3), 'file': item['file'], 'duration': item['duration'], 'volume': .38, 'meaning': f'{rig.name} contact'})
+            # The host's act is heard too (plan-to-9 phase 3: the references put a sound on every action):
+            # keys while it types, a soft paper landing when it pops or drops into the set.
+            act = (shot.get('bot') or {}).get('act');entrance = (shot.get('bot') or {}).get('entrance')
+            if act == 'types':
+                for j, at in enumerate((.3, .4, .5, .6, .7)):
+                    key = ledger[f'key{j % 3 + 1}'];cues.append({'shot': shot['id'], 'start': round(start + dur * at, 3), 'file': key['file'], 'duration': key['duration'], 'volume': .22, 'meaning': 'host types'})
+            if entrance in ('pop', 'drop') and not prev:
+                land = ledger['paper'];cues.append({'shot': shot['id'], 'start': round(start + dur * .2, 3), 'file': land['file'], 'duration': land['duration'], 'volume': .3, 'meaning': f'host {entrance}s in'})
         if shot['role'] in ('payoff', 'hook', 'cta'):
             item = ledger['whoosh' if shot['role'] != 'payoff' else 'star'];cues.append({'shot': shot['id'], 'start': round(start + (.02 if shot['role'] != 'payoff' else dur * .3), 3), 'file': item['file'], 'duration': item['duration'], 'volume': .26, 'meaning': f'{shot["role"]} accent'})
     duration = frames_index[-1]['start'] + frames_index[-1]['duration']
@@ -934,6 +1070,14 @@ def check_brief(brief, allow_draft=False):
     plan = plan_reel(brief, allow_draft);errs, requests = validate_plan(plan, allow_draft)
     out.update({'estimated_runtime': round(estimate(brief), 1), 'plan': errs, 'library_requests': requests, 'warnings': plan['warnings']})
     out['sound_off'] = sound_off(plan, brief)['failures']
+    # Before voicing, shot lengths are unknown; the hook and CTA always run long enough to show their
+    # second headline, so check them as split (Claudex brief: check passed, then run failed L010 on
+    # the hook's second headline and held one CTA card for 3.8 s).
+    for beat in plan['beats']:
+        for shot in beat['shots']:
+            if shot.get('role') in ('hook', 'cta') and shot.get('headline_b'):shot['split_headline'] = True
+            if shot.get('role') == 'cta' and (shot.get('headline_b') or '').upper() == (shot.get('headline') or '').upper():
+                out['plan'].append('cta: second headline repeats the first, so one card holds the whole end')
     from motif_lessons import CHECKS, PLAN_CHECKS, ledger
     out['lessons'] = [];out['lesson_warnings'] = []
     for lesson in ledger()['lessons']:

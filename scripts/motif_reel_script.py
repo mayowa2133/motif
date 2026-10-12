@@ -69,6 +69,9 @@ def validate(brief, measured=None):
     if len({b['id'] for b in brief['beats']}) != len(brief['beats']):errors.append('duplicate beat ids')
     if errors:return errors
     if brief['cta']['keyword'].lower() not in brief['cta']['narration'].lower():errors.append('cta narration must say the keyword')
+    # The CTA's first headline is always COMMENT <keyword>; a second one that repeats it holds one card for the whole end (Claudex brief, 2026-10-11).
+    hb = (brief['cta'].get('headline_b') or '').upper()
+    if hb and hb.split()[:1] == ['COMMENT']:errors.append('cta.headline_b must not repeat COMMENT <keyword> (the first CTA headline already says it)')
     lim = limits(brief);lo, hi = lim['beats']
     if not lo <= len(brief['beats']) <= hi:errors.append(f'{len(brief["beats"])} beats outside {lo}-{hi} for the {brief.get("format", "short")} format')
     runtime = measured if measured is not None else estimate(brief);rt = lim['runtime']
