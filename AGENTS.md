@@ -59,7 +59,11 @@ quality bar). Copy the closest one and change it.
 6. **Visual hints.** Author them; the fallback planner reads generic. Per beat:
    `visual.rig` + `params` (labels use the claim's own nouns), `room`,
    `palette`, optional `insert`, `costume`, `brand`, `hold`. The hook can have
-   its own machine via `hook.visual`.
+   its own machine via `hook.visual`. Give the host an `act` (`types`,
+   `stamps`, `gasps`, `smug`, `shrugs`, `cheers`, `inspects`: never the same
+   twice in a row) and an `entrance` (`walk`, `pop`, `drop`, `slide`), and
+   layer close product screens with two pieces or more: `cards` and a `stack`
+   window behind (`{"title": ..., "lines": [...]}`).
 7. **Relation.** Each claim beat names a `relation` its machine can show
    (`catalog` lists `relations` and which machines show each).
 8. **Palettes.** One name, or `"object/room"` (e.g. `"lagoon/berry"`): the

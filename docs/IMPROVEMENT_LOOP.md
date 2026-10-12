@@ -89,3 +89,5 @@ proven on old films and a library change breaks nothing.
 | L031 numbers in names | Claudex cut 1 (GPT-6 and a bare comma read as numbers) | planner counts only standalone numbers |
 | L032 approved look | Mayowa on Claudex cut 1 ("I don't like the transitions") | every look keeps the hard cut, taped strip and paper finish; a gate fails a look that uses a rejected style |
 | L033 shot variety | Claudex cut 3 grade (six of twelve frames the same two-desk wide shot; product small) | planner flips framing to avoid repeats, product screens framed close with a small host; gate fails a repeated composition |
+| L034 host acts | Claudex cut 6 grade (Bot helped, the reference character performs) | acting library (motif_acts): a named act per beat with wind-up, hit and held reaction, plus an entrance; gate fails a repeated or unknown act or a standing hold over 1 s |
+| L035 layered product | Claudex cut 6 grade (one object per frame; reference 09 layers 2 to 4) | app-screen stack window behind plus taped cards; warns on a close product screen with fewer than two pieces |

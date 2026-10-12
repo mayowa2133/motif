@@ -289,6 +289,24 @@
       "rule": "Consecutive beats never share a composition (same machine at the same framing); product screens are framed close with the host small in front",
       "check": "shot-variety",
       "level": "gate"
+    },
+    {
+      "id": "L034",
+      "date": "2026-10-12",
+      "source": "Claudex cut 6 grade against reference 09 (plan-to-9 phase 2)",
+      "symptom": "Bot helped but did not perform: it stood, pointed and carried, while the reference character acts in every shot",
+      "rule": "Every claim beat names a host act (visual.act: types, stamps, gasps, smug, shrugs, cheers, inspects) with a wind-up, a hit on the contact and a held reaction; no two beats in a row share an act; the host never holds a plain standing pose over 1 s; it arrives in each set with an entrance (walk, pop, drop, slide)",
+      "check": "host-acts",
+      "level": "gate"
+    },
+    {
+      "id": "L035",
+      "date": "2026-10-12",
+      "source": "Claudex cut 6 grade against reference 09 (plan-to-9 phase 2)",
+      "symptom": "product shots showed one object at a time; reference 09 layers two to four pasted pieces per frame (site, price tag, bill, logo)",
+      "rule": "Close product screens layer at least two pasted pieces: taped cards (app-screen cards) or a window behind (app-screen stack)",
+      "check": "layered-product",
+      "level": "warn"
     }
   ]
 }

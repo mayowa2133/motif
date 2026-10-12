@@ -208,6 +208,27 @@
                   "null"
                 ],
                 "description": "This beat's product mark when it differs from the film's (null: none)."
+              },
+              "act": {
+                "enum": [
+                  "cheers",
+                  "gasps",
+                  "inspects",
+                  "shrugs",
+                  "smug",
+                  "stamps",
+                  "types"
+                ],
+                "description": "The host's act this beat (motif_acts): how it works the machine, hits on the contact and reacts. Default: by relation."
+              },
+              "entrance": {
+                "enum": [
+                  "walk",
+                  "pop",
+                  "drop",
+                  "slide"
+                ],
+                "description": "How the host arrives in the set. Default: rotates by beat."
               }
             }
           },

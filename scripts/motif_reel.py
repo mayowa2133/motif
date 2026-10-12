@@ -37,6 +37,9 @@ import subprocess
 import wave
 from pathlib import Path
 
+from motif_acts import ACTS as HOST_ACTS, ENTRANCES, act_motion, default_act
+
+
 ROOT = Path(__file__).resolve().parents[1]
 FPS = 30
 PIN = '0.8.99'
@@ -148,7 +151,7 @@ def plan_reel(brief, allow_draft=False, avoid_looks=()):
     cat = catalog(allow_draft);facts = {f['id']: f for f in brief['facts']};seed = brief.get('seed', 0)
     brand = (brief.get('brand') or {}).get('slug')
     look_id = motif_looks.choose(brief, avoid_looks);look = motif_looks.get(look_id)
-    palettes = motif_looks.palettes(look_id, len(brief['beats']) + 2, seed);used_rigs, rooms = [], []
+    palettes = motif_looks.palettes(look_id, len(brief['beats']) + 2, seed);used_rigs, rooms = [], [];last_act = None
     hook, _ = hook_line(brief)
     beats = []
 
@@ -187,12 +190,15 @@ def plan_reel(brief, allow_draft=False, avoid_looks=()):
         setup = b.get('headline') or _short(fact['claim'], 26);payoff = b.get('payoff_headline') or _short(fact.get('value') or b['narration'], 26)
         if payoff == setup:payoff = _short(b['narration'], 26)
         beat_brand = visual['brand'] if 'brand' in visual else brand
+        # The host's act and entrance (motif_acts, plan-to-9 phase 2): authored, else by relation, never repeating the last beat's.
+        act = visual.get('act') or default_act(relation, rig_id, last_act);last_act = act
+        entrance = visual.get('entrance') or ENTRANCES[(i + seed) % len(ENTRANCES)]
         if beat_brand != brand and 'logo' in _get_rig(rig_id).params_schema['properties'] and params.get('logo') == brand:params['logo'] = beat_brand
         beats.append({'id': b['id'], 'kind': 'claim', 'relation': relation, 'narration': b['narration'], 'fact': b['fact'], 'palette': visual.get('palette') or palettes[i + 1], 'shots': [
             {'id': f'{b["id"]}-a', 'role': 'setup', 'headline': setup, 'headline_b': _short(b['narration'], 26), 'headline_b_cut': _clip(b['narration'], 26)[1], 'room': room, 'rig': {'id': rig_id, 'params': params, **({'hold': True} if visual.get('hold') else {}), **({'framing': visual['framing']} if visual.get('framing') else {})}, 'insert': None,
-             'bot': {'costume': costume, 'face': 'determined', 'pose': 'walking'}},
+             'bot': {'costume': costume, 'face': 'determined', 'pose': 'walking', 'act': act, 'entrance': entrance}},
             {'id': f'{b["id"]}-b', 'role': 'payoff', 'headline': payoff, 'headline_b': _short(fact['claim'], 26), 'headline_b_cut': _clip(fact['claim'], 26)[1], 'room': room, 'rig': {'id': rig_id, 'params': params, **({'hold': True} if visual.get('hold') else {}), **({'framing': visual['framing']} if visual.get('framing') else {})}, 'insert': insert,
-             'bot': {'costume': costume, 'face': 'surprised', 'pose': 'pointing'}}]})
+             'bot': {'costume': costume, 'face': 'surprised', 'pose': 'pointing', 'act': act, 'entrance': entrance}}]})
         if beat_brand != brand:
             for shot in beats[-1]['shots']:shot['brand'] = beat_brand
     # Hero-first opening (review item 5, round 2): the hook shows the first claim's machine
@@ -750,7 +756,8 @@ def shot_frames(shot, layout, seed, look='paper-craft', brand=None, prev=None, c
         b = layout['bot'];bot = shot['bot']
         if rig:
             side = b.get('side', -1 if b['x'] < 360 else 1)
-            pose, face, bdx, bdy, squash, cycle = bot_motion(shot['role'], u, f, n, tc, side, entering=not prev, acts=ACTS.get(rig.name, ('pointing', 'presenting')))
+            if bot.get('act') in HOST_ACTS:pose, face, bdx, bdy, squash, cycle = act_motion(bot['act'], bot.get('entrance', 'walk'), shot['role'], u, f, n, tc, side, entering=not prev)
+            else:pose, face, bdx, bdy, squash, cycle = bot_motion(shot['role'], u, f, n, tc, side, entering=not prev, acts=ACTS.get(rig.name, ('pointing', 'presenting')))
             face = bot['face'] if shot['role'] == 'payoff' and face == 'excited' and bot.get('face') else face
             track = None if close else rig.host_track(rig.params(h.get('values') or None), (action, t))
             if track:
@@ -901,6 +908,14 @@ def compile_reel(project, plan, spans, voice_duration, seed=0):
         if shot['rig'] and shot['role'] == 'setup':
             rig = get_rig(shot['rig']['id']);item = ledger[SOUND.get(rig.name, 'pop')]
             cues.append({'shot': shot['id'], 'start': round(start + dur * .92, 3), 'file': item['file'], 'duration': item['duration'], 'volume': .38, 'meaning': f'{rig.name} contact'})
+            # The host's act is heard too (plan-to-9 phase 3: the references put a sound on every action):
+            # keys while it types, a soft paper landing when it pops or drops into the set.
+            act = (shot.get('bot') or {}).get('act');entrance = (shot.get('bot') or {}).get('entrance')
+            if act == 'types':
+                for j, at in enumerate((.3, .4, .5, .6, .7)):
+                    key = ledger[f'key{j % 3 + 1}'];cues.append({'shot': shot['id'], 'start': round(start + dur * at, 3), 'file': key['file'], 'duration': key['duration'], 'volume': .22, 'meaning': 'host types'})
+            if entrance in ('pop', 'drop') and not prev:
+                land = ledger['paper'];cues.append({'shot': shot['id'], 'start': round(start + dur * .2, 3), 'file': land['file'], 'duration': land['duration'], 'volume': .3, 'meaning': f'host {entrance}s in'})
         if shot['role'] in ('payoff', 'hook', 'cta'):
             item = ledger['whoosh' if shot['role'] != 'payoff' else 'star'];cues.append({'shot': shot['id'], 'start': round(start + (.02 if shot['role'] != 'payoff' else dur * .3), 3), 'file': item['file'], 'duration': item['duration'], 'volume': .26, 'meaning': f'{shot["role"]} accent'})
     duration = frames_index[-1]['start'] + frames_index[-1]['duration']

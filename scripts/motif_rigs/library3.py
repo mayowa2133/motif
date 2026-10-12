@@ -455,7 +455,7 @@ class AppScreen(Rig):
 
     def printed_text(self, p):
         name = (p.get('agent') or self.AGENTS.get(p.get('logo') or '', ('',))[0]) if p['ui'] == 'cli' else None
-        return [t for t in [p.get('title'), *(p.get('lines') or []), *(p.get('pane') or []), p.get('cwd'), p.get('result'), p.get('credit'), *(p.get('cards') or []), name] if t]
+        return [t for t in [p.get('title'), *(p.get('lines') or []), *(p.get('pane') or []), p.get('cwd'), *(((p.get('stack') or {}).get('title'),) + tuple((p.get('stack') or {}).get('lines') or [])), p.get('result'), p.get('credit'), *(p.get('cards') or []), name] if t]
 
     # Chrome each view draws besides its lines (title bar, welcome box, input, footer, tabs, pills).
     CHROME = {'cli': 5, 'pr': 7, 'files': 2, 'note': 2, 'chat': 2, 'graph': 1, 'map': 6, 'terminal': 2, 'window': 2, 'browser': 3}
@@ -463,7 +463,7 @@ class AppScreen(Rig):
     def detail(self, p):
         """Pieces of UI on the screen: its lines, the open file's lines, the cards and the view's chrome
         (scorecard line screen_detail; reference 09's product screens carry about 10 to 24)."""
-        return len(p.get('lines') or []) + len(p.get('pane') or []) + len(p.get('cards') or []) + self.CHROME.get(p['ui'], 1) + (1 if p.get('logo') else 0)
+        return len(p.get('lines') or []) + len(p.get('pane') or []) + len(p.get('cards') or []) + (1 + len((p.get('stack') or {}).get('lines') or []) if p.get('stack') else 0) + self.CHROME.get(p['ui'], 1) + (1 if p.get('logo') else 0)
 
     def cards(self, p, c, typed):
         """Collage cards (Claudex cut 4 grade: reference 09 layers tilted paper cards over its screens):
@@ -479,6 +479,27 @@ class AppScreen(Rig):
                     + rect(cw / 2 - 30, -10, 60, 20, c['accent'], 3).replace('<rect', '<rect opacity=".7"') + txt(label, cw / 2, 39, 28, c['dark'], 900, 'middle'))
             out += g(card, cx, cy, ang * (2 - k), .9 + .1 * k, .9 + .1 * k, k)
         return out
+
+    def stack(self, p, c, typed):
+        """A second window pasted behind the screen, offset up and out with its own tilt (plan-to-9 phase 2:
+        reference 09 layers the site, a price tag and the bill in one frame). It slides out from behind
+        the screen as the session starts typing."""
+        st = p.get('stack')
+        if not st:return ''
+        x, y, w, h = self.screen(p);total = max(1, sum(len(l) for l in (p.get('lines') or [])))
+        k = min(1.0, max(0.0, (typed / total - .05) * 5));k = k * k * (3 - 2 * k)
+        # Peeking out above the screen's top-right edge, no higher than the gap under the headline strip
+        # in a close shot (the host stands bottom right, the cards sit top left and bottom left).
+        sw, sh = w * .56, h * .6;sx = x + w * .5;sy = y - 118
+        lines = st.get('lines') or [];fs = min(20, (sw - 40) / max(10, max((len(l) for l in lines), default=10) * .56))
+        body = rect(6, 8, sw, sh, '#000000', 10).replace('<rect', '<rect opacity=".2"') + rect(0, 0, sw, sh, '#FFFDF7', 10, c['dark'], 3)
+        body += rect(0, 0, sw, 34, c['metal'], 10) + rect(0, 26, sw, 8, c['metal'])
+        body += ''.join(f'<circle cx="{16 + i * 14}" cy="17" r="4.5" fill="{col}"/>' for i, col in enumerate(('#FF6159', '#FFBD2E', '#28C941')))
+        body += txt(st.get('title') or '', 62, 24, 16, c['dark'], 800)
+        for i, line in enumerate(lines[:5]):
+            head = line.startswith('#');ly = 34 + 14 + fs + i * fs * 1.5
+            body += txt(line.lstrip('# ') if head else line, 16, ly, fs * (1.1 if head else 1), c['dark'], 900 if head else 600)
+        return g(body, sx - (1 - k) * sw * .4, sy + (1 - k) * 100, 4 - 3 * (1 - k), .85 + .15 * k, 1, min(1.0, k * 1.5))
 
     def chat_view(self, p, c, typed, done):
         """An assistant chat: the first line is the question (right bubble), the rest the answer (left),
@@ -575,7 +596,7 @@ class AppScreen(Rig):
         if action:done = 0.0 if t < tc else min(1.0, .55 + .45 * ease(t_after(t, tc) * 3)) + settle(t_after(t, tc), .08)
         else:typed, done = (total, 1.0) if start == 'done' else (0, 0.0)
         if p.get('prefilled'):typed = total
-        body = self.device(p, c) + self.ui(p, c, typed, done) + self.cards(p, c, typed)
+        body = self.stack(p, c, typed) + self.device(p, c) + self.ui(p, c, typed, done) + self.cards(p, c, typed)
         if p.get('send_to'):
             k = (min(1.0, t_after(t, tc) * 1.5) if t >= tc else 0.0) if action else (1.0 if start == 'done' else 0.0)
             body += self.usb(p, c, k >= 1)
@@ -592,16 +613,17 @@ class AppScreen(Rig):
 
 
 register(AppScreen(
-    name='app-screen', description='The product in use: a monitor, laptop or phone showing a Motif-drawn terminal, coding-agent session (cli: > prompt, * action, - result, + / x diff, [ ] / [x] todo, ? permission), pull request (pr: title, then ✓ / x checks and @name: comments), file tree (files, with pane = the open file), app window, browser page or street map (lines become map pins); the brief\'s lines type in, the cursor presses run and the result pops. send_to puts a USB stick in front and the file flies into it; credit adds a corner attribution; prefilled starts with the lines already in. Demos, commands, settings, checkboxes, downloads.',
+    name='app-screen', description='The product in use: a monitor, laptop or phone showing a Motif-drawn terminal, coding-agent session (cli: > prompt, * action, - result, + / x diff, [ ] / [x] todo, ? permission), pull request (pr: title, then ✓ / x checks and @name: comments), file tree (files, with pane = the open file), stack = a second window pasted behind, app window, browser page or street map (lines become map pins); the brief\'s lines type in, the cursor presses run and the result pops. send_to puts a USB stick in front and the file flies into it; credit adds a corner attribution; prefilled starts with the lines already in. Demos, commands, settings, checkboxes, downloads.',
     params_schema={'type': 'object', 'properties': {
         'device': {'enum': ['monitor', 'laptop', 'phone']}, 'ui': {'enum': ['terminal', 'window', 'browser', 'map', 'files', 'note', 'graph', 'chat', 'cli', 'pr']},
+        'stack': {'type': ['object', 'null'], 'properties': {'title': {'type': 'string', 'maxLength': 20}, 'lines': {'type': 'array', 'items': {'type': 'string', 'maxLength': 30}, 'maxItems': 5}}, 'additionalProperties': False},
         'pane': {'type': 'array', 'items': {'type': 'string', 'maxLength': 34}, 'maxItems': 10}, 'cwd': {'type': ['string', 'null'], 'maxLength': 24},
         'agent': {'type': ['string', 'null'], 'maxLength': 16}, 'cards': {'type': 'array', 'items': {'type': 'string', 'maxLength': 18}, 'maxItems': 2},
         'title': {'type': 'string', 'maxLength': 26}, 'lines': {'type': 'array', 'items': {'type': 'string', 'maxLength': 34}, 'minItems': 1, 'maxItems': 12},
         'result': {'type': 'string', 'maxLength': 14}, 'button': {'type': ['string', 'null'], 'maxLength': 8}, 'logo': {'type': ['string', 'null']},
         'send_to': {'type': ['string', 'null'], 'maxLength': 6}, 'credit': {'type': ['string', 'null'], 'maxLength': 34}, 'prefilled': {'type': 'boolean'}},
         'required': ['device', 'ui', 'lines'], 'additionalProperties': False},
-    defaults={'device': 'monitor', 'ui': 'terminal', 'title': 'Terminal', 'lines': ['run the thing'], 'result': 'DONE', 'button': None, 'logo': None, 'send_to': None, 'credit': None, 'prefilled': False, 'agent': None, 'cards': [], 'pane': [], 'cwd': None},
+    defaults={'device': 'monitor', 'ui': 'terminal', 'title': 'Terminal', 'lines': ['run the thing'], 'result': 'DONE', 'button': None, 'logo': None, 'send_to': None, 'credit': None, 'prefilled': False, 'agent': None, 'cards': [], 'pane': [], 'cwd': None, 'stack': None},
     states=('idle', 'done'),
     actions={'run': Action('run', 'idle', 'done', 60, 'cursor-press', 30)},
     bot_slot={'x': 300, 'y': 0, 'scale': .24, 'role': 'watches the screen and reacts to the result'},

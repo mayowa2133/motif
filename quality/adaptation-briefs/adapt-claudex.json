@@ -124,12 +124,25 @@
           ],
           "result": "PLAN READY",
           "cards": [
-            "PLAN.MD"
+            "PLAN.MD",
+            "4 STEPS"
           ],
-          "cwd": "~/my-app"
+          "cwd": "~/my-app",
+          "stack": {
+            "title": "PLAN.md",
+            "lines": [
+              "# Login API plan",
+              "1. Users table and schema",
+              "2. POST /login route",
+              "3. Session API",
+              "4. Deploy"
+            ]
+          }
         },
         "room": "diner",
-        "palette": "poppy/mauve"
+        "palette": "poppy/mauve",
+        "act": "types",
+        "entrance": "pop"
       }
     },
     {
@@ -164,11 +177,21 @@
             "3 GAPS",
             "REVISE"
           ],
-          "cwd": "~/my-app"
+          "cwd": "~/my-app",
+          "stack": {
+            "title": "PLAN.md",
+            "lines": [
+              "# Login API plan",
+              "4. Deploy",
+              "no tests? no auth?"
+            ]
+          }
         },
         "room": "server-room",
         "palette": "poppy/slate",
-        "brand": "openai"
+        "brand": "openai",
+        "act": "gasps",
+        "entrance": "slide"
       }
     },
     {
@@ -214,7 +237,9 @@
           ]
         },
         "room": "arcade",
-        "palette": "royal/mustard"
+        "palette": "royal/mustard",
+        "act": "stamps",
+        "entrance": "walk"
       }
     },
     {
@@ -256,7 +281,9 @@
         },
         "room": "office",
         "palette": "royal/ink-navy",
-        "framing": "close"
+        "framing": "close",
+        "act": "cheers",
+        "entrance": "drop"
       }
     },
     {
@@ -298,7 +325,9 @@
           "stamp": "HOLDS UP"
         },
         "room": "workshop",
-        "palette": "royal/slate"
+        "palette": "royal/slate",
+        "act": "inspects",
+        "entrance": "slide"
       }
     },
     {
@@ -324,10 +353,24 @@
             "✓ Self-graded: 0"
           ],
           "result": "2 SIGN-OFFS",
-          "logo": null
+          "logo": null,
+          "stack": {
+            "title": "REVIEW.md",
+            "lines": [
+              "# Review log",
+              "Plan: Astra OK",
+              "Code: Claude OK",
+              "Self-graded: 0"
+            ]
+          },
+          "cards": [
+            "LGTM x2"
+          ]
         },
         "room": "street",
-        "palette": "poppy/mauve"
+        "palette": "poppy/mauve",
+        "act": "smug",
+        "entrance": "walk"
       }
     },
     {
@@ -365,10 +408,23 @@
             "2. Astra audits the plan",
             "3. Swap: Astra builds",
             "4. Claude audits the code"
+          ],
+          "stack": {
+            "title": "~/.codex/skills",
+            "lines": [
+              "claudex/",
+              "  SKILL.md",
+              "Same skill in Codex"
+            ]
+          },
+          "cards": [
+            "SKILL.MD"
           ]
         },
         "room": "living-room",
-        "palette": "sunflower/dusk-teal"
+        "palette": "sunflower/dusk-teal",
+        "act": "types",
+        "entrance": "pop"
       }
     }
   ],
