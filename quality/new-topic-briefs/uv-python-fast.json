@@ -79,24 +79,46 @@
   "beats": [
     {
       "id": "tools",
-      "narration": "Normally you'd juggle pyenv, virtualenv and pip. uv replaces all of them.",
+      "narration": "Normally you'd juggle pyenv, virtualenv and pip. uv does all three jobs.",
       "fact": "f2",
-      "relation": "transform",
-      "headline": "3 TOOLS IN, 1 TOOL OUT",
+      "relation": "demo",
+      "headline": "3 TOOLS, 1 COMMAND EACH",
       "payoff_headline": "ONE TOOL REPLACES 3",
       "visual": {
-        "rig": "conveyor",
+        "rig": "app-screen",
         "params": {
-          "items": [
-            "PYENV",
-            "VENV",
-            "PIP"
+          "device": "monitor",
+          "ui": "terminal",
+          "title": "~/scripts",
+          "logo": "uv",
+          "lines": [
+            "# was: pyenv install 3.13",
+            "$ uv python install 3.13",
+            "Installed Python 3.13",
+            "# was: python -m venv .venv",
+            "$ uv venv",
+            "Creating virtual environment",
+            "# was: pip install rich",
+            "$ uv pip install rich",
+            "Installed 4 packages"
           ],
-          "machine": "UV",
-          "output": "1 TOOL"
+          "result": "3 IN 1",
+          "cards": [
+            "NO PYENV",
+            "NO PIP"
+          ],
+          "stack": {
+            "title": "pip freeze",
+            "lines": [
+              "markdown-it-py",
+              "mdurl",
+              "pygments",
+              "rich"
+            ]
+          }
         },
         "room": "bakery",
-        "palette": "candy/dusk-teal",
+        "palette": "lilac/dusk-teal",
         "act": "cheers",
         "entrance": "slide"
       }
