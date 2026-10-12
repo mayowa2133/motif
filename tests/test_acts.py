@@ -40,3 +40,21 @@ def test_host_acts_gate_flags_a_repeat_and_an_unknown_act():
     assert L.check_host_acts(None, {'beats': [beat(0, 'types'), beat(1, 'gasps')]}, None) == []
     out = L.check_host_acts(None, {'beats': [beat(0, 'types'), beat(1, 'types'), beat(2, 'juggles')]}, None)
     assert [o['where'] for o in out] == ['b1', 'b2']
+
+
+def test_race_track_never_frames_close_and_the_hook_pair_keeps_its_framing():
+    import motif_rigs
+    import motif_reel as R
+    race = motif_rigs.get('race-track')
+    assert race.focus(race.params(None), 'close') is None
+    shot = lambda: {'rig': {'id': 'race-track', 'params': {}}, 'role': 'setup'}
+    beats = [{'id': 'hook', 'kind': 'hook', 'shots': [shot()]}, {'id': 'b1', 'kind': 'claim', 'shots': [shot()]}]
+    R._vary_framing(beats)
+    assert 'framing' not in beats[1]['shots'][0]['rig']
+
+
+def test_cta_short_warns_on_a_long_end_card():
+    import motif_lessons as L
+    plan = lambda n: {'beats': [{'id': 'cta', 'kind': 'cta', 'narration': ' '.join(['word'] * n)}]}
+    assert L.check_cta_short(None, plan(10), None) == []
+    assert L.check_cta_short(None, plan(12), None)

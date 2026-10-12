@@ -294,7 +294,18 @@ def check_layered_product(project, plan, layouts):
     return out
 
 
+def check_cta_short(project, plan, layouts):
+    """The end card is a beat, not a scene: about two seconds of narration (uv film grade: a 12-word CTA
+    held 2 of 12 sampled frames; the references' 'Comment X' card holds about one)."""
+    out = []
+    for beat in (plan or {}).get('beats', []):
+        if beat.get('kind') == 'cta' and len(beat.get('narration', '').split()) > 10:
+            out.append({'where': beat['id'], 'detail': f'CTA narration is {len(beat["narration"].split())} words: keep it to 10 or fewer'})
+    return out
+
+
 CHECKS = {
+    'cta-short': check_cta_short,
     'host-acts': check_host_acts,
     'layered-product': check_layered_product,
     'approved-look': check_approved_look,
@@ -315,7 +326,7 @@ CHECKS = {
 
 
 # Checks that need only the plan, so `motif_reel.py check` runs them before any voice or render.
-PLAN_CHECKS = ('host-acts', 'layered-product', 'approved-look', 'shot-variety', 'headline-openers', 'shared-object-palette', 'set-variety', 'headline-length', 'product-on-screen', 'headline-whole', 'wall-variety')
+PLAN_CHECKS = ('cta-short', 'host-acts', 'layered-product', 'approved-look', 'shot-variety', 'headline-openers', 'shared-object-palette', 'set-variety', 'headline-length', 'product-on-screen', 'headline-whole', 'wall-variety')
 
 
 def run(project, plan=None, layouts=None):

@@ -266,12 +266,13 @@ def _vary_framing(beats):
     (same machine at the same framing) and the brief did not choose its framing, flip it, when the
     machine has a close spot (Rig.focus 'close'). Applies to setup and payoff alike."""
     from motif_rigs import get as _get_rig
-    prev = None
+    prev = prev_kind = None
     for beat in beats:
         shots = [s for s in beat['shots'] if s.get('rig')]
-        if not shots:prev = None;continue
+        if not shots:prev = prev_kind = None;continue
         r = shots[0]['rig'];key = composition(shots[0])
-        if key == prev and not r.get('framing') and beat.get('kind') != 'hook':
+        # The hero-first hook previews the first claim's shot on purpose (the check exempts that pair).
+        if key == prev and not r.get('framing') and beat.get('kind') != 'hook' and prev_kind != 'hook':
             other = 'wide' if key[1] == 'close' else 'close'
             rig = _get_rig(r['id'])
             try:spot = rig.focus(rig.params(r.get('params') or None), 'close')
@@ -279,7 +280,7 @@ def _vary_framing(beats):
             if other == 'wide' or spot:
                 for s in shots:s['rig'] = {**s['rig'], 'framing': other}
                 key = composition(shots[0])
-        prev = key
+        prev, prev_kind = key, beat.get('kind')
 
 
 def _keep_object_palettes(beats, explicit):

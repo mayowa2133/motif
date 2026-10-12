@@ -307,6 +307,15 @@
       "rule": "Close product screens layer at least two pasted pieces: taped cards (app-screen cards) or a window behind (app-screen stack)",
       "check": "layered-product",
       "level": "warn"
+    },
+    {
+      "id": "L036",
+      "date": "2026-10-12",
+      "source": "uv film grade against reference 09 (plan-to-9 phase 3)",
+      "symptom": "the race track was framed close because the hook previewed it, so the speed beat was a dark slab of track; the 12-word end card held 2 of 12 sampled frames",
+      "rule": "A machine whose story is its whole length (Rig.close_framing False, e.g. race-track) is never framed close, and the planner never flips the framing of the beat the hook previews; the CTA narration is 10 words or fewer",
+      "check": "cta-short",
+      "level": "warn"
     }
   ]
 }
