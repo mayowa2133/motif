@@ -8,7 +8,6 @@
     "bench-open-map",
     "bench-python-no-gil",
     "bench-sqlite-everywhere",
-    "git-reflog-rescue",
     "passkeys-a",
     "fixture-paper-notes"
   ]

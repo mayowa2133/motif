@@ -241,7 +241,8 @@ def default_label_warnings(beats):
             printed = getattr(rig, 'printed_text', None)
             if printed:
                 # A rig that declares what it prints only leaves a default on screen when that default is printed.
-                on = set(printed(rig.params(shot['rig'].get('params'))))
+                try:on = set(printed(rig.params(shot['rig'].get('params'))))
+                except Exception:continue  # invalid params: validate_plan reports them instead of check crashing
                 left = [k for k in left if any(x in on for x in (rig.defaults.get(k) if isinstance(rig.defaults.get(k), list) else [rig.defaults.get(k)]))]
             if left:out.append(f'{beat["id"]}: {rig.name} text params {left} use library defaults {[rig.defaults.get(k) for k in left]}; set visual.params in the brief')
     return out
