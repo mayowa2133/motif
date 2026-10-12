@@ -23,7 +23,7 @@
     "visual": {
       "rig": "receipt-stack",
       "params": {
-        "from": 1,
+        "from": 0,
         "to": 12,
         "amount": "$10",
         "label": "MONTHS PAID"
@@ -176,7 +176,8 @@
         "params": {
           "items": [
             "SAM",
-            "FRI 3PM"
+            "FRI 3PM",
+            "FADE CUT"
           ],
           "machine": "BOOKING APP",
           "output": "EMAIL SENT"
