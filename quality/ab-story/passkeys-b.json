@@ -206,7 +206,8 @@
         "after": "Use your passkey, fingerprint matched: SIGNED IN",
         "action": "the host presses a finger to the phone and the sign-in completes",
         "pays_off": [
-          "stolen-key"
+          "stolen-key",
+          "password-box"
         ],
         "sets_up": [
           "fingerprint"

@@ -50,9 +50,27 @@ def sentences(brief):
     return [s for s in re.split(r'(?<=[.!?])\s+', text.strip()) if s]
 
 
+def returning_machines(brief):
+    """(machine, earlier parts, returning beat) for a machine that comes back after another set.
+
+    Mayowa, story A/B 2026-10-12: the film that reused the padlock (hook, then again
+    four beats later as a new idea) read worse; a machine may only return as the
+    same object changing, never as a second metaphor."""
+    parts = [('hook', ((brief.get('hook') or {}).get('visual') or {}).get('rig'))] + [(b['id'], (b.get('visual') or {}).get('rig')) for b in brief['beats']]
+    out = []
+    for k, (who, rig) in enumerate(parts):
+        if not rig or k == 0 or parts[k - 1][1] == rig:continue
+        earlier = [w for w, r in parts[:k] if r == rig]
+        if earlier:out.append((rig, earlier, who))
+    return out
+
+
 def check(brief):
     story = brief.get('story')
-    if not story:return {'status': 'NOT_USED', 'failures': [], 'warnings': []}
+    if not story:
+        warn = [f'{who}: {rig} returns after {", ".join(earlier)} with no story link; a second metaphor on the same machine reads as a repeat (use the story pass or another machine)'
+                for rig, earlier, who in returning_machines(brief)]
+        return {'status': 'NOT_USED', 'failures': [], 'warnings': warn}
     fail, warn = [], []
     beats = brief['beats'];hook = (brief.get('hook') or {}).get('story');cta = brief['cta'].get('story') or {}
     if story['chosen'] >= len(story['premises']):fail.append(f'story.chosen {story["chosen"]} has no premise')
@@ -89,6 +107,13 @@ def check(brief):
         for t in s.get('sets_up', []):open_tokens.setdefault(t, who)
     for t, who in open_tokens.items():
         if t not in paid:fail.append(f'{who}: sets up "{t}", which no later beat pays off')
+    # A machine that comes back must be the same object changing: the returning beat pays off
+    # something its earlier appearance set up.
+    planted = {'hook': set(hook.get('sets_up', [])), **{b['id']: set(b['story'].get('sets_up', [])) for b in beats}}
+    by_id = {b['id']: b['story'] for b in beats}
+    for rig, earlier, who in returning_machines(brief):
+        if not set(by_id[who].get('pays_off', [])) & set().union(*(planted[w] for w in earlier)):
+            fail.append(f'{who}: {rig} returns after {", ".join(earlier)} as a new metaphor; pay off something it set up there, or use another machine')
     end = set(parts[-1].get('pays_off', [])) | set(cta.get('pays_off', []))
     if hook_tokens and not hook_tokens & end:fail.append('the last beat and CTA pay off nothing the hook promised')
     # Narration rhythm and the last line.

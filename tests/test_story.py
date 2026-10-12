@@ -73,6 +73,21 @@ class StoryPassTests(unittest.TestCase):
         b = storied();b['story']['premises'] = ['same idea'] * 3
         self.assertTrue(any('repeat' in f for f in st.check(b)['failures']))
 
+    def test_machine_returning_as_new_metaphor_fails(self):
+        # Mayowa, story A/B: the padlock reused as a second idea read as a repeat.
+        b = storied();b['beats'][3]['visual']['rig'] = b['beats'][0]['visual']['rig'];b['beats'][3]['visual']['params'] = b['beats'][0]['visual']['params']
+        self.assertTrue(any('new metaphor' in f for f in st.check(b)['failures']))
+        b['beats'][3]['story']['pays_off'] = ['stars'];b['beats'][1]['story']['pays_off'] = []
+        self.assertFalse(any('new metaphor' in f for f in st.check(b)['failures']))
+
+    def test_unstoried_brief_warns_on_returning_machine(self):
+        b = copy.deepcopy(BRIEF);b['beats'][3]['visual'] = copy.deepcopy(b['beats'][0]['visual'])
+        report = st.check(b);self.assertEqual(report['status'], 'NOT_USED');self.assertTrue(report['warnings'])
+
+    def test_ab_briefs(self):
+        self.assertEqual(st.check(json.loads((ROOT / 'quality/ab-story/passkeys-b.json').read_text()))['status'], 'PASS')
+        self.assertTrue(st.check(json.loads((ROOT / 'quality/ab-story/passkeys-a.json').read_text()))['warnings'])
+
 
 if __name__ == '__main__':
     unittest.main()

@@ -53,6 +53,10 @@ from its library), and character backstory (too heavy for a 30 s explainer).
   a word with what is on screen.
 - At least one beat complicates (a `but` link or a complicate beat).
 - The last beat reveals or resolves.
+- A machine that comes back after another set must be the same object
+  changing: the returning beat pays off something its earlier appearance set
+  up. Otherwise it is a second metaphor on the same machine, which reads as a
+  repeat. Briefs without a story block get this as a warning.
 - Every token set up is paid off later; every pay-off was set up earlier; the
   last beat or CTA pays off something the hook set up.
 
@@ -71,3 +75,15 @@ no line marked `land`.
   "sets_up": ["copied-key"], "line_job": "anticipation"
 }
 ```
+
+## A/B result (2026-10-12)
+
+One topic (passkeys), fixed length, look, mascot, voice and facts; each brief
+written by a fresh agent (`quality/ab-story/`). Mayowa watched both blind on
+the phone and picked the story-pass film: "it doesn't reuse metaphors; in film 2
+I saw the lock twice". Film A (no story pass) used six machines, one per fact,
+and brought the padlock back as a new idea; film B carried one password
+(Sunny42) from the phone's saved passwords to the key that opens the bank lock,
+then to the fingerprint and the wall of phones. B's animatic also caught three
+headlines cut mid-phrase and a counter covering a screen before the render.
+The returning-machine rule above came from this review.
