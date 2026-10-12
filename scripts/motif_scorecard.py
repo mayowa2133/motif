@@ -60,8 +60,9 @@ def plan_metrics(run):
     claims = [b for b in plan['beats'] if b.get('kind') == 'claim']
     def main(b):return next((s for s in b['shots'] if s.get('rig')), None)
     product = sum(1 for b in claims if main(b) and main(b)['rig']['id'] == 'app-screen' and framing_of(main(b)) == 'close')
-    keys = [composition(main(b)) if main(b) else None for b in plan['beats']]
-    pairs = [(a, b) for a, b in zip(keys, keys[1:]) if a and b]
+    keys = [(composition(main(b)) if main(b) else None, b.get('kind')) for b in plan['beats']]
+    # The hero-first hook previews the first claim's machine on purpose; gate L033 exempts that pair too.
+    pairs = [(a, b) for (a, kind), (b, _) in zip(keys, keys[1:]) if a and b and kind != 'hook']
     heights = []
     for b in claims:
         for s in b['shots']:
