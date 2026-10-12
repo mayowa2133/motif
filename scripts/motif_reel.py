@@ -463,6 +463,8 @@ CLOSE_ZOOM = (1.15, 1.9)  # and the camera zoom stays in this range
 CLOSE_TALL = 600          # and its height stays within this many pixels
 CLOSE_Y = 640             # where the close subject's centre sits (between headline and captions)
 CLOSE_TILT = 2.5          # degrees a close product screen leans, alternating by beat
+REFRAME = 1.16            # payoff reframe cut on a wide machine, every look
+CLOSE_REFRAME = .88       # on a close product screen the payoff cuts wider, so the result chip and the pasted pieces all show
 CLOSE_HOST = .27          # host scale in a close framing (about 20% of frame height)
 
 
@@ -669,7 +671,9 @@ def shot_frames(shot, layout, seed, look='paper-craft', brand=None, prev=None, c
         sticker_at = sticker_spot(layout, rig, half)
     else:sticker_at = None
     poof_at = None
-    reframe = L.get('reframe') if prev and shot['role'] == 'payoff' and rig else None
+    # Every look cuts closer on the payoff (paper-craft's approved reframe cut; uv cut 4 in candy-pastel had none,
+    # so the picture changed only once a beat, 3.9 s, against the references' 1.8-3.7 s).
+    reframe = L.get('reframe', REFRAME) if prev and shot['role'] == 'payoff' and rig else None
     fc = round(.92 * (n - 1)) if rig and shot['role'] == 'setup' and not (shot['rig'] or {}).get('hold') else None
     # A held beat keeps its machine in the start state (Codex's v11 critique: Python's lock opened
     # while the narration was still explaining the restriction). A later beat performs the change.
@@ -715,7 +719,7 @@ def shot_frames(shot, layout, seed, look='paper-craft', brand=None, prev=None, c
                 dx = min((zoom - 1) * ccx, max((1 - zoom) * (720 - ccx), dx + k * (360 - ccx)))
         if close:
             # Held close framing across setup and payoff: a slow push, the subject centred, room edges never shown.
-            zoom = close[2] * (1 + .03 * u + (.03 if prev else 0));ccx = close[0]
+            zoom = max(1.0, close[2] * (1 + .03 * u) * (CLOSE_REFRAME if reframe else 1));ccx = close[0]  # the payoff is a hard cut to a new framing
             dx = min((zoom - 1) * ccx, max((1 - zoom) * (720 - ccx), 360 - ccx + 4 * math.sin(f * .07)))
             dy = min((zoom - 1) * close[1], max((1 - zoom) * (1280 - close[1]), CLOSE_Y - close[1] + 3 * math.sin(f * .053)))
         if fc is not None and f >= fc:

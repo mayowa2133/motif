@@ -9,7 +9,6 @@
     "bench-python-no-gil",
     "bench-sqlite-everywhere",
     "git-reflog-rescue",
-    "uv-python-fast",
     "passkeys-a",
     "fixture-paper-notes"
   ]
