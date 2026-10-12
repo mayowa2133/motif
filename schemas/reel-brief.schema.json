@@ -96,6 +96,39 @@
           "type": "string",
           "maxLength": 30,
           "description": "Second headline for this long shot (otherwise the planner cuts one from the narration at a clause boundary)."
+        },
+        "story": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "promise",
+            "sets_up"
+          ],
+          "properties": {
+            "promise": {
+              "type": "string",
+              "maxLength": 120,
+              "description": "What the first seconds promise the viewer will see; the last beat or CTA must keep it."
+            },
+            "sets_up": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "pattern": "^[a-z0-9-]+$"
+              },
+              "uniqueItems": true,
+              "description": "Details this part introduces that a later beat or the CTA must pay off (short kebab tokens)."
+            },
+            "pays_off": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "pattern": "^[a-z0-9-]+$"
+              },
+              "uniqueItems": true,
+              "description": "Tokens set up earlier (by the hook or an earlier beat) that this part develops or resolves on screen."
+            }
+          }
         }
       }
     },
@@ -261,6 +294,79 @@
               "everywhere",
               "demo"
             ]
+          },
+          "story": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "purpose",
+              "link",
+              "before",
+              "after",
+              "action"
+            ],
+            "description": "Story pass (docs/STORY_PASS.md): what this beat does to the story and how the viewer sees it.",
+            "properties": {
+              "purpose": {
+                "enum": [
+                  "complicate",
+                  "demonstrate",
+                  "reveal",
+                  "escalate",
+                  "resolve"
+                ],
+                "description": "What the beat does: complicate (a problem gets worse), demonstrate (the claim happens on screen), reveal (the turn: the viewer learns the truth), escalate (stakes or scale grow), resolve (the promise is kept)."
+              },
+              "link": {
+                "enum": [
+                  "but",
+                  "therefore"
+                ],
+                "description": "How this beat follows the previous one. 'and then' is not allowed: if neither word fits, the beat is a list item, not a story beat."
+              },
+              "before": {
+                "type": "string",
+                "maxLength": 80,
+                "description": "What the object looks like when the beat starts."
+              },
+              "after": {
+                "type": "string",
+                "maxLength": 80,
+                "description": "What it looks like when the beat ends. Must use words that appear on screen (headline, payoff headline, machine labels or screen lines)."
+              },
+              "action": {
+                "type": "string",
+                "maxLength": 80,
+                "description": "The one physical action that makes the change (who does what to what)."
+              },
+              "line_job": {
+                "enum": [
+                  "context",
+                  "anticipation",
+                  "explain",
+                  "land"
+                ],
+                "description": "Narration's job: context, anticipation (opens a question), explain (says what the picture cannot), land (the line people would repeat)."
+              },
+              "sets_up": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "pattern": "^[a-z0-9-]+$"
+                },
+                "uniqueItems": true,
+                "description": "Details this part introduces that a later beat or the CTA must pay off (short kebab tokens)."
+              },
+              "pays_off": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "pattern": "^[a-z0-9-]+$"
+                },
+                "uniqueItems": true,
+                "description": "Tokens set up earlier (by the hook or an earlier beat) that this part develops or resolves on screen."
+              }
+            }
           }
         }
       },
@@ -288,6 +394,39 @@
           "type": "string",
           "maxLength": 30,
           "description": "Second headline for this long shot (otherwise the planner cuts one from the narration at a clause boundary)."
+        },
+        "story": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "sets_up": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "pattern": "^[a-z0-9-]+$"
+              },
+              "uniqueItems": true,
+              "description": "Details this part introduces that a later beat or the CTA must pay off (short kebab tokens)."
+            },
+            "pays_off": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "pattern": "^[a-z0-9-]+$"
+              },
+              "uniqueItems": true,
+              "description": "Tokens set up earlier (by the hook or an earlier beat) that this part develops or resolves on screen."
+            },
+            "line_job": {
+              "enum": [
+                "context",
+                "anticipation",
+                "explain",
+                "land"
+              ],
+              "description": "Narration's job: context, anticipation (opens a question), explain (says what the picture cannot), land (the line people would repeat)."
+            }
+          }
         }
       }
     },
@@ -350,6 +489,52 @@
         }
       },
       "description": "The film's one object, carried by the host through every set as a labelled card and thrown into the product screens (AGENTS.md: story first)."
+    },
+    "story": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "premises",
+        "chosen",
+        "object",
+        "ending"
+      ],
+      "description": "Story pass, written before the beats (docs/STORY_PASS.md).",
+      "properties": {
+        "premises": {
+          "type": "array",
+          "minItems": 3,
+          "items": {
+            "type": "string",
+            "maxLength": 240
+          },
+          "description": "At least three different premises (one object, one want, one obstacle, one visible ending each); the obvious first idea goes first."
+        },
+        "chosen": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "Index of the premise this film tells, and why in 'why'."
+        },
+        "why": {
+          "type": "string",
+          "maxLength": 240
+        },
+        "object": {
+          "type": "string",
+          "maxLength": 60,
+          "description": "The one object that changes through the film."
+        },
+        "spine": {
+          "type": "string",
+          "maxLength": 400,
+          "description": "Optional story spine: Every day... One day... Because of that... Until finally..."
+        },
+        "ending": {
+          "type": "string",
+          "maxLength": 160,
+          "description": "The final picture: what the viewer sees that keeps the hook's promise. Written before the middle."
+        }
+      }
     }
   }
 }

@@ -1,0 +1,299 @@
+{
+  "slug": "passkeys-b",
+  "title": "Passkeys are replacing your passwords",
+  "topic": "passkeys replacing passwords",
+  "format": "long",
+  "seed": 71,
+  "mascot": "lumo",
+  "voice": "af_bella",
+  "look": "candy-pastel",
+  "story": {
+    "premises": [
+      "A padlock opened by a password key: the key gets copied and handed out, a thief opens the lock with the copy, then the key is swapped for a fingerprint and only the owner opens it.",
+      "One phone sign-in screen: the password box fails, its password is the same on every site, the same password unlocks the bank for a thief, then the box is replaced by a fingerprint and every phone signs in without one.",
+      "A race between two sign-ins: the password runner trips on typos and fake pages while the passkey runner crosses the line first, and the crowd of 5 billion passkeys cheers at the finish."
+    ],
+    "chosen": 1,
+    "why": "The phone sign-in screen is what viewers touch every day; it can fail, be copied and be stolen, and its password box can visibly disappear, so the claim is shown, not decorated.",
+    "object": "the password box on a phone sign-in screen",
+    "spine": "Every day you type a password that fails. Because it is the same everywhere, one leak hands a thief the key to your bank. Then the box is replaced by your fingerprint, which signs in more often. Until finally every phone signs in with no password at all.",
+    "ending": "A wall of phones lights up one by one, each showing a passkey sign-in and no password box: 5 BILLION PASSKEYS."
+  },
+  "hook": {
+    "alternates": [
+      "Your phone still asks for a password, and most tries fail. Watch that little box disappear."
+    ],
+    "selected": 0,
+    "headline": "PASSWORDS WORK 13.8% OF TRIES",
+    "headline_b": "THE PASSWORD BOX IS GOING",
+    "visual": {
+      "rig": "app-screen",
+      "params": {
+        "device": "phone",
+        "ui": "window",
+        "title": "Sign in",
+        "lines": [
+          "Email: sam@mail.com",
+          "Password: ********",
+          "Wrong password. Try again",
+          "Password: ********",
+          "Wrong password. Try again",
+          "Forgot password?"
+        ],
+        "result": "TRY AGAIN",
+        "button": "SIGN IN"
+      },
+      "room": "living-room",
+      "palette": "candy/lilac"
+    },
+    "story": {
+      "promise": "the password box on your phone's sign-in screen disappears",
+      "sets_up": [
+        "password-box",
+        "low-success"
+      ]
+    }
+  },
+  "facts": [
+    {
+      "id": "f1",
+      "claim": "Only 49% are distinct: for users hit by infostealers, in the median case only 49% of a user's passwords across different services were distinct from each other",
+      "value": "49%",
+      "source_url": "https://www.verizon.com/business/resources/articles/credential-stuffing-attacks-2025-dbir-research/",
+      "accessed": "2026-10-12"
+    },
+    {
+      "id": "f2",
+      "claim": "Stolen logins opened 22%: the use of compromised credentials was an initial access vector in 22% of the breaches reviewed in the 2025 DBIR",
+      "value": "22%",
+      "source_url": "https://www.verizon.com/business/resources/articles/credential-stuffing-attacks-2025-dbir-research/",
+      "accessed": "2026-10-12"
+    },
+    {
+      "id": "f3",
+      "claim": "Passkeys sign you in using just a fingerprint, face scan or other screen lock, and the biometric is never sent to Google's servers",
+      "value": "fingerprint",
+      "source_url": "https://security.googleblog.com/2023/05/making-authentication-faster-than-ever.html",
+      "accessed": "2026-10-12"
+    },
+    {
+      "id": "f4",
+      "claim": "Passkeys win 4x as often: average authentication success rate with passwords is 13.8%, while local passkey success rate is 63.8%",
+      "value": "63.8%",
+      "source_url": "https://security.googleblog.com/2023/05/making-authentication-faster-than-ever.html",
+      "accessed": "2026-10-12"
+    },
+    {
+      "id": "f5",
+      "claim": "5 billion passkeys are now in use worldwide",
+      "value": "5 billion",
+      "source_url": "https://fidoalliance.org/fido-alliance-reports-accelerating-global-passkey-adoption-on-world-passkey-day-2026/",
+      "accessed": "2026-10-12"
+    }
+  ],
+  "beats": [
+    {
+      "id": "reused",
+      "narration": "Worse, it's the same password everywhere. In the median case, about half of yours are copies.",
+      "fact": "f1",
+      "relation": "demo",
+      "headline": "HALF YOUR PASSWORDS REPEAT",
+      "payoff_headline": "SUNNY42 ON 4 SITES",
+      "visual": {
+        "rig": "app-screen",
+        "params": {
+          "device": "phone",
+          "ui": "note",
+          "title": "Saved passwords",
+          "lines": [
+            "bank.com  Sunny42",
+            "mail.com  Sunny42",
+            "shop.com  Sunny42",
+            "work.com  Tiger9",
+            "games.com  Sunny42",
+            "news.com  Tiger9",
+            "Unique passwords: 49%"
+          ],
+          "result": "4 REUSED",
+          "button": null
+        },
+        "room": "office",
+        "palette": "candy/peach"
+      },
+      "story": {
+        "purpose": "complicate",
+        "link": "but",
+        "before": "one sign-in box with one password",
+        "after": "Sunny42 saved on bank, mail, shop and games: 4 REUSED",
+        "action": "the host scrolls the saved list as the same password repeats",
+        "sets_up": [
+          "sunny42"
+        ],
+        "line_job": "explain"
+      }
+    },
+    {
+      "id": "stolen",
+      "narration": "So one leak opens your bank too. Stolen logins started 22 percent of the breaches Verizon studied.",
+      "fact": "f2",
+      "relation": "unlock",
+      "headline": "22% OF BREACHES: STOLEN LOGINS",
+      "payoff_headline": "ONE LEAK, EVERY DOOR",
+      "visual": {
+        "rig": "lock-and-key",
+        "params": {
+          "label": "BANK",
+          "key": "SUNNY42"
+        },
+        "room": "bakery",
+        "palette": "mint-coral/lilac",
+        "insert": {
+          "kind": "counter",
+          "args": {
+            "start": 0,
+            "end": 22,
+            "prefix": "",
+            "suffix": "%",
+            "label": "OF BREACHES"
+          }
+        }
+      },
+      "story": {
+        "purpose": "escalate",
+        "link": "therefore",
+        "before": "the bank padlock shut",
+        "after": "the SUNNY42 key opens the BANK lock",
+        "action": "a leaked SUNNY42 key slides into the bank padlock and turns",
+        "pays_off": [
+          "sunny42"
+        ],
+        "sets_up": [
+          "stolen-key"
+        ],
+        "line_job": "explain"
+      }
+    },
+    {
+      "id": "passkey",
+      "narration": "A passkey has nothing to steal. You sign in with your fingerprint, and it never leaves the phone.",
+      "fact": "f3",
+      "relation": "demo",
+      "headline": "NO PASSWORD, JUST YOUR FINGER",
+      "payoff_headline": "FINGERPRINT STAYS ON PHONE",
+      "visual": {
+        "rig": "app-screen",
+        "params": {
+          "device": "phone",
+          "ui": "window",
+          "title": "Sign in to bank",
+          "lines": [
+            "Email: sam@mail.com",
+            "Use your passkey",
+            "Touch the fingerprint sensor",
+            "Fingerprint matched",
+            "Nothing sent to the server"
+          ],
+          "result": "SIGNED IN",
+          "button": "PASSKEY"
+        },
+        "room": "diner",
+        "palette": "candy/mint-coral"
+      },
+      "story": {
+        "purpose": "reveal",
+        "link": "but",
+        "before": "a sign-in box waiting for a password",
+        "after": "Use your passkey, fingerprint matched: SIGNED IN",
+        "action": "the host presses a finger to the phone and the sign-in completes",
+        "pays_off": [
+          "stolen-key",
+          "password-box"
+        ],
+        "sets_up": [
+          "fingerprint"
+        ],
+        "line_job": "explain"
+      }
+    },
+    {
+      "id": "success",
+      "narration": "And it actually works. Passkeys sign you in 64 percent of the time. Passwords manage just 14.",
+      "fact": "f4",
+      "relation": "race",
+      "headline": "PASSKEY 63.8%, PASSWORD 13.8%",
+      "payoff_headline": "PASSWORDS STALL AT 13.8%",
+      "visual": {
+        "rig": "race-track",
+        "params": {
+          "labels": [
+            "PASSKEY",
+            "PASSWORD"
+          ],
+          "progress": [
+            1.0,
+            0.22
+          ]
+        },
+        "room": "park",
+        "palette": "peach/candy"
+      },
+      "story": {
+        "purpose": "demonstrate",
+        "link": "therefore",
+        "before": "passkey and password at the start line",
+        "after": "PASSKEY crosses the line at 63.8%, PASSWORD stuck at 13.8%",
+        "action": "the two sign-ins race and the passkey reaches the finish",
+        "pays_off": [
+          "low-success",
+          "fingerprint"
+        ],
+        "line_job": "land"
+      }
+    },
+    {
+      "id": "everywhere",
+      "narration": "That's why 5 billion passkeys are already in use around the world.",
+      "fact": "f5",
+      "relation": "everywhere",
+      "headline": "5 BILLION PASSKEYS IN USE",
+      "payoff_headline": "NO PASSWORD BOX LEFT",
+      "visual": {
+        "rig": "device-wall",
+        "params": {
+          "kind": "phone",
+          "count": 6,
+          "label": "5 BILLION PASSKEYS",
+          "names": [
+            "BANK",
+            "MAIL",
+            "SHOP",
+            "WORK",
+            "GAMES",
+            "NEWS"
+          ]
+        },
+        "room": "living-room",
+        "palette": "lilac/peach"
+      },
+      "story": {
+        "purpose": "resolve",
+        "link": "therefore",
+        "before": "a shelf of dark phones",
+        "after": "every phone lit: 5 BILLION PASSKEYS, NO PASSWORD BOX LEFT",
+        "action": "a stamp lands on one phone and the passkey spreads to every screen",
+        "pays_off": [
+          "password-box"
+        ],
+        "line_job": "land"
+      }
+    }
+  ],
+  "cta": {
+    "keyword": "PASSKEY",
+    "narration": "Turn one on for your bank today. Comment PASSKEY for the steps.",
+    "story": {
+      "line_job": "context"
+    },
+    "headline_b": "TURN ONE ON FOR YOUR BANK"
+  }
+}

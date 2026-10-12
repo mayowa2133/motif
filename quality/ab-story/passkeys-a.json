@@ -1,0 +1,130 @@
+{
+  "slug": "passkeys-a",
+  "title": "Passkeys are replacing passwords",
+  "topic": "passkeys replacing passwords",
+  "format": "long",
+  "seed": 71,
+  "look": "candy-pastel",
+  "mascot": "lumo",
+  "voice": "af_bella",
+  "hook": {
+    "alternates": [
+      "Your password is a key anyone can copy. Here's the new lock that fixes it."
+    ],
+    "selected": 0,
+    "headline": "1 PASSWORD, ANYONE'S KEY",
+    "headline_b": "MEET THE PASSKEY",
+    "visual": {
+      "rig": "lock-and-key",
+      "params": {"label": "YOUR EMAIL", "key": "PASSWORD"},
+      "room": "living-room",
+      "palette": "peach/lilac"
+    }
+  },
+  "facts": [
+    {"id": "f1", "claim": "The use of compromised credentials was an initial access vector in 22% of the breaches reviewed in the 2025 DBIR", "value": "22%", "source_url": "https://www.verizon.com/business/resources/articles/credential-stuffing-attacks-2025-dbir-research/", "accessed": "2026-10-12"},
+    {"id": "f2", "claim": "For users hit by infostealers, in the median case only 49% of a user's passwords across services were distinct from each other", "value": "49% distinct", "source_url": "https://www.verizon.com/business/resources/articles/credential-stuffing-attacks-2025-dbir-research/", "accessed": "2026-10-12"},
+    {"id": "f3", "claim": "Passkeys sign you in using just a fingerprint, face scan or other screen lock, and the biometric or screen lock data is never sent to Google's servers", "value": "fingerprint", "source_url": "https://security.googleblog.com/2023/05/making-authentication-faster-than-ever.html", "accessed": "2026-10-12"},
+    {"id": "f4", "claim": "Passkeys are based on public key cryptography and are resistant to phishing", "value": "phishing resistant", "source_url": "https://security.googleblog.com/2023/05/making-authentication-faster-than-ever.html", "accessed": "2026-10-12"},
+    {"id": "f5", "claim": "Average authentication success rate with passwords is 13.8%, while local passkey success rate is 63.8%", "value": "63.8% vs 13.8%", "source_url": "https://security.googleblog.com/2023/05/making-authentication-faster-than-ever.html", "accessed": "2026-10-12"},
+    {"id": "f6", "claim": "5 billion passkeys are now in use worldwide", "value": "5 billion", "source_url": "https://fidoalliance.org/fido-alliance-reports-accelerating-global-passkey-adoption-on-world-passkey-day-2026/", "accessed": "2026-10-12"}
+  ],
+  "beats": [
+    {
+      "id": "stolen",
+      "narration": "Stolen logins opened the door in 22 percent of breaches Verizon studied.",
+      "fact": "f1",
+      "relation": "approve",
+      "headline": "22% OF BREACHES: STOLEN LOGINS",
+      "payoff_headline": "A COPIED KEY STILL WORKS",
+      "visual": {
+        "rig": "stamp-gate",
+        "params": {"document": "STOLEN LOGIN", "stamp": "VALID", "verdict": "approved"},
+        "room": "office",
+        "palette": "candy/mint-coral"
+      }
+    },
+    {
+      "id": "reuse",
+      "narration": "And about half of our passwords repeat, so one leak knocks over all the rest.",
+      "fact": "f2",
+      "relation": "spread",
+      "headline": "HALF OUR PASSWORDS REPEAT",
+      "payoff_headline": "ONE LEAK, EVERY ACCOUNT",
+      "visual": {
+        "rig": "domino-run",
+        "params": {"count": 6, "label": "SAME PASSWORD", "target": "ALL IN"},
+        "room": "diner",
+        "palette": "lilac/peach"
+      }
+    },
+    {
+      "id": "passkey",
+      "narration": "A passkey signs you in with your fingerprint or face, and that never leaves your phone.",
+      "fact": "f3",
+      "relation": "demo",
+      "headline": "SIGN IN WITH A FINGERPRINT",
+      "payoff_headline": "YOUR FACE NEVER LEAVES",
+      "visual": {
+        "rig": "app-screen",
+        "params": {
+          "device": "phone",
+          "ui": "window",
+          "title": "Sign in",
+          "lines": ["mail.example", "Use your passkey?", "Touch the sensor", "Fingerprint matched", "Sent to server: nothing"],
+          "result": "SIGNED IN",
+          "button": "USE"
+        },
+        "room": "park",
+        "palette": "mint-coral/candy"
+      }
+    },
+    {
+      "id": "phish",
+      "narration": "It runs on public key math, so a fake look-alike site can't trick it out of you.",
+      "fact": "f4",
+      "relation": "unlock",
+      "headline": "PUBLIC KEY BEATS PHISHING",
+      "payoff_headline": "ONLY THE REAL SITE OPENS",
+      "visual": {
+        "rig": "lock-and-key",
+        "params": {"label": "REAL SITE", "key": "PASSKEY"},
+        "room": "bakery",
+        "palette": "peach/mint-coral"
+      }
+    },
+    {
+      "id": "race",
+      "narration": "Google found passkeys work 64 percent of the time. Passwords? Just 14.",
+      "fact": "f5",
+      "relation": "race",
+      "headline": "PASSKEYS 64%, PASSWORDS 14%",
+      "payoff_headline": "4 TIMES MORE SIGN-INS",
+      "visual": {
+        "rig": "race-track",
+        "params": {"labels": ["PASSKEY", "PASSWORD"], "progress": [0.64, 0.14]},
+        "room": "living-room",
+        "palette": "candy/lilac"
+      }
+    },
+    {
+      "id": "scale",
+      "narration": "Five billion passkeys are already in use around the world.",
+      "fact": "f6",
+      "relation": "big-number",
+      "headline": "5 BILLION PASSKEYS IN USE",
+      "payoff_headline": "THE SWITCH IS ON",
+      "visual": {
+        "rig": "stacked-meter",
+        "params": {"from": 0, "to": 5, "unit": "B", "label": "PASSKEYS IN USE", "rocket": false},
+        "room": "office",
+        "palette": "lilac/peach"
+      }
+    }
+  ],
+  "cta": {
+    "keyword": "PASSKEY",
+    "narration": "Turn one on tonight. Comment PASSKEY for the steps.",
+    "headline_b": "TURN ONE ON TONIGHT"
+  }
+}

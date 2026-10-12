@@ -11,6 +11,8 @@ never copy a reference reel's characters, metaphors or layouts.
 python scripts/motif_reel.py catalog > /tmp/catalog.json     # 1. what a brief may name
 # 2. write quality/<dir>/<slug>.json (see "Writing the brief")
 python scripts/motif_reel.py check --brief BRIEF --allow-draft # 3. fast: script, plan, sound-off, lessons
+python scripts/motif_reel.py animatic --brief BRIEF --out RUNS \
+    --tts-python <python with kokoro-onnx> --allow-draft         # 3b. minutes: stills on the real voice
 python scripts/motif_reel.py run --brief BRIEF --out RUNS \
     --tts-python <python with kokoro-onnx> --allow-draft --render  # 4. voice, compile, gate, render
 python scripts/motif_improve.py retro RUNS/<slug> [--feedback "what the reviewer said"]  # 5. learn
@@ -39,7 +41,12 @@ quality bar). Copy the closest one and change it.
    demonstrate the claim is a failure. When the object is a file or a
    thing the viewer owns (`weather.py`), set `"carry": {"label": ...}`: the
    host carries it as a labelled card into every set and throws it into the
-   product screens.
+   product screens. Do the **story pass**
+   ([docs/STORY_PASS.md](docs/STORY_PASS.md)) before the beats: three
+   premises, the ending first, and a `story` block per beat (purpose,
+   but/therefore link, before and after, the action, what it sets up and pays
+   off). It is required: `check` fails a new brief without it. `animatic`
+   shows it on the real voice in minutes; watch it before you render.
 2. **Facts.** Every claim beat cites a fact with an http(s) `source_url`.
    Write narration in plain speech, about 3.7 words per second.
 3. **Format.** `"format": "short"` (default, 20-32 s, 4-6 beats) or `"long"`

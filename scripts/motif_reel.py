@@ -978,6 +978,9 @@ def run(brief_path, out_root=None, allow_draft=False, stub_voice=False, render=F
     if project.exists():raise FileExistsError(f'{project} exists; choose a fresh slug')
     project.mkdir(parents=True);write(project / 'brief.json', brief)
     script = script_record(brief);write(project / 'reel-script.json', script);stage('script', 'PASS', hook=script['hook'], hook_alternates=script['hook_alternates'])
+    from motif_story import check as story_check
+    story = story_check(brief);stage('story', story['status'], failures=story['failures'], warnings=story['warnings'])
+    if story['status'] == 'FAIL':write(project / 'reel-record.json', record);raise ValueError('story: ' + '; '.join(story['failures']))
     plan = plan_reel(brief, allow_draft, avoid_looks);errs, requests = validate_plan(plan, allow_draft)
     if requests:write(project / 'library-requests.json', requests)
     if errs:stage('plan', 'FAIL', errors=errs);write(project / 'reel-record.json', record);raise ValueError('plan: ' + '; '.join(errs))
@@ -1084,7 +1087,9 @@ def check_brief(brief, allow_draft=False):
         if lesson.get('check') not in PLAN_CHECKS:continue
         found = [f'{lesson["id"]} {f["where"]}: {f["detail"]}' for f in CHECKS[lesson['check']](None, plan, {})]
         (out['lessons'] if lesson.get('level') == 'gate' else out['lesson_warnings']).extend(found)
-    bad = out['plan'] or out['sound_off'] or out['lessons']
+    from motif_story import check as story_check
+    out['story'] = story_check(brief)
+    bad = out['plan'] or out['sound_off'] or out['lessons'] or out['story']['status'] == 'FAIL'
     return {'status': 'FAIL' if bad else 'PASS', **out}
 
 
@@ -1097,6 +1102,8 @@ def main():
     pl = sub.add_parser('plan');pl.add_argument('--brief', type=Path, required=True);pl.add_argument('--allow-draft', action='store_true')
     ck = sub.add_parser('check', help='fast brief check for authors and agents: script, plan, sound-off (no voice, no render)')
     ck.add_argument('--brief', type=Path, required=True);ck.add_argument('--allow-draft', action='store_true')
+    an = sub.add_parser('animatic', help='voice + compile + two stills per shot timed to the voice (minutes, not a render); see docs/STORY_PASS.md')
+    an.add_argument('--brief', type=Path, required=True);an.add_argument('--out', type=Path);an.add_argument('--allow-draft', action='store_true');an.add_argument('--tts-python', type=Path)
     sub.add_parser('catalog', help='everything a brief may name (machines, modes, rooms, palettes, looks, mascots, costumes, inserts, brands, relations) as JSON')
     a = p.parse_args()
     if a.cmd == 'catalog':print(json.dumps(catalog_for_agents(), indent=1));return
@@ -1104,6 +1111,11 @@ def main():
         report = check_brief(read(a.brief), a.allow_draft);print(json.dumps(report, indent=2));raise SystemExit(0 if report['status'] == 'PASS' else 1)
     if a.cmd == 'plan':
         plan = plan_reel(read(a.brief), a.allow_draft);errs, _ = validate_plan(plan, a.allow_draft);print(json.dumps({'plan': plan, 'errors': errs}, indent=2));raise SystemExit(1 if errs else 0)
+    if a.cmd == 'animatic':
+        from motif_story import animatic
+        brief = read(a.brief);root = Path(a.out) if a.out else ROOT / 'videos/productions'
+        run(a.brief, root, a.allow_draft, python=a.tts_python, finish=False)
+        print(json.dumps(animatic(root / brief['slug']), indent=2));return
     record = run(a.brief, a.out, a.allow_draft, a.stub_voice, a.render, a.tts_python, not a.no_finish)
     print(json.dumps(record['stages'], indent=2))
 

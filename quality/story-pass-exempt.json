@@ -1,0 +1,16 @@
+{
+  "note": "Briefs written before the story pass became required (2026-10-12, Mayowa: 'if you think it helps'). Every other brief must carry a story block (docs/STORY_PASS.md). Do not add new slugs here; give the brief a story block instead.",
+  "slugs": [
+    "adapt-claudex",
+    "adapt-second-brain",
+    "bench-blender-free",
+    "bench-free-https",
+    "bench-open-map",
+    "bench-python-no-gil",
+    "bench-sqlite-everywhere",
+    "git-reflog-rescue",
+    "uv-python-fast",
+    "passkeys-a",
+    "fixture-paper-notes"
+  ]
+}
