@@ -144,6 +144,34 @@ class AgentScreenTests(unittest.TestCase):
         svg = rig.render(v, ('run', 1.0))
         self.assertIn('Claude Code', svg);self.assertIn('PLAN.MD', svg)
 
+    def test_cli_session_draws_every_line_kind_and_scrolls(self):
+        rig = motif_rigs.get('app-screen')
+        v = {'device': 'laptop', 'ui': 'cli', 'logo': 'openai', 'agent': 'GPT-6 Astra', 'cwd': '~/my-app',
+             'lines': ['> audit PLAN.md', '* Read(PLAN.md)', '- 4 steps', '[x] Schema', '[ ] Tests', 'x old route', '+ new route', '- No tests', '- No auth', '- No limit', '? Send 3 gaps back?']}
+        early, late = rig.render(v, ('run', .1)), rig.render(v, ('run', 1.0))
+        self.assertIn('Thinking', early);self.assertNotIn('Thinking', late)
+        self.assertIn('clip-path', late);self.assertIn('1. Yes', late);self.assertIn('98% context left', late)
+        self.assertRegex(late, r'translate\(0 -[1-9]')  # the long session has scrolled
+
+    def test_pull_request_turns_merged_at_the_result(self):
+        rig = motif_rigs.get('app-screen')
+        v = {'device': 'monitor', 'ui': 'pr', 'title': 'Pull request #42', 'lines': ['Add login API', '✓ Plan audited', 'x Lint', '@astra: holds up'], 'result': 'MERGED'}
+        self.assertIn('Open', rig.render(v, ('run', .1)));late = rig.render(v, ('run', 1.0))
+        self.assertIn('Merged', late);self.assertIn('holds up', late);self.assertIn('Files changed', late)
+
+    def test_files_pane_opens_the_last_file(self):
+        rig = motif_rigs.get('app-screen')
+        v = {'device': 'monitor', 'ui': 'files', 'lines': ['app/', '  SKILL.md'], 'pane': ['name: claudex', '# Claudex']}
+        svg = rig.render(v, ('run', 1.0))
+        self.assertGreaterEqual(svg.count('SKILL.md'), 2);self.assertIn('claudex', svg)
+        self.assertIn('# Claudex', rig.printed_text(rig.params(v)))
+
+    def test_result_chip_never_takes_the_ink_colour(self):
+        # Claudex cut 6: sunflower's pop is its ink, so SKILL ADDED printed black on black.
+        rig = motif_rigs.get('app-screen')
+        svg = rig.render({'device': 'monitor', 'ui': 'files', 'lines': ['a/', '  b.md'], 'result': 'ADDED'}, ('run', 1.0), 'sunflower')
+        self.assertNotIn('rx="14" fill="#141414" stroke', svg)
+
     def test_host_carries_the_sheet_in_the_loop(self):
         rig = motif_rigs.get('review-loop')
         xs = [rig.host_track(rig.params({'mode': 'loop'}), ('run', t))[0] for t in (.05, .2, .35)]

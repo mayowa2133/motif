@@ -42,11 +42,16 @@ quality bar). Copy the closest one and change it.
 3. **Format.** `"format": "short"` (default, 20-32 s, 4-6 beats) or `"long"`
    (30-62 s, 4-10 beats).
 4. **Show the product.** For a film about an app, put it on screen in at
-   least a third of the beats with `app-screen` views: `files` (folder tree),
-   `note` (Markdown page, `[[links]]` become chips), `graph` (one node per
-   line), `chat` (question, then an answer with `[n]` citations), `terminal`,
-   `window`, `browser`. Fill them with the film's real content: several lines
-   (a terminal with two commands looks empty), since screens start mostly typed.
+   least a third of the beats with `app-screen` views: `cli` (a coding agent's
+   session: `> ` prompt, `* ` action, `- ` result, `+ `/`x ` diff lines,
+   `[ ] `/`[x] ` todos, `? ` permission prompt; `logo` picks the agent's
+   chrome), `pr` (pull request: title, then `✓ `/`x ` checks and
+   `@name: text` reviews), `files` (folder tree; `pane` opens the last file
+   beside it), `note` (Markdown page, `[[links]]` become chips), `graph` (one
+   node per line), `chat` (question, then an answer with `[n]` citations),
+   `terminal`, `window`, `browser`. Fill them with the film's real content:
+   8 to 12 lines, as dense as the real product (the scorecard's
+   `screen_detail` line fails a screen emptier than the references).
 5. **A new set every beat.** Consecutive beats never share a room. Continuity
    comes from the object and the host travelling between sets, not from
    holding one room. Aim for about 30 s (35 s at most); cut beats rather than

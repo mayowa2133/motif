@@ -25,6 +25,7 @@ REFERENCE = {
     'product_share': (.5, 1.0),     # claim beats showing the product big (close app-screen)
     'shot_variety': (1.0, 1.0),     # consecutive beats with a different composition
     'host_height': (.14, .3),       # host height as a share of frame height
+    'screen_detail': (10, 24),      # UI pieces per product screen (reference 09 by eye: a prompt box ~10, an editor ~20)
 }
 HOST_UNITS = 670  # host height in frame pixels per unit of scale (BOT_SCALE .42 reads at 22% of 1280)
 
@@ -68,7 +69,14 @@ def plan_metrics(run):
             lay = layouts.get(b['id']) if isinstance(layouts, dict) else None
             scale = CLOSE_HOST if framing_of(s) == 'close' else ((lay or {}).get('bot') or {}).get('scale')
             if scale:heights.append(scale * HOST_UNITS / 1280)
+    from motif_rigs import get as get_rig
+    details = []
+    for b in plan['beats']:
+        s = main(b)
+        if s and s['rig']['id'] == 'app-screen':
+            rig = get_rig('app-screen');details.append(rig.detail(rig.params(s['rig'].get('params'))))
     return {'product_share': round(product / max(1, len(claims)), 2),
+            'screen_detail': round(sum(details) / len(details), 1) if details else None,
             'shot_variety': round(sum(1 for a, b in pairs if a != b) / max(1, len(pairs)), 2),
             'host_height': round(sum(heights) / len(heights), 3) if heights else None}
 

@@ -112,14 +112,21 @@
           "logo": "claude",
           "lines": [
             "> plan a login API with Claudex",
+            "* Read(src/server.ts)",
+            "- Read 84 lines",
             "* Write(PLAN.md)",
+            "+ 1. Users table and schema",
+            "+ 2. POST /login route",
+            "+ 3. Session API",
+            "+ 4. Deploy",
             "- 4 steps, saved to PLAN.md",
-            "* Send PLAN.md to GPT-6 Astra"
+            "? Send PLAN.md to GPT-6 Astra?"
           ],
           "result": "PLAN READY",
           "cards": [
             "PLAN.MD"
-          ]
+          ],
+          "cwd": "~/my-app"
         },
         "room": "diner",
         "palette": "poppy/mauve"
@@ -143,15 +150,21 @@
           "lines": [
             "> audit PLAN.md",
             "* Read(PLAN.md)",
+            "- 4 steps, 0 tests",
+            "* Update(PLAN.md)",
+            "x 4. Deploy",
+            "+ 4. Tests, then deploy",
             "- No tests for login",
             "- No auth on the API",
-            "- No rate limit"
+            "- No rate limit",
+            "? Send 3 gaps back to Claude?"
           ],
           "result": "SENT BACK",
           "cards": [
             "3 GAPS",
             "REVISE"
-          ]
+          ],
+          "cwd": "~/my-app"
         },
         "room": "server-room",
         "palette": "poppy/slate",
@@ -298,17 +311,20 @@
       "visual": {
         "rig": "app-screen",
         "params": {
-          "device": "laptop",
-          "ui": "note",
-          "title": "REVIEW.md",
+          "device": "monitor",
+          "ui": "pr",
+          "title": "Pull request #42",
           "lines": [
-            "# Review log",
-            "Plan: Astra OK",
-            "Code: Claude OK",
-            "Self-graded: 0"
+            "Add login API",
+            "✓ Plan audited by GPT-6 Astra",
+            "✓ Code audited by Claude",
+            "✓ Tests, auth, rate limit",
+            "@astra: the plan holds up",
+            "@claude: bug fixed, LGTM",
+            "✓ Self-graded: 0"
           ],
           "result": "2 SIGN-OFFS",
-          "logo": "claude"
+          "logo": null
         },
         "room": "street",
         "palette": "poppy/mauve"
@@ -333,10 +349,23 @@
             "    skills/",
             "      claudex/",
             "        SKILL.md",
-            "  src/"
+            "  src/",
+            "    api/",
+            "  tests/"
           ],
           "result": "SKILL ADDED",
-          "logo": "claude"
+          "logo": "claude",
+          "pane": [
+            "---",
+            "name: claudex",
+            "description: plan, audit, swap",
+            "---",
+            "# Claudex",
+            "1. Claude plans",
+            "2. Astra audits the plan",
+            "3. Swap: Astra builds",
+            "4. Claude audits the code"
+          ]
         },
         "room": "living-room",
         "palette": "sunflower/dusk-teal"
