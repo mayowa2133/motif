@@ -4381,6 +4381,22 @@
    "license": "CC0-1.0 icon data; trademark of its owner, nominative use",
    "source_url": "https://docs.astral.sh/uv/",
    "evidence": "assets/brands/simple-icons/LICENSE.md"
+  },
+  {
+   "id": "brand/simple-icons/ollama",
+   "sha256": "9c62bf0159ee96c8b58c86a732f33b002b4b3bb165ec86e8ecca51ad6a82dab6",
+   "origin": "licensed",
+   "generator": "npm simple-icons@13.21.0 icons/ollama.svg",
+   "approval": {
+    "status": "APPROVED",
+    "by": "policy",
+    "date": "2026-10-12",
+    "note": "Nominative use of the product mark to identify the subject of the reel; icon data CC0 from simple-icons."
+   },
+   "path": "assets/brands/simple-icons/ollama.svg",
+   "license": "CC0-1.0 icon data; trademark of its owner, nominative use",
+   "source_url": "https://ollama.com",
+   "evidence": "assets/brands/simple-icons/LICENSE.md"
   }
  ]
 }

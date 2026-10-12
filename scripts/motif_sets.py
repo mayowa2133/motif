@@ -666,13 +666,15 @@ def bot_placement(rig, hero, hero_box):
     return x, FLOOR, s, side
 
 
-def front_spot(x, side, half, hero_box, labels):
+def front_spot(x, side, half, hero_box, labels, clear=()):
     """Where the host stands in front of the machine: as close to its slot (x) as possible while its
     body covers as little of the machine's labels as possible, and always inside the frame. When no
     spot is clear it may shrink a little (to 75%) rather than hide a label. Returns (x, side, shrink)."""
     def cost(cx, k):
         h = half * k;box = (cx - h * 1.05, FLOOR - 4.2 * h, 2.1 * h, 4.2 * h)  # arms out (cut 5: Memo's hand sat on the heap)
         cover = sum(_overlap(box, t) / max(1.0, t[2] * t[3]) for t in labels)
+        # A keep_clear station is one big box, so a partial overlap scores small; weigh it like a label.
+        cover += 5 * sum(_overlap(box, t) / max(1.0, t[2] * t[3]) for t in clear)
         return cover * 1000 + abs(cx - x) + (1 - k) * 400
     best = None
     for k in (1.0, .88, .75):
@@ -697,7 +699,7 @@ def solve(room, rig_name, values=None, palette=None, seed=0, beat=0, costume=Non
     # A machine with stations the host must not stand in front of (review-loop's two desks, Claudex cut 1
     # review: Bot hid the planner's desk) lists them as keep_clear boxes in its own units.
     clear = [_box(hero['x'], FLOOR, hero['scale'], b) for b in rig.bot_slot.get('keep_clear', ())]
-    bx, side, shrink = front_spot(bx, side, half, hero_box, labels + clear);bscale = max(BOT_MIN, bscale * shrink);half = BOT_HALF * bscale
+    bx, side, shrink = front_spot(bx, side, half, hero_box, labels, clear);bscale = max(BOT_MIN, bscale * shrink);half = BOT_HALF * bscale
     bot_box = (bx - half, by - 4.2 * half, 2 * half, 4.2 * half)
     pool = list(ROOMS[room]['dressing']);rng.shuffle(pool)
     roles = ['edge', 'overlap', 'back', 'back'][:max(2, min(4, count))];placed = []

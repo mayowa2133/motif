@@ -75,3 +75,17 @@ def test_brief_carry_reaches_every_shot_and_hook_framing_is_kept():
     plan = R.plan_reel(brief, allow_draft=True)
     assert plan['carry'] == 'weather.py'
     assert plan['beats'][0]['shots'][0]['rig'].get('framing') == 'close'
+
+
+def test_bridge_span_only_reads_wide():
+    from motif_rigs import get
+    rig = get('bridge-span');assert rig.focus(rig.params(None), 'close') is None
+
+
+def test_host_stands_clear_of_the_stamp_gate_document():
+    import motif_sets as S
+    from motif_rigs import get
+    lay = S.solve('street', 'stamp-gate', {'document': 'YOUR PROMPTS', 'stamp': 'LOCAL', 'verdict': 'rejected'}, 'berry/mauve', 83, 3)
+    hero = lay['hero'];doc = S._box(hero['x'], S.FLOOR, hero['scale'], get('stamp-gate').bot_slot['keep_clear'][0])
+    half = S.BOT_HALF * lay['bot']['scale'];host = (lay['bot']['x'] - half, S.FLOOR - 4.2 * half, 2 * half, 4.2 * half)
+    assert S._overlap(host, doc) == 0

@@ -1,0 +1,366 @@
+{
+  "slug": "ollama-local-ai",
+  "title": "Run an AI model on your own laptop with Ollama",
+  "topic": "Ollama, which runs open AI models locally",
+  "format": "short",
+  "seed": 83,
+  "mascot": "memo",
+  "look": "paper-craft",
+  "voice": "af_heart",
+  "brand": {
+    "slug": "ollama"
+  },
+  "carry": {
+    "label": "journal.md"
+  },
+  "story": {
+    "premises": [
+      "A rocket launch: Ollama installs, the model lifts off from the laptop, and it lands answers back on the desk.",
+      "One private file, journal.md, that an AI reads without it leaving the laptop: install, pull a model to disk, keep prompts local, then a summary on your desk.",
+      "A delivery van that never leaves the garage: every request is delivered inside the house."
+    ],
+    "chosen": 1,
+    "why": "A private journal is something viewers would never paste into a website; carrying it through every set makes 'it never leaves your laptop' visible instead of claimed.",
+    "object": "journal.md, a private file",
+    "spine": "You want AI on your journal, but not on someone's server. Therefore Ollama installs with one command. But it needs a model, so it pulls one to your own disk. Therefore every prompt stays local, and your own apps can ask it too. Until finally it summarizes the journal right on your desk.",
+    "ending": "The terminal prints a summary of journal.md and stamps SUMMED UP: ANSWERED ON YOUR DESK."
+  },
+  "hook": {
+    "alternates": [
+      "Want AI to read your private journal, without it ever leaving your laptop?"
+    ],
+    "selected": 0,
+    "headline": "AI THAT STAYS ON YOUR LAPTOP",
+    "headline_b": "MEET OLLAMA",
+    "visual": {
+      "rig": "app-screen",
+      "framing": "close",
+      "params": {
+        "device": "laptop",
+        "ui": "note",
+        "title": "journal.md",
+        "lines": [
+          "# This week",
+          "Slept badly Monday, better after.",
+          "Fixed the bike chain on Thursday.",
+          "Want more time outside.",
+          "Private: do not share",
+          "[[goals]] [[sleep]]"
+        ],
+        "result": "PRIVATE"
+      },
+      "room": "living-room",
+      "palette": "lagoon/dusk-teal",
+      "brand": null
+    },
+    "story": {
+      "promise": "an AI answers about journal.md without it leaving the laptop",
+      "sets_up": [
+        "needs-ai",
+        "private-journal"
+      ]
+    }
+  },
+  "facts": [
+    {
+      "id": "f1",
+      "claim": "Ollama installs on macOS and Linux with one command: curl -fsSL https://ollama.com/install.sh | sh",
+      "value": "one command",
+      "source_url": "https://github.com/ollama/ollama/blob/main/README.md",
+      "accessed": "2026-10-12"
+    },
+    {
+      "id": "f2",
+      "claim": "On macOS, Ollama stores models in ~/.ollama/models",
+      "value": "~/.ollama/models",
+      "source_url": "https://docs.ollama.com/faq",
+      "accessed": "2026-10-12"
+    },
+    {
+      "id": "f3",
+      "claim": "Ollama runs locally, and Ollama does not see your prompts or data when you run locally",
+      "value": "runs locally",
+      "source_url": "https://docs.ollama.com/faq",
+      "accessed": "2026-10-12"
+    },
+    {
+      "id": "f4",
+      "claim": "Ollama has a REST API for running and managing models, served at localhost:11434",
+      "value": "11434",
+      "source_url": "https://github.com/ollama/ollama/blob/main/README.md",
+      "accessed": "2026-10-12"
+    },
+    {
+      "id": "f5",
+      "claim": "ollama run gemma4 runs and chats with the Gemma 4 open model",
+      "value": "ollama run",
+      "source_url": "https://github.com/ollama/ollama/blob/main/README.md",
+      "accessed": "2026-10-12"
+    }
+  ],
+  "beats": [
+    {
+      "id": "install",
+      "narration": "Ollama installs with one command.",
+      "fact": "f1",
+      "relation": "demo",
+      "headline": "1 COMMAND TO INSTALL",
+      "payoff_headline": "OLLAMA IS READY",
+      "visual": {
+        "rig": "app-screen",
+        "params": {
+          "device": "monitor",
+          "ui": "terminal",
+          "title": "~",
+          "logo": "ollama",
+          "lines": [
+            "$ curl -fsSL \\",
+            "  https://ollama.com/install.sh \\",
+            "  | sh",
+            ">>> Downloading Ollama",
+            ">>> Installing ollama",
+            ">>> Install complete",
+            "$ ollama",
+            "Run a model or launch an app"
+          ],
+          "result": "READY",
+          "cards": [
+            "INSTALL.SH"
+          ],
+          "stack": {
+            "title": "journal.md",
+            "lines": [
+              "# This week",
+              "Slept badly Monday"
+            ]
+          }
+        },
+        "room": "office",
+        "palette": "lagoon/mustard",
+        "act": "types",
+        "entrance": "pop"
+      },
+      "story": {
+        "purpose": "demonstrate",
+        "link": "therefore",
+        "before": "no AI on the laptop",
+        "after": "ollama installed and waiting: OLLAMA IS READY",
+        "action": "the host types the install command and it completes",
+        "pays_off": [
+          "needs-ai"
+        ],
+        "line_job": "context",
+        "sets_up": [
+          "server-ready"
+        ]
+      }
+    },
+    {
+      "id": "model",
+      "narration": "But it needs a model, so it pulls one onto your own disk.",
+      "fact": "f2",
+      "relation": "demo",
+      "headline": "PULL GEMMA4 ONCE",
+      "payoff_headline": "SAVED IN ~/.OLLAMA",
+      "visual": {
+        "rig": "app-screen",
+        "params": {
+          "device": "monitor",
+          "ui": "files",
+          "title": "~/.ollama",
+          "logo": "ollama",
+          "lines": [
+            "~/.ollama/",
+            "  models/",
+            "    blobs/",
+            "    manifests/",
+            "      gemma4"
+          ],
+          "pane": [
+            "model: gemma4",
+            "source: ollama.com/library",
+            "stored: ~/.ollama/models",
+            "leaves laptop: never"
+          ],
+          "result": "SAVED",
+          "cards": [
+            "GEMMA4"
+          ],
+          "stack": {
+            "title": "terminal",
+            "lines": [
+              "$ ollama pull gemma4",
+              "pulling manifest",
+              "success"
+            ]
+          }
+        },
+        "room": "workshop",
+        "palette": "lagoon/slate",
+        "act": "inspects",
+        "entrance": "slide"
+      },
+      "story": {
+        "purpose": "complicate",
+        "link": "but",
+        "before": "Ollama with no model",
+        "after": "gemma4 saved on the laptop: SAVED IN ~/.OLLAMA",
+        "action": "the model files land in the folder tree",
+        "sets_up": [
+          "model-on-disk"
+        ],
+        "line_job": "explain"
+      }
+    },
+    {
+      "id": "local",
+      "narration": "It runs locally, so Ollama never sees your prompts or your data.",
+      "fact": "f3",
+      "relation": "approve",
+      "headline": "PROMPTS STAY ON YOUR LAPTOP",
+      "payoff_headline": "OLLAMA SEES NOTHING",
+      "visual": {
+        "rig": "stamp-gate",
+        "params": {
+          "document": "YOUR PROMPTS",
+          "stamp": "LOCAL",
+          "verdict": "rejected"
+        },
+        "room": "street",
+        "palette": "berry/mauve",
+        "act": "stamps",
+        "entrance": "drop"
+      },
+      "story": {
+        "purpose": "reveal",
+        "link": "therefore",
+        "before": "your prompts at the gate out of the laptop",
+        "after": "the gate stays shut on YOUR PROMPTS, stamped LOCAL",
+        "action": "the stamp slams LOCAL and the gate arm stays down",
+        "sets_up": [
+          "stays-local"
+        ],
+        "pays_off": [
+          "private-journal"
+        ],
+        "line_job": "explain"
+      }
+    },
+    {
+      "id": "api",
+      "narration": "Your own apps can ask it too, at localhost port eleven four three four.",
+      "fact": "f4",
+      "relation": "demo",
+      "headline": "LOCALHOST:11434",
+      "payoff_headline": "YOUR APPS CAN ASK IT",
+      "visual": {
+        "rig": "app-screen",
+        "params": {
+          "device": "monitor",
+          "ui": "terminal",
+          "title": "my-app",
+          "logo": "ollama",
+          "lines": [
+            "$ curl localhost:11434/api/chat \\",
+            "  -d '{\"model\": \"gemma4\",",
+            "  \"messages\": [{\"role\": \"user\",",
+            "  \"content\": \"Plan my week\"}]}'",
+            "{\"message\": {\"role\": \"assistant\",",
+            "  \"content\": \"Mon: fix the bike,",
+            "  Tue: early night...\"}}"
+          ],
+          "result": "ANSWERED",
+          "cards": [
+            "LOCALHOST",
+            "11434"
+          ],
+          "stack": {
+            "title": "app.py",
+            "lines": [
+              "import ollama",
+              "ollama.chat(model=\"gemma4\",",
+              "  messages=[...])"
+            ]
+          }
+        },
+        "room": "diner",
+        "palette": "lagoon/ink-navy",
+        "act": "cheers",
+        "entrance": "walk"
+      },
+      "story": {
+        "purpose": "escalate",
+        "link": "therefore",
+        "before": "only the terminal chat can talk to the model",
+        "after": "an app call answered on localhost:11434: YOUR APPS CAN ASK IT",
+        "action": "a curl call goes to localhost:11434 and the answer comes back",
+        "line_job": "anticipation",
+        "pays_off": [
+          "server-ready"
+        ]
+      }
+    },
+    {
+      "id": "ask",
+      "narration": "Ask about your journal, and the answer never leaves your desk.",
+      "fact": "f5",
+      "relation": "demo",
+      "headline": "GEMMA4 READS JOURNAL.MD",
+      "payoff_headline": "ANSWERED ON YOUR DESK",
+      "visual": {
+        "rig": "app-screen",
+        "params": {
+          "device": "laptop",
+          "ui": "terminal",
+          "title": "~/notes",
+          "logo": "ollama",
+          "lines": [
+            "$ ollama run gemma4 \\",
+            "  \"Summarize $(cat journal.md)\"",
+            "This week you slept better",
+            "after Monday, fixed the bike,",
+            "and want more time outside.",
+            "$ ls ~/.ollama/models",
+            "blobs  manifests"
+          ],
+          "result": "SUMMED UP",
+          "cards": [
+            "NO CLOUD"
+          ],
+          "stack": {
+            "title": "journal.md",
+            "lines": [
+              "# This week",
+              "Fixed the bike chain"
+            ]
+          }
+        },
+        "room": "living-room",
+        "palette": "lagoon/peach",
+        "act": "smug",
+        "entrance": "slide"
+      },
+      "story": {
+        "purpose": "resolve",
+        "link": "therefore",
+        "before": "journal.md unread by any AI",
+        "after": "a summary of journal.md printed locally: SUMMED UP",
+        "action": "the host throws journal.md into the terminal and the summary types out",
+        "pays_off": [
+          "model-on-disk",
+          "stays-local",
+          "private-journal"
+        ],
+        "line_job": "land"
+      }
+    }
+  ],
+  "cta": {
+    "keyword": "OLLAMA",
+    "narration": "Comment OLLAMA and I'll send you the setup.",
+    "headline_b": "GET THE SETUP",
+    "story": {
+      "line_job": "context"
+    }
+  }
+}
