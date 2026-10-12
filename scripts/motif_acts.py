@@ -11,6 +11,8 @@ every mascot plays every act.
 import math
 from dataclasses import dataclass
 
+from motif_springs import pop as spring_pop
+
 
 @dataclass(frozen=True)
 class Act:
@@ -63,12 +65,16 @@ def act_motion(act, entrance, role, u, f, n, tc, side, entering=True):
         arrive = min(1.0, u / .22) if entering else 1.0
         if arrive < 1:
             k = _ease(arrive)
-            if entrance == 'pop':   # springs up from below the frame, stretches, lands with a squash
-                return a.work[0], 'excited', 0.0, 320 * (1 - k) - 40 * math.sin(k * math.pi), 1 + .12 * math.sin(k * math.pi), None
-            if entrance == 'drop':  # falls in from above and lands
-                return 'falling' if k < .7 else a.work[0], 'surprised', 0.0, -560 * (1 - k) ** 2, (1 - .14 * math.sin((k - .7) / .3 * math.pi)) if k > .7 else 1.06, None
-            if entrance == 'slide':  # skids in from its side
-                return 'pushing', 'determined', side * 260 * (1 - k), 0.0, 1.0, None
+            # Entrances are springs (2026-10-12 motion study): the host arrives fast, overshoots its
+            # mark and settles, instead of an eased move that slows to a dead stop.
+            if entrance == 'pop':   # springs up from below the frame past its mark, stretched while fast, and settles
+                s = spring_pop(arrive, .42);speed = (spring_pop(min(1.0, arrive + .02), .42) - s) / .02
+                return a.work[0], 'excited', 0.0, 320 * (1 - s), 1 + max(-.1, min(.14, .035 * speed)), None
+            if entrance == 'drop':  # falls in from above, lands and bounces off a sprung squash
+                if k < .7:return 'falling', 'surprised', 0.0, -560 * (1 - k) ** 2, 1.06, None
+                land = (k - .7) / .3;return a.work[0], 'surprised', 0.0, -26 * math.exp(-4 * land) * abs(math.sin(land * math.pi * 2)), 1 - .16 * math.exp(-4 * land) * math.cos(land * math.pi * 3), None
+            if entrance == 'slide':  # skids in from its side, past its mark, and rocks back
+                return 'pushing', 'determined', side * 260 * (1 - spring_pop(arrive, .5)), 0.0, 1.0, None
             return 'standing', 'determined', side * 80 * (1 - k), 0.0, 1.0, 'walk'  # legs cycle, so not a held pose
         at = u / max(1e-6, tc * .92) if tc else 1.0
         if at < .82:  # works the machine: alternating gestures with a bob, never a held pose

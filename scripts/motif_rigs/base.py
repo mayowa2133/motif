@@ -165,6 +165,10 @@ def ease(t):t = max(0.0, min(1.0, t));return 1 - (1 - t) ** 3
 def ease_in(t):t = max(0.0, min(1.0, t));return t ** 3
 
 
+# Springs for in-scene arrivals (cards, stickers, objects landing); the camera keeps ease (L027).
+from motif_springs import pop as spring_pop, spring, track  # noqa: E402,F401
+
+
 def place(svg, x, y, scale=1.0):
     return f'<g transform="translate({x:.3f} {y:.3f}) scale({scale:.5f})">{svg}</g>'
 

@@ -316,6 +316,15 @@
       "rule": "A machine whose story is its whole length (Rig.close_framing False, e.g. race-track) is never framed close, and the planner never flips the framing of the beat the hook previews; the CTA narration is 10 words or fewer",
       "check": "cta-short",
       "level": "warn"
+    },
+    {
+      "id": "L037",
+      "date": "2026-10-12",
+      "source": "raycfu motion-design studio guide (reel DeZRVmkvhiR and its doc), assessed against Motif's code: rigs and host acts used plain easing almost everywhere, and the music bed's tempo ignored the cuts",
+      "symptom": "eased arrivals slow to a dead stop and read floaty (motion 3.9-4.0 against the references' 4.5-8.2); cuts fell anywhere against the music's beat",
+      "rule": "Things that arrive in a scene (host entrances, collage cards, stacked windows, new rig pieces) move on springs from motif_springs (pop: fast start, a small overshoot, settled by the end; track: retargets keep their velocity); the camera still always eases (L027). The music bed fits its tempo so every cut lands on a beat and starts a bar",
+      "check": null,
+      "level": "brief"
     }
   ]
 }
