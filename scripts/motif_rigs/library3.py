@@ -144,6 +144,11 @@ class AppScreen(Rig):
         top = -620 if p['device'] == 'phone' else (-560 if p['device'] == 'monitor' else -440)
         return (-w / 2, top, w, h)
 
+    def focus(self, p, role):
+        # Close framing: the screen itself fills the frame (the references show the product big).
+        if role != 'close':return None
+        x, y, w, h = self.screen(p);return (x + w / 2, y + h / 2, w, h)
+
     def button(self, p):
         x, y, w, h = self.screen(p)
         return (x + 70, y + h - 46)  # bottom-left: Bot stands on the right and must not hide the key
@@ -218,7 +223,7 @@ class AppScreen(Rig):
             if kind in self.VIEWS or kind == 'terminal':
                 # A corner sticker clear of the content: below it where text runs down the screen
                 # (chat, terminal, file tree; cut 6 stills: CLAUDE IS IN and VAULT READY covered lines).
-                fit = min(.72, (w * .5) / rw);rx, ry = x + w - rw * fit / 2 - 14, (y + h - 34 if kind in ('chat', 'terminal', 'files') else y + 44 + 34)
+                fit = min(.72, (w * .5) / rw);rx, ry = x + w - rw * fit / 2 - 14, (y + h - 34 if kind in ('chat', 'terminal', 'files', 'note') else y + 44 + 34)
             out += g(rect(-rw / 2 + 5, -40, rw, 80, c['dark'], 14).replace('<rect', '<rect opacity=".22"') + rect(-rw / 2, -44, rw, 80, c['pop'] if c['pop'] != c['light'] else c['accent'], 14, c['dark'], 3)
                      + txt(res, 0, 12, 40, c['dark'], 900, 'middle'), rx, ry, -3, done * fit)
         return out
@@ -255,12 +260,14 @@ class AppScreen(Rig):
         x, y, w, h = self.screen(p);top = y + 44;lines = p.get('lines') or [];rows = self._shown(lines, typed)
         out = ''
         if rows and rows[0][1] > 0:
-            title = rows[0][0];ts = min(46, (w - 60) / max(6, len(title) * .62))
+            title = rows[0][0];ts = min(40, (w - 60) / max(6, len(title) * .62))
             out += txt(title, x + 26, top + 18 + ts, ts, c['dark'], 900) + rect(x + 26, top + 30 + ts, w - 52, 3, c['secondary'])
-        body_top = top + 64 + min(46, (w - 60) / max(6, len(lines[0] if lines else 'x') * .62));size = min(30, (w - 60) / max(14, max((len(l) for l in lines[1:]), default=14) * .6))
+        ts = min(40, (w - 60) / max(6, len(lines[0] if lines else 'x') * .62));size = min(30, (w - 60) / max(14, max((len(l) for l in lines[1:]), default=14) * .6))
+        # Body lines end above the run key (Claudex cut 3: the OK key covered the last line).
+        size = min(size, (y + h - 72 - top - 34 - ts) / (1.1 + max(0, len(lines) - 2) * 1.55));body_top = top + 34 + ts + size * 1.1
         for i, (line, k) in enumerate(rows[1:]):
             if k <= 0:break
-            ly = body_top + i * size * 1.7;lx = x + 26
+            ly = body_top + i * size * 1.55;lx = x + 26
             shown = line[:max(1, int(len(line) * k))]
             for part in re.split(r'(\[\[[^\]]*\]?\]?)', shown):
                 if not part:continue

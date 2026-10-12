@@ -5,7 +5,7 @@ Motif turns a JSON brief into a narrated 2D paper-style short-form reel. A reel 
 library and gates the result. Never write per-film code, never hand-draw a frame,
 never copy a reference reel's characters, metaphors or layouts.
 
-## The loop in five commands
+## The loop in six commands
 
 ```bash
 python scripts/motif_reel.py catalog > /tmp/catalog.json     # 1. what a brief may name
@@ -14,6 +14,7 @@ python scripts/motif_reel.py check --brief BRIEF --allow-draft # 3. fast: script
 python scripts/motif_reel.py run --brief BRIEF --out RUNS \
     --tts-python <python with kokoro-onnx> --allow-draft --render  # 4. voice, compile, gate, render
 python scripts/motif_improve.py retro RUNS/<slug> [--feedback "what the reviewer said"]  # 5. learn
+python scripts/motif_scorecard.py RUNS/<slug>                   # 6. score against the references
 ```
 
 Repeat 3 until it prints `PASS` before you spend a render (a 45 s reel takes

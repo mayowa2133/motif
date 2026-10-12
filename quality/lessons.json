@@ -280,6 +280,15 @@
       "rule": "Every look keeps the approved base: hard cuts, an eased camera (push, pan, float), the taped strip headline, paper captions and the paper finish; a look varies only palettes, rooms, accents and hook/CTA staging",
       "check": "approved-look",
       "level": "gate"
+    },
+    {
+      "id": "L033",
+      "date": "2026-10-12",
+      "source": "Claudex cut 3 grade against reference 09 (2026-10-11)",
+      "symptom": "six of twelve frames were the same two-desk wide shot, product screens were small and the host stood large at the edge; reference 09 changes the composition every idea and shows the product big in 9 of 12 frames",
+      "rule": "Consecutive beats never share a composition (same machine at the same framing); product screens are framed close with the host small in front",
+      "check": "shot-variety",
+      "level": "gate"
     }
   ]
 }

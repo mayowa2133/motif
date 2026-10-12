@@ -189,9 +189,9 @@ def plan_reel(brief, allow_draft=False, avoid_looks=()):
         beat_brand = visual['brand'] if 'brand' in visual else brand
         if beat_brand != brand and 'logo' in _get_rig(rig_id).params_schema['properties'] and params.get('logo') == brand:params['logo'] = beat_brand
         beats.append({'id': b['id'], 'kind': 'claim', 'relation': relation, 'narration': b['narration'], 'fact': b['fact'], 'palette': visual.get('palette') or palettes[i + 1], 'shots': [
-            {'id': f'{b["id"]}-a', 'role': 'setup', 'headline': setup, 'headline_b': _short(b['narration'], 26), 'headline_b_cut': _clip(b['narration'], 26)[1], 'room': room, 'rig': {'id': rig_id, 'params': params, **({'hold': True} if visual.get('hold') else {})}, 'insert': None,
+            {'id': f'{b["id"]}-a', 'role': 'setup', 'headline': setup, 'headline_b': _short(b['narration'], 26), 'headline_b_cut': _clip(b['narration'], 26)[1], 'room': room, 'rig': {'id': rig_id, 'params': params, **({'hold': True} if visual.get('hold') else {}), **({'framing': visual['framing']} if visual.get('framing') else {})}, 'insert': None,
              'bot': {'costume': costume, 'face': 'determined', 'pose': 'walking'}},
-            {'id': f'{b["id"]}-b', 'role': 'payoff', 'headline': payoff, 'headline_b': _short(fact['claim'], 26), 'headline_b_cut': _clip(fact['claim'], 26)[1], 'room': room, 'rig': {'id': rig_id, 'params': params, **({'hold': True} if visual.get('hold') else {})}, 'insert': insert,
+            {'id': f'{b["id"]}-b', 'role': 'payoff', 'headline': payoff, 'headline_b': _short(fact['claim'], 26), 'headline_b_cut': _clip(fact['claim'], 26)[1], 'room': room, 'rig': {'id': rig_id, 'params': params, **({'hold': True} if visual.get('hold') else {}), **({'framing': visual['framing']} if visual.get('framing') else {})}, 'insert': insert,
              'bot': {'costume': costume, 'face': 'surprised', 'pose': 'pointing'}}]})
         if beat_brand != brand:
             for shot in beats[-1]['shots']:shot['brand'] = beat_brand
@@ -211,6 +211,7 @@ def plan_reel(brief, allow_draft=False, avoid_looks=()):
     elif (brief.get('hook') or {}).get('hero', True):
         beats[0]['shots'][0].update({'rig': copy.deepcopy(first_claim['rig']), 'insert': None, 'crowd': 0, 'grammar': 'hero'})
     _assign_wallpapers(beats, seed)
+    _vary_framing(beats)
     _keep_object_palettes(beats, {b['id'] for b in brief['beats'] if (b.get('visual') or {}).get('palette')} | ({'hook'} if (hook_visual or {}).get('palette') else set()))
     cta_room = room_for('celebrate launch ' + brief['cta']['narration'], brief['cta'].get('room'))
     beats.append({'id': 'cta', 'kind': 'cta', 'narration': brief['cta']['narration'], 'palette': palettes[-1], 'shots': [
@@ -252,6 +253,27 @@ def _assign_wallpapers(beats, seed):
         pick = min((w for w in order if w != prev), key=lambda w: (used.get(w, 0), order.index(w)))
         used[pick] = used.get(pick, 0) + 1;prev = pick
         for shot in beat['shots']:shot['wallpaper'] = pick
+
+
+def _vary_framing(beats):
+    """L033: consecutive beats never share a composition. Where a beat would repeat the previous one
+    (same machine at the same framing) and the brief did not choose its framing, flip it, when the
+    machine has a close spot (Rig.focus 'close'). Applies to setup and payoff alike."""
+    from motif_rigs import get as _get_rig
+    prev = None
+    for beat in beats:
+        shots = [s for s in beat['shots'] if s.get('rig')]
+        if not shots:prev = None;continue
+        r = shots[0]['rig'];key = (r['id'], framing_of(shots[0]))
+        if key == prev and not r.get('framing') and beat.get('kind') != 'hook':
+            other = 'wide' if key[1] == 'close' else 'close'
+            rig = _get_rig(r['id'])
+            try:spot = rig.focus(rig.params(r.get('params') or None), 'close')
+            except Exception:spot = None  # bad params: the plan validator reports them
+            if other == 'wide' or spot:
+                for s in shots:s['rig'] = {**s['rig'], 'framing': other}
+                key = (r['id'], other)
+        prev = key
 
 
 def _keep_object_palettes(beats, explicit):
@@ -427,6 +449,25 @@ def insert_piece(insert, c_name, u, frame):
     if kind == 'gauge':return g(ins.gauge(min(a.get('value', .8), u * 1.4), c_name, a.get('label', '')), 540, 420, 0, scale)
     if kind == 'progress_bar':return g(ins.progress_bar(min(a.get('fraction', 1.0), u * 1.5), c_name, label=a.get('label', '')), 150, 390, -1, scale)
     raise ValueError(f'unsupported insert {kind}')
+
+
+CLOSE_FILL = .86          # close framing: the subject's span fills this share of frame width
+CLOSE_ZOOM = (1.15, 1.9)  # and the camera zoom stays in this range
+CLOSE_TALL = 600          # and its height stays within this many pixels
+CLOSE_Y = 640             # where the close subject's centre sits (between headline and captions)
+CLOSE_TILT = 2.5          # degrees a close product screen leans, alternating by beat
+CLOSE_HOST = .27          # host scale in a close framing (about 20% of frame height)
+
+
+def framing_of(shot):
+    """'close' or 'wide': a beat's visual.framing, else close on product screens (the references
+    show the product big) and wide on machines."""
+    r = shot.get('rig') or {}
+    return r.get('framing') or ('close' if r.get('id') == 'app-screen' and shot.get('role') != 'hook' else 'wide')
+
+
+def shot_index(shot):
+    return int(hashlib.sha256(shot['id'].split('-')[0].encode()).hexdigest()[:4], 16)
 
 
 FOCUS_ZOOM = .16  # how far a setup eases in on the acting part of a wide machine (Rig.focus)
@@ -616,14 +657,23 @@ def shot_frames(shot, layout, seed, look='paper-craft', brand=None, prev=None, c
         # The payoff opens on the change itself: a puff where the machine made contact.
         h = layout['hero'];(lx, ly), _ = rig.contacts(h.get('values'), (action, tc))[rig.actions[action].contact]
         poof_at = (h['x'] + lx * h['scale'], h['y'] + ly * h['scale'])
-    carry_to = hit = focus = None
-    if rig and not prev:
+    carry_to = hit = focus = close = None
+    if rig and framing_of(shot) == 'close':
+        spot = rig.focus(rig.params(layout['hero'].get('values') or None), 'close')
+        if spot:
+            # Close framing (Claudex cut 3 grade): the product or the acting part fills the frame, the
+            # way the references open each idea on a big screen or object; the host stands small in front.
+            h = layout['hero'];fx_, fy_ = h['x'] + spot[0] * h['scale'], h['y'] + spot[1] * h['scale']
+            z = CLOSE_FILL * 720 / (spot[2] * h['scale'])
+            if len(spot) > 3:z = min(z, CLOSE_TALL / (spot[3] * h['scale']))  # a tall subject (a phone) fits between headline and captions
+            close = (fx_, fy_, min(CLOSE_ZOOM[1], max(CLOSE_ZOOM[0], z)))
+    if rig and not prev and not close:
         spot = rig.focus(rig.params(layout['hero'].get('values') or None), shot['role'])
         if spot:h = layout['hero'];focus = (h['x'] + spot[0] * h['scale'], h['y'] + spot[1] * h['scale'])
     if rig:
         h = layout['hero'];(lx, ly), _ = rig.contacts(h.get('values'), (action, tc))[rig.actions[action].contact]
         hit = (h['x'] + lx * h['scale'], h['y'] + ly * h['scale'])
-        if fc is not None and rig.name in CARRY:carry_to = hit
+        if fc is not None and rig.name in CARRY and not close:carry_to = hit
     frames = []
     for f in range(n):
         u = f / max(1, n - 1);pieces = []
@@ -642,12 +692,17 @@ def shot_frames(shot, layout, seed, look='paper-craft', brand=None, prev=None, c
                 # Ease in on the part of the machine that is acting, never past the room's edges.
                 k = ease(min(1.0, u / .6));zoom += FOCUS_ZOOM * k;ccx = focus[0]
                 dx = min((zoom - 1) * ccx, max((1 - zoom) * (720 - ccx), dx + k * (360 - ccx)))
+        if close:
+            # Held close framing across setup and payoff: a slow push, the subject centred, room edges never shown.
+            zoom = close[2] * (1 + .03 * u + (.03 if prev else 0));ccx = close[0]
+            dx = min((zoom - 1) * ccx, max((1 - zoom) * (720 - ccx), 360 - ccx + 4 * math.sin(f * .07)))
+            dy = min((zoom - 1) * close[1], max((1 - zoom) * (1280 - close[1]), CLOSE_Y - close[1] + 3 * math.sin(f * .053)))
         if fc is not None and f >= fc:
             # Contact punch (2026-10-11 motion study): the references' frames change in sudden events
             # (11-25% of frames) where Motif eased everything (2%); the moment the machine makes contact
             # the camera kicks in and shakes for a few frames.
             k = math.exp(-(f - fc) / 3.5);zoom += .07 * k;dx += 9 * math.sin((f - fc) * 2.6) * k;dy += 5 * math.cos((f - fc) * 3.1) * k
-        fy = focus[1] if focus and not prev else cy
+        fy = close[1] if close else (focus[1] if focus and not prev else cy)
         cam = lambda markup: camera(markup, zoom, ccx, fy, dx, dy)
         if dy > 0:pieces.append(f'<rect width="720" height="1280" fill="{L["transition_colour"]}"/>')
         pieces.append(cam(room['draw'](c)))
@@ -672,6 +727,7 @@ def shot_frames(shot, layout, seed, look='paper-craft', brand=None, prev=None, c
             # bounce where ours glided; Mayowa wants the camera smooth, so the energy lives in the object).
             sq = impact(f, fc, n, prev, hold)
             if sq:rock += 3.5 * sq
+            if close and rig.name == 'app-screen':rock += CLOSE_TILT * (1 if shot_index(shot) % 2 else -1)  # a pasted-on collage tilt
             hero = f'<g transform="translate({h["x"]:.1f} {h["y"]:.1f}) scale({1 + .55 * sq:.4f} {1 - sq:.4f}) rotate({rock:.3f}) translate({-h["x"]:.1f} {-h["y"]:.1f})">{hero}</g>'  # the machine rocks on its base
             if brand and shot['role'] != 'hook' and not rig_shows_mark(shot, brand):
                 from motif_brand import sticker
@@ -690,7 +746,12 @@ def shot_frames(shot, layout, seed, look='paper-craft', brand=None, prev=None, c
             face = bot['face'] if shot['role'] == 'payoff' and face == 'excited' and bot.get('face') else face
             body = dressed_bot(b['x'] + bdx, b['y'] + bdy, b['scale'], face, pose, bot['costume'], shot['palette'], flip=side > 0, cycle=cycle, phase=f / 10, head=round(4 * math.sin(f * .3)), mascot=M)
             if squash != 1:body = f'<g transform="translate({b["x"]:.1f} {b["y"]:.1f}) scale({2 - squash:.3f} {squash:.3f}) translate({-b["x"]:.1f} {-b["y"]:.1f})">{body}</g>'
-            if b.get('behind'):pieces.insert(hero_at, cam(body))  # squeezed onto a wide machine: peeks from behind it
+            if close:
+                # Small and in front of the big subject, outside the camera (refs: about 20% of frame height).
+                hx = 590 if side > 0 or rig.name == 'app-screen' else 130
+                body = dressed_bot(hx + bdx * .5, 1048 + bdy * .5, CLOSE_HOST, face, pose, bot['costume'], shot['palette'], flip=hx > 360, cycle=cycle, phase=f / 10, head=round(4 * math.sin(f * .3)), mascot=M)
+                pieces.append(body)
+            elif b.get('behind'):pieces.insert(hero_at, cam(body))  # squeezed onto a wide machine: peeks from behind it
             else:pieces.append(cam(body))
             if carry_to:
                 half = 235 * b['scale'];ns = max(.8, half / 80);t0 = max(1, fc - 9)

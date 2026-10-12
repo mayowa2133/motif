@@ -248,8 +248,23 @@ def check_approved_look(project, plan, layouts):
     return [{'where': 'film', 'detail': d} for d in unapproved(look)] if look else []
 
 
+def check_shot_variety(project, plan, layouts):
+    """Consecutive beats never share a composition: the same machine at the same framing (Claudex cut 3
+    grade: six of twelve frames were the same two-desk wide shot; the references change the shot every idea)."""
+    from motif_reel import framing_of
+    out, prev, prev_kind = [], None, None
+    for beat in (plan or {}).get('beats', []):
+        shot = next((s for s in beat.get('shots', []) if s.get('rig')), None)
+        key = (shot['rig']['id'], framing_of(shot)) if shot else None
+        # The hero-first hook previews the first claim's machine on purpose; that pair is exempt.
+        if key and key == prev and prev_kind != 'hook':out.append({'where': beat['id'], 'detail': f'{key[0]} {key[1]} again: change the framing (visual.framing) or the machine'})
+        prev, prev_kind = key, beat.get('kind')
+    return out
+
+
 CHECKS = {
     'approved-look': check_approved_look,
+    'shot-variety': check_shot_variety,
     'label-collision': check_label_collision,
     'wall-variety': check_wall_variety,
     'headline-whole': check_headline_whole,
@@ -266,7 +281,7 @@ CHECKS = {
 
 
 # Checks that need only the plan, so `motif_reel.py check` runs them before any voice or render.
-PLAN_CHECKS = ('approved-look', 'headline-openers', 'shared-object-palette', 'set-variety', 'headline-length', 'product-on-screen', 'headline-whole', 'wall-variety')
+PLAN_CHECKS = ('approved-look', 'shot-variety', 'headline-openers', 'shared-object-palette', 'set-variety', 'headline-length', 'product-on-screen', 'headline-whole', 'wall-variety')
 
 
 def run(project, plan=None, layouts=None):

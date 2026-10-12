@@ -73,8 +73,12 @@ class Rig:
 
     def focus(self, p, role):
         """Point (local units) the camera eases in on during a shot with this role, or None to stay
-        wide. A wide machine uses it so the part that is acting reads big (Claudex cut 2 review)."""
-        return None
+        wide. A wide machine uses it so the part that is acting reads big (Claudex cut 2 review).
+        Role 'close' returns (x, y, span): the point a close framing centres and the width it fills;
+        by default the machine's contact (where the change happens) and 60% of its width."""
+        if role != 'close':return None
+        action = next(iter(self.actions));(x, y), _ = self.contacts(p, (action, self.contact_t(action)))[self.actions[action].contact]
+        return (x, y, max(280.0, .6 * self.footprint[2]))
 
     def params(self, values=None):
         merged = {**copy.deepcopy(self.defaults), **(values or {})}

@@ -85,6 +85,10 @@ class ReviewLoop(Rig):
     def focus(self, p, role):
         # The setup eases in on the station doing the work: Astra's desk tabbing the plan, the
         # tower Astra builds. The payoff cuts back wide for the result.
+        # Close framing (role 'close', with the span to fill the frame): the part each mode is about.
+        if role == 'close':
+            return {'audit': (self.DESK_X - 60, self.SHEET_Y, 420), 'swap': (self.DESK_X, -460, 360), 'build': (40, -230, 440),
+                    'ship': (0, -230, 440), 'loop': (0, self.SHEET_Y, 640)}.get(p['mode'])
         spots = {'audit': (self.DESK_X - 60, self.SHEET_Y), 'build': (80, -260)}
         return spots.get(p['mode']) if role == 'setup' else None
 

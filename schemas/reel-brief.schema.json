@@ -191,6 +191,13 @@
               "palette": {
                 "type": "string"
               },
+              "framing": {
+                "enum": [
+                  "wide",
+                  "close"
+                ],
+                "description": "close: the camera holds in on the acting part (Rig.focus close) and the host stands small in front; default close on app-screen, wide elsewhere."
+              },
               "hold": {
                 "type": "boolean",
                 "description": "Keep the machine in its start state through the beat; a later beat shows the change."

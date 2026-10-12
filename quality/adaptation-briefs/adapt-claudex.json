@@ -281,7 +281,8 @@
           "stamp": "HOLDS UP"
         },
         "room": "office",
-        "palette": "royal/ink-navy"
+        "palette": "royal/ink-navy",
+        "framing": "close"
       }
     },
     {
@@ -330,41 +331,26 @@
       "id": "ship",
       "narration": "Two frontier models check each other, so no AI marks its own homework.",
       "fact": "f2",
-      "relation": "approve",
+      "relation": "demo",
       "headline": "2 MODELS SIGN OFF",
       "payoff_headline": "0 SELF-GRADED WORK",
       "visual": {
-        "rig": "review-loop",
+        "rig": "app-screen",
         "params": {
-          "mode": "ship",
-          "steps": [
-            "SCHEMA",
-            "LOGIN",
-            "API",
-            "TESTS"
+          "device": "phone",
+          "ui": "note",
+          "title": "REVIEW.md",
+          "lines": [
+            "# Review log",
+            "Plan: Astra OK",
+            "Code: Claude OK",
+            "Self-graded: 0"
           ],
-          "left": "CLAUDE",
-          "right": "ASTRA",
-          "left_logo": "claude",
-          "right_logo": "openai",
-          "new_roles": [
-            "AUDITS",
-            "BUILDS"
-          ],
-          "banner": "2 JUDGES",
-          "roles": [
-            "PLANS",
-            "AUDITS"
-          ],
-          "solo_roles": [
-            "PLANS",
-            "BUILDS",
-            "GRADES"
-          ],
-          "stamp": "HOLDS UP"
+          "result": "2 SIGN-OFFS",
+          "logo": "claude"
         },
         "room": "street",
-        "palette": "royal/mauve"
+        "palette": "poppy/mauve"
       }
     },
     {

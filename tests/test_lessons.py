@@ -21,8 +21,15 @@ def _layout(dressing=()):
 
 
 def _plan(*beats):
-    return {'beats': [{'id': b, 'palette': pal, 'shots': [{'id': f'{b}-1', 'headline': head, 'rig': {'id': 'knowledge-vault', 'params': VAULT}}]}
-                      for b, head, pal in beats]}
+    # Framing alternates as the planner's _vary_framing would, so L033 (shot variety) holds.
+    return {'beats': [{'id': b, 'palette': pal, 'shots': [{'id': f'{b}-1', 'headline': head, 'rig': {'id': 'knowledge-vault', 'params': VAULT, 'framing': ('wide', 'close')[i % 2]}}]}
+                      for i, (b, head, pal) in enumerate(beats)]}
+
+
+def test_consecutive_beats_need_a_new_composition():
+    plan = _plan(('a', 'ONE', 'lagoon'), ('b', 'TWO', 'lagoon'))
+    plan['beats'][1]['shots'][0]['rig']['framing'] = 'wide'
+    assert [p['where'] for p in L.check_shot_variety(None, plan, {})] == ['b']
 
 
 def test_ledger_checks_exist():
