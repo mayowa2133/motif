@@ -80,6 +80,12 @@ class Rig:
         action = next(iter(self.actions));(x, y), _ = self.contacts(p, (action, self.contact_t(action)))[self.actions[action].contact]
         return (x, y, max(280.0, .6 * self.footprint[2]))
 
+    def host_track(self, p, pose):
+        """Where the host walks during this pose: (x in local units, moving, facing) or None to keep
+        its slot. A machine whose object travels uses it so the host carries the object (Claudex
+        cut 5 grade: on the desk beats Bot only stood and pointed)."""
+        return None
+
     def params(self, values=None):
         merged = {**copy.deepcopy(self.defaults), **(values or {})}
         Draft202012Validator(self.params_schema).validate(merged)

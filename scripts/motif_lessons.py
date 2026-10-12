@@ -251,11 +251,11 @@ def check_approved_look(project, plan, layouts):
 def check_shot_variety(project, plan, layouts):
     """Consecutive beats never share a composition: the same machine at the same framing (Claudex cut 3
     grade: six of twelve frames were the same two-desk wide shot; the references change the shot every idea)."""
-    from motif_reel import framing_of
+    from motif_reel import composition
     out, prev, prev_kind = [], None, None
     for beat in (plan or {}).get('beats', []):
         shot = next((s for s in beat.get('shots', []) if s.get('rig')), None)
-        key = (shot['rig']['id'], framing_of(shot)) if shot else None
+        key = composition(shot) if shot else None
         # The hero-first hook previews the first claim's machine on purpose; that pair is exempt.
         if key and key == prev and prev_kind != 'hook':out.append({'where': beat['id'], 'detail': f'{key[0]} {key[1]} again: change the framing (visual.framing) or the machine'})
         prev, prev_kind = key, beat.get('kind')

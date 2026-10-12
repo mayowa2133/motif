@@ -53,13 +53,13 @@ def video_metrics(video):
 
 def plan_metrics(run):
     """Product share, shot variety and host size from the run's plan and set layouts."""
-    from motif_reel import framing_of, CLOSE_HOST
+    from motif_reel import composition, framing_of, CLOSE_HOST
     plan = json.loads((run / 'production-plan.json').read_text())
     layouts = json.loads((run / 'set-layouts.json').read_text()) if (run / 'set-layouts.json').exists() else {}
     claims = [b for b in plan['beats'] if b.get('kind') == 'claim']
     def main(b):return next((s for s in b['shots'] if s.get('rig')), None)
     product = sum(1 for b in claims if main(b) and main(b)['rig']['id'] == 'app-screen' and framing_of(main(b)) == 'close')
-    keys = [(main(b)['rig']['id'], framing_of(main(b))) if main(b) else None for b in plan['beats']]
+    keys = [composition(main(b)) if main(b) else None for b in plan['beats']]
     pairs = [(a, b) for a, b in zip(keys, keys[1:]) if a and b]
     heights = []
     for b in claims:

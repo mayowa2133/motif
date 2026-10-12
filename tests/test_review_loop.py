@@ -143,3 +143,10 @@ class AgentScreenTests(unittest.TestCase):
         for word in ('Claude Code', 'PLAN.MD', '> plan it'):self.assertIn(word, text)
         svg = rig.render(v, ('run', 1.0))
         self.assertIn('Claude Code', svg);self.assertIn('PLAN.MD', svg)
+
+    def test_host_carries_the_sheet_in_the_loop(self):
+        rig = motif_rigs.get('review-loop')
+        xs = [rig.host_track(rig.params({'mode': 'loop'}), ('run', t))[0] for t in (.05, .2, .35)]
+        self.assertGreater(max(xs) - min(xs), 100)
+        self.assertIsNone(rig.host_track(rig.params({'mode': 'audit'}), ('run', .3)))
+

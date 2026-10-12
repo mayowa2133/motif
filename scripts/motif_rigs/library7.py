@@ -92,6 +92,14 @@ class ReviewLoop(Rig):
         spots = {'audit': (self.DESK_X - 60, self.SHEET_Y), 'build': (80, -260)}
         return spots.get(p['mode']) if role == 'setup' else None
 
+    def host_track(self, p, pose):
+        # Loop: the host runs the PLAN sheet between the desks under it, then steps to the middle.
+        if p['mode'] != 'loop':return None
+        t, tc, u, after = self.timeline(self.pose(pose));pos = self.loop_state(p, u)[0]
+        if u < .8:
+            ahead = self.loop_state(p, min(.8, u + .02))[0];return (pos[0], True, 1 if ahead[0] >= pos[0] else -1)
+        k = clamp((u - .8) / .15);return (lerp(self.DESK_X, 0, ease(k)), k < 1, -1)
+
     def block_slot(self, i, x=0):
         return x, -self.BLOCK[1] / 2 - 4 - i * (self.BLOCK[1] + 4)
 

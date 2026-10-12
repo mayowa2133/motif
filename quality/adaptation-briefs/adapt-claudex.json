@@ -126,58 +126,12 @@
       }
     },
     {
-      "id": "audit",
-      "narration": "Then GPT-6 Astra audits it and flags every gap.",
-      "fact": "f1",
-      "relation": "approve",
-      "headline": "STEP 2: ASTRA AUDITS",
-      "payoff_headline": "3 GAPS FLAGGED",
-      "visual": {
-        "rig": "review-loop",
-        "params": {
-          "mode": "audit",
-          "steps": [
-            "SCHEMA",
-            "LOGIN",
-            "API",
-            "TESTS"
-          ],
-          "left": "CLAUDE",
-          "right": "ASTRA",
-          "left_logo": "claude",
-          "right_logo": "openai",
-          "gaps": [
-            "NO TESTS",
-            "AUTH?",
-            "NO LIMIT"
-          ],
-          "roles": [
-            "PLANS",
-            "AUDITS"
-          ],
-          "new_roles": [
-            "AUDITS",
-            "BUILDS"
-          ],
-          "solo_roles": [
-            "PLANS",
-            "BUILDS",
-            "GRADES"
-          ],
-          "stamp": "HOLDS UP"
-        },
-        "room": "stage",
-        "palette": "royal/dusk-teal",
-        "brand": "openai"
-      }
-    },
-    {
       "id": "notes",
-      "narration": "Its notes go straight back: no tests, no auth, no rate limit.",
-      "fact": "f3",
+      "narration": "Then GPT-6 Astra audits it: no tests, no auth, no rate limit.",
+      "fact": "f1",
       "relation": "demo",
-      "headline": "AUDIT.MD: NO AUTH, NO TESTS",
-      "payoff_headline": "VERDICT: REVISE THE PLAN",
+      "headline": "STEP 2: ASTRA AUDITS",
+      "payoff_headline": "3 GAPS, SENT BACK",
       "visual": {
         "rig": "app-screen",
         "params": {
@@ -344,7 +298,7 @@
       "visual": {
         "rig": "app-screen",
         "params": {
-          "device": "phone",
+          "device": "laptop",
           "ui": "note",
           "title": "REVIEW.md",
           "lines": [

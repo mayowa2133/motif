@@ -264,7 +264,7 @@ def _vary_framing(beats):
     for beat in beats:
         shots = [s for s in beat['shots'] if s.get('rig')]
         if not shots:prev = None;continue
-        r = shots[0]['rig'];key = (r['id'], framing_of(shots[0]))
+        r = shots[0]['rig'];key = composition(shots[0])
         if key == prev and not r.get('framing') and beat.get('kind') != 'hook':
             other = 'wide' if key[1] == 'close' else 'close'
             rig = _get_rig(r['id'])
@@ -272,7 +272,7 @@ def _vary_framing(beats):
             except Exception:spot = None  # bad params: the plan validator reports them
             if other == 'wide' or spot:
                 for s in shots:s['rig'] = {**s['rig'], 'framing': other}
-                key = (r['id'], other)
+                key = composition(shots[0])
         prev = key
 
 
@@ -464,6 +464,14 @@ def framing_of(shot):
     show the product big) and wide on machines."""
     r = shot.get('rig') or {}
     return r.get('framing') or ('close' if r.get('id') == 'app-screen' and shot.get('role') != 'hook' else 'wide')
+
+
+def composition(shot):
+    """What a viewer sees as 'the same shot again': the machine and its framing. Two different
+    product screens in a row are different shots (reference 09 runs several screens back to back)."""
+    r = shot.get('rig') or {};key = (r.get('id'), framing_of(shot))
+    if r.get('id') == 'app-screen':key += ((r.get('params') or {}).get('title'),)
+    return key
 
 
 def shot_index(shot):
@@ -736,7 +744,7 @@ def shot_frames(shot, layout, seed, look='paper-craft', brand=None, prev=None, c
                 mark = f'<g transform="translate({sticker_at[0]:.1f} {sticker_at[1]:.1f})">{sticker(brand, 92, -8 + wob)}</g>'
                 hero += mark if prev else pop_in(mark, f, 2, sticker_at)
             hero_at = len(pieces);pieces.append(cam(boil(hero, f, f'{shot["id"]}-hero', .6)))
-            if prev and shot['role'] == 'payoff' and poof_at:pieces.append(cam(poof(*poof_at, f, c, h['scale'] * (.6 if rig.name == 'app-screen' else 1.1))))  # small on screens: the puff hid the answer
+            if prev and shot['role'] == 'payoff' and poof_at and not close:pieces.append(cam(poof(*poof_at, f, c, h['scale'] * (.6 if rig.name == 'app-screen' else 1.1))))  # small on screens: the puff hid the answer
             since = contact_age(f, fc, prev, hold)
             if since is not None and hit:pieces.append(cam(confetti(*hit, since, c, max(.8, h['scale'] * 1.4))))
         b = layout['bot'];bot = shot['bot']
@@ -744,6 +752,11 @@ def shot_frames(shot, layout, seed, look='paper-craft', brand=None, prev=None, c
             side = b.get('side', -1 if b['x'] < 360 else 1)
             pose, face, bdx, bdy, squash, cycle = bot_motion(shot['role'], u, f, n, tc, side, entering=not prev, acts=ACTS.get(rig.name, ('pointing', 'presenting')))
             face = bot['face'] if shot['role'] == 'payoff' and face == 'excited' and bot.get('face') else face
+            track = None if close else rig.host_track(rig.params(h.get('values') or None), (action, t))
+            if track:
+                # The host carries the machine's travelling object (Rig.host_track).
+                tx_, moving, facing = track;b = {**b, 'x': h['x'] + tx_ * h['scale']};bdx = 0
+                if moving:pose, cycle, side = 'carrying-object', 'carry', facing
             body = dressed_bot(b['x'] + bdx, b['y'] + bdy, b['scale'], face, pose, bot['costume'], shot['palette'], flip=side > 0, cycle=cycle, phase=f / 10, head=round(4 * math.sin(f * .3)), mascot=M)
             if squash != 1:body = f'<g transform="translate({b["x"]:.1f} {b["y"]:.1f}) scale({2 - squash:.3f} {squash:.3f}) translate({-b["x"]:.1f} {-b["y"]:.1f})">{body}</g>'
             if close:
