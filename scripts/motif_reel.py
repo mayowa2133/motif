@@ -123,6 +123,37 @@ def _number(value):
     return {'prefix': m.group(1) or '', 'value': int(n) if n == int(n) else n, 'suffix': suffix}
 
 
+BIG_FILLER = {'TO', 'FOR', 'THAN', 'IN', 'OF', 'A', 'AN', 'THE', 'AT', 'ON', 'BY', 'IS', 'AND', 'OR', 'EACH'}
+
+
+def big_number(headline):
+    """The number a beat's headline states, as a big paper number for the payoff (plan-to-9: the
+    references keep a big number in most frames). '3 TOOLS, 1 COMMAND EACH' -> 3 TOOLS; a digit inside
+    a name (GEMMA4, GPT-6) is not a number."""
+    words = re.sub(r'[,!?]', ' ', headline or '').split()
+    for i, w in enumerate(words):
+        m = re.fullmatch(r'(?:[A-Z]*:)?(\$?\d[\d.]*(?:-\d[\d.]*)?[X%K]?)', w)
+        if not m:continue
+        nxt = words[i + 1] if i + 1 < len(words) else ''
+        unit = nxt if nxt.isalpha() and nxt not in BIG_FILLER and len(nxt) <= 9 else ''
+        return {'value': m.group(1), 'unit': unit}
+    return None
+
+
+def big_number_piece(big, c, f, side, sticker_x=None):
+    """A big taped paper number that slaps in at the payoff cut and keeps a slow wobble."""
+    from motif_ui_components import card, g, txt
+    v, unit = big['value'], big.get('unit', '')
+    size = 118 if len(v) <= 3 else (92 if len(v) <= 5 else 70);w = max(190, int(len(v) * size * .62) + 50, len(unit) * 22 + 50);h = 150 if unit else 120
+    fill = c['pop'] if c['pop'] not in (c['light'], c['dark']) else c['accent']
+    body = card(w, h, fill, .1) + txt(v, w / 2, size * .86 + 8, size, c['dark'], 900, 'middle')
+    if unit:body += txt(unit, w / 2, h - 18, 26, c['dark'], 800, 'middle')
+    body += f'<rect x="{w / 2 - 34:.0f}" y="-12" width="68" height="22" fill="{c["light"]}" opacity=".8" transform="rotate(-4 {w / 2:.0f} 0)"/>'
+    k = min(1.0, f / 8);s_ = 1.5 - .5 * k + .12 * math.sin(k * math.pi) if f < 8 else 1.0 + .015 * math.sin(f * .25)
+    x = min(720 - w / 2 - 20, max(w / 2 + 20, sticker_x if sticker_x else 360 + side * 190));y = 395 + 6 * math.sin(f * .17)  # above the host's head, under the headline: the machine stays clear
+    return g(g(body, -w / 2, -h / 2, -6 * side + 2.5 * math.sin(f * .13), s_), x, y)
+
+
 def _insert_for(fact, text, cat):
     from motif_library import retrieve
     num = _number(fact.get('value'))
@@ -199,6 +230,11 @@ def plan_reel(brief, allow_draft=False, avoid_looks=()):
              'bot': {'costume': costume, 'face': 'determined', 'pose': 'walking', 'act': act, 'entrance': entrance}},
             {'id': f'{b["id"]}-b', 'role': 'payoff', 'headline': payoff, 'headline_b': _short(fact['claim'], 26), 'headline_b_cut': _clip(fact['claim'], 26)[1], 'room': room, 'rig': {'id': rig_id, 'params': params, **({'hold': True} if visual.get('hold') else {}), **({'framing': visual['framing']} if visual.get('framing') else {})}, 'insert': insert,
              'bot': {'costume': costume, 'face': 'surprised', 'pose': 'pointing', 'act': act, 'entrance': entrance}}]})
+        if not insert:
+            big = big_number(payoff) or big_number(setup)
+            # Not on a machine that counts on its own (a meter, a pile, a days counter): two numbers fight.
+            counts = any(isinstance(v, (int, float)) and not isinstance(v, bool) for v in params.values())
+            if big and not counts and not any(big['value'] in t for t in rig_text(params, rig_id)):beats[-1]['shots'][1]['number'] = big
         if beat_brand != brand:
             for shot in beats[-1]['shots']:shot['brand'] = beat_brand
     # Hero-first opening (review item 5, round 2): the hook shows the first claim's machine
@@ -213,6 +249,10 @@ def plan_reel(brief, allow_draft=False, avoid_looks=()):
         if brand and hook_visual.get('brand', brand) and 'logo' in _get_rig(hook_visual['rig']).params_schema['properties'] and 'logo' not in hp:hp['logo'] = brand
         beats[0]['shots'][0].update({'rig': {'id': hook_visual['rig'], 'params': hp, **({'framing': hook_visual['framing']} if hook_visual.get('framing') else {})}, 'insert': None, 'crowd': 0, 'grammar': 'hero'})
         if hook_visual.get('palette'):beats[0]['palette'] = hook_visual['palette']
+        # The host performs in the hook too (Ollama film: a still host over a still screen measured the
+        # film's lowest motion), already working the machine on frame 1.
+        first_act = ((beats[1]['shots'][0].get('bot') or {}).get('act') if len(beats) > 1 else None)
+        beats[0]['shots'][0].setdefault('bot', {})['act'] = 'shrugs' if first_act == 'gasps' else 'gasps';beats[0]['shots'][0]['bot']['entrance'] = 'walk'
         if 'brand' in hook_visual:beats[0]['shots'][0]['brand'] = hook_visual['brand']  # Claudex cut 3: no Claude badge on the self-grading model
     elif (brief.get('hook') or {}).get('hero', True):
         beats[0]['shots'][0].update({'rig': copy.deepcopy(first_claim['rig']), 'insert': None, 'crowd': 0, 'grammar': 'hero'})
@@ -755,7 +795,7 @@ def shot_frames(shot, layout, seed, look='paper-craft', brand=None, prev=None, c
             if sq:rock += 3.5 * sq
             if close and rig.name == 'app-screen':rock += CLOSE_TILT * (1 if shot_index(shot) % 2 else -1)  # a pasted-on collage tilt
             hero = f'<g transform="translate({h["x"]:.1f} {h["y"]:.1f}) scale({1 + .55 * sq:.4f} {1 - sq:.4f}) rotate({rock:.3f}) translate({-h["x"]:.1f} {-h["y"]:.1f})">{hero}</g>'  # the machine rocks on its base
-            if brand and shot['role'] != 'hook' and not rig_shows_mark(shot, brand):
+            if brand and shot['role'] != 'hook' and not rig_shows_mark(shot, brand) and not (shot.get('number') and shot['role'] == 'payoff'):  # the big number takes its lane
                 from motif_brand import sticker
                 # The product's mark on the machine: the frame names its subject without the caption.
                 wob = 3 * math.sin(f * .3)
@@ -768,7 +808,7 @@ def shot_frames(shot, layout, seed, look='paper-craft', brand=None, prev=None, c
         b = layout['bot'];bot = shot['bot']
         if rig:
             side = b.get('side', -1 if b['x'] < 360 else 1)
-            if bot.get('act') in HOST_ACTS:pose, face, bdx, bdy, squash, cycle = act_motion(bot['act'], bot.get('entrance', 'walk'), shot['role'], u, f, n, tc, side, entering=not prev)
+            if bot.get('act') in HOST_ACTS:pose, face, bdx, bdy, squash, cycle = act_motion(bot['act'], bot.get('entrance', 'walk'), 'setup' if shot['role'] == 'hook' else shot['role'], u, f, n, tc, side, entering=not prev and shot['role'] != 'hook')
             else:pose, face, bdx, bdy, squash, cycle = bot_motion(shot['role'], u, f, n, tc, side, entering=not prev, acts=ACTS.get(rig.name, ('pointing', 'presenting')))
             face = bot['face'] if shot['role'] == 'payoff' and face == 'excited' and bot.get('face') else face
             track = None if close else rig.host_track(rig.params(h.get('values') or None), (action, t))
@@ -838,6 +878,9 @@ def shot_frames(shot, layout, seed, look='paper-craft', brand=None, prev=None, c
             s_ = 1.0 if f > 10 else .9 + .1 * ease(f / 10) + .06 * math.sin(f / 10 * math.pi)
             spin = 4 * math.sin(f * .12)
             pieces.append(cam(boil(f'<g transform="translate({bx} {by + 6 * math.sin(f * .15):.1f}) scale({s_:.4f})">{badge(brand, size, c, angle=spin)}</g>', f, f'{shot["id"]}-brand', .5)))
+        if shot.get('number') and shot['role'] == 'payoff' and not close:  # a close screen carries its own text
+            bside = (1 if hx > 360 else -1) if close else (1 if (layout['bot'].get('x', 360) > 360) else -1)
+            pieces.append(big_number_piece(shot['number'], c, f, bside, sticker_at[0] if sticker_at else None))
         if shot.get('insert') and (shot['role'] != 'payoff' or u > .25):
             start = .25 if shot['role'] == 'payoff' else 0;local = (u - start) / (1 - start)
             piece = insert_piece(shot['insert'], shot['palette'], local, int(local * (n - 1)))

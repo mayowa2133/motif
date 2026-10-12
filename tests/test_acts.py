@@ -89,3 +89,32 @@ def test_host_stands_clear_of_the_stamp_gate_document():
     hero = lay['hero'];doc = S._box(hero['x'], S.FLOOR, hero['scale'], get('stamp-gate').bot_slot['keep_clear'][0])
     half = S.BOT_HALF * lay['bot']['scale'];host = (lay['bot']['x'] - half, S.FLOOR - 4.2 * half, 2 * half, 4.2 * half)
     assert S._overlap(host, doc) == 0
+
+
+def test_big_number_reads_the_headline_number_not_a_name():
+    import motif_reel as R
+    assert R.big_number('3 TOOLS, 1 COMMAND EACH') == {'value': '3', 'unit': 'TOOLS'}
+    assert R.big_number('KEPT FOR 90 DAYS') == {'value': '90', 'unit': 'DAYS'}
+    assert R.big_number('LOCALHOST:11434')['value'] == '11434'
+    assert R.big_number('PULL GEMMA4 ONCE') is None and R.big_number('GPT-6 AUDITS') is None
+
+
+def test_big_number_skips_machines_that_count_and_hook_host_acts():
+    import json, motif_reel as R
+    from pathlib import Path
+    root = Path(__file__).resolve().parents[1]
+    git = R.plan_reel(json.loads((root / 'quality/new-topic-briefs/git-reflog-rescue.json').read_text()), True)
+    assert not [b for b in git['beats'] if b['shots'][-1].get('number')]  # stacked-meter and receipt-stack count on their own
+    uv = R.plan_reel(json.loads((root / 'quality/new-topic-briefs/uv-python-fast.json').read_text()), True)
+    speed = next(b for b in uv['beats'] if b['id'] == 'speed')
+    assert speed['shots'][1]['number']['value'] == '10-100X'
+    assert uv['beats'][0]['shots'][0]['bot']['act'] in R.HOST_ACTS
+
+
+def test_note_pictures_render_and_are_not_labels():
+    import motif_rigs
+    rig = motif_rigs.get('app-screen')
+    p = rig.params({'device': 'laptop', 'ui': 'note', 'title': 'j', 'lines': ['# Week', 'one line', '![tree] ![@ollama] ![nothing-here]']})
+    svg = rig.render(p, ('run', 1.0), 'lagoon')
+    assert '![' not in svg and 'circle' in svg
+    assert not any('![' in t for t in rig.printed_text(p))
