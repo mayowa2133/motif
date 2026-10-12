@@ -8,8 +8,9 @@ set-up / pay-off tokens). docs/STORY_PASS.md explains how to write them.
     python scripts/motif_story.py check BRIEF
     python scripts/motif_story.py animatic PROJECT      # after `motif_reel.py run --no-finish`
 
-check() only judges briefs that opted in (status NOT_USED otherwise), so the
-benchmark briefs keep passing. Its rules come from the story-craft review of
+The story pass is required: a brief without a story block fails unless its
+slug is in quality/story-pass-exempt.json (briefs written before 2026-10-12),
+which report NOT_USED. Its rules come from the story-craft review of
 2026-10-12: every beat changes something the viewer can see, beats join with
 "but" or "therefore" (never "and then"), the hook's promise is paid off on
 screen, and every detail a beat sets up comes back later.
@@ -65,11 +66,20 @@ def returning_machines(brief):
     return out
 
 
+EXEMPT = Path(__file__).resolve().parents[1] / 'quality/story-pass-exempt.json'
+
+
+def exempt():
+    return set(json.loads(EXEMPT.read_text())['slugs'])
+
+
 def check(brief):
     story = brief.get('story')
     if not story:
         warn = [f'{who}: {rig} returns after {", ".join(earlier)} with no story link; a second metaphor on the same machine reads as a repeat (use the story pass or another machine)'
                 for rig, earlier, who in returning_machines(brief)]
+        if brief.get('slug') not in exempt():
+            return {'status': 'FAIL', 'failures': ['no story block: new briefs need the story pass (docs/STORY_PASS.md): premises, ending, and a story per beat'], 'warnings': warn}
         return {'status': 'NOT_USED', 'failures': [], 'warnings': warn}
     fail, warn = [], []
     beats = brief['beats'];hook = (brief.get('hook') or {}).get('story');cta = brief['cta'].get('story') or {}

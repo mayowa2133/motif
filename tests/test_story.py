@@ -32,6 +32,10 @@ class StoryPassTests(unittest.TestCase):
     def test_briefs_without_story_are_not_judged(self):
         self.assertEqual(st.check(BRIEF)['status'], 'NOT_USED')
 
+    def test_new_brief_without_story_fails(self):
+        b = copy.deepcopy(BRIEF);b['slug'] = 'brand-new-film'
+        self.assertEqual(st.check(b)['status'], 'FAIL')
+
     def test_storied_fixture_passes_schema_and_check(self):
         b = storied();self.assertEqual(rs.validate(b), [])
         report = st.check(b);self.assertEqual(report['status'], 'PASS', report)

@@ -3,8 +3,9 @@
 Motif's gates catch problems with the look: headlines, labels, sets, palettes,
 the camera. The story pass catches problems with the story before any frame is
 drawn, and the animatic shows the result in minutes instead of a full render.
-It is optional per brief: a brief opts in by carrying a `story` block, and
-`check` then gates on it.
+It is required: `check` fails a brief without a `story` block, except the
+briefs written before 2026-10-12 listed in `quality/story-pass-exempt.json`
+(do not add to that list).
 
 The ideas are adapted from three story-craft skills reviewed on 2026-10-12
 (a writers'-room story engine, a film director's planning skill and a
