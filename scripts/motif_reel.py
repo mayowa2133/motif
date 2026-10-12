@@ -947,7 +947,7 @@ def compile_reel(project, plan, spans, voice_duration, seed=0):
     if plan.get('music', True):
         # An original bed under the voice (the references all run music; review item 6).
         from motif_music import bed
-        music = bed(project / 'assets/music/bed.wav', duration, plan.get('look', 'paper-craft'), plan.get('seed', 0))
+        music = bed(project / 'assets/music/bed.wav', duration, plan.get('look', 'paper-craft'), plan.get('seed', 0), [f['start'] for f in frames_index[1:]])  # cuts on the beat
         music.update({'file': 'assets/music/bed.wav', 'volume': MUSIC_VOLUME})
     write(project / 'audio-plan.json', {'duration': voice_duration, 'narration': 'assets/voice/narration-af-nova.wav', 'sfx_cues': cues, 'music': music, 'subjective_listening': 'not assessed'})
     write_index(project, frames_index, duration, voice_duration, 0)

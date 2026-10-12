@@ -118,6 +118,19 @@ class MusicTests(unittest.TestCase):
             motif_music.bed(Path(tmp) / 'c.wav', 3.0, 'candy-pastel', 4)
             self.assertNotEqual((Path(tmp) / 'a.wav').read_bytes(), (Path(tmp) / 'c.wav').read_bytes())
 
+    def test_cuts_land_on_the_beat_and_start_a_bar(self):
+        import motif_music
+        cuts = [2.4, 4.9, 6.6, 9.8, 12.1, 15.0, 17.7, 20.3, 23.9, 26.2]
+        bpm = motif_music.fit_tempo(28, (96, 108), cuts, 100)
+        grid, on, shift = motif_music.beat_grid(28, 60 / bpm, cuts)
+        self.assertGreaterEqual(len(on), 9);self.assertLessEqual(shift, motif_music.MAX_SHIFT)
+        downbeats = {round(s, 6) for s, _, down in grid if down}
+        for c in on:self.assertIn(round(c, 6), downbeats)
+        times = [s for s, _, _ in grid];self.assertEqual(times, sorted(times));self.assertGreaterEqual(times[-1], 28)
+        with tempfile.TemporaryDirectory() as tmp:
+            info = motif_music.bed(Path(tmp) / 'd.wav', 6.0, 'paper-craft', 2, [1.9, 3.7])
+            self.assertEqual((info['cuts'], info['cuts_on_beat']), (2, 2))
+
 
 class Round4SlipTests(unittest.TestCase):
     def test_range_values_get_no_counter_and_cta_offer_drops_the_keyword(self):

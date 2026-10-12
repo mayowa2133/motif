@@ -15,6 +15,7 @@ import math
 
 from motif_rigs import register
 from motif_rigs.base import Action, Rig, ease, lerp
+from motif_springs import pop as spring_pop
 from motif_rigs.library import ink, label_size, settle, t_after, t_in, tag
 from motif_ui_components import card, g, path, rect, txt
 
@@ -480,10 +481,10 @@ class AppScreen(Rig):
         for i, label in enumerate((p.get('cards') or [])[:2]):
             k = min(1.0, max(0.0, (typed / total - (.35 + .3 * i)) * 6))
             if k <= 0:continue
-            cw = len(label) * 17 + 44;cx, cy, ang = spots[i]
+            cw = len(label) * 17 + 44;cx, cy, ang = spots[i];s = spring_pop(k, .45)  # slapped on: a sprung scale that overshoots and settles
             card = (rect(5, 7, cw, 58, '#000000', 6).replace('<rect', '<rect opacity=".2"') + rect(0, 0, cw, 58, '#FFF7E3', 6, c['dark'], 2.5)
                     + rect(cw / 2 - 30, -10, 60, 20, c['accent'], 3).replace('<rect', '<rect opacity=".7"') + txt(label, cw / 2, 39, 28, c['dark'], 900, 'middle'))
-            out += g(card, cx, cy, ang * (2 - k), .9 + .1 * k, .9 + .1 * k, k)
+            out += g(card, cx, cy, ang * (2 - s), .7 + .3 * s, 1, min(1.0, k * 2))
         return out
 
     def stack(self, p, c, typed):
@@ -493,7 +494,7 @@ class AppScreen(Rig):
         st = p.get('stack')
         if not st:return ''
         x, y, w, h = self.screen(p);total = max(1, sum(len(l) for l in (p.get('lines') or [])))
-        k = min(1.0, max(0.0, (typed / total - .05) * 5));k = k * k * (3 - 2 * k)
+        k = spring_pop(min(1.0, max(0.0, (typed / total - .05) * 5)), .7)  # UI spring: a small overshoot out from behind
         # Peeking out above the screen's top-right edge, no higher than the gap under the headline strip
         # in a close shot (the host stands bottom right, the cards sit top left and bottom left).
         sw, sh = w * .56, h * .6;sx = x + w * .5;sy = y - 118
@@ -505,7 +506,7 @@ class AppScreen(Rig):
         for i, line in enumerate(lines[:5]):
             head = line.startswith('#');ly = 34 + 14 + fs + i * fs * 1.5
             body += txt(line.lstrip('# ') if head else line, 16, ly, fs * (1.1 if head else 1), c['dark'], 900 if head else 600)
-        return g(body, sx - (1 - k) * sw * .4, sy + (1 - k) * 100, 4 - 3 * (1 - k), .85 + .15 * k, 1, min(1.0, k * 1.5))
+        return g(body, sx - (1 - k) * sw * .4, sy + (1 - k) * 100, 4 - 3 * (1 - k), .85 + .15 * k, 1, max(0.0, min(1.0, k * 1.5)))
 
     def chat_view(self, p, c, typed, done):
         """An assistant chat: the first line is the question (right bubble), the rest the answer (left),
