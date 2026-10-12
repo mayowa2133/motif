@@ -491,7 +491,17 @@ def insert_piece(insert, c_name, u, frame):
         values = ins.counter_values(a.get('start', 0), a['end'], 40);v = values[min(len(values) - 1, int(u * 60))]
         body = ins.counter(v, c_name, a.get('prefix', ''), a.get('suffix', ''), a.get('label'), w=300, roll=(frame % 4) / 4 if v != a['end'] else 0)
         return g(body, 360 - 150 * scale, 330, 2, scale)
-    if kind == 'comment_end_card':return g(ins.comment_end_card(a['keyword'], c_name), 80, 330, -1.5, scale)
+    if kind == 'comment_end_card':
+        # The CTA acts out its ask (Ollama cut 2: the end card was the stillest two seconds of the film): the
+        # keyword types into the box, then viewers' replies rise past it, one after another.
+        word = a['keyword'];typed = len(word) * min(1.0, max(0.0, (u - .06) / .22))
+        body = g(ins.comment_end_card(word, c_name, typed=typed), 80, 330, -1.5, scale)
+        for i in range(6):
+            t = (u - .3 - i * .11) / .42
+            if not 0 < t < 1:continue
+            lane = 470 + 70 * (i % 2);rise = 1 - (1 - t) ** 2
+            body += g(ins.comment_chip(word, c_name, i), lane + 18 * math.sin(t * 5 + i), 1060 - 520 * rise, 3 * math.sin(t * 4 + i), 1, 1, min(1.0, t * 6, (1 - t) * 4))
+        return body
     if kind == 'star_badge':return g(ins.star_badge(c_name, a.get('rating', 5), min(a.get('filled', 5), int(u * 8) + 1), 1.2), 230, 380, 0, scale)
     if kind == 'price_tag':return g(ins.price_tag(a['amount'], c_name, a.get('strike')), 470, 330, -6 + 3 * math.sin(frame * .2), scale)
     if kind == 'gauge':return g(ins.gauge(min(a.get('value', .8), u * 1.4), c_name, a.get('label', '')), 540, 420, 0, scale)

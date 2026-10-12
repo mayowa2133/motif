@@ -118,3 +118,21 @@ def test_note_pictures_render_and_are_not_labels():
     svg = rig.render(p, ('run', 1.0), 'lagoon')
     assert '![' not in svg and 'circle' in svg
     assert not any('![' in t for t in rig.printed_text(p))
+
+
+def test_long_note_scrolls_and_pictures_span_the_screen():
+    import motif_rigs
+    rig = motif_rigs.get('app-screen')
+    lines = ['# Week'] + [f'line number {i} of the page' for i in range(8)] + ['![tree] ![bench]']
+    p = rig.params({'device': 'laptop', 'ui': 'note', 'title': 'j', 'lines': lines})
+    svg = rig.render(p, ('run', 1.0), 'lagoon')
+    assert 'clip-path' in svg and 'translate(0 -' in svg  # the page scrolled to keep the newest line in view
+    short = rig.params({'device': 'monitor', 'ui': 'note', 'title': 'j', 'lines': ['# Week', 'one line', '![tree] ![bench] ![sun]', 'two']})
+    assert 'translate(0 -' not in rig.render(short, ('run', 1.0), 'lagoon')  # a page that fits never scrolls
+
+
+def test_cta_types_its_keyword_and_replies_rise():
+    import motif_reel as R
+    ins = {'kind': 'comment_end_card', 'args': {'keyword': 'OLLAMA'}}
+    early, late = R.insert_piece(ins, 'lagoon', .12, 3), R.insert_piece(ins, 'lagoon', .6, 40)
+    assert 'OLLAMA' not in early and late.count('OLLAMA') >= 3  # typing, then the keyword plus rising replies

@@ -36,13 +36,12 @@
       "rig": "app-screen",
       "framing": "close",
       "params": {
-        "device": "laptop",
+        "device": "monitor",
         "ui": "note",
         "title": "journal.md",
         "lines": [
           "# This week",
           "Slept badly Monday, better after.",
-          "Fixed the bike chain on Thursday.",
           "![tree] ![bench] ![sun]",
           "Want more time outside.",
           "[[goals]] [[sleep]]"
