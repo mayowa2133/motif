@@ -59,7 +59,7 @@ def _ease(k):
 def act_motion(act, entrance, role, u, f, n, tc, side, entering=True):
     """(pose, face, dx, dy, squash, cycle) for frame f of n (u = f / n) in a setup or payoff shot."""
     a = ACTS[act]
-    if role == 'setup':
+    if role in ('setup', 'hook'):  # an authored hook act (hook.visual.act) works the hook's machine like a setup
         arrive = min(1.0, u / .22) if entering else 1.0
         if arrive < 1:
             k = _ease(arrive)

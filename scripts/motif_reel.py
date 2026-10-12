@@ -165,9 +165,10 @@ def plan_reel(brief, allow_draft=False, avoid_looks=()):
     first_fact = facts[brief['beats'][0]['fact']]
     hook_room = room_for(brief['topic'] + ' ' + hook, (brief.get('hook') or {}).get('room') or ((brief.get('hook') or {}).get('visual') or {}).get('room'));rooms.append(hook_room)
     hook_insert = _insert_for(first_fact, hook, cat) if _number(first_fact.get('value')) else None
+    hook_act = ((brief.get('hook') or {}).get('visual') or {}).get('act');last_act = hook_act
     beats.append({'id': 'hook', 'kind': 'hook', 'narration': hook, 'palette': palettes[0], 'shots': [
         {'id': 'hook', 'role': 'hook', 'headline': (brief.get('hook') or {}).get('headline') or _short(hook, 28), 'headline_b': (brief.get('hook') or {}).get('headline_b') or _short(brief['topic'], 28), 'headline_b_cut': not (brief.get('hook') or {}).get('headline_b') and _clip(brief['topic'], 28)[1], 'room': hook_room, 'rig': None,
-         'insert': hook_insert, 'bot': {'costume': [], 'face': 'excited', 'pose': 'celebrating'}, 'crowd': 9 if look['hook'] == 'crowd' else 0, 'grammar': 'big-bot' if look['hook'] == 'number' and not hook_insert else look['hook']}]})
+         'insert': hook_insert, 'bot': {'costume': [], 'face': 'excited', 'pose': 'celebrating', **({'act': hook_act, 'entrance': 'pop'} if hook_act else {})}, 'crowd': 9 if look['hook'] == 'crowd' else 0, 'grammar': 'big-bot' if look['hook'] == 'number' and not hook_insert else look['hook']}]})
     for i, b in enumerate(brief['beats']):
         fact = facts[b['fact']];visual = b.get('visual', {});text = f'{b["narration"]} {fact["claim"]} {fact.get("value", "")}'
         relation = relation_of(b, fact)

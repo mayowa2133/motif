@@ -11,7 +11,7 @@
     "slug": "replit"
   },
   "carry": {
-    "label": "booking app"
+    "label": "Juno Cuts"
   },
   "hook": {
     "alternates": [
@@ -30,7 +30,8 @@
       },
       "room": "office",
       "palette": "berry/mustard",
-      "brand": null
+      "brand": null,
+      "act": "gasps"
     },
     "story": {
       "promise": "a booking page of your own that takes payment",
@@ -183,7 +184,8 @@
         "room": "living-room",
         "palette": "lagoon/ink-navy",
         "act": "inspects",
-        "entrance": "slide"
+        "entrance": "slide",
+        "framing": "close"
       },
       "story": {
         "purpose": "demonstrate",
@@ -300,26 +302,34 @@
       "visual": {
         "rig": "app-screen",
         "params": {
-          "device": "phone",
-          "ui": "browser",
+          "device": "monitor",
+          "ui": "calendar",
           "title": "junocuts.com",
           "logo": "replit",
           "lines": [
-            "Juno Cuts",
-            "Book a cut",
-            "Fri 3:00 PM  Skin fade",
-            "Barber: Juno",
-            "Deposit: $20",
-            "Card ending 4242",
-            "Pay $20 and book",
-            "Booked! Email sent to Sam"
+            "# Juno Cuts: book a cut",
+            "MON 13:00 Ama",
+            "TUE 14:00 open",
+            "WED 13:00 Leo",
+            "THU 15:00 open",
+            "SAT 16:00 Kofi",
+            "SUN closed",
+            "FRI 15:00 Sam"
           ],
           "result": "BOOKED",
           "button": "PAY $20",
           "cards": [
-            "JUNOCUTS.COM",
-            "$20 PAID"
-          ]
+            "$20 PAID",
+            "FRI 3 PM"
+          ],
+          "stack": {
+            "title": "Inbox",
+            "lines": [
+              "Booking confirmed",
+              "Juno Cuts, Fri 3:00 PM",
+              "Deposit $20 paid"
+            ]
+          }
         },
         "room": "stage",
         "palette": "sunrise/slate",
@@ -331,8 +341,8 @@
         "purpose": "resolve",
         "link": "therefore",
         "before": "Juno Cuts live on its own domain, no clients yet",
-        "after": "Sam pays $20 on junocuts.com and is BOOKED: YOUR PAGE TAKES PAYMENT",
-        "action": "the host throws the booking app card onto the phone and Sam's payment lands",
+        "after": "Sam's Fri 3 PM slot BOOKED, $20 PAID: YOUR PAGE TAKES PAYMENT",
+        "action": "Sam's slot drops into the junocuts.com calendar and the pay key turns it booked",
         "pays_off": [
           "rented-page",
           "deposit",

@@ -181,7 +181,7 @@ class AppScreen(Rig):
         if p['device'] != 'phone':
             out += ''.join(f'<circle cx="{x + 20 + i * 18:.1f}" cy="{y + bar / 2:.1f}" r="5.5" fill="{col}"/>' for i, col in enumerate(('#FF6159', '#FFBD2E', '#28C941')))
         title = p.get('title') or '';tx = x + (78 if p['device'] != 'phone' else 18)
-        if kind == 'browser':
+        if kind == 'browser' or (kind == 'calendar' and '.' in title):
             out += rect(tx - 6, y + 6, w - (tx - x) - 14, bar - 12, c['light'], 11)
             out += path(f'M{tx + 6:.1f} {y + bar / 2 + 4:.1f}h12v-7h-12z M{tx + 8:.1f} {y + bar / 2 - 3:.1f}v-3a4 4 0 0 1 8 0v3', c['accent'], 2.4)
             out += txt(title, tx + 26, y + bar / 2 + 7, 20, c['dark'], 700)
@@ -230,7 +230,7 @@ class AppScreen(Rig):
                 if kind == 'cli':kind = 'terminal'
                 # A corner sticker clear of the content: below it where text runs down the screen
                 # (chat, terminal, file tree; cut 6 stills: CLAUDE IS IN and VAULT READY covered lines).
-                fit = min(.72, (w * .5) / rw);rx, ry = x + w - rw * fit / 2 - 14, (y + h - 34 if kind in ('chat', 'terminal', 'files', 'note', 'pr') else y + 44 + 34)
+                fit = min(.72, (w * .5) / rw);rx, ry = x + w - rw * fit / 2 - 14, (y + h - 34 if kind in ('chat', 'terminal', 'files', 'note', 'pr', 'calendar') else y + 44 + 34)
             out += g(rect(-rw / 2 + 5, -40, rw, 80, c['dark'], 14).replace('<rect', '<rect opacity=".22"') + rect(-rw / 2, -44, rw, 80, c['pop'] if c['pop'] not in (c['light'], c['dark']) else c['accent'], 14, c['dark'], 3)
                      + txt(res, 0, 12, 40, c['dark'], 900, 'middle'), rx, ry, -3, done * fit)
         return out
@@ -238,7 +238,7 @@ class AppScreen(Rig):
     # Product views (2026-10-11 reference comparison): the references show the real app doing the
     # thing in most shots. These recreate common app surfaces in Motif's own drawing, with the
     # brief's lines as the content, so a film can show the product rather than a machine about it.
-    VIEWS = ('files', 'note', 'graph', 'chat', 'cli', 'pr')
+    VIEWS = ('files', 'note', 'graph', 'chat', 'cli', 'pr', 'calendar')
 
     def _shown(self, lines, typed):
         """(line, visible share) per line as the typing budget reaches it."""
@@ -459,12 +459,78 @@ class AppScreen(Rig):
             ly += size * 1.75
         return out
 
+    DAYS = ('MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT', 'SUN')
+
+    @classmethod
+    def calendar_events(cls, lines):
+        """Parse calendar lines: '# title', 'DAY closed', or 'DAY HH:MM label' (label 'open' = a free slot)."""
+        import re
+        out = []
+        for i, line in enumerate(lines):
+            m = re.match(r'^(MON|TUE|WED|THU|FRI|SAT|SUN)\s+(?:(closed)|(\d{1,2}):(\d{2})\s*(.*))$', line.strip(), re.I)
+            if not m:continue
+            day = m.group(1).upper()
+            if m.group(2):out.append((i, day, None, 'closed'))
+            else:out.append((i, day, int(m.group(3)) + int(m.group(4)) / 60, (m.group(5) or 'booked').strip()))
+        return out
+
+    def calendar_view(self, p, c, typed, done):
+        """A week calendar (booking-app reel cut 1 grade: the app was described, never seen; the source
+        reel's strongest frames are its calendar). A '# ' line is the header; 'DAY closed' greys a column;
+        'DAY HH:MM label' drops an hour block, 'open' an outlined free slot, anything else a booked slot
+        in the accent colour. Blocks pop in as their lines type; at the result the last booked one pulses."""
+        x, y, w, h = self.screen(p);top = y + 44;lines = p.get('lines') or [];rows = self._shown(lines, typed);out = ''
+        events = self.calendar_events(lines)
+        head = next((l[2:] for l in lines if l.startswith('# ')), None);hy = top + 10
+        if head:
+            k = rows[lines.index('# ' + head)][1]
+            hs = min(26, (w - 40) / max(8, len(head) * .6))
+            out += txt(head[:max(1, int(len(head) * k))] if k > 0 else '', x + 18, top + 10 + hs, hs, c['dark'], 900);hy = top + 22 + hs
+        used = {d for _, d, _, _ in events}
+        days = [d for d in self.DAYS if d in used or d not in ('SUN',)]
+        hours = [hr for _, _, hr, _ in events if hr is not None] or [9.0]
+        h0 = max(0, int(min(hours)));h1 = min(24, max(h0 + 4, int(max(hours)) + 1))
+        gx = x + 52;gw = x + w - 12 - gx;cw = gw / len(days);dh = 30;gy = hy + dh
+        gh = (y + h - 76) - gy;rh = gh / max(1, h1 - h0)
+        ds = min(18, cw * .3)
+        for j, d in enumerate(days):
+            out += txt(d, gx + cw * j + cw / 2, hy + dh * .7, ds, c['dark'], 800, 'middle')
+        out += rect(gx, gy, gw, gh, '#FFFFFF', 4, c['metal'], 2)
+        for r in range(h1 - h0 + 1):
+            ly = gy + r * rh
+            out += rect(gx, ly, gw, 1.5, c['metal'])
+            if r < h1 - h0:out += txt(f'{(h0 + r - 1) % 12 + 1}{"am" if h0 + r < 12 else "pm"}', gx - 6, ly + min(16, rh * .5), min(15, rh * .45), '#7D7A73', 600, 'end')
+        for j in range(1, len(days)):out += rect(gx + cw * j, gy, 1.5, gh, c['metal'])
+        booked = [e for e in events if e[3] not in ('open', 'closed')];last = booked[-1][0] if booked else None
+        for i, day, hr, label in events:
+            k = rows[i][1]
+            if k <= 0 or day not in days:continue
+            j = days.index(day);bx = gx + cw * j + 3;bw = cw - 6;pop = min(1.0, k * 1.6)
+            if label == 'closed':
+                hatch = ''.join(path(f'M{bx:.1f} {gy + t:.1f}l{bw:.1f} {-bw:.1f}', c['metal'], 2) for t in range(int(bw), int(gh), 18))
+                out += g(rect(bx, gy + 2, bw, gh - 4, '#E4DED2') + self._clip(bx, gy + 2, bw, gh - 4, hatch), 0, 0, 0, 1, 1, pop)
+                out += g(txt('CLOSED', 0, 0, min(18, bw * .26), '#7D7A73', 900, 'middle'), bx + bw / 2, gy + gh / 2, -90, pop)
+                continue
+            by = gy + (hr - h0) * rh + 2;bh = rh - 4;free = label == 'open'
+            hot = i == last and done > 0 and c['pop'] not in (c['light'], c['dark'])
+            fill = '#FFFFFF' if free else (c['pop'] if hot else c['accent']);fs = min(17, bw / max(4, len(label) * .58), bh * .42)
+            blk = rect(0, 0, bw, bh, fill, 6, c['dark'] if not free else c['secondary'], 2.5 if not free else 2)
+            col = '#7D7A73' if free else ink(fill, c)
+            if bh >= 44:
+                blk += txt(f'{int(hr) % 12 or 12}:{int(round(hr % 1 * 60)):02d}', 6, fs * 1.05, fs * .8, col, 700) + txt(label, 6, fs * 2.25, fs, col, 900 if not free else 600)
+            else:  # short rows: one line, the name only, as big as the block allows
+                fs = min(20, (bw - 10) / max(3, len(label) * .6), bh * .62);blk += txt(label, bw / 2, bh / 2 + fs * .36, fs, col, 900 if not free else 600, 'middle')
+            if i == last and done:
+                out += rect(bx - 6 - 8 * done, by - 6 - 8 * done, bw + 12 + 16 * done, bh + 12 + 16 * done, 'none', 10, c['pop'], 4).replace('<rect', f'<rect opacity="{max(0, 1 - done * .6):.2f}"')
+            out += g(blk, bx + bw / 2 * (1 - pop), by + bh / 2 * (1 - pop), 0, pop)
+        return out
+
     def printed_text(self, p):
         name = (p.get('agent') or self.AGENTS.get(p.get('logo') or '', ('',))[0]) if p['ui'] == 'cli' else None
         return [t for t in [p.get('title'), *(p.get('lines') or []), *(p.get('pane') or []), p.get('cwd'), *(((p.get('stack') or {}).get('title'),) + tuple((p.get('stack') or {}).get('lines') or [])), p.get('result'), p.get('credit'), *(p.get('cards') or []), name] if t]
 
     # Chrome each view draws besides its lines (title bar, welcome box, input, footer, tabs, pills).
-    CHROME = {'cli': 5, 'pr': 7, 'files': 2, 'note': 2, 'chat': 2, 'graph': 1, 'map': 6, 'terminal': 2, 'window': 2, 'browser': 3}
+    CHROME = {'cli': 5, 'pr': 7, 'calendar': 4, 'files': 2, 'note': 2, 'chat': 2, 'graph': 1, 'map': 6, 'terminal': 2, 'window': 2, 'browser': 3}
 
     def detail(self, p):
         """Pieces of UI on the screen: its lines, the open file's lines, the cards and the view's chrome
@@ -619,9 +685,9 @@ class AppScreen(Rig):
 
 
 register(AppScreen(
-    name='app-screen', description='The product in use: a monitor, laptop or phone showing a Motif-drawn terminal, coding-agent session (cli: > prompt, * action, - result, + / x diff, [ ] / [x] todo, ? permission), pull request (pr: title, then ✓ / x checks and @name: comments), file tree (files, with pane = the open file), stack = a second window pasted behind, app window, browser page or street map (lines become map pins); the brief\'s lines type in, the cursor presses run and the result pops. send_to puts a USB stick in front and the file flies into it; credit adds a corner attribution; prefilled starts with the lines already in. Demos, commands, settings, checkboxes, downloads.',
+    name='app-screen', description='The product in use: a monitor, laptop or phone showing a Motif-drawn terminal, coding-agent session (cli: > prompt, * action, - result, + / x diff, [ ] / [x] todo, ? permission), pull request (pr: title, then ✓ / x checks and @name: comments), file tree (files, with pane = the open file), week calendar (calendar: # header, DAY closed, DAY HH:MM name booked or open slots), stack = a second window pasted behind, app window, browser page or street map (lines become map pins); the brief\'s lines type in, the cursor presses run and the result pops. send_to puts a USB stick in front and the file flies into it; credit adds a corner attribution; prefilled starts with the lines already in. Demos, commands, settings, checkboxes, downloads.',
     params_schema={'type': 'object', 'properties': {
-        'device': {'enum': ['monitor', 'laptop', 'phone']}, 'ui': {'enum': ['terminal', 'window', 'browser', 'map', 'files', 'note', 'graph', 'chat', 'cli', 'pr']},
+        'device': {'enum': ['monitor', 'laptop', 'phone']}, 'ui': {'enum': ['terminal', 'window', 'browser', 'map', 'files', 'note', 'graph', 'chat', 'cli', 'pr', 'calendar']},
         'stack': {'type': ['object', 'null'], 'properties': {'title': {'type': 'string', 'maxLength': 20}, 'lines': {'type': 'array', 'items': {'type': 'string', 'maxLength': 30}, 'maxItems': 5}}, 'additionalProperties': False},
         'pane': {'type': 'array', 'items': {'type': 'string', 'maxLength': 34}, 'maxItems': 10}, 'cwd': {'type': ['string', 'null'], 'maxLength': 24},
         'agent': {'type': ['string', 'null'], 'maxLength': 16}, 'cards': {'type': 'array', 'items': {'type': 'string', 'maxLength': 18}, 'maxItems': 2},
