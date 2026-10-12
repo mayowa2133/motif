@@ -37,6 +37,12 @@
       "palette": "lilac/peach",
       "framing": "close",
       "brand": null
+    },
+    "story": {
+      "promise": "weather.py runs on a new laptop",
+      "sets_up": [
+        "broken-script"
+      ]
     }
   },
   "facts": [
@@ -121,6 +127,17 @@
         "palette": "lilac/dusk-teal",
         "act": "cheers",
         "entrance": "slide"
+      },
+      "story": {
+        "purpose": "complicate",
+        "link": "but",
+        "before": "weather.py broken, needs fixing",
+        "after": "pyenv, venv and pip each replaced by one uv command: ONE TOOL REPLACES 3",
+        "action": "the host types the three uv commands, one per old tool",
+        "sets_up": [
+          "three-tools"
+        ],
+        "line_job": "context"
       }
     },
     {
@@ -172,6 +189,20 @@
         "palette": "lilac/slate",
         "act": "types",
         "entrance": "pop"
+      },
+      "story": {
+        "purpose": "demonstrate",
+        "link": "therefore",
+        "before": "weather.py with no list of its packages",
+        "after": "weather.py carries its dependencies: PACKAGES INSIDE THE FILE",
+        "action": "the host runs uv add --script and the header block appears in the file",
+        "sets_up": [
+          "deps-in-file"
+        ],
+        "pays_off": [
+          "three-tools"
+        ],
+        "line_job": "explain"
       }
     },
     {
@@ -197,6 +228,17 @@
         "palette": "mint-coral/mauve",
         "act": "gasps",
         "entrance": "drop"
+      },
+      "story": {
+        "purpose": "escalate",
+        "link": "therefore",
+        "before": "packages listed but not installed",
+        "after": "uv crosses the line while pip lags: 10-100X FASTER THAN PIP",
+        "action": "the uv cart races past the pip cart to the finish",
+        "pays_off": [
+          "deps-in-file"
+        ],
+        "line_job": "anticipation"
       }
     },
     {
@@ -217,6 +259,17 @@
         "palette": "peach/ink-navy",
         "act": "inspects",
         "entrance": "walk"
+      },
+      "story": {
+        "purpose": "reveal",
+        "link": "therefore",
+        "before": "every script downloads its own packages",
+        "after": "all scripts pulled to 1 CACHE: NOTHING DOWNLOADS TWICE",
+        "action": "the cache magnet pulls every script card in",
+        "sets_up": [
+          "shared-cache"
+        ],
+        "line_job": "explain"
       }
     },
     {
@@ -261,15 +314,42 @@
         "palette": "lilac/mustard",
         "act": "smug",
         "entrance": "slide"
+      },
+      "story": {
+        "purpose": "resolve",
+        "link": "therefore",
+        "before": "weather.py still has no Python on the new laptop",
+        "after": "uv run fetches Python 3.13 and weather.py prints the weather: IT RUNS",
+        "action": "the host throws weather.py into the terminal and hits run",
+        "pays_off": [
+          "broken-script",
+          "shared-cache"
+        ],
+        "line_job": "land"
       }
     }
   ],
   "cta": {
     "keyword": "UV",
     "narration": "Comment UV and I'll send you the setup.",
-    "headline_b": "GET THE SETUP"
+    "headline_b": "GET THE SETUP",
+    "story": {
+      "line_job": "context"
+    }
   },
   "carry": {
     "label": "weather.py"
+  },
+  "story": {
+    "premises": [
+      "A race between pip and uv: uv crosses the line first, then wins every lap as more packages pile on, and the crowd holds up 100X.",
+      "One script, weather.py, that will not run on a new laptop: it fails, needs three tools, gets its packages written into it, installs fast from a shared cache, and finally runs with one command.",
+      "A toolbox crammed with pyenv, virtualenv, pip and poetry: each tool is pulled out and dropped into one uv box until the toolbox is empty."
+    ],
+    "chosen": 1,
+    "why": "A broken script is the problem viewers actually have; it can fail on screen, travel through every set in the host's hand, change state each beat, and visibly run at the end.",
+    "object": "weather.py, a Python script that will not run",
+    "spine": "Your script fails on a new laptop. But fixing it normally takes three tools. Therefore uv does all three, and writes the packages into the script itself. Therefore installs are 10-100x faster, and a shared cache means nothing downloads twice. Until finally uv run fetches Python and the same script runs.",
+    "ending": "The terminal that said BROKEN now prints the weather and stamps IT RUNS: WEATHER.PY RUNS."
   }
 }

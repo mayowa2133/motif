@@ -57,7 +57,7 @@ quality bar). Copy the closest one and change it.
    `[ ] `/`[x] ` todos, `? ` permission prompt; `logo` picks the agent's
    chrome), `pr` (pull request: title, then `✓ `/`x ` checks and
    `@name: text` reviews), `files` (folder tree; `pane` opens the last file
-   beside it), `note` (Markdown page, `[[links]]` become chips), `graph` (one
+   beside it), `note` (Markdown page, `[[links]]` become chips, a line of `![prop]` or `![@brand]` embeds becomes a row of pictures), `graph` (one
    node per line), `chat` (question, then an answer with `[n]` citations),
    `terminal`, `window`, `browser`. Fill them with the film's real content:
    8 to 12 lines, as dense as the real product (the scorecard's

@@ -122,6 +122,28 @@ register(DeviceWall(
     footprint=(-300, -640, 600, 640)))
 
 
+PICTURES = __import__('re').compile(r'(?:!\[[^\]]+\]\s*)+')
+
+
+def picture_tile(name, c, w, h, i=0):
+    """A picture inside a screen (plan-to-9: the references' screens carry photos and logos, ours only
+    text): a framed tile holding a Motif prop (`![sofa]`) or a vendored product mark (`![@github]`),
+    else a paper landscape. Top-left at (0, 0)."""
+    frame = rect(0, 0, w, h, '#FFFFFF', 8, c['dark'], 2.5)
+    if name.startswith('@'):
+        from motif_brand import glyph
+        s = min(w, h) * .62;inner = f'<g transform="translate({(w - s) / 2:.1f} {(h - s) / 2:.1f})">{glyph(name[1:], s)}</g>'
+        return frame + inner
+    from motif_props import PROPS
+    pr = PROPS.get(name)
+    if pr:
+        k = min((w - 16) / pr.w, (h - 16) / pr.h)
+        tint = rect(4, 4, w - 8, h - 8, (c['secondary'], c['accent'], c['pop'])[i % 3], 6).replace('<rect', '<rect opacity=".35"')
+        return frame + rect(4, 4, w - 8, h - 8, c['light'], 6) + tint + f'<g transform="translate({w / 2:.1f} {h - 8:.1f}) scale({k:.4f})">{pr.render(c)}</g>'
+    hills = f'<path d="M4 {h - 4}L{w * .35:.1f} {h * .45:.1f}L{w * .55:.1f} {h * .7:.1f}L{w * .72:.1f} {h * .5:.1f}L{w - 4:.1f} {h - 4}Z" fill="{c["secondary"]}" stroke="{c["dark"]}" stroke-width="2"/>'
+    return frame + rect(4, 4, w - 8, h - 8, c['light'], 6) + f'<circle cx="{w * .76:.1f}" cy="{h * .3:.1f}" r="{min(w, h) * .12:.1f}" fill="{c["pop"]}"/>' + hills
+
+
 class AppScreen(Rig):
     """The product in use, recreated as a cut-paper screen (no screenshots).
 
@@ -286,28 +308,59 @@ class AppScreen(Rig):
         return out
 
     def note_view(self, p, c, typed, done):
-        """A Markdown note: the first line is the page title, the rest body lines where [[name]] is a link chip."""
+        """A Markdown note: the first line is the page title, the rest body lines where [[name]] is a link
+        chip and a line of ![name] embeds is a row of pictures (picture_tile: a prop, or @brand for a mark)."""
         import re
         x, y, w, h = self.screen(p);top = y + 44;lines = p.get('lines') or [];rows = self._shown(lines, typed)
         out = ''
         if rows and rows[0][1] > 0:
             title = rows[0][0];ts = min(40, (w - 60) / max(6, len(title) * .62))
             out += txt(title, x + 26, top + 18 + ts, ts, c['dark'], 900) + rect(x + 26, top + 30 + ts, w - 52, 3, c['secondary'])
-        ts = min(40, (w - 60) / max(6, len(lines[0] if lines else 'x') * .62));size = min(30, (w - 60) / max(14, max((len(l) for l in lines[1:]), default=14) * .6))
-        # Body lines end above the run key (Claudex cut 3: the OK key covered the last line).
-        size = min(size, (y + h - 72 - top - 34 - ts) / (1.1 + max(0, len(lines) - 2) * 1.55));body_top = top + 34 + ts + size * 1.1
-        for i, (line, k) in enumerate(rows[1:]):
-            if k <= 0:break
-            ly = body_top + i * size * 1.55;lx = x + 26
-            shown = line[:max(1, int(len(line) * k))]
+        pics = [bool(PICTURES.fullmatch(l.strip())) for l in lines]
+        ts = min(40, (w - 60) / max(6, len(lines[0] if lines else 'x') * .62));size = min(30, (w - 60) / max(14, max((len(l) for l, pic in zip(lines[1:], pics[1:]) if not pic), default=14) * .6))
+        # Body lines end above the run key (Claudex cut 3: the OK key covered the last line). A picture row spans the
+        # screen width (Ollama cut 2: tiles squeezed into three text lines were too small to read on a phone). When the
+        # page is longer than the screen it scrolls to keep the newest line in view, as a real editor does, instead of
+        # shrinking everything.
+        body_top = top + 34 + ts + 6;bottom = y + h - 72
+        def pic_size(line):
+            n = max(1, len(re.findall(r'!\[([^\]]+)\]', line)));tw = min(170, (w - 52 - 12 * (n - 1)) / n);th = min(tw * .72, 118, (bottom - body_top) * .5)
+            return min(tw, th * 1.5), th
+        # Fit the page when it can at 18 px or more; only a page longer than that scrolls.
+        pic_total = sum(pic_size(l)[1] + 14 for l, pic in zip(lines[1:], pics[1:]) if pic);n_text = sum(1 for pic in pics[1:] if not pic)
+        if n_text:size = max(18, min(size, (bottom - body_top - pic_total) / (n_text * 1.55)))
+        items, ly = [], body_top
+        for line, pic in zip(lines[1:], pics[1:]):
+            hgt = pic_size(line)[1] + 14 if pic else size * 1.55
+            items.append((ly, hgt));ly += hgt
+        reach = body_top
+        for (iy, hgt), (line, kk) in zip(items, rows[1:]):
+            if kk <= 0:break
+            reach = iy + hgt * min(1.0, kk * 3)
+        offset = max(0.0, reach - bottom)
+        body = ''
+        for (iy, hgt), (line, kk), pic in zip(items, rows[1:], pics[1:]):
+            if kk <= 0:break
+            if pic:
+                names = re.findall(r'!\[([^\]]+)\]', line);tw, th = pic_size(line)
+                x0 = x + (w - len(names) * tw - 12 * (len(names) - 1)) / 2
+                for j, name in enumerate(names):
+                    pop = min(1.0, max(0.0, kk * 3 - j * .5))  # each picture pops in as it "loads", one after another
+                    body += g(picture_tile(name, c, tw, th, j), x0 + j * (tw + 12) + tw / 2 * (1 - pop), iy + 6 + th / 2 * (1 - pop), 0, max(.01, pop), 1, min(1.0, pop * 1.5))
+                continue
+            base = iy + size * 1.2;lx = x + 26
+            shown = line[:max(1, int(len(line) * kk))]
             for part in re.split(r'(\[\[[^\]]*\]?\]?)', shown):
                 if not part:continue
                 if part.startswith('[['):
                     name = part.strip('[]');pw = len(name) * size * .6 + 16
-                    out += rect(lx, ly - size * .86, pw, size * 1.2, c['accent'], 8).replace('<rect', '<rect opacity=".28"') + txt(name, lx + 8, ly, size, c['dark'], 800) + rect(lx + 8, ly + 4, pw - 16, 2.5, c['dark'])
+                    body += rect(lx, base - size * .86, pw, size * 1.2, c['accent'], 8).replace('<rect', '<rect opacity=".28"') + txt(name, lx + 8, base, size, c['dark'], 800) + rect(lx + 8, base + 4, pw - 16, 2.5, c['dark'])
                     lx += pw + 8
                 else:
-                    out += txt(part, lx, ly, size, c['dark'], 600);lx += len(part) * size * .58
+                    body += txt(part, lx, base, size, c['dark'], 600);lx += len(part) * size * .58
+        if offset > 0:
+            body = self._clip(x, body_top - 4, w, bottom - body_top + 8, f'<g transform="translate(0 {-offset:.1f})">{body}</g>')
+        out += body
         return out
 
     def graph_view(self, p, c, typed, done):
@@ -461,7 +514,7 @@ class AppScreen(Rig):
 
     def printed_text(self, p):
         name = (p.get('agent') or self.AGENTS.get(p.get('logo') or '', ('',))[0]) if p['ui'] == 'cli' else None
-        return [t for t in [p.get('title'), *(p.get('lines') or []), *(p.get('pane') or []), p.get('cwd'), *(((p.get('stack') or {}).get('title'),) + tuple((p.get('stack') or {}).get('lines') or [])), p.get('result'), p.get('credit'), *(p.get('cards') or []), name] if t]
+        return [t for t in [p.get('title'), *(p.get('lines') or []), *(p.get('pane') or []), p.get('cwd'), *(((p.get('stack') or {}).get('title'),) + tuple((p.get('stack') or {}).get('lines') or [])), p.get('result'), p.get('credit'), *(p.get('cards') or []), name] if t and not PICTURES.fullmatch(t.strip())]
 
     # Chrome each view draws besides its lines (title bar, welcome box, input, footer, tabs, pills).
     CHROME = {'cli': 5, 'pr': 7, 'files': 2, 'note': 2, 'chat': 2, 'graph': 1, 'map': 6, 'terminal': 2, 'window': 2, 'browser': 3}

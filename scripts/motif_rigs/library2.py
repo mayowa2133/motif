@@ -486,6 +486,7 @@ register(SproutGrow(
 # 16 Bridge span ------------------------------------------------------------------
 
 class BridgeSpan(Rig):
+    close_framing = False  # its story is the gap between two cliffs; a close shot crops one cliff away (Ollama rough)
     LEFT, RIGHT, TOP = -150, 150, -300
 
     def plank(self, p, k):

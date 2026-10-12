@@ -578,7 +578,7 @@ register(ReceiptStack(
     footprint=(-220, -560, 440, 560)))
 
 
-# 9 Stamp gate ------------------------------------------------------------------
+# 9 Stamp gate (keep_clear: the in-tray document; in the Ollama rough the host hid YOUR PROMPTS) ------------------------------------------------------------------
 
 class StampGate(Rig):
     DOC_TOP = -250
@@ -692,7 +692,7 @@ register(StampGate(
                    'required': ['document', 'stamp', 'verdict'], 'additionalProperties': False},
     defaults={'document': 'NEW MODEL', 'stamp': 'APPROVED', 'verdict': 'approved'}, states=('waiting', 'stamped'),
     actions={'stamp': Action('stamp', 'waiting', 'stamped', 42, 'stamp-document', 20)},
-    bot_slot={'x': -60, 'y': -640, 'scale': .2, 'role': 'grips the stamp handle'}, tags=('approval', 'policy', 'permission', 'review', 'regulation', 'reject'),
+    bot_slot={'x': -60, 'y': -640, 'scale': .2, 'role': 'grips the stamp handle', 'keep_clear': ((-230, -280, 320, 210),)}, tags=('approval', 'policy', 'permission', 'review', 'regulation', 'reject'),
     footprint=(-260, -680, 620, 680)))
 
 

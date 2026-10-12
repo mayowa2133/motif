@@ -14,45 +14,297 @@
     "headline": "3 DAYS OF WORK, GONE?",
     "headline_b": "GIT KEPT A RECEIPT",
     "visual": {
-      "rig": "stacked-meter",
-      "params": {"from": 9, "to": 6, "unit": "", "label": "COMMITS", "rocket": false},
+      "rig": "app-screen",
+      "framing": "close",
+      "params": {
+        "device": "laptop",
+        "ui": "terminal",
+        "title": "my-app",
+        "lines": [
+          "$ git reset --hard HEAD~3",
+          "HEAD is now at 4f2a9c1 login page",
+          "$ git log --oneline",
+          "4f2a9c1 login page",
+          "2b7e5d3 sign-up form",
+          "9be71d0 first commit"
+        ],
+        "result": "GONE?"
+      },
       "room": "night-sky",
-      "palette": "neon-teal/plum-night"
+      "palette": "neon-violet/plum-night"
+    },
+    "story": {
+      "promise": "the three lost days of work come back",
+      "sets_up": [
+        "lost-commits",
+        "missing-from-log"
+      ]
     }
   },
   "facts": [
-    {"id": "f1", "claim": "A git commit records a snapshot of the project's staged contents", "value": "a snapshot", "source_url": "https://git-scm.com/docs/git-commit", "accessed": "2026-10-11"},
-    {"id": "f2", "claim": "A branch in Git is a lightweight movable pointer to a commit", "value": "a pointer", "source_url": "https://git-scm.com/book/en/v2/Git-Branching-Branches-in-a-Nutshell", "accessed": "2026-10-11"},
-    {"id": "f3", "claim": "git reset --hard discards changes and moves the branch back to an earlier commit", "value": "--hard", "source_url": "https://git-scm.com/docs/git-reset", "accessed": "2026-10-11"},
-    {"id": "f4", "claim": "Reflogs record when the tips of branches were updated in the local repository", "value": "every move", "source_url": "https://git-scm.com/docs/git-reflog", "accessed": "2026-10-11"},
-    {"id": "f5", "claim": "Reflog entries are kept for 90 days by default before git gc may expire them", "value": "90 days", "source_url": "https://git-scm.com/docs/git-gc", "accessed": "2026-10-11"}
+    {
+      "id": "f2",
+      "claim": "A branch in Git is a lightweight movable pointer to a commit",
+      "value": "a pointer",
+      "source_url": "https://git-scm.com/book/en/v2/Git-Branching-Branches-in-a-Nutshell",
+      "accessed": "2026-10-11"
+    },
+    {
+      "id": "f3",
+      "claim": "git reset --hard discards changes and moves the branch back to an earlier commit",
+      "value": "--hard",
+      "source_url": "https://git-scm.com/docs/git-reset",
+      "accessed": "2026-10-11"
+    },
+    {
+      "id": "f4",
+      "claim": "Reflogs record when the tips of branches were updated in the local repository",
+      "value": "every move",
+      "source_url": "https://git-scm.com/docs/git-reflog",
+      "accessed": "2026-10-11"
+    },
+    {
+      "id": "f5",
+      "claim": "Reflog entries are kept for 90 days by default before git gc may expire them",
+      "value": "90 days",
+      "source_url": "https://git-scm.com/docs/git-gc",
+      "accessed": "2026-10-11"
+    }
   ],
   "beats": [
     {
-      "id": "commit", "narration": "Every commit saves a snapshot of your whole project.", "fact": "f1", "relation": "demo",
-      "headline": "1 COMMIT = 1 SNAPSHOT", "payoff_headline": "SAVED AS 4F2A9C1",
-      "visual": {"rig": "app-screen", "params": {"device": "monitor", "ui": "terminal", "title": "my-app", "lines": ["git add .", "git commit -m \"login page\"", "[main 4f2a9c1] login page", "3 files changed"], "result": "SAVED"}, "room": "arcade", "palette": "neon-violet"}
+      "id": "stack",
+      "narration": "A hard reset moved your branch back three commits, and git log can't see them.",
+      "fact": "f3",
+      "relation": "big-number",
+      "headline": "MAIN DROPPED FROM 9 TO 6",
+      "payoff_headline": "GIT LOG SHOWS 6",
+      "visual": {
+        "rig": "stacked-meter",
+        "params": {
+          "from": 9,
+          "to": 6,
+          "unit": "",
+          "label": "COMMITS",
+          "rocket": false
+        },
+        "room": "server-room",
+        "palette": "neon-teal/neon-ember",
+        "act": "gasps",
+        "entrance": "drop"
+      },
+      "story": {
+        "purpose": "complicate",
+        "link": "but",
+        "before": "9 commits on main",
+        "after": "the tower drops to 6 COMMITS: GIT LOG SHOWS 6",
+        "action": "three blocks fall off the top of the tower",
+        "sets_up": [
+          "three-gone"
+        ],
+        "pays_off": [
+          "lost-commits"
+        ],
+        "line_job": "context"
+      }
     },
     {
-      "id": "stack", "narration": "Commit often, and the snapshots stack up into nine save points.", "fact": "f2", "relation": "big-number",
-      "headline": "9 SAVE POINTS", "payoff_headline": "MAIN POINTS AT THE TOP",
-      "visual": {"rig": "stacked-meter", "params": {"from": 1, "to": 9, "unit": "", "label": "COMMITS", "rocket": false}, "room": "server-room", "palette": "neon-teal/neon-ember"}
+      "id": "receipts",
+      "narration": "But git prints a receipt every time your branch moves. It's called the reflog.",
+      "fact": "f4",
+      "relation": "pile-up",
+      "headline": "1 RECEIPT PER BRANCH MOVE",
+      "payoff_headline": "THAT'S THE REFLOG",
+      "visual": {
+        "rig": "receipt-stack",
+        "params": {
+          "from": 0,
+          "to": 10,
+          "amount": "MOVE",
+          "label": "REFLOG"
+        },
+        "room": "arcade",
+        "palette": "neon-ember/neon-violet",
+        "act": "inspects",
+        "entrance": "walk"
+      },
+      "story": {
+        "purpose": "reveal",
+        "link": "but",
+        "before": "the lost commits look gone for good",
+        "after": "10 receipts piled up in the REFLOG",
+        "action": "receipts print and drop onto the pile, one per move",
+        "sets_up": [
+          "receipt"
+        ],
+        "line_job": "explain"
+      }
     },
     {
-      "id": "oops", "narration": "Then one hard reset throws the last three away.", "fact": "f3", "relation": "demo",
-      "headline": "RESET --HARD HEAD~3", "payoff_headline": "THREE COMMITS GONE",
-      "visual": {"rig": "app-screen", "params": {"device": "laptop", "ui": "terminal", "title": "my-app", "lines": ["git reset --hard HEAD~3", "HEAD is now at 4f2a9c1", "git log --oneline", "4f2a9c1 login page"], "result": "GONE?"}, "room": "stage", "palette": "neon-violet/plum-night"}
+      "id": "find",
+      "narration": "Run git reflog, and your lost commit sits one line down.",
+      "fact": "f4",
+      "relation": "demo",
+      "headline": "GIT REFLOG: C13F8AA",
+      "payoff_headline": "LOST COMMIT FOUND",
+      "visual": {
+        "rig": "app-screen",
+        "params": {
+          "device": "monitor",
+          "ui": "terminal",
+          "title": "my-app",
+          "lines": [
+            "$ git reflog",
+            "4f2a9c1 HEAD@{0}: reset: HEAD~3",
+            "c13f8aa HEAD@{1}: checkout flow",
+            "7d41b02 HEAD@{2}: cart totals",
+            "e90c3f5 HEAD@{3}: cart page",
+            "4f2a9c1 HEAD@{4}: login page",
+            "2b7e5d3 HEAD@{5}: sign-up form"
+          ],
+          "result": "FOUND",
+          "cards": [
+            "HEAD@{1}",
+            "C13F8AA"
+          ],
+          "stack": {
+            "title": "git log",
+            "lines": [
+              "4f2a9c1 login page",
+              "2b7e5d3 sign-up form",
+              "9be71d0 first commit"
+            ]
+          }
+        },
+        "room": "stage",
+        "palette": "neon-violet/neon-ember",
+        "act": "types",
+        "entrance": "pop"
+      },
+      "story": {
+        "purpose": "demonstrate",
+        "link": "therefore",
+        "before": "c13f8aa missing from git log",
+        "after": "c13f8aa on the reflog: LOST COMMIT FOUND",
+        "action": "the host types git reflog and the lost commit appears one line down",
+        "pays_off": [
+          "receipt",
+          "three-gone",
+          "missing-from-log"
+        ],
+        "sets_up": [
+          "found-id"
+        ],
+        "line_job": "explain"
+      }
     },
     {
-      "id": "reflog", "narration": "But git reflog remembers every place your branch has been.", "fact": "f4", "relation": "demo",
-      "headline": "REFLOG LOGS EVERY MOVE", "payoff_headline": "THERE IT IS: C13F8AA",
-      "visual": {"rig": "app-screen", "params": {"device": "monitor", "ui": "terminal", "title": "my-app", "lines": ["git reflog", "4f2a9c1 HEAD@{0}: reset", "c13f8aa HEAD@{1}: commit", "9be71d0 HEAD@{2}: commit"], "result": "FOUND"}, "room": "rooftop", "palette": "neon-violet/neon-ember"}
+      "id": "ninety",
+      "narration": "Those receipts last ninety days by default, so you have time.",
+      "fact": "f5",
+      "relation": "level",
+      "headline": "KEPT FOR 90 DAYS",
+      "payoff_headline": "NO RUSH TO RESCUE",
+      "visual": {
+        "rig": "certificate",
+        "params": {
+          "mode": "expire",
+          "domain": "c13f8aa",
+          "issuer": "git reflog",
+          "days_from": 90,
+          "days_to": 88,
+          "stamp": "KEPT"
+        },
+        "room": "rooftop",
+        "palette": "neon-teal/plum-night",
+        "act": "smug",
+        "entrance": "slide"
+      },
+      "story": {
+        "purpose": "escalate",
+        "link": "therefore",
+        "before": "one found commit id",
+        "after": "the c13f8aa receipt shows 88 days left: KEPT FOR 90 DAYS",
+        "action": "the days counter ticks down slowly from 90",
+        "line_job": "anticipation"
+      }
     },
     {
-      "id": "restore", "narration": "Reset back to that line and your work is home. Git keeps those entries for ninety days.", "fact": "f5", "relation": "unlock",
-      "headline": "90 DAYS TO GET IT BACK", "payoff_headline": "WORK RESTORED",
-      "visual": {"rig": "lock-and-key", "params": {"label": "LOST WORK", "key": "REFLOG"}, "room": "arcade", "palette": "neon-ember/neon-violet"}
+      "id": "restore",
+      "narration": "Reset back to that line, and all three days of work come home.",
+      "fact": "f3",
+      "relation": "demo",
+      "headline": "RESET --HARD C13F8AA",
+      "payoff_headline": "9 COMMITS BACK HOME",
+      "visual": {
+        "rig": "app-screen",
+        "params": {
+          "device": "laptop",
+          "ui": "terminal",
+          "title": "my-app",
+          "logo": null,
+          "lines": [
+            "$ git reset --hard c13f8aa",
+            "HEAD is now at c13f8aa",
+            "$ git log --oneline",
+            "c13f8aa checkout flow",
+            "7d41b02 cart totals",
+            "e90c3f5 cart page",
+            "4f2a9c1 login page"
+          ],
+          "result": "RESTORED",
+          "cards": [
+            "9 COMMITS"
+          ],
+          "stack": {
+            "title": "reflog",
+            "lines": [
+              "c13f8aa HEAD@{1}",
+              "7d41b02 HEAD@{2}"
+            ]
+          }
+        },
+        "room": "night-sky",
+        "palette": "neon-violet/dusk-teal",
+        "act": "cheers",
+        "entrance": "walk"
+      },
+      "story": {
+        "purpose": "resolve",
+        "link": "therefore",
+        "before": "main at 6 commits, c13f8aa only in the reflog",
+        "after": "c13f8aa back on top of git log: 9 COMMITS BACK HOME",
+        "action": "the host throws c13f8aa into the terminal and the log refills",
+        "pays_off": [
+          "found-id",
+          "lost-commits"
+        ],
+        "line_job": "land"
+      }
     }
   ],
-  "cta": {"keyword": "GIT", "narration": "Save this for your next scary reset. Comment GIT for the cheat sheet."}
+  "cta": {
+    "keyword": "GIT",
+    "narration": "Comment GIT and I'll send you the rescue commands.",
+    "headline_b": "GET THE RESCUE COMMANDS",
+    "story": {
+      "line_job": "context"
+    }
+  },
+  "voice": "bf_emma",
+  "carry": {
+    "label": "c13f8aa"
+  },
+  "story": {
+    "premises": [
+      "A tower of 9 save-point blocks: a reset knocks the top 3 off, they are found in a lost-and-found bin, and stacked back on.",
+      "One commit, c13f8aa, that holds three days of work: a hard reset hides it, but git printed a receipt when the branch moved, the reflog lists it, the receipt is good for 90 days, and resetting to it brings the work home.",
+      "A detective follows footprints (branch moves) through the repository until they lead to the missing commit."
+    ],
+    "chosen": 1,
+    "why": "A single commit id is something the viewer can carry and read on every screen; it disappears from git log, shows up on a receipt, and ends as the branch tip again.",
+    "object": "commit c13f8aa, three days of work",
+    "spine": "You reset and three days of commits vanish from git log. But git printed a receipt every time the branch moved. Therefore git reflog shows c13f8aa one line down, and the receipt lasts 90 days. Until finally a reset back to it brings all 9 commits home.",
+    "ending": "git log shows all 9 commits again with c13f8aa on top: 9 COMMITS BACK HOME."
+  }
 }

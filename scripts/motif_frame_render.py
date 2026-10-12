@@ -103,10 +103,30 @@ def mix(project, silent, out, duration):
         filters.append(f'[{k}:a]aresample=48000,{MUSIC_EQ},volume={music.get("volume", .22)}[m0]')
         filters.append('[m0][vkey]sidechaincompress=threshold=0.02:ratio=4:attack=15:release=350[mus]');labels.append('[mus]')
     else:filters[0] = f'[1:a]aresample=48000,{VOICE_EQ}[v0]'
-    filters.append(f'{"".join(labels)}amix=inputs={len(labels)}:normalize=0,apad,atrim=0:{duration:.3f},loudnorm=I={LOUDNESS}:TP=-1:LRA=9[a]')
-    subprocess.run(['ffmpeg', '-v', 'error', '-y', *inputs, '-filter_complex', ';'.join(filters), '-map', '0:v', '-map', '[a]', '-c:v', 'copy', '-c:a', 'aac', '-b:a', '192k', '-ar', '48000', '-movflags', '+faststart', str(out)], check=True)
+    def encode(target):
+        graph = ';'.join(filters + [f'{"".join(labels)}amix=inputs={len(labels)}:normalize=0,apad,atrim=0:{duration:.3f},loudnorm=I={target:.2f}:TP=-1:LRA=9[a]'])
+        subprocess.run(['ffmpeg', '-v', 'error', '-y', *inputs, '-filter_complex', graph, '-map', '0:v', '-map', '[a]', '-c:v', 'copy', '-c:a', 'aac', '-b:a', '192k', '-ar', '48000', '-movflags', '+faststart', str(out)], check=True)
+    encode(LOUDNESS)
+    # Single-pass loudnorm lands anywhere from -13.5 to -15.6 on a short film (Ollama, 2026-10-12): measure
+    # the mix and re-encode once with the target shifted by the miss, so every film masters at -14.
+    got = measured_lufs(out)
+    if got is not None and abs(got - MASTER) > .4:
+        # loudnorm's true-peak guard holds a transient-heavy mix down, so close the gap with plain gain
+        # and a limiter on the finished mix.
+        tmp = out.with_suffix('.gain.mp4')
+        subprocess.run(['ffmpeg', '-v', 'error', '-y', '-i', str(out), '-map', '0:v', '-map', '0:a', '-c:v', 'copy', '-af', f'volume={MASTER - got:.2f}dB,alimiter=limit=0.84:level=false',
+                        '-c:a', 'aac', '-b:a', '192k', '-ar', '48000', '-movflags', '+faststart', str(tmp)], check=True)
+        tmp.replace(out)
     silent.unlink()
     return out
+
+
+MASTER = -14.0  # what the references measure
+
+
+def measured_lufs(path):
+    found = re.findall(r'I:\s+(-?[\d.]+) LUFS', subprocess.run(['ffmpeg', '-nostdin', '-i', str(path), '-af', 'ebur128', '-vn', '-f', 'null', '-'], capture_output=True, text=True).stderr)
+    return float(found[-1]) if found else None
 
 
 def main():

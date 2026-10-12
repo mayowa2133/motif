@@ -101,14 +101,28 @@ def progress_bar(fraction, c, w=420, label=''):
     return body
 
 
-def comment_end_card(keyword, c, prompt='Comment', w=560):
-    """End card: 'Comment KEYWORD' in a speech box. The keyword is the CTA word."""
+def comment_end_card(keyword, c, prompt='Comment', w=560, typed=None):
+    """End card: 'Comment KEYWORD' in a speech box. The keyword is the CTA word; `typed` letters of it show
+    (with a caret) while it is being typed, all of it when None."""
     c = get_palette(c) if isinstance(c, str) else c;h = 220
     body = path(f'M0 0H{w}V{h - 40}H{w * .32}L{w * .2} {h + 10}L{w * .22} {h - 40}H0Z', c['dark'], 0, c['dark'], 'transform="translate(6 10)" opacity=".2"')
     body += path(f'M0 0H{w}V{h - 40}H{w * .32}L{w * .2} {h + 10}L{w * .22} {h - 40}H0Z', c['light'], 3, c['light'])
     body += txt(prompt, w / 2, 62, 34, c['dark'], 800, 'middle')
-    kw_w = w * .78;body += g(card(kw_w, 84, c['pop'], .08) + txt(keyword.upper(), kw_w / 2, 58, label_size(keyword, kw_w - 30, 52), ink(c['pop'], c), 900, 'middle'), (w - kw_w) / 2, 84)
+    kw_w = w * .78;size = label_size(keyword, kw_w - 30, 52);word = keyword.upper()
+    if typed is None or typed >= len(word):
+        shown = txt(word, kw_w / 2, 58, size, ink(c['pop'], c), 900, 'middle')
+    else:  # left-aligned where the full word will sit, so letters do not slide as they arrive
+        x0 = kw_w / 2 - len(word) * size * .34;part = word[:max(0, int(typed))]
+        shown = txt(part, x0, 58, size, ink(c['pop'], c), 900) + rect(x0 + len(part) * size * .68 + 4, 20, 5, size * .9, ink(c['pop'], c))
+    body += g(card(kw_w, 84, c['pop'], .08) + shown, (w - kw_w) / 2, 84)
     return body
+
+
+def comment_chip(keyword, c, i):
+    """One viewer's reply in the CTA's comment feed: an avatar dot and the keyword."""
+    c = get_palette(c) if isinstance(c, str) else c;word = keyword.upper();w = 70 + len(word) * 17
+    dot = (c['secondary'], c['accent'], c['primary'], c['pop'])[i % 4]
+    return card(w, 50, c['light'], .06) + f'<circle cx="26" cy="25" r="14" fill="{dot}" stroke="{c["dark"]}" stroke-width="2"/>' + txt(word, 48, 33, 24, c['dark'], 900)
 
 
 def screenshot_card(image_href, c, source_url, w=420, h=300, project=None, sha256=None, licence='nominative'):

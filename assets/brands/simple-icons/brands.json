@@ -61,6 +61,12 @@
       "hex": "#DE5FE9",
       "source": "https://docs.astral.sh/uv/",
       "guidelines": null
+    },
+    "ollama": {
+      "title": "Ollama",
+      "hex": "#000000",
+      "source": "https://github.com/ollama/ollama/issues/2152#issuecomment-1905286922",
+      "guidelines": null
     }
   }
 }
