@@ -464,8 +464,8 @@ CLOSE_ZOOM = (1.15, 1.9)  # and the camera zoom stays in this range
 CLOSE_TALL = 600          # and its height stays within this many pixels
 CLOSE_Y = 640             # where the close subject's centre sits (between headline and captions)
 CLOSE_TILT = 2.5          # degrees a close product screen leans, alternating by beat
-REFRAME = 1.16            # payoff reframe cut on a wide machine, every look
-CLOSE_REFRAME = .88       # on a close product screen the payoff cuts wider, so the result chip and the pasted pieces all show
+REFRAME = 1.3             # payoff reframe cut on a wide machine, every look
+CLOSE_REFRAME = .8        # on a close product screen the payoff cuts wider, so the result chip and the pasted pieces all show
 CLOSE_HOST = .27          # host scale in a close framing (about 20% of frame height)
 
 
@@ -708,7 +708,7 @@ def shot_frames(shot, layout, seed, look='paper-craft', brand=None, prev=None, c
         if prev and reframe:
             # Reframe cut (2026-10-11 reference comparison): the payoff cuts to a closer framing on the
             # machine, so the picture changes every 2-3 s while the set and its objects stay the same.
-            zoom = reframe + .04 * u;ccx = 360
+            zoom = reframe + .04 * u;ccx = hit[0] if hit else 360  # closer on where the machine acted, not the frame centre
         elif prev:
             pz, pdx, pdy = motif_looks.camera(L['camera'], prev[0], 1.0, prev[1] - 1, prev[1]);k = ease(min(1.0, f / 10))
             zoom, dx, dy = pz + (zoom - pz) * k, pdx + (dx - pdx) * k, pdy + (dy - pdy) * k
