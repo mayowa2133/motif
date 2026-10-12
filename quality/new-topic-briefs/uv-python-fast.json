@@ -1,0 +1,285 @@
+{
+  "slug": "uv-python-fast",
+  "title": "uv makes Python installs fast",
+  "topic": "uv, the Python package and project manager written in Rust",
+  "format": "short",
+  "seed": 73,
+  "mascot": "lumo",
+  "look": "candy-pastel",
+  "voice": "af_bella",
+  "brand": {
+    "slug": "uv"
+  },
+  "hook": {
+    "alternates": [
+      "Your Python installs could be a hundred times faster."
+    ],
+    "selected": 0,
+    "headline": "100X FASTER THAN PIP?",
+    "headline_b": "MEET UV, BUILT IN RUST",
+    "visual": {
+      "rig": "race-track",
+      "params": {
+        "labels": [
+          "PIP",
+          "UV"
+        ],
+        "progress": [
+          0.12,
+          1.0
+        ]
+      },
+      "room": "park",
+      "palette": "mint-coral/peach"
+    }
+  },
+  "facts": [
+    {
+      "id": "f1",
+      "claim": "uv is an extremely fast Python package and project manager, written in Rust, 10-100x faster than pip",
+      "value": "10-100x",
+      "source_url": "https://github.com/astral-sh/uv",
+      "accessed": "2026-10-12"
+    },
+    {
+      "id": "f2",
+      "claim": "uv is a single tool to replace pip, pip-tools, pipx, poetry, pyenv, twine, virtualenv, and more",
+      "value": "one tool",
+      "source_url": "https://github.com/astral-sh/uv",
+      "accessed": "2026-10-12"
+    },
+    {
+      "id": "f3",
+      "claim": "uv provides project management with a universal lockfile",
+      "value": "uv.lock",
+      "source_url": "https://docs.astral.sh/uv/concepts/projects/layout/",
+      "accessed": "2026-10-12"
+    },
+    {
+      "id": "f4",
+      "claim": "uv installs and manages Python versions",
+      "value": "Python versions",
+      "source_url": "https://docs.astral.sh/uv/guides/install-python/",
+      "accessed": "2026-10-12"
+    },
+    {
+      "id": "f5",
+      "claim": "uv is disk-space efficient, with a global cache for dependency deduplication",
+      "value": "global cache",
+      "source_url": "https://docs.astral.sh/uv/concepts/cache/",
+      "accessed": "2026-10-12"
+    },
+    {
+      "id": "f6",
+      "claim": "uv runs scripts, with support for inline dependency metadata",
+      "value": "inline metadata",
+      "source_url": "https://docs.astral.sh/uv/guides/scripts/",
+      "accessed": "2026-10-12"
+    }
+  ],
+  "beats": [
+    {
+      "id": "speed",
+      "narration": "It's called uv. It's written in Rust, and it installs ten to a hundred times faster than pip.",
+      "fact": "f1",
+      "relation": "race",
+      "headline": "10-100X FASTER THAN PIP",
+      "payoff_headline": "WRITTEN IN RUST",
+      "visual": {
+        "rig": "race-track",
+        "params": {
+          "labels": [
+            "PIP",
+            "UV"
+          ],
+          "progress": [
+            0.12,
+            1.0
+          ]
+        },
+        "room": "stage",
+        "palette": "mint-coral/mauve",
+        "act": "gasps",
+        "entrance": "pop"
+      }
+    },
+    {
+      "id": "tools",
+      "narration": "One tool replaces pip, pipx, poetry and pyenv.",
+      "fact": "f2",
+      "relation": "transform",
+      "headline": "4 TOOLS IN, 1 TOOL OUT",
+      "payoff_headline": "ONE TOOL: UV",
+      "visual": {
+        "rig": "conveyor",
+        "params": {
+          "items": [
+            "PIP",
+            "PIPX",
+            "POETRY",
+            "PYENV"
+          ],
+          "machine": "UV",
+          "output": "1 TOOL"
+        },
+        "room": "bakery",
+        "palette": "candy/dusk-teal",
+        "act": "cheers",
+        "entrance": "slide"
+      }
+    },
+    {
+      "id": "project",
+      "narration": "Start a project, add a package, and uv writes a lockfile for you.",
+      "fact": "f3",
+      "relation": "demo",
+      "headline": "UV INIT, THEN UV ADD",
+      "payoff_headline": "LOCKED IN UV.LOCK",
+      "visual": {
+        "rig": "app-screen",
+        "params": {
+          "device": "monitor",
+          "ui": "terminal",
+          "title": "my-app",
+          "logo": "uv",
+          "lines": [
+            "$ uv init my-app",
+            "Initialized project my-app",
+            "$ cd my-app",
+            "$ uv add requests",
+            "Resolved 6 packages",
+            "Prepared 5 packages",
+            "Installed 5 packages",
+            " + requests"
+          ],
+          "result": "LOCKED",
+          "cards": [
+            "UV.LOCK"
+          ],
+          "stack": {
+            "title": "pyproject.toml",
+            "lines": [
+              "[project]",
+              "name = \"my-app\"",
+              "dependencies = [",
+              "  \"requests\",",
+              "]"
+            ]
+          }
+        },
+        "room": "living-room",
+        "palette": "lilac/slate",
+        "act": "types",
+        "entrance": "walk"
+      }
+    },
+    {
+      "id": "cache",
+      "narration": "Every project shares one global cache, so each package downloads once.",
+      "fact": "f5",
+      "relation": "attract",
+      "headline": "1 CACHE FOR EVERY PROJECT",
+      "payoff_headline": "DOWNLOADED ONCE",
+      "visual": {
+        "rig": "magnet-pull",
+        "params": {
+          "count": 5,
+          "item": "PROJECT",
+          "label": "1 CACHE"
+        },
+        "room": "diner",
+        "palette": "peach/ink-navy",
+        "act": "inspects",
+        "entrance": "drop"
+      }
+    },
+    {
+      "id": "python",
+      "narration": "It even installs Python itself, whichever version you need.",
+      "fact": "f4",
+      "relation": "demo",
+      "headline": "PYTHON 3.13, ONE COMMAND",
+      "payoff_headline": "ANY VERSION YOU NEED",
+      "visual": {
+        "rig": "app-screen",
+        "params": {
+          "device": "laptop",
+          "ui": "terminal",
+          "title": "~",
+          "logo": "uv",
+          "lines": [
+            "$ uv python install 3.13",
+            "Installed Python 3.13",
+            "$ uv python list",
+            "cpython-3.13",
+            "cpython-3.12",
+            "cpython-3.11",
+            "pypy-3.10"
+          ],
+          "result": "INSTALLED",
+          "cards": [
+            "3.13",
+            "3.12"
+          ]
+        },
+        "room": "office",
+        "palette": "lilac/mustard",
+        "act": "smug",
+        "entrance": "pop"
+      }
+    },
+    {
+      "id": "script",
+      "narration": "And a single script can list its own packages, so uv run just works.",
+      "fact": "f6",
+      "relation": "demo",
+      "headline": "UV RUN READS THE SCRIPT",
+      "payoff_headline": "PACKAGES ON THE FLY",
+      "visual": {
+        "rig": "app-screen",
+        "params": {
+          "device": "monitor",
+          "ui": "files",
+          "title": "scripts",
+          "logo": "uv",
+          "lines": [
+            "scripts/",
+            "  clean.py",
+            "  report.py",
+            "  weather.py"
+          ],
+          "pane": [
+            "# /// script",
+            "# dependencies = [",
+            "#   \"requests\",",
+            "#   \"rich\",",
+            "# ]",
+            "# ///",
+            "import requests",
+            "from rich import print"
+          ],
+          "result": "RAN",
+          "cards": [
+            "UV RUN"
+          ],
+          "stack": {
+            "title": "terminal",
+            "lines": [
+              "uv run weather.py",
+              "Installed 9 packages",
+              "Sunny, 21 C"
+            ]
+          }
+        },
+        "room": "street",
+        "palette": "candy/mauve",
+        "act": "types",
+        "entrance": "slide"
+      }
+    }
+  ],
+  "cta": {
+    "keyword": "UV",
+    "narration": "Try it on your next project. Comment UV for the install command."
+  }
+}

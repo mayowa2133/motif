@@ -166,6 +166,15 @@ class AgentScreenTests(unittest.TestCase):
         self.assertGreaterEqual(svg.count('SKILL.md'), 2);self.assertIn('claudex', svg)
         self.assertIn('# Claudex', rig.printed_text(rig.params(v)))
 
+    def test_terminal_marks_commands_and_keeps_lines_above_the_key(self):
+        rig = motif_rigs.get('app-screen')
+        v = {'device': 'monitor', 'ui': 'terminal', 'lines': ['$ uv init app', 'Initialized', '$ uv add rich', 'Resolved 6', 'Prepared 5', 'Installed 5', ' + rich', ' + pygments']}
+        svg = rig.render(v, ('run', 1.0))
+        self.assertIn('>$<', svg)
+        import re
+        bottom = max(float(y_) for y_, word in re.findall(r'<text x="[\d.-]+" y="([\d.-]+)"[^>]*>([^<]*)<', svg) if word not in ('RUN', 'DONE'))
+        self.assertLess(bottom, rig.button(rig.params(v))[1] - 22)
+
     def test_result_chip_never_takes_the_ink_colour(self):
         # Claudex cut 6: sunflower's pop is its ink, so SKILL ADDED printed black on black.
         rig = motif_rigs.get('app-screen')

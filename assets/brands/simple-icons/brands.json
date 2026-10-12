@@ -49,6 +49,18 @@
       "hex": "#412991",
       "source": "https://openai.com/brand",
       "guidelines": "https://openai.com/brand"
+    },
+    "github": {
+      "title": "GitHub",
+      "hex": "#181717",
+      "source": "https://github.com/logos",
+      "guidelines": "https://github.com/logos"
+    },
+    "uv": {
+      "title": "uv",
+      "hex": "#DE5FE9",
+      "source": "https://docs.astral.sh/uv/",
+      "guidelines": null
     }
   }
 }

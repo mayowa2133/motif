@@ -191,6 +191,8 @@ class AppScreen(Rig):
             from motif_brand import glyph
             s = 28;out += f'<g transform="translate({x + w - s - 12:.1f} {y + (bar - s) / 2:.1f})">{glyph(logo, s, None if not dark else "#FFFFFF")}</g>'
         size = min(40 if p['device'] != 'phone' else 30, (w - 50) / max(8, max((len(l) for l in lines), default=8) * .62))
+        # Lines end above the run key (uv film rough: an 8-line terminal ran under RUN and off the screen).
+        size = min(size, (h - bar - 24 - 84) / max(1.0, len(lines) * 1.55 - .55))
         ly = y + bar + 24 + size;budget = typed
         if kind == 'map':
             out += self.map_view(p, c, typed, done);lines = []
@@ -198,7 +200,11 @@ class AppScreen(Rig):
             out += getattr(self, kind + '_view')(p, c, typed, done);lines = []
         for i, line in enumerate(lines):
             shown = line[:max(0, int(budget))];budget -= len(line)
-            if kind == 'terminal':
+            if kind == 'terminal' and any(l.startswith('$ ') for l in lines):
+                # '$ ' lines are commands, the rest their output in grey, as a real shell reads.
+                cmd = line.startswith('$ ')
+                out += (txt('$', x + 20, ly, size, '#7FD08A', 800) + txt(shown[2:], x + 20 + size * .9, ly, size, ink, 700)) if cmd else txt(shown, x + 20 + size * .9, ly, size * .92, '#9AA6B8', 600)
+            elif kind == 'terminal':
                 out += txt(('> ' if i == 0 else '  ') + shown, x + 20, ly, size, ink, 600)
             elif kind == 'window':
                 tick = budget >= 0
@@ -589,7 +595,7 @@ class AppScreen(Rig):
         lines = p.get('lines') or []
         if action and p['ui'] == 'chat' and lines:
             q = len(lines[0]);typed = q * min(1.0, .5 + t / max(1e-6, tc)) if t < tc else q + (total - q) * min(1.0, t_after(t, tc) * 4)
-        elif action and p['ui'] in ('cli', 'pr', 'files'):
+        elif action and p['ui'] in ('cli', 'pr', 'files', 'terminal'):
             # Dense screens keep typing up to the contact so the software moves all through the shot (plan-to-9 phase 1).
             typed = total * min(1.0, .3 + .7 * t / max(1e-6, tc))
         elif action:typed = total * min(1.0, .4 + .6 * t / max(1e-6, tc * .6))

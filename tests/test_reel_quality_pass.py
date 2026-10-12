@@ -60,7 +60,7 @@ class BrandTests(unittest.TestCase):
         registry = json.loads((ROOT / 'assets/PROVENANCE.json').read_text())
         ids = {e['id'] for e in registry['assets']}
         for slug in brand.catalogue():
-            m = brand.mark(slug);self.assertTrue(m['path'].startswith('M'));self.assertRegex(m['hex'], r'^#[0-9A-Fa-f]{6}$')
+            m = brand.mark(slug);self.assertIn(m['path'][0], 'Mm')  # a leading relative moveto is absolute (uv's mark);self.assertRegex(m['hex'], r'^#[0-9A-Fa-f]{6}$')
             self.assertIn(f'brand/simple-icons/{slug}', ids)
         self.assertIn('<path', brand.badge('sqlite', 200, {'dark': '#000', 'light': '#fff'}))
 
