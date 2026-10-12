@@ -27,7 +27,9 @@ The product in use: a monitor, laptop or phone showing a Motif-drawn terminal, a
   "logo": null,
   "send_to": null,
   "credit": null,
-  "prefilled": false
+  "prefilled": false,
+  "agent": null,
+  "cards": []
 }
 ```
 

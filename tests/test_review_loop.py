@@ -133,3 +133,13 @@ class ApprovedLookTests(unittest.TestCase):
             for look in motif_looks.LOOKS:
                 style = json.loads(motif_looks.finish_style(look, Path(tmp) / f'{look}.json').read_text())
                 self.assertEqual(style['materials']['overlay'], 'motif-v1-1024/crumpled', look)
+
+
+class AgentScreenTests(unittest.TestCase):
+    def test_cli_screen_prints_the_agent_and_its_cards(self):
+        rig = motif_rigs.get('app-screen')
+        v = {'device': 'laptop', 'ui': 'cli', 'title': 'claude', 'logo': 'claude', 'lines': ['> plan it', '* Write(PLAN.md)', '- 4 steps'], 'cards': ['PLAN.MD']}
+        text = rig.printed_text(rig.params(v))
+        for word in ('Claude Code', 'PLAN.MD', '> plan it'):self.assertIn(word, text)
+        svg = rig.render(v, ('run', 1.0))
+        self.assertIn('Claude Code', svg);self.assertIn('PLAN.MD', svg)

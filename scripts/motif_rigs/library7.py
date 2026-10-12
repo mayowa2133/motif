@@ -322,7 +322,6 @@ class ReviewLoop(Rig):
         out = self.floor_shadow(c) + self.stations(p, c, tags=new, tag_k=(ka, kb), drops=drops, old=old)
         sx, sy = self.sheet_at(1)
         out += g(self.sheet(c, steps, ticked=set(range(len(steps))), stamp=p['stamp'], stamp_k=1.0), sx, sy)
-        out += self.counter(c, p['rounds'], 1.0)
         if after > 0:out += burst(self.DESK_X, self.TAG_Y + 38, clamp(after * 2.4), c, 8, 50, 110)
         return out
 

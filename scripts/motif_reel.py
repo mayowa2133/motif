@@ -673,7 +673,7 @@ def shot_frames(shot, layout, seed, look='paper-craft', brand=None, prev=None, c
     if rig:
         h = layout['hero'];(lx, ly), _ = rig.contacts(h.get('values'), (action, tc))[rig.actions[action].contact]
         hit = (h['x'] + lx * h['scale'], h['y'] + ly * h['scale'])
-        if fc is not None and rig.name in CARRY and not close:carry_to = hit
+        if fc is not None and rig.name in CARRY:carry_to = hit
     frames = []
     for f in range(n):
         u = f / max(1, n - 1);pieces = []
@@ -751,9 +751,20 @@ def shot_frames(shot, layout, seed, look='paper-craft', brand=None, prev=None, c
                 hx = 590 if side > 0 or rig.name == 'app-screen' else 130
                 body = dressed_bot(hx + bdx * .5, 1048 + bdy * .5, CLOSE_HOST, face, pose, bot['costume'], shot['palette'], flip=hx > 360, cycle=cycle, phase=f / 10, head=round(4 * math.sin(f * .3)), mascot=M)
                 pieces.append(body)
+                if carry_to:
+                    # The host acts on the product: it holds a note, then throws it into the run key
+                    # (Claudex cut 4 grade: Bot stood beside the screens and only pointed).
+                    half = 235 * CLOSE_HOST;ns = max(.8, half / 80);t0 = max(1, fc - 9);sd = 1 if hx > 360 else -1
+                    hand = (hx + bdx * .5 - sd * half * .8, 1048 + bdy * .5 - 2.3 * half)
+                    tx, ty = ccx + dx + zoom * (carry_to[0] - ccx), fy + dy + zoom * (carry_to[1] - fy)
+                    if f < t0:pieces.append(carried_note(*hand, -8 * sd + 4 * math.sin(f * .3), c, ns))
+                    elif f < fc:
+                        p_ = ease((f - t0) / (fc - t0));x_ = hand[0] + (tx - hand[0]) * p_;y_ = hand[1] + (ty - hand[1]) * p_ - 150 * math.sin(math.pi * p_)
+                        pieces.append(carried_note(x_, y_, -sd * 330 * p_, c, ns * (1 - .3 * p_)))
+                    else:pieces.append(poof(tx, ty, f - fc, c, .55))
             elif b.get('behind'):pieces.insert(hero_at, cam(body))  # squeezed onto a wide machine: peeks from behind it
             else:pieces.append(cam(body))
-            if carry_to:
+            if carry_to and not close:
                 half = 235 * b['scale'];ns = max(.8, half / 80);t0 = max(1, fc - 9)
                 hand = (b['x'] + bdx - side * half * .8, b['y'] + bdy - 2.3 * half)
                 if f < t0:pieces.append(cam(carried_note(*hand, -8 * side + 4 * math.sin(f * .3), c, ns)))

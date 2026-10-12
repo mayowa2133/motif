@@ -107,17 +107,19 @@
         "rig": "app-screen",
         "params": {
           "device": "laptop",
-          "ui": "note",
-          "title": "PLAN.md",
+          "ui": "cli",
+          "title": "claude",
+          "logo": "claude",
           "lines": [
-            "# Plan",
-            "- [ ] Schema",
-            "- [ ] Login",
-            "- [ ] API",
-            "- [ ] Tests"
+            "> plan a login API with Claudex",
+            "* Write(PLAN.md)",
+            "- 4 steps, saved to PLAN.md",
+            "* Send PLAN.md to GPT-6 Astra"
           ],
           "result": "PLAN READY",
-          "logo": "claude"
+          "cards": [
+            "PLAN.MD"
+          ]
         },
         "room": "diner",
         "palette": "poppy/mauve"
@@ -179,18 +181,23 @@
       "visual": {
         "rig": "app-screen",
         "params": {
-          "device": "laptop",
-          "ui": "note",
-          "title": "AUDIT.md",
+          "device": "monitor",
+          "ui": "cli",
+          "title": "codex",
+          "logo": "openai",
+          "agent": "GPT-6 Astra",
           "lines": [
-            "# Astra's audit",
-            "- Tests: none",
-            "- Login: no auth",
-            "- API: no rate limit",
-            "Verdict: revise"
+            "> audit PLAN.md",
+            "* Read(PLAN.md)",
+            "- No tests for login",
+            "- No auth on the API",
+            "- No rate limit"
           ],
           "result": "SENT BACK",
-          "logo": "openai"
+          "cards": [
+            "3 GAPS",
+            "REVISE"
+          ]
         },
         "room": "server-room",
         "palette": "poppy/slate",
