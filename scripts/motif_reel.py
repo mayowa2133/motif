@@ -211,7 +211,7 @@ def plan_reel(brief, allow_draft=False, avoid_looks=()):
         from motif_rigs import get as _get_rig
         hp = dict(hook_visual.get('params', {}))
         if brand and hook_visual.get('brand', brand) and 'logo' in _get_rig(hook_visual['rig']).params_schema['properties'] and 'logo' not in hp:hp['logo'] = brand
-        beats[0]['shots'][0].update({'rig': {'id': hook_visual['rig'], 'params': hp}, 'insert': None, 'crowd': 0, 'grammar': 'hero'})
+        beats[0]['shots'][0].update({'rig': {'id': hook_visual['rig'], 'params': hp, **({'framing': hook_visual['framing']} if hook_visual.get('framing') else {})}, 'insert': None, 'crowd': 0, 'grammar': 'hero'})
         if hook_visual.get('palette'):beats[0]['palette'] = hook_visual['palette']
         if 'brand' in hook_visual:beats[0]['shots'][0]['brand'] = hook_visual['brand']  # Claudex cut 3: no Claude badge on the self-grading model
     elif (brief.get('hook') or {}).get('hero', True):
@@ -224,7 +224,7 @@ def plan_reel(brief, allow_draft=False, avoid_looks=()):
         {'id': 'cta', 'role': 'cta', 'headline': _short(f'COMMENT {brief["cta"]["keyword"]}', 28), 'headline_b': brief['cta'].get('headline_b') or _short(re.sub(r'[,.?!]?\s*comment\s+\S+\s*$', '', brief['cta']['narration'], flags=re.I), 28), 'headline_b_cut': not brief['cta'].get('headline_b') and _clip(re.sub(r'[,.?!]?\s*comment\s+\S+\s*$', '', brief['cta']['narration'], flags=re.I), 28)[1], 'room': cta_room, 'rig': None,
          'insert': {'kind': 'comment_end_card', 'args': {'keyword': brief['cta']['keyword']}}, 'bot': {'costume': ['party-hat'], 'face': 'excited', 'pose': 'celebrating' if look['cta'] != 'card' else 'pointing'},
          'crowd': 7 if look['cta'] == 'crowd' else 0, 'grammar': look['cta']}]})
-    plan = {'schema_version': 'reel-1.1', 'quality_mode': 'motif-gold-v1', 'slug': brief['slug'], 'seed': seed, 'look': look_id, 'brand': brand, 'mascot': brief.get('mascot', 'bot'), 'library': 'draft' if allow_draft else 'canonical', 'beats': beats, 'library_requests': [], 'warnings': default_label_warnings(beats)}
+    plan = {'schema_version': 'reel-1.1', 'quality_mode': 'motif-gold-v1', 'slug': brief['slug'], 'seed': seed, 'look': look_id, 'brand': brand, 'mascot': brief.get('mascot', 'bot'), 'carry': (brief.get('carry') or {}).get('label'), 'library': 'draft' if allow_draft else 'canonical', 'beats': beats, 'library_requests': [], 'warnings': default_label_warnings(beats)}
     return plan
 
 
@@ -578,8 +578,14 @@ def confetti(x, y, d, c, size=1.0, frames=18):
     return out
 
 
-def carried_note(x, y, angle, c, s=1.0):
-    """A paper note the host carries: a sticky square with three ink lines."""
+def carried_note(x, y, angle, c, s=1.0, label=None):
+    """A paper note the host carries: a sticky square with three ink lines, or the film's carried
+    object (brief.carry) as a file card with its name, so one object travels through every set."""
+    if label:
+        from motif_ui_components import card, g as group, txt
+        w = max(80, 14 * len(label) + 34);tab = c['pop'] if c['pop'] not in (c['light'], c['dark']) else c['accent']
+        return (f'<g transform="translate({x:.1f} {y:.1f}) rotate({angle:.1f}) scale({s:.3f})">'
+                + group(card(w, 50, c['light'], .08) + f'<rect x="0" y="0" width="12" height="50" fill="{tab}"/>' + txt(label, w / 2 + 6, 34, 24, c['dark'], 800, 'middle'), -w / 2, -25) + '</g>')
     lines = ''.join(f'<path d="M-20 {ly} H{w - 20}" stroke="{c["dark"]}" stroke-width="3.5" stroke-linecap="round"/>' for ly, w in ((-9, 40), (1, 32), (11, 24)))
     return (f'<g transform="translate({x:.1f} {y:.1f}) rotate({angle:.1f}) scale({s:.3f})">'
             f'<rect x="-29" y="-23" width="58" height="46" rx="3" fill="{c["pop"]}" stroke="{c["dark"]}" stroke-width="3.5"/>'
@@ -645,7 +651,7 @@ def shot_frames(shot, layout, seed, look='paper-craft', brand=None, prev=None, c
     from motif_rigs.base import ease, place
     from motif_rigs.palettes import palette
     import motif_looks
-    L = motif_looks.get(look);grammar = shot.get('grammar', 'crowd');brand = shot.get('brand', brand);M = shot.get('mascot', 'bot')
+    L = motif_looks.get(look);grammar = shot.get('grammar', 'crowd');brand = shot.get('brand', brand);M = shot.get('mascot', 'bot');carry = shot.get('carry')
     c = palette(shot['palette']);n = shot['frames'];room = ms.ROOMS[shot['room']]
     if shot.get('wallpaper'):c = {**c, 'wallpaper': shot['wallpaper']}
     rig = get_rig(shot['rig']['id']) if shot['rig'] else None
@@ -778,21 +784,29 @@ def shot_frames(shot, layout, seed, look='paper-craft', brand=None, prev=None, c
                     half = 235 * CLOSE_HOST;ns = max(.8, half / 80);t0 = max(1, fc - 9);sd = 1 if hx > 360 else -1
                     hand = (hx + bdx * .5 - sd * half * .8, 1048 + bdy * .5 - 2.3 * half)
                     tx, ty = ccx + dx + zoom * (carry_to[0] - ccx), fy + dy + zoom * (carry_to[1] - fy)
-                    if f < t0:pieces.append(carried_note(*hand, -8 * sd + 4 * math.sin(f * .3), c, ns))
+                    if f < t0:pieces.append(carried_note(*hand, -8 * sd + 4 * math.sin(f * .3), c, ns, carry))
                     elif f < fc:
                         p_ = ease((f - t0) / (fc - t0));x_ = hand[0] + (tx - hand[0]) * p_;y_ = hand[1] + (ty - hand[1]) * p_ - 150 * math.sin(math.pi * p_)
-                        pieces.append(carried_note(x_, y_, -sd * 330 * p_, c, ns * (1 - .3 * p_)))
+                        pieces.append(carried_note(x_, y_, -sd * 330 * p_, c, ns * (1 - .3 * p_), carry))
                     else:pieces.append(poof(tx, ty, f - fc, c, .55))
+                elif carry and not (shot['role'] == 'payoff' and rig.name in CARRY):  # once thrown in, it stays in the machine
+                    # The film's carried object stays in the host's hand (brief.carry).
+                    half = 235 * CLOSE_HOST;sd = 1 if hx > 360 else -1
+                    pieces.append(carried_note(hx + bdx * .5 - sd * half * 1.05, 1048 + bdy * .5 - 1.15 * half, -8 * sd + 4 * math.sin(f * .3), c, max(.7, half / 110), carry))
             elif b.get('behind'):pieces.insert(hero_at, cam(body))  # squeezed onto a wide machine: peeks from behind it
             else:pieces.append(cam(body))
             if carry_to and not close:
                 half = 235 * b['scale'];ns = max(.8, half / 80);t0 = max(1, fc - 9)
                 hand = (b['x'] + bdx - side * half * .8, b['y'] + bdy - 2.3 * half)
-                if f < t0:pieces.append(cam(carried_note(*hand, -8 * side + 4 * math.sin(f * .3), c, ns)))
+                if f < t0:pieces.append(cam(carried_note(*hand, -8 * side + 4 * math.sin(f * .3), c, ns, carry)))
                 elif f < fc:
                     p = ease((f - t0) / (fc - t0));x = hand[0] + (carry_to[0] - hand[0]) * p;y = hand[1] + (carry_to[1] - hand[1]) * p - 150 * math.sin(math.pi * p)
-                    pieces.append(cam(carried_note(x, y, -side * 330 * p, c, ns * (1 - .3 * p))))
+                    pieces.append(cam(carried_note(x, y, -side * 330 * p, c, ns * (1 - .3 * p), carry)))
                 else:pieces.append(cam(poof(*carry_to, f - fc, c, .55)))
+            elif carry and not close and not b.get('behind') and not (shot['role'] == 'payoff' and rig.name in CARRY):
+                # Held at the host's side, clear of its face and the machine's labels.
+                half = 235 * b['scale']
+                pieces.append(cam(carried_note(b['x'] + bdx - side * half * 1.05, b['y'] + bdy - 1.15 * half, -8 * side + 4 * math.sin(f * .3), c, max(.7, half / 110), carry)))
         elif grammar == 'big-bot':
             hop = abs(math.sin(f * .18)) * 18;tilt = 4 * math.sin(f * .15)
             pieces.append(cam(dressed_bot(360 if not brand else 540, 1050 - hop, .5 if not brand else .42, bot['face'], bot['pose'], bot['costume'], shot['palette'], angle=tilt, mascot=M)))
@@ -899,6 +913,7 @@ def compile_reel(project, plan, spans, voice_duration, seed=0):
         prev = (shots[i - 1]['role'], shots[i - 1]['frames']) if i and same(shots[i - 1], shot) else None
         continued = i + 1 < len(shots) and same(shots[i + 1], shot)
         shot.setdefault('mascot', plan.get('mascot', 'bot'))
+        if plan.get('carry'):shot.setdefault('carry', plan['carry'])
         frames = shot_frames(shot, layout, seed + shot['start_frame'], plan.get('look', 'paper-craft'), plan.get('brand'), prev, continued)
         dur = shot['frames'] / FPS
         events = [{'time': round(f / FPS, 9), 'target': f'#{shot["id"]}-world', 'action': 'SET', 'params': {'props': {'innerHTML': namespace(body, shot['id'])}}} for f, body in enumerate(frames) if f]

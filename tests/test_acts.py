@@ -58,3 +58,20 @@ def test_cta_short_warns_on_a_long_end_card():
     plan = lambda n: {'beats': [{'id': 'cta', 'kind': 'cta', 'narration': ' '.join(['word'] * n)}]}
     assert L.check_cta_short(None, plan(10), None) == []
     assert L.check_cta_short(None, plan(12), None)
+
+
+def test_carried_object_card_prints_its_label():
+    import motif_reel as R
+    from motif_rigs.palettes import palette
+    svg = R.carried_note(100, 100, 0, palette('lilac'), 1.0, 'weather.py')
+    assert 'weather.py' in svg and '<text' in svg
+    assert 'weather.py' not in R.carried_note(100, 100, 0, palette('lilac'))
+
+
+def test_brief_carry_reaches_every_shot_and_hook_framing_is_kept():
+    import json, motif_reel as R
+    from pathlib import Path
+    brief = json.loads((Path(__file__).resolve().parents[1] / 'quality/new-topic-briefs/uv-python-fast.json').read_text())
+    plan = R.plan_reel(brief, allow_draft=True)
+    assert plan['carry'] == 'weather.py'
+    assert plan['beats'][0]['shots'][0]['rig'].get('framing') == 'close'

@@ -36,7 +36,10 @@ quality bar). Copy the closest one and change it.
    second-brain reel's vault: a leaky brain, then a RAW crate, then a WIKI board
    that fills, answers and gets checked). Each beat is one change to it.
    Objects and consequences stay connected; a pretty metaphor that does not
-   demonstrate the claim is a failure.
+   demonstrate the claim is a failure. When the object is a file or a
+   thing the viewer owns (`weather.py`), set `"carry": {"label": ...}`: the
+   host carries it as a labelled card into every set and throws it into the
+   product screens.
 2. **Facts.** Every claim beat cites a fact with an http(s) `source_url`.
    Write narration in plain speech, about 3.7 words per second.
 3. **Format.** `"format": "short"` (default, 20-32 s, 4-6 beats) or `"long"`
