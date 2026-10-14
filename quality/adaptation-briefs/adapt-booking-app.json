@@ -2,7 +2,7 @@
   "slug": "adapt-booking-app",
   "title": "Build your own booking app that takes payment",
   "topic": "Replit Agent builds a barber shop's booking app from one sentence, adds Stripe deposits with one more prompt, and publishes it on the shop's own domain",
-  "format": "long",
+  "format": "short",
   "seed": 83,
   "mascot": "kit",
   "look": "paper-craft",
@@ -15,7 +15,7 @@
   },
   "hook": {
     "alternates": [
-      "Still paying ten dollars a seat, every single month, just to rent someone else's booking page?"
+      "Still paying ten dollars a seat, every month, for someone else's booking page?"
     ],
     "selected": 0,
     "headline": "$10 A SEAT, EVERY MONTH",
@@ -73,7 +73,7 @@
   "beats": [
     {
       "id": "prompt",
-      "narration": "Describe it in one sentence, and Replit's Agent builds the whole booking app.",
+      "narration": "Describe it in one sentence, and Replit's Agent builds it.",
       "fact": "f2",
       "relation": "demo",
       "headline": "1 SENTENCE, 1 BOOKING APP",
@@ -135,7 +135,7 @@
     },
     {
       "id": "hours",
-      "narration": "It already knows your opening hours, so a Sunday request just bounces off.",
+      "narration": "It knows your hours, so Sunday requests just bounce.",
       "fact": "f2",
       "relation": "approve",
       "headline": "SUNDAY 3 PM? CLOSED",
@@ -166,7 +166,7 @@
     },
     {
       "id": "email",
-      "narration": "Sam picks Friday at three, and the confirmation email goes out by itself.",
+      "narration": "Sam books Friday at three, and the confirmation sends itself.",
       "fact": "f2",
       "relation": "transform",
       "headline": "SAM BOOKS FRI 3 PM",
@@ -202,7 +202,7 @@
     },
     {
       "id": "stripe",
-      "narration": "But a free booking is a no-show waiting to happen. One more prompt adds Stripe.",
+      "narration": "But free bookings mean no-shows. One more prompt adds Stripe.",
       "fact": "f3",
       "relation": "demo",
       "headline": "1 MORE PROMPT ADDS STRIPE",
@@ -265,7 +265,7 @@
     },
     {
       "id": "domain",
-      "narration": "Then publish it on your own domain, which you can buy without ever leaving Replit.",
+      "narration": "Then put it live on your own domain.",
       "fact": "f4",
       "relation": "launch",
       "headline": "LIVE ON JUNOCUTS.COM",
@@ -295,7 +295,7 @@
     },
     {
       "id": "paid",
-      "narration": "Now Sam books and pays right on your own page, under your shop's name.",
+      "narration": "Now Sam pays you, right on your page.",
       "fact": "f4",
       "relation": "demo",
       "headline": "SAM PAID, FRI 3 PM BOOKED",
