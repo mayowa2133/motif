@@ -175,6 +175,15 @@ class AgentScreenTests(unittest.TestCase):
         bottom = max(float(y_) for y_, word in re.findall(r'<text x="[\d.-]+" y="([\d.-]+)"[^>]*>([^<]*)<', svg) if word not in ('RUN', 'DONE'))
         self.assertLess(bottom, rig.button(rig.params(v))[1] - 22)
 
+    def test_calendar_view_draws_slots_and_highlights_the_last_booking(self):
+        # Booking-app reel cut 1: the app was only described; the calendar shows it.
+        rig = motif_rigs.get('app-screen')
+        v = {'device': 'monitor', 'ui': 'calendar', 'title': 'junocuts.com', 'lines': ['# Juno Cuts', 'MON 13:00 Ama', 'TUE 14:00 open', 'SUN closed', 'FRI 15:00 Sam'], 'result': 'BOOKED'}
+        early, late = rig.render(v, ('run', .05)), rig.render(v, ('run', 1.0))
+        for word in ('MON', 'FRI', 'Ama', 'open', 'CLOSED', 'Sam', 'junocuts.com'):self.assertIn(word, late)
+        self.assertNotIn('>Sam<', early)
+        self.assertEqual([e[1:] for e in rig.calendar_events(v['lines'])], [('MON', 13.0, 'Ama'), ('TUE', 14.0, 'open'), ('SUN', None, 'closed'), ('FRI', 15.0, 'Sam')])
+
     def test_result_chip_never_takes_the_ink_colour(self):
         # Claudex cut 6: sunflower's pop is its ink, so SKILL ADDED printed black on black.
         rig = motif_rigs.get('app-screen')

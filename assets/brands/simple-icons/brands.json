@@ -61,6 +61,18 @@
       "hex": "#DE5FE9",
       "source": "https://docs.astral.sh/uv/",
       "guidelines": null
+    },
+    "replit": {
+      "title": "Replit",
+      "hex": "#F26207",
+      "source": "https://replit.com",
+      "guidelines": null
+    },
+    "stripe": {
+      "title": "Stripe",
+      "hex": "#635BFF",
+      "source": "https://stripe.com/newsroom/information",
+      "guidelines": "https://stripe.com/newsroom/information"
     }
   }
 }

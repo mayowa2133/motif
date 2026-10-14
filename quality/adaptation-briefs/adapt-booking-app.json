@@ -1,0 +1,376 @@
+{
+  "slug": "adapt-booking-app",
+  "title": "Build your own booking app that takes payment",
+  "topic": "Replit Agent builds a barber shop's booking app from one sentence, adds Stripe deposits with one more prompt, and publishes it on the shop's own domain",
+  "format": "short",
+  "seed": 83,
+  "mascot": "kit",
+  "look": "paper-craft",
+  "voice": "af_heart",
+  "brand": {
+    "slug": "replit"
+  },
+  "carry": {
+    "label": "Juno Cuts"
+  },
+  "hook": {
+    "alternates": [
+      "Still paying ten dollars a seat, every month, for someone else's booking page?"
+    ],
+    "selected": 0,
+    "headline": "$10 A SEAT, EVERY MONTH",
+    "headline_b": "OR BUILD YOUR OWN",
+    "visual": {
+      "rig": "receipt-stack",
+      "params": {
+        "from": 0,
+        "to": 12,
+        "amount": "$10",
+        "label": "MONTHS PAID"
+      },
+      "room": "office",
+      "palette": "berry/mustard",
+      "brand": null,
+      "act": "gasps"
+    },
+    "story": {
+      "promise": "a booking page of your own that takes payment",
+      "sets_up": [
+        "rented-page"
+      ]
+    }
+  },
+  "facts": [
+    {
+      "id": "f1",
+      "claim": "Calendly's Standard plan costs $10 per seat per month",
+      "value": "$10 a seat",
+      "source_url": "https://calendly.com/pricing",
+      "accessed": "2026-10-12"
+    },
+    {
+      "id": "f2",
+      "claim": "Replit Agent turns your ideas into apps from plain language",
+      "value": "plain language",
+      "source_url": "https://docs.replit.com/replitai/agent",
+      "accessed": "2026-10-12"
+    },
+    {
+      "id": "f3",
+      "claim": "Agent can add Stripe to your app in one click with no setup, starting with a Stripe sandbox for test payments",
+      "value": "one click",
+      "source_url": "https://docs.replit.com/core-concepts/monetization/stripe-payments",
+      "accessed": "2026-10-12"
+    },
+    {
+      "id": "f4",
+      "claim": "A published Replit app can use your own custom domain, and you can buy one without leaving Replit",
+      "value": "custom domain",
+      "source_url": "https://docs.replit.com/cloud-services/deployments/custom-domains",
+      "accessed": "2026-10-12"
+    }
+  ],
+  "beats": [
+    {
+      "id": "prompt",
+      "narration": "Describe it in one sentence, and Replit's Agent builds it.",
+      "fact": "f2",
+      "relation": "demo",
+      "headline": "1 SENTENCE, 1 BOOKING APP",
+      "payoff_headline": "CALENDAR BUILT",
+      "visual": {
+        "rig": "app-screen",
+        "params": {
+          "device": "laptop",
+          "ui": "cli",
+          "title": "Replit Agent",
+          "logo": "replit",
+          "cwd": "~/juno-cuts",
+          "lines": [
+            "> Build a booking app for Juno",
+            "  Cuts: calendar, open hours,",
+            "  confirmation emails",
+            "* Planning booking app",
+            "[x] Calendar, 30 min slots",
+            "[x] Open Mon-Sat, 9 to 6",
+            "[ ] Confirmation emails",
+            "+ app/calendar.tsx",
+            "+ app/hours.ts",
+            "- Calendar ready to preview"
+          ],
+          "result": "APP BUILT",
+          "cards": [
+            "30 MIN SLOTS",
+            "MON-SAT"
+          ],
+          "stack": {
+            "title": "Calendar",
+            "lines": [
+              "FRI 9:00  open",
+              "FRI 9:30  open",
+              "FRI 10:00 open",
+              "SUN       closed"
+            ]
+          }
+        },
+        "room": "workshop",
+        "palette": "sunrise/dusk-teal",
+        "act": "types",
+        "entrance": "walk",
+        "framing": "close"
+      },
+      "story": {
+        "purpose": "complicate",
+        "link": "but",
+        "before": "a rented booking page billed every month",
+        "after": "one sentence in Replit Agent builds Juno Cuts a booking app: CALENDAR BUILT",
+        "action": "the host types one sentence and the calendar files appear",
+        "sets_up": [
+          "booking-app",
+          "open-hours"
+        ],
+        "pays_off": [],
+        "line_job": "context"
+      }
+    },
+    {
+      "id": "hours",
+      "narration": "It knows your hours, so Sunday requests just bounce.",
+      "fact": "f2",
+      "relation": "approve",
+      "headline": "SUNDAY 3 PM? CLOSED",
+      "payoff_headline": "ONLY OPEN SLOTS BOOK",
+      "visual": {
+        "rig": "stamp-gate",
+        "params": {
+          "document": "SUNDAY 3 PM",
+          "stamp": "CLOSED",
+          "verdict": "rejected"
+        },
+        "room": "diner",
+        "palette": "citrus/mauve",
+        "act": "stamps",
+        "entrance": "pop"
+      },
+      "story": {
+        "purpose": "demonstrate",
+        "link": "therefore",
+        "before": "a calendar with open hours but no requests yet",
+        "after": "a Sunday request is stamped CLOSED: ONLY OPEN SLOTS BOOK",
+        "action": "the host stamps the Sunday request and the gate stays shut",
+        "pays_off": [
+          "open-hours"
+        ],
+        "line_job": "explain"
+      }
+    },
+    {
+      "id": "email",
+      "narration": "Sam books Friday at three, and the confirmation sends itself.",
+      "fact": "f2",
+      "relation": "transform",
+      "headline": "SAM BOOKS FRI 3 PM",
+      "payoff_headline": "CONFIRMATION EMAILED",
+      "visual": {
+        "rig": "conveyor",
+        "params": {
+          "items": [
+            "SAM",
+            "FRI 3PM",
+            "FADE CUT"
+          ],
+          "machine": "BOOKING APP",
+          "output": "EMAIL SENT"
+        },
+        "room": "living-room",
+        "palette": "lagoon/ink-navy",
+        "act": "inspects",
+        "entrance": "slide",
+        "framing": "close"
+      },
+      "story": {
+        "purpose": "demonstrate",
+        "link": "therefore",
+        "before": "Friday 3 PM is an open slot",
+        "after": "Sam's Friday 3 PM slot goes in and EMAIL SENT comes out: CONFIRMATION EMAILED",
+        "action": "Sam's name and slot ride the belt into the booking app and an email pops out",
+        "sets_up": [
+          "sam-booking"
+        ],
+        "line_job": "anticipation"
+      }
+    },
+    {
+      "id": "stripe",
+      "narration": "But free bookings mean no-shows. One more prompt adds Stripe.",
+      "fact": "f3",
+      "relation": "demo",
+      "headline": "1 MORE PROMPT ADDS STRIPE",
+      "payoff_headline": "$20 DEPOSIT APPROVED",
+      "visual": {
+        "rig": "app-screen",
+        "params": {
+          "device": "laptop",
+          "ui": "cli",
+          "title": "Replit Agent",
+          "logo": "replit",
+          "cwd": "~/juno-cuts",
+          "lines": [
+            "> Add Stripe: take a $20",
+            "  deposit to confirm a booking",
+            "* Connecting Stripe sandbox",
+            "[x] Checkout on booking page",
+            "[x] $20 deposit per slot",
+            "+ app/checkout.ts",
+            "+ app/stripe-webhook.ts",
+            "- Test card 4242 charged $20",
+            "- Payment approved"
+          ],
+          "result": "PAID $20",
+          "cards": [
+            "$20 DEPOSIT",
+            "TEST MODE"
+          ],
+          "stack": {
+            "title": "Stripe sandbox",
+            "lines": [
+              "Payment  $20.00",
+              "Status   Succeeded",
+              "For      Sam, Fri 3 PM"
+            ]
+          }
+        },
+        "room": "office",
+        "palette": "sunrise/mustard",
+        "brand": "stripe",
+        "act": "gasps",
+        "entrance": "drop",
+        "framing": "close"
+      },
+      "story": {
+        "purpose": "complicate",
+        "link": "but",
+        "before": "Sam's booking confirmed but unpaid",
+        "after": "the booking app takes a $20 Stripe deposit: $20 DEPOSIT APPROVED",
+        "action": "the host types one more prompt and the test payment goes through",
+        "sets_up": [
+          "deposit"
+        ],
+        "pays_off": [
+          "booking-app",
+          "sam-booking"
+        ],
+        "line_job": "anticipation"
+      }
+    },
+    {
+      "id": "domain",
+      "narration": "Then put it live on your own domain.",
+      "fact": "f4",
+      "relation": "launch",
+      "headline": "LIVE ON JUNOCUTS.COM",
+      "payoff_headline": "YOUR DOMAIN, NOT THEIRS",
+      "visual": {
+        "rig": "launch-pad",
+        "params": {
+          "label": "BOOKING APP",
+          "target": "JUNOCUTS"
+        },
+        "room": "street",
+        "palette": "berry/dusk-teal",
+        "act": "cheers",
+        "entrance": "walk"
+      },
+      "story": {
+        "purpose": "escalate",
+        "link": "therefore",
+        "before": "the booking app only runs inside Replit",
+        "after": "the booking app launches through the JUNOCUTS ring: LIVE ON JUNOCUTS.COM",
+        "action": "the booking app rocket lifts off and punches through the JUNOCUTS ring",
+        "sets_up": [
+          "own-domain"
+        ],
+        "line_job": "context"
+      }
+    },
+    {
+      "id": "paid",
+      "narration": "Now Sam pays you, right on your page.",
+      "fact": "f4",
+      "relation": "demo",
+      "headline": "SAM PAID, FRI 3 PM BOOKED",
+      "payoff_headline": "YOUR PAGE TAKES PAYMENT",
+      "visual": {
+        "rig": "app-screen",
+        "params": {
+          "device": "monitor",
+          "ui": "calendar",
+          "title": "junocuts.com",
+          "logo": "replit",
+          "lines": [
+            "# Juno Cuts: book a cut",
+            "MON 13:00 Ama",
+            "TUE 14:00 open",
+            "WED 13:00 Leo",
+            "THU 15:00 open",
+            "SAT 16:00 Kofi",
+            "SUN closed",
+            "FRI 15:00 Sam"
+          ],
+          "result": "BOOKED",
+          "button": "PAY $20",
+          "cards": [
+            "$20 PAID",
+            "FRI 3 PM"
+          ],
+          "stack": {
+            "title": "Inbox",
+            "lines": [
+              "Booking confirmed",
+              "Juno Cuts, Fri 3:00 PM",
+              "Deposit $20 paid"
+            ]
+          }
+        },
+        "room": "stage",
+        "palette": "sunrise/slate",
+        "act": "smug",
+        "entrance": "slide",
+        "framing": "close"
+      },
+      "story": {
+        "purpose": "resolve",
+        "link": "therefore",
+        "before": "Juno Cuts live on its own domain, no clients yet",
+        "after": "Sam's Fri 3 PM slot BOOKED, $20 PAID: YOUR PAGE TAKES PAYMENT",
+        "action": "Sam's slot drops into the junocuts.com calendar and the pay key turns it booked",
+        "pays_off": [
+          "rented-page",
+          "deposit",
+          "own-domain"
+        ],
+        "line_job": "land"
+      }
+    }
+  ],
+  "cta": {
+    "keyword": "BOOK",
+    "narration": "Comment BOOK and I'll send you the prompt.",
+    "headline_b": "GET THE PROMPT",
+    "story": {
+      "line_job": "context"
+    }
+  },
+  "story": {
+    "premises": [
+      "A pile of monthly receipts for a rented booking page grows each month until you build your own and the pile stops.",
+      "One barber shop's booking app, Juno Cuts, grows from one sentence: a calendar, hours that bounce a Sunday request, Sam's confirmation email, a $20 Stripe deposit, then it goes live on junocuts.com, where Sam books and pays.",
+      "A shop's paper appointment book is turned into a website page by page, each page a feature the Agent adds."
+    ],
+    "chosen": 1,
+    "why": "One shop and one client make every feature a visible change to the same app: the viewer watches Sam's Friday 3 PM slot get booked, confirmed, paid for and finally booked on the shop's own domain, which keeps the hook's promise.",
+    "object": "Juno Cuts' booking app",
+    "spine": "You rent a booking page every month. But one sentence builds your own booking app. Therefore it bounces a Sunday request and emails Sam's confirmation. But an unpaid booking is a no-show, so one more prompt adds a Stripe deposit. Therefore it goes live on junocuts.com, until Sam books and pays on your own page.",
+    "ending": "Sam's phone shows junocuts.com with Fri 3 PM booked and $20 paid: SAM PAID, FRI 3 PM BOOKED."
+  }
+}

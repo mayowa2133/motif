@@ -59,7 +59,8 @@ quality bar). Copy the closest one and change it.
    `@name: text` reviews), `files` (folder tree; `pane` opens the last file
    beside it), `note` (Markdown page, `[[links]]` become chips), `graph` (one
    node per line), `chat` (question, then an answer with `[n]` citations),
-   `terminal`, `window`, `browser`. Fill them with the film's real content:
+   `calendar` (week grid: `# ` header, `DAY closed`, `DAY HH:MM name` booked
+   or `open`; the last booking lights up), `terminal`, `window`, `browser`. Fill them with the film's real content:
    8 to 12 lines, as dense as the real product (the scorecard's
    `screen_detail` line fails a screen emptier than the references).
 5. **A new set every beat.** Consecutive beats never share a room. Continuity
@@ -69,7 +70,8 @@ quality bar). Copy the closest one and change it.
 6. **Visual hints.** Author them; the fallback planner reads generic. Per beat:
    `visual.rig` + `params` (labels use the claim's own nouns), `room`,
    `palette`, optional `insert`, `costume`, `brand`, `hold`. The hook can have
-   its own machine via `hook.visual`. Give the host an `act` (`types`,
+   its own machine via `hook.visual` (with an `act`: a hook about a problem
+   gasps or shrugs). Give the host an `act` (`types`,
    `stamps`, `gasps`, `smug`, `shrugs`, `cheers`, `inspects`: never the same
    twice in a row) and an `entrance` (`walk`, `pop`, `drop`, `slide`), and
    layer close product screens with two pieces or more: `cards` and a `stack`
