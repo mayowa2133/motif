@@ -1,0 +1,120 @@
+{
+  "type": "object",
+  "properties": {
+    "role": {
+      "type": "string",
+      "enum": [
+        "concept",
+        "opening"
+      ]
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "PASS",
+        "FAIL",
+        "NOT_ASSESSED"
+      ]
+    },
+    "setup_assessments": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "setup_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "checks": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "check": {
+                  "type": "string",
+                  "enum": [
+                    "setup-variety",
+                    "hero-scale",
+                    "art-density",
+                    "set-specificity",
+                    "intentional-space",
+                    "distinct-silhouettes",
+                    "character-role",
+                    "hierarchy",
+                    "energy",
+                    "acting",
+                    "tactility",
+                    "caption-rhythm",
+                    "physicality",
+                    "novelty",
+                    "COMPOUND_VISUAL_RULE",
+                    "UNNECESSARY_VISIBLE_MECHANISM",
+                    "ACTOR_AMBIGUITY",
+                    "CONTACT_PROOF_UNREADABLE"
+                  ]
+                },
+                "status": {
+                  "type": "string",
+                  "enum": [
+                    "PASS",
+                    "FAIL",
+                    "NOT_ASSESSED",
+                    "NOT_APPLICABLE"
+                  ]
+                },
+                "evidence": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "correction": {
+                  "type": "string"
+                },
+                "basis_id": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              },
+              "required": [
+                "check",
+                "status",
+                "evidence",
+                "basis_id",
+                "correction"
+              ],
+              "additionalProperties": false
+            }
+          }
+        },
+        "required": [
+          "setup_id",
+          "checks"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "novelty_warnings": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "limits": {
+      "type": "string",
+      "minLength": 1
+    },
+    "evidence_scope": {
+      "type": "string",
+      "const": "transfer-independent-v1"
+    }
+  },
+  "required": [
+    "role",
+    "status",
+    "setup_assessments",
+    "novelty_warnings",
+    "limits",
+    "evidence_scope"
+  ],
+  "additionalProperties": false
+}

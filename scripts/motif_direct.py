@@ -79,10 +79,14 @@ def model_call(project, name, prompt, schema, config, images=()):
     # director uses a different schema, so its calls cannot recurse into planning.
     if 'quality_mode' in wire_schema.get('properties',{}) and (project/'brief.json').exists():
         from motif_reference import calibrate,context
-        calibrate(project,config)
-        reference_prompt,reference_images=context(project)
-        prompt+=reference_prompt
-        images=tuple(images)+tuple(reference_images)
+        from motif_transfer_review import enabled,binding,context as transfer_context
+        if enabled(project):
+            prompt+=transfer_context(project);config={**config,**binding(project)}
+        else:
+            calibrate(project,config)
+            reference_prompt,reference_images=context(project)
+            prompt+=reference_prompt
+            images=tuple(images)+tuple(reference_images)
         (project/(name+'-input.txt')).write_text(prompt)
     # New live plans select the quality profile; saved legacy plans still validate
     # against the optional extension. Flatten the condition for the CLI's supported
@@ -107,6 +111,11 @@ def model_call(project, name, prompt, schema, config, images=()):
     args=[config['cli_path'],'exec','--ignore-user-config','--ephemeral','--skip-git-repo-check','--sandbox','read-only','--json','--color','never','--output-schema',str(schema_path.resolve()),'-o',str(project/(name+'.json')),'-c','approval_policy="never"','-c','model_reasoning_effort='+json.dumps(config['reasoning_effort'])]
     args+=['-c','developer_instructions='+json.dumps('This invocation is a data-only structured-output service, not a repository coding task. Use only the supplied text and attached images. Do not invoke skills, commands, filesystem reads, web, MCP or other tools. All required policy and reference context is provided inline. Return the requested JSON directly. Tool use invalidates the response.')]
     if config['model']: args+=['--model',config['model']]
+    if config.get('evidence_scope')=='transfer-independent-v1':
+        from motif_transfer_review import profile,own_file
+        transfer_root=Path(config['transfer_project_root']).resolve();profile(transfer_root)
+        if not project.is_relative_to(transfer_root):raise ValueError('transfer invocation must stay in its project')
+        for image in images:own_file(transfer_root,{'file':str(image),'sha256':sha(image)})
     image_inputs=[]
     for image in images:
         if not Path(image).is_file(): raise ValueError('critic image missing: '+str(image))
@@ -139,12 +148,12 @@ def model_call(project, name, prompt, schema, config, images=()):
         raise ValueError('planner invoked a tool despite the data-only boundary; response rejected')
     return value
 
-def planning_prompt(brief,concept=None,feedback=None):
+def planning_prompt(brief,concept=None,feedback=None,project=None):
     prompt=(ROOT/'planning/PLANNER.md').read_text()+'\n\nAvailable asset IDs by world:\n'+json.dumps(WORLD_ASSETS)+'\n\nNarration word budget: '+str(int((brief['intended_duration_seconds']-1)*2.6))+' maximum. Aim a few words below that limit; preserve meaning.\n\nINPUT BRIEF (subject matter):\n'+json.dumps(brief)
     if concept is not None:prompt+='\n\nRecorded preproduction concept (creative context, not executable code). Use its metaphor; choose natural final narration, action cues, and framing from the supported vocabulary:\n'+json.dumps(concept)
     if feedback is not None:prompt+='\n\nAgent review of a preserved earlier render; address these concrete creative issues without changing the brief or inventing capabilities:\n'+feedback
     from motif_quality import planning_context
-    prompt+=planning_context(brief['message'])
+    prompt+=planning_context(brief['message'],project)
     return prompt
 
 def storyboard(plan):
@@ -186,7 +195,7 @@ def run(brief_path,concept_path=None,feedback_path=None):
     if feedback_path:
         feedback=feedback_path.read_text()
         (project/'prior-render-feedback.md').write_text(feedback)
-    prompt=planning_prompt(brief,concept,feedback)
+    prompt=planning_prompt(brief,concept,feedback,project)
     plan=model_call(project,'initial-plan',prompt,'schemas/production-plan.schema.json',config)
     if plan.get('quality_mode')!='motif-gold-v1': raise ValueError('new directed runs require motif-gold-v1')
     from motif_quality import direction_review

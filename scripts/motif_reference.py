@@ -106,6 +106,11 @@ def accept_calibration(project):
  return result
 
 def require_calibration(project,required=False):
+ from motif_transfer_review import enabled,profile
+ if enabled(project):
+  profile(project)
+  if required:raise ValueError('explicit transfer mode uses own-evidence gates, not private calibration')
+  return None
  base=folder(project)
  if not (base/'required.json').exists() and not required:return None
  try:
@@ -156,6 +161,8 @@ def stage_status(plan,report,stage,ids,setup_ids):
  return {'status':'PASS' if not blocked else 'REVISE_ART_DIRECTION' if stage=='concept' else 'REWORK_OPENING','blocked':blocked}
 
 def stage_review(project,stage,evidence_path,config):
+ from motif_transfer_review import enabled,stage_review as transfer_stage_review
+ if enabled(project):return transfer_stage_review(project,stage,evidence_path,config)
  from motif_direct import model_call
  p=Path(project);require_calibration(p,required=True);plan=read(p/'production-plan.json');ev=read(evidence_path);ref,images=context(p);base=p/'reference-gates'/stage;base.mkdir(parents=True,exist_ok=True)
  if stage=='concept':
@@ -196,6 +203,8 @@ def stage_review(project,stage,evidence_path,config):
  return report
 
 def require_stage(project,stage):
+ from motif_transfer_review import enabled,require_stage as require_transfer_stage
+ if enabled(project):return require_transfer_stage(project,stage)
  if require_calibration(project) is None:return None
  p=Path(project);base=p/'reference-gates'/stage;name=stage+'-critic'
  try:
