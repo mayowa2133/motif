@@ -100,7 +100,7 @@ def regress(dirs=BRIEF_DIRS):
     for d in dirs:
         for path in sorted(Path(d).glob('*.json')):
             report = check_brief(json.loads(path.read_text()), allow_draft=True)
-            problems = report.get('script', []) + report.get('plan', []) + report.get('sound_off', []) + report.get('lessons', []) + report.get('story', {}).get('failures', [])
+            problems = report.get('script', []) + report.get('plan', []) + report.get('sound_off', []) + report.get('lessons', []) + report.get('story', {}).get('failures', []) + report.get('narration', {}).get('failures', [])
             rows.append({'brief': str(path.relative_to(ROOT)), 'status': report['status'], 'problems': problems})
     return {'status': 'FAIL' if any(r['status'] != 'PASS' for r in rows) else 'PASS', 'briefs': rows}
 

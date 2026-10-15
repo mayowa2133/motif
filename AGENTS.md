@@ -48,7 +48,10 @@ quality bar). Copy the closest one and change it.
    off). It is required: `check` fails a new brief without it. `animatic`
    shows it on the real voice in minutes; watch it before you render.
 2. **Facts.** Every claim beat cites a fact with an http(s) `source_url`.
-   Write narration in plain speech, about 3.7 words per second.
+   Write narration in plain speech, about 3.7 words per second, then do the
+   voice pass ([docs/STORY_PASS.md](docs/STORY_PASS.md#voice-the-narration-pass)):
+   no stated moral, a number, name or command in every claim line, and lines
+   that are easy to say aloud. `check` gates the common AI tells.
 3. **Format.** `"format": "short"` (default, 20-32 s, 4-6 beats) or `"long"`
    (30-62 s, 4-10 beats).
 4. **Show the product.** For a film about an app, put it on screen in at
