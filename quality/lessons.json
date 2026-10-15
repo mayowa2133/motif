@@ -316,6 +316,15 @@
       "rule": "A machine whose story is its whole length (Rig.close_framing False, e.g. race-track) is never framed close, and the planner never flips the framing of the beat the hook previews; the CTA narration is 10 words or fewer",
       "check": "cta-short",
       "level": "warn"
+    },
+    {
+      "id": "L037",
+      "date": "2026-10-15",
+      "source": "/human writing skill (millee.md) on StoryScope, arXiv 2604.03136; Mayowa asked to try it 2026-10-15",
+      "symptom": "narration closed on a stated moral (passkeys B: \"That's why 5 billion passkeys...\"; Claudex: \"so no AI marks its own homework\") and some lines carried no number, name or command",
+      "rule": "Narration never states the moral, never uses the \"it's not X, it's Y\" shape, stock AI words, dashes or fillers; every claim line holds a number, a name or a command, and each beat raises the stakes of the one before",
+      "enforced_by": "scripts/motif_narration.py (check and run)",
+      "level": "gate"
     }
   ]
 }

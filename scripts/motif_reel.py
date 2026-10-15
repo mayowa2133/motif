@@ -980,7 +980,10 @@ def run(brief_path, out_root=None, allow_draft=False, stub_voice=False, render=F
     script = script_record(brief);write(project / 'reel-script.json', script);stage('script', 'PASS', hook=script['hook'], hook_alternates=script['hook_alternates'])
     from motif_story import check as story_check
     story = story_check(brief);stage('story', story['status'], failures=story['failures'], warnings=story['warnings'])
+    from motif_narration import lint as narration_lint
+    lines = narration_lint(brief);stage('narration', lines['status'], failures=lines['failures'], warnings=lines['warnings'])
     if story['status'] == 'FAIL':write(project / 'reel-record.json', record);raise ValueError('story: ' + '; '.join(story['failures']))
+    if lines['status'] == 'FAIL':write(project / 'reel-record.json', record);raise ValueError('narration: ' + '; '.join(lines['failures']))
     plan = plan_reel(brief, allow_draft, avoid_looks);errs, requests = validate_plan(plan, allow_draft)
     if requests:write(project / 'library-requests.json', requests)
     if errs:stage('plan', 'FAIL', errors=errs);write(project / 'reel-record.json', record);raise ValueError('plan: ' + '; '.join(errs))
@@ -1089,7 +1092,9 @@ def check_brief(brief, allow_draft=False):
         (out['lessons'] if lesson.get('level') == 'gate' else out['lesson_warnings']).extend(found)
     from motif_story import check as story_check
     out['story'] = story_check(brief)
-    bad = out['plan'] or out['sound_off'] or out['lessons'] or out['story']['status'] == 'FAIL'
+    from motif_narration import lint as narration_lint
+    out['narration'] = narration_lint(brief)
+    bad = out['plan'] or out['sound_off'] or out['lessons'] or out['story']['status'] == 'FAIL' or out['narration']['status'] == 'FAIL'
     return {'status': 'FAIL' if bad else 'PASS', **out}
 
 

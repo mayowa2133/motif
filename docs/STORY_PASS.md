@@ -47,6 +47,50 @@ from its library), and character backstory (too heavy for a 30 s explainer).
    length (short, then long), keep each line to what the picture cannot say,
    and make the last beat a line people would repeat.
 
+## Voice (the narration pass)
+
+Adapted on 2026-10-15 from the "/human" writing skill (millee.md), which rests
+on StoryScope (arXiv 2604.03136): AI and human stories were told apart at 93%
+from structure alone. AI narrators state the moral (77% against 52% of human
+ones), keep one tidy track, and escalate flatly (Claude's own fingerprint). For
+a 30 s explainer that means:
+
+1. **Never explain what it means.** No closing "that's why", "the real
+   point", "it's that simple". The last change on screen is the point; the
+   line says what happens, not what it proves. A line that calls back the
+   hook's own picture ("no AI marks its own homework" after "graded its own
+   code an A plus") is a payoff, not a moral: keep it.
+2. **Every line holds a handle**: a number, a name, a command or a thing the
+   viewer can picture ("git reflog", "ninety days", "no rate limit"), not a
+   category ("better results", "the plan holds up").
+3. **Start at the interesting moment** and backfill: the hook is the moment
+   something goes wrong or surprising, not the topic.
+4. **Escalate.** Each beat raises the stakes or the payoff of the one before
+   (a bigger number, a worse failure, a second use). A run of equal-sized
+   beats is a list.
+5. **Say plain feelings plainly** when the host or viewer feels one ("that's
+   scary", "it's gone"), in a few words, instead of describing the reaction.
+6. **Surface last**, after the structure: no "it's not X, it's Y", no stock AI
+   words (seamless, unlock, game-changer, magic, supercharge), no dashes, no
+   fillers (actually, really, basically).
+
+7. **Say it aloud.** The viewer hears each line once: no dropped verbs ("and
+   Claude the code"), no file names the voice trips on (SKILL.md), no jargon
+   the picture does not show. Do not rewrite a line that already works.
+
+Blind test (2026-10-15): the rules rewrote 2 to 4 lines in each of three films
+(Claudex, git reflog, second brain). A blind judge preferred the rewrite only
+for second brain, where vague lines became pictures ("every page is a circle
+and every link a line"). It preferred the originals of the other two, because
+the rewrite dropped hook callbacks and added lines that are hard to say;
+rules 1 and 7 now say so. Each gap was slight. The surface tells (rule 6) were
+already almost absent from Motif briefs.
+
+Subplots, digressions and unresolved endings, which the skill also asks for,
+are fiction advice; a reel keeps one object and lands its ask. `check` gates
+rule 1's common phrases and rule 6 (`scripts/motif_narration.py`) and warns on
+rule 2.
+
 ## What `check` gates
 
 - At least three different premises, and a chosen one.
