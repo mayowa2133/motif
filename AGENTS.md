@@ -27,6 +27,12 @@ The run stops at `REVIEW_REQUIRED`: a human (Mayowa) watches it on a phone. Ever
 stage result is in `RUNS/<slug>/reel-record.json`; the render is under
 `RUNS/<slug>-finished/`.
 
+After Mayowa approves a render, `python scripts/motif_publish.py approve RUNS/<slug>
+--by Mayowa` records it and `python scripts/motif_publish.py publish RUNS/<slug>`
+puts it in the Buffer queue ([docs/PUBLISHING.md](docs/PUBLISHING.md)). Agents
+never approve a reel themselves and never post one Mayowa has not approved;
+test with `--dry-run` or `--draft`.
+
 ## Writing the brief
 
 Schema: `schemas/reel-brief.schema.json`. Examples:
@@ -95,6 +101,8 @@ quality bar). Copy the closest one and change it.
    for a second headline: author `hook.headline_b` / `cta.headline_b`, or the
    planner cuts one from the narration at a phrase boundary.
 12. **CTA.** `cta.keyword` must be said in `cta.narration`.
+    Optionally add `post` (`caption`, `title`, `hashtags`) for the social post;
+    otherwise the caption is the hook line plus the CTA.
 13. **Voice.** Optionally name a `voice` from `catalog`'s `voices` (`af_heart`,
    `af_bella`, `bf_emma`, approved by Mayowa); otherwise the seed picks one.
 
