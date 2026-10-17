@@ -1,0 +1,14 @@
+{
+  "name": "motif-three-d-experiment",
+  "private": true,
+  "type": "module",
+  "description": "DRAFT experiment: Motif's 2D library art rebuilt as lit 3D paper with three.js.",
+  "scripts": {
+    "export": "python3 export_scenes.py",
+    "render": "node render.mjs"
+  },
+  "dependencies": {
+    "playwright-core": "1.56.1",
+    "three": "0.170.0"
+  }
+}
