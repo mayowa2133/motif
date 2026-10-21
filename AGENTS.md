@@ -20,7 +20,9 @@ python scripts/motif_scorecard.py RUNS/<slug>                   # 6. score again
 ```
 
 Repeat 3 until it prints `PASS` before you spend a render (a 45 s reel takes
-about 50 minutes on 4 cores). After any reviewer feedback, follow
+about 40 minutes on 4 cores, with shots drawn in parallel). A re-render draws only
+the shots whose markup changed and reuses the rest from `.render-cache/`, so a
+one-shot fix costs minutes, not a full render. After any reviewer feedback, follow
 [docs/IMPROVEMENT_LOOP.md](docs/IMPROVEMENT_LOOP.md) so the next film is better.
 
 The run stops at `REVIEW_REQUIRED`: a human (Mayowa) watches it on a phone. Every

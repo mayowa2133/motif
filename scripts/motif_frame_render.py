@@ -12,9 +12,12 @@ This is a review renderer: the pinned HyperFrames renderer stays the delivery
 path wherever it runs at a usable speed.
 """
 import argparse
+import hashlib
 import json
+import os
 import re
 import subprocess
+from concurrent.futures import ProcessPoolExecutor
 from pathlib import Path
 
 from motif_finish import SCRIPT, top_level
@@ -39,43 +42,74 @@ def states(html):
     return comp, shell, frames
 
 
-def render(project, out, size=(720, 1280), audio=True):
-    from playwright.sync_api import sync_playwright
-    import functools, http.server, threading
+def render(project, out, size=(720, 1280), audio=True, workers=None):
+    """Shots render in parallel, one Chromium per worker, each to its own cached segment.
+
+    Every frame is drawn from data alone, so a shot whose markup did not change since
+    the last render is reused, and only the changed shots are drawn again.
+    """
     project, out = Path(project), Path(out);out.parent.mkdir(parents=True, exist_ok=True)
     index = (project / 'index.html').read_text();fonts = FONT_STYLE.search(index);fonts = fonts.group(1).split('*{')[0] if fonts else ''
     shots = [c for c in clips(project) if c['id'] != 'captions'];cap = next((c for c in clips(project) if c['id'] == 'captions'), None)
     total = round((shots[-1]['start'] + shots[-1]['duration']) * FPS)
     cap_comp, cap_shell, cap_frames = states((project / cap['src']).read_text()) if cap else (None, '', [])
+    cache = project / '.render-cache';cache.mkdir(exist_ok=True);jobs = []
+    for shot in shots:
+        html = (project / shot['src']).read_text();first = round(shot['start'] * FPS);count = min(round(shot['duration'] * FPS), total - first)
+        caps = [cap_frames[min(first + f, len(cap_frames) - 1)] for f in range(count)] if cap_frames else []
+        key = hashlib.sha256(json.dumps([html, cap_shell, caps, fonts, list(size), count]).encode()).hexdigest()[:20]
+        jobs.append({'src': shot['src'], 'count': count, 'caps': caps, 'segment': str(cache / f'{key}.mp4')})
+    todo = [j for j in jobs if not Path(j['segment']).exists()]
+    workers = max(1, min(workers or min(4, os.cpu_count() or 1), len(todo) or 1));bins = [[] for _ in range(workers)]
+    for job in sorted(todo, key=lambda j: -j['count']):min(bins, key=lambda b: sum(j['count'] for j in b)).append(job)
+    common = (str(project), fonts, cap_comp, cap_shell, list(size))
+    if workers == 1:_render_shots(common, todo)
+    else:
+        with ProcessPoolExecutor(workers) as pool:list(pool.map(_render_shots, [common] * workers, bins))
+    for job in jobs:
+        frames = int(subprocess.run(['ffprobe', '-v', 'error', '-count_packets', '-select_streams', 'v:0', '-show_entries', 'stream=nb_read_packets', '-of', 'csv=p=0', job['segment']], capture_output=True, text=True).stdout.strip() or 0)
+        if frames != job['count']:Path(job['segment']).unlink(missing_ok=True);raise RuntimeError(f'{job["src"]}: {frames} frames rendered, {job["count"]} planned')
+    used = {Path(j['segment']).name for j in jobs}
+    for old in cache.glob('*.mp4'):
+        if old.name not in used:old.unlink()
+    listing = cache / 'concat.txt';listing.write_text(''.join(f"file '{j['segment']}'\n" for j in jobs))
     silent = out.with_suffix('.silent.mp4')
-    ff = subprocess.Popen(['ffmpeg', '-v', 'error', '-y', '-f', 'image2pipe', '-framerate', str(FPS), '-i', '-', '-c:v', 'libx264', '-pix_fmt', 'yuv420p', '-crf', '18', '-preset', 'medium', str(silent)], stdin=subprocess.PIPE)
+    subprocess.run(['ffmpeg', '-v', 'error', '-y', '-f', 'concat', '-safe', '0', '-i', str(listing), '-c', 'copy', str(silent)], check=True)
+    written = sum(j['count'] for j in jobs)
+    if not audio:silent.replace(out);return {'frames': written, 'file': str(out), 'shots_drawn': len(todo), 'shots': len(jobs)}
+    return {'frames': written, 'file': str(mix(project, silent, out, written / FPS)), 'shots_drawn': len(todo), 'shots': len(jobs)}
+
+
+def _render_shots(common, jobs):
+    """One worker: one Chromium page, each shot piped straight to its own segment."""
+    if not jobs:return
+    from playwright.sync_api import sync_playwright
+    import functools, http.server, threading
+    project, fonts, cap_comp, cap_shell, size = common;project = Path(project)
     handler = functools.partial(_QuietHandler, directory=str(project));server = http.server.ThreadingHTTPServer(('127.0.0.1', 0), handler)
     threading.Thread(target=server.serve_forever, daemon=True).start();base = f'http://127.0.0.1:{server.server_address[1]}/'
-    written = 0
     try:
         with sync_playwright() as p:
             browser = p.chromium.launch(executable_path=_chromium());page = browser.new_page(viewport={'width': size[0], 'height': size[1]})
-            for shot in shots:
-                comp, shell, frames = states((project / shot['src']).read_text())
-                tmp = project / f'.render-{comp}.html'
+            for job in jobs:
+                comp, shell, frames = states((project / job['src']).read_text())
+                tmp = project / f'.render-{comp}.html';part = Path(job['segment']).with_suffix('.part.mp4')
                 layer = 'position:absolute;inset:0;width:100%;height:100%'
                 tmp.write_text(f'<!doctype html><html><head><meta charset="utf-8"><style>{fonts} html,body{{margin:0;background:#000;width:{size[0]}px;height:{size[1]}px;overflow:hidden;position:relative}} svg{{{layer}}}</style></head>'
                                f'<body>{shell}{cap_shell}</body></html>')
+                ff = subprocess.Popen(['ffmpeg', '-v', 'error', '-y', '-f', 'image2pipe', '-framerate', str(FPS), '-i', '-', '-c:v', 'libx264', '-pix_fmt', 'yuv420p', '-crf', '18', '-preset', 'medium', str(part)], stdin=subprocess.PIPE)
                 try:
                     page.goto(base + tmp.name, wait_until='load', timeout=300000)
                     page.evaluate("Promise.all(['700 40px Inter','900 40px Inter','700 40px \"EB Garamond\"'].map(f => document.fonts.load(f).catch(() => null))).then(() => document.fonts.ready)")
-                    first = round(shot['start'] * FPS);count = min(round(shot['duration'] * FPS), total - first)
-                    for f in range(count):
-                        g = first + f
+                    for f in range(job['count']):
                         page.evaluate('([a, b, ca, cb]) => { document.getElementById(a).innerHTML = b; if (ca) document.getElementById(ca).innerHTML = cb; }',
-                                      [f'{comp}-world', frames[min(f, len(frames) - 1)], f'{cap_comp}-world' if cap_comp else None, cap_frames[min(g, len(cap_frames) - 1)] if cap_frames else ''])
-                        ff.stdin.write(page.screenshot(type='png'));written += 1
-                finally:tmp.unlink()
+                                      [f'{comp}-world', frames[min(f, len(frames) - 1)], f'{cap_comp}-world' if cap_comp else None, job['caps'][f] if job['caps'] else ''])
+                        ff.stdin.write(page.screenshot(type='png'))
+                finally:
+                    tmp.unlink();ff.stdin.close();ff.wait()
+                part.replace(job['segment'])
             browser.close()
-    finally:
-        server.shutdown();ff.stdin.close();ff.wait()
-    if not audio:silent.replace(out);return {'frames': written, 'file': str(out)}
-    return {'frames': written, 'file': str(mix(project, silent, out, written / FPS))}
+    finally:server.shutdown()
 
 
 # 2026-10-10 sound study against the references: they master near -14 LUFS (ours -16.7), the
@@ -111,8 +145,8 @@ def mix(project, silent, out, duration):
 
 def main():
     a = argparse.ArgumentParser(description=__doc__.split('\n')[0]);a.add_argument('project', type=Path);a.add_argument('out', type=Path)
-    a.add_argument('--width', type=int, default=720);a.add_argument('--no-audio', action='store_true')
-    args = a.parse_args();print(json.dumps(render(args.project, args.out, (args.width, round(args.width * 16 / 9)), not args.no_audio)))
+    a.add_argument('--width', type=int, default=720);a.add_argument('--no-audio', action='store_true');a.add_argument('--workers', type=int)
+    args = a.parse_args();print(json.dumps(render(args.project, args.out, (args.width, round(args.width * 16 / 9)), not args.no_audio, args.workers)))
 
 
 if __name__ == '__main__':
