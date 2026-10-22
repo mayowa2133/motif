@@ -316,6 +316,15 @@
       "rule": "A machine whose story is its whole length (Rig.close_framing False, e.g. race-track) is never framed close, and the planner never flips the framing of the beat the hook previews; the CTA narration is 10 words or fewer",
       "check": "cta-short",
       "level": "warn"
+    },
+    {
+      "id": "L037",
+      "date": "2026-10-22",
+      "source": "/animate skill guide (Drive PDF, 2026-10-22): its review traces every drawn word against the phone UI; tried on the Claudex film",
+      "symptom": "every caption sat at y 1800 of 1920, under Instagram's own caption, username and buttons (77 caption words in the phone UI on the Claudex film); the references set theirs just above, about y 1485",
+      "rule": "Captions sit just above the phone UI (centre 1462 of 1920, nothing past 1500) and take the lane that covers no word the shot prints; motif_textcheck traces every drawn word for cut-off, overlapping and phone-UI text",
+      "check": "caption-safe",
+      "level": "gate"
     }
   ]
 }

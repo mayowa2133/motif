@@ -304,7 +304,22 @@ def check_cta_short(project, plan, layouts):
     return out
 
 
+def check_caption_safe(project, plan, layouts):
+    """Captions sit above the phone UI: Instagram's caption, username and buttons cover y > 1000 of the
+    1280 canvas (motif_textcheck SAFE). Every caption on the Claudex film sat at 1200, under them."""
+    from motif_reel import CAPTION_HALF
+    path = Path(project) / 'caption-events.json'
+    if not path.exists():return []
+    out = []
+    for g in json.loads(path.read_text()):
+        y = g.get('y')
+        if y is None or (y + CAPTION_HALF - 1000) / (2 * CAPTION_HALF) > 1 / 3:
+            out.append({'where': f'{g["start"]:.2f}s', 'detail': f'caption "{g["text"]}" at y {y} sits under the phone UI'})
+    return out
+
+
 CHECKS = {
+    'caption-safe': check_caption_safe,
     'cta-short': check_cta_short,
     'host-acts': check_host_acts,
     'layered-product': check_layered_product,
