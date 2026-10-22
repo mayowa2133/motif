@@ -50,8 +50,8 @@ COLLECT = """(safe) => {
 
 OVERLAY = """([safe, boxes]) => {
   const add = (x, y, w, h, css) => { const d = document.createElement('div'); d.style.cssText = `position:absolute;left:${x}px;top:${y}px;width:${w}px;height:${h}px;${css}`; document.body.appendChild(d); };
-  add(0, 0, innerWidth, safe.top, 'background:rgba(255,0,0,.25)'); add(0, innerHeight - safe.bottom, innerWidth, safe.bottom, 'background:rgba(255,0,0,.25)');
-  add(innerWidth - safe.right, safe.top, safe.right, innerHeight - safe.top - safe.bottom, 'background:rgba(255,0,0,.25)');
+  add(0, 0, innerWidth, safe.top, 'background:rgba(255,40,40,.16);outline:4px dashed #FF2A2A;outline-offset:-4px'); add(0, innerHeight - safe.bottom, innerWidth, safe.bottom, 'background:rgba(255,40,40,.16);outline:4px dashed #FF2A2A;outline-offset:-4px');
+  add(innerWidth - safe.right, safe.top, safe.right, innerHeight - safe.top - safe.bottom, 'background:rgba(255,40,40,.16);outline:4px dashed #FF2A2A;outline-offset:-4px');
   boxes.forEach((b) => add(b.x0, b.y0, b.x1 - b.x0, b.y1 - b.y0, 'outline:2px solid #00E5FF'));
 }"""
 
