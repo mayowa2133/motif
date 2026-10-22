@@ -887,6 +887,35 @@ def caption_groups(lines, spans):
     return out
 
 
+CAPTION_LANES = (975, 925, 875)   # first choice just above the phone UI, then up the frame
+CAPTION_SHIFTS = (0, -70, 70, -140, 140)
+CAPTION_HALF = 42                  # half a caption line's height on the 720 x 1280 canvas
+CAPTION_RAIL = 627                 # Instagram's like/comment/share rail covers x > 627 (940 of 1080)
+
+
+def caption_lanes(groups, drawn):
+    """Give each caption group a line ('y', and 'dx' off centre) that covers no word the shot prints.
+    The first lane sits just above Instagram's caption and buttons (motif_textcheck); a label there moves
+    the caption up, then sideways; when every place covers a label, the one covering least wins."""
+    from motif_lessons import _overlap, texts
+    def boxes(frame):
+        start, frames = max(((s, f) for s, f in drawn if s <= frame), key=lambda d: d[0])
+        try:return [t['box'] for t in texts(frames[min(len(frames) - 1, frame - start)]) if t['box'][1] > 300]
+        except Exception:return []
+    for g in groups:
+        a, b = round(g['start'] * FPS), round(g['end'] * FPS) - 1
+        labels = [x for f in sorted({*range(a, b, 6), b}) for x in boxes(f)]
+        width = min(660, sum(len(w['text']) * 30 + 24 for w in g['words']))
+        def cost(y, dx):
+            x0 = (720 - width) / 2 + dx
+            if dx and (x0 < 16 or x0 + width > CAPTION_RAIL):return None
+            return sum(_overlap((x0, y - CAPTION_HALF, width, 2 * CAPTION_HALF), l) / max(1.0, l[2] * l[3]) for l in labels)
+        places = [(cost(y, dx), k, y, dx) for k, (dx, y) in enumerate((dx, y) for dx in CAPTION_SHIFTS for y in CAPTION_LANES)]
+        places = [p for p in places if p[0] is not None]
+        c, _, g['y'], g['dx'] = min(places, key=lambda p: (p[0] > .15, p[0] if p[0] > .15 else 0, p[1]))
+    return groups
+
+
 def compile_reel(project, plan, spans, voice_duration, seed=0):
     import motif_sets as ms
     from fontTools.ttLib import TTFont
@@ -894,7 +923,7 @@ def compile_reel(project, plan, spans, voice_duration, seed=0):
     from motif_script import write_index
     from motif_ui_components import DEFS
     from motif_ui_production import captions_frame, make_sounds, namespace, write_composition
-    shots = schedule(plan, spans, voice_duration);frames_index, cues, layouts, lights = [], [], {}, {}
+    shots = schedule(plan, spans, voice_duration);frames_index, cues, layouts, lights, drawn = [], [], {}, {}, []
     ledger = {x['id']: x for x in make_sounds(project)}
     by_beat = {}
     for shot in shots:
@@ -915,6 +944,7 @@ def compile_reel(project, plan, spans, voice_duration, seed=0):
         shot.setdefault('mascot', plan.get('mascot', 'bot'))
         if plan.get('carry'):shot.setdefault('carry', plan['carry'])
         frames = shot_frames(shot, layout, seed + shot['start_frame'], plan.get('look', 'paper-craft'), plan.get('brand'), prev, continued)
+        drawn.append((shot['start_frame'], frames))
         dur = shot['frames'] / FPS
         events = [{'time': round(f / FPS, 9), 'target': f'#{shot["id"]}-world', 'action': 'SET', 'params': {'props': {'innerHTML': namespace(body, shot['id'])}}} for f, body in enumerate(frames) if f]
         write_composition(project, shot['id'], dur, frames[0], events, DEFS)
@@ -939,6 +969,7 @@ def compile_reel(project, plan, spans, voice_duration, seed=0):
     import motif_looks
     look = motif_looks.get(plan.get('look', 'paper-craft'))
     fonts = {'serif': TTFont(project / 'assets/fonts/EBGaramond-700.woff2'), 'sans': TTFont(project / 'assets/fonts/Inter-900.woff2')}
+    caption_lanes(groups, drawn)
     cap = lambda f: motif_looks.captions(look['captions'], groups, f, fonts, look['caption_colours'])
     total = round(duration * FPS)
     capevents = [{'time': round(f / FPS, 9), 'target': '#captions-world', 'action': 'SET', 'params': {'props': {'innerHTML': namespace(cap(f), 'captions')}}} for f in range(1, total)]
@@ -1022,6 +1053,11 @@ def run(brief_path, out_root=None, allow_draft=False, stub_voice=False, render=F
         from motif_looks import finish_style
         style = finish_style(plan['look'], project / 'finish-style.json')
         apply(project, final, style_path=style, lights_path=project / 'finish-lights.json');stage('finish', 'PASS', project=str(final), style=f'motif-finish-v1+{plan["look"]}')
+    # Every drawn word traced to the phone screen (cut off, overlapping, under Instagram's UI). Reported,
+    # not gated yet: layered product screens still tuck some lines under their cards.
+    from motif_textcheck import check as text_check
+    text = text_check(final);write(final / 'text-check.json', text)
+    stage('text', text['status'], cut_off=text['cut_off'], overlap=text['overlap'], phone_ui=text['phone_ui'], frames=text['frames'])
     origin = provenance(final);gate = pacing(final)
     stage('gate', 'PASS' if origin['status'] == 'PASS' and gate['status'] == 'PASS' and learned['status'] == 'PASS' else 'FAIL', provenance={k: origin[k] for k in ('status', 'checked', 'unknown', 'reference_derived', 'rejected')}, pacing=gate['status'], lessons=learned['status'])
     if render:

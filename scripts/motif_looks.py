@@ -198,12 +198,17 @@ def headline(style, text, c, f):
 
 # Caption treatments -----------------------------------------------------------------
 
+# Caption line centre on the 720 x 1280 canvas: 975 is 1462 px of 1920, just above the phone UI
+# (Instagram's caption, username and buttons cover y > 1500), where the references set theirs (~1485).
+CAPTION_Y = 975
+
+
 def captions(style, groups, f, fonts, colours):
-    """Caption band markup (y >= 1090) for frame f. fonts: {'serif': TTFont, 'sans': TTFont}."""
+    """Caption line markup for frame f, centred on the group's lane ('y', default CAPTION_Y). fonts: {'serif': TTFont, 'sans': TTFont}."""
     from motif_ui_production import captions_frame, font_width
-    if style == 'tiles':return f'<g transform="translate(0 150)">{captions_frame(groups, f, fonts["serif"])}</g>'
     t = f / 30;c = next((c for c in groups if c['start'] <= t < c['end']), None)
     if c is None:return ''
+    if style == 'tiles':return f'<g transform="translate({c.get("dx", 0)} {c.get("y", CAPTION_Y) - 1040})">{captions_frame(groups, f, fonts["serif"])}</g>'
     visible = [w for w in c['words'] if t + .0001 >= w['start']]
     if not visible:return ''
     words = [w['text'].upper() if style in ('bar', 'glow', 'underline') else w['text'] for w in c['words']]
@@ -212,11 +217,11 @@ def captions(style, groups, f, fonts, colours):
     pad = {'bar': 0, 'glow': 34, 'sticker': 26, 'underline': 0}[style]
     if full + pad * (len(words) if style == 'sticker' else 1) > 640:
         k = 640 / (full + pad * (len(words) if style == 'sticker' else 1));size *= k;widths = [w * k for w in widths];full = sum(widths) + gap * (len(words) - 1)
-    n = len(visible);active = n - 1;y = 1200;out = ''
+    n = len(visible);active = n - 1;y = c.get('y', CAPTION_Y);out = ''
     esc = lambda s: s.replace('&', '&amp;').replace('<', '&lt;')
     word = lambda s, x, col, extra='': f'<text x="{x:.1f}" y="{y + size * .36:.1f}" font-family="Inter" font-weight="900" font-size="{size:.1f}" fill="{col}" text-anchor="middle" {extra} data-layout-allow-overlap>{esc(s)}</text>'
     if style == 'sticker':full += pad * len(words)
-    x = (720 - full) / 2
+    x = (720 - full) / 2 + c.get('dx', 0)
     if style == 'bar':
         out += f'<rect x="0" y="{y - 52}" width="720" height="104" fill="{colours["fill"]}" opacity=".92"/>'
     if style == 'glow':
