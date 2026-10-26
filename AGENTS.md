@@ -17,11 +17,14 @@ python scripts/motif_reel.py run --brief BRIEF --out RUNS \
     --tts-python <python with kokoro-onnx> --allow-draft --render  # 4. voice, compile, gate, render
 python scripts/motif_improve.py retro RUNS/<slug> [--feedback "what the reviewer said"]  # 5. learn
 python scripts/motif_scorecard.py RUNS/<slug>                   # 6. score against the references
+python scripts/motif_jury.py pack RUNS/<slug>                  # 7. review pack for an independent jury
 ```
 
 Repeat 3 until it prints `PASS` before you spend a render (a 45 s reel takes
 about 50 minutes on 4 cores). After any reviewer feedback, follow
 [docs/IMPROVEMENT_LOOP.md](docs/IMPROVEMENT_LOOP.md) so the next film is better.
+Before Mayowa watches a film, have someone who did not make it grade the
+jury pack ([docs/JURY.md](docs/JURY.md)) and apply the fixes, two rounds.
 
 The run stops at `REVIEW_REQUIRED`: a human (Mayowa) watches it on a phone. Every
 stage result is in `RUNS/<slug>/reel-record.json`; the render is under
