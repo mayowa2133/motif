@@ -112,6 +112,10 @@ The host is chosen per film with `"mascot"`:
 | `memo` | sticky note with a spiral-pad body (DRAFT) | notes, productivity, knowledge |
 | `lumo` | light bulb in a teal suit (DRAFT) | ideas, tips, inventions |
 
+DRAFT: `"host_acting": true` makes the host act its face changes (a squint before, a take
+after), pops a painted mark on strong reactions (! ? sweat sparkle vein) and boils the host and
+machine outlines (`scripts/motif_face_acting.py`; proof: `scripts/proof_face_acting.py OUT.png`).
+
 Every mascot shares Bot's skeleton, so all 16 poses, expressions, costumes,
 walk cycles and crowds work for each. Pick the mascot whose character fits the
 topic, and vary it across films. DRAFT mascots need `--allow-draft` until

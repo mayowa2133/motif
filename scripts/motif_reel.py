@@ -224,7 +224,7 @@ def plan_reel(brief, allow_draft=False, avoid_looks=()):
         {'id': 'cta', 'role': 'cta', 'headline': _short(f'COMMENT {brief["cta"]["keyword"]}', 28), 'headline_b': brief['cta'].get('headline_b') or _short(re.sub(r'[,.?!]?\s*comment\s+\S+\s*$', '', brief['cta']['narration'], flags=re.I), 28), 'headline_b_cut': not brief['cta'].get('headline_b') and _clip(re.sub(r'[,.?!]?\s*comment\s+\S+\s*$', '', brief['cta']['narration'], flags=re.I), 28)[1], 'room': cta_room, 'rig': None,
          'insert': {'kind': 'comment_end_card', 'args': {'keyword': brief['cta']['keyword']}}, 'bot': {'costume': ['party-hat'], 'face': 'excited', 'pose': 'celebrating' if look['cta'] != 'card' else 'pointing'},
          'crowd': 7 if look['cta'] == 'crowd' else 0, 'grammar': look['cta']}]})
-    plan = {'schema_version': 'reel-1.1', 'quality_mode': 'motif-gold-v1', 'slug': brief['slug'], 'seed': seed, 'look': look_id, 'brand': brand, 'mascot': brief.get('mascot', 'bot'), 'carry': (brief.get('carry') or {}).get('label'), 'library': 'draft' if allow_draft else 'canonical', 'beats': beats, 'library_requests': [], 'warnings': default_label_warnings(beats)}
+    plan = {'schema_version': 'reel-1.1', 'quality_mode': 'motif-gold-v1', 'slug': brief['slug'], 'seed': seed, 'look': look_id, 'brand': brand, 'mascot': brief.get('mascot', 'bot'), 'host_acting': bool(brief.get('host_acting')), 'carry': (brief.get('carry') or {}).get('label'), 'library': 'draft' if allow_draft else 'canonical', 'beats': beats, 'library_requests': [], 'warnings': default_label_warnings(beats)}
     return plan
 
 
@@ -695,6 +695,18 @@ def shot_frames(shot, layout, seed, look='paper-craft', brand=None, prev=None, c
         h = layout['hero'];(lx, ly), _ = rig.contacts(h.get('values'), (action, tc))[rig.actions[action].contact]
         hit = (h['x'] + lx * h['scale'], h['y'] + ly * h['scale'])
         if fc is not None and rig.name in CARRY:carry_to = hit
+    acting = shot.get('host_acting') and rig
+    if acting:
+        # Acted faces (motif_face_acting, DRAFT): the whole shot's face track first, so each change
+        # can squint before it and land as a take after it, frames still pure functions of f.
+        import motif_face_acting as fa
+        b0 = layout['bot'];side0 = b0.get('side', -1 if b0['x'] < 360 else 1);bot0 = shot['bot']
+        def host_face(f):
+            u = f / max(1, n - 1)
+            if bot0.get('act') in HOST_ACTS:face = act_motion(bot0['act'], bot0.get('entrance', 'walk'), shot['role'], u, f, n, tc, side0, entering=not prev)[1]
+            else:face = bot_motion(shot['role'], u, f, n, tc, side0, entering=not prev, acts=ACTS.get(rig.name, ('pointing', 'presenting')))[1]
+            return bot0['face'] if shot['role'] == 'payoff' and face == 'excited' and bot0.get('face') else face
+        face_track = [host_face(f) for f in range(n)];marks = fa.emote_events(face_track)
     frames = []
     for f in range(n):
         u = f / max(1, n - 1);pieces = []
@@ -756,6 +768,7 @@ def shot_frames(shot, layout, seed, look='paper-craft', brand=None, prev=None, c
                 wob = 3 * math.sin(f * .3)
                 mark = f'<g transform="translate({sticker_at[0]:.1f} {sticker_at[1]:.1f})">{sticker(brand, 92, -8 + wob)}</g>'
                 hero += mark if prev else pop_in(mark, f, 2, sticker_at)
+            if acting:hero = fa.boil_lines(hero, f, 'hero', .7)
             hero_at = len(pieces);pieces.append(cam(boil(hero, f, f'{shot["id"]}-hero', .6)))
             if prev and shot['role'] == 'payoff' and poof_at and not close:pieces.append(cam(poof(*poof_at, f, c, h['scale'] * (.6 if rig.name == 'app-screen' else 1.1))))  # small on screens: the puff hid the answer
             since = contact_age(f, fc, prev, hold)
@@ -772,11 +785,21 @@ def shot_frames(shot, layout, seed, look='paper-craft', brand=None, prev=None, c
                 tx_, moving, facing = track;b = {**b, 'x': h['x'] + tx_ * h['scale']};bdx = 0
                 if moving:pose, cycle, side = 'carrying-object', 'carry', facing
             body = dressed_bot(b['x'] + bdx, b['y'] + bdy, b['scale'], face, pose, bot['costume'], shot['palette'], flip=side > 0, cycle=cycle, phase=f / 10, head=round(4 * math.sin(f * .3)), mascot=M)
+            if acting:body = fa.act_face(body, M, *fa.face_scale(face_track, f))
             if squash != 1:body = f'<g transform="translate({b["x"]:.1f} {b["y"]:.1f}) scale({2 - squash:.3f} {squash:.3f}) translate({-b["x"]:.1f} {-b["y"]:.1f})">{body}</g>'
+            mark_at = (b['x'] + bdx, b['y'] + bdy, b['scale'], side > 0)
             if close:
                 # Small and in front of the big subject, outside the camera (refs: about 20% of frame height).
                 hx = 590 if side > 0 or rig.name == 'app-screen' else 130
                 body = dressed_bot(hx + bdx * .5, 1048 + bdy * .5, CLOSE_HOST, face, pose, bot['costume'], shot['palette'], flip=hx > 360, cycle=cycle, phase=f / 10, head=round(4 * math.sin(f * .3)), mascot=M)
+                if acting:body = fa.act_face(body, M, *fa.face_scale(face_track, f))
+                mark_at = (hx + bdx * .5, 1048 + bdy * .5, CLOSE_HOST, hx > 360)
+            if acting:
+                # Lines boil on the host, and a painted mark pops beside its head on a strong reaction.
+                body = fa.boil_lines(body, f, 'host')
+                mx, my = fa.head_spot(*mark_at)
+                body += ''.join(fa.emote(kind, mx, my, max(70.0, 235 * mark_at[2] * .9), f - start) for start, kind in marks)
+            if close:
                 pieces.append(body)
                 if carry_to:
                     # The host acts on the product: it holds a note, then throws it into the run key
@@ -913,6 +936,7 @@ def compile_reel(project, plan, spans, voice_duration, seed=0):
         prev = (shots[i - 1]['role'], shots[i - 1]['frames']) if i and same(shots[i - 1], shot) else None
         continued = i + 1 < len(shots) and same(shots[i + 1], shot)
         shot.setdefault('mascot', plan.get('mascot', 'bot'))
+        if plan.get('host_acting'):shot.setdefault('host_acting', True)
         if plan.get('carry'):shot.setdefault('carry', plan['carry'])
         frames = shot_frames(shot, layout, seed + shot['start_frame'], plan.get('look', 'paper-craft'), plan.get('brand'), prev, continued)
         dur = shot['frames'] / FPS

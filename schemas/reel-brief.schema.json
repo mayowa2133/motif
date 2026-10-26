@@ -475,6 +475,11 @@
       "default": "bot",
       "description": "The film's host character (scripts/motif_mascots.py). Same poses, cycles, faces and costumes as Bot."
     },
+    "host_acting": {
+      "type": "boolean",
+      "default": false,
+      "description": "DRAFT: the host's face squints before each change and lands as a take, strong reactions pop a painted mark (! ? sweat sparkle vein), and the host and machine outlines boil (scripts/motif_face_acting.py)."
+    },
     "carry": {
       "type": "object",
       "additionalProperties": false,
