@@ -64,37 +64,90 @@
     "source": {
       "status": "DONE",
       "inputs": {
-        "source": "513601419cb6a1a2f47ddbbf335a865621d37bd7c9cb667bcc73af140b9020a7",
+        "source": "e6abbe92edea0c76834a7d6e82fb356aa80ee2cbd8683434e6066c21cd46a7b5",
         "direction.json": "3490a60575b27b288badccffa69edf37eb2598371b64780c80f38b17bcfce456"
       },
-      "at": "2026-10-31T07:24:54+00:00",
+      "at": "2026-10-31T08:01:47+00:00",
       "agent_assisted": true
     },
     "audio": {
       "status": "DONE",
       "inputs": {
         "sound": "80f1e8cecae8550e9bcd7c1bdc6810a64b28d35d04dd67d5b531fd559eecc50d",
-        "key": "8e7274e44bb6"
+        "key": "3c9d57177a43"
       },
-      "at": "2026-10-31T07:22:09+00:00",
-      "key": "8e7274e44bb6",
-      "master_sha256": "d511c1a0557eb07d53c59e1261efab5651708902585748f906eea64ebb590664",
+      "at": "2026-10-31T08:01:51+00:00",
+      "key": "3c9d57177a43",
+      "master_sha256": "ca2526e40bdeed49bfced17e2a941112d51d6a1d6e926ce1e0bc8f54ef6596ba",
       "takes_reused": 7,
       "takes": 7
     },
     "rough": {
       "status": "DONE",
       "inputs": {
-        "source": "513601419cb6a1a2f47ddbbf335a865621d37bd7c9cb667bcc73af140b9020a7",
-        "audio": "8e7274e44bb6"
+        "source": "e6abbe92edea0c76834a7d6e82fb356aa80ee2cbd8683434e6066c21cd46a7b5",
+        "audio": "3c9d57177a43"
       },
-      "at": "2026-10-31T07:25:41+00:00",
-      "key": "6ef7ac4355af",
-      "preview": "runs/the-keeper/rough/6ef7ac4355af/preview.mp4",
-      "preview_sha256": "7f215565ed41b24df38151ab6b97f5cd233fbb9b488631f01183419ed5386737"
+      "at": "2026-10-31T08:02:22+00:00",
+      "key": "01d02c8be734",
+      "preview": "runs/the-keeper/rough/01d02c8be734/preview.mp4",
+      "preview_sha256": "8d1f16d712f6fffe88e05732deddc7687dff9cdd9387bb609d7e33128314e218"
     }
   },
-  "failures": {},
+  "failures": {
+    "lost-calf-v1": [
+      {
+        "role": "story",
+        "request_sha256": "f2361ad62f8bf2b24adfceb20ae573b1d2471b9f8be8280179dbc06880071797",
+        "source_sha256": "513601419cb6a1a2f47ddbbf335a865621d37bd7c9cb667bcc73af140b9020a7",
+        "at": "2026-10-31T07:47:46+00:00",
+        "issues": [
+          "payoff: FAIL: The reveal answers the hook well (crying calf in the beam at 19.0-21.5 s, Ada smiles at 22.0 s), but the ending that answers the opening ('the sea stayed empty' becomes 'had never been empty') rests on two dawn spouts that are almost invisible on a phone: a ~24x19 px near-white puff on peach sky at ~31.5 s (spout RGB 253,235,215 vs sky 252,221,186, about 1.1:1 contrast) and a ~10 px white blip at the waterline ~0.5 s later, both in the left third, never reading as one big and one small spout together, so the last line plays over a sea that looks empty and the mother-and-calf-together image is lost.",
+          "clarity_normal_speed: FAIL: The plot is followable, but the 'swims home' beat reads backwards: the calf faces left, toward the sea and the tail, from 19.0 to 26.0 s, then the moment the tail answers (about 26.3 s) it flips to face the lighthouse and glides tail-first toward its mother for about 2 s while shrinking (26.5-28.5 s), which on a phone looks like it turns its back on its mother and drifts backwards; secondary weaknesses: the threat is a smooth dark ellipse the same shape as the beam's own light pool, with a four-point 'shine' sparkle rather than an eye, so fear is carried mainly by Ada's reactions, and the cup (about 10 px) and the dawn wave (about 5 px of arm) are too small to register.",
+          "critical: dawn, about 31.0-33.0 s (f930-f990; sampled at 31.0, 31.5, 32.0, 32.5 s and strip-spouts f922-f938): The two spouts meant to prove 'The sea had never been empty' and show mother and calf safe together are near-invisible at phone size: the first is a ~24x19 px near-white spray on a peach sky (about 1.1:1 contrast), the second a ~10 px white blip at the waterline that appears about 0.5 s later, both in the left third while attention sits on the lighthouse and the lamp switching off at right. They never read as a big and a small spout side by side, so the closing line plays over an apparently empty sea.",
+          "critical: home, about 26.3-28.5 s (f789-f855; ordered-frames 26.0 vs 26.5-28.0 s; strip-calf_go f790-f806; phone-f00799): When the mother's tail answers, the calf flips from facing the tail to facing the lighthouse, then glides tail-first toward its mother for about 2 s. The intended action ('the calf turns and swims along the beam toward it') reads inverted, as if the calf turns away from its mother and is pulled backwards."
+        ]
+      },
+      {
+        "role": "visual",
+        "request_sha256": "d2a3d9a61ff01393cc6217610fb2d34206e65ae91a5da91ee75e7802fccef33f",
+        "source_sha256": "513601419cb6a1a2f47ddbbf335a865621d37bd7c9cb667bcc73af140b9020a7",
+        "at": "2026-10-31T07:47:46+00:00",
+        "issues": [
+          "focal_hierarchy: FAIL: The beam leads the eye well to the glinting shape in the sighting (8.5-11.5 s) and the calf owns the reveal close-up (19.5-21.5 s), but the reveal opens with two competing 'eyes' (old star glint plus the calf's own eye, f570-575), and the ending's subject, the two spouts (31.5-32.5 s), is the weakest thing in the frame, losing to the horizon glow and the lighthouse at the edge.",
+          "identity_continuity: FAIL: Ada, the tower and the calf keep a consistent design. But the 'eye glint' the viewer tracks for 10 s is not the calf's eye, the calf flips to face right at 26.5 s and then travels left tail-first, the black rock under the tower disappears whenever the dark shape is beside it (13.5-24 s), and the teacup turns up in Ada's hand at 12.0 s without ever being shown in the routine.",
+          "composition: FAIL: The gallery close-ups are centred and use the vertical frame well, with Ada in the upper half and the beam leading down. The wide shots, though, push the lighthouse into the right 15-25% of the frame, under the platform action rail. The lantern with Ada is cut by the right edge during the glint and stop beat (8.5-10.0 s), the mother's tail is jammed against the left edge (26-28.5 s), and the closing shot drifts the lighthouse half out of frame (32.0-32.5 s).",
+          "readable_action: FAIL: The beam sweeping, passing the shape and swinging back reads clearly. The physical actions the story turns on do not: the crank never moves while Ada 'turns the lamp', the shutter lever moves behind her head while her hand points into empty air, the shutter is thrown open with no gesture, the calf swims home backwards, and the spout floats free of the calf's head.",
+          "motion_performance: FAIL: Judged only on the acting the frames show. Smoothness, easing and holds between samples are not assessed. The shock reaction works (open mouth, cup released, 12.5-13.0 s). But all six gallery close-ups reuse one body pose (one arm on the lamp, one by the crank) and change only the tiny face, so the decision (15-17 s) and the softening (22.0-23.9 s) are not performed. The 'crying' calf keeps a smile curve the whole time.",
+          "phone_readability: FAIL: The big shapes survive at 360x640: lighthouse, beam, dark oval, calf and fluke. The intimate details that carry the emotion do not. The cup is about 10 px, the calf's tear about 5 px, Ada's face about 40 px wide so her shift from fear to tenderness is a few pixels of mouth, the closing spouts are low-contrast specks, and the waving Ada at dawn is about 33 px tall with an unreadable wave.",
+          "technical_defects: FAIL: Cuts are clean and the samples show no broken or torn frames. There are layering errors at key beats: a white ripple ring drawn straight across the calf's face like a halo at the reveal, the tower base turning translucent with the oval's rim showing through it, the rock vanishing, the beam pool drawn on top of the tower body during the routine sweeps, and the glint star popping off in one sample step.",
+          "critical: home, 26.5-28.5 s (strip-calf_go f790-f806; ordered-frames 26.5-28.0 s; phone-f00799): After the mother's tail rises, the calf flips to face the lighthouse and then travels left toward the tail backwards, so the climax 'calf swims home along the beam' reads as a calf drifting away tail-first and looking the wrong way.",
+          "critical: reveal, 19.0-19.3 s (strip-surface f571-f577; ordered-frames 19.0 s): The star glint the viewer has read as the monster's eye since 8.8 s stays in one spot while the calf surfaces with its own eye about 10% of the frame width away, then the star pops off. The reveal never connects 'the glinting eye' to the calf.",
+          "critical: choice, 15.0-17.0 s (strip-shutter f442-f458, strip-open f502-f512, phone-f00498): The central decision has no readable physical action. While the lamp gets its shutter rings, the crank lever slides behind Ada's head and her hand points into empty air. When the light is thrown open she makes no gesture at all. A viewer sees the light dim and brighten by itself.",
+          "critical: reveal, 20.4-23.9 s (strip-cry, strip-soften, phone-f00649): The turn from suspense to tenderness is not acted. The calf keeps a smiling mouth with a ~5 px tear, so it reads as content, not small and crying. Ada's 'softening' close-up reuses the exact pose of every earlier close-up with no hand on her heart, leaving the emotion to a few pixels of mouth on a 40 px face.",
+          "critical: reveal, 19.2-19.6 s (strip-surface f575-f587): The surfacing ripple ring is drawn at eye height across the calf's face and over its body, so it reads as a halo or hoop at the most important moment of the film.",
+          "critical: sighting and choice, 13.5-18.5 s and 24.0 s (strip-lightning f394-f404, strip-open f514-f518, ordered-frames 13.5/17.5/18.5 s): When the shape reaches the rock, the rock disappears and the tower base turns translucent, with the oval's rim and surface showing through it. The promised staging, a shadow under the swell beside the rock, reads instead as a disc pasted over a ghosted tower.",
+          "critical: dawn, 31.0-32.5 s (strip-spouts f930-f938, ordered-frames 31.5-32.5 s, phone-f00930): The final payoff, two spouts (one big, one small) and Ada waving, is nearly invisible on a phone. The spouts are ~20 px white puffs at ~10% contrast against the bright horizon and never clearly appear together. Ada is ~33 px tall at the right edge, and the camera drift crops the lantern out of frame by 32.0-32.5 s.",
+          "critical: sighting, 8.5-10.0 s (ordered-frames 8.5/9.0/9.5/10.0 s): While the beam finds the shape and Ada stops the lamp, the lantern with Ada in it is cut in half by the right frame edge, in the platform UI rail zone, so the protagonist is effectively off-screen for her first reaction."
+        ]
+      },
+      {
+        "role": "visual",
+        "request_sha256": "6a1354c65752102bb7237beae29b87ca91a92e6a94e6319181e6f3e99384908b",
+        "source_sha256": "cbfbc3718d550076cf43b47d57aec7a3f42d8242decf1458216ea7608dbf802d",
+        "at": "2026-10-31T08:01:47+00:00",
+        "issues": [
+          "readable_action: FAIL: Routine cranking (3.5-4.5 s), the calf surfacing, spouting and crying (18.5-21.5 s), the beam swing (24.5-25.0 s) and the calf leaving toward the tail (27.0-28.5 s) read, but the central threat at 8.5-14.0 s reads as a flat brown disc with a twinkle rather than a creature, the lightning reveals nothing, and the shutter decision at 15.0-17.2 s reads as head-clutching followed by a cheer.",
+          "motion_performance: FAIL: Beat timing in the samples is sensible (a ~1.5 s hold at the decision, a gasp before the cup-drop arms, a blink-spout-tear sequence for the calf), but the acting that the story turns on is not performed: fear at 12.4 s and resolve at 17.0 s share the same raised-arms pose, the reaction to the moan is an eye shift only, and the calf leaves with no turn or anticipation; motion quality between samples was not assessable.",
+          "phone_readability: FAIL: At 360x640 the calf's face, the tail, the beam and the two dawn spouts survive, but the hook's eye glint is a ~9 px sparkle on a disc, and the Ada beats that carry the turn (cup drop, jaw set, softening, hand on heart, final wave) live in 2-10 px details because the lantern shots frame her face at only ~45 px wide.",
+          "technical_defects: FAIL: No torn, black or broken frames appear in any sample, but the crank wheel on the lamp pedestal fades out as the lamp dims (f450-456) and is back at f506, a prop pop, alongside smaller issues: the beam is drawn across Ada's body in every lantern shot and the rock outline reads as a stray line across the pool at 20.0-21.6 s.",
+          "critical: sighting 8.5-14.0 s (f255-f420): glint f256-264, found f318, lightning f396-402; phone-f00327: The 'huge dark shape under the waves' is an opaque brown ellipse with a lit hard rim floating on the surface, and the 'eye glint' is a four-point white sparkle (~9 px on a 360 px frame). It reads as a disc, hatch or raft with a twinkle, not a living creature. The lightning at 13.2 s raises whole-frame brightness ~45% but shows no larger silhouette. So the hook and the 'every clue says monster' complication never land on screen.",
+          "critical: choice 15.0-17.2 s (f450-f515), phone-f00498; compare cup drop f372-380: The shutter pull is masked: the lever's red knob goes up behind her hat, so from 15.5 s she reads as clutching her head. Her reaction to the moan is an eye shift of a few pixels with no body change. The throw-open at 17.0 s uses the same both-arms-up V pose as her fright at 12.5 s. The protagonist's one decision therefore reads as panic or a cheer and is carried only by the lamp flare.",
+          "critical: 15.1-16.9 s: the wheel fades out over f450-f456 and is back by f506: The crank wheel on the lamp pedestal fades out with the lamp's brightness while the shutter closes, leaving only its red knob floating, then reappears when the shutter opens. It is a prop pop tied to the wrong layer."
+        ]
+      }
+    ]
+  },
   "concept_changes": [],
   "technical_retries": [],
   "renders": [
@@ -145,6 +198,42 @@
       "seconds": 32.3,
       "workers": 3,
       "file": "runs/the-keeper/rough/6ef7ac4355af/picture.mp4"
+    },
+    {
+      "at": "2026-10-31T07:47:35+00:00",
+      "kind": "diagnostic",
+      "frames": 990,
+      "size": [
+        360,
+        640
+      ],
+      "seconds": 15.7,
+      "workers": 3,
+      "file": "runs/the-keeper/diagnostic/20261031T074719-DIAGNOSTIC_ONLY.mp4"
+    },
+    {
+      "at": "2026-10-31T07:48:02+00:00",
+      "kind": "rough",
+      "frames": 990,
+      "size": [
+        360,
+        640
+      ],
+      "seconds": 15.6,
+      "workers": 3,
+      "file": "runs/the-keeper/rough/655079e387a8/picture.mp4"
+    },
+    {
+      "at": "2026-10-31T08:02:07+00:00",
+      "kind": "rough",
+      "frames": 1014,
+      "size": [
+        360,
+        640
+      ],
+      "seconds": 15.6,
+      "workers": 3,
+      "file": "runs/the-keeper/rough/01d02c8be734/picture.mp4"
     }
   ],
   "reviewer_calls": 0,
@@ -302,6 +391,128 @@
       "event": "stage",
       "stage": "rough",
       "status": "DONE"
+    },
+    {
+      "at": "2026-10-31T07:39:55+00:00",
+      "event": "ledger-refresh",
+      "changed": [
+        "film.js"
+      ],
+      "unrecorded": []
+    },
+    {
+      "at": "2026-10-31T07:42:16+00:00",
+      "event": "ledger-refresh",
+      "changed": [
+        "film.js"
+      ],
+      "unrecorded": []
+    },
+    {
+      "at": "2026-10-31T07:46:41+00:00",
+      "event": "ledger-refresh",
+      "changed": [
+        "film.js"
+      ],
+      "unrecorded": []
+    },
+    {
+      "at": "2026-10-31T07:47:35+00:00",
+      "event": "diagnostic-render",
+      "file": "runs/the-keeper/diagnostic/20261031T074719-DIAGNOSTIC_ONLY.mp4"
+    },
+    {
+      "at": "2026-10-31T07:47:46+00:00",
+      "event": "creative-failure",
+      "approach": "lost-calf-v1",
+      "role": "story",
+      "round": 1,
+      "settled": "before the request changed"
+    },
+    {
+      "at": "2026-10-31T07:47:46+00:00",
+      "event": "creative-failure",
+      "approach": "lost-calf-v1",
+      "role": "visual",
+      "round": 1,
+      "settled": "before the request changed"
+    },
+    {
+      "at": "2026-10-31T07:47:46+00:00",
+      "event": "stage",
+      "stage": "source",
+      "status": "DONE",
+      "agent_assisted": true
+    },
+    {
+      "at": "2026-10-31T07:48:16+00:00",
+      "event": "stage",
+      "stage": "rough",
+      "status": "DONE"
+    },
+    {
+      "at": "2026-10-31T07:48:17+00:00",
+      "event": "review-archived",
+      "role": "story",
+      "reason": "stale: the request changed",
+      "kept": "story-f2361ad62f8b.json"
+    },
+    {
+      "at": "2026-10-31T07:48:17+00:00",
+      "event": "review-archived",
+      "role": "visual",
+      "reason": "stale: the request changed",
+      "kept": "visual-d2a3d9a61ff0.json"
+    },
+    {
+      "at": "2026-10-31T08:01:22+00:00",
+      "event": "ledger-refresh",
+      "changed": [
+        "film.js",
+        "film.json"
+      ],
+      "unrecorded": []
+    },
+    {
+      "at": "2026-10-31T08:01:47+00:00",
+      "event": "creative-failure",
+      "approach": "lost-calf-v1",
+      "role": "visual",
+      "round": 2,
+      "settled": "before the request changed"
+    },
+    {
+      "at": "2026-10-31T08:01:47+00:00",
+      "event": "stage",
+      "stage": "source",
+      "status": "DONE",
+      "agent_assisted": true
+    },
+    {
+      "at": "2026-10-31T08:01:51+00:00",
+      "event": "stage",
+      "stage": "audio",
+      "status": "DONE"
+    },
+    {
+      "at": "2026-10-31T08:02:22+00:00",
+      "event": "stage",
+      "stage": "rough",
+      "status": "DONE"
+    },
+    {
+      "at": "2026-10-31T08:02:22+00:00",
+      "event": "review-archived",
+      "role": "story",
+      "reason": "stale: the request changed",
+      "kept": "story-8fe7004c2e41.json"
+    },
+    {
+      "at": "2026-10-31T08:02:23+00:00",
+      "event": "review-archived",
+      "role": "visual",
+      "reason": "stale: the request changed",
+      "kept": "visual-6a1354c65752.json"
     }
   ],
   "next_step": "independent reviewers write reviews/story.json, reviews/visual.json from the matching -request.md, then resume; the builder may not write these",
@@ -322,6 +533,30 @@
         "render_fingerprint_sha256": "2663bfe78a4dd790d1cb524dcc08915a1f4efe6afac4050e72e61778f7b5768a"
       },
       "status": "PASS"
+    },
+    "story": {
+      "request_sha256": "8fe7004c2e412f7a91547b68f2e7596d61a10226972a746f51df7a31e7de74ad",
+      "core": {
+        "brief_sha256": "ed619971d142838fdc1a17ab74265a2426874ed35cab1f256106d77fa6864bee",
+        "concepts_sha256": "7dd47936c57cca57241b97af937c340f4116bb0196e8ec70a9a23cc31a0010c6",
+        "direction_sha256": "3490a60575b27b288badccffa69edf37eb2598371b64780c80f38b17bcfce456",
+        "source_tree_sha256": "cbfbc3718d550076cf43b47d57aec7a3f42d8242decf1458216ea7608dbf802d",
+        "audio_master_sha256": "d511c1a0557eb07d53c59e1261efab5651708902585748f906eea64ebb590664",
+        "render_fingerprint_sha256": "a49e4124ed0096750186d15063f722ddbbc972972d32443790110f9ad8bfb31b"
+      },
+      "status": "PASS"
+    },
+    "visual": {
+      "request_sha256": "6a1354c65752102bb7237beae29b87ca91a92e6a94e6319181e6f3e99384908b",
+      "core": {
+        "brief_sha256": "ed619971d142838fdc1a17ab74265a2426874ed35cab1f256106d77fa6864bee",
+        "concepts_sha256": "7dd47936c57cca57241b97af937c340f4116bb0196e8ec70a9a23cc31a0010c6",
+        "direction_sha256": "3490a60575b27b288badccffa69edf37eb2598371b64780c80f38b17bcfce456",
+        "source_tree_sha256": "cbfbc3718d550076cf43b47d57aec7a3f42d8242decf1458216ea7608dbf802d",
+        "audio_master_sha256": "d511c1a0557eb07d53c59e1261efab5651708902585748f906eea64ebb590664",
+        "render_fingerprint_sha256": "a49e4124ed0096750186d15063f722ddbbc972972d32443790110f9ad8bfb31b"
+      },
+      "status": "FAIL"
     }
   },
   "reviews": {

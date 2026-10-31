@@ -93,9 +93,9 @@
     const save = ctx.save, restore = ctx.restore;let depth = 0;
     ctx.save = function () { depth++; return save.call(ctx); };
     ctx.restore = function () { if (--depth < 0) throw new Error('frame ' + n + ': restore() without a matching save()'); return restore.call(ctx); };
-    try { state.film.render(ctx, env(n)); } finally { ctx.save = save; ctx.restore = restore; }
+    save.call(ctx);                     // every frame starts from the same context state, whatever the last frame set
+    try { state.film.render(ctx, env(n)); } finally { ctx.save = save; ctx.restore = restore; restore.call(ctx); }
     if (depth !== 0) throw new Error('frame ' + n + ': ' + depth + ' save() without restore()');
-    ctx.setTransform(1, 0, 0, 1, 0, 0);
     return true;
   }
 

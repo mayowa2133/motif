@@ -1,0 +1,102 @@
+{
+ "request_sha256": "66b59d642014948389ab8ccac6e4172f904f8b980655f6aebced08a394b1f87c",
+ "role": "visual",
+ "reviewer": {
+  "kind": "model",
+  "id": "Claude subagent (fresh context, same model family as the builder)",
+  "independence": "separate-context-same-family",
+  "playback": "ordered-frames",
+  "inputs_viewed": [
+   "/home/user/motif/atelier/projects/runaway-shadow/reviews/visual-request.md",
+   "/home/user/motif/atelier/contracts/review.schema.json",
+   "/home/user/motif/atelier/runs/runaway-shadow/rough/8118c6a03c78/evidence-review/ordered-frames.png",
+   "/home/user/motif/atelier/runs/runaway-shadow/rough/8118c6a03c78/evidence-review/strip-double_take.png",
+   "/home/user/motif/atelier/runs/runaway-shadow/rough/8118c6a03c78/evidence-review/strip-detach.png",
+   "/home/user/motif/atelier/runs/runaway-shadow/rough/8118c6a03c78/evidence-review/strip-stand_up.png",
+   "/home/user/motif/atelier/runs/runaway-shadow/rough/8118c6a03c78/evidence-review/strip-raspberry.png",
+   "/home/user/motif/atelier/runs/runaway-shadow/rough/8118c6a03c78/evidence-review/strip-run_off.png",
+   "/home/user/motif/atelier/runs/runaway-shadow/rough/8118c6a03c78/evidence-review/strip-melt.png",
+   "/home/user/motif/atelier/runs/runaway-shadow/rough/8118c6a03c78/evidence-review/strip-faceplant.png",
+   "/home/user/motif/atelier/runs/runaway-shadow/rough/8118c6a03c78/evidence-review/strip-peek.png",
+   "/home/user/motif/atelier/runs/runaway-shadow/rough/8118c6a03c78/evidence-review/strip-idea.png",
+   "/home/user/motif/atelier/runs/runaway-shadow/rough/8118c6a03c78/evidence-review/strip-creep.png",
+   "/home/user/motif/atelier/runs/runaway-shadow/rough/8118c6a03c78/evidence-review/strip-stomp.png",
+   "/home/user/motif/atelier/runs/runaway-shadow/rough/8118c6a03c78/evidence-review/strip-wink.png",
+   "/home/user/motif/atelier/runs/runaway-shadow/rough/8118c6a03c78/evidence-review/phone-f00048.png",
+   "/home/user/motif/atelier/runs/runaway-shadow/rough/8118c6a03c78/evidence-review/phone-f00183.png",
+   "/home/user/motif/atelier/runs/runaway-shadow/rough/8118c6a03c78/evidence-review/phone-f00333.png",
+   "/home/user/motif/atelier/runs/runaway-shadow/rough/8118c6a03c78/evidence-review/phone-f00465.png",
+   "/home/user/motif/atelier/runs/runaway-shadow/rough/8118c6a03c78/evidence-review/phone-f00633.png",
+   "/home/user/motif/atelier/runs/runaway-shadow/rough/8118c6a03c78/evidence-review/phone-f00810.png"
+  ],
+  "tools": "Read on every evidence PNG; PIL crops/2-5x enlargements of the same images in the scratchpad; pixel measurements (hat/tree/twin centroids per 0.5 s sample, WCAG contrast at phone size, sky gradient steps, frame-edge proximity)"
+ },
+ "dimensions": {
+  "focal_hierarchy": {
+   "status": "PASS",
+   "note": "The staging is consistent and clear: Pim sits in the upper middle and the shadow takes the lower middle as the biggest dark shape, so the gag object is always the loudest form. At the two key reveals the white eyes are the brightest marks on dark ground (giggle 16.67-17.5 s, night wink 27.2-29.5 s at about 17:1 contrast). One weak spot: during the raspberry (10.5-11.5 s) the twin stands overlapping Pim, its pom on Pim's hand and its hand on Pim's foot, which muddies both silhouettes for a moment.",
+   "evidence": "ordered-frames 0.0-29.5 s; strip-raspberry f325-f333; strip-peek f500-f506; strip-wink f827-f843; phone-f00333, phone-f00810"
+  },
+  "identity_continuity": {
+   "status": "PASS",
+   "note": "Pim stays the same through every push-in and the night grade: egg body, red cap with band and white pom, plum shoes, white-glove hands. The shadow keeps Pim's capped silhouette whether it is flat on the ground, standing as the opaque plum twin with white eyes (f306-f390) or flat again with eyes (f500-f705). Pim correctly has no shadow from 10.5 s until the stomp at 23.0 s and gets it back afterwards. The twin's height drifts (taller than Pim at f310, squat at f330), which reads as settling, not a different character. The only continuity lapse is the hat prop during the faceplant, logged under readable_action and technical_defects.",
+   "evidence": "ordered-frames 10.5-23.5 s (no Pim shadow until stomp); strip-stand_up f306-f310; phone-f00333; strip-stomp f690-f698"
+  },
+  "composition": {
+   "status": "PASS",
+   "note": "The framing is built for a vertical phone: the character is stacked above the shadow, so the frame's height is used. Measured at 360x640, the essential action stays clear of the platform zones: the dance sits at y 0.16-0.41, the creeping shadow at x 0.3-0.7 and y 0.45-0.8, the giggle eyes at y≈0.63 and the night eyes at y≈0.56. That keeps it out of the bottom caption band (y>0.8) and the right action rail (x>0.85, y 0.4-0.85). Minor: in wide shots Pim is only about 17% of the frame width, and at f618 (20.6 s) his dancing hand comes within about 2% of the right frame edge.",
+   "evidence": "phone-f00048, phone-f00183, phone-f00633, phone-f00810; strip-creep f618-f632"
+  },
+  "readable_action": {
+   "status": "FAIL",
+   "note": "Most beats read well. The detach shows a visible gap opening between Pim's feet and the shadow (f290-f300); the hinge-up into a twin is clear (f304-f310), as are the raspberry tongue (f325-f333), the melt into a flat splat on the trunk shadow (f426-f430), Pim's feet landing on the shadow's feet with a dust puff and squash (f690-f692) and the wink (f835-f855). The complication's key action does not read. In the hat-net dive landing (f466-f476) the hat jumps from Pim's raised upper hand to hanging open-side-up below his lower hand, slides behind his body and ends point-down beside his feet. It never comes down over the spot where the twin melted, so the 'net slams down on nothing' gag is lost, and so is a clean face-first contact. The 'shadow can't resist copying the dance' idea is also not visible in the sampled poses (21.0-22.5 s): the shadow's arms do not match any of Pim's recent poses, though this needs playback to confirm.",
+   "evidence": "strip-faceplant f466->f468 (hat moves from upper hand to below body), f470-f476 (hat passes under/behind body, ends at feet); peek strip f490-f506 and ordered-frames 16.0-19.5 s (hat lying by feet); ordered-frames 21.0-22.5 s"
+  },
+  "motion_performance": {
+   "status": "NOT_ASSESSED",
+   "note": "Ordered stills cannot show spacing, easing or whether the comic timing lands. Here is what the samples do show. On the plus side there is anticipation for the take (hat stretch and O mouth, f174->f176), a backing-up wind-up before the dive (14.5-15.0 s), a hop before the stomp with squash on landing (f682-f692), and holds on the giggle and the wink. On the minus side Pim stands frozen and gawping for about 1.8 s (11.6-13.4 s) while the twin dashes only about 0.2 of the frame width (11.5-12.0 s) and then idles at the trunk. That leaves the actual chase at about 1 s and five steps (13.47-14.3 s), so 'force fails' is thin.",
+   "evidence": "strip-double_take f174-f176; ordered-frames 11.0-15.5 s (hat/twin centroid positions measured per sample); strip-stomp f682-f698"
+  },
+  "style_coherence": {
+   "status": "PASS",
+   "note": "One visual language holds throughout: flat solid shapes, plum outlines on Pim and the tree, no gradients on characters, a violet-to-gold sky and stylised grass tufts. The night grade darkens everything evenly. The translucent ground shadow and the outline-free opaque plum twin are two devices used consistently.",
+   "evidence": "ordered-frames all samples; phone-f00048 vs phone-f00810; strip-stand_up f304-f310"
+  },
+  "phone_readability": {
+   "status": "PASS",
+   "note": "At 360x640 the essential story survives: the shadow misbehaves, comes loose, runs, hides, gets stomped back into place and winks in the dark. The shadow is large and the white eyes are high contrast. Pim is about 60 px wide with eyes of about 20 px, so his double take is carried more by the hat stretch than by his face. Weaker points: the raspberry tongue is only about 10 px; the 'idea' at 19.47 s is just a face change plus an arm that was already half raised; and at night Pim's body is only 2.75:1 against the ground and his hat 1.45:1 against the sky, though his white eyes carry the worried look.",
+   "evidence": "phone-f00183, phone-f00333, phone-f00633, phone-f00810 (contrast measured); strip-idea f576-f592"
+  },
+  "technical_defects": {
+   "status": "FAIL",
+   "note": "There is a visible prop pop: between f466 and f468 the hat leaves Pim's raised upper hand and appears about one body height lower, hanging below his lower hand, with nothing in between. Through f470-f474 it then passes under and behind his body before popping out at his feet. Otherwise no tearing, broken frames or unintended clipping is visible in any sample. The sky gradient is smooth (largest per-row step 7/765). The night sky is coarsely stepped (9 levels across the top 240 px) but shows no visible banding.",
+   "evidence": "strip-faceplant f466, f468, f470, f472, f474, f476; phone-f00048 / phone-f00810 sky columns"
+  }
+ },
+ "verdict": "REPAIR",
+ "critical_issues": [
+  {
+   "dimension": "readable_action",
+   "where": "chase, faceplant 15.5-16.0 s (f466-f476) and the hold through about 19.5 s",
+   "problem": "The hat-net dive never visibly nets anything. The hat ends point-down beside Pim's feet instead of over the shade or trunk-shadow spot where the twin melted, so a first-time viewer gets 'Pim fell over' rather than 'his net slammed down on empty grass while the shadow giggles from elsewhere'. The face-first landing is also muddled because the hat is lying behind him.",
+   "smallest_fix": "Keep the hat in the leading hand through the landing and slam it open-side-down onto the trunk-shadow spot where the twin melted (f426-f430 position), with Pim face-down behind it. Then hold that pose for the giggle at f500 and leave the hat there until hat_back at f597."
+  },
+  {
+   "dimension": "technical_defects",
+   "where": "chase, f466->f468 and f470-f474",
+   "problem": "The hat pops from the raised upper hand to hanging under the lower hand in a single 2-frame step, then passes behind Pim's body. The prop changes parent and layer with no in-between.",
+   "smallest_fix": "Keep the hat attached to one hand in a continuous arc (or give a fly-off a real trajectory in front of the body) so it never jumps between hands or slips behind the body. The fix for the critical issue above also removes this."
+  }
+ ],
+ "suggestions": [
+  "In the wide shots (0-9.5 s and 23-25 s) the sun sits left of Pim, yet his shadow falls down and to the left, parallel to the tree's. In a film about a shadow, have Pim's shadow fall away from the sun (down and right), or move the sun to Pim's right.",
+  "Make the copying impossible to miss: give Pim two big, distinct dance poses and have the shadow hit each one a beat later, mirrored the way a cast shadow would be, before it creeps to his feet (20.5-22.5 s).",
+  "Shorten Pim's frozen gawp (11.6-13.4 s) and give the twin a longer, more visible sprint, or one dodge, before it reaches the tree, so 'force fails' gets more than one second of chasing.",
+  "Stage the twin and Pim apart during the raspberry (10.5-11.5 s) so the pom and hands don't overlap Pim's hand and foot.",
+  "Give the idea beat (19.47 s) a clear pose change from a lowered arm, or a beat of stillness first; the arm is already half raised at f576.",
+  "Keep Pim's dancing hand off the right frame edge at about 20.6 s (f618).",
+  "At night, lift Pim's body and cap values a little (cap is 1.45:1 against the sky) so the worried look-down reads before the eyes open."
+ ],
+ "sampling_limits": "Judged from decoded stills only. The evidence was 60 ordered frames at 0.5 s intervals (135x240 each on the contact sheet), 12 dense strips of 9 frames each at every 2nd frame around the named moments (150x266 each), and 6 full 360x640 phone frames. There was no moving playback and no audio. I cannot assess motion smoothness, spacing or easing, whether camera moves are continuous (for example the reframe between f675 and f682), how a 2-frame change such as the twin's hinge-up (f304->f306) or the hat jump looks at speed, whether the shadow's one-beat-late copying reads in motion, or how sound cues sync with picture. motion_performance is therefore NOT_ASSESSED, and the fade from sunset to night was seen only at 0.5 s intervals.",
+ "summary": "This is a clearly staged, stylistically consistent vertical comedy. Character above and shadow below makes good use of the frame, Pim's shadowless stretch is handled correctly, and the stomp and night wink are legible, strong beats. The complication's key gag fails on screen: the hat-net dive lands with the hat jumping from hand to hand, slipping behind the body and ending by Pim's feet, so the net never comes down on the spot where the shadow vanished. The beat reads as a plain fall, and the prop pop is a visible defect. That needs repair before release. Secondary concerns: a thin chase, copying in the payoff that is not obvious from the poses, Pim's shadow falling the wrong way for the sun, and dim night values on Pim."
+}

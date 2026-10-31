@@ -3,6 +3,7 @@
   "role": "story",
   "project": "the-keeper",
   "project_id": "8d2de20a07c442d1a592b5f46c2a99a7",
+  "approach_id": "lost-calf-v1",
   "dimensions": {
     "opening_promise": "the opening establishes a promise, situation or feeling worth watching",
     "progression": "each part develops or complicates it; nothing is a list item",
@@ -95,7 +96,7 @@
         "sees": "rain stops, the sky turns to dawn, the lamp goes dark, two spouts rise on the horizon and Ada waves",
         "frames": [
           870,
-          990
+          1014
         ]
       }
     ]
@@ -104,106 +105,106 @@
     "brief_sha256": "ed619971d142838fdc1a17ab74265a2426874ed35cab1f256106d77fa6864bee",
     "concepts_sha256": "7dd47936c57cca57241b97af937c340f4116bb0196e8ec70a9a23cc31a0010c6",
     "direction_sha256": "3490a60575b27b288badccffa69edf37eb2598371b64780c80f38b17bcfce456",
-    "source_tree_sha256": "513601419cb6a1a2f47ddbbf335a865621d37bd7c9cb667bcc73af140b9020a7",
-    "audio_master_sha256": "d511c1a0557eb07d53c59e1261efab5651708902585748f906eea64ebb590664",
-    "render_sha256": "7f215565ed41b24df38151ab6b97f5cd233fbb9b488631f01183419ed5386737",
-    "render_fingerprint_sha256": "7197ea912cf4cc1a22d3a899b28346e0bd0c3367c49d1bba42b9508adc5b8bc8"
+    "source_tree_sha256": "e6abbe92edea0c76834a7d6e82fb356aa80ee2cbd8683434e6066c21cd46a7b5",
+    "audio_master_sha256": "ca2526e40bdeed49bfced17e2a941112d51d6a1d6e926ce1e0bc8f54ef6596ba",
+    "render_sha256": "8d1f16d712f6fffe88e05732deddc7687dff9cdd9387bb609d7e33128314e218",
+    "render_fingerprint_sha256": "c0ae5c30d1e66d045a1f2324c2a7aaad195906787077afd18f40468d1282452a"
   },
   "evidence": [
     {
-      "path": "runs/the-keeper/rough/6ef7ac4355af/evidence-review/ordered-frames.png",
+      "path": "runs/the-keeper/rough/01d02c8be734/evidence-review/ordered-frames.png",
       "what": "ordered frames every 15 frames (0.50s), in playback order, labelled time / frame / shot",
-      "sha256": "0870690370977cc1a41ae7271929ebc120d0c8a9a59585ed7bb495e2a54d0708"
+      "sha256": "a04e9bf318084d7f69a9b7b9ee907511ea3bb506360e9d2e69f6aa17d8294f38"
     },
     {
-      "path": "runs/the-keeper/rough/6ef7ac4355af/evidence-review/strip-glint.png",
+      "path": "runs/the-keeper/rough/01d02c8be734/evidence-review/strip-glint.png",
       "what": "dense strip around moment \"glint\" (frame 264, 8.80s): every 2nd frame from -8 to +8",
-      "sha256": "a6ed68874621c5cf9b4efabe59d82423416394b15c7d51544946f9df0e471867"
+      "sha256": "a3ff8932e1b8ce5697651d98931c11268f4e8a25a8a95b1171b80ab1ac255d1f"
     },
     {
-      "path": "runs/the-keeper/rough/6ef7ac4355af/evidence-review/strip-found.png",
+      "path": "runs/the-keeper/rough/01d02c8be734/evidence-review/strip-found.png",
       "what": "dense strip around moment \"found\" (frame 318, 10.60s): every 2nd frame from -8 to +8",
-      "sha256": "4c94ab115eac49d7eadf6b4f2239f40a0be8b4d7af4a658fedbb6ad97e794d45"
+      "sha256": "0eec405557cce7e4a862525f8bf9f840f6530423e1cf3a33cb2e0a591cf7ead3"
     },
     {
-      "path": "runs/the-keeper/rough/6ef7ac4355af/evidence-review/strip-cup_drop.png",
+      "path": "runs/the-keeper/rough/01d02c8be734/evidence-review/strip-cup_drop.png",
       "what": "dense strip around moment \"cup_drop\" (frame 372, 12.40s): every 2nd frame from -8 to +8",
-      "sha256": "00d7f91b5e7d9e14f9d70ed2dfaece79693a787a3e956a1d0a626f0fe25a5301"
+      "sha256": "5f2221825b9b24c79ef03b34b7fde01d07b5fb3eb1ea7eb4b944abaf1b6b4779"
     },
     {
-      "path": "runs/the-keeper/rough/6ef7ac4355af/evidence-review/strip-lightning.png",
+      "path": "runs/the-keeper/rough/01d02c8be734/evidence-review/strip-lightning.png",
       "what": "dense strip around moment \"lightning\" (frame 396, 13.20s): every 2nd frame from -8 to +8",
-      "sha256": "a958216394c779b1f2c62e98b36dd28aa84f5e061e34c2f8847ec58e1e894fdb"
+      "sha256": "f36c49a17351e69b15954d117675f7d203c4481dea271e3fea00eea213f0950e"
     },
     {
-      "path": "runs/the-keeper/rough/6ef7ac4355af/evidence-review/strip-shutter.png",
+      "path": "runs/the-keeper/rough/01d02c8be734/evidence-review/strip-shutter.png",
       "what": "dense strip around moment \"shutter\" (frame 450, 15.00s): every 2nd frame from -8 to +8",
-      "sha256": "15ca4e9a841a85f9b4720b59b5f15617e443e91fed5fc7263da7e4d74d761bfd"
+      "sha256": "ec99c79e996888da9b01ae79f4988ad6f1be9b247a20677b87216f3e4e4dd613"
     },
     {
-      "path": "runs/the-keeper/rough/6ef7ac4355af/evidence-review/strip-open.png",
+      "path": "runs/the-keeper/rough/01d02c8be734/evidence-review/strip-open.png",
       "what": "dense strip around moment \"open\" (frame 510, 17.00s): every 2nd frame from -8 to +8",
-      "sha256": "ea4015c79d84afbbb7fda70395471347f74ca57590d497f1865d23b35265081e"
+      "sha256": "134cfc9e2666c5767b0abb940c570ea1fd43409262b9721570b77a781bb11045"
     },
     {
-      "path": "runs/the-keeper/rough/6ef7ac4355af/evidence-review/strip-surface.png",
+      "path": "runs/the-keeper/rough/01d02c8be734/evidence-review/strip-surface.png",
       "what": "dense strip around moment \"surface\" (frame 579, 19.30s): every 2nd frame from -8 to +8",
-      "sha256": "30bf0082cd9aeb7a6a24477e0684ec835d169c0171560397c2d8bd1723f56e62"
+      "sha256": "7e6f11a7bcba7054f976862ed322228b371c9ea8e221bf51bf501b4b799492ac"
     },
     {
-      "path": "runs/the-keeper/rough/6ef7ac4355af/evidence-review/strip-cry.png",
+      "path": "runs/the-keeper/rough/01d02c8be734/evidence-review/strip-cry.png",
       "what": "dense strip around moment \"cry\" (frame 621, 20.70s): every 2nd frame from -8 to +8",
-      "sha256": "fbd2252adf0ddc64fce326da8b2fd27e1085d1c7438e334760478df5fead2ced"
+      "sha256": "0c78b42572d1bfda1fa66221b00861bf6cd8c47642cd67941f49dcddbc59aafc"
     },
     {
-      "path": "runs/the-keeper/rough/6ef7ac4355af/evidence-review/strip-soften.png",
+      "path": "runs/the-keeper/rough/01d02c8be734/evidence-review/strip-soften.png",
       "what": "dense strip around moment \"soften\" (frame 660, 22.00s): every 2nd frame from -8 to +8",
-      "sha256": "76dd4b2b56bc7feaaa44b13ada9d48800d954e25b97f3f7e7334b975aa413b35"
+      "sha256": "150cf24013e4b7929db4812ea83180af4bcddc10e5abbb0c3a2cbb4931cdfa4f"
     },
     {
-      "path": "runs/the-keeper/rough/6ef7ac4355af/evidence-review/strip-tail.png",
+      "path": "runs/the-keeper/rough/01d02c8be734/evidence-review/strip-tail.png",
       "what": "dense strip around moment \"tail\" (frame 771, 25.70s): every 2nd frame from -8 to +8",
-      "sha256": "b9e77189a9f070994a7fd320631cfb827f6356bcf56e50631f96a1c5e1d4b1bb"
+      "sha256": "5c1edd4254b912e6ba6fe9f73fd70b76e618e65e3405ec9f1b7293269ebeb98f"
     },
     {
-      "path": "runs/the-keeper/rough/6ef7ac4355af/evidence-review/strip-calf_go.png",
+      "path": "runs/the-keeper/rough/01d02c8be734/evidence-review/strip-calf_go.png",
       "what": "dense strip around moment \"calf_go\" (frame 798, 26.60s): every 2nd frame from -8 to +8",
-      "sha256": "00f4216b0b4edb87c6f219db92374c54e752a5656eea29fbf574d49288c40189"
+      "sha256": "f1e7b34d6db4d7cc20fb9d829119dff30f071038b3a9e99d38a20a80d3b7eba4"
     },
     {
-      "path": "runs/the-keeper/rough/6ef7ac4355af/evidence-review/strip-spouts.png",
+      "path": "runs/the-keeper/rough/01d02c8be734/evidence-review/strip-spouts.png",
       "what": "dense strip around moment \"spouts\" (frame 930, 31.00s): every 2nd frame from -8 to +8",
-      "sha256": "224f815af090d55c978289482a99bdfb0283f7cd058222a703cc7a607768fcd7"
+      "sha256": "956310eef481aaeb6cadb6e87437422348e1aeade629aa64eaf5250a80c1650b"
     },
     {
-      "path": "runs/the-keeper/rough/6ef7ac4355af/evidence-review/phone-f00114.png",
+      "path": "runs/the-keeper/rough/01d02c8be734/evidence-review/phone-f00114.png",
       "what": "full preview frame at phone size 360x640, shot routine midpoint (3.80s)",
-      "sha256": "8ecc43103d7550d8898043b0ea9fb812de6ff51d97acf7d42823b8782736d62d"
+      "sha256": "01eff328e14d4babb4379d55c861f892911a8d2b6c9350a737721c70f78696c4"
     },
     {
-      "path": "runs/the-keeper/rough/6ef7ac4355af/evidence-review/phone-f00327.png",
+      "path": "runs/the-keeper/rough/01d02c8be734/evidence-review/phone-f00327.png",
       "what": "full preview frame at phone size 360x640, shot sighting midpoint (10.90s)",
-      "sha256": "b9559f2a04737c91af6c0e8dcc6aa596619a75290dac5be198fb43fb7772f614"
+      "sha256": "16576ca6221b64125b38cf096da9cfa32e0c2774bfb91fc2726c8a62ed69b683"
     },
     {
-      "path": "runs/the-keeper/rough/6ef7ac4355af/evidence-review/phone-f00498.png",
+      "path": "runs/the-keeper/rough/01d02c8be734/evidence-review/phone-f00498.png",
       "what": "full preview frame at phone size 360x640, shot choice midpoint (16.60s)",
-      "sha256": "e84c30b81c1627039bc6ea74c4339467763ea4b93d39b9c59453b66d6e6711a7"
+      "sha256": "b732b2987cf1e509f7147f2796228d5ffae7ce03e50a5509d807eaf9023d2a5d"
     },
     {
-      "path": "runs/the-keeper/rough/6ef7ac4355af/evidence-review/phone-f00649.png",
+      "path": "runs/the-keeper/rough/01d02c8be734/evidence-review/phone-f00649.png",
       "what": "full preview frame at phone size 360x640, shot reveal midpoint (21.63s)",
-      "sha256": "1551cf829a03e12dc61278d3fac6fc9bbc702e3b99f2fcc40b70967f2395607a"
+      "sha256": "aa103e01591fe9a22e6217855000aea83ef8518ac4677c77ce7ed988ba77cce9"
     },
     {
-      "path": "runs/the-keeper/rough/6ef7ac4355af/evidence-review/phone-f00799.png",
+      "path": "runs/the-keeper/rough/01d02c8be734/evidence-review/phone-f00799.png",
       "what": "full preview frame at phone size 360x640, shot home midpoint (26.63s)",
-      "sha256": "cd054f12f5d1ecef8e41c7f2320a61887786454f8424e2c95ea9d6f22b002b48"
+      "sha256": "ac2b2b3df228ffee80e706f1443fdb9ca7c68da54510534130fe31fb4f00a307"
     },
     {
-      "path": "runs/the-keeper/rough/6ef7ac4355af/evidence-review/phone-f00930.png",
-      "what": "full preview frame at phone size 360x640, shot dawn midpoint (31.00s)",
-      "sha256": "c1158f17f063d43ae74334e21638f36ff82f9d1aea205a2af44bae45c6ef0a8e"
+      "path": "runs/the-keeper/rough/01d02c8be734/evidence-review/phone-f00942.png",
+      "what": "full preview frame at phone size 360x640, shot dawn midpoint (31.40s)",
+      "sha256": "e980fae3b1ce98fbade1542440dcd3b7ef684a64f5416aa7bb6fb5dece079a0d"
     }
   ],
   "evidence_root": "/home/user/motif/atelier",
@@ -214,8 +215,8 @@
   "response_schema": "atelier/contracts/review.schema.json",
   "audio": {
     "measured_on_preview": {
-      "integrated_lufs": -14.24,
-      "true_peak_dbtp": -1.85,
+      "integrated_lufs": -14.31,
+      "true_peak_dbtp": -1.86,
       "lra_lu": 10.0
     },
     "cues": [
@@ -425,8 +426,8 @@
       },
       {
         "at": "lamp_off",
-        "frame": 930,
-        "time": 31.0,
+        "frame": 946,
+        "time": 31.5333,
         "sound": "tick"
       },
       {

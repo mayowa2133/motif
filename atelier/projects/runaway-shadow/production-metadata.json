@@ -1,0 +1,20 @@
+{
+  "project": "runaway-shadow",
+  "project_id": "bc963cf78b804f9fb12efffb4e700de3",
+  "mode": "motif-atelier",
+  "concept": {
+    "id": "copycat-lure",
+    "title": "The Copycat"
+  },
+  "hook": "A small round creature in a long red stocking cap walks onto a meadow at sunset; its long shadow walks with it across the grass toward us.",
+  "style": "Flat bold cartoon: solid shapes, 7-unit dark plum outlines, no gradients on characters, a backlit sunset sky graded from violet to gold.",
+  "classification": "fictional",
+  "duration_s": 29.6,
+  "approach": "stomp-lure-v2",
+  "revision": {
+    "source_tree_sha256": "e290118c990d8db2e544237699c2539e2ca46e9dcd4bf515c9983691bd95fb16",
+    "ledger_versions": 15
+  },
+  "delivery_sha256": "1e9e54047cc79dec183bb349baebad35428dacec7df821998cf0b17ef6242458",
+  "published": false
+}

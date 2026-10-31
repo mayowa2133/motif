@@ -1,0 +1,78 @@
+{
+  "request_sha256": "c175d02270935f9ae31a582b74944ff0192942f850f82df7911732c29cf2a807",
+  "role": "story",
+  "reviewer": {
+    "kind": "model",
+    "id": "Claude subagent (fresh context, same model family as the builder)",
+    "independence": "separate-context-same-family",
+    "playback": "ordered-frames",
+    "inputs_viewed": [
+      "/home/user/motif/atelier/projects/runaway-shadow/reviews/story-request.md",
+      "/home/user/motif/atelier/contracts/review.schema.json",
+      "/home/user/motif/atelier/runs/runaway-shadow/rough/00fb923136be/evidence-review/ordered-frames.png",
+      "/home/user/motif/atelier/runs/runaway-shadow/rough/00fb923136be/evidence-review/strip-double_take.png",
+      "/home/user/motif/atelier/runs/runaway-shadow/rough/00fb923136be/evidence-review/strip-detach.png",
+      "/home/user/motif/atelier/runs/runaway-shadow/rough/00fb923136be/evidence-review/strip-stand_up.png",
+      "/home/user/motif/atelier/runs/runaway-shadow/rough/00fb923136be/evidence-review/strip-raspberry.png",
+      "/home/user/motif/atelier/runs/runaway-shadow/rough/00fb923136be/evidence-review/strip-run_off.png",
+      "/home/user/motif/atelier/runs/runaway-shadow/rough/00fb923136be/evidence-review/strip-stomp1.png",
+      "/home/user/motif/atelier/runs/runaway-shadow/rough/00fb923136be/evidence-review/strip-stomp2.png",
+      "/home/user/motif/atelier/runs/runaway-shadow/rough/00fb923136be/evidence-review/strip-stomp3.png",
+      "/home/user/motif/atelier/runs/runaway-shadow/rough/00fb923136be/evidence-review/strip-peek.png",
+      "/home/user/motif/atelier/runs/runaway-shadow/rough/00fb923136be/evidence-review/strip-idea.png",
+      "/home/user/motif/atelier/runs/runaway-shadow/rough/00fb923136be/evidence-review/strip-creep.png",
+      "/home/user/motif/atelier/runs/runaway-shadow/rough/00fb923136be/evidence-review/strip-stomp.png",
+      "/home/user/motif/atelier/runs/runaway-shadow/rough/00fb923136be/evidence-review/strip-wink.png",
+      "/home/user/motif/atelier/runs/runaway-shadow/rough/00fb923136be/evidence-review/phone-f00048.png",
+      "/home/user/motif/atelier/runs/runaway-shadow/rough/00fb923136be/evidence-review/phone-f00183.png",
+      "/home/user/motif/atelier/runs/runaway-shadow/rough/00fb923136be/evidence-review/phone-f00333.png",
+      "/home/user/motif/atelier/runs/runaway-shadow/rough/00fb923136be/evidence-review/phone-f00465.png",
+      "/home/user/motif/atelier/runs/runaway-shadow/rough/00fb923136be/evidence-review/phone-f00633.png",
+      "/home/user/motif/atelier/runs/runaway-shadow/rough/00fb923136be/evidence-review/phone-f00810.png"
+    ],
+    "tools": "Read on every evidence PNG; PIL 2x crops/enlargements of the same images into the session scratchpad (contact-sheet half-rows, strip halves, face/lure zooms); numpy pixel measurement of Pim's body position vs the shadow's white eyes in strips stomp1/stomp2/stomp3/creep/stomp"
+  },
+  "dimensions": {
+    "opening_promise": {
+      "status": "PASS",
+      "note": "From frame 0 the film sets up a clear situation and mood: a small red-capped creature walking across a sunset meadow, a long shadow that takes more of the lower frame than the creature does, and the tree's shade already planted bottom-left. By 5.0-6.0 s the shadow holds an arm out that Pim does not, and Pim's open-mouthed double-take turns that into a question worth staying for. The 'one beat late' copying during the 0-3.5 s walk and sigh cannot be confirmed from stills, though, and the first anomaly visible in the stills arrives only at about 4.0-5.0 s.",
+      "evidence": "0.00-2.00 s (f0-f60): Pim crosses from right of frame toward centre with a long translucent shadow pointing at camera and the tree shade visible bottom-left. phone-f00048. 3.00 s: eyes half-closed sigh. 4.00-4.50 s: Pim's arms are up but the shadow's arms point out and down. 5.00-5.50 s: Pim's arms are down while the shadow keeps its left arm out (strip-double_take f166-f172). f174-f182 and phone-f00183: double-take with an 'o' mouth as the shadow snaps back to normal."
+    },
+    "progression": {
+      "status": "PASS",
+      "note": "Each section changes the situation instead of listing gags. The shadow goes from copying, to lagging and showing off, to breaking free as a raspberry-blowing twin, to beating force (two dodged stomps, then melting into the tree shade so Pim hurts his foot), to being lured out by its own urge to copy and pinned, to escaping again when night removes all shadows. Each failure leads straight to the next choice. The 7.0-8.5 s arm test is the one beat where nothing changes, but it builds Pim's suspicion and sets up the lean-in that triggers the escape.",
+      "evidence": "Lag 5.0-6.5 s (flourish, double-take, suspicious look). Arm test 7.0-8.5 s, lean-in to squint 9.5 s. Escape 10.0-12.5 s (strip-stand_up f304-f310, strip-raspberry f319-f333, strip-run_off f348-f356; Pim has no shadow at 12.0-12.5 s). Chase 14.0-15.3 s: three stomps, with the shadow's eyes jumping from x~63 to x~40 at stomp 2 (f436-f438) and vanishing into the shade at stomp 3 (f459). Sore-foot hop 15.5-16.5 s. Giggle eyes 17.0-18.5 s. Idea 19.5 s. Dance lure 20.5-22.5 s. Stomp 23.0 s. Nightfall 24.5-27.0 s. Wink 27.8 s."
+    },
+    "payoff": {
+      "status": "PASS",
+      "note": "The ending is clearly intended and answers the opening twice. First, the copying trait established in the first 8 s becomes the trap: Pim dances in open sun, the shadow comes out of the shade copying with its eyes blissfully shut, creeps under his feet, and the fourth stomp pins it back on (it then reads as a normal shadow again by 24.0 s). Second, the sunset that opened the film becomes nightfall: every shadow disappears, and the shadow's signature white eyes open on the dark grass by Pim's feet and wink, so the shadow gets the last word.",
+      "evidence": "strip-creep f626-f634 and phone-f00633: the shadow leaves the tree shade copying with raised arms. 22.0-22.5 s: it is upright under Pim's feet. strip-stomp f682-f698: Pim jumps and lands on it, its eyes squash to lines and it stays attached. 23.5-24.5 s: attached, eyes gone, Pim smug. 25.0-27.0 s: sun sinks and the frame goes navy with no shadows (phone-f00810). 27.5 s: two white eyes below Pim. strip-wink f835-f843 and 28.0-28.5 s: wink held."
+    },
+    "cause_before_effect": {
+      "status": "PASS",
+      "note": "Every important cause appears on screen before its effect. The tree shade is in the first frame, 15 s before the shadow hides in it. The failed stomps at 13.9-15.3 s come before the winning stomp at 23.0 s. The sore foot follows stomp 3. The idea gesture at 19.5 s comes before the dance. The shadow's urge to copy is established at 0-8 s before the lure depends on it. At 21.5 s Pim's pupils swing down-left to the emerging shadow before he goes back to innocent half-closed dancing, and at f682 he is looking straight down at the oblivious shadow before he jumps, so the fourth stomp reads as deliberate. The sun is visibly sinking before the dark.",
+      "evidence": "Tree shade at f0 (phone-f00048). Stomp 3 at f459, then a one-foot hop with an 'ow' face at f461-f467 and 16.0-16.5 s. Idea at f584-f592 (grin, arm straight up), before Pim walks away from the shade at 20.0-20.5 s. Side-eye at 21.5 s (f645), then eyes half-closed at 22.0-22.5 s. f682 Pim's pupils down on a shadow whose eyes are shut; f684-f686 airborne; f690 lands. Sun half-set at 25.5 s, dark at 26.0 s."
+    },
+    "clarity_normal_speed": {
+      "status": "PASS",
+      "note": "Judged from dwell in the real-time 0.5 s samples. Every story state has a distinct key pose held across at least two consecutive samples (flourish 5.0-5.5 s, twin and raspberry 10.5-11.5 s, taunt at the tree 12.0-13.0 s, sore foot 15.5-16.5 s, giggle and smug stare 17.0-18.5 s, dance-out 21.0-22.5 s, wink about 0.7 s), and the cast is two characters plus one tree, so a first-time viewer should follow the chain. Two moments are weaker. Stomp 1 (f418) lands right on the shadow's top end while the shadow only stretches, so it does not read as a dodge the way stomps 2 and 3 do. The solid standing twin becomes a flat ground shadow across a camera push-in between 13.5 and 14.0 s. Neither breaks the story.",
+      "evidence": "Measured on strip-stomp1: Pim lands at x~62 with the shadow's eyes at x~61, directly below, so no clear miss. strip-stomp2: Pim at x~75, eyes slide to x~40, a clear miss. strip-stomp3: eyes vanish at f459. Contact sheet 13.5 s shows a solid crouching twin at the trunk; at 14.0 s it is a translucent flat shadow with eyes beside the tree shade, after the reframe. The sub-0.5 s actions (detach-to-stand-up f288-f310, the three dodges about 0.67 s apart) were seen only in dense strips, not at playback speed."
+    },
+    "picture_sound_link": {
+      "status": "NOT_APPLICABLE",
+      "note": "Declared not applicable before production: this is a silent comedy by design, with no narration or dialogue and only score and effects. The narration list in the request is empty. No reviewer has listened to the mix.",
+      "evidence": "Request 'Declared not applicable' section; Narration: []; audio note 'measurements only; no reviewer has listened'."
+    }
+  },
+  "verdict": "PROCEED",
+  "critical_issues": [],
+  "suggestions": [
+    "Make the lag readable before 4 s: in the 0-3.5 s walk and sigh the shadow matches Pim in every sampled frame, and the first clear oddity comes at about 4.0-5.0 s. One visibly late or extra step or sigh by the shadow inside the first 1.5 s would land the hook before a phone viewer scrolls away.",
+    "Make stomp 1 read as a dodge like stomps 2 and 3: at f418 Pim lands right on the shadow's top end and it only stretches, with its eyes still under his feet. Have it whip sideways before the foot lands.",
+    "Give the twin a visible beat of dropping flat before the 14.0 s reframe. At 13.5 s it is solid and crouching and at 14.0 s it is already a flat translucent ground shadow, so the change of state happens across a camera move.",
+    "Give Pim a visible reaction after the wink. His worried face is identical from 27.0 s to 29.5 s (f810-f885), and the last about 0.6 s holds both eyes reopened (f870-f885). A small gulp or a lean away after 27.8 s would sharpen the button, or end closer to the wink.",
+    "The idea at 19.5 s is carried only by a grin, a raised arm and a chime. It reads, but a held beat or a glance from Pim toward the open sunlight before the dance would make the plan clearer."
+  ],
+  "sampling_limits": "Ordered decoded frames only: a contact sheet every 15 frames (0.5 s) from 0 to 29.5 s, dense strips of every 2nd frame within ±8 frames of 13 named moments, and 6 full phone-size frames (360x640). There was no moving playback and no listening. I could not judge the 'one beat late' copying during the opening walk, how smooth or legible the sub-0.5 s actions are in motion (detach and stand-up, the three dodges, the creep), whether the dance and the shadow's copying stay in sync between samples, or anything about score and SFX timing (picture_sound_link is declared N/A). The first renders of several evidence images were dropped from my context, so I re-viewed every image as 2x PIL crops of the same files. All six phone frames, all twelve half-rows of the contact sheet and both halves of all 13 strips were seen. Positions of Pim and the shadow's eyes were measured in pixels on the strip images.",
+  "summary": "A coherent silent comedy with a real setup and payoff. The shadow's copying, established at 0-8 s, becomes the trap at 20.5-23.0 s, three failed stomps plant the winning fourth, the tree shade is planted from frame 0, and nightfall turns the sunset opening into a wink button where the shadow gets the last word. Causes come before effects throughout, including Pim's side-eye at 21.5 s that makes the final stomp deliberate. Nothing blocks release on story. The weak points are a slow visible hook (first clear oddity at about 4-5 s in the stills), an ambiguous first stomp, an unshown solid-to-flat change across the 14.0 s reframe, and no reaction from Pim to the wink."
+}

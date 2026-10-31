@@ -3,8 +3,8 @@
     {
       "path": "film.js",
       "kind": "source",
-      "version": 8,
-      "sha256": "b2d697c6a547b558f74d31ef24ee3c9be232239643386b6f2277870e7f473dbc",
+      "version": 12,
+      "sha256": "7de584f02d906256cc76c5db7d2284a0967b377d3f21c9b4aefbeec7df93c546",
       "origin": "atelier-authored-code",
       "author": "Claude (agent-assisted authoring)",
       "rights": "original Motif production artwork, code, narration text and note score; no third-party material",
@@ -13,8 +13,8 @@
     {
       "path": "film.json",
       "kind": "data",
-      "version": 1,
-      "sha256": "969615eb30686858686860f950d1b7d274aba140aaa031701a458247928cc9d9",
+      "version": 2,
+      "sha256": "1cc09d90cd0c39adfe6723fc270073933f007c9398f561a36192691e1206c820",
       "origin": "atelier-authored-code",
       "author": "Claude (agent-assisted authoring)",
       "rights": "original Motif production artwork, code, narration text and note score; no third-party material",

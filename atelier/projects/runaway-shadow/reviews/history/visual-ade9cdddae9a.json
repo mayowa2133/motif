@@ -1,0 +1,89 @@
+{
+ "request_sha256": "ade9cdddae9a7593a3ad3bbb08861facedcbaf0fbbab55db9655718139312468",
+ "role": "visual",
+ "reviewer": {
+  "kind": "model",
+  "id": "Claude subagent (fresh context, same model family as the builder)",
+  "independence": "separate-context-same-family",
+  "playback": "ordered-frames",
+  "inputs_viewed": [
+   "/home/user/motif/atelier/projects/runaway-shadow/reviews/visual-request.md",
+   "/home/user/motif/atelier/contracts/review.schema.json",
+   "/home/user/motif/atelier/runs/runaway-shadow/rough/00fb923136be/evidence-review/ordered-frames.png",
+   "/home/user/motif/atelier/runs/runaway-shadow/rough/00fb923136be/evidence-review/strip-double_take.png",
+   "/home/user/motif/atelier/runs/runaway-shadow/rough/00fb923136be/evidence-review/strip-detach.png",
+   "/home/user/motif/atelier/runs/runaway-shadow/rough/00fb923136be/evidence-review/strip-stand_up.png",
+   "/home/user/motif/atelier/runs/runaway-shadow/rough/00fb923136be/evidence-review/strip-raspberry.png",
+   "/home/user/motif/atelier/runs/runaway-shadow/rough/00fb923136be/evidence-review/strip-run_off.png",
+   "/home/user/motif/atelier/runs/runaway-shadow/rough/00fb923136be/evidence-review/strip-stomp1.png",
+   "/home/user/motif/atelier/runs/runaway-shadow/rough/00fb923136be/evidence-review/strip-stomp2.png",
+   "/home/user/motif/atelier/runs/runaway-shadow/rough/00fb923136be/evidence-review/strip-stomp3.png",
+   "/home/user/motif/atelier/runs/runaway-shadow/rough/00fb923136be/evidence-review/strip-peek.png",
+   "/home/user/motif/atelier/runs/runaway-shadow/rough/00fb923136be/evidence-review/strip-idea.png",
+   "/home/user/motif/atelier/runs/runaway-shadow/rough/00fb923136be/evidence-review/strip-creep.png",
+   "/home/user/motif/atelier/runs/runaway-shadow/rough/00fb923136be/evidence-review/strip-stomp.png",
+   "/home/user/motif/atelier/runs/runaway-shadow/rough/00fb923136be/evidence-review/strip-wink.png",
+   "/home/user/motif/atelier/runs/runaway-shadow/rough/00fb923136be/evidence-review/phone-f00048.png",
+   "/home/user/motif/atelier/runs/runaway-shadow/rough/00fb923136be/evidence-review/phone-f00183.png",
+   "/home/user/motif/atelier/runs/runaway-shadow/rough/00fb923136be/evidence-review/phone-f00333.png",
+   "/home/user/motif/atelier/runs/runaway-shadow/rough/00fb923136be/evidence-review/phone-f00465.png",
+   "/home/user/motif/atelier/runs/runaway-shadow/rough/00fb923136be/evidence-review/phone-f00633.png",
+   "/home/user/motif/atelier/runs/runaway-shadow/rough/00fb923136be/evidence-review/phone-f00810.png"
+  ],
+  "tools": "Read tool on every evidence PNG; PIL/numpy crops and 2-5x enlargements of the same images in a scratch directory; pixel sampling for WCAG contrast ratios, eye sizes, and tree-canopy and hat centroids per sampled frame to track the camera and Pim"
+ },
+ "dimensions": {
+  "focal_hierarchy": {
+   "status": "PASS",
+   "note": "In almost every beat the thing that matters has the strongest contrast. Pim's red hat leads 0-9 s, the opaque near-black twin owns 10.1-13.4 s, the white eyes are the brightest small marks in the shade (17.0 s, 18-20 s) and in the night frame (27.5-29.6 s). The weak spot is the lure, 20.5-22.5 s: the bright dancing Pim sits in the upper right and the low-contrast emerging shadow in the lower left, about 250 px apart on a 360x640 frame, so the eye is split across the diagonal.",
+   "evidence": "ordered-frames 10.5-13.0 s, 17.0 s, 20.5-22.5 s, 27.5-29.5 s; phone-f00333, phone-f00633 (Pim x 205-350 / y 100-265 vs shadow x 15-195 / y 240-520), phone-f00810"
+  },
+  "identity_continuity": {
+   "status": "PASS",
+   "note": "Pim keeps the egg body, red stocking cap with white band and pom-pom, white gloves, plum boots and cheeks throughout; the hat stretches only as deliberate squash-and-stretch (f176, f584), and the night grade desaturates without changing the design. The twin keeps Pim's cap silhouette and its lidded white eyes from stand-up (f308) through the flat chase body, the shade peeks and the final wink. The switch from translucent ground shadow to opaque standing twin happens inside a 4-frame perspective hinge (f302-f306) whose pivot stays at the feet. The tree, hills and sun stay consistent across reframes.",
+   "evidence": "strip-stand_up f300-f310 (pivot at the shadow's feet, about y 162 of 266 before and after), strip-double_take f174-f176, strip-wink f827-f843, ordered-frames throughout"
+  },
+  "composition": {
+   "status": "PASS",
+   "note": "The vertical frame is used deliberately: sky in the top third, Pim mid-frame, ground shadow and shade stretching toward the lens in the lower half, so the character-versus-shadow relationship reads top-to-bottom. Nothing essential falls in the bottom caption zone (y > 512) or under the right-hand action rail. There are several craft tangents, none blocking. 10.3-11.8 s: the twin's pom-pom covers Pim's raised hand and its right hand merges with Pim's boot. 12.0-13.0 s: the twin's cap merges with the trunk. 15.0-20.0 s: Pim's pom-pom stacks on the trunk base. f618-f634: Pim's dance hand is cut by the right frame edge.",
+   "evidence": "phone-f00333 (twin hand at about 225,305 touching Pim's boot at 215-265,300-315), ordered-frames 12.5-13.0 s, phone-f00465, strip-creep f618/f630 (hand at the panel edge)"
+  },
+  "readable_action": {
+   "status": "PASS",
+   "note": "The key actions read as a clear chain: the shadow's flourish while Pim stands still (5.0-5.5 s), its snap back to innocent on the double take (f174 to f176), the slide-off (f288-f296), the perspective hinge up into the twin (f302-f310), the raspberry tongue (f325-f333), the run to the tree, the drop flat (f405 to f410), dust puffs on the stomp landings, the sore-foot hop with an impact ring (f461-f467, 15.5 s), the giggling ^^ eyes (f506, 17.5 s), and the decisive fourth stomp with puff and re-attachment at the feet (f688 to f694). Two weak spots. Stomp 1 hardly reads as a dodge: from f416 to f418 the twin shifts about 8% of the frame width toward Pim's landing x, and Pim lands just behind its feet, staged much like the successful stomp at f690. The 'copies the dance' idea is not visible in stills: at 22.0 s Pim has both arms out while the shadow has one up and one down.",
+   "evidence": "strip-double_take, strip-detach, strip-stand_up, strip-raspberry, strip-stomp1 (twin eyes x 48 to 60 of 150 while Pim lands at x 60), strip-stomp2 (twin snaps from x 56 to 40 at f438 while Pim lands at about 75: clear miss), strip-stomp3 (twin melts at f459-f461), strip-stomp f688-f694, strip-wink"
+  },
+  "motion_performance": {
+   "status": "PASS",
+   "note": "Judged only on beat placement, poses and holds, not on spacing or easing. The gags are built with anticipation and reactions. Pim leans and squints before the detach (9.5-10.0 s), recoils as the twin rises (f310), holds a gape while it runs (11.6-13.4 s), hops on the sore foot, holds still to think (18.0-19.4 s) before the idea pop (f584), and rises before landing the final stomp (f684-f688). The wink closes in 2 frames (f833 to f835) and holds about 1.2 s before reopening at about f870. The three stomps come 0.67 s apart (f418/f438/f459), which is brisk, and stomp 1 adds little, so the rule-of-three escalation leans on stomps 2 and 3.",
+   "evidence": "strip-detach, strip-stand_up, strip-idea f582 to f584, strip-stomp f682-f698, strip-wink, ordered-frames 11.5-13.5 s and 18.0-19.5 s"
+  },
+  "style_coherence": {
+   "status": "PASS",
+   "note": "One deliberate language throughout: flat-filled characters with dark plum outlines and no character gradients, a violet-to-gold graded sunset sky, flat translucent unoutlined ground shadows, flat dust puffs and impact rings, and a night grade that shifts the whole palette to navy while keeping the design. Overlapping shadows do not double-darken (the shade-and-twin threshold map is uniform), so the 'melt into darker shadow' rule is visually consistent.",
+   "evidence": "phone-f00048, phone-f00465, phone-f00633, phone-f00810; overlapping shade tone about (96,95,68) vs twin about (82,84,58)"
+  },
+  "phone_readability": {
+   "status": "PASS",
+   "note": "At 360x640 the essentials survive. Pim stands 140-200 px tall with a readable face. The standing twin is near-black on a bright meadow. Ground shadows sit at about 2.8:1 against the grass, enough to read the 5.0 s flourish. The shade eyes are about 16x13 px each, and the final eyes are bright white on navy. Pim at night is about 2.7:1 against the background. The smallest essential cues are the raspberry tongue (about 10 px) and the closed '- -' eyes after the re-attach (about 8 px), both visible but small.",
+   "evidence": "measured on phone-f00048 (shadow vs grass 2.78:1), phone-f00633 (twin vs grass 2.77:1; eyes bbox x 90-131, y 402-415), phone-f00810 (Pim vs background 2.70:1, boots vs ground 1.03:1), phone-f00333"
+  },
+  "technical_defects": {
+   "status": "PASS",
+   "note": "Across the 60 contact-sheet frames, the 126 dense-strip frames and the 6 phone frames I found no broken frames, tearing, z-order errors or unintended pops. The odd f304 silhouette is a correct foreshortened step of the hinge, and the snaps at f176, f438 and f835 are intended. Two things could not be verified between samples. Between f675 and f682 the camera shifts about 12.6% of the frame width in 7 frames, then stops; it could be a whip reframe or a jump. Between f600 and f615 Pim crosses 36% of the frame width in 0.5 s.",
+   "evidence": "tree-canopy centroid x 0.289 at f675, 0.163 at f682, 0.157 at f690; hat centroid x 0.411 at f600 to 0.772 at f615; strip-stand_up f302-f306; strip-creep f618-f634 (hand clipped by the frame edge: framing, not a render fault)"
+  }
+ },
+ "verdict": "PROCEED",
+ "critical_issues": [],
+ "suggestions": [
+  "Make stomp 1 a clear miss. Slide the twin at least one body-width away from Pim's landing spot (away, not toward it as at f416-f418), so the first failure doesn't look like the successful fourth stomp at f690.",
+  "Sell 'the shadow cannot resist copying' (20.5-22.5 s). Match the shadow's limbs to Pim's dance poses on the same beats; at 22.0 s Pim has both arms out but the shadow has one up and one down. Also stage Pim nearer the shade so both fit in one glance instead of across a 250 px diagonal.",
+  "Fix the tangents. Separate the twin from Pim during the raspberry (10.3-11.8 s; pom-pom over Pim's hand, twin hand merging with Pim's boot). Keep the twin's cap off the trunk at 12.0-13.0 s, keep Pim's pom-pom off the trunk base at 15.0-20.0 s, and keep Pim's hand inside the frame during the dance (f618-f634).",
+  "Light direction. Pim's shadow falls to the lower left although the sun sits to Pim's left (1.6 s: sun x about 135, Pim's feet x about 215, shadow tip x about 140). In a film about shadows, cast it away from the sun or move the sun to Pim's right.",
+  "During the dance (21.1 s), Pim's feet sit just below the horizon line at the tree's depth, at foreground size, with no shadow, so Pim reads as hovering. Lowering Pim in frame would ground the creep-under-the-feet geometry.",
+  "Night (26-29.6 s): Pim's boots vanish (1.03:1) and the cap is faint. A thin cool rim light would keep Pim grounded without weakening the eyes' payoff."
+ ],
+ "sampling_limits": "Ordered frames only, no moving playback and no audio. The contact sheet samples every 15 frames (0.5 s) at 135x240. Dense strips sample every 2nd frame from -8 to +8 around 14 named moments at 150x266. Six full frames at 360x640. About 70% of the 888 frames were never sampled, including f600-f615 (Pim's cross to the sunlit spot), f675-f682 (a fast camera reframe) and most of the 24.5-27 s light fade. Motion smoothness, easing, arcs, pops between samples, lip and pose timing against the score, and whether the shadow's one-beat lag and dance copying read in motion cannot be established. Contrast figures come from decoded preview pixels; no device-specific gamma or brightness was modelled.",
+ "summary": "A coherent, readable flat cartoon. Pim and the twin keep their identity, the vertical staging stacks character over shadow well, the shadow-to-twin hinge is cleverly foreshortened, and the final stomp and the night wink land clearly at phone size. No release-blocking visual defect is visible in the sampled frames. The weak spots are craft-level: stomp 1 barely reads as a dodge, the dance copying isn't legible in stills, there are several silhouette tangents (twin over Pim, cap on the trunk, hand clipped at the frame edge), and Pim's shadow points toward the sun's side."
+}

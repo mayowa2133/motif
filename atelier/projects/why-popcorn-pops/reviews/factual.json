@@ -1,0 +1,64 @@
+{
+ "request_sha256": "9a096619361ce37cf82edf526377d9fd97882ccb489d9adc27fe3003c87fd88a",
+ "role": "factual",
+ "reviewer": {
+  "kind": "model",
+  "id": "Claude subagent (fresh context, same model family as the builder)",
+  "independence": "separate-context-same-family",
+  "playback": "ordered-frames",
+  "inputs_viewed": [
+   "atelier/projects/why-popcorn-pops/reviews/factual-request.md (intent, claim ledger, dramatization list, timed narration, audio cue sheet)",
+   "atelier/contracts/review.schema.json",
+   "evidence-review/ordered-frames.png",
+   "evidence-review/strip-cutaway.png",
+   "evidence-review/strip-boil.png",
+   "evidence-review/strip-pressure.png",
+   "evidence-review/strip-leak.png",
+   "evidence-review/strip-burst.png",
+   "evidence-review/strip-foam.png",
+   "evidence-review/strip-leg.png",
+   "evidence-review/strip-jump.png",
+   "evidence-review/strip-replay_split.png",
+   "evidence-review/strip-replay_pop.png",
+   "evidence-review/strip-kernel_lands.png",
+   "evidence-review/phone-f00053.png",
+   "evidence-review/phone-f00191.png",
+   "evidence-review/phone-f00355.png",
+   "evidence-review/phone-f00490.png",
+   "evidence-review/phone-f00673.png",
+   "evidence-review/phone-f00849.png",
+   "evidence-review/phone-f00961.png",
+   "web search results only: HAL record hal-01178414 (Virot & Ponomarenko 2015), CIMMYT catalogue record 68087 (Hoseney et al. 1983), Purdue Agriculture news 2020-02, plus press coverage (NBC News 2005 and 2015, Physics Today, Science News Explores, Royal Society blog)"
+  ],
+  "tools": "web search (results only where hosts were blocked); direct fetches of ag.purdue.edu, hal-polytechnique.archives-ouvertes.fr and knowledgecenter.cimmyt.org all failed with ENOTFOUND under the session's network policy"
+ },
+ "dimensions": {
+  "claims_match_sources": {
+   "status": "PASS",
+   "note": "Each of the 8 ledger claims is supported by its cited source, but this rests on search-result summaries of the abstracts and the Purdue page, not on the primary pages: all three publisher/catalogue hosts failed to resolve, so treat it as verified through search snippets, not first-hand.",
+   "evidence": "Virot & Ponomarenko 2015 (HAL record, as relayed by search): about 180 C critical temperature consistent with a pressure-vessel scenario; 'popcorn jumps with a leg of starch which is compressed on the ground'; synchronised video/audio lead them to 'propose' the pop is caused by the release of water vapour. This supports critical-temperature, starch-leg, pop-is-steam and, with Hoseney, steam-pressure. Hoseney et al. 1983 (CIMMYT catalogue summary, as relayed by search): the pericarp acts as a pressure vessel; popping at about 177 C (about 135 psi); most of the water is superheated at the moment of popping and drives expansion once the pericarp ruptures. This supports pressure-vessel and superheated-expansion. Purdue 2020 (as relayed by search): moisture of about 13 to 14.5 percent of total weight; 4 to 47 percent of kernels, depending on variety, failed; Hamaker: 'cuts or weaknesses in the outside layer ... that let the moisture leave on heating'. This supports water-content and crack-leaks. One ledger hygiene point: the crack-leaks excerpt's second half ('cracks or weak spots in the outer layer that let moisture escape during heating') does not match the verbatim Hamaker wording that search surfaced; it reads as a paraphrase inside a quote field. The substance is the same."
+  },
+  "narration_matches_ledger": {
+   "status": "PASS",
+   "note": "All 10 narration lines (0.5 to 33.3 s) and the three on-screen readouts (WATER 14% at 6.5 to 8.5 s, 180 °C from 19.5 s, REPLAY from 27.5 s) map to ledger entries, and the wording stays within them: 'about fourteen percent', 'some of that water', 'about a hundred and eighty', 'Researchers think'. The one stretch is the closing generalisation 'Their steam got out' (30.2 to 33.3 s), which crack-leaks covers only as the leaky-hull cause.",
+   "evidence": "q 'a few kernels in every bowl never pop' -> crack-leaks (4 to 47 percent fail); inside 'about fourteen percent ... hard, shiny hull' -> water-content, pressure-vessel, with the WATER 14% label (inside 13 to 14.5 percent); heat 'some of that water to steam' -> steam-pressure; trapped 'pressure climbs' -> pressure-vessel; crack 'one tiny crack just leaks its steam away' -> crack-leaks, shown at 14.8 to 18.0 s as bubbles leaving the right kernel through its crack; burst 'about a hundred and eighty degrees' -> critical-temperature, with the 180 °C readout (frames 585 to 885) before the hull splits at f630; foam -> superheated-expansion; leg -> starch-leg, with the leg drawn pressing the pan at f720 to f735 and the jump at f737 to f743; pop 'Researchers think it's the steam rushing out' -> pop-is-steam, with the replay showing a silent split at f852 and sound rings from the vapour jet at f872 to f880; answer 'Their steam got out' -> crack-leaks, generalised. Unmapped visuals that make no consequential claim: unpopped kernels collecting at the bottom of the bowl (an everyday observation), and the leaky kernel turning dark brown from about 16.5 s."
+  },
+  "dramatization_labeled": {
+   "status": "PASS",
+   "note": "The five listed dramatizations cover the main inventions a viewer sees (giant cutaway kernels, six water drops, steam as white bubbles that merge, slow-motion burst and replay, a single visible crack). None misleads on the film's conclusion, because the narration hedges where the visuals overstate ('some of that water' while every drop turns into a bubble by f315 to f330). Two minor inventions are not listed: the leaky kernel browning (f495 onward), and the first burst's 'crack' sound cue at f630 against the replay's silent split.",
+   "evidence": "Visuals that the dramatization list covers: the cutaway kernels at f150 to f270; blue drops turning into white bubbles at f297 to f330, covered by item 5 (superheated water, not steam); the merged white mass in the sealed kernel at f420 to f615; the burst slowed over f630 to f735 and replayed with the split at f852 and the jet and rings at f872, covered by item 3; one hairline crack at f444 while the bowl's other unpopped kernels are drawn uncracked at f960 to f1020, covered by item 4. Not listed: the right kernel turns dark brown from about 16.5 s to the end, which a viewer could read as 'leaky kernels scorch'. The audio cue sheet also puts a 'crack' at the hull split (f630) 4 frames before the 'pop' (f634), while the replay that delivers the 'surprising fact' gives the split no cue (f850) and pops at the jet (f872). Neither is release-blocking. The mix itself was not heard."
+  }
+ },
+ "verdict": "PROCEED",
+ "critical_issues": [],
+ "suggestions": [
+  "Hedge the closing generalisation so the single cause does not read as the only one, e.g. 'So most of the kernels at the bottom? Their steam got out.' Kernels that were too dry to start with, or never got hot enough, also stay unpopped; dramatization item 4 acknowledges this only for what is shown, not for what is said.",
+  "Replace the crack-leaks excerpt with Hamaker's verbatim wording as the Purdue page appears to give it ('cuts or weaknesses in the outside layer of the popcorn kernel that let the moisture leave on heating'), or mark the current text as a paraphrase; re-check it against the page once ag.purdue.edu is reachable.",
+  "Add a dramatization line for the leaky kernel turning brown (or tone it down), so it does not imply that losing steam scorches the kernel.",
+  "Have someone listen to the first burst (f630 to f634): if the 'crack' cue is distinct from the 'pop', it slightly contradicts the replay's point that the pop is the steam, not the hull breaking. Fold it into the pop or make it very quiet.",
+  "Optional sync: bubbles appear at f299, while the thermometer bar is about a fifth full, well before the middle tick that the 'hundred' cue at f318 implies is 100 °C. No number is shown, so this is not a factual error, but the bubbles could start nearer the tick.",
+  "Re-run source verification against the primary pages (HAL hal-01178414, the CIMMYT catalogue record or the publisher's page for Hoseney 1983, and the Purdue news page) once those hosts are allowed; this review relied on search-result summaries."
+ ],
+ "sampling_limits": "Ordered frames every 0.5 s plus eleven dense strips (every 2nd frame, +/-8 frames) and seven phone-size stills; no moving playback and no listening, so the timing of narration against picture comes from the request's timing table and cue sheet, not from watching or hearing the film. Thermometer scale ticks other than the 180 °C label carry no numbers and could only be read by position. Sources: direct fetches of ag.purdue.edu, hal-polytechnique.archives-ouvertes.fr and knowledgecenter.cimmyt.org failed (ENOTFOUND, network policy), so every source check relies on web-search result summaries of the abstracts and the Purdue page, cross-checked across several queries and press coverage. The full papers were not read.",
+ "summary": "Factually sound for release. Every spoken line and on-screen readout (WATER 14%, 180 °C, REPLAY) maps to a ledger claim, and each claim is supported by its source as far as search-result abstracts show: Virot & Ponomarenko 2015 for 180 °C, the starch leg and the vapour-release pop; Hoseney et al. 1983 for the pericarp pressure vessel and superheated expansion; Purdue 2020 for 13 to 14.5 percent moisture and leaky hulls. The narration hedges appropriately ('about', 'some', 'Researchers think'), and the listed dramatizations cover the main visual inventions. There are no critical issues. Non-blocking: the closing 'Their steam got out' generalises a single cause to all unpopped kernels; the crack-leaks excerpt looks paraphrased rather than verbatim; the leaky kernel's browning and the first burst's 'crack' cue are unlisted dramatizations. Primary pages were unreachable, so source support is verified through search snippets only."
+}

@@ -26,7 +26,7 @@
 
   // ---------- the beam ----------
   function aim(t) {                              // where the beam meets the sea
-    const sweep = (tt) => [260 + 430 * Math.sin(tt * 1.1 - 0.25), 1040 + 60 * Math.cos(tt * 1.1 - 0.25)];   // crosses the shape at 8.8 s
+    const sweep = (tt) => [230 + 360 * Math.sin(tt * 1.1 - 0.25), 1040 + 60 * Math.cos(tt * 1.1 - 0.25)];   // crosses the shape at 8.8 s, stays left of the tower
     if (t < 9.6) return sweep(t);
     const back = sweep(9.6), shape = shapeAt(t);
     if (t < 10.6) { const u = A.ease.inOutCubic(seg(t, 9.6, 10.6)); return [back[0] + (shape[0] - back[0]) * u, back[1] + (shape[1] - back[1]) * u]; }
@@ -75,7 +75,7 @@
     if (f > 0.02) { ctx.fillStyle = `rgba(200,225,240,${0.5 * f})`; ctx.fillRect(-600, -400, 2300, HORIZON + 420); }
     if (t > 13.2 && t < 13.5) {                  // the bolt
       const r = A.rng(77); ctx.save(); ctx.strokeStyle = `rgba(235,245,255,${1 - seg(t, 13.2, 13.5)})`; ctx.lineWidth = 6; ctx.beginPath();
-      let x = 260, y = -200; ctx.moveTo(x, y); while (y < HORIZON - 10) { x += (r() - 0.5) * 120; y += 60 + r() * 50; ctx.lineTo(x, y); } ctx.stroke(); ctx.restore();
+      let x = 470, y = 300; ctx.lineWidth = 9; ctx.moveTo(x, y); while (y < HORIZON - 10) { x += (r() - 0.5) * 110; y += 50 + r() * 40; ctx.lineTo(x, y); } ctx.stroke(); ctx.restore();
     }
   }
   function waveY(i, x, t) {
@@ -101,7 +101,7 @@
   }
   function rock(ctx, t) {
     const d = dawn(t);
-    ctx.fillStyle = mixc('#05121A', '#2E3F4A', d);
+    ctx.fillStyle = mixc('#1A2C36', '#2E3F4A', d);
     ctx.beginPath(); ctx.moveTo(610, 1520); ctx.lineTo(650, 1430); ctx.lineTo(700, 1405); ctx.lineTo(760, 1385); ctx.lineTo(860, 1390); ctx.lineTo(930, 1415); ctx.lineTo(985, 1460); ctx.lineTo(1010, 1530); ctx.closePath(); ctx.fill();
     for (const s of spray) {                      // a wave breaking on the rock every few seconds
       const age = (((t - s.t0) % 3.4) + 3.4) % 3.4; if (age > 1.2) continue;
@@ -110,6 +110,8 @@
       ctx.beginPath(); ctx.arc(s.x + s.vx * u * 120, 1420 - Math.sin(Math.PI * u) * s.h, 6 + 10 * u, 0, Math.PI * 2); ctx.fill();
     }
   }
+  function crankHandle(t) { const c = t * 5.2; return [800 + Math.cos(c) * 11, 682 + Math.sin(c) * 11]; }
+  function leverKnob(t) { const lever = kf(t, [[14.6, 0], [15.6, 1], [16.85, 1], [17.0, 0, 'outBack']]), a = -0.9 + 1.1 * lever; return [738 + Math.sin(a) * 26, 690 - Math.cos(a) * 26]; }
   function lighthouse(ctx, t) {
     const d = dawn(t), lit = Math.min(1, intensity(t));
     const body = mixc('#152B36', '#C9B9AE', d), band = mixc('#3A1E22', '#B04A3E', d);
@@ -133,36 +135,46 @@
     const I = intensity(t);
     if (I > 0.01) { ctx.save(); ctx.globalCompositeOperation = 'lighter'; const glow = ctx.createRadialGradient(LAMP.x + 10, LAMP.y, 4, LAMP.x + 10, LAMP.y, 70 * I);
       glow.addColorStop(0, `rgba(255,245,210,${0.85 * Math.min(1, I)})`); glow.addColorStop(1, 'rgba(255,230,160,0)'); ctx.fillStyle = glow; ctx.beginPath(); ctx.arc(LAMP.x + 10, LAMP.y, 70 * I, 0, Math.PI * 2); ctx.fill(); ctx.restore(); }
-    const lever = kf(t, [[14.6, 0], [15.6, 1], [16.7, 1], [17.0, 0, 'outBack']]);
-    ctx.save(); ctx.translate(742, 650); ctx.rotate(-0.6 + 1.1 * lever); ctx.fillStyle = '#2A2016'; ctx.fillRect(-3, -30, 6, 32); ctx.fillStyle = '#B8342A'; ctx.beginPath(); ctx.arc(0, -30, 7, 0, Math.PI * 2); ctx.fill(); ctx.restore();
+    const h = crankHandle(t);                       // the crank Ada turns: a wheel on the lamp pedestal
+    ctx.strokeStyle = '#2A2016'; ctx.lineWidth = 5; ctx.beginPath(); ctx.arc(800, 682, 11, 0, Math.PI * 2); ctx.moveTo(800, 682); ctx.lineTo(h[0], h[1]); ctx.stroke();
+    ctx.strokeStyle = '#D9B877'; ctx.lineWidth = 2.5; ctx.beginPath(); ctx.arc(800, 682, 11, 0, Math.PI * 2); ctx.moveTo(800, 682); ctx.lineTo(h[0], h[1]); ctx.stroke();
+    ctx.fillStyle = '#B8342A'; ctx.beginPath(); ctx.arc(h[0], h[1], 3.5, 0, Math.PI * 2); ctx.fill();
+    const lever = kf(t, [[14.6, 0], [15.6, 1], [16.85, 1], [17.0, 0, 'outBack']]);
+    ctx.save(); ctx.translate(738, 690); ctx.rotate(-0.9 + 1.1 * lever); ctx.fillStyle = '#C9A86A'; ctx.fillRect(-3, -26, 6, 28); ctx.strokeStyle = '#2A2016'; ctx.lineWidth = 1.5; ctx.strokeRect(-3, -26, 6, 28);
+    ctx.fillStyle = '#D8402E'; ctx.beginPath(); ctx.arc(0, -26, 7, 0, Math.PI * 2); ctx.fill(); ctx.stroke(); ctx.restore();
   }
 
   // ---------- Ada ----------
   function ada(t) {
-    const P = { x: 765, y: 700, s: 1, armR: 0.3, armL: 0.3, bendR: 0.4, bendL: 0.4, reachR: 0, mouth: 'smile', open: 0, brows: 0, eyes: 1, look: [0.3, 0], cup: 'hand', lean: 0, bob: 0, wave: 0, heart: 0 };
+    const P = { x: 765, y: 700, s: 1, armR: 0.3, armL: 0.3, bendR: 0.4, bendL: 0.4, reachR: null, reachL: null, mouth: 'smile', open: 0, brows: 0, eyes: 1, look: [0.3, 0], cup: 'hand', lean: 0, bob: 0, wave: 0, heart: 0 };
     // routine: crank the lamp (right arm circles), sip (left hand)
-    if (t < 7.6) { const c = t * 5.2; P.armR = 1.3 + Math.sin(c) * 0.45; P.bendR = 0.8 + Math.cos(c) * 0.3; P.bob = Math.abs(Math.sin(c)) * 1.5;
+    if (t < 7.6) { const c = t * 5.2; P.reachR = { world: crankHandle(t) }; P.bob = Math.abs(Math.sin(c)) * 1.5;
       P.armL = kf(t, [[4.6, 0.6], [5.0, 2.3], [5.9, 2.3], [6.3, 0.6]]); P.bendL = kf(t, [[4.6, 0.4], [5.0, 1.6], [5.9, 1.6], [6.3, 0.4]]); P.eyes = t > 5.0 && t < 5.9 ? 0.2 : 1; P.look = [-0.6, 0.3]; }
     // sighting: stops cranking, leans to the glass, swings the lamp back, drops the cup
     if (t >= 7.6 && t < 14.2) {
       P.armR = kf(t, [[8.8, 1.3], [9.1, 0.4], [9.6, 1.6], [10.6, 1.9], [12.2, 1.9]]); P.bendR = 0.5; P.armL = 0.7; P.bendL = 0.8;
       P.look = [-0.9, kf(t, [[8.6, 0.2], [9.0, 0.6], [12.0, 0.9]])]; P.lean = kf(t, [[8.8, 0], [9.2, -0.12], [12.2, -0.15], [12.4, 0.05, 'outBack']]);
       P.mouth = t > 8.85 ? 'o' : 'smile'; P.open = kf(t, [[8.85, 0], [9.0, 0.4], [12.3, 0.4], [12.45, 1, 'outQuad']]); P.brows = kf(t, [[8.85, 0], [9.0, 0.6], [12.35, 1]]);
-      P.eyes = 1 + kf(t, [[12.3, 0], [12.4, 0.4, 'outQuad']]); P.cup = t < 12.4 ? 'hand' : 'falling'; P.armL = t > 12.4 ? kf(t, [[12.4, 0.7], [12.5, 1.6]]) : 0.7;
+      P.eyes = 1 + kf(t, [[12.3, 0], [12.4, 0.4, 'outQuad']]); P.cup = t < 12.4 ? 'hand' : 'falling';
+      if (t > 12.4) { P.armL = kf(t, [[12.4, 0.7], [12.5, 2.6, 'outQuad']]); P.armR = kf(t, [[12.4, 1.9], [12.5, 2.6, 'outQuad']]); P.bendL = P.bendR = 0.2; P.bob = -kf(t, [[12.4, 0], [12.5, 3]]); }
     }
     // choice: reach for the shutter, freeze at the moan, resolve, throw it open, steer down
     if (t >= 14.2 && t < 19.0) {
       P.cup = 'gone'; P.look = [kf(t, [[14.2, -0.9], [14.6, -1], [15.7, -1], [15.9, -0.6]]), kf(t, [[14.2, 0.9], [14.6, 0.1], [15.7, 0.1], [15.9, 0.9]])];
-      P.armL = kf(t, [[14.3, 0.4], [14.7, 1.55, 'outQuad'], [16.7, 1.55], [17.0, 1.3]]); P.bendL = 0.1; P.reachR = 0;
+      if (t > 14.5 && t < 17.15) P.reachL = { world: leverKnob(t) }; else P.armL = 0.5;
       P.mouth = t < 16.2 ? 'wobble' : 'flat'; P.brows = kf(t, [[15.6, 0.9], [15.8, 1.2], [16.2, 1.2], [16.6, -0.9, 'outQuad']]); P.eyes = kf(t, [[15.6, 1.1], [15.8, 1.4], [16.2, 1.2], [16.6, 0.85]]);
-      P.lean = kf(t, [[15.6, -0.05], [15.75, 0.08, 'outQuad'], [16.6, 0], [17.0, -0.1]]);
-      P.armR = kf(t, [[16.9, 0.4], [17.4, 1.7, 'outQuad'], [19.0, 1.7]]); P.bendR = 0.4;
+      P.lean = kf(t, [[15.6, -0.05], [15.8, -0.16, 'outQuad'], [16.3, -0.16], [16.6, 0.02], [16.85, 0.06]]);
+      if (t > 15.65 && t < 16.4) { P.reachR = { local: [9, -84] }; P.look = [-1, 0.5]; P.eyes = 1.3; P.mouth = 'o'; P.open = 0.3; P.brows = 0.9; }   // hand to the brim, peering out at the sea
+      if (t >= 16.4 && t < 16.85) { P.brows = -1.3; P.eyes = 0.8; P.mouth = 'flat'; P.look = [-0.6, 0.2]; P.armR = 0.5; }                       // the jaw sets
+      P.armR = kf(t, [[17.0, 0.9], [17.4, 1.7], [19.0, 1.7]]); P.bendR = 0.3;
+      if (t > 16.85 && t < 17.3) { P.lean = kf(t, [[16.85, 0.08], [17.0, -0.2, 'outQuad'], [17.3, -0.08]]); P.mouth = 'flat'; P.brows = -1.2; P.armR = 0.9; P.bendR = 0.2; }   // the shove: leans into the lever, other arm back
     }
     // reveal: watches, then softens, hand on heart
     if (t >= 19.0 && t < 24.3) {
       P.cup = 'gone'; P.armR = 1.7; P.armL = kf(t, [[19.0, 1.3], [19.6, 0.6]]); P.look = [-0.9, 0.9]; P.lean = -0.08;
       P.brows = kf(t, [[19.0, -0.9], [19.6, 0.4], [21.8, 0.6], [22.4, 0.9]]); P.eyes = kf(t, [[19.0, 0.9], [19.8, 1.25], [21.9, 1.1], [22.5, 0.35]]);
-      P.mouth = t < 21.9 ? 'o' : 'smile'; P.open = 0.3; P.heart = seg(t, 22.0, 22.6); if (P.heart > 0) { P.armL = 0.6 + 0.9 * P.heart; P.bendL = 0.4 + 1.4 * P.heart; }
+      P.mouth = t < 21.9 ? 'o' : 'smile'; P.open = 0.3; P.heart = seg(t, 22.0, 22.5);
+      if (P.heart > 0) { P.reachL = { local: [-3 + 6 * (1 - P.heart), -44 - 6 * (1 - P.heart)] }; P.lean = -0.08 + 0.14 * P.heart; P.look = [-0.4, 0.6]; }
     }
     // home: steers the beam out to sea, watches the calf go
     if (t >= 24.3 && t < 29.0) {
@@ -177,8 +189,11 @@
     const lit = 0.6 + 0.4 * Math.min(1, intensity(t)), d = dawn(t);
     const coat = mixc('#6E5216', '#E8B23A', Math.max(lit * 0.9, d)), skin = mixc('#7A5C4A', '#F2C9A8', Math.max(lit * 0.9, d)), dark = '#1A1410';
     ctx.save(); ctx.translate(P.x, P.y); ctx.rotate(P.lean); ctx.translate(0, -P.bob); ctx.scale(P.s, P.s);
-    const arm = (side, a, bend) => {
-      const sx = side * 13, sy = -55, ex = sx + side * Math.sin(a) * 26, ey = sy + Math.cos(a) * 26;
+    const local = (w) => { const dx = (w[0] - P.x), dy = (w[1] - P.y), c = Math.cos(-P.lean), sn = Math.sin(-P.lean); return [(dx * c - dy * sn) / P.s, (dx * sn + dy * c + P.bob) / P.s]; };
+    const arm = (side, a, bend, reach) => {
+      const sx = side * 13, sy = -55;
+      let ex = sx + side * Math.sin(a) * 26, ey = sy + Math.cos(a) * 26;
+      if (reach) { const [lx, ly] = reach.world ? local(reach.world) : reach.local, d = Math.hypot(lx - sx, ly - sy), k = Math.min(1, 34 / d); ex = sx + (lx - sx) * k; ey = sy + (ly - sy) * k; a = Math.atan2(side * (ex - sx), ey - sy); }
       const cx = (sx + ex) / 2 - Math.cos(a) * side * 8 * bend, cy = (sy + ey) / 2 + Math.sin(a) * 8 * bend;
       ctx.strokeStyle = coat; ctx.lineWidth = 9; ctx.lineCap = 'round'; ctx.beginPath(); ctx.moveTo(sx, sy); ctx.quadraticCurveTo(cx, cy, ex, ey); ctx.stroke();
       ctx.fillStyle = skin; ctx.beginPath(); ctx.arc(ex, ey, 4.5, 0, Math.PI * 2); ctx.fill();
@@ -187,7 +202,7 @@
     ctx.fillStyle = dark; ctx.fillRect(-12, -9, 10, 9); ctx.fillRect(2, -9, 10, 9);
     ctx.fillStyle = coat; ctx.beginPath(); ctx.moveTo(-22, -8); ctx.lineTo(-13, -60); ctx.lineTo(13, -60); ctx.lineTo(22, -8); ctx.closePath(); ctx.fill();
     ctx.strokeStyle = 'rgba(60,40,10,0.45)'; ctx.lineWidth = 1.5; ctx.beginPath(); ctx.moveTo(0, -58); ctx.lineTo(0, -10); ctx.moveTo(-8, -40); ctx.lineTo(-11, -12); ctx.stroke();
-    const handR = arm(1, P.armR, P.bendR), handL = arm(-1, P.armL, P.bendL);
+    const handR = arm(1, P.armR, P.bendR, P.reachR), handL = arm(-1, P.armL, P.bendL, P.reachL);
     // head
     ctx.fillStyle = '#B9B4AE'; ctx.beginPath(); ctx.arc(-9, -78, 6, 0, Math.PI * 2); ctx.fill();
     ctx.fillStyle = skin; ctx.beginPath(); ctx.arc(0, -72, 12, 0, Math.PI * 2); ctx.fill();
@@ -208,7 +223,8 @@
     // sou'wester
     ctx.fillStyle = coat; ctx.beginPath(); ctx.ellipse(0, -82, 21, 5, -0.08, 0, Math.PI * 2); ctx.fill(); ctx.beginPath(); ctx.arc(0, -84, 11, Math.PI, 0); ctx.fill();
     // the cup
-    if (P.cup === 'hand') { ctx.fillStyle = '#E8E2D6'; ctx.fillRect(handL[0] - 3.5, handL[1] - 6, 7, 7); }
+    if (P.cup === 'hand') { ctx.fillStyle = '#EDE6D8'; ctx.fillRect(handL[0] - 5, handL[1] - 9, 10, 10); ctx.strokeStyle = '#EDE6D8'; ctx.lineWidth = 2; ctx.beginPath(); ctx.arc(handL[0] + 6, handL[1] - 4, 3, -1.5, 1.5); ctx.stroke();
+      ctx.strokeStyle = 'rgba(240,240,240,0.5)'; ctx.lineWidth = 1.5; ctx.beginPath(); ctx.moveTo(handL[0], handL[1] - 11); ctx.quadraticCurveTo(handL[0] + 3 * Math.sin(t * 4), handL[1] - 17, handL[0] - 1, handL[1] - 23); ctx.stroke(); }
     ctx.restore();
     if (P.cup === 'falling') {                         // cup tumbles to the gallery floor and bounces
       const u = seg(t, 12.4, 12.62), bx = P.x - 16, by = kf(t, [[12.4, P.y - 58], [12.62, P.y - 4, 'inQuad'], [12.72, P.y - 12, 'outQuad'], [12.82, P.y - 4, 'inQuad']]);
@@ -218,23 +234,27 @@
 
   // ---------- the shape, the calf, the mother ----------
   function shapeAt(t) {
-    return [kf(t, [[8.0, 230], [9.6, 330], [12.0, 470], [13.2, 560], [19.0, 575]]), kf(t, [[8.0, 1000], [9.6, 1120], [12.0, 1260], [13.2, 1350], [19.0, 1370]])];
+    return [kf(t, [[8.0, 230], [9.6, 330], [12.0, 470], [13.2, 560], [19.0, 585]]), kf(t, [[8.0, 1000], [9.6, 1120], [12.0, 1260], [13.2, 1350], [19.0, 1372]])];
   }
   function under(ctx, t) {                           // the dark mass under the swell, and the eye that catches the light
     if (t < 8.0 || t > 20.2) return;
     const [x, y] = shapeAt(t), big = kf(t, [[8.0, 0.8], [13.2, 1.25], [19.0, 1.2]]), lit = inBeam(t, x, y - 10), f = flash(t);
-    const alpha = Math.min(0.92, 0.12 + 0.85 * lit + 0.7 * f) * (1 - seg(t, 19.4, 20.2));   // only the light shows it
-    ctx.save(); ctx.translate(x, y); ctx.scale(big, big);
-    const m = ctx.createRadialGradient(0, 0, 20, 0, 0, 260);             // soft-edged and shapeless: something big, not yet a whale
-    m.addColorStop(0, `rgba(3,10,16,${alpha})`); m.addColorStop(0.6, `rgba(3,10,16,${alpha * 0.8})`); m.addColorStop(1, 'rgba(3,10,16,0)');
-    ctx.fillStyle = m; ctx.beginPath(); ctx.ellipse(40, 0, 300, 80 + 8 * Math.sin(t * 2), 0.03, 0, Math.PI * 2); ctx.fill();
+    const flashShow = t > 13.2 && t < 13.36 ? 1 : 0;                  // the lightning shows the whole silhouette for a few frames
+    const alpha = Math.min(0.9, 0.1 + 0.8 * lit + 0.5 * f + 0.6 * flashShow) * (1 - seg(t, 18.9, 19.35));
+    ctx.save(); ctx.translate(x, y); ctx.scale(big * 1.25, big * 1.25);             // refracted and enlarged under the swell: bigger than the calf
+    const body = () => { ctx.beginPath(); ctx.moveTo(-170, 10); ctx.bezierCurveTo(-180, -60, -60, -95, 40, -78); ctx.bezierCurveTo(140, -60, 210, -30, 250, -8);
+      ctx.quadraticCurveTo(300, -40, 340, -64); ctx.quadraticCurveTo(325, -10, 352, 30); ctx.quadraticCurveTo(300, 18, 250, 18); ctx.bezierCurveTo(150, 40, 0, 50, -170, 10); ctx.closePath(); };
+    for (const [grow, a] of [[1.12, 0.25], [1.06, 0.45], [1.0, 1]]) { ctx.save(); ctx.scale(grow, grow); body(); ctx.fillStyle = `rgba(3,10,16,${alpha * a})`; ctx.fill(); ctx.restore(); }   // soft edge without a blur filter
     ctx.restore();
-    const glint = Math.max(lit > 0.35 ? lit : 0, f > 0.3 ? f : 0) * (t < 19.2 ? 1 : 0);
+    const glint = Math.max(lit > 0.35 ? lit : 0, f > 0.3 ? f : 0) * (1 - seg(t, 19.15, 19.55));
     if (glint > 0) {
-      const ex = x - 110 * big, ey = y - 14 * big; ctx.save(); ctx.globalCompositeOperation = 'lighter'; ctx.fillStyle = `rgba(255,250,225,${glint})`;
-      ctx.beginPath(); ctx.moveTo(ex - 26, ey); ctx.lineTo(ex, ey - 4); ctx.lineTo(ex + 26, ey); ctx.lineTo(ex, ey + 4); ctx.closePath(); ctx.fill();
-      ctx.beginPath(); ctx.moveTo(ex, ey - 18); ctx.lineTo(ex + 3, ey); ctx.lineTo(ex, ey + 18); ctx.lineTo(ex - 3, ey); ctx.closePath(); ctx.fill();
-      ctx.beginPath(); ctx.arc(ex, ey, 5, 0, Math.PI * 2); ctx.fill(); ctx.restore();
+      // the submerged calf's eye: a round eye catching the light, in the place the calf's eye will surface
+      const ex = x - 95, ey = y + 22 - 70 * A.ease.outCubic(seg(t, 19.1, 20.5));
+      ctx.save(); ctx.globalCompositeOperation = 'lighter';
+      const halo = ctx.createRadialGradient(ex, ey, 2, ex, ey, 46); halo.addColorStop(0, `rgba(255,248,215,${0.7 * glint})`); halo.addColorStop(1, 'rgba(255,248,215,0)');
+      ctx.fillStyle = halo; ctx.beginPath(); ctx.arc(ex, ey, 46, 0, Math.PI * 2); ctx.fill(); ctx.restore();
+      ctx.save(); ctx.globalAlpha = glint; ctx.fillStyle = '#05090C'; ctx.beginPath(); ctx.arc(ex, ey, 19, 0, Math.PI * 2); ctx.fill();
+      ctx.fillStyle = '#FFF8E0'; ctx.beginPath(); ctx.arc(ex - 6, ey - 6, 7, 0, Math.PI * 2); ctx.fill(); ctx.beginPath(); ctx.arc(ex + 6, ey + 5, 2.5, 0, Math.PI * 2); ctx.fill(); ctx.restore();
     }
   }
   function calf(ctx, t) {
@@ -242,8 +262,9 @@
     const rise = A.ease.outCubic(seg(t, 19.1, 20.5));
     const go = A.ease.inOutSine(seg(t, 26.6, 29.0)), start = [585, 1372], end = [130, 912];
     const x = start[0] + (end[0] - start[0]) * go, y = start[1] + (end[1] - start[1]) * go + 70 * (1 - rise), s = 1 - 0.85 * go;
-    const turn = kf(t, [[25.8, 1], [26.6, -1]]), lit = Math.max(0.25, inBeam(t, x, y - 40)), d = dawn(t);
+    const turn = 1, lit = Math.max(0.25, inBeam(t, x, y - 40)), d = dawn(t);
     const cry = seg(t, 20.6, 20.9) * (1 - seg(t, 21.6, 22.0)), blink = (t > 19.8 && t < 19.95) || (t > 23.2 && t < 23.3);
+    if (rise > 0 && rise < 1) { ctx.strokeStyle = `rgba(220,236,242,${0.7 * (1 - rise)})`; ctx.lineWidth = 6; ctx.beginPath(); ctx.ellipse(x + 30, start[1] + 38, 150 + 160 * rise, 16 + 14 * rise, 0, Math.PI, 2 * Math.PI); ctx.stroke(); }   // ring at the waterline, behind
     ctx.save(); ctx.translate(x, y); ctx.scale(s * turn, s);
     const body = mixc('#2A3E4B', '#5F8297', 0.35 + 0.65 * lit), belly = mixc('#4C6270', '#C6D8E0', 0.35 + 0.65 * lit);
     ctx.rotate(-0.06 - 0.12 * cry + Math.sin(t * 3) * 0.03);
@@ -256,18 +277,18 @@
     const ex = -95, ey = -48;
     ctx.fillStyle = '#0B1218'; ctx.beginPath(); ctx.ellipse(ex, ey, 21, blink ? 3 : 21 - 7 * cry, 0, 0, Math.PI * 2); ctx.fill();
     if (!blink) { ctx.fillStyle = `rgba(255,250,230,${0.65 + 0.35 * lit})`; ctx.beginPath(); ctx.arc(ex - 7, ey - 7, 7, 0, Math.PI * 2); ctx.fill(); ctx.beginPath(); ctx.arc(ex + 7, ey + 6, 3, 0, Math.PI * 2); ctx.fill(); }
-    ctx.strokeStyle = 'rgba(10,20,26,0.8)'; ctx.lineWidth = 3; ctx.beginPath(); ctx.arc(ex + 2, ey - 8, 20, 1.15 * Math.PI, 1.65 * Math.PI); ctx.stroke();                     // brow ridge
-    ctx.beginPath(); ctx.moveTo(-148, -6); ctx.quadraticCurveTo(-120, 4 + 10 * cry, -90, -2); ctx.stroke();                                                                     // mouth
-    if (cry > 0 || (t > 21.6 && t < 23.0)) { const tu = seg(t, 20.8, 22.6); ctx.fillStyle = `rgba(210,236,250,${0.95 * (1 - tu)})`; ctx.beginPath(); ctx.ellipse(ex + 6, ey + 28 + 50 * tu, 7, 10, 0, 0, Math.PI * 2); ctx.fill(); }
+    const sad = Math.max(cry, seg(t, 19.6, 20.0) * (1 - seg(t, 23.0, 24.0)));
+    ctx.strokeStyle = 'rgba(10,20,26,0.85)'; ctx.lineWidth = 4; ctx.beginPath(); ctx.moveTo(ex - 22, ey - 22 + 10 * sad); ctx.quadraticCurveTo(ex, ey - 32, ex + 22, ey - 26 - 6 * sad); ctx.stroke();   // brow, tilted up when sad
+    ctx.beginPath(); ctx.moveTo(-150, -2); ctx.quadraticCurveTo(-122, -2 - 14 * sad + 8 * (1 - sad), -94, -2); ctx.stroke();                                                          // mouth turns down while it cries
+    if (cry > 0 || (t > 21.6 && t < 23.0)) { const tu = seg(t, 20.8, 22.6); ctx.fillStyle = `rgba(215,240,252,${0.95 * (1 - tu)})`; ctx.beginPath(); ctx.ellipse(ex + 6, ey + 30 + 55 * tu, 11, 16, 0, 0, Math.PI * 2); ctx.fill(); ctx.strokeStyle = 'rgba(40,70,90,0.6)'; ctx.lineWidth = 2; ctx.stroke(); }
     ctx.restore();
     // spout
     for (const [t0, k] of [[20.4, 1], [27.6, 0.5]]) {
       const u = seg(t, t0, t0 + 1.0); if (u <= 0 || u >= 1) continue;
-      const r = A.rng(Math.round(t0 * 10)), bx = x + (-20) * s * turn, by = y - 120 * s;
+      const r = A.rng(Math.round(t0 * 10)), bx = x - 40 * s, by = y - 112 * s;
       for (let i = 0; i < 18; i++) { const a = -Math.PI / 2 + (r() - 0.5) * 0.9, sp = (90 + r() * 120) * k * s;
         ctx.fillStyle = `rgba(220,236,242,${0.75 * (1 - u)})`; ctx.beginPath(); ctx.arc(bx + Math.cos(a) * sp * u, by + Math.sin(a) * sp * u + 60 * u * u, (4 + r() * 5) * s, 0, Math.PI * 2); ctx.fill(); }
     }
-    if (rise > 0 && rise < 1) { ctx.strokeStyle = `rgba(220,236,242,${0.7 * (1 - rise)})`; ctx.lineWidth = 5; ctx.beginPath(); ctx.ellipse(x, start[1] + 20, 120 + 160 * rise, 18 + 20 * rise, 0, 0, Math.PI * 2); ctx.stroke(); }
   }
   function mother(ctx, t) {
     if (t < 25.6) return;
@@ -278,7 +299,23 @@
       ctx.bezierCurveTo(30, -125, 80, -140, 130, -150); ctx.bezierCurveTo(110, -120, 60, -90, 10, -70); ctx.lineTo(16, 0); ctx.closePath(); ctx.fill();
       ctx.strokeStyle = `rgba(255,232,170,${0.8 * lit})`; ctx.lineWidth = 3; ctx.stroke(); ctx.restore();
     }
-    for (const [t0, bx, k] of [[26.8, 70, 1], [31.0, 200, 1], [31.6, 262, 0.55]]) {      // spouts: hers, then both at dawn
+    const backs = [[360, 150, 1], [478, 82, 0.62]], up2 = A.ease.outCubic(seg(t, 30.3, 30.9));
+    if (up2 > 0) for (const [bx, w] of backs) {                       // two whale backs at dawn, one big and one small
+      ctx.fillStyle = '#2E4A5C'; ctx.beginPath(); ctx.ellipse(bx, 916, w, 22 * up2 * w / 150 + 6 * up2, 0, Math.PI, 2 * Math.PI); ctx.fill();
+      ctx.strokeStyle = 'rgba(255,236,210,0.7)'; ctx.lineWidth = 3; ctx.beginPath(); ctx.ellipse(bx, 916, w, 22 * up2 * w / 150 + 6 * up2, 0, 1.15 * Math.PI, 1.6 * Math.PI); ctx.stroke();
+    }
+    for (const [bx, w, k] of backs) {                                 // their spouts, repeating until the last frame
+      if (t < 30.7) break;
+      for (let rep = 0; rep < 3; rep++) {
+        const u = ((t - 30.7 - rep * 0.6 * k) % 1.8) / 1.8; if (t - 30.7 - rep * 0.6 * k < 0) continue;
+        const r = A.rng(bx + rep * 7);
+        for (let i = 0; i < 26; i++) { const a = -Math.PI / 2 + (r() - 0.5) * 0.55, sp = (120 + r() * 120) * k;
+          const px = bx - 0.25 * w + Math.cos(a) * sp * u, py = 900 + Math.sin(a) * sp * u + 60 * u * u, rr = (6 + r() * 8) * k * (0.6 + u);
+          ctx.fillStyle = `rgba(118,146,166,${0.85 * (1 - u)})`; ctx.beginPath(); ctx.arc(px, py, rr, 0, Math.PI * 2); ctx.fill();
+          ctx.fillStyle = `rgba(255,250,244,${0.7 * (1 - u)})`; ctx.beginPath(); ctx.arc(px - rr * 0.3, py - rr * 0.3, rr * 0.45, 0, Math.PI * 2); ctx.fill(); }
+      }
+    }
+    for (const [t0, bx, k] of [[26.8, 70, 1]]) {      // her answering spout at night
       const u = seg(t, t0, t0 + 1.4); if (u <= 0 || u >= 1) continue;
       const r = A.rng(Math.round(t0 * 10));
       for (let i = 0; i < 30; i++) { const a = -Math.PI / 2 + (r() - 0.5) * 0.7, sp = (100 + r() * 150) * k;
@@ -289,12 +326,12 @@
   // ---------- camera ----------
   function camera(t) {                          // close-ups on Ada are hard cuts (one-frame key pairs), pushes elsewhere
     const c = 0.034;
-    const z = kf(t, [[0, 1.0], [2.6, 1.0], [3.2, 4.2], [4.6, 4.4], [5.2, 1.15], [7.6, 1.15], [8.4, 1.3], [9.6, 1.3], [11.8, 1.35], [12.0 - c, 1.35], [12.0, 5.0], [13.1 - c, 5.0], [13.1, 1.3], [14.4 - c, 1.3], [14.4, 5.0], [17.1 - c, 5.2],
-      [17.1, 1.5], [19.0, 2.1], [21.9 - c, 2.25], [21.9, 5.2], [23.7 - c, 5.2], [23.7, 1.6], [24.3, 1.5], [25.8, 1.0], [29.0, 1.0], [30.6, 1.2], [33.0, 1.3]]);
-    const fx = kf(t, [[0, 600], [2.6, 600], [3.2, 772], [4.6, 772], [5.2, 470], [7.6, 470], [8.4, 420], [9.6, 420], [11.8, 560], [12.0 - c, 560], [12.0, 768], [13.1 - c, 768], [13.1, 600], [14.4 - c, 600], [14.4, 765], [17.1 - c, 765],
-      [17.1, 640], [19.0, 560], [21.9 - c, 560], [21.9, 768], [23.7 - c, 768], [23.7, 560], [24.3, 560], [25.8, 470], [29.0, 470], [30.6, 450], [33.0, 440]]);
-    const fy = kf(t, [[0, 1020], [2.6, 1020], [3.2, 655], [4.6, 655], [5.2, 1060], [7.6, 1060], [8.4, 1130], [9.6, 1130], [11.8, 1230], [12.0 - c, 1230], [12.0, 655], [13.1 - c, 655], [13.1, 1180], [14.4 - c, 1180], [14.4, 655], [17.1 - c, 655],
-      [17.1, 1160], [19.0, 1300], [21.9 - c, 1310], [21.9, 655], [23.7 - c, 655], [23.7, 1150], [24.3, 1150], [25.8, 1020], [29.0, 1020], [30.6, 960], [33.0, 940]]);
+    const z = kf(t, [[0, 1.0], [2.6, 1.0], [3.2, 4.2], [4.6, 4.4], [5.2, 1.1], [7.6, 1.1], [8.4, 1.15], [9.6, 1.15], [11.8, 1.3], [12.0 - c, 1.3], [12.0, 5.0], [13.1 - c, 5.0], [13.1, 1.25], [14.4 - c, 1.25], [14.4, 6.4], [17.1 - c, 6.8],
+      [17.1, 1.5], [19.0, 2.1], [21.9 - c, 2.25], [21.9, 7.0], [23.7 - c, 7.2], [23.7, 1.6], [24.3, 1.5], [25.8, 1.0], [29.0, 1.0], [30.6, 1.2], [33.8, 1.25]]);
+    const fx = kf(t, [[0, 600], [2.6, 600], [3.2, 772], [4.6, 772], [5.2, 520], [7.6, 520], [8.4, 560], [9.6, 560], [11.8, 600], [12.0 - c, 600], [12.0, 768], [13.1 - c, 768], [13.1, 620], [14.4 - c, 620], [14.4, 758], [17.1 - c, 758],
+      [17.1, 640], [19.0, 560], [21.9 - c, 560], [21.9, 766], [23.7 - c, 766], [23.7, 560], [24.3, 560], [25.8, 470], [29.0, 470], [30.6, 520], [33.8, 525]]);
+    const fy = kf(t, [[0, 1020], [2.6, 1020], [3.2, 655], [4.6, 655], [5.2, 1060], [7.6, 1060], [8.4, 1110], [9.6, 1130], [11.8, 1230], [12.0 - c, 1230], [12.0, 655], [13.1 - c, 655], [13.1, 1180], [14.4 - c, 1180], [14.4, 650], [17.1 - c, 650],
+      [17.1, 1160], [19.0, 1300], [21.9 - c, 1310], [21.9, 640], [23.7 - c, 640], [23.7, 1150], [24.3, 1150], [25.8, 1020], [29.0, 1020], [30.6, 960], [33.8, 955]]);
     return { z, fx, fy };
   }
 
@@ -316,8 +353,8 @@
       seaLayer(ctx, t, 0); mother(ctx, t); seaLayer(ctx, t, 1); seaLayer(ctx, t, 2);
       seaLayer(ctx, t, 3);
       under(ctx, t);                                // seen through the near water
-      lighthouse(ctx, t); drawAda(ctx, ada(t), t); rock(ctx, t);
-      beam(ctx, t);
+      lighthouse(ctx, t); rock(ctx, t);
+      beam(ctx, t); drawAda(ctx, ada(t), t);
       calf(ctx, t);
       seaLayer(ctx, t, 4);
       seaLayer(ctx, t, 5);

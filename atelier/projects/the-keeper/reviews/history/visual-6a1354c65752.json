@@ -1,0 +1,109 @@
+{
+ "request_sha256": "6a1354c65752102bb7237beae29b87ca91a92e6a94e6319181e6f3e99384908b",
+ "role": "visual",
+ "reviewer": {
+  "kind": "model",
+  "id": "Claude subagent (fresh context, same model family as the builder)",
+  "independence": "separate-context-same-family",
+  "playback": "ordered-frames",
+  "inputs_viewed": [
+   "/home/user/motif/atelier/projects/the-keeper/reviews/visual-request.md",
+   "/home/user/motif/atelier/contracts/review.schema.json",
+   "/home/user/motif/atelier/runs/the-keeper/rough/655079e387a8/evidence-review/ordered-frames.png",
+   "/home/user/motif/atelier/runs/the-keeper/rough/655079e387a8/evidence-review/strip-glint.png",
+   "/home/user/motif/atelier/runs/the-keeper/rough/655079e387a8/evidence-review/strip-found.png",
+   "/home/user/motif/atelier/runs/the-keeper/rough/655079e387a8/evidence-review/strip-cup_drop.png",
+   "/home/user/motif/atelier/runs/the-keeper/rough/655079e387a8/evidence-review/strip-lightning.png",
+   "/home/user/motif/atelier/runs/the-keeper/rough/655079e387a8/evidence-review/strip-shutter.png",
+   "/home/user/motif/atelier/runs/the-keeper/rough/655079e387a8/evidence-review/strip-open.png",
+   "/home/user/motif/atelier/runs/the-keeper/rough/655079e387a8/evidence-review/strip-surface.png",
+   "/home/user/motif/atelier/runs/the-keeper/rough/655079e387a8/evidence-review/strip-cry.png",
+   "/home/user/motif/atelier/runs/the-keeper/rough/655079e387a8/evidence-review/strip-soften.png",
+   "/home/user/motif/atelier/runs/the-keeper/rough/655079e387a8/evidence-review/strip-tail.png",
+   "/home/user/motif/atelier/runs/the-keeper/rough/655079e387a8/evidence-review/strip-calf_go.png",
+   "/home/user/motif/atelier/runs/the-keeper/rough/655079e387a8/evidence-review/strip-spouts.png",
+   "/home/user/motif/atelier/runs/the-keeper/rough/655079e387a8/evidence-review/phone-f00114.png",
+   "/home/user/motif/atelier/runs/the-keeper/rough/655079e387a8/evidence-review/phone-f00327.png",
+   "/home/user/motif/atelier/runs/the-keeper/rough/655079e387a8/evidence-review/phone-f00498.png",
+   "/home/user/motif/atelier/runs/the-keeper/rough/655079e387a8/evidence-review/phone-f00649.png",
+   "/home/user/motif/atelier/runs/the-keeper/rough/655079e387a8/evidence-review/phone-f00799.png",
+   "/home/user/motif/atelier/runs/the-keeper/rough/655079e387a8/evidence-review/phone-f00930.png"
+  ],
+  "tools": "Read tool image viewing of every evidence PNG; Python/PIL crops, 2-5x enlargements, autocontrast and mean-luminance measurements of those same images in the scratchpad"
+ },
+ "dimensions": {
+  "focal_hierarchy": {
+   "status": "PASS",
+   "note": "The beam and the cutting consistently put the thing that matters at the brightest point of the frame (the pool at 8.5-13.5 s, the dimming lamp rings at 15.0-16.5 s, the calf's face centred at 19.0-21.5 s, the beam ending on the tail at 25.5-28.5 s, the spouts at 31.5-32.5 s), with only secondary losses where the lamp's white glow outshines Ada's small face and the closing wave is lost.",
+   "evidence": "phone-f00327: the beam pool is the brightest region and holds the eye; phone-f00649: calf eye and brow dead centre; phone-f00799: beam links lantern to tail with the calf as a third point. Weak spots: in every lantern shot (phone-f00114, f00498; strip-soften f658-668) the lamp glow is a ~70 px white disc beside a ~45 px face, so at the 22.0-23.5 s softening beat the lamp competes with Ada's expression; the cup at 12.4 s is a white fleck against the pale beam; Ada's wave at 31.5-32.5 s is a few pixels."
+  },
+  "identity_continuity": {
+   "status": "PASS",
+   "note": "Ada (yellow oilskin, sou'wester, round glasses, red-knob lever), the three-band tower, the rock and the calf hold their design and scale across close and wide shots, and the shape-to-calf identity is carried by one unbroken push-in on the same pool at 17.5-19.0 s, with the crank-wheel pop at 15.1-16.9 s as the one prop exception (logged under technical_defects).",
+   "evidence": "ordered-frames 3.5-4.5 s vs 12.0-13.0 s vs 22.0-23.5 s: Ada consistent; tower keeps 3 red bands and door from 0.0 s through the dawn recolour at 30.0 s; calf design identical in strip-surface/cry and strip-tail/calf_go; ordered-frames 17.5/18.0/18.5/19.0 s show the brown disc in the pool becoming the rising calf in the same pool. Calf length is ~3x tower width at 26.6 s (phone-f00799), about the same as the threat at 10.9 s (~3.5x, phone-f00327), so scale is consistent, though it means the calf never actually reads 'small'. Night wide lantern is a solid lit box while the dawn lantern is an open railed gallery (29.0 vs 30.5 s), acceptable as lighting."
+  },
+  "composition": {
+   "status": "PASS",
+   "note": "Staging uses the vertical deliberately (tall tower against diagonal beam, lantern high, subjects in the central band clear of the bottom caption zone and the right-hand icon rail), and the home and dawn wides balance lantern, tail or spouts and calf in readable triangles.",
+   "evidence": "phone-f00114/f00498: Ada and lamp sit in the 35-60% band; phone-f00649: calf face at x 25-45%, y 47-62%; phone-f00799: tail at upper-left, lantern upper-right, calf lower-centre above y 72%; phone-f00930: spouts at y ~45% left, tower right. Only non-essential elements (rock, tower base, spray) fall under the right rail. The 5.0 s frame crops the lantern at the edge mid pull-out (transitional). Lantern 'close-ups' leave ~30% dead dark headroom while Ada stays small, which hurts phone readability rather than composition per se."
+  },
+  "readable_action": {
+   "status": "FAIL",
+   "note": "Routine cranking (3.5-4.5 s), the calf surfacing, spouting and crying (18.5-21.5 s), the beam swing (24.5-25.0 s) and the calf leaving toward the tail (27.0-28.5 s) read, but the central threat at 8.5-14.0 s reads as a flat brown disc with a twinkle rather than a creature, the lightning reveals nothing, and the shutter decision at 15.0-17.2 s reads as head-clutching followed by a cheer.",
+   "evidence": "strip-glint f256-264 and phone-f00327 (enlarged): opaque brown ellipse with a lit hard upper rim sitting on the surface plus a 4-point white sparkle (~9 px at phone size); strip-lightning f394-404: whole-frame mean luminance 58 -> 85 at f398 but the disc region only 68 -> 76 and no silhouette appears; strip-shutter f450-458 and ordered-frames 15.5-16.5 s: the lever knob goes behind her hat, hand stays at her head, beam dims ~40% (measured 132 -> 80) with concentric rings on the lamp; strip-open f508-512 repeats the both-arms-up pose of strip-cup_drop f374-380. Cup drop itself is a ~5 px white fleck over pale beam. Tail first shows at f769-771 as a thin gull-like V hovering in the pool before it grows."
+  },
+  "motion_performance": {
+   "status": "FAIL",
+   "note": "Beat timing in the samples is sensible (a ~1.5 s hold at the decision, a gasp before the cup-drop arms, a blink-spout-tear sequence for the calf), but the acting that the story turns on is not performed: fear at 12.4 s and resolve at 17.0 s share the same raised-arms pose, the reaction to the moan is an eye shift only, and the calf leaves with no turn or anticipation; motion quality between samples was not assessable.",
+   "evidence": "strip-cup_drop f364 (gasp) -> f372-380 (arms in a V) vs strip-open f508-512 (arms in a V, flat mouth ~2-3 px different); ordered-frames 15.5/16.0/16.5 s: identical body pose, eyes move; strip-calf_go f790-806: calf static at its cue, then ordered-frames 27.0-28.5 s it slides and shrinks to the horizon in ~1.5 s with no visible turn; strip-tail f767-779: tail scales up in place with no water interaction. Dawn wave at 31.5-32.5 s not visible at sample scale."
+  },
+  "style_coherence": {
+   "status": "PASS",
+   "note": "One deliberate language holds from 0.0 to 32.5 s: flat cut shapes with soft gradients, grain, rain streaks and vignette in teal/navy, a single additive beam as the key light, cream line waves, and a dawn that recolours the same shapes peach and blue.",
+   "evidence": "ordered-frames throughout; dawn crossfade 29.0-30.5 s keeps geometry and swaps palette; Ada, calf and tail share the flat simplified vocabulary (the tail's cream rim matches the cream wave and rock lines). It is closer to flat vector than 'painterly', and the beam reads cool cream rather than warm, but it is consistent."
+  },
+  "phone_readability": {
+   "status": "FAIL",
+   "note": "At 360x640 the calf's face, the tail, the beam and the two dawn spouts survive, but the hook's eye glint is a ~9 px sparkle on a disc, and the Ada beats that carry the turn (cup drop, jaw set, softening, hand on heart, final wave) live in 2-10 px details because the lantern shots frame her face at only ~45 px wide.",
+   "evidence": "phone-f00327: glint reads as a twinkle, not an eye; phone-f00498: face ~50 px, mouth a 2 px line, lever hidden behind hat; strip-soften f664-668 at phone scale: smile readable but hand on heart is a small pink dot reading as a button; strip-cup_drop: cup ~5 px against the pale beam; ordered-frames 31.5-32.5 s upscaled to phone: Ada ~22 px tall, wave arm ~3-4 px. Good: phone-f00649 calf brow, eye and tear clear; phone-f00799 tail clearly a fluke; spouts legible at 32.0 s."
+  },
+  "technical_defects": {
+   "status": "FAIL",
+   "note": "No torn, black or broken frames appear in any sample, but the crank wheel on the lamp pedestal fades out as the lamp dims (f450-456) and is back at f506, a prop pop, alongside smaller issues: the beam is drawn across Ada's body in every lantern shot and the rock outline reads as a stray line across the pool at 20.0-21.6 s.",
+   "evidence": "strip-shutter enlarged f450 (wheel present) -> f454 (faint) -> f456-458 (gone, only red knob); ordered-frames 15.5-16.5 s wheel absent; strip-open f502-506 wheel present again. Beam cone splits Ada's coat into mustard and pale yellow and passes through the cup and body (phone-f00114, strip-cup_drop, strip-soften). phone-f00649: cream rock polyline crosses the pool lower right and the calf's belly is clipped by a ruler-straight diagonal that does not follow the wavy surface line."
+  }
+ },
+ "verdict": "REPAIR",
+ "critical_issues": [
+  {
+   "dimension": "readable_action",
+   "where": "sighting 8.5-14.0 s (f255-f420): glint f256-264, found f318, lightning f396-402; phone-f00327",
+   "problem": "The 'huge dark shape under the waves' is an opaque brown ellipse with a lit hard rim floating on the surface, and the 'eye glint' is a four-point white sparkle (~9 px on a 360 px frame). It reads as a disc, hatch or raft with a twinkle, not a living creature. The lightning at 13.2 s raises whole-frame brightness ~45% but shows no larger silhouette. So the hook and the 'every clue says monster' complication never land on screen.",
+   "smallest_fix": "Replace the ellipse with a soft-edged dark whale silhouette (rounded head, flipper, tail stock) drawn under the wave lines, darker than the water and bigger than the beam's pool so the beam catches only part of it. Replace the sparkle with a round eye (dark iris plus a small catchlight) set in that silhouette's head. On the 13.2 s flash, show the full silhouette under the swell beside the rock for 3-4 frames."
+  },
+  {
+   "dimension": "readable_action",
+   "where": "choice 15.0-17.2 s (f450-f515), phone-f00498; compare cup drop f372-380",
+   "problem": "The shutter pull is masked: the lever's red knob goes up behind her hat, so from 15.5 s she reads as clutching her head. Her reaction to the moan is an eye shift of a few pixels with no body change. The throw-open at 17.0 s uses the same both-arms-up V pose as her fright at 12.5 s. The protagonist's one decision therefore reads as panic or a cheer and is carried only by the lamp flare.",
+   "smallest_fix": "Keep the lever in front of her body and show it travel down as the beam dims. At the moan, give one clear, held turn of her head and shoulders toward the sea. Stage the open as a one-armed forward shove of the lever with a forward lean, distinct from the startle pose. Push in about 1.5-2x for this beat so her face is at least ~90 px wide on a phone."
+  },
+  {
+   "dimension": "technical_defects",
+   "where": "15.1-16.9 s: the wheel fades out over f450-f456 and is back by f506",
+   "problem": "The crank wheel on the lamp pedestal fades out with the lamp's brightness while the shutter closes, leaving only its red knob floating, then reappears when the shutter opens. It is a prop pop tied to the wrong layer.",
+   "smallest_fix": "Render the crank wheel on the opaque prop layer so its opacity no longer follows lamp intensity."
+  }
+ ],
+ "suggestions": [
+  "Cup drop (12.3-12.7 s): give the cup a dark rim or make it larger, and let it fall against the dark gallery rather than the pale beam, or cut in to a 6-8 frame insert of it hitting the floor.",
+  "Softening beat (22.0-23.5 s): push in on Ada's face, and make hand-on-heart a full open hand over the chest rather than a pink dot that reads as a button.",
+  "Tail (25.6-26.0 s): have it rise out of the water with a splash ring instead of scaling up from a thin gull-like V hovering over the pool.",
+  "Calf departure (26.8-28.5 s): add a visible tail flick or turn and a few frames of swimming before it shrinks, and slow the run to the horizon so it doesn't slide.",
+  "Ending (31.0-33.0 s): Ada's wave is about 3-4 px at phone size; give it a 1 s push-in on the gallery or enlarge the gesture, separate the two whale backs (they merge into one low dark island), and hold at least ~2.5 s after the spouts.",
+  "Lantern shots: stop the beam cone from washing across Ada's coat by letting her body occlude it, or stand her on the far side of the lamp.",
+  "Reveal close-up (20.0-21.6 s): soften or hide the cream rock outline that cuts across the pool, and clip the calf along the wavy surface line, not a straight diagonal.",
+  "Shutter visual: the concentric rings read as a target or hypnosis spiral; louvres or an iris closing would say 'shutter' faster."
+ ],
+ "sampling_limits": "I judged from decoded stills only: a contact sheet every 15 frames (0.5 s) from 0.0 to 32.5 s, twelve dense strips at every 2nd frame for ±8 frames around the named moments, and six 360x640 phone frames. I saw no continuous playback and heard nothing. Not established: motion smoothness, easing and arcs; one-frame glitches between samples; the inner frames of the camera moves at 2.5-3.5 s, 4.5-5.5 s, 17.5-19.0 s and the dawn crossfade at 29.0-30.5 s; the calf's swim cycle; the final frames f976-990; and whether picture and sound line up (moan, thuds, whale calls). Pixel sizes for phone legibility come from the phone frames, or from contact-sheet frames upscaled to 360x640, which are softer than the true encode.",
+ "summary": "The film is coherent and handsomely lit: a clear routine, a sweet and very legible calf reveal, a strong beam-to-tail payoff and a dawn that recolours the same world. But its suspense half fails on screen. The 'huge dark shape with an eye' renders as a flat brown disc with a twinkle, the lightning reveals nothing, and Ada's decision to hide and then shine is acted as head-clutching then a cheer, using the same pose as her fright. Repair the threat silhouette and the choice staging, and fix the crank wheel that vanishes while the lamp dims, before release."
+}

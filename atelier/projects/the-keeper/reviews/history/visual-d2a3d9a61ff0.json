@@ -1,0 +1,137 @@
+{
+ "request_sha256": "d2a3d9a61ff01393cc6217610fb2d34206e65ae91a5da91ee75e7802fccef33f",
+ "role": "visual",
+ "reviewer": {
+  "kind": "model",
+  "id": "Claude subagent (fresh context, same model family as the builder)",
+  "independence": "separate-context-same-family",
+  "playback": "ordered-frames",
+  "inputs_viewed": [
+   "/home/user/motif/atelier/projects/the-keeper/reviews/visual-request.md",
+   "/home/user/motif/atelier/contracts/review.schema.json",
+   "/home/user/motif/atelier/runs/the-keeper/rough/6ef7ac4355af/evidence-review/ordered-frames.png",
+   "/home/user/motif/atelier/runs/the-keeper/rough/6ef7ac4355af/evidence-review/strip-glint.png",
+   "/home/user/motif/atelier/runs/the-keeper/rough/6ef7ac4355af/evidence-review/strip-found.png",
+   "/home/user/motif/atelier/runs/the-keeper/rough/6ef7ac4355af/evidence-review/strip-cup_drop.png",
+   "/home/user/motif/atelier/runs/the-keeper/rough/6ef7ac4355af/evidence-review/strip-lightning.png",
+   "/home/user/motif/atelier/runs/the-keeper/rough/6ef7ac4355af/evidence-review/strip-shutter.png",
+   "/home/user/motif/atelier/runs/the-keeper/rough/6ef7ac4355af/evidence-review/strip-open.png",
+   "/home/user/motif/atelier/runs/the-keeper/rough/6ef7ac4355af/evidence-review/strip-surface.png",
+   "/home/user/motif/atelier/runs/the-keeper/rough/6ef7ac4355af/evidence-review/strip-cry.png",
+   "/home/user/motif/atelier/runs/the-keeper/rough/6ef7ac4355af/evidence-review/strip-soften.png",
+   "/home/user/motif/atelier/runs/the-keeper/rough/6ef7ac4355af/evidence-review/strip-tail.png",
+   "/home/user/motif/atelier/runs/the-keeper/rough/6ef7ac4355af/evidence-review/strip-calf_go.png",
+   "/home/user/motif/atelier/runs/the-keeper/rough/6ef7ac4355af/evidence-review/strip-spouts.png",
+   "/home/user/motif/atelier/runs/the-keeper/rough/6ef7ac4355af/evidence-review/phone-f00114.png",
+   "/home/user/motif/atelier/runs/the-keeper/rough/6ef7ac4355af/evidence-review/phone-f00327.png",
+   "/home/user/motif/atelier/runs/the-keeper/rough/6ef7ac4355af/evidence-review/phone-f00498.png",
+   "/home/user/motif/atelier/runs/the-keeper/rough/6ef7ac4355af/evidence-review/phone-f00649.png",
+   "/home/user/motif/atelier/runs/the-keeper/rough/6ef7ac4355af/evidence-review/phone-f00799.png",
+   "/home/user/motif/atelier/runs/the-keeper/rough/6ef7ac4355af/evidence-review/phone-f00930.png"
+  ],
+  "tools": "Read tool on every evidence PNG; Python/PIL enlargements of contact-sheet rows and strip panels into a scratch folder; numpy pixel measurements (crank-knob centroid, lantern x-position per sample, cup and spout size, spout luminance contrast, camera drift in strip-found)"
+ },
+ "verdict": "REPAIR",
+ "dimensions": {
+  "focal_hierarchy": {
+   "status": "FAIL",
+   "note": "The beam leads the eye well to the glinting shape in the sighting (8.5-11.5 s) and the calf owns the reveal close-up (19.5-21.5 s), but the reveal opens with two competing 'eyes' (old star glint plus the calf's own eye, f570-575), and the ending's subject, the two spouts (31.5-32.5 s), is the weakest thing in the frame, losing to the horizon glow and the lighthouse at the edge.",
+   "evidence": "strip-surface f571-f575 star at x~0.27 and calf eye at x~0.37 at the same time; ordered-frames 31.5/32.0/32.5 s spouts are ~20 phone-px puffs at luminance ~243 on a ~219 horizon (about 10% contrast); strip-cup_drop: the dropped cup is a featureless ~4x4 px square in a 150 px panel"
+  },
+  "identity_continuity": {
+   "status": "FAIL",
+   "note": "Ada, the tower and the calf keep a consistent design. But the 'eye glint' the viewer tracks for 10 s is not the calf's eye, the calf flips to face right at 26.5 s and then travels left tail-first, the black rock under the tower disappears whenever the dark shape is beside it (13.5-24 s), and the teacup turns up in Ada's hand at 12.0 s without ever being shown in the routine.",
+   "evidence": "strip-surface f571-f575 star and calf eye in different places, star pops off by f577; ordered-frames 25.0/26.0 s calf faces left, 26.5/27.0/27.5/28.0 s faces right while moving left toward the tail (strip-calf_go f790-f806); ordered-frames 7.5 s large black rock vs 13.5/17.5/18.5 s no rock, the tower base standing in the oval; phone-f00114 and 3.5-4.5 s no cup, left hand on the crank; strip-cup_drop f364 cup in left hand"
+  },
+  "composition": {
+   "status": "FAIL",
+   "note": "The gallery close-ups are centred and use the vertical frame well, with Ada in the upper half and the beam leading down. The wide shots, though, push the lighthouse into the right 15-25% of the frame, under the platform action rail. The lantern with Ada is cut by the right edge during the glint and stop beat (8.5-10.0 s), the mother's tail is jammed against the left edge (26-28.5 s), and the closing shot drifts the lighthouse half out of frame (32.0-32.5 s).",
+   "evidence": "Measured lantern x on the 0.5 s samples: 0.66-0.72 at 0-2.5 s, 0.83-0.89 at 5.5-7.5 s, touching x=133/134 at 8.5-10.0 s, 0.78-0.88 at 24-29 s; phone-f00799 fluke left tip at x~5/360; ordered-frames 32.0/32.5 s lantern cropped by the right edge with Ada at x~0.9"
+  },
+  "readable_action": {
+   "status": "FAIL",
+   "note": "The beam sweeping, passing the shape and swinging back reads clearly. The physical actions the story turns on do not: the crank never moves while Ada 'turns the lamp', the shutter lever moves behind her head while her hand points into empty air, the shutter is thrown open with no gesture, the calf swims home backwards, and the spout floats free of the calf's head.",
+   "evidence": "Crank-knob centroid fixed at (42,104)+/-1 px at 3.5, 3.8 (phone-f00114), 4.0 and 4.5 s; phone-f00498 and ordered-frames 15.0-16.5 s: knob slides from x 41 to 59 and hides behind her head while her left arm is extended out-left, empty; strip-open f502-f510: the lamp brightens with no arm or lever move; strip-calf_go f790-f806 head toward the tower while the body travels left; strip-cry f613-f629 the bubble cluster sits ~14 px (in a 150 px panel) above the calf, separated by the oval rim; strip-lightning f398-f404 the bolt is a 1-2 px line clipped at the left edge and shows nothing new about the shape"
+  },
+  "motion_performance": {
+   "status": "FAIL",
+   "note": "Judged only on the acting the frames show. Smoothness, easing and holds between samples are not assessed. The shock reaction works (open mouth, cup released, 12.5-13.0 s). But all six gallery close-ups reuse one body pose (one arm on the lamp, one by the crank) and change only the tiny face, so the decision (15-17 s) and the softening (22.0-23.9 s) are not performed. The 'crying' calf keeps a smile curve the whole time.",
+   "evidence": "ordered-frames 3.5, 12.0, 14.5, 15.0-17.0 and 22.0-23.5 s: same pose; no hand on heart anywhere in strip-soften f658-f668; strip-cry f619-f629 and phone-f00649 upturned mouth, with a tear of only ~2 px in a 150 px panel"
+  },
+  "style_coherence": {
+   "status": "PASS",
+   "note": "The film holds one deliberate language from first frame to last: flat vector shapes with film grain, rain streaks, teal and navy sea and sky, a translucent cream beam, and a dawn that re-lights the same shapes peach and blue. It reads as flat cut-paper vector rather than the stated 'painterly chiaroscuro', the beam is pale cream-green rather than warm, and lightning is almost absent, but these departures are consistent and do not break the look.",
+   "evidence": "ordered-frames 0.0-29.5 s night palette; 30.0-32.5 s the same tower, rock and sea re-coloured; the outlined fluke (26-28.5 s) is the only outlined object, explained by its rim light"
+  },
+  "phone_readability": {
+   "status": "FAIL",
+   "note": "The big shapes survive at 360x640: lighthouse, beam, dark oval, calf and fluke. The intimate details that carry the emotion do not. The cup is about 10 px, the calf's tear about 5 px, Ada's face about 40 px wide so her shift from fear to tenderness is a few pixels of mouth, the closing spouts are low-contrast specks, and the waving Ada at dawn is about 33 px tall with an unreadable wave.",
+   "evidence": "cup 4x4 px in a 150 px panel, about 10 px at phone width (strip-cup_drop f374-f380); phone-f00498 face about 40 px wide; dawn spouts about 20 phone-px at about 10% luminance contrast (ordered-frames 31.5-32.5 s); yellow Ada bbox about 33 phone-px tall at 31.5-32.5 s"
+  },
+  "technical_defects": {
+   "status": "FAIL",
+   "note": "Cuts are clean and the samples show no broken or torn frames. There are layering errors at key beats: a white ripple ring drawn straight across the calf's face like a halo at the reveal, the tower base turning translucent with the oval's rim showing through it, the rock vanishing, the beam pool drawn on top of the tower body during the routine sweeps, and the glint star popping off in one sample step.",
+   "evidence": "strip-surface f575-f587 ring at eye height over the body, not at the waterline; ordered-frames 13.5/17.5/18.5 s tower base washed into the oval, rim line crossing the tower; ordered-frames 1.5 and 7.0 s pool ellipse composited over the tower with the stripes showing through; strip-surface star present at f575, gone at f577"
+  }
+ },
+ "critical_issues": [
+  {
+   "dimension": "readable_action",
+   "where": "home, 26.5-28.5 s (strip-calf_go f790-f806; ordered-frames 26.5-28.0 s; phone-f00799)",
+   "problem": "After the mother's tail rises, the calf flips to face the lighthouse and then travels left toward the tail backwards, so the climax 'calf swims home along the beam' reads as a calf drifting away tail-first and looking the wrong way.",
+   "smallest_fix": "Keep the calf facing left (head toward the tail) for the whole calf_go travel, or animate a visible 180-degree turn so the head leads while it moves toward the tail."
+  },
+  {
+   "dimension": "identity_continuity",
+   "where": "reveal, 19.0-19.3 s (strip-surface f571-f577; ordered-frames 19.0 s)",
+   "problem": "The star glint the viewer has read as the monster's eye since 8.8 s stays in one spot while the calf surfaces with its own eye about 10% of the frame width away, then the star pops off. The reveal never connects 'the glinting eye' to the calf.",
+   "smallest_fix": "Surface the calf with its eye exactly on the glint's position and cross-fade the star into the eye's catch-light (no separate star after f570)."
+  },
+  {
+   "dimension": "readable_action",
+   "where": "choice, 15.0-17.0 s (strip-shutter f442-f458, strip-open f502-f512, phone-f00498)",
+   "problem": "The central decision has no readable physical action. While the lamp gets its shutter rings, the crank lever slides behind Ada's head and her hand points into empty air. When the light is thrown open she makes no gesture at all. A viewer sees the light dim and brighten by itself.",
+   "smallest_fix": "Put her hand on the lever and have it pull the lever down as the shutter closes (15.0-16.5 s). Hold a set-jaw face for about 0.4 s, then make one big throw of the lever or arm at 17.0 s, synchronised with the flare."
+  },
+  {
+   "dimension": "motion_performance",
+   "where": "reveal, 20.4-23.9 s (strip-cry, strip-soften, phone-f00649)",
+   "problem": "The turn from suspense to tenderness is not acted. The calf keeps a smiling mouth with a ~5 px tear, so it reads as content, not small and crying. Ada's 'softening' close-up reuses the exact pose of every earlier close-up with no hand on her heart, leaving the emotion to a few pixels of mouth on a 40 px face.",
+   "smallest_fix": "Give the calf a downturned or open crying mouth, a tilted brow and a larger tear during the cry beat. Add one new Ada pose for the soften shot, with a hand on her chest and the head tilted, and push in on her face."
+  },
+  {
+   "dimension": "technical_defects",
+   "where": "reveal, 19.2-19.6 s (strip-surface f575-f587)",
+   "problem": "The surfacing ripple ring is drawn at eye height across the calf's face and over its body, so it reads as a halo or hoop at the most important moment of the film.",
+   "smallest_fix": "Place the ring on the waterline and split it into a back half behind the calf and a front half in front, or drop the ring."
+  },
+  {
+   "dimension": "technical_defects",
+   "where": "sighting and choice, 13.5-18.5 s and 24.0 s (strip-lightning f394-f404, strip-open f514-f518, ordered-frames 13.5/17.5/18.5 s)",
+   "problem": "When the shape reaches the rock, the rock disappears and the tower base turns translucent, with the oval's rim and surface showing through it. The promised staging, a shadow under the swell beside the rock, reads instead as a disc pasted over a ghosted tower.",
+   "smallest_fix": "Draw the tower and rock as an opaque layer above the shape, keep the rock visible, and let the shape show only around the rock as a darker mass under the wave lines."
+  },
+  {
+   "dimension": "phone_readability",
+   "where": "dawn, 31.0-32.5 s (strip-spouts f930-f938, ordered-frames 31.5-32.5 s, phone-f00930)",
+   "problem": "The final payoff, two spouts (one big, one small) and Ada waving, is nearly invisible on a phone. The spouts are ~20 px white puffs at ~10% contrast against the bright horizon and never clearly appear together. Ada is ~33 px tall at the right edge, and the camera drift crops the lantern out of frame by 32.0-32.5 s.",
+   "smallest_fix": "Make the two spouts larger (at least 5-8% of frame height) with a blue-grey shadow side for contrast, place them side by side away from the sun glow and hold both for 1 s or more. Stop the dawn drift with the lantern at least 10% inside the frame, or reframe to a mid shot of Ada waving."
+  },
+  {
+   "dimension": "composition",
+   "where": "sighting, 8.5-10.0 s (ordered-frames 8.5/9.0/9.5/10.0 s)",
+   "problem": "While the beam finds the shape and Ada stops the lamp, the lantern with Ada in it is cut in half by the right frame edge, in the platform UI rail zone, so the protagonist is effectively off-screen for her first reaction.",
+   "smallest_fix": "Reframe the sighting wide shots so the lantern sits at about x 0.65-0.75 with at least 8% margin from the right edge, keeping the beam pool in frame on the left."
+  }
+ ],
+ "suggestions": [
+  "Show the teacup in the routine (3.0-4.5 s) and make it a recognisable mug shape with a handle, at least 3x larger, so the cup drop at 12.4 s reads at phone size.",
+  "Animate the crank visibly rotating in the routine; at 3.5, 3.8, 4.0 and 4.5 s it sits in the same position, so 'turns the lamp by hand' is not shown.",
+  "Occlude the beam cone and beam pool behind the tower when the sweep passes behind it (1.5 s, 7.0 s), and stop the cone washing through Ada's body in the close-ups.",
+  "Make the lightning a full-frame flash that briefly reveals a larger silhouette under the swell, instead of a thin bolt clipped at the left edge with the same oval underneath.",
+  "Give the dark shape a living silhouette (a hump, fin or wake under the wave lines) rather than a hard-edged lit ellipse with a bevel, which can read as a raft or disc.",
+  "Attach the calf's spout to a blowhole on its head and make it a rising column rather than a free-floating bubble cluster."
+ ],
+ "sampling_limits": "Ordered decoded frames only: a 0.5 s contact sheet (66 samples, about 135x240 px each), 12 dense strips (every 2nd frame, plus or minus 8 frames, about 150x266 px panels) and 6 full 360x640 phone frames. No moving playback and no audio. Motion smoothness, easing, anticipation timing, holds between samples, popping between sampled frames (except where strips cover it), camera-move quality, and picture-to-sound sync (creaks, thuds, whale calls, thunder) are not assessed. The motion_performance FAIL rests on poses and expressions visible in the samples, not on timing. The crank 'not turning' claim rests on four samples (3.5, 3.8, 4.0, 4.5 s) agreeing to within 1 px; a rotation aliased exactly to those instants cannot be fully excluded but is implausible. Platform UI-zone judgements assume the typical right action rail (about x 0.84-1.0, y 0.4-0.85) and bottom caption band.",
+ "summary": "A clear, coherent flat-vector night look with a well-staged sighting (the beam passes the glinting shape, swings back, finds it closer). The reveal and climax break at the level a first-time phone viewer would notice. The glint the viewer tracked is not the calf's eye. The calf swims home backwards. The hide-the-light decision has no readable physical action. The tender turn is not acted (smiling calf, reused Ada pose, no hand on heart). Layering defects land on key beats: a halo ring across the calf's face, the tower ghosting, the rock vanishing. The closing spouts and Ada's wave are nearly invisible, with the lighthouse drifting out of frame. Style coherence passes; every other dimension fails. Verdict REPAIR: the concept and look hold, and each blocker has a contained fix."
+}

@@ -1,0 +1,93 @@
+{
+ "request_sha256": "f2361ad62f8bf2b24adfceb20ae573b1d2471b9f8be8280179dbc06880071797",
+ "role": "story",
+ "reviewer": {
+  "kind": "model",
+  "id": "Claude subagent (fresh context, same model family as the builder)",
+  "independence": "separate-context-same-family",
+  "playback": "ordered-frames",
+  "inputs_viewed": [
+   "/home/user/motif/atelier/projects/the-keeper/reviews/story-request.md",
+   "/home/user/motif/atelier/contracts/review.schema.json",
+   "/home/user/motif/atelier/runs/the-keeper/rough/6ef7ac4355af/evidence-review/ordered-frames.png",
+   "/home/user/motif/atelier/runs/the-keeper/rough/6ef7ac4355af/evidence-review/strip-glint.png",
+   "/home/user/motif/atelier/runs/the-keeper/rough/6ef7ac4355af/evidence-review/strip-found.png",
+   "/home/user/motif/atelier/runs/the-keeper/rough/6ef7ac4355af/evidence-review/strip-cup_drop.png",
+   "/home/user/motif/atelier/runs/the-keeper/rough/6ef7ac4355af/evidence-review/strip-lightning.png",
+   "/home/user/motif/atelier/runs/the-keeper/rough/6ef7ac4355af/evidence-review/strip-shutter.png",
+   "/home/user/motif/atelier/runs/the-keeper/rough/6ef7ac4355af/evidence-review/strip-open.png",
+   "/home/user/motif/atelier/runs/the-keeper/rough/6ef7ac4355af/evidence-review/strip-surface.png",
+   "/home/user/motif/atelier/runs/the-keeper/rough/6ef7ac4355af/evidence-review/strip-cry.png",
+   "/home/user/motif/atelier/runs/the-keeper/rough/6ef7ac4355af/evidence-review/strip-soften.png",
+   "/home/user/motif/atelier/runs/the-keeper/rough/6ef7ac4355af/evidence-review/strip-tail.png",
+   "/home/user/motif/atelier/runs/the-keeper/rough/6ef7ac4355af/evidence-review/strip-calf_go.png",
+   "/home/user/motif/atelier/runs/the-keeper/rough/6ef7ac4355af/evidence-review/strip-spouts.png",
+   "/home/user/motif/atelier/runs/the-keeper/rough/6ef7ac4355af/evidence-review/phone-f00114.png",
+   "/home/user/motif/atelier/runs/the-keeper/rough/6ef7ac4355af/evidence-review/phone-f00327.png",
+   "/home/user/motif/atelier/runs/the-keeper/rough/6ef7ac4355af/evidence-review/phone-f00498.png",
+   "/home/user/motif/atelier/runs/the-keeper/rough/6ef7ac4355af/evidence-review/phone-f00649.png",
+   "/home/user/motif/atelier/runs/the-keeper/rough/6ef7ac4355af/evidence-review/phone-f00799.png",
+   "/home/user/motif/atelier/runs/the-keeper/rough/6ef7ac4355af/evidence-review/phone-f00930.png"
+  ],
+  "tools": "Read tool on every evidence PNG; Python/PIL crops, 2-8x enlargements, autocontrast and pixel/mean-colour measurements of those same images, written to the session scratchpad"
+ },
+ "dimensions": {
+  "opening_promise": {
+   "status": "PASS",
+   "note": "From frame 0 a storm-lashed lighthouse sweeps its beam, 3.0-4.5 s shows Ada in a yellow oilskin working the lamp, 5.0-7.5 s the beam crosses empty water under 'And every night, the sea stayed empty', and 'Until tonight' (8.1 s) lands with a dark shape and glint in the beam at 8.5 s: a clear ritual-then-break promise, though nothing unusual appears until 8.5 s, which is late for scrollers.",
+   "evidence": "ordered-frames 0.0-8.5 s; phone-f00114 (3.8 s); strip-glint f256-f272"
+  },
+  "progression": {
+   "status": "PASS",
+   "note": "Each part changes the situation: the shape appears far out (8.5 s), is lost and found again closer (10.5 s), Ada's shock (12.0 s), it is at the rock (13.5 s), she dims the lamp (15.0-16.5 s, lamp mean ~242 down to ~142, beam about halved), throws it open and aims it down (17.0-18.5 s), the calf surfaces and cries (19.0-21.5 s), she sends the beam to sea and a tail answers (25.0-26.0 s), the calf leaves (26.5-29.0 s), dawn (29.5-32.5 s); nothing is a list item.",
+   "evidence": "ordered-frames 8.5-32.5 s; strip-found, strip-shutter, strip-open, strip-surface, strip-tail"
+  },
+  "payoff": {
+   "status": "FAIL",
+   "note": "The reveal answers the hook well (crying calf in the beam at 19.0-21.5 s, Ada smiles at 22.0 s), but the ending that answers the opening ('the sea stayed empty' becomes 'had never been empty') rests on two dawn spouts that are almost invisible on a phone: a ~24x19 px near-white puff on peach sky at ~31.5 s (spout RGB 253,235,215 vs sky 252,221,186, about 1.1:1 contrast) and a ~10 px white blip at the waterline ~0.5 s later, both in the left third, never reading as one big and one small spout together, so the last line plays over a sea that looks empty and the mother-and-calf-together image is lost.",
+   "evidence": "ordered-frames 31.0-32.5 s (contrast-enhanced crops); strip-spouts f922-f938; phone-f00930"
+  },
+  "cause_before_effect": {
+   "status": "PASS",
+   "note": "Causes precede effects throughout: the shape is shown before Ada's shock (8.5/10.5 s vs 12.0 s), the dimming (15.0-15.5 s) precedes the moan cue (15.6 s), her set mouth (16.5 s) and full beam (17.0 s); the beam reaches the horizon (25.0 s) before the tail rises (about 25.7-26.0 s) and the calf moves only after it (26.5 s); minor gaps: the cup is never shown before she drops it (it first appears in her hand at 12.0 s), and the lightning at 13.2 s reveals no larger shadow, so the intended 'size of its shadow' clue has no on-screen cause.",
+   "evidence": "ordered-frames 8.5-26.5 s; strip-cup_drop f364-f380; strip-lightning f394-f404; strip-tail f763-f779"
+  },
+  "clarity_normal_speed": {
+   "status": "FAIL",
+   "note": "The plot is followable, but the 'swims home' beat reads backwards: the calf faces left, toward the sea and the tail, from 19.0 to 26.0 s, then the moment the tail answers (about 26.3 s) it flips to face the lighthouse and glides tail-first toward its mother for about 2 s while shrinking (26.5-28.5 s), which on a phone looks like it turns its back on its mother and drifts backwards; secondary weaknesses: the threat is a smooth dark ellipse the same shape as the beam's own light pool, with a four-point 'shine' sparkle rather than an eye, so fear is carried mainly by Ada's reactions, and the cup (about 10 px) and the dawn wave (about 5 px of arm) are too small to register.",
+   "evidence": "ordered-frames 24.0-28.5 s (enlarged: eye and mouth on the left at 25.0/25.5/26.0 s, on the right at 26.5/27.0/27.5 s while x moves left); phone-f00799; strip-calf_go f790-f806; phone-f00327"
+  },
+  "picture_sound_link": {
+   "status": "PASS",
+   "note": "All seven lines land on matching picture: 'Ada kept the light turning' (1.0-3.2 s) cuts to Ada at 3.0 s, 'the sea stayed empty' (4.9-7.0 s) over the beam on empty water, 'Until tonight' (8.1-9.2 s) as the shape appears, the 11.8 s silence is carried by picture, 'It wasn't a monster. It was lost.' (21.0-23.7 s) follows the cry at 20.7 s and covers Ada's smile, 'So Ada did what the light was for' (24.2-26.2 s) covers the beam swing and tail, and 'The sea had never been empty' (30.5-32.3 s) covers dawn, although that last line's visual support is the faint spouts filed under payoff; sound effects and the moan that motivates her change of heart could not be heard.",
+   "evidence": "narration timings vs ordered-frames 1.0-32.5 s; cue sheet (moan 15.6 s, cry 20.7 s, answer 26.2 s, lamp_off 31.0 s)"
+  }
+ },
+ "verdict": "REPAIR",
+ "critical_issues": [
+  {
+   "dimension": "payoff",
+   "where": "dawn, about 31.0-33.0 s (f930-f990; sampled at 31.0, 31.5, 32.0, 32.5 s and strip-spouts f922-f938)",
+   "problem": "The two spouts meant to prove 'The sea had never been empty' and show mother and calf safe together are near-invisible at phone size: the first is a ~24x19 px near-white spray on a peach sky (about 1.1:1 contrast), the second a ~10 px white blip at the waterline that appears about 0.5 s later, both in the left third while attention sits on the lighthouse and the lamp switching off at right. They never read as a big and a small spout side by side, so the closing line plays over an apparently empty sea.",
+   "smallest_fix": "Make both spouts 3-4x larger and raise their contrast (blue-grey or backlit spray, with a dark whale back breaking the surface under each). Raise them side by side, one big and one small, by about 30.8 s, nearer frame centre, and hold them to the last frame."
+  },
+  {
+   "dimension": "clarity_normal_speed",
+   "where": "home, about 26.3-28.5 s (f789-f855; ordered-frames 26.0 vs 26.5-28.0 s; strip-calf_go f790-f806; phone-f00799)",
+   "problem": "When the mother's tail answers, the calf flips from facing the tail to facing the lighthouse, then glides tail-first toward its mother for about 2 s. The intended action ('the calf turns and swims along the beam toward it') reads inverted, as if the calf turns away from its mother and is pulled backwards.",
+   "smallest_fix": "Remove or invert the flip at about 26.3 s so the calf's head leads its motion toward the tail. If a look-back at Ada is wanted, make it a brief head turn before it swims off head-first."
+  }
+ ],
+ "suggestions": [
+  "Make the threat read as a creature: give the dark ellipse a silhouette cue (a ridge, a fin, a long body shadow running past the edge of the light pool) so it does not look like a darker patch of the beam's own spot. Make the lightning at 13.2 s actually show a much larger shadow under the swell beside the rock: right now the bolt is a thin line at the left edge and the shape is unchanged.",
+  "Turn the glint into the calf's eye: at f571-f575 the sparkle and the real eye are both on screen, side by side.",
+  "Establish the cup in the routine close-up (3.0-4.5 s), or drop the beat: it first appears in Ada's hand at 12.0 s and is about 10 px at phone size.",
+  "Show the shutter: at 15.0-16.5 s Ada's reaching arm points at empty air. The dimming reads, but a visible lever or closing shutter blades would make 'hiding the light' clear.",
+  "At the reveal the calf's mouth is an upturned smile and its tear is about 10 px, so it reads cute and happy until the narration says 'lost'. Turn the mouth down while it cries.",
+  "Ada's softening at 22.0-23.5 s reuses the exact routine framing and pose. The smile reads, but the intended hand on heart is missing and would carry the tenderness.",
+  "Ada's dawn wave is about 5 px of arm on a figure about 21 px tall. Push in or enlarge the gallery for the final beat.",
+  "Consider a faint swell or glint before 8.5 s so a scrolling viewer gets a hint of the threat sooner."
+ ],
+ "sampling_limits": "Ordered decoded frames every 0.5 s (f0-f975; the final ~0.5 s to f990 is unsampled), dense strips of every 2nd frame within +/-8 frames of 12 named moments, and six 360x640 phone frames. No moving playback and no listening. Motion between samples, the exact timing of cuts and turns between samples, and whether the moan at 15.6 s (the only on-screen cause of Ada's change of heart) reads as a plaintive whale rather than a monster cannot be judged. Neither can the cry, the answer call or any sound effect, nor the mix. The narration-to-picture link was judged from the stated timestamps, not heard. Sizes and contrasts were measured on the downscaled sheets and converted to phone pixels, so they are approximate.",
+ "summary": "A clean, well-built suspense-to-tenderness arc: routine, sighting, the choice to hide the light or shine it, a crying-calf reveal and a guide-home beat, with sparse narration landing on the right pictures. Two fixes block release. The dawn spouts that carry the final line are near-invisible on a phone, so the closing image reads as an empty sea. And the calf flips to face the lighthouse as it heads home, so it appears to swim backwards toward its mother. The threat is also under-designed (a smooth dark ellipse with a sparkle, and lightning that reveals nothing), so the suspense leans on Ada's reactions."
+}

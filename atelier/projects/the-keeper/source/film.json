@@ -1,7 +1,7 @@
 {
  "entry": "film.js",
  "fps": 30,
- "frames": 990,
+ "frames": 1014,
  "design": [
   1080,
   1920
@@ -35,7 +35,7 @@
   {
    "id": "dawn",
    "start": 870,
-   "end": 990
+   "end": 1014
   }
  ],
  "moments": {
@@ -70,7 +70,7 @@
   "calf_spout": 828,
   "tail_down": 849,
   "clear": 870,
-  "lamp_off": 930,
+  "lamp_off": 946,
   "spouts": 930,
   "wave": 930,
   "end_hold": 966

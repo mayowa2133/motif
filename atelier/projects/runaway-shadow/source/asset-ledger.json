@@ -3,8 +3,8 @@
     {
       "path": "film.js",
       "kind": "source",
-      "version": 10,
-      "sha256": "cb4827b1e2273e3ad29d69beaba859833737cb7cc46491187849d8fc67eb7c2e",
+      "version": 11,
+      "sha256": "1e253cf2d6f09c699b59dbb323aae92cec4ffcdd62b611ad463c17fbfef0ba49",
       "origin": "atelier-authored-code",
       "author": "Claude (agent-assisted authoring)",
       "rights": "original Motif production artwork and code; no third-party material",
@@ -13,8 +13,8 @@
     {
       "path": "film.json",
       "kind": "data",
-      "version": 3,
-      "sha256": "5c5e47f631117b08c6fbe399768d4b058aeb58191cd6b476ab23173537321caf",
+      "version": 4,
+      "sha256": "9ac124e4bb172091ffa617bf9485a4feb60f368946d5e601979e6b5f8a9c5c12",
       "origin": "atelier-authored-code",
       "author": "Claude (agent-assisted authoring)",
       "rights": "original Motif production artwork and code; no third-party material",

@@ -75,40 +75,43 @@
       if (t >= 12.55) { P.lookY = kf(t, [[12.55, 0.1], [12.7, 1, 'outQuad'], [13.0, 1], [13.12, 0, 'outQuad']]); P.lookX = kf(t, [[12.55, -0.9], [12.7, 0], [13.12, 0]]);
         P.mouth = 'flat'; P.brows = kf(t, [[13.0, 0], [13.12, -0.9]]); P.eyeSize = 1; P.open = 0; P.armL = P.armR = 0.3; P.hatUp = kf(t, [[12.55, 0.4], [12.75, 0, 'outBack']]); }
     }
-    // chase: wind-up, a visible run across open grass, cap off as a net, dive, faceplant
-    if (t >= 13.2 && t < 17.8) {
-      const run = A.seg(t, 13.45, 14.35);
-      P.x = kf(t, [[13.45, 700], [14.35, 565, 'inOutQuad']]); P.facing = kf(t, [[13.2, -0.3], [13.35, -0.9]]);
-      P.lean = kf(t, [[13.2, -0.05], [13.4, 0.18, 'outQuad'], [13.5, -0.22], [14.3, -0.22], [14.45, 0.05]]); P.brows = -0.9; P.mouth = 'flat'; P.lookX = -0.9; P.lookY = 0.3;
-      if (run > 0 && run < 1) { const w = walkLegs(t, 2.6, 0.62); P.legL = w.l; P.legR = w.r; P.lift = -w.bob; P.armL = 1.0 + w.l * 1.1; P.armR = 1.0 + w.r * 1.1; P.hatTilt = 0.9 + Math.sin(t * 16) * 0.12; }
-      if (t >= 14.35) {
-        const d = A.seg(t, 15.0, 15.6);
-        P.hatOff = t >= 14.55 ? 1 : 0; P.armR = kf(t, [[14.35, 0.5], [14.55, 2.7, 'outQuad'], [14.9, 2.2], [15.3, 2.45]]); P.armL = kf(t, [[14.35, 0.5], [14.95, 1.8], [15.3, 2.4]]);
-        P.squash = kf(t, [[14.75, 1], [14.95, 0.8, 'outQuad'], [15.02, 1.12]]); P.eyeSize = t < 14.95 ? 1.15 : 1;
-        P.x = kf(t, [[15.0, 565], [15.6, 345, 'linear']]); P.y = kf(t, [[15.0, 1232], [15.6, 1462, 'inQuad']]); P.lift = Math.sin(Math.PI * d) * 160; P.back = t > 15.35 ? 1 : 0;
-        P.rot = kf(t, [[15.0, 0], [15.6, -1.45, 'inOutQuad']]); P.s = kf(t, [[15.0, 1], [15.6, 1.1]]);
-        if (t >= 15.6) { P.rot = -1.5 + wob(t, 15.6, 0.08, 18, 7); P.squash = 1 + wob(t, 15.6, -0.18, 20, 7); P.lift = 0; P.back = 1;
-          P.legL = 0.9 + Math.sin(t * 11) * 0.35 * (1 - A.seg(t, 16.6, 17.2)); P.legR = -0.5 - Math.sin(t * 11 + 1) * 0.35 * (1 - A.seg(t, 16.6, 17.2)); P.armL = 2.9; P.armR = 2.85; P.bendL = P.bendR = 0.1; P.mouth = 'flat'; P.brows = 0; }
+    // chase: three stomps at the flattened shadow; it slides away each time, the third time into the tree's shade
+    if (t >= 13.2 && t < 20.05) {
+      const leaps = [[13.45, 13.95, [700, 1232], [340, 1360], 150], [14.15, 14.6, [340, 1360], [420, 1450], 100], [14.8, 15.3, [420, 1450], [250, 1470], 120]];
+      P.x = 250; P.y = 1470; P.facing = -0.6; P.brows = -0.9; P.mouth = 'flat'; P.lookX = -0.8; P.lookY = 0.6;
+      if (t < 13.45) { P.x = 700; P.y = 1232; P.squash = kf(t, [[13.2, 1], [13.45, 0.84, 'outQuad']]); P.lean = kf(t, [[13.2, 0], [13.45, 0.16]]); P.armL = P.armR = kf(t, [[13.2, 0.3], [13.45, 0.9]]); P.lookX = -0.9; P.lookY = 0.4; }
+      for (const [a, b, from, to, h] of leaps) {
+        if (t >= a && t < b) {                                 // a leap: stretch up, tuck, both feet down hard
+          const u = (t - a) / (b - a);
+          P.x = from[0] + (to[0] - from[0]) * u; P.y = from[1] + (to[1] - from[1]) * u; P.lift = Math.sin(Math.PI * u) * h;
+          P.squash = u < 0.3 ? 1.15 : 1.05; P.legL = -0.5 * Math.sin(Math.PI * u); P.legR = 0.5 * Math.sin(Math.PI * u); P.armL = P.armR = 2.2 - 1.2 * u;
+          P.facing = to[0] < from[0] ? -0.8 : 0.8; P.lookX = P.facing > 0 ? 0.6 : -0.6; P.lookY = 0.9; P.brows = -0.9;
+        }
+        if (t >= b && t < b + 0.22) { P.x = to[0]; P.y = to[1]; P.squash = 1 + wob(t, b, -0.28, 26, 8); P.armL = P.armR = 1.4; P.lookY = 1; P.eyeSize = 1.15;
+          const next = leaps.find((l) => l[0] > b); P.lookX = next ? (next[3][0] > to[0] ? 0.9 : -0.9) : -0.9; }
+        if (t >= b + 0.22 && leaps.some((l) => l[0] > t) && t < leaps.find((l) => l[0] > t)[0]) { P.x = to[0]; P.y = to[1]; const nx = leaps.find((l) => l[0] > t)[3][0];
+          P.lookX = nx > to[0] ? 0.9 : -0.9; P.lookY = 0.8; P.squash = kf(t, [[b + 0.22, 1], [leaps.find((l) => l[0] > t)[0], 0.86]]); }
       }
-    }
-    // sit up, glare at the giggling eyes, think, get the idea, put the cap back on
-    if (t >= 17.8 && t < 20.05) {
-      const up = A.ease.outBack(A.seg(t, 17.8, 18.3));
-      P.x = 345; P.y = 1462; P.s = 1.1; P.rot = -1.5 * (1 - up); P.sit = up; P.hatOff = 1; P.dazed = t < 18.3 ? 1 : 0; P.back = t < 17.95 ? 1 : 0;
-      P.lookX = -0.9; P.lookY = 0.55; P.brows = -0.9; P.mouth = 'flat'; P.armL = 0.6; P.armR = 0.6; P.legL = 1.1; P.legR = 1.0;
-      if (t > 18.6) { P.armR = 2.0 + Math.sin(t * 14) * 0.08; P.frontR = true; P.bendR = 1.1; P.lookX = kf(t, [[18.6, -0.9], [18.9, 0.3]]); P.lookY = kf(t, [[18.6, 0.55], [18.9, -0.7]]); P.squint = 0.35; P.brows = -0.2; }
-      if (t > 19.4) {                                        // the idea: a glance at the eyes, then mitten up
-        const aha = kf(t, [[19.4, 0], [19.5, 1, 'outBack'], [19.8, 1], [19.9, 0]]);
-        P.frontR = false; P.armR = 0.6 + 2.3 * aha; P.bendR = 0.1; P.squint = 0; P.eyeSize = 1 + 0.25 * aha; P.brows = 0.9 * aha; P.mouth = 'grin'; P.squash = 1 + 0.08 * aha;
-        P.lookX = kf(t, [[19.4, 0.3], [19.5, -0.9], [19.75, -0.9], [19.85, 0]]); P.lookY = kf(t, [[19.4, -0.7], [19.5, 0.5], [19.85, 0]]); P.hatUp = 0.6 * aha;
+      if (t >= 15.3 && t < 17.8) {                             // the last stomp lands on bare shade: sore foot, hopping
+        const hop = t > 15.5 && t < 16.6;
+        P.legR = kf(t, [[15.3, 0], [15.45, -1.3, 'outQuad'], [16.5, -1.3], [16.7, 0]]); P.armR = kf(t, [[15.3, 1.4], [15.45, 0.9]]); P.bendR = 1.2;
+        P.armL = 1.8 + Math.sin(t * 22) * 0.4 * (hop ? 1 : 0); P.lift = hop ? Math.abs(Math.sin((t - 15.5) * Math.PI * 4)) * 34 : 0; P.x = 250 + (hop ? Math.sin((t - 15.5) * 6) * 30 : 0);
+        P.eyeOpen = hop ? 0.1 : 1; P.mouth = hop ? 'o' : 'flat'; P.open = 0.8; P.squash = 1 + wob(t, 15.3, -0.25, 26, 8); P.brows = hop ? 0.6 : -0.9;
+        if (t > 16.7) { P.lookX = -0.9; P.lookY = 0.55; P.brows = -0.9; P.mouth = 'flat'; P.armL = P.armR = kf(t, [[16.7, 0.4], [17.0, 1.1]]); P.bendL = P.bendR = 1.3; P.frontL = P.frontR = true; }  // arms folded, glaring at the giggle
       }
-      if (t > 19.85) { P.armR = kf(t, [[19.85, 1.2], [19.95, 1.8, 'outQuad'], [20.05, 2.6]]); P.sit = kf(t, [[19.85, 1], [20.05, 0.4]]); P.lookX = 0.6; }
+      if (t >= 17.8) {                                         // think, then the idea
+        P.lookX = kf(t, [[17.8, -0.9], [18.6, -0.9], [18.9, 0.3]]); P.lookY = kf(t, [[18.6, 0.55], [18.9, -0.7]]); P.armL = 0.4; P.armR = 0.4;
+        if (t > 18.6) { P.armR = 2.0 + Math.sin(t * 14) * 0.08; P.frontR = true; P.bendR = 1.1; P.squint = 0.35; P.brows = -0.2; }
+        if (t > 19.4) { const aha = kf(t, [[19.4, 0], [19.5, 1, 'outBack'], [19.85, 1], [19.95, 0]]);
+          P.frontR = false; P.armR = 0.6 + 2.3 * aha; P.bendR = 0.1; P.squint = 0; P.eyeSize = 1 + 0.25 * aha; P.brows = 0.9 * aha; P.mouth = 'grin'; P.squash = 1 + 0.08 * aha; P.lift = 18 * aha;
+          P.lookX = kf(t, [[19.4, 0.3], [19.5, -0.9], [19.75, -0.9], [19.9, 0]]); P.lookY = kf(t, [[19.4, -0.7], [19.5, 0.5], [19.9, 0]]); P.hatUp = 0.6 * aha; }
+      }
     }
     // lure: walk back into the sun, dance, freeze, wind up, stomp, pinned hold, smug
     if (t >= 20.05 && t < 24.4) {
       const back = A.seg(t, 20.05, 20.6);
-      P.hatOff = 0; P.sit = kf(t, [[20.05, 0.4], [20.2, 0, 'outQuad']]);
-      P.x = kf(t, [[20.05, 345], [20.6, 640, 'inOutQuad']]); P.y = kf(t, [[20.05, 1462], [20.6, 1262, 'inOutQuad']]); P.s = kf(t, [[20.05, 1.1], [20.6, 1.04]]);
+      P.hatOff = 0;
+      P.x = kf(t, [[20.05, 250], [20.6, 640, 'inOutQuad']]); P.y = kf(t, [[20.05, 1470], [20.6, 1262, 'inOutQuad']]); P.s = kf(t, [[20.05, 1.1], [20.6, 1.04]]);
       P.brows = 0.6; P.mouth = 'grin'; P.lookX = -0.5; P.lookY = 0.2; P.facing = back > 0 && back < 1 ? 0.8 : 0;
       if (back > 0 && back < 1) { const w = walkLegs(t, 2.2, 0.45); P.legL = w.l; P.legR = w.r; P.lift = -w.bob; P.squash = 1 + Math.sin(t * 25) * 0.03; }
       if (t >= 20.6 && t < 22.6) {
@@ -172,14 +175,17 @@
         if (t >= 11.6 && t < 12.3) { const w = walkLegs(t, 3.4, 0.75); S.pose.legL = w.l; S.pose.legR = w.r; S.pose.lift = -w.bob * 1.5; S.pose.armL = 1.0 + w.l; S.pose.armR = 1.0 + w.r; S.look = [-0.9, 0]; }
         S.scale = 1.1 - 0.12 * A.seg(t, 11.6, 12.3);
       }
-      if (t >= 12.3 && t < 14.15) {                           // taunt at the edge of the shade while Pim comes
+      if (t >= 12.3 && t < 13.4) {                            // taunt at the edge of the shade while Pim winds up
         S.pose.facing = 0.5; S.pose.armL = S.pose.armR = 2.65 + Math.sin(t * 18) * 0.15; S.pose.lean = Math.sin(t * 12) * 0.12; S.face = 'grin'; S.look = [0.9, -0.2];
       }
-      if (t >= 14.0) {                                          // melt: hinge down flat into the shade, held long enough to read
-        const m = A.seg(t, 14.05, 14.55);
-        S.u = 1 - A.ease.inQuad(m); S.anchor = [262 - 82 * m, 1340 + 140 * m]; S.pose.armL = S.pose.armR = 2.5; S.eyes = 1 - A.seg(t, 14.4, 14.55); S.face = 'grin';
+      if (t >= 13.4) {                                         // drops flat, then dodges each stomp by sliding along the grass
+        const spots = [[13.4, [262, 1340]], [13.65, [300, 1360]], [13.82, [300, 1360]], [13.95, [420, 1450]], [14.48, [420, 1450]], [14.62, [230, 1470]], [15.15, [230, 1470]], [15.35, [180, 1480]]];
+        let at = spots[spots.length - 1][1];
+        for (let i = 1; i < spots.length; i++) if (t < spots[i][0]) { const [t0, a] = spots[i - 1], [t1, b] = spots[i], u = A.ease.inOutQuad((t - t0) / (t1 - t0)); at = [a[0] + (b[0] - a[0]) * u, a[1] + (b[1] - a[1]) * u]; break; }
+        S.anchor = at; S.u = kf(t, [[13.4, 1], [13.65, 0, 'inQuad']]); S.scale = 1.0; S.pose.armL = S.pose.armR = 2.5; S.pose.lean = 0; S.face = 'grin'; S.look = [0.6, -0.6];
+        S.eyes = 1 - A.seg(t, 15.2, 15.35);
       }
-      if (t >= 14.55) { S.u = 0; S.anchor = [180, 1480]; S.eyes = 0; S.hidden = true; }
+      if (t >= 15.35) { S.u = 0; S.anchor = [180, 1480]; S.eyes = 0; S.hidden = true; }
       if (t >= 16.6 && t < 20.95) {                             // peek from another patch of shade, giggle, watch the dance
         S.eyes = kf(t, [[16.6, 0], [16.75, 1, 'outBack'], [16.85, 0.1], [16.95, 1]]); S.peek = [40, 1600]; S.k = 1.4;
         S.face = t > 17.15 && t < 18.0 ? 'giggle' : 'mischief'; S.giggle = S.face === 'giggle' ? Math.sin(t * 40) * 7 : 0;
@@ -444,9 +450,9 @@
   }
 
   function camera(t) {
-    const z = kf(t, [[0, 1.0], [3.0, 1.0], [4.4, 1.2], [9.0, 1.2], [10.4, 1.14], [12.0, 1.1], [13.3, 1.0], [14.5, 1.05], [19.9, 1.05], [20.6, 1.0], [22.3, 1.0], [22.8, 1.15], [23.6, 1.18], [24.4, 1.18], [29.6, 1.36]]);
-    const fx = kf(t, [[0, 600], [3.0, 600], [4.4, 610], [9.0, 610], [10.4, 560], [12.0, 520], [13.3, 520], [14.5, 300], [19.9, 300], [20.6, 330], [22.3, 360], [22.8, 560], [23.6, 560], [24.4, 580], [29.6, 620]]);
-    const fy = kf(t, [[0, 1010], [3.0, 1010], [4.4, 1180], [9.0, 1200], [10.4, 1250], [12.0, 1240], [13.3, 1120], [14.5, 1430], [19.9, 1430], [20.6, 1440], [22.3, 1420], [22.8, 1280], [23.6, 1260], [24.4, 1240], [29.6, 1240]]);
+    const z = kf(t, [[0, 1.0], [3.0, 1.0], [4.4, 1.2], [9.0, 1.2], [10.4, 1.14], [12.0, 1.1], [13.3, 1.0], [13.9, 1.0], [15.4, 1.0], [16.4, 1.05], [19.9, 1.05], [20.6, 1.0], [22.3, 1.0], [22.8, 1.15], [23.6, 1.18], [24.4, 1.18], [29.6, 1.36]]);
+    const fx = kf(t, [[0, 600], [3.0, 600], [4.4, 610], [9.0, 610], [10.4, 560], [12.0, 520], [13.3, 520], [13.9, 440], [15.4, 380], [16.4, 300], [19.9, 300], [20.6, 330], [22.3, 360], [22.8, 560], [23.6, 560], [24.4, 580], [29.6, 620]]);
+    const fy = kf(t, [[0, 1010], [3.0, 1010], [4.4, 1180], [9.0, 1200], [10.4, 1250], [12.0, 1240], [13.3, 1150], [13.9, 1320], [15.4, 1370], [16.4, 1430], [19.9, 1430], [20.6, 1440], [22.3, 1420], [22.8, 1280], [23.6, 1260], [24.4, 1240], [29.6, 1240]]);
     const jolt = t >= 23.0 && t < 23.1 ? Math.sin((t - 23.0) * 90) * 14 : 0;
     return { z, fx, fy: fy + jolt };
   }
@@ -477,22 +483,12 @@
       const P = pim(t), S = shadow(t, P);
       tree(ctx, t);
       shadows(ctx, t, P, S);
-      dust(ctx, 230, 1470, t, 15.6, 9, 11, 1.3); dust(ctx, P.x - 30, P.y + 6, t, 23.0, 12, 12, 1.7); dust(ctx, 700, 1236, t, 2.4, 4, 13, 1);
+      dust(ctx, 340, 1364, t, 13.95, 7, 14, 1.1); dust(ctx, 420, 1454, t, 14.6, 7, 15, 1.1); dust(ctx, 250, 1474, t, 15.3, 9, 11, 1.3); dust(ctx, P.x - 30, P.y + 6, t, 23.0, 12, 12, 1.7); dust(ctx, 700, 1236, t, 2.4, 4, 13, 1);
       if (t >= 23.0 && t < 23.2) { const u = (t - 23.0) / 0.2; ctx.save(); ctx.strokeStyle = `rgba(255,246,220,${1 - u})`; ctx.lineWidth = 9; ctx.lineCap = 'round';
         for (let i = 0; i < 7; i++) { const a = Math.PI + 0.2 + i * 0.46, r0 = 70 + 40 * u, r1 = 110 + 90 * u; ctx.beginPath(); ctx.moveTo(P.x - 20 + Math.cos(a) * r0, P.y + Math.sin(a) * r0 * 0.5); ctx.lineTo(P.x - 20 + Math.cos(a) * r1, P.y + Math.sin(a) * r1 * 0.5); ctx.stroke(); } ctx.restore(); }
-      if (t >= 14.5 && t < 15.15) { const u = (t - 14.5) / 0.65; ctx.beginPath(); ctx.ellipse(180, 1480, 40 + 140 * u, 14 + 46 * u, 0, 0, Math.PI * 2); ctx.strokeStyle = `rgba(36,21,46,${0.6 * (1 - u)})`; ctx.lineWidth = 8; ctx.stroke(); }
+      if (t >= 15.35 && t < 16.0) { const u = (t - 15.35) / 0.65; ctx.beginPath(); ctx.ellipse(180, 1480, 40 + 140 * u, 14 + 46 * u, 0, 0, Math.PI * 2); ctx.strokeStyle = `rgba(36,21,46,${0.6 * (1 - u)})`; ctx.lineWidth = 8; ctx.stroke(); }
       const twinInFront = !S.attached && S.u > 0.02 && S.anchor[1] > P.y;
       if (!twinInFront) twin(ctx, t, S);
-      if (t >= 14.55 && t < 20.05) {                     // the cap as a net: in hand, lands net-down on the shade (empty), tossed back on
-        let hx, hy, rot;
-        if (t < 15.6) { [hx, hy] = handPos(P, 1); rot = P.armR - Math.PI + P.rot + P.lean; }
-        else if (t < 19.85) { const bo = A.ease.outQuad(A.seg(t, 15.6, 16.1)); hx = 230 + 270 * bo; hy = 1480 + 22 * bo - Math.sin(Math.PI * bo) * 120; rot = Math.PI + 2.4 * bo + Math.max(0, wob(t, 16.1, 0.2, 18, 8)); }
-        else { const u = A.ease.inOutQuad(A.seg(t, 19.85, 20.05)); hx = 500 + (P.x - 500) * u; hy = 1502 + (P.y - LEG - BH - 20 - 1502) * u - Math.sin(Math.PI * u) * 170; rot = Math.PI + 2.4 + (6.28 - Math.PI - 2.4) * u; }
-        ctx.save(); ctx.translate(hx, hy); ctx.rotate(rot);
-        ctx.beginPath(); ctx.moveTo(-60, 0); ctx.quadraticCurveTo(-40, -110, 40, -150); ctx.quadraticCurveTo(50, -60, 60, 0); ctx.closePath(); ctx.fillStyle = RED; ctx.fill(); ctx.strokeStyle = PLUM; ctx.lineWidth = 7; ctx.stroke();
-        ctx.beginPath(); ctx.roundRect(-68, -8, 136, 26, 12); ctx.fillStyle = RED_D; ctx.fill(); ctx.stroke();
-        ctx.beginPath(); ctx.arc(40, -150, 22, 0, Math.PI * 2); ctx.fillStyle = '#FFF'; ctx.fill(); ctx.stroke(); ctx.restore();
-      }
       drawPim(ctx, P, t);
       if (twinInFront) twin(ctx, t, S);
       const n = night(t);

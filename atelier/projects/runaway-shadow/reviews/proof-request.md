@@ -3,7 +3,7 @@
 You are an independent reviewer for a short vertical film made in Motif Atelier. You did not make it. Judge only the rendered evidence listed here against the stated intent: do not read the project source, builder notes or earlier reviews. Be specific and critical; a polite PASS on weak work defeats the purpose. For every dimension give PASS, FAIL or NOT_ASSESSED with a one-sentence note citing times or frames. Use NOT_ASSESSED whenever the evidence cannot establish the dimension (for example motion smoothness between sampled frames, or how the mix sounds). NOT_APPLICABLE is allowed only for the dimensions listed under not_applicable, with that reason. List every problem that should block release as a critical issue with the smallest fix. Disclose your sampling limits. Do not reward effort, technique or a description of intentions; reward what a first-time phone viewer would see.
 
 Write your response as JSON to `/home/user/motif/atelier/projects/runaway-shadow/reviews/proof.json`, valid against `/home/user/motif/atelier/contracts/review.schema.json`, with
-`"request_sha256": "938f3f3378d0ab5d4db69b61b4e5b8f0f03b2b3bc267ee55dcc9c3d870c0c1a8"` and `"role": "proof"`. Set `reviewer` honestly (kind, id, independence, playback: "ordered-frames").
+`"request_sha256": "d7fff4961b8ff8806e985948aad3dfc5c3f40fab3e03116555089dafb1247cc0"` and `"role": "proof"`. Set `reviewer` honestly (kind, id, independence, playback: "ordered-frames").
 
 ## Intent
 ```json
@@ -20,7 +20,7 @@ Write your response as JSON to `/home/user/motif/atelier/projects/runaway-shadow
   "complication": "Chasing fails: the shadow can melt into any darker shadow, and the creature's hat-net dive ends face-first in the grass while two white eyes giggle from the tree's shade.",
   "payoff": "The creature stops chasing and starts a goofy dance; the shadow cannot resist copying, slides out of hiding mid-dance, and the creature stomps on its feet to pin it back in place. Then the sun sets, every shadow vanishes, and two white eyes wink up from the dark."
  },
- "logline": "A small creature's shadow runs off at sunset; force cannot catch it, so the creature dances until the copycat shadow cannot resist copying its way back.",
+ "logline": "A small creature's shadow runs off at sunset; three stomps can't pin it down, so the creature dances until the copycat shadow copies its way under its feet for the fourth.",
  "opening_promise": "Pim walks onto a sunset meadow and stops to enjoy the view; its long shadow copies every move, one beat late.",
  "ending": "The sun sets, the meadow goes dark and the shadow vanishes with the light; Pim looks down, worried, and two white eyes open on the dark grass beside its feet and wink.",
  "style": "Flat bold cartoon: solid shapes, 7-unit dark plum outlines, no gradients on characters, a backlit sunset sky graded from violet to gold.",
@@ -60,8 +60,8 @@ Write your response as JSON to `/home/user/motif/atelier/projects/runaway-shadow
   },
   {
    "id": "chase",
-   "purpose": "force fails",
-   "sees": "Pim chases; the twin dives flat into the tree's long shade and disappears; Pim's hat-net dive lands face-first and two white eyes giggle from the shade",
+   "purpose": "force fails, and plants the stomp",
+   "sees": "the twin drops flat on the grass; Pim stomps at it three times and it slides away each time, the third time into the tree's long shade where it vanishes; two white eyes giggle from the shade while Pim hops on a sore foot",
    "frames": [
     396,
     534
@@ -70,7 +70,7 @@ Write your response as JSON to `/home/user/motif/atelier/projects/runaway-shadow
   {
    "id": "lure",
    "purpose": "wit wins",
-   "sees": "Pim gets an idea and dances in the sunlight; the shadow cannot resist copying, slides out of the shade copying the dance and creeps to Pim's feet; Pim stomps on its feet and it snaps back attached",
+   "sees": "Pim gets an idea and dances in the sunlight; the shadow cannot resist copying, slides out of the shade copying the dance and creeps under Pim's feet; the fourth stomp lands and it snaps back attached",
    "frames": [
     534,
     732
@@ -82,7 +82,7 @@ Write your response as JSON to `/home/user/motif/atelier/projects/runaway-shadow
    "sees": "the sun sinks, the light and every shadow fade, Pim looks down worried, and two white eyes open in the dark grass by its feet and wink",
    "frames": [
     732,
-    855
+    888
    ]
   }
  ],
@@ -100,11 +100,11 @@ Write your response as JSON to `/home/user/motif/atelier/projects/runaway-shadow
 - `feasible_look`: the representative artwork holds up at 360x640
 
 ## Evidence (open every image)
-- `/home/user/motif/atelier/runs/runaway-shadow/proof/fad0ed940e66/evidence-proof/ordered-frames.png`: ordered frames every 2 frames (0.07s), in playback order, labelled time / frame / shot
-- `/home/user/motif/atelier/runs/runaway-shadow/proof/fad0ed940e66/evidence-proof/strip-detach.png`: dense strip around moment "detach" (frame 288, 9.60s): every 2nd frame from -8 to +8
-- `/home/user/motif/atelier/runs/runaway-shadow/proof/fad0ed940e66/evidence-proof/strip-stand_up.png`: dense strip around moment "stand_up" (frame 302, 10.07s): every 2nd frame from -8 to +8
-- `/home/user/motif/atelier/runs/runaway-shadow/proof/fad0ed940e66/evidence-proof/strip-raspberry.png`: dense strip around moment "raspberry" (frame 325, 10.83s): every 2nd frame from -8 to +8
-- `/home/user/motif/atelier/runs/runaway-shadow/proof/fad0ed940e66/evidence-proof/strip-run_off.png`: dense strip around moment "run_off" (frame 347, 11.57s): every 2nd frame from -8 to +8
-- `/home/user/motif/atelier/runs/runaway-shadow/proof/fad0ed940e66/evidence-proof/phone-f00333.png`: full preview frame at phone size 360x640, shot escape midpoint (11.10s)
+- `/home/user/motif/atelier/runs/runaway-shadow/proof/cdeae8e22838/evidence-proof/ordered-frames.png`: ordered frames every 2 frames (0.07s), in playback order, labelled time / frame / shot
+- `/home/user/motif/atelier/runs/runaway-shadow/proof/cdeae8e22838/evidence-proof/strip-detach.png`: dense strip around moment "detach" (frame 288, 9.60s): every 2nd frame from -8 to +8
+- `/home/user/motif/atelier/runs/runaway-shadow/proof/cdeae8e22838/evidence-proof/strip-stand_up.png`: dense strip around moment "stand_up" (frame 302, 10.07s): every 2nd frame from -8 to +8
+- `/home/user/motif/atelier/runs/runaway-shadow/proof/cdeae8e22838/evidence-proof/strip-raspberry.png`: dense strip around moment "raspberry" (frame 325, 10.83s): every 2nd frame from -8 to +8
+- `/home/user/motif/atelier/runs/runaway-shadow/proof/cdeae8e22838/evidence-proof/strip-run_off.png`: dense strip around moment "run_off" (frame 348, 11.60s): every 2nd frame from -8 to +8
+- `/home/user/motif/atelier/runs/runaway-shadow/proof/cdeae8e22838/evidence-proof/phone-f00333.png`: full preview frame at phone size 360x640, shot escape midpoint (11.10s)
 
 Limits: Ordered decoded frames and dense strips only; no moving playback and no listening. Motion between samples and the sound of the mix cannot be judged from this evidence.

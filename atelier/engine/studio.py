@@ -22,7 +22,8 @@ from .project import ROOT, Project, now, read, sha, sha_value, write
 
 STAGES = ('intake', 'concepts', 'direction', 'proof', 'source', 'audio', 'rough', 'review', 'delivery')
 RENDER_FILES = ('playback.py', 'runtime/atelier.js', 'runtime/player.html')   # what can change pixels or the encode
-CORE = ('brief_sha256', 'concepts_sha256', 'direction_sha256', 'source_tree_sha256', 'audio_master_sha256', 'render_fingerprint_sha256')
+CORE = ('brief_sha256', 'concepts_sha256', 'direction_sha256', 'source_tree_sha256', 'audio_master_sha256')
+SAME_PICTURE = {'mean': 1.0, 'max': 24}   # thumbnail distance under which two encodes of one source are the same picture
 EQUIVALENCE = {'mean': 6.0, 'max': 96}      # delivery (downscaled) vs reviewed preview thumbnails: same picture, different raster size
 AUTHORED = {'concepts': 'concepts.json', 'direction': 'direction.json', 'proof': 'source/', 'source': 'source/'}
 HANDOFF = {
@@ -159,7 +160,9 @@ class Run:
         path = self.p.dir / f'reviews/{role}-request.json';got = review.response(self.p, role)
         if not path.is_file() or not got or got.get('request_sha256') != sha(path):return
         status, issues, _ = contracts.review(got, read(path), sha(path))
-        self.p.state.setdefault('settled', {})[role] = {'request_sha256': sha(path), 'core': core(read(path)['binding']), 'status': status}
+        req = read(path);first = next((e['path'] for e in req['evidence'] if '/evidence-' in e['path']), None)
+        evidence = str(Path(first).parent.parent / (Path(first).parent.name + '.json')) if first else None
+        self.p.state.setdefault('settled', {})[role] = {'request_sha256': sha(path), 'core': core(req['binding']), 'status': status, 'evidence': evidence}
         self.p.save()
         approach = read(path).get('approach_id') or self.p.stage('direction').get('approach_id') or self.approach()   # the approach the request was made under
         if status == 'FAIL' and not any(f['request_sha256'] == sha(path) for v in self.p.state['failures'].values() for f in v):
@@ -169,13 +172,25 @@ class Run:
                 self.p.event('creative-failure', approach=approach, role=role, round=self.failed_rounds(approach), settled='before the request changed')
                 self.p.save()
 
+    def same_picture(self, old_evidence, value):
+        """The reviewed render and the new one show the same picture within SAME_PICTURE on every shared sampled frame."""
+        first = next((e['path'] for e in value['evidence'] if '/evidence-' in e['path']), None)
+        if not old_evidence or not first:return False
+        new = self.p.root / Path(first).parent.parent / (Path(first).parent.name + '.json');old = self.p.root / old_evidence
+        if not old.is_file() or not new.is_file():return False
+        a, b = read(old)['fingerprint'], read(new)['fingerprint'];shared = set(a) & set(b)
+        if len(shared) < 6:return False
+        worst = [playback.thumb_distance(a[k], b[k]) for k in shared]
+        return max(w['mean'] for w in worst) <= SAME_PICTURE['mean'] and max(w['max'] for w in worst) <= SAME_PICTURE['max']
+
     def gate(self, role, value, digest):
         """None: awaiting review. True: PASS. False: blocked."""
         got = review.response(self.p, role);bound = digest
         settled = self.p.state.get('settled', {}).get(role, {})
-        if got and got.get('request_sha256') != digest and settled.get('request_sha256') == got.get('request_sha256') and settled.get('core') == core(value['binding']):
+        if got and got.get('request_sha256') != digest and settled.get('request_sha256') == got.get('request_sha256') and core(settled.get('core', {})) == core(value['binding']) \
+                and self.same_picture(settled.get('evidence'), value):
             bound = got['request_sha256']          # same brief, direction, source, audio and decoded picture: the verdict still applies
-            self.p.event('review-carried', role=role, from_request=bound, to_request=digest, reason='identical film; only paths or container bytes changed')
+            self.p.event('review-carried', role=role, from_request=bound, to_request=digest, reason='same brief, concepts, direction, source and audio; decoded picture within the same-picture tolerance')
         elif got and got.get('request_sha256') != digest:review.archive(self.p, role, 'stale: the request changed');got = None
         if got is None:
             if self.reviewer == 'codex' or (self.reviewer == 'auto' and review.codex_available()):

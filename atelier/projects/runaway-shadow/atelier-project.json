@@ -32,66 +32,153 @@
       "status": "DONE",
       "inputs": {
         "concepts.json": "659baee660c5e8db64079c594c7b51ab271b72be322a6c0183d712125f1630af",
-        "direction.json": "876ce38da1e0679e47709d44499cc1a30119ad7faa5cb4696182d210bc5c88fb"
+        "direction.json": "d035bb36d7ebfc35fe70d75d9ca54e49437ac2d53964a744829933a903b1a13a"
       },
-      "at": "2026-10-31T06:36:29+00:00",
-      "approach_id": "copycat-lure-v1",
+      "at": "2026-10-31T07:35:07+00:00",
+      "approach_id": "stomp-lure-v2",
       "agent_assisted": true
     },
     "proof": {
       "status": "DONE",
       "inputs": {
-        "direction.json": "876ce38da1e0679e47709d44499cc1a30119ad7faa5cb4696182d210bc5c88fb"
+        "direction.json": "d035bb36d7ebfc35fe70d75d9ca54e49437ac2d53964a744829933a903b1a13a"
       },
-      "at": "2026-10-31T06:37:41+00:00",
-      "approach_id": "copycat-lure-v1",
-      "request_sha256": "938f3f3378d0ab5d4db69b61b4e5b8f0f03b2b3bc267ee55dcc9c3d870c0c1a8",
+      "at": "2026-10-31T07:35:57+00:00",
+      "approach_id": "stomp-lure-v2",
+      "request_sha256": "d7fff4961b8ff8806e985948aad3dfc5c3f40fab3e03116555089dafb1247cc0",
       "reviewer": {
         "kind": "builder",
         "id": "Claude (the builder of this film)",
         "independence": "builder-self-inspection",
         "playback": "ordered-frames",
         "inputs_viewed": [
-          "runs/runaway-shadow/proof/fad0ed940e66/evidence-proof/ordered-frames.png",
-          "runs/runaway-shadow/proof/fad0ed940e66/evidence-proof/strip-detach.png",
-          "runs/runaway-shadow/proof/fad0ed940e66/evidence-proof/strip-stand_up.png",
-          "runs/runaway-shadow/proof/fad0ed940e66/evidence-proof/strip-raspberry.png",
-          "runs/runaway-shadow/proof/fad0ed940e66/evidence-proof/strip-run_off.png",
-          "runs/runaway-shadow/proof/fad0ed940e66/evidence-proof/phone-f00333.png"
+          "runs/runaway-shadow/proof/cdeae8e22838/evidence-proof/ordered-frames.png",
+          "runs/runaway-shadow/proof/cdeae8e22838/evidence-proof/strip-detach.png",
+          "runs/runaway-shadow/proof/cdeae8e22838/evidence-proof/strip-stand_up.png",
+          "runs/runaway-shadow/proof/cdeae8e22838/evidence-proof/strip-raspberry.png",
+          "runs/runaway-shadow/proof/cdeae8e22838/evidence-proof/strip-run_off.png",
+          "runs/runaway-shadow/proof/cdeae8e22838/evidence-proof/phone-f00333.png"
         ]
       }
     },
     "source": {
       "status": "DONE",
       "inputs": {
-        "source": "faa575b9c2bc0d14b6f44950979030990c5367164f3b5a6eb33e3bea3504d4a2",
-        "direction.json": "876ce38da1e0679e47709d44499cc1a30119ad7faa5cb4696182d210bc5c88fb"
+        "source": "e290118c990d8db2e544237699c2539e2ca46e9dcd4bf515c9983691bd95fb16",
+        "direction.json": "d035bb36d7ebfc35fe70d75d9ca54e49437ac2d53964a744829933a903b1a13a"
       },
-      "at": "2026-10-31T07:12:46+00:00",
+      "at": "2026-10-31T07:35:57+00:00",
       "agent_assisted": true
     },
     "audio": {
       "status": "DONE",
       "inputs": {
-        "sound": "ab845c5e4e221bad066a086e2140e494791854ead6d6cc72e4701bf4df8b02ff",
-        "key": "a8737c0223a7"
+        "sound": "b90b179124003e1c03380c7e8873cc17ae20dbb62ba79abdcd51e23130a49648",
+        "key": "8c20768b0d66"
       },
-      "at": "2026-10-31T06:56:45+00:00",
-      "key": "a8737c0223a7",
-      "master_sha256": "5fdd4ee071ac7fadd06de33f070dda43c63596ebd839d8ad4ce2e6efc683721e",
+      "at": "2026-10-31T07:36:00+00:00",
+      "key": "8c20768b0d66",
+      "master_sha256": "ccff3cecc5176d9c766d037b53c0f9fcb97e085e992103ece731e2387e9d8963",
       "takes_reused": 0,
       "takes": 0
     },
     "rough": {
-      "status": "BLOCKED",
+      "status": "DONE",
       "inputs": {
-        "source": "faa575b9c2bc0d14b6f44950979030990c5367164f3b5a6eb33e3bea3504d4a2",
-        "audio": "a8737c0223a7"
+        "source": "e290118c990d8db2e544237699c2539e2ca46e9dcd4bf515c9983691bd95fb16",
+        "audio": "8c20768b0d66"
       },
-      "at": "2026-10-31T07:13:08+00:00",
-      "key": "8118c6a03c78",
-      "preview": "runs/runaway-shadow/rough/8118c6a03c78/preview.mp4",
-      "preview_sha256": "f46d1da1e6d24f0fa5fda8412463c5acb89d1b2d1a78fe21de62ff81f3cb2f96"
+      "at": "2026-10-31T08:07:14+00:00",
+      "key": "8e2663ed4748",
+      "preview": "runs/runaway-shadow/rough/8e2663ed4748/preview.mp4",
+      "preview_sha256": "695ae79091278cef535029caebeb99d314192b8852cfc3bf1ec364acbc869ca5"
+    },
+    "review": {
+      "status": "DONE",
+      "inputs": {
+        "story": "41e8466108ebbebdb01b4af8c5b63e410116a59e469b35c8e02860ce8378fa1b",
+        "visual": "c439469c3128a7b71e86d600081487a6825d1e0da778cf5991137eba64bb7834"
+      },
+      "at": "2026-10-31T08:07:15+00:00",
+      "reviewers": {
+        "story": {
+          "kind": "model",
+          "id": "Claude subagent (fresh context, same model family as the builder)",
+          "independence": "separate-context-same-family",
+          "playback": "ordered-frames",
+          "inputs_viewed": [
+            "/home/user/motif/atelier/projects/runaway-shadow/reviews/story-request.md",
+            "/home/user/motif/atelier/contracts/review.schema.json",
+            "/home/user/motif/atelier/runs/runaway-shadow/rough/00fb923136be/evidence-review/ordered-frames.png",
+            "/home/user/motif/atelier/runs/runaway-shadow/rough/00fb923136be/evidence-review/strip-double_take.png",
+            "/home/user/motif/atelier/runs/runaway-shadow/rough/00fb923136be/evidence-review/strip-detach.png",
+            "/home/user/motif/atelier/runs/runaway-shadow/rough/00fb923136be/evidence-review/strip-stand_up.png",
+            "/home/user/motif/atelier/runs/runaway-shadow/rough/00fb923136be/evidence-review/strip-raspberry.png",
+            "/home/user/motif/atelier/runs/runaway-shadow/rough/00fb923136be/evidence-review/strip-run_off.png",
+            "/home/user/motif/atelier/runs/runaway-shadow/rough/00fb923136be/evidence-review/strip-stomp1.png",
+            "/home/user/motif/atelier/runs/runaway-shadow/rough/00fb923136be/evidence-review/strip-stomp2.png",
+            "/home/user/motif/atelier/runs/runaway-shadow/rough/00fb923136be/evidence-review/strip-stomp3.png",
+            "/home/user/motif/atelier/runs/runaway-shadow/rough/00fb923136be/evidence-review/strip-peek.png",
+            "/home/user/motif/atelier/runs/runaway-shadow/rough/00fb923136be/evidence-review/strip-idea.png",
+            "/home/user/motif/atelier/runs/runaway-shadow/rough/00fb923136be/evidence-review/strip-creep.png",
+            "/home/user/motif/atelier/runs/runaway-shadow/rough/00fb923136be/evidence-review/strip-stomp.png",
+            "/home/user/motif/atelier/runs/runaway-shadow/rough/00fb923136be/evidence-review/strip-wink.png",
+            "/home/user/motif/atelier/runs/runaway-shadow/rough/00fb923136be/evidence-review/phone-f00048.png",
+            "/home/user/motif/atelier/runs/runaway-shadow/rough/00fb923136be/evidence-review/phone-f00183.png",
+            "/home/user/motif/atelier/runs/runaway-shadow/rough/00fb923136be/evidence-review/phone-f00333.png",
+            "/home/user/motif/atelier/runs/runaway-shadow/rough/00fb923136be/evidence-review/phone-f00465.png",
+            "/home/user/motif/atelier/runs/runaway-shadow/rough/00fb923136be/evidence-review/phone-f00633.png",
+            "/home/user/motif/atelier/runs/runaway-shadow/rough/00fb923136be/evidence-review/phone-f00810.png"
+          ],
+          "tools": "Read on every evidence PNG; PIL 2x crops/enlargements of the same images into the session scratchpad (contact-sheet half-rows, strip halves, face/lure zooms); numpy pixel measurement of Pim's body position vs the shadow's white eyes in strips stomp1/stomp2/stomp3/creep/stomp"
+        },
+        "visual": {
+          "kind": "model",
+          "id": "Claude subagent (fresh context, same model family as the builder)",
+          "independence": "separate-context-same-family",
+          "playback": "ordered-frames",
+          "inputs_viewed": [
+            "/home/user/motif/atelier/projects/runaway-shadow/reviews/visual-request.md",
+            "/home/user/motif/atelier/contracts/review.schema.json",
+            "/home/user/motif/atelier/runs/runaway-shadow/rough/00fb923136be/evidence-review/ordered-frames.png",
+            "/home/user/motif/atelier/runs/runaway-shadow/rough/00fb923136be/evidence-review/strip-double_take.png",
+            "/home/user/motif/atelier/runs/runaway-shadow/rough/00fb923136be/evidence-review/strip-detach.png",
+            "/home/user/motif/atelier/runs/runaway-shadow/rough/00fb923136be/evidence-review/strip-stand_up.png",
+            "/home/user/motif/atelier/runs/runaway-shadow/rough/00fb923136be/evidence-review/strip-raspberry.png",
+            "/home/user/motif/atelier/runs/runaway-shadow/rough/00fb923136be/evidence-review/strip-run_off.png",
+            "/home/user/motif/atelier/runs/runaway-shadow/rough/00fb923136be/evidence-review/strip-stomp1.png",
+            "/home/user/motif/atelier/runs/runaway-shadow/rough/00fb923136be/evidence-review/strip-stomp2.png",
+            "/home/user/motif/atelier/runs/runaway-shadow/rough/00fb923136be/evidence-review/strip-stomp3.png",
+            "/home/user/motif/atelier/runs/runaway-shadow/rough/00fb923136be/evidence-review/strip-peek.png",
+            "/home/user/motif/atelier/runs/runaway-shadow/rough/00fb923136be/evidence-review/strip-idea.png",
+            "/home/user/motif/atelier/runs/runaway-shadow/rough/00fb923136be/evidence-review/strip-creep.png",
+            "/home/user/motif/atelier/runs/runaway-shadow/rough/00fb923136be/evidence-review/strip-stomp.png",
+            "/home/user/motif/atelier/runs/runaway-shadow/rough/00fb923136be/evidence-review/strip-wink.png",
+            "/home/user/motif/atelier/runs/runaway-shadow/rough/00fb923136be/evidence-review/phone-f00048.png",
+            "/home/user/motif/atelier/runs/runaway-shadow/rough/00fb923136be/evidence-review/phone-f00183.png",
+            "/home/user/motif/atelier/runs/runaway-shadow/rough/00fb923136be/evidence-review/phone-f00333.png",
+            "/home/user/motif/atelier/runs/runaway-shadow/rough/00fb923136be/evidence-review/phone-f00465.png",
+            "/home/user/motif/atelier/runs/runaway-shadow/rough/00fb923136be/evidence-review/phone-f00633.png",
+            "/home/user/motif/atelier/runs/runaway-shadow/rough/00fb923136be/evidence-review/phone-f00810.png"
+          ],
+          "tools": "Read tool on every evidence PNG; PIL/numpy crops and 2-5x enlargements of the same images in a scratch directory; pixel sampling for WCAG contrast ratios, eye sizes, and tree-canopy and hat centroids per sampled frame to track the camera and Pim"
+        }
+      }
+    },
+    "delivery": {
+      "status": "DONE",
+      "inputs": {
+        "review": {
+          "story": "41e8466108ebbebdb01b4af8c5b63e410116a59e469b35c8e02860ce8378fa1b",
+          "visual": "c439469c3128a7b71e86d600081487a6825d1e0da778cf5991137eba64bb7834"
+        },
+        "rough": "8e2663ed4748"
+      },
+      "at": "2026-10-31T08:07:59+00:00",
+      "key": "db94a6a29459",
+      "delivery": "runs/runaway-shadow/delivery/db94a6a29459/runaway-shadow-delivery-1080x1920.mp4",
+      "delivery_sha256": "1e9e54047cc79dec183bb349baebad35428dacec7df821998cf0b17ef6242458",
+      "preview": "runs/runaway-shadow/delivery/db94a6a29459/runaway-shadow-preview-360x640.mp4"
     }
   },
   "failures": {
@@ -161,7 +248,23 @@
       }
     ]
   },
-  "concept_changes": [],
+  "concept_changes": [
+    {
+      "to": "stomp-lure-v2",
+      "reason": "Three rounds failed on the middle act's prop business (cap-net dive, faceplant, cap continuity) while the opening and payoff passed. The new approach restructures the second act around stomping: three stomps miss because the flattened shadow slides away (the third into the tree's shade), which plants the stomp that the payoff then lands only because the shadow copies its way under Pim's feet. The cap prop is removed from the chase entirely.",
+      "at": "2026-10-31T07:33:27+00:00",
+      "from": "copycat-lure-v1",
+      "failed_rounds": [
+        {
+          "role": "review",
+          "request_sha256": "exhausted",
+          "source_sha256": "faa575b9c2bc0d14b6f44950979030990c5367164f3b5a6eb33e3bea3504d4a2",
+          "at": "2026-10-31T07:24:26+00:00",
+          "issues": []
+        }
+      ]
+    }
+  ],
   "technical_retries": [
     {
       "at": "2026-10-31T06:37:50+00:00",
@@ -253,11 +356,107 @@
       "seconds": 13.1,
       "workers": 3,
       "file": "runs/runaway-shadow/rough/8118c6a03c78/picture.mp4"
+    },
+    {
+      "at": "2026-10-31T07:35:11+00:00",
+      "kind": "proof",
+      "frames": 126,
+      "size": [
+        360,
+        640
+      ],
+      "seconds": 4.1,
+      "workers": 3,
+      "file": "runs/runaway-shadow/proof/cdeae8e22838/proof.mp4"
+    },
+    {
+      "at": "2026-10-31T07:36:15+00:00",
+      "kind": "rough",
+      "frames": 888,
+      "size": [
+        360,
+        640
+      ],
+      "seconds": 14.2,
+      "workers": 3,
+      "file": "runs/runaway-shadow/rough/00fb923136be/picture.mp4"
+    },
+    {
+      "at": "2026-10-31T07:46:48+00:00",
+      "kind": "diagnostic",
+      "frames": 600,
+      "size": [
+        360,
+        640
+      ],
+      "seconds": 5.5,
+      "workers": 3,
+      "file": "runs/runaway-shadow/diagnostic/20261031T074643-DIAGNOSTIC_ONLY.mp4"
+    },
+    {
+      "at": "2026-10-31T07:47:11+00:00",
+      "kind": "diagnostic",
+      "frames": 288,
+      "size": [
+        360,
+        640
+      ],
+      "seconds": 3.6,
+      "workers": 3,
+      "file": "runs/runaway-shadow/diagnostic/20261031T074707-DIAGNOSTIC_ONLY.mp4"
+    },
+    {
+      "at": "2026-10-31T08:03:20+00:00",
+      "kind": "rough",
+      "frames": 888,
+      "size": [
+        360,
+        640
+      ],
+      "seconds": 7.6,
+      "workers": 3,
+      "file": "runs/runaway-shadow/rough/81b96879e861/picture.mp4"
+    },
+    {
+      "at": "2026-10-31T08:05:35+00:00",
+      "kind": "delivery",
+      "frames": 888,
+      "size": [
+        1080,
+        1920
+      ],
+      "seconds": 32.5,
+      "workers": 3,
+      "file": "runs/runaway-shadow/delivery/db0cf26b89ea/picture.mp4"
+    },
+    {
+      "at": "2026-10-31T08:07:05+00:00",
+      "kind": "rough",
+      "frames": 888,
+      "size": [
+        360,
+        640
+      ],
+      "seconds": 7.6,
+      "workers": 3,
+      "file": "runs/runaway-shadow/rough/8e2663ed4748/picture.mp4"
+    },
+    {
+      "at": "2026-10-31T08:07:47+00:00",
+      "kind": "delivery",
+      "frames": 888,
+      "size": [
+        1080,
+        1920
+      ],
+      "seconds": 32.1,
+      "workers": 3,
+      "file": "runs/runaway-shadow/delivery/db94a6a29459/picture.mp4"
     }
   ],
   "reviewer_calls": 0,
   "human_decision": null,
-  "status": "BLOCKED:REPAIR_BUDGET_EXHAUSTED",
+  "status": "REVIEW_REQUIRED",
   "history": [
     {
       "at": "2026-10-31T06:28:20+00:00",
@@ -558,72 +757,405 @@
       "event": "status",
       "status": "BLOCKED:REPAIR_BUDGET_EXHAUSTED",
       "next_step": "approach copycat-lure-v1 failed 3 times (2 repairs allowed): record a concept change (new direction approach_id + `concept-change`) or an unresolved blocker (`blocker`)"
+    },
+    {
+      "at": "2026-10-31T07:33:27+00:00",
+      "event": "concept-change",
+      "to": "stomp-lure-v2"
+    },
+    {
+      "at": "2026-10-31T07:34:38+00:00",
+      "event": "ledger-refresh",
+      "changed": [
+        "film.js",
+        "film.json"
+      ],
+      "unrecorded": []
+    },
+    {
+      "at": "2026-10-31T07:35:07+00:00",
+      "event": "creative-failure",
+      "approach": "stomp-lure-v2",
+      "role": "visual",
+      "round": 1,
+      "settled": "before the request changed"
+    },
+    {
+      "at": "2026-10-31T07:35:07+00:00",
+      "event": "stage",
+      "stage": "direction",
+      "status": "DONE",
+      "agent_assisted": true
+    },
+    {
+      "at": "2026-10-31T07:35:13+00:00",
+      "event": "review-archived",
+      "role": "proof",
+      "reason": "stale: the request changed",
+      "kept": "proof-938f3f3378d0.json"
+    },
+    {
+      "at": "2026-10-31T07:35:13+00:00",
+      "event": "status",
+      "status": "AWAITING_REVIEW:proof",
+      "next_step": "watch the proof at phone size and write reviews/proof.json (builder inspection is allowed here, and recorded as such), then resume"
+    },
+    {
+      "at": "2026-10-31T07:35:33+00:00",
+      "event": "bookkeeping-correction",
+      "removed": 1,
+      "reason": "a round-3 response to a copycat-lure-v1 request was charged to stomp-lure-v2 by a settle bug (fixed: requests now carry approach_id); it remains counted under copycat-lure-v1"
+    },
+    {
+      "at": "2026-10-31T07:35:57+00:00",
+      "event": "stage",
+      "stage": "proof",
+      "status": "DONE"
+    },
+    {
+      "at": "2026-10-31T07:35:57+00:00",
+      "event": "stage",
+      "stage": "source",
+      "status": "DONE",
+      "agent_assisted": true
+    },
+    {
+      "at": "2026-10-31T07:36:00+00:00",
+      "event": "stage",
+      "stage": "audio",
+      "status": "DONE"
+    },
+    {
+      "at": "2026-10-31T07:36:25+00:00",
+      "event": "stage",
+      "stage": "rough",
+      "status": "DONE"
+    },
+    {
+      "at": "2026-10-31T07:36:26+00:00",
+      "event": "review-archived",
+      "role": "story",
+      "reason": "stale: the request changed",
+      "kept": "story-109078a61354.json"
+    },
+    {
+      "at": "2026-10-31T07:36:26+00:00",
+      "event": "review-archived",
+      "role": "visual",
+      "reason": "stale: the request changed",
+      "kept": "visual-66b59d642014.json"
+    },
+    {
+      "at": "2026-10-31T07:36:26+00:00",
+      "event": "status",
+      "status": "AWAITING_REVIEW:story,visual",
+      "next_step": "independent reviewers write reviews/story.json, reviews/visual.json from the matching -request.md, then resume; the builder may not write these"
+    },
+    {
+      "at": "2026-10-31T07:46:48+00:00",
+      "event": "diagnostic-render",
+      "file": "runs/runaway-shadow/diagnostic/20261031T074643-DIAGNOSTIC_ONLY.mp4"
+    },
+    {
+      "at": "2026-10-31T07:47:11+00:00",
+      "event": "diagnostic-render",
+      "file": "runs/runaway-shadow/diagnostic/20261031T074707-DIAGNOSTIC_ONLY.mp4"
+    },
+    {
+      "at": "2026-10-31T08:03:30+00:00",
+      "event": "stage",
+      "stage": "rough",
+      "status": "DONE"
+    },
+    {
+      "at": "2026-10-31T08:03:30+00:00",
+      "event": "review-archived",
+      "role": "story",
+      "reason": "stale: the request changed",
+      "kept": "story-c175d0227093.json"
+    },
+    {
+      "at": "2026-10-31T08:03:30+00:00",
+      "event": "review-archived",
+      "role": "visual",
+      "reason": "stale: the request changed",
+      "kept": "visual-ade9cdddae9a.json"
+    },
+    {
+      "at": "2026-10-31T08:04:19+00:00",
+      "event": "review-restored",
+      "roles": [
+        "story",
+        "visual"
+      ],
+      "reason": "archived as stale only because the exact-fingerprint rule failed on a capture-path change; restored unchanged to be re-judged by the same-picture tolerance rule"
+    },
+    {
+      "at": "2026-10-31T08:04:21+00:00",
+      "event": "review-archived",
+      "role": "story",
+      "reason": "stale: the request changed",
+      "kept": "story-c175d0227093.json"
+    },
+    {
+      "at": "2026-10-31T08:04:21+00:00",
+      "event": "review-archived",
+      "role": "visual",
+      "reason": "stale: the request changed",
+      "kept": "visual-ade9cdddae9a.json"
+    },
+    {
+      "at": "2026-10-31T08:04:44+00:00",
+      "event": "review-restored",
+      "roles": [
+        "story",
+        "visual"
+      ],
+      "reason": "second restore: the carry-over compared a stale key from the old CORE definition (fixed); same responses, unchanged"
+    },
+    {
+      "at": "2026-10-31T08:04:45+00:00",
+      "event": "review-archived",
+      "role": "story",
+      "reason": "stale: the request changed",
+      "kept": "story-c175d0227093.json"
+    },
+    {
+      "at": "2026-10-31T08:04:45+00:00",
+      "event": "review-archived",
+      "role": "visual",
+      "reason": "stale: the request changed",
+      "kept": "visual-ade9cdddae9a.json"
+    },
+    {
+      "at": "2026-10-31T08:05:01+00:00",
+      "event": "review-restored",
+      "roles": [
+        "story",
+        "visual"
+      ],
+      "reason": "third restore after fixing the core comparison; same responses, unchanged"
+    },
+    {
+      "at": "2026-10-31T08:05:02+00:00",
+      "event": "review-carried",
+      "role": "story",
+      "from_request": "c175d02270935f9ae31a582b74944ff0192942f850f82df7911732c29cf2a807",
+      "to_request": "5534684e33fa6e17a0601343580c1bf207aada701e489fa52649c532b51c7889",
+      "reason": "same brief, concepts, direction, source and audio; decoded picture within the same-picture tolerance"
+    },
+    {
+      "at": "2026-10-31T08:05:02+00:00",
+      "event": "review-carried",
+      "role": "visual",
+      "from_request": "ade9cdddae9a7593a3ad3bbb08861facedcbaf0fbbab55db9655718139312468",
+      "to_request": "dba4e8f1d27cdd99b32527fc0ee38cbcfa880aa03e363838d700447b3bcf6cf2",
+      "reason": "same brief, concepts, direction, source and audio; decoded picture within the same-picture tolerance"
+    },
+    {
+      "at": "2026-10-31T08:05:02+00:00",
+      "event": "stage",
+      "stage": "review",
+      "status": "DONE"
+    },
+    {
+      "at": "2026-10-31T08:05:46+00:00",
+      "event": "status",
+      "status": "BLOCKED:TECHNICAL",
+      "next_step": "technical checks failed: deterministic-seek: 1/3 frames byte-identical when re-rendered in reverse order in a fresh browser"
+    },
+    {
+      "at": "2026-10-31T08:07:14+00:00",
+      "event": "stage",
+      "stage": "rough",
+      "status": "DONE"
+    },
+    {
+      "at": "2026-10-31T08:07:15+00:00",
+      "event": "review-carried",
+      "role": "story",
+      "from_request": "c175d02270935f9ae31a582b74944ff0192942f850f82df7911732c29cf2a807",
+      "to_request": "41e8466108ebbebdb01b4af8c5b63e410116a59e469b35c8e02860ce8378fa1b",
+      "reason": "same brief, concepts, direction, source and audio; decoded picture within the same-picture tolerance"
+    },
+    {
+      "at": "2026-10-31T08:07:15+00:00",
+      "event": "review-carried",
+      "role": "visual",
+      "from_request": "ade9cdddae9a7593a3ad3bbb08861facedcbaf0fbbab55db9655718139312468",
+      "to_request": "c439469c3128a7b71e86d600081487a6825d1e0da778cf5991137eba64bb7834",
+      "reason": "same brief, concepts, direction, source and audio; decoded picture within the same-picture tolerance"
+    },
+    {
+      "at": "2026-10-31T08:07:15+00:00",
+      "event": "stage",
+      "stage": "review",
+      "status": "DONE"
+    },
+    {
+      "at": "2026-10-31T08:07:59+00:00",
+      "event": "stage",
+      "stage": "delivery",
+      "status": "DONE"
+    },
+    {
+      "at": "2026-10-31T08:07:59+00:00",
+      "event": "status",
+      "status": "REVIEW_REQUIRED",
+      "next_step": "a person watches the delivery on a phone with sound, confirms rights and facts, then runs `approve`"
     }
   ],
-  "next_step": "approach copycat-lure-v1 failed 3 times (2 repairs allowed): record a concept change (new direction approach_id + `concept-change`) or an unresolved blocker (`blocker`)",
+  "next_step": "a person watches the delivery on a phone with sound, confirms rights and facts, then runs `approve`",
   "approaches": {
     "copycat-lure-v1": {
       "logline": "A small creature's shadow runs off at sunset; force cannot catch it, so the creature dances until the copycat shadow cannot resist copying its way back.",
       "hardest_shot": "The shadow must read as Pim's own projection, then visibly detach, hinge up into a standing twin and run, while Pim's feet are left without a shadow; if the detach or the stand-up reads as a sticker swap the premise fails.",
       "at": "2026-10-31T06:36:29+00:00"
+    },
+    "stomp-lure-v2": {
+      "logline": "A small creature's shadow runs off at sunset; three stomps can't pin it down, so the creature dances until the copycat shadow copies its way under its feet for the fourth.",
+      "hardest_shot": "The shadow must read as Pim's own projection, then visibly detach, hinge up into a standing twin and run, while Pim's feet are left without a shadow; if the detach or the stand-up reads as a sticker swap the premise fails.",
+      "at": "2026-10-31T07:35:07+00:00"
     }
   },
   "reviews": {
     "proof": {
       "status": "PASS",
-      "request_sha256": "938f3f3378d0ab5d4db69b61b4e5b8f0f03b2b3bc267ee55dcc9c3d870c0c1a8",
+      "request_sha256": "d7fff4961b8ff8806e985948aad3dfc5c3f40fab3e03116555089dafb1247cc0",
+      "response_request_sha256": "d7fff4961b8ff8806e985948aad3dfc5c3f40fab3e03116555089dafb1247cc0",
       "reviewer": {
         "kind": "builder",
         "id": "Claude (the builder of this film)",
         "independence": "builder-self-inspection",
         "playback": "ordered-frames",
         "inputs_viewed": [
-          "runs/runaway-shadow/proof/fad0ed940e66/evidence-proof/ordered-frames.png",
-          "runs/runaway-shadow/proof/fad0ed940e66/evidence-proof/strip-detach.png",
-          "runs/runaway-shadow/proof/fad0ed940e66/evidence-proof/strip-stand_up.png",
-          "runs/runaway-shadow/proof/fad0ed940e66/evidence-proof/strip-raspberry.png",
-          "runs/runaway-shadow/proof/fad0ed940e66/evidence-proof/strip-run_off.png",
-          "runs/runaway-shadow/proof/fad0ed940e66/evidence-proof/phone-f00333.png"
+          "runs/runaway-shadow/proof/cdeae8e22838/evidence-proof/ordered-frames.png",
+          "runs/runaway-shadow/proof/cdeae8e22838/evidence-proof/strip-detach.png",
+          "runs/runaway-shadow/proof/cdeae8e22838/evidence-proof/strip-stand_up.png",
+          "runs/runaway-shadow/proof/cdeae8e22838/evidence-proof/strip-raspberry.png",
+          "runs/runaway-shadow/proof/cdeae8e22838/evidence-proof/strip-run_off.png",
+          "runs/runaway-shadow/proof/cdeae8e22838/evidence-proof/phone-f00333.png"
         ]
       },
       "issues": [],
-      "at": "2026-10-31T06:37:41+00:00"
+      "deferred": [],
+      "at": "2026-10-31T07:35:57+00:00"
+    },
+    "story": {
+      "status": "PASS",
+      "request_sha256": "41e8466108ebbebdb01b4af8c5b63e410116a59e469b35c8e02860ce8378fa1b",
+      "response_request_sha256": "c175d02270935f9ae31a582b74944ff0192942f850f82df7911732c29cf2a807",
+      "reviewer": {
+        "kind": "model",
+        "id": "Claude subagent (fresh context, same model family as the builder)",
+        "independence": "separate-context-same-family",
+        "playback": "ordered-frames",
+        "inputs_viewed": [
+          "/home/user/motif/atelier/projects/runaway-shadow/reviews/story-request.md",
+          "/home/user/motif/atelier/contracts/review.schema.json",
+          "/home/user/motif/atelier/runs/runaway-shadow/rough/00fb923136be/evidence-review/ordered-frames.png",
+          "/home/user/motif/atelier/runs/runaway-shadow/rough/00fb923136be/evidence-review/strip-double_take.png",
+          "/home/user/motif/atelier/runs/runaway-shadow/rough/00fb923136be/evidence-review/strip-detach.png",
+          "/home/user/motif/atelier/runs/runaway-shadow/rough/00fb923136be/evidence-review/strip-stand_up.png",
+          "/home/user/motif/atelier/runs/runaway-shadow/rough/00fb923136be/evidence-review/strip-raspberry.png",
+          "/home/user/motif/atelier/runs/runaway-shadow/rough/00fb923136be/evidence-review/strip-run_off.png",
+          "/home/user/motif/atelier/runs/runaway-shadow/rough/00fb923136be/evidence-review/strip-stomp1.png",
+          "/home/user/motif/atelier/runs/runaway-shadow/rough/00fb923136be/evidence-review/strip-stomp2.png",
+          "/home/user/motif/atelier/runs/runaway-shadow/rough/00fb923136be/evidence-review/strip-stomp3.png",
+          "/home/user/motif/atelier/runs/runaway-shadow/rough/00fb923136be/evidence-review/strip-peek.png",
+          "/home/user/motif/atelier/runs/runaway-shadow/rough/00fb923136be/evidence-review/strip-idea.png",
+          "/home/user/motif/atelier/runs/runaway-shadow/rough/00fb923136be/evidence-review/strip-creep.png",
+          "/home/user/motif/atelier/runs/runaway-shadow/rough/00fb923136be/evidence-review/strip-stomp.png",
+          "/home/user/motif/atelier/runs/runaway-shadow/rough/00fb923136be/evidence-review/strip-wink.png",
+          "/home/user/motif/atelier/runs/runaway-shadow/rough/00fb923136be/evidence-review/phone-f00048.png",
+          "/home/user/motif/atelier/runs/runaway-shadow/rough/00fb923136be/evidence-review/phone-f00183.png",
+          "/home/user/motif/atelier/runs/runaway-shadow/rough/00fb923136be/evidence-review/phone-f00333.png",
+          "/home/user/motif/atelier/runs/runaway-shadow/rough/00fb923136be/evidence-review/phone-f00465.png",
+          "/home/user/motif/atelier/runs/runaway-shadow/rough/00fb923136be/evidence-review/phone-f00633.png",
+          "/home/user/motif/atelier/runs/runaway-shadow/rough/00fb923136be/evidence-review/phone-f00810.png"
+        ],
+        "tools": "Read on every evidence PNG; PIL 2x crops/enlargements of the same images into the session scratchpad (contact-sheet half-rows, strip halves, face/lure zooms); numpy pixel measurement of Pim's body position vs the shadow's white eyes in strips stomp1/stomp2/stomp3/creep/stomp"
+      },
+      "issues": [],
+      "deferred": [],
+      "at": "2026-10-31T08:07:15+00:00"
+    },
+    "visual": {
+      "status": "PASS",
+      "request_sha256": "c439469c3128a7b71e86d600081487a6825d1e0da778cf5991137eba64bb7834",
+      "response_request_sha256": "ade9cdddae9a7593a3ad3bbb08861facedcbaf0fbbab55db9655718139312468",
+      "reviewer": {
+        "kind": "model",
+        "id": "Claude subagent (fresh context, same model family as the builder)",
+        "independence": "separate-context-same-family",
+        "playback": "ordered-frames",
+        "inputs_viewed": [
+          "/home/user/motif/atelier/projects/runaway-shadow/reviews/visual-request.md",
+          "/home/user/motif/atelier/contracts/review.schema.json",
+          "/home/user/motif/atelier/runs/runaway-shadow/rough/00fb923136be/evidence-review/ordered-frames.png",
+          "/home/user/motif/atelier/runs/runaway-shadow/rough/00fb923136be/evidence-review/strip-double_take.png",
+          "/home/user/motif/atelier/runs/runaway-shadow/rough/00fb923136be/evidence-review/strip-detach.png",
+          "/home/user/motif/atelier/runs/runaway-shadow/rough/00fb923136be/evidence-review/strip-stand_up.png",
+          "/home/user/motif/atelier/runs/runaway-shadow/rough/00fb923136be/evidence-review/strip-raspberry.png",
+          "/home/user/motif/atelier/runs/runaway-shadow/rough/00fb923136be/evidence-review/strip-run_off.png",
+          "/home/user/motif/atelier/runs/runaway-shadow/rough/00fb923136be/evidence-review/strip-stomp1.png",
+          "/home/user/motif/atelier/runs/runaway-shadow/rough/00fb923136be/evidence-review/strip-stomp2.png",
+          "/home/user/motif/atelier/runs/runaway-shadow/rough/00fb923136be/evidence-review/strip-stomp3.png",
+          "/home/user/motif/atelier/runs/runaway-shadow/rough/00fb923136be/evidence-review/strip-peek.png",
+          "/home/user/motif/atelier/runs/runaway-shadow/rough/00fb923136be/evidence-review/strip-idea.png",
+          "/home/user/motif/atelier/runs/runaway-shadow/rough/00fb923136be/evidence-review/strip-creep.png",
+          "/home/user/motif/atelier/runs/runaway-shadow/rough/00fb923136be/evidence-review/strip-stomp.png",
+          "/home/user/motif/atelier/runs/runaway-shadow/rough/00fb923136be/evidence-review/strip-wink.png",
+          "/home/user/motif/atelier/runs/runaway-shadow/rough/00fb923136be/evidence-review/phone-f00048.png",
+          "/home/user/motif/atelier/runs/runaway-shadow/rough/00fb923136be/evidence-review/phone-f00183.png",
+          "/home/user/motif/atelier/runs/runaway-shadow/rough/00fb923136be/evidence-review/phone-f00333.png",
+          "/home/user/motif/atelier/runs/runaway-shadow/rough/00fb923136be/evidence-review/phone-f00465.png",
+          "/home/user/motif/atelier/runs/runaway-shadow/rough/00fb923136be/evidence-review/phone-f00633.png",
+          "/home/user/motif/atelier/runs/runaway-shadow/rough/00fb923136be/evidence-review/phone-f00810.png"
+        ],
+        "tools": "Read tool on every evidence PNG; PIL/numpy crops and 2-5x enlargements of the same images in a scratch directory; pixel sampling for WCAG contrast ratios, eye sizes, and tree-canopy and hat centroids per sampled frame to track the camera and Pim"
+      },
+      "issues": [],
+      "deferred": [],
+      "at": "2026-10-31T08:07:15+00:00"
     }
   },
   "settled": {
     "story": {
-      "request_sha256": "109078a61354575051e54a076fb57f14b07e12794cc070f038f22e170d2e2260",
+      "request_sha256": "c175d02270935f9ae31a582b74944ff0192942f850f82df7911732c29cf2a807",
       "core": {
         "brief_sha256": "30e159de271b3f7bc6085696cdafd89d949264fa317ced44d627573fb497ec83",
         "concepts_sha256": "659baee660c5e8db64079c594c7b51ab271b72be322a6c0183d712125f1630af",
-        "direction_sha256": "876ce38da1e0679e47709d44499cc1a30119ad7faa5cb4696182d210bc5c88fb",
-        "source_tree_sha256": "faa575b9c2bc0d14b6f44950979030990c5367164f3b5a6eb33e3bea3504d4a2",
-        "audio_master_sha256": "5fdd4ee071ac7fadd06de33f070dda43c63596ebd839d8ad4ce2e6efc683721e",
-        "render_fingerprint_sha256": "b62dccf5a0ccf6a7e9afa0360d1da1c855c48a6cf88f1432ffee404a331b99d0"
+        "direction_sha256": "d035bb36d7ebfc35fe70d75d9ca54e49437ac2d53964a744829933a903b1a13a",
+        "source_tree_sha256": "e290118c990d8db2e544237699c2539e2ca46e9dcd4bf515c9983691bd95fb16",
+        "audio_master_sha256": "ccff3cecc5176d9c766d037b53c0f9fcb97e085e992103ece731e2387e9d8963",
+        "render_fingerprint_sha256": "cce5ca52cda5008412a7ec31a19e4d00472986851ecaee06a25425c884a7198d"
       },
-      "status": "PASS"
+      "status": "PASS",
+      "evidence": "runs/runaway-shadow/rough/00fb923136be/evidence-review.json"
     },
     "visual": {
-      "request_sha256": "66b59d642014948389ab8ccac6e4172f904f8b980655f6aebced08a394b1f87c",
+      "request_sha256": "ade9cdddae9a7593a3ad3bbb08861facedcbaf0fbbab55db9655718139312468",
       "core": {
         "brief_sha256": "30e159de271b3f7bc6085696cdafd89d949264fa317ced44d627573fb497ec83",
         "concepts_sha256": "659baee660c5e8db64079c594c7b51ab271b72be322a6c0183d712125f1630af",
-        "direction_sha256": "876ce38da1e0679e47709d44499cc1a30119ad7faa5cb4696182d210bc5c88fb",
-        "source_tree_sha256": "faa575b9c2bc0d14b6f44950979030990c5367164f3b5a6eb33e3bea3504d4a2",
-        "audio_master_sha256": "5fdd4ee071ac7fadd06de33f070dda43c63596ebd839d8ad4ce2e6efc683721e",
-        "render_fingerprint_sha256": "b62dccf5a0ccf6a7e9afa0360d1da1c855c48a6cf88f1432ffee404a331b99d0"
+        "direction_sha256": "d035bb36d7ebfc35fe70d75d9ca54e49437ac2d53964a744829933a903b1a13a",
+        "source_tree_sha256": "e290118c990d8db2e544237699c2539e2ca46e9dcd4bf515c9983691bd95fb16",
+        "audio_master_sha256": "ccff3cecc5176d9c766d037b53c0f9fcb97e085e992103ece731e2387e9d8963",
+        "render_fingerprint_sha256": "cce5ca52cda5008412a7ec31a19e4d00472986851ecaee06a25425c884a7198d"
       },
-      "status": "FAIL"
+      "status": "PASS",
+      "evidence": "runs/runaway-shadow/rough/00fb923136be/evidence-review.json"
     },
     "proof": {
-      "request_sha256": "938f3f3378d0ab5d4db69b61b4e5b8f0f03b2b3bc267ee55dcc9c3d870c0c1a8",
+      "request_sha256": "d7fff4961b8ff8806e985948aad3dfc5c3f40fab3e03116555089dafb1247cc0",
       "core": {
         "brief_sha256": "30e159de271b3f7bc6085696cdafd89d949264fa317ced44d627573fb497ec83",
-        "direction_sha256": "876ce38da1e0679e47709d44499cc1a30119ad7faa5cb4696182d210bc5c88fb",
-        "source_tree_sha256": "0017c3dec66ced7d5eb3405e0e474e0cebd84565d69e5224da0829854cd3c94d",
-        "render_fingerprint_sha256": "1816d40573290586bfcfa764f21ada7e028a322da0059511f1645c8079c1ce4d"
+        "direction_sha256": "d035bb36d7ebfc35fe70d75d9ca54e49437ac2d53964a744829933a903b1a13a",
+        "source_tree_sha256": "e290118c990d8db2e544237699c2539e2ca46e9dcd4bf515c9983691bd95fb16"
       },
-      "status": "PASS"
+      "status": "PASS",
+      "evidence": "runs/runaway-shadow/proof/cdeae8e22838/evidence-proof.json"
     }
   }
 }

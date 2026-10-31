@@ -3,7 +3,7 @@
 You are an independent reviewer for a short vertical film made in Motif Atelier. You did not make it. Judge only the rendered evidence listed here against the stated intent: do not read the project source, builder notes or earlier reviews. Be specific and critical; a polite PASS on weak work defeats the purpose. For every dimension give PASS, FAIL or NOT_ASSESSED with a one-sentence note citing times or frames. Use NOT_ASSESSED whenever the evidence cannot establish the dimension (for example motion smoothness between sampled frames, or how the mix sounds). NOT_APPLICABLE is allowed only for the dimensions listed under not_applicable, with that reason. List every problem that should block release as a critical issue with the smallest fix. Disclose your sampling limits. Do not reward effort, technique or a description of intentions; reward what a first-time phone viewer would see.
 
 Write your response as JSON to `/home/user/motif/atelier/projects/the-keeper/reviews/story.json`, valid against `/home/user/motif/atelier/contracts/review.schema.json`, with
-`"request_sha256": "f2361ad62f8bf2b24adfceb20ae573b1d2471b9f8be8280179dbc06880071797"` and `"role": "story"`. Set `reviewer` honestly (kind, id, independence, playback: "ordered-frames").
+`"request_sha256": "9b0d3b689e45c6d68b82561303332241d1810bc140a77789ce0c95354a34a7be"` and `"role": "story"`. Set `reviewer` honestly (kind, id, independence, playback: "ordered-frames").
 
 ## Intent
 ```json
@@ -82,7 +82,7 @@ Write your response as JSON to `/home/user/motif/atelier/projects/the-keeper/rev
    "sees": "rain stops, the sky turns to dawn, the lamp goes dark, two spouts rise on the horizon and Ada waves",
    "frames": [
     870,
-    990
+    1014
    ]
   }
  ]
@@ -98,32 +98,32 @@ Write your response as JSON to `/home/user/motif/atelier/projects/the-keeper/rev
 - `picture_sound_link`: narration/dialogue and picture tell one story (N/A only for a declared silent film)
 
 ## Evidence (open every image)
-- `/home/user/motif/atelier/runs/the-keeper/rough/6ef7ac4355af/evidence-review/ordered-frames.png`: ordered frames every 15 frames (0.50s), in playback order, labelled time / frame / shot
-- `/home/user/motif/atelier/runs/the-keeper/rough/6ef7ac4355af/evidence-review/strip-glint.png`: dense strip around moment "glint" (frame 264, 8.80s): every 2nd frame from -8 to +8
-- `/home/user/motif/atelier/runs/the-keeper/rough/6ef7ac4355af/evidence-review/strip-found.png`: dense strip around moment "found" (frame 318, 10.60s): every 2nd frame from -8 to +8
-- `/home/user/motif/atelier/runs/the-keeper/rough/6ef7ac4355af/evidence-review/strip-cup_drop.png`: dense strip around moment "cup_drop" (frame 372, 12.40s): every 2nd frame from -8 to +8
-- `/home/user/motif/atelier/runs/the-keeper/rough/6ef7ac4355af/evidence-review/strip-lightning.png`: dense strip around moment "lightning" (frame 396, 13.20s): every 2nd frame from -8 to +8
-- `/home/user/motif/atelier/runs/the-keeper/rough/6ef7ac4355af/evidence-review/strip-shutter.png`: dense strip around moment "shutter" (frame 450, 15.00s): every 2nd frame from -8 to +8
-- `/home/user/motif/atelier/runs/the-keeper/rough/6ef7ac4355af/evidence-review/strip-open.png`: dense strip around moment "open" (frame 510, 17.00s): every 2nd frame from -8 to +8
-- `/home/user/motif/atelier/runs/the-keeper/rough/6ef7ac4355af/evidence-review/strip-surface.png`: dense strip around moment "surface" (frame 579, 19.30s): every 2nd frame from -8 to +8
-- `/home/user/motif/atelier/runs/the-keeper/rough/6ef7ac4355af/evidence-review/strip-cry.png`: dense strip around moment "cry" (frame 621, 20.70s): every 2nd frame from -8 to +8
-- `/home/user/motif/atelier/runs/the-keeper/rough/6ef7ac4355af/evidence-review/strip-soften.png`: dense strip around moment "soften" (frame 660, 22.00s): every 2nd frame from -8 to +8
-- `/home/user/motif/atelier/runs/the-keeper/rough/6ef7ac4355af/evidence-review/strip-tail.png`: dense strip around moment "tail" (frame 771, 25.70s): every 2nd frame from -8 to +8
-- `/home/user/motif/atelier/runs/the-keeper/rough/6ef7ac4355af/evidence-review/strip-calf_go.png`: dense strip around moment "calf_go" (frame 798, 26.60s): every 2nd frame from -8 to +8
-- `/home/user/motif/atelier/runs/the-keeper/rough/6ef7ac4355af/evidence-review/strip-spouts.png`: dense strip around moment "spouts" (frame 930, 31.00s): every 2nd frame from -8 to +8
-- `/home/user/motif/atelier/runs/the-keeper/rough/6ef7ac4355af/evidence-review/phone-f00114.png`: full preview frame at phone size 360x640, shot routine midpoint (3.80s)
-- `/home/user/motif/atelier/runs/the-keeper/rough/6ef7ac4355af/evidence-review/phone-f00327.png`: full preview frame at phone size 360x640, shot sighting midpoint (10.90s)
-- `/home/user/motif/atelier/runs/the-keeper/rough/6ef7ac4355af/evidence-review/phone-f00498.png`: full preview frame at phone size 360x640, shot choice midpoint (16.60s)
-- `/home/user/motif/atelier/runs/the-keeper/rough/6ef7ac4355af/evidence-review/phone-f00649.png`: full preview frame at phone size 360x640, shot reveal midpoint (21.63s)
-- `/home/user/motif/atelier/runs/the-keeper/rough/6ef7ac4355af/evidence-review/phone-f00799.png`: full preview frame at phone size 360x640, shot home midpoint (26.63s)
-- `/home/user/motif/atelier/runs/the-keeper/rough/6ef7ac4355af/evidence-review/phone-f00930.png`: full preview frame at phone size 360x640, shot dawn midpoint (31.00s)
+- `/home/user/motif/atelier/runs/the-keeper/rough/01d02c8be734/evidence-review/ordered-frames.png`: ordered frames every 15 frames (0.50s), in playback order, labelled time / frame / shot
+- `/home/user/motif/atelier/runs/the-keeper/rough/01d02c8be734/evidence-review/strip-glint.png`: dense strip around moment "glint" (frame 264, 8.80s): every 2nd frame from -8 to +8
+- `/home/user/motif/atelier/runs/the-keeper/rough/01d02c8be734/evidence-review/strip-found.png`: dense strip around moment "found" (frame 318, 10.60s): every 2nd frame from -8 to +8
+- `/home/user/motif/atelier/runs/the-keeper/rough/01d02c8be734/evidence-review/strip-cup_drop.png`: dense strip around moment "cup_drop" (frame 372, 12.40s): every 2nd frame from -8 to +8
+- `/home/user/motif/atelier/runs/the-keeper/rough/01d02c8be734/evidence-review/strip-lightning.png`: dense strip around moment "lightning" (frame 396, 13.20s): every 2nd frame from -8 to +8
+- `/home/user/motif/atelier/runs/the-keeper/rough/01d02c8be734/evidence-review/strip-shutter.png`: dense strip around moment "shutter" (frame 450, 15.00s): every 2nd frame from -8 to +8
+- `/home/user/motif/atelier/runs/the-keeper/rough/01d02c8be734/evidence-review/strip-open.png`: dense strip around moment "open" (frame 510, 17.00s): every 2nd frame from -8 to +8
+- `/home/user/motif/atelier/runs/the-keeper/rough/01d02c8be734/evidence-review/strip-surface.png`: dense strip around moment "surface" (frame 579, 19.30s): every 2nd frame from -8 to +8
+- `/home/user/motif/atelier/runs/the-keeper/rough/01d02c8be734/evidence-review/strip-cry.png`: dense strip around moment "cry" (frame 621, 20.70s): every 2nd frame from -8 to +8
+- `/home/user/motif/atelier/runs/the-keeper/rough/01d02c8be734/evidence-review/strip-soften.png`: dense strip around moment "soften" (frame 660, 22.00s): every 2nd frame from -8 to +8
+- `/home/user/motif/atelier/runs/the-keeper/rough/01d02c8be734/evidence-review/strip-tail.png`: dense strip around moment "tail" (frame 771, 25.70s): every 2nd frame from -8 to +8
+- `/home/user/motif/atelier/runs/the-keeper/rough/01d02c8be734/evidence-review/strip-calf_go.png`: dense strip around moment "calf_go" (frame 798, 26.60s): every 2nd frame from -8 to +8
+- `/home/user/motif/atelier/runs/the-keeper/rough/01d02c8be734/evidence-review/strip-spouts.png`: dense strip around moment "spouts" (frame 930, 31.00s): every 2nd frame from -8 to +8
+- `/home/user/motif/atelier/runs/the-keeper/rough/01d02c8be734/evidence-review/phone-f00114.png`: full preview frame at phone size 360x640, shot routine midpoint (3.80s)
+- `/home/user/motif/atelier/runs/the-keeper/rough/01d02c8be734/evidence-review/phone-f00327.png`: full preview frame at phone size 360x640, shot sighting midpoint (10.90s)
+- `/home/user/motif/atelier/runs/the-keeper/rough/01d02c8be734/evidence-review/phone-f00498.png`: full preview frame at phone size 360x640, shot choice midpoint (16.60s)
+- `/home/user/motif/atelier/runs/the-keeper/rough/01d02c8be734/evidence-review/phone-f00649.png`: full preview frame at phone size 360x640, shot reveal midpoint (21.63s)
+- `/home/user/motif/atelier/runs/the-keeper/rough/01d02c8be734/evidence-review/phone-f00799.png`: full preview frame at phone size 360x640, shot home midpoint (26.63s)
+- `/home/user/motif/atelier/runs/the-keeper/rough/01d02c8be734/evidence-review/phone-f00942.png`: full preview frame at phone size 360x640, shot dawn midpoint (31.40s)
 
 ## Audio
 ```json
 {
  "measured_on_preview": {
-  "integrated_lufs": -14.24,
-  "true_peak_dbtp": -1.85,
+  "integrated_lufs": -14.31,
+  "true_peak_dbtp": -1.86,
   "lra_lu": 10.0
  },
  "cues": [
@@ -333,8 +333,8 @@ Write your response as JSON to `/home/user/motif/atelier/projects/the-keeper/rev
   },
   {
    "at": "lamp_off",
-   "frame": 930,
-   "time": 31.0,
+   "frame": 946,
+   "time": 31.5333,
    "sound": "tick"
   },
   {

@@ -83,7 +83,7 @@
       "takes": 10
     },
     "rough": {
-      "status": "DONE",
+      "status": "BLOCKED",
       "inputs": {
         "source": "ebb0af7993defca899627aae3d6639ca53d84a6c2268cf46c728730db431bdb5",
         "audio": "000d20657818"
@@ -151,6 +151,26 @@
           "critical: 25.0-27.0 s (f750-f810), end of the burst shot: After the jump the flake rises into the top band and parks behind the thermometer for about 2 s, with the HUD bar and fill crossing it. It barely moves on screen while the rest of the scene shrinks, then the film cuts away without a fall. The jump's payoff is staged under the HUD at the top edge and reads as a stall or layering error.",
           "critical: 0.0-1.5 s (f0-f45), the opening bowl: The two unpopped kernels, the subject of the hook question, are about 10% of frame width and sit at 81-84% of frame height, inside the platform caption zone, on a frame that does not move for the first second. They reach a safe height only at about 2.0 s, so the question's object is hidden for most of the hook line."
         ]
+      },
+      {
+        "role": "visual",
+        "request_sha256": "ba3c0214849ceeb6d1ee105de2ef191c86be1fe83ee4213573634a160a053fb0",
+        "source_sha256": "ebb0af7993defca899627aae3d6639ca53d84a6c2268cf46c728730db431bdb5",
+        "at": "2026-10-31T07:40:16+00:00",
+        "issues": [
+          "composition: FAIL: Most of the framing is deliberate for a vertical phone: the action sits in the 40-65% height band, the thermometer at about 15%, the bottom fifth is left free for captions, and the crack (x about 245/360) is clear of the right-hand icon rail. But at the top of the jump, 24.9-26.2 s, the hero flake flies up behind the fixed thermometer bar, which cuts across the top third of the object everyone is watching. Also tight: the left kernel is jammed against the left frame edge at 16-18 s, and the right quarter of the right kernel (x about 300-330/360) falls in the platform icon-rail zone during 20-29.9 s.",
+          "readable_action: FAIL: Heating, bubbling, the leak, the split and bloom, the replay and the sinking kernel all read. Leak: crack appears at 14.8 s, bubbles leave through it from 15.0 to 17.5 s, the bubbles inside drain and the hull browns by 18 s. Split and bloom: f630-f642. Replay: the hull splits silently at f850 and the rings come at f872. Sinking: 31.0-32.5 s. The kick does not read. The 'leg of starch' is a separate straight-sided trapezoid pasted over the foam: it stays unchanged from f721 to f733, gets shorter as the flake dips (f735), goes semi-transparent (f737) and is gone by f739. It never pushes against the pan, so nothing on screen causes the jump, and the moment it lets go of the pan is a cross-fade. The sealed hull also never measurably bulges.",
+          "motion_performance: NOT_ASSESSED: The frames show events landing on the narration: the burst at 21.0 s on 'bursts', the bloom at 21.4 s on 'puffs into foam', the leg at about 24.0 s, the jump at 24.5 s on 'jumps' and the replay pop at 29.07 s. They also show clean holds (7.0-9.0 s and 32.5-34.2 s) and an anticipation dip at f735. Moving playback is needed to judge the easing, the weight of the floaty jump that hangs for about 2.5 s (24.5-27.0 s, mixed up with a camera pull-back at the same time), the hull tremble, and whether 20 s of flame flicker feels busy.",
+          "critical: burst shot, leg and jump, about 23.9-24.7 s (f720-f739; strip-leg, strip-jump): The 'leg of starch' is a rigid straight-sided trapezoid with its own blue outline drawn over the foam; its flat top edge shows inside the cloud, so it reads as a cup or stand, not part of the flake. It stays unchanged from f721 to f733, gets shorter as the flake dips (f735), goes semi-transparent with the hull-petal outlines showing through it (f737) and is gone by f739 while the flake rises. The leg never pushes against the pan, so the kick the narration names as the cause of the jump is never shown, and the release is a cross-fade.",
+          "critical: top of the jump, about 24.9-26.2 s (ordered frames 25.0 s f750, 25.5 s f765, 26.0 s f780): The jumping flake, the focal object of the climax, flies up into the fixed thermometer overlay. For about a second the thermometer bar and its pink fill are drawn across the top third of the flake, so the high point of the burst reads as the flake slipping behind a UI bar."
+        ]
+      },
+      {
+        "role": "review",
+        "request_sha256": "exhausted",
+        "source_sha256": "ebb0af7993defca899627aae3d6639ca53d84a6c2268cf46c728730db431bdb5",
+        "at": "2026-10-31T07:40:16+00:00",
+        "issues": []
       }
     ]
   },
@@ -252,11 +272,35 @@
       "seconds": 32.5,
       "workers": 3,
       "file": "runs/why-popcorn-pops/rough/5f7080a26f0e/picture.mp4"
+    },
+    {
+      "at": "2026-10-31T07:46:58+00:00",
+      "kind": "diagnostic",
+      "frames": 600,
+      "size": [
+        360,
+        640
+      ],
+      "seconds": 9.6,
+      "workers": 3,
+      "file": "runs/why-popcorn-pops/diagnostic/20261031T074648-DIAGNOSTIC_ONLY.mp4"
+    },
+    {
+      "at": "2026-10-31T07:47:19+00:00",
+      "kind": "diagnostic",
+      "frames": 426,
+      "size": [
+        360,
+        640
+      ],
+      "seconds": 8.1,
+      "workers": 3,
+      "file": "runs/why-popcorn-pops/diagnostic/20261031T074711-DIAGNOSTIC_ONLY.mp4"
     }
   ],
   "reviewer_calls": 0,
   "human_decision": null,
-  "status": "AWAITING_REVIEW:story,visual,factual",
+  "status": "BLOCKED:UNRESOLVED",
   "history": [
     {
       "at": "2026-10-31T06:42:26+00:00",
@@ -583,9 +627,46 @@
       "role": "factual",
       "reason": "stale: the request changed",
       "kept": "factual-863f72059801.json"
+    },
+    {
+      "at": "2026-10-31T07:40:16+00:00",
+      "event": "creative-failure",
+      "approach": "two-kernels-v1",
+      "role": "visual",
+      "round": 3,
+      "settled": "before the request changed"
+    },
+    {
+      "at": "2026-10-31T07:40:16+00:00",
+      "event": "creative-failure",
+      "approach": "two-kernels-v1",
+      "role": "review",
+      "round": 3
+    },
+    {
+      "at": "2026-10-31T07:40:16+00:00",
+      "event": "status",
+      "status": "BLOCKED:REPAIR_BUDGET_EXHAUSTED",
+      "next_step": "approach two-kernels-v1 failed 3 times (2 repairs allowed): record a concept change (new direction approach_id + `concept-change`) or an unresolved blocker (`blocker`)"
+    },
+    {
+      "at": "2026-10-31T07:46:58+00:00",
+      "event": "diagnostic-render",
+      "file": "runs/why-popcorn-pops/diagnostic/20261031T074648-DIAGNOSTIC_ONLY.mp4"
+    },
+    {
+      "at": "2026-10-31T07:47:19+00:00",
+      "event": "diagnostic-render",
+      "file": "runs/why-popcorn-pops/diagnostic/20261031T074711-DIAGNOSTIC_ONLY.mp4"
+    },
+    {
+      "at": "2026-10-31T07:48:49+00:00",
+      "event": "status",
+      "status": "BLOCKED:UNRESOLVED",
+      "next_step": "Approach two-kernels-v1 failed independent visual review in three rounds (2 repairs allowed). Round 3: story PASS, factual PASS, visual FAIL with two critical issues: (1) the starch leg reads as a stiff stand drawn over the foam rather than a push that causes the jump (23.9-24.7 s); (2) at the jump apex the flake passes behind the fixed top gauge (24.9-26.2 s). Smallest next steps for a person to choose: redraw the leg as part of the foam and fade the gauge after 180 C, or record a concept change to the direction's documented fallback (cut from the straining kernel to a flake mid-air and drop the leg line). The reviewed rough is in atelier/runs/why-popcorn-pops/rough/ (not a delivery)."
     }
   ],
-  "next_step": "independent reviewers write reviews/story.json, reviews/visual.json, reviews/factual.json from the matching -request.md, then resume; the builder may not write these",
+  "next_step": "Approach two-kernels-v1 failed independent visual review in three rounds (2 repairs allowed). Round 3: story PASS, factual PASS, visual FAIL with two critical issues: (1) the starch leg reads as a stiff stand drawn over the foam rather than a push that causes the jump (23.9-24.7 s); (2) at the jump apex the flake passes behind the fixed top gauge (24.9-26.2 s). Smallest next steps for a person to choose: redraw the leg as part of the foam and fade the gauge after 180 C, or record a concept change to the direction's documented fallback (cut from the straining kernel to a flake mid-air and drop the leg line). The reviewed rough is in atelier/runs/why-popcorn-pops/rough/ (not a delivery).",
   "approaches": {
     "two-kernels-v1": {
       "logline": "Two kernels heat in one pan; the sealed one bursts into a flake and jumps, the one with a hairline crack leaks its steam and ends up at the bottom of the bowl.",
@@ -628,40 +709,44 @@
       "status": "PASS"
     },
     "story": {
-      "request_sha256": "6f9e4d1af296d2eac7bd8ea99531e99d553f005014368fb8feb197825a727713",
+      "request_sha256": "11ee0ea97eafcdaedcbb6882987d5ab7be33c0f5df3bf1671fa5b2062599bea8",
       "core": {
         "brief_sha256": "b86b896694c91fe2653bbcf5129e14a56695dc88342905c6690df0ef4c0c6e66",
         "concepts_sha256": "39decf2869ce03552e35a2fc16e5c4ef3050039cfae2c12fde2962f2640a277c",
         "direction_sha256": "897f1d9cfae45a07c0b61faafd5401200158ad59936fef34122d2a315814e3cb",
-        "source_tree_sha256": "809f09ef1ab84d259066bf56f3f613ea8fcb82c7e3d09bf68f3aa0fdaa9a6431",
+        "source_tree_sha256": "ebb0af7993defca899627aae3d6639ca53d84a6c2268cf46c728730db431bdb5",
         "audio_master_sha256": "fa87b483d788c466c718f2524877e0fe25695baaf4adb97388fab2adc4e18e0d",
-        "render_fingerprint_sha256": "0f15537dde9499450c60e128d15a82fae72a38d31f42fc25e74e1f20d73a8ac9"
+        "render_fingerprint_sha256": "230a89a16d8a386608a0506f5063304cba8f78a84027f77f6587a8997e6caedf"
       },
       "status": "PASS"
     },
     "visual": {
-      "request_sha256": "a7798203f5f3ef7bca06c9fc42050768601859a859d75a57fae30634ff4c6e57",
+      "request_sha256": "ba3c0214849ceeb6d1ee105de2ef191c86be1fe83ee4213573634a160a053fb0",
       "core": {
         "brief_sha256": "b86b896694c91fe2653bbcf5129e14a56695dc88342905c6690df0ef4c0c6e66",
         "concepts_sha256": "39decf2869ce03552e35a2fc16e5c4ef3050039cfae2c12fde2962f2640a277c",
         "direction_sha256": "897f1d9cfae45a07c0b61faafd5401200158ad59936fef34122d2a315814e3cb",
-        "source_tree_sha256": "809f09ef1ab84d259066bf56f3f613ea8fcb82c7e3d09bf68f3aa0fdaa9a6431",
+        "source_tree_sha256": "ebb0af7993defca899627aae3d6639ca53d84a6c2268cf46c728730db431bdb5",
         "audio_master_sha256": "fa87b483d788c466c718f2524877e0fe25695baaf4adb97388fab2adc4e18e0d",
-        "render_fingerprint_sha256": "0f15537dde9499450c60e128d15a82fae72a38d31f42fc25e74e1f20d73a8ac9"
+        "render_fingerprint_sha256": "230a89a16d8a386608a0506f5063304cba8f78a84027f77f6587a8997e6caedf"
       },
       "status": "FAIL"
     },
     "factual": {
-      "request_sha256": "863f72059801b8e11bc733c339c024a56a254f8b4cf3b21e0a64389fffdeb762",
+      "request_sha256": "9a096619361ce37cf82edf526377d9fd97882ccb489d9adc27fe3003c87fd88a",
       "core": {
         "brief_sha256": "b86b896694c91fe2653bbcf5129e14a56695dc88342905c6690df0ef4c0c6e66",
         "concepts_sha256": "39decf2869ce03552e35a2fc16e5c4ef3050039cfae2c12fde2962f2640a277c",
         "direction_sha256": "897f1d9cfae45a07c0b61faafd5401200158ad59936fef34122d2a315814e3cb",
-        "source_tree_sha256": "809f09ef1ab84d259066bf56f3f613ea8fcb82c7e3d09bf68f3aa0fdaa9a6431",
+        "source_tree_sha256": "ebb0af7993defca899627aae3d6639ca53d84a6c2268cf46c728730db431bdb5",
         "audio_master_sha256": "fa87b483d788c466c718f2524877e0fe25695baaf4adb97388fab2adc4e18e0d",
-        "render_fingerprint_sha256": "0f15537dde9499450c60e128d15a82fae72a38d31f42fc25e74e1f20d73a8ac9"
+        "render_fingerprint_sha256": "230a89a16d8a386608a0506f5063304cba8f78a84027f77f6587a8997e6caedf"
       },
       "status": "PASS"
     }
+  },
+  "blocker": {
+    "note": "Approach two-kernels-v1 failed independent visual review in three rounds (2 repairs allowed). Round 3: story PASS, factual PASS, visual FAIL with two critical issues: (1) the starch leg reads as a stiff stand drawn over the foam rather than a push that causes the jump (23.9-24.7 s); (2) at the jump apex the flake passes behind the fixed top gauge (24.9-26.2 s). Smallest next steps for a person to choose: redraw the leg as part of the foam and fade the gauge after 180 C, or record a concept change to the direction's documented fallback (cut from the straining kernel to a flake mid-air and drop the leg line). The reviewed rough is in atelier/runs/why-popcorn-pops/rough/ (not a delivery).",
+    "at": "2026-10-31T07:48:49+00:00"
   }
 }
