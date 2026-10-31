@@ -83,7 +83,7 @@
       "takes": 7
     },
     "rough": {
-      "status": "DONE",
+      "status": "BLOCKED",
       "inputs": {
         "source": "e6abbe92edea0c76834a7d6e82fb356aa80ee2cbd8683434e6066c21cd46a7b5",
         "audio": "3c9d57177a43"
@@ -145,6 +145,23 @@
           "critical: choice 15.0-17.2 s (f450-f515), phone-f00498; compare cup drop f372-380: The shutter pull is masked: the lever's red knob goes up behind her hat, so from 15.5 s she reads as clutching her head. Her reaction to the moan is an eye shift of a few pixels with no body change. The throw-open at 17.0 s uses the same both-arms-up V pose as her fright at 12.5 s. The protagonist's one decision therefore reads as panic or a cheer and is carried only by the lamp flare.",
           "critical: 15.1-16.9 s: the wheel fades out over f450-f456 and is back by f506: The crank wheel on the lamp pedestal fades out with the lamp's brightness while the shutter closes, leaving only its red knob floating, then reappears when the shutter opens. It is a prop pop tied to the wrong layer."
         ]
+      },
+      {
+        "role": "visual",
+        "request_sha256": "147b1dcd9f2787a59648373f4232a20a5a310f0f1805360836d20437597d9e11",
+        "source_sha256": "e6abbe92edea0c76834a7d6e82fb356aa80ee2cbd8683434e6066c21cd46a7b5",
+        "at": "2026-10-31T08:15:56+00:00",
+        "issues": [
+          "phone_readability: FAIL: Most story beats survive at 360x640 (the glinting eye, Ada's face and lever, the calf's face and tear, the lit tail), but the ending payoff does not. At 31-33.5 s the two spouts are grey-blue puffs about 28 and 20 px tall, darker than the sky at about 1.75:1 contrast, so they read as smoke. The two backs merge into one dark islet, and Ada's wave is made by a 19x33 px figure. Smaller details are also lost: the cup is a ~6 px chip and the hand on her heart is a dot.",
+          "critical: dawn, 31.0-33.5 s (f930-f1005); phone-f00942, strip-spouts: The final payoff (two spouts, one big and one small, proving the calf is home with its mother) does not read at phone size. The spouts are 20-28 px grey-blue puffs darker than the peach sky (contrast about 1.75:1), so they read as smoke. The two backs merge into one low dark islet, and the saturated tower pulls the eye away. A first-time viewer can miss that these are two whales, which leaves 'The sea had never been empty' without a picture behind it."
+        ]
+      },
+      {
+        "role": "review",
+        "request_sha256": "exhausted",
+        "source_sha256": "e6abbe92edea0c76834a7d6e82fb356aa80ee2cbd8683434e6066c21cd46a7b5",
+        "at": "2026-10-31T08:15:56+00:00",
+        "issues": []
       }
     ]
   },
@@ -238,7 +255,7 @@
   ],
   "reviewer_calls": 0,
   "human_decision": null,
-  "status": "AWAITING_REVIEW:story,visual",
+  "status": "BLOCKED:UNRESOLVED",
   "history": [
     {
       "at": "2026-10-31T07:04:57+00:00",
@@ -513,9 +530,36 @@
       "role": "visual",
       "reason": "stale: the request changed",
       "kept": "visual-6a1354c65752.json"
+    },
+    {
+      "at": "2026-10-31T08:15:56+00:00",
+      "event": "creative-failure",
+      "approach": "lost-calf-v1",
+      "role": "visual",
+      "round": 3,
+      "settled": "before the request changed"
+    },
+    {
+      "at": "2026-10-31T08:15:56+00:00",
+      "event": "creative-failure",
+      "approach": "lost-calf-v1",
+      "role": "review",
+      "round": 3
+    },
+    {
+      "at": "2026-10-31T08:15:56+00:00",
+      "event": "status",
+      "status": "BLOCKED:REPAIR_BUDGET_EXHAUSTED",
+      "next_step": "approach lost-calf-v1 failed 3 times (2 repairs allowed): record a concept change (new direction approach_id + `concept-change`) or an unresolved blocker (`blocker`)"
+    },
+    {
+      "at": "2026-10-31T08:15:56+00:00",
+      "event": "status",
+      "status": "BLOCKED:UNRESOLVED",
+      "next_step": "Approach lost-calf-v1 failed independent visual review in three rounds (2 repairs allowed). Final round: story PASS (all six dimensions, no critical issues); visual 7 of 8 PASS with one critical issue: the dawn payoff (two spouts, one big and one small) does not read at phone size (20-28 px grey-blue puffs at about 1.75:1 against the peach sky, read as smoke), 31.0-33.5 s. Smallest next step for a person to choose: push in on the two whales for the last 2 s and draw the spouts white with a dark rim. Non-blocking story note: the creature silhouette (added at the round-2 visual reviewer's request) answers 'what is it' early. The reviewed rough is in atelier/runs/the-keeper/rough/ (not a delivery)."
     }
   ],
-  "next_step": "independent reviewers write reviews/story.json, reviews/visual.json from the matching -request.md, then resume; the builder may not write these",
+  "next_step": "Approach lost-calf-v1 failed independent visual review in three rounds (2 repairs allowed). Final round: story PASS (all six dimensions, no critical issues); visual 7 of 8 PASS with one critical issue: the dawn payoff (two spouts, one big and one small) does not read at phone size (20-28 px grey-blue puffs at about 1.75:1 against the peach sky, read as smoke), 31.0-33.5 s. Smallest next step for a person to choose: push in on the two whales for the last 2 s and draw the spouts white with a dark rim. Non-blocking story note: the creature silhouette (added at the round-2 visual reviewer's request) answers 'what is it' early. The reviewed rough is in atelier/runs/the-keeper/rough/ (not a delivery).",
   "approaches": {
     "lost-calf-v1": {
       "logline": "A lighthouse keeper spots a giant shape closing on her rock in a storm, chooses to shine the light instead of hiding it, and finds a lost whale calf she guides home.",
@@ -529,34 +573,34 @@
       "core": {
         "brief_sha256": "ed619971d142838fdc1a17ab74265a2426874ed35cab1f256106d77fa6864bee",
         "direction_sha256": "3490a60575b27b288badccffa69edf37eb2598371b64780c80f38b17bcfce456",
-        "source_tree_sha256": "b04b919d12e985c565b385585a888d714321a84fb5f87a73123f7552b48dff74",
-        "render_fingerprint_sha256": "2663bfe78a4dd790d1cb524dcc08915a1f4efe6afac4050e72e61778f7b5768a"
+        "source_tree_sha256": "b04b919d12e985c565b385585a888d714321a84fb5f87a73123f7552b48dff74"
       },
-      "status": "PASS"
+      "status": "PASS",
+      "evidence": "runs/the-keeper/proof/df8c54770acb/evidence-proof.json"
     },
     "story": {
-      "request_sha256": "8fe7004c2e412f7a91547b68f2e7596d61a10226972a746f51df7a31e7de74ad",
+      "request_sha256": "9b0d3b689e45c6d68b82561303332241d1810bc140a77789ce0c95354a34a7be",
       "core": {
         "brief_sha256": "ed619971d142838fdc1a17ab74265a2426874ed35cab1f256106d77fa6864bee",
         "concepts_sha256": "7dd47936c57cca57241b97af937c340f4116bb0196e8ec70a9a23cc31a0010c6",
         "direction_sha256": "3490a60575b27b288badccffa69edf37eb2598371b64780c80f38b17bcfce456",
-        "source_tree_sha256": "cbfbc3718d550076cf43b47d57aec7a3f42d8242decf1458216ea7608dbf802d",
-        "audio_master_sha256": "d511c1a0557eb07d53c59e1261efab5651708902585748f906eea64ebb590664",
-        "render_fingerprint_sha256": "a49e4124ed0096750186d15063f722ddbbc972972d32443790110f9ad8bfb31b"
+        "source_tree_sha256": "e6abbe92edea0c76834a7d6e82fb356aa80ee2cbd8683434e6066c21cd46a7b5",
+        "audio_master_sha256": "ca2526e40bdeed49bfced17e2a941112d51d6a1d6e926ce1e0bc8f54ef6596ba"
       },
-      "status": "PASS"
+      "status": "PASS",
+      "evidence": "runs/the-keeper/rough/01d02c8be734/evidence-review.json"
     },
     "visual": {
-      "request_sha256": "6a1354c65752102bb7237beae29b87ca91a92e6a94e6319181e6f3e99384908b",
+      "request_sha256": "147b1dcd9f2787a59648373f4232a20a5a310f0f1805360836d20437597d9e11",
       "core": {
         "brief_sha256": "ed619971d142838fdc1a17ab74265a2426874ed35cab1f256106d77fa6864bee",
         "concepts_sha256": "7dd47936c57cca57241b97af937c340f4116bb0196e8ec70a9a23cc31a0010c6",
         "direction_sha256": "3490a60575b27b288badccffa69edf37eb2598371b64780c80f38b17bcfce456",
-        "source_tree_sha256": "cbfbc3718d550076cf43b47d57aec7a3f42d8242decf1458216ea7608dbf802d",
-        "audio_master_sha256": "d511c1a0557eb07d53c59e1261efab5651708902585748f906eea64ebb590664",
-        "render_fingerprint_sha256": "a49e4124ed0096750186d15063f722ddbbc972972d32443790110f9ad8bfb31b"
+        "source_tree_sha256": "e6abbe92edea0c76834a7d6e82fb356aa80ee2cbd8683434e6066c21cd46a7b5",
+        "audio_master_sha256": "ca2526e40bdeed49bfced17e2a941112d51d6a1d6e926ce1e0bc8f54ef6596ba"
       },
-      "status": "FAIL"
+      "status": "FAIL",
+      "evidence": "runs/the-keeper/rough/01d02c8be734/evidence-review.json"
     }
   },
   "reviews": {
@@ -582,5 +626,9 @@
       "deferred": [],
       "at": "2026-10-31T07:22:05+00:00"
     }
+  },
+  "blocker": {
+    "note": "Approach lost-calf-v1 failed independent visual review in three rounds (2 repairs allowed). Final round: story PASS (all six dimensions, no critical issues); visual 7 of 8 PASS with one critical issue: the dawn payoff (two spouts, one big and one small) does not read at phone size (20-28 px grey-blue puffs at about 1.75:1 against the peach sky, read as smoke), 31.0-33.5 s. Smallest next step for a person to choose: push in on the two whales for the last 2 s and draw the spouts white with a dark rim. Non-blocking story note: the creature silhouette (added at the round-2 visual reviewer's request) answers 'what is it' early. The reviewed rough is in atelier/runs/the-keeper/rough/ (not a delivery).",
+    "at": "2026-10-31T08:15:56+00:00"
   }
 }

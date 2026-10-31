@@ -4,7 +4,7 @@ Motif Classic asks *what film can we make with the approved kit?* Atelier asks
 *what is the strongest way to tell this story, and what artwork, performance or
 animation code does it need?* It is an explicitly selected mode with its own
 command, contracts, folders and reviews. Classic (`scripts/motif_reel.py`) is
-unchanged. Agent rules: [AGENTS.md](AGENTS.md).
+unchanged. Agent rules: [AGENTS.md](AGENTS.md). What the three pilot films proved and what remains: [PILOTS.md](PILOTS.md).
 
 ## Commands
 
@@ -95,8 +95,9 @@ A request binds hashes of the brief, concepts, direction, source tree, audio
 master, the preview encode and a fingerprint of its decoded frames. A response
 answers exactly that request; any upstream change makes it stale and it is
 archived under `reviews/history/`. The one exception: if only paths or container
-bytes changed (same brief, direction, source, audio and identical decoded-frame
-fingerprint), the verdict carries over and the carry is logged. Failed reviews
+bytes changed (same brief, concepts, direction, source and audio, and every shared
+sampled frame within the same-picture tolerance: thumbnail distance mean <= 1.0,
+max <= 24), the verdict carries over and the carry is logged. Failed reviews
 are counted against the approach before any request is replaced. Two repair
 rounds per approach; the third failure stops further renders on it.
 

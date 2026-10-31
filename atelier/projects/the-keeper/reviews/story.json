@@ -1,0 +1,78 @@
+{
+ "request_sha256": "9b0d3b689e45c6d68b82561303332241d1810bc140a77789ce0c95354a34a7be",
+ "role": "story",
+ "reviewer": {
+  "kind": "model",
+  "id": "Claude subagent (fresh context, same model family as the builder)",
+  "independence": "separate-context-same-family",
+  "playback": "ordered-frames",
+  "inputs_viewed": [
+   "/home/user/motif/atelier/projects/the-keeper/reviews/story-request.md",
+   "/home/user/motif/atelier/contracts/review.schema.json",
+   "/home/user/motif/atelier/runs/the-keeper/rough/01d02c8be734/evidence-review/ordered-frames.png",
+   "/home/user/motif/atelier/runs/the-keeper/rough/01d02c8be734/evidence-review/strip-glint.png",
+   "/home/user/motif/atelier/runs/the-keeper/rough/01d02c8be734/evidence-review/strip-found.png",
+   "/home/user/motif/atelier/runs/the-keeper/rough/01d02c8be734/evidence-review/strip-cup_drop.png",
+   "/home/user/motif/atelier/runs/the-keeper/rough/01d02c8be734/evidence-review/strip-lightning.png",
+   "/home/user/motif/atelier/runs/the-keeper/rough/01d02c8be734/evidence-review/strip-shutter.png",
+   "/home/user/motif/atelier/runs/the-keeper/rough/01d02c8be734/evidence-review/strip-open.png",
+   "/home/user/motif/atelier/runs/the-keeper/rough/01d02c8be734/evidence-review/strip-surface.png",
+   "/home/user/motif/atelier/runs/the-keeper/rough/01d02c8be734/evidence-review/strip-cry.png",
+   "/home/user/motif/atelier/runs/the-keeper/rough/01d02c8be734/evidence-review/strip-soften.png",
+   "/home/user/motif/atelier/runs/the-keeper/rough/01d02c8be734/evidence-review/strip-tail.png",
+   "/home/user/motif/atelier/runs/the-keeper/rough/01d02c8be734/evidence-review/strip-calf_go.png",
+   "/home/user/motif/atelier/runs/the-keeper/rough/01d02c8be734/evidence-review/strip-spouts.png",
+   "/home/user/motif/atelier/runs/the-keeper/rough/01d02c8be734/evidence-review/phone-f00114.png",
+   "/home/user/motif/atelier/runs/the-keeper/rough/01d02c8be734/evidence-review/phone-f00327.png",
+   "/home/user/motif/atelier/runs/the-keeper/rough/01d02c8be734/evidence-review/phone-f00498.png",
+   "/home/user/motif/atelier/runs/the-keeper/rough/01d02c8be734/evidence-review/phone-f00649.png",
+   "/home/user/motif/atelier/runs/the-keeper/rough/01d02c8be734/evidence-review/phone-f00799.png",
+   "/home/user/motif/atelier/runs/the-keeper/rough/01d02c8be734/evidence-review/phone-f00942.png"
+  ],
+  "tools": "Read tool on every evidence PNG; PIL crops/2-4x enlargements of contact-sheet rows, the choice close-ups and the dawn gallery/horizon written to the session scratchpad; numpy luminance measurements on contact-sheet cells (lamp/beam dimming 14.5-17.0 s, sky brightness 0-33.5 s, lantern at dawn)."
+ },
+ "dimensions": {
+  "opening_promise": {
+   "status": "PASS",
+   "note": "A storm-lashed lighthouse with a sweeping beam (0.0-2.5 s), a push-in to the keeper in a yellow oilskin cranking the lamp with tea at hand (3.0-4.5 s), the beam passing over empty water (5.5-7.5 s) and the lines 'Every night... the sea stayed empty. / Until tonight.' set a clear ritual and a clear promise that something is coming; weakness: the first threat only arrives at 8.5 s (about 25% in) and 5.5-7.5 s nearly repeats the 0-2.5 s wide.",
+   "evidence": "ordered-frames 0.00-8.00 s; phone-f00114 (Ada, cup, crank, beam); narration ritual 1.0-3.24 s, empty 4.9-7.04 s, tonight 8.1-9.24 s"
+  },
+  "progression": {
+   "status": "PASS",
+   "note": "Each beat changes the situation: the shape is caught in the beam (8.5 s), found closer at the rock (10.5-11.5 s), Ada drops her cup with arms up (12.4-13.0 s), it sits at the rock base in lightning (13.2-14.0 s), she pulls the lever and the light measurably dims (15.0-16.5 s), turns at the moan (16.0 s), sets her face (16.5 s), throws the light to full (17.0 s), the calf surfaces and cries (19.0-21.5 s), she softens (22.0-23.5 s), lays the beam out and the parent's tail answers (25.0-26.5 s), the calf swims to it (27.5-28.5 s), dawn (29.5-33.5 s); weaknesses (not blocking): the beam fully lights a recognisable whale silhouette with flukes at 8.5 s and 10.5-11.5 s, so the 'what is it / monster' misdirection is answered ten seconds early and the turn is 'it is a crying baby' rather than 'it is a whale', and the lightning beat repeats information already shown at 11.5 s.",
+   "evidence": "ordered-frames 8.50-29.00 s; strip-glint f256-f272 (lit whale silhouette with flukes); strip-found; strip-cup_drop; strip-lightning; contact-cell luminance whole-frame 88.5 at 14.5 s -> 59.0 at 15.5-16.5 s -> 106.1 at 17.0 s, beam region 124 -> 67 -> 154"
+  },
+  "payoff": {
+   "status": "PASS",
+   "note": "The ending answers the opening directly: the storm clears (29.5-30.5 s), the lamp goes dark (lantern peak drops from 255 to about 224 at 31.5 s), and two spouts, one big and one small, rise from paired backs on the horizon (30.5-33.5 s) under 'The sea had never been empty' (30.5-32.3 s), reversing the 'sea stayed empty' line; the spout icon was planted on the calf at 20.5-21.0 s so the dawn spouts read as the reunited pair; Ada's wave is not legible at phone size (figure about 15 px, raised hand against the lens at 31.4 s).",
+   "evidence": "ordered-frames 29.50-33.50 s; strip-spouts f922-f938; phone-f00942 (enlarged horizon and gallery); strip-cry f615-f629 (calf spout puff)"
+  },
+  "cause_before_effect": {
+   "status": "PASS",
+   "note": "Causes precede their effects throughout: 'Until tonight' (8.1 s) then the glint (8.5-8.8 s); the cup is planted in the routine (3.5-4.5 s) and in her hand at 12.0 s before it falls (12.4 s) after she sees the shape close (10.5-11.5 s); the lever is visible from 3.0 s before it is pulled (15.0 s); the moan cue (15.6 s) precedes her head turn (16.0 s), set jaw (16.5 s) and the flare (17.0 s); the tear (20.5-21.5 s) precedes Ada softening (22.0 s); the beam is laid out (25.0 s) before the tail rises at its end (25.7 s) and the answer call (26.2 s) before the calf swims (27.5 s); the sky lightens (29.5-31.0 s) before the lamp goes off (31.5 s). Caveat: the moan that drives the decision has no on-screen source, so this link depends on the sound being audible.",
+   "evidence": "ordered-frames 3.0-4.5, 12.0-13.0, 15.0-17.0, 20.5-22.5, 25.0-28.5, 29.5-31.5 s; enlarged choice faces 14.5-17.0 s; audio cues moan f468, open f510, answer f786, lamp_off f946"
+  },
+  "clarity_normal_speed": {
+   "status": "PASS",
+   "note": "Judged from 0.5 s sampling and shot durations, every decisive beat holds for at least 1 s and is legible at 360x640: the glowing-eyed shape beside the tower (phone-f00327), the dimmed lamp with lever raised and worried face (phone-f00498, 15.0-16.5 s), the calf with tear (phone-f00649), the tail at the end of the beam with the calf (phone-f00799) and the dawn spouts (phone-f00942); eye position carries from the dark shape (18.5 s) to the calf's eye (19.0 s), so the identity of the reveal reads; softer points: the moan reaction is a single-sample head turn at 16.0 s, the cup is about 11 px at phone size, and the tower base renders translucent over the creature at 13.2-14.0 s and 17.5-18.0 s, which muddles whether it is striking the rock.",
+   "evidence": "phone-f00327, phone-f00498, phone-f00649, phone-f00799, phone-f00942; ordered-frames 18.50 s vs 19.00 s (eye continuity); strip-surface f571-f583 (dark mass dissolves into light pool); strip-lightning f394-f404"
+  },
+  "picture_sound_link": {
+   "status": "PASS",
+   "note": "All seven narration lines land on the matching picture: 'Ada kept the light turning' over the lighthouse and the push-in to her crank (1.0-3.2 s), 'sea stayed empty' over the beam on empty water (4.9-7.0 s), 'Until tonight' as the shape enters the beam (8.1-9.2 s), 'It wasn't a monster' on the crying calf (21.0-22.4 s), 'It was lost' on Ada softening (22.7-23.7 s), 'did what the light was for' as the beam swings out and the tail rises (24.2-26.2 s), 'never been empty' as the dawn spouts rise (30.5-32.3 s); the long wordless stretch 9.2-21.0 s is carried by picture, and cue times (cup land 12.63 s, thunder 13.2 s with the bolt at f398, spout hiss 20.4 s with the puff at 20.5-21.0 s, answer call 26.2 s after the tail, lamp tick 31.53 s) line up with visible events. The mix itself was not heard.",
+   "evidence": "narration timings vs ordered-frames; audio cue sheet; strip-lightning f398-f402 (bolt); strip-cry (spout and tear); strip-tail f769-f779"
+  }
+ },
+ "verdict": "PROCEED",
+ "critical_issues": [],
+ "suggestions": [
+  "Protect the reveal: at 8.5 s and 10.5-11.5 s the beam fully lights a recognisable whale silhouette with tail flukes, which answers the audience hook 'what is the huge dark shape?' ten seconds before the calf surfaces and makes 'It wasn't a monster' land as 'it wasn't a threat' rather than a surprise. Keep the shape a vast, formless dark mass under the swell (no fluke outline, beam grazing rather than lighting the whole body) with only the glinting eye until 19.0 s.",
+  "Give the moan a visible source for sound-off viewers: a 0.5 s cutaway to bubbles or the eye at 15.6 s, or hold Ada's head turn longer than the single 16.0 s sample, so the cause of her change of mind is on screen and not only in the mix.",
+  "Make Ada's dawn wave readable: at 31.4-32.0 s she is about 15 px tall at phone size and her raised hand sits against the lens; a short push-in or larger gesture would let the farewell read.",
+  "Tighten the opening for a scrolling viewer: 5.5-7.5 s nearly repeats the 0-2.5 s wide; trim it or let the faint dark patch visible at 8.0 s appear a beat earlier so the threat arrives before 8.5 s.",
+  "Make the lightning beat (13.2-14.0 s) add information, for example the full outsized shadow under the swell, since the shape at the rock base was already shown at 11.5 s; also fix the tower base rendering translucent over the creature at 13.2-14.0 s and 17.5-18.0 s, which blurs whether it is in front of, behind or hitting the rock.",
+  "At dawn the two backs merge into one island-like dark lens on the horizon (phone-f00942); a small gap between the big and small back would make 'two whales' read faster."
+ ],
+ "sampling_limits": "Ordered decoded frames every 0.5 s, 13 dense strips (every 2nd frame, +/-8 frames around named moments) and six 360x640 phone frames; no moving playback and no listening. Motion between samples (for example the beam sweep, the calf's swim 27.0-28.5 s, the lever throw) and the audibility of the decisive whale moan at 15.6 s and the other cues could not be verified; clarity at normal speed is inferred from how long each beat is held across samples. The thunder cue at 1.8 s (flash1, frame 54) falls between samples and no flash is visible at 1.5 s or 2.0 s. Luminance was measured on the downscaled contact sheet, not the full-resolution render.",
+ "summary": "A coherent, well-ordered six-beat story that a first-time phone viewer can follow: a keeper's ritual over an empty sea, a glowing-eyed shape closing on the rock, fear, a visible dimming of the light, a moan, the light thrown open, a crying calf, the parent's tail answering at the end of the beam, and a dawn bookend with two spouts that turns 'the sea stayed empty' into 'the sea had never been empty'. All six story dimensions pass and nothing blocks release. The main weakness is that the shape is visibly a whale from 8.5 s, which spends the 'what is it' mystery early and narrows the reveal to 'it is a lost baby'; secondary weaknesses are a slow 8.5 s hook, an audio-only cause for the decision, a redundant lightning beat and an illegible dawn wave."
+}

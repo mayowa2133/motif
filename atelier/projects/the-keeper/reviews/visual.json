@@ -1,0 +1,97 @@
+{
+ "request_sha256": "147b1dcd9f2787a59648373f4232a20a5a310f0f1805360836d20437597d9e11",
+ "role": "visual",
+ "reviewer": {
+  "kind": "model",
+  "id": "Claude subagent (fresh context, same model family as the builder)",
+  "independence": "separate-context-same-family",
+  "playback": "ordered-frames",
+  "inputs_viewed": [
+   "/home/user/motif/atelier/projects/the-keeper/reviews/visual-request.md",
+   "/home/user/motif/atelier/contracts/review.schema.json",
+   "/home/user/motif/atelier/runs/the-keeper/rough/01d02c8be734/evidence-review/ordered-frames.png",
+   "/home/user/motif/atelier/runs/the-keeper/rough/01d02c8be734/evidence-review/strip-glint.png",
+   "/home/user/motif/atelier/runs/the-keeper/rough/01d02c8be734/evidence-review/strip-found.png",
+   "/home/user/motif/atelier/runs/the-keeper/rough/01d02c8be734/evidence-review/strip-cup_drop.png",
+   "/home/user/motif/atelier/runs/the-keeper/rough/01d02c8be734/evidence-review/strip-lightning.png",
+   "/home/user/motif/atelier/runs/the-keeper/rough/01d02c8be734/evidence-review/strip-shutter.png",
+   "/home/user/motif/atelier/runs/the-keeper/rough/01d02c8be734/evidence-review/strip-open.png",
+   "/home/user/motif/atelier/runs/the-keeper/rough/01d02c8be734/evidence-review/strip-surface.png",
+   "/home/user/motif/atelier/runs/the-keeper/rough/01d02c8be734/evidence-review/strip-cry.png",
+   "/home/user/motif/atelier/runs/the-keeper/rough/01d02c8be734/evidence-review/strip-soften.png",
+   "/home/user/motif/atelier/runs/the-keeper/rough/01d02c8be734/evidence-review/strip-tail.png",
+   "/home/user/motif/atelier/runs/the-keeper/rough/01d02c8be734/evidence-review/strip-calf_go.png",
+   "/home/user/motif/atelier/runs/the-keeper/rough/01d02c8be734/evidence-review/strip-spouts.png",
+   "/home/user/motif/atelier/runs/the-keeper/rough/01d02c8be734/evidence-review/phone-f00114.png",
+   "/home/user/motif/atelier/runs/the-keeper/rough/01d02c8be734/evidence-review/phone-f00327.png",
+   "/home/user/motif/atelier/runs/the-keeper/rough/01d02c8be734/evidence-review/phone-f00498.png",
+   "/home/user/motif/atelier/runs/the-keeper/rough/01d02c8be734/evidence-review/phone-f00649.png",
+   "/home/user/motif/atelier/runs/the-keeper/rough/01d02c8be734/evidence-review/phone-f00799.png",
+   "/home/user/motif/atelier/runs/the-keeper/rough/01d02c8be734/evidence-review/phone-f00942.png"
+  ],
+  "tools": "Read tool on every evidence PNG; Python/PIL crops and enlargements (3-6x) of those same images in a scratch directory; numpy luminance and WCAG contrast measurements (lamp/beam brightness across strip-shutter and strip-open, sky brightness across strip-lightning, eye-glint position in strip-glint, spout size and contrast in phone-f00942)"
+ },
+ "dimensions": {
+  "focal_hierarchy": {
+   "status": "PASS",
+   "note": "In nearly every shot the beam leads the eye to what matters: the empty pool of light (0-7.5 s), the glinting eye (8.5 s, then 10.5-14 s), Ada centred against the lamp in close-ups, the calf's face centred in the beam (19-21.6 s) and the lit tail where the beam ends (25.7-28.5 s). Two weak spots: the first glint sits 7-9% from the left edge and is already fading by f264, and at dawn the saturated red-and-white tower outweighs the grey spouts (counted under phone_readability).",
+   "evidence": "strip-glint: eye at x 10-13 of 150 px (6.7-8.7%) in f256-f262, glint strength falls from 741 to 525 by f264; phone-f00327 eye at x~65/360 inside the beam; phone-f00649 calf face at x 85-250 under the beam; phone-f00799 tail outlined at the beam's end; phone-f00942 tower x 230-357 dominates, spouts are small and grey"
+  },
+  "identity_continuity": {
+   "status": "PASS",
+   "note": "Ada (yellow oilskin and sou'wester, round glasses, grey hair, red-knob lever on her left, dial on her right) is the same in every close-up and reads as the same small yellow figure in the wide shots. The lighthouse relights gradually from slate and maroon to white and red over 29-30.5 s with no pop or double image, and the calf keeps its design from close-up (19-21.6 s) to wide (24-28.5 s). The monster turns into the calf in a 0.5-0.8 s cross-dissolve with the eye held in place, which carries identity even though colour (olive to pale blue), outline and size all change at once.",
+   "evidence": "ordered-frames 3.5-4.5 s, 12.0-13.0 s, 14.5-17.0 s, 22.0-23.5 s (Ada); ordered-frames 29.0-30.5 s, enlarged (tower relight is continuous); strip-surface f571-f587 (olive mass fades around the calf, eye at the same x as the monster's glint at 18.5 s). Minor: the cup loses its handle and steam and becomes a plain white chip in flight (strip-cup_drop f372-f380); at 24 s the calf is still about 2.5x the tower's width, so 'small' comes from its design rather than its scale"
+  },
+  "composition": {
+   "status": "PASS",
+   "note": "The vertical framing is deliberate: the lighthouse sits on the right third and the beam's diagonal carries the eye left and down to the subject, the close-ups centre Ada at mid-height, and the bottom ~20% (the caption zone) is empty water in all six phone frames. There is minor crowding at the edges: the mother's tail at 25.7-28.5 s sits on the left edge, and at dawn the tower and rock fill x 230-357, under the platform's right-hand action rail.",
+   "evidence": "phone-f00114, phone-f00327, phone-f00498, phone-f00649, phone-f00799 (tail spans x 3-90 of 360), phone-f00942 (rock reaches x~357; Ada at y 178-211, above the usual rail zone)"
+  },
+  "readable_action": {
+   "status": "PASS",
+   "note": "The main chain of action is legible: Ada pulls the lever and the lamp visibly dims, sets her jaw, throws the lever and the beam brightens, steers the beam down onto the shape, lays it across the sea, the tail rises at its end, and the calf swims off along it. Four secondary beats are weak: the cup drop is a ~6 px chip, the lightning reveals nothing because the creature is already fully lit at the rock, the calf 'surfaces' by dissolving in place rather than rising, and the hand on heart is a pink dot with no arm.",
+   "evidence": "strip-shutter f442-f458: lever goes from 45 degrees to upright, beam luminance 138 to 87, lamp shows shutter rings; ordered-frames 16.5 s: flat mouth; strip-open f502-f512: lever thrown down, beam luminance 126 to 165; ordered-frames 17.5 s: beam aimed at the shape; strip-tail f769-f779: tail grows at the beam's end; ordered-frames 27.0-28.5 s: calf recedes toward the tail. Weak: strip-cup_drop f372-f380 (cup is a white chip that falls ~60 phone px); strip-lightning f394 shows the creature fully visible before the bolt at f398-f402, and sky luminance only rises 52 to 98; strip-surface: calf fixed in place while the olive mass fades; strip-soften f662-f668: pink hand dot on the coat with no forearm"
+  },
+  "motion_performance": {
+   "status": "PASS",
+   "note": "At the sampled resolution, beat timing serves the story. The routine holds 7.5 s before the sighting, the gasp holds about 1 s (12.0-13.0 s), the decision plays out over 2.5 s in readable stages (worried 14.5-15.5 s, startled turn 16.0 s, set jaw 16.5 s, throw 17.0 s), and the film holds 2.6 s on the calf and 2.5 s on the still dawn. Pose changes are quick pops with no visible anticipation, and Ada's softening happens across a cut: she is already smiling in the first frame of the 22.0 s shot. Easing and in-betweens were not visible to this review.",
+   "evidence": "ordered-frames 12.0-13.0, 14.5-17.0, 19.0-21.5, 31.0-33.5 s; strip-cup_drop f370-f374 (arms go up within ~4 frames); strip-open f506-f508 (lever thrown in 2 frames); strip-soften f658 (already smiling at the cut), f660-f662 (hand to chest)"
+  },
+  "style_coherence": {
+   "status": "PASS",
+   "note": "One visual language holds from 0 s to 33.5 s: flat cut-paper vector shapes with grain, soft sky gradients, rain streaks and an additive beam, and the dawn recolours the same shapes peach and blue instead of switching style. It is flatter and more cartoon-like (the emoji-eyed calf, Ada's mitten hands) than the 'painterly chiaroscuro' the intent asks for, and the beam reads as pale, cool cream rather than warm, but the language is consistent.",
+   "evidence": "ordered-frames whole sheet; ordered-frames 29.0-30.5 s enlarged (same tower and lantern shapes relit); phone-f00649 vs phone-f00114 (calf and Ada share the same flat treatment)"
+  },
+  "phone_readability": {
+   "status": "FAIL",
+   "note": "Most story beats survive at 360x640 (the glinting eye, Ada's face and lever, the calf's face and tear, the lit tail), but the ending payoff does not. At 31-33.5 s the two spouts are grey-blue puffs about 28 and 20 px tall, darker than the sky at about 1.75:1 contrast, so they read as smoke. The two backs merge into one dark islet, and Ada's wave is made by a 19x33 px figure. Smaller details are also lost: the cup is a ~6 px chip and the hand on her heart is a dot.",
+   "evidence": "phone-f00942: big spout core RGB ~(158,173,177) and small spout ~(159,176,184) against sky ~(252,221,187), WCAG contrast 1.79 and 1.73; backs overlap into one shape at x 55-195, y 290-300; Ada's yellow figure covers x 270-289, y 178-211. strip-spouts f922-f938: spouts rise as small grey clusters. strip-cup_drop f372-f380"
+  },
+  "technical_defects": {
+   "status": "PASS",
+   "note": "The samples show no broken frames, tearing or popping, and the cuts and the night-to-dawn relight are clean. Remaining defects are minor and not release-blocking: the creature covers the rock's left edge while the tower is drawn over the creature, and the rock base is missing at 13.1-14 s; Ada's right arm reads as a yellow stalk behind her head in the 16.0 s turn pose; the cup jumps up out of her hand and loses its shape. Audio sync could not be checked.",
+   "evidence": "strip-lightning f394-f404 and strip-open f514-f518 (layering at the tower base, enlarged 6x); ordered-frames 16.0 s enlarged 5x (arm stalk; one sample only); strip-cup_drop f370 to f372 (cup jumps ~20 px upward and becomes a chip); possible sync offsets: glint peaks f256-f262 before the f264 chime, and the beam is gone by about f932 while the lamp_off tick is at f946"
+  }
+ },
+ "verdict": "REPAIR",
+ "critical_issues": [
+  {
+   "dimension": "phone_readability",
+   "where": "dawn, 31.0-33.5 s (f930-f1005); phone-f00942, strip-spouts",
+   "problem": "The final payoff (two spouts, one big and one small, proving the calf is home with its mother) does not read at phone size. The spouts are 20-28 px grey-blue puffs darker than the peach sky (contrast about 1.75:1), so they read as smoke. The two backs merge into one low dark islet, and the saturated tower pulls the eye away. A first-time viewer can miss that these are two whales, which leaves 'The sea had never been empty' without a picture behind it.",
+   "smallest_fix": "Render the spouts lighter than the sky (near-white mist with a faint cool shadow side) and about 1.5-2x their current size. Open a visible gap of open sea between the two backs, or give each a small dorsal fin, so they read as two whales of different sizes. Optionally widen Ada's wave arc so it reads at 19x33 px."
+  }
+ ],
+ "suggestions": [
+  "Lightning (13.2 s): make the flash reveal something. For example, keep the beam off the creature for those frames and let the flash silhouette a much larger shadow under the swell beside the rock, so the bolt is a cause with a consequence. At present the creature is fully lit in f394 before the bolt, and the sky only brightens from 52 to 98.",
+  "Cup drop (12.2-12.6 s): keep the cup's shape (handle) in flight and make it larger, or cut to a quick insert of it hitting the gallery floor. At present it is a ~6 px white chip that jumps upward out of her hand (f370-f372).",
+  "Reveal (18.7-19.5 s): as the dark mass dissolves, let the calf's head break the waterline with a splash ring so the intended 'surfaces' happens, instead of a pure in-place dissolve.",
+  "Calf face (19.5-21.6 s): the brow slopes down toward the snout, which reads cross. Raise its front end for sadness, and draw the tear as a filled droplet rather than the outlined ring it becomes at f649.",
+  "Ada's softening (22.0 s): open the shot on her set-jaw face and let it soften on screen before the smile, and draw a forearm to her chest so the hand on her heart does not float.",
+  "Glint (8.5-8.8 s): bring the creature's first lit appearance about 10% further in from the left edge, and land the glint's peak on the chime cue.",
+  "Layering (13.1-18 s): put the creature fully behind the rock at the tower base, so it no longer covers the rock while the tower covers it.",
+  "Home (25.7-28.5 s): move the tail about 20 px in from the left edge so it is not crowded by the frame."
+ ],
+ "sampling_limits": "Viewed: ordered decoded frames every 15 frames (0.5 s) from 0 to 33.5 s, twelve dense strips at every 2nd frame (+/-8 frames) around the named moments, and six 360x640 phone frames. I cropped, enlarged and measured these same images in PIL. There was no moving playback and no audio, so this review did not establish: easing and in-between smoothness; continuity of the beam sweep and the creature's and calf's paths between samples; whether the calf blinks; how long the 16.0 s arm pose lasts; anything between the 0.5 s samples outside the strips (for example f405-f441, f520-f569, f680-f760, f810-f920); or audio-visual sync (the glint and lamp_off offsets above are inferred from frames only). Platform UI zone judgements use generic TikTok/Reels overlay positions, not a real overlay.",
+ "summary": "A clear, coherent short. The beam-led staging, Ada's close-up acting through the decision (14.5-17 s) and the calf reveal (19-21.6 s) read well on a phone, and the night-to-dawn relight is clean and keeps the lighthouse's identity. One problem blocks release: the dawn payoff (two spouts, big and small) is too small, too low-contrast and too merged to read as two whales at phone size. Secondary weaknesses: the lightning beat reveals nothing, the cup drop is a ~6 px chip, the reveal is an in-place dissolve rather than a surfacing, the calf's brow reads cross rather than sad, and the creature, rock and tower overlap in the wrong order at the tower base."
+}
