@@ -1,0 +1,82 @@
+{
+ "request_sha256": "e5d0165b2337eec82867f3bcd312f0ae4f066c5e12b3b44d6387cd2d47b59ee6",
+ "role": "story",
+ "reviewer": {
+  "kind": "model",
+  "id": "Claude subagent (fresh context, same model family as the builder)",
+  "independence": "separate-context-same-family",
+  "playback": "ordered-frames",
+  "inputs_viewed": [
+   "/home/user/motif/atelier/runs/runaway-shadow/rough/fda6559f438c/evidence-review/ordered-frames.png",
+   "/home/user/motif/atelier/runs/runaway-shadow/rough/fda6559f438c/evidence-review/strip-double_take.png",
+   "/home/user/motif/atelier/runs/runaway-shadow/rough/fda6559f438c/evidence-review/strip-detach.png",
+   "/home/user/motif/atelier/runs/runaway-shadow/rough/fda6559f438c/evidence-review/strip-stand_up.png",
+   "/home/user/motif/atelier/runs/runaway-shadow/rough/fda6559f438c/evidence-review/strip-raspberry.png",
+   "/home/user/motif/atelier/runs/runaway-shadow/rough/fda6559f438c/evidence-review/strip-run_off.png",
+   "/home/user/motif/atelier/runs/runaway-shadow/rough/fda6559f438c/evidence-review/strip-melt.png",
+   "/home/user/motif/atelier/runs/runaway-shadow/rough/fda6559f438c/evidence-review/strip-faceplant.png",
+   "/home/user/motif/atelier/runs/runaway-shadow/rough/fda6559f438c/evidence-review/strip-peek.png",
+   "/home/user/motif/atelier/runs/runaway-shadow/rough/fda6559f438c/evidence-review/strip-idea.png",
+   "/home/user/motif/atelier/runs/runaway-shadow/rough/fda6559f438c/evidence-review/strip-creep.png",
+   "/home/user/motif/atelier/runs/runaway-shadow/rough/fda6559f438c/evidence-review/strip-stomp.png",
+   "/home/user/motif/atelier/runs/runaway-shadow/rough/fda6559f438c/evidence-review/strip-wink.png",
+   "/home/user/motif/atelier/runs/runaway-shadow/rough/fda6559f438c/evidence-review/phone-f00048.png",
+   "/home/user/motif/atelier/runs/runaway-shadow/rough/fda6559f438c/evidence-review/phone-f00183.png",
+   "/home/user/motif/atelier/runs/runaway-shadow/rough/fda6559f438c/evidence-review/phone-f00333.png",
+   "/home/user/motif/atelier/runs/runaway-shadow/rough/fda6559f438c/evidence-review/phone-f00465.png",
+   "/home/user/motif/atelier/runs/runaway-shadow/rough/fda6559f438c/evidence-review/phone-f00633.png",
+   "/home/user/motif/atelier/runs/runaway-shadow/rough/fda6559f438c/evidence-review/phone-f00810.png"
+  ],
+  "tools": "Read on every evidence PNG; PIL crops/2x-4x upscales of contact-sheet rows and strips, brightened crops of the night frames, and a pixel scan of the stomp strip measuring the gap between Pim's feet and the shadow (scratch files only)"
+ },
+ "dimensions": {
+  "opening_promise": {
+   "status": "PASS",
+   "note": "0.5-3.0s sets up a clear, warm situation: a small capped creature stops on a sunset meadow, and its long shadow fills the lower half of the frame. Two weaknesses: frame 0.0s is an empty meadow (Pim only enters at the right edge at 0.5s), and no sample before about 4.5s shows the shadow acting oddly. The 'one beat late' walk and sigh cannot be confirmed from 0.5s samples, so the hook really lands at 5.0-5.8s, when the shadow keeps its arms out while Pim's are down and Pim double-takes with a hat boing.",
+   "evidence": "ordered-frames 0.00s-3.00s (f0-f90), 5.00s/5.50s (f150/f165); phone-f00048; strip-double_take f166-f182"
+  },
+  "progression": {
+   "status": "PASS",
+   "note": "Each shot changes the situation rather than listing gags. Lag: the shadow holds the stretch, snaps innocent at the double take, then copies a suspicious arm test. Escape: it detaches, stands up as a twin, blows a raspberry and runs. Chase: it melts into the tree shade, the hat dive crashes and eyes giggle from the shade. Lure: idea, dance, creep, stomp, reattached. Nightfall: the button. Two mild sags: the arm test (6.5-8.5s) repeats a copy beat and adds only suspicion, and Pim stays upside-down or seated for about 3.8s (15.6-19.4s) before the idea.",
+   "evidence": "lag 3.5-8.5s (f105-f255); escape f288-f390; chase f405-f525 incl. strip-melt f422-f430, strip-faceplant f468, strip-peek f500-f506; lure f540-f720; nightfall f735-f885"
+  },
+  "payoff": {
+   "status": "PASS",
+   "note": "The ending is deliberate and answers the opening question of what the shadow will do next. After the lure the shadow is back at Pim's feet (23.5-25.0s, Pim smug). Night then erases every shadow (25.0-26.0s), Pim frowns (26.0-27.0s), two white eyes open on the dark grass below its feet (27.5s) and wink (28.0-28.5s), so the copycat gets the last word. The lure that comes before this is weakened by two things: the stomp never touches the shadow (blocking, filed under cause_before_effect), and the samples cannot show that the shadow is copying Pim's dance. Over f682-f688 its pose stays fixed while Pim's arms change.",
+   "evidence": "ordered-frames 23.50s-29.50s (f705-f885); strip-wink f827-f843; phone-f00810; strip-stomp f682-f698; strip-creep f618-f634"
+  },
+  "cause_before_effect": {
+   "status": "FAIL",
+   "note": "The payoff depends on Pim pinning the shadow by stomping on its feet, and that is never shown. At the stomp frame f690, Pim's foot and dust puff land on bare grass about 11 px (strip scale), roughly 25 px at phone size, above the shadow's top end. At f692-f694 the gap grows to about 19 px (roughly 45 px at phone size) as the shadow sags away. The shadow only joins Pim's feet at f696-f698, with no contact. Every other causal chain is in the right order: the flourish (5.0-5.5s) comes before the double take (f174-f176), the lean and squint (f285) before the detach (f288-f300), the melt (f422-f430) before the dive and faceplant (f450-f468) with the eyes in the shade afterwards (f500), the dance (21.0s) before the creep-out (21.5-22.5s), and the darkening (24.5-26.0s) before the worry and the eyes (26.0-27.5s).",
+   "evidence": "strip-stomp f682-f698 (pixel scan: feet bottom vs shadow top 135/146 at f690, 136/155 at f692, 135/154 at f694, 136/135 at f696); strip-double_take; strip-detach; strip-melt; strip-faceplant; strip-peek"
+  },
+  "clarity_normal_speed": {
+   "status": "PASS",
+   "note": "There is one location throughout, with big flat silhouettes, and each beat holds 3-6s. The three fast changes each take about 0.27s: the hinge-up (f302-f310), the melt (f422-f430) and the snap back (f690-f698). Each is followed by a held result a first-time viewer can read: the standing twin at 10.3-11.6s, the eyes in the shade at 16.6-19.5s, and the attached shadow at 23.5-25.0s. Two risks: the creeping shadow's first peek is a single eye at the extreme left edge, low in frame (phone-f00633 eyes at about x 5-55, y 480-500 of 640), which is easy to miss; and the stomp gap may read as a magic snap rather than a pin. Comic timing and motion readability cannot be judged from stills.",
+   "evidence": "strip-stand_up f302-f310; strip-melt f422-f430; strip-stomp f690-f698; phone-f00333, phone-f00465, phone-f00633; ordered-frames 10.5-11.5s, 17.0-19.5s, 20.5-22.5s"
+  },
+  "picture_sound_link": {
+   "status": "NOT_APPLICABLE",
+   "note": "Silent comedy by design: no narration or dialogue, and sound is score and effects only (declared before production). The narration list is empty and no on-screen dialogue was seen. I did not listen to the effects.",
+   "evidence": "request Narration [] and audio_intent narration none; no speech or text in any frame 0.00-29.50s"
+  }
+ },
+ "verdict": "REPAIR",
+ "critical_issues": [
+  {
+   "dimension": "cause_before_effect",
+   "where": "lure, stomp at 22.9-23.3s (f688-f698); measured in strip-stomp",
+   "problem": "The payoff gag is 'Pim stomps on the shadow's feet and pins it', but Pim's foot lands on empty grass. The shadow's top end is about 25 px (phone scale) below the foot at f690 and sags to about 45 px away at f692-f694. It then slides up and reattaches at f696-f698 with no contact, so the cause (foot on the shadow's feet) never appears on screen. The clever, character-driven pin becomes an unexplained snap back.",
+   "smallest_fix": "Move the shadow's foot end right up to Pim's feet by about f686, so the stomp at f690 visibly lands on it. Hold the pinned contact for 3-4 frames, ideally with the shadow's eyes popping open or wincing, before it flattens into the attached pose. Remove the sag away from the foot at f692-f694."
+  }
+ ],
+ "suggestions": [
+  "Put Pim in frame at 0.0s instead of an empty meadow, and make the beat-late copy readable inside the first 2-3s. For example, the shadow takes one extra step after Pim stops at about 1.0s, or finishes the sigh after Pim. As it stands, nothing in the samples shows the shadow misbehaving before about 4.5s.",
+  "Make the copying during the dance unmistakable: give the emerging shadow at least two of Pim's distinctive dance poses, held clearly and matched to Pim, between 21.0s and 22.5s. In the samples its limbs move but never clearly mirror Pim, and the 'can't resist copying' logic of the payoff depends on that mirroring.",
+  "Bring the shadow's first peek away from the extreme left edge and up from the lower quarter of the frame (phone-f00633 eyes at about y 480-500 of 640), so that platform caption overlays cannot hide it and a first-time viewer notices it.",
+  "Shorten the defeated stretch from 15.6s to 19.4s by about 1s (the upside-down hold propped on the hat or the seated pause), so the turn to the idea comes sooner.",
+  "Outside story scope: the request's measured true peak on the preview is +1.89 dBTP (above 0), which the proof or visual reviewer should check."
+ ],
+ "sampling_limits": "Ordered frames every 0.5s, dense strips (every 2nd frame, plus or minus 8 frames) around 12 named moments, and six 360x640 phone frames, all decoded from the preview. I had no moving playback and did not listen. I could not verify the beat-late walk and sigh in 0-3s, whether the shadow's limbs mirror Pim's dance between strip samples (20.6-22.6s), the comic timing and readability of the roughly 0.27s hinge-up, melt and snap, or anything about the score and effects. Events between 0.5s samples outside the strips (for example the look_down at 26.2s and the shadow fade at 25.5-26.0s) were seen only at sample points. The stomp gap was measured by a pixel scan of strip thumbnails (272 px tall) and scaled to phone size by about 2.35x, accurate to about plus or minus 3 thumbnail px. That error does not change the finding, since the gap is visible by eye at f690-f694.",
+ "summary": "A well-built silent comedy. It has a clear setup (the shadow holds the stretch and snaps innocent at the hat-boing double take), real escalation (it detaches as a raspberry-blowing twin, melts into the tree shade, and the hat dive crashes while eyes giggle) and a strong night-time wink button that answers the opening. The one blocking problem is in the central payoff: Pim's stomp at f690 lands on bare grass about 25-45 phone px from the shadow, which reattaches on its own at f696-f698, so the 'pin its feet' mechanism the joke depends on is never shown. Secondary risks: the dance-copying is not clearly mirrored in the samples, the first frame is empty with the hook arriving only at about 5s, and the peek is small at the left edge. Verdict: REPAIR."
+}

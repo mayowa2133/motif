@@ -1,0 +1,39 @@
+{
+  "authored_by": "Claude (agent-assisted authoring in Motif Atelier)",
+  "approach_id": "copycat-lure-v1",
+  "logline": "A small creature's shadow runs off at sunset; force cannot catch it, so the creature dances until the copycat shadow cannot resist copying its way back.",
+  "ending": "The sun sets, the meadow goes dark and the shadow vanishes with the light; Pim looks down, worried, and two white eyes open on the dark grass beside its feet and wink.",
+  "opening_promise": "Pim walks onto a sunset meadow and stops to enjoy the view; its long shadow copies every move, one beat late.",
+  "continuity": {"carrier": "character", "what": "Pim and its shadow on one sunset meadow; the sun's height drives shadow length and, at the end, the dark."},
+  "style_sheet": {
+    "look": "Flat bold cartoon: solid shapes, 7-unit dark plum outlines, no gradients on characters, a backlit sunset sky graded from violet to gold.",
+    "palette": ["#3B2A5C", "#E0607E", "#FFB25B", "#FFF1D6", "#E2483A", "#2B1B33", "#9DB35A", "#5E7F35"],
+    "materials": "flat paint; grass tufts and cloud wisps as simple strokes; shadows as one flat plum layer at uniform opacity so overlapping parts never double-darken",
+    "characters": [
+      {"id": "pim", "design": "Egg-shaped cream body, long red stocking cap that flops with a white pompom, big oval eyes, pink cheeks, stubby legs with plum boots, noodle arms with mitten hands.",
+       "silhouette": "round body under a tall curved cap: readable as a dot with a hook at 360 px",
+       "key_poses": ["walk", "sigh", "big stretch", "double take", "squint lean", "run", "hat dive", "faceplant", "chin rub", "goofy dance", "stomp", "smug", "worried look-down"],
+       "expressions": ["content", "suspicious", "shocked", "determined", "dazed", "smug", "worried"],
+       "new_design": true, "canonical_asset": null},
+      {"id": "pim-shadow", "design": "Pim's exact silhouette in flat plum; flat on the ground it is a projection of Pim's pose, standing it becomes a dark twin with white eyes and a pink tongue.",
+       "silhouette": "same as Pim, solid plum", "key_poses": ["copy", "extra stretch", "innocent snap", "peel up", "raspberry", "sprint", "melt into shade", "peek", "copy dance", "snap back"],
+       "expressions": ["mischief", "innocent", "giggle", "busted", "wink"], "new_design": true, "canonical_asset": null}
+    ],
+    "environment": "One hilltop meadow at sunset: low sun half behind far hills, a lone tree on the left whose long shadow lies down the lower-left of frame, grass tufts. Light only from the sun, behind the characters, so every shadow falls toward the viewer.",
+    "framing": "One continuous take in 9:16; the camera pushes in for the lag and the double take, pulls wide for the chase, and settles close for the stomp and the final wink.",
+    "typography": null,
+    "sound_intent": "Silent comedy: a plucky pizzicato and marimba score that stops dead for the double take, mickey-mousing footsteps, squeaks, a raspberry, a faceplant thud and a stomp; the score falls away to a few celesta notes in the dark."
+  },
+  "audio": {"narration": "none", "voice": null, "music": "original note-list score (pizzicato, marimba, celesta) synthesised in code", "sfx": "seeded procedural sound design placed on the picture's moment table"},
+  "shots": [
+    {"id": "sunset", "purpose": "establish Pim, the meadow and a shadow that copies", "sees": "Pim walks in and stops to sigh at the sunset; the long shadow on the grass walks and sighs with it", "before": "empty meadow", "after": "Pim content, shadow attached"},
+    {"id": "lag", "purpose": "reveal the shadow has a mind of its own", "sees": "Pim stretches; the shadow holds the stretch after Pim stops, adds an extra flourish, then snaps innocent when Pim double-takes", "before": "shadow copies", "after": "Pim suspicious of its shadow", "cause": "the shadow's lag"},
+    {"id": "escape", "purpose": "the shadow breaks free", "sees": "Pim leans in to squint; the shadow slides away from Pim's feet, hinges up into a dark twin with white eyes, blows a raspberry and sprints off, leaving Pim with no shadow at all", "before": "shadow on the ground at Pim's feet", "after": "Pim shadowless and shocked", "cause": "Pim leaning in"},
+    {"id": "chase", "purpose": "force fails", "sees": "Pim chases; the twin dives flat into the tree's long shade and disappears; Pim's hat-net dive lands face-first and two white eyes giggle from the shade", "before": "twin running in the open", "after": "twin hidden in shade, Pim face-down", "cause": "the shadow melting into darker shadow"},
+    {"id": "lure", "purpose": "wit wins", "sees": "Pim gets an idea and dances in the sunlight; the shadow cannot resist copying, slides out of the shade copying the dance and creeps to Pim's feet; Pim stomps on its feet and it snaps back attached", "before": "shadow hidden", "after": "shadow pinned back in place, Pim smug", "cause": "the shadow's urge to copy, planted in the opening"},
+    {"id": "nightfall", "purpose": "button: the shadow gets the last word", "sees": "the sun sinks, the light and every shadow fade, Pim looks down worried, and two white eyes open in the dark grass by its feet and wink", "before": "sunlit, shadow attached", "after": "dark meadow, winking eyes", "stillness": "a held dark beat before the eyes open"}
+  ],
+  "hardest_shot": {"shot": "escape", "why": "The shadow must read as Pim's own projection, then visibly detach, hinge up into a standing twin and run, while Pim's feet are left without a shadow; if the detach or the stand-up reads as a sticker swap the premise fails.", "fallback": "Stage the escape as the flat shadow sliding away along the grass without standing up, and keep the dark twin for the chase only."},
+  "claims": [],
+  "applicability": {"picture_sound_link": "Silent comedy by design: no narration or dialogue; sound is score and effects only."}
+}

@@ -1,0 +1,44 @@
+{
+  "authored_by": "Claude (agent-assisted authoring in Motif Atelier)",
+  "classification": "fictional",
+  "premises": [
+    {
+      "id": "copycat-lure",
+      "title": "The Copycat",
+      "opening_image": "A small round creature in a long red stocking cap walks onto a meadow at sunset; its long shadow walks with it across the grass toward us.",
+      "audience_hook": "Why is the shadow a beat late, and what will it do next?",
+      "central_action": "The shadow peels itself off the ground, stands up as a dark twin with white eyes, blows a raspberry and runs off; the creature chases it into the long shadow of a tree, where it hides.",
+      "complication": "Chasing fails: the shadow can melt into any darker shadow, and the creature's hat-net dive ends face-first in the grass while two white eyes giggle from the tree's shade.",
+      "payoff": "The creature stops chasing and starts a goofy dance; the shadow cannot resist copying, slides out of hiding mid-dance, and the creature stomps on its feet to pin it back in place. Then the sun sets, every shadow vanishes, and two white eyes wink up from the dark.",
+      "art_motion_idea": "Flat bold cartoon with dark plum outlines on a backlit sunset meadow; shadows computed from the character's own pose so the lag and the peel are real projections, not stickers.",
+      "library_fit": "No Classic rig, room or mascot supports a detached, independently animated cast shadow; everything is new.",
+      "scores": {"clarity": 4, "visual_potential": 5, "originality": 4, "appeal": 4, "feasibility": 3}
+    },
+    {
+      "id": "lamp-leash",
+      "title": "Short Leash",
+      "opening_image": "A night street with one buzzing streetlamp; a character stands in its pool of light and its shadow strains toward the dark like a dog on a lead.",
+      "audience_hook": "What is out there that the shadow wants so badly?",
+      "central_action": "The character walks the shadow from lamp to lamp; every time it steps between lamps the shadow splits in two and the halves try to run opposite ways.",
+      "complication": "At the last lamp the bulb dies and the shadow is gone; the character is alone in the dark.",
+      "payoff": "A match flares: the shadow is back, curled up asleep at the character's feet.",
+      "art_motion_idea": "Ink-wash night scene with multiple point lights so shadows split and swing; slower, quieter comedy.",
+      "library_fit": "Would need multi-light shadow projection and a new street set; nothing in the Classic kit applies.",
+      "scores": {"clarity": 3, "visual_potential": 4, "originality": 4, "appeal": 3, "feasibility": 3}
+    },
+    {
+      "id": "noon-standoff",
+      "title": "High Noon",
+      "opening_image": "A desert at midday; a gunslinger-style cactus stands with its shadow shrunk to a puddle under its feet.",
+      "audience_hook": "Can you catch a shadow when the sun is right overhead?",
+      "central_action": "As the sun crawls across the sky the cactus's shadow grows and starts mimicking a duel, drawing first every time.",
+      "complication": "The cactus cannot move fast enough to beat its own shadow to the draw.",
+      "payoff": "The cactus waits for the sun to pass behind a cloud; the shadow vanishes mid-draw and the cactus wins by default.",
+      "art_motion_idea": "Western parody with a fast sun timelapse; relies on genre references for its jokes.",
+      "library_fit": "Would need a desert set and a sun-angle system; no Classic overlap.",
+      "scores": {"clarity": 3, "visual_potential": 3, "originality": 2, "appeal": 3, "feasibility": 4}
+    }
+  ],
+  "chosen": "copycat-lure",
+  "rationale": "The Copycat has the clearest rule and the most satisfying turn: the opening plants the shadow's compulsion to copy, the chase shows force fails, and the payoff uses that same compulsion against it, so the ending is earned by the character's wit rather than luck. One sunset meadow carries the whole film and the sunset itself delivers the final button. It is the hardest to animate (pose-driven shadow projection, a peel-up and an independent dark twin), which is exactly the capability this pilot should prove; High Noon leans on a borrowed genre and Short Leash ends on a softer, less legible gag."
+}

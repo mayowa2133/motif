@@ -1,0 +1,982 @@
+{
+ "entry": "film.js",
+ "fps": 30,
+ "frames": 1026,
+ "design": [
+  1080,
+  1920
+ ],
+ "fonts": [
+  {
+   "family": "Inter",
+   "path": "fonts/Inter-900-latin.woff2",
+   "weight": 900
+  }
+ ],
+ "shots": [
+  {
+   "id": "bowl",
+   "start": 0,
+   "end": 107
+  },
+  {
+   "id": "inside",
+   "start": 107,
+   "end": 276
+  },
+  {
+   "id": "steam",
+   "start": 276,
+   "end": 435
+  },
+  {
+   "id": "leak",
+   "start": 435,
+   "end": 546
+  },
+  {
+   "id": "burst",
+   "start": 546,
+   "end": 801
+  },
+  {
+   "id": "sound",
+   "start": 801,
+   "end": 897
+  },
+  {
+   "id": "answer",
+   "start": 897,
+   "end": 1026
+  }
+ ],
+ "moments": {
+  "question": 15,
+  "wipe": 107,
+  "cutaway": 150,
+  "water_label": 189,
+  "flame": 279,
+  "boil": 297,
+  "hundred": 318,
+  "pressure": 360,
+  "crack_seen": 444,
+  "leak": 448,
+  "leak_end": 528,
+  "strain": 585,
+  "one_eighty": 576,
+  "burst": 630,
+  "foam": 642,
+  "leg": 729,
+  "jump": 735,
+  "apex": 792,
+  "replay": 810,
+  "replay_pop": 872,
+  "to_bowl": 897,
+  "flake_lands": 921,
+  "kernel_falls": 930,
+  "kernel_lands": 966,
+  "end_hold": 1002,
+  "replay_split": 850
+ },
+ "key_moments": [
+  "cutaway",
+  "boil",
+  "pressure",
+  "leak",
+  "burst",
+  "foam",
+  "leg",
+  "jump",
+  "replay_split",
+  "replay_pop",
+  "kernel_lands"
+ ],
+ "proof": {
+  "shot": "burst",
+  "start": 570,
+  "end": 798,
+  "note": "strain, hull split, foam bloom, leg kick and jump"
+ },
+ "sound": {
+  "voice": "af_heart",
+  "speed": 1.0,
+  "narration": [
+   {
+    "id": "q",
+    "text": "Why do a few kernels in every bowl never pop?",
+    "at": 15
+   },
+   {
+    "id": "inside",
+    "text": "Inside each one is a little water, about fourteen percent, sealed in a hard, shiny hull.",
+    "at": 117,
+    "claims": [
+     "water-content",
+     "pressure-vessel"
+    ]
+   },
+   {
+    "id": "heat",
+    "text": "Heat turns some of that water to steam.",
+    "at": 282,
+    "claims": [
+     "steam-pressure"
+    ]
+   },
+   {
+    "id": "trapped",
+    "text": "In a sealed kernel it's trapped, and the pressure climbs.",
+    "at": 348,
+    "claims": [
+     "pressure-vessel"
+    ]
+   },
+   {
+    "id": "crack",
+    "text": "But a kernel with one tiny crack just leaks its steam away.",
+    "at": 441,
+    "claims": [
+     "crack-leaks"
+    ]
+   },
+   {
+    "id": "burst",
+    "text": "At about a hundred and eighty degrees, the hull bursts,",
+    "at": 552,
+    "claims": [
+     "critical-temperature"
+    ],
+    "ends_before": "burst"
+   },
+   {
+    "id": "foam",
+    "text": "and the hot starch puffs into foam.",
+    "at": 639,
+    "claims": [
+     "superheated-expansion"
+    ]
+   },
+   {
+    "id": "leg",
+    "text": "A leg of starch kicks the pan, and the kernel jumps.",
+    "at": 705,
+    "claims": [
+     "starch-leg"
+    ]
+   },
+   {
+    "id": "pop",
+    "text": "And the pop? Researchers think it's the steam rushing out.",
+    "at": 804,
+    "claims": [
+     "pop-is-steam"
+    ]
+   },
+   {
+    "id": "answer",
+    "text": "So the kernels at the bottom of the bowl? Their steam got out.",
+    "at": 906,
+    "claims": [
+     "crack-leaks"
+    ]
+   }
+  ],
+  "sfx": [
+   {
+    "at": "wipe",
+    "recipe": "swish",
+    "gain_db": -16
+   },
+   {
+    "at": "cutaway",
+    "recipe": "zip",
+    "gain_db": -20,
+    "params": {
+     "from": 300,
+     "to": 900,
+     "length": 0.4
+    }
+   },
+   {
+    "at": "water_label",
+    "recipe": "blip",
+    "gain_db": -22,
+    "params": {
+     "from": 900,
+     "to": 980
+    }
+   },
+   {
+    "at": "flame",
+    "recipe": "whoosh",
+    "gain_db": -16,
+    "params": {
+     "lo": 150,
+     "hi": 900,
+     "length": 0.6
+    }
+   },
+   {
+    "at": "flame",
+    "recipe": "rumble",
+    "gain_db": -28,
+    "offset": 8,
+    "params": {
+     "length": 11.5,
+     "hi": 180,
+     "attack": 0.6,
+     "release": 0.5
+    }
+   },
+   {
+    "at": "boil",
+    "recipe": "sizzle",
+    "gain_db": -30,
+    "params": {
+     "length": 10.8,
+     "density": 0.004,
+     "attack": 0.8,
+     "release": 0.3
+    }
+   },
+   {
+    "at": "hundred",
+    "recipe": "tick",
+    "gain_db": -18
+   },
+   {
+    "at": "crack_seen",
+    "recipe": "tick",
+    "gain_db": -16,
+    "params": {
+     "pitch": 3000
+    }
+   },
+   {
+    "at": "leak",
+    "recipe": "hiss",
+    "gain_db": -17,
+    "pan": 0.35,
+    "params": {
+     "length": 2.7,
+     "lo": 2200,
+     "hi": 10000,
+     "attack": 0.15,
+     "release": 0.5
+    }
+   },
+   {
+    "at": "one_eighty",
+    "recipe": "tick",
+    "gain_db": -16
+   },
+   {
+    "at": "burst",
+    "recipe": "crack",
+    "gain_db": -12
+   },
+   {
+    "at": "burst",
+    "recipe": "pop",
+    "gain_db": -5,
+    "offset": 4,
+    "params": {
+     "pitch": 330,
+     "length": 0.2
+    }
+   },
+   {
+    "at": "foam",
+    "recipe": "whoosh",
+    "gain_db": -18,
+    "params": {
+     "lo": 400,
+     "hi": 2500,
+     "length": 1.6
+    }
+   },
+   {
+    "at": "leg",
+    "recipe": "thud",
+    "gain_db": -14,
+    "params": {
+     "pitch": 140,
+     "length": 0.2
+    }
+   },
+   {
+    "at": "jump",
+    "recipe": "whoosh",
+    "gain_db": -15,
+    "params": {
+     "length": 0.9
+    }
+   },
+   {
+    "at": "replay",
+    "recipe": "swish",
+    "gain_db": -15,
+    "params": {
+     "rise": false
+    }
+   },
+   {
+    "at": "replay_pop",
+    "recipe": "pop",
+    "gain_db": -6,
+    "params": {
+     "pitch": 300,
+     "length": 0.22
+    }
+   },
+   {
+    "at": "to_bowl",
+    "recipe": "swish",
+    "gain_db": -15
+   },
+   {
+    "at": "flake_lands",
+    "recipe": "step",
+    "gain_db": -16,
+    "params": {
+     "bright": 2200
+    }
+   },
+   {
+    "at": "kernel_falls",
+    "recipe": "whoosh",
+    "gain_db": -24,
+    "params": {
+     "length": 1.0,
+     "rise": false
+    }
+   },
+   {
+    "at": 940,
+    "recipe": "tick",
+    "gain_db": -24,
+    "params": {
+     "pitch": 2600
+    }
+   },
+   {
+    "at": 949,
+    "recipe": "tick",
+    "gain_db": -24,
+    "params": {
+     "pitch": 2300
+    }
+   },
+   {
+    "at": 957,
+    "recipe": "tick",
+    "gain_db": -24,
+    "params": {
+     "pitch": 2000
+    }
+   },
+   {
+    "at": "kernel_lands",
+    "recipe": "tick",
+    "gain_db": -12,
+    "params": {
+     "pitch": 1800
+    }
+   }
+  ],
+  "music": {
+   "kind": "notes",
+   "tempo": 96,
+   "gain_db": -17,
+   "duck_db": 7,
+   "tracks": [
+    {
+     "instrument": "pluck",
+     "gain_db": -1,
+     "pan": 0.15,
+     "notes": [
+      [
+       0.32,
+       67,
+       0.4,
+       0.55
+      ],
+      [
+       0.8200000000000001,
+       72,
+       0.4,
+       0.55
+      ],
+      [
+       1.32,
+       74,
+       0.4,
+       0.55
+      ],
+      [
+       1.82,
+       76,
+       0.4,
+       0.55
+      ],
+      [
+       2.32,
+       74,
+       0.4,
+       0.55
+      ],
+      [
+       2.82,
+       72,
+       0.4,
+       0.55
+      ],
+      [
+       6.24,
+       60,
+       0.4,
+       0.4
+      ],
+      [
+       6.74,
+       64,
+       0.4,
+       0.4
+      ],
+      [
+       7.24,
+       67,
+       0.4,
+       0.4
+      ],
+      [
+       7.74,
+       64,
+       0.4,
+       0.4
+      ],
+      [
+       8.24,
+       60,
+       0.4,
+       0.4
+      ],
+      [
+       8.74,
+       64,
+       0.4,
+       0.4
+      ],
+      [
+       9.24,
+       67,
+       0.4,
+       0.4
+      ],
+      [
+       9.74,
+       64,
+       0.4,
+       0.4
+      ],
+      [
+       10.24,
+       57,
+       0.4,
+       0.4
+      ],
+      [
+       10.74,
+       61,
+       0.4,
+       0.4
+      ],
+      [
+       11.24,
+       64,
+       0.4,
+       0.4
+      ],
+      [
+       11.74,
+       61,
+       0.4,
+       0.4
+      ],
+      [
+       12.24,
+       55,
+       0.4,
+       0.4
+      ],
+      [
+       12.74,
+       59,
+       0.4,
+       0.4
+      ],
+      [
+       13.24,
+       62,
+       0.4,
+       0.4
+      ],
+      [
+       13.74,
+       59,
+       0.4,
+       0.4
+      ],
+      [
+       23.2,
+       76,
+       0.2,
+       0.35
+      ],
+      [
+       23.7,
+       79,
+       0.2,
+       0.35
+      ],
+      [
+       24.2,
+       76,
+       0.2,
+       0.35
+      ],
+      [
+       24.7,
+       79,
+       0.2,
+       0.35
+      ],
+      [
+       25.2,
+       76,
+       0.2,
+       0.35
+      ],
+      [
+       25.7,
+       79,
+       0.2,
+       0.35
+      ],
+      [
+       26.2,
+       76,
+       0.2,
+       0.35
+      ],
+      [
+       26.7,
+       79,
+       0.2,
+       0.35
+      ],
+      [
+       27.2,
+       76,
+       0.2,
+       0.35
+      ],
+      [
+       27.7,
+       79,
+       0.2,
+       0.35
+      ],
+      [
+       28.2,
+       76,
+       0.2,
+       0.35
+      ],
+      [
+       28.7,
+       79,
+       0.2,
+       0.35
+      ],
+      [
+       29.2,
+       76,
+       0.2,
+       0.35
+      ],
+      [
+       29.7,
+       79,
+       0.2,
+       0.35
+      ],
+      [
+       30.2,
+       76,
+       0.2,
+       0.35
+      ],
+      [
+       30.7,
+       79,
+       0.2,
+       0.35
+      ],
+      [
+       31.2,
+       76,
+       0.2,
+       0.35
+      ],
+      [
+       31.7,
+       79,
+       0.2,
+       0.35
+      ],
+      [
+       32.2,
+       76,
+       0.2,
+       0.35
+      ],
+      [
+       48.32,
+       67,
+       0.45,
+       0.5
+      ],
+      [
+       48.82,
+       72,
+       0.45,
+       0.5
+      ],
+      [
+       49.32,
+       74,
+       0.45,
+       0.5
+      ],
+      [
+       49.82,
+       76,
+       0.45,
+       0.5
+      ],
+      [
+       50.32,
+       74,
+       0.45,
+       0.5
+      ],
+      [
+       50.82,
+       72,
+       0.45,
+       0.5
+      ],
+      [
+       51.32,
+       71,
+       0.45,
+       0.5
+      ],
+      [
+       51.82,
+       72,
+       2.0,
+       0.5
+      ]
+     ]
+    },
+    {
+     "instrument": "bass",
+     "gain_db": -4,
+     "notes": [
+      [
+       6.24,
+       48,
+       1.8,
+       0.55
+      ],
+      [
+       8.24,
+       48,
+       1.8,
+       0.55
+      ],
+      [
+       10.24,
+       45,
+       1.8,
+       0.55
+      ],
+      [
+       12.24,
+       43,
+       1.8,
+       0.55
+      ],
+      [
+       15.04,
+       43,
+       0.6,
+       0.4
+      ],
+      [
+       16.04,
+       44,
+       0.6,
+       0.43000000000000005
+      ],
+      [
+       17.04,
+       45,
+       0.6,
+       0.46
+      ],
+      [
+       18.04,
+       46,
+       0.6,
+       0.49
+      ],
+      [
+       19.04,
+       47,
+       0.6,
+       0.52
+      ],
+      [
+       20.04,
+       48,
+       0.6,
+       0.55
+      ],
+      [
+       21.04,
+       49,
+       0.6,
+       0.5800000000000001
+      ],
+      [
+       22.04,
+       50,
+       0.6,
+       0.61
+      ],
+      [
+       23.04,
+       51,
+       0.6,
+       0.64
+      ],
+      [
+       24.04,
+       52,
+       0.6,
+       0.67
+      ],
+      [
+       25.04,
+       52,
+       0.6,
+       0.7
+      ],
+      [
+       26.04,
+       52,
+       0.6,
+       0.73
+      ],
+      [
+       48.32,
+       48,
+       2.0,
+       0.5
+      ],
+      [
+       50.32,
+       43,
+       2.0,
+       0.5
+      ],
+      [
+       52.32,
+       48,
+       3.0,
+       0.5
+      ]
+     ]
+    },
+    {
+     "instrument": "pad",
+     "gain_db": -9,
+     "pan": -0.2,
+     "notes": [
+      [
+       15.04,
+       55,
+       0.9,
+       0.25
+      ],
+      [
+       16.04,
+       56,
+       0.9,
+       0.25
+      ],
+      [
+       17.04,
+       57,
+       0.9,
+       0.25
+      ],
+      [
+       18.04,
+       58,
+       0.9,
+       0.25
+      ],
+      [
+       19.04,
+       59,
+       0.9,
+       0.25
+      ],
+      [
+       20.04,
+       60,
+       0.9,
+       0.25
+      ],
+      [
+       21.04,
+       61,
+       0.9,
+       0.25
+      ],
+      [
+       22.04,
+       62,
+       0.9,
+       0.25
+      ],
+      [
+       23.04,
+       63,
+       0.9,
+       0.25
+      ],
+      [
+       24.04,
+       64,
+       0.9,
+       0.25
+      ],
+      [
+       25.04,
+       64,
+       0.9,
+       0.25
+      ],
+      [
+       26.04,
+       64,
+       0.9,
+       0.25
+      ]
+     ]
+    },
+    {
+     "instrument": "celesta",
+     "gain_db": -3,
+     "pan": 0.2,
+     "notes": [
+      [
+       33.84,
+       84,
+       0.5,
+       0.5
+      ],
+      [
+       34.09,
+       88,
+       0.5,
+       0.5
+      ],
+      [
+       34.34,
+       91,
+       0.5,
+       0.5
+      ],
+      [
+       34.59,
+       96,
+       0.5,
+       0.5
+      ],
+      [
+       34.84,
+       91,
+       0.5,
+       0.5
+      ],
+      [
+       35.09,
+       88,
+       0.5,
+       0.5
+      ],
+      [
+       35.34,
+       84,
+       0.5,
+       0.5
+      ],
+      [
+       35.59,
+       79,
+       0.5,
+       0.5
+      ]
+     ]
+    },
+    {
+     "instrument": "marimba",
+     "gain_db": -3,
+     "pan": -0.15,
+     "notes": [
+      [
+       39.04,
+       72,
+       0.4,
+       0.6
+      ],
+      [
+       39.37,
+       76,
+       0.4,
+       0.6
+      ],
+      [
+       39.699999999999996,
+       79,
+       0.4,
+       0.6
+      ],
+      [
+       40.03,
+       84,
+       0.4,
+       0.6
+      ]
+     ]
+    }
+   ]
+  }
+ }
+}

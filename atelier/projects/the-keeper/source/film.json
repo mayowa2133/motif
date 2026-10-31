@@ -1,0 +1,704 @@
+{
+ "entry": "film.js",
+ "fps": 30,
+ "frames": 990,
+ "design": [
+  1080,
+  1920
+ ],
+ "shots": [
+  {
+   "id": "routine",
+   "start": 0,
+   "end": 228
+  },
+  {
+   "id": "sighting",
+   "start": 228,
+   "end": 426
+  },
+  {
+   "id": "choice",
+   "start": 426,
+   "end": 570
+  },
+  {
+   "id": "reveal",
+   "start": 570,
+   "end": 729
+  },
+  {
+   "id": "home",
+   "start": 729,
+   "end": 870
+  },
+  {
+   "id": "dawn",
+   "start": 870,
+   "end": 990
+  }
+ ],
+ "moments": {
+  "flash1": 54,
+  "crank": 96,
+  "sip": 150,
+  "glint": 264,
+  "stop_lamp": 273,
+  "swing_back": 288,
+  "found": 318,
+  "beat1": 327,
+  "beat2": 345,
+  "beat3": 362,
+  "cup_drop": 372,
+  "cup_land": 379,
+  "lightning": 396,
+  "reach": 438,
+  "shutter": 450,
+  "moan": 468,
+  "resolve": 492,
+  "open": 510,
+  "steer": 519,
+  "surface": 579,
+  "spout": 612,
+  "cry": 621,
+  "soften": 660,
+  "swing_out": 735,
+  "tail": 771,
+  "answer": 786,
+  "calf_turn": 780,
+  "calf_go": 798,
+  "calf_spout": 828,
+  "tail_down": 849,
+  "clear": 870,
+  "lamp_off": 930,
+  "spouts": 930,
+  "wave": 930,
+  "end_hold": 966
+ },
+ "key_moments": [
+  "glint",
+  "found",
+  "cup_drop",
+  "lightning",
+  "shutter",
+  "open",
+  "surface",
+  "cry",
+  "soften",
+  "tail",
+  "calf_go",
+  "spouts"
+ ],
+ "proof": {
+  "shot": "reveal",
+  "start": 564,
+  "end": 729,
+  "note": "the beam on the shape, the calf surfacing, blinking, spouting and crying; Ada softening"
+ },
+ "sound": {
+  "voice": "bf_emma",
+  "speed": 0.92,
+  "narration": [
+   {
+    "id": "ritual",
+    "text": "Every night, Ada kept the light turning.",
+    "at": 30
+   },
+   {
+    "id": "empty",
+    "text": "And every night, the sea stayed empty.",
+    "at": 147
+   },
+   {
+    "id": "tonight",
+    "text": "Until tonight.",
+    "at": 243
+   },
+   {
+    "id": "monster",
+    "text": "It wasn't a monster.",
+    "at": 630
+   },
+   {
+    "id": "lost",
+    "text": "It was lost.",
+    "at": 681
+   },
+   {
+    "id": "light",
+    "text": "So Ada did what the light was for.",
+    "at": 726
+   },
+   {
+    "id": "never",
+    "text": "The sea had never been empty.",
+    "at": 915
+   }
+  ],
+  "sfx": [
+   {
+    "at": 0,
+    "recipe": "rain",
+    "gain_db": -25,
+    "params": {
+     "length": 29.8,
+     "attack": 1.0,
+     "release": 1.5
+    }
+   },
+   {
+    "at": 12,
+    "recipe": "wave",
+    "gain_db": -21,
+    "pan": 0.25,
+    "params": {
+     "length": 2.8
+    }
+   },
+   {
+    "at": 114,
+    "recipe": "wave",
+    "gain_db": -21,
+    "pan": 0.25,
+    "params": {
+     "length": 2.8
+    }
+   },
+   {
+    "at": 216,
+    "recipe": "wave",
+    "gain_db": -21,
+    "pan": 0.25,
+    "params": {
+     "length": 2.8
+    }
+   },
+   {
+    "at": 318,
+    "recipe": "wave",
+    "gain_db": -21,
+    "pan": 0.25,
+    "params": {
+     "length": 2.8
+    }
+   },
+   {
+    "at": 420,
+    "recipe": "wave",
+    "gain_db": -21,
+    "pan": 0.25,
+    "params": {
+     "length": 2.8
+    }
+   },
+   {
+    "at": 522,
+    "recipe": "wave",
+    "gain_db": -21,
+    "pan": 0.25,
+    "params": {
+     "length": 2.8
+    }
+   },
+   {
+    "at": 624,
+    "recipe": "wave",
+    "gain_db": -21,
+    "pan": 0.25,
+    "params": {
+     "length": 2.8
+    }
+   },
+   {
+    "at": 726,
+    "recipe": "wave",
+    "gain_db": -21,
+    "pan": 0.25,
+    "params": {
+     "length": 2.8
+    }
+   },
+   {
+    "at": 828,
+    "recipe": "wave",
+    "gain_db": -21,
+    "pan": 0.25,
+    "params": {
+     "length": 2.8
+    }
+   },
+   {
+    "at": "flash1",
+    "recipe": "thunder",
+    "gain_db": -24,
+    "params": {
+     "length": 3.0
+    }
+   },
+   {
+    "at": 96,
+    "recipe": "creak",
+    "gain_db": -24,
+    "params": {
+     "length": 0.4
+    }
+   },
+   {
+    "at": 118,
+    "recipe": "creak",
+    "gain_db": -24,
+    "params": {
+     "length": 0.4
+    }
+   },
+   {
+    "at": 141,
+    "recipe": "creak",
+    "gain_db": -24,
+    "params": {
+     "length": 0.4
+    }
+   },
+   {
+    "at": "glint",
+    "recipe": "chime",
+    "gain_db": -17,
+    "params": {
+     "pitch": 1760,
+     "length": 1.2
+    }
+   },
+   {
+    "at": "glint",
+    "recipe": "rumble",
+    "gain_db": -20,
+    "offset": 4,
+    "params": {
+     "length": 6.5,
+     "hi": 90,
+     "attack": 1.0,
+     "release": 1.0
+    }
+   },
+   {
+    "at": "stop_lamp",
+    "recipe": "creak",
+    "gain_db": -18,
+    "params": {
+     "length": 0.5
+    }
+   },
+   {
+    "at": "beat1",
+    "recipe": "thud",
+    "gain_db": -14,
+    "params": {
+     "pitch": 60,
+     "length": 0.35
+    }
+   },
+   {
+    "at": "beat2",
+    "recipe": "thud",
+    "gain_db": -14,
+    "params": {
+     "pitch": 60,
+     "length": 0.35
+    }
+   },
+   {
+    "at": "beat3",
+    "recipe": "thud",
+    "gain_db": -14,
+    "params": {
+     "pitch": 60,
+     "length": 0.35
+    }
+   },
+   {
+    "at": "cup_land",
+    "recipe": "chime",
+    "gain_db": -16,
+    "params": {
+     "pitch": 2600,
+     "length": 0.25
+    }
+   },
+   {
+    "at": "cup_land",
+    "recipe": "tick",
+    "gain_db": -14,
+    "params": {
+     "pitch": 2200
+    }
+   },
+   {
+    "at": "lightning",
+    "recipe": "thunder",
+    "gain_db": -7,
+    "params": {
+     "length": 3.2
+    }
+   },
+   {
+    "at": "shutter",
+    "recipe": "creak",
+    "gain_db": -16,
+    "params": {
+     "length": 0.7
+    }
+   },
+   {
+    "at": "moan",
+    "recipe": "whale",
+    "gain_db": -6,
+    "params": {
+     "from": 62,
+     "to": 104,
+     "length": 2.2
+    }
+   },
+   {
+    "at": "open",
+    "recipe": "whoosh",
+    "gain_db": -14,
+    "params": {
+     "lo": 200,
+     "hi": 2000,
+     "length": 0.5
+    }
+   },
+   {
+    "at": "open",
+    "recipe": "chime",
+    "gain_db": -20,
+    "params": {
+     "pitch": 660,
+     "length": 1.4
+    }
+   },
+   {
+    "at": "surface",
+    "recipe": "wave",
+    "gain_db": -14,
+    "params": {
+     "length": 1.4
+    }
+   },
+   {
+    "at": "spout",
+    "recipe": "hiss",
+    "gain_db": -18,
+    "params": {
+     "length": 0.9,
+     "lo": 1500,
+     "hi": 8000,
+     "attack": 0.03,
+     "release": 0.4
+    }
+   },
+   {
+    "at": "cry",
+    "recipe": "whale",
+    "gain_db": -9,
+    "params": {
+     "from": 330,
+     "to": 560,
+     "length": 1.5
+    }
+   },
+   {
+    "at": "swing_out",
+    "recipe": "swish",
+    "gain_db": -16
+   },
+   {
+    "at": "answer",
+    "recipe": "whale",
+    "gain_db": -9,
+    "params": {
+     "from": 110,
+     "to": 190,
+     "length": 2.6
+    }
+   },
+   {
+    "at": "calf_spout",
+    "recipe": "hiss",
+    "gain_db": -24,
+    "params": {
+     "length": 0.7,
+     "lo": 2000,
+     "hi": 8000
+    }
+   },
+   {
+    "at": "tail_down",
+    "recipe": "wave",
+    "gain_db": -17,
+    "params": {
+     "length": 1.6
+    }
+   },
+   {
+    "at": "lamp_off",
+    "recipe": "tick",
+    "gain_db": -20,
+    "params": {
+     "pitch": 1400
+    }
+   },
+   {
+    "at": 948,
+    "recipe": "squeak",
+    "gain_db": -27,
+    "params": {
+     "from": 2200,
+     "to": 1700,
+     "length": 0.16
+    }
+   },
+   {
+    "at": 959,
+    "recipe": "squeak",
+    "gain_db": -27,
+    "params": {
+     "from": 2500,
+     "to": 2000,
+     "length": 0.16
+    }
+   }
+  ],
+  "music": {
+   "kind": "notes",
+   "tempo": 72,
+   "gain_db": -18,
+   "duck_db": 6,
+   "tracks": [
+    {
+     "instrument": "pad",
+     "gain_db": -4,
+     "notes": [
+      [
+       0.24,
+       50,
+       3.2,
+       0.35
+      ],
+      [
+       0.24,
+       57,
+       3.2,
+       0.25
+      ],
+      [
+       3.24,
+       53,
+       3.2,
+       0.35
+      ],
+      [
+       3.24,
+       57,
+       3.2,
+       0.25
+      ],
+      [
+       6.24,
+       50,
+       3.2,
+       0.35
+      ],
+      [
+       6.24,
+       57,
+       3.2,
+       0.25
+      ],
+      [
+       10.32,
+       49,
+       2.2,
+       0.4
+      ],
+      [
+       10.32,
+       55,
+       2.2,
+       0.3
+      ],
+      [
+       12.72,
+       48,
+       2.2,
+       0.4
+      ],
+      [
+       12.72,
+       54,
+       2.2,
+       0.3
+      ],
+      [
+       15.12,
+       47,
+       2.2,
+       0.4
+      ],
+      [
+       15.12,
+       53,
+       2.2,
+       0.3
+      ],
+      [
+       23.28,
+       53,
+       3.0,
+       0.32
+      ],
+      [
+       23.28,
+       60,
+       3.0,
+       0.24
+      ],
+      [
+       26.4,
+       55,
+       3.0,
+       0.32
+      ],
+      [
+       26.4,
+       62,
+       3.0,
+       0.24
+      ],
+      [
+       29.28,
+       57,
+       3.0,
+       0.32
+      ],
+      [
+       29.28,
+       64,
+       3.0,
+       0.24
+      ],
+      [
+       32.4,
+       53,
+       3.0,
+       0.32
+      ],
+      [
+       32.4,
+       60,
+       3.0,
+       0.24
+      ],
+      [
+       35.28,
+       50,
+       3.0,
+       0.32
+      ],
+      [
+       35.28,
+       57,
+       3.0,
+       0.24
+      ],
+      [
+       37.2,
+       55,
+       3.0,
+       0.32
+      ],
+      [
+       37.2,
+       62,
+       3.0,
+       0.24
+      ]
+     ]
+    },
+    {
+     "instrument": "celesta",
+     "gain_db": -2,
+     "pan": 0.2,
+     "notes": [
+      [
+       25.44,
+       76,
+       1.6,
+       0.38
+      ],
+      [
+       27.48,
+       74,
+       1.6,
+       0.38
+      ],
+      [
+       29.52,
+       72,
+       1.6,
+       0.38
+      ],
+      [
+       31.68,
+       79,
+       1.6,
+       0.38
+      ],
+      [
+       36.72,
+       74,
+       1.6,
+       0.38
+      ],
+      [
+       37.68,
+       79,
+       1.6,
+       0.38
+      ],
+      [
+       38.4,
+       81,
+       1.6,
+       0.38
+      ]
+     ]
+    },
+    {
+     "instrument": "bass",
+     "gain_db": -6,
+     "notes": [
+      [
+       23.28,
+       41,
+       3.0,
+       0.4
+      ],
+      [
+       29.28,
+       45,
+       3.0,
+       0.4
+      ],
+      [
+       35.28,
+       38,
+       3.5,
+       0.4
+      ]
+     ]
+    }
+   ]
+  }
+ }
+}

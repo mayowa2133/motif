@@ -1,0 +1,24 @@
+{
+  "assets": [
+    {
+      "path": "film.js",
+      "kind": "source",
+      "version": 10,
+      "sha256": "cb4827b1e2273e3ad29d69beaba859833737cb7cc46491187849d8fc67eb7c2e",
+      "origin": "atelier-authored-code",
+      "author": "Claude (agent-assisted authoring)",
+      "rights": "original Motif production artwork and code; no third-party material",
+      "use": "runaway-shadow film source (production-specific)"
+    },
+    {
+      "path": "film.json",
+      "kind": "data",
+      "version": 3,
+      "sha256": "5c5e47f631117b08c6fbe399768d4b058aeb58191cd6b476ab23173537321caf",
+      "origin": "atelier-authored-code",
+      "author": "Claude (agent-assisted authoring)",
+      "rights": "original Motif production artwork and code; no third-party material",
+      "use": "runaway-shadow film source (production-specific)"
+    }
+  ]
+}

@@ -1,0 +1,495 @@
+{
+  "schema": "motif-atelier-review-request/1",
+  "role": "visual",
+  "project": "the-keeper",
+  "project_id": "8d2de20a07c442d1a592b5f46c2a99a7",
+  "dimensions": {
+    "focal_hierarchy": "the thing that matters now commands attention",
+    "identity_continuity": "characters and objects keep identity, scale and materials",
+    "composition": "staging and framing are intentional for a vertical phone",
+    "readable_action": "meaningful actions are legible; contacts, grips, landings and releases hold up",
+    "motion_performance": "timing, anticipation, reactions and stillness serve the story, not busyness",
+    "style_coherence": "one deliberate visual language throughout",
+    "phone_readability": "essential meaning survives at phone size",
+    "technical_defects": "no glitches, popping, tearing, unintended clipping or broken frames"
+  },
+  "mandatory": [
+    "focal_hierarchy",
+    "identity_continuity",
+    "composition",
+    "readable_action",
+    "motion_performance",
+    "style_coherence",
+    "phone_readability",
+    "technical_defects"
+  ],
+  "not_applicable": {},
+  "intent": {
+    "idea": "A short fictional suspense story with a genuine reveal: a lighthouse keeper in a storm sees a huge dark shape closing on the rock, and has to choose whether to hide the light",
+    "audience": "people scrolling short vertical video on a phone",
+    "classification": "fictional",
+    "intended_effect": "suspense that turns into tenderness at the reveal",
+    "premise": {
+      "title": "The Keeper",
+      "opening_image": "A lighthouse on a black rock in a storm, its beam sweeping an empty sea; a small keeper in a yellow oilskin turns the lamp by hand.",
+      "audience_hook": "What is the huge dark shape the beam just caught under the waves, and will she hide the light?",
+      "central_action": "The keeper tracks a giant shape with a glinting eye as it closes on the rock, starts to shutter the lamp to hide, hears it moan, and instead turns the full beam onto it.",
+      "complication": "Every clue (the swell, the size of its shadow in the lightning, the moan) says monster, and hiding is the safe choice.",
+      "payoff": "A whale calf surfaces in the beam, small and crying; she swings the light out to sea, a vast tail rises where it ends, and the calf swims home. At dawn two spouts rise from a sea that was never empty."
+    },
+    "logline": "A lighthouse keeper spots a giant shape closing on her rock in a storm, chooses to shine the light instead of hiding it, and finds a lost whale calf she guides home.",
+    "opening_promise": "A storm, a lighthouse and a keeper whose nightly routine is turning the light over a sea that is always empty.",
+    "ending": "Dawn over a calm sea: the lamp goes dark for the day, Ada waves from the gallery, and two spouts, one big and one small, rise on the horizon. 'The sea had never been empty.'",
+    "style": "Painterly chiaroscuro night: deep teal and navy shapes, soft gradients, a warm additive beam as the only strong light, lightning flashes, rain, film grain and vignette; dawn turns the same shapes peach and blue.",
+    "audio_intent": {
+      "narration": "voice-over",
+      "voice": "bf_emma",
+      "music": "sparse original pad and celesta notes synthesised in code",
+      "sfx": "seeded procedural storm, surf, drone, cup, whale calls"
+    },
+    "shot_plan": [
+      {
+        "id": "routine",
+        "purpose": "establish the ritual and the empty sea",
+        "sees": "the storm and the sweeping beam, Ada cranking the lamp with tea at hand, the beam passing over empty water",
+        "frames": [
+          0,
+          228
+        ]
+      },
+      {
+        "id": "sighting",
+        "purpose": "the threat appears",
+        "sees": "the beam crosses a huge dark mass under the waves and an eye glints; Ada stops the lamp, swings back and finds it closer; she drops her cup; lightning shows its shadow under the swell beside the rock",
+        "frames": [
+          228,
+          426
+        ]
+      },
+      {
+        "id": "choice",
+        "purpose": "the decision",
+        "sees": "Ada reaches for the shutter lever and the light starts to dim; a moan rises from the sea; she stops, sets her jaw, throws the shutter open and steers the full beam down onto the shape",
+        "frames": [
+          426,
+          570
+        ]
+      },
+      {
+        "id": "reveal",
+        "purpose": "the reveal",
+        "sees": "in the beam a small whale calf surfaces, blinks, spouts and cries; Ada's face softens, hand on heart",
+        "frames": [
+          570,
+          729
+        ]
+      },
+      {
+        "id": "home",
+        "purpose": "use the light",
+        "sees": "Ada lays the beam across the sea; far out where it ends a vast tail rises and answers; the calf turns and swims along the beam toward it",
+        "frames": [
+          729,
+          870
+        ]
+      },
+      {
+        "id": "dawn",
+        "purpose": "release",
+        "sees": "rain stops, the sky turns to dawn, the lamp goes dark, two spouts rise on the horizon and Ada waves",
+        "frames": [
+          870,
+          990
+        ]
+      }
+    ]
+  },
+  "binding": {
+    "brief_sha256": "ed619971d142838fdc1a17ab74265a2426874ed35cab1f256106d77fa6864bee",
+    "concepts_sha256": "7dd47936c57cca57241b97af937c340f4116bb0196e8ec70a9a23cc31a0010c6",
+    "direction_sha256": "3490a60575b27b288badccffa69edf37eb2598371b64780c80f38b17bcfce456",
+    "source_tree_sha256": "513601419cb6a1a2f47ddbbf335a865621d37bd7c9cb667bcc73af140b9020a7",
+    "audio_master_sha256": "d511c1a0557eb07d53c59e1261efab5651708902585748f906eea64ebb590664",
+    "render_sha256": "7f215565ed41b24df38151ab6b97f5cd233fbb9b488631f01183419ed5386737",
+    "render_fingerprint_sha256": "7197ea912cf4cc1a22d3a899b28346e0bd0c3367c49d1bba42b9508adc5b8bc8"
+  },
+  "evidence": [
+    {
+      "path": "runs/the-keeper/rough/6ef7ac4355af/evidence-review/ordered-frames.png",
+      "what": "ordered frames every 15 frames (0.50s), in playback order, labelled time / frame / shot",
+      "sha256": "0870690370977cc1a41ae7271929ebc120d0c8a9a59585ed7bb495e2a54d0708"
+    },
+    {
+      "path": "runs/the-keeper/rough/6ef7ac4355af/evidence-review/strip-glint.png",
+      "what": "dense strip around moment \"glint\" (frame 264, 8.80s): every 2nd frame from -8 to +8",
+      "sha256": "a6ed68874621c5cf9b4efabe59d82423416394b15c7d51544946f9df0e471867"
+    },
+    {
+      "path": "runs/the-keeper/rough/6ef7ac4355af/evidence-review/strip-found.png",
+      "what": "dense strip around moment \"found\" (frame 318, 10.60s): every 2nd frame from -8 to +8",
+      "sha256": "4c94ab115eac49d7eadf6b4f2239f40a0be8b4d7af4a658fedbb6ad97e794d45"
+    },
+    {
+      "path": "runs/the-keeper/rough/6ef7ac4355af/evidence-review/strip-cup_drop.png",
+      "what": "dense strip around moment \"cup_drop\" (frame 372, 12.40s): every 2nd frame from -8 to +8",
+      "sha256": "00d7f91b5e7d9e14f9d70ed2dfaece79693a787a3e956a1d0a626f0fe25a5301"
+    },
+    {
+      "path": "runs/the-keeper/rough/6ef7ac4355af/evidence-review/strip-lightning.png",
+      "what": "dense strip around moment \"lightning\" (frame 396, 13.20s): every 2nd frame from -8 to +8",
+      "sha256": "a958216394c779b1f2c62e98b36dd28aa84f5e061e34c2f8847ec58e1e894fdb"
+    },
+    {
+      "path": "runs/the-keeper/rough/6ef7ac4355af/evidence-review/strip-shutter.png",
+      "what": "dense strip around moment \"shutter\" (frame 450, 15.00s): every 2nd frame from -8 to +8",
+      "sha256": "15ca4e9a841a85f9b4720b59b5f15617e443e91fed5fc7263da7e4d74d761bfd"
+    },
+    {
+      "path": "runs/the-keeper/rough/6ef7ac4355af/evidence-review/strip-open.png",
+      "what": "dense strip around moment \"open\" (frame 510, 17.00s): every 2nd frame from -8 to +8",
+      "sha256": "ea4015c79d84afbbb7fda70395471347f74ca57590d497f1865d23b35265081e"
+    },
+    {
+      "path": "runs/the-keeper/rough/6ef7ac4355af/evidence-review/strip-surface.png",
+      "what": "dense strip around moment \"surface\" (frame 579, 19.30s): every 2nd frame from -8 to +8",
+      "sha256": "30bf0082cd9aeb7a6a24477e0684ec835d169c0171560397c2d8bd1723f56e62"
+    },
+    {
+      "path": "runs/the-keeper/rough/6ef7ac4355af/evidence-review/strip-cry.png",
+      "what": "dense strip around moment \"cry\" (frame 621, 20.70s): every 2nd frame from -8 to +8",
+      "sha256": "fbd2252adf0ddc64fce326da8b2fd27e1085d1c7438e334760478df5fead2ced"
+    },
+    {
+      "path": "runs/the-keeper/rough/6ef7ac4355af/evidence-review/strip-soften.png",
+      "what": "dense strip around moment \"soften\" (frame 660, 22.00s): every 2nd frame from -8 to +8",
+      "sha256": "76dd4b2b56bc7feaaa44b13ada9d48800d954e25b97f3f7e7334b975aa413b35"
+    },
+    {
+      "path": "runs/the-keeper/rough/6ef7ac4355af/evidence-review/strip-tail.png",
+      "what": "dense strip around moment \"tail\" (frame 771, 25.70s): every 2nd frame from -8 to +8",
+      "sha256": "b9e77189a9f070994a7fd320631cfb827f6356bcf56e50631f96a1c5e1d4b1bb"
+    },
+    {
+      "path": "runs/the-keeper/rough/6ef7ac4355af/evidence-review/strip-calf_go.png",
+      "what": "dense strip around moment \"calf_go\" (frame 798, 26.60s): every 2nd frame from -8 to +8",
+      "sha256": "00f4216b0b4edb87c6f219db92374c54e752a5656eea29fbf574d49288c40189"
+    },
+    {
+      "path": "runs/the-keeper/rough/6ef7ac4355af/evidence-review/strip-spouts.png",
+      "what": "dense strip around moment \"spouts\" (frame 930, 31.00s): every 2nd frame from -8 to +8",
+      "sha256": "224f815af090d55c978289482a99bdfb0283f7cd058222a703cc7a607768fcd7"
+    },
+    {
+      "path": "runs/the-keeper/rough/6ef7ac4355af/evidence-review/phone-f00114.png",
+      "what": "full preview frame at phone size 360x640, shot routine midpoint (3.80s)",
+      "sha256": "8ecc43103d7550d8898043b0ea9fb812de6ff51d97acf7d42823b8782736d62d"
+    },
+    {
+      "path": "runs/the-keeper/rough/6ef7ac4355af/evidence-review/phone-f00327.png",
+      "what": "full preview frame at phone size 360x640, shot sighting midpoint (10.90s)",
+      "sha256": "b9559f2a04737c91af6c0e8dcc6aa596619a75290dac5be198fb43fb7772f614"
+    },
+    {
+      "path": "runs/the-keeper/rough/6ef7ac4355af/evidence-review/phone-f00498.png",
+      "what": "full preview frame at phone size 360x640, shot choice midpoint (16.60s)",
+      "sha256": "e84c30b81c1627039bc6ea74c4339467763ea4b93d39b9c59453b66d6e6711a7"
+    },
+    {
+      "path": "runs/the-keeper/rough/6ef7ac4355af/evidence-review/phone-f00649.png",
+      "what": "full preview frame at phone size 360x640, shot reveal midpoint (21.63s)",
+      "sha256": "1551cf829a03e12dc61278d3fac6fc9bbc702e3b99f2fcc40b70967f2395607a"
+    },
+    {
+      "path": "runs/the-keeper/rough/6ef7ac4355af/evidence-review/phone-f00799.png",
+      "what": "full preview frame at phone size 360x640, shot home midpoint (26.63s)",
+      "sha256": "cd054f12f5d1ecef8e41c7f2320a61887786454f8424e2c95ea9d6f22b002b48"
+    },
+    {
+      "path": "runs/the-keeper/rough/6ef7ac4355af/evidence-review/phone-f00930.png",
+      "what": "full preview frame at phone size 360x640, shot dawn midpoint (31.00s)",
+      "sha256": "c1158f17f063d43ae74334e21638f36ff82f9d1aea205a2af44bae45c6ef0a8e"
+    }
+  ],
+  "evidence_root": "/home/user/motif/atelier",
+  "playback_available": false,
+  "limits": "Ordered decoded frames and dense strips only; no moving playback and no listening. Motion between samples and the sound of the mix cannot be judged from this evidence.",
+  "instructions": "You are an independent reviewer for a short vertical film made in Motif Atelier. You did not make it. Judge only the rendered evidence listed here against the stated intent: do not read the project source, builder notes or earlier reviews. Be specific and critical; a polite PASS on weak work defeats the purpose. For every dimension give PASS, FAIL or NOT_ASSESSED with a one-sentence note citing times or frames. Use NOT_ASSESSED whenever the evidence cannot establish the dimension (for example motion smoothness between sampled frames, or how the mix sounds). NOT_APPLICABLE is allowed only for the dimensions listed under not_applicable, with that reason. List every problem that should block release as a critical issue with the smallest fix. Disclose your sampling limits. Do not reward effort, technique or a description of intentions; reward what a first-time phone viewer would see.",
+  "response_path": "reviews/visual.json",
+  "response_schema": "atelier/contracts/review.schema.json",
+  "audio": {
+    "measured_on_preview": {
+      "integrated_lufs": -14.24,
+      "true_peak_dbtp": -1.85,
+      "lra_lu": 10.0
+    },
+    "cues": [
+      {
+        "at": 0,
+        "frame": 0,
+        "time": 0.0,
+        "sound": "rain"
+      },
+      {
+        "at": 12,
+        "frame": 12,
+        "time": 0.4,
+        "sound": "wave"
+      },
+      {
+        "at": 114,
+        "frame": 114,
+        "time": 3.8,
+        "sound": "wave"
+      },
+      {
+        "at": 216,
+        "frame": 216,
+        "time": 7.2,
+        "sound": "wave"
+      },
+      {
+        "at": 318,
+        "frame": 318,
+        "time": 10.6,
+        "sound": "wave"
+      },
+      {
+        "at": 420,
+        "frame": 420,
+        "time": 14.0,
+        "sound": "wave"
+      },
+      {
+        "at": 522,
+        "frame": 522,
+        "time": 17.4,
+        "sound": "wave"
+      },
+      {
+        "at": 624,
+        "frame": 624,
+        "time": 20.8,
+        "sound": "wave"
+      },
+      {
+        "at": 726,
+        "frame": 726,
+        "time": 24.2,
+        "sound": "wave"
+      },
+      {
+        "at": 828,
+        "frame": 828,
+        "time": 27.6,
+        "sound": "wave"
+      },
+      {
+        "at": "flash1",
+        "frame": 54,
+        "time": 1.8,
+        "sound": "thunder"
+      },
+      {
+        "at": 96,
+        "frame": 96,
+        "time": 3.2,
+        "sound": "creak"
+      },
+      {
+        "at": 118,
+        "frame": 118,
+        "time": 3.9333,
+        "sound": "creak"
+      },
+      {
+        "at": 141,
+        "frame": 141,
+        "time": 4.7,
+        "sound": "creak"
+      },
+      {
+        "at": "glint",
+        "frame": 264,
+        "time": 8.8,
+        "sound": "chime"
+      },
+      {
+        "at": "glint",
+        "frame": 268,
+        "time": 8.9333,
+        "sound": "rumble"
+      },
+      {
+        "at": "stop_lamp",
+        "frame": 273,
+        "time": 9.1,
+        "sound": "creak"
+      },
+      {
+        "at": "beat1",
+        "frame": 327,
+        "time": 10.9,
+        "sound": "thud"
+      },
+      {
+        "at": "beat2",
+        "frame": 345,
+        "time": 11.5,
+        "sound": "thud"
+      },
+      {
+        "at": "beat3",
+        "frame": 362,
+        "time": 12.0667,
+        "sound": "thud"
+      },
+      {
+        "at": "cup_land",
+        "frame": 379,
+        "time": 12.6333,
+        "sound": "chime"
+      },
+      {
+        "at": "cup_land",
+        "frame": 379,
+        "time": 12.6333,
+        "sound": "tick"
+      },
+      {
+        "at": "lightning",
+        "frame": 396,
+        "time": 13.2,
+        "sound": "thunder"
+      },
+      {
+        "at": "shutter",
+        "frame": 450,
+        "time": 15.0,
+        "sound": "creak"
+      },
+      {
+        "at": "moan",
+        "frame": 468,
+        "time": 15.6,
+        "sound": "whale"
+      },
+      {
+        "at": "open",
+        "frame": 510,
+        "time": 17.0,
+        "sound": "whoosh"
+      },
+      {
+        "at": "open",
+        "frame": 510,
+        "time": 17.0,
+        "sound": "chime"
+      },
+      {
+        "at": "surface",
+        "frame": 579,
+        "time": 19.3,
+        "sound": "wave"
+      },
+      {
+        "at": "spout",
+        "frame": 612,
+        "time": 20.4,
+        "sound": "hiss"
+      },
+      {
+        "at": "cry",
+        "frame": 621,
+        "time": 20.7,
+        "sound": "whale"
+      },
+      {
+        "at": "swing_out",
+        "frame": 735,
+        "time": 24.5,
+        "sound": "swish"
+      },
+      {
+        "at": "answer",
+        "frame": 786,
+        "time": 26.2,
+        "sound": "whale"
+      },
+      {
+        "at": "calf_spout",
+        "frame": 828,
+        "time": 27.6,
+        "sound": "hiss"
+      },
+      {
+        "at": "tail_down",
+        "frame": 849,
+        "time": 28.3,
+        "sound": "wave"
+      },
+      {
+        "at": "lamp_off",
+        "frame": 930,
+        "time": 31.0,
+        "sound": "tick"
+      },
+      {
+        "at": 948,
+        "frame": 948,
+        "time": 31.6,
+        "sound": "squeak"
+      },
+      {
+        "at": 959,
+        "frame": 959,
+        "time": 31.9667,
+        "sound": "squeak"
+      }
+    ],
+    "note": "measurements only; no reviewer has listened"
+  },
+  "narration": [
+    {
+      "id": "ritual",
+      "start": 1.0,
+      "end": 3.2372,
+      "text": "Every night, Ada kept the light turning."
+    },
+    {
+      "id": "empty",
+      "start": 4.9,
+      "end": 7.0369,
+      "text": "And every night, the sea stayed empty."
+    },
+    {
+      "id": "tonight",
+      "start": 8.1,
+      "end": 9.2442,
+      "text": "Until tonight."
+    },
+    {
+      "id": "monster",
+      "start": 21.0,
+      "end": 22.386,
+      "text": "It wasn't a monster."
+    },
+    {
+      "id": "lost",
+      "start": 22.7,
+      "end": 23.6896,
+      "text": "It was lost."
+    },
+    {
+      "id": "light",
+      "start": 24.2,
+      "end": 26.2317,
+      "text": "So Ada did what the light was for."
+    },
+    {
+      "id": "never",
+      "start": 30.5,
+      "end": 32.3426,
+      "text": "The sea had never been empty."
+    }
+  ]
+}

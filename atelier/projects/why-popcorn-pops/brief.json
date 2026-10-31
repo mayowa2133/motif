@@ -1,0 +1,31 @@
+{
+  "mode": "atelier",
+  "slug": "why-popcorn-pops",
+  "idea": "Explain why popcorn pops, and why a few kernels in every bowl never do, through the kernels themselves changing on screen rather than a labelled machine.",
+  "audience": "curious adults and teens scrolling short vertical video",
+  "classification": "factual",
+  "intended_effect": "a satisfying 'oh, that's why' about the unpopped kernels at the bottom of the bowl, plus one surprising fact about the pop sound",
+  "duration_s": 32,
+  "style": "a print-made science look that is not Motif's paper-robot style",
+  "references": [
+    {
+      "note": "Virot & Ponomarenko (2015), Popcorn: critical temperature, jump and sound, J. R. Soc. Interface 12: 20141247",
+      "url": "https://doi.org/10.1098/rsif.2014.1247",
+      "use": "fact-source"
+    },
+    {
+      "note": "Hoseney, Zeleznak & Abdelrahman (1983), Mechanism of popcorn popping, J. Cereal Sci. 1: 43-52",
+      "use": "fact-source"
+    }
+  ],
+  "constraints": [
+    "Every consequential spoken claim maps to a source in the claim ledger.",
+    "No on-screen character mascot; the kernels carry the story."
+  ],
+  "resources": {
+    "concepts": 3,
+    "creative_repairs_per_approach": 2,
+    "delivery_renders": 3,
+    "render_minutes": 60
+  }
+}

@@ -1,0 +1,351 @@
+{
+  "schema": "motif-atelier-project/1",
+  "mode": "motif-atelier",
+  "slug": "the-keeper",
+  "project_id": "8d2de20a07c442d1a592b5f46c2a99a7",
+  "created": "2026-10-31T07:04:57+00:00",
+  "budgets": {
+    "concepts": 3,
+    "creative_repairs_per_approach": 2,
+    "delivery_renders": 3,
+    "render_minutes": 60
+  },
+  "stages": {
+    "intake": {
+      "status": "DONE",
+      "inputs": {
+        "brief.json": "ed619971d142838fdc1a17ab74265a2426874ed35cab1f256106d77fa6864bee"
+      },
+      "at": "2026-10-31T07:04:57+00:00"
+    },
+    "concepts": {
+      "status": "DONE",
+      "inputs": {
+        "brief.json": "ed619971d142838fdc1a17ab74265a2426874ed35cab1f256106d77fa6864bee",
+        "concepts.json": "7dd47936c57cca57241b97af937c340f4116bb0196e8ec70a9a23cc31a0010c6"
+      },
+      "at": "2026-10-31T07:20:55+00:00",
+      "chosen": "lost-calf",
+      "agent_assisted": true
+    },
+    "direction": {
+      "status": "DONE",
+      "inputs": {
+        "concepts.json": "7dd47936c57cca57241b97af937c340f4116bb0196e8ec70a9a23cc31a0010c6",
+        "direction.json": "3490a60575b27b288badccffa69edf37eb2598371b64780c80f38b17bcfce456"
+      },
+      "at": "2026-10-31T07:20:55+00:00",
+      "approach_id": "lost-calf-v1",
+      "agent_assisted": true
+    },
+    "proof": {
+      "status": "DONE",
+      "inputs": {
+        "direction.json": "3490a60575b27b288badccffa69edf37eb2598371b64780c80f38b17bcfce456"
+      },
+      "at": "2026-10-31T07:22:05+00:00",
+      "approach_id": "lost-calf-v1",
+      "request_sha256": "b4ad10d928bd466943ea89937e46e829b698ce42e54c05457f80feb8b6a69c74",
+      "reviewer": {
+        "kind": "builder",
+        "id": "Claude (the builder of this film)",
+        "independence": "builder-self-inspection",
+        "playback": "ordered-frames",
+        "inputs_viewed": [
+          "runs/the-keeper/proof/df8c54770acb/evidence-proof/ordered-frames.png",
+          "runs/the-keeper/proof/df8c54770acb/evidence-proof/strip-surface.png",
+          "runs/the-keeper/proof/df8c54770acb/evidence-proof/strip-cry.png",
+          "runs/the-keeper/proof/df8c54770acb/evidence-proof/strip-soften.png",
+          "runs/the-keeper/proof/df8c54770acb/evidence-proof/phone-f00564.png",
+          "runs/the-keeper/proof/df8c54770acb/evidence-proof/phone-f00649.png"
+        ]
+      }
+    },
+    "source": {
+      "status": "DONE",
+      "inputs": {
+        "source": "513601419cb6a1a2f47ddbbf335a865621d37bd7c9cb667bcc73af140b9020a7",
+        "direction.json": "3490a60575b27b288badccffa69edf37eb2598371b64780c80f38b17bcfce456"
+      },
+      "at": "2026-10-31T07:24:54+00:00",
+      "agent_assisted": true
+    },
+    "audio": {
+      "status": "DONE",
+      "inputs": {
+        "sound": "80f1e8cecae8550e9bcd7c1bdc6810a64b28d35d04dd67d5b531fd559eecc50d",
+        "key": "8e7274e44bb6"
+      },
+      "at": "2026-10-31T07:22:09+00:00",
+      "key": "8e7274e44bb6",
+      "master_sha256": "d511c1a0557eb07d53c59e1261efab5651708902585748f906eea64ebb590664",
+      "takes_reused": 7,
+      "takes": 7
+    },
+    "rough": {
+      "status": "DONE",
+      "inputs": {
+        "source": "513601419cb6a1a2f47ddbbf335a865621d37bd7c9cb667bcc73af140b9020a7",
+        "audio": "8e7274e44bb6"
+      },
+      "at": "2026-10-31T07:25:41+00:00",
+      "key": "6ef7ac4355af",
+      "preview": "runs/the-keeper/rough/6ef7ac4355af/preview.mp4",
+      "preview_sha256": "7f215565ed41b24df38151ab6b97f5cd233fbb9b488631f01183419ed5386737"
+    }
+  },
+  "failures": {},
+  "concept_changes": [],
+  "technical_retries": [],
+  "renders": [
+    {
+      "at": "2026-10-31T07:21:02+00:00",
+      "kind": "proof",
+      "frames": 165,
+      "size": [
+        360,
+        640
+      ],
+      "seconds": 6.5,
+      "workers": 3,
+      "file": "runs/the-keeper/proof/2bed99b625ee/proof.mp4"
+    },
+    {
+      "at": "2026-10-31T07:21:45+00:00",
+      "kind": "proof",
+      "frames": 165,
+      "size": [
+        360,
+        640
+      ],
+      "seconds": 6.5,
+      "workers": 3,
+      "file": "runs/the-keeper/proof/df8c54770acb/proof.mp4"
+    },
+    {
+      "at": "2026-10-31T07:22:41+00:00",
+      "kind": "rough",
+      "frames": 990,
+      "size": [
+        360,
+        640
+      ],
+      "seconds": 32.2,
+      "workers": 3,
+      "file": "runs/the-keeper/rough/930b3477b6e5/picture.mp4"
+    },
+    {
+      "at": "2026-10-31T07:25:26+00:00",
+      "kind": "rough",
+      "frames": 990,
+      "size": [
+        360,
+        640
+      ],
+      "seconds": 32.3,
+      "workers": 3,
+      "file": "runs/the-keeper/rough/6ef7ac4355af/picture.mp4"
+    }
+  ],
+  "reviewer_calls": 0,
+  "human_decision": null,
+  "status": "AWAITING_REVIEW:story,visual",
+  "history": [
+    {
+      "at": "2026-10-31T07:04:57+00:00",
+      "event": "intake",
+      "brief_sha256": "ed619971d142838fdc1a17ab74265a2426874ed35cab1f256106d77fa6864bee"
+    },
+    {
+      "at": "2026-10-31T07:04:57+00:00",
+      "event": "stage",
+      "stage": "intake",
+      "status": "DONE"
+    },
+    {
+      "at": "2026-10-31T07:04:57+00:00",
+      "event": "stage",
+      "stage": "concepts",
+      "status": "AWAITING_AUTHORING",
+      "errors": [],
+      "agent_assisted": true,
+      "worker": "handoff"
+    },
+    {
+      "at": "2026-10-31T07:04:57+00:00",
+      "event": "status",
+      "status": "AWAITING_AUTHORING:concepts",
+      "next_step": "complete handoff/concepts.md then resume"
+    },
+    {
+      "at": "2026-10-31T07:18:19+00:00",
+      "event": "ledger-refresh",
+      "changed": [],
+      "unrecorded": []
+    },
+    {
+      "at": "2026-10-31T07:18:28+00:00",
+      "event": "ledger-refresh",
+      "changed": [
+        "film.js"
+      ],
+      "unrecorded": []
+    },
+    {
+      "at": "2026-10-31T07:19:48+00:00",
+      "event": "ledger-refresh",
+      "changed": [
+        "film.js"
+      ],
+      "unrecorded": []
+    },
+    {
+      "at": "2026-10-31T07:19:59+00:00",
+      "event": "ledger-refresh",
+      "changed": [
+        "film.js"
+      ],
+      "unrecorded": []
+    },
+    {
+      "at": "2026-10-31T07:20:34+00:00",
+      "event": "ledger-refresh",
+      "changed": [
+        "film.js"
+      ],
+      "unrecorded": []
+    },
+    {
+      "at": "2026-10-31T07:20:55+00:00",
+      "event": "stage",
+      "stage": "concepts",
+      "status": "DONE",
+      "agent_assisted": true
+    },
+    {
+      "at": "2026-10-31T07:20:55+00:00",
+      "event": "stage",
+      "stage": "direction",
+      "status": "DONE",
+      "agent_assisted": true
+    },
+    {
+      "at": "2026-10-31T07:21:05+00:00",
+      "event": "status",
+      "status": "AWAITING_REVIEW:proof",
+      "next_step": "watch the proof at phone size and write reviews/proof.json (builder inspection is allowed here, and recorded as such), then resume"
+    },
+    {
+      "at": "2026-10-31T07:21:38+00:00",
+      "event": "ledger-refresh",
+      "changed": [
+        "film.js"
+      ],
+      "unrecorded": []
+    },
+    {
+      "at": "2026-10-31T07:22:05+00:00",
+      "event": "stage",
+      "stage": "proof",
+      "status": "DONE"
+    },
+    {
+      "at": "2026-10-31T07:22:05+00:00",
+      "event": "stage",
+      "stage": "source",
+      "status": "DONE",
+      "agent_assisted": true
+    },
+    {
+      "at": "2026-10-31T07:22:09+00:00",
+      "event": "stage",
+      "stage": "audio",
+      "status": "DONE"
+    },
+    {
+      "at": "2026-10-31T07:22:56+00:00",
+      "event": "stage",
+      "stage": "rough",
+      "status": "DONE"
+    },
+    {
+      "at": "2026-10-31T07:22:57+00:00",
+      "event": "status",
+      "status": "AWAITING_REVIEW:story,visual",
+      "next_step": "independent reviewers write reviews/story.json, reviews/visual.json from the matching -request.md, then resume; the builder may not write these"
+    },
+    {
+      "at": "2026-10-31T07:23:20+00:00",
+      "event": "ledger-refresh",
+      "changed": [
+        "film.js"
+      ],
+      "unrecorded": []
+    },
+    {
+      "at": "2026-10-31T07:23:59+00:00",
+      "event": "ledger-refresh",
+      "changed": [
+        "film.js"
+      ],
+      "unrecorded": []
+    },
+    {
+      "at": "2026-10-31T07:24:54+00:00",
+      "event": "stage",
+      "stage": "source",
+      "status": "DONE",
+      "agent_assisted": true
+    },
+    {
+      "at": "2026-10-31T07:25:41+00:00",
+      "event": "stage",
+      "stage": "rough",
+      "status": "DONE"
+    }
+  ],
+  "next_step": "independent reviewers write reviews/story.json, reviews/visual.json from the matching -request.md, then resume; the builder may not write these",
+  "approaches": {
+    "lost-calf-v1": {
+      "logline": "A lighthouse keeper spots a giant shape closing on her rock in a storm, chooses to shine the light instead of hiding it, and finds a lost whale calf she guides home.",
+      "hardest_shot": "The surfacing must flip the audience's read in one move: the same shape that read as a giant has to become a small, sympathetic calf with a readable face at phone size, lit only by the beam; if it reads as a generic blob or still looks threatening, the story fails.",
+      "at": "2026-10-31T07:20:55+00:00"
+    }
+  },
+  "settled": {
+    "proof": {
+      "request_sha256": "b4ad10d928bd466943ea89937e46e829b698ce42e54c05457f80feb8b6a69c74",
+      "core": {
+        "brief_sha256": "ed619971d142838fdc1a17ab74265a2426874ed35cab1f256106d77fa6864bee",
+        "direction_sha256": "3490a60575b27b288badccffa69edf37eb2598371b64780c80f38b17bcfce456",
+        "source_tree_sha256": "b04b919d12e985c565b385585a888d714321a84fb5f87a73123f7552b48dff74",
+        "render_fingerprint_sha256": "2663bfe78a4dd790d1cb524dcc08915a1f4efe6afac4050e72e61778f7b5768a"
+      },
+      "status": "PASS"
+    }
+  },
+  "reviews": {
+    "proof": {
+      "status": "PASS",
+      "request_sha256": "b4ad10d928bd466943ea89937e46e829b698ce42e54c05457f80feb8b6a69c74",
+      "response_request_sha256": "b4ad10d928bd466943ea89937e46e829b698ce42e54c05457f80feb8b6a69c74",
+      "reviewer": {
+        "kind": "builder",
+        "id": "Claude (the builder of this film)",
+        "independence": "builder-self-inspection",
+        "playback": "ordered-frames",
+        "inputs_viewed": [
+          "runs/the-keeper/proof/df8c54770acb/evidence-proof/ordered-frames.png",
+          "runs/the-keeper/proof/df8c54770acb/evidence-proof/strip-surface.png",
+          "runs/the-keeper/proof/df8c54770acb/evidence-proof/strip-cry.png",
+          "runs/the-keeper/proof/df8c54770acb/evidence-proof/strip-soften.png",
+          "runs/the-keeper/proof/df8c54770acb/evidence-proof/phone-f00564.png",
+          "runs/the-keeper/proof/df8c54770acb/evidence-proof/phone-f00649.png"
+        ]
+      },
+      "issues": [],
+      "deferred": [],
+      "at": "2026-10-31T07:22:05+00:00"
+    }
+  }
+}

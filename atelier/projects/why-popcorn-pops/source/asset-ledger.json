@@ -1,0 +1,46 @@
+{
+  "assets": [
+    {
+      "path": "film.js",
+      "kind": "source",
+      "origin": "atelier-authored-code",
+      "author": "Claude (agent-assisted authoring)",
+      "rights": "original Motif production code and procedural artwork",
+      "version": 10,
+      "use": "why-popcorn-pops film source (production-specific)",
+      "sha256": "afa09252d85b102ae7bf1f9cbd4bf0c22af24aa89e0e4221aca13998f24cb272"
+    },
+    {
+      "path": "film.json",
+      "kind": "data",
+      "origin": "atelier-authored-code",
+      "author": "Claude (agent-assisted authoring)",
+      "rights": "original Motif production data, narration text and note score",
+      "version": 3,
+      "use": "why-popcorn-pops film manifest",
+      "sha256": "633947584fc2b84bccc71855ddddfe9d53e803b43cce609886ca4858a87c86fc"
+    },
+    {
+      "path": "fonts/Inter-900-latin.woff2",
+      "kind": "font",
+      "origin": "reused-motif-asset",
+      "registry_id": "font/Inter-900-latin",
+      "author": "Rasmus Andersson (Inter)",
+      "rights": "licensed: SIL Open Font License 1.1 (fonts/OFL-inter.txt)",
+      "version": 1,
+      "use": "three short readouts (WATER 14%, 100 \u00b0C, 180 \u00b0C, REPLAY)",
+      "sha256": "08a195a0cb54f0aa04e00d7a57f175d8cad0923b62f99268d7279b4e982cb3e8"
+    },
+    {
+      "path": "fonts/OFL-inter.txt",
+      "kind": "license",
+      "origin": "licensed",
+      "registry_id": "font/Inter-900-latin",
+      "author": "Inter project",
+      "rights": "licence text: SIL Open Font License 1.1",
+      "version": 1,
+      "use": "licence notice shipped with the font",
+      "sha256": "8c8fa881d9091ee315d2c80d207bb73afd4e90a66c9782ca445c5642f25db6dc"
+    }
+  ]
+}

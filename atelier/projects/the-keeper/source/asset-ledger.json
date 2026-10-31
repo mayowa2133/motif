@@ -1,0 +1,24 @@
+{
+  "assets": [
+    {
+      "path": "film.js",
+      "kind": "source",
+      "version": 8,
+      "sha256": "b2d697c6a547b558f74d31ef24ee3c9be232239643386b6f2277870e7f473dbc",
+      "origin": "atelier-authored-code",
+      "author": "Claude (agent-assisted authoring)",
+      "rights": "original Motif production artwork, code, narration text and note score; no third-party material",
+      "use": "the-keeper film source (production-specific)"
+    },
+    {
+      "path": "film.json",
+      "kind": "data",
+      "version": 1,
+      "sha256": "969615eb30686858686860f950d1b7d274aba140aaa031701a458247928cc9d9",
+      "origin": "atelier-authored-code",
+      "author": "Claude (agent-assisted authoring)",
+      "rights": "original Motif production artwork, code, narration text and note score; no third-party material",
+      "use": "the-keeper film source (production-specific)"
+    }
+  ]
+}

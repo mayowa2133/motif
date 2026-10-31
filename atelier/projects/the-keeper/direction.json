@@ -1,0 +1,37 @@
+{
+  "authored_by": "Claude (agent-assisted authoring in Motif Atelier)",
+  "approach_id": "lost-calf-v1",
+  "logline": "A lighthouse keeper spots a giant shape closing on her rock in a storm, chooses to shine the light instead of hiding it, and finds a lost whale calf she guides home.",
+  "ending": "Dawn over a calm sea: the lamp goes dark for the day, Ada waves from the gallery, and two spouts, one big and one small, rise on the horizon. 'The sea had never been empty.'",
+  "opening_promise": "A storm, a lighthouse and a keeper whose nightly routine is turning the light over a sea that is always empty.",
+  "continuity": {"carrier": "visual-pattern", "what": "The beam: it sweeps empty water, finds the shape, is nearly shuttered, is turned on the calf and finally laid across the sea as a path home."},
+  "style_sheet": {
+    "look": "Painterly chiaroscuro night: deep teal and navy shapes, soft gradients, a warm additive beam as the only strong light, lightning flashes, rain, film grain and vignette; dawn turns the same shapes peach and blue.",
+    "palette": ["#0B1F2E", "#16384A", "#0E2A3A", "#FFE7A8", "#E8B23A", "#5C7E95", "#C9DCE4", "#F6B38E"],
+    "materials": "soft-edged painted shapes, wet highlights, foam strokes; no outlines except where the beam rims a form",
+    "characters": [
+      {"id": "ada", "design": "A small elderly keeper: mustard oilskin coat, wide-brimmed sou'wester, grey bun, round glasses that catch the light, rubber boots.",
+       "silhouette": "triangle coat under a wide brim", "key_poses": ["cranking the lamp", "sipping tea", "frozen with the cup", "reaching for the shutter lever", "pushing it open", "steering the lamp", "hand on heart", "waving"],
+       "expressions": ["content", "shock", "fear", "resolve", "tender", "joy"], "new_design": true, "canonical_asset": null},
+      {"id": "calf", "design": "A young whale: big head, round dark eye with a wet highlight, pale belly, small fins; first seen only as a dark mass and a glint.",
+       "silhouette": "rounded head and back breaking the surface", "key_poses": ["dark mass under the swell", "eye glint", "surfacing", "crying", "turning to swim"], "expressions": ["frightened", "relieved"], "new_design": true, "canonical_asset": null},
+      {"id": "mother", "design": "Only ever seen as a vast tail and a spout far out, rimmed by the beam.", "new_design": true, "canonical_asset": null}
+    ],
+    "environment": "One rock and lighthouse in a storm at sea, seen from the water; the horizon low, the tower tall in the vertical frame; the sea in parallax layers.",
+    "framing": "Wide for the sea and the beam, close on Ada for every decision; the camera stays low near the water for the reveal.",
+    "typography": null,
+    "sound_intent": "Rain and surf throughout, a low drone and heartbeat thuds for the approach, a cup clinking, a deep moan, then the calf's high cry and the mother's answer; a sparse storybook narrator (approved voice bf_emma) only at the ritual, the reveal and the end; a few soft celesta and pad notes at dawn."
+  },
+  "audio": {"narration": "voice-over", "voice": "bf_emma", "music": "sparse original pad and celesta notes synthesised in code", "sfx": "seeded procedural storm, surf, drone, cup, whale calls"},
+  "shots": [
+    {"id": "routine", "purpose": "establish the ritual and the empty sea", "sees": "the storm and the sweeping beam, Ada cranking the lamp with tea at hand, the beam passing over empty water", "before": "night storm", "after": "routine established"},
+    {"id": "sighting", "purpose": "the threat appears", "sees": "the beam crosses a huge dark mass under the waves and an eye glints; Ada stops the lamp, swings back and finds it closer; she drops her cup; lightning shows its shadow under the swell beside the rock", "before": "empty sea", "after": "a giant shape at the rock", "cause": "the beam"},
+    {"id": "choice", "purpose": "the decision", "sees": "Ada reaches for the shutter lever and the light starts to dim; a moan rises from the sea; she stops, sets her jaw, throws the shutter open and steers the full beam down onto the shape", "before": "about to hide", "after": "light on the shape"},
+    {"id": "reveal", "purpose": "the reveal", "sees": "in the beam a small whale calf surfaces, blinks, spouts and cries; Ada's face softens, hand on heart", "before": "monster", "after": "a lost calf", "cause": "her choice to shine the light"},
+    {"id": "home", "purpose": "use the light", "sees": "Ada lays the beam across the sea; far out where it ends a vast tail rises and answers; the calf turns and swims along the beam toward it", "before": "calf at the rock", "after": "calf swimming home"},
+    {"id": "dawn", "purpose": "release", "sees": "rain stops, the sky turns to dawn, the lamp goes dark, two spouts rise on the horizon and Ada waves", "before": "storm", "after": "calm dawn sea with two whales", "stillness": "a held wide on the calm horizon"}
+  ],
+  "hardest_shot": {"shot": "reveal", "why": "The surfacing must flip the audience's read in one move: the same shape that read as a giant has to become a small, sympathetic calf with a readable face at phone size, lit only by the beam; if it reads as a generic blob or still looks threatening, the story fails.", "fallback": "Reveal the calf in a closer framing with a cut instead of one continuous surfacing, and let its cry carry the change."},
+  "claims": [],
+  "applicability": {}
+}

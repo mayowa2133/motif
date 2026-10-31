@@ -1,0 +1,606 @@
+{
+  "schema": "motif-atelier-review-request/1",
+  "role": "story",
+  "project": "runaway-shadow",
+  "project_id": "bc963cf78b804f9fb12efffb4e700de3",
+  "dimensions": {
+    "opening_promise": "the opening establishes a promise, situation or feeling worth watching",
+    "progression": "each part develops or complicates it; nothing is a list item",
+    "payoff": "the ending delivers an intentional result that answers the opening",
+    "cause_before_effect": "important causes are shown before their consequences",
+    "clarity_normal_speed": "a first-time viewer follows it at normal speed",
+    "picture_sound_link": "narration/dialogue and picture tell one story (N/A only for a declared silent film)"
+  },
+  "mandatory": [
+    "opening_promise",
+    "progression",
+    "payoff",
+    "cause_before_effect",
+    "clarity_normal_speed",
+    "picture_sound_link"
+  ],
+  "not_applicable": {
+    "picture_sound_link": "Silent comedy by design: no narration or dialogue; sound is score and effects only."
+  },
+  "intent": {
+    "idea": "A silent comedy about a character trying to catch its runaway shadow",
+    "audience": "people scrolling short vertical video on a phone",
+    "classification": "fictional",
+    "intended_effect": "laughter at a clever, character-driven payoff",
+    "premise": {
+      "title": "The Copycat",
+      "opening_image": "A small round creature in a long red stocking cap walks onto a meadow at sunset; its long shadow walks with it across the grass toward us.",
+      "audience_hook": "Why is the shadow a beat late, and what will it do next?",
+      "central_action": "The shadow peels itself off the ground, stands up as a dark twin with white eyes, blows a raspberry and runs off; the creature chases it into the long shadow of a tree, where it hides.",
+      "complication": "Chasing fails: the shadow can melt into any darker shadow, and the creature's hat-net dive ends face-first in the grass while two white eyes giggle from the tree's shade.",
+      "payoff": "The creature stops chasing and starts a goofy dance; the shadow cannot resist copying, slides out of hiding mid-dance, and the creature stomps on its feet to pin it back in place. Then the sun sets, every shadow vanishes, and two white eyes wink up from the dark."
+    },
+    "logline": "A small creature's shadow runs off at sunset; force cannot catch it, so the creature dances until the copycat shadow cannot resist copying its way back.",
+    "opening_promise": "Pim walks onto a sunset meadow and stops to enjoy the view; its long shadow copies every move, one beat late.",
+    "ending": "The sun sets, the meadow goes dark and the shadow vanishes with the light; Pim looks down, worried, and two white eyes open on the dark grass beside its feet and wink.",
+    "style": "Flat bold cartoon: solid shapes, 7-unit dark plum outlines, no gradients on characters, a backlit sunset sky graded from violet to gold.",
+    "audio_intent": {
+      "narration": "none",
+      "voice": null,
+      "music": "original note-list score (pizzicato, marimba, celesta) synthesised in code",
+      "sfx": "seeded procedural sound design placed on the picture's moment table"
+    },
+    "shot_plan": [
+      {
+        "id": "sunset",
+        "purpose": "establish Pim, the meadow and a shadow that copies",
+        "sees": "Pim walks in and stops to sigh at the sunset; the long shadow on the grass walks and sighs with it",
+        "frames": [
+          0,
+          96
+        ]
+      },
+      {
+        "id": "lag",
+        "purpose": "reveal the shadow has a mind of its own",
+        "sees": "Pim stretches; the shadow holds the stretch after Pim stops, adds an extra flourish, then snaps innocent when Pim double-takes",
+        "frames": [
+          96,
+          270
+        ]
+      },
+      {
+        "id": "escape",
+        "purpose": "the shadow breaks free",
+        "sees": "Pim leans in to squint; the shadow slides away from Pim's feet, hinges up into a dark twin with white eyes, blows a raspberry and sprints off, leaving Pim with no shadow at all",
+        "frames": [
+          270,
+          396
+        ]
+      },
+      {
+        "id": "chase",
+        "purpose": "force fails",
+        "sees": "Pim chases; the twin dives flat into the tree's long shade and disappears; Pim's hat-net dive lands face-first and two white eyes giggle from the shade",
+        "frames": [
+          396,
+          534
+        ]
+      },
+      {
+        "id": "lure",
+        "purpose": "wit wins",
+        "sees": "Pim gets an idea and dances in the sunlight; the shadow cannot resist copying, slides out of the shade copying the dance and creeps to Pim's feet; Pim stomps on its feet and it snaps back attached",
+        "frames": [
+          534,
+          732
+        ]
+      },
+      {
+        "id": "nightfall",
+        "purpose": "button: the shadow gets the last word",
+        "sees": "the sun sinks, the light and every shadow fade, Pim looks down worried, and two white eyes open in the dark grass by its feet and wink",
+        "frames": [
+          732,
+          888
+        ]
+      }
+    ]
+  },
+  "binding": {
+    "brief_sha256": "30e159de271b3f7bc6085696cdafd89d949264fa317ced44d627573fb497ec83",
+    "concepts_sha256": "659baee660c5e8db64079c594c7b51ab271b72be322a6c0183d712125f1630af",
+    "direction_sha256": "876ce38da1e0679e47709d44499cc1a30119ad7faa5cb4696182d210bc5c88fb",
+    "source_tree_sha256": "faa575b9c2bc0d14b6f44950979030990c5367164f3b5a6eb33e3bea3504d4a2",
+    "audio_master_sha256": "5fdd4ee071ac7fadd06de33f070dda43c63596ebd839d8ad4ce2e6efc683721e",
+    "render_sha256": "f46d1da1e6d24f0fa5fda8412463c5acb89d1b2d1a78fe21de62ff81f3cb2f96",
+    "render_fingerprint_sha256": "b62dccf5a0ccf6a7e9afa0360d1da1c855c48a6cf88f1432ffee404a331b99d0"
+  },
+  "evidence": [
+    {
+      "path": "runs/runaway-shadow/rough/8118c6a03c78/evidence-review/ordered-frames.png",
+      "what": "ordered frames every 15 frames (0.50s), in playback order, labelled time / frame / shot",
+      "sha256": "7917e044133a361aeb31ace00a8ae8cff8daba7509668ca8a10df2da8205633a"
+    },
+    {
+      "path": "runs/runaway-shadow/rough/8118c6a03c78/evidence-review/strip-double_take.png",
+      "what": "dense strip around moment \"double_take\" (frame 174, 5.80s): every 2nd frame from -8 to +8",
+      "sha256": "1f560c57c8bef2594e1a3364f16719fd52e0c2be8eb9177a8d1c2826414690b6"
+    },
+    {
+      "path": "runs/runaway-shadow/rough/8118c6a03c78/evidence-review/strip-detach.png",
+      "what": "dense strip around moment \"detach\" (frame 288, 9.60s): every 2nd frame from -8 to +8",
+      "sha256": "5e12a8ad1727b73eaf028a1eec987ee3353d816227f08b4b9af8a0c429eb96e1"
+    },
+    {
+      "path": "runs/runaway-shadow/rough/8118c6a03c78/evidence-review/strip-stand_up.png",
+      "what": "dense strip around moment \"stand_up\" (frame 302, 10.07s): every 2nd frame from -8 to +8",
+      "sha256": "043f53af537993ac8252e846238ac0b88bec11a334599102cfa0a9e8b96fdc86"
+    },
+    {
+      "path": "runs/runaway-shadow/rough/8118c6a03c78/evidence-review/strip-raspberry.png",
+      "what": "dense strip around moment \"raspberry\" (frame 325, 10.83s): every 2nd frame from -8 to +8",
+      "sha256": "32db2c8b921005c0e19be5d22fd7f535c3d9c22e2c4e8b99a3c5bf8bf5c39db9"
+    },
+    {
+      "path": "runs/runaway-shadow/rough/8118c6a03c78/evidence-review/strip-run_off.png",
+      "what": "dense strip around moment \"run_off\" (frame 348, 11.60s): every 2nd frame from -8 to +8",
+      "sha256": "88350085d8af374c35df7b0f21500df975fb9913d2f90091bd02cb20176f21f3"
+    },
+    {
+      "path": "runs/runaway-shadow/rough/8118c6a03c78/evidence-review/strip-melt.png",
+      "what": "dense strip around moment \"melt\" (frame 422, 14.07s): every 2nd frame from -8 to +8",
+      "sha256": "14871270b5d7293b35218be205ea1fbbe70b8712ec1cd905fec18a145e032538"
+    },
+    {
+      "path": "runs/runaway-shadow/rough/8118c6a03c78/evidence-review/strip-faceplant.png",
+      "what": "dense strip around moment \"faceplant\" (frame 468, 15.60s): every 2nd frame from -8 to +8",
+      "sha256": "a0d5bba2433a7a55bf5e5d9b0960117bedf3207229ca9c12c6c7aa1d48ff4f14"
+    },
+    {
+      "path": "runs/runaway-shadow/rough/8118c6a03c78/evidence-review/strip-peek.png",
+      "what": "dense strip around moment \"peek\" (frame 498, 16.60s): every 2nd frame from -8 to +8",
+      "sha256": "d88057f74caacc0617afb908993c13657fd371ec9ed576dbb19356a203b4fabf"
+    },
+    {
+      "path": "runs/runaway-shadow/rough/8118c6a03c78/evidence-review/strip-idea.png",
+      "what": "dense strip around moment \"idea\" (frame 584, 19.47s): every 2nd frame from -8 to +8",
+      "sha256": "4b8ce0f1b20149e3355c53403755a95c9e3a98e10e10a044c4e2feefc927988b"
+    },
+    {
+      "path": "runs/runaway-shadow/rough/8118c6a03c78/evidence-review/strip-creep.png",
+      "what": "dense strip around moment \"creep\" (frame 626, 20.87s): every 2nd frame from -8 to +8",
+      "sha256": "470d31830805cca361e110c9a46195b35e75754da1251f4e0cd76ae5e8ef67f7"
+    },
+    {
+      "path": "runs/runaway-shadow/rough/8118c6a03c78/evidence-review/strip-stomp.png",
+      "what": "dense strip around moment \"stomp\" (frame 690, 23.00s): every 2nd frame from -8 to +8",
+      "sha256": "47f918b79b57e00c3db9ed16ac0879fa007ff836c3221030c3274d39fff60ea8"
+    },
+    {
+      "path": "runs/runaway-shadow/rough/8118c6a03c78/evidence-review/strip-wink.png",
+      "what": "dense strip around moment \"wink\" (frame 835, 27.83s): every 2nd frame from -8 to +8",
+      "sha256": "6a919480889a38e119732d1cfa6f6d6fcc0a033c07dbade03466c959b6d1ee0e"
+    },
+    {
+      "path": "runs/runaway-shadow/rough/8118c6a03c78/evidence-review/phone-f00048.png",
+      "what": "full preview frame at phone size 360x640, shot sunset midpoint (1.60s)",
+      "sha256": "faf8703ebee6c1de75f339735181fdb7998de27f448b8d1154fbfdd4923fa7d9"
+    },
+    {
+      "path": "runs/runaway-shadow/rough/8118c6a03c78/evidence-review/phone-f00183.png",
+      "what": "full preview frame at phone size 360x640, shot lag midpoint (6.10s)",
+      "sha256": "629905a96df9c28084813d50530a0923de8eb6bd8aae1684f0e0a33347a153eb"
+    },
+    {
+      "path": "runs/runaway-shadow/rough/8118c6a03c78/evidence-review/phone-f00333.png",
+      "what": "full preview frame at phone size 360x640, shot escape midpoint (11.10s)",
+      "sha256": "96dbfd051314cf31392aab101303940f9882f5240e3fe840aa6ef8cb98f6ec4b"
+    },
+    {
+      "path": "runs/runaway-shadow/rough/8118c6a03c78/evidence-review/phone-f00465.png",
+      "what": "full preview frame at phone size 360x640, shot chase midpoint (15.50s)",
+      "sha256": "642f9f6ad6101550817290ea7aa6af1abb7df89310530f336aa7393715353f13"
+    },
+    {
+      "path": "runs/runaway-shadow/rough/8118c6a03c78/evidence-review/phone-f00633.png",
+      "what": "full preview frame at phone size 360x640, shot lure midpoint (21.10s)",
+      "sha256": "4397260cd9c2182fa1f5185fa9525a3c1adac57335b539205fbf862f9a2fdb27"
+    },
+    {
+      "path": "runs/runaway-shadow/rough/8118c6a03c78/evidence-review/phone-f00810.png",
+      "what": "full preview frame at phone size 360x640, shot nightfall midpoint (27.00s)",
+      "sha256": "4909b5ecafeae135fa987984539b912bd953126e7801db6fe9fc909e140f3b39"
+    }
+  ],
+  "evidence_root": "/home/user/motif/atelier",
+  "playback_available": false,
+  "limits": "Ordered decoded frames and dense strips only; no moving playback and no listening. Motion between samples and the sound of the mix cannot be judged from this evidence.",
+  "instructions": "You are an independent reviewer for a short vertical film made in Motif Atelier. You did not make it. Judge only the rendered evidence listed here against the stated intent: do not read the project source, builder notes or earlier reviews. Be specific and critical; a polite PASS on weak work defeats the purpose. For every dimension give PASS, FAIL or NOT_ASSESSED with a one-sentence note citing times or frames. Use NOT_ASSESSED whenever the evidence cannot establish the dimension (for example motion smoothness between sampled frames, or how the mix sounds). NOT_APPLICABLE is allowed only for the dimensions listed under not_applicable, with that reason. List every problem that should block release as a critical issue with the smallest fix. Disclose your sampling limits. Do not reward effort, technique or a description of intentions; reward what a first-time phone viewer would see.",
+  "response_path": "reviews/story.json",
+  "response_schema": "atelier/contracts/review.schema.json",
+  "audio": {
+    "measured_on_preview": {
+      "integrated_lufs": -14.16,
+      "true_peak_dbtp": -1.87,
+      "lra_lu": 7.0
+    },
+    "cues": [
+      {
+        "at": 13,
+        "frame": 13,
+        "time": 0.4333,
+        "sound": "step"
+      },
+      {
+        "at": 26,
+        "frame": 26,
+        "time": 0.8667,
+        "sound": "step"
+      },
+      {
+        "at": 39,
+        "frame": 39,
+        "time": 1.3,
+        "sound": "step"
+      },
+      {
+        "at": 52,
+        "frame": 52,
+        "time": 1.7333,
+        "sound": "step"
+      },
+      {
+        "at": 65,
+        "frame": 65,
+        "time": 2.1667,
+        "sound": "step"
+      },
+      {
+        "at": "sigh",
+        "frame": 84,
+        "time": 2.8,
+        "sound": "whoosh"
+      },
+      {
+        "at": "stretch_peak",
+        "frame": 106,
+        "time": 3.5333,
+        "sound": "stretch"
+      },
+      {
+        "at": "shadow_extra",
+        "frame": 150,
+        "time": 5.0,
+        "sound": "stretch"
+      },
+      {
+        "at": "double_take",
+        "frame": 174,
+        "time": 5.8,
+        "sound": "boing"
+      },
+      {
+        "at": "snap_innocent",
+        "frame": 176,
+        "time": 5.8667,
+        "sound": "tick"
+      },
+      {
+        "at": "arm_test",
+        "frame": 213,
+        "time": 7.1,
+        "sound": "blip"
+      },
+      {
+        "at": "arm_drop",
+        "frame": 240,
+        "time": 8.0,
+        "sound": "tick"
+      },
+      {
+        "at": "detach",
+        "frame": 288,
+        "time": 9.6,
+        "sound": "zip"
+      },
+      {
+        "at": "stand_up",
+        "frame": 302,
+        "time": 10.0667,
+        "sound": "stretch"
+      },
+      {
+        "at": "pim_recoil",
+        "frame": 310,
+        "time": 10.3333,
+        "sound": "squeak"
+      },
+      {
+        "at": "eyes_pop",
+        "frame": 317,
+        "time": 10.5667,
+        "sound": "blip"
+      },
+      {
+        "at": "raspberry",
+        "frame": 325,
+        "time": 10.8333,
+        "sound": "raspberry"
+      },
+      {
+        "at": "run_off",
+        "frame": 348,
+        "time": 11.6,
+        "sound": "zip"
+      },
+      {
+        "at": "chase_start",
+        "frame": 404,
+        "time": 13.4667,
+        "sound": "whoosh"
+      },
+      {
+        "at": 439,
+        "frame": 439,
+        "time": 14.6333,
+        "sound": "step"
+      },
+      {
+        "at": "melt",
+        "frame": 422,
+        "time": 14.0667,
+        "sound": "whoosh"
+      },
+      {
+        "at": "melt",
+        "frame": 432,
+        "time": 14.4,
+        "sound": "blip"
+      },
+      {
+        "at": "hat_dive",
+        "frame": 450,
+        "time": 15.0,
+        "sound": "whoosh"
+      },
+      {
+        "at": "faceplant",
+        "frame": 468,
+        "time": 15.6,
+        "sound": "thud"
+      },
+      {
+        "at": "peek",
+        "frame": 498,
+        "time": 16.6,
+        "sound": "blip"
+      },
+      {
+        "at": "peek",
+        "frame": 506,
+        "time": 16.8667,
+        "sound": "blip"
+      },
+      {
+        "at": "idea",
+        "frame": 584,
+        "time": 19.4667,
+        "sound": "chime"
+      },
+      {
+        "at": "creep",
+        "frame": 626,
+        "time": 20.8667,
+        "sound": "hiss"
+      },
+      {
+        "at": "side_eye",
+        "frame": 645,
+        "time": 21.5,
+        "sound": "tick"
+      },
+      {
+        "at": 668,
+        "frame": 668,
+        "time": 22.2667,
+        "sound": "tick"
+      },
+      {
+        "at": "freeze",
+        "frame": 678,
+        "time": 22.6,
+        "sound": "tick"
+      },
+      {
+        "at": "stomp",
+        "frame": 690,
+        "time": 23.0,
+        "sound": "thud"
+      },
+      {
+        "at": "stomp",
+        "frame": 692,
+        "time": 23.0667,
+        "sound": "pop"
+      },
+      {
+        "at": "sunset",
+        "frame": 732,
+        "time": 24.4,
+        "sound": "chime"
+      },
+      {
+        "at": "look_down",
+        "frame": 786,
+        "time": 26.2,
+        "sound": "squeak"
+      },
+      {
+        "at": "eyes_open",
+        "frame": 816,
+        "time": 27.2,
+        "sound": "blip"
+      },
+      {
+        "at": "jolt",
+        "frame": 823,
+        "time": 27.4333,
+        "sound": "squeak"
+      },
+      {
+        "at": "wink",
+        "frame": 835,
+        "time": 27.8333,
+        "sound": "tick"
+      },
+      {
+        "at": "hat_back",
+        "frame": 597,
+        "time": 19.9,
+        "sound": "pop"
+      },
+      {
+        "at": 349,
+        "frame": 349,
+        "time": 11.6333,
+        "sound": "tick"
+      },
+      {
+        "at": 354,
+        "frame": 354,
+        "time": 11.8,
+        "sound": "tick"
+      },
+      {
+        "at": 359,
+        "frame": 359,
+        "time": 11.9667,
+        "sound": "tick"
+      },
+      {
+        "at": 364,
+        "frame": 364,
+        "time": 12.1333,
+        "sound": "tick"
+      },
+      {
+        "at": 405,
+        "frame": 405,
+        "time": 13.5,
+        "sound": "step"
+      },
+      {
+        "at": 411,
+        "frame": 411,
+        "time": 13.7,
+        "sound": "step"
+      },
+      {
+        "at": 416,
+        "frame": 416,
+        "time": 13.8667,
+        "sound": "step"
+      },
+      {
+        "at": 422,
+        "frame": 422,
+        "time": 14.0667,
+        "sound": "step"
+      },
+      {
+        "at": 428,
+        "frame": 428,
+        "time": 14.2667,
+        "sound": "step"
+      },
+      {
+        "at": 436,
+        "frame": 436,
+        "time": 14.5333,
+        "sound": "whoosh"
+      },
+      {
+        "at": 514,
+        "frame": 514,
+        "time": 17.1333,
+        "sound": "blip"
+      },
+      {
+        "at": 518,
+        "frame": 518,
+        "time": 17.2667,
+        "sound": "blip"
+      },
+      {
+        "at": 521,
+        "frame": 521,
+        "time": 17.3667,
+        "sound": "blip"
+      },
+      {
+        "at": 524,
+        "frame": 524,
+        "time": 17.4667,
+        "sound": "blip"
+      },
+      {
+        "at": 528,
+        "frame": 528,
+        "time": 17.6,
+        "sound": "blip"
+      },
+      {
+        "at": 531,
+        "frame": 531,
+        "time": 17.7,
+        "sound": "blip"
+      },
+      {
+        "at": 603,
+        "frame": 603,
+        "time": 20.1,
+        "sound": "step"
+      },
+      {
+        "at": 609,
+        "frame": 609,
+        "time": 20.3,
+        "sound": "step"
+      },
+      {
+        "at": 615,
+        "frame": 615,
+        "time": 20.5,
+        "sound": "step"
+      },
+      {
+        "at": 705,
+        "frame": 705,
+        "time": 23.5,
+        "sound": "tick"
+      },
+      {
+        "at": 709,
+        "frame": 709,
+        "time": 23.6333,
+        "sound": "tick"
+      },
+      {
+        "at": 713,
+        "frame": 713,
+        "time": 23.7667,
+        "sound": "tick"
+      },
+      {
+        "at": 679,
+        "frame": 679,
+        "time": 22.6333,
+        "sound": "squeak"
+      },
+      {
+        "at": "wink_open",
+        "frame": 870,
+        "time": 29.0,
+        "sound": "blip"
+      }
+    ],
+    "note": "measurements only; no reviewer has listened"
+  },
+  "narration": []
+}

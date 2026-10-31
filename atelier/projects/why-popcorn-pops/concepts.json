@@ -1,0 +1,44 @@
+{
+  "authored_by": "Claude (agent-assisted authoring in Motif Atelier)",
+  "classification": "factual",
+  "premises": [
+    {
+      "id": "two-kernels",
+      "title": "Two Kernels, One Crack",
+      "opening_image": "The bottom of a bowl of popcorn seen in cross-section: under the fluffy heap, two hard kernels that never popped.",
+      "audience_hook": "Why do a few kernels in every bowl never pop?",
+      "central_action": "Two identical-looking kernels heat side by side in a pan, cut open like a diagram: water inside both turns to steam, one hull holds it until it bursts into foam and jumps, the other has a hairline crack and hisses its steam away.",
+      "complication": "The kernels look the same from outside; the difference is a crack too small to notice until the steam finds it.",
+      "payoff": "The flake lands in the bowl and the leaky kernel ends up at the bottom, answering the opening question; a replay of the burst shows the pop is the steam rushing out.",
+      "art_motion_idea": "Risograph science-zine look: three overprinted inks with slight misregistration, halftone shading, cutaway kernels that bulge, burst and bloom; slow motion for the burst.",
+      "library_fit": "No Classic rig shows a cutaway kernel, steam pressure or a foam bloom; built new.",
+      "scores": {"clarity": 5, "visual_potential": 4, "originality": 4, "appeal": 4, "feasibility": 4}
+    },
+    {
+      "id": "rewind-the-pop",
+      "title": "Rewind",
+      "opening_image": "A single popcorn flake frozen mid-air above a pan, then the film runs backwards.",
+      "audience_hook": "What happened in the tenth of a second before this flake existed?",
+      "central_action": "The flake un-blooms back into a kernel, the hull reseals, steam condenses back into droplets, and the film steps forward again one stage at a time.",
+      "complication": "Running backwards makes cause and effect harder to read for a first-time viewer.",
+      "payoff": "Played forward at full speed, the whole sequence is one blink.",
+      "art_motion_idea": "Scrubbing timeline effects and stop-frame annotation.",
+      "library_fit": "Not supported by Classic; would need custom time-remapping.",
+      "scores": {"clarity": 3, "visual_potential": 4, "originality": 3, "appeal": 3, "feasibility": 4}
+    },
+    {
+      "id": "grain-tour",
+      "title": "Only One Grain Pops",
+      "opening_image": "A row of grains on a hot pan: wheat, rice, field corn, sweet corn and popcorn.",
+      "audience_hook": "Why does only one of these grains explode?",
+      "central_action": "Each grain heats; steam seeps through the porous hulls of the others while the popcorn's sealed hull holds and bursts.",
+      "complication": "Five grains split attention and need more claims, each needing its own source.",
+      "payoff": "Only the popcorn flies; the others sit toasted.",
+      "art_motion_idea": "Line-up comparison with a pan-wide camera move.",
+      "library_fit": "No Classic overlap.",
+      "scores": {"clarity": 3, "visual_potential": 3, "originality": 3, "appeal": 3, "feasibility": 3}
+    }
+  ],
+  "chosen": "two-kernels",
+  "rationale": "Two Kernels turns the explanation into a fair test the viewer can watch: same pan, same heat, one difference. The sealed hull's job is demonstrated by its absence in the cracked kernel, the opening question is answered by the ending image, and the burst gives the film its spectacle. It needs the fewest claims (each with a source) and keeps attention on two objects instead of five."
+}

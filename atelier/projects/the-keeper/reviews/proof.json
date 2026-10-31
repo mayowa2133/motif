@@ -1,0 +1,40 @@
+{
+ "request_sha256": "b4ad10d928bd466943ea89937e46e829b698ce42e54c05457f80feb8b6a69c74",
+ "role": "proof",
+ "reviewer": {
+  "kind": "builder",
+  "id": "Claude (the builder of this film)",
+  "independence": "builder-self-inspection",
+  "playback": "ordered-frames",
+  "inputs_viewed": [
+   "runs/the-keeper/proof/df8c54770acb/evidence-proof/ordered-frames.png",
+   "runs/the-keeper/proof/df8c54770acb/evidence-proof/strip-surface.png",
+   "runs/the-keeper/proof/df8c54770acb/evidence-proof/strip-cry.png",
+   "runs/the-keeper/proof/df8c54770acb/evidence-proof/strip-soften.png",
+   "runs/the-keeper/proof/df8c54770acb/evidence-proof/phone-f00564.png",
+   "runs/the-keeper/proof/df8c54770acb/evidence-proof/phone-f00649.png"
+  ]
+ },
+ "dimensions": {
+  "action_reads": {
+   "status": "PASS",
+   "note": "The beam holds on the dark mass with its glint (18.8-19.0 s); the calf surfaces in a foam ring (19.1-20.5 s), blinks, spouts (20.4 s) and cries with a tear (20.7-21.6 s); hard cut to Ada softening (21.9-23.7 s); back to the calf calm in the beam."
+  },
+  "performance": {
+   "status": "PASS",
+   "note": "The calf has readable acting at phone size (eye with highlights, head tilt on the cry, tear); Ada moves from wide eyes to closed-eye smile with a hand on her chest."
+  },
+  "feasible_look": {
+   "status": "PASS",
+   "note": "Painterly night look holds at 360x640: textured sea, beam as the key light, rain and grain; the calf is lit by its own light model so the additive beam does not wash it out."
+  }
+ },
+ "verdict": "PROCEED",
+ "critical_issues": [],
+ "suggestions": [
+  "Ada's hand-on-heart pose is small in the close-up; the face change carries the beat.",
+  "Builder self-inspection only; story and visual reviews must be independent."
+ ],
+ "sampling_limits": "Every second frame of the 165-frame proof plus dense strips and one native frame; no playback, no audio.",
+ "summary": "The reveal (dark mass to small crying calf) flips the read at phone size and Ada's reaction lands. Proceed to the full film."
+}

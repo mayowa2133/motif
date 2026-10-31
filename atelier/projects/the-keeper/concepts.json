@@ -1,0 +1,44 @@
+{
+  "authored_by": "Claude (agent-assisted authoring in Motif Atelier)",
+  "classification": "fictional",
+  "premises": [
+    {
+      "id": "lost-calf",
+      "title": "The Keeper",
+      "opening_image": "A lighthouse on a black rock in a storm, its beam sweeping an empty sea; a small keeper in a yellow oilskin turns the lamp by hand.",
+      "audience_hook": "What is the huge dark shape the beam just caught under the waves, and will she hide the light?",
+      "central_action": "The keeper tracks a giant shape with a glinting eye as it closes on the rock, starts to shutter the lamp to hide, hears it moan, and instead turns the full beam onto it.",
+      "complication": "Every clue (the swell, the size of its shadow in the lightning, the moan) says monster, and hiding is the safe choice.",
+      "payoff": "A whale calf surfaces in the beam, small and crying; she swings the light out to sea, a vast tail rises where it ends, and the calf swims home. At dawn two spouts rise from a sea that was never empty.",
+      "art_motion_idea": "Painterly chiaroscuro: a dark teal storm lit only by the beam and lightning, parallax wave layers, rain, film grain; slow suspense pacing and a light that acts.",
+      "library_fit": "Nothing in Classic: no sea, weather, light cones, creature or new character; built new.",
+      "scores": {"clarity": 4, "visual_potential": 5, "originality": 4, "appeal": 5, "feasibility": 3}
+    },
+    {
+      "id": "machine-sleeps",
+      "title": "Repair Call",
+      "opening_image": "A tiny repair technician squeezes through a hatch into a warm, humming machine room full of pipes.",
+      "audience_hook": "Why is this machine breathing?",
+      "central_action": "The technician tightens valves while the pipes swell and sigh and a round gauge blinks.",
+      "complication": "Each repair makes the machine hum louder, as if waking.",
+      "payoff": "Pulling back reveals the machine is a sleeping dragon and the gauge is its eye, which winks and goes back to sleep.",
+      "art_motion_idea": "Interior cutaway with warm lights and a big pull-back reveal.",
+      "library_fit": "Would need a new interior and creature; no Classic overlap.",
+      "scores": {"clarity": 3, "visual_potential": 4, "originality": 3, "appeal": 4, "feasibility": 3}
+    },
+    {
+      "id": "last-ticket",
+      "title": "Last Train",
+      "opening_image": "An empty night platform; one passenger waits under a flickering lamp, clutching a ticket.",
+      "audience_hook": "Who is the passenger waiting for on a platform with no trains?",
+      "central_action": "Lights of an approaching train grow, the passenger stands, the train passes without stopping.",
+      "complication": "The ticket is for a date long gone.",
+      "payoff": "The passenger turns and finds an old friend who has been waiting on the bench all along.",
+      "art_motion_idea": "Lamp-lit quiet scene, slow pans, mostly stillness.",
+      "library_fit": "No Classic overlap.",
+      "scores": {"clarity": 3, "visual_potential": 3, "originality": 3, "appeal": 4, "feasibility": 4}
+    }
+  ],
+  "chosen": "lost-calf",
+  "rationale": "The Keeper has a reveal that recasts everything before it (the threat was a child), a choice the character makes on screen (hide or shine), and an environment that does story work: the beam is both what finds the 'monster' and what brings it home, and the storm clearing is the emotional release. Repair Call's reveal is a twist without a choice; Last Train is quieter and depends on backstory a 30-second film cannot carry."
+}

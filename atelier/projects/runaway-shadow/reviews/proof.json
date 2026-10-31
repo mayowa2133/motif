@@ -1,0 +1,41 @@
+{
+ "request_sha256": "938f3f3378d0ab5d4db69b61b4e5b8f0f03b2b3bc267ee55dcc9c3d870c0c1a8",
+ "role": "proof",
+ "reviewer": {
+  "kind": "builder",
+  "id": "Claude (the builder of this film)",
+  "independence": "builder-self-inspection",
+  "playback": "ordered-frames",
+  "inputs_viewed": [
+   "runs/runaway-shadow/proof/fad0ed940e66/evidence-proof/ordered-frames.png",
+   "runs/runaway-shadow/proof/fad0ed940e66/evidence-proof/strip-detach.png",
+   "runs/runaway-shadow/proof/fad0ed940e66/evidence-proof/strip-stand_up.png",
+   "runs/runaway-shadow/proof/fad0ed940e66/evidence-proof/strip-raspberry.png",
+   "runs/runaway-shadow/proof/fad0ed940e66/evidence-proof/strip-run_off.png",
+   "runs/runaway-shadow/proof/fad0ed940e66/evidence-proof/phone-f00333.png"
+  ]
+ },
+ "dimensions": {
+  "action_reads": {
+   "status": "PASS",
+   "note": "Detach is visible as a widening gap at Pim's feet (f288-300); the hinge-up reads as the flat shape rising (f304-312); eyes pop f318, raspberry tongue f324-336, sprint loop behind Pim f348-370 and the taunt by the tree f372-394. Pim has no shadow from f300 on."
+  },
+  "performance": {
+   "status": "PASS",
+   "note": "Pim leans in squinting, then recoils hands-up with a tremble and hat spring (f310-345); the twin has anticipation before the sprint (f342-348) and leans into its run. Timing between samples not judged: frames only."
+  },
+  "feasible_look": {
+   "status": "PASS",
+   "note": "At 360x640 (phone-f00333) the dark twin, its white eyes and pink tongue, Pim's face and the cap all read; the flat shadow layer merges cleanly with the tree shade."
+  }
+ },
+ "verdict": "PROCEED",
+ "critical_issues": [],
+ "suggestions": [
+  "f304-306: the mid-hinge sliver is a brief dark smear; acceptable at speed but watch it in playback.",
+  "f312-346: the standing twin overlaps the tree trunk; readable because of its eyes, but a cleaner separation would help.",
+  "Builder self-inspection only: the independent story and visual reviews must judge the full film."
+ ],
+ "sampling_limits": "Every second frame of the 126-frame proof plus dense strips and one native 360x640 frame; no moving playback, no audio (the proof is picture-only).",
+ "summary": "The hardest action (a projected shadow detaching, standing up as a twin and running) is legible at phone size with real posing on both characters. Proceed to the full film."
+}

@@ -1,0 +1,114 @@
+{
+ "request_sha256": "2644d565acc7185e480a2423b1ef7683317706c817385cfc9f7c0a6a0395547b",
+ "role": "visual",
+ "reviewer": {
+  "kind": "model",
+  "id": "Claude subagent (fresh context, same model family as the builder)",
+  "independence": "separate-context-same-family",
+  "playback": "ordered-frames",
+  "inputs_viewed": [
+   "/home/user/motif/atelier/projects/why-popcorn-pops/reviews/visual-request.md",
+   "/home/user/motif/atelier/contracts/review.schema.json",
+   "/home/user/motif/atelier/runs/why-popcorn-pops/rough/2a2ead48e853/evidence-review/ordered-frames.png",
+   "/home/user/motif/atelier/runs/why-popcorn-pops/rough/2a2ead48e853/evidence-review/strip-cutaway.png",
+   "/home/user/motif/atelier/runs/why-popcorn-pops/rough/2a2ead48e853/evidence-review/strip-boil.png",
+   "/home/user/motif/atelier/runs/why-popcorn-pops/rough/2a2ead48e853/evidence-review/strip-pressure.png",
+   "/home/user/motif/atelier/runs/why-popcorn-pops/rough/2a2ead48e853/evidence-review/strip-leak.png",
+   "/home/user/motif/atelier/runs/why-popcorn-pops/rough/2a2ead48e853/evidence-review/strip-burst.png",
+   "/home/user/motif/atelier/runs/why-popcorn-pops/rough/2a2ead48e853/evidence-review/strip-foam.png",
+   "/home/user/motif/atelier/runs/why-popcorn-pops/rough/2a2ead48e853/evidence-review/strip-leg.png",
+   "/home/user/motif/atelier/runs/why-popcorn-pops/rough/2a2ead48e853/evidence-review/strip-jump.png",
+   "/home/user/motif/atelier/runs/why-popcorn-pops/rough/2a2ead48e853/evidence-review/strip-replay_pop.png",
+   "/home/user/motif/atelier/runs/why-popcorn-pops/rough/2a2ead48e853/evidence-review/strip-kernel_lands.png",
+   "/home/user/motif/atelier/runs/why-popcorn-pops/rough/2a2ead48e853/evidence-review/phone-f00053.png",
+   "/home/user/motif/atelier/runs/why-popcorn-pops/rough/2a2ead48e853/evidence-review/phone-f00191.png",
+   "/home/user/motif/atelier/runs/why-popcorn-pops/rough/2a2ead48e853/evidence-review/phone-f00355.png",
+   "/home/user/motif/atelier/runs/why-popcorn-pops/rough/2a2ead48e853/evidence-review/phone-f00490.png",
+   "/home/user/motif/atelier/runs/why-popcorn-pops/rough/2a2ead48e853/evidence-review/phone-f00673.png",
+   "/home/user/motif/atelier/runs/why-popcorn-pops/rough/2a2ead48e853/evidence-review/phone-f00849.png",
+   "/home/user/motif/atelier/runs/why-popcorn-pops/rough/2a2ead48e853/evidence-review/phone-f00961.png"
+  ],
+  "tools": "Read tool on every evidence PNG; Python/PIL crops and 2-4x enlargements of contact-sheet tiles, strip tiles and phone frames (written to the session scratchpad); pixel sampling for label heights, paper vs fill colour, and centroid tracking of kernel outlines and hull petals across samples"
+ },
+ "dimensions": {
+  "focal_hierarchy": {
+   "status": "PASS",
+   "note": "Every shot has one clear subject, led by camera moves: the sink onto the orange/red kernel pair (0-3.0 s), the push-in onto the right kernel as its steam plume rises (14.5-18.0 s), the split and ring burst (21.0-21.5 s), the REPLAY header over the kernel (27.5 s) and the sink to the bowl bottom (32-34 s). The weak spot is 22-25 s: the hero flake is cream on cream paper, the lowest-contrast object on screen, while the saturated flames and the glossy brown kernel pull the eye away from it.",
+   "evidence": "ordered-frames 1.0-3.0 s, 15.0-18.0 s, 21.0-21.5 s, 27.5 s; phone-f00673 (flake vs flames/brown kernel); phone-f00961"
+  },
+  "identity_continuity": {
+   "status": "FAIL",
+   "note": "At f966 (32.2 s) the falling brown cracked kernel lands exactly on top of the red unpopped kernel and stays merged until the end (34.0 s). Its brown body, glint and crack glyph collapse into one dark-red blob with two outlines, and the bowl still shows two kernels where there should now be three. There is also a material snap at the split: the orange halftone cutaway with its white interior becomes an opaque pale-yellow hull with a thin outline (f630, f852), then cream foam. The crack mark also changes style, from a small blue tick (14.8-15.5 s) to a black zigzag (17.0 s on).",
+   "evidence": "strip-kernel_lands f964 vs f966-f974; ordered-frames 32.5-34.0 s; phone-f00961 (kernel still falling, two kernels already at bottom); strip-burst f628/f630/f632; strip-replay_pop f850/f852/f854; strip-leak f448-f456 vs ordered-frames 17.0 s"
+  },
+  "composition": {
+   "status": "FAIL",
+   "note": "The pan staging is horizontal (thermometer, kernel, kernel) and does not fit 9:16. The right kernel is cut by the frame edge from 5.5 to 9.0 s (phone-f00191, x 278-360). The cracked kernel sits in the platform right-rail zone and is cropped from 18.5 to 27 s (phone-f00673, x 265-360), and it shrinks to a sliver in the replay (phone-f00849, x 305-360). The thermometer tube is off-frame for the 180 °C beat (18.5-21.0 s) and the whole replay (27.5-29.9 s), leaving orphan '-180 °C'/'-100 °C' labels hanging at x=0. The top 35-45% of every pan shot is empty paper while the flames and burner sit in the bottom caption band. The bowl shots (0-3.5 s, 30-34 s) are well centred.",
+   "evidence": "phone-f00191, phone-f00673, phone-f00849; ordered-frames 5.5-9.0 s, 18.5-21.0 s, 27.5-29.5 s; strip-burst f622-f630 (tube off-frame, labels only)"
+  },
+  "readable_action": {
+   "status": "FAIL",
+   "note": "Several actions read well: the leak (crack, steam coils, bubbles draining, hull browning, 14.8-18 s), split then foam (f630-f642), the replay order of crack, then steam, then rings (f852, f856, f858), and the squash before the jump (f733-f735). Three actions do not. The hull halves sink through the pan floor into the flames from 21.5 to 24.5 s, so the foam never rests on the pan. The narrated 'leg of starch kicks the pan' (23.5-24.5 s) is a pale translucent capsule hidden under the flake, about 12 px wide at phone size, with only a faint pink contact ellipse. The final landing (32.2 s) merges into an existing kernel instead of settling. The 'pressure climbs' beat (11.4-14.3 s) shows no bulge: kernel outline centroids hold within about 0.5 px across f352-f368.",
+   "evidence": "phone-f00673 and ordered-frames 21.5-24.0 s (petals below pan line); strip-leg f721-f737; strip-jump f733-f743; strip-kernel_lands f966; strip-pressure f352-f368; strip-leak; strip-replay_pop"
+  },
+  "motion_performance": {
+   "status": "NOT_ASSESSED",
+   "note": "Frames cannot establish easing, smoothness, how the slow-motion bloom feels, or any hull tremble under about 1 px. From the samples: squash anticipation before the jump is present (f733 to f735). The 11.5-14.0 s stretch is almost static apart from the mercury and flame flicker. After the jump the flake hangs near its apex for about 1.5 s (25.5-27.0 s; the petal centroid stays within about 4 px at contact-sheet scale while the pan drifts), then the film cuts to the replay.",
+   "evidence": "strip-jump f733-f743; ordered-frames 11.5-14.0 s and 25.5-27.0 s; strip-pressure"
+  },
+  "style_coherence": {
+   "status": "PASS",
+   "note": "One deliberate risograph-zine language runs throughout: grained cream paper, navy/blue linework, fluorescent pink, yellow and orange overprints, halftone dot shading, visible misregistration on the bowl rim and kernels, and ink-flood wipes (pink at 3.5 s, yellow at 30.0 s). Minor drift: the pan-scene kernels carry heavy near-black outlines against the thin blue bowl linework. The steam bubbles are pure white (about 248), brighter than the paper (about 236/229/213), which a riso print cannot make. The crack becomes a black zigzag.",
+   "evidence": "ordered-frames 0-3.5 s vs 10-20 s; phone-f00053; phone-f00355 (bubble vs paper sample); ordered-frames 3.5 s and 30.0 s"
+  },
+  "phone_readability": {
+   "status": "FAIL",
+   "note": "At 360x640 the large shapes read: kernels, flames, thermometer, flake, sound rings. The details that carry the explanation do not. The leg is a pale sliver about 12 px wide. At the bottom of the bowl the cracked kernel cannot be told apart: its crack glyph is about 4 px on a 40 px kernel, and it merges with the red kernel. The water drops are 4-5 px dark specks that read as seeds, and only the label carries 'water'. The temperature labels are small: '100 °C' has a 9 px cap height (1.4% of frame height) and '180 °C' 12 px, in pink on cream.",
+   "evidence": "phone-f00673, phone-f00961, phone-f00191, phone-f00355 (label measured 9 px tall), phone-f00849; strip-leg; strip-kernel_lands"
+  },
+  "technical_defects": {
+   "status": "FAIL",
+   "note": "Defects found: the hull halves and the flake base clip through the pan floor into the flames (21.5-24.5 s, and again 28.5-29.9 s in the replay); kernel-on-kernel interpenetration at the bowl bottom (32.2-34.0 s); the interior pops to an opaque hull for the split frames (f630, f852); the bowl-bottom kernels sit inside the bowl-wall band (0-3.5 s, 31.5-34 s); the pink '14%' overprints the right kernel's outline (6.5-8.5 s); the sound rings cross the REPLAY text (29.0-29.5 s); the flake and petal cover the thermometer's '100 °C' label (f735-f741). No torn, blank or broken frames appear in the samples.",
+   "evidence": "phone-f00673 (pan line through petals); ordered-frames 29.0-29.5 s; strip-kernel_lands f966-f974; strip-burst f630; strip-replay_pop f852; ordered-frames 6.5-8.5 s; strip-jump f735-f741; phone-f00053 (kernels in wall band)"
+  }
+ },
+ "verdict": "REPAIR",
+ "critical_issues": [
+  {
+   "dimension": "identity_continuity",
+   "where": "32.2-34.0 s (f966-f1020), answer shot",
+   "problem": "The film resolves on this image, and it is muddled. The falling cracked kernel lands exactly on top of the red unpopped kernel already at the bottom, so the two overlap as one dark-red, double-outlined blob. The kernel loses its brown colour, glint and crack glyph, and the count stays at two, so a viewer cannot see 'the cracked kernel ended up here among the unpopped'.",
+   "smallest_fix": "Change the landing target so the cracked kernel settles in open space beside the two existing kernels, resting on the bowl's inner surface as a visible third kernel. Keep its brown fill and glint, enlarge its crack glyph to about 10 px at phone size, and hold about 1 s before the end."
+  },
+  {
+   "dimension": "technical_defects",
+   "where": "21.5-24.5 s (f645-f735) and 28.5-29.9 s (replay), burst and sound shots",
+   "problem": "After the split, the two hull halves (and the base of the foam flake) sit with their lower halves below the pan floor line, overlapping the flames. The pan line visibly cuts through them at mid-height for about 3 s of the hero moment and again in the replay.",
+   "smallest_fix": "Offset the petals and the flake base upward so their lowest points rest on the pan floor line, in both the burst and the replay instances."
+  },
+  {
+   "dimension": "readable_action",
+   "where": "23.5-24.5 s (f705-f735), burst shot",
+   "problem": "The narration says 'A leg of starch kicks the pan, and the kernel jumps', but the leg is a pale translucent capsule mostly hidden under the flake between the sunken petals, about 12 px wide on a phone. The cause of the jump is not legible; only the squash and rise are.",
+   "smallest_fix": "Draw the leg as an opaque cream starch lobe with the blue outline, at least a quarter of the flake's height, extending visibly below the flake. Give it a clear contact squash or dust mark on the pan floor for 4-6 frames before f735."
+  },
+  {
+   "dimension": "composition",
+   "where": "18.5-21.0 s (180 °C beat), 27.5-29.9 s (replay), 5.5-9.0 s (inside push-in)",
+   "problem": "The thermometer tube is off-frame while the narration says 'about a hundred and eighty degrees', so the burst's cause is shown only as an orphan '-180 °C' label at the frame edge. The same orphan labels hang there through the replay. The comparison kernel (inside) and the cracked kernel (burst, replay) are cropped by the right edge and sit in the platform's right action rail, which undercuts the 'two kernels side by side' comparison.",
+   "smallest_fix": "In those three shots, reframe or scale the pan group so the thermometer and both kernels fit inside roughly x 24-300 of 360. Make sure the mercury is seen reaching the 180 °C mark before the split at f630."
+  }
+ ],
+ "suggestions": [
+  "Show 'the pressure climbs' (11.4-14.3 s): swell the sealed hull by 3-5% and add a visible 2-3 px tremble at phone scale, or crowd the bubbles more as the narration runs.",
+  "Keep the cutaway interior visible through the split (f630, f852) so the white steam turns into cream foam without an opaque-hull pop.",
+  "Keep one crack glyph style from discovery (14.8 s) to the end, rather than a blue tick that becomes a black zigzag.",
+  "Raise the label cap heights to 14 px or more at 360x640, and keep '14%' clear of the right kernel's outline.",
+  "Make the water drops blue and larger, as the intent describes; at 4-5 px dark specks they read as seeds.",
+  "Shorten the flake's apex hang (25.5-27.0 s) or let it keep arcing out of frame before the replay.",
+  "Keep the replay's sound rings from crossing the REPLAY text, and seat the bowl-bottom kernels on the bowl's inner surface rather than inside the wall band.",
+  "Print the steam bubbles in paper or cream tone rather than pure white, to stay true to riso."
+ ],
+ "sampling_limits": "Evidence was ordered decoded frames every 15 frames (0.5 s), ten dense strips at every 2nd frame over ±8 frames around named moments, and seven 360x640 stills. There was no moving playback and no audio. I cannot judge easing, smoothness, how the slow-motion bloom feels, tremble below about 1 px, how long the full-frame ink wipes at 3.5 s and 30.0 s last or how they feel, where the falling cracked kernel enters between 30.5 and 31.0 s, or audio-visual sync of the listed cues. Contact-sheet tiles are only 135x240, so I judged fine detail from the strips, the phone frames and PIL enlargements of the same images.",
+ "summary": "A coherent risograph look with clear focal staging. The leak, the split-to-foam and the replay order of crack, steam and rings read well. Four things block release. The cracked kernel lands superimposed on an existing kernel at 32.2 s, which muddles the payoff. The hull halves clip through the pan floor during the burst and the replay. The narrated 'leg of starch' that causes the jump cannot be seen. The horizontal pan staging crops the thermometer at the 180 °C beat and pushes the comparison kernel into the right edge and UI rail. Verdict: REPAIR."
+}

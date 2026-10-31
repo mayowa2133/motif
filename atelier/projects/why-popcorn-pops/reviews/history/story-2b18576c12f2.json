@@ -1,0 +1,83 @@
+{
+ "request_sha256": "2b18576c12f2521da7b9a7ed64e47a48a5fc48722b083c4116510ea71fc3aae9",
+ "role": "story",
+ "reviewer": {
+  "kind": "model",
+  "id": "Claude subagent (fresh context, same model family as the builder)",
+  "independence": "separate-context-same-family",
+  "playback": "ordered-frames",
+  "inputs_viewed": [
+   "/home/user/motif/atelier/projects/why-popcorn-pops/reviews/story-request.md",
+   "/home/user/motif/atelier/contracts/review.schema.json",
+   "/home/user/motif/atelier/runs/why-popcorn-pops/rough/2a2ead48e853/evidence-review/ordered-frames.png",
+   "/home/user/motif/atelier/runs/why-popcorn-pops/rough/2a2ead48e853/evidence-review/strip-cutaway.png",
+   "/home/user/motif/atelier/runs/why-popcorn-pops/rough/2a2ead48e853/evidence-review/strip-boil.png",
+   "/home/user/motif/atelier/runs/why-popcorn-pops/rough/2a2ead48e853/evidence-review/strip-pressure.png",
+   "/home/user/motif/atelier/runs/why-popcorn-pops/rough/2a2ead48e853/evidence-review/strip-leak.png",
+   "/home/user/motif/atelier/runs/why-popcorn-pops/rough/2a2ead48e853/evidence-review/strip-burst.png",
+   "/home/user/motif/atelier/runs/why-popcorn-pops/rough/2a2ead48e853/evidence-review/strip-foam.png",
+   "/home/user/motif/atelier/runs/why-popcorn-pops/rough/2a2ead48e853/evidence-review/strip-leg.png",
+   "/home/user/motif/atelier/runs/why-popcorn-pops/rough/2a2ead48e853/evidence-review/strip-jump.png",
+   "/home/user/motif/atelier/runs/why-popcorn-pops/rough/2a2ead48e853/evidence-review/strip-replay_pop.png",
+   "/home/user/motif/atelier/runs/why-popcorn-pops/rough/2a2ead48e853/evidence-review/strip-kernel_lands.png",
+   "/home/user/motif/atelier/runs/why-popcorn-pops/rough/2a2ead48e853/evidence-review/phone-f00053.png",
+   "/home/user/motif/atelier/runs/why-popcorn-pops/rough/2a2ead48e853/evidence-review/phone-f00191.png",
+   "/home/user/motif/atelier/runs/why-popcorn-pops/rough/2a2ead48e853/evidence-review/phone-f00355.png",
+   "/home/user/motif/atelier/runs/why-popcorn-pops/rough/2a2ead48e853/evidence-review/phone-f00490.png",
+   "/home/user/motif/atelier/runs/why-popcorn-pops/rough/2a2ead48e853/evidence-review/phone-f00673.png",
+   "/home/user/motif/atelier/runs/why-popcorn-pops/rough/2a2ead48e853/evidence-review/phone-f00849.png",
+   "/home/user/motif/atelier/runs/why-popcorn-pops/rough/2a2ead48e853/evidence-review/phone-f00961.png"
+  ],
+  "tools": "Read tool on every listed PNG; PIL crops/2-4x enlargements of the contact-sheet rows, the leak, leg and kernel_lands strips, and replay frame f840 (written to the scratchpad only)"
+ },
+ "dimensions": {
+  "opening_promise": {
+   "status": "PASS",
+   "note": "From 0.0s to 3.0s the camera sinks through a cross-section bowl of popcorn to two hard kernels at the bottom while the voice asks 'Why do a few kernels in every bowl never pop?' (0.5-3.03s): a familiar, specific question with the object on screen.",
+   "evidence": "ordered-frames 0.00s-3.00s (f0-f90); phone-f00053 (1.77s) shows the two kernels clearly at the bowl bottom. The kernels are small (about 25-30 px each at phone width) and never highlighted, so the narration carries the question more than the picture does."
+  },
+  "progression": {
+   "status": "PASS",
+   "note": "Each beat changes the same pair of kernels: whole (4.0s), see-through with water drops and 'WATER 14%' (6.5s), drops turn to steam bubbles that crowd (9.9-14.0s), the right one cracks and leaks and browns (14.8-18.0s), the left one bursts, foams and jumps (21.0-26.5s), then the replay ties 'pop = steam rushing out' to the answer 'their steam got out'.",
+   "evidence": "ordered-frames rows 2-6; strip-boil f289-f305 (drops become white bubbles); strip-pressure f352-f368 (bubbles crowded in both); strip-leak f444-f456; strip-burst f622-f638; strip-jump f727-f743. The sound replay (27.5-29.5s) is the only aside, and the narration makes it set up the answer instead of reading as a bonus fact."
+  },
+  "payoff": {
+   "status": "FAIL",
+   "note": "The brown cracked kernel is easy to follow as it falls through the heap (31.0-32.0s). But at 32.2s it lands almost exactly on top of the right-hand kernel already at the bottom, and through to 34.0s the final held image shows one muddy dark-red blob with a doubled outline that dips through the bowl wall, not a cracked kernel lying among the unpopped ones.",
+   "evidence": "strip-kernel_lands f958-f964 (brown kernel with crack mark falling) then f966-f974 (it fuses onto the red/orange kernel, its outline offset by a few px and spilling below the pink rim); ordered-frames 32.50s-34.00s; phone-f00961 (32.03s) shows the kernel mid-fall and identifiable. Its brown colour and crack mark, the details that link it to the leak beat, are not readable once it is at rest."
+  },
+  "cause_before_effect": {
+   "status": "PASS",
+   "note": "Every key cause shows before its effect: flame (9.3s) before boiling (9.9s); the crack mark on the right hull (f444, 14.8s) before steam leaves it (f454+); '180 °C' (20.4s) before the burst (21.0s); the starch leg on the pan (f721-f733) before the jump (f735-f743); and in the replay the hull opens (f852) before the steam curl (f854) and sound rings (f858).",
+   "evidence": "strip-boil, strip-leak (crack at f444, steam rings from f454), ordered-frames 20.50s/21.00s, strip-leg, strip-jump, strip-replay_pop. One cause is left off screen and implied: how the leaky kernel gets from the pan into the bowl (it simply drops in after the flake at 31.0s). That is acceptable. The crack is hidden until 14.8s on purpose, and the narration's 'But...' presents it as a reveal."
+  },
+  "clarity_normal_speed": {
+   "status": "PASS",
+   "note": "The main chain (water, then steam, then one leaks while one bursts, then the leaky one ends at the bottom) comes as distinct 3-5 s beats, each with one big visual change and a matching line, so a first-time viewer can follow it. The finer points are thin at normal speed: the starch 'leg' is a tiny stem half-hidden by the petals (24.0-24.5s), and in the replay only about 7 frames (0.23s) separate the hull opening from the sound rings.",
+   "evidence": "phone-f00355 (11.83s) both kernels visibly full of steam; phone-f00490 (16.33s) the steam plume leaving the right kernel is obvious even though the crack is a few pixels; phone-f00673 (22.43s) foam against the browned kernel; strip-leg f721-f737 (leg about 10 px at phone scale); strip-replay_pop f850-f858."
+  },
+  "picture_sound_link": {
+   "status": "PASS",
+   "note": "Each narration line lands on its picture: 'fourteen percent' with the WATER 14% label (6.3s), 'Heat turns that water to steam' with the flame and boiling (9.3-10.6s), 'one tiny crack...leaks' with the crack and plume (14.7s / 14.8s), 'hull bursts' at the burst (20.98s / 21.0s), 'puffs into foam' with the foam (21.3s / 21.4s), 'kicks the pan...jumps' with leg and jump (24.3-24.5s), 'And the pop?' with the REPLAY card (27.0s), and 'Their steam got out' with the kernel reaching the bottom (32.2s).",
+   "evidence": "Narration table compared with ordered-frames, strips and the cue table. Small slips: the '180 °C' label appears at 20.4s, about 0.5-1.5 s after 'a hundred and eighty' is spoken (from 18.4s). The replay's 'crack' cue (f838, 27.93s) comes about 0.43 s before any visible split (whole kernel at f840 and f850, split at f852). I did not hear the audio, so this judges only timing and meaning, not the mix."
+  }
+ },
+ "verdict": "REPAIR",
+ "critical_issues": [
+  {
+   "dimension": "payoff",
+   "where": "answer shot, 32.2s-34.2s (f966-f1026), bottom of the bowl",
+   "problem": "The cracked kernel, which answers the opening question, lands almost on top of one of the two kernels already at the bottom and merges with it. The last held frame shows a muddy doubled-outline blob breaching the bowl wall instead of the brown, cracked kernel lying among the unpopped ones, so the final image looks like a glitch and loses the kernel's identity at the moment the narration says 'Their steam got out.'",
+   "smallest_fix": "Move the landing spot so the cracked kernel comes to rest beside the existing kernels, not on them, and fully inside the bowl wall. Keep its brown hull and crack mark facing the camera and unblended, and hold it there for the final 1.5-2 s."
+  }
+ ],
+ "suggestions": [
+  "Make the replay earn its place: slow the hull-split-to-ring interval well beyond the current 7 frames (f851 to f858), or briefly hold the open hull with no rings, so the 'steam, not the shell' point is visible and not only spoken.",
+  "Check the replay's 'crack' SFX at f838: by the cue table it sounds about 0.43 s before any visible split, and an audible crack at the hull break goes against the intended 'hull cracks silently' beat. Either drop or soften it, or move it to the split frame (about f851).",
+  "Bring the '180 °C' label in while 'a hundred and eighty degrees' is spoken (from about 18.9s), not at 20.4s.",
+  "Make the starch 'leg' readable: draw it clear of the hull petals and larger than the current stem (about 10 px at phone width) during 24.0-24.5s, since the narration names it.",
+  "Consider drawing the bowl-bottom kernels inside the bowl, not overlapping the pink wall band, where the multiply blend turns their lower halves red; this would also tidy the final image."
+ ],
+ "sampling_limits": "Ordered decoded frames only: a contact sheet every 0.5 s (f0-f1020), ten dense strips (every 2nd frame, -8 to +8) around cutaway, boil, pressure, leak, burst, foam, leg, jump, replay_pop and kernel_lands, and seven full 360x640 phone frames. No moving playback and no listening. I could not judge the sealed hull's bulge or tremble, the hull glint, whether the burst and replay feel slow-motion, camera-move smoothness, or the volume and character of any SFX or the voice. Word-level timing inside each narration line is estimated from the line start and end times in the request. Frames between samples (for example f826-f847 in the replay, f900-f957 in the answer shot) were not seen.",
+ "summary": "The story is clear and well built: the same two kernels change in every beat, causes come before effects, and the narration and picture line up closely from the bowl question through water, steam, the leak, the burst and the replay. It fails on the payoff image: the cracked kernel that answers the question lands on top of an existing kernel and fuses into a muddy blob breaching the bowl wall, so the final held frame loses the kernel's identity. Repairing the landing position is a small fix. Secondary weaknesses: the replay adds little beyond the first burst, the starch leg is tiny, and the 180 °C label comes late."
+}

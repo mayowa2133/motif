@@ -1,0 +1,80 @@
+{
+ "request_sha256": "3ff038eaab81d4b4a14fa87661139750f5a911ee851f042f8ca4ae712de4fad7",
+ "role": "factual",
+ "reviewer": {
+  "kind": "model",
+  "id": "Claude subagent (fresh context, same model family as the builder)",
+  "independence": "separate-context-same-family",
+  "playback": "ordered-frames",
+  "inputs_viewed": [
+   "atelier/projects/why-popcorn-pops/reviews/factual-request.md (intent, claim ledger, dramatization list, narration timing, audio cue table)",
+   "atelier/contracts/review.schema.json",
+   "evidence-review/ordered-frames.png",
+   "evidence-review/strip-cutaway.png",
+   "evidence-review/strip-boil.png",
+   "evidence-review/strip-pressure.png",
+   "evidence-review/strip-leak.png",
+   "evidence-review/strip-burst.png",
+   "evidence-review/strip-foam.png",
+   "evidence-review/strip-leg.png",
+   "evidence-review/strip-jump.png",
+   "evidence-review/strip-replay_pop.png",
+   "evidence-review/strip-kernel_lands.png",
+   "evidence-review/phone-f00053.png",
+   "evidence-review/phone-f00191.png",
+   "evidence-review/phone-f00355.png",
+   "evidence-review/phone-f00490.png",
+   "evidence-review/phone-f00673.png",
+   "evidence-review/phone-f00849.png",
+   "evidence-review/phone-f00961.png",
+   "web search results for Hoseney et al. 1983, the Purdue 2020 article, and Virot & Ponomarenko 2015 (source pages themselves could not be fetched)"
+  ],
+  "tools": "web search (results only where hosts were blocked); direct fetches of ag.purdue.edu, hal-polytechnique.archives-ouvertes.fr and knowledgecenter.cimmyt.org all failed DNS under the session network policy"
+ },
+ "dimensions": {
+  "claims_match_sources": {
+   "status": "PASS",
+   "note": "All seven ledger claims are supported by what web-search results report of their cited sources, but no source page could be opened, so this is second-hand verification: the 14% (WATER 14%, 6.3-8.5 s) and 180 °C (from 20.5 s) figures, the pressure vessel, superheated-water expansion, starch leg and the hedged pop-is-steam claim all match the relayed abstracts and article text.",
+   "evidence": "pressure-vessel and superheated-expansion: search relay of the Hoseney, Zeleznak & Abdelrahman 1983 catalogue abstract gives 'During the popping of popcorn the pericarp acts as a pressure vessel' and 'most of the water in the kernel is superheated at the moment of popping and provides the driving force for expanding the kernel once the pericarp ruptures' (also: popping at about 177 °C, about 135 psi inside). water-content: search relay of the Purdue Feb 2020 article quotes Hamaker, 'about 13 to 14.5 percent of its total weight' (it is the moisture popcorn needs to pop well; other outlets give 14.5-15%, so 'about fourteen percent' is fair). crack-leaks: the same relay gives 4-47 percent unpopped depending on variety (from Hamaker's study of 14 varieties) and kernels with 'cuts or weaknesses in the outside layer, which lets moisture escape during heating'; the meaning matches, but the ledger excerpt's exact wording ('cracks or weak spots') could not be confirmed and may be paraphrased. critical-temperature, starch-leg, pop-is-steam: search relay of the Virot & Ponomarenko 2015 abstract (HAL record) matches all three excerpts word for word, including 'we propose', which the narration keeps as 'Researchers think'. Not verified first-hand: no source page loaded (DNS failures above); royalsocietypublishing.org was not retried."
+  },
+  "narration_matches_ledger": {
+   "status": "FAIL",
+   "note": "Nine of ten spoken lines and the WATER 14% and 180 °C readouts map to ledger entries, but the 'heat' line (9.4-11.06 s, 'Heat turns that water to steam') and the on-screen '100 °C' readout (appears about 10.5 s, cue 'hundred' at f318, stays on the thermometer to about 29.5 s) have no ledger entry; separately, the cue table puts a 'crack' sound at f838 (27.93 s) in the replay that is meant to show the hull cracking silently (not listened to).",
+   "evidence": "Mapping: q (0.5 s) premise question, consistent with crack-leaks' 4-47% failure range; inside (3.9 s) -> water-content + pressure-vessel, on-screen 'WATER 14%' (ordered frames 6.5-8.5 s, phone-f00191); heat (9.4 s) -> no entry (pressure-vessel's excerpt mentions neither steam nor 100 °C); trapped (11.4 s) -> pressure-vessel; crack (14.7 s) -> crack-leaks, crack visible from f444 and plume 15.5-18.0 s (strip-leak, phone-f00490); burst (18.4 s) -> critical-temperature, '180 °C' label from 20.5 s and split at f630 (strip-burst, phone-f00673); foam (21.3 s) -> superheated-expansion (strip-foam); leg (23.5 s) -> starch-leg, leg compressed on the pan f721-735 then jump f737-743 (strip-leg, strip-jump); pop (26.8 s) -> pop-is-steam, hedged, 'REPLAY' label, rings start with the steam curl at f856-858 (strip-replay_pop, phone-f00849); answer (30.2 s) -> crack-leaks, cracked brown kernel lands at the bottom f958-966 (strip-kernel_lands, phone-f00961). Audio cue table: 'replay_crack' crack at f838 and 'replay_pop' pop at f856; the visible split in strip-replay_pop is around f852, so the crack cue also plays about 0.47 s before any visible crack."
+  },
+  "dramatization_labeled": {
+   "status": "FAIL",
+   "note": "The four listed dramatizations match the frames (cutaway scale, drops and bubbles, slow motion with a 'REPLAY' label at 27.5-29.5 s, one visible crack), but the steam shot shows the water boiling into bubbles as the thermometer reaches 100 °C inside a sealed kernel (strip-boil f297-305, then bubbles crowd to 14.0 s), while the film's own cited source says most of the water is still superheated liquid when the kernel pops; that simplification is not in the dramatization list.",
+   "evidence": "strip-boil f289-305: blue drops turn into white bubbles in both kernels from about f297 (9.9 s); ordered frames 10.5-11.0 s: the '100 °C' tick appears with the bubbles already large; strip-pressure f352-368: bubbles crowd under a fixed 100 °C label. Hoseney 1983 abstract (search relay): popping at about 177 °C and 135 psi, and 'most of the water in the kernel is superheated at the moment of popping'. In a sealed hull the rising pressure raises the boiling point, so the water does not simply boil at 100 °C; the bubbles really stand for rising vapour pressure. Dramatization item 2 covers drawing water as drops and steam as bubbles, not this timing. Item 4 adequately labels the closing generalisation 'Their steam got out' (30.2-33.3 s): moisture escaping through a cut or weak hull is the leading explanation in the cited Purdue work. Item 3 covers the slowed burst and jump (21.0-27.0 s) and the replay separation, and the on-screen 'REPLAY' label helps."
+  }
+ },
+ "verdict": "REPAIR",
+ "critical_issues": [
+  {
+   "dimension": "narration_matches_ledger",
+   "where": "line 'heat' 9.4-11.06 s; on-screen '100 °C' readout from about 10.5 s (cue 'hundred', f318) through about 29.5 s",
+   "problem": "The step where water turns to steam and the 100 °C readout are consequential spoken and shown claims with no ledger entry. The other two readouts (14%, 180 °C) are ledgered; this one is not, and the pressure-vessel excerpt says nothing about steam or 100 °C.",
+   "smallest_fix": "Ledger edit only, no re-render: add a claim such as 'Heating turns some of the kernel's water to vapour; trapped by the pericarp, the pressure rises to about 135 psi by popping at about 177 °C', sourced to the Hoseney 1983 abstract (or the 'pressure vessel scenario' in Virot & Ponomarenko 2015), with spoken_as 'Heat turns that water to steam'. Record the 100 °C readout as water's boiling point at normal atmospheric pressure, with a standard reference."
+  },
+  {
+   "dimension": "dramatization_labeled",
+   "where": "steam shot 9.9-14.3 s (strip-boil f289-305, strip-pressure f352-368, phone-f00355)",
+   "problem": "Drops boil into steam bubbles at the 100 °C mark inside a sealed kernel, and the line says heat turns 'that water' to steam. Inside a sealed hull the rising pressure raises the boiling point, and the cited Hoseney abstract says most of the water is superheated liquid at the moment of popping, flashing to steam only once the pericarp ruptures. Nothing in the dramatization list labels this, so a viewer learns that the kernel's water all boils at 100 °C.",
+   "smallest_fix": "Add a dramatization line: 'Inside the sealed hull the water does not simply boil at 100 °C: pressure keeps most of it liquid (superheated) until the hull breaks. The bubbles stand for rising vapour pressure, and 100 °C is water's open-air boiling point.' Removing the 100 °C tick label instead would also clear it."
+  },
+  {
+   "dimension": "narration_matches_ledger",
+   "where": "replay: cue 'replay_crack' (crack sfx) at f838 / 27.93 s, about 0.47 s before the visible split at about f852; pop cue at f856 / 28.53 s",
+   "problem": "The request's cue table schedules a 'crack' sound effect at the replay's hull crack. The replay exists to show the hull cracking silently and the sound coming from the steam jet (intent shot 'sound'; rings start with the steam curl at f856-858). An audible crack there presents the fracture as a source of sound, which works against the pop-is-steam claim (Virot & Ponomarenko propose that the pop is caused by the release of water vapour). This comes from reading the cue table; the mix was not listened to.",
+   "smallest_fix": "Remove or mute the replay_crack sfx at f838 so the replay's first sound is the pop at f856 with the steam jet. Confirm by listening."
+  }
+ ],
+ "suggestions": [
+  "Consider also softening or dropping the first-burst 'crack' cue at f630 (pop follows at f634), so nothing in the film suggests the hull fracture is the audible part.",
+  "Re-check the ledger excerpts against the primary pages once ag.purdue.edu, hal-polytechnique.archives-ouvertes.fr and knowledgecenter.cimmyt.org are reachable. The crack-leaks excerpt in particular may be a paraphrase (search relays 'cuts or weaknesses in the outside layer, which lets moisture escape during heating').",
+  "The water-content source gives 13-14.5% as the moisture popcorn needs to pop well. The ledger statement says kernels 'hold' it; 'well-conditioned popcorn holds about 13 to 14.5 percent' would track the source more closely. The narration does not need to change.",
+  "Optional precision: 'Their steam got out' (30.2 s) closes as a universal answer. It is defensible with dramatization item 4, but 'Most of them? Their steam got out.' would match the multi-cause reality."
+ ],
+ "sampling_limits": "Ordered decoded frames every 15 frames (0.5 s), dense strips (every 2nd frame, +/-8) around 11 moments, and 7 phone-size stills; no moving playback and no listening, so on-screen text was read from stills and all audio judgements (including the replay crack cue) come from the request's cue table, not from the mix. Sources were verified only through web-search result summaries: direct fetches of ag.purdue.edu, hal-polytechnique.archives-ouvertes.fr and knowledgecenter.cimmyt.org failed DNS under the session network policy, and royalsocietypublishing.org (per the brief) was not retried, so verbatim excerpt wording is unconfirmed. Readouts briefly visible between samples could have been missed.",
+ "summary": "Factually the film is close: every ledger claim is supported by its cited source as far as search results show (14% water, pericarp as pressure vessel, about 180 °C, superheated water expanding the starch, the starch leg, and the hedged pop-is-steam proposal), and the closing answer and replay are labelled as simplifications. Three repairs block release. The 'Heat turns that water to steam' line and the on-screen 100 °C readout need a ledger entry. Showing the water boiling at 100 °C inside a sealed kernel conflicts with the cited superheated-water finding and needs a dramatization line. The cue table puts a crack sound on the replay's 'silent' hull crack, which, if audible, undercuts the film's surprising fact. The first two are ledger-only edits; the third is one sfx removal."
+}

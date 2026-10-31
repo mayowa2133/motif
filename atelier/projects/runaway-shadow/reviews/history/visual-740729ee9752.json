@@ -1,0 +1,116 @@
+{
+ "request_sha256": "740729ee9752d72d492cd052ac5092ec1e1ace1c334e36b0a90c29a70e580e65",
+ "role": "visual",
+ "reviewer": {
+  "kind": "model",
+  "id": "Claude subagent (fresh context, same model family as the builder)",
+  "independence": "separate-context-same-family",
+  "playback": "ordered-frames",
+  "inputs_viewed": [
+   "/home/user/motif/atelier/runs/runaway-shadow/rough/21d19bed6b6b/evidence-review/ordered-frames.png",
+   "/home/user/motif/atelier/runs/runaway-shadow/rough/21d19bed6b6b/evidence-review/strip-double_take.png",
+   "/home/user/motif/atelier/runs/runaway-shadow/rough/21d19bed6b6b/evidence-review/strip-detach.png",
+   "/home/user/motif/atelier/runs/runaway-shadow/rough/21d19bed6b6b/evidence-review/strip-stand_up.png",
+   "/home/user/motif/atelier/runs/runaway-shadow/rough/21d19bed6b6b/evidence-review/strip-raspberry.png",
+   "/home/user/motif/atelier/runs/runaway-shadow/rough/21d19bed6b6b/evidence-review/strip-run_off.png",
+   "/home/user/motif/atelier/runs/runaway-shadow/rough/21d19bed6b6b/evidence-review/strip-melt.png",
+   "/home/user/motif/atelier/runs/runaway-shadow/rough/21d19bed6b6b/evidence-review/strip-faceplant.png",
+   "/home/user/motif/atelier/runs/runaway-shadow/rough/21d19bed6b6b/evidence-review/strip-peek.png",
+   "/home/user/motif/atelier/runs/runaway-shadow/rough/21d19bed6b6b/evidence-review/strip-creep.png",
+   "/home/user/motif/atelier/runs/runaway-shadow/rough/21d19bed6b6b/evidence-review/strip-stomp.png",
+   "/home/user/motif/atelier/runs/runaway-shadow/rough/21d19bed6b6b/evidence-review/strip-wink.png",
+   "/home/user/motif/atelier/runs/runaway-shadow/rough/21d19bed6b6b/evidence-review/phone-f00048.png",
+   "/home/user/motif/atelier/runs/runaway-shadow/rough/21d19bed6b6b/evidence-review/phone-f00183.png",
+   "/home/user/motif/atelier/runs/runaway-shadow/rough/21d19bed6b6b/evidence-review/phone-f00333.png",
+   "/home/user/motif/atelier/runs/runaway-shadow/rough/21d19bed6b6b/evidence-review/phone-f00465.png",
+   "/home/user/motif/atelier/runs/runaway-shadow/rough/21d19bed6b6b/evidence-review/phone-f00633.png",
+   "/home/user/motif/atelier/runs/runaway-shadow/rough/21d19bed6b6b/evidence-review/phone-f00793.png"
+  ],
+  "tools": "Read tool on every evidence PNG, plus PIL crops and 2x upscales of the same evidence images (scratchpad only) to inspect small details; no other repository files opened"
+ },
+ "dimensions": {
+  "focal_hierarchy": {
+   "status": "FAIL",
+   "note": "Sunset, lag, the escape stand-up/raspberry, the lure and nightfall each have one clear focus. The middle loses it. At 11.6-12.0 s the twin's sprint passes right across Pim, and its hat covers Pim's face (f351-355). From 13.5 to 14.2 s the two characters merge into one dark-on-cream knot in front of the trunk: the twin's arm is across Pim's face and the hats interlock (f415-421), so the melt, the point of the beat, happens at the edge of the knot. At the peek (16.7-17.9 s) the punchline, eyes of about 10 px giggling in the shade, is the smallest and lowest-contrast thing in a cluster led by the saturated red hat and Pim's upside-down face.",
+   "evidence": "strip-run_off f349-355; ordered 13.50 s/14.00 s; strip-melt f415-423; strip-peek f502-510; ordered 16.50-17.50 s"
+  },
+  "identity_continuity": {
+   "status": "PASS",
+   "note": "Pim keeps the same cream egg body, red cap with banded brim and white pompom, white ball hands and plum feet throughout, including the dimmed night grade. The twin reads as a solid dark copy (egg, cap, pompom, white eyes) and keeps roughly Pim's scale after an overshoot stretch at f308-310. The ground shadow's material (translucent olive with grass showing through) is the same before the escape and after it is pinned (0-9.5 s vs 23.5-25.0 s). One continuity gap between samples: the cap is planted in the grass at 19.50 s and back on Pim at 20.00 s, with no grab visible.",
+   "evidence": "ordered 0.50-9.50 s, 23.50-25.00 s, 26.00-28.00 s; strip-stand_up f308-310; strip-raspberry f317-333; ordered 19.50 s->20.00 s"
+  },
+  "composition": {
+   "status": "FAIL",
+   "note": "The vertical layering of sky, character at mid-frame and shadow play in the lower half is deliberate and works well at 1.6 s, 6.1 s and 21.1 s. The whole chase-failure stretch is jammed against the left edge, though. From 15.0 to 19.5 s the dive, the headstand, the cap and the giggling eyes sit in the left third or so of the frame, with Pim's body and hand within about 10 px of the edge at 15.5 s and two thirds of the frame left as empty grass. The eyes in the shade at the peek (17.0 s) and lure (20.5-21.5 s) sit about 72-79% down at the far left, which is where platform captions overlay on Reels and TikTok.",
+   "evidence": "phone-f00048, phone-f00183, phone-f00633 (good); phone-f00465; ordered 15.00-19.50 s; strip-peek f502-510; ordered 20.50-21.50 s"
+  },
+  "readable_action": {
+   "status": "FAIL",
+   "note": "Several actions read well: the shadow's held flourish and its innocent snap at the double-take (f166-176), the arm test (7.0-8.0 s), the shadow sliding off Pim's feet (f288-296), the twin popping up with eyes and a raspberry (f304-333), the dive and crash (f460-468), the shadow re-attaching at the stomp and the wink. The chase that should show force failing does not read. The twin leans left, sprints right straight past Pim and out of frame right (f347-360), then is back at the tree beside Pim at 12.50 s. The chase covers no ground: Pim stands next to the twin from 12.5 to 14.0 s, about 0.7 s from chase_start to melt. The melt itself is a 4-frame flat sliver (f427-431). The cap-net never works as a net: it is held up by the pompom at 15.0 s and then planted in the grass.",
+   "evidence": "strip-run_off f345-355; ordered 12.00 s, 12.50 s, 13.00 s, 13.50 s, 14.00 s, 14.50 s; strip-melt f423-431; ordered 15.00 s; strip-faceplant f460-468"
+  },
+  "motion_performance": {
+   "status": "FAIL",
+   "note": "There is real acting: a two-frame snap into a held double-take (f174-176), an opposite-direction lean before the run (f345-347), a dizzy hold (16.0-17.5 s) and a smug dance (21.0-22.5 s). Timing fails at the two moments that carry the comedy. The stomp, the payoff contact, is a hop of about 18 px at phone scale with almost no wind-up, no squash on impact and a tiny puff, and the shadow snaps to Pim's feet within 2 frames (f684-692). The final wink (f835) holds only about 20 frames (0.67 s) before the film ends at f855. The chase also gets no time to build (about 0.7 s).",
+   "evidence": "strip-double_take f174-182; strip-run_off f345-347; strip-stomp f684-700; strip-wink f827-843; ordered 28.00 s; cue table chase_start f403 / melt f423"
+  },
+  "style_coherence": {
+   "status": "PASS",
+   "note": "There is one consistent language throughout: flat solid shapes with thin plum outlines on Pim, the tree and the hills, a violet-to-gold sunset sky, a stylised tufted meadow, translucent cast shadows, a solid near-black twin, and a single coherent night grade that dims every element together (dimmed body, glowing eyes). Small effects (dust puff, ripple ring, dizzy spirals) are drawn in the same flat style.",
+   "evidence": "phone-f00048, phone-f00333, phone-f00633, phone-f00793; ordered 14.50 s (ripple), 16.50 s (spirals), 25.00-26.00 s (grade)"
+  },
+  "phone_readability": {
+   "status": "FAIL",
+   "note": "Most of the meaning survives at 360x640 thanks to bold silhouettes, the solid twin, white eyes and a clear tongue (phone-f00183, f00333, f00633). Three load-bearing details are below phone scale. The melt is a sliver about 54x5 px for a few frames. The stomp's impact puff is a speck (f692). The closing wink is made of eyes about 12 px across, half the size of Pim's, and it is on screen for under a second, so the film's last image is the easiest thing to miss.",
+   "evidence": "strip-melt f427-431; strip-stomp f692; strip-wink f827-843; phone-f00633 (shade eyes ~14 px, readable); phone-f00793"
+  },
+  "technical_defects": {
+   "status": "PASS",
+   "note": "No tearing, blocking, broken frames, banding, unintended clipping through the frame edge or draw-order flips are visible in any sampled frame. Overlaps keep consistent layering (twin in front, f415-421). The one odd-looking sample, the translucent squashed blob at f304, is an in-between of the stand-up rather than a glitch. Popping between the 0.5 s samples cannot be ruled out (for example Pim righting itself between 17.5 and 18.0 s, and the cap's return between 19.5 and 20.0 s).",
+   "evidence": "all ordered frames; strip-stand_up f302-308; strip-melt f415-421; phone frames f00048-f00793"
+  }
+ },
+ "verdict": "REPAIR",
+ "critical_issues": [
+  {
+   "dimension": "readable_action",
+   "where": "run_off -> chase -> melt, 11.6-14.5 s (f347-435)",
+   "problem": "Force failing is not shown. The twin sprints right, straight past Pim, exits frame right, then is back at the tree beside Pim by 12.5 s. Pim never visibly chases across open ground (about 0.7 s between chase_start and melt while the two stand together). The melt into the tree's shade is a 4-frame sliver at the edge of an overlapping knot of both characters, so a first-time viewer sees the twin simply vanish.",
+   "smallest_fix": "Send the twin left directly toward the tree, with no exit to the right. Give Pim 15-20 frames of visible running across open grass with clear space between the two. Hold the melt for 10-12 frames as a readable puddle-slide into the shade, ending on the ripple."
+  },
+  {
+   "dimension": "focal_hierarchy",
+   "where": "chase scuffle 13.5-14.2 s (f405-425) and peek/giggle 16.7-17.9 s (f502-536)",
+   "problem": "In the scuffle the twin's arm crosses Pim's face and the two caps interlock, so the silhouettes merge into one knot. At the peek the giggling eyes, about 10 px and low contrast on the olive shade, carry the joke, but the eye goes first to the saturated red cap planted right beside them and to Pim's upside-down face.",
+   "smallest_fix": "Keep at least a body-width gap between the two characters until the twin dives. At the peek, move the planted cap away from the eyes (or behind Pim), and enlarge the giggling eyes about 1.5x with a small bounce on each giggle."
+  },
+  {
+   "dimension": "composition",
+   "where": "faceplant/peek/idea 15.0-19.5 s; shade eyes in lure 20.5-21.5 s",
+   "problem": "The film's main failure gag is staged in the left third or so of the frame, against the edge (Pim's body and hand within about 10 px of the left edge at 15.5 s), leaving two thirds of the frame as empty grass. The shadow's eyes in the tree shade sit about 72-79% down at the far left, inside the bottom-left caption-overlay zone of phone platforms.",
+   "smallest_fix": "Reframe these shots, either panning the camera about 20% left or moving the tree right, so the tree's shade, the landing and the eyes fall at centre to centre-left and above the bottom quarter of the frame."
+  },
+  {
+   "dimension": "motion_performance",
+   "where": "stomp, 22.8-23.2 s (f684-700)",
+   "problem": "The payoff contact is undersold. Pim rises only about 18 px (phone scale) with no real wind-up, lands with no squash and only a tiny puff, and the shadow is already re-attached and sulking 2 frames later. The viewer may read it as the shadow drifting back rather than being pinned by a stomp.",
+   "smallest_fix": "Add a 6-8 frame wind-up that lifts Pim about 40 px or more with a look down. Squash Pim on contact and add a bigger impact puff or star at the feet. Hold the pinned moment for 8-10 frames, with the shadow's eyes popping wide before they close to sulk lines."
+  },
+  {
+   "dimension": "phone_readability",
+   "where": "eyes_open / wink, 27.2-28.5 s (f816-855)",
+   "problem": "The button is the film's last image, but the shadow's eyes are about 12 px each at phone size (half Pim's eye size) and the wink at f835 holds only about 20 frames (0.67 s) before the film ends, so it is easy to miss.",
+   "smallest_fix": "Scale the night eyes up about 1.5-2x, place them right at Pim's feet, and hold the wink for at least 1.2 s by extending the ending by about 20-30 frames."
+  }
+ ],
+ "suggestions": [
+  "The stand-up (f302-308) replaces the ground shadow with a crouched lump in one step. A 4-6 frame visible hinge from the feet would sell 'peels itself off the ground'.",
+  "From 20.5 to 21.5 s the copying shadow's silhouette merges with the tree shade, so its copied dance reads only as bumps. Let it separate from the shade before it starts mirroring Pim, and match Pim's arm poses exactly so the copying is unmistakable before 23.5 s.",
+  "The crash reads as a headstand rather than face-first (16.0-17.5 s). That is acceptable as a gag, but it differs from the stated intent.",
+  "Show Pim grabbing the cap back (19.5 s -> 20.0 s), and smooth the 20.0 -> 20.5 s reframe, where the camera pushes in while Pim also relocates from the foreground shade to beside the tree.",
+  "The twin's pompom sits on Pim's raised hand at f327-333 (a tangent). Shift one of them.",
+  "At the end, aim Pim's pupils at the eyes in the grass (f816-843) so the 'looks down worried' beat points the viewer at the button."
+ ],
+ "sampling_limits": "Ordered decoded frames every 15 frames (0.5 s), dense strips at every 2nd frame (+-8 frames) around 11 moments, and six full 360x640 phone frames, all decoded from the encoded preview; no moving playback and no audio. I cannot judge motion smoothness, spacing or easing between samples, or whether the opening shadow is visibly 'one beat late' (0-3.2 s, no dense strip). I also cannot tell whether the reframes at 3.5->4.0 s and 20.0->20.5 s are cuts or camera moves, what path the twin takes between 12.0 and 12.5 s, how Pim rights itself (17.5->18.0 s), how the cap returns (19.5->20.0 s), whether there is popping between samples, or how well sound syncs to the cue table. Pixel sizes at phone scale are estimated from the phone frames and scaled strip thumbnails, and the caption-overlay risk is inferred from typical platform layouts, not tested.",
+ "summary": "A charming, coherent rough. The design, style and night grade are solid. The opening, lag, double-take, the escape into a raspberrying dark twin, the lure dance and the nightfall all read on a phone. Its comedy breaks in the middle and at the payoff. The run-off/chase/melt has confused screen direction, no chase distance, overlapping characters and a 4-frame melt. The faceplant and giggle are crammed against the left edge, with the punchline eyes outcompeted by the red cap. The stomp payoff has almost no wind-up or impact, and the final wink is tiny and held only 0.67 s before the end. Verdict: REPAIR; the fixes are restaging and retiming, not a concept change."
+}

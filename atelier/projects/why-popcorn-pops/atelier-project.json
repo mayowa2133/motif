@@ -1,0 +1,667 @@
+{
+  "schema": "motif-atelier-project/1",
+  "mode": "motif-atelier",
+  "slug": "why-popcorn-pops",
+  "project_id": "79c327e8974747ccacf6761b737a19ad",
+  "created": "2026-10-31T06:42:26+00:00",
+  "budgets": {
+    "concepts": 3,
+    "creative_repairs_per_approach": 2,
+    "delivery_renders": 3,
+    "render_minutes": 60
+  },
+  "stages": {
+    "intake": {
+      "status": "DONE",
+      "inputs": {
+        "brief.json": "b86b896694c91fe2653bbcf5129e14a56695dc88342905c6690df0ef4c0c6e66"
+      },
+      "at": "2026-10-31T06:42:26+00:00"
+    },
+    "concepts": {
+      "status": "DONE",
+      "inputs": {
+        "brief.json": "b86b896694c91fe2653bbcf5129e14a56695dc88342905c6690df0ef4c0c6e66",
+        "concepts.json": "39decf2869ce03552e35a2fc16e5c4ef3050039cfae2c12fde2962f2640a277c"
+      },
+      "at": "2026-10-31T06:51:00+00:00",
+      "chosen": "two-kernels",
+      "agent_assisted": true
+    },
+    "direction": {
+      "status": "DONE",
+      "inputs": {
+        "concepts.json": "39decf2869ce03552e35a2fc16e5c4ef3050039cfae2c12fde2962f2640a277c",
+        "direction.json": "897f1d9cfae45a07c0b61faafd5401200158ad59936fef34122d2a315814e3cb"
+      },
+      "at": "2026-10-31T07:16:18+00:00",
+      "approach_id": "two-kernels-v1",
+      "agent_assisted": true
+    },
+    "proof": {
+      "status": "DONE",
+      "inputs": {
+        "direction.json": "b35dde4e4042eddc7706f0cd88207ee9f74f4f35ee31f43880427aac82818b4b"
+      },
+      "at": "2026-10-31T06:59:01+00:00",
+      "approach_id": "two-kernels-v1",
+      "request_sha256": "a336956d36374c371767cab253986262b7379160f6e577365da82b73dd38927a",
+      "reviewer": {
+        "kind": "builder",
+        "id": "Claude (the builder of this film)",
+        "independence": "builder-self-inspection",
+        "playback": "ordered-frames",
+        "inputs_viewed": [
+          "runs/why-popcorn-pops/proof/59c229c2f5db/evidence-proof/ordered-frames.png",
+          "runs/why-popcorn-pops/proof/59c229c2f5db/evidence-proof/strip-burst.png",
+          "runs/why-popcorn-pops/proof/59c229c2f5db/evidence-proof/strip-foam.png",
+          "runs/why-popcorn-pops/proof/59c229c2f5db/evidence-proof/strip-leg.png",
+          "runs/why-popcorn-pops/proof/59c229c2f5db/evidence-proof/strip-jump.png",
+          "runs/why-popcorn-pops/proof/59c229c2f5db/evidence-proof/phone-f00673.png"
+        ]
+      }
+    },
+    "source": {
+      "status": "DONE",
+      "inputs": {
+        "source": "ebb0af7993defca899627aae3d6639ca53d84a6c2268cf46c728730db431bdb5",
+        "direction.json": "897f1d9cfae45a07c0b61faafd5401200158ad59936fef34122d2a315814e3cb"
+      },
+      "at": "2026-10-31T07:29:35+00:00",
+      "agent_assisted": true
+    },
+    "audio": {
+      "status": "DONE",
+      "inputs": {
+        "sound": "a4222905acf9718c6b62bc446346d5e5dc93f2e80b633a631b0c6dd0d9f46b4c",
+        "key": "000d20657818"
+      },
+      "at": "2026-10-31T07:16:43+00:00",
+      "key": "000d20657818",
+      "master_sha256": "fa87b483d788c466c718f2524877e0fe25695baaf4adb97388fab2adc4e18e0d",
+      "takes_reused": 10,
+      "takes": 10
+    },
+    "rough": {
+      "status": "DONE",
+      "inputs": {
+        "source": "ebb0af7993defca899627aae3d6639ca53d84a6c2268cf46c728730db431bdb5",
+        "audio": "000d20657818"
+      },
+      "at": "2026-10-31T07:30:21+00:00",
+      "key": "5f7080a26f0e",
+      "preview": "runs/why-popcorn-pops/rough/5f7080a26f0e/preview.mp4",
+      "preview_sha256": "a8e9640b5d26ab5f7171d6a2fc1e297fba2042dfdf51d52386814b34a2f28600"
+    }
+  },
+  "failures": {
+    "two-kernels-v1": [
+      {
+        "role": "story",
+        "request_sha256": "2b18576c12f2521da7b9a7ed64e47a48a5fc48722b083c4116510ea71fc3aae9",
+        "source_sha256": "ff95c2483a87d703834ad3c38dbc05c4c11abe5337703f9538258f04e569eb48",
+        "at": "2026-10-31T07:16:39+00:00",
+        "issues": [
+          "payoff: FAIL: The brown cracked kernel is easy to follow as it falls through the heap (31.0-32.0s). But at 32.2s it lands almost exactly on top of the right-hand kernel already at the bottom, and through to 34.0s the final held image shows one muddy dark-red blob with a doubled outline that dips through the bowl wall, not a cracked kernel lying among the unpopped ones.",
+          "critical: answer shot, 32.2s-34.2s (f966-f1026), bottom of the bowl: The cracked kernel, which answers the opening question, lands almost on top of one of the two kernels already at the bottom and merges with it. The last held frame shows a muddy doubled-outline blob breaching the bowl wall instead of the brown, cracked kernel lying among the unpopped ones, so the final image looks like a glitch and loses the kernel's identity at the moment the narration says 'Their steam got out.'"
+        ]
+      },
+      {
+        "role": "visual",
+        "request_sha256": "2644d565acc7185e480a2423b1ef7683317706c817385cfc9f7c0a6a0395547b",
+        "source_sha256": "ff95c2483a87d703834ad3c38dbc05c4c11abe5337703f9538258f04e569eb48",
+        "at": "2026-10-31T07:16:39+00:00",
+        "issues": [
+          "identity_continuity: FAIL: At f966 (32.2 s) the falling brown cracked kernel lands exactly on top of the red unpopped kernel and stays merged until the end (34.0 s). Its brown body, glint and crack glyph collapse into one dark-red blob with two outlines, and the bowl still shows two kernels where there should now be three. There is also a material snap at the split: the orange halftone cutaway with its white interior becomes an opaque pale-yellow hull with a thin outline (f630, f852), then cream foam. The crack mark also changes style, from a small blue tick (14.8-15.5 s) to a black zigzag (17.0 s on).",
+          "composition: FAIL: The pan staging is horizontal (thermometer, kernel, kernel) and does not fit 9:16. The right kernel is cut by the frame edge from 5.5 to 9.0 s (phone-f00191, x 278-360). The cracked kernel sits in the platform right-rail zone and is cropped from 18.5 to 27 s (phone-f00673, x 265-360), and it shrinks to a sliver in the replay (phone-f00849, x 305-360). The thermometer tube is off-frame for the 180 \u00b0C beat (18.5-21.0 s) and the whole replay (27.5-29.9 s), leaving orphan '-180 \u00b0C'/'-100 \u00b0C' labels hanging at x=0. The top 35-45% of every pan shot is empty paper while the flames and burner sit in the bottom caption band. The bowl shots (0-3.5 s, 30-34 s) are well centred.",
+          "readable_action: FAIL: Several actions read well: the leak (crack, steam coils, bubbles draining, hull browning, 14.8-18 s), split then foam (f630-f642), the replay order of crack, then steam, then rings (f852, f856, f858), and the squash before the jump (f733-f735). Three actions do not. The hull halves sink through the pan floor into the flames from 21.5 to 24.5 s, so the foam never rests on the pan. The narrated 'leg of starch kicks the pan' (23.5-24.5 s) is a pale translucent capsule hidden under the flake, about 12 px wide at phone size, with only a faint pink contact ellipse. The final landing (32.2 s) merges into an existing kernel instead of settling. The 'pressure climbs' beat (11.4-14.3 s) shows no bulge: kernel outline centroids hold within about 0.5 px across f352-f368.",
+          "motion_performance: NOT_ASSESSED: Frames cannot establish easing, smoothness, how the slow-motion bloom feels, or any hull tremble under about 1 px. From the samples: squash anticipation before the jump is present (f733 to f735). The 11.5-14.0 s stretch is almost static apart from the mercury and flame flicker. After the jump the flake hangs near its apex for about 1.5 s (25.5-27.0 s; the petal centroid stays within about 4 px at contact-sheet scale while the pan drifts), then the film cuts to the replay.",
+          "phone_readability: FAIL: At 360x640 the large shapes read: kernels, flames, thermometer, flake, sound rings. The details that carry the explanation do not. The leg is a pale sliver about 12 px wide. At the bottom of the bowl the cracked kernel cannot be told apart: its crack glyph is about 4 px on a 40 px kernel, and it merges with the red kernel. The water drops are 4-5 px dark specks that read as seeds, and only the label carries 'water'. The temperature labels are small: '100 \u00b0C' has a 9 px cap height (1.4% of frame height) and '180 \u00b0C' 12 px, in pink on cream.",
+          "technical_defects: FAIL: Defects found: the hull halves and the flake base clip through the pan floor into the flames (21.5-24.5 s, and again 28.5-29.9 s in the replay); kernel-on-kernel interpenetration at the bowl bottom (32.2-34.0 s); the interior pops to an opaque hull for the split frames (f630, f852); the bowl-bottom kernels sit inside the bowl-wall band (0-3.5 s, 31.5-34 s); the pink '14%' overprints the right kernel's outline (6.5-8.5 s); the sound rings cross the REPLAY text (29.0-29.5 s); the flake and petal cover the thermometer's '100 \u00b0C' label (f735-f741). No torn, blank or broken frames appear in the samples.",
+          "critical: 32.2-34.0 s (f966-f1020), answer shot: The film resolves on this image, and it is muddled. The falling cracked kernel lands exactly on top of the red unpopped kernel already at the bottom, so the two overlap as one dark-red, double-outlined blob. The kernel loses its brown colour, glint and crack glyph, and the count stays at two, so a viewer cannot see 'the cracked kernel ended up here among the unpopped'.",
+          "critical: 21.5-24.5 s (f645-f735) and 28.5-29.9 s (replay), burst and sound shots: After the split, the two hull halves (and the base of the foam flake) sit with their lower halves below the pan floor line, overlapping the flames. The pan line visibly cuts through them at mid-height for about 3 s of the hero moment and again in the replay.",
+          "critical: 23.5-24.5 s (f705-f735), burst shot: The narration says 'A leg of starch kicks the pan, and the kernel jumps', but the leg is a pale translucent capsule mostly hidden under the flake between the sunken petals, about 12 px wide on a phone. The cause of the jump is not legible; only the squash and rise are.",
+          "critical: 18.5-21.0 s (180 \u00b0C beat), 27.5-29.9 s (replay), 5.5-9.0 s (inside push-in): The thermometer tube is off-frame while the narration says 'about a hundred and eighty degrees', so the burst's cause is shown only as an orphan '-180 \u00b0C' label at the frame edge. The same orphan labels hang there through the replay. The comparison kernel (inside) and the cracked kernel (burst, replay) are cropped by the right edge and sit in the platform's right action rail, which undercuts the 'two kernels side by side' comparison."
+        ]
+      },
+      {
+        "role": "factual",
+        "request_sha256": "3ff038eaab81d4b4a14fa87661139750f5a911ee851f042f8ca4ae712de4fad7",
+        "source_sha256": "ff95c2483a87d703834ad3c38dbc05c4c11abe5337703f9538258f04e569eb48",
+        "at": "2026-10-31T07:16:39+00:00",
+        "issues": [
+          "narration_matches_ledger: FAIL: Nine of ten spoken lines and the WATER 14% and 180 \u00b0C readouts map to ledger entries, but the 'heat' line (9.4-11.06 s, 'Heat turns that water to steam') and the on-screen '100 \u00b0C' readout (appears about 10.5 s, cue 'hundred' at f318, stays on the thermometer to about 29.5 s) have no ledger entry; separately, the cue table puts a 'crack' sound at f838 (27.93 s) in the replay that is meant to show the hull cracking silently (not listened to).",
+          "dramatization_labeled: FAIL: The four listed dramatizations match the frames (cutaway scale, drops and bubbles, slow motion with a 'REPLAY' label at 27.5-29.5 s, one visible crack), but the steam shot shows the water boiling into bubbles as the thermometer reaches 100 \u00b0C inside a sealed kernel (strip-boil f297-305, then bubbles crowd to 14.0 s), while the film's own cited source says most of the water is still superheated liquid when the kernel pops; that simplification is not in the dramatization list.",
+          "critical: line 'heat' 9.4-11.06 s; on-screen '100 \u00b0C' readout from about 10.5 s (cue 'hundred', f318) through about 29.5 s: The step where water turns to steam and the 100 \u00b0C readout are consequential spoken and shown claims with no ledger entry. The other two readouts (14%, 180 \u00b0C) are ledgered; this one is not, and the pressure-vessel excerpt says nothing about steam or 100 \u00b0C.",
+          "critical: steam shot 9.9-14.3 s (strip-boil f289-305, strip-pressure f352-368, phone-f00355): Drops boil into steam bubbles at the 100 \u00b0C mark inside a sealed kernel, and the line says heat turns 'that water' to steam. Inside a sealed hull the rising pressure raises the boiling point, and the cited Hoseney abstract says most of the water is superheated liquid at the moment of popping, flashing to steam only once the pericarp ruptures. Nothing in the dramatization list labels this, so a viewer learns that the kernel's water all boils at 100 \u00b0C.",
+          "critical: replay: cue 'replay_crack' (crack sfx) at f838 / 27.93 s, about 0.47 s before the visible split at about f852; pop cue at f856 / 28.53 s: The request's cue table schedules a 'crack' sound effect at the replay's hull crack. The replay exists to show the hull cracking silently and the sound coming from the steam jet (intent shot 'sound'; rings start with the steam curl at f856-858). An audible crack there presents the fracture as a source of sound, which works against the pop-is-steam claim (Virot & Ponomarenko propose that the pop is caused by the release of water vapour). This comes from reading the cue table; the mix was not listened to."
+        ]
+      },
+      {
+        "role": "visual",
+        "request_sha256": "a7798203f5f3ef7bca06c9fc42050768601859a859d75a57fae30634ff4c6e57",
+        "source_sha256": "809f09ef1ab84d259066bf56f3f613ea8fcb82c7e3d09bf68f3aa0fdaa9a6431",
+        "at": "2026-10-31T07:29:35+00:00",
+        "issues": [
+          "identity_continuity: FAIL: At the burst (f628 to f630) and again in the replay (f850 to f852), the sealed kernel full of white steam is swapped in one 2-frame step for a different drawing: a closed two-half hull about 12% narrower with a yellow disc inside, no white mass, no red germ tip, and a thinner, lighter blue outline. The white that built up from 10 s to 21 s vanishes at the moment it should burst out, then foam regrows from a small ball (f632-f650). Elsewhere identity holds: the cracked kernel keeps its brown hull and zigzag from 17.5 s to the last frame, and the flake keeps its two orange petals from 21.5 s into the bowl at 30.5-31.5 s. The starch leg also disappears between f737 and f739.",
+          "composition: FAIL: The vertical staging is mostly deliberate: thermometer near the top at about 15%, the kernels in the middle band (41-65% of height), the burner low and the bottom ~18% left clear. But: (a) at 25.0-27.0 s the jumping flake rises into the top band and parks behind the thermometer, whose bar and pink fill cross it for about 2 s; (b) at 0.0-1.5 s the hook kernels sit at 81-84% of frame height, inside the platform caption zone, and the first second is static; (c) in the burst and replay shots the crack mark sits at x 297-312 of 360 (83-87%), under the right-side action rail; the foam touches the left edge (x about 8) at 22.43 s; and the 180 \u00b0C label at y 60-75 of 640 (9-12%) sits at the edge of the top UI band.",
+          "motion_performance: FAIL: Smoothness cannot be judged, but timing at the sampled scale shows a stall. After lift-off the flake reaches the top by 25.5 s, then keeps almost the same screen position and size (about 46-50 px wide, its top about 30 px down) through 27.0 s, while the pan and the cracked kernel shrink about 30% in the pull-back. The jump's payoff reads as a 1.5 s hang rather than an arc, and the shot cuts to REPLAY with no fall. Also, f0-f30 are static, and the sealed kernel looks unchanged from about 15 s to 21 s apart from the 180 \u00b0C label, so the pressure has no visible build before the split (trembling cannot be assessed). Good: squash anticipation at f733-f735, an eased foam bloom over about 2 s, a fall that speeds up under gravity (f958-f966), and a 1.7 s final hold.",
+          "technical_defects: FAIL: (1) A hard drawing swap at f628 to f630 and f850 to f852: the contents vanish and the outline and size change. (2) A layering collision at 25.0-27.0 s: the thermometer bar and fill overprint the hero flake. (3) The starch leg disappears in one step (f737 to f739). (4) Petal outlines show through the white foam at 25.0-25.5 s, so the flake reads as translucent. No tearing or broken frames in the samples; the full pink (3.5 s) and yellow (30.0 s) plate frames look like deliberate wipes, but their duration cannot be established.",
+          "critical: 20.93-21.07 s (f628 to f632) and the replay at 28.27-28.53 s (f850 to f856): The sealed kernel's built-up white steam mass and its hull drawing are swapped in one step for a smaller closed split hull that looks empty: no white, no germ, a thinner and lighter outline. What built pressure for about 10 s disappears at the instant it should burst, and foam regrows from a small ball. This breaks the visible chain from trapped steam to burst, and it is most visible in the replay, where the empty split holds for 4+ frames on the very beat that explains the pop.",
+          "critical: 25.0-27.0 s (f750-f810), end of the burst shot: After the jump the flake rises into the top band and parks behind the thermometer for about 2 s, with the HUD bar and fill crossing it. It barely moves on screen while the rest of the scene shrinks, then the film cuts away without a fall. The jump's payoff is staged under the HUD at the top edge and reads as a stall or layering error.",
+          "critical: 0.0-1.5 s (f0-f45), the opening bowl: The two unpopped kernels, the subject of the hook question, are about 10% of frame width and sit at 81-84% of frame height, inside the platform caption zone, on a frame that does not move for the first second. They reach a safe height only at about 2.0 s, so the question's object is hidden for most of the hook line."
+        ]
+      }
+    ]
+  },
+  "concept_changes": [],
+  "technical_retries": [],
+  "renders": [
+    {
+      "at": "2026-10-31T06:51:08+00:00",
+      "kind": "proof",
+      "frames": 228,
+      "size": [
+        360,
+        640
+      ],
+      "seconds": 8.1,
+      "workers": 3,
+      "file": "runs/why-popcorn-pops/proof/c3ab41eeb82e/proof.mp4"
+    },
+    {
+      "at": "2026-10-31T06:58:37+00:00",
+      "kind": "proof",
+      "frames": 228,
+      "size": [
+        360,
+        640
+      ],
+      "seconds": 8.0,
+      "workers": 3,
+      "file": "runs/why-popcorn-pops/proof/59c229c2f5db/proof.mp4"
+    },
+    {
+      "at": "2026-10-31T06:59:34+00:00",
+      "kind": "rough",
+      "frames": 1026,
+      "size": [
+        360,
+        640
+      ],
+      "seconds": 29.7,
+      "workers": 3,
+      "file": "runs/why-popcorn-pops/rough/5bd4af5bc838/picture.mp4"
+    },
+    {
+      "at": "2026-10-31T07:00:28+00:00",
+      "kind": "rough",
+      "frames": 1026,
+      "size": [
+        360,
+        640
+      ],
+      "seconds": 30.7,
+      "workers": 3,
+      "file": "runs/why-popcorn-pops/rough/bb7807497fe7/picture.mp4"
+    },
+    {
+      "at": "2026-10-31T07:02:04+00:00",
+      "kind": "rough",
+      "frames": 1026,
+      "size": [
+        360,
+        640
+      ],
+      "seconds": 30.7,
+      "workers": 3,
+      "file": "runs/why-popcorn-pops/rough/29ae24182df1/picture.mp4"
+    },
+    {
+      "at": "2026-10-31T07:03:27+00:00",
+      "kind": "rough",
+      "frames": 1026,
+      "size": [
+        360,
+        640
+      ],
+      "seconds": 31.2,
+      "workers": 3,
+      "file": "runs/why-popcorn-pops/rough/2a2ead48e853/picture.mp4"
+    },
+    {
+      "at": "2026-10-31T07:17:15+00:00",
+      "kind": "rough",
+      "frames": 1026,
+      "size": [
+        360,
+        640
+      ],
+      "seconds": 31.2,
+      "workers": 3,
+      "file": "runs/why-popcorn-pops/rough/07c86c472181/picture.mp4"
+    },
+    {
+      "at": "2026-10-31T07:30:07+00:00",
+      "kind": "rough",
+      "frames": 1026,
+      "size": [
+        360,
+        640
+      ],
+      "seconds": 32.5,
+      "workers": 3,
+      "file": "runs/why-popcorn-pops/rough/5f7080a26f0e/picture.mp4"
+    }
+  ],
+  "reviewer_calls": 0,
+  "human_decision": null,
+  "status": "AWAITING_REVIEW:story,visual,factual",
+  "history": [
+    {
+      "at": "2026-10-31T06:42:26+00:00",
+      "event": "intake",
+      "brief_sha256": "b86b896694c91fe2653bbcf5129e14a56695dc88342905c6690df0ef4c0c6e66"
+    },
+    {
+      "at": "2026-10-31T06:42:26+00:00",
+      "event": "stage",
+      "stage": "intake",
+      "status": "DONE"
+    },
+    {
+      "at": "2026-10-31T06:42:26+00:00",
+      "event": "stage",
+      "stage": "concepts",
+      "status": "AWAITING_AUTHORING",
+      "errors": [],
+      "agent_assisted": true,
+      "worker": "handoff"
+    },
+    {
+      "at": "2026-10-31T06:42:26+00:00",
+      "event": "status",
+      "status": "AWAITING_AUTHORING:concepts",
+      "next_step": "complete handoff/concepts.md then resume"
+    },
+    {
+      "at": "2026-10-31T06:49:35+00:00",
+      "event": "ledger-refresh",
+      "changed": [
+        "film.js"
+      ],
+      "unrecorded": []
+    },
+    {
+      "at": "2026-10-31T06:50:37+00:00",
+      "event": "ledger-refresh",
+      "changed": [
+        "film.js"
+      ],
+      "unrecorded": []
+    },
+    {
+      "at": "2026-10-31T06:51:00+00:00",
+      "event": "ledger-refresh",
+      "changed": [
+        "film.js"
+      ],
+      "unrecorded": []
+    },
+    {
+      "at": "2026-10-31T06:51:00+00:00",
+      "event": "stage",
+      "stage": "concepts",
+      "status": "DONE",
+      "agent_assisted": true
+    },
+    {
+      "at": "2026-10-31T06:51:00+00:00",
+      "event": "stage",
+      "stage": "direction",
+      "status": "DONE",
+      "agent_assisted": true
+    },
+    {
+      "at": "2026-10-31T06:51:12+00:00",
+      "event": "status",
+      "status": "AWAITING_REVIEW:proof",
+      "next_step": "watch the proof at phone size and write reviews/proof.json (builder inspection is allowed here, and recorded as such), then resume"
+    },
+    {
+      "at": "2026-10-31T06:58:12+00:00",
+      "event": "ledger-refresh",
+      "changed": [
+        "film.js"
+      ],
+      "unrecorded": []
+    },
+    {
+      "at": "2026-10-31T06:58:29+00:00",
+      "event": "ledger-refresh",
+      "changed": [
+        "film.js"
+      ],
+      "unrecorded": []
+    },
+    {
+      "at": "2026-10-31T06:59:01+00:00",
+      "event": "stage",
+      "stage": "proof",
+      "status": "DONE"
+    },
+    {
+      "at": "2026-10-31T06:59:01+00:00",
+      "event": "stage",
+      "stage": "source",
+      "status": "DONE",
+      "agent_assisted": true
+    },
+    {
+      "at": "2026-10-31T06:59:04+00:00",
+      "event": "stage",
+      "stage": "audio",
+      "status": "DONE"
+    },
+    {
+      "at": "2026-10-31T06:59:36+00:00",
+      "event": "status",
+      "status": "BLOCKED:RENDER_ERROR",
+      "next_step": "rough has 999 frames, film declares 1026"
+    },
+    {
+      "at": "2026-10-31T07:00:40+00:00",
+      "event": "stage",
+      "stage": "rough",
+      "status": "DONE"
+    },
+    {
+      "at": "2026-10-31T07:00:41+00:00",
+      "event": "status",
+      "status": "AWAITING_REVIEW:story,visual,factual",
+      "next_step": "independent reviewers write reviews/story.json, reviews/visual.json, reviews/factual.json from the matching -request.md, then resume; the builder may not write these"
+    },
+    {
+      "at": "2026-10-31T07:02:16+00:00",
+      "event": "stage",
+      "stage": "rough",
+      "status": "DONE"
+    },
+    {
+      "at": "2026-10-31T07:02:38+00:00",
+      "event": "ledger-refresh",
+      "changed": [
+        "film.js"
+      ],
+      "unrecorded": []
+    },
+    {
+      "at": "2026-10-31T07:02:56+00:00",
+      "event": "stage",
+      "stage": "source",
+      "status": "DONE",
+      "agent_assisted": true
+    },
+    {
+      "at": "2026-10-31T07:03:39+00:00",
+      "event": "stage",
+      "stage": "rough",
+      "status": "DONE"
+    },
+    {
+      "at": "2026-10-31T07:15:31+00:00",
+      "event": "ledger-refresh",
+      "changed": [
+        "film.js",
+        "film.json"
+      ],
+      "unrecorded": []
+    },
+    {
+      "at": "2026-10-31T07:16:01+00:00",
+      "event": "ledger-refresh",
+      "changed": [
+        "film.js"
+      ],
+      "unrecorded": []
+    },
+    {
+      "at": "2026-10-31T07:16:18+00:00",
+      "event": "stage",
+      "stage": "direction",
+      "status": "DONE",
+      "agent_assisted": true
+    },
+    {
+      "at": "2026-10-31T07:16:18+00:00",
+      "event": "stage",
+      "stage": "source",
+      "status": "DONE",
+      "agent_assisted": true
+    },
+    {
+      "at": "2026-10-31T07:16:21+00:00",
+      "event": "stage",
+      "stage": "source",
+      "status": "AWAITING_AUTHORING",
+      "errors": [
+        "audio: line trapped starts at 11.40s before line heat ends (11.35s)"
+      ],
+      "agent_assisted": true,
+      "worker": "handoff"
+    },
+    {
+      "at": "2026-10-31T07:16:21+00:00",
+      "event": "status",
+      "status": "AWAITING_AUTHORING:source",
+      "next_step": "complete handoff/source.md then resume"
+    },
+    {
+      "at": "2026-10-31T07:16:39+00:00",
+      "event": "ledger-refresh",
+      "changed": [
+        "film.json"
+      ],
+      "unrecorded": []
+    },
+    {
+      "at": "2026-10-31T07:16:39+00:00",
+      "event": "creative-failure",
+      "approach": "two-kernels-v1",
+      "role": "story",
+      "round": 1,
+      "settled": "before the request changed"
+    },
+    {
+      "at": "2026-10-31T07:16:39+00:00",
+      "event": "creative-failure",
+      "approach": "two-kernels-v1",
+      "role": "visual",
+      "round": 1,
+      "settled": "before the request changed"
+    },
+    {
+      "at": "2026-10-31T07:16:39+00:00",
+      "event": "creative-failure",
+      "approach": "two-kernels-v1",
+      "role": "factual",
+      "round": 1,
+      "settled": "before the request changed"
+    },
+    {
+      "at": "2026-10-31T07:16:39+00:00",
+      "event": "stage",
+      "stage": "source",
+      "status": "DONE",
+      "agent_assisted": true
+    },
+    {
+      "at": "2026-10-31T07:16:43+00:00",
+      "event": "stage",
+      "stage": "audio",
+      "status": "DONE"
+    },
+    {
+      "at": "2026-10-31T07:17:27+00:00",
+      "event": "stage",
+      "stage": "rough",
+      "status": "DONE"
+    },
+    {
+      "at": "2026-10-31T07:17:28+00:00",
+      "event": "review-archived",
+      "role": "story",
+      "reason": "stale: the request changed",
+      "kept": "story-2b18576c12f2.json"
+    },
+    {
+      "at": "2026-10-31T07:17:28+00:00",
+      "event": "review-archived",
+      "role": "visual",
+      "reason": "stale: the request changed",
+      "kept": "visual-2644d565acc7.json"
+    },
+    {
+      "at": "2026-10-31T07:17:28+00:00",
+      "event": "review-archived",
+      "role": "factual",
+      "reason": "stale: the request changed",
+      "kept": "factual-3ff038eaab81.json"
+    },
+    {
+      "at": "2026-10-31T07:17:28+00:00",
+      "event": "status",
+      "status": "AWAITING_REVIEW:story,visual,factual",
+      "next_step": "independent reviewers write reviews/story.json, reviews/visual.json, reviews/factual.json from the matching -request.md, then resume; the builder may not write these"
+    },
+    {
+      "at": "2026-10-31T07:29:11+00:00",
+      "event": "ledger-refresh",
+      "changed": [
+        "film.js"
+      ],
+      "unrecorded": []
+    },
+    {
+      "at": "2026-10-31T07:29:35+00:00",
+      "event": "creative-failure",
+      "approach": "two-kernels-v1",
+      "role": "visual",
+      "round": 2,
+      "settled": "before the request changed"
+    },
+    {
+      "at": "2026-10-31T07:29:35+00:00",
+      "event": "stage",
+      "stage": "source",
+      "status": "DONE",
+      "agent_assisted": true
+    },
+    {
+      "at": "2026-10-31T07:30:21+00:00",
+      "event": "stage",
+      "stage": "rough",
+      "status": "DONE"
+    },
+    {
+      "at": "2026-10-31T07:30:22+00:00",
+      "event": "review-archived",
+      "role": "story",
+      "reason": "stale: the request changed",
+      "kept": "story-6f9e4d1af296.json"
+    },
+    {
+      "at": "2026-10-31T07:30:22+00:00",
+      "event": "review-archived",
+      "role": "visual",
+      "reason": "stale: the request changed",
+      "kept": "visual-a7798203f5f3.json"
+    },
+    {
+      "at": "2026-10-31T07:30:22+00:00",
+      "event": "review-archived",
+      "role": "factual",
+      "reason": "stale: the request changed",
+      "kept": "factual-863f72059801.json"
+    }
+  ],
+  "next_step": "independent reviewers write reviews/story.json, reviews/visual.json, reviews/factual.json from the matching -request.md, then resume; the builder may not write these",
+  "approaches": {
+    "two-kernels-v1": {
+      "logline": "Two kernels heat in one pan; the sealed one bursts into a flake and jumps, the one with a hairline crack leaks its steam and ends up at the bottom of the bowl.",
+      "hardest_shot": "The burst must look like real popcorn forming (hull splitting, foam lobes blooming into a recognisable flake) and the leg-kick jump must read as a physical push on the pan; a generic white blob or a cut would lose the payoff.",
+      "at": "2026-10-31T06:51:00+00:00"
+    }
+  },
+  "reviews": {
+    "proof": {
+      "status": "PASS",
+      "request_sha256": "a336956d36374c371767cab253986262b7379160f6e577365da82b73dd38927a",
+      "reviewer": {
+        "kind": "builder",
+        "id": "Claude (the builder of this film)",
+        "independence": "builder-self-inspection",
+        "playback": "ordered-frames",
+        "inputs_viewed": [
+          "runs/why-popcorn-pops/proof/59c229c2f5db/evidence-proof/ordered-frames.png",
+          "runs/why-popcorn-pops/proof/59c229c2f5db/evidence-proof/strip-burst.png",
+          "runs/why-popcorn-pops/proof/59c229c2f5db/evidence-proof/strip-foam.png",
+          "runs/why-popcorn-pops/proof/59c229c2f5db/evidence-proof/strip-leg.png",
+          "runs/why-popcorn-pops/proof/59c229c2f5db/evidence-proof/strip-jump.png",
+          "runs/why-popcorn-pops/proof/59c229c2f5db/evidence-proof/phone-f00673.png"
+        ]
+      },
+      "issues": [],
+      "deferred": [],
+      "at": "2026-10-31T06:59:01+00:00"
+    }
+  },
+  "settled": {
+    "proof": {
+      "request_sha256": "a336956d36374c371767cab253986262b7379160f6e577365da82b73dd38927a",
+      "core": {
+        "brief_sha256": "b86b896694c91fe2653bbcf5129e14a56695dc88342905c6690df0ef4c0c6e66",
+        "direction_sha256": "b35dde4e4042eddc7706f0cd88207ee9f74f4f35ee31f43880427aac82818b4b",
+        "source_tree_sha256": "c617a3438ec223909ce05183430c48f7d5b233a8c4677841ccfd434bbe794441",
+        "render_fingerprint_sha256": "9ab1fc4b0d55308b44300bf7553a98186d10528bceebd309e0eb522bd84f1d78"
+      },
+      "status": "PASS"
+    },
+    "story": {
+      "request_sha256": "6f9e4d1af296d2eac7bd8ea99531e99d553f005014368fb8feb197825a727713",
+      "core": {
+        "brief_sha256": "b86b896694c91fe2653bbcf5129e14a56695dc88342905c6690df0ef4c0c6e66",
+        "concepts_sha256": "39decf2869ce03552e35a2fc16e5c4ef3050039cfae2c12fde2962f2640a277c",
+        "direction_sha256": "897f1d9cfae45a07c0b61faafd5401200158ad59936fef34122d2a315814e3cb",
+        "source_tree_sha256": "809f09ef1ab84d259066bf56f3f613ea8fcb82c7e3d09bf68f3aa0fdaa9a6431",
+        "audio_master_sha256": "fa87b483d788c466c718f2524877e0fe25695baaf4adb97388fab2adc4e18e0d",
+        "render_fingerprint_sha256": "0f15537dde9499450c60e128d15a82fae72a38d31f42fc25e74e1f20d73a8ac9"
+      },
+      "status": "PASS"
+    },
+    "visual": {
+      "request_sha256": "a7798203f5f3ef7bca06c9fc42050768601859a859d75a57fae30634ff4c6e57",
+      "core": {
+        "brief_sha256": "b86b896694c91fe2653bbcf5129e14a56695dc88342905c6690df0ef4c0c6e66",
+        "concepts_sha256": "39decf2869ce03552e35a2fc16e5c4ef3050039cfae2c12fde2962f2640a277c",
+        "direction_sha256": "897f1d9cfae45a07c0b61faafd5401200158ad59936fef34122d2a315814e3cb",
+        "source_tree_sha256": "809f09ef1ab84d259066bf56f3f613ea8fcb82c7e3d09bf68f3aa0fdaa9a6431",
+        "audio_master_sha256": "fa87b483d788c466c718f2524877e0fe25695baaf4adb97388fab2adc4e18e0d",
+        "render_fingerprint_sha256": "0f15537dde9499450c60e128d15a82fae72a38d31f42fc25e74e1f20d73a8ac9"
+      },
+      "status": "FAIL"
+    },
+    "factual": {
+      "request_sha256": "863f72059801b8e11bc733c339c024a56a254f8b4cf3b21e0a64389fffdeb762",
+      "core": {
+        "brief_sha256": "b86b896694c91fe2653bbcf5129e14a56695dc88342905c6690df0ef4c0c6e66",
+        "concepts_sha256": "39decf2869ce03552e35a2fc16e5c4ef3050039cfae2c12fde2962f2640a277c",
+        "direction_sha256": "897f1d9cfae45a07c0b61faafd5401200158ad59936fef34122d2a315814e3cb",
+        "source_tree_sha256": "809f09ef1ab84d259066bf56f3f613ea8fcb82c7e3d09bf68f3aa0fdaa9a6431",
+        "audio_master_sha256": "fa87b483d788c466c718f2524877e0fe25695baaf4adb97388fab2adc4e18e0d",
+        "render_fingerprint_sha256": "0f15537dde9499450c60e128d15a82fae72a38d31f42fc25e74e1f20d73a8ac9"
+      },
+      "status": "PASS"
+    }
+  }
+}

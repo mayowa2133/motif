@@ -1,0 +1,106 @@
+{
+ "request_sha256": "41bf87aab1b71a5ae4b56d55fc1cf8dc53c875acc9a69db6cf14983ea7131bda",
+ "role": "visual",
+ "reviewer": {
+  "kind": "model",
+  "id": "Claude subagent (fresh context, same model family as the builder)",
+  "independence": "separate-context-same-family",
+  "playback": "ordered-frames",
+  "inputs_viewed": [
+   "/home/user/motif/atelier/projects/runaway-shadow/reviews/visual-request.md",
+   "/home/user/motif/atelier/runs/runaway-shadow/rough/fda6559f438c/evidence-review/ordered-frames.png",
+   "/home/user/motif/atelier/runs/runaway-shadow/rough/fda6559f438c/evidence-review/strip-double_take.png",
+   "/home/user/motif/atelier/runs/runaway-shadow/rough/fda6559f438c/evidence-review/strip-detach.png",
+   "/home/user/motif/atelier/runs/runaway-shadow/rough/fda6559f438c/evidence-review/strip-stand_up.png",
+   "/home/user/motif/atelier/runs/runaway-shadow/rough/fda6559f438c/evidence-review/strip-raspberry.png",
+   "/home/user/motif/atelier/runs/runaway-shadow/rough/fda6559f438c/evidence-review/strip-run_off.png",
+   "/home/user/motif/atelier/runs/runaway-shadow/rough/fda6559f438c/evidence-review/strip-melt.png",
+   "/home/user/motif/atelier/runs/runaway-shadow/rough/fda6559f438c/evidence-review/strip-faceplant.png",
+   "/home/user/motif/atelier/runs/runaway-shadow/rough/fda6559f438c/evidence-review/strip-peek.png",
+   "/home/user/motif/atelier/runs/runaway-shadow/rough/fda6559f438c/evidence-review/strip-idea.png",
+   "/home/user/motif/atelier/runs/runaway-shadow/rough/fda6559f438c/evidence-review/strip-creep.png",
+   "/home/user/motif/atelier/runs/runaway-shadow/rough/fda6559f438c/evidence-review/strip-stomp.png",
+   "/home/user/motif/atelier/runs/runaway-shadow/rough/fda6559f438c/evidence-review/strip-wink.png",
+   "/home/user/motif/atelier/runs/runaway-shadow/rough/fda6559f438c/evidence-review/phone-f00048.png",
+   "/home/user/motif/atelier/runs/runaway-shadow/rough/fda6559f438c/evidence-review/phone-f00183.png",
+   "/home/user/motif/atelier/runs/runaway-shadow/rough/fda6559f438c/evidence-review/phone-f00333.png",
+   "/home/user/motif/atelier/runs/runaway-shadow/rough/fda6559f438c/evidence-review/phone-f00465.png",
+   "/home/user/motif/atelier/runs/runaway-shadow/rough/fda6559f438c/evidence-review/phone-f00633.png",
+   "/home/user/motif/atelier/runs/runaway-shadow/rough/fda6559f438c/evidence-review/phone-f00810.png"
+  ],
+  "tools": "Read tool on every evidence PNG; Python/PIL crops, 2-3x enlargements and pixel sampling of those same images in a scratch directory (no other repository files opened)"
+ },
+ "dimensions": {
+  "focal_hierarchy": {
+   "status": "FAIL",
+   "note": "Most beats direct the eye well (the opaque twin during the escape, white eyes in the shade, the night eyes), but at the lure creep the element that matters, the shadow being drawn out, is a low-contrast olive shape half off the left edge with an eye clipped, while bright dancing Pim holds the centre; the opening frame (0.0 s) is an empty meadow whose only focal point is the tree.",
+   "evidence": "ordered 0.00s, 20.50s, 21.00s, 21.50s; strip-creep f618-f634; phone-f00633"
+  },
+  "identity_continuity": {
+   "status": "PASS",
+   "note": "Pim keeps its egg body, red stocking cap with white bobble and band, black feet and white hands throughout (desaturated consistently at night); the twin is a recognisable dark-plum Pim silhouette with the same lidded white eyes as twin, in the shade, while creeping and at night; Pim correctly casts no shadow from 10.0 s until the stomp, and the hat's removal and return is tracked (15.0-20.0 s).",
+   "evidence": "ordered 0.50-29.50s; strip-stand_up f304-f310; strip-peek f500; strip-stomp f698; strip-wink f827-f843"
+  },
+  "composition": {
+   "status": "FAIL",
+   "note": "Vertical staging generally uses the long shadow well and keeps characters above the bottom caption band, but in the creep the shadow's eyes sit 6-52 px from the left edge at y 482-498 of 640 (bottom-left caption/username zone) with the left eye cut off f618-f630; tangents muddle key beats (the twin's hat bobble sits on Pim's raised hand through the raspberry f317-f333, Pim's raised hand lands exactly on the trunk base through the faceplant f468-f560), and Pim enters at 0.5 s half off-frame under the right-side UI rail.",
+   "evidence": "strip-creep f618-f630; phone-f00633; strip-raspberry f317-f333; phone-f00333; strip-faceplant f468-f476; strip-peek f490-f506; ordered 0.50s"
+  },
+  "readable_action": {
+   "status": "FAIL",
+   "note": "Detach, stand-up, raspberry, run-off and melt read clearly, but the payoff stomp misses: at f690-f694 Pim's foot and dust puff land on bare grass about 25-30 px (phone scale) above the shadow's foot nubs, which only reach Pim's feet at about f698; the faceplant leaves Pim upside down with its face in the air, its body touching no ground and one arm glued to the trunk base, and from 18.0 to 19.5 s Pim floats upright, sitting inside the planted hat like an egg in a cone.",
+   "evidence": "strip-detach f288-f296; strip-stand_up f302-f310; strip-melt f424-f430; strip-stomp f688-f698; strip-faceplant f468-f476; ordered 18.00-19.50s; strip-idea f576-f592"
+  },
+  "motion_performance": {
+   "status": "NOT_ASSESSED",
+   "note": "The dense strips show sound key-moment acting: the double-take stretch (f174-f176), the stand-up squash and stretch (f302-f310), the stomp's hop, impact and squash (f684-f692) and the wink (f833-f835). There are weaker spots: Pim holds one frozen pose while the twin escapes (f340-f356), and about 4 s pass near-static at the faceplant spot (15.6-19.5 s). But the film's central timing gags, the shadow moving one beat late and copying the dance, are temporal and cannot be judged from 0.5 s and 2-frame samples.",
+   "evidence": "strip-double_take f166-f182; strip-stand_up; strip-run_off f340-f356; strip-stomp f682-f698; ordered 15.50-19.50s; strip-wink"
+  },
+  "style_coherence": {
+   "status": "PASS",
+   "note": "One deliberate flat bold language throughout: solid fills, dark plum outlines on characters and tree, outline-free translucent ground shadows, a violet-to-gold backlit sky, and dust puffs and spiral eyes in the same flat idiom; the nightfall grade dims everything consistently while keeping the eyes white for the button.",
+   "evidence": "phone-f00048, phone-f00333, phone-f00810; ordered 24.50-26.50s"
+  },
+  "phone_readability": {
+   "status": "PASS",
+   "note": "At 360x640, Pim, the twin, the pink raspberry tongue, the white eyes in the tree's shade and the night wink all read; the mid-dive (f465) and the creep (f633) are weakened by staging and framing, which is already counted under readable_action and composition.",
+   "evidence": "phone-f00048, phone-f00183, phone-f00333, phone-f00465, phone-f00633, phone-f00810; strip-wink f835-f843"
+  },
+  "technical_defects": {
+   "status": "PASS",
+   "note": "About 170 sampled frames show no tearing, broken frames, z-order errors or unintended pops, and the 2-frame switch from translucent olive to opaque plum at f304-f306 reads as the intended transformation. Popping between samples cannot be confirmed, nor whether the large reframe between 20.0 and 20.5 s is a cut or a whip.",
+   "evidence": "ordered-frames (60 frames); 12 dense strips (108 frames); strip-stand_up f304-f306; ordered 20.00-20.50s"
+  }
+ },
+ "verdict": "REPAIR",
+ "critical_issues": [
+  {
+   "dimension": "readable_action",
+   "where": "lure, stomp f686-f698 (22.87-23.27 s)",
+   "problem": "On the impact frames f690-f694, Pim's stomping foot and dust puff land on empty grass about 25-30 px (360x640 scale) above the shadow's foot nubs. The shadow only reaches Pim's feet at about f698, so the payoff action ('stomps on its feet to pin it back') never visibly makes contact; it reads as a stomp on grass, after which the shadow slides up.",
+   "smallest_fix": "Move the shadow's anchor (its creep end point) so its foot nubs sit directly under Pim's stomping foot by f688, and hold that contact through the squash at f690-f694; alternatively, retime the stomp impact to the frame the nubs arrive."
+  },
+  {
+   "dimension": "composition",
+   "where": "lure creep 20.5-21.5 s (f615-f645)",
+   "problem": "The shadow being lured out is the mechanism of the payoff, yet it is jammed against the left edge: its left eye is cut off by the frame at f618-f630, and at f633 the eyes sit at x 6-52, y 482-498 of 640, inside the bottom-left caption/username zone, on a low-contrast olive shape while bright dancing Pim holds the centre. A first-time phone viewer is unlikely to register the shadow coming out to copy the dance.",
+   "smallest_fix": "Reframe the lure about 70-90 px (phone scale) toward the shade, or move the shadow's emergence point up and inward, so the shade edge and both eyes sit fully inside the frame above about 70% of its height; then hold one clearly matched pose (the shadow hitting Pim's move a beat late) before the creep."
+  },
+  {
+   "dimension": "readable_action",
+   "where": "chase faceplant and hold 15.6-19.8 s (f468-f594)",
+   "problem": "The hat-net dive does not land face-first in the grass. Pim ends upside down with its face toward the camera and no part of its body touching the ground, and its raised arm ends exactly on the tree-trunk base, so it reads as hanging on the tree. From 18.0 to 19.5 s Pim then floats upright, sitting inside the planted hat like an egg in a cone, so the landing never holds up as a crash.",
+   "smallest_fix": "Lower Pim so its head and the hat-net hit the grass at the shade edge, with the body flopped onto the ground behind and the free arm away from the trunk; then have Pim sit up beside the hat and pull it free instead of rising out of it."
+  }
+ ],
+ "suggestions": [
+  "Put Pim at least partly in frame on frame 0, entering away from the right-side UI rail; the empty opening frame is a weak first impression for a scroll feed.",
+  "Separate the twin's hat bobble from Pim's raised hand during the raspberry (f317-f333) and keep the twin's trailing hand off Pim's foot during the run-off (f350-f352), so the two silhouettes stay distinct.",
+  "Give Pim a reaction beat while the twin escapes; f340-f356 is one held pose with an identical face.",
+  "Trim the roughly 4 s faceplant-to-idea hold (15.6-19.5 s), where Pim barely moves.",
+  "Pim's shadow falls down-left even though Pim stands right of the setting sun (1.0-3.0 s); this is a minor lighting inconsistency.",
+  "Outside visual scope but noticed in the request: the preview's true peak is +1.89 dBTP; the audio or proof reviewer should confirm a limiter."
+ ],
+ "sampling_limits": "Ordered decoded frames only: 60 frames every 15 frames (0.5 s), 12 dense strips of 9 frames each (every 2nd frame, +/-8 around named moments) and 6 full-size 360x640 frames, about 170 of 888 frames (about 19%). There was no moving playback and no audio, so I could not judge whether the shadow is a beat late, the rhythm of the dance copying, motion smoothness, popping between samples, or whether the 20.0-20.5 s reframe is a cut or a camera move. Platform UI zones were judged against typical TikTok/Reels overlay positions, not a real overlay. Pixel gaps were measured on downscaled strip tiles and converted to phone scale, so they are approximate to within a few pixels.",
+ "summary": "The art direction is coherent and appealing, and the escape (detach, stand-up, raspberry, run-off, melt) and the nightfall wink read well at phone size. Three craft problems should block release. First, the payoff stomp visibly misses the shadow's feet. Second, the creep that sells 'wit wins' is framed half off the left edge, inside the caption zone. Third, the faceplant landing is ambiguous: the arm sits on the trunk base, the body is unsupported, and Pim then floats in the hat like an egg in a cone. Verdict: REPAIR."
+}

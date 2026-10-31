@@ -1,0 +1,41 @@
+{
+ "request_sha256": "a336956d36374c371767cab253986262b7379160f6e577365da82b73dd38927a",
+ "role": "proof",
+ "reviewer": {
+  "kind": "builder",
+  "id": "Claude (the builder of this film)",
+  "independence": "builder-self-inspection",
+  "playback": "ordered-frames",
+  "inputs_viewed": [
+   "runs/why-popcorn-pops/proof/59c229c2f5db/evidence-proof/ordered-frames.png",
+   "runs/why-popcorn-pops/proof/59c229c2f5db/evidence-proof/strip-burst.png",
+   "runs/why-popcorn-pops/proof/59c229c2f5db/evidence-proof/strip-foam.png",
+   "runs/why-popcorn-pops/proof/59c229c2f5db/evidence-proof/strip-leg.png",
+   "runs/why-popcorn-pops/proof/59c229c2f5db/evidence-proof/strip-jump.png",
+   "runs/why-popcorn-pops/proof/59c229c2f5db/evidence-proof/phone-f00673.png"
+  ]
+ },
+ "dimensions": {
+  "action_reads": {
+   "status": "PASS",
+   "note": "Steam fills the sealed kernel and it trembles (f570-628); at f630 the hull splits into two halves that fold onto the pan while foam blooms out of the kernel volume (f632-700); the starch strut lifts the flake (f718-738) and it launches (f744+)."
+  },
+  "performance": {
+   "status": "PASS",
+   "note": "Object performance: anticipation (tremble, bulge), a sharp split, slow bloom, a push-up on the leg and a jump with spin; the steam jet and sound rings land just after the split."
+  },
+  "feasible_look": {
+   "status": "PASS",
+   "note": "At 360x640 (phone-f00673) the riso inks, flake, hull halves, cracked kernel and thermometer readouts read; halftone stays texture, not noise."
+  }
+ },
+ "verdict": "PROCEED",
+ "critical_issues": [],
+ "suggestions": [
+  "f628-630: the drawing switches from the cutaway (steam visible) to the closed hull exterior for the split; reads as the hull splitting, but a reviewer may notice the convention change.",
+  "The leg strut is narrow at phone size; acceptable because the narration names it, but watch it in playback.",
+  "Builder self-inspection only; story, visual and factual reviews must be independent."
+ ],
+ "sampling_limits": "Every second frame of the 228-frame proof plus dense strips and one native 360x640 frame; no playback, no audio.",
+ "summary": "The hardest shot (pressure, split, foam bloom, leg kick and jump) reads as popcorn forming at phone size. Proceed to the full film."
+}

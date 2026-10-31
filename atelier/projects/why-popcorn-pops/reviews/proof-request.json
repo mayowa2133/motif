@@ -1,0 +1,161 @@
+{
+  "schema": "motif-atelier-review-request/1",
+  "role": "proof",
+  "project": "why-popcorn-pops",
+  "project_id": "79c327e8974747ccacf6761b737a19ad",
+  "dimensions": {
+    "action_reads": "the hardest action reads at phone size: cause, contact and result are visible",
+    "performance": "poses, timing and reactions sell the action (not a slide across a still)",
+    "feasible_look": "the representative artwork holds up at 360x640"
+  },
+  "mandatory": [
+    "action_reads",
+    "performance",
+    "feasible_look"
+  ],
+  "not_applicable": {},
+  "intent": {
+    "idea": "Explain why popcorn pops, and why a few kernels in every bowl never do, through the kernels themselves changing on screen rather than a labelled machine.",
+    "audience": "curious adults and teens scrolling short vertical video",
+    "classification": "factual",
+    "intended_effect": "a satisfying 'oh, that's why' about the unpopped kernels at the bottom of the bowl, plus one surprising fact about the pop sound",
+    "premise": {
+      "title": "Two Kernels, One Crack",
+      "opening_image": "The bottom of a bowl of popcorn seen in cross-section: under the fluffy heap, two hard kernels that never popped.",
+      "audience_hook": "Why do a few kernels in every bowl never pop?",
+      "central_action": "Two identical-looking kernels heat side by side in a pan, cut open like a diagram: water inside both turns to steam, one hull holds it until it bursts into foam and jumps, the other has a hairline crack and hisses its steam away.",
+      "complication": "The kernels look the same from outside; the difference is a crack too small to notice until the steam finds it.",
+      "payoff": "The flake lands in the bowl and the leaky kernel ends up at the bottom, answering the opening question; a replay of the burst shows the pop is the steam rushing out."
+    },
+    "logline": "Two kernels heat in one pan; the sealed one bursts into a flake and jumps, the one with a hairline crack leaks its steam and ends up at the bottom of the bowl.",
+    "opening_promise": "A cross-section of a popcorn bowl reveals two hard kernels at the bottom, with the question of why they never popped.",
+    "ending": "The flake drops into the bowl, the camera sinks to the bottom, and the dry cracked kernel lies there among the unpopped: their steam got out.",
+    "style": "Risograph science zine: off-white paper, overprinted flat inks (blue linework, fluorescent pink, yellow) with 3-unit misregistration, halftone dot shading, paper grain; cutaway diagrams instead of characters.",
+    "audio_intent": {
+      "narration": "voice-over",
+      "voice": "af_heart",
+      "music": "original note-list score synthesised in code",
+      "sfx": "seeded procedural sound design on the moment table"
+    },
+    "shot_plan": [
+      {
+        "id": "bowl",
+        "purpose": "the question",
+        "sees": "a cross-section bowl of popcorn; the camera sinks to two hard kernels at the bottom",
+        "frames": [
+          0,
+          107
+        ]
+      },
+      {
+        "id": "inside",
+        "purpose": "what a kernel holds",
+        "sees": "two kernels in a cold pan open like a diagram: soft starch, blue water drops, a hard shiny hull that glints",
+        "frames": [
+          107,
+          276
+        ]
+      },
+      {
+        "id": "steam",
+        "purpose": "demonstrate pressure",
+        "sees": "the flame lights, the thermometer passes 100 \u00b0C, water drops boil into bubbles; in the sealed kernel bubbles crowd and the hull bulges and trembles",
+        "frames": [
+          276,
+          435
+        ]
+      },
+      {
+        "id": "leak",
+        "purpose": "complicate: the crack",
+        "sees": "the camera finds a hairline crack in the right kernel; steam hisses out of it in a plume, its bubbles drain away and its hull relaxes and browns",
+        "frames": [
+          435,
+          546
+        ]
+      },
+      {
+        "id": "burst",
+        "purpose": "reveal the pop",
+        "sees": "the thermometer reaches 180 \u00b0C; the sealed hull splits, petals of hull fold back and white starch foam blooms out in slow motion; a leg of starch presses the pan and the kernel jumps",
+        "frames": [
+          546,
+          801
+        ]
+      },
+      {
+        "id": "sound",
+        "purpose": "the surprising fact",
+        "sees": "a replay of the burst: the hull cracks silently, then the steam jet bursts out and sound rings spread from the jet",
+        "frames": [
+          801,
+          897
+        ]
+      },
+      {
+        "id": "answer",
+        "purpose": "resolve the question",
+        "sees": "the flake drops into the bowl and the camera sinks to the bottom where the dry cracked kernel lies",
+        "frames": [
+          897,
+          1026
+        ]
+      }
+    ],
+    "hardest_shot": {
+      "shot": "burst",
+      "why": "The burst must look like real popcorn forming (hull splitting, foam lobes blooming into a recognisable flake) and the leg-kick jump must read as a physical push on the pan; a generic white blob or a cut would lose the payoff.",
+      "fallback": "Stage the burst as a cut from a straining kernel to a fully formed flake mid-air with a sound accent, and drop the leg line."
+    }
+  },
+  "binding": {
+    "brief_sha256": "b86b896694c91fe2653bbcf5129e14a56695dc88342905c6690df0ef4c0c6e66",
+    "direction_sha256": "b35dde4e4042eddc7706f0cd88207ee9f74f4f35ee31f43880427aac82818b4b",
+    "source_tree_sha256": "c617a3438ec223909ce05183430c48f7d5b233a8c4677841ccfd434bbe794441",
+    "render_sha256": "47e5e9830fc1d59f13f2f9c719616c42b384b5e007fe5ba247ee921b215a4b00",
+    "render_fingerprint_sha256": "9ab1fc4b0d55308b44300bf7553a98186d10528bceebd309e0eb522bd84f1d78"
+  },
+  "evidence": [
+    {
+      "path": "runs/why-popcorn-pops/proof/59c229c2f5db/evidence-proof/ordered-frames.png",
+      "what": "ordered frames every 2 frames (0.07s), in playback order, labelled time / frame / shot",
+      "sha256": "e180db0511642971c33a0542e19cd8454e8b1178bb5322a494afd578853de15b"
+    },
+    {
+      "path": "runs/why-popcorn-pops/proof/59c229c2f5db/evidence-proof/strip-burst.png",
+      "what": "dense strip around moment \"burst\" (frame 630, 21.00s): every 2nd frame from -8 to +8",
+      "sha256": "ff4ea36e61252d85ea69191904f45684d5e8cd83db9cd5a2096f6a7714bd7e55"
+    },
+    {
+      "path": "runs/why-popcorn-pops/proof/59c229c2f5db/evidence-proof/strip-foam.png",
+      "what": "dense strip around moment \"foam\" (frame 642, 21.40s): every 2nd frame from -8 to +8",
+      "sha256": "35106a71927b4c159331fd7564d6ad026292d188a34428df9e92ced379389c29"
+    },
+    {
+      "path": "runs/why-popcorn-pops/proof/59c229c2f5db/evidence-proof/strip-leg.png",
+      "what": "dense strip around moment \"leg\" (frame 729, 24.30s): every 2nd frame from -8 to +8",
+      "sha256": "d1828a18e0bc391cd212bfab4f01301923b40ba39dda66fb7534abcc34a66fde"
+    },
+    {
+      "path": "runs/why-popcorn-pops/proof/59c229c2f5db/evidence-proof/strip-jump.png",
+      "what": "dense strip around moment \"jump\" (frame 735, 24.50s): every 2nd frame from -8 to +8",
+      "sha256": "e4b4d06fe259085771441cc46cd2ff1324cfd9372ded4be239713dd2865e89d9"
+    },
+    {
+      "path": "runs/why-popcorn-pops/proof/59c229c2f5db/evidence-proof/phone-f00673.png",
+      "what": "full preview frame at phone size 360x640, shot burst midpoint (22.43s)",
+      "sha256": "69a3f4e39a45e09a23680ae28ded828a99b3a783b35b2e09965bc39bc20a1c13"
+    }
+  ],
+  "evidence_root": "/home/user/motif/atelier",
+  "playback_available": false,
+  "limits": "Ordered decoded frames and dense strips only; no moving playback and no listening. Motion between samples and the sound of the mix cannot be judged from this evidence.",
+  "instructions": "You are an independent reviewer for a short vertical film made in Motif Atelier. You did not make it. Judge only the rendered evidence listed here against the stated intent: do not read the project source, builder notes or earlier reviews. Be specific and critical; a polite PASS on weak work defeats the purpose. For every dimension give PASS, FAIL or NOT_ASSESSED with a one-sentence note citing times or frames. Use NOT_ASSESSED whenever the evidence cannot establish the dimension (for example motion smoothness between sampled frames, or how the mix sounds). NOT_APPLICABLE is allowed only for the dimensions listed under not_applicable, with that reason. List every problem that should block release as a critical issue with the smallest fix. Disclose your sampling limits. Do not reward effort, technique or a description of intentions; reward what a first-time phone viewer would see.",
+  "response_path": "reviews/proof.json",
+  "response_schema": "atelier/contracts/review.schema.json",
+  "proof_video": "runs/why-popcorn-pops/proof/59c229c2f5db/proof.mp4",
+  "proof_frames": [
+    570,
+    798
+  ]
+}

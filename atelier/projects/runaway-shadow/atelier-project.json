@@ -1,0 +1,629 @@
+{
+  "schema": "motif-atelier-project/1",
+  "mode": "motif-atelier",
+  "slug": "runaway-shadow",
+  "project_id": "bc963cf78b804f9fb12efffb4e700de3",
+  "created": "2026-10-31T06:28:20+00:00",
+  "budgets": {
+    "concepts": 3,
+    "creative_repairs_per_approach": 2,
+    "delivery_renders": 3,
+    "render_minutes": 60
+  },
+  "stages": {
+    "intake": {
+      "status": "DONE",
+      "inputs": {
+        "brief.json": "30e159de271b3f7bc6085696cdafd89d949264fa317ced44d627573fb497ec83"
+      },
+      "at": "2026-10-31T06:28:20+00:00"
+    },
+    "concepts": {
+      "status": "DONE",
+      "inputs": {
+        "brief.json": "30e159de271b3f7bc6085696cdafd89d949264fa317ced44d627573fb497ec83",
+        "concepts.json": "659baee660c5e8db64079c594c7b51ab271b72be322a6c0183d712125f1630af"
+      },
+      "at": "2026-10-31T06:36:29+00:00",
+      "chosen": "copycat-lure",
+      "agent_assisted": true
+    },
+    "direction": {
+      "status": "DONE",
+      "inputs": {
+        "concepts.json": "659baee660c5e8db64079c594c7b51ab271b72be322a6c0183d712125f1630af",
+        "direction.json": "876ce38da1e0679e47709d44499cc1a30119ad7faa5cb4696182d210bc5c88fb"
+      },
+      "at": "2026-10-31T06:36:29+00:00",
+      "approach_id": "copycat-lure-v1",
+      "agent_assisted": true
+    },
+    "proof": {
+      "status": "DONE",
+      "inputs": {
+        "direction.json": "876ce38da1e0679e47709d44499cc1a30119ad7faa5cb4696182d210bc5c88fb"
+      },
+      "at": "2026-10-31T06:37:41+00:00",
+      "approach_id": "copycat-lure-v1",
+      "request_sha256": "938f3f3378d0ab5d4db69b61b4e5b8f0f03b2b3bc267ee55dcc9c3d870c0c1a8",
+      "reviewer": {
+        "kind": "builder",
+        "id": "Claude (the builder of this film)",
+        "independence": "builder-self-inspection",
+        "playback": "ordered-frames",
+        "inputs_viewed": [
+          "runs/runaway-shadow/proof/fad0ed940e66/evidence-proof/ordered-frames.png",
+          "runs/runaway-shadow/proof/fad0ed940e66/evidence-proof/strip-detach.png",
+          "runs/runaway-shadow/proof/fad0ed940e66/evidence-proof/strip-stand_up.png",
+          "runs/runaway-shadow/proof/fad0ed940e66/evidence-proof/strip-raspberry.png",
+          "runs/runaway-shadow/proof/fad0ed940e66/evidence-proof/strip-run_off.png",
+          "runs/runaway-shadow/proof/fad0ed940e66/evidence-proof/phone-f00333.png"
+        ]
+      }
+    },
+    "source": {
+      "status": "DONE",
+      "inputs": {
+        "source": "faa575b9c2bc0d14b6f44950979030990c5367164f3b5a6eb33e3bea3504d4a2",
+        "direction.json": "876ce38da1e0679e47709d44499cc1a30119ad7faa5cb4696182d210bc5c88fb"
+      },
+      "at": "2026-10-31T07:12:46+00:00",
+      "agent_assisted": true
+    },
+    "audio": {
+      "status": "DONE",
+      "inputs": {
+        "sound": "ab845c5e4e221bad066a086e2140e494791854ead6d6cc72e4701bf4df8b02ff",
+        "key": "a8737c0223a7"
+      },
+      "at": "2026-10-31T06:56:45+00:00",
+      "key": "a8737c0223a7",
+      "master_sha256": "5fdd4ee071ac7fadd06de33f070dda43c63596ebd839d8ad4ce2e6efc683721e",
+      "takes_reused": 0,
+      "takes": 0
+    },
+    "rough": {
+      "status": "BLOCKED",
+      "inputs": {
+        "source": "faa575b9c2bc0d14b6f44950979030990c5367164f3b5a6eb33e3bea3504d4a2",
+        "audio": "a8737c0223a7"
+      },
+      "at": "2026-10-31T07:13:08+00:00",
+      "key": "8118c6a03c78",
+      "preview": "runs/runaway-shadow/rough/8118c6a03c78/preview.mp4",
+      "preview_sha256": "f46d1da1e6d24f0fa5fda8412463c5acb89d1b2d1a78fe21de62ff81f3cb2f96"
+    }
+  },
+  "failures": {
+    "copycat-lure-v1": [
+      {
+        "role": "visual",
+        "request_sha256": "740729ee9752d72d492cd052ac5092ec1e1ace1c334e36b0a90c29a70e580e65",
+        "source_sha256": "1181d4113e39e84424a5ee9bbf49a8c760de72d5cf731440d978797e2149140e",
+        "at": "2026-10-31T06:52:51+00:00",
+        "issues": [
+          "focal_hierarchy: FAIL: Sunset, lag, the escape stand-up/raspberry, the lure and nightfall each have one clear focus. The middle loses it. At 11.6-12.0 s the twin's sprint passes right across Pim, and its hat covers Pim's face (f351-355). From 13.5 to 14.2 s the two characters merge into one dark-on-cream knot in front of the trunk: the twin's arm is across Pim's face and the hats interlock (f415-421), so the melt, the point of the beat, happens at the edge of the knot. At the peek (16.7-17.9 s) the punchline, eyes of about 10 px giggling in the shade, is the smallest and lowest-contrast thing in a cluster led by the saturated red hat and Pim's upside-down face.",
+          "composition: FAIL: The vertical layering of sky, character at mid-frame and shadow play in the lower half is deliberate and works well at 1.6 s, 6.1 s and 21.1 s. The whole chase-failure stretch is jammed against the left edge, though. From 15.0 to 19.5 s the dive, the headstand, the cap and the giggling eyes sit in the left third or so of the frame, with Pim's body and hand within about 10 px of the edge at 15.5 s and two thirds of the frame left as empty grass. The eyes in the shade at the peek (17.0 s) and lure (20.5-21.5 s) sit about 72-79% down at the far left, which is where platform captions overlay on Reels and TikTok.",
+          "readable_action: FAIL: Several actions read well: the shadow's held flourish and its innocent snap at the double-take (f166-176), the arm test (7.0-8.0 s), the shadow sliding off Pim's feet (f288-296), the twin popping up with eyes and a raspberry (f304-333), the dive and crash (f460-468), the shadow re-attaching at the stomp and the wink. The chase that should show force failing does not read. The twin leans left, sprints right straight past Pim and out of frame right (f347-360), then is back at the tree beside Pim at 12.50 s. The chase covers no ground: Pim stands next to the twin from 12.5 to 14.0 s, about 0.7 s from chase_start to melt. The melt itself is a 4-frame flat sliver (f427-431). The cap-net never works as a net: it is held up by the pompom at 15.0 s and then planted in the grass.",
+          "motion_performance: FAIL: There is real acting: a two-frame snap into a held double-take (f174-176), an opposite-direction lean before the run (f345-347), a dizzy hold (16.0-17.5 s) and a smug dance (21.0-22.5 s). Timing fails at the two moments that carry the comedy. The stomp, the payoff contact, is a hop of about 18 px at phone scale with almost no wind-up, no squash on impact and a tiny puff, and the shadow snaps to Pim's feet within 2 frames (f684-692). The final wink (f835) holds only about 20 frames (0.67 s) before the film ends at f855. The chase also gets no time to build (about 0.7 s).",
+          "phone_readability: FAIL: Most of the meaning survives at 360x640 thanks to bold silhouettes, the solid twin, white eyes and a clear tongue (phone-f00183, f00333, f00633). Three load-bearing details are below phone scale. The melt is a sliver about 54x5 px for a few frames. The stomp's impact puff is a speck (f692). The closing wink is made of eyes about 12 px across, half the size of Pim's, and it is on screen for under a second, so the film's last image is the easiest thing to miss.",
+          "critical: run_off -> chase -> melt, 11.6-14.5 s (f347-435): Force failing is not shown. The twin sprints right, straight past Pim, exits frame right, then is back at the tree beside Pim by 12.5 s. Pim never visibly chases across open ground (about 0.7 s between chase_start and melt while the two stand together). The melt into the tree's shade is a 4-frame sliver at the edge of an overlapping knot of both characters, so a first-time viewer sees the twin simply vanish.",
+          "critical: chase scuffle 13.5-14.2 s (f405-425) and peek/giggle 16.7-17.9 s (f502-536): In the scuffle the twin's arm crosses Pim's face and the two caps interlock, so the silhouettes merge into one knot. At the peek the giggling eyes, about 10 px and low contrast on the olive shade, carry the joke, but the eye goes first to the saturated red cap planted right beside them and to Pim's upside-down face.",
+          "critical: faceplant/peek/idea 15.0-19.5 s; shade eyes in lure 20.5-21.5 s: The film's main failure gag is staged in the left third or so of the frame, against the edge (Pim's body and hand within about 10 px of the left edge at 15.5 s), leaving two thirds of the frame as empty grass. The shadow's eyes in the tree shade sit about 72-79% down at the far left, inside the bottom-left caption-overlay zone of phone platforms.",
+          "critical: stomp, 22.8-23.2 s (f684-700): The payoff contact is undersold. Pim rises only about 18 px (phone scale) with no real wind-up, lands with no squash and only a tiny puff, and the shadow is already re-attached and sulking 2 frames later. The viewer may read it as the shadow drifting back rather than being pinned by a stomp.",
+          "critical: eyes_open / wink, 27.2-28.5 s (f816-855): The button is the film's last image, but the shadow's eyes are about 12 px each at phone size (half Pim's eye size) and the wink at f835 holds only about 20 frames (0.67 s) before the film ends, so it is easy to miss."
+        ]
+      },
+      {
+        "role": "story",
+        "request_sha256": "e5d0165b2337eec82867f3bcd312f0ae4f066c5e12b3b44d6387cd2d47b59ee6",
+        "source_sha256": "b4e373d0cc0d54f3b5e568166753b48f1a31b52405f7cb8a625704fe5d77edc1",
+        "at": "2026-10-31T07:13:09+00:00",
+        "issues": [
+          "cause_before_effect: FAIL: The payoff depends on Pim pinning the shadow by stomping on its feet, and that is never shown. At the stomp frame f690, Pim's foot and dust puff land on bare grass about 11 px (strip scale), roughly 25 px at phone size, above the shadow's top end. At f692-f694 the gap grows to about 19 px (roughly 45 px at phone size) as the shadow sags away. The shadow only joins Pim's feet at f696-f698, with no contact. Every other causal chain is in the right order: the flourish (5.0-5.5s) comes before the double take (f174-f176), the lean and squint (f285) before the detach (f288-f300), the melt (f422-f430) before the dive and faceplant (f450-f468) with the eyes in the shade afterwards (f500), the dance (21.0s) before the creep-out (21.5-22.5s), and the darkening (24.5-26.0s) before the worry and the eyes (26.0-27.5s).",
+          "critical: lure, stomp at 22.9-23.3s (f688-f698); measured in strip-stomp: The payoff gag is 'Pim stomps on the shadow's feet and pins it', but Pim's foot lands on empty grass. The shadow's top end is about 25 px (phone scale) below the foot at f690 and sags to about 45 px away at f692-f694. It then slides up and reattaches at f696-f698 with no contact, so the cause (foot on the shadow's feet) never appears on screen. The clever, character-driven pin becomes an unexplained snap back."
+        ]
+      },
+      {
+        "role": "visual",
+        "request_sha256": "41bf87aab1b71a5ae4b56d55fc1cf8dc53c875acc9a69db6cf14983ea7131bda",
+        "source_sha256": "b4e373d0cc0d54f3b5e568166753b48f1a31b52405f7cb8a625704fe5d77edc1",
+        "at": "2026-10-31T07:13:09+00:00",
+        "issues": [
+          "focal_hierarchy: FAIL: Most beats direct the eye well (the opaque twin during the escape, white eyes in the shade, the night eyes), but at the lure creep the element that matters, the shadow being drawn out, is a low-contrast olive shape half off the left edge with an eye clipped, while bright dancing Pim holds the centre; the opening frame (0.0 s) is an empty meadow whose only focal point is the tree.",
+          "composition: FAIL: Vertical staging generally uses the long shadow well and keeps characters above the bottom caption band, but in the creep the shadow's eyes sit 6-52 px from the left edge at y 482-498 of 640 (bottom-left caption/username zone) with the left eye cut off f618-f630; tangents muddle key beats (the twin's hat bobble sits on Pim's raised hand through the raspberry f317-f333, Pim's raised hand lands exactly on the trunk base through the faceplant f468-f560), and Pim enters at 0.5 s half off-frame under the right-side UI rail.",
+          "readable_action: FAIL: Detach, stand-up, raspberry, run-off and melt read clearly, but the payoff stomp misses: at f690-f694 Pim's foot and dust puff land on bare grass about 25-30 px (phone scale) above the shadow's foot nubs, which only reach Pim's feet at about f698; the faceplant leaves Pim upside down with its face in the air, its body touching no ground and one arm glued to the trunk base, and from 18.0 to 19.5 s Pim floats upright, sitting inside the planted hat like an egg in a cone.",
+          "motion_performance: NOT_ASSESSED: The dense strips show sound key-moment acting: the double-take stretch (f174-f176), the stand-up squash and stretch (f302-f310), the stomp's hop, impact and squash (f684-f692) and the wink (f833-f835). There are weaker spots: Pim holds one frozen pose while the twin escapes (f340-f356), and about 4 s pass near-static at the faceplant spot (15.6-19.5 s). But the film's central timing gags, the shadow moving one beat late and copying the dance, are temporal and cannot be judged from 0.5 s and 2-frame samples.",
+          "critical: lure, stomp f686-f698 (22.87-23.27 s): On the impact frames f690-f694, Pim's stomping foot and dust puff land on empty grass about 25-30 px (360x640 scale) above the shadow's foot nubs. The shadow only reaches Pim's feet at about f698, so the payoff action ('stomps on its feet to pin it back') never visibly makes contact; it reads as a stomp on grass, after which the shadow slides up.",
+          "critical: lure creep 20.5-21.5 s (f615-f645): The shadow being lured out is the mechanism of the payoff, yet it is jammed against the left edge: its left eye is cut off by the frame at f618-f630, and at f633 the eyes sit at x 6-52, y 482-498 of 640, inside the bottom-left caption/username zone, on a low-contrast olive shape while bright dancing Pim holds the centre. A first-time phone viewer is unlikely to register the shadow coming out to copy the dance.",
+          "critical: chase faceplant and hold 15.6-19.8 s (f468-f594): The hat-net dive does not land face-first in the grass. Pim ends upside down with its face toward the camera and no part of its body touching the ground, and its raised arm ends exactly on the tree-trunk base, so it reads as hanging on the tree. From 18.0 to 19.5 s Pim then floats upright, sitting inside the planted hat like an egg in a cone, so the landing never holds up as a crash."
+        ]
+      },
+      {
+        "role": "visual",
+        "request_sha256": "66b59d642014948389ab8ccac6e4172f904f8b980655f6aebced08a394b1f87c",
+        "source_sha256": "faa575b9c2bc0d14b6f44950979030990c5367164f3b5a6eb33e3bea3504d4a2",
+        "at": "2026-10-31T07:24:26+00:00",
+        "issues": [
+          "readable_action: FAIL: Most beats read well. The detach shows a visible gap opening between Pim's feet and the shadow (f290-f300); the hinge-up into a twin is clear (f304-f310), as are the raspberry tongue (f325-f333), the melt into a flat splat on the trunk shadow (f426-f430), Pim's feet landing on the shadow's feet with a dust puff and squash (f690-f692) and the wink (f835-f855). The complication's key action does not read. In the hat-net dive landing (f466-f476) the hat jumps from Pim's raised upper hand to hanging open-side-up below his lower hand, slides behind his body and ends point-down beside his feet. It never comes down over the spot where the twin melted, so the 'net slams down on nothing' gag is lost, and so is a clean face-first contact. The 'shadow can't resist copying the dance' idea is also not visible in the sampled poses (21.0-22.5 s): the shadow's arms do not match any of Pim's recent poses, though this needs playback to confirm.",
+          "motion_performance: NOT_ASSESSED: Ordered stills cannot show spacing, easing or whether the comic timing lands. Here is what the samples do show. On the plus side there is anticipation for the take (hat stretch and O mouth, f174->f176), a backing-up wind-up before the dive (14.5-15.0 s), a hop before the stomp with squash on landing (f682-f692), and holds on the giggle and the wink. On the minus side Pim stands frozen and gawping for about 1.8 s (11.6-13.4 s) while the twin dashes only about 0.2 of the frame width (11.5-12.0 s) and then idles at the trunk. That leaves the actual chase at about 1 s and five steps (13.47-14.3 s), so 'force fails' is thin.",
+          "technical_defects: FAIL: There is a visible prop pop: between f466 and f468 the hat leaves Pim's raised upper hand and appears about one body height lower, hanging below his lower hand, with nothing in between. Through f470-f474 it then passes under and behind his body before popping out at his feet. Otherwise no tearing, broken frames or unintended clipping is visible in any sample. The sky gradient is smooth (largest per-row step 7/765). The night sky is coarsely stepped (9 levels across the top 240 px) but shows no visible banding.",
+          "critical: chase, faceplant 15.5-16.0 s (f466-f476) and the hold through about 19.5 s: The hat-net dive never visibly nets anything. The hat ends point-down beside Pim's feet instead of over the shade or trunk-shadow spot where the twin melted, so a first-time viewer gets 'Pim fell over' rather than 'his net slammed down on empty grass while the shadow giggles from elsewhere'. The face-first landing is also muddled because the hat is lying behind him.",
+          "critical: chase, f466->f468 and f470-f474: The hat pops from the raised upper hand to hanging under the lower hand in a single 2-frame step, then passes behind Pim's body. The prop changes parent and layer with no in-between."
+        ]
+      },
+      {
+        "role": "review",
+        "request_sha256": "exhausted",
+        "source_sha256": "faa575b9c2bc0d14b6f44950979030990c5367164f3b5a6eb33e3bea3504d4a2",
+        "at": "2026-10-31T07:24:26+00:00",
+        "issues": []
+      }
+    ]
+  },
+  "concept_changes": [],
+  "technical_retries": [
+    {
+      "at": "2026-10-31T06:37:50+00:00",
+      "kind": "rough",
+      "error": "Error: Page.evaluate: IndexSizeError: Failed to execute 'arc' on 'CanvasRenderingContext2D': The radius provided (-3.29672e-15) is negative.\n    at dust (http://127.0.0.1:40041/film.js:439:28)\n    at Object.render (http://127.0.0.1:40041/film.js:460:92)\n    at Object.seek (http://127.0.0.1:40041/__atelier/atelier.js:92:28)\n    at eval (eval at evaluate (:370:30), <anonymous>:1:14)\n    at UtilityScript.evaluate (<anonymous>:377:18)\n    at UtilityScript.<anonymous> (<anonymous>:1:44); RenderError: Error: Page.evaluate: IndexSizeError: Failed to execute 'arc' on 'CanvasRenderingContext2D': The ra"
+    }
+  ],
+  "renders": [
+    {
+      "at": "2026-10-31T06:36:34+00:00",
+      "kind": "proof",
+      "frames": 126,
+      "size": [
+        360,
+        640
+      ],
+      "seconds": 4.1,
+      "workers": 3,
+      "file": "runs/runaway-shadow/proof/acec9cee1f20/proof.mp4"
+    },
+    {
+      "at": "2026-10-31T06:37:16+00:00",
+      "kind": "proof",
+      "frames": 126,
+      "size": [
+        360,
+        640
+      ],
+      "seconds": 3.5,
+      "workers": 3,
+      "file": "runs/runaway-shadow/proof/fad0ed940e66/proof.mp4"
+    },
+    {
+      "at": "2026-10-31T06:38:11+00:00",
+      "kind": "rough",
+      "frames": 855,
+      "size": [
+        360,
+        640
+      ],
+      "seconds": 13.0,
+      "workers": 3,
+      "file": "runs/runaway-shadow/rough/144e496022ba/picture.mp4"
+    },
+    {
+      "at": "2026-10-31T06:39:49+00:00",
+      "kind": "rough",
+      "frames": 855,
+      "size": [
+        360,
+        640
+      ],
+      "seconds": 13.0,
+      "workers": 3,
+      "file": "runs/runaway-shadow/rough/21d19bed6b6b/picture.mp4"
+    },
+    {
+      "at": "2026-10-31T06:52:42+00:00",
+      "kind": "rough",
+      "frames": 855,
+      "size": [
+        360,
+        640
+      ],
+      "seconds": 13.0,
+      "workers": 3,
+      "file": "runs/runaway-shadow/rough/6ac4a94b591f/picture.mp4"
+    },
+    {
+      "at": "2026-10-31T06:56:58+00:00",
+      "kind": "rough",
+      "frames": 888,
+      "size": [
+        360,
+        640
+      ],
+      "seconds": 13.0,
+      "workers": 3,
+      "file": "runs/runaway-shadow/rough/fda6559f438c/picture.mp4"
+    },
+    {
+      "at": "2026-10-31T07:12:59+00:00",
+      "kind": "rough",
+      "frames": 888,
+      "size": [
+        360,
+        640
+      ],
+      "seconds": 13.1,
+      "workers": 3,
+      "file": "runs/runaway-shadow/rough/8118c6a03c78/picture.mp4"
+    }
+  ],
+  "reviewer_calls": 0,
+  "human_decision": null,
+  "status": "BLOCKED:REPAIR_BUDGET_EXHAUSTED",
+  "history": [
+    {
+      "at": "2026-10-31T06:28:20+00:00",
+      "event": "intake",
+      "brief_sha256": "30e159de271b3f7bc6085696cdafd89d949264fa317ced44d627573fb497ec83"
+    },
+    {
+      "at": "2026-10-31T06:28:20+00:00",
+      "event": "stage",
+      "stage": "intake",
+      "status": "DONE"
+    },
+    {
+      "at": "2026-10-31T06:28:20+00:00",
+      "event": "stage",
+      "stage": "concepts",
+      "status": "AWAITING_AUTHORING",
+      "errors": [],
+      "agent_assisted": true,
+      "worker": "handoff"
+    },
+    {
+      "at": "2026-10-31T06:28:20+00:00",
+      "event": "status",
+      "status": "AWAITING_AUTHORING:concepts",
+      "next_step": "complete handoff/concepts.md then resume"
+    },
+    {
+      "at": "2026-10-31T06:34:53+00:00",
+      "event": "ledger-refresh",
+      "changed": [],
+      "unrecorded": []
+    },
+    {
+      "at": "2026-10-31T06:36:12+00:00",
+      "event": "ledger-refresh",
+      "changed": [
+        "film.js"
+      ],
+      "unrecorded": []
+    },
+    {
+      "at": "2026-10-31T06:36:29+00:00",
+      "event": "stage",
+      "stage": "concepts",
+      "status": "DONE",
+      "agent_assisted": true
+    },
+    {
+      "at": "2026-10-31T06:36:29+00:00",
+      "event": "stage",
+      "stage": "direction",
+      "status": "DONE",
+      "agent_assisted": true
+    },
+    {
+      "at": "2026-10-31T06:36:36+00:00",
+      "event": "status",
+      "status": "AWAITING_REVIEW:proof",
+      "next_step": "watch the proof at phone size and write reviews/proof.json (builder inspection is allowed here, and recorded as such), then resume"
+    },
+    {
+      "at": "2026-10-31T06:37:12+00:00",
+      "event": "ledger-refresh",
+      "changed": [
+        "film.js"
+      ],
+      "unrecorded": []
+    },
+    {
+      "at": "2026-10-31T06:37:41+00:00",
+      "event": "stage",
+      "stage": "proof",
+      "status": "DONE"
+    },
+    {
+      "at": "2026-10-31T06:37:41+00:00",
+      "event": "stage",
+      "stage": "source",
+      "status": "DONE",
+      "agent_assisted": true
+    },
+    {
+      "at": "2026-10-31T06:37:44+00:00",
+      "event": "stage",
+      "stage": "audio",
+      "status": "DONE"
+    },
+    {
+      "at": "2026-10-31T06:37:50+00:00",
+      "event": "status",
+      "status": "BLOCKED:RENDER_ERROR",
+      "next_step": "rough render failed (technical, not a creative repair): Error: Page.evaluate: IndexSizeError: Failed to execute 'arc' on 'CanvasRenderingContext2D': The radius provided (-3.29672e-15) is negative.\n    at dust (http://127.0.0.1:40041/film.js:439:28)\n    at Object.render (http://127.0.0.1:40041/film.js:460:92)\n    at Object.seek (http://127.0.0.1:40041/__a"
+    },
+    {
+      "at": "2026-10-31T06:37:58+00:00",
+      "event": "ledger-refresh",
+      "changed": [
+        "film.js"
+      ],
+      "unrecorded": []
+    },
+    {
+      "at": "2026-10-31T06:37:58+00:00",
+      "event": "stage",
+      "stage": "source",
+      "status": "DONE",
+      "agent_assisted": true
+    },
+    {
+      "at": "2026-10-31T06:38:19+00:00",
+      "event": "stage",
+      "stage": "rough",
+      "status": "DONE"
+    },
+    {
+      "at": "2026-10-31T06:38:20+00:00",
+      "event": "status",
+      "status": "AWAITING_REVIEW:story,visual",
+      "next_step": "independent reviewers write reviews/story.json, reviews/visual.json from the matching -request.md, then resume; the builder may not write these"
+    },
+    {
+      "at": "2026-10-31T06:39:14+00:00",
+      "event": "ledger-refresh",
+      "changed": [
+        "film.js",
+        "film.json"
+      ],
+      "unrecorded": []
+    },
+    {
+      "at": "2026-10-31T06:39:33+00:00",
+      "event": "stage",
+      "stage": "source",
+      "status": "DONE",
+      "agent_assisted": true
+    },
+    {
+      "at": "2026-10-31T06:39:36+00:00",
+      "event": "stage",
+      "stage": "audio",
+      "status": "DONE"
+    },
+    {
+      "at": "2026-10-31T06:39:57+00:00",
+      "event": "stage",
+      "stage": "rough",
+      "status": "DONE"
+    },
+    {
+      "at": "2026-10-31T06:52:50+00:00",
+      "event": "stage",
+      "stage": "rough",
+      "status": "DONE"
+    },
+    {
+      "at": "2026-10-31T06:52:51+00:00",
+      "event": "creative-failure",
+      "approach": "copycat-lure-v1",
+      "role": "visual",
+      "round": 1,
+      "settled": "before the request changed"
+    },
+    {
+      "at": "2026-10-31T06:52:51+00:00",
+      "event": "review-archived",
+      "role": "story",
+      "reason": "stale: the request changed",
+      "kept": "story-ad277b485902.json"
+    },
+    {
+      "at": "2026-10-31T06:52:51+00:00",
+      "event": "review-archived",
+      "role": "visual",
+      "reason": "stale: the request changed",
+      "kept": "visual-740729ee9752.json"
+    },
+    {
+      "at": "2026-10-31T06:54:51+00:00",
+      "event": "ledger-refresh",
+      "changed": [
+        "film.js",
+        "film.json"
+      ],
+      "unrecorded": []
+    },
+    {
+      "at": "2026-10-31T06:55:43+00:00",
+      "event": "ledger-refresh",
+      "changed": [
+        "film.js"
+      ],
+      "unrecorded": []
+    },
+    {
+      "at": "2026-10-31T06:56:24+00:00",
+      "event": "ledger-refresh",
+      "changed": [
+        "film.js"
+      ],
+      "unrecorded": []
+    },
+    {
+      "at": "2026-10-31T06:56:42+00:00",
+      "event": "stage",
+      "stage": "source",
+      "status": "DONE",
+      "agent_assisted": true
+    },
+    {
+      "at": "2026-10-31T06:56:45+00:00",
+      "event": "stage",
+      "stage": "audio",
+      "status": "DONE"
+    },
+    {
+      "at": "2026-10-31T06:57:06+00:00",
+      "event": "stage",
+      "stage": "rough",
+      "status": "DONE"
+    },
+    {
+      "at": "2026-10-31T07:11:58+00:00",
+      "event": "ledger-refresh",
+      "changed": [
+        "film.js"
+      ],
+      "unrecorded": []
+    },
+    {
+      "at": "2026-10-31T07:12:28+00:00",
+      "event": "ledger-refresh",
+      "changed": [
+        "film.js"
+      ],
+      "unrecorded": []
+    },
+    {
+      "at": "2026-10-31T07:12:46+00:00",
+      "event": "stage",
+      "stage": "source",
+      "status": "DONE",
+      "agent_assisted": true
+    },
+    {
+      "at": "2026-10-31T07:13:08+00:00",
+      "event": "stage",
+      "stage": "rough",
+      "status": "DONE"
+    },
+    {
+      "at": "2026-10-31T07:13:09+00:00",
+      "event": "creative-failure",
+      "approach": "copycat-lure-v1",
+      "role": "story",
+      "round": 2,
+      "settled": "before the request changed"
+    },
+    {
+      "at": "2026-10-31T07:13:09+00:00",
+      "event": "creative-failure",
+      "approach": "copycat-lure-v1",
+      "role": "visual",
+      "round": 2,
+      "settled": "before the request changed"
+    },
+    {
+      "at": "2026-10-31T07:13:09+00:00",
+      "event": "review-archived",
+      "role": "story",
+      "reason": "stale: the request changed",
+      "kept": "story-e5d0165b2337.json"
+    },
+    {
+      "at": "2026-10-31T07:13:09+00:00",
+      "event": "review-archived",
+      "role": "visual",
+      "reason": "stale: the request changed",
+      "kept": "visual-41bf87aab1b7.json"
+    },
+    {
+      "at": "2026-10-31T07:24:26+00:00",
+      "event": "creative-failure",
+      "approach": "copycat-lure-v1",
+      "role": "visual",
+      "round": 3,
+      "settled": "before the request changed"
+    },
+    {
+      "at": "2026-10-31T07:24:26+00:00",
+      "event": "creative-failure",
+      "approach": "copycat-lure-v1",
+      "role": "review",
+      "round": 3
+    },
+    {
+      "at": "2026-10-31T07:24:26+00:00",
+      "event": "status",
+      "status": "BLOCKED:REPAIR_BUDGET_EXHAUSTED",
+      "next_step": "approach copycat-lure-v1 failed 3 times (2 repairs allowed): record a concept change (new direction approach_id + `concept-change`) or an unresolved blocker (`blocker`)"
+    }
+  ],
+  "next_step": "approach copycat-lure-v1 failed 3 times (2 repairs allowed): record a concept change (new direction approach_id + `concept-change`) or an unresolved blocker (`blocker`)",
+  "approaches": {
+    "copycat-lure-v1": {
+      "logline": "A small creature's shadow runs off at sunset; force cannot catch it, so the creature dances until the copycat shadow cannot resist copying its way back.",
+      "hardest_shot": "The shadow must read as Pim's own projection, then visibly detach, hinge up into a standing twin and run, while Pim's feet are left without a shadow; if the detach or the stand-up reads as a sticker swap the premise fails.",
+      "at": "2026-10-31T06:36:29+00:00"
+    }
+  },
+  "reviews": {
+    "proof": {
+      "status": "PASS",
+      "request_sha256": "938f3f3378d0ab5d4db69b61b4e5b8f0f03b2b3bc267ee55dcc9c3d870c0c1a8",
+      "reviewer": {
+        "kind": "builder",
+        "id": "Claude (the builder of this film)",
+        "independence": "builder-self-inspection",
+        "playback": "ordered-frames",
+        "inputs_viewed": [
+          "runs/runaway-shadow/proof/fad0ed940e66/evidence-proof/ordered-frames.png",
+          "runs/runaway-shadow/proof/fad0ed940e66/evidence-proof/strip-detach.png",
+          "runs/runaway-shadow/proof/fad0ed940e66/evidence-proof/strip-stand_up.png",
+          "runs/runaway-shadow/proof/fad0ed940e66/evidence-proof/strip-raspberry.png",
+          "runs/runaway-shadow/proof/fad0ed940e66/evidence-proof/strip-run_off.png",
+          "runs/runaway-shadow/proof/fad0ed940e66/evidence-proof/phone-f00333.png"
+        ]
+      },
+      "issues": [],
+      "at": "2026-10-31T06:37:41+00:00"
+    }
+  },
+  "settled": {
+    "story": {
+      "request_sha256": "109078a61354575051e54a076fb57f14b07e12794cc070f038f22e170d2e2260",
+      "core": {
+        "brief_sha256": "30e159de271b3f7bc6085696cdafd89d949264fa317ced44d627573fb497ec83",
+        "concepts_sha256": "659baee660c5e8db64079c594c7b51ab271b72be322a6c0183d712125f1630af",
+        "direction_sha256": "876ce38da1e0679e47709d44499cc1a30119ad7faa5cb4696182d210bc5c88fb",
+        "source_tree_sha256": "faa575b9c2bc0d14b6f44950979030990c5367164f3b5a6eb33e3bea3504d4a2",
+        "audio_master_sha256": "5fdd4ee071ac7fadd06de33f070dda43c63596ebd839d8ad4ce2e6efc683721e",
+        "render_fingerprint_sha256": "b62dccf5a0ccf6a7e9afa0360d1da1c855c48a6cf88f1432ffee404a331b99d0"
+      },
+      "status": "PASS"
+    },
+    "visual": {
+      "request_sha256": "66b59d642014948389ab8ccac6e4172f904f8b980655f6aebced08a394b1f87c",
+      "core": {
+        "brief_sha256": "30e159de271b3f7bc6085696cdafd89d949264fa317ced44d627573fb497ec83",
+        "concepts_sha256": "659baee660c5e8db64079c594c7b51ab271b72be322a6c0183d712125f1630af",
+        "direction_sha256": "876ce38da1e0679e47709d44499cc1a30119ad7faa5cb4696182d210bc5c88fb",
+        "source_tree_sha256": "faa575b9c2bc0d14b6f44950979030990c5367164f3b5a6eb33e3bea3504d4a2",
+        "audio_master_sha256": "5fdd4ee071ac7fadd06de33f070dda43c63596ebd839d8ad4ce2e6efc683721e",
+        "render_fingerprint_sha256": "b62dccf5a0ccf6a7e9afa0360d1da1c855c48a6cf88f1432ffee404a331b99d0"
+      },
+      "status": "FAIL"
+    },
+    "proof": {
+      "request_sha256": "938f3f3378d0ab5d4db69b61b4e5b8f0f03b2b3bc267ee55dcc9c3d870c0c1a8",
+      "core": {
+        "brief_sha256": "30e159de271b3f7bc6085696cdafd89d949264fa317ced44d627573fb497ec83",
+        "direction_sha256": "876ce38da1e0679e47709d44499cc1a30119ad7faa5cb4696182d210bc5c88fb",
+        "source_tree_sha256": "0017c3dec66ced7d5eb3405e0e474e0cebd84565d69e5224da0829854cd3c94d",
+        "render_fingerprint_sha256": "1816d40573290586bfcfa764f21ada7e028a322da0059511f1645c8079c1ce4d"
+      },
+      "status": "PASS"
+    }
+  }
+}

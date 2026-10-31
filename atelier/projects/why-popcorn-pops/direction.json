@@ -1,0 +1,181 @@
+{
+  "authored_by": "Claude (agent-assisted authoring in Motif Atelier)",
+  "approach_id": "two-kernels-v1",
+  "logline": "Two kernels heat in one pan; the sealed one bursts into a flake and jumps, the one with a hairline crack leaks its steam and ends up at the bottom of the bowl.",
+  "ending": "The flake drops into the bowl, the camera sinks to the bottom, and the dry cracked kernel lies there among the unpopped: their steam got out.",
+  "opening_promise": "A cross-section of a popcorn bowl reveals two hard kernels at the bottom, with the question of why they never popped.",
+  "continuity": {
+    "carrier": "object",
+    "what": "Two kernels, one sealed and one cracked, from the pan to the bowl; the cracked one is the kernel the opening asked about."
+  },
+  "style_sheet": {
+    "look": "Risograph science zine: off-white paper, overprinted flat inks (blue linework, fluorescent pink, yellow) with 3-unit misregistration, halftone dot shading, paper grain; cutaway diagrams instead of characters.",
+    "palette": [
+      "#F3ECDD",
+      "#1F4FA8",
+      "#FF4F9A",
+      "#FFC93C",
+      "#FF7A2F",
+      "#FFF6E4"
+    ],
+    "materials": "ink on paper: multiply-blended fills, halftone dots for shade, blue line outlines printed slightly off register",
+    "characters": [],
+    "environment": "a cross-section bowl and a skillet over riso flames; a print-style thermometer gauge fixed at the top of the frame during the pan scenes is the only measurement on screen",
+    "framing": "vertical: pan in the lower third, open space above for steam and the jump; the camera pushes into whichever kernel the line is about and follows the jump up",
+    "typography": "Inter 900 (OFL) for three readouts only: WATER 14%, 180 \u00b0C on the top gauge, and REPLAY",
+    "sound_intent": "A clear, warm narrator (approved voice af_heart at natural speed) over a curious pluck score; the score holds its breath before the burst; crack, hiss, pop and foam are sound-designed and the replay places the pop on the steam jet, not the crack."
+  },
+  "audio": {
+    "narration": "voice-over",
+    "voice": "af_heart",
+    "music": "original note-list score synthesised in code",
+    "sfx": "seeded procedural sound design on the moment table"
+  },
+  "shots": [
+    {
+      "id": "bowl",
+      "purpose": "the question",
+      "sees": "a cross-section bowl of popcorn; the camera sinks to two hard kernels at the bottom",
+      "before": "a full bowl",
+      "after": "attention on the unpopped kernels"
+    },
+    {
+      "id": "inside",
+      "purpose": "what a kernel holds",
+      "sees": "two kernels in a cold pan open like a diagram: soft starch, blue water drops, a hard shiny hull that glints",
+      "before": "kernels seen from outside",
+      "after": "kernels in cutaway with water visible"
+    },
+    {
+      "id": "steam",
+      "purpose": "demonstrate pressure",
+      "sees": "the flame lights, the thermometer passes 100 \u00b0C, water drops boil into bubbles; in the sealed kernel bubbles crowd and the hull bulges and trembles",
+      "before": "still water drops",
+      "after": "sealed kernel straining",
+      "cause": "heat"
+    },
+    {
+      "id": "leak",
+      "purpose": "complicate: the crack",
+      "sees": "the camera finds a hairline crack in the right kernel; steam hisses out of it in a plume, its bubbles drain away and its hull relaxes and browns",
+      "before": "both kernels pressurising",
+      "after": "cracked kernel empty of steam",
+      "cause": "the crack"
+    },
+    {
+      "id": "burst",
+      "purpose": "reveal the pop",
+      "sees": "the thermometer reaches 180 \u00b0C; the sealed hull splits, petals of hull fold back and white starch foam blooms out in slow motion; a leg of starch presses the pan and the kernel jumps",
+      "before": "sealed kernel straining",
+      "after": "a popcorn flake in the air",
+      "cause": "trapped steam at about 180 \u00b0C"
+    },
+    {
+      "id": "sound",
+      "purpose": "the surprising fact",
+      "sees": "a replay of the burst: the hull cracks silently, then the steam jet bursts out and sound rings spread from the jet",
+      "before": "flake in the air",
+      "after": "the pop tied to the steam"
+    },
+    {
+      "id": "answer",
+      "purpose": "resolve the question",
+      "sees": "the flake drops into the bowl and the camera sinks to the bottom where the dry cracked kernel lies",
+      "before": "two kernels' fates apart",
+      "after": "the opening image answered"
+    }
+  ],
+  "hardest_shot": {
+    "shot": "burst",
+    "why": "The burst must look like real popcorn forming (hull splitting, foam lobes blooming into a recognisable flake) and the leg-kick jump must read as a physical push on the pan; a generic white blob or a cut would lose the payoff.",
+    "fallback": "Stage the burst as a cut from a straining kernel to a fully formed flake mid-air with a sound accent, and drop the leg line."
+  },
+  "claims": [
+    {
+      "id": "pressure-vessel",
+      "statement": "A popcorn kernel's hard hull (the pericarp) acts as a pressure vessel while it heats.",
+      "kind": "observation",
+      "source_url": "https://knowledgecenter.cimmyt.org/bib/68087",
+      "source_title": "Hoseney, Zeleznak & Abdelrahman (1983), Mechanism of popcorn popping, Journal of Cereal Science 1(1): 43-52 (catalogue record and abstract)",
+      "excerpt": "the pericarp acts as a pressure vessel during popping",
+      "spoken_as": "sealed in a hard, shiny hull / In a sealed kernel it's trapped, and the pressure climbs.",
+      "note": "Excerpt relayed through a web-search summary of the abstract; the catalogue and publisher pages were not reachable from this session (network policy)."
+    },
+    {
+      "id": "steam-pressure",
+      "statement": "Heated, part of the kernel's water turns to vapour; trapped by the hull, it raises the pressure inside.",
+      "kind": "inference",
+      "source_url": "https://doi.org/10.1098/rsif.2014.1247",
+      "source_title": "Virot & Ponomarenko (2015) abstract; Hoseney, Zeleznak & Abdelrahman (1983) abstract",
+      "excerpt": "the critical temperature 180\u00b0C at which almost all of popcorn pops is consistent with an elementary pressure vessel scenario (Virot & Ponomarenko); the pericarp acts as a pressure vessel during popping (Hoseney et al.)",
+      "spoken_as": "Heat turns some of that water to steam.",
+      "note": "Inference from the pressure-vessel model both sources describe; the narration says \"some of that water\" because most of it stays liquid (superheated) until the hull breaks."
+    },
+    {
+      "id": "water-content",
+      "statement": "Popcorn kernels hold roughly 13 to 14.5 percent water by weight.",
+      "kind": "observation",
+      "source_url": "https://ag.purdue.edu/news/2020/02/whats-under-the-shell-of-this-popular-snack.html",
+      "source_title": "Purdue University College of Agriculture news (2020), quoting food scientist Bruce Hamaker",
+      "excerpt": "Popcorn must have moisture inside the kernel of about 13 to 14.5 percent of its total weight",
+      "spoken_as": "a little water, about fourteen percent",
+      "note": "Expert quotation in a university news article (secondary); excerpt relayed through web search."
+    },
+    {
+      "id": "crack-leaks",
+      "statement": "Kernels with cracks or weak spots in the hull let moisture escape while heating, and fail to pop.",
+      "kind": "observation",
+      "source_url": "https://ag.purdue.edu/news/2020/02/whats-under-the-shell-of-this-popular-snack.html",
+      "source_title": "Purdue University College of Agriculture news (2020)",
+      "excerpt": "4 to 47 percent of kernels, dependent on variety, were unsuccessful in their transformation ... cracks or weak spots in the outer layer that let moisture escape during heating",
+      "spoken_as": "a kernel with one tiny crack just leaks its steam away / Their steam got out.",
+      "note": "Excerpt relayed through web search. The film generalises from cracks and weak spots to one visible crack; that simplification is listed under dramatization."
+    },
+    {
+      "id": "critical-temperature",
+      "statement": "Almost all popcorn pops at a critical temperature of about 180 degrees Celsius.",
+      "kind": "observation",
+      "source_url": "https://doi.org/10.1098/rsif.2014.1247",
+      "source_title": "Virot & Ponomarenko (2015), Popcorn: critical temperature, jump and sound, J. R. Soc. Interface 12: 20141247 (abstract)",
+      "excerpt": "the critical temperature 180\u00b0C at which almost all of popcorn pops is consistent with an elementary pressure vessel scenario",
+      "spoken_as": "At about a hundred and eighty degrees, the hull bursts",
+      "note": "Abstract text relayed through web search of the HAL archive record; publisher host not reachable from this session."
+    },
+    {
+      "id": "superheated-expansion",
+      "statement": "Superheated water provides the driving force that expands the kernel once the hull ruptures.",
+      "kind": "observation",
+      "source_url": "https://knowledgecenter.cimmyt.org/bib/68087",
+      "source_title": "Hoseney, Zeleznak & Abdelrahman (1983), Mechanism of popcorn popping (abstract)",
+      "excerpt": "most of the water in the kernel is superheated at the moment of popping and provides the driving force for expanding the kernel once the pericarp ruptures",
+      "spoken_as": "and the hot starch puffs into foam",
+      "note": "Excerpt relayed through a web-search summary of the abstract. 'Foam' is the film's plain word for the expanded starch."
+    },
+    {
+      "id": "starch-leg",
+      "statement": "Popcorn jumps on a leg of starch that is compressed against the surface.",
+      "kind": "observation",
+      "source_url": "https://doi.org/10.1098/rsif.2014.1247",
+      "source_title": "Virot & Ponomarenko (2015), abstract",
+      "excerpt": "We observe that popcorn jumps with a 'leg' of starch which is compressed on the ground.",
+      "spoken_as": "A leg of starch kicks the pan, and the kernel jumps."
+    },
+    {
+      "id": "pop-is-steam",
+      "statement": "The researchers propose that the familiar pop sound is caused by the release of water vapour.",
+      "kind": "inference",
+      "source_url": "https://doi.org/10.1098/rsif.2014.1247",
+      "source_title": "Virot & Ponomarenko (2015), abstract",
+      "excerpt": "By synchronizing video recordings with acoustic recordings, we propose that the familiar 'pop' sound of the popcorn is caused by the release of water vapour.",
+      "spoken_as": "And the pop? Researchers think it's the steam rushing out.",
+      "note": "The authors propose this; the narration says 'think' rather than stating it as settled."
+    }
+  ],
+  "dramatization": [
+    "Kernels are drawn several hundred times life size in cutaway; real kernels are opaque.",
+    "Water is drawn as a few visible drops and steam as bubbles; in reality the water is spread through the starch.",
+    "The burst and jump are slowed down by orders of magnitude, and the replay separates the crack from the steam jet more than real time would.",
+    "Unpopped kernels fail for several reasons (cracks, weak spots, moisture loss); the film shows a single visible crack.",
+    "Steam is drawn as white bubbles that merge as the pressure rises; in a real kernel most of the water stays liquid (superheated) under pressure until the hull breaks, then flashes to vapour."
+  ]
+}

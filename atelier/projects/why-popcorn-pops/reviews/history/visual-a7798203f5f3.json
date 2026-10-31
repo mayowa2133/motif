@@ -1,0 +1,108 @@
+{
+ "request_sha256": "a7798203f5f3ef7bca06c9fc42050768601859a859d75a57fae30634ff4c6e57",
+ "role": "visual",
+ "reviewer": {
+  "kind": "model",
+  "id": "Claude subagent (fresh context, same model family as the builder)",
+  "independence": "separate-context-same-family",
+  "playback": "ordered-frames",
+  "inputs_viewed": [
+   "/home/user/motif/atelier/projects/why-popcorn-pops/reviews/visual-request.md",
+   "/home/user/motif/atelier/contracts/review.schema.json",
+   "/home/user/motif/atelier/runs/why-popcorn-pops/rough/07c86c472181/evidence-review/ordered-frames.png",
+   "/home/user/motif/atelier/runs/why-popcorn-pops/rough/07c86c472181/evidence-review/strip-cutaway.png",
+   "/home/user/motif/atelier/runs/why-popcorn-pops/rough/07c86c472181/evidence-review/strip-boil.png",
+   "/home/user/motif/atelier/runs/why-popcorn-pops/rough/07c86c472181/evidence-review/strip-pressure.png",
+   "/home/user/motif/atelier/runs/why-popcorn-pops/rough/07c86c472181/evidence-review/strip-leak.png",
+   "/home/user/motif/atelier/runs/why-popcorn-pops/rough/07c86c472181/evidence-review/strip-burst.png",
+   "/home/user/motif/atelier/runs/why-popcorn-pops/rough/07c86c472181/evidence-review/strip-foam.png",
+   "/home/user/motif/atelier/runs/why-popcorn-pops/rough/07c86c472181/evidence-review/strip-leg.png",
+   "/home/user/motif/atelier/runs/why-popcorn-pops/rough/07c86c472181/evidence-review/strip-jump.png",
+   "/home/user/motif/atelier/runs/why-popcorn-pops/rough/07c86c472181/evidence-review/strip-replay_split.png",
+   "/home/user/motif/atelier/runs/why-popcorn-pops/rough/07c86c472181/evidence-review/strip-replay_pop.png",
+   "/home/user/motif/atelier/runs/why-popcorn-pops/rough/07c86c472181/evidence-review/strip-kernel_lands.png",
+   "/home/user/motif/atelier/runs/why-popcorn-pops/rough/07c86c472181/evidence-review/phone-f00053.png",
+   "/home/user/motif/atelier/runs/why-popcorn-pops/rough/07c86c472181/evidence-review/phone-f00191.png",
+   "/home/user/motif/atelier/runs/why-popcorn-pops/rough/07c86c472181/evidence-review/phone-f00355.png",
+   "/home/user/motif/atelier/runs/why-popcorn-pops/rough/07c86c472181/evidence-review/phone-f00490.png",
+   "/home/user/motif/atelier/runs/why-popcorn-pops/rough/07c86c472181/evidence-review/phone-f00673.png",
+   "/home/user/motif/atelier/runs/why-popcorn-pops/rough/07c86c472181/evidence-review/phone-f00849.png",
+   "/home/user/motif/atelier/runs/why-popcorn-pops/rough/07c86c472181/evidence-review/phone-f00961.png"
+  ],
+  "tools": "Read tool on every evidence PNG; Python/PIL crops, 2-5x enlargements and pixel measurements of those same images in a scratch directory"
+ },
+ "dimensions": {
+  "focal_hierarchy": {
+   "status": "PASS",
+   "note": "In most beats the thing that changes commands attention: the ringed kernels at 2.5-3.0 s, WATER 14% with leader lines at 6.5-9.0 s, the left kernel filling with bubbles at 10-14 s, the right kernel draining and browning at 15-18 s, the white foam bloom at 21.4-24 s, the replay split at 28.3-29.5 s, and the dark cracked kernel falling through white popcorn at 31-32.2 s. Weak spots: at 0-1.5 s the hook kernels are small and low under a busy heap; at 15-18 s the leak plume is faint grey rings while the pure-white sealed kernel beside it is the brightest object; at 25-27 s the flake sits behind the thermometer (see composition).",
+   "evidence": "ordered-frames 2.5s/3.0s, 6.5-9.0s, 15.0-18.0s, 21.5-24.0s, 31.0-32.5s; phone-f00490; strip-kernel_lands"
+  },
+  "identity_continuity": {
+   "status": "FAIL",
+   "note": "At the burst (f628 to f630) and again in the replay (f850 to f852), the sealed kernel full of white steam is swapped in one 2-frame step for a different drawing: a closed two-half hull about 12% narrower with a yellow disc inside, no white mass, no red germ tip, and a thinner, lighter blue outline. The white that built up from 10 s to 21 s vanishes at the moment it should burst out, then foam regrows from a small ball (f632-f650). Elsewhere identity holds: the cracked kernel keeps its brown hull and zigzag from 17.5 s to the last frame, and the flake keeps its two orange petals from 21.5 s into the bowl at 30.5-31.5 s. The starch leg also disappears between f737 and f739.",
+   "evidence": "strip-burst f628/f630/f632; strip-replay_split f850/f852/f856; strip-jump f737/f739; enlarged crops of those cells"
+  },
+  "composition": {
+   "status": "FAIL",
+   "note": "The vertical staging is mostly deliberate: thermometer near the top at about 15%, the kernels in the middle band (41-65% of height), the burner low and the bottom ~18% left clear. But: (a) at 25.0-27.0 s the jumping flake rises into the top band and parks behind the thermometer, whose bar and pink fill cross it for about 2 s; (b) at 0.0-1.5 s the hook kernels sit at 81-84% of frame height, inside the platform caption zone, and the first second is static; (c) in the burst and replay shots the crack mark sits at x 297-312 of 360 (83-87%), under the right-side action rail; the foam touches the left edge (x about 8) at 22.43 s; and the 180 °C label at y 60-75 of 640 (9-12%) sits at the edge of the top UI band.",
+   "evidence": "ordered-frames 25.0-27.0s (enlarged); ordered-frames 0.0-1.5s (kernel bbox y 0.81-0.84 at f0-f30); phone-f00673; phone-f00849"
+  },
+  "readable_action": {
+   "status": "PASS",
+   "note": "In every sampled beat the cause comes before the consequence: the flame lights (9.3 s) before the drops turn to bubbles (9.9-10.5 s); the crack appears (f444) before the rings rise (f446 on) and the bubbles drain (15-17 s); 180 °C shows (19.5 s) before the split (21.0 s); the leg presses the pan with a pink contact ellipse (24.0 s) and the foam squashes (f735) before lift-off; in the replay the split (f852) comes before the steam coil (f864) and the sound rings (f872); the kernel lands upright on the bowl floor at f966 and holds there to 34 s. Weaknesses: the jump never lands within its own shot; the leg releases by vanishing; at 15.0-16.5 s the crack is drawn over a white bubble inside the outline and the plume starts about 30 px above it; at 31.0 s the cracked kernel enters the bowl already overlapping the flake, as if it came out of it.",
+   "evidence": "strip-boil, strip-leak, strip-burst, strip-leg, strip-jump, strip-replay_split, strip-replay_pop, strip-kernel_lands; ordered-frames 30.5-32.5s"
+  },
+  "motion_performance": {
+   "status": "FAIL",
+   "note": "Smoothness cannot be judged, but timing at the sampled scale shows a stall. After lift-off the flake reaches the top by 25.5 s, then keeps almost the same screen position and size (about 46-50 px wide, its top about 30 px down) through 27.0 s, while the pan and the cracked kernel shrink about 30% in the pull-back. The jump's payoff reads as a 1.5 s hang rather than an arc, and the shot cuts to REPLAY with no fall. Also, f0-f30 are static, and the sealed kernel looks unchanged from about 15 s to 21 s apart from the 180 °C label, so the pressure has no visible build before the split (trembling cannot be assessed). Good: squash anticipation at f733-f735, an eased foam bloom over about 2 s, a fall that speeds up under gravity (f958-f966), and a 1.7 s final hold.",
+   "evidence": "ordered-frames 24.5-27.0s with measured flake vs kernel sizes; ordered-frames 0.0-1.0s and 15.0-21.0s; strip-jump; strip-foam; strip-kernel_lands"
+  },
+  "style_coherence": {
+   "status": "PASS",
+   "note": "One risograph language holds throughout: off-white grained paper, flat blue, pink and yellow inks with overprint mixes (orange, olive), halftone dot shading, offset double rim lines, bold sans labels in the same inks, and single-ink plate wipes (pink at 3.5 s, yellow at 30.0 s). Small outliers: the hard-edged geometric trapezoid leg (24.0-24.6 s) among organic forms, and the kernel outline changing from thin blue to thick near-black during the 5.0 s push (f148-f152).",
+   "evidence": "ordered-frames all rows; strip-cutaway f148-f152; strip-leg"
+  },
+  "phone_readability": {
+   "status": "PASS",
+   "note": "At 360x640 the labels read (the WATER 14% block is about 70 px tall; 180 °C and REPLAY have about 15 px cap height). The crack is a dark zigzag about 15x30 px, and the cracked kernel stays recognisable by its brown colour and upright pose even at about 55 px in the final frame. Caveats: the water drops are olive-green lens shapes (RGB about 84,100,40) that read as seeds or eyes without the label; the leak plume is 1-2 px light-grey rings, the upper ones nearly invisible; and with no 100 °C text, passing 100 °C is shown only by an unlabelled tick.",
+   "evidence": "phone-f00191 (enlarged, drop colours sampled), phone-f00490, phone-f00673, phone-f00849, phone-f00961, strip-kernel_lands"
+  },
+  "technical_defects": {
+   "status": "FAIL",
+   "note": "(1) A hard drawing swap at f628 to f630 and f850 to f852: the contents vanish and the outline and size change. (2) A layering collision at 25.0-27.0 s: the thermometer bar and fill overprint the hero flake. (3) The starch leg disappears in one step (f737 to f739). (4) Petal outlines show through the white foam at 25.0-25.5 s, so the flake reads as translucent. No tearing or broken frames in the samples; the full pink (3.5 s) and yellow (30.0 s) plate frames look like deliberate wipes, but their duration cannot be established.",
+   "evidence": "strip-burst, strip-replay_split, strip-jump, ordered-frames 25.0-27.0s enlarged, ordered-frames 3.5s and 30.0s"
+  }
+ },
+ "verdict": "REPAIR",
+ "critical_issues": [
+  {
+   "dimension": "identity_continuity",
+   "where": "20.93-21.07 s (f628 to f632) and the replay at 28.27-28.53 s (f850 to f856)",
+   "problem": "The sealed kernel's built-up white steam mass and its hull drawing are swapped in one step for a smaller closed split hull that looks empty: no white, no germ, a thinner and lighter outline. What built pressure for about 10 s disappears at the instant it should burst, and foam regrows from a small ball. This breaks the visible chain from trapped steam to burst, and it is most visible in the replay, where the empty split holds for 4+ frames on the very beat that explains the pop.",
+   "smallest_fix": "Split the existing kernel drawing in place, keeping its size, outline and germ, and let the white mass push out through the opening as the seed of the jet and foam, so the kernel never appears to empty."
+  },
+  {
+   "dimension": "composition",
+   "where": "25.0-27.0 s (f750-f810), end of the burst shot",
+   "problem": "After the jump the flake rises into the top band and parks behind the thermometer for about 2 s, with the HUD bar and fill crossing it. It barely moves on screen while the rest of the scene shrinks, then the film cuts away without a fall. The jump's payoff is staged under the HUD at the top edge and reads as a stall or layering error.",
+   "smallest_fix": "Keep the jump apex below the thermometer (at roughly 30-35% of frame height), or fade the thermometer out once the flake leaves the pan, and let the flake arc down or leave the frame before the cut to REPLAY."
+  },
+  {
+   "dimension": "composition",
+   "where": "0.0-1.5 s (f0-f45), the opening bowl",
+   "problem": "The two unpopped kernels, the subject of the hook question, are about 10% of frame width and sit at 81-84% of frame height, inside the platform caption zone, on a frame that does not move for the first second. They reach a safe height only at about 2.0 s, so the question's object is hidden for most of the hook line.",
+   "smallest_fix": "Frame the opening so the bottom kernels sit at or above about 70% of frame height (raise the bowl or tighten the start), or start the sink at frame 0."
+  }
+ ],
+ "suggestions": [
+  "Make the water drops read as water: unoverprinted blue (knock out the yellow beneath them) and a rounder drop shape. Also draw a distinct hull band in the cutaway so hard hull and soft starch differ.",
+  "Draw the crack on the hull outline, start the plume at the crack, and give the steam rings darker, 2-3 px strokes that stay visible as they rise.",
+  "Give the starch leg an organic shape that grows out of the foam, and retract it into the flake at lift-off instead of letting it vanish.",
+  "Separate the cracked kernel's entrance from the flake's at 31.0 s: drop it after the flake settles, from a different x, so it does not seem to come out of the flake.",
+  "Add a small '100 °C' tag at the tick around 10.6 s, since the shot plan relies on passing 100 °C.",
+  "Keep the crack mark at or below about 80% of frame width in the burst and replay shots, and move the 180 °C label below about 12% of height, away from platform UI.",
+  "Keep the kernel outline weight and colour constant through the 5.0 s push-in."
+ ],
+ "sampling_limits": "Ordered decoded preview frames every 0.5 s (69 frames), 11 dense strips (every 2nd frame, -8 to +8) around the marked moments, and 7 full-size 360x640 frames; no moving playback and no audio. I could not judge motion smoothness or easing between samples, trembling and heat shimmer, flicker, the duration of the pink (3.5 s) and yellow (30.0 s) wipes, the cutaway opening (between 5.5 s and 6.0 s), the replay cut (27.0-27.5 s), or audio-visual sync. Platform UI zones were judged against typical TikTok, Reels and Shorts overlays, not rendered overlays. Pixel measurements were taken on encoded preview frames.",
+ "summary": "A coherent risograph cutaway film whose beats mostly read in order: kernels in the bowl, water inside, bubbles building, the crack leaking and browning, the burst into foam, the leg kick, the replay with sound rings, and the cracked kernel landing at the bottom. Three problems block release. At the burst and the replay split, the white-filled kernel is swapped for an empty-looking split hull, breaking the steam-to-burst link. After the jump, the flake stalls behind the thermometer for about 2 s with no landing. And the opening's hook kernels sit in the caption zone for the first 1.5 s. Smaller issues: green-looking water drops, a faint leak plume, a geometric leg that vanishes, and the cracked kernel entering the bowl tangled with the flake."
+}
