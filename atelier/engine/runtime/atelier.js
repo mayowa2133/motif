@@ -89,7 +89,13 @@
     ctx.globalAlpha = 1; ctx.globalCompositeOperation = 'source-over'; ctx.filter = 'none';
     ctx.fillStyle = '#000'; ctx.fillRect(0, 0, ctx.canvas.width, ctx.canvas.height);
     ctx.setTransform(state.scale, 0, 0, state.scale, 0, 0);
-    ctx.save(); state.film.render(ctx, env(n)); ctx.restore();
+    // A film that leaves save/restore unbalanced would leak transforms into the rest of its own frame; fail it loudly.
+    const save = ctx.save, restore = ctx.restore;let depth = 0;
+    ctx.save = function () { depth++; return save.call(ctx); };
+    ctx.restore = function () { if (--depth < 0) throw new Error('frame ' + n + ': restore() without a matching save()'); return restore.call(ctx); };
+    try { state.film.render(ctx, env(n)); } finally { ctx.save = save; ctx.restore = restore; }
+    if (depth !== 0) throw new Error('frame ' + n + ': ' + depth + ' save() without restore()');
+    ctx.setTransform(1, 0, 0, 1, 0, 0);
     return true;
   }
 

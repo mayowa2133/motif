@@ -36,7 +36,7 @@ def stub_take(text, voice, speed, cache, python=None):
     folder = Path(cache) / 'voice';folder.mkdir(parents=True, exist_ok=True)
     out = folder / f'stub-{abs(hash((text, voice, speed))) % 10**8}.wav'
     if out.is_file():return out, True
-    n = int(len(text.split()) / 2.8 * 24000);t = np.arange(n) / 24000
+    n = int(len(text.split()) / 4.5 * 24000);t = np.arange(n) / 24000
     with wave.open(str(out), 'wb') as w:
         w.setnchannels(1);w.setsampwidth(2);w.setframerate(24000);w.writeframes((np.sin(2 * np.pi * 220 * t) * 0.3 * 32767).astype('<i2').tobytes())
     return out, False
@@ -63,7 +63,7 @@ class Pipeline(unittest.TestCase):
             d = read(project.dir / 'direction.json');d['audio']['narration'] = 'voice-over';d['audio']['voice'] = 'af_heart';d['applicability'].pop('picture_sound_link')
             write(project.dir / 'direction.json', d)
             f = read(project.source / 'film.json');f['sound']['voice'] = 'af_heart'
-            f['sound']['narration'] = [{'id': 'drop', 'text': 'Drop it.', 'at': 0}];write(project.source / 'film.json', f)
+            f['sound']['narration'] = [{'id': 'drop', 'text': 'Drop it, little ball.', 'at': 0}];write(project.source / 'film.json', f)
             studio.refresh_ledger(project)
         return project
 

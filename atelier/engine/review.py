@@ -82,7 +82,7 @@ def intent(project, role, film):
 def request(project, role, binding, entries, film, extra=None):
     """Write reviews/<role>-request.json (+ prompt). Returns (request, sha)."""
     direction = read(project.dir / 'direction.json');spec = ROLES[role]
-    value = {'schema': 'motif-atelier-review-request/1', 'role': role, 'project': project.slug, 'project_id': project.state['project_id'],
+    value = {'schema': 'motif-atelier-review-request/1', 'role': role, 'project': project.slug, 'project_id': project.state['project_id'], 'approach_id': direction['approach_id'],
              'dimensions': spec['dims'], 'mandatory': spec['mandatory'],
              'not_applicable': {k: v for k, v in direction.get('applicability', {}).items() if k in spec['dims']},
              'intent': intent(project, role, film), 'binding': binding, 'evidence': entries, 'evidence_root': str(project.root),

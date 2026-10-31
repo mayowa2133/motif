@@ -161,11 +161,12 @@ class Run:
         status, issues, _ = contracts.review(got, read(path), sha(path))
         self.p.state.setdefault('settled', {})[role] = {'request_sha256': sha(path), 'core': core(read(path)['binding']), 'status': status}
         self.p.save()
-        if status == 'FAIL':
-            rounds = self.p.state['failures'].setdefault(self.approach(), [])
-            if not any(f['request_sha256'] == sha(path) for f in rounds):
+        approach = read(path).get('approach_id') or self.p.stage('direction').get('approach_id') or self.approach()   # the approach the request was made under
+        if status == 'FAIL' and not any(f['request_sha256'] == sha(path) for v in self.p.state['failures'].values() for f in v):
+            rounds = self.p.state['failures'].setdefault(approach, [])
+            if True:
                 rounds.append({'role': role, 'request_sha256': sha(path), 'source_sha256': read(path)['binding']['source_tree_sha256'], 'at': now(), 'issues': issues[:20]})
-                self.p.event('creative-failure', approach=self.approach(), role=role, round=self.failed_rounds(self.approach()), settled='before the request changed')
+                self.p.event('creative-failure', approach=approach, role=role, round=self.failed_rounds(approach), settled='before the request changed')
                 self.p.save()
 
     def gate(self, role, value, digest):
@@ -454,6 +455,9 @@ def halted(project, stage):
     if stages.get(stage, {}).get('status') == 'DONE':stages[stage]['status'] = reason
     for later in STAGES[STAGES.index(stage) + 1:]:
         if stages.get(later, {}).get('status') == 'DONE':stages[later]['status'] = 'SUPERSEDED'
+    if project.state.get('human_decision') and stages.get('delivery', {}).get('status') != 'DONE':
+        project.event('human-decision-invalidated', decision=project.state['human_decision'], reason='the delivery it named is no longer current')
+        project.state['human_decision'] = None
     project.save()
     return project
 

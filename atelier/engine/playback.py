@@ -13,6 +13,7 @@ Chromium page with network access limited to the local file server and a
 per-frame timeout. That is browser isolation plus request interception, not an
 operating-system sandbox. Python never imports or executes project files.
 """
+import base64
 import functools
 import http.server
 import io
@@ -97,9 +98,16 @@ def _worker(base, size, frames, out, fps, crf, stills, blocked, errors, keep):
                 page.wait_for_function('window.__atelierReady === true || window.__atelierError !== undefined', timeout=BOOT_TIMEOUT_MS)
                 boot_error = page.evaluate('window.__atelierError || null')
                 if boot_error:raise RenderError(f'film failed to boot: {boot_error}')
+                cdp = page.context.new_cdp_session(page)
                 for n in frames:
-                    page.evaluate('n => Atelier.seek(n)', n)
-                    png = page.screenshot(type='png')
+                    # Runtime.evaluate's own timeout terminates a runaway script; page.evaluate would wait forever.
+                    # The pixels come from the canvas buffer in the same call, so a capture can never show a stale composited frame.
+                    got = cdp.send('Runtime.evaluate', {'expression': f'Atelier.seek({n}) && document.getElementById("film").toDataURL("image/png")',
+                                                        'timeout': FRAME_TIMEOUT_MS, 'returnByValue': True})
+                    if 'exceptionDetails' in got:
+                        detail = got['exceptionDetails'];text = (detail.get('exception') or {}).get('description') or detail.get('text', '')
+                        raise RenderError(f'frame {n}: ' + ('timed out after %d ms (execution terminated)' % FRAME_TIMEOUT_MS if 'terminated' in text.lower() else text))
+                    png = base64.b64decode(got['result']['value'].split(',', 1)[1])
                     if encoder:encoder.stdin.write(png)
                     if n in stills:keep[n] = png
                     if errors or blocked:raise RenderError('; '.join(errors + [f'blocked request {u}' for u in blocked]))
