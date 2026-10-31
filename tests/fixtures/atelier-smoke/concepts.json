@@ -1,0 +1,12 @@
+{"authored_by": "test fixture", "classification": "fictional",
+ "premises": [
+  {"id": "drop", "title": "Drop", "opening_image": "a ball hangs at the top of an empty frame", "audience_hook": "will it bounce or splat?",
+   "central_action": "the ball falls and squashes on contact", "complication": "it stretches as it falls fast", "payoff": "it settles round again",
+   "scores": {"clarity": 5, "visual_potential": 2, "originality": 1, "appeal": 2, "feasibility": 5}},
+  {"id": "roll", "title": "Roll", "opening_image": "a cube sits on a slope beside a puddle", "audience_hook": "is the cube going to tip into the puddle?",
+   "central_action": "the cube tumbles edge over edge down the slope", "complication": "a gust pushes it back uphill", "payoff": "it lands balanced on one corner",
+   "scores": {"clarity": 4, "visual_potential": 3, "originality": 2, "appeal": 2, "feasibility": 4}},
+  {"id": "grow", "title": "Grow", "opening_image": "a seed lies in dark soil under a cracked pot", "audience_hook": "what is pushing the soil?",
+   "central_action": "a shoot spirals upward through the crack", "complication": "a stone blocks the shoot", "payoff": "a flower opens beside the stone",
+   "scores": {"clarity": 3, "visual_potential": 4, "originality": 2, "appeal": 3, "feasibility": 3}}],
+ "chosen": "drop", "rationale": "the smallest complete cause and effect for an engine smoke test"}

@@ -1,0 +1,86 @@
+{
+ "$schema": "https://json-schema.org/draft/2020-12/schema",
+ "title": "Atelier asset ledger: identity, origin, rights, version and use of every source file",
+ "type": "object",
+ "additionalProperties": false,
+ "required": [
+  "assets"
+ ],
+ "properties": {
+  "assets": {
+   "type": "array",
+   "items": {
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+     "path",
+     "kind",
+     "origin",
+     "author",
+     "rights",
+     "version",
+     "use",
+     "sha256"
+    ],
+    "properties": {
+     "path": {
+      "type": "string",
+      "minLength": 3
+     },
+     "kind": {
+      "enum": [
+       "source",
+       "art",
+       "audio",
+       "font",
+       "data",
+       "license"
+      ]
+     },
+     "origin": {
+      "enum": [
+       "atelier-authored-code",
+       "motif-authored-svg",
+       "procedural-seeded",
+       "motif-image-gen",
+       "motif-tts",
+       "licensed",
+       "reused-motif-asset"
+      ]
+     },
+     "author": {
+      "type": "string",
+      "minLength": 3
+     },
+     "rights": {
+      "type": "string",
+      "minLength": 3
+     },
+     "version": {
+      "type": "integer",
+      "minimum": 1
+     },
+     "use": {
+      "type": "string",
+      "minLength": 3
+     },
+     "sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+     },
+     "generation": {
+      "type": "object"
+     },
+     "registry_id": {
+      "type": "string",
+      "minLength": 3
+     },
+     "note": {
+      "type": "string",
+      "minLength": 3
+     }
+    }
+   }
+  }
+ }
+}

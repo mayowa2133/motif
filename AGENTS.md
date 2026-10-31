@@ -1,5 +1,18 @@
 # Making a Motif reel (for any AI agent: Codex, Claude, others)
 
+> **Mode routing.** This file is the contract for **Motif Classic**, the default
+> constrained pipeline (`scripts/motif_reel.py` and everything below). It still
+> applies to every Classic brief, the Classic library, canonical assets and frozen
+> productions. **Motif Atelier** is a separate mode that is used only when it is
+> explicitly selected: `scripts/motif_atelier.py`, briefs with `"mode": "atelier"`,
+> and work inside `atelier/`. Inside that scope only, [atelier/AGENTS.md](atelier/AGENTS.md)
+> narrows two rules below on purpose: Atelier films *are* written as project
+> code and artwork (in `atelier/projects/<slug>/source/`), and they are not
+> limited to the approved library. Every other safeguard (provenance, facts,
+> originality, review, human approval) still holds there. A failed Classic job is
+> never silently moved to Atelier, and an Atelier film is never evidence that
+> Classic gained a capability.
+
 Motif turns a JSON brief into a narrated 2D paper-style short-form reel. A reel is
 **data only**: you write a brief, the pipeline draws everything from the approved
 library and gates the result. Never write per-film code, never hand-draw a frame,

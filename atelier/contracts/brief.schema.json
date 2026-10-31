@@ -1,0 +1,122 @@
+{
+ "$schema": "https://json-schema.org/draft/2020-12/schema",
+ "title": "Motif Atelier brief: the small input contract",
+ "type": "object",
+ "additionalProperties": false,
+ "required": [
+  "mode",
+  "slug",
+  "idea"
+ ],
+ "properties": {
+  "mode": {
+   "const": "atelier",
+   "description": "explicit selection; Classic briefs never carry it"
+  },
+  "slug": {
+   "type": "string",
+   "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+  },
+  "idea": {
+   "type": "string",
+   "minLength": 12
+  },
+  "audience": {
+   "type": "string",
+   "minLength": 3
+  },
+  "classification": {
+   "enum": [
+    "factual",
+    "fictional",
+    "mixed",
+    "unspecified"
+   ],
+   "description": "unspecified: the concepts stage must classify"
+  },
+  "intended_effect": {
+   "type": "string",
+   "minLength": 3
+  },
+  "duration_s": {
+   "type": "number",
+   "minimum": 6,
+   "maximum": 120,
+   "description": "a starting point for pacing, not an invariant"
+  },
+  "style": {
+   "type": "string",
+   "minLength": 3
+  },
+  "references": {
+   "type": "array",
+   "items": {
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+     "note"
+    ],
+    "properties": {
+     "note": {
+      "type": "string",
+      "minLength": 3
+     },
+     "url": {
+      "type": "string",
+      "pattern": "^https?://"
+     },
+     "use": {
+      "enum": [
+       "style-guide-only",
+       "fact-source"
+      ]
+     }
+    }
+   }
+  },
+  "constraints": {
+   "type": "array",
+   "items": {
+    "type": "string",
+    "minLength": 3
+   }
+  },
+  "locked_wording": {
+   "type": "array",
+   "items": {
+    "type": "string",
+    "minLength": 3
+   },
+   "description": "user wording that must be spoken verbatim"
+  },
+  "explore": {
+   "type": "boolean"
+  },
+  "resources": {
+   "type": "object",
+   "additionalProperties": false,
+   "properties": {
+    "concepts": {
+     "type": "integer",
+     "minimum": 1,
+     "maximum": 6
+    },
+    "creative_repairs_per_approach": {
+     "type": "integer",
+     "minimum": 0,
+     "maximum": 2
+    },
+    "delivery_renders": {
+     "type": "integer",
+     "minimum": 1,
+     "maximum": 10
+    },
+    "render_minutes": {
+     "type": "number",
+     "minimum": 1,
+     "maximum": 600
+    }
+   }
+  }
+ }
+}

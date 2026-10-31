@@ -29,6 +29,12 @@ The [brief variation review](docs/BRIEF_VARIATION_REVIEW.md) verifies SYNC and R
 
 The [production-plan workflow](docs/PRODUCTION_PLAN_WORKFLOW.md) adds live Codex planning, state review, speech-driven action timing and compilation into the existing engine. Its [milestone review](docs/PRODUCTION_PLAN_MILESTONE_REVIEW.md) evaluates a declined calendar proposal and two failed arena answers handed to a person. The legacy producer and frozen demos remain available.
 
+## Two modes
+
+**Motif Classic** is everything above and in [AGENTS.md](AGENTS.md): the constrained, data-only reel pipeline (`scripts/motif_reel.py`) built from the approved library. It is the default and is unchanged.
+
+**Motif Atelier** is an explicitly selected original-animation mode (`scripts/motif_atelier.py`, briefs with `"mode": "atelier"`): an agent invents the film, writes its artwork and animation code inside `atelier/projects/<slug>/`, and the engine renders it deterministically, gates it with independent reviews and technical checks, and stops at REVIEW_REQUIRED. See [atelier/README.md](atelier/README.md) and [atelier/AGENTS.md](atelier/AGENTS.md).
+
 ## Motif quality mode
 
 New directed runs stop at a native moving rough for independent story and visual review. See [QUALITY_SYSTEM.md](QUALITY_SYSTEM.md) for contracts, frozen gold references, named performance and reaction bindings, asset promotion, bounded repairs and final human approval.

@@ -1,0 +1,132 @@
+{
+ "$schema": "https://json-schema.org/draft/2020-12/schema",
+ "title": "Atelier concepts: substantially different premises, ranked as hypotheses",
+ "type": "object",
+ "additionalProperties": false,
+ "required": [
+  "authored_by",
+  "classification",
+  "premises",
+  "chosen",
+  "rationale"
+ ],
+ "properties": {
+  "authored_by": {
+   "type": "string",
+   "minLength": 3
+  },
+  "classification": {
+   "enum": [
+    "factual",
+    "fictional",
+    "mixed"
+   ]
+  },
+  "premises": {
+   "type": "array",
+   "minItems": 1,
+   "items": {
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+     "id",
+     "title",
+     "opening_image",
+     "audience_hook",
+     "central_action",
+     "complication",
+     "payoff",
+     "scores"
+    ],
+    "properties": {
+     "id": {
+      "type": "string",
+      "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+     },
+     "title": {
+      "type": "string",
+      "minLength": 3
+     },
+     "opening_image": {
+      "type": "string",
+      "minLength": 12
+     },
+     "audience_hook": {
+      "type": "string",
+      "minLength": 12
+     },
+     "central_action": {
+      "type": "string",
+      "minLength": 12
+     },
+     "complication": {
+      "type": "string",
+      "minLength": 12
+     },
+     "payoff": {
+      "type": "string",
+      "minLength": 12
+     },
+     "art_motion_idea": {
+      "type": "string",
+      "minLength": 3
+     },
+     "library_fit": {
+      "type": "string",
+      "minLength": 3
+     },
+     "scores": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+       "clarity",
+       "visual_potential",
+       "originality",
+       "appeal",
+       "feasibility"
+      ],
+      "properties": {
+       "clarity": {
+        "type": "integer",
+        "minimum": 1,
+        "maximum": 5
+       },
+       "visual_potential": {
+        "type": "integer",
+        "minimum": 1,
+        "maximum": 5
+       },
+       "originality": {
+        "type": "integer",
+        "minimum": 1,
+        "maximum": 5
+       },
+       "appeal": {
+        "type": "integer",
+        "minimum": 1,
+        "maximum": 5
+       },
+       "feasibility": {
+        "type": "integer",
+        "minimum": 1,
+        "maximum": 5
+       }
+      }
+     }
+    }
+   }
+  },
+  "chosen": {
+   "type": "string",
+   "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+  },
+  "rationale": {
+   "type": "string",
+   "minLength": 12
+  },
+  "notes": {
+   "type": "string",
+   "minLength": 3
+  }
+ }
+}

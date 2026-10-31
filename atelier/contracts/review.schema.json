@@ -1,0 +1,160 @@
+{
+ "$schema": "https://json-schema.org/draft/2020-12/schema",
+ "title": "Atelier review response: one independent critique bound to one request",
+ "type": "object",
+ "additionalProperties": false,
+ "required": [
+  "request_sha256",
+  "role",
+  "reviewer",
+  "dimensions",
+  "critical_issues",
+  "sampling_limits",
+  "summary"
+ ],
+ "properties": {
+  "request_sha256": {
+   "type": "string",
+   "pattern": "^[0-9a-f]{64}$"
+  },
+  "role": {
+   "enum": [
+    "proof",
+    "story",
+    "visual",
+    "factual"
+   ]
+  },
+  "reviewer": {
+   "type": "object",
+   "additionalProperties": false,
+   "required": [
+    "kind",
+    "id",
+    "independence",
+    "playback"
+   ],
+   "properties": {
+    "kind": {
+     "enum": [
+      "model",
+      "human",
+      "builder"
+     ]
+    },
+    "id": {
+     "type": "string",
+     "minLength": 3
+    },
+    "independence": {
+     "enum": [
+      "different-provider",
+      "separate-context-same-family",
+      "human",
+      "builder-self-inspection"
+     ]
+    },
+    "playback": {
+     "enum": [
+      "moving",
+      "ordered-frames",
+      "stills"
+     ]
+    },
+    "inputs_viewed": {
+     "type": "array",
+     "items": {
+      "type": "string",
+      "minLength": 3
+     }
+    },
+    "tools": {
+     "type": "string",
+     "minLength": 3
+    }
+   }
+  },
+  "dimensions": {
+   "type": "object",
+   "additionalProperties": {
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+     "status",
+     "note"
+    ],
+    "properties": {
+     "status": {
+      "enum": [
+       "PASS",
+       "FAIL",
+       "NOT_ASSESSED",
+       "NOT_APPLICABLE"
+      ]
+     },
+     "note": {
+      "type": "string",
+      "minLength": 3
+     },
+     "evidence": {
+      "type": "string",
+      "minLength": 3
+     }
+    }
+   }
+  },
+  "verdict": {
+   "enum": [
+    "PROCEED",
+    "REPAIR",
+    "CHANGE_CONCEPT"
+   ]
+  },
+  "critical_issues": {
+   "type": "array",
+   "items": {
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+     "dimension",
+     "where",
+     "problem",
+     "smallest_fix"
+    ],
+    "properties": {
+     "dimension": {
+      "type": "string",
+      "minLength": 3
+     },
+     "where": {
+      "type": "string",
+      "minLength": 3
+     },
+     "problem": {
+      "type": "string",
+      "minLength": 3
+     },
+     "smallest_fix": {
+      "type": "string",
+      "minLength": 3
+     }
+    }
+   }
+  },
+  "suggestions": {
+   "type": "array",
+   "items": {
+    "type": "string",
+    "minLength": 3
+   }
+  },
+  "sampling_limits": {
+   "type": "string",
+   "minLength": 12
+  },
+  "summary": {
+   "type": "string",
+   "minLength": 12
+  }
+ }
+}

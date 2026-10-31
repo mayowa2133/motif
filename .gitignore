@@ -38,3 +38,6 @@ private-audit/
 videos/productions/turbo-*/**/*-input.txt
 videos/productions/turbo-*/**/*-events.jsonl
 videos/productions/turbo-*/**/*-stderr.txt
+
+# Motif Atelier: generated outputs (renders, takes, review frames) stay local.
+atelier/runs/

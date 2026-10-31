@@ -1,0 +1,10 @@
+{"authored_by": "test fixture", "approach_id": "drop-v1", "logline": "A ball falls, squashes on the floor and settles round.",
+ "ending": "the ball rests round on the floor", "opening_promise": "a ball hangs high above an empty floor",
+ "continuity": {"carrier": "object", "what": "one orange ball from top to floor"},
+ "style_sheet": {"look": "flat two-colour test card", "palette": ["#F2E8D5", "#E8682A"], "materials": "flat fills", "characters": [],
+   "environment": "an empty floor line", "framing": "locked wide", "typography": null, "sound_intent": "one thud on contact"},
+ "audio": {"narration": "none", "voice": null, "music": "none", "sfx": "thud on contact"},
+ "shots": [{"id": "fall", "purpose": "set up and pay off the drop", "sees": "the ball falls, squashes on contact, then rounds out",
+            "before": "ball high", "after": "ball resting"}],
+ "hardest_shot": {"shot": "fall", "why": "the squash must land exactly on the contact frame", "fallback": "a hard cut to the settled ball"},
+ "applicability": {"picture_sound_link": "silent test card by design: no narration or dialogue", "performance": "no characters by design: an object test"}}

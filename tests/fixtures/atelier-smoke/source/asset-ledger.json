@@ -1,0 +1,24 @@
+{
+  "assets": [
+    {
+      "path": "film.js",
+      "kind": "source",
+      "origin": "atelier-authored-code",
+      "author": "test fixture",
+      "rights": "original (Motif)",
+      "version": 1,
+      "use": "smoke-test film",
+      "sha256": "7c0c09431237800e40828cabdc5ac9a3ccfdb7843ea5fcf50c71b92d344f735c"
+    },
+    {
+      "path": "film.json",
+      "kind": "data",
+      "origin": "atelier-authored-code",
+      "author": "test fixture",
+      "rights": "original (Motif)",
+      "version": 1,
+      "use": "smoke-test film",
+      "sha256": "78f2774f3db9999b08f245499f7d900aa421cfa36af31790bb4ea26447983ca6"
+    }
+  ]
+}

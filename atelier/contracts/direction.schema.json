@@ -1,0 +1,327 @@
+{
+ "$schema": "https://json-schema.org/draft/2020-12/schema",
+ "title": "Atelier direction: ending first, shot plan of visible change, style sheet",
+ "type": "object",
+ "additionalProperties": false,
+ "required": [
+  "authored_by",
+  "approach_id",
+  "logline",
+  "ending",
+  "opening_promise",
+  "continuity",
+  "style_sheet",
+  "audio",
+  "shots",
+  "hardest_shot"
+ ],
+ "properties": {
+  "authored_by": {
+   "type": "string",
+   "minLength": 3
+  },
+  "approach_id": {
+   "type": "string",
+   "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+  },
+  "logline": {
+   "type": "string",
+   "minLength": 12
+  },
+  "ending": {
+   "type": "string",
+   "minLength": 12
+  },
+  "opening_promise": {
+   "type": "string",
+   "minLength": 12
+  },
+  "continuity": {
+   "type": "object",
+   "additionalProperties": false,
+   "required": [
+    "carrier",
+    "what"
+   ],
+   "properties": {
+    "carrier": {
+     "enum": [
+      "character",
+      "object",
+      "goal",
+      "situation",
+      "visual-pattern",
+      "place"
+     ]
+    },
+    "what": {
+     "type": "string",
+     "minLength": 12
+    }
+   }
+  },
+  "style_sheet": {
+   "type": "object",
+   "additionalProperties": false,
+   "required": [
+    "look",
+    "palette",
+    "materials",
+    "characters",
+    "environment",
+    "framing",
+    "sound_intent"
+   ],
+   "properties": {
+    "look": {
+     "type": "string",
+     "minLength": 12
+    },
+    "palette": {
+     "type": "array",
+     "minItems": 2,
+     "items": {
+      "type": "string",
+      "pattern": "^#[0-9a-fA-F]{6}$"
+     }
+    },
+    "materials": {
+     "type": "string",
+     "minLength": 3
+    },
+    "characters": {
+     "type": "array",
+     "items": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+       "id",
+       "design",
+       "new_design"
+      ],
+      "properties": {
+       "id": {
+        "type": "string",
+        "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+       },
+       "design": {
+        "type": "string",
+        "minLength": 12
+       },
+       "silhouette": {
+        "type": "string",
+        "minLength": 3
+       },
+       "key_poses": {
+        "type": "array",
+        "items": {
+         "type": "string",
+         "minLength": 3
+        }
+       },
+       "expressions": {
+        "type": "array",
+        "items": {
+         "type": "string",
+         "minLength": 3
+        }
+       },
+       "new_design": {
+        "type": "boolean"
+       },
+       "canonical_asset": {
+        "type": [
+         "string",
+         "null"
+        ]
+       }
+      }
+     }
+    },
+    "environment": {
+     "type": "string",
+     "minLength": 3
+    },
+    "framing": {
+     "type": "string",
+     "minLength": 3
+    },
+    "typography": {
+     "type": [
+      "string",
+      "null"
+     ]
+    },
+    "sound_intent": {
+     "type": "string",
+     "minLength": 3
+    }
+   }
+  },
+  "audio": {
+   "type": "object",
+   "additionalProperties": false,
+   "required": [
+    "narration",
+    "music",
+    "sfx"
+   ],
+   "properties": {
+    "narration": {
+     "enum": [
+      "none",
+      "voice-over",
+      "dialogue"
+     ]
+    },
+    "voice": {
+     "type": [
+      "string",
+      "null"
+     ]
+    },
+    "music": {
+     "type": "string",
+     "minLength": 3
+    },
+    "sfx": {
+     "type": "string",
+     "minLength": 3
+    }
+   }
+  },
+  "shots": {
+   "type": "array",
+   "minItems": 1,
+   "items": {
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+     "id",
+     "purpose",
+     "sees",
+     "before",
+     "after"
+    ],
+    "properties": {
+     "id": {
+      "type": "string",
+      "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+     },
+     "purpose": {
+      "type": "string",
+      "minLength": 3
+     },
+     "sees": {
+      "type": "string",
+      "minLength": 12
+     },
+     "before": {
+      "type": "string",
+      "minLength": 3
+     },
+     "after": {
+      "type": "string",
+      "minLength": 3
+     },
+     "cause": {
+      "type": "string",
+      "minLength": 3
+     },
+     "stillness": {
+      "type": "string",
+      "minLength": 3
+     }
+    }
+   }
+  },
+  "hardest_shot": {
+   "type": "object",
+   "additionalProperties": false,
+   "required": [
+    "shot",
+    "why",
+    "fallback"
+   ],
+   "properties": {
+    "shot": {
+     "type": "string",
+     "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+    },
+    "why": {
+     "type": "string",
+     "minLength": 12
+    },
+    "fallback": {
+     "type": "string",
+     "minLength": 12
+    }
+   }
+  },
+  "claims": {
+   "type": "array",
+   "items": {
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+     "id",
+     "statement",
+     "kind"
+    ],
+    "properties": {
+     "id": {
+      "type": "string",
+      "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+     },
+     "statement": {
+      "type": "string",
+      "minLength": 12
+     },
+     "kind": {
+      "enum": [
+       "observation",
+       "inference",
+       "exaggeration",
+       "invention"
+      ]
+     },
+     "source_url": {
+      "type": "string",
+      "pattern": "^https?://"
+     },
+     "source_title": {
+      "type": "string",
+      "minLength": 3
+     },
+     "excerpt": {
+      "type": "string",
+      "minLength": 3
+     },
+     "spoken_as": {
+      "type": "string",
+      "minLength": 3
+     },
+     "note": {
+      "type": "string",
+      "minLength": 3
+     }
+    }
+   }
+  },
+  "dramatization": {
+   "type": "array",
+   "items": {
+    "type": "string",
+    "minLength": 3
+   }
+  },
+  "applicability": {
+   "type": "object",
+   "additionalProperties": {
+    "type": "string",
+    "minLength": 12
+   },
+   "description": "dimension -> reason, declared before production; the only NOT_APPLICABLE a review may use"
+  }
+ }
+}
